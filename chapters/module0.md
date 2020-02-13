@@ -1,41 +1,41 @@
 ---
-title: 'Module 0: Welcome to Introduction to Machine Learning'
+title: 'Module 0: Welcome to Programming in Python for Data Science '
 description:
-  'Course Introduction, summary of course learning outcomes and prerequisite validation.' 
+  'Course Introduction, summary of course learning outcomes' 
 prev: null
 next: /module1
 type: chapter
 id: 0
 ---
 
-<exercise id="1" title="DSCI-571 Introduction to Machine Learning" type="slides">
+<exercise id="1" title="DSCI-511 Programming in Python for Data Science" type="slides">
 
 <slides source="module0_00">
 </slides>
 
 </exercise>
 
-<exercise id="2" title="Prerequisite Confirmation">
+<exercise id="2" title="Are you ready?">
 
-Have you taken the prerequisite **DSCI 511a - Programming in Python for Data Science**?
+Are you ready to start the course **DSCI-511 Programming in Python for Data Science**?
 
 
 <choice>
-<opt text="Yes I have and I am ready to take DSCI-571 Introduction to Machine Learning" correct="true">
+<opt text="Yes! Let's get this party started! 🎉" correct="true">
 
-Great! Let's get started. Please continue on to Module 1.
-
-</opt>
-
-<opt text="I have not taken the prerequisite but I'm feeling confident that I know python well enough" correct="true">
-
-We recommend having a solid understanding in coding in Python. If you feel confident in your knowledge feel free to continue on to Module 1. 
+We love the enthusiasm! Alright let's move on to Module 1. 
 
 </opt>
 
-<opt text="I have not and I have little Python coding background">
+<opt text="I have a python background but have not had very much wrangling experience 🤔" correct="true">
 
-Please take the course **DSCI 511a - Programming in Python for Data Science** before proceeding onto Module 1.
+We recommend taking this course so that you are familiar with `Pandas` and have the fundamentals master for our more advanced Data Science courses. Please continue on to Module 1. 
+
+</opt>
+
+<opt text="I don't think this is the right fit for me. 😧">
+
+That's ok. If you don't think this is the right course for your we hope you find what you are looking for. We still suggest taking a look at what we have to offer in Module 1 before formulating a set opinion. 
 
 </opt>
 </choice>
