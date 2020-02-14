@@ -8,7 +8,7 @@ type: chapter
 id: 1
 ---
 
-<exercise id="1" title="Introduction to dataframes, tidy data" type="slides">
+<exercise id="1" title="Introduction to Dataframes and Tidy Data" type="slides">
 
 <slides source="module1_01">
 </slides>

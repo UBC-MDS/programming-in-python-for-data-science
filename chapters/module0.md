@@ -1,7 +1,7 @@
 ---
 title: 'Module 0: Welcome to Programming in Python for Data Science '
 description:
-  'Course Introduction, summary of course learning outcomes' 
+  'Course introduction and summary of course learning outcomes' 
 prev: null
 next: /module1
 type: chapter
