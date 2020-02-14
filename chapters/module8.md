@@ -1,7 +1,7 @@
 ---
-title: 'Module 8: Putting it all together'
+title: 'Module 8: '
 description:
-  'This module will combine everything you learned over the previous modules and teach you about pipelines.'
+  'In this module learn about ...'
 prev: /module7
 next: null
 type: chapter

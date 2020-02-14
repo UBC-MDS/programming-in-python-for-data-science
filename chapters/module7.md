@@ -1,7 +1,7 @@
 ---
-title: 'Module 7: Ensemble Methods'
+title: 'Module 7: '
 description:
-  'This module will teach you about different ensemble methods. '
+  'In this module learn about ... '
 prev: /module6
 next: /module8
 type: chapter

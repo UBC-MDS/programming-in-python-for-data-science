@@ -1,7 +1,7 @@
 ---
-title: 'Module 5: Introduction to Linear Classifiers and Logistic Regression'
+title: 'Module 5: '
 description:
-  'In this module you will be introduced to various Linear classifiers and how to implement them. You will learn about Logistic regression and the benefits of interpretability.'
+  'In this module learn about ...'
 prev: /module4
 next: /module6
 type: chapter

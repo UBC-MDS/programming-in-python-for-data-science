@@ -1,7 +1,7 @@
 ---
-title: 'Module 6: SVMs and Random Forests'
+title: 'Module 6: '
 description:
-  'This module will introduce you Support Vector Machines, multi-class classification and Random Forests.'
+  'In this module learn about ...'
 prev: /module5
 next: /module7
 type: chapter

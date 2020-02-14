@@ -1,7 +1,7 @@
 ---
-title: 'Module 4: All about Naive Bayes'
+title: 'Module 4: '
 description:
-  'In this module learn about Naive Bayes Classification.'
+  'In this module learn about ... '
 prev: /module3
 next: /module5
 type: chapter

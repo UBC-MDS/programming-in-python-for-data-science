@@ -1,21 +1,21 @@
 ---
-title: 'Module 1: Introduction and Decision Trees'
+title: 'Module 1: Python, Pandas and Data - an unexpected friendship'
 description:
-  'This chapter will explain the different branches of machine learning and introduce decision trees; a machine learning model used in supervised learning.'
+  'In this module learn you will be introduced to dataframes, tidy data and the packages numpy and pandas.'
 prev: module0
 next: /module2
 type: chapter
 id: 1
 ---
 
-<exercise id="1" title="Introduction + Supervised vs. Unsupervised learning" type="slides">
+<exercise id="1" title="Introduction to dataframes, tidy data" type="slides">
 
 <slides source="module1_01">
 </slides>
 
 </exercise>
 
-<exercise id="2" title=" Supervised vs. Unsupervised Learning">
+<exercise id="2" title="Describing a Dataframe">
 
 **Given the following scenarios, would each example be considered supervised learning or unsupervised learning?**
 
@@ -92,7 +92,7 @@ Since we are clustering animals that are similar and there are no pre-defined gr
 
 </exercise>
 
-<exercise id="3" title="Classification vs. Regression" type="slides">
+<exercise id="3" title=" Pandas that don't eat bamboo" type="slides">
 
 <slides source="module1_03">
 </slides>
