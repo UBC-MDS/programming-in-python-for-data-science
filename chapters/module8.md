@@ -1,7 +1,7 @@
 ---
-title: 'Module 8: '
+title: 'Module 8: Vogue Code the Style Guide (Readable Code and Libraries)'
 description:
-  'In this module learn about ...'
+  'In this module you will learn about ...'
 prev: /module7
 next: null
 type: chapter

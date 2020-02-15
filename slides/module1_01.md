@@ -18,14 +18,13 @@ Your browser does not support the video tag.
 
 Notes: 
 By the end of the module, students are expected to:
-1. Insert here 
-1. Insert here 
-1. Insert here 
-1. Insert here 
-1. Insert here 
-1. Insert here 
-1. Insert here 
-1. Insert here 
+- Describe the components of a Dataframe.
+- Read a standard .csv file using Pandas `pd.read_csv()`.
+- Explain modules and import libraries.
+- Demonstrate indexing and slicing with `df.loc[]` and `df.iloc[]`.
+- Demonstrate Selecting and filtering columns of a dataframe using `df[]` notation.
+- Create simple summary statistics using `pd.describe()` and `pd.summary()`.
+- construct simple visualizations using pandas.
 
 ---
 

@@ -20,7 +20,7 @@
 
 ## Modules 
 
-### Module 1: Python, Pandas & Data - an unexpected friendship!
+### Module 1: Python & Pandas - an unexpected friendship!
 
 #### Topics 
 
@@ -108,7 +108,7 @@ By the end of the module, students are expected to:
 - Use `df.melt() `and `df.pivot() `to reshape dataframes, specifically to make tidy data
 - Manipulate non-standard date/time formats into standard Pandas datetime using `pd.to_datetime()`.
 
-### Module 5: Table Marriage and having the whole package: (Combining dataframes and Missing Values)
+### Module 5: Having the Whole Package and Marriage: (Missing Values and Combining Dataframes)
 
 #### Topics 
 
@@ -124,7 +124,8 @@ By the end of the module, students are expected to:
 - Use stacking and unstacking operations to reshape a dataframe.
 - Combine dataframes using `df.merge()` and `pd.concat()` and know when to use these different methods.
 
-### Module 6:  Fruit Loops and Function: Loops & functions 
+### Module 6:  Fruit Loops and Function: Loops & Functions 
+
 #### Topics 
 
 - Loops 
@@ -149,7 +150,7 @@ By the end of the module, students are expected to:
 - Source and use functions stored as python code in another file, as well as those in
 
 
-### Module 7: A Slice of Numpy
+### Module 7: A Slice of Numpy (Numpy Arrays)
 
 #### Topics 
 
