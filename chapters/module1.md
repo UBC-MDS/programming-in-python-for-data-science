@@ -1,14 +1,14 @@
 ---
-title: 'Module 1: Python, Pandas and Data - an unexpected friendship'
+title: 'Module 1: Python and Pandas - an Unexpected Friendship'
 description:
-  'In this module learn you will be introduced to dataframes, tidy data and the packages numpy and pandas.'
+  'In this module learn you will be introduced to dataframes and the pandas python package.'
 prev: module0
 next: /module2
 type: chapter
 id: 1
 ---
 
-<exercise id="1" title="Introduction to Dataframes and Tidy Data" type="slides">
+<exercise id="1" title="Introduction to Dataframes and Pandas" type="slides">
 
 <slides source="module1_01">
 </slides>
@@ -99,7 +99,7 @@ Since we are clustering animals that are similar and there are no pre-defined gr
 
 </exercise>
 
-<exercise id="4" title="Classification vs. Regression">
+<exercise id="4" title="Title here">
 
 **Given the following scenarios, would each example be considered classification or regression?**
 
@@ -175,14 +175,14 @@ Is the prediction a categorical or a numical value?
 </choice>
 </exercise>
 
-<exercise id="5" title="Tabular Data and Terminology" type="slides">
+<exercise id="5" title="Title here " type="slides">
 
 <slides source="module1_05">
 </slides>
 
 </exercise>
 
-<exercise id="6" title="Terminology: Target">
+<exercise id="6" title="Title here ">
 
 Which is a synonym for ***target***? 
 
@@ -215,7 +215,7 @@ Not quite. You may want to have a read through of the definitions in this sectio
 </choice>
 </exercise>
 
-<exercise id="7" title="Terminology: Features">
+<exercise id="7" title="Title here">
 
 Which is not a synonym for ***features***? 
 
@@ -248,7 +248,7 @@ Predictors is a synonym for features. You may want to have a read through of the
 
 </exercise>
 
-<exercise id="8" title="Describing a Dataset">
+<exercise id="8" title="Title here">
 
 Let's make sure we understand all the components we use in a Dataset for machine learning. 
 
@@ -348,12 +348,12 @@ What would we be predicting, a numerical value or categorical?
 </choice>
 </exercise>
 
-<exercise id="9" title="Training a Model using Scikit-learn" type="slides">
+<exercise id="9" title="Title here" type="slides">
 <slides source="module1_09">
 </slides>
 </exercise>
 
-<exercise id="10" title="Fit or Predict">
+<exercise id="10" title="Title here">
 
 **Do the following statements correspond to the `fit` or the `predict` function:**  
 
@@ -426,7 +426,7 @@ You may want to look at the slides and see what each function delivers as an out
 </choice>
 </exercise>
 
-<exercise id="11" title="Building Your Model">
+<exercise id="11" title="Title here">
 
 Let's try training and prediction our own model. 
 
@@ -444,12 +444,12 @@ When you run a code exercise for the first time, it could take a bit of time for
 </codeblock>
 </exercise>
 
-<exercise id="12" title="Decision Tree Splitting Rules" type="slides">
+<exercise id="12" title="Title here" type="slides">
 <slides source="module1_12">
 </slides>
 </exercise>
 
-<exercise id="13" title="Calculating Gini Impurity">
+<exercise id="13" title="Title here">
 
 Let's try calculating the Gini impurity  on our candybar dataset using the same `gini2` function from the module slides. The function has been imported for you. 
 
@@ -476,13 +476,13 @@ Save your Gini impurity as object `peanut_gini_impurity`
 </codeblock>
 </exercise>
 
-<exercise id="14" title="ML Model Parameters and Hyperparameters " type="slides">
+<exercise id="14" title="Title here" type="slides">
 <slides source="module1_14">
 </slides>
 </exercise>
 
 
-<exercise id="15" title= "Decision Tree - Trees">
+<exercise id="15" title= "Title here">
 
 **Question:**   
 What type of tree are Decision Trees?
@@ -510,7 +510,7 @@ Does the tree need to be balanced?
 
 </exercise>
 
-<exercise id="16" title= "Feature Split Selection">
+<exercise id="16" title= "Title here">
 
 Who choses the features that are split on at each node?
 
@@ -531,7 +531,7 @@ Great!
 
 </exercise>
 
-<exercise id="17" title= "Decision Stumps">
+<exercise id="17" title= "Title here">
 
 **Question:**   
 What is the depth of a decision stump? 
@@ -557,7 +557,7 @@ Decision stumps are what make up a decision tree, stumps are not a hyperparamete
 </choice>
 </exercise>
 
-<exercise id="18" title= "Decision Tree True and False">
+<exercise id="18" title= "Title here">
 
 **Are the following Statements True or False**:
 

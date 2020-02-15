@@ -2,7 +2,7 @@
 type: slides
 ---
 
-# Introduction to Dataframes and Tidy Data
+# Introduction to Dataframes and Pandas 
 
 Notes: In this module you will be introduced to data frames, tidy data, the python pandas package and learn how to manipute data into a new form. 
 
@@ -18,20 +18,18 @@ Your browser does not support the video tag.
 
 Notes: 
 By the end of the module, students are expected to:
-- Explain what Tidy data is
-- Describe the components of a Dataframe
-- Use NumPy to create ndarrays from existing data with np.array() and from functions such as np.arange(), np.linspace() and np.full().
-- Read a standard .csv file using Pandas pd.read_csv().
-- Demonstrate indexing and slicing with df.loc[] and df.iloc[]
-- Explain what broadcasting is and how to use it (quickly????)
-- Select and filter columns of a dataframe using df[] notation.
-- Compare and contrast np.ndarray, pd.Series and pd.DataFrame objects. 
+1. Insert here 
+1. Insert here 
+1. Insert here 
+1. Insert here 
+1. Insert here 
+1. Insert here 
+1. Insert here 
+1. Insert here 
 
 ---
 
 # Data Frames  
-
-
 
 Notes: Script here. 
 <html>
