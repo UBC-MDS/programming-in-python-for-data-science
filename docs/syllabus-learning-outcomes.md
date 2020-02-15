@@ -108,7 +108,7 @@ By the end of the module, students are expected to:
 - Use `df.melt() `and `df.pivot() `to reshape dataframes, specifically to make tidy data
 - Manipulate non-standard date/time formats into standard Pandas datetime using `pd.to_datetime()`.
 
-### Module 5: Having the Whole Package and Marriage: (Missing Values and Combining Dataframes)
+### Module 5: Marriage & the Whole Package: (Missing Values and joining Dataframes)
 
 #### Topics 
 
