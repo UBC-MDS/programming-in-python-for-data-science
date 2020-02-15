@@ -70,6 +70,7 @@ _Note: This module can be pushed to the end of the wrangling material but I want
 
 - Read different `.csv` files using Pandas `pd.read_csv()`
 - Review wrangling, practice creation of plots
+- Indexing a dataframe using `[]`, `[[]]`, `.iloc[]`, `.loc[]`.
 - Simple dataframe manipulations and operations
 - filtering recap using `df[]` and introduce `df.query()` notation
 - Dataframe reshaping
@@ -82,6 +83,7 @@ _Note: This module can be pushed to the end of the wrangling material but I want
 By the end of the module, students are expected to:
 - Demonstrate how to rename columns of a dataframe using df.rename().
 - Sort a dataframe using df.sort_values()`.
+- Use different methods of indexting dataframes and predict the datatypes that will result. 
 - Use `df[]` and `df.query()` notation to filter rows of a dataframe.
 - Create new rows or columns in a dataframe using `df[]` notation.
 - Use pandas to modify values in a dataframe using `df.apply()` and `df.applymap()`.
@@ -168,6 +170,8 @@ By the end of the module, students are expected to:
 
 ### Module 8: Vogue Code the Style Guide (Readable code and libraries)
 
+_Things to add here? Definitely my weekest module!_ 
+
 #### Topics 
 
 - Python import
@@ -175,9 +179,11 @@ By the end of the module, students are expected to:
 - Style guides and coding style 
 - Python debugger (pdb)
 
-
 #### Learning Outcomes 
 
 - Demonstrate how to import classes and functions for different python libraries
+- Source and use functions stored as python code in another file
+- Describe what python libraries are, as well as explain when and why they are useful
 - Identify where code can be improved concerning variable names, magic numbers, comments and whitespace
 - Write code that is human readable and follows the pep8 style guide.
+- Explain how the python debugger can help rectify your code. 
