@@ -1,7 +1,7 @@
 ---
-title: 'Module 4: It's Tidy up time! (Time and Tidy Data)'
+title: 'Module 4: '
 description:
-  'In this module you will learn about ...'
+  'In this module learn about ... '
 prev: /module3
 next: /module5
 type: chapter
