@@ -44,7 +44,7 @@ By the end of the module, students are expected to:
 
 
 ### Module 2: Python without the "eek": Basic Python 
-_Note: This module can be pushed to the end of the wrangling material but I wanted to discuss why I think we should introduce datatypes earlier" 
+_Note: This module can be pushed to the end of the wrangling material but I wanted to discuss why I think we should introduce datatypes earlier_
 
 #### Topics 
 
