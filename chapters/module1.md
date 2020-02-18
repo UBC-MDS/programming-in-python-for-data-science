@@ -119,8 +119,35 @@ When you run a code exercise for the first time, it could take a bit of time for
 
 </exercise>
 
+<exercise id="5" title="Wrangling Basics">
 
-<exercise id="19" title="What Did We Just Learn?" type="slides">
+**Question**
+
+
+<choice id="1" >
+<opt text="Answer 1">
+
+Let's look into this more 
+
+</opt>
+
+<opt text="Answer 2" correct="true">
+
+Good job! 
+
+</opt>
+
+<opt text="Answer 3" >
+
+Maybe not the right answer.
+
+</opt>
+
+</choice >
+
+</exercise>
+
+<exercise id="6" title="What Did We Just Learn?" type="slides">
 <slides source="module1_19">
 </slides>
 </exercise>
