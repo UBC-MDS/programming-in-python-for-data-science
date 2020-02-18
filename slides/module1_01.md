@@ -154,7 +154,7 @@ print(len(df))
 25
 ```
 
-Notice in this case we have the name of the dataframe within the `len` brackets. That's because  `len` is a function whereas the others are attributes. This is going to be discussed later in this course.  For now, be aware that sometimes we are going to be specifying the dataframe before the tool we are using and sometimes within it. 
+Notice in this case we have the name of the dataframe within the `len` brackets. That's because  `len` is a function whereas the others are methods. This is going to be discussed later in this course.  For now, be aware that sometimes we are going to be specifying the dataframe before the tool we are using and sometimes within it. 
 
 Notes: Script here. 
 <html>
@@ -164,7 +164,7 @@ Notes: Script here.
 
 ---
 
-Another important attribute to know is what if we don't want to print the whole table   
+Another important method to know is what if we don't want to print the whole table   
 We can then specify how many rows of the dataset to show with `df.head()`
 
 ```python
