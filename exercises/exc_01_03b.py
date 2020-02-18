@@ -1,10 +1,8 @@
-import numpy as np
-import pandas as pd
+____ pandas as ____
 
+____ = pd.____('data/____')
 
-candybar_df = pd.read_csv('data/candybars.csv', header=____, index_col=____)
-
-print(candybar_df.head())
+print(____.head())
 
 candybar_feats = ____(candybar_df.____)
 print(candybar_feats)

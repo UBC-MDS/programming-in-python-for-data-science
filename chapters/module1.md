@@ -1,5 +1,5 @@
 ---
-title: 'Module 1: Python & Pandas - an unexpected friendship!'
+title: 'Module 1: Python & Pandas - an Unexpected Friendship!'
 description:
   'In this module you will be introduced to dataframes and the pandas python package.'
 prev: module0
@@ -7,6 +7,14 @@ next: /module2
 type: chapter
 id: 1
 ---
+
+<exercise id="0" title="Module Learning Outcomes" type="slides">
+
+<slides source="module1_00">
+</slides>
+
+</exercise>
+
 
 <exercise id="1" title="Introduction to Dataframes and Pandas" type="slides">
 
@@ -17,240 +25,59 @@ id: 1
 
 <exercise id="2" title="Describing a Dataframe">
 
-**Given the following scenarios, would each example be considered supervised learning or unsupervised learning?**
+**What are data frames comparable to?**
 
-**Example:**   
-_Finding groups of similar properties in a real estate data set._
 
 <choice id="1" >
-<opt text="Supervised Learning">
+<opt text="Text Documents">
 
-Is there a "true number" of groups of similar properties? Are the groups known and defined?
+Is this an easy way to organize data?
 
 </opt>
 
-<opt text="Unsupervised Learning" correct="true">
+<opt text="Excel Sheets" correct="true">
 
-Good job! This is an unsupervised learning example.
+Good job! 
+
+</opt>
+
+<opt text="Picture Frames" >
+
+Are we storing pictures in a data frame?
 
 </opt>
 
 </choice>
 
-**Example:**    
-_Is predicting real estate prices based on house features (number of rooms, learning from past sales, etc.) learning from past sales as examples supervised learning or unsupervised learning?_
+**What is Pandas?**    
+
 
 <choice id="2">
-<opt text="Supervised Learning" correct="true">
+<opt text="A Python package needed for extra tools" correct="true">
 
-Nice work! Since we have examples with known value of real estate prices, we can use this predict real estate prices for homes we don't know the price on. 
+Nice work! Pandas is a package we import so we can use additional features.
 
 </opt>
 
-<opt text="Unsupervised Learning">
+<opt text="A programming language">
 
-Do we have true corresponding values of what we are predicting with?
+Are you sure you know the difference between Python and Pandas? 
+
+</opt>
+
+<opt text=" Fluffy animals that eat bamboo">
+
+Although that isn't wrong, we are studying Python and coding and in this course, the context is not quite right. 
 
 </opt>
 
 </choice >
 
-**Example:**   
-_Detecting credit card fraud based on examples of fraudulent transactions_
-
-<choice  id="3">
-<opt text="Supervised Learning" correct= "true">
-
-Great! Since we have examples with labels of "fraudulent" or "not fraudulent", we can detect if transactions with similar features to our examples are of the same nature. 
-
-</opt>
-
-<opt text="Unsupervised Learning" >
-
-Do we have examples of the true corresponding value of what we are predicting?
-
-</opt>
-
-</choice>
-
-**Example:**   
-_Idenitfying groups of animals given features such as "number of legs", "wings/no wings", "fur/no fur", etc._
-
-<choice  id="4">
-<opt text="Supervised Learning">
-
-Not quite! Do we have predefined know groups that we are classifying?
-
-</opt>
-
-<opt text="Unsupervised Learning" correct="true">
-
-Since we are clustering animals that are similar and there are no pre-defined groups, this is an example of unsupervised learning.
-
-</opt>
-</choice>
-
 </exercise>
 
-<exercise id="3" title=" Pandas that don't eat bamboo" type="slides">
+<exercise id="3" title="Title here">
 
-<slides source="module1_03">
-</slides>
-
-</exercise>
-
-<exercise id="4" title="Title here">
-
-**Given the following scenarios, would each example be considered classification or regression?**
-
-
-**Example:**  
-_Predicting the price of a house based on features like number of rooms_
-
-<choice id="1">
-<opt text="Classification">
-
-Is the prediction a categorical or a numical value?
-
-</opt>
-
-<opt text="Regression" correct="true">
-
-Good job! We are predicting a numerical value and therefore this is an example of regression.
-
-</opt>
-
-</choice>
-
-**Example:**  
-_Predicting if a house will sell or not based on features like the price of the house, number of rooms, etc._
-
-<choice  id="2">
-<opt text="Classification" correct="true">
-
-Good job! We are predicting a categorical value (Sell/Not Sell) and therefore this is an example of classification.
-
-</opt>
-
-<opt text="Regression" >
-
-Is the prediction a categorical or a numical value?
-
-</opt>
-
-</choice>
-
-**Example:**  
-_Predicting your grade in 571 based on past grades._
-
-<choice  id="3">
-<opt text="Classification">
-
-Is the prediction a categorical or a numical value?
-
-</opt>
-
-<opt text="Regression" correct="true">
-
-Good job! We are predicting a numerical value (percent grade) and therefore this is an example of regression.
-
-</opt>
-</choice>
-
-**Example:**  
-_Predicting whether you should bicycle to work tomorrow based on the weather forecast._
-
-<choice  id="4">
-<opt text="Classification" correct="true">
-
-Good job! We are predicting a categorical value (Bike/Not bike) and therefore this is an example of classification.
-
-</opt>
-
-<opt text="Regression">
-
-Is the prediction a categorical or a numical value?
-
-</opt>
-</choice>
-</exercise>
-
-<exercise id="5" title="Title here " type="slides">
-
-<slides source="module1_05">
-</slides>
-
-</exercise>
-
-<exercise id="6" title="Title here ">
-
-Which is a synonym for ***target***? 
-
-<choice  id="1">
-
-<opt text="Predictors" >
-
-Not quite. You may want to have a read through of the definitions in this section. 
-
-</opt>
-
-<opt text="Records">
-
-Not quite. You may want to have a read through of the definitions in this section. 
-
-</opt>
-
-<opt text="Outcomes" correct="true">
-
-Good job!
-
-</opt>
-
-<opt text="Independent variables">
-
-Not quite. You may want to have a read through of the definitions in this section.
-
-</opt>
-
-</choice>
-</exercise>
-
-<exercise id="7" title="Title here">
-
-Which is not a synonym for ***features***? 
-
-<choice  id="1">
-<opt text="Inputs" >
-
-Inputs is a synonym for features. You may want to have a read through of the definitions in this section. 
-
-</opt>
-
-<opt text="Records" correct="true">
-
-Good job! Records is a synonym for examples, rows and samples
-
-</opt>
-
-<opt text="Predictors" >
-
-Predictors is a synonym for features. You may want to have a read through of the definitions in this section. 
-
-</opt>
-
-<opt text="Independent variables">
-
-Predictors is a synonym for features. You may want to have a read through of the definitions in this section. 
-
-</opt>
-
-</choice>
-
-</exercise>
-
-<exercise id="8" title="Title here">
-
-Let's make sure we understand all the components we use in a Dataset for machine learning. 
+Let's try importing pandas and loading in our own dataset. 
 
 **Instructions:**
 
@@ -258,14 +85,24 @@ When you run a code exercise for the first time, it could take a bit of time for
 
 **When you see `____` in a code exercise, replace it with what you assume to be the correct code. Run it and see if it you obtain the desired output. Submit your code to validate if you were correct.**
 
-The packages you need will be loaded for you. 
 
-- Print the `canbybar_df` object. 
-- Save the feature names as a list named `candybar_feat`.
-- Save the candybar names in a list named `candybar_names`.
-- Save the dimensions of the dataframe as a tuple named `candybar_dim`.
+- Import `pandas` as `pd`. 
+- Load in a dataset named `.csv`.
+- Save the dataframe as ``.
+- display the dataframe
 
-<codeblock id="01_08">
+<codeblock id="01_03a">
+
+- Are you sure you are saving `candybar_feat` and `candybar_names` as lists?
+- Did you import the csv with the correct manner?
+
+</codeblock>
+
+- Let's display the column names 
+- Let's find our the dataframes dimension 
+- How many rows does the dataframe have? 
+
+<codeblock id="01_03b">
 
 - Are you sure you are saving `candybar_feat` and `candybar_names` as lists?
 - Did you import the csv with the correct manner?
@@ -347,6 +184,14 @@ What would we be predicting, a numerical value or categorical?
 </opt>
 </choice>
 </exercise>
+
+<exercise id="5" title="More Pandas, Less Fur" type="slides">
+
+<slides source="module1_05">
+</slides>
+
+</exercise>
+
 
 <exercise id="9" title="Title here" type="slides">
 <slides source="module1_09">
