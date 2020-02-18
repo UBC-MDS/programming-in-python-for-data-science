@@ -1,15 +1,20 @@
-____ pandas as ____
+import pandas as pd
 
-____ = pd.____('data/____')
+# Read in the dataset 
 
-print(____.head())
+hockey_players = pd.read_csv('data/canucks.csv')
 
-candybar_feats = ____(candybar_df.____)
-print(candybar_feats)
+# Print the column names of `hockey_players` and save it as `columns_hockey`.
 
-candybar_names = ____(candybar_df.____)
-print(candybar_names)
-print(len(candybar_names))
+____ 
+print(____)
 
-candybar_dim = candybar_df.____
-print(candybar_dim)
+# Save the number of rows `hockey_players` has in a variable called `hockey_rows`.
+
+____
+print(____)
+
+# Save the data frame dimension as `hockey_dim`. 
+
+____
+print(____)

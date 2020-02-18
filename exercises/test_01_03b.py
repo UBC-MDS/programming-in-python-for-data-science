@@ -5,7 +5,10 @@ def test():
     # in the meta.json for details.
 
     # If an assertion fails, the message will be displayed
-    assert candybar_feats == ['chocolate', 'peanuts', 'caramel', 'nougat', 'cookie_wafer_rice', 'coconut', 'white_chocolate', 'multi', 'available_canada_america'], "Your features may not be correct, Try putting them in a list and `df.columns` may be useful"
-    assert candybar_names == ['CoffeeCrisp', 'Butterfinger', 'Skor', 'Smarties', 'Twix', 'ReesesPeanutButterCups ', '3Musketeers', 'Kinder Surprise', 'M&Ms', 'Glosettes', 'KitKat', 'Babe Ruth', 'Caramilk', 'Aero', 'Mars', 'Payday', 'Snickers', 'Crunchie', 'Wonderbar ', '100Grand ', 'Take5', 'Whatchamacallits', 'AlmondJoy', 'OhHenry', 'CookiesandCream'], "Your candybar names don't seem correct try putting them in a list and `using df.index`"
-    assert candybar_dim == (25, 9), "Did you load your data correctly? "
+
+    assert "columns_hockey = hockey_players.columns" in __solution__ , "There seems to be a problem with finding the column names of the dataset"
+    assert "hockey_rows = len(hockey_players)" in __solution__ , "There seems to be a problem with finding the number of rows of the dataset"
+    assert "hockey_dim = hockey_players.shape" in __solution__ , "There seems to be a problem with the dimension of the datset"
+    assert hockey_dim == (22, 10), "You may not have the correct dataset"
+    assert list(columns_hockey) ==  ['Player', 'No.', 'Age', 'Height', 'Weight', 'Country ', 'Position', 'Experience', 'Birth Date', 'Salary'], "Your column names does not seem correct"
     __msg__.good("Nice work, well done!")

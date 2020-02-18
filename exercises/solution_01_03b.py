@@ -1,16 +1,20 @@
-import numpy as np
 import pandas as pd
 
-candybar_df = pd.read_csv('data/candybars.csv', header=0, index_col=0)
+# Read in the dataset 
 
-print(candybar_df.head())
+hockey_players = pd.read_csv('data/canucks.csv')
 
-candybar_feats = list(candybar_df.columns)
-print(candybar_feats)
+# Print the column names of `hockey_players` and save it as `columns_hockey`.
 
-candybar_names = list(candybar_df.index)
-print(candybar_names)
-print(len(candybar_names))
+columns_hockey = hockey_players.columns 
+print(columns_hockey)
 
-candybar_dim = candybar_df.shape
-print(candybar_dim)
+# Save the number of rows `hockey_players` has in a variable called `hockey_rows`.
+
+hockey_rows = len(hockey_players)
+print(hockey_rows)
+
+# Save the data frame dimension as `hockey_dim`. 
+
+hockey_dim = hockey_players.shape
+print(hockey_dim)

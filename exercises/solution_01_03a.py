@@ -6,4 +6,4 @@ hockey_players = pd.read_csv('data/canucks.csv')
 
 
 # Display the dataframe
-print(hockey_players) 
+print(hockey_players.head()) 
