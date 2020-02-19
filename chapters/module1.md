@@ -89,18 +89,18 @@ When you run a code exercise for the first time, it could take a bit of time for
 - Import `pandas` as `pd`. 
 - Load in a dataset named `.csv`.
 - Save the dataframe as `hockey_players`.
-- display the first 5 rows of the  dataframe
+- Display the first 5 rows of the  dataframe
 
 <codeblock id="01_03a">
 
 - Are you sure you are saving your dataframe as `hockey_players` a
-- are you using `pd.read_csv()`
+- Are you using `pd.read_csv()`
 
 </codeblock>
 
 - Now Let's display the column names of `hockey_players` and save it as `columns_hockey`.
 - Save the number of rows `hockey_players` has in a variable called `hockey_rows`.
-- the data frame dimension should be save as `hockey_dim`. 
+- The data frame dimension should be save as `hockey_dim`. 
 
 
 <codeblock id="01_03b">
