@@ -20,7 +20,7 @@ class Juniper extends React.Component {
         kernelType: 'python3',
         lang: 'python',
         theme: 'default',
-        isolateCells: true,
+        isolateCells: false,
         useBinder: true,
         storageKey: 'juniper',
         useStorage: true,

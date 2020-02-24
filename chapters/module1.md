@@ -37,7 +37,7 @@ Is this an easy way to organize data?
 
 <opt text="Excel Sheets" correct="true">
 
-Good job! 
+Good job!
 
 </opt>
 
@@ -61,13 +61,13 @@ Nice work! Pandas is a package we import so we can use additional features.
 
 <opt text="A programming language">
 
-Are you sure you know the difference between Python and Pandas? 
+Are you sure you know the difference between Python and Pandas?
 
 </opt>
 
 <opt text=" Fluffy animals that eat bamboo">
 
-Although that isn't wrong, we are studying Python and coding and in this course, the context is not quite right. 
+Although that isn't wrong, we are studying Python and coding and in this course, the context is not quite right.
 
 </opt>
 
@@ -75,19 +75,19 @@ Although that isn't wrong, we are studying Python and coding and in this course,
 
 </exercise>
 
-<exercise id="3" title="Your First Code">
+<exercise id="3" title="Your First Code!">
 
-Let's try importing pandas and loading in our own dataset. 
+Let's try importing pandas and loading in our own dataset.
 
 **Instructions:**
 
-When you run a code exercise for the first time, it could take a bit of time for everything to load. 
+When you run a code exercise for the first time, it could take a bit of time for everything to load.
 
 **When you see `____` in a code exercise, replace it with what you assume to be the correct code. Run it and see if it you obtain the desired output. Submit your code to validate if you were correct.**
 
 
-- Import `pandas` as `pd`. 
-- Load in a dataset named `.csv`.
+- Import `pandas` as `pd`.
+- Load in a dataset named `canucks.csv`.
 - Save the dataframe as `hockey_players`.
 - Display the first 5 rows of the  dataframe
 
@@ -98,12 +98,16 @@ When you run a code exercise for the first time, it could take a bit of time for
 
 </codeblock>
 
+</exercise>
+
+<exercise id="4" title="Your Second Code!">
+
 - Now Let's display the column names of `hockey_players` and save it as `columns_hockey`.
 - Save the number of rows `hockey_players` has in a variable called `hockey_rows`.
-- The data frame dimension should be save as `hockey_dim`. 
+- The data frame dimension should be save as `hockey_dim`.
 
 
-<codeblock id="01_03b">
+<codeblock id="01_04">
 
 - Are you sure you are saving your objects correctly?
 - Are you using `len()`, `df.shape` and `df.columns`?
@@ -112,14 +116,14 @@ When you run a code exercise for the first time, it could take a bit of time for
 
 </exercise>
 
-<exercise id="4" title="More Pandas, Less Fur" type="slides">
+<exercise id="5" title="More Pandas, Less Fur" type="slides">
 
-<slides source="module1_04">
+<slides source="module1_05">
 </slides>
 
 </exercise>
 
-<exercise id="5" title="Wrangling Basics">
+<exercise id="6" title="Wrangling Basics">
 
 **Question**
 
@@ -127,13 +131,13 @@ When you run a code exercise for the first time, it could take a bit of time for
 <choice id="1" >
 <opt text="Answer 1">
 
-Let's look into this more 
+Let's look into this more
 
 </opt>
 
 <opt text="Answer 2" correct="true">
 
-Good job! 
+Good job!
 
 </opt>
 
@@ -147,7 +151,7 @@ Maybe not the right answer.
 
 </exercise>
 
-<exercise id="6" title="What Did We Just Learn?" type="slides">
+<exercise id="7" title="What Did We Just Learn?" type="slides">
 <slides source="module1_19">
 </slides>
 </exercise>
