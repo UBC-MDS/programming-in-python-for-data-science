@@ -2,7 +2,7 @@
 type: slides
 ---
 
-# Selecting with Pandas
+# Slicing with Pandas
 
 Notes: Script here.
 <html>
@@ -110,7 +110,7 @@ Notes: Script here.
 In the first case:
 
 ``` Python
-df.loc[ "Apple Cinnamon Cheerios": "Cap'n'Crunch"]
+df.loc[ "Apple Cinnamon Cheerios" : "Cap'n'Crunch"]
 ```
 
 
@@ -121,6 +121,7 @@ df.loc[ "Apple Cinnamon Cheerios": "Cap'n'Crunch"]
 
 <img src='module1/apple-captain.png'>
 
+ This essentially means the _dataframe location from Apple Cinnamon Cheerios" to "Cap'n'Crunch"._   
 What about if we only wanted certain columns as well?
 
 Notes: Script here.
@@ -131,10 +132,11 @@ Notes: Script here.
 
 ---
 
-Perhaps we were only interested in the `calories` to `fiber` columns?
+Perhaps we were only interested in the `calories` to `fiber` columns of those rows?
+
 
 ``` Python
-df.loc[ "Apple Cinnamon Cheerios": "Cap'n'Crunch", "calories" :"fiber"]
+df.loc[ "Apple Cinnamon Cheerios" : "Cap'n'Crunch", "calories" : "fiber"]
 ```
 
 
@@ -146,7 +148,33 @@ df.loc[ "Apple Cinnamon Cheerios": "Cap'n'Crunch", "calories" :"fiber"]
 <img src='module1/cals-fiber.png'>
 
 
-So `loc` is used to slice columns and rows by **name** and within an interval.  
+So `loc` is used to slice columns and rows by **name** and within an interval.
+
+Notes: Script here.
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+What if we wanted all the rows of the dataframe but only the columns "calories" to "fiber"?
+
+we would simply use `:` to indicate from "end" to "end" for rows.
+
+``` Python
+df.loc[ : , "calories" : "fiber"]
+```
+
+
+```out
+
+
+```
+
+<img src='module1/rows-somecols.png'>
+
+
 
 Notes: Script here.
 <html>
@@ -161,7 +189,7 @@ What about if we only wanted certain columns as well?
 Perhaps we were only interested in the `calories` to `fiber` columns?
 
 ``` Python
-df.loc[ "Apple Cinnamon Cheerios": "Cap'n'Crunch", "calories" :"fiber"]
+df.loc[ "Apple Cinnamon Cheerios": "Cap'n'Crunch", "calories" : "fiber"]
 ```
 
 
@@ -173,7 +201,26 @@ df.loc[ "Apple Cinnamon Cheerios": "Cap'n'Crunch", "calories" :"fiber"]
 <img src='module1/cals-fiber.png'>
 
 
-So `loc` is used to slice columns and rows by **name** and within an interval.  
+Notes: Script here.
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+## So Far
+
+`loc` is used to slice columns and rows by **name** and within an interval.
+We always specify **row** indexing first, then **columns**.
+
+```
+df.loc[ "row name start" : "row name end", "column name start" : "column name end"]
+```
+
+- If we arn't slicing any columns we can simply say `df.loc[ "row name start" : "row name end"]`` since columns come after.
+- However the reverse is not true. If we want all the rows with only specific columns, since we specify rows first we need to make it clear with `df.loc[  : , "column name start" : "column name end"]`
+- We can specify unordered columns and rows too.
 
 Notes: Script here.
 <html>
@@ -182,6 +229,30 @@ Notes: Script here.
 </audio></html>
 
 ---
+
+## Unordered Indexing
+
+Let's say we wanted only the rows named "Wheaties", "Trix" and "Clusters" in that ordered.
+How would we obtain them now?
+
+``` Python
+df.loc[["Wheaties", "Trix", "Clusters"], ['type', 'rating', 'sugars']]
+```
+
+
+```out
+
+
+```
+
+<img src=''>
+
+Notes: Script here.
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
 
 # Let's practice!
 
