@@ -80,7 +80,7 @@ Now the index has been set as the name of the cereal (we will talk about how to 
 Let's talk about `Almond Delight`.  It's index name is "Almond Delight" but it's index position is 4th.    
 If you just double counted and started screaming "5!" at the screen that's ok. In the Python language we start counting at position 0 (then 1, 2, 3, and 4 for Almond Delight). So it's important that we relearn counting from childhood to include 0.
 
-So now let's say we want 5 rows past `Almond Delight` so we want rows with the index names "Apple Cinnamon Cheerios" to "Cap'n'Crunch". How would we do this?
+
 
 
 Notes: Script here.
@@ -91,13 +91,22 @@ Notes: Script here.
 
 ---
 
+So now let's say we want 5 rows past `Almond Delight` so we want rows with the index names "Apple Cinnamon Cheerios" to "Cap'n'Crunch".    
+How would we do this?   
+
 There are 3 main ways:
 - .loc[] using index names
 - .iloc[]  using index position
 - Using [] brackets (we will get into that more next module)
 
+Notes: Script here.
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
 
 ---
+
 In the first case:
 
 ``` Python
@@ -111,6 +120,42 @@ df.loc[ "Apple Cinnamon Cheerios": "Cap'n'Crunch"]
 ```
 
 <img src='module1/apple-captain.png'>
+
+What about if we only wanted certain columns as well?
+
+Notes: Script here.
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+Perhaps we were only interested in the `calories` to `fiber` columns?
+
+``` Python
+df.loc[ "Apple Cinnamon Cheerios": "Cap'n'Crunch", "calories" :"fiber"]
+```
+
+
+```out
+
+
+```
+
+<img src='module1/cals-fiber.png'>
+
+
+So `loc` is used to slice columns and rows by **name** and within an interval.  
+
+Notes: Script here.
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
 
 What about if we only wanted certain columns as well?
 Perhaps we were only interested in the `calories` to `fiber` columns?
@@ -135,6 +180,7 @@ Notes: Script here.
 <audio controls >
   <source src="placeholder_audio.mp3" />
 </audio></html>
+
 ---
 
 # Let's practice!
