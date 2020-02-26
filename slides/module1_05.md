@@ -91,13 +91,14 @@ Notes: Script here.
 
 ---
 
-So now let's say we want 5 rows past `Almond Delight` so we want rows with the index names "Apple Cinnamon Cheerios" to "Cap'n'Crunch".    
+So now let's say we want 5 rows past `Almond Delight` so we want rows with the index names "Apple Cinnamon Cheerios" to "Cap'n'Crunch".  
+
 How would we do this?   
 
 There are 3 main ways:
-- .loc[] using index names
-- .iloc[]  using index position
-- Using [] brackets (we will get into that more next module)
+- `.loc[]` using index names
+- `.iloc[] ` using index position
+- Using `[]` brackets (we will get into that more next module)
 
 Notes: Script here.
 <html>
@@ -172,7 +173,7 @@ df.loc[ : , "calories" : "fiber"]
 
 ```
 
-<img src='module1/rows-somecols.png'>
+<img src='module1/rows-somecols.png' width="60%">
 
 
 
@@ -183,7 +184,6 @@ Notes: Script here.
 </audio></html>
 
 ---
-
 
 What about if we only wanted certain columns as well?
 Perhaps we were only interested in the `calories` to `fiber` columns?
@@ -209,18 +209,11 @@ Notes: Script here.
 
 ---
 
-## So Far
+We discussed slicing when the indices are named with words but that's not always the case. What if they are named with a numbers?
+Let's go back to our original cereal dataframe we had when we uploaded it.
 
-`loc` is used to slice columns and rows by **name** and within an interval.
-We always specify **row** indexing first, then **columns**.
+<img src='module1/cereal-index-num.png'>
 
-```
-df.loc[ "row name start" : "row name end", "column name start" : "column name end"]
-```
-
-- If we arn't slicing any columns we can simply say `df.loc[ "row name start" : "row name end"]`` since columns come after.
-- However the reverse is not true. If we want all the rows with only specific columns, since we specify rows first we need to make it clear with `df.loc[  : , "column name start" : "column name end"]`
-- We can specify unordered columns and rows too.
 
 Notes: Script here.
 <html>
@@ -230,13 +223,14 @@ Notes: Script here.
 
 ---
 
-## Unordered Indexing
+We can use the same format before but now since our rows are named with numbers we no longer need to express the row names in "quotations". So now we would use row names without quotations.
 
-Let's say we wanted only the rows named "Wheaties", "Trix" and "Clusters" in that ordered.
-How would we obtain them now?
+`df.loc[ row-name-start : row-name-end , "column name start" : "column name end"]`
+
+Let's give our past example a shot. We again want rows "Apple Cinnamon Cheerios" to "Cap'n'Crunch" with all the columns but now the indices are named with numbers.
 
 ``` Python
-df.loc[["Wheaties", "Trix", "Clusters"], ['type', 'rating', 'sugars']]
+df.loc[ 5 : 10 ]
 ```
 
 
@@ -245,7 +239,7 @@ df.loc[["Wheaties", "Trix", "Clusters"], ['type', 'rating', 'sugars']]
 
 ```
 
-<img src=''>
+<img src='module1/cereal510.png'>
 
 Notes: Script here.
 <html>
@@ -253,8 +247,74 @@ Notes: Script here.
   <source src="placeholder_audio.mp3" />
 </audio></html>
 
+---
+What if we wanted only certain columns again too? Note that now `name` is a column now.
 
-# Let's practice!
+``` Python
+df.loc[ 5 : 10 , "calories" : "fiber"]
+```
+
+
+```out
+
+
+```
+
+ <img src='module1/cereal-510-cf.png'>
+
+Notes: Script here.
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+The sliced dataframe no longer has `name` in it so we would have to include it in our slice. In the next slide deck we will talk about selecting specific columns and rows that are not consecutive.  
+
+``` Python
+df.loc[ 5 : 10 , "name" : "fiber"]
+```
+
+
+```out
+
+
+```
+
+ <img src='module1/cereal-510-nf.png'>
+
+Notes: Script here.
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+## So Far
+
+`loc` is used to slice columns and rows by **name** and within an interval.
+We always specify **row** indexing first, then **columns**.
+
+```
+df.loc[ "row name start" : "row name end", "column name start" : "column name end"]
+```
+
+- If we arn't slicing any columns we can simply say `df.loc[ "row name start" : "row name end"]` since columns specification follow row's.
+- However, the reverse is not true. If we want all the rows with only specific columns, we specify rows first and therefore we would need to make it clear with `df.loc[  : , "column name start" : "column name end"]`.
+- We can read `:` as *"to"*
+- If the indices are named numbers we do not need "quotations" when calling them.
+
+Notes: Script here.
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+# let’s apply what we learned!
 
 Notes: Script here
 <html>
