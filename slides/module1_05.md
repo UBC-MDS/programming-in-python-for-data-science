@@ -73,7 +73,7 @@ Notes: Script here
 
 ---
 
-<img src='module1/cereal15.png', width="60%">
+<img src='module1/cereal15.png' width="60%">
 
 Now the index has been set as the name of the cereal (we will talk about how to do this later)
 
