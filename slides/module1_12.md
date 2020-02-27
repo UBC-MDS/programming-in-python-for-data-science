@@ -2,7 +2,7 @@
 type: slides
 ---
 
-# Selecting using df.iloc[]
+# Slicing and Selecting using df.iloc[]
 
 Notes: Script here.
 <html>
@@ -11,14 +11,12 @@ Notes: Script here.
 </audio></html>
 
 ---
+## Slicing Dataframe
 
-## Unordered Indexing
+Up to this point we have been manipulating our dataframe with column and row _**names**_ using `df. loc`.     
+`df.iloc` is very similar, however the "i" in `iloc` refers to index **position**.     
 
-We have our trusty `cereal.csv` data again with the cereal names as the index labels.
-
-<img src='module1/cereal15.png' width="60%">
-
-What would we do if we want to select columns and rows too that don't fall consecutively or if we want rearrange them.
+Let's return to our cereal dataset and take a look at the first 15 rows. 
 
 
 Notes: Script here.
@@ -28,14 +26,10 @@ Notes: Script here.
 </audio></html>
 
 ---
-Let's say we wanted only the rows labeled "Clusters", "Trix" and "Wheaties" and the columns "type", "sugars" and "rating"
-How would we obtain them now?
-
-We need to specify each column and row label that we want between square brackets `[]`, separated with commas.
-
 
 ``` Python
-df.loc[ ["Clusters", "Trix", "Wheaties"] , ["type", "sugars", "rating"] ]
+df = pd.read_csv('cereal.csv', index_col = 0)
+df.head(15)
 ```
 
 
@@ -44,10 +38,7 @@ df.loc[ ["Clusters", "Trix", "Wheaties"] , ["type", "sugars", "rating"] ]
 
 ```
 
-<img src='module1/selecting-cereal.png' width="30%">
-
-We can also reorder it too to change the column and row order.
-
+<img src='module1/slide12_1.png' width="40%">
 
 Notes: Script here.
 <html>
@@ -57,13 +48,11 @@ Notes: Script here.
 
 ---
 
-What if we wanted the rows to be in the order  "Wheaties", "Trix" and "Clusters" and columns in the order "type", "rating" and "sugars"
-How would we obtain that?
-
-we would just rearrange them!
+Let's say we want the rows `All-Bran` to `Apple Cinnamon Cheerios` but we want to slice based on their position.      
+Using Python's counting method of starting at zero, we conclude `All-Bran` to be at position to 2. We get `Apple Cinnamon Cheerios` position to be 5 in the same way. Using the same coding structure we learned with `df.loc`, but using the position instead of labels would look like this. 
 
 ``` Python
-df.loc[ ["Wheaties", "Trix", "Clusters"] , ["type", "rating", "sugars"] ]
+df.iloc[2:5]
 ```
 
 
@@ -72,7 +61,9 @@ df.loc[ ["Wheaties", "Trix", "Clusters"] , ["type", "rating", "sugars"] ]
 
 ```
 
-<img src='module1/selecting-cereal-o.png' width="30%">
+<img src='module1/slide12_2.png' width="30%">
+
+
 
 
 Notes: Script here.
@@ -83,24 +74,10 @@ Notes: Script here.
 
 ---
 
-Let's try it to get the same selection of rows and columns but with indices numbers as labels.
-Bring in the adjusted dataframe.
-
-<img src='module1/cereal15.png' width="60%">
-
-Notes: Script here.
-<html>
-<audio controls >
-  <source src="placeholder_audio.mp3" />
-</audio></html>
-
-
----
-
-we we just substitute the index label number without quotes as we did before.
+But why doesn't "Apple Cinnamon Cheerios" appear in the dataframe? That's because when we use slicing by index position, it will take all the indices including the lower bound but _EXCLUDING_ the upper bound. So if we wanted to include "Apple Cinnamon Cheerios" we would have to go 1 index position further. 
 
 ``` Python
-df.loc[ [75, 73, 13] , ["type", "rating", "sugars"] ]
+df.iloc[2:6]
 ```
 
 
@@ -109,10 +86,7 @@ df.loc[ [75, 73, 13] , ["type", "rating", "sugars"] ]
 
 ```
 
-<img src='module1/number-select.png' width="40%">
-
-
-
+<img src='module1/slide12_3.png' width="30%">
 
 
 Notes: Script here.
@@ -123,10 +97,13 @@ Notes: Script here.
 
 ---
 
-You can see that the last code didn't include the name of the cereal so we would need to specify `name` in the column brackets of the code if we want to include it.
+Ah, that's better.  
+The same concepts woucand apply to the columns of the dataframe.   
+Let's say we want all the rows but we only want the columns starting at `protein` and ending (including) at column `sugars`.     
+Using the logic we learned in the last set of slides we would use the following code  
 
 ``` Python
-df.loc[ [75, 73, 13] , [ "name", "type", "rating", "sugars"] ]
+df.iloc[ : , 3:9 ]
 ```
 
 
@@ -135,7 +112,10 @@ df.loc[ [75, 73, 13] , [ "name", "type", "rating", "sugars"] ]
 
 ```
 
-<img src='module1/name-num-select.png' width="40%">
+<img src='module1/slide12_4.png' width="30%">
+
+we would need to specify all rows using ` : ` as we did using `df.loc[]`. The column `protein` is at index position 3 and `sugars` is at index position 8, but since we want to include the 8th column we need to use the 9th position to make sure we get all the columns _BEFORE_ the upper bound. 
+
 
 
 Notes: Script here.
@@ -147,7 +127,79 @@ Notes: Script here.
 
 ---
 
-# let’s apply what we learned!
+The same would apply if we only wanted certain rows with certain columns so now we want the rows  `All-Bran` to `Apple Cinnamon Cheerios` and `protein` to `sugars`.     
+**Rows**    
+`All-Bran` being at position 2.     
+`Apple Cinnamon Cheerios` being at position 5.     
+**Columns**   
+`protein` being at position 3.     
+`sugar` being at position 8. 
+
+
+``` Python
+df.iloc[2:6, 3:9]
+```
+
+
+```out
+
+
+```
+
+<img src='module1/slide12_5' width="40%">
+
+
+Both of our upper bound have now been compensated with + 1 to make sure it they are included. 
+
+
+Notes: Script here.
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+## Selecting with `df.iloc[]` 
+
+Selecting using `iloc` is done identically to `loc` however the items withing each set of square brackets **MUST** be numeric.   
+
+Lets say we want the rows `Cheerios`, `Basic 4` and `Apple Jacks`  with the columns `rating`, `fat` and `type` _in that order_. 
+
+**Rows**    
+`Cheerios` being at position 2.     
+`Basic 4` being at position 5.    
+`Apple Jacks` being at position 3.
+
+**Columns**   
+`rating` being at position 14.  
+`fat` being at position 4.  
+`type` being at position 1.   
+
+Now let's put those position into square backing within `df.iloc[]`
+
+``` Python
+df.iloc[[11, 7, 6], [14, 4, 1]]
+```
+
+
+```out
+
+
+```
+
+<img src='module1/slide12_6.png' width="40%">
+
+
+Notes: Script here.
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+
+---
+
+# Super! Nice work! Let’s apply what we learned!
 
 Notes: Script here
 <html>

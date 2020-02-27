@@ -60,7 +60,7 @@ Notes: Script here.
 What if we wanted the rows to be in the order  "Wheaties", "Trix" and "Clusters" and columns in the order "type", "rating" and "sugars"
 How would we obtain that?
 
-we would just rearrange them!
+we would just rearrange them in the square brackets!
 
 ``` Python
 df.loc[ ["Wheaties", "Trix", "Clusters"] , ["type", "rating", "sugars"] ]
@@ -97,7 +97,7 @@ Notes: Script here.
 
 ---
 
-we we just substitute the index label number without quotes as we did before.
+We would just substitute the index label number without quotes as we did before.
 
 ``` Python
 df.loc[ [75, 73, 13] , ["type", "rating", "sugars"] ]
@@ -113,8 +113,6 @@ df.loc[ [75, 73, 13] , ["type", "rating", "sugars"] ]
 
 
 
-
-
 Notes: Script here.
 <html>
 <audio controls >
@@ -123,7 +121,7 @@ Notes: Script here.
 
 ---
 
-You can see that the last code didn't include the name of the cereal so we would need to specify `name` in the column brackets of the code if we want to include it.
+You can see that the last code didn't include the name of the cereal so we would need to specify `name` in the column brackets of the code if we want to include it in the dataframe.
 
 ``` Python
 df.loc[ [75, 73, 13] , [ "name", "type", "rating", "sugars"] ]
