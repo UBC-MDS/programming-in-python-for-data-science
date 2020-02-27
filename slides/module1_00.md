@@ -4,11 +4,11 @@ type: slides
 
 # Module Learning Outcomes
 
-Notes: In this module you will be introduced to data frames, tidy data, the python pandas package and learn how to manipute data into a new form. 
+Notes: In this module you will be introduced to data frames, tidy data, the python pandas package and learn how to manipute data into a new form.
 
 ---
 
-# Module Learning Outcomes 
+# Module Learning Outcomes
 
 <html>
 <video style="display:block; margin: 0 auto;" width="100%" height="auto" controls >
@@ -16,7 +16,7 @@ Notes: In this module you will be introduced to data frames, tidy data, the pyth
 Your browser does not support the video tag.
 </video></html>
 
-Notes: 
+Notes:
 By the end of the module, students are expected to:
 - Describe the components of a Dataframe.
 - Read a standard .csv file using Pandas `pd.read_csv()`.

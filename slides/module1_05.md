@@ -2,7 +2,7 @@
 type: slides
 ---
 
-# Slicing with Pandas
+# Slicing with Pandas Using df.loc[]
 
 Notes: Script here.
 <html>
@@ -60,9 +60,9 @@ Notes: Script here.
 We can see all the columns of the dataframe and the first 5 rows of the data.
 let's say we only want certain rows of the whole dataframe or certain columns.
 
-We talked about how `df.head()` will generate the first 5 rows of a df but what if we wanted rows 5-10?
+We talked about how `df.head()` will generate the first 5 rows of a dataframe but what if we wanted rows 5-10?
 
-The first column of this dataframe is called the `index` each row is given a name as well as a position. In this case the name and index are both numbers.
+The first column of this dataframe is called the `index` each row is given a label as well as a position. In this case the label and index are both numbers.
 but what if we they were not?
 
 Notes: Script here.
@@ -77,7 +77,7 @@ Notes: Script here.
 
 Now the index has been set as the name of the cereal (we will talk about how to do this later)
 
-Let's talk about `Almond Delight`.  It's index name is "Almond Delight" but it's index position is 4th.    
+Let's talk about `Almond Delight`.  It's index labels is "Almond Delight" but it's index position is 4th.    
 If you just double counted and started screaming "5!" at the screen that's ok. In the Python language we start counting at position 0 (then 1, 2, 3, and 4 for Almond Delight). So it's important that we relearn counting from childhood to include 0.
 
 
@@ -91,12 +91,12 @@ Notes: Script here.
 
 ---
 
-So now let's say we want 5 rows past `Almond Delight` so we want rows with the index names "Apple Cinnamon Cheerios" to "Cap'n'Crunch".  
+So now let's say we want 5 rows past `Almond Delight` so we want rows with the index labels "Apple Cinnamon Cheerios" to "Cap'n'Crunch".  
 
 How would we do this?   
 
 There are 3 main ways:
-- `.loc[]` using index names
+- `.loc[]` using index labels
 - `.iloc[] ` using index position
 - Using `[]` brackets (we will get into that more next module)
 
@@ -149,7 +149,7 @@ df.loc[ "Apple Cinnamon Cheerios" : "Cap'n'Crunch", "calories" : "fiber"]
 <img src='module1/cals-fiber.png'>
 
 
-So `loc` is used to slice columns and rows by **name** and within an interval.
+So `loc` is used to slice columns and rows by **label** and within an interval.
 
 Notes: Script here.
 <html>
@@ -173,7 +173,7 @@ df.loc[ : , "calories" : "fiber"]
 
 ```
 
-<img src='module1/rows-somecols.png' width="60%">
+<img src='module1/rows-somecols.png' width="40%">
 
 
 
@@ -189,7 +189,7 @@ What about if we only wanted certain columns as well?
 Perhaps we were only interested in the `calories` to `fiber` columns?
 
 ``` Python
-df.loc[ "Apple Cinnamon Cheerios": "Cap'n'Crunch", "calories" : "fiber"]
+df.loc[ "Apple Cinnamon Cheerios" : "Cap'n'Crunch", "calories" : "fiber"]
 ```
 
 
@@ -209,7 +209,7 @@ Notes: Script here.
 
 ---
 
-We discussed slicing when the indices are named with words but that's not always the case. What if they are named with a numbers?
+We discussed slicing when the indices are labeled with words but that's not always the case. What if they are labeled with a numbers?
 Let's go back to our original cereal dataframe we had when we uploaded it.
 
 <img src='module1/cereal-index-num.png'>
@@ -223,11 +223,11 @@ Notes: Script here.
 
 ---
 
-We can use the same format before but now since our rows are named with numbers we no longer need to express the row names in "quotations". So now we would use row names without quotations.
+We can use the same format before but now since our rows are labeled with numbers, we no longer need to express the row labels in "quotations". We use row labels expressed as numbers without quotations.
 
 `df.loc[ row-name-start : row-name-end , "column name start" : "column name end"]`
 
-Let's give our past example a shot. We again want rows "Apple Cinnamon Cheerios" to "Cap'n'Crunch" with all the columns but now the indices are named with numbers.
+Let's give our past example a shot. We again want rows "Apple Cinnamon Cheerios" to "Cap'n'Crunch" with all the columns but now the indices are labeled with numbers.
 
 ``` Python
 df.loc[ 5 : 10 ]
@@ -239,7 +239,7 @@ df.loc[ 5 : 10 ]
 
 ```
 
-<img src='module1/cereal510.png'>
+<img src='module1/cereal510.png' >
 
 Notes: Script here.
 <html>
@@ -260,7 +260,9 @@ df.loc[ 5 : 10 , "calories" : "fiber"]
 
 ```
 
- <img src='module1/cereal-510-cf.png'>
+ <img src='module1/cereal-510-cf.png' width = "40%">
+
+ The sliced dataframe no longer has `name` in it so we would have to include it in our slice. In the next slide deck we will talk about selecting specific columns and rows that are not consecutive.  
 
 Notes: Script here.
 <html>
@@ -270,7 +272,7 @@ Notes: Script here.
 
 ---
 
-The sliced dataframe no longer has `name` in it so we would have to include it in our slice. In the next slide deck we will talk about selecting specific columns and rows that are not consecutive.  
+This now incorporates all the columns from `names` to `fiber`.
 
 ``` Python
 df.loc[ 5 : 10 , "name" : "fiber"]
@@ -282,7 +284,7 @@ df.loc[ 5 : 10 , "name" : "fiber"]
 
 ```
 
- <img src='module1/cereal-510-nf.png'>
+ <img src='module1/cereal-510-nf.png'  width = "60%">
 
 Notes: Script here.
 <html>
@@ -294,7 +296,7 @@ Notes: Script here.
 
 ## So Far
 
-`loc` is used to slice columns and rows by **name** and within an interval.
+`loc` is used to slice columns and rows by **label** and within an interval.
 We always specify **row** indexing first, then **columns**.
 
 ```
@@ -303,8 +305,8 @@ df.loc[ "row name start" : "row name end", "column name start" : "column name en
 
 - If we arn't slicing any columns we can simply say `df.loc[ "row name start" : "row name end"]` since columns specification follow row's.
 - However, the reverse is not true. If we want all the rows with only specific columns, we specify rows first and therefore we would need to make it clear with `df.loc[  : , "column name start" : "column name end"]`.
-- We can read `:` as *"to"*
-- If the indices are named numbers we do not need "quotations" when calling them.
+- We can read `:` as **"to"**
+- If the indices are labeled with numbers, we do not need "quotations" when calling them.
 
 Notes: Script here.
 <html>
@@ -319,5 +321,5 @@ Notes: Script here.
 Notes: Script here
 <html>
 <audio controls >
-  <source src="572_placeholder_audio.mp3" />
+  <source src="placeholder_audio.mp3" />
 </audio></html>

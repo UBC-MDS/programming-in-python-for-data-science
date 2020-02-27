@@ -2,7 +2,7 @@
 type: slides
 ---
 
-# Selecting using df.loc[]
+# Selecting using df.iloc[]
 
 Notes: Script here.
 <html>
@@ -83,7 +83,7 @@ Notes: Script here.
 
 ---
 
-Let's try it to get the same selection of rows and columns but with indices numbers as labels.    
+Let's try it to get the same selection of rows and columns but with indices numbers as labels.
 Bring in the adjusted dataframe.
 
 <img src='module1/cereal15.png' width="60%">

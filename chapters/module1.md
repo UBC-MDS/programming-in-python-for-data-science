@@ -91,7 +91,7 @@ When you run a code exercise for the first time, it could take a bit of time for
 - Save the dataframe as `hockey_players`.
 - Display the first 5 rows of the  dataframe
 
-<codeblock id="01_03a">
+<codeblock id="01_03">
 
 - Are you sure you are saving your dataframe as `hockey_players` a
 - Are you using `pd.read_csv()`
@@ -116,14 +116,14 @@ When you run a code exercise for the first time, it could take a bit of time for
 
 </exercise>
 
-<exercise id="5" title="More Pandas, Less Fur" type="slides">
+<exercise id="5" title="Slicing Using df.loc[]" type="slides">
 
 <slides source="module1_05">
 </slides>
 
 </exercise>
 
-<exercise id="6" title="Wrangling Basics">
+<exercise id="6" title="Slice and Dice Questions">
 
 **Question**
 
@@ -151,7 +151,192 @@ Maybe not the right answer.
 
 </exercise>
 
-<exercise id="7" title="What Did We Just Learn?" type="slides">
+<exercise id="7" title="Practicing Slicing">
+
+- Now Let's display the column names of `hockey_players` and save it as `columns_hockey`.
+- Save the number of rows `hockey_players` has in a variable called `hockey_rows`.
+- The data frame dimension should be save as `hockey_dim`.
+
+
+<codeblock id="01_07">
+
+- Are you sure you are saving your objects correctly?
+- Are you using `len()`, `df.shape` and `df.columns`?
+
+</codeblock>
+
+</exercise>
+
+<exercise id="8" title="Practicing Slicing Some More">
+
+- Now Let's display the column names of `hockey_players` and save it as `columns_hockey`.
+- Save the number of rows `hockey_players` has in a variable called `hockey_rows`.
+- The data frame dimension should be save as `hockey_dim`.
+
+
+<codeblock id="01_08">
+
+- Are you sure you are saving your objects correctly?
+- Are you using `len()`, `df.shape` and `df.columns`?
+
+</codeblock>
+
+</exercise>
+
+<exercise id="9" title="Selecting Using df.loc[]" type="slides">
+<slides source="module1_09">
+</slides>
+</exercise>
+
+<exercise id="10" title="Practicing Selecting">
+
+- Now Let's display the column names of `hockey_players` and save it as `columns_hockey`.
+- Save the number of rows `hockey_players` has in a variable called `hockey_rows`.
+- The data frame dimension should be save as `hockey_dim`.
+
+
+<codeblock id="01_10">
+
+- Are you sure you are saving your objects correctly?
+- Are you using `len()`, `df.shape` and `df.columns`?
+
+</codeblock>
+
+</exercise>
+
+<exercise id="11" title="Practicing Selecting">
+
+- Now Let's display the column names of `hockey_players` and save it as `columns_hockey`.
+- Save the number of rows `hockey_players` has in a variable called `hockey_rows`.
+- The data frame dimension should be save as `hockey_dim`.
+
+
+<codeblock id="01_11">
+
+- Are you sure you are saving your objects correctly?
+- Are you using `len()`, `df.shape` and `df.columns`?
+
+</codeblock>
+
+</exercise>
+
+
+<exercise id="12" title="Slicing and Selecting Using df.iloc[]" type="slides">
+<slides source="module1_12">
+</slides>
+</exercise>
+
+<exercise id="13" title="Slice and Dice Questions">
+
+**Question**
+
+
+<choice id="1" >
+<opt text="Answer 1">
+
+Let's look into this more
+
+</opt>
+
+<opt text="Answer 2" correct="true">
+
+Good job!
+
+</opt>
+
+<opt text="Answer 3" >
+
+Maybe not the right answer.
+
+</opt>
+
+</choice >
+
+</exercise>
+
+<exercise id="14" title="Practicing Slicing">
+
+- Now Let's display the column names of `hockey_players` and save it as `columns_hockey`.
+- Save the number of rows `hockey_players` has in a variable called `hockey_rows`.
+- The data frame dimension should be save as `hockey_dim`.
+
+
+<codeblock id="01_14">
+
+- Are you sure you are saving your objects correctly?
+- Are you using `len()`, `df.shape` and `df.columns`?
+
+</codeblock>
+
+</exercise>
+
+<exercise id="15" title="Summary Statistics and Quick Viz!" type="slides">
+<slides source="module1_15">
+</slides>
+</exercise>
+
+
+<exercise id="16" title="Practice">
+
+**Question**
+
+
+<choice id="1" >
+<opt text="Answer 1">
+
+Let's look into this more
+
+</opt>
+
+<opt text="Answer 2" correct="true">
+
+Good job!
+
+</opt>
+
+<opt text="Answer 3" >
+
+Maybe not the right answer.
+
+</opt>
+
+</choice >
+
+</exercise>
+
+<exercise id="17" title="Practicing">
+
+- Now Let's display the column names of `hockey_players` and save it as `columns_hockey`.
+- Save the number of rows `hockey_players` has in a variable called `hockey_rows`.
+- The data frame dimension should be save as `hockey_dim`.
+
+
+<codeblock id="01_17">
+
+- Are you sure you are saving your objects correctly?
+- Are you using `len()`, `df.shape` and `df.columns`?
+
+</codeblock>
+
+</exercise>
+
+<exercise id="18" title="Practicing">
+
+- Now Let's display the column names of `hockey_players` and save it as `columns_hockey`.
+- Save the number of rows `hockey_players` has in a variable called `hockey_rows`.
+- The data frame dimension should be save as `hockey_dim`.
+
+
+<codeblock id="01_18">
+
+- Are you sure you are saving your objects correctly?
+- Are you using `len()`, `df.shape` and `df.columns`?
+
+</codeblock>
+
+</exercise>
+
+<exercise id="19" title="What Did We Just Learn?" type="slides">
 <slides source="module1_19">
 </slides>
 </exercise>
