@@ -16,7 +16,7 @@ Notes: Script here.
 
 We have our trusty `cereal.csv` data again with the cereal names as the index labels.
 
-<img src='module1/cereal15.png' width="60%">
+<img src='module1/cereal15.png' >
 
 What would we do if we want to select columns and rows too that don't fall consecutively or if we want rearrange them.
 
@@ -28,7 +28,7 @@ Notes: Script here.
 </audio></html>
 
 ---
-Let's say we wanted only the rows labeled "Clusters", "Trix" and "Wheaties" and the columns "type", "sugars" and "rating"
+Let's say we wanted only the rows labeled `Clusters`, `Trix` and `Wheaties` and the columns `type`, `sugars` and `rating`
 How would we obtain them now?
 
 We need to specify each column and row label that we want between square brackets `[]`, separated with commas.
@@ -57,7 +57,7 @@ Notes: Script here.
 
 ---
 
-What if we wanted the rows to be in the order  "Wheaties", "Trix" and "Clusters" and columns in the order "type", "rating" and "sugars"
+What if we wanted the rows to be in the order  `Wheaties`, `Trix` and `Clusters` and columns in the order `type`, `rating` and `sugars`
 How would we obtain that?
 
 we would just rearrange them in the square brackets!
@@ -86,7 +86,7 @@ Notes: Script here.
 Let's try it to get the same selection of rows and columns but with indices numbers as labels.    
 Bring in the adjusted dataframe.
 
-<img src='module1/cereal15.png' width="60%">
+<img src='module1/cereal15.png'>
 
 Notes: Script here.
 <html>
@@ -109,7 +109,7 @@ df.loc[ [75, 73, 13] , ["type", "rating", "sugars"] ]
 
 ```
 
-<img src='module1/number-select.png' width="40%">
+<img src='module1/number-select.png' width="60%">
 
 
 
@@ -134,6 +134,35 @@ df.loc[ [75, 73, 13] , [ "name", "type", "rating", "sugars"] ]
 ```
 
 <img src='module1/name-num-select.png' width="40%">
+
+
+Notes: Script here.
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+
+---
+
+# Selecting a Single Column
+
+Something that is extremely useful is just getting a single columm. There is a quicker way of doing this over the alternative  `df.loc[ : , [ "column-name"] ]`
+
+The quicker way is to omit `loc` altogether and use: 
+
+``` Python
+df[['type']]
+```
+
+
+```out
+
+
+```
+
+<img src='module1/noloc.png' width="60%">
+
 
 
 Notes: Script here.

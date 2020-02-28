@@ -77,7 +77,7 @@ Notes: Script here.
 
 Now the index has been set as the name of the cereal (we will talk about how to do this later)
 
-Let's talk about `Almond Delight`.  It's index labels is "Almond Delight" but it's index position is 4th.    
+Let's talk about `Almond Delight`.  It's index labels is `Almond Delight` but it's index position is 4th.    
 If you just double counted and started screaming "5!" at the screen that's ok. In the Python language we start counting at position 0 (then 1, 2, 3, and 4 for Almond Delight). So it's important that we relearn counting from childhood to include 0.
 
 
@@ -91,7 +91,7 @@ Notes: Script here.
 
 ---
 
-So now let's say we want 5 rows past `Almond Delight` so we want rows with the index labels "Apple Cinnamon Cheerios" to "Cap'n'Crunch".  
+So now let's say we want 5 rows past `Almond Delight` so we want rows with the index labels `Apple Cinnamon Cheerios` to `Cap'n'Crunch`.  
 
 How would we do this?   
 
@@ -122,7 +122,7 @@ df.loc[ "Apple Cinnamon Cheerios" : "Cap'n'Crunch"]
 
 <img src='module1/apple-captain.png'>
 
- This essentially means the _dataframe location from Apple Cinnamon Cheerios" to "Cap'n'Crunch"._   
+ This essentially means the _dataframe location from `Apple Cinnamon Cheerios` to `Cap'n'Crunch`._   
 What about if we only wanted certain columns as well?
 
 Notes: Script here.
@@ -159,7 +159,7 @@ Notes: Script here.
 
 ---
 
-What if we wanted all the rows of the dataframe but only the columns "calories" to "fiber"?
+What if we wanted all the rows of the dataframe but only the columns `calories` to `fiber`?
 
 we would simply use `:` to indicate from "end" to "end" for rows.
 
@@ -227,7 +227,7 @@ We can use the same format before but now since our rows are labeled with number
 
 `df.loc[ row-name-start : row-name-end , "column name start" : "column name end"]`
 
-Let's give our past example a shot. We again want rows "Apple Cinnamon Cheerios" to "Cap'n'Crunch" with all the columns but now the indices are labeled with numbers.
+Let's give our past example a shot. We again want rows `Apple Cinnamon Cheerios` to `Cap'n'Crunch with all the columns but now the indices are labeled with numbers.
 
 ``` Python
 df.loc[ 5 : 10 ]

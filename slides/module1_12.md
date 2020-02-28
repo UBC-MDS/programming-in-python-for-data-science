@@ -38,7 +38,7 @@ df.head(15)
 
 ```
 
-<img src='module1/slide12_1.png' width="40%">
+<img src='module1/slide12_1.png'>
 
 Notes: Script here.
 <html>
@@ -61,7 +61,7 @@ df.iloc[2:5]
 
 ```
 
-<img src='module1/slide12_2.png' width="30%">
+<img src='module1/slide12_2.png' width="60%">
 
 
 
@@ -86,7 +86,7 @@ df.iloc[2:6]
 
 ```
 
-<img src='module1/slide12_3.png' width="30%">
+<img src='module1/slide12_3.png'>
 
 
 Notes: Script here.
@@ -112,7 +112,7 @@ df.iloc[ : , 3:9 ]
 
 ```
 
-<img src='module1/slide12_4.png' width="30%">
+<img src='module1/slide12_4.png' width="45%">
 
 we would need to specify all rows using ` : ` as we did using `df.loc[]`. The column `protein` is at index position 3 and `sugars` is at index position 8, but since we want to include the 8th column we need to use the 9th position to make sure we get all the columns _BEFORE_ the upper bound. 
 
@@ -146,7 +146,7 @@ df.iloc[2:6, 3:9]
 
 ```
 
-<img src='module1/slide12_5' width="40%">
+<img src='module1/slide12_5.png' width="40%">
 
 
 Both of our upper bound have now been compensated with + 1 to make sure it they are included. 
@@ -175,6 +175,14 @@ Lets say we want the rows `Cheerios`, `Basic 4` and `Apple Jacks`  with the colu
 `fat` being at position 4.  
 `type` being at position 1.   
 
+Notes: Script here.
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
 Now let's put those position into square backing within `df.iloc[]`
 
 ``` Python
@@ -199,7 +207,7 @@ Notes: Script here.
 
 ---
 
-# Super! Nice work! Let’s apply what we learned!
+# Nice work! Let’s apply what we learned!
 
 Notes: Script here
 <html>

@@ -2,9 +2,10 @@
 type: slides
 ---
 
-# What Did we Learn and What to Expect in Assignment 1
+# Quick Viz with Pandas!
 
-Notes: Script here
+
+Notes: Script here.
 <html>
 <audio controls >
   <source src="placeholder_audio.mp3" />
@@ -12,35 +13,48 @@ Notes: Script here
 
 ---
 
-# Summary  
+If we want to visualize things using different plots we can do that pretty quickly and with little code! Take `manufacturer_freq` object we made in the last deck of slide.
 
+```python
+freq_mfr_df
+```
+
+```out
+
+```
+
+<img src='module1/renamed.png'>
+
+
+
+
+
+
+ This would be great to express as a bar chart. But how do we do it?! 
+
+
+Notes: Script here.
 <html>
-<video style="display:block; margin: 0 auto;" width="100%" height="auto" controls >
-  <source src="sample_video.mp4" type="video/mp4">
-Your browser does not support the video tag.
-</video></html>
-
-Notes:
-By the end of the module, students are expected to:
-- Describe the components of a Dataframe.
-- Read a standard .csv file using Pandas `pd.read_csv()`.
-- Explain modules and import libraries.
-- Demonstrate indexing and slicing with `df.loc[]` and `df.iloc[]`.
-- Demonstrate Selecting and filtering columns of a dataframe using `df[]` notation.
-- Create simple summary statistics using `pd.describe()` and `pd.summary()`.
-- construct simple visualizations using pandas.
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
 
 ---
+Notes: Script here.
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
 
-# Assignment Instructions
+---
+Notes: Script here.
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
 
-The assignment will concentrate not only on the learning objectives above but also
-
-- Navigating a Jupyter Notebook
-- Understanding cells
-- 
-
-Notes: Script here
+---
+Notes: Script here.
 <html>
 <audio controls >
   <source src="placeholder_audio.mp3" />
@@ -48,10 +62,10 @@ Notes: Script here
 
 ---
 
-# On to Assignment 1!
 
-Notes: Insert audio here.
+# let’s apply what we learned!
 
+Notes: Script here
 <html>
 <audio controls >
   <source src="placeholder_audio.mp3" />

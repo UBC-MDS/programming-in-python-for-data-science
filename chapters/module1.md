@@ -270,7 +270,7 @@ Maybe not the right answer.
 
 </exercise>
 
-<exercise id="15" title="Summary Statistics and Quick Viz!" type="slides">
+<exercise id="15" title="Summary Statistics" type="slides">
 <slides source="module1_15">
 </slides>
 </exercise>
@@ -336,7 +336,44 @@ Maybe not the right answer.
 
 </exercise>
 
-<exercise id="19" title="What Did We Just Learn?" type="slides">
+<exercise id="19" title="Quick Viz with Pandas" type="slides">
 <slides source="module1_19">
+</slides>
+</exercise>
+
+<exercise id="20" title="Practicing Viz">
+
+- Now Let's display the column names of `hockey_players` and save it as `columns_hockey`.
+- Save the number of rows `hockey_players` has in a variable called `hockey_rows`.
+- The data frame dimension should be save as `hockey_dim`.
+
+
+<codeblock id="01_20">
+
+- Are you sure you are saving your objects correctly?
+- Are you using `len()`, `df.shape` and `df.columns`?
+
+</codeblock>
+
+</exercise>
+
+<exercise id="21" title="Practicing Viz">
+
+- Now Let's display the column names of `hockey_players` and save it as `columns_hockey`.
+- Save the number of rows `hockey_players` has in a variable called `hockey_rows`.
+- The data frame dimension should be save as `hockey_dim`.
+
+
+<codeblock id="01_21">
+
+- Are you sure you are saving your objects correctly?
+- Are you using `len()`, `df.shape` and `df.columns`?
+
+</codeblock>
+
+</exercise>
+
+<exercise id="22" title="What Did We Just Learn?" type="slides">
+<slides source="module1_22">
 </slides>
 </exercise>
