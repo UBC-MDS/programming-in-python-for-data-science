@@ -123,27 +123,69 @@ When you run a code exercise for the first time, it could take a bit of time for
 
 </exercise>
 
-<exercise id="6" title="Slice and Dice Questions">
+<exercise id="6" title="Slicing and Dicing Practice">
 
-**Question**
+My dataframe object name is `fruit_salad`. my row names in order are `apple`, `banana`, `cantaloupe`, `dragon-fruit`, `elderberry`, `fig`, `Guava`, `huckleberry`, `kiwi` and `lemon`. 
+My index is labeled with the `name` of the fruit.
+My column names in order are; , `colour`, `location`, `seeds`, `shape`, `sweetness`, `water-content` and  `weight`.
 
+**Question 1**
+
+If I wanted all the rows and only columns `seeds`, `shape`, `sweetness` and  `water-content` what would my code look like? 
 
 <choice id="1" >
-<opt text="Answer 1">
+<opt text='fruit_salad.loc[  :  , seeds : water-content]'>
 
-Let's look into this more
-
-</opt>
-
-<opt text="Answer 2" correct="true">
-
-Good job!
+This is almost right but it's missing something important
 
 </opt>
 
-<opt text="Answer 3" >
+<opt text='fruit_salad[  :  , "seeds" : "water-content"]' >
 
-Maybe not the right answer.
+This is almost right but it's missing something important! Try looking at the title of the slides we just finished. 
+
+</opt>
+
+<opt text='fruit_salad[ "apple": "lemon" , "seeds" : "water-content"]' >
+
+This is almost right but it's missing something important! Try looking at the title of the slides we just finished. 
+
+</opt>
+
+<opt text='fruit_salad.loc[  :  , "seeds" : "water-content"]' correct="true">
+
+Good job! This has both `loc` and "quotation" which are both needed to slice here. 
+
+</opt>
+
+</choice >
+
+**Question 2**
+
+If I wanted all the rows between `cantaloupe`  and `kiwi` and all the columns?  What would my code look like? 
+
+<choice id="2" >
+<opt text='fruit_salad.loc[ : , "cantaloupe" : "kiwi"]'>
+
+Remember that rows are expressed first before columns. 
+
+</opt>
+
+<opt text='fruit_salad.loc[ "cantaloupe" : "kiwi" ]' correct="true">
+
+Great! You don't need to specify the second column part because by default the code will slice all the columns. 
+
+</opt>
+
+<opt text='fruit_salad.loc[ : , cantaloupe : kiwi]' >
+
+Remember that rows are expressed first before columns and you are missing something important!
+
+</opt>
+
+<opt text= 'fruit_salad[ cantaloupe : kiwi ]'  >
+
+I think you are missing something inportant.  
 
 </opt>
 
@@ -153,15 +195,18 @@ Maybe not the right answer.
 
 <exercise id="7" title="Practicing Slicing">
 
-- Now Let's display the column names of `hockey_players` and save it as `columns_hockey`.
-- Save the number of rows `hockey_players` has in a variable called `hockey_rows`.
-- The data frame dimension should be save as `hockey_dim`.
+Using our `hockey_players` data from the last few questions with the index labelled with `Player` name, Let's try slicing it.
 
+We want 
+- The rows `Adam Gaudette` to `Brandon Sutter`
+- The rows `Age`, `Height`,	`Weight` and `Country`
+- The new sliced dataframe saved as object `benched_players`
 
 <codeblock id="01_07">
 
-- Are you sure you are saving your objects correctly?
-- Are you using `len()`, `df.shape` and `df.columns`?
+- Are you using `df.loc[]`
+- Are you using the correct dataframe labels? Check your spelling and punctuation. 
+- Did you slice both columns and rows? 
 
 </codeblock>
 
