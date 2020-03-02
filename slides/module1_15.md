@@ -39,7 +39,7 @@ df.head(15)
 
 ```
 
-<img src='module1/cereal15.1.png'>
+<img src='module1/cereal15.1.png' width = "90%">
 
 
 Notes: Script here.
@@ -99,7 +99,7 @@ Notes: Script here.
 
 ---
 
-You can make change to either limit how much you show or extend it too with additional arguments 
+You can make change to either limit how much you show or extend it too with additional arguments:
 
 ```python
 df.describe(include = "all")
@@ -113,6 +113,7 @@ df.describe(include = "all")
 
 <img src='module1/include_all.png'>
 
+
 Notes: Script here.
 <html>
 <audio controls >
@@ -126,15 +127,13 @@ Notes: Script here.
 
 ```
 
-<img src='module1/include_all.png'>
+<img src='module1/include_all.png' width="90%">
 
-Adding `include = "all"` within the brackets adds some additional statistics 
+dding `include = "all"` withinh the brackets adds some additional statistics 
 
 - `unique`: how many observations are unique
 - `top`: which observation value is most occuring
 - `freq`: what is the frequency of the most occuring observation 
-
-
 
 Notes: Script here.
 <html>
@@ -142,21 +141,6 @@ Notes: Script here.
   <source src="placeholder_audio.mp3" />
 </audio></html>
 
-
----
-
-Adding `include = "all"` withinh the brackets adds some additional statistics 
-
-- `unique`: how many observations are unique
-- `top`: which observation value is most occuring
-- `freq`: what is the frequency of the most occuring observation 
-
-
-Notes: Script here.
-<html>
-<audio controls >
-  <source src="placeholder_audio.mp3" />
-</audio></html>
 
 ---
 
@@ -196,8 +180,7 @@ Notes: Script here.
 ## `pd.value_counts`
 
 If you want to get a frequency table of categorical columns `pd.value_counts` is very useful. 
-
-In the previous slides we talked about getting a single column from a dataframe using double brackets like `df[['column-name']]`.  That's great but to  use pd.value_counts we need to use a different structure which you'll learn in the next module. Instead of getting a single columns with double brackets we only use single brackets like so:
+In the previous slides we talked about getting a single column from a dataframe using double brackets like `df[['column-name']]`.  That's great but to  use pd.value_counts we need to use a different structure which you'll learn in the next module. Instead of getting a single column with double brackets we only use single brackets like so:
 
 ```python
 manufacturer_column = df["mfr"]
@@ -221,7 +204,6 @@ Wheaties Honey Gold          G
 Name: mfr, Length: 77, dtype: object
 
 ```
-We saved the object in a variable called `manufacturer_column` in the same way as we have aave dataframes before. 
 
 Notes: Script here.
 <html>
@@ -231,7 +213,8 @@ Notes: Script here.
 
 ---
 
-Next we cant use `pd.value_counts()` referencing that column we saved within the brackets.  
+We saved the object in a variable called `manufacturer_column` in the same way as we have other dataframes before.  
+Next we cant use `pd.value_counts()` referencing that the column we saved as `manufacturer_column` within the brackets.  
 
 ```python
 manufacturer_freq = pd.value_counts(manufacturer_column)
@@ -251,8 +234,8 @@ Name: mfr, dtype: int64
 
 ```
 
-We can then see the frequency of each qualitative value.  _Careful here! Notice that instead of putting the dataframe first, we indicate the package (pd)  that `value_counts` is coming from and then the object we want the counts of within the brackets! 
-
+We can then see the frequency of each qualitative value.   
+_Careful here! Notice that instead of putting the dataframe first, we indicate the package (pd)  that `value_counts` is coming from and then the object we want the counts of within the brackets!_ 
 
 
 Notes: Script here.
@@ -262,7 +245,7 @@ Notes: Script here.
 </audio></html>
 
 ---
-
+   
 ```out
 K    23
 G    22
@@ -272,24 +255,34 @@ Q     8
 N     6
 A     1
 Name: mfr, dtype: int64
-
 ```
 
-This looks a bit funny though doesn't it? That's because this output isn't our usual dataframe type so we need to make it so. We can make it prettier with the following:
+This looks a bit funny though doesn't it? That's because this output isn't our usual dataframe type so we need to make it so. We can make it prettier with `pd.DataFrame` and saving it as a new variable:
 
 ```python
 manufacturer_freq_df = pd.DataFrame(manufacturer_freq)
 manufacturer_freq_df
-
 ```
 
-```out
+Notes: Script here.
 
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+```out
+  
+   
 ```
 
 <img src='module1/dataframe_counts.png'>
 
 Ah! That's what we are used to. The column name is specifying the counts of the manufacturers, but maybe we should rename that column to something that makes more sense. 
+
+let's rename that column to `freq`. But how?    
 
 Notes: Script here.
 <html>
@@ -298,8 +291,6 @@ Notes: Script here.
 </audio></html>
 
 ---
-
-let's rename that column to `freq`. But how?    
     
 We use something called `rename` of course! When we rename things it's especially important that we don't forget to assign it to a variable or the column name won't stick! Let's assign it to `freq_mfr_df`.
 
@@ -311,12 +302,10 @@ freq_mfr_df
 
 ```out
 
+          
 ```
 
-<img src='module1/renamed.png'>
-
-_Note: The code above uses something we've never seen before, `{}` curley brackets!   
-These have a special meaning but for now you need to know that this `columns` argument need to be set equal to  `"old column name" : "new-column-name"` in curley brackets for us to rename the column._
+<img src='module1/renamed.png' >
 
 Notes: Script here.
 <html>
@@ -326,6 +315,20 @@ Notes: Script here.
 
 ---
 
+```python
+freq_mfr_df = manufacturer_freq_df.rename(columns = {"mfr": "freq"})
+```
+
+This code  uses something we've never seen before, `{}` curley brackets!   
+These have a special meaning but for now you need to know that this `columns` argument need to be set equal to  `"old column name" : "new-column-name"` in curley brackets for us to rename the column.
+
+Notes: Script here.
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
 
 # let’s apply what we learned!
 
