@@ -41,9 +41,10 @@ Notes: Script here.
 1. We take the dataframe we wish to plot, in this case `freq_mfr_df`.    
 2. Next we add `.plot` since we want to plot it!   
 3. But what kind of plot do we want?! A bar chart in this case would work nicely so lets add `.bar()` after that 
+4. It is a good idea to save it as an object too, let's call it `brand_plot`
 
 ```python
-freq_mfr_df.plot.bar();
+brand_plot = freq_mfr_df.plot.bar()
 ```
 
 ```out
@@ -53,23 +54,7 @@ freq_mfr_df.plot.bar();
 
 <img src='module1/bar.png'>
 
-
-
-Notes: Script here.
-<html>
-<audio controls >
-  <source src="placeholder_audio.mp3" />
-</audio></html>
-
----
-
 The important things to notice here is that we want to `.plot` a `.bar()` graph. 
-You may have noticed also this `;` after the code. this just prevents an additional unnecessary output such as 
-
-```
-<matplotlib.axes._subplots.AxesSubplot at 0x1227555c0>
-```
-which we don't really need. 
 
 Notes: Script here.
 <html>
@@ -79,12 +64,13 @@ Notes: Script here.
 
 ---
 
-What else can we plot from our original cereal dataframe named `df`? Maybe we want to see the relationship between `calories` and `rating` in cereals?    
+What else can we plot from our original cereal dataframe named `df`? Maybe we want to see the relationship between `sugars` and `calories` in cereals?    
 This would require a `scatter` plot! 
-In the code we would need to specify the x and y axis which means we would need to specify the column names for each axis.  
+In the code we would need to specify the x and y axis which means we would need to specify the column names for each axis. 
+We are going to call it `sug_cal_scatter1`
 
 ```python
-df.plot.scatter(x='sugars', y='calories');
+sug_cal_scatter1 = df.plot.scatter(x='sugars', y='calories')
 ```
 
 ```out
@@ -105,7 +91,7 @@ Notes: Script here.
 Something you may have noticed is that there are 77 cereals but there doesn't seem to be 77 data points! That's because some of them are lying on top of each other with the same sugar ar calorie values. It may be of use to set an opacity to the graph to differential those points. Opacity is set with the argument `alpha` and accepts values between 0 and 1, 1 being full intensity.  
 
 ```python
-df.plot.scatter(x='sugars',y='calories', alpha= 0.3);
+sug_cal_scatter2 = df.plot.scatter(x='sugars',y='calories', alpha= 0.3)
 ```
 
 ```out
@@ -127,10 +113,10 @@ Look at that! Now we can see there are multiple cereals that have 2.5g of sugar 
 What if we wanted to change the colour to purple? Enter parameter `color`! We can also add a bit of readability by separating the arguments into separate lines. 
 
 ```python
-df.plot.scatter(x="sugars", 
-                y="calories", 
-                alpha= .3, 
-                color= "purple");
+sug_cal_scatter3 = df.plot.scatter(x="sugars", 
+                                   y="calories", 
+                                   alpha= .3, 
+                                   color= "purple")
 ```
 
 ```out
@@ -151,12 +137,12 @@ Notes: Script here.
 Those data points look pretty small. To enlarge them, the argument `s` should do the trick. Also every good graph should havew a title! Let's take this opportunity to finish off this graph and set the argument `title` to something as well. 
 
 ```python
-df.plot.scatter(x="sugars",
-                y="calories",
-                alpha= 0.3, 
-                color="purple",
-                s= 50, 
-                title = "The relationship between sugar and calories in cereals");
+sug_cal_scatter4 = df.plot.scatter(x="sugars",
+                                   y="calories",
+                                   alpha= 0.3, 
+                                   color="purple",
+                                   s= 50, 
+                                   title = "The relationship between sugar and calories in cereals")
 ```
 
 ```out

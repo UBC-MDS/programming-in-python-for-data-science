@@ -526,7 +526,7 @@ Task:
 Now you are going to use the frequency table from the questions in the last section and plot it!
 
 Tasks: 
-- Use `plot.bar()` with `position_freq`
+- Use `plot.bar()` with `position_freq` and save the plot in an object named `position_bar`
 - Assign a `color` as `Teal`, set opacity to 0.5 and don't forget to add a title as "Canuck Player Positions"  
 
 <codeblock id="01_21">
@@ -545,7 +545,7 @@ Tasks:
 Ok let's try our luck with a scatterplot. We want to explore the relationship between `Age` and `Salary`. 
 
 Tasks:
-- Plots x as `Age` and y as `Salary`. using a scatterplot 
+- Plots x as `Age` and y as `Salary`. using a scatterplot and save the plot in an object named `age_salary_scatter`
 - Set color to `Darkblue`, opacity to 0.4 and don't forget to assign a title as "Canuck players Age vs. Salary" 
 
 <codeblock id="01_22">
