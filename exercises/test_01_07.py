@@ -6,9 +6,10 @@ def test():
 
     # If an assertion fails, the message will be displayed
 
-    assert "columns_hockey = hockey_players.columns" in __solution__ , "There seems to be a problem with finding the column names of the dataset"
-    assert "hockey_rows = len(hockey_players)" in __solution__ , "There seems to be a problem with finding the number of rows of the dataset"
-    assert "hockey_dim = hockey_players.shape" in __solution__ , "There seems to be a problem with the dimension of the datset"
-    assert hockey_dim == (22, 10), "You may not have the correct dataset"
-    assert list(columns_hockey) ==  ['Player', 'No.', 'Age', 'Height', 'Weight', 'Country ', 'Position', 'Experience', 'Birth Date', 'Salary'], "Your column names does not seem correct"
+    assert benched_players.shape == (13, 5), "You may not have sliced correctly "
+    assert len(benched_players) == 13, "You may not have sliced correctly "
+    assert list(benched_players.columns) ==  ['No.', 'Age', 'Height', 'Weight', 'Country'], "Your columns do not seem to be correct"
+    assert list(benched_players.index) == ['Adam Gaudette', 'Bo Horvat\xa0(C)', 'Quinn Hughes', 'Zack MacEwen',
+    'Jacob Markstrom', 'J.T. Miller', 'Tyler Myers', 'Tanner Pearson', 'Elias Pettersson', 'Antoine Roussel', 'Tim Schaller', 
+    'Troy Stecher', 'Brandon Sutter'], "Your rows do not seem to be correct"
     __msg__.good("Nice work, well done!")

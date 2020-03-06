@@ -129,7 +129,7 @@ Notes: Script here.
 
 <img src='module1/include_all.png' width="90%">
 
-dding `include = "all"` withinh the brackets adds some additional statistics 
+Adding `include = "all"` withinh the brackets adds some additional statistics about categorical columns.
 
 - `unique`: how many observations are unique
 - `top`: which observation value is most occuring
@@ -217,7 +217,7 @@ We saved the object in a variable called `manufacturer_column` in the same way a
 Next we cant use `pd.value_counts()` referencing that the column we saved as `manufacturer_column` within the brackets.  
 
 ```python
-manufacturer_freq = pd.value_counts(manufacturer_column)
+manufacturer_freq = manufacturer_column.value_counts()
 manufacturer_freq
 
 ```
@@ -235,7 +235,7 @@ Name: mfr, dtype: int64
 ```
 
 We can then see the frequency of each qualitative value.   
-_Careful here! Notice that instead of putting the dataframe first, we indicate the package (pd)  that `value_counts` is coming from and then the object we want the counts of within the brackets!_ 
+_We can also use the argument `sort = True` withing the brackets if we want to sort the categories in frequency order_ 
 
 
 Notes: Script here.

@@ -11,7 +11,7 @@ Notes: Welcome to DSCI 511 Programming in Python for Data Science
 # Course Learning Outcomes 
 
 <html>
-<video style="display:block; margin: 0 auto;" width="100%" height="auto" controls >
+<video style="display:block; margin: 0 auto;" width="80%" height="auto" controls >
   <source src="sample_video.mp4" type="video/mp4">
 Your browser does not support the video tag.
 </video></html>

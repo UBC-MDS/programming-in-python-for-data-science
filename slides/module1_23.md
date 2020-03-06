@@ -15,7 +15,7 @@ Notes: Script here
 # Summary  
 
 <html>
-<video style="display:block; margin: 0 auto;" width="100%" height="auto" controls >
+<video style="display:block; margin: 0 auto;" width="80%" height="auto" controls >
   <source src="sample_video.mp4" type="video/mp4">
 Your browser does not support the video tag.
 </video></html>
@@ -38,7 +38,7 @@ The assignment will concentrate not only on the learning objectives above but al
 
 - Navigating a Jupyter Notebook
 - Understanding cells
-- 
+- Creating Markdown cells and coding cells
 
 Notes: Script here
 <html>

@@ -1,20 +1,14 @@
 import pandas as pd
 
-# Read in the dataset 
+# The database 
 
 hockey_players = pd.read_csv('data/canucks.csv')
+print(hockey_players)
 
-# Print the column names of `hockey_players` and save it as `columns_hockey`.
+# Slice the rows and columns and save the new dataframe as `benched_players`
 
-columns_hockey = hockey_players.columns 
-print(columns_hockey)
+benched_players = hockey_players.loc[ 7 : 19, "Player" : "Country"]
 
-# Save the number of rows `hockey_players` has in a variable called `hockey_rows`.
+# Display it (without using print)
 
-hockey_rows = len(hockey_players)
-print(hockey_rows)
-
-# Save the data frame dimension as `hockey_dim`. 
-
-hockey_dim = hockey_players.shape
-print(hockey_dim)
+benched_players 

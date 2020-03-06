@@ -5,10 +5,10 @@ import pandas as pd
 hockey_players = pd.read_csv('data/canucks.csv')
 print(hockey_players)
 
-# Slice the rows and columns and save the new dataframe as `benched_players`
+# Slice the rows and columns and save the new dataframe as `skilled_players`
 
-____ = ____
+skilled_players = hockey_players.iloc[11:18, 0:4]
 
 # Display it (without using print)
 
-____ 
+skilled_players 

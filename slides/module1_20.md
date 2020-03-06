@@ -84,7 +84,7 @@ This would require a `scatter` plot!
 In the code we would need to specify the x and y axis which means we would need to specify the column names for each axis.  
 
 ```python
-df.plot.scatter(x='sugars',y='calories');
+df.plot.scatter(x='sugars', y='calories');
 ```
 
 ```out
@@ -124,13 +124,13 @@ Notes: Script here.
 ---
 
 Look at that! Now we can see there are multiple cereals that have 2.5g of sugar with 100 calories. 
-What if we wanted to change the colour to purple? Enter parameter `c`! We can also add a bit of readability by separating the arguments into separate lines. 
+What if we wanted to change the colour to purple? Enter parameter `color`! We can also add a bit of readability by separating the arguments into separate lines. 
 
 ```python
 df.plot.scatter(x="sugars", 
                 y="calories", 
                 alpha= .3, 
-                c = "purple");
+                color= "purple");
 ```
 
 ```out
@@ -154,7 +154,7 @@ Those data points look pretty small. To enlarge them, the argument `s` should do
 df.plot.scatter(x="sugars",
                 y="calories",
                 alpha= 0.3, 
-                c="purple",
+                color="purple",
                 s= 50, 
                 title = "The relationship between sugar and calories in cereals");
 ```

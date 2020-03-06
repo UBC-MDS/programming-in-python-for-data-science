@@ -11,7 +11,7 @@ Notes: In this module you will be introduced to data frames, tidy data, the pyth
 # Module Learning Outcomes
 
 <html>
-<video style="display:block; margin: 0 auto;" width="100%" height="auto" controls >
+<video style="display:block; margin: 0 auto;" width="80%" height="auto" controls >
   <source src="sample_video.mp4" type="video/mp4">
 Your browser does not support the video tag.
 </video></html>
