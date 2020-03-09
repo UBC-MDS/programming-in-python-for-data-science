@@ -1,5 +1,5 @@
 ---
-title: 'Module 7: A Slice of Numpy (Numpy Arrays)'
+title: "Module 7: It's Tidy Up Time! (Time and Tidy Data)"
 description:
    'In this module you will learn about ...'
 prev: /module6

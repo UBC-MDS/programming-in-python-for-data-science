@@ -1,5 +1,5 @@
 ---
-title: "Module 4: It's Tidy up time! (Time and Tidy Data)"
+title: 'Module 4: Python Without the "Eek" (Basic Python)'
 description:
   'In this module you will learn about ...'
 prev: /module3

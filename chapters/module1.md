@@ -1,5 +1,5 @@
 ---
-title: 'Module 1: Python & Pandas - an Unexpected Friendship!'
+title: 'Module 1: Python & Pandas - An Unexpected Friendship!'
 description:
   'In this module you will be introduced to dataframes and the pandas python package.'
 prev: module0

@@ -1,5 +1,5 @@
 ---
-title: 'Module 6: Fruit Loops & Function (Loops and Functions) '
+title: 'Module 6: A Slice of Numpy (Numpy Arrays)'
 description:
   'In this module you will learn about ...'
 prev: /module5
