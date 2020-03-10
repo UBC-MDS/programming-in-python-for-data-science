@@ -12,24 +12,24 @@ ____
 
 # Save the most prominent country in an object called `hockey_country` (_Don't forget to put it between "quotation"_)
 
-____ = ____
-print("Most of the Canucks players are from", ____)
+# ____ = ____
+# ____
 
 # Save the value of the tallest play in `tallest_height`
 
-____ = ____
-print("The tallest Canuck player's heigh is", ____, "cm.")
+# ____ = ____
+# ____
 
 # What is the youngest age? Save it in an object named `youngest_age`
 
-____ = ____
-print("The youngest Canuck player is", ____, "years old.")
+# ____ = ____
+# ____
 
 
 # Find the total Salary of the team and save it in an object called `player_cost`
 
-____ = hockey_players[[____]].____()
-____
+# ____ = hockey_players[[____]].____()
+# ____
 
 
  

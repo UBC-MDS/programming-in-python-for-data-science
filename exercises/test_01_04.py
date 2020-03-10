@@ -8,7 +8,7 @@ def test():
 
     assert "columns_hockey = hockey_players.columns" in __solution__ , "There seems to be a problem with finding the column names of the dataset"
     assert "hockey_rows = len(hockey_players)" in __solution__ , "There seems to be a problem with finding the number of rows of the dataset"
-    assert "hockey_dim = hockey_players.shape" in __solution__ , "There seems to be a problem with the dimension of the datset"
-    assert hockey_dim == (22, 10), "You may not have the correct dataset"
-    assert list(columns_hockey) ==  ['Player', 'No.', 'Age', 'Height', 'Weight', 'Country ', 'Position', 'Experience', 'Birth Date', 'Salary'], "Your column names does not seem correct"
+    assert "hockey_shape = hockey_players.shape" in __solution__ , "There seems to be a problem with the dimension of the datset"
+    assert hockey_shape == (22, 10), "You may not have the correct dataset"
+    assert list(columns_hockey) ==  ['Player', 'No.', 'Age', 'Height', 'Weight', 'Country', 'Position', 'Experience', 'Birth Date', 'Salary'], "Your column names do not seem correct"
     __msg__.good("Nice work, well done!")

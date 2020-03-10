@@ -104,7 +104,7 @@ When you run a code exercise for the first time, it could take a bit of time for
 
 - Now Let's display the column names of `hockey_players` and save it as `columns_hockey`.
 - Save the number of rows `hockey_players` has in a variable called `hockey_rows`.
-- The data frame dimension should be save as `hockey_dim`.
+- The data frame shape should be save as `hockey_shape`.
 
 
 <codeblock id="01_04">
@@ -134,25 +134,25 @@ My column names in order are; `colour`, `location`, `seeds`, `shape`, `sweetness
 If I wanted all the rows and only columns `seeds`, `shape`, `sweetness` and  `water-content` what would my code look like using index labels? 
 
 <choice id="1" >
-<opt text='fruit_salad.loc[  :  , seeds : water-content]'>
+<opt text='<code>fruit_salad.loc[  :  , seeds : water-content]</code>'>
 
 This is almost right but it's missing something important
 
 </opt>
 
-<opt text='fruit_salad[  :  , "seeds" : "water-content"]' >
+<opt text='<code>fruit_salad[  :  , "seeds" : "water-content"]</code>' >
 
 This is almost right but it's missing something important! Try looking at the title of the slides we just finished. 
 
 </opt>
 
-<opt text='fruit_salad[ "apple": "lemon" , "seeds" : "water-content"]' >
+<opt text='<code>fruit_salad[ "apple": "lemon" , "seeds" : "water-content"]</code>' >
 
 This is almost right but it's missing something important! Try looking at the title of the slides we just finished. 
 
 </opt>
 
-<opt text='fruit_salad.loc[  :  , "seeds" : "water-content"]' correct="true">
+<opt text='<code>fruit_salad.loc[  :  , "seeds" : "water-content"]</code>' correct="true">
 
 Good job! This has both `loc` and "quotation" which are both needed to slice here. 
 
@@ -165,25 +165,25 @@ Good job! This has both `loc` and "quotation" which are both needed to slice her
 If I wanted all the rows between `cantaloupe`  and `kiwi` and all the columns? What would my code look like using index labels? 
 
 <choice id="2" >
-<opt text='fruit_salad.loc[ : , "cantaloupe" : "kiwi"]'>
+<opt text='<code>fruit_salad.loc[ : , "cantaloupe" : "kiwi"]</code>'>
 
 Remember that rows are expressed first before columns. 
 
 </opt>
 
-<opt text='fruit_salad.loc[ "cantaloupe" : "kiwi" ]' correct="true">
+<opt text='<code>fruit_salad.loc[ "cantaloupe" : "kiwi" ]</code>' correct="true">
 
 Great! You don't need to specify the second column part because by default the code will slice all the columns. 
 
 </opt>
 
-<opt text='fruit_salad.loc[ : , cantaloupe : kiwi]' >
+<opt text='<code>fruit_salad.loc[ : , cantaloupe : kiwi]</code>' >
 
 Remember that rows are expressed first before columns and you are missing something important!
 
 </opt>
 
-<opt text= 'fruit_salad[ cantaloupe : kiwi ]'  >
+<opt text= '<code>fruit_salad[ cantaloupe : kiwi ]</code>'  >
 
 I think you are missing something inportant.  
 
@@ -301,25 +301,25 @@ It's column names in order were; `colour`, `location`, `seeds`, `shape`, `sweetn
 If I wanted the rows `elderberry`  to `kiwi` and only columns `seeds`, `shape`, `sweetness` and  `water-content` what would my code look like if I was using index positions? 
 
 <choice id="1" >
-<opt text='fruit_salad.iloc[4 : 9 , 2 : 6]' correct="true">
+<opt text='<code>fruit_salad.iloc[4 : 9 , 2 : 6]</code>' correct="true">
 
 This is correct! We need to use `iloc` and go one position further then the last bound to select it 
 
 </opt>
 
-<opt text='fruit_salad.iloc[4 : 8 , 2 : 5]' >
+<opt text='<code>fruit_salad.iloc[4 : 8 , 2 : 5]</code>' >
 
 I think you may be forgetting that the last interval value does not get selected. 
 
 </opt>
 
-<opt text='fruit_salad.iloc[5 : 9 , 3 : 6]' >
+<opt text='<code>fruit_salad.iloc[5 : 9 , 3 : 6]</code>' >
 
 Are you forgetting that in the Python language we start counting at 0? You also may be forgetting that the last interval value does not get selected. 
 
 </opt>
 
-<opt text='fruit_salad.iloc[5 : 10 , 3 : 7]'>
+<opt text='<code>fruit_salad.iloc[5 : 10 , 3 : 7]</code>'>
 
 Are you forgetting that in the Python language we start counting at 0? 
 
@@ -332,25 +332,25 @@ Are you forgetting that in the Python language we start counting at 0?
 If I wanted the rows `lemon` and `cantaloupe`  but only the columns `colour`, `weight` and `seeds` in that order using indec position. what would my code look like if I was using index position? 
 
 <choice id="2" >
-<opt text='fruit_salad.iloc[[lemon, cantaloupe], [colour, weight, seeds]]'>
+<opt text='<code>fruit_salad.iloc[[lemon, cantaloupe], [colour, weight, seeds]]</code>'>
 
 We need to use the index position for this question and when using `iloc`.
 
 </opt>
 
-<opt text='fruit_salad.iloc[[10, 3], [1 ,7 ,3]]' >
+<opt text='<code>fruit_salad.iloc[[10, 3], [1 ,7 ,3]]</code>' >
 
 Great! You don't need to specify the second column part because by default the code will slice all the columns. 
 
 </opt>
 
-<opt text='fruit_salad.iloc[[9, 2], [0 ,6 ,2]]' correct="true">
+<opt text='<code>fruit_salad.iloc[[9, 2], [0 ,6 ,2]]</code>' correct="true">
 
 Great Work!
 
 </opt>
 
-<opt text= 'fruit_salad[[9, 2], [0 ,6 ,2]]'  >
+<opt text= '<code>fruit_salad[[9, 2], [0 ,6 ,2]]</code>'  >
 
 I think you are missing something inportant!
 
@@ -413,25 +413,25 @@ Let's say I have a dataframe named  `fruit_salad` with a column of interest name
 If you want to get the frequency of occurances of `colour` using `pd.value_counts(X)` what is `X`? 
 
 <choice id="1" >
-<opt text='fruit_salad[colour]'>
+<opt text='<code>fruit_salad[colour]</code>'>
 
 Almost there. What is missing from this? 
 
 </opt>
 
-<opt text='fruit_salad["colour"]' correct="true">
+<opt text='<code>fruit_salad["colour"]</code>' correct="true">
 
 Good job!
 
 </opt>
 
-<opt text='fruit_salad.loc["colour"]' >
+<opt text='<code>fruit_salad.loc["colour"]</code>' >
 
 We don't need to use `loc`. L et's try again. 
 
 </opt>
 
-<opt text='fruit_salad.loc[ : , ["colour"]]' >
+<opt text='<code>fruit_salad.loc[ : , ["colour"]]</code>' >
 
 This won't give us the correct output for `pd.value_counts()`. Check the slides to double check. 
 
@@ -444,25 +444,25 @@ This won't give us the correct output for `pd.value_counts()`. Check the slides 
 We need summary statictics of both quantitative and categorical columns of the dataframe `fruit_salad`. What code would be suitable for this? 
 
 <choice id="2" >
-<opt text='df.describe()'>
+<opt text='<code>df.describe()</code>'>
 
 Is our dataframe named `df`? Will this get summary staticstics for all the columns? 
 
 </opt>
 
-<opt text='df.describe(include = "all")' >
+<opt text='<code>df.describe(include = "all")</code>' >
 
 Is our dataframe named `df`? 
 
 </opt>
 
-<opt text='fruit_salad.describe(include = "all")' correct="true">
+<opt text='<code>fruit_salad.describe(include = "all")</code>' correct="true">
 
 This looks great! Well done!  
 
 </opt>
 
-<opt text='fruit_salad.summary(include = "all")' >
+<opt text='<code>fruit_salad.summary(include = "all")</code>' >
 
 Is `summary` the correct command here? 
 

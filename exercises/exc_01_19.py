@@ -11,14 +11,14 @@ ____ = ____
 
 # Find the frequencies of the position for the hockey team using `df.value_counts()` and save it as `position_freq`. Make sure you sort it too! 
 
-____ = ____.____(____)
+# ____ = ____.____(____)
 
 # Convert that to a dataframe. and save it as object `temp_df`
-____ = ____.____(____)
+# ____ = ____.____(____)
 
 
 # rename the column `Position` of `temp_df` to `freq` using `df.rename(columns = {})`. Save the object with the name `position_freq_df`. 
-____ = ____.____(columns = ____)
+# ____ = ____.____(columns = ____)
 
 # Display 
-print(____)
+# ____

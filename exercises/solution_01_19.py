@@ -21,4 +21,4 @@ temp_df = pd.DataFrame(position_freq)
 position_freq_df = temp_df.rename(columns = {"Position" : "freq"})
 
 # Display 
-print(position_freq_df)
+position_freq_df

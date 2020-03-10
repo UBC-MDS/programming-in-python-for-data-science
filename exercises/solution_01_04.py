@@ -7,14 +7,14 @@ hockey_players = pd.read_csv('data/canucks.csv')
 # Print the column names of `hockey_players` and save it as `columns_hockey`.
 
 columns_hockey = hockey_players.columns 
-print(columns_hockey)
+columns_hockey
 
 # Save the number of rows `hockey_players` has in a variable called `hockey_rows`.
 
 hockey_rows = len(hockey_players)
-print(hockey_rows)
+hockey_rows
 
-# Save the data frame dimension as `hockey_dim`. 
+# Save the data frame shape as `hockey_shape`. 
 
-hockey_dim = hockey_players.shape
-print(hockey_dim)
+hockey_shape = hockey_players.shape
+hockey_shape

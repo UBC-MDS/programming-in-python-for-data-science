@@ -6,4 +6,4 @@ ____ = pd.____('data/____')
 
 
 # Display the dataframe
-print(____) 
+____

@@ -1,10 +1,5 @@
 import pandas as pd
 
-#ignore these imports for now
-
-from matplotlib import style
-style.use('seaborn-white')
-
 # Bring in previous frequency table we had saved as position_freq_df ignore this for now
 
 position_freq_df = pd.read_csv('data/position_freq_df.csv', index_col=0)

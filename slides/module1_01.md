@@ -113,7 +113,7 @@ From this database we can see that there are 25 different candybars and 10 colum
 We can obtain the names of the columns using this code:
 
 ```python
-print(df.columns)
+df.columns
 ```
 
 ```out
@@ -164,7 +164,7 @@ Notes: Script here.
 
 ---
 
-Another important method to know is what if we don't want to print the whole table   
+Another important method to know is what if we don't want to output the whole table   
 We can then specify how many rows of the dataset to show with `df.head()`
 
 ```python
@@ -175,7 +175,7 @@ df.head(2)
 
 
 ```
-<img src='module1/df_head.png' width="70%">   
+<img src='module1/df_head_2.png' width="70%">   
 This specifies only 2 rows will be shown. we can specify any number of rows within the brackets or we can leave it empty which will default to 5 rows
 
 ```python
@@ -186,7 +186,7 @@ df.head()
 
 
 ```
-<img src='module1/df_head_2.png' width="70%">    
+<img src='module1/df_head.png' width="70%">    
 
 Notes: Script here.
 <html>
