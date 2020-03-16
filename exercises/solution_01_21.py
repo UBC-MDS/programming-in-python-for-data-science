@@ -8,7 +8,7 @@ position_freq_df
 # Use `plot.bar()` with `position_freq`
 # Assign a `color` as `Teal`, set opacity to 0.5 and don't forget to add a title as "Canuck Player Positions"  
 position_bar = position_freq_df.plot.bar(color = "Teal", 
-                                         alpha = .5, 
+                                         alpha = 0.5, 
                                          title = "Canuck player positions")
 
 position_bar

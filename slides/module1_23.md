@@ -15,7 +15,7 @@ Notes: Script here
 # Summary  
 
 <html>
-<video style="display:block; margin: 0 auto;" width="80%" height="auto" controls >
+<video style="display:block; margin: 0 auto;" width="60%" height="auto" controls >
   <source src="sample_video.mp4" type="video/mp4">
 Your browser does not support the video tag.
 </video></html>

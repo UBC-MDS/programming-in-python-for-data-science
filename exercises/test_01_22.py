@@ -6,9 +6,11 @@ def test():
 
     # If an assertion fails, the message will be displayed
 
-    assert "columns_hockey = hockey_players.columns" in __solution__ , "There seems to be a problem with finding the column names of the dataset"
-    assert "hockey_rows = len(hockey_players)" in __solution__ , "There seems to be a problem with finding the number of rows of the dataset"
-    assert "hockey_dim = hockey_players.shape" in __solution__ , "There seems to be a problem with the dimension of the datset"
-    assert hockey_dim == (22, 10), "You may not have the correct dataset"
-    assert list(columns_hockey) ==  ['Player', 'No.', 'Age', 'Height', 'Weight', 'Country ', 'Position', 'Experience', 'Birth Date', 'Salary'], "Your column names does not seem correct"
+    assert "scatter" in __solution__ , "You don't seem to be plotting a scatterplot"
+    assert 'x = "Age"' in __solution__ , "Your X value is not correct"
+    assert 'y = "Salary"' in __solution__ , "Your Y value is not correct"
+    assert 'alpha = 0.4' in __solution__ , "Your alpha value is not correct"
+    assert 'color = "Darkblue"' in __solution__ , "Your colour assignment is not correct"
+    assert 'title = "Canuck players Age vs. Salary"' in __solution__ , "Your title  is not correct"
     __msg__.good("Nice work, well done!")
+    

@@ -1,4 +1,26 @@
 ---
+title: "Practice Slides"
+output: 
+  md_document:
+    variant: gfm
+---
+
+```{r setup, include=FALSE}
+library(rmarkdown)
+knitr::opts_chunk$set(echo = TRUE)
+knitr_opts <- knitr_options( opts_knit = NULL,
+  opts_chunk = NULL,
+  knit_hooks = NULL,
+  opts_hooks = NULL,
+  opts_template = NULL)
+md_document_custom <- md_document(variant = "gfm", pandoc_args = )
+output_format(knitr = knitr_opts,
+              pandoc = NULL,
+              base_format = md_document_custom)
+library(reticulate)
+```
+
+---
 type: slides
 ---
 
@@ -14,7 +36,7 @@ Essentially dataframe's look like excel sheets and are a essential part of data 
 Notes: Script here.
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="static/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -27,21 +49,20 @@ Notes: Script here.
 Notes: Script here.
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="static/placeholder_audio.mp3" />
 </audio></html>
-
 
 ---
 
 Python although a powerful tool, does not have everything we need right away for data science. `Pandas` is an add-on python packages that contain the tools necessary for working with and wrangling data to a state that is functional for analysis and visualisation.  
 
-<img src='module1/pandas.gif' alt="this slowpoke moves"  width="50%" alt="404 image"/>
+<img src='static/module1/pandas.gif' alt="this slowpoke moves"  width="50%" alt="404 image"/>
 
 
 Notes: Script here.
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="static/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -52,18 +73,19 @@ Before we really start writing any valuable code, we need to tell python that we
 
 We do this by using the code below:
 
-```python
+
+```{python}
 import pandas as pd
 ```
 
-We will talk about this further on in the course, but for now, just know that we are equiping our python base with additional abilities.
 
+We will talk about this further on in the course, but for now, just know that we are equiping our python base with additional abilities.
 
 
 Notes: Script here.
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="static/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -72,12 +94,10 @@ Notes: Script here.
 
 Next we can bring in our data with the following code
 
-```python
-df = pd.read_csv('candybars.csv')
-df
-```
 
-The first line of code reads in the dataframe and the second line will display the object `df`
+```{python}
+df = pd.read_csv('data/candybars.csv')
+```
 
 let's break this up:
 
@@ -88,25 +108,29 @@ let's break this up:
 Notes: Script here.
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="static/placeholder_audio.mp3" />
 </audio></html>
 
 ---
 
-This code produces the following output
+The object `df` looks like this: 
 
-```out
-
-
+```{python}
+df
+```
+```{r}
+?rmarkdown::knitr_options
+(knitr::opts_knit$get())
 ```
 
-<img src='module1/candybars_full.jpg' width="60%">
+
+<img src='static/module1/candybars_full.jpg' width="60%">
 
 
 Notes: Script here.
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="static/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -140,7 +164,7 @@ Breaking up this code it just means "From our dataframe that we saved as `df` te
 Notes: Script here.
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="static/placeholder_audio.mp3" />
 </audio></html>
 
 
@@ -161,7 +185,7 @@ Notice in this case we have the name of the dataframe within the `len` brackets.
 Notes: Script here.
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="static/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -177,7 +201,7 @@ df.head(2)
 
 
 ```
-<img src='module1/df_head_2.png' width="70%">   
+<img src='static/module1/df_head_2.png' width="70%">   
 This specifies only 2 rows will be shown. we can specify any number of rows within the brackets or we can leave it empty which will default to 5 rows
 
 ```python
@@ -188,12 +212,12 @@ df.head()
 
 
 ```
-<img src='module1/df_head.png' width="70%">    
+<img src='static/module1/df_head.png' width="70%">    
 
 Notes: Script here.
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="static/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -203,5 +227,5 @@ Notes: Script here.
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="static/placeholder_audio.mp3" />
 </audio></html>
