@@ -74,10 +74,8 @@ Next we can bring in our data with the following code
 
 ```python
 df = pd.read_csv('candybars.csv')
-df
 ```
 
-The first line of code reads in the dataframe and the second line will display the object `df`
 
 let's break this up:
 
@@ -93,7 +91,7 @@ Notes: Script here.
 
 ---
 
-This code produces the following output
+This object df looks like this 
 
 ```out
 
