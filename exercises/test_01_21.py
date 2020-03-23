@@ -11,7 +11,7 @@ def test():
     assert '0.5' in __solution__ , "Your alpha value is not correct"
     assert 'color' in __solution__ , "Your have not specified a color parameter"
     assert '"Teal"' in __solution__ , "Your colour parameter is not correct"
-    assert 'title' in __solution__ , "Your have not specified a title"
+    assert 'title' in __solution__ , "You have not specified a title"
     assert '"Canuck player positions"' in __solution__ , "Your title is not correct"
     assert "position_freq_df"in __solution__ , "the dataframe you are calling is not correct"
     __msg__.good("Nice work, well done!")
