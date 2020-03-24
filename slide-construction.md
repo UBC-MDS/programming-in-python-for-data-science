@@ -1,3 +1,5 @@
+type: slides
+
 # What is a Dataframe?
 
 When working with information, it’s important that it is stored in as
@@ -12,8 +14,7 @@ data.
 Essentially dataframe’s look like excel sheets and are a essential part
 of data science.
 
-Notes: Script
-here.
+Notes: Script here.
 
 <html>
 
@@ -50,8 +51,7 @@ Notes: Script here.
 Python although a powerful tool, does not have everything we need right
 away for data science. `Pandas` is an add-on python packages that
 contain the tools necessary for working with and wrangling data to a
-state that is functional for analysis and
-visualisation.
+state that is functional for analysis and visualisation.
 
 <img src='static/module1/pandas.gif' alt="this slowpoke moves"  width="50%" alt="404 image"/>
 
@@ -127,8 +127,7 @@ Notes: Script here.
 
 -----
 
-The object `df` looks like
-    this:
+The object `df` looks like this:
 
 ``` python
 df
@@ -192,7 +191,7 @@ df
     ## $upload.fun
     ## function (x) 
     ## x
-    ## <bytecode: 0x7fa33d3e0b80>
+    ## <bytecode: 0x7fc0194e9a78>
     ## <environment: namespace:base>
     ## 
     ## $global.device
@@ -263,7 +262,7 @@ df
     ## [1] "static"
     ## 
     ## $output.dir
-    ## [1] "/Users/icics-user/Documents/online_course/MCL-DSCI-511-programming-in-python"
+    ## [1] "/Users/tiffany/Documents/mcl/MCL-DSCI-511-programming-in-python"
 
 <img src='static/module1/candybars_full.jpg' width="60%">
 

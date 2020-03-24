@@ -1,3 +1,7 @@
+---
+type: slides
+---
+
 # What is a Dataframe?
 
 When working with information, it’s important that it is stored in as
@@ -12,8 +16,7 @@ data.
 Essentially dataframe’s look like excel sheets and are a essential part
 of data science.
 
-Notes: Script
-here.
+Notes: Script here.
 
 <html>
 
@@ -50,8 +53,7 @@ Notes: Script here.
 Python although a powerful tool, does not have everything we need right
 away for data science. `Pandas` is an add-on python packages that
 contain the tools necessary for working with and wrangling data to a
-state that is functional for analysis and
-visualisation.
+state that is functional for analysis and visualisation.
 
 <img src='static/module1/pandas.gif' alt="this slowpoke moves"  width="50%" alt="404 image"/>
 
@@ -127,42 +129,41 @@ Notes: Script here.
 
 ---
 
-The object `df` looks like
-    this:
+The object `df` looks like this:
 
 ``` python
 df
 ```
 
 ```out
-    ##                   candy bar  chocolate  ...  multi  available_canada_america
-    ## 0               CoffeeCrisp          1  ...      0                    Canada
-    ## 1              Butterfinger          1  ...      0                   America
-    ## 2                      Skor          1  ...      0                      Both
-    ## 3                  Smarties          1  ...      1                    Canada
-    ## 4                      Twix          1  ...      1                      Both
-    ## 5   ReesesPeanutButterCups           1  ...      1                      Both
-    ## 6               3Musketeers          1  ...      0                   America
-    ## 7           Kinder Surprise          1  ...      0                    Canada
-    ## 8                      M&Ms          1  ...      1                      Both
-    ## 9                 Glosettes          1  ...      1                    Canada
-    ## 10                   KitKat          1  ...      1                      Both
-    ## 11                Babe Ruth          1  ...      0                   America
-    ## 12                 Caramilk          1  ...      0                    Canada
-    ## 13                     Aero          1  ...      0                    Canada
-    ## 14                     Mars          1  ...      0                      Both
-    ## 15                   Payday          0  ...      0                   America
-    ## 16                 Snickers          1  ...      0                      Both
-    ## 17                 Crunchie          1  ...      0                    Canada
-    ## 18               Wonderbar           1  ...      0                    Canada
-    ## 19                100Grand           1  ...      0                   America
-    ## 20                    Take5          1  ...      0                   America
-    ## 21         Whatchamacallits          1  ...      0                   America
-    ## 22                AlmondJoy          1  ...      0                   America
-    ## 23                  OhHenry          1  ...      0                      Both
-    ## 24          CookiesandCream          0  ...      0                      Both
-    ## 
-    ## [25 rows x 10 columns]
+                  candy bar  chocolate  ...  multi  available_canada_america
+0               CoffeeCrisp          1  ...      0                    Canada
+1              Butterfinger          1  ...      0                   America
+2                      Skor          1  ...      0                      Both
+3                  Smarties          1  ...      1                    Canada
+4                      Twix          1  ...      1                      Both
+5   ReesesPeanutButterCups           1  ...      1                      Both
+6               3Musketeers          1  ...      0                   America
+7           Kinder Surprise          1  ...      0                    Canada
+8                      M&Ms          1  ...      1                      Both
+9                 Glosettes          1  ...      1                    Canada
+10                   KitKat          1  ...      1                      Both
+11                Babe Ruth          1  ...      0                   America
+12                 Caramilk          1  ...      0                    Canada
+13                     Aero          1  ...      0                    Canada
+14                     Mars          1  ...      0                      Both
+15                   Payday          0  ...      0                   America
+16                 Snickers          1  ...      0                      Both
+17                 Crunchie          1  ...      0                    Canada
+18               Wonderbar           1  ...      0                    Canada
+19                100Grand           1  ...      0                   America
+20                    Take5          1  ...      0                   America
+21         Whatchamacallits          1  ...      0                   America
+22                AlmondJoy          1  ...      0                   America
+23                  OhHenry          1  ...      0                      Both
+24          CookiesandCream          0  ...      0                      Both
+
+[25 rows x 10 columns]
 ```
 ``` r
 ?rmarkdown::knitr_options
@@ -170,102 +171,102 @@ df
 ```
 
 ```out
-    ## $progress
-    ## [1] TRUE
-    ## 
-    ## $verbose
-    ## [1] FALSE
-    ## 
-    ## $eval.after
-    ## [1] "fig.cap"
-    ## 
-    ## $base.dir
-    ## NULL
-    ## 
-    ## $base.url
-    ## NULL
-    ## 
-    ## $root.dir
-    ## NULL
-    ## 
-    ## $child.path
-    ## [1] ""
-    ## 
-    ## $upload.fun
-    ## function (x) 
-    ## x
-    ## <bytecode: 0x7fa33d3e0b80>
-    ## <environment: namespace:base>
-    ## 
-    ## $global.device
-    ## [1] FALSE
-    ## 
-    ## $global.par
-    ## [1] FALSE
-    ## 
-    ## $concordance
-    ## [1] FALSE
-    ## 
-    ## $documentation
-    ## [1] 1
-    ## 
-    ## $self.contained
-    ## [1] TRUE
-    ## 
-    ## $unnamed.chunk.label
-    ## [1] "unnamed-chunk"
-    ## 
-    ## $highr.opts
-    ## NULL
-    ## 
-    ## $out.format
-    ## [1] "markdown"
-    ## 
-    ## $child
-    ## [1] FALSE
-    ## 
-    ## $parent
-    ## [1] FALSE
-    ## 
-    ## $tangle
-    ## [1] FALSE
-    ## 
-    ## $aliases
-    ## NULL
-    ## 
-    ## $header
-    ## highlight      tikz    framed 
-    ##        ""        ""        "" 
-    ## 
-    ## $global.pars
-    ## NULL
-    ## 
-    ## $rmarkdown.pandoc.from
-    ## [1] "markdown+autolink_bare_uris+tex_math_single_backslash"
-    ## 
-    ## $rmarkdown.pandoc.to
-    ## [1] "gfm"
-    ## 
-    ## $rmarkdown.pandoc.args
-    ## [1] "--standalone"
-    ## 
-    ## $rmarkdown.pandoc.id_prefix
-    ## [1] ""
-    ## 
-    ## $rmarkdown.keep_md
-    ## [1] FALSE
-    ## 
-    ## $rmarkdown.df_print
-    ## [1] "default"
-    ## 
-    ## $rmarkdown.version
-    ## [1] 2
-    ## 
-    ## $rmarkdown.runtime
-    ## [1] "static"
-    ## 
-    ## $output.dir
-    ## [1] "/Users/icics-user/Documents/online_course/MCL-DSCI-511-programming-in-python"
+$progress
+[1] TRUE
+
+$verbose
+[1] FALSE
+
+$eval.after
+[1] "fig.cap"
+
+$base.dir
+NULL
+
+$base.url
+NULL
+
+$root.dir
+NULL
+
+$child.path
+[1] ""
+
+$upload.fun
+function (x) 
+x
+<bytecode: 0x7fc0194e9a78>
+<environment: namespace:base>
+
+$global.device
+[1] FALSE
+
+$global.par
+[1] FALSE
+
+$concordance
+[1] FALSE
+
+$documentation
+[1] 1
+
+$self.contained
+[1] TRUE
+
+$unnamed.chunk.label
+[1] "unnamed-chunk"
+
+$highr.opts
+NULL
+
+$out.format
+[1] "markdown"
+
+$child
+[1] FALSE
+
+$parent
+[1] FALSE
+
+$tangle
+[1] FALSE
+
+$aliases
+NULL
+
+$header
+highlight      tikz    framed 
+       ""        ""        "" 
+
+$global.pars
+NULL
+
+$rmarkdown.pandoc.from
+[1] "markdown+autolink_bare_uris+tex_math_single_backslash"
+
+$rmarkdown.pandoc.to
+[1] "gfm"
+
+$rmarkdown.pandoc.args
+[1] "--standalone"
+
+$rmarkdown.pandoc.id_prefix
+[1] ""
+
+$rmarkdown.keep_md
+[1] FALSE
+
+$rmarkdown.df_print
+[1] "default"
+
+$rmarkdown.version
+[1] 2
+
+$rmarkdown.runtime
+[1] "static"
+
+$output.dir
+[1] "/Users/tiffany/Documents/mcl/MCL-DSCI-511-programming-in-python"
 ```
 <img src='static/module1/candybars_full.jpg' width="60%">
 

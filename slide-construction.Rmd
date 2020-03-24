@@ -20,9 +20,7 @@ output_format(knitr = knitr_opts,
 library(reticulate)
 ```
 
----
 type: slides
----
 
 # What is a Dataframe?
 
