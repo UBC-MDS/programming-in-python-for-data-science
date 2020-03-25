@@ -4,202 +4,281 @@ type: slides
 
 # What is a Dataframe?
 
-When working with information, it's important that it is stored in as manner that is organised, readable and accessible.    
-A **data frame** is a table or a 2 dimensional structure in which **columns** contain values from a variable and **rows** are occurances, examples or data points.
+When working with information, it must be stored in a manner that is
+organized, readable and accessible.
 
-Data frames make it easy to calculate statistics and clean and store data.
+A dataframe makes it easy to calculate statistics and clean and store
+data.
 
-Essentially dataframe's look like excel sheets and are a essential part of data science.
+From a data perspective, it is a rectangle where the rows are the
+observations. (Essentially, they look like excel sheets)
+
+<img src='static/module1/df_obs.png' width="50%" alt="404 image"/>
 
 Notes: Script here.
+
 <html>
+
 <audio controls >
-  <source src="placeholder_audio.mp3" />
-</audio></html>
+
+<source src="static/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
 
 ---
 
-# What is Pandas and Why Do We Need It?
+The columns are the variables.
 
-<img src='https://media.giphy.com/media/xTk9ZRJytbejZGlzqg/giphy.gif' width="50%">  
-[Attribution: GYPHY](https://giphy.com/gifs/panda-falling-vine-xTk9ZRJytbejZGlzqg)
+<img src='static/module1/df_vars.png' width="50%" alt="404 image"/>
 
 Notes: Script here.
-<html>
-<audio controls >
-  <source src="placeholder_audio.mp3" />
-</audio></html>
 
+<html>
+
+<audio controls >
+
+<source src="static/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
 
 ---
 
-Python although a powerful tool, does not have everything we need right away for data science. `Pandas` is an add-on python packages that contain the tools necessary for working with and wrangling data to a state that is functional for analysis and visualisation.  
+# Enter Pandas
 
-<img src='module1/pandas.gif' alt="this slowpoke moves"  width="50%" alt="404 image"/>
-
+<img src='static/module1/pandas.gif' width="50%" alt="404 image"/>
 
 Notes: Script here.
+
 <html>
+
 <audio controls >
-  <source src="placeholder_audio.mp3" />
-</audio></html>
+
+<source src="static/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
 
 ---
 
 ## Importing Pandas
 
-Before we really start writing any valuable code, we need to tell python that we need our extra tools from the pandas package.   
+To analyze dataframes, we need to make sure that we import something
+called `pandas`. This will help us store and manipulate dataframes.
 
-We do this by using the code below:
+Before we start writing any valuable code, we need to import pandas.
 
-```python
+``` python
 import pandas as pd
 ```
 
-We will talk about this further on in the course, but for now, just know that we are equiping our python base with additional abilities.
-
-
-
 Notes: Script here.
+
 <html>
+
 <audio controls >
-  <source src="placeholder_audio.mp3" />
-</audio></html>
+
+<source src="static/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
 
 ---
 
 ## Reading in Data
 
-Next we can bring in our data with the following code
+Next we can bring in our data named `candybars` which is stored as a
+`.csv` with the following code:
 
-```python
+``` python
 df = pd.read_csv('candybars.csv')
 ```
 
+let’s break this up:
 
-let's break this up:
+`pd`: this is the short form for pandas, which we are using to
+manipulate our dataframes.  
+`read_csv()`: The tool that does the job and, in this case, it is
+reading in the `csv` file named `candybars.csv`.  
+`df`: The dataframe is now saved as an object called `df`
 
-`pd` : The package our tool comes from and as we said above we imported `pandas` as `pd`.    
-`read_csv()` : The tool that does the job and in this case, it is reading in the `csv` file named `candybars.csv`.   
-`df` : The dataframe is now saved as an object called `df`
+In these slides you can differentiate between what we typed in (our
+code) in light gray and the output of this will be coloured in a dark
+grey background.
 
-Notes: Script here.
+You can see what the object `df` looks like on the next slide.
+
+Notes: Script
+    here.
+
 <html>
+
 <audio controls >
-  <source src="placeholder_audio.mp3" />
-</audio></html>
+
+<source src="static/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
 
 ---
 
-This object df looks like this 
-
-```out
-
-
+``` python
+df
 ```
 
-<img src='module1/candybars_full.jpg' width="60%">
+```out
+                         name  chocolate  ...  multi  available_canada_america
+0                Coffee Crisp          1  ...      0                    Canada
+1                Butterfinger          1  ...      0                   America
+2                        Skor          1  ...      0                      Both
+3                    Smarties          1  ...      1                    Canada
+4                        Twix          1  ...      1                      Both
+5   Reeses Peanutbutter Cups           1  ...      1                      Both
+6                3 Musketeers          1  ...      0                   America
+7             Kinder Surprise          1  ...      0                    Canada
+8                       M & M          1  ...      1                      Both
+9                   Glosettes          1  ...      1                    Canada
+10                     KitKat          1  ...      1                      Both
+11                  Babe Ruth          1  ...      0                   America
+12                   Caramilk          1  ...      0                    Canada
+13                       Aero          1  ...      0                    Canada
+14                       Mars          1  ...      0                      Both
+15                     Payday          0  ...      0                   America
+16                   Snickers          1  ...      0                      Both
+17                   Crunchie          1  ...      0                    Canada
+18                 Wonderbar           1  ...      0                    Canada
+19                 100 Grand           1  ...      0                   America
+20                     Take 5          1  ...      0                   America
+21           Whatchamacallits          1  ...      0                   America
+22                 Almond Joy          1  ...      0                   America
+23                   Oh Henry          1  ...      0                      Both
+24          Cookies and Cream          0  ...      0                      Both
 
+[25 rows x 10 columns]
+```
 
 Notes: Script here.
+
 <html>
+
 <audio controls >
-  <source src="placeholder_audio.mp3" />
-</audio></html>
+
+<source src="static/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
 
 ---
 
-From this database we can see that there are 25 different candybars and 10 columns.
-We can obtain the names of the columns using this code:
+From this dataframe, we can see that there are 25 different candy bars
+and 10 columns. We can obtain the names of the columns using this code:
 
-```python
+``` python
 df.columns
 ```
 
 ```out
-Index(['candy bar', 'chocolate', 'peanuts', 'caramel', 'nougat',
+Index(['name', 'chocolate', 'peanuts', 'caramel', 'nougat',
        'cookie_wafer_rice', 'coconut', 'white_chocolate', 'multi',
        'available_canada_america'],
       dtype='object')
 ```
 
-Or if you wanted to see the dimensions of the whole dataframe you could code the following:
+Or if you wanted to see the dimensions of the whole dataframe you could
+code the following:
 
-```python
-print(df.shape)
+``` python
+df.shape
 ```
 
 ```out
 (25, 10)
 ```
 
-Breaking up this code it just means "From our dataframe that we saved as `df` tell me the  `columns` or tell me the `shape`".
+Breaking up this code it just means “From our dataframe that we saved as
+`df` tell me the `columns` or tell me the `shape`”.
 
 Notes: Script here.
-<html>
-<audio controls >
-  <source src="placeholder_audio.mp3" />
-</audio></html>
 
+<html>
+
+<audio controls >
+
+<source src="static/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
 
 ---
 
-To find out the length of the dataframe, i.e. the number of rows, we can ask for the `length`.
+Another important method to know is what if we don’t want to output the
+whole table  
+We can then specify how many rows of the dataset to show with
+`df.head()`
 
-```python
-len(df)
-```
-
-```out
-25
-```
-
-Notice in this case we have the name of the dataframe within the `len` brackets. That's because  `len` is a function whereas the others are methods. This is going to be discussed later in this course.  For now, be aware that sometimes we are going to be specifying the dataframe before the tool we are using and sometimes within it.
-
-Notes: Script here.
-<html>
-<audio controls >
-  <source src="placeholder_audio.mp3" />
-</audio></html>
-
----
-
-Another important method to know is what if we don't want to output the whole table   
-We can then specify how many rows of the dataset to show with `df.head()`
-
-```python
+``` python
 df.head(2)
 ```
 
 ```out
+           name  chocolate  ...  multi  available_canada_america
+0  Coffee Crisp          1  ...      0                    Canada
+1  Butterfinger          1  ...      0                   America
 
-
+[2 rows x 10 columns]
 ```
-<img src='module1/df_head_2.png' width="70%">   
-This specifies only 2 rows will be shown. we can specify any number of rows within the brackets or we can leave it empty which will default to 5 rows
 
-```python
+This specifies only 2 rows will be shown. We can specify any number of
+rows within the brackets or we can leave it empty which will default to
+5 rows.
+
+``` python
 df.head()
 ```
 
 ```out
+           name  chocolate  ...  multi  available_canada_america
+0  Coffee Crisp          1  ...      0                    Canada
+1  Butterfinger          1  ...      0                   America
+2          Skor          1  ...      0                      Both
+3      Smarties          1  ...      1                    Canada
+4          Twix          1  ...      1                      Both
 
-
+[5 rows x 10 columns]
 ```
-<img src='module1/df_head.png' width="70%">    
 
 Notes: Script here.
+
 <html>
+
 <audio controls >
-  <source src="placeholder_audio.mp3" />
-</audio></html>
+
+<source src="static/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
 
 ---
 
-# let’s apply what we learned!
+# let’s apply what we learned\!
 
 Notes: Script here
+
 <html>
+
 <audio controls >
-  <source src="placeholder_audio.mp3" />
-</audio></html>
+
+<source src="static/placeholder_audio.mp3" />
+
+</audio>
+
+</html>

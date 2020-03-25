@@ -1,0 +1,184 @@
+---
+title: "Module1_01"
+output: 
+  md_document:
+    variant: gfm
+---
+
+```{r setup, include=FALSE}
+library(rmarkdown)
+knitr::opts_chunk$set(echo = TRUE)
+knitr_opts <- knitr_options( opts_knit = NULL,
+  opts_chunk = NULL,
+  knit_hooks = NULL,
+  opts_hooks = NULL,
+  opts_template = NULL)
+md_document_custom <- md_document(variant = "gfm")
+output_format(knitr = knitr_opts,
+              pandoc = NULL,
+              base_format = md_document_custom)
+library(reticulate)
+```
+
+
+type: slides
+
+
+# What is a Dataframe?
+
+When working with information, it must be stored in a manner that is organized, readable and accessible.    
+
+A dataframe makes it easy to calculate statistics and clean and store data.
+
+From a data perspective, it is a rectangle where the rows are the observations. 
+(Essentially, they look like excel sheets)
+
+<img src='static/module1/df_obs.png' width="50%" alt="404 image"/>
+
+
+Notes: Script here.
+<html>
+<audio controls >
+  <source src="static/placeholder_audio.mp3" />
+</audio></html>
+
+---
+ 
+The columns are the variables.
+
+<img src='static/module1/df_vars.png' width="50%" alt="404 image"/>
+
+
+Notes: Script here.
+<html>
+<audio controls >
+  <source src="static/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+# Enter Pandas
+
+<img src='static/module1/pandas.gif' width="50%" alt="404 image"/>
+
+Notes: Script here.
+<html>
+<audio controls >
+  <source src="static/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+## Importing Pandas
+
+To analyze dataframes, we need to make sure that we import something called `pandas`. This will help us store and manipulate dataframes. 
+
+Before we start writing any valuable code, we need to import pandas. 
+
+```{python}
+import pandas as pd
+```
+
+Notes: Script here.
+<html>
+<audio controls >
+  <source src="static/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+## Reading in Data
+
+Next we can bring in our data  named `candybars` which is stored as a `.csv` with the following code:
+
+```{python}
+df = pd.read_csv('candybars.csv')
+```
+
+let's break this up:
+
+`pd`: this is the short form for pandas, which we are using to manipulate our dataframes.  
+`read_csv()`: The tool that does the job and, in this case, it is reading in the `csv` file named `candybars.csv`.   
+`df`: The dataframe is now saved as an object called `df`
+
+In these slides you can differentiate between what we typed in (our code) in light gray and the output of this will be coloured in a dark grey background. 
+
+You can see what the object `df` looks like on the next slide. 
+
+Notes: Script here.
+<html>
+<audio controls >
+  <source src="static/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+```{python}
+df
+```
+
+Notes: Script here.
+<html>
+<audio controls >
+  <source src="static/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+From this dataframe, we can see that there are 25 different candy bars and 10 columns.
+We can obtain the names of the columns using this code:
+
+```{python}
+df.columns
+```
+
+Or if you wanted to see the dimensions of the whole dataframe you could code the following:
+
+```{python}
+df.shape
+```
+
+
+Breaking up this code it just means "From our dataframe that we saved as `df` tell me the  `columns` or tell me the `shape`".
+
+
+Notes: Script here.
+<html>
+<audio controls >
+  <source src="static/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+Another important method to know is what if we don't want to output the whole table   
+We can then specify how many rows of the dataset to show with `df.head()`
+
+```{python}
+df.head(2)
+```
+
+
+This specifies only 2 rows will be shown. We can specify any number of rows within the brackets or we can leave it empty which will default to 5 rows.
+
+
+```{python}
+df.head()
+```
+
+
+
+Notes: Script here.
+<html>
+<audio controls >
+  <source src="static/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+# let’s apply what we learned!
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="static/placeholder_audio.mp3" />
+</audio></html>

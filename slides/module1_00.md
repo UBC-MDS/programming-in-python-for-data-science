@@ -4,7 +4,7 @@ type: slides
 
 # Module Learning Outcomes
 
-Notes: In this module you will be introduced to data frames, tidy data, the python pandas package and learn how to manipute data into a new form.
+Notes: In this module you will be introduced to data frames, tidy data, the python pandas package and learn how to manipute data.
 
 ---
 
@@ -24,7 +24,7 @@ By the end of the module, students are expected to:
 - Demonstrate indexing and slicing with `df.loc[]` and `df.iloc[]`.
 - Demonstrate Selecting and filtering columns of a dataframe using `df[]` notation.
 - Create simple summary statistics using `pd.describe()` and `pd.summary()`.
-- construct simple visualizations using pandas.
+- Construct simple visualizations using pandas.
 
 ---
 

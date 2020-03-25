@@ -18,7 +18,7 @@
     "showProfileImage": true,
     "footerLinks": [
         { "text": "Website", "url": "https://masterdatascience.ubc.ca" },
-        { "text": "Source", "url": "https://github.com/UBC-MDS/MCL-DSCI-571-machine-learning" },
+        { "text": "Source", "url": "https://github.com/UBC-MDS/MCL-DSCI-511-programming-in-python" },
         { "text": "Built with ♥", "url": "https://github.com/ines/course-starter-python" }
     ],
     "theme": "#0BB5D4"

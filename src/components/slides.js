@@ -30,11 +30,12 @@ class Slides extends React.Component {
                 RevealMarkdown.init()
                 Reveal.initialize({
                     center: false,
+                    slideNumber: true,
                     progress: false,
                     showNotes: true,
                     controls: true,
                     width: '100%',
-                    height: 600,
+                    height: 700,
                     minScale: 0.75,
                     maxScale: 1,
                 })

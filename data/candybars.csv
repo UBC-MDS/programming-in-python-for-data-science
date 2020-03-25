@@ -1,13 +1,13 @@
-﻿candy bar,chocolate,peanuts,caramel,nougat,cookie_wafer_rice,coconut,white_chocolate,multi,available_canada_america
-CoffeeCrisp,1,0,0,0,1,0,0,0,Canada
+﻿name,chocolate,peanuts,caramel,nougat,cookie_wafer_rice,coconut,white_chocolate,multi,available_canada_america
+Coffee Crisp,1,0,0,0,1,0,0,0,Canada
 Butterfinger,1,1,1,0,0,0,0,0,America
 Skor,1,0,1,0,0,0,0,0,Both
 Smarties,1,0,0,0,0,0,0,1,Canada
 Twix,1,0,1,0,1,0,0,1,Both
-ReesesPeanutButterCups ,1,1,0,0,0,0,0,1,Both
-3Musketeers,1,0,0,1,0,0,0,0,America
+Reeses Peanutbutter Cups ,1,1,0,0,0,0,0,1,Both
+3 Musketeers,1,0,0,1,0,0,0,0,America
 Kinder Surprise,1,0,0,0,0,0,1,0,Canada
-M&Ms,1,1,0,0,0,0,0,1,Both
+M & M,1,1,0,0,0,0,0,1,Both
 Glosettes,1,0,0,0,0,0,0,1,Canada
 KitKat,1,0,0,0,1,0,0,1,Both
 Babe Ruth,1,1,1,1,0,0,0,0,America
@@ -18,9 +18,9 @@ Payday,0,1,1,0,0,0,0,0,America
 Snickers,1,1,1,1,0,0,0,0,Both
 Crunchie,1,0,0,0,0,0,0,0,Canada
 Wonderbar ,1,1,1,0,0,0,0,0,Canada
-100Grand ,1,0,1,0,1,0,0,0,America
-Take5,1,1,1,0,1,0,0,0,America
+100 Grand ,1,0,1,0,1,0,0,0,America
+Take 5,1,1,1,0,1,0,0,0,America
 Whatchamacallits,1,1,0,0,1,0,0,0,America
-AlmondJoy,1,0,0,0,0,1,0,0,America
-OhHenry,1,1,1,0,0,0,0,0,Both
-CookiesandCream,0,0,0,0,1,0,1,0,Both
+Almond Joy,1,0,0,0,0,1,0,0,America
+Oh Henry,1,1,1,0,0,0,0,0,Both
+Cookies and Cream,0,0,0,0,1,0,1,0,Both
