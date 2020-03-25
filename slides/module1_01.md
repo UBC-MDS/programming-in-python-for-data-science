@@ -13,7 +13,7 @@ data.
 From a data perspective, it is a rectangle where the rows are the
 observations. (Essentially, they look like excel sheets)
 
-<img src='static/module1/df_obs.png' width="50%" alt="404 image"/>
+<img src='module1/df_obs.png' width="50%" alt="404 image"/>
 
 Notes: Script here.
 
@@ -21,7 +21,7 @@ Notes: Script here.
 
 <audio controls >
 
-<source src="static/placeholder_audio.mp3" />
+<source src="placeholder_audio.mp3" />
 
 </audio>
 
@@ -31,7 +31,7 @@ Notes: Script here.
 
 The columns are the variables.
 
-<img src='static/module1/df_vars.png' width="50%" alt="404 image"/>
+<img src='module1/df_vars.png' width="50%" alt="404 image"/>
 
 Notes: Script here.
 
@@ -39,7 +39,7 @@ Notes: Script here.
 
 <audio controls >
 
-<source src="static/placeholder_audio.mp3" />
+<source src="placeholder_audio.mp3" />
 
 </audio>
 
@@ -49,7 +49,7 @@ Notes: Script here.
 
 # Enter Pandas
 
-<img src='static/module1/pandas.gif' width="50%" alt="404 image"/>
+<img src='module1/pandas.gif' width="50%" alt="404 image"/>
 
 Notes: Script here.
 
@@ -57,7 +57,7 @@ Notes: Script here.
 
 <audio controls >
 
-<source src="static/placeholder_audio.mp3" />
+<source src="placeholder_audio.mp3" />
 
 </audio>
 
@@ -120,7 +120,7 @@ Notes: Script
 
 <audio controls >
 
-<source src="static/placeholder_audio.mp3" />
+<source src="placeholder_audio.mp3" />
 
 </audio>
 
@@ -271,13 +271,13 @@ Notes: Script here.
 
 # let’s apply what we learned\!
 
-Notes: Script here
+Notes: Script here.
 
 <html>
 
 <audio controls >
 
-<source src="static/placeholder_audio.mp3" />
+<source src="placeholder_audio.mp3" />
 
 </audio>
 

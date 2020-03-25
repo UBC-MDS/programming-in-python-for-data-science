@@ -33,38 +33,38 @@ A dataframe makes it easy to calculate statistics and clean and store data.
 From a data perspective, it is a rectangle where the rows are the observations. 
 (Essentially, they look like excel sheets)
 
-<img src='static/module1/df_obs.png' width="50%" alt="404 image"/>
+<img src='module1/df_obs.png' width="50%" alt="404 image"/>
 
 
 Notes: Script here.
 <html>
 <audio controls >
-  <source src="static/placeholder_audio.mp3" />
+  <source src="placeholder_audio.mp3" />
 </audio></html>
 
 ---
  
 The columns are the variables.
 
-<img src='static/module1/df_vars.png' width="50%" alt="404 image"/>
+<img src='module1/df_vars.png' width="50%" alt="404 image"/>
 
 
 Notes: Script here.
 <html>
 <audio controls >
-  <source src="static/placeholder_audio.mp3" />
+  <source src="placeholder_audio.mp3" />
 </audio></html>
 
 ---
 
 # Enter Pandas
 
-<img src='static/module1/pandas.gif' width="50%" alt="404 image"/>
+<img src='module1/pandas.gif' width="50%" alt="404 image"/>
 
 Notes: Script here.
 <html>
 <audio controls >
-  <source src="static/placeholder_audio.mp3" />
+  <source src="placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -108,7 +108,7 @@ You can see what the object `df` looks like on the next slide.
 Notes: Script here.
 <html>
 <audio controls >
-  <source src="static/placeholder_audio.mp3" />
+  <source src="placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -177,8 +177,8 @@ Notes: Script here.
 
 # let’s apply what we learned!
 
-Notes: Script here
+Notes: Script here.
 <html>
 <audio controls >
-  <source src="static/placeholder_audio.mp3" />
+  <source src="placeholder_audio.mp3" />
 </audio></html>
