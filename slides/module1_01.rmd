@@ -26,6 +26,14 @@ type: slides
 
 # What is a Dataframe?
 
+Notes: Script here.
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
 When working with information, it must be stored in a manner that is organized, readable and accessible.    
 
 A dataframe makes it easy to calculate statistics and clean and store data.
@@ -82,7 +90,7 @@ import pandas as pd
 Notes: Script here.
 <html>
 <audio controls >
-  <source src="static/placeholder_audio.mp3" />
+  <source src="placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -120,7 +128,7 @@ df
 Notes: Script here.
 <html>
 <audio controls >
-  <source src="static/placeholder_audio.mp3" />
+  <source src="placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -145,9 +153,8 @@ Breaking up this code it just means "From our dataframe that we saved as `df` te
 Notes: Script here.
 <html>
 <audio controls >
-  <source src="static/placeholder_audio.mp3" />
+  <source src="placeholder_audio.mp3" />
 </audio></html>
-
 ---
 
 Another important method to know is what if we don't want to output the whole table   
@@ -170,7 +177,7 @@ df.head()
 Notes: Script here.
 <html>
 <audio controls >
-  <source src="static/placeholder_audio.mp3" />
+  <source src="placeholder_audio.mp3" />
 </audio></html>
 
 ---

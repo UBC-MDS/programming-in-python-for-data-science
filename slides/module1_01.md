@@ -4,6 +4,20 @@ type: slides
 
 # What is a Dataframe?
 
+Notes: Script here.
+
+<html>
+
+<audio controls >
+
+<source src="placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
 When working with information, it must be stored in a manner that is
 organized, readable and accessible.
 
@@ -82,7 +96,7 @@ Notes: Script here.
 
 <audio controls >
 
-<source src="static/placeholder_audio.mp3" />
+<source src="placeholder_audio.mp3" />
 
 </audio>
 
@@ -169,7 +183,7 @@ Notes: Script here.
 
 <audio controls >
 
-<source src="static/placeholder_audio.mp3" />
+<source src="placeholder_audio.mp3" />
 
 </audio>
 
@@ -211,7 +225,7 @@ Notes: Script here.
 
 <audio controls >
 
-<source src="static/placeholder_audio.mp3" />
+<source src="placeholder_audio.mp3" />
 
 </audio>
 
@@ -261,7 +275,7 @@ Notes: Script here.
 
 <audio controls >
 
-<source src="static/placeholder_audio.mp3" />
+<source src="placeholder_audio.mp3" />
 
 </audio>
 
