@@ -54,7 +54,7 @@ Notes: Script here.
  
 The columns are the variables.
 
-<img src='module1/df_vars.png' width="50%" alt="404 image"/>
+<img src='module1/df_var.png' width="50%" alt="404 image"/>
 
 
 Notes: Script here.
@@ -100,7 +100,7 @@ Notes: Script here.
 Next we can bring in our data  named `candybars` which is stored as a `.csv` with the following code:
 
 ```{python}
-df = pd.read_csv('candybars.csv')
+df = pd.read_csv('candybars.csv', index_col =0)
 ```
 
 let's break this up:

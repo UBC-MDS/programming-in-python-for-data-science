@@ -1,5 +1,7 @@
 ---
+---
 type: slides
+---
 ---
 
 # What is a Dataframe?
@@ -45,7 +47,7 @@ Notes: Script here.
 
 The columns are the variables.
 
-<img src='module1/df_vars.png' width="50%" alt="404 image"/>
+<img src='module1/df_var.png' width="50%" alt="404 image"/>
 
 Notes: Script here.
 
@@ -110,7 +112,7 @@ Next we can bring in our data named `candybars` which is stored as a
 `.csv` with the following code:
 
 ``` python
-df = pd.read_csv('candybars.csv')
+df = pd.read_csv('candybars.csv', index_col =0)
 ```
 
 let’s break this up:
@@ -147,32 +149,33 @@ df
 ```
 
 ```out
-                         name  chocolate  ...  multi  available_canada_america
-0                Coffee Crisp          1  ...      0                    Canada
-1                Butterfinger          1  ...      0                   America
-2                        Skor          1  ...      0                      Both
-3                    Smarties          1  ...      1                    Canada
-4                        Twix          1  ...      1                      Both
-5   Reeses Peanutbutter Cups           1  ...      1                      Both
-6                3 Musketeers          1  ...      0                   America
-7             Kinder Surprise          1  ...      0                    Canada
-8                       M & M          1  ...      1                      Both
-9                   Glosettes          1  ...      1                    Canada
-10                     KitKat          1  ...      1                      Both
-11                  Babe Ruth          1  ...      0                   America
-12                   Caramilk          1  ...      0                    Canada
-13                       Aero          1  ...      0                    Canada
-14                       Mars          1  ...      0                      Both
-15                     Payday          0  ...      0                   America
-16                   Snickers          1  ...      0                      Both
-17                   Crunchie          1  ...      0                    Canada
-18                 Wonderbar           1  ...      0                    Canada
-19                 100 Grand           1  ...      0                   America
-20                     Take 5          1  ...      0                   America
-21           Whatchamacallits          1  ...      0                   America
-22                 Almond Joy          1  ...      0                   America
-23                   Oh Henry          1  ...      0                      Both
-24          Cookies and Cream          0  ...      0                      Both
+                           weight  chocolate  ...  multi  available_canada_america
+name                                          ...                                 
+Coffee Crisp                   50          1  ...      0                    Canada
+Butterfinger                  184          1  ...      0                   America
+Skor                           39          1  ...      0                      Both
+Smarties                       45          1  ...      1                    Canada
+Twix                           58          1  ...      1                      Both
+Reeses Peanutbutter Cups       43          1  ...      1                      Both
+3 Musketeers                   54          1  ...      0                   America
+Kinder Surprise                20          1  ...      0                    Canada
+M & M                          48          1  ...      1                      Both
+Glosettes                      50          1  ...      1                    Canada
+KitKat                         45          1  ...      1                      Both
+Babe Ruth                      60          1  ...      0                   America
+Caramilk                       52          1  ...      0                    Canada
+Aero                           42          1  ...      0                    Canada
+Mars                           51          1  ...      0                      Both
+Payday                         52          0  ...      0                   America
+Snickers                       48          1  ...      0                      Both
+Crunchie                       26          1  ...      0                    Canada
+Wonderbar                      58          1  ...      0                    Canada
+100 Grand                      43          1  ...      0                   America
+Take 5                         43          1  ...      0                   America
+Whatchamacallits               45          1  ...      0                   America
+Almond Joy                     46          1  ...      0                   America
+Oh Henry                       51          1  ...      0                      Both
+Cookies and Cream              43          0  ...      0                      Both
 
 [25 rows x 10 columns]
 ```
@@ -199,7 +202,7 @@ df.columns
 ```
 
 ```out
-Index(['name', 'chocolate', 'peanuts', 'caramel', 'nougat',
+Index(['weight', 'chocolate', 'peanuts', 'caramel', 'nougat',
        'cookie_wafer_rice', 'coconut', 'white_chocolate', 'multi',
        'available_canada_america'],
       dtype='object')
@@ -243,28 +246,31 @@ df.head(2)
 ```
 
 ```out
-           name  chocolate  ...  multi  available_canada_america
-0  Coffee Crisp          1  ...      0                    Canada
-1  Butterfinger          1  ...      0                   America
+              weight  chocolate  ...  multi  available_canada_america
+name                             ...                                 
+Coffee Crisp      50          1  ...      0                    Canada
+Butterfinger     184          1  ...      0                   America
 
 [2 rows x 10 columns]
 ```
 
 This specifies only 2 rows will be shown. We can specify any number of
 rows within the brackets or we can leave it empty which will default to
-5 rows.
+5
+    rows.
 
 ``` python
 df.head()
 ```
 
 ```out
-           name  chocolate  ...  multi  available_canada_america
-0  Coffee Crisp          1  ...      0                    Canada
-1  Butterfinger          1  ...      0                   America
-2          Skor          1  ...      0                      Both
-3      Smarties          1  ...      1                    Canada
-4          Twix          1  ...      1                      Both
+              weight  chocolate  ...  multi  available_canada_america
+name                             ...                                 
+Coffee Crisp      50          1  ...      0                    Canada
+Butterfinger     184          1  ...      0                   America
+Skor              39          1  ...      0                      Both
+Smarties          45          1  ...      1                    Canada
+Twix              58          1  ...      1                      Both
 
 [5 rows x 10 columns]
 ```
