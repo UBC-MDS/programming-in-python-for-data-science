@@ -1,6 +1,4 @@
----
 type: slides
----
 
 # What is a Dataframe?
 
@@ -16,7 +14,7 @@ Notes: Script here.
 
 </html>
 
----
+-----
 
 When working with information, it must be stored in a manner that is
 organized, readable and accessible.
@@ -41,7 +39,7 @@ Notes: Script here.
 
 </html>
 
----
+-----
 
 The columns are the variables.
 
@@ -59,7 +57,7 @@ Notes: Script here.
 
 </html>
 
----
+-----
 
 # Enter Pandas
 
@@ -77,7 +75,7 @@ Notes: Script here.
 
 </html>
 
----
+-----
 
 ## Importing Pandas
 
@@ -102,7 +100,7 @@ Notes: Script here.
 
 </html>
 
----
+-----
 
 ## Reading in Data
 
@@ -142,43 +140,41 @@ Notes: Script
 
 </html>
 
----
+-----
 
 ``` python
 df
 ```
 
-```out
-                           weight  chocolate  ...  multi  available_canada_america
-name                                          ...                                 
-Coffee Crisp                   50          1  ...      0                    Canada
-Butterfinger                  184          1  ...      0                   America
-Skor                           39          1  ...      0                      Both
-Smarties                       45          1  ...      1                    Canada
-Twix                           58          1  ...      1                      Both
-Reeses Peanutbutter Cups       43          1  ...      1                      Both
-3 Musketeers                   54          1  ...      0                   America
-Kinder Surprise                20          1  ...      0                    Canada
-M & M                          48          1  ...      1                      Both
-Glosettes                      50          1  ...      1                    Canada
-KitKat                         45          1  ...      1                      Both
-Babe Ruth                      60          1  ...      0                   America
-Caramilk                       52          1  ...      0                    Canada
-Aero                           42          1  ...      0                    Canada
-Mars                           51          1  ...      0                      Both
-Payday                         52          0  ...      0                   America
-Snickers                       48          1  ...      0                      Both
-Crunchie                       26          1  ...      0                    Canada
-Wonderbar                      58          1  ...      0                    Canada
-100 Grand                      43          1  ...      0                   America
-Take 5                         43          1  ...      0                   America
-Whatchamacallits               45          1  ...      0                   America
-Almond Joy                     46          1  ...      0                   America
-Oh Henry                       51          1  ...      0                      Both
-Cookies and Cream              43          0  ...      0                      Both
-
-[25 rows x 10 columns]
-```
+    ##                            weight  chocolate  ...  multi  available_canada_america
+    ## name                                          ...                                 
+    ## Coffee Crisp                   50          1  ...      0                    Canada
+    ## Butterfinger                  184          1  ...      0                   America
+    ## Skor                           39          1  ...      0                      Both
+    ## Smarties                       45          1  ...      1                    Canada
+    ## Twix                           58          1  ...      1                      Both
+    ## Reeses Peanutbutter Cups       43          1  ...      1                      Both
+    ## 3 Musketeers                   54          1  ...      0                   America
+    ## Kinder Surprise                20          1  ...      0                    Canada
+    ## M & M                          48          1  ...      1                      Both
+    ## Glosettes                      50          1  ...      1                    Canada
+    ## KitKat                         45          1  ...      1                      Both
+    ## Babe Ruth                      60          1  ...      0                   America
+    ## Caramilk                       52          1  ...      0                    Canada
+    ## Aero                           42          1  ...      0                    Canada
+    ## Mars                           51          1  ...      0                      Both
+    ## Payday                         52          0  ...      0                   America
+    ## Snickers                       48          1  ...      0                      Both
+    ## Crunchie                       26          1  ...      0                    Canada
+    ## Wonderbar                      58          1  ...      0                    Canada
+    ## 100 Grand                      43          1  ...      0                   America
+    ## Take 5                         43          1  ...      0                   America
+    ## Whatchamacallits               45          1  ...      0                   America
+    ## Almond Joy                     46          1  ...      0                   America
+    ## Oh Henry                       51          1  ...      0                      Both
+    ## Cookies and Cream              43          0  ...      0                      Both
+    ## 
+    ## [25 rows x 10 columns]
 
 Notes: Script here.
 
@@ -192,7 +188,7 @@ Notes: Script here.
 
 </html>
 
----
+-----
 
 From this dataframe, we can see that there are 25 different candy bars
 and 10 columns. We can obtain the names of the columns using this code:
@@ -201,12 +197,10 @@ and 10 columns. We can obtain the names of the columns using this code:
 df.columns
 ```
 
-```out
-Index(['weight', 'chocolate', 'peanuts', 'caramel', 'nougat',
-       'cookie_wafer_rice', 'coconut', 'white_chocolate', 'multi',
-       'available_canada_america'],
-      dtype='object')
-```
+    ## Index(['weight', 'chocolate', 'peanuts', 'caramel', 'nougat',
+    ##        'cookie_wafer_rice', 'coconut', 'white_chocolate', 'multi',
+    ##        'available_canada_america'],
+    ##       dtype='object')
 
 Or if you wanted to see the dimensions of the whole dataframe you could
 code the following:
@@ -215,9 +209,7 @@ code the following:
 df.shape
 ```
 
-```out
-(25, 10)
-```
+    ## (25, 10)
 
 Breaking up this code it just means “From our dataframe that we saved as
 `df` tell me the `columns` or tell me the `shape`”.
@@ -234,7 +226,7 @@ Notes: Script here.
 
 </html>
 
----
+-----
 
 Another important method to know is what if we don’t want to output the
 whole table  
@@ -245,14 +237,12 @@ We can then specify how many rows of the dataset to show with
 df.head(2)
 ```
 
-```out
-              weight  chocolate  ...  multi  available_canada_america
-name                             ...                                 
-Coffee Crisp      50          1  ...      0                    Canada
-Butterfinger     184          1  ...      0                   America
-
-[2 rows x 10 columns]
-```
+    ##               weight  chocolate  ...  multi  available_canada_america
+    ## name                             ...                                 
+    ## Coffee Crisp      50          1  ...      0                    Canada
+    ## Butterfinger     184          1  ...      0                   America
+    ## 
+    ## [2 rows x 10 columns]
 
 This specifies only 2 rows will be shown. We can specify any number of
 rows within the brackets or we can leave it empty which will default to
@@ -263,17 +253,15 @@ rows within the brackets or we can leave it empty which will default to
 df.head()
 ```
 
-```out
-              weight  chocolate  ...  multi  available_canada_america
-name                             ...                                 
-Coffee Crisp      50          1  ...      0                    Canada
-Butterfinger     184          1  ...      0                   America
-Skor              39          1  ...      0                      Both
-Smarties          45          1  ...      1                    Canada
-Twix              58          1  ...      1                      Both
-
-[5 rows x 10 columns]
-```
+    ##               weight  chocolate  ...  multi  available_canada_america
+    ## name                             ...                                 
+    ## Coffee Crisp      50          1  ...      0                    Canada
+    ## Butterfinger     184          1  ...      0                   America
+    ## Skor              39          1  ...      0                      Both
+    ## Smarties          45          1  ...      1                    Canada
+    ## Twix              58          1  ...      1                      Both
+    ## 
+    ## [5 rows x 10 columns]
 
 Notes: Script here.
 
@@ -287,7 +275,7 @@ Notes: Script here.
 
 </html>
 
----
+-----
 
 # let’s apply what we learned\!
 
