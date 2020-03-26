@@ -1,0 +1,35 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+My dataframe object name is `fruit_salad`. my row names in order are `apple`, `banana`, `cantaloupe`, `dragon-fruit`, `elderberry`, `fig`, `Guava`, `huckleberry`, `kiwi` and `lemon`. 
+It's index is labeled with the `name` of the fruit.
+My column names in order are; `colour`, `location`, `seeds`, `shape`, `sweetness`, `water_content` and  `weight`.
+
+```{r}
+library(tidyverse)
+library(knitr)
+```
+
+
+```{r}
+
+kable(
+  tribble(
+  ~name, ~colour,  ~location, ~seeds, ~shape, ~sweetness, ~water_content, ~weight,
+  "apple", 'red',  'canada', TRUE, 'round', TRUE, 84, 100,
+  "banana", 'yellow',  'mexico', FALSE, 'long', TRUE, 75, 120,
+  "cantaloupe", 'orange', 'spain', TRUE, 'round', TRUE, 90, 1360,
+  "dragon-fruit", 'magenta', 'china', TRUE, 'round', FALSE, 96, 600, 
+  'elderberry', 'purple', 'austria', FALSE, 'round', TRUE, 80, 5,
+  "fig", 'purple', 'turkey', TRUE, 'oval', FALSE, 78, 40,
+  "guava", 'green', 'mexico', FALSE, 'oval', TRUE, 83, 450,
+  "huckleberry", 'blue', 'canada', FALSE, 'round', TRUE, 73, 5,
+  "kiwi", 'brown', 'china', TRUE, 'round', TRUE, 80, 76, 
+  "lemon", 'yellow', 'mexico', TRUE, 'oval', FALSE, 83, 65
+)
+)
+```
+
+

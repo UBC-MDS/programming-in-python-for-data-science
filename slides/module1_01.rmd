@@ -148,7 +148,7 @@ df.shape
 ```
 
 
-Breaking up this code it just means "From our dataframe that we saved as `df` tell me the  `columns` or tell me the `shape`".
+Breaking up this code it just means "From our dataframe that we saved as `df` tell me the `columns` or tell me the `shape`".
 
 
 Notes: Script here.

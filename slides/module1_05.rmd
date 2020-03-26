@@ -23,17 +23,6 @@ library(reticulate)
 
 type: slides
 
-  
-# Slicing with Pandas Using df.loc[]
-  
-  Notes: Script here.
-<html>
-  <audio controls >
-  <source src="placeholder_audio.mp3" />
-    </audio></html>
-    
-    ---
-    
 Congratulations on writing your first code! This is great! We have read in our data and know the dimensions. What now? Let's go over how we would **index**, **slice** and  **select** certain columns or rows of our data.
 
 Notes: Script here.
@@ -46,91 +35,81 @@ Notes: Script here.
 ---
 ## Cereal Data
 
-Before doing anything let's bring in some new data called `cereal.csv`
 
-```{python}
+Let's import pandas and bring in our dataset named `cereal.csv` using the name of the candy bar as the index like we did last time with `index_col=0`.
+
+
+```{python echo=}
 import pandas as pd
   
-df = pd.read_csv('cereal.csv')
+df = pd.read_csv('cereal.csv', index_col=0)
 df.head()
 ```
 
   
-  ```python
+Notes: Script here.
+<html>
+<audio controls >
+<source src="placeholder_audio.mp3" />
+</audio></html>
+    
+---
 
-  ```
-  
-  ```out
-  
-  
-  ```
-  
-  <img src='module1/cereal-head.png'>
+## Indexing Dataframes
     
-    
-    Notes: Script here.
-  <html>
-    <audio controls >
-    <source src="placeholder_audio.mp3" />
-    </audio></html>
-    
-    ---
-    ## Indexing Dataframes
-    
-    ```out
-  
-  
-  ```
-  
-  <img src='module1/cereal-head.png'>
-    
-    We can see all the columns of the dataframe and the first 5 rows of the data.
-  let's say we only want certain rows of the whole dataframe or certain columns.
+We can see 7 of the 15 columns of the dataframe and the first 5 rows of the data.
+Let's say we only want certain rows of the whole dataframe or certain columns.
 
-We talked about how `df.head()` will generate the first 5 rows of a dataframe but what if we wanted rows 5-10?
+We talked about how `df.head()` will generate the first few rows (5 as default) of a dataframe but what if we wanted rows 5-10?
 
-The first column of this dataframe is called the `index` each row is given a label as well as a position. In this case the label and index are both numbers.
-but what if we they were not?
+The first column of this dataframe is called the `index`. This is what we specified with `index_col=0` when we read in our data. Each row is given a label as well as a position. In this case, the label of an observation is the cereal name and the index position is a number. In other cases, the index label could be named with a number. 
 
 Notes: Script here.
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+<source src="placeholder_audio.mp3" />
 </audio></html>
 
 ---
 
-<img src='module1/cereal15.png' width="60%">
+Here are the first 15 rows of the dataframe: 
 
-Now the index has been set as the name of the cereal (we will talk about how to do this later)
+```{python}
+df.head(15)
+```
 
-Let's talk about `Almond Delight`.  It's index labels is `Almond Delight` but it's index position is 4th.    
-  If you just double counted and started screaming "5!" at the screen that's ok. In the Python language we start counting at position 0 (then 1, 2, 3, and 4 for Almond Delight). So it's important that we relearn counting from childhood to include 0.
+Notes: Script here.
+<html>
+<audio controls >
+<source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+Let's talk about the observation named `Almond Delight`.  Its index label is `Almond Delight` but its index position is 4.    
+If you just went and counted those again and started screaming "5! It's the fifth position", that's ok. In the Python language, we start counting at position 0 (then 1, 2, 3, and 4 for Almond Delight).
   
-  
-  
-  
-  Notes: Script here.
-  <html>
-    <audio controls >
-    <source src="placeholder_audio.mp3" />
-    </audio></html>
+Notes: Script here.
+<html>
+<audio controls >
+<source src="placeholder_audio.mp3" />
+</audio></html>
     
-    ---
-    
-    So now let's say we want 5 rows past `Almond Delight` so we want rows with the index labels `Apple Cinnamon Cheerios` to `Cap'n'Crunch`.  
+---
+
+So now let's say we want 5 rows past `Almond Delight` so we want rows with the index labels `Apple Cinnamon Cheerios` to `Cap'n'Crunch`.  
 
 How would we do this?   
 
 There are 3 main ways:
 - `.loc[]` using index labels
-- `.iloc[] ` using index position
+- `.iloc[]` using index position
 - Using `[]` brackets (we will get into that more next module)
 
 Notes: Script here.
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+<source src="placeholder_audio.mp3" />
 </audio></html>
 
 ---

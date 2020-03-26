@@ -25,7 +25,7 @@ id: 1
 
 <exercise id="2" title="Describing a Dataframe">
 
-**What are data frames comparable to?**
+**What are dataframes comparable to?**
 
 
 <choice id="1" >
@@ -43,7 +43,7 @@ Good job!
 
 <opt text="Picture Frames" >
 
-Are we storing pictures in a data frame?
+Are we storing pictures in a dataframe?
 
 </opt>
 
@@ -53,9 +53,9 @@ Are we storing pictures in a data frame?
 
 
 <choice id="2">
-<opt text="A Python package needed for extra tools" correct="true">
+<opt text="A useful tool for data manipulation in Python" correct="true">
 
-Nice work! Pandas is a package we import so we can use additional features.
+Nice work! Pandas is a tool we use in conjuction with Python.
 
 </opt>
 
@@ -65,9 +65,9 @@ Are you sure you know the difference between Python and Pandas?
 
 </opt>
 
-<opt text=" Fluffy animals that eat bamboo">
+<opt text="A datatype">
 
-Although that isn't wrong, we are studying Python and coding and in this course, the context is not quite right.
+Not quite. You may want to review the module slides. 
 
 </opt>
 
@@ -102,15 +102,24 @@ When you run a code exercise for the first time, it could take a bit of time for
 
 <exercise id="4" title="Your Second Code!">
 
-- Now Let's display the column names of `hockey_players` and save it as `columns_hockey`.
-- Save the number of rows `hockey_players` has in a variable called `hockey_rows`.
-- The data frame shape should be save as `hockey_shape`.
+Let's display the column names of `hockey_players` and save it as `columns_hockey`.
+
 
 
 <codeblock id="01_04">
 
-- Are you sure you are saving your objects correctly?
-- Are you using `len()`, `df.shape` and `df.columns`?
+- Are you sure you are saving your objects as `columns_hockey`?
+- Are you using `df.columns`?
+
+</codeblock>
+
+
+What is the shape of the hockey dataframe? Save the result as `hockey_shape`.
+
+<codeblock id="01_05">
+
+- Are you sure you are saving your objects as `hockey_shape`?
+- Are you using  `df.shape` ?
 
 </codeblock>
 
@@ -125,9 +134,11 @@ When you run a code exercise for the first time, it could take a bit of time for
 
 <exercise id="6" title="Slicing and Dicing Practice">
 
-My dataframe object name is `fruit_salad`. my row names in order are `apple`, `banana`, `cantaloupe`, `dragon-fruit`, `elderberry`, `fig`, `Guava`, `huckleberry`, `kiwi` and `lemon`. 
-It's index is labeled with the `name` of the fruit.
-My column names in order are; `colour`, `location`, `seeds`, `shape`, `sweetness`, `water-content` and  `weight`.
+My dataframe object name is `fruit_salad` with the index label as the `name` column. 
+
+<img src='static/fruitbowl.png' width="50%" alt="404 image"/>
+
+
 
 **Question 1**
 
