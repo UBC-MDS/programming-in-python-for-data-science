@@ -45,7 +45,7 @@ Notes: Script here.
 
 The columns are the variables.
 
-<img src='module1/df_var.png' width="50%" alt="404 image"/>
+<img src='module1/df_var.png' width="80%" alt="404 image"/>
 
 Notes: Script here.
 
@@ -110,7 +110,7 @@ Next we can bring in our data named `candybars` which is stored as a
 `.csv` with the following code:
 
 ``` python
-df = pd.read_csv('candybars.csv', index_col =0)
+df = pd.read_csv('candybars.csv', index_col=0)
 ```
 
 let’s break this up:
@@ -120,8 +120,8 @@ manipulate our dataframes.
 `read_csv()`: The tool that does the job and, in this case, it is
 reading in the `csv` file named `candybars.csv`.  
 `index_col =0`: This specifies to use the first column in the csv as an
-index (we will talk about this in a moment) `df`: The dataframe is now
-saved as an object called `df`
+index (we will talk about this in a moment).  
+`df`: The dataframe is now saved as an object called `df`
 
 In these slides you can differentiate between what we typed in (our
 code) in light gray and the output of this will be coloured in a dark
