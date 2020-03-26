@@ -1,8 +1,7 @@
 ---
----
 type: slides
 ---
----
+
 
 # What is a Dataframe?
 
