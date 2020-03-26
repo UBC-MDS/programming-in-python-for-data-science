@@ -27,7 +27,7 @@ data.
 From a data perspective, it is a rectangle where the rows are the
 observations. (Essentially, they look like excel sheets)
 
-<img src='module1/df_obs.png' width="50%" alt="404 image"/>
+<img src='module1/df_obs.png' width="70%" alt="404 image"/>
 
 Notes: Script here.
 
@@ -45,7 +45,7 @@ Notes: Script here.
 
 The columns are the variables.
 
-<img src='module1/df_var.png' width="80%" alt="404 image"/>
+<img src='module1/df_var.png' width="50%" alt="404 image"/>
 
 Notes: Script here.
 
