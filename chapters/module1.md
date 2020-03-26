@@ -136,7 +136,7 @@ What is the shape of the hockey dataframe? Save the result as `hockey_shape`.
 
 My dataframe object name is `fruit_salad` with the index label as the `name` column. 
 
-<img src='../../static/fruitbowl.png' width="50%" alt="404 image"/>
+<img src='static/fruitbowl.png' width="50%" alt="404 image"/>
 
 
 
