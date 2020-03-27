@@ -1752,170 +1752,39 @@ summary {
 <p>My dataframe object name is <code>fruit_salad</code>. my row names in order are <code>apple</code>, <code>banana</code>, <code>cantaloupe</code>, <code>dragon-fruit</code>, <code>elderberry</code>, <code>fig</code>, <code>Guava</code>, <code>huckleberry</code>, <code>kiwi</code> and <code>lemon</code>. It’s index is labeled with the <code>name</code> of the fruit. My column names in order are; <code>colour</code>, <code>location</code>, <code>seeds</code>, <code>shape</code>, <code>sweetness</code>, <code>water_content</code> and <code>weight</code>.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeSh0aWR5dmVyc2UpXG5cbmBgYCJ9 -->
-<pre class="r"><code>library(tidyverse)
-</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiXHUwMDFiWzM3beKUgOKUgCBcdTAwMWJbMW1BdHRhY2hpbmcgcGFja2FnZXNcdTAwMWJbMjJtIOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgCB0aWR5dmVyc2UgMS4yLjEg4pSA4pSAXHUwMDFiWzM5bVxuXHUwMDFiWzM3bVx1MDAxYlszMm3inJNcdTAwMWJbMzdtIFx1MDAxYlszNG1nZ3Bsb3QyXHUwMDFiWzM3bSAzLjIuMSAgICAgXHUwMDFiWzMybeKck1x1MDAxYlszN20gXHUwMDFiWzM0bXB1cnJyICBcdTAwMWJbMzdtIDAuMy4zXG5cdTAwMWJbMzJt4pyTXHUwMDFiWzM3bSBcdTAwMWJbMzRtdGliYmxlIFx1MDAxYlszN20gMi4xLjMgICAgIFx1MDAxYlszMm3inJNcdTAwMWJbMzdtIFx1MDAxYlszNG1kcGx5ciAgXHUwMDFiWzM3bSAwLjguNVxuXHUwMDFiWzMybeKck1x1MDAxYlszN20gXHUwMDFiWzM0bXRpZHlyICBcdTAwMWJbMzdtIDEuMC4wICAgICBcdTAwMWJbMzJt4pyTXHUwMDFiWzM3bSBcdTAwMWJbMzRtc3RyaW5nclx1MDAxYlszN20gMS40LjBcblx1MDAxYlszMm3inJNcdTAwMWJbMzdtIFx1MDAxYlszNG1yZWFkciAgXHUwMDFiWzM3bSAxLjMuMSAgICAgXHUwMDFiWzMybeKck1x1MDAxYlszN20gXHUwMDFiWzM0bWZvcmNhdHNcdTAwMWJbMzdtIDAuNC4wXHUwMDFiWzM5bVxuXHUwMDFiWzM3beKUgOKUgCBcdTAwMWJbMW1Db25mbGljdHNcdTAwMWJbMjJtIOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgCB0aWR5dmVyc2VfY29uZmxpY3RzKCkg4pSA4pSAXG5cdTAwMWJbMzFteFx1MDAxYlszN20gXHUwMDFiWzM0bWRwbHlyXHUwMDFiWzM3bTo6XHUwMDFiWzMybWZpbHRlcigpXHUwMDFiWzM3bSBtYXNrcyBcdTAwMWJbMzRtc3RhdHNcdTAwMWJbMzdtOjpmaWx0ZXIoKVxuXHUwMDFiWzMxbXhcdTAwMWJbMzdtIFx1MDAxYlszNG1kcGx5clx1MDAxYlszN206Olx1MDAxYlszMm1sYWcoKVx1MDAxYlszN20gICAgbWFza3MgXHUwMDFiWzM0bXN0YXRzXHUwMDFiWzM3bTo6bGFnKClcdTAwMWJbMzltXG4ifQ== -->
-<pre><code>[37m── [1mAttaching packages[22m ────────────────────────────────────────────────────────────── tidyverse 1.2.1 ──[39m
-[37m[32m✓[37m [34mggplot2[37m 3.2.1     [32m✓[37m [34mpurrr  [37m 0.3.3
-[32m✓[37m [34mtibble [37m 2.1.3     [32m✓[37m [34mdplyr  [37m 0.8.5
-[32m✓[37m [34mtidyr  [37m 1.0.0     [32m✓[37m [34mstringr[37m 1.4.0
-[32m✓[37m [34mreadr  [37m 1.3.1     [32m✓[37m [34mforcats[37m 0.4.0[39m
-[37m── [1mConflicts[22m ───────────────────────────────────────────────────────────────── tidyverse_conflicts() ──
-[31mx[37m [34mdplyr[37m::[32mfilter()[37m masks [34mstats[37m::filter()
-[31mx[37m [34mdplyr[37m::[32mlag()[37m    masks [34mstats[37m::lag()[39m</code></pre>
-<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG5rYWJsZShcbiAgdHJpYmJsZShcbiAgfm5hbWUsIH5jb2xvdXIsICB+bG9jYXRpb24sIH5zZWVkcywgfnNoYXBlLCB+c3dlZXRuZXNzLCB+d2F0ZXJfY29udGVudCwgfndlaWdodCxcbiAgXCJhcHBsZVwiLCAncmVkJywgICdjYW5hZGEnLCBUUlVFLCAncm91bmQnLCBUUlVFLCA4NCwgMTAwLFxuICBcImJhbmFuYVwiLCAneWVsbG93JywgICdtZXhpY28nLCBGQUxTRSwgJ2xvbmcnLCBUUlVFLCA3NSwgMTIwLFxuICBcImNhbnRhbG91cGVcIiwgJ29yYW5nZScsICdzcGFpbicsIFRSVUUsICdyb3VuZCcsIFRSVUUsIDkwLCAxMzYwLFxuICBcImRyYWdvbi1mcnVpdFwiLCAnbWFnZW50YScsICdjaGluYScsIFRSVUUsICdyb3VuZCcsIEZBTFNFLCA5NiwgNjAwLCBcbiAgJ2VsZGVyYmVycnknLCAncHVycGxlJywgJ2F1c3RyaWEnLCBGQUxTRSwgJ3JvdW5kJywgVFJVRSwgODAsIDUsXG4gIFwiZmlnXCIsICdwdXJwbGUnLCAndHVya2V5JywgVFJVRSwgJ292YWwnLCBGQUxTRSwgNzgsIDQwLFxuICBcImd1YXZhXCIsICdncmVlbicsICdtZXhpY28nLCBGQUxTRSwgJ292YWwnLCBUUlVFLCA4MywgNDUwLFxuICBcImh1Y2tsZWJlcnJ5XCIsICdibHVlJywgJ2NhbmFkYScsIEZBTFNFLCAncm91bmQnLCBUUlVFLCA3MywgNSxcbiAgXCJraXdpXCIsICdicm93bicsICdjaGluYScsIFRSVUUsICdyb3VuZCcsIFRSVUUsIDgwLCA3NiwgXG4gIFwibGVtb25cIiwgJ3llbGxvdycsICdtZXhpY28nLCBUUlVFLCAnb3ZhbCcsIEZBTFNFLCA4MywgNjVcbilcbilcbmBgYCJ9 -->
-<pre class="r"><code>
-kable(
-  tribble(
-  ~name, ~colour,  ~location, ~seeds, ~shape, ~sweetness, ~water_content, ~weight,
-  &quot;apple&quot;, 'red',  'canada', TRUE, 'round', TRUE, 84, 100,
-  &quot;banana&quot;, 'yellow',  'mexico', FALSE, 'long', TRUE, 75, 120,
-  &quot;cantaloupe&quot;, 'orange', 'spain', TRUE, 'round', TRUE, 90, 1360,
-  &quot;dragon-fruit&quot;, 'magenta', 'china', TRUE, 'round', FALSE, 96, 600, 
-  'elderberry', 'purple', 'austria', FALSE, 'round', TRUE, 80, 5,
-  &quot;fig&quot;, 'purple', 'turkey', TRUE, 'oval', FALSE, 78, 40,
-  &quot;guava&quot;, 'green', 'mexico', FALSE, 'oval', TRUE, 83, 450,
-  &quot;huckleberry&quot;, 'blue', 'canada', FALSE, 'round', TRUE, 73, 5,
-  &quot;kiwi&quot;, 'brown', 'china', TRUE, 'round', TRUE, 80, 76, 
-  &quot;lemon&quot;, 'yellow', 'mexico', TRUE, 'oval', FALSE, 83, 65
-)
-)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgcHl0aG9uXG5wZC5zZXRfb3B0aW9uKCdkaXNwbGF5LndpZHRoJywgMzIwKVxuXG5ucC5zZXRfcHJpbnRvcHRpb25zKGxpbmV3aWR0aD0zMjApXG5cbnBkLnNldF9vcHRpb24oJ2Rpc3BsYXkubWF4X2NvbHVtbnMnLDEwKVxuYGBgIn0= -->
+<pre class="python"><code>pd.set_option('display.width', 320)
+
+np.set_printoptions(linewidth=320)
+
+pd.set_option('display.max_columns',10)</code></pre>
 <!-- rnb-source-end -->
-
-<!-- rnb-html-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImtuaXRfYXNpcyJdLCJzaXppbmdQb2xpY3kiOltdfX0= -->
-
-<table>
-<thead>
-<tr class="header">
-<th align="left">name</th>
-<th align="left">colour</th>
-<th align="left">location</th>
-<th align="left">seeds</th>
-<th align="left">shape</th>
-<th align="left">sweetness</th>
-<th align="right">water_content</th>
-<th align="right">weight</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">apple</td>
-<td align="left">red</td>
-<td align="left">canada</td>
-<td align="left">TRUE</td>
-<td align="left">round</td>
-<td align="left">TRUE</td>
-<td align="right">84</td>
-<td align="right">100</td>
-</tr>
-<tr class="even">
-<td align="left">banana</td>
-<td align="left">yellow</td>
-<td align="left">mexico</td>
-<td align="left">FALSE</td>
-<td align="left">long</td>
-<td align="left">TRUE</td>
-<td align="right">75</td>
-<td align="right">120</td>
-</tr>
-<tr class="odd">
-<td align="left">cantaloupe</td>
-<td align="left">orange</td>
-<td align="left">spain</td>
-<td align="left">TRUE</td>
-<td align="left">round</td>
-<td align="left">TRUE</td>
-<td align="right">90</td>
-<td align="right">1360</td>
-</tr>
-<tr class="even">
-<td align="left">dragon-fruit</td>
-<td align="left">magenta</td>
-<td align="left">china</td>
-<td align="left">TRUE</td>
-<td align="left">round</td>
-<td align="left">FALSE</td>
-<td align="right">96</td>
-<td align="right">600</td>
-</tr>
-<tr class="odd">
-<td align="left">elderberry</td>
-<td align="left">purple</td>
-<td align="left">austria</td>
-<td align="left">FALSE</td>
-<td align="left">round</td>
-<td align="left">TRUE</td>
-<td align="right">80</td>
-<td align="right">5</td>
-</tr>
-<tr class="even">
-<td align="left">fig</td>
-<td align="left">purple</td>
-<td align="left">turkey</td>
-<td align="left">TRUE</td>
-<td align="left">oval</td>
-<td align="left">FALSE</td>
-<td align="right">78</td>
-<td align="right">40</td>
-</tr>
-<tr class="odd">
-<td align="left">guava</td>
-<td align="left">green</td>
-<td align="left">mexico</td>
-<td align="left">FALSE</td>
-<td align="left">oval</td>
-<td align="left">TRUE</td>
-<td align="right">83</td>
-<td align="right">450</td>
-</tr>
-<tr class="even">
-<td align="left">huckleberry</td>
-<td align="left">blue</td>
-<td align="left">canada</td>
-<td align="left">FALSE</td>
-<td align="left">round</td>
-<td align="left">TRUE</td>
-<td align="right">73</td>
-<td align="right">5</td>
-</tr>
-<tr class="odd">
-<td align="left">kiwi</td>
-<td align="left">brown</td>
-<td align="left">china</td>
-<td align="left">TRUE</td>
-<td align="left">round</td>
-<td align="left">TRUE</td>
-<td align="right">80</td>
-<td align="right">76</td>
-</tr>
-<tr class="even">
-<td align="left">lemon</td>
-<td align="left">yellow</td>
-<td align="left">mexico</td>
-<td align="left">TRUE</td>
-<td align="left">oval</td>
-<td align="left">FALSE</td>
-<td align="right">83</td>
-<td align="right">65</td>
-</tr>
-</tbody>
-</table>
-
-
-<!-- rnb-html-end -->
-
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-output-begin eyJkYXRhIjoiICAgICAgICAgICBuYW1lICAgY29sb3VyIGxvY2F0aW9uICAgc2VlZCAgc2hhcGUgIHN3ZWV0bmVzcyAgd2F0ZXItY29udGVudCAgd2VpZ2h0XG4wICAgICAgICAgYXBwbGUgICAgICByZWQgICBjYW5hZGEgICBUcnVlICByb3VuZCAgICAgICBUcnVlICAgICAgICAgICAgIDg0ICAgICAxMDBcbjEgICAgICAgIGJhbmFuYSAgIHllbGxvdyAgIG1leGljbyAgRmFsc2UgICBsb25nICAgICAgIFRydWUgICAgICAgICAgICAgNzUgICAgIDEyMFxuMiAgICBjYW50YWxvdXBlICAgb3JhbmdlICAgIHNwYWluICAgVHJ1ZSAgcm91bmQgICAgICAgVHJ1ZSAgICAgICAgICAgICA5MCAgICAxMzYwXG4zICBkcmFnb24tZnJ1aXQgIG1lZ2VudGEgICAgY2hpbmEgICBUcnVlICByb3VuZCAgICAgIEZhbHNlICAgICAgICAgICAgIDk2ICAgICA2MDBcbjQgICAgZWxkZXJiZXJyeSAgIHB1cnBsZSAgYXVzdHJpYSAgRmFsc2UgIHJvdW5kICAgICAgIFRydWUgICAgICAgICAgICAgODAgICAgICAgNVxuNSAgICAgICAgICAgZmlnICAgcHVycGxlICAgdHVya2V5ICBGYWxzZSAgIG92YWwgICAgICBGYWxzZSAgICAgICAgICAgICA3OCAgICAgIDQwXG42ICAgICAgICAgZ3VhdmEgICAgZ3JlZW4gICBtZXhpY28gICBUcnVlICAgb3ZhbCAgICAgICBUcnVlICAgICAgICAgICAgIDgzICAgICA0NTBcbjcgICBodWNrbGViZXJyeSAgICAgYmx1ZSAgIGNhbmFkYSAgIFRydWUgIHJvdW5kICAgICAgIFRydWUgICAgICAgICAgICAgNzMgICAgICAgNVxuOCAgICAgICAgICBraXdpICAgIGJyb3duICAgIGNoaW5hICAgVHJ1ZSAgcm91bmQgICAgICAgVHJ1ZSAgICAgICAgICAgICA4MCAgICAgIDc2XG45ICAgICAgICAgbGVtb24gICB5ZWxsb3cgICBtZXhpY28gIEZhbHNlICAgb3ZhbCAgICAgIEZhbHNlICAgICAgICAgICAgIDgzICAgICAgNjVcbiJ9 -->
+<pre><code>           name   colour location   seed  shape  sweetness  water-content  weight
+0         apple      red   canada   True  round       True             84     100
+1        banana   yellow   mexico  False   long       True             75     120
+2    cantaloupe   orange    spain   True  round       True             90    1360
+3  dragon-fruit  megenta    china   True  round      False             96     600
+4    elderberry   purple  austria  False  round       True             80       5
+5           fig   purple   turkey  False   oval      False             78      40
+6         guava    green   mexico   True   oval       True             83     450
+7   huckleberry     blue   canada   True  round       True             73       5
+8          kiwi    brown    china   True  round       True             80      76
+9         lemon   yellow   mexico  False   oval      False             83      65</code></pre>
+<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKTXkgZGF0YWZyYW1lIG9iamVjdCBuYW1lIGlzIGBmcnVpdF9zYWxhZGAuIG15IHJvdyBuYW1lcyBpbiBvcmRlciBhcmUgYGFwcGxlYCwgYGJhbmFuYWAsIGBjYW50YWxvdXBlYCwgYGRyYWdvbi1mcnVpdGAsIGBlbGRlcmJlcnJ5YCwgYGZpZ2AsIGBHdWF2YWAsIGBodWNrbGViZXJyeWAsIGBraXdpYCBhbmQgYGxlbW9uYC4gCkl0J3MgaW5kZXggaXMgbGFiZWxlZCB3aXRoIHRoZSBgbmFtZWAgb2YgdGhlIGZydWl0LgpNeSBjb2x1bW4gbmFtZXMgaW4gb3JkZXIgYXJlOyBgY29sb3VyYCwgYGxvY2F0aW9uYCwgYHNlZWRzYCwgYHNoYXBlYCwgYHN3ZWV0bmVzc2AsIGB3YXRlcl9jb250ZW50YCBhbmQgIGB3ZWlnaHRgLgoKYGBge3J9CmxpYnJhcnkodGlkeXZlcnNlKQpsaWJyYXJ5KGtuaXRyKQpgYGAKCgpgYGB7cn0KCmthYmxlKAogIHRyaWJibGUoCiAgfm5hbWUsIH5jb2xvdXIsICB+bG9jYXRpb24sIH5zZWVkcywgfnNoYXBlLCB+c3dlZXRuZXNzLCB+d2F0ZXJfY29udGVudCwgfndlaWdodCwKICAiYXBwbGUiLCAncmVkJywgICdjYW5hZGEnLCBUUlVFLCAncm91bmQnLCBUUlVFLCA4NCwgMTAwLAogICJiYW5hbmEiLCAneWVsbG93JywgICdtZXhpY28nLCBGQUxTRSwgJ2xvbmcnLCBUUlVFLCA3NSwgMTIwLAogICJjYW50YWxvdXBlIiwgJ29yYW5nZScsICdzcGFpbicsIFRSVUUsICdyb3VuZCcsIFRSVUUsIDkwLCAxMzYwLAogICJkcmFnb24tZnJ1aXQiLCAnbWFnZW50YScsICdjaGluYScsIFRSVUUsICdyb3VuZCcsIEZBTFNFLCA5NiwgNjAwLCAKICAnZWxkZXJiZXJyeScsICdwdXJwbGUnLCAnYXVzdHJpYScsIEZBTFNFLCAncm91bmQnLCBUUlVFLCA4MCwgNSwKICAiZmlnIiwgJ3B1cnBsZScsICd0dXJrZXknLCBUUlVFLCAnb3ZhbCcsIEZBTFNFLCA3OCwgNDAsCiAgImd1YXZhIiwgJ2dyZWVuJywgJ21leGljbycsIEZBTFNFLCAnb3ZhbCcsIFRSVUUsIDgzLCA0NTAsCiAgImh1Y2tsZWJlcnJ5IiwgJ2JsdWUnLCAnY2FuYWRhJywgRkFMU0UsICdyb3VuZCcsIFRSVUUsIDczLCA1LAogICJraXdpIiwgJ2Jyb3duJywgJ2NoaW5hJywgVFJVRSwgJ3JvdW5kJywgVFJVRSwgODAsIDc2LCAKICAibGVtb24iLCAneWVsbG93JywgJ21leGljbycsIFRSVUUsICdvdmFsJywgRkFMU0UsIDgzLCA2NQopCikKYGBgCgoK</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKTXkgZGF0YWZyYW1lIG9iamVjdCBuYW1lIGlzIGBmcnVpdF9zYWxhZGAuIG15IHJvdyBuYW1lcyBpbiBvcmRlciBhcmUgYGFwcGxlYCwgYGJhbmFuYWAsIGBjYW50YWxvdXBlYCwgYGRyYWdvbi1mcnVpdGAsIGBlbGRlcmJlcnJ5YCwgYGZpZ2AsIGBHdWF2YWAsIGBodWNrbGViZXJyeWAsIGBraXdpYCBhbmQgYGxlbW9uYC4gCkl0J3MgaW5kZXggaXMgbGFiZWxlZCB3aXRoIHRoZSBgbmFtZWAgb2YgdGhlIGZydWl0LgpNeSBjb2x1bW4gbmFtZXMgaW4gb3JkZXIgYXJlOyBgY29sb3VyYCwgYGxvY2F0aW9uYCwgYHNlZWRzYCwgYHNoYXBlYCwgYHN3ZWV0bmVzc2AsIGB3YXRlcl9jb250ZW50YCBhbmQgIGB3ZWlnaHRgLgoKYGBge3B5dGhvbn0KaW1wb3J0IHBhbmRhcyBhcyBwZAppbXBvcnQgbnVtcHkgYXMgbnAKYGBgCgpgYGB7cHl0aG9ufQpwZC5zZXRfb3B0aW9uKCdkaXNwbGF5LndpZHRoJywgMzIwKQoKbnAuc2V0X3ByaW50b3B0aW9ucyhsaW5ld2lkdGg9MzIwKQoKcGQuc2V0X29wdGlvbignZGlzcGxheS5tYXhfY29sdW1ucycsMTApCmBgYAoKCmBgYHtweXRob24gfQoKZnJ1aXQgPSB7J25hbWUnOiBbJ2FwcGxlJywgJ2JhbmFuYScsICdjYW50YWxvdXBlJywgJ2RyYWdvbi1mcnVpdCcsICdlbGRlcmJlcnJ5JywgJ2ZpZycsICdndWF2YScsCiAgICAgICAgICAgICAgICAgICAnaHVja2xlYmVycnknLCAna2l3aScsICdsZW1vbiddLAogICAgICAgICAnY29sb3VyJzogWydyZWQnLCAneWVsbG93JywgJ29yYW5nZScsICdtZWdlbnRhJywgJ3B1cnBsZScsICdwdXJwbGUnLCAnZ3JlZW4nLCAnYmx1ZScsIAogICAgICAgICAgICAgICAgICAgICdicm93bicsICd5ZWxsb3cnXSwKICAgICAgICAgJ2xvY2F0aW9uJzogWydjYW5hZGEnLCAnbWV4aWNvJywgJ3NwYWluJywgJ2NoaW5hJywgJ2F1c3RyaWEnLCAndHVya2V5JywgJ21leGljbycsICdjYW5hZGEnLAogICAgICAgICAgICAgICAgICAgICAgJ2NoaW5hJywgJ21leGljbyddLAogICAgICAgICAnc2VlZCc6IFtUcnVlLCBGYWxzZSwgVHJ1ZSwgVHJ1ZSwgRmFsc2UsIEZhbHNlLCBUcnVlLCBUcnVlLCBUcnVlLCBGYWxzZV0sCiAgICAgICAgICdzaGFwZSc6IFsncm91bmQnLCAnbG9uZycsICdyb3VuZCcsICdyb3VuZCcsICdyb3VuZCcsICdvdmFsJywgJ292YWwnLCAncm91bmQnLCAncm91bmQnLCAnb3ZhbCddLCAKICAgICAgICAgJ3N3ZWV0bmVzcyc6IFtUcnVlLCBUcnVlLCBUcnVlLCBGYWxzZSwgVHJ1ZSwgRmFsc2UsIFRydWUsIFRydWUsIFRydWUsIEZhbHNlXSwKICAgICAgICAgJ3dhdGVyLWNvbnRlbnQnOiBbODQsIDc1LCA5MCwgOTYsIDgwLCA3OCwgODMsIDczLCA4MCwgODNdLAogICAgICAgICAnd2VpZ2h0JzogWzEwMCwgMTIwLCAxMzYwLCA2MDAsIDUsIDQwLCA0NTAsIDUsIDc2LCA2NV19CiAgICAgICAgIAoKZGYgPSBwZC5EYXRhRnJhbWUoZnJ1aXQsIGNvbHVtbnMgPSBsaXN0KGZydWl0LmtleXMoKSkpCmRmCmBgYAoKCg==</div>
 
 
 

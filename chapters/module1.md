@@ -116,7 +116,7 @@ Let's display the column names of `hockey_players` and save it as `columns_hocke
 
 What is the shape of the hockey dataframe? Save the result as `hockey_shape`.
 
-<codeblock id="01_05">
+<codeblock id="01_04b">
 
 - Are you sure you are saving your objects as `hockey_shape`?
 - Are you using  `df.shape` ?
@@ -132,22 +132,65 @@ What is the shape of the hockey dataframe? Save the result as `hockey_shape`.
 
 </exercise>
 
+
+<exercise id="6" title="Slicing rows and columns">
+
+Using our `hockey_players` data from the last few questions with the index labelled with `Player` name, Let's try slicing it. 
+
+
+Tasks:
+- Select the players `Adam Gaudette` to `Brandon Sutter` 
+- Save the new sliced dataframe as object `star_players`.
+- Display it. 
+
+
+**Instructions:**
+
+When you run a code exercise for the first time, it could take a bit of time for everything to load.
+
+**When you see `____` in a code exercise, replace it with what you assume to be the correct code. Run it and see if it you obtain the desired output. Submit your code to validate if you were correct.**
+
+
+
+<codeblock id="01_06">
+
+- Are you using `df.loc[]`
+- Are you using the correct dataframe labels? Check your spelling and punctuation in row and column labels. 
+- Did you slice both columns and rows? 
+- Are you using "quotations"?
+
+</codeblock>
+
+</exercise>
+
+
 <exercise id="6" title="Slicing and Dicing Practice">
 
 My dataframe object name is `fruit_salad` with the index label as the `name` column. 
 
-<img src='../static/fruitbowl.png' width="50%" alt="404 image"/>
-
+```out
+        name     colour    location   seed   shape    sweetness   water-content  weight
+       apple        red     canada    True   round       True          84         100
+      banana     yellow     mexico   False    long       True          75         120
+  cantaloupe     orange      spain    True   round       True          90        1360
+dragon-fruit    megenta      china    True   round      False          96         600
+  elderberry     purple    austria   False   round       True          80           5
+         fig     purple     turkey   False    oval      False          78          40
+       guava      green     mexico    True    oval       True          83         450
+ huckleberry       blue     canada    True   round       True          73           5
+        kiwi      brown      china    True   round       True          80          76
+       lemon     yellow     mexico   False    oval      False          83          65
+```
 
 
 **Question 1**
 
-If I wanted all the rows and only columns `seeds`, `shape`, `sweetness` and  `water-content` what would my code look like using index labels? 
+If you wanted all the rows and only columns `seeds`, `shape`, `sweetness` and  `water-content` what would your code look like using index labels? 
 
 <choice id="1" >
-<opt text='<code>fruit_salad.loc[  :  , seeds : water-content]</code>'>
+<opt text='<code>fruit_salad.loc[  :  , "seed" : "weight"]</code>'>
 
-This is almost right but it's missing something important
+This is almost right but it may be good to check yout columns. 
 
 </opt>
 
@@ -173,7 +216,7 @@ Good job! This has both `loc` and "quotation" which are both needed to slice her
 
 **Question 2**
 
-If I wanted all the rows between `cantaloupe`  and `kiwi` and all the columns? What would my code look like using index labels? 
+If you wanted all the rows between `cantaloupe` and `kiwi` and all the columns? What would your code look like using index labels? 
 
 <choice id="2" >
 <opt text='<code>fruit_salad.loc[ : , "cantaloupe" : "kiwi"]</code>'>
@@ -206,7 +249,8 @@ I think you are missing something inportant.
 
 <exercise id="7" title="Practicing Slicing Using Index Labels">
 
-Using our `hockey_players` data from the last few questions with the index labelled with `Player` name, Let's try slicing it.
+Using our `hockey_players` data from the last few questions with the index labelled with `Player` name, Let's try slicing it. 
+
 
 Tasks:
 - Select the players `Adam Gaudette` to `Brandon Sutter` and the columns `No.`, `Age`, `Height`,	`Weight` and `Country`. 
@@ -303,9 +347,20 @@ Tasks:
 <exercise id="13" title="Practicing Slicing and Selecting using index position">
 
 Remember my `fruit_salad` dataset from earlier? 
-It had row names; `apple`, `banana`, `cantaloupe`, `dragon-fruit`, `elderberry`, `fig`, `Guava`, `huckleberry`, `kiwi` and `lemon` (in that order). 
-The index was labeled with the `name` of the fruit.
-It's column names in order were; `colour`, `location`, `seeds`, `shape`, `sweetness`, `water-content` and  `weight`.
+
+```out
+        name     colour    location   seed   shape    sweetness   water-content  weight
+       apple        red     canada    True   round       True          84         100
+      banana     yellow     mexico   False    long       True          75         120
+  cantaloupe     orange      spain    True   round       True          90        1360
+dragon-fruit    megenta      china    True   round      False          96         600
+  elderberry     purple    austria   False   round       True          80           5
+         fig     purple     turkey   False    oval      False          78          40
+       guava      green     mexico    True    oval       True          83         450
+ huckleberry       blue     canada    True   round       True          73           5
+        kiwi      brown      china    True   round       True          80          76
+       lemon     yellow     mexico   False    oval      False          83          65
+```
 
 **Question 1**
 

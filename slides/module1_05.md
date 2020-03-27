@@ -2,324 +2,236 @@
 type: slides
 ---
 
-# Slicing with Pandas Using df.loc[]
+# Slicing with Pandas Using df.loc
 
 Notes: Script here.
+
 <html>
+
 <audio controls >
-  <source src="placeholder_audio.mp3" />
-</audio></html>
+
+<source src="placeholder_audio.mp3" />
+
+</audio>
+
+</html>
 
 ---
 
-Congratulations on writing your first code! This is great! We have read in our data and know the dimensions. What now? Let's go over how we would **index**, **slice** and  **select** certain columns or rows of our data.
+Congratulations on writing your first code\! This is great\! We have
+read in our data and know the dimensions. What now? Let’s go over how we
+would **index**, **slice** and **select** certain columns or rows of our
+data.
 
 Notes: Script here.
-<html>
-<audio controls >
-  <source src="placeholder_audio.mp3" />
-</audio></html>
 
+<html>
+
+<audio controls >
+
+<source src="placeholder_audio.mp3" />
+
+</audio>
+
+</html>
 
 ---
+
 ## Cereal Data
 
-Before doing anything let's bring in some new data called `cereal.csv`
+Let’s import pandas and bring in our dataset named `cereal.csv` using
+the name of the candy bar as the index like we did last time with
+`index_col=0`.
 
-```python
+``` python
 import pandas as pd
-
-df = pd.read_csv('cereal.csv')
+  
+df = pd.read_csv('cereal.csv', index_col=0)
 df.head()
 ```
 
 ```out
+                          mfr  type  calories  ...  weight  cups     rating
+name                                           ...                         
+100% Bran                   N  Cold        70  ...     1.0  0.33  68.402973
+100% Natural Bran           Q  Cold       120  ...     1.0  1.00  33.983679
+All-Bran                    K  Cold        70  ...     1.0  0.33  59.425505
+All-Bran with Extra Fiber   K  Cold        50  ...     1.0  0.50  93.704912
+Almond Delight              R  Cold       110  ...     1.0  0.75  34.384843
 
-
+[5 rows x 15 columns]
 ```
 
-<img src='module1/cereal-head.png'>
-
-
 Notes: Script here.
+
 <html>
+
 <audio controls >
-  <source src="placeholder_audio.mp3" />
-</audio></html>
+
+<source src="placeholder_audio.mp3" />
+
+</audio>
+
+</html>
 
 ---
+
 ## Indexing Dataframes
 
-```out
+We can see 7 of the 15 columns of the dataframe and the first 5 rows of
+the data. Let’s say we only want certain rows of the whole dataframe or
+certain columns.
 
+We talked about how `df.head()` will generate the first few rows (5 as
+default) of a dataframe but what if we wanted rows 5-10?
 
+The first column of this dataframe is called the `index`. This is what
+we specified with `index_col=0` when we read in our data. Each row is
+given a label as well as a position. In this case, the label of an
+observation is the cereal name and the index position is a number. In
+other cases, the index label could be named with a number.
+
+Notes: Script here.
+
+<html>
+
+<audio controls >
+
+<source src="placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+Here are the first 15 rows of the
+    dataframe:
+
+``` python
+df.head(15)
 ```
 
-<img src='module1/cereal-head.png'>
+```out
+                          mfr  type  calories  ...  weight  cups     rating
+name                                           ...                         
+100% Bran                   N  Cold        70  ...    1.00  0.33  68.402973
+100% Natural Bran           Q  Cold       120  ...    1.00  1.00  33.983679
+All-Bran                    K  Cold        70  ...    1.00  0.33  59.425505
+All-Bran with Extra Fiber   K  Cold        50  ...    1.00  0.50  93.704912
+Almond Delight              R  Cold       110  ...    1.00  0.75  34.384843
+Apple Cinnamon Cheerios     G  Cold       110  ...    1.00  0.75  29.509541
+Apple Jacks                 K  Cold       110  ...    1.00  1.00  33.174094
+Basic 4                     G  Cold       130  ...    1.33  0.75  37.038562
+Bran Chex                   R  Cold        90  ...    1.00  0.67  49.120253
+Bran Flakes                 P  Cold        90  ...    1.00  0.67  53.313813
+Cap'n'Crunch                Q  Cold       120  ...    1.00  0.75  18.042851
+Cheerios                    G  Cold       110  ...    1.00  1.25  50.764999
+Cinnamon Toast Crunch       G  Cold       120  ...    1.00  0.75  19.823573
+Clusters                    G  Cold       110  ...    1.00  0.50  40.400208
+Cocoa Puffs                 G  Cold       110  ...    1.00  1.00  22.736446
 
-We can see all the columns of the dataframe and the first 5 rows of the data.
-let's say we only want certain rows of the whole dataframe or certain columns.
-
-We talked about how `df.head()` will generate the first 5 rows of a dataframe but what if we wanted rows 5-10?
-
-The first column of this dataframe is called the `index` each row is given a label as well as a position. In this case the label and index are both numbers.
-but what if we they were not?
+[15 rows x 15 columns]
+```
 
 Notes: Script here.
+
 <html>
+
 <audio controls >
-  <source src="placeholder_audio.mp3" />
-</audio></html>
+
+<source src="placeholder_audio.mp3" />
+
+</audio>
+
+</html>
 
 ---
 
-<img src='module1/cereal15.png' width="60%">
-
-Now the index has been set as the name of the cereal (we will talk about how to do this later)
-
-Let's talk about `Almond Delight`.  It's index labels is `Almond Delight` but it's index position is 4th.    
-If you just double counted and started screaming "5!" at the screen that's ok. In the Python language we start counting at position 0 (then 1, 2, 3, and 4 for Almond Delight). So it's important that we relearn counting from childhood to include 0.
-
-
-
+Let’s talk about the observation named `Almond Delight`. Its index label
+is `Almond Delight` but its index position is 4.  
+If you just went and counted those again and started screaming “5\! It’s
+the fifth position”, that’s ok. In the Python language, we start
+counting at position 0 (then 1, 2, 3, and 4 for Almond Delight).
 
 Notes: Script here.
+
 <html>
+
 <audio controls >
-  <source src="placeholder_audio.mp3" />
-</audio></html>
+
+<source src="placeholder_audio.mp3" />
+
+</audio>
+
+</html>
 
 ---
 
-So now let's say we want 5 rows past `Almond Delight` so we want rows with the index labels `Apple Cinnamon Cheerios` to `Cap'n'Crunch`.  
+So now let’s say we want 5 rows past `Almond Delight`. That means we
+want rows with the index labels `Apple Cinnamon Cheerios` to
+`Cap'n'Crunch`.
 
-How would we do this?   
-
-There are 3 main ways:
-- `.loc[]` using index labels
-- `.iloc[] ` using index position
-- Using `[]` brackets (we will get into that more next module)
-
-Notes: Script here.
-<html>
-<audio controls >
-  <source src="placeholder_audio.mp3" />
-</audio></html>
-
----
-
-In the first case:
-
-``` Python
+``` python
 df.loc[ "Apple Cinnamon Cheerios" : "Cap'n'Crunch"]
 ```
 
-
 ```out
+                        mfr  type  calories  ...  weight  cups     rating
+name                                         ...                         
+Apple Cinnamon Cheerios   G  Cold       110  ...    1.00  0.75  29.509541
+Apple Jacks               K  Cold       110  ...    1.00  1.00  33.174094
+Basic 4                   G  Cold       130  ...    1.33  0.75  37.038562
+Bran Chex                 R  Cold        90  ...    1.00  0.67  49.120253
+Bran Flakes               P  Cold        90  ...    1.00  0.67  53.313813
+Cap'n'Crunch              Q  Cold       120  ...    1.00  0.75  18.042851
 
-
+[6 rows x 15 columns]
 ```
 
-<img src='module1/apple-captain.png'>
-
- This essentially means the _dataframe location from `Apple Cinnamon Cheerios` to `Cap'n'Crunch`._   
-What about if we only wanted certain columns as well?
-
 Notes: Script here.
+
 <html>
+
 <audio controls >
-  <source src="placeholder_audio.mp3" />
-</audio></html>
+
+<source src="placeholder_audio.mp3"/>
+
+</audio>
+
+</html>
 
 ---
 
-Perhaps we were only interested in the `calories` to `fiber` columns of those rows?
+`df.loc[ "Apple Cinnamon Cheerios" : "Cap'n'Crunch"]`
 
-
-``` Python
-df.loc[ "Apple Cinnamon Cheerios" : "Cap'n'Crunch", "calories" : "fiber"]
-```
-
-
-```out
-
-
-```
-
-<img src='module1/cals-fiber.png'>
-
-
-So `loc` is used to slice columns and rows by **label** and within an interval.
+This essentially means the *dataframe location from `Apple Cinnamon
+Cheerios` to `Cap'n'Crunch`.*
 
 Notes: Script here.
+
 <html>
+
 <audio controls >
-  <source src="placeholder_audio.mp3" />
-</audio></html>
+
+<source src="placeholder_audio.mp3"/>
+
+</audio>
+
+</html>
 
 ---
 
-What if we wanted all the rows of the dataframe but only the columns `calories` to `fiber`?
-
-we would simply use `:` to indicate from "end" to "end" for rows.
-
-``` Python
-df.loc[ : , "calories" : "fiber"]
-```
-
-
-```out
-
-
-```
-
-<img src='module1/rows-somecols.png' width="40%">
-
-
-
-Notes: Script here.
-<html>
-<audio controls >
-  <source src="placeholder_audio.mp3" />
-</audio></html>
-
----
-
-What about if we only wanted certain columns as well?
-Perhaps we were only interested in the `calories` to `fiber` columns?
-
-``` Python
-df.loc[ "Apple Cinnamon Cheerios" : "Cap'n'Crunch", "calories" : "fiber"]
-```
-
-
-```out
-
-
-```
-
-<img src='module1/cals-fiber.png'>
-
-
-Notes: Script here.
-<html>
-<audio controls >
-  <source src="placeholder_audio.mp3" />
-</audio></html>
-
----
-
-We discussed slicing when the indices are labeled with words but that's not always the case. What if they are labeled with a numbers?
-Let's go back to our original cereal dataframe we had when we uploaded it.
-
-<img src='module1/cereal-index-num.png'>
-
-
-Notes: Script here.
-<html>
-<audio controls >
-  <source src="placeholder_audio.mp3" />
-</audio></html>
-
----
-
-We can use the same format before but now since our rows are labeled with numbers, we no longer need to express the row labels in "quotations". We use row labels expressed as numbers without quotations.
-
-`df.loc[ row-name-start : row-name-end , "column name start" : "column name end"]`
-
-Let's give our past example a shot. We again want rows `Apple Cinnamon Cheerios` to `Cap'n'Crunch with all the columns but now the indices are labeled with numbers.
-
-``` Python
-df.loc[ 5 : 10 ]
-```
-
-
-```out
-
-
-```
-
-<img src='module1/cereal510.png' >
-
-Notes: Script here.
-<html>
-<audio controls >
-  <source src="placeholder_audio.mp3" />
-</audio></html>
-
----
-What if we wanted only certain columns again too? Note that now `name` is a column now.
-
-``` Python
-df.loc[ 5 : 10 , "calories" : "fiber"]
-```
-
-
-```out
-
-
-```
-
- <img src='module1/cereal-510-cf.png' width = "40%">
-
- The sliced dataframe no longer has `name` in it so we would have to include it in our slice. In the next slide deck we will talk about selecting specific columns and rows that are not consecutive.  
-
-Notes: Script here.
-<html>
-<audio controls >
-  <source src="placeholder_audio.mp3" />
-</audio></html>
-
----
-
-This now incorporates all the columns from `names` to `fiber`.
-
-``` Python
-df.loc[ 5 : 10 , "name" : "fiber"]
-```
-
-
-```out
-
-
-```
-
- <img src='module1/cereal-510-nf.png'  width = "60%">
-
-Notes: Script here.
-<html>
-<audio controls >
-  <source src="placeholder_audio.mp3" />
-</audio></html>
-
----
-
-## So Far
-
-`loc` is used to slice columns and rows by **label** and within an interval.
-We always specify **row** indexing first, then **columns**.
-
-```
-df.loc[ "row name start" : "row name end", "column name start" : "column name end"]
-```
-
-- If we arn't slicing any columns we can simply say `df.loc[ "row name start" : "row name end"]` since columns specification follow row's.
-- However, the reverse is not true. If we want all the rows with only specific columns, we specify rows first and therefore we would need to make it clear with `df.loc[  : , "column name start" : "column name end"]`.
-- We can read `:` as **"to"**
-- If the indices are labeled with numbers, we do not need "quotations" when calling them.
-
-Notes: Script here.
-<html>
-<audio controls >
-  <source src="placeholder_audio.mp3" />
-</audio></html>
-
----
-
-# let’s apply what we learned!
+# let’s try it out\!
 
 Notes: Script here
+
 <html>
+
 <audio controls >
-  <source src="placeholder_audio.mp3" />
-</audio></html>
+
+<source src="placeholder_audio.mp3" />
+
+</audio>
+
+</html>

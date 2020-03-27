@@ -2,17 +2,13 @@ import pandas as pd
 
 # Read in the dataset 
 
-hockey_players = pd.read_csv('data/canucks.csv')
+hockey_players = pd.read_csv('data/canucks.csv', index_col=0)
 
-# Print the column names of `hockey_players` and save it as `columns_hockey`.
+# Find the column names of `hockey_players` save it as `columns_hockey` 
 
-# ____ 
+____
 
+# Display it by writing the object name.
 
-# Save the number of rows `hockey_players` has in a variable called `hockey_rows`.
+____ 
 
-# ____
-
-# Save the data frame shape as `hockey_shape`. 
-
-# ____

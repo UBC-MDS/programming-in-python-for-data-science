@@ -4,11 +4,11 @@ import pandas as pd
 
 hockey_players = pd.read_csv('data/canucks.csv', index_col=0)
 
-# Find the column names of `hockey_players` save it as `columns_hockey` 
+# find the the data frame shape of `hockey_players` save it as  as `hockey_shape' 
 
-columns_hockey = hockey_players.columns 
+____
 
 # Display it by writing the object name.
 
-columns_hockey 
+____ 
 
