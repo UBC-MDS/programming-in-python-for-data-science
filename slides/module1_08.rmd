@@ -1,0 +1,98 @@
+---
+title: "module1_05b"
+output: 
+  md_document:
+    variant: gfm
+---
+
+
+```{r setup, include=FALSE}
+library(rmarkdown)
+knitr::opts_chunk$set(echo = TRUE)
+knitr_opts <- knitr_options( opts_knit = NULL,
+                             opts_chunk = NULL,
+                             knit_hooks = NULL,
+                             opts_hooks = NULL,
+                             opts_template = NULL)
+md_document_custom <- md_document(variant = "gfm")
+output_format(knitr = knitr_opts,
+              pandoc = NULL,
+              base_format = md_document_custom)
+library(reticulate)
+```
+
+
+```{python include=FALSE}
+import pandas as pd
+import numpy as np
+pd.set_option('display.width', 400)
+
+np.set_printoptions(linewidth=400)
+
+pd.set_option('display.max_columns', 15)
+df = pd.read_csv('cereal.csv', index_col=0)
+```
+
+type: slides
+
+## Slicing Only Columns using df.loc[]
+
+
+Notes: Script here.
+<html>
+<audio controls >
+<source src="placeholder_audio.mp3" />
+</audio></html>
+
+
+---
+
+What happens now if we wanted all the rows of the dataframe but only the columns `calories` to `fiber`?
+
+we would simply use `:` to indicate from "end" to "end" for rows.
+
+```{python}
+df.loc[ : , "calories" : "fiber"]
+```
+
+
+Notes: Script here.
+<html>
+<audio controls >
+<source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+## So Far
+    
+`loc` is used to slice columns and rows by **label** and within an interval.
+We always specify **row** indexing first, then **columns**.
+  
+ ```python
+df.loc[ "row name start" : "row name end", "column name start" : "column name end"]
+```
+  
+- If we aren’t slicing any columns, we can simply say `df.loc[ "row name start": "row name end"]` since columns specification follow rows.
+- However, the reverse is not true. If we want all the rows with only specific columns, we specify rows first and therefore we would need to make it clear with `df.loc[  : , "column name start" : "column name end"]`.
+- We can read `:` as **"to"**
+- If the indices are labeled with numbers, we do not need "quotations" when calling them.
+  
+Notes: Script here.
+<html>
+<audio controls >
+<source src="placeholder_audio.mp3" />
+</audio></html>
+
+    
+---
+    
+# Let’s apply what we learned!
+    
+Notes: Script here.
+<html>
+<audio controls >
+<source src="placeholder_audio.mp3" />
+</audio></html>
+
+    

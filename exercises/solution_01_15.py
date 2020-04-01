@@ -2,13 +2,12 @@ import pandas as pd
 
 # The database 
 
-hockey_players = pd.read_csv('data/canucks.csv')
-hockey_players
+hockey_players = pd.read_csv('data/canucks.csv', index_col=0)
 
-# Slice the rows and columns and save the new dataframe as `injured_players`
+# Select the rows and columns and save the new dataframe as `penalty_players`
 
-injured_players = hockey_players.iloc[[16, 4, 21, 1], [0, 8, 7, 9]]
+penalty_players = hockey_players.loc[["Zack MacEwen", "Jake Virtanen", "Jordie Benn"], ["Height", "Weight", "Salary", "Country"]]
 
-# Display it (without using print)
+# Display it
 
-injured_players 
+penalty_players 

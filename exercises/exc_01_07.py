@@ -3,12 +3,11 @@ import pandas as pd
 # The database 
 
 hockey_players = pd.read_csv('data/canucks.csv', index_col=0)
-# hockey_players
 
 # Slice the rows and columns and save the new dataframe as `benched_players`
 
-benched_players = ____.____[____ : ____ , ____ : ____]
+benched_players = ____.____[____ : ____ ]
 
-# Display it (without using print)
+# Display it
 
-# ____ 
+____

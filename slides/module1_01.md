@@ -149,35 +149,33 @@ df
 ```
 
 ```out
-                           weight  chocolate  ...  multi  available_canada_america
-name                                          ...                                 
-Coffee Crisp                   50          1  ...      0                    Canada
-Butterfinger                  184          1  ...      0                   America
-Skor                           39          1  ...      0                      Both
-Smarties                       45          1  ...      1                    Canada
-Twix                           58          1  ...      1                      Both
-Reeses Peanutbutter Cups       43          1  ...      1                      Both
-3 Musketeers                   54          1  ...      0                   America
-Kinder Surprise                20          1  ...      0                    Canada
-M & M                          48          1  ...      1                      Both
-Glosettes                      50          1  ...      1                    Canada
-KitKat                         45          1  ...      1                      Both
-Babe Ruth                      60          1  ...      0                   America
-Caramilk                       52          1  ...      0                    Canada
-Aero                           42          1  ...      0                    Canada
-Mars                           51          1  ...      0                      Both
-Payday                         52          0  ...      0                   America
-Snickers                       48          1  ...      0                      Both
-Crunchie                       26          1  ...      0                    Canada
-Wonderbar                      58          1  ...      0                    Canada
-100 Grand                      43          1  ...      0                   America
-Take 5                         43          1  ...      0                   America
-Whatchamacallits               45          1  ...      0                   America
-Almond Joy                     46          1  ...      0                   America
-Oh Henry                       51          1  ...      0                      Both
-Cookies and Cream              43          0  ...      0                      Both
-
-[25 rows x 10 columns]
+                           weight  chocolate  peanuts  caramel  nougat  cookie_wafer_rice  coconut  white_chocolate  multi available_canada_america
+name                                                                                                                                               
+Coffee Crisp                   50          1        0        0       0                  1        0                0      0                   Canada
+Butterfinger                  184          1        1        1       0                  0        0                0      0                  America
+Skor                           39          1        0        1       0                  0        0                0      0                     Both
+Smarties                       45          1        0        0       0                  0        0                0      1                   Canada
+Twix                           58          1        0        1       0                  1        0                0      1                     Both
+Reeses Peanutbutter Cups       43          1        1        0       0                  0        0                0      1                     Both
+3 Musketeers                   54          1        0        0       1                  0        0                0      0                  America
+Kinder Surprise                20          1        0        0       0                  0        0                1      0                   Canada
+M & M                          48          1        1        0       0                  0        0                0      1                     Both
+Glosettes                      50          1        0        0       0                  0        0                0      1                   Canada
+KitKat                         45          1        0        0       0                  1        0                0      1                     Both
+Babe Ruth                      60          1        1        1       1                  0        0                0      0                  America
+Caramilk                       52          1        0        1       0                  0        0                0      0                   Canada
+Aero                           42          1        0        0       0                  0        0                0      0                   Canada
+Mars                           51          1        0        1       1                  0        0                0      0                     Both
+Payday                         52          0        1        1       0                  0        0                0      0                  America
+Snickers                       48          1        1        1       1                  0        0                0      0                     Both
+Crunchie                       26          1        0        0       0                  0        0                0      0                   Canada
+Wonderbar                      58          1        1        1       0                  0        0                0      0                   Canada
+100 Grand                      43          1        0        1       0                  1        0                0      0                  America
+Take 5                         43          1        1        1       0                  1        0                0      0                  America
+Whatchamacallits               45          1        1        0       0                  1        0                0      0                  America
+Almond Joy                     46          1        0        0       0                  0        1                0      0                  America
+Oh Henry                       51          1        1        1       0                  0        0                0      0                     Both
+Cookies and Cream              43          0        0        0       0                  1        0                1      0                     Both
 ```
 
 Notes: Script here.
@@ -195,17 +193,15 @@ Notes: Script here.
 ---
 
 From this dataframe, we can see that there are 25 different candy bars
-and 10 columns. We can obtain the names of the columns using this code:
+and 10 columns. We can obtain the names of the columns using this
+    code:
 
 ``` python
 df.columns
 ```
 
 ```out
-Index(['weight', 'chocolate', 'peanuts', 'caramel', 'nougat',
-       'cookie_wafer_rice', 'coconut', 'white_chocolate', 'multi',
-       'available_canada_america'],
-      dtype='object')
+Index(['weight', 'chocolate', 'peanuts', 'caramel', 'nougat', 'cookie_wafer_rice', 'coconut', 'white_chocolate', 'multi', 'available_canada_america'], dtype='object')
 ```
 
 Or if you wanted to see the dimensions of the whole dataframe you could
@@ -219,8 +215,8 @@ df.shape
 (25, 10)
 ```
 
-Breaking up this code it just means “From our dataframe that we saved as
-`df` tell me the `columns` or tell me the `shape`”.
+Breaking up this code it just means "From our dataframe that we saved as
+`df` tell me the `columns` or tell me the `shape`.
 
 Notes: Script here.
 
@@ -246,12 +242,10 @@ df.head(2)
 ```
 
 ```out
-              weight  chocolate  ...  multi  available_canada_america
-name                             ...                                 
-Coffee Crisp      50          1  ...      0                    Canada
-Butterfinger     184          1  ...      0                   America
-
-[2 rows x 10 columns]
+              weight  chocolate  peanuts  caramel  nougat  cookie_wafer_rice  coconut  white_chocolate  multi available_canada_america
+name                                                                                                                                  
+Coffee Crisp      50          1        0        0       0                  1        0                0      0                   Canada
+Butterfinger     184          1        1        1       0                  0        0                0      0                  America
 ```
 
 This specifies only 2 rows will be shown. We can specify any number of
@@ -264,15 +258,13 @@ df.head()
 ```
 
 ```out
-              weight  chocolate  ...  multi  available_canada_america
-name                             ...                                 
-Coffee Crisp      50          1  ...      0                    Canada
-Butterfinger     184          1  ...      0                   America
-Skor              39          1  ...      0                      Both
-Smarties          45          1  ...      1                    Canada
-Twix              58          1  ...      1                      Both
-
-[5 rows x 10 columns]
+              weight  chocolate  peanuts  caramel  nougat  cookie_wafer_rice  coconut  white_chocolate  multi available_canada_america
+name                                                                                                                                  
+Coffee Crisp      50          1        0        0       0                  1        0                0      0                   Canada
+Butterfinger     184          1        1        1       0                  0        0                0      0                  America
+Skor              39          1        0        1       0                  0        0                0      0                     Both
+Smarties          45          1        0        0       0                  0        0                0      1                   Canada
+Twix              58          1        0        1       0                  1        0                0      1                     Both
 ```
 
 Notes: Script here.

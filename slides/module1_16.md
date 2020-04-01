@@ -2,340 +2,349 @@
 type: slides
 ---
 
-# Summary Statistics!
+# Slicing and Selecting using df.iloc\[\]
 
 Notes: Script here.
+
 <html>
+
 <audio controls >
-  <source src="placeholder_audio.mp3" />
-</audio></html>
+
+<source src="placeholder_audio.mp3" />
+
+</audio>
+
+</html>
 
 ---
 
-Now we've learned about how to get our dataframe how we want it, let's try and get some fun out of it!
+## Slicing Dataframe
 
-We have our data, now what? 
+Up to this point, we have been manipulating our dataframe with column
+and row ***label*** name using `df. loc`.  
+`df.iloc` is very similar, however, the “i” in `iloc` refers to the
+index ***integer*** position.
 
-We usually like to learn from it. We want to find out about maybe some summary statistics about the features of the data. 
-
-Let's load in our cereal dataset again. 
+Let’s return to our cereal dataset and take a look at the first 15 rows.
 
 Notes: Script here.
+
 <html>
+
 <audio controls >
-  <source src="placeholder_audio.mp3" />
-</audio></html>
+
+<source src="placeholder_audio.mp3" />
+
+</audio>
+
+</html>
 
 ---
 
-``` Python
-df = pd.read_csv('cereal.csv',)
+``` python
+df = pd.read_csv('cereal.csv', index_col = 0)
 df.head(15)
 ```
 
-
 ```out
-
-
+                          mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
+name                                                                                                                                       
+100% Bran                   N  Cold        70        4    1     130   10.0    5.0       6     280        25      3    1.00  0.33  68.402973
+100% Natural Bran           Q  Cold       120        3    5      15    2.0    8.0       8     135         0      3    1.00  1.00  33.983679
+All-Bran                    K  Cold        70        4    1     260    9.0    7.0       5     320        25      3    1.00  0.33  59.425505
+All-Bran with Extra Fiber   K  Cold        50        4    0     140   14.0    8.0       0     330        25      3    1.00  0.50  93.704912
+Almond Delight              R  Cold       110        2    2     200    1.0   14.0       8      -1        25      3    1.00  0.75  34.384843
+Apple Cinnamon Cheerios     G  Cold       110        2    2     180    1.5   10.5      10      70        25      1    1.00  0.75  29.509541
+Apple Jacks                 K  Cold       110        2    0     125    1.0   11.0      14      30        25      2    1.00  1.00  33.174094
+Basic 4                     G  Cold       130        3    2     210    2.0   18.0       8     100        25      3    1.33  0.75  37.038562
+Bran Chex                   R  Cold        90        2    1     200    4.0   15.0       6     125        25      1    1.00  0.67  49.120253
+Bran Flakes                 P  Cold        90        3    0     210    5.0   13.0       5     190        25      3    1.00  0.67  53.313813
+Cap'n'Crunch                Q  Cold       120        1    2     220    0.0   12.0      12      35        25      2    1.00  0.75  18.042851
+Cheerios                    G  Cold       110        6    2     290    2.0   17.0       1     105        25      1    1.00  1.25  50.764999
+Cinnamon Toast Crunch       G  Cold       120        1    3     210    0.0   13.0       9      45        25      2    1.00  0.75  19.823573
+Clusters                    G  Cold       110        3    2     140    2.0   13.0       7     105        25      3    1.00  0.50  40.400208
+Cocoa Puffs                 G  Cold       110        1    1     180    0.0   12.0      13      55        25      2    1.00  1.00  22.736446
 ```
 
-<img src='module1/cereal15.1.png' width = "90%">
-
-
 Notes: Script here.
-<html>
-<audio controls >
-  <source src="placeholder_audio.mp3" />
-</audio></html>
 
+<html>
+
+<audio controls >
+
+<source src="placeholder_audio.mp3" />
+
+</audio>
+
+</html>
 
 ---
 
-## Pandas describe()
-
-Pandas has a lot up it's sleeve but one of the most useful functions is called describe and it does exactly that. it _describes_ your data let's try it out. 
-
-``` Python
-df.describe()
-```
-
+Let’s say we want the rows `All-Bran` to `Apple Cinnamon Cheerios` but
+we want to slice based on their position.  
+Using Python’s counting method of starting at zero, we conclude
+`All-Bran` to be at position to
+    2.
 
 ```out
-
-
+                          mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
+name                                                                                                                                       
+100% Bran                   N  Cold        70        4    1     130   10.0    5.0       6     280        25      3     1.0  0.33  68.402973
+100% Natural Bran           Q  Cold       120        3    5      15    2.0    8.0       8     135         0      3     1.0  1.00  33.983679
+All-Bran                    K  Cold        70        4    1     260    9.0    7.0       5     320        25      3     1.0  0.33  59.425505
+All-Bran with Extra Fiber   K  Cold        50        4    0     140   14.0    8.0       0     330        25      3     1.0  0.50  93.704912
+Almond Delight              R  Cold       110        2    2     200    1.0   14.0       8      -1        25      3     1.0  0.75  34.384843
+Apple Cinnamon Cheerios     G  Cold       110        2    2     180    1.5   10.5      10      70        25      1     1.0  0.75  29.509541
+Apple Jacks                 K  Cold       110        2    0     125    1.0   11.0      14      30        25      2     1.0  1.00  33.174094
 ```
 
-<img src='module1/pandas_describe.png'>
-
+We get `Apple Cinnamon Cheerios` position to be 5 in the same way.
 
 Notes: Script here.
+
 <html>
+
 <audio controls >
-  <source src="placeholder_audio.mp3" />
-</audio></html>
+
+<source src="placeholder_audio.mp3" />
+
+</audio>
+
+</html>
 
 ---
 
-```out
+We can use the same coding structure we learned with `df.loc`, but this
+time using the position instead of labels with
+    `df.iloc[]`
 
-
-```
-
-<img src='module1/pandas_describe.png'>
-
-This table will tell you about:
-- `count`: The number of non-NA/null observations.
-- `mean`: The mean of  column 
-- `std` : The standard deviation of a column
-- `min`: The min value for a column
-- `max`: The max value for a column 
-- By default the 25, 50 and 75 percentile of the observations
-
-Notes: Script here.
-<html>
-<audio controls >
-  <source src="placeholder_audio.mp3" />
-</audio></html>
-
----
-
-You can make change to either limit how much you show or extend it too with additional arguments:
-
-```python
-df.describe(include = "all")
-
-```
-
-```out
-
-
-```
-
-<img src='module1/include_all.png'>
-
-
-Notes: Script here.
-<html>
-<audio controls >
-  <source src="placeholder_audio.mp3" />
-</audio></html>
-
----
-
-```out
-
-
-```
-
-<img src='module1/include_all.png' width="90%">
-
-Adding `include = "all"` withinh the brackets adds some additional statistics about categorical columns.
-
-- `unique`: how many observations are unique
-- `top`: which observation value is most occuring
-- `freq`: what is the frequency of the most occuring observation 
-
-Notes: Script here.
-<html>
-<audio controls >
-  <source src="placeholder_audio.mp3" />
-</audio></html>
-
-
----
-
-you can also get single statistics of each column using:
-either `df.mean()`,`df.std()`, `df.count()`, `df.median()`, `df.sum()`. Some of these might produce some wild results especially if the column is a qualitative observation.  
-
-```python
-df.sum()
-
+``` python
+df.iloc[2:5]
 ```
 
 ```out
-mfr         NQKKRGKGRPQGGGGRKKGKNKGRKKKPKPPGPPPQGPKKGQGARR...
-type        ColdColdColdColdColdColdColdColdColdColdColdCo...
-calories                                                 8230
-protein                                                   196
-fat                                                        78
-sodium                                                  12295
-fiber                                                   165.7
-carbo                                                    1124
-sugars                                                    533
-potass                                                   7398
-vitamins                                                 2175
-shelf                                                     170
-weight                                                  79.28
-cups                                                    63.22
-rating                                                3285.26
+                          mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
+name                                                                                                                                       
+All-Bran                    K  Cold        70        4    1     260    9.0    7.0       5     320        25      3     1.0  0.33  59.425505
+All-Bran with Extra Fiber   K  Cold        50        4    0     140   14.0    8.0       0     330        25      3     1.0  0.50  93.704912
+Almond Delight              R  Cold       110        2    2     200    1.0   14.0       8      -1        25      3     1.0  0.75  34.384843
 ```
 
+But wait\! Something is missing here\!
+
+Why doesn’t “Apple Cinnamon Cheerios” appear in the dataframe?
+
 Notes: Script here.
+
 <html>
+
 <audio controls >
-  <source src="placeholder_audio.mp3" />
-</audio></html>
+
+<source src="placeholder_audio.mp3" />
+
+</audio>
+
+</html>
 
 ---
-## `pd.value_counts`
 
-If you want to get a frequency table of categorical columns `pd.value_counts` is very useful. 
-In the previous slides we talked about getting a single column from a dataframe using double brackets like `df[['column-name']]`.  That's great but to  use pd.value_counts we need to use a different structure which you'll learn in the next module. Instead of getting a single column with double brackets we only use single brackets like so:
+That’s because when we use slicing by index position, it will take all
+the indices including the lower bound but *EXCLUDING* the upper bound.
+If we wanted to include “Apple Cinnamon Cheerios” we would have to go 1
+index position
+    further.
 
-```python
-manufacturer_column = df["mfr"]
-manufacturer_column
-
+``` python
+df.iloc[2:6]
 ```
 
 ```out
-name
-100% Bran                    N
-100% Natural Bran            Q
-All-Bran                     K
-All-Bran with Extra Fiber    K
-Almond Delight               R
-                            ..
-Triples                      G
-Trix                         G
-Wheat Chex                   R
-Wheaties                     G
-Wheaties Honey Gold          G
-Name: mfr, Length: 77, dtype: object
-
+                          mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
+name                                                                                                                                       
+All-Bran                    K  Cold        70        4    1     260    9.0    7.0       5     320        25      3     1.0  0.33  59.425505
+All-Bran with Extra Fiber   K  Cold        50        4    0     140   14.0    8.0       0     330        25      3     1.0  0.50  93.704912
+Almond Delight              R  Cold       110        2    2     200    1.0   14.0       8      -1        25      3     1.0  0.75  34.384843
+Apple Cinnamon Cheerios     G  Cold       110        2    2     180    1.5   10.5      10      70        25      1     1.0  0.75  29.509541
 ```
 
+Ah, that’s better.
+
 Notes: Script here.
+
 <html>
+
 <audio controls >
-  <source src="placeholder_audio.mp3" />
-</audio></html>
+
+<source src="placeholder_audio.mp3" />
+
+</audio>
+
+</html>
 
 ---
 
-We saved the object in a variable called `manufacturer_column` in the same way as we have other dataframes before.  
-Next we cant use `pd.value_counts()` referencing that the column we saved as `manufacturer_column` within the brackets.  
+The same concepts can apply to the columns of the dataframe.  
+Let’s say we want all the rows but we only want the columns starting at
+`protein` and ending (including) at column `sugars`.  
+Using the logic we learned in the last set of slides, we would use the
+following
+    code:
 
-```python
-manufacturer_freq = manufacturer_column.value_counts()
-manufacturer_freq
-
+``` python
+df.iloc[ : ,  3:9 ]
 ```
 
 ```out
-K    23
-G    22
-P     9
-R     8
-Q     8
-N     6
-A     1
-Name: mfr, dtype: int64
+                           protein  fat  sodium  fiber  carbo  sugars
+name                                                                 
+100% Bran                        4    1     130   10.0    5.0       6
+100% Natural Bran                3    5      15    2.0    8.0       8
+All-Bran                         4    1     260    9.0    7.0       5
+All-Bran with Extra Fiber        4    0     140   14.0    8.0       0
+Almond Delight                   2    2     200    1.0   14.0       8
+...                            ...  ...     ...    ...    ...     ...
+Triples                          2    1     250    0.0   21.0       3
+Trix                             1    1     140    0.0   13.0      12
+Wheat Chex                       3    1     230    3.0   17.0       3
+Wheaties                         3    1     200    3.0   17.0       3
+Wheaties Honey Gold              2    1     200    1.0   16.0       8
 
+[77 rows x 6 columns]
 ```
 
-We can then see the frequency of each qualitative value.   
-_We can also use the argument `sort = True` withing the brackets if we want to sort the categories in frequency order_ 
-
-
-Notes: Script here.
-<html>
-<audio controls >
-  <source src="placeholder_audio.mp3" />
-</audio></html>
-
----
-   
-```out
-K    23
-G    22
-P     9
-R     8
-Q     8
-N     6
-A     1
-Name: mfr, dtype: int64
-```
-
-This looks a bit funny though doesn't it? That's because this output isn't our usual dataframe type so we need to make it so. We can make it prettier with `pd.DataFrame` and saving it as a new variable:
-
-```python
-manufacturer_freq_df = pd.DataFrame(manufacturer_freq)
-manufacturer_freq_df
-```
+We would need to specify all rows using `:` as we did when we used
+`df.loc[]`. The column `protein` is at index position 3 and `sugars` is
+at index position 8, but since we want to include the 8th column we need
+to use the 9th position to make sure we get all the columns *BEFORE* the
+upper bound.
 
 Notes: Script here.
 
 <html>
+
 <audio controls >
-  <source src="placeholder_audio.mp3" />
-</audio></html>
+
+<source src="placeholder_audio.mp3" />
+
+</audio>
+
+</html>
 
 ---
 
-```out
-  
-   
-```
+The same would apply if we only wanted certain rows with certain
+columns. Let’s say we want the rows `All-Bran` to `Apple Cinnamon
+Cheerios` and `protein` to `sugars`.  
+**Rows**  
+`All-Bran` located at position 2.  
+`Apple Cinnamon Cheerios` is located at position 5.  
+**Columns**  
+`protein` is located at position 3.  
+`sugar` is located at position
+    8.
 
-<img src='module1/dataframe_counts.png'>
-
-Ah! That's what we are used to. The column name is specifying the counts of the manufacturers, but maybe we should rename that column to something that makes more sense. 
-
-let's rename that column to `freq`. But how?    
-
-Notes: Script here.
-<html>
-<audio controls >
-  <source src="placeholder_audio.mp3" />
-</audio></html>
-
----
-    
-We use something called `rename` of course! When we rename things it's especially important that we don't forget to assign it to a variable or the column name won't stick! Let's assign it to `freq_mfr_df`.
-
-```python
-freq_mfr_df = manufacturer_freq_df.rename(columns = {"mfr": "freq"})
-freq_mfr_df
-
+``` python
+df.iloc[2:6, 3:9]
 ```
 
 ```out
-
-          
+                           protein  fat  sodium  fiber  carbo  sugars
+name                                                                 
+All-Bran                         4    1     260    9.0    7.0       5
+All-Bran with Extra Fiber        4    0     140   14.0    8.0       0
+Almond Delight                   2    2     200    1.0   14.0       8
+Apple Cinnamon Cheerios          2    2     180    1.5   10.5      10
 ```
 
-<img src='module1/renamed.png' >
+Both of our upper bound have been compensated with + 1 to make sure they
+are included in the new dataframe.
 
 Notes: Script here.
+
 <html>
+
 <audio controls >
-  <source src="placeholder_audio.mp3" />
-</audio></html>
 
----
-     
-     
-    
-```python
-freq_mfr_df = manufacturer_freq_df.rename(columns = {"mfr": "freq"})
-```
+<source src="placeholder_audio.mp3" />
 
-This code  uses something we've never seen before, `{}` curley brackets!   
-These have a special meaning but for now you need to know that this `columns` argument need to be set equal to  `"old column name" : "new-column-name"` in curley brackets for us to rename the column.
+</audio>
 
-Notes: Script here.
-<html>
-<audio controls >
-  <source src="placeholder_audio.mp3" />
-</audio></html>
+</html>
 
 ---
 
-# let’s apply what we learned!
+## Selecting with df.iloc\[\]
+
+Selecting using `iloc` is done identically to `loc`, however, the items
+within each set of square brackets **MUST** be numeric.
+
+Let’s say we want the rows `Cheerios`, `Basic 4` and `Apple Jacks` with
+the columns `rating`, `fat` and `type` *in that order*.
+
+**Rows**  
+`Cheerios` is located at position 11.  
+`Basic 4` is located at position 7.  
+`Apple Jacks` is located at position 6.
+
+**Columns**  
+`rating` is located at position 14.  
+`fat` is located at position 4. `type` is located at position 1.
+
+Notes: Script here.
+
+<html>
+
+<audio controls >
+
+<source src="placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+Now let’s put those position into square backing within `df.iloc[]`
+
+Recap the locations: `Cheerios` = 2, `Basic 4` = 5 and `Apple Jacks` =
+3, `rating` = 14, `fat` = 4, `type` = 1.
+
+``` python
+df.iloc[[11, 7, 6], [14, 4, 1]]
+```
+
+```out
+                rating  fat  type
+name                             
+Cheerios     50.764999    2  Cold
+Basic 4      37.038562    2  Cold
+Apple Jacks  33.174094    0  Cold
+```
+
+Notes: Script here.
+
+<html>
+
+<audio controls >
+
+<source src="placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+# Nice work\! Let’s apply what we learned\!
 
 Notes: Script here
+
 <html>
+
 <audio controls >
-  <source src="placeholder_audio.mp3" />
-</audio></html>
+
+<source src="placeholder_audio.mp3" />
+
+</audio>
+
+</html>

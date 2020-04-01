@@ -1,3 +1,6 @@
+``` 
+
+
 ---
 type: slides
 ---
@@ -7,7 +10,7 @@ type: slides
 Notes: Script here.
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+<source src="placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -16,168 +19,108 @@ Notes: Script here.
 
 We have our trusty `cereal.csv` data again with the cereal names as the index labels.
 
-<img src='module1/cereal15.png' >
 
-What would we do if we want to select columns and rows too that don't fall consecutively or if we want rearrange them.
+```
 
+## mfr type calories protein fat sodium fiber carbo sugars potass vitamins shelf weight cups rating
+
+## name
+
+## 100% Bran N Cold 70 4 1 130 10.0 5.0 6 280 25 3 1.0 0.33 68.402973
+
+## 100% Natural Bran Q Cold 120 3 5 15 2.0 8.0 8 135 0 3 1.0 1.00 33.983679
+
+## All-Bran K Cold 70 4 1 260 9.0 7.0 5 320 25 3 1.0 0.33 59.425505
+
+## All-Bran with Extra Fiber K Cold 50 4 0 140 14.0 8.0 0 330 25 3 1.0 0.50 93.704912
+
+## Almond Delight R Cold 110 2 2 200 1.0 14.0 8 -1 25 3 1.0 0.75 34.384843
+
+## … .. … … … … … … … … … … … … … …
+
+## Triples G Cold 110 2 1 250 0.0 21.0 3 60 25 3 1.0 0.75 39.106174
+
+## Trix G Cold 110 1 1 140 0.0 13.0 12 25 25 2 1.0 1.00 27.753301
+
+## Wheat Chex R Cold 100 3 1 230 3.0 17.0 3 115 25 1 1.0 0.67 49.787445
+
+## Wheaties G Cold 100 3 1 200 3.0 17.0 3 110 25 1 1.0 1.00 51.592193
+
+## Wheaties Honey Gold G Cold 110 2 1 200 1.0 16.0 8 60 25 1 1.0 0.75 36.187559
+
+## 
+
+## \[77 rows x 15 columns\]
+
+\`\`\`
+
+What would we do if we want to select columns and rows that don’t fall
+consecutively or if we want to rearrange them?
 
 Notes: Script here.
+
 <html>
+
 <audio controls >
-  <source src="placeholder_audio.mp3" />
-</audio></html>
+
+<source src="placeholder_audio.mp3" />
+
+</audio>
+
+</html>
 
 ---
-Let's say we wanted only the rows labeled `Clusters`, `Trix` and `Wheaties` and the columns `type`, `sugars` and `rating`
-How would we obtain them now?
 
-We need to specify each column and row label that we want between square brackets `[]`, separated with commas.
+Let’s say we wanted only the rows labeled `Clusters`, `Trix` and
+`Wheaties` and the columns `type`, `sugars` and `rating` How would we
+obtain them now?
 
+We need to specify each column and row label that we want between square
+brackets `[]`, separated with
+commas.
 
-``` Python
+``` python
 df.loc[ ["Clusters", "Trix", "Wheaties"] , ["type", "sugars", "rating"] ]
 ```
 
-
 ```out
-
-
+          type  sugars     rating
+name                             
+Clusters  Cold       7  40.400208
+Trix      Cold      12  27.753301
+Wheaties  Cold       3  51.592193
 ```
 
-<img src='module1/selecting-cereal.png' width="30%">
-
-We can also reorder it too to change the column and row order.
-
+We can also reorder it to change the column and row order.
 
 Notes: Script here.
+
 <html>
+
 <audio controls >
-  <source src="placeholder_audio.mp3" />
-</audio></html>
+
+<source src="placeholder_audio.mp3" />
+
+</audio>
+
+</html>
 
 ---
 
-What if we wanted the rows to be in the order  `Wheaties`, `Trix` and `Clusters` and columns in the order `type`, `rating` and `sugars`
-How would we obtain that?
+What if we wanted the rows to be in the order `Wheaties`, `Trix` and
+`Clusters` and columns in the order `type`, `rating` and `sugars` How
+would we obtain that?
 
-we would just rearrange them in the square brackets!
-
-``` Python
-df.loc[ ["Wheaties", "Trix", "Clusters"] , ["type", "rating", "sugars"] ]
-```
-
-
-```out
-
-
-```
-
-<img src='module1/selecting-cereal-o.png' width="30%">
-
-
-Notes: Script here.
-<html>
-<audio controls >
-  <source src="placeholder_audio.mp3" />
-</audio></html>
-
----
-
-Let's try it to get the same selection of rows and columns but with indices numbers as labels.    
-Bring in the adjusted dataframe.
-
-<img src='module1/cereal15.png'>
-
-Notes: Script here.
-<html>
-<audio controls >
-  <source src="placeholder_audio.mp3" />
-</audio></html>
-
-
----
-
-We would just substitute the index label number without quotes as we did before.
-
-``` Python
-df.loc[ [75, 73, 13] , ["type", "rating", "sugars"] ]
-```
-
-
-```out
-
-
-```
-
-<img src='module1/number-select.png' width="60%">
-
-
-
-Notes: Script here.
-<html>
-<audio controls >
-  <source src="placeholder_audio.mp3" />
-</audio></html>
-
----
-
-You can see that the last code didn't include the name of the cereal so we would need to specify `name` in the column brackets of the code if we want to include it in the dataframe.
-
-``` Python
-df.loc[ [75, 73, 13] , [ "name", "type", "rating", "sugars"] ]
-```
-
-
-```out
-
-
-```
-
-<img src='module1/name-num-select.png' width="40%">
-
-
-Notes: Script here.
-<html>
-<audio controls >
-  <source src="placeholder_audio.mp3" />
-</audio></html>
-
-
----
-
-# Selecting a Single Column
-
-Something that is extremely useful is just getting a single columm. There is a quicker way of doing this over the alternative  `df.loc[ : , [ "column-name"] ]`
-
-The quicker way is to omit `loc` altogether and use: 
-
-``` Python
-df[['type']]
-```
-
-
-```out
-
-
-```
-
-<img src='module1/noloc.png' width="60%">
-
-
-
-Notes: Script here.
-<html>
-<audio controls >
-  <source src="placeholder_audio.mp3" />
-</audio></html>
-
-
----
-
-# let’s apply what we learned!
+# Let’s explore that in an exercise\!
 
 Notes: Script here
+
 <html>
+
 <audio controls >
-  <source src="placeholder_audio.mp3" />
-</audio></html>
+
+<source src="placeholder_audio.mp3" />
+
+</audio>
+
+</html>

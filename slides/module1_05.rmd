@@ -1,5 +1,5 @@
 ---
-title: "Module1_01"
+title: "Module1_05"
 output: 
   md_document:
     variant: gfm
@@ -22,14 +22,14 @@ library(reticulate)
 ```
 
 
-```{python  include=FALSE}
+```{python include=FALSE}
 import pandas as pd
 import numpy as np
-pd.set_option('display.width', 320)
+pd.set_option('display.width', 400)
 
-np.set_printoptions(linewidth=320)
+np.set_printoptions(linewidth=400)
 
-pd.set_option('display.max_columns', 6)
+pd.set_option('display.max_columns', 15)
 ```
 
 type: slides
@@ -50,7 +50,7 @@ Congratulations on writing your first code! This is great! We have read in our d
 Notes: Script here.
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+<source src="placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -154,18 +154,23 @@ Perhaps we were only interested in the `calories` to `fiber` columns of those ro
 df.loc[ "Apple Cinnamon Cheerios" : "Cap'n'Crunch", "calories" : "fiber"]
 ```
 
-
 `loc` is used to slice columns and rows by **label** and within an interval.
+The general format to slice both rows and columns together looks like this:
+
+```python
+`df.loc[ row-name-start : row-name-end , "column name start" : "column name end"]`
+```
+
 
 Notes: Script here.
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+<source src="placeholder_audio.mp3" />
 </audio></html>
 
 ---
 
-# let’s try it out!
+# Let’s try it out!
     
 Notes: Script here
 <html>

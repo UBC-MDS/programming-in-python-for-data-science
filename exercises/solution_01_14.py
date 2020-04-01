@@ -2,13 +2,13 @@ import pandas as pd
 
 # The database 
 
-hockey_players = pd.read_csv('data/canucks.csv')
-hockey_players
+hockey_players = pd.read_csv('data/canucks.csv', index_col=0)
 
-# Slice the rows and columns and save the new dataframe as `skilled_players`
+# Select all the rows from column `Salary` only and save it as `player_cost` 
+# (Hint: you don't need `loc` here) 
 
-skilled_players = hockey_players.iloc[11:18, 0:4]
+player_cost = hockey_players[["Salary"]]
 
-# Display it (without using print)
+# Display it
 
-skilled_players 
+player_cost

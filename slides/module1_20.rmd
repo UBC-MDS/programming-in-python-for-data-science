@@ -1,0 +1,288 @@
+---
+title: "module1_16"
+output: 
+  md_document:
+    variant: gfm
+---
+
+
+```{r setup, include=FALSE}
+library(rmarkdown)
+knitr::opts_chunk$set(echo = TRUE)
+knitr_opts <- knitr_options( opts_knit = NULL,
+                             opts_chunk = NULL,
+                             knit_hooks = NULL,
+                             opts_hooks = NULL,
+                             opts_template = NULL)
+md_document_custom <- md_document(variant = "gfm")
+output_format(knitr = knitr_opts,
+              pandoc = NULL,
+              base_format = md_document_custom)
+library(reticulate)
+```
+
+
+```{python include=FALSE}
+import pandas as pd
+import numpy as np
+pd.set_option('display.width', 400)
+
+np.set_printoptions(linewidth=400)
+
+pd.set_option('display.max_columns', 15)
+df = pd.read_csv('cereal.csv', index_col=0)
+```
+
+
+type: slides
+
+# Summary Statistics!
+
+Notes: Script here.
+<html>
+<audio controls >
+<source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+Now we've learned about how to get our dataframe how we want it, let's try and make some fun of it!
+
+We have our data, now what? 
+
+We usually like to learn from it. We want to find out about maybe some summary statistics about the features of the data. 
+
+Let's load in our cereal dataset again. 
+
+Notes: Script here.
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+```{python}
+df = pd.read_csv('cereal.csv', index_col = 0)
+df.head(15)
+```
+
+Notes: Script here.
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+
+---
+
+## Pandas describe()
+
+Pandas has a lot up it's sleeve but one of the most useful functions is called describe and it does exactly that. it _describes_ your data.  Let's try it out. 
+
+
+```{python}
+df.describe()
+```
+
+
+
+Notes: Script here.
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+```{python echo=FALSE}
+df.describe()
+```
+
+
+This table will tell you about:
+
+- `count`: The number of non-NA/null observations.
+- `mean`: The mean of  column 
+- `std` : The standard deviation of a column
+- `min`: The min value for a column
+- `max`: The max value for a column 
+- By default the 25, 50 and 75 percentile of the observations
+
+Notes: Script here.
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+You can make change to either limit how much you show or extend it too with the additional argument `include = "all"` in the `describe` brackets. 
+
+```{python}
+df.describe(include = "all")
+```
+
+
+Notes: Script here.
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+```{python echo=FALSE}
+df.describe(include = "all")
+```
+
+Adding `include = "all"` within the brackets adds some additional statistics about categorical columns.
+
+- `unique`: how many observations are unique
+- `top`: which observation value is most occuring
+- `freq`: what is the frequency of the most occuring observation 
+
+Notes: Script here.
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+
+---
+
+you can also get single statistics of each column using:
+either `df.mean()`,`df.std()`, `df.count()`, `df.median()`, `df.sum()`. 
+
+Let's see the sum of the cereal ratings.
+
+
+```{python}
+ratings = df['rating'] 
+ratings.sum()
+```
+
+Or maybe the median calories of the cereals. 
+
+
+```{python}
+calories = df['calories'] 
+calories.median()
+```
+
+
+Notes: Script here.
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+## Frequency Tables
+
+If you want to get a frequency table of a categorical column, there are a few steps that need to be followed. 
+In the previous slides we talked about getting a single column from a dataframe using double brackets like `df[['column-name']]`.  That's great but in order to make a frequency table we need to use a different structure which you'll learn in the next module. Instead of getting a single column with double brackets we only use single brackets like so:
+
+
+```{python}
+manufacturer_column = df["mfr"]
+manufacturer_column
+```
+
+Notes: Script here.
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+We saved the object in a variable called `manufacturer_column` in the same way as we have other dataframes before.  
+Next we cant use `pd.value_counts()` referencing that the column we saved as `manufacturer_column` within the brackets.  
+
+
+```{python}
+manufacturer_freq = manufacturer_column.value_counts()
+manufacturer_freq
+```
+
+
+
+We can then see the frequency of each qualitative value.   
+_We can also use the argument `sort = True` within the brackets if we want to sort the categories in frequency order_ 
+
+
+Notes: Script here.
+<html>
+<audio controls >
+<source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+```{python echo = FALSE}
+manufacturer_freq
+```
+
+
+This looks a bit funny though doesn't it? That's because this output isn't our usual dataframe type so we need to make it so. We can make it prettier with `pd.DataFrame` and saving it as a new variable:
+
+```{python}
+manufacturer_freq_df = pd.DataFrame(manufacturer_freq)
+manufacturer_freq_df
+```
+
+Notes: Script here.
+
+<html>
+<audio controls >
+<source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+Ah! That's what we are used to. The column name is specifying the counts of the manufacturers, but maybe we should rename that column to something that makes more sense. 
+
+let's rename that column to `freq`. But how?    
+
+We use something called `rename` of course! When we rename things it's especially important that we don't forget to assign it to a variable or the column name won't stick! Let's assign it to `freq_mfr_df`.
+
+```{python}
+freq_mfr_df = manufacturer_freq_df.rename(columns = {"mfr": "freq"})
+freq_mfr_df
+```
+
+
+Notes: Script here.
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+```{python eval=FALSE}
+freq_mfr_df = manufacturer_freq_df.rename(columns = {"mfr": "freq"})
+```
+     
+
+This code uses something we've never seen before, `{}` curly brackets!   
+These have a special meaning but for now you need to know that this `columns` argument need to be set equal to   
+`{"old column name" : "new-column-name"}` for us to rename the column.
+
+Notes: Script here.
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+# Let’s apply what we learned!
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>

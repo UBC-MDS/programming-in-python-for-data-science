@@ -6,13 +6,10 @@ def test():
 
     # If an assertion fails, the message will be displayed
 
-    assert "iloc" in __solution__ , "Are you using iloc to slice?"
-    assert "11" in __solution__ , "You may be indexing the wrong position"
-    assert "18" in __solution__ , "You may be indexing the wrong position"
-    assert "0" in __solution__ , "You may be indexing the wrong position"
-    assert "4" in __solution__ , "You may be indexing the wrong position"
-    assert skilled_players.shape == (7, 4), "You may not have selected correctly "
-    assert len(skilled_players) == 7, "You may not have selected correctly "
-    assert list(skilled_players.columns) ==  ['Player', 'No.', 'Age', 'Height'], "Your columns do not seem to be correct"
-    assert list(skilled_players.index) == [11, 12, 13, 14, 15, 16, 17], "Your rows do not seem to be correct"
+    assert '["Zack MacEwen", "Jake Virtanen", "Jordie Benn"]' in __solution__ , "It looks like there is a problem with the row labels you selected"
+    assert '["Height", "Weight", "Salary", "Country"]' in __solution__ , "It looks like there is a problem with the columns labels you selected"
+    assert penalty_players.shape == (3, 4), "You may not have selected correctly "
+    assert len(penalty_players) == 3, "You may not have selected correctly "
+    assert list(penalty_players.columns) ==  ['Height', 'Weight', 'Salary', 'Country'], "Your columns do not seem to be correct"
+    assert list(penalty_players.index) == ['Zack MacEwen', 'Jake Virtanen', 'Jordie Benn'], "Your rows do not seem to be correct"
     __msg__.good("Nice work, well done!")

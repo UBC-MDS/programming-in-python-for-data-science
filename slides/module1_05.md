@@ -51,15 +51,13 @@ df.head()
 ```
 
 ```out
-                          mfr  type  calories  ...  weight  cups     rating
-name                                           ...                         
-100% Bran                   N  Cold        70  ...     1.0  0.33  68.402973
-100% Natural Bran           Q  Cold       120  ...     1.0  1.00  33.983679
-All-Bran                    K  Cold        70  ...     1.0  0.33  59.425505
-All-Bran with Extra Fiber   K  Cold        50  ...     1.0  0.50  93.704912
-Almond Delight              R  Cold       110  ...     1.0  0.75  34.384843
-
-[5 rows x 15 columns]
+                          mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
+name                                                                                                                                       
+100% Bran                   N  Cold        70        4    1     130   10.0    5.0       6     280        25      3     1.0  0.33  68.402973
+100% Natural Bran           Q  Cold       120        3    5      15    2.0    8.0       8     135         0      3     1.0  1.00  33.983679
+All-Bran                    K  Cold        70        4    1     260    9.0    7.0       5     320        25      3     1.0  0.33  59.425505
+All-Bran with Extra Fiber   K  Cold        50        4    0     140   14.0    8.0       0     330        25      3     1.0  0.50  93.704912
+Almond Delight              R  Cold       110        2    2     200    1.0   14.0       8      -1        25      3     1.0  0.75  34.384843
 ```
 
 Notes: Script here.
@@ -113,25 +111,23 @@ df.head(15)
 ```
 
 ```out
-                          mfr  type  calories  ...  weight  cups     rating
-name                                           ...                         
-100% Bran                   N  Cold        70  ...    1.00  0.33  68.402973
-100% Natural Bran           Q  Cold       120  ...    1.00  1.00  33.983679
-All-Bran                    K  Cold        70  ...    1.00  0.33  59.425505
-All-Bran with Extra Fiber   K  Cold        50  ...    1.00  0.50  93.704912
-Almond Delight              R  Cold       110  ...    1.00  0.75  34.384843
-Apple Cinnamon Cheerios     G  Cold       110  ...    1.00  0.75  29.509541
-Apple Jacks                 K  Cold       110  ...    1.00  1.00  33.174094
-Basic 4                     G  Cold       130  ...    1.33  0.75  37.038562
-Bran Chex                   R  Cold        90  ...    1.00  0.67  49.120253
-Bran Flakes                 P  Cold        90  ...    1.00  0.67  53.313813
-Cap'n'Crunch                Q  Cold       120  ...    1.00  0.75  18.042851
-Cheerios                    G  Cold       110  ...    1.00  1.25  50.764999
-Cinnamon Toast Crunch       G  Cold       120  ...    1.00  0.75  19.823573
-Clusters                    G  Cold       110  ...    1.00  0.50  40.400208
-Cocoa Puffs                 G  Cold       110  ...    1.00  1.00  22.736446
-
-[15 rows x 15 columns]
+                          mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
+name                                                                                                                                       
+100% Bran                   N  Cold        70        4    1     130   10.0    5.0       6     280        25      3    1.00  0.33  68.402973
+100% Natural Bran           Q  Cold       120        3    5      15    2.0    8.0       8     135         0      3    1.00  1.00  33.983679
+All-Bran                    K  Cold        70        4    1     260    9.0    7.0       5     320        25      3    1.00  0.33  59.425505
+All-Bran with Extra Fiber   K  Cold        50        4    0     140   14.0    8.0       0     330        25      3    1.00  0.50  93.704912
+Almond Delight              R  Cold       110        2    2     200    1.0   14.0       8      -1        25      3    1.00  0.75  34.384843
+Apple Cinnamon Cheerios     G  Cold       110        2    2     180    1.5   10.5      10      70        25      1    1.00  0.75  29.509541
+Apple Jacks                 K  Cold       110        2    0     125    1.0   11.0      14      30        25      2    1.00  1.00  33.174094
+Basic 4                     G  Cold       130        3    2     210    2.0   18.0       8     100        25      3    1.33  0.75  37.038562
+Bran Chex                   R  Cold        90        2    1     200    4.0   15.0       6     125        25      1    1.00  0.67  49.120253
+Bran Flakes                 P  Cold        90        3    0     210    5.0   13.0       5     190        25      3    1.00  0.67  53.313813
+Cap'n'Crunch                Q  Cold       120        1    2     220    0.0   12.0      12      35        25      2    1.00  0.75  18.042851
+Cheerios                    G  Cold       110        6    2     290    2.0   17.0       1     105        25      1    1.00  1.25  50.764999
+Cinnamon Toast Crunch       G  Cold       120        1    3     210    0.0   13.0       9      45        25      2    1.00  0.75  19.823573
+Clusters                    G  Cold       110        3    2     140    2.0   13.0       7     105        25      3    1.00  0.50  40.400208
+Cocoa Puffs                 G  Cold       110        1    1     180    0.0   12.0      13      55        25      2    1.00  1.00  22.736446
 ```
 
 Notes: Script here.
@@ -177,16 +173,14 @@ df.loc[ "Apple Cinnamon Cheerios" : "Cap'n'Crunch"]
 ```
 
 ```out
-                        mfr  type  calories  ...  weight  cups     rating
-name                                         ...                         
-Apple Cinnamon Cheerios   G  Cold       110  ...    1.00  0.75  29.509541
-Apple Jacks               K  Cold       110  ...    1.00  1.00  33.174094
-Basic 4                   G  Cold       130  ...    1.33  0.75  37.038562
-Bran Chex                 R  Cold        90  ...    1.00  0.67  49.120253
-Bran Flakes               P  Cold        90  ...    1.00  0.67  53.313813
-Cap'n'Crunch              Q  Cold       120  ...    1.00  0.75  18.042851
-
-[6 rows x 15 columns]
+                        mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
+name                                                                                                                                     
+Apple Cinnamon Cheerios   G  Cold       110        2    2     180    1.5   10.5      10      70        25      1    1.00  0.75  29.509541
+Apple Jacks               K  Cold       110        2    0     125    1.0   11.0      14      30        25      2    1.00  1.00  33.174094
+Basic 4                   G  Cold       130        3    2     210    2.0   18.0       8     100        25      3    1.33  0.75  37.038562
+Bran Chex                 R  Cold        90        2    1     200    4.0   15.0       6     125        25      1    1.00  0.67  49.120253
+Bran Flakes               P  Cold        90        3    0     210    5.0   13.0       5     190        25      3    1.00  0.67  53.313813
+Cap'n'Crunch              Q  Cold       120        1    2     220    0.0   12.0      12      35        25      2    1.00  0.75  18.042851
 ```
 
 Notes: Script here.
@@ -222,7 +216,51 @@ Notes: Script here.
 
 ---
 
-# let’s try it out\!
+Now what if we only wanted certain columns now?
+
+Perhaps we were only interested in the `calories` to `fiber` columns of
+those
+rows?
+
+``` python
+df.loc[ "Apple Cinnamon Cheerios" : "Cap'n'Crunch", "calories" : "fiber"]
+```
+
+```out
+                         calories  protein  fat  sodium  fiber
+name                                                          
+Apple Cinnamon Cheerios       110        2    2     180    1.5
+Apple Jacks                   110        2    0     125    1.0
+Basic 4                       130        3    2     210    2.0
+Bran Chex                      90        2    1     200    4.0
+Bran Flakes                    90        3    0     210    5.0
+Cap'n'Crunch                  120        1    2     220    0.0
+```
+
+`loc` is used to slice columns and rows by **label** and within an
+interval. The general format to slice both rows and columns together
+looks like
+this:
+
+``` python
+`df.loc[ row-name-start : row-name-end , "column name start" : "column name end"]`
+```
+
+Notes: Script here.
+
+<html>
+
+<audio controls >
+
+<source src="placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+# Let’s try it out\!
 
 Notes: Script here
 

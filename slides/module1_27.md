@@ -22,7 +22,7 @@ Your browser does not support the video tag.
 
 Notes:
 By the end of the module, students are expected to:
-- Describe the components of a Dataframe.
+- Describe the components of a dataframe.
 - Read a standard .csv file using Pandas `pd.read_csv()`.
 - Explain modules and import libraries.
 - Demonstrate indexing and slicing with `df.loc[]` and `df.iloc[]`.

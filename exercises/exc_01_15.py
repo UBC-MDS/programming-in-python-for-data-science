@@ -2,13 +2,12 @@ import pandas as pd
 
 # The database 
 
-hockey_players = pd.read_csv('data/canucks.csv')
-hockey_players
+hockey_players = pd.read_csv('data/canucks.csv', index_col=0)
 
-# Slice the rows and columns and save the new dataframe as `injured_players`
+# Select the rows and columns and save the new dataframe as `penalty_players`
 
-# ____ = ____.____[____ : ____ , ____ : ____]
+# ____ = ____.____[____, ____]
 
-# Display it (without using print)
+# Display it
 
-#____ 
+____ 

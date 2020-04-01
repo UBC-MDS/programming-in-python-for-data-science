@@ -21,6 +21,16 @@ library(reticulate)
 ```
 
 
+```{python include=FALSE}
+import pandas as pd
+import numpy as np
+pd.set_option('display.width', 400)
+
+np.set_printoptions(linewidth=400)
+
+pd.set_option('display.max_columns', 15)
+```
+
 type: slides
 
 
@@ -148,7 +158,7 @@ df.shape
 ```
 
 
-Breaking up this code it just means "From our dataframe that we saved as `df` tell me the `columns` or tell me the `shape`".
+Breaking up this code it just means "From our dataframe that we saved as `df` tell me the `columns` or tell me the `shape`.
 
 
 Notes: Script here.

@@ -35,7 +35,7 @@ class Slides extends React.Component {
                     showNotes: true,
                     controls: true,
                     width: '100%',
-                    height: 700,
+                    height: 650,
                     minScale: 0.75,
                     maxScale: 1,
                 })
