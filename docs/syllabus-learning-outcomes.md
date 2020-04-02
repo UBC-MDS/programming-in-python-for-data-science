@@ -140,7 +140,6 @@ By the end of the module, students are expected to:
 - DRY principle 
 - Keyword arguments 
 - Docstrings 
-
 - Multiple return values 
 - Demonstrate how to import classes and functions for different python libraries
 
