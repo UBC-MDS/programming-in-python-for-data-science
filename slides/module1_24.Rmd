@@ -117,7 +117,8 @@ df.plot.scatter(x='sugars', y='calories')
 ```
 
 ```out
-   
+  
+            
 ```
 ```{python echo = FALSE, fig.width = 7, fig.height = 4}
 df.plot.scatter(x='sugars', y='calories')
@@ -137,7 +138,7 @@ Something you may have noticed is that there are 77 cereals but there doesn't se
 df.plot.scatter(x='sugars',y='calories', alpha= 0.3)
 ```
 ```out
-   
+                               
 ```
 ```{python echo = FALSE, fig.width = 7, fig.height = 4}
 df.plot.scatter(x='sugars',y='calories', alpha= 0.3)
@@ -162,8 +163,9 @@ df.plot.scatter(x="sugars",
 ```
 
 ```out
-   
+                                   
 ```
+ 
 ```{python echo = FALSE, fig.width = 7, fig.height = 4}
 df.plot.scatter(x="sugars", 
                 y="calories", 
@@ -191,7 +193,8 @@ df.plot.scatter(x="sugars",
 ```
 
 ```out
-   
+                        
+                              
 ```
 ```{python echo = FALSE, fig.width = 7, fig.height = 4}
 df.plot.scatter(x="sugars",
