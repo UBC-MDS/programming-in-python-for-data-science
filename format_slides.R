@@ -10,12 +10,20 @@ Options:
 library(docopt)
 library(readr)
 library(stringr)
+library(rmarkdown)
 
 opt <- docopt(doc)
 
 main <- function(input) {
-
-  text <- read_file(input)
+  
+  # render the rmd and give variable to created md path
+  render(input) 
+  str_input <- gsub(input, pattern=".rmd$", replacement="")
+  md_input = paste(str_input, ".md", sep = "")
+  text <- read_file(md_input)
+  
+  # replace global enviromnent with relative  
+  text <- str_replace_all( text, "/Users/.+/static/", "" )
 
   # replace \n-----\n with \n---\n to denote slide breaks
   text <- str_replace_all(string = text, 
@@ -43,8 +51,9 @@ main <- function(input) {
   if (!is.null(opt[["--output"]])) {
     write_file(text, opt[["--output"]])
   } else {
-    write_file(text, input)
+    write_file(text, md_input)
   }
 }
+
 
 main(opt[["--input"]])
