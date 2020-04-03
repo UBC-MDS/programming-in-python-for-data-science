@@ -34,7 +34,7 @@ library(reticulate)
 ```{python include=FALSE}
 import pandas as pd
 import numpy as np
-pd.set_option('display.width', 400)
+pd.set_option('display.width', 350)
 
 np.set_printoptions(linewidth=400)
 
@@ -84,10 +84,13 @@ Notes: Script here.
 2. Next we add `.plot` since we want to plot it!   
 3. But what kind of plot do we want?! A bar chart in this case would work nicely so lets add `.bar()` after that 
 
-```out
-  
+
+```{python echo=TRUE, results='hide'}
+freq_mfr_df.plot.bar()
 ```
-```{python results='hide'}
+```out
+```
+```{python echo = FALSE, fig.width = 7, fig.height = 5}
 freq_mfr_df.plot.bar()
 ```
 
