@@ -27,14 +27,14 @@ freq_mfr_df
 ```
 
 ```out
-   freq
-K    23
-G    22
-P     9
-Q     8
-R     8
-N     6
-A     1
+    ##    freq
+    ## K    23
+    ## G    22
+    ## P     9
+    ## R     8
+    ## Q     8
+    ## N     6
+    ## A     1
 ```
 
 This would be great to express as a bar chart. But how do we do it?
