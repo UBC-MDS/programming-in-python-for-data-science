@@ -88,9 +88,11 @@ Notes: Script here.
 ```{python echo=TRUE, results='hide'}
 freq_mfr_df.plot.bar()
 ```
+
 ```out
+   
 ```
-```{python echo = FALSE, fig.width = 7, fig.height = 5}
+```{python echo = FALSE, fig.width = 7, fig.height = 4}
 freq_mfr_df.plot.bar()
 ```
 
@@ -110,11 +112,16 @@ This would require a `scatter` plot!
 In the code we would need to specify the x and y axis which means we would need to specify the column names for each axis. 
 We are going to call it `sug_cal_scatter1`.
 
-```{python}
+```{python echo=TRUE, results='hide'}
 df.plot.scatter(x='sugars', y='calories')
-
 ```
 
+```out
+   
+```
+```{python echo = FALSE, fig.width = 7, fig.height = 4}
+df.plot.scatter(x='sugars', y='calories')
+```
 
 Notes: Script here.
 <html>
@@ -126,7 +133,13 @@ Notes: Script here.
 
 Something you may have noticed is that there are 77 cereals but there doesn't seem to be 77 data points! That's because some of them are lying on top of each other with the same sugar ar calorie values. It may be of use to set an opacity to the graph to differential those points. Opacity is set with the argument `alpha` and accepts values between 0 and 1, 1 being full intensity.  
 
-```{python}
+```{python echo=TRUE, results='hide'}
+df.plot.scatter(x='sugars',y='calories', alpha= 0.3)
+```
+```out
+   
+```
+```{python echo = FALSE, fig.width = 7, fig.height = 4}
 df.plot.scatter(x='sugars',y='calories', alpha= 0.3)
 ```
 
@@ -141,14 +154,22 @@ Notes: Script here.
 Look at that! Now we can see there are multiple cereals that have 2.5g of sugar with 100 calories. 
 What if we wanted to change the colour to purple? Enter parameter `color`! We can also add a bit of readability by separating the arguments into separate lines.
 
-```{python}
+```{python echo=TRUE, results='hide'}
 df.plot.scatter(x="sugars", 
                 y="calories", 
                 alpha= .3, 
                 color= "purple")
 ```
 
-
+```out
+   
+```
+```{python echo = FALSE, fig.width = 7, fig.height = 4}
+df.plot.scatter(x="sugars", 
+                y="calories", 
+                alpha= .3, 
+                color= "purple")
+```
 
 Notes: Script here.
 <html>
@@ -160,7 +181,7 @@ Notes: Script here.
 
 Those data points look pretty small. To enlarge them, the argument `s` should do the trick. Also every good graph should havew a title! Let's take this opportunity to finish off this graph and set the argument `title` to something as well. 
 
-```{python}
+```{python echo=TRUE, results='hide'}
 df.plot.scatter(x="sugars",
                 y="calories",
                 alpha= 0.3, 
@@ -169,6 +190,17 @@ df.plot.scatter(x="sugars",
                 title = "The relationship between sugar and calories in cereals")
 ```
 
+```out
+   
+```
+```{python echo = FALSE, fig.width = 7, fig.height = 4}
+df.plot.scatter(x="sugars",
+                y="calories",
+                alpha= 0.3, 
+                color="purple",
+                s= 80, 
+                title = "The relationship between sugar and calories in cereals")
+```
 
 Notes: Script here.
 <html>
