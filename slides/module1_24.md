@@ -67,7 +67,7 @@ freq_mfr_df.plot.bar()
 
 <img src="module1/module1_24/unnamed-chunk-4-1.png" width="672" />
 
-``` out
+```out
    
 ```
 
@@ -104,7 +104,7 @@ df.plot.scatter(x='sugars', y='calories')
 
 <img src="module1/module1_24/unnamed-chunk-6-1.png" width="672" />
 
-``` out
+```out
   
             
 ```
@@ -139,7 +139,7 @@ df.plot.scatter(x='sugars',y='calories', alpha= 0.3)
 
 <img src="module1/module1_24/unnamed-chunk-8-1.png" width="672" />
 
-``` out
+```out
                                
 ```
 
@@ -173,7 +173,7 @@ df.plot.scatter(x="sugars",
 
 <img src="module1/module1_24/unnamed-chunk-10-1.png" width="672" />
 
-``` out
+```out
                                    
 ```
 
@@ -209,7 +209,7 @@ df.plot.scatter(x="sugars",
 
 <img src="module1/module1_24/unnamed-chunk-12-1.png" width="672" />
 
-``` out
+```out
                         
                               
 ```
