@@ -44,9 +44,9 @@ main <- function(input) {
   text <- str_replace_all(text, "(?<=    ## .{0,300})\n\n", "\n```\n\n")
   
   # remove comment blocks and indentation from output code chunks
-  #text <- str_replace_all(string = text, 
-   #                       pattern = "    ## ",
-    #                      replacement = "")
+  text <- str_replace_all(string = text, 
+                          pattern = "    ## ",
+                          replacement = "")
   
   if (!is.null(opt[["--output"]])) {
     write_file(text, opt[["--output"]])
