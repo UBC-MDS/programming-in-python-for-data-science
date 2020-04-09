@@ -100,7 +100,7 @@ Notes: Script here.
 
 What else can we plot from our original cereal dataframe named `df`? Maybe we want to see the relationship between `sugars` and `calories` in cereals?        
 This would require a `scatter` plot!       
-In the code we would need to specify the x and y axis which means we would need to specify the column names for each axis; In this case the x axis is the `sugars` column and the y axis is the `calories` column.    
+In the code we would need to specify the x and y axis which means we would need to specify the column names for each axis; In this case the x-axis is the `sugars` column and the y-axis is the `calories` column.    
 
 ```{python fig.width = 6, fig.height = 4}
 df.plot.scatter(x='sugars', y='calories')

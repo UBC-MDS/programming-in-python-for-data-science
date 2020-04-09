@@ -89,8 +89,8 @@ Maybe we want to see the relationship between `sugars` and `calories` in
 cereals?  
 This would require a `scatter` plot\!  
 In the code we would need to specify the x and y axis which means we
-would need to specify the column names for each axis; In this case the x
-axis is the `sugars` column and the y axis is the `calories`
+would need to specify the column names for each axis; In this case the
+x-axis is the `sugars` column and the y-axis is the `calories`
 column.
 
 ``` python

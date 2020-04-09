@@ -49,8 +49,6 @@ Wheaties Honey Gold        Cold
 [77 rows x 1 columns]
 ```
 
-But there is a better way of doing this.
-
 Notes: Script here.
 
 <html>
@@ -65,7 +63,8 @@ Notes: Script here.
 
 ---
 
-We can omit `loc` altogether and use double square brackets:
+But there is a better way of doing this. We can omit `loc` altogether
+and use double square parentheses:
 
 ``` python
 df[['column-name']]

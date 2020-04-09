@@ -21,11 +21,13 @@ Notes: Script here.
 ## Slicing Dataframe
 
 Up to this point, we have been manipulating our dataframe with column
-and row ***label*** name using `df. loc`.  
-`df.iloc` is very similar, however, the “i” in `iloc` refers to the
-index ***integer*** position.
+and row ***labels*** using `df. loc`.  
+Slicing can also be done by the location position of each row with
+`df.iloc`. `df.iloc` is very similar, however, the “i” in `iloc` refers
+to the index ***integer*** position.
 
-Let’s return to our cereal dataset and take a look at the first 15 rows.
+We are going to return to our cereal dataset and take a look at the
+first 15 rows.
 
 Notes: Script here.
 
@@ -115,7 +117,7 @@ Notes: Script here.
 ---
 
 We can use the same coding structure we learned with `df.loc`, but this
-time using the position instead of labels with
+time using row positions instead of labels with
     `df.iloc[]`
 
 ``` python
@@ -132,7 +134,7 @@ Almond Delight              R  Cold       110        2    2     200    1.0   14.
 
 But wait\! Something is missing here\!
 
-Why doesn’t “Apple Cinnamon Cheerios” appear in the dataframe?
+Why doesn’t `Apple Cinnamon Cheerios` appear in the dataframe?
 
 Notes: Script here.
 
@@ -150,7 +152,7 @@ Notes: Script here.
 
 That’s because when we use slicing by index position, it will take all
 the indices including the lower bound but *EXCLUDING* the upper bound.
-If we wanted to include “Apple Cinnamon Cheerios” we would have to go 1
+If we wanted to include `Apple Cinnamon Cheerios` we would have to go 1
 index position
     further.
 
@@ -183,9 +185,9 @@ Notes: Script here.
 
 ---
 
-The same concepts can apply to the columns of the dataframe.  
-Let’s say we want all the rows but we only want the columns starting at
-`protein` and ending (including) at column `sugars`.  
+The same concepts can apply to the columns of the dataframe. Let’s say
+we want all the rows but we only want the columns starting at `protein`
+and ending (including) at column `sugars`.  
 Using the logic we learned in the last set of slides, we would use the
 following
     code:
@@ -276,7 +278,7 @@ Notes: Script here.
 ## Selecting with df.iloc\[\]
 
 Selecting using `iloc` is done identically to `loc`, however, the items
-within each set of square brackets **MUST** be numeric.
+within each set of square parentheses **MUST** be numeric.
 
 Let’s say we want the rows `Cheerios`, `Basic 4` and `Apple Jacks` with
 the columns `rating`, `fat` and `type` *in that order*.

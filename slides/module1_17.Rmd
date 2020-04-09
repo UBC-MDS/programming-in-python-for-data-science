@@ -62,7 +62,7 @@ For example, if we wanted the column `type` from our cereal dataframe.
 df.loc[ : , [ "type"] ]
 ```
 
-But there is a better way of doing this.
+
 
 Notes: Script here.
 <html>
@@ -72,7 +72,8 @@ Notes: Script here.
 
 ---
 
-We can omit `loc` altogether and use double square brackets:
+But there is a better way of doing this.
+We can omit `loc` altogether and use double square parentheses:
 
 ``` Python
 df[['column-name']]

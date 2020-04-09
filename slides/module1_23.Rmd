@@ -68,7 +68,7 @@ Notes: Script here.
 
 ---
 
-What if we wanted the cereals with a higher sugar content first?  Then we would order them in `descending` order by setting the parameter `ascending` to "False":
+What if we wanted the cereals with a higher sugar content first?  Then we would order them in `descending` order by setting the parameter `ascending=False`:
 
 ```{python}
 sorted_sugar = df.sort_values(by="sugars", ascending=False)

@@ -137,7 +137,7 @@ It may be a good idea to look over this section.
 Let's try importing pandas and loading in our data.
 
 **Instructions:**    
-When you run a coding exercise for the first time, it could take a bit of time for everything to load.
+Running a coding exercise for the first time, could take a bit of time for everything to load. Be patient, it could take a few minutes. 
 
 **When you see `____` in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.**
 
@@ -159,8 +159,7 @@ Tasks:
 <exercise id="5" title="Your Second Code!">
 
 
-**Instructions:**    
-When you run a coding exercise for the first time, it could take a bit of time for everything to load.
+Running a coding exercise for the first time, could take a bit of time for everything to load. Be patient, it could take a few minutes. 
 
 **When you see `____` in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.**
 
@@ -287,7 +286,7 @@ I think you are missing something important.
 
 
 **Instructions:**    
-When you run a coding exercise for the first time, it could take a bit of time for everything to load.    
+Running a coding exercise for the first time, could take a bit of time for everything to load. Be patient, it could take a few minutes.   
 
 **When you see `____` in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.**
 
@@ -324,7 +323,7 @@ Tasks:
 <exercise id="9" title="Practicing Column Slicing">
 
 **Instructions:**     
-When you run a coding exercise for the first time, it could take a bit of time for everything to load.
+Running a coding exercise for the first time, could take a bit of time for everything to load. Be patient it could take a few minutes. 
 
 **When you see `____` in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.**
 
@@ -334,11 +333,6 @@ Use the output of the following code chunk to help answer the next question.
 <codeblock id="hockey_players">
 
 </codeblock>
-
-**Instructions:**    
-When you run a coding exercise for the first time, it could take a bit of time for everything to load.    
-
-**When you see `____` in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.**
 
 
 Using our `hockey_players` data from the last few questions with the index labeled with `Player` name, Let's try slicing it.
@@ -399,7 +393,7 @@ This is almost right but it's missing something important! Try looking at the ti
 
 </opt>
 
-<opt text='<code>fruit_salad[ "apple": "lemon" , "seeds" : "water-content"]</code>' >
+<opt text='<code>fruit_salad["apple": "lemon" , "seeds" : "water-content"]</code>' >
 
 This is almost right but it's missing something important and it could be condensed! Try looking at the title of the slides we just finished.
 
@@ -441,11 +435,10 @@ dragon-fruit    magenta      china    True   round      False          96       
        lemon     yellow     mexico   False    oval      False          83          65
 ```
 **Question**    
-If I wanted to make a tropical salad and the recipe calls for `kiwi`, `cantaloupe` and `guava` in this order and I am only interested in columns ordered as `sweetness`, `weight`, `seed` and  `location`, 
-what would my code look like?
+If I wanted to make a tropical salad and the recipe calls for `kiwi`, `cantaloupe` and `guava` in this order and I am only interested in columns ordered as `sweetness`, `weight`, `seed` and  `location`, what would my code look like?
 
 <choice >
-<opt text='<code>fruit_salad.loc[ "kiwi", "cantaloupe", "guava" : "sweetness", "weight", "seed", "location"]</code>' >
+<opt text='<code>fruit_salad.loc["kiwi", "cantaloupe", "guava" : "sweetness", "weight", "seed", "location"]</code>' >
 
 Unfortunately, this code has many errors in it.
 
@@ -453,17 +446,17 @@ Unfortunately, this code has many errors in it.
 
 <opt text='<code>fruit_salad.loc[ ["kiwi", "cantaloupe", "guava"] : ["sweetness", "weight", "seed", "location"] ]</code>' >
 
-The way that the rows and columns are separated may need to be looked over
+The way that the rows and columns are separated may need to be looked over.
 
 </opt>
 
 <opt text='<code>fruit_salad.loc[["kiwi", "cantaloupe", "guava"] , ["sweetness", "weight", "seed", "location"] ]</code>' correct="true">
 
-Ah, this looks right!
+Yes, this looks right!
 
 </opt>
 
-<opt text='<code>fruit_salad.loc["cantaloupe", "kiwi", "guava"] , [ "weight", "seed”, “sweetness", "location"]]</code>'>
+<opt text='<code>fruit_salad.loc["cantaloupe", "kiwi", "guava"] , ["weight", "seed”, “sweetness", "location"]]</code>'>
 
 Remember we are rearranging here.
 
@@ -475,7 +468,7 @@ Remember we are rearranging here.
 <exercise id="14" title="Practicing Selecting Using Index Labels">
 
 **Instructions:**    
-When you run a coding exercise for the first time, it could take a bit of time for everything to load.    
+Running a coding exercise for the first time, could take a bit of time for everything to load. Be patient, it could take a few minutes. 
 
 **When you see `____` in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.**
 
@@ -512,7 +505,7 @@ Tasks:
 <exercise id="16" title="Practicing Selecting Values">
 
 **Instructions:**    
-When you run a coding exercise for the first time, it could take a bit of time for everything to load.    
+Running a coding exercise for the first time, could take a bit of time for everything to load. Be patient, it could take a few minutes.   
 
 **When you see `____` in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.**
 
@@ -553,6 +546,11 @@ Tasks:
 
 
 <exercise id="18" title="Practicing Selecting">
+
+**Instructions:**    
+Running a coding exercise for the first time, could take a bit of time for everything to load. Be patient, it could take a few minutes. 
+
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.**
 
 Let's try selecting a specific column.
 
@@ -660,6 +658,11 @@ I think you are missing something important!
 
 <exercise id="21" title="Practicing Slicing Using Index Position">
 
+**Instructions:**    
+Running a coding exercise for the first time, could take a bit of time for everything to load. Be patient, it could take a few minutes. 
+
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.**
+
  In previous questions, we tried slicing using index labels on our Canack dataset. Let's try something similar but using the index positions.
 To make life a little easier for you we will be reading in the data without `index_loc=0`. This means that no column is being assigned as an index and will have an index labeled with row numbers.
 
@@ -680,6 +683,11 @@ Tasks:
 </exercise>
 
 <exercise id="22" title="Practicing Selecting Using Index Position">
+
+**Instructions:**    
+Running a coding exercise for the first time, could take a bit of time for everything to load. Be patient, it could take a few minutes. 
+
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.**
 
 These unfortunate Canuck players have various forms of injuries, so let's make a dataframe of players who have injuries by selecting them using their index position.
 
@@ -704,6 +712,11 @@ Tasks:
 </exercise>
 
 <exercise id="24" title="Practice Sorting">
+
+**Instructions:**    
+Running a coding exercise for the first time, could take a bit of time for everything to load. Be patient, it could take a few minutes. 
+
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.**
 
 Let's sort our hockey dataframe
 
@@ -793,6 +806,11 @@ Is `summary` the correct command here?
 
 <exercise id="27" title="Using df.describe()">
 
+**Instructions:**    
+Running a coding exercise for the first time, could take a bit of time for everything to load. Be patient, it could take a few minutes. 
+
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.**
+
 Let's try and obtain some statistics from our hockey data we've been playing with.
 
 Task:
@@ -824,6 +842,12 @@ Task:
 
 <exercise id="28" title="Practicing Frequency Tables">
 
+**Instructions:**    
+Running a coding exercise for the first time, could take a bit of time for everything to load. Be patient, it could take a few minutes. 
+
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.**
+
+
 Let's get the frequencies of some of our values! We spoke in the slides about the steps we needed to follow to get a frequency table.    
     
 _**Make sure you remove the hash (`#`) symbol in the coding portions of this question. We have commented them so that the line won't execute and you can test your code after each step.**_ 
@@ -851,6 +875,11 @@ Task:
 
 <exercise id="30" title="Practicing Bar Charts">
 
+**Instructions:**    
+Running a coding exercise for the first time, could take a bit of time for everything to load. Be patient, it could take a few minutes. 
+
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.**
+
 You are going to load the frequency table from the questions that we exported as a `csv` in the last section and plot it!
 
 _**Make sure you remove the hash (`#`) symbol in the coding portions of this question. We have commented them so that the line won't execute and you can test your code after each step.**_ 
@@ -873,6 +902,11 @@ Tasks:
 </exercise>
 
 <exercise id="31" title="Practicing Scatterplots">
+
+**Instructions:**    
+Running a coding exercise for the first time, could take a bit of time for everything to load. Be patient, it could take a few minutes. 
+
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.**
 
 Ok, let's try our luck with a scatterplot. We want to explore the relationship between `Age` and `Salary`.
 
