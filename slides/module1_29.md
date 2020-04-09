@@ -57,7 +57,7 @@ Notes: Script here.
 2.  Next we add `.plot` since we want to plot it\!  
 3.  But what kind of plot do we want?\! A bar chart in this case would
     work nicely so lets add `.bar()` after
-that
+that.
 
 <!-- end list -->
 
@@ -65,7 +65,7 @@ that
 manufacturer_freq.plot.bar()
 ```
 
-<img src="module1/module1_28/unnamed-chunk-4-1.png" width="576" />
+<img src="module1/module1_29/unnamed-chunk-4-1.png" width="576" />
 
 See how quick that was? The important things to notice here is that we
 want to `.plot` a `.bar()` graph.
@@ -87,16 +87,17 @@ Notes: Script here.
 What else can we plot from our original cereal dataframe named `df`?
 Maybe we want to see the relationship between `sugars` and `calories` in
 cereals?  
-This would require a `scatter` plot\! In the code we would need to
-specify the x and y axis which means we would need to specify the column
-names for each axis. We are going to call it
-`sug_cal_scatter1`.
+This would require a `scatter` plot\!  
+In the code we would need to specify the x and y axis which means we
+would need to specify the column names for each axis; In this case the x
+axis is the `sugars` column and the y axis is the `calories`
+column.
 
 ``` python
 df.plot.scatter(x='sugars', y='calories')
 ```
 
-<img src="module1/module1_28/unnamed-chunk-5-1.png" width="576" />
+<img src="module1/module1_29/unnamed-chunk-5-1.png" width="576" />
 
 Notes: Script here.
 
@@ -124,7 +125,7 @@ intensity.
 df.plot.scatter(x='sugars',y='calories', alpha= 0.3)
 ```
 
-<img src="module1/module1_28/unnamed-chunk-6-1.png" width="576" />
+<img src="module1/module1_29/unnamed-chunk-6-1.png" width="576" />
 
 Notes: Script here.
 
@@ -152,7 +153,7 @@ df.plot.scatter(x="sugars",
                 color= "purple")
 ```
 
-<img src="module1/module1_28/unnamed-chunk-7-1.png" width="576" />
+<img src="module1/module1_29/unnamed-chunk-7-1.png" width="576" />
 
 Notes: Script here.
 
@@ -182,7 +183,7 @@ df.plot.scatter(x="sugars",
                 title = "The relationship between sugar and calories in cereals")
 ```
 
-<img src="module1/module1_28/unnamed-chunk-8-1.png" width="576" />
+<img src="module1/module1_29/unnamed-chunk-8-1.png" width="576" />
 
 Notes: Script here.
 

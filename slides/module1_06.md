@@ -198,7 +198,7 @@ Notes: Script here.
 
 ---
 
-Now what if we only wanted certain columns now?
+What if we only wanted certain columns now?
 
 Perhaps we were only interested in the `calories` to `fiber` columns of
 those
@@ -220,8 +220,9 @@ Cap'n'Crunch                  120        1    2     220    0.0
 ```
 
 `loc` is used to slice columns and rows by **label** and within an
-interval. The general format to slice both rows and columns together
-looks like
+interval.
+
+The general format to slice both rows and columns together looks like
 this:
 
 ``` python

@@ -238,7 +238,7 @@ Good job! This has both `loc` and "quotation" which are both needed to slice her
 </choice >
 
 **Question 2**    
-If you wanted all the rows between `cantaloupe` and `fig` and only columns `name` to `seed`? What would your code look like using index labels?
+If you wanted all the rows between `cantaloupe` and `fig` and only columns `name` to `seed`, what would your code look like using index labels?
 
 <choice id="2" >
 <opt text='<code>fruit_salad.loc[ "cantaloupe" : "fig", "name" : "seed"]</code>'>
@@ -321,6 +321,11 @@ Use the output of the following code chunk to help answer the next question.
 <codeblock id="hockey_players">
 
 </codeblock>
+
+**Instructions:**    
+When you run a coding exercise for the first time, it could take a bit of time for everything to load.    
+
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.**
 
 
 Using our `hockey_players` data from the last few questions with the index labeled with `Player` name, Let's try slicing it.
@@ -456,6 +461,12 @@ Remember we are rearranging here.
 
 <exercise id="14" title="Practicing Selecting Using Index Labels">
 
+**Instructions:**    
+When you run a coding exercise for the first time, it could take a bit of time for everything to load.    
+
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.**
+
+
 Now let's select specific players and columns.
 
 Tasks:
@@ -486,6 +497,11 @@ Tasks:
 
 
 <exercise id="16" title="Practicing Selecting Values">
+
+**Instructions:**    
+When you run a coding exercise for the first time, it could take a bit of time for everything to load.    
+
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.**
 
 
 Use the output of the following code chunk to help complete the next tasks.
@@ -669,17 +685,39 @@ Tasks:
 
 </exercise>
 
-<exercise id="23" title="Summary Statistics" type="slides">
+<exercise id="23" title="Sorting Dataframes" type="slides">
 <slides source="module1_23">
 </slides>
 </exercise>
 
+<exercise id="24" title="Practice Sorting">
 
-<exercise id="24" title="Fruit Bowl Statistics">
+Let's sort our hockey dataframe
+
+Task:
+- Sort your `hockey_players` dataframe by Salary from most to least and name your new dataframe as `rich_players`
+- Display it
+
+
+<codeblock id="01_24">
+
+- Are you sure you are using `sort_values`?
+- Are you using the argument `ascending=False` to order `Salary` in descending order?
+
+</codeblock>
+
+</exercise>
+
+<exercise id="25" title="Summary Statistics" type="slides">
+<slides source="module1_25">
+</slides>
+</exercise>
+
+<exercise id="26" title="Fruit Bowl Statistics">
 
 **Question 1**
 Let's say I have a dataframe named  `fruit_salad` with a column of interest named `colour`.  
-How would you find the frequency of the column `colour` using `pd.value_counts()`?
+Which of the following will give us the desired input if we wanted to make a frequency table of the column `colour` using `pd.value_counts()`?
 
 <choice id="1" >
 <opt text='<code>fruit_salad[colour]</code>'>
@@ -740,25 +778,7 @@ Is `summary` the correct command here?
 
 </exercise>
 
-<exercise id="25" title="Practice Sorting">
-
-Let's sort our hockey dataframe
-
-Task:
-- Sort your `hockey_players` dataframe by Salary from most to least and name your new dataframe as `rich_players`
-- Display it
-
-
-<codeblock id="01_25">
-
-- Are you sure you are using `sort_values`?
-- Are you using the argument `ascending=False` to order `Salary` in descending order?
-
-</codeblock>
-
-</exercise>
-
-<exercise id="26" title="Using df.describe()">
+<exercise id="27" title="Using df.describe()">
 
 Let's try and obtain some statistics from our hockey data we've been playing with.
 
@@ -767,7 +787,7 @@ Task:
 - Display it
 
 
-<codeblock id="01_26a">
+<codeblock id="01_27a">
 
 - Are you sure you are saving your objects correctly?
 - Are you using using `df.describe(include = "all")` ?
@@ -779,7 +799,7 @@ Task:
 - Find the total salary of the team and save it in an object called `player_cost`
 
 
-<codeblock id="01_26b">
+<codeblock id="01_27b">
 
 
 - Are you using df[["column-name"]].sum() to find the total of a column?
@@ -789,7 +809,7 @@ Task:
 
 </exercise>
 
-<exercise id="27" title="Practicing Frequency Tables">
+<exercise id="28" title="Practicing Frequency Tables">
 
 Let's get the frequencies of some of our values! We spoke in the slides about the steps we needed to follow to get a frequency table.    
     
@@ -801,7 +821,7 @@ Task:
 - Export position_freq  to a csv named `position_frequencies.csv` using `pd.to_csv()`.
 - Don't forget to display it.
 
-<codeblock id="01_27">
+<codeblock id="01_28">
 
 - Are you sure you are using single `[]` brackets for `position_column`?
 - Are you using `pd.to_csv()` to save your `csv`?
@@ -811,12 +831,12 @@ Task:
 
 </exercise>
 
-<exercise id="28" title="Quick Viz with Pandas" type="slides">
-<slides source="module1_28">
+<exercise id="29" title="Quick Viz with Pandas" type="slides">
+<slides source="module1_29">
 </slides>
 </exercise>
 
-<exercise id="29" title="Practicing Bar Charts">
+<exercise id="30" title="Practicing Bar Charts">
 
 You are going to load the frequency table from the questions that we exported as a `csv` in the last section and plot it!
 
@@ -828,7 +848,7 @@ Tasks:
 - Assign a `color` as `Teal`, set opacity to 0.5.
 - Don't forget to add a title as "Canuck Player Positions".
 
-<codeblock id="01_29">
+<codeblock id="01_30">
 
 - Are you sure you using `alpha` as opacify?
 - Are you using the correct Dataframe?
@@ -839,7 +859,7 @@ Tasks:
 
 </exercise>
 
-<exercise id="30" title="Practicing Scatterplots">
+<exercise id="31" title="Practicing Scatterplots">
 
 Ok, let's try our luck with a scatterplot. We want to explore the relationship between `Age` and `Salary`.
 
@@ -848,7 +868,7 @@ Tasks:
 - Set color to `Darkblue` and opacity to 0.4.
 - Don't forget to assign a title as "Canuck players Age vs. Salary".
 
-<codeblock id="01_30">
+<codeblock id="01_31">
 
 - Are you using `df.plot.scatter()`
 - Are you sure you using `alpha` as opacify?
@@ -861,7 +881,7 @@ Tasks:
 
 </exercise>
 
-<exercise id="31" title="What Did We Just Learn?" type="slides">
-<slides source="module1_31">
+<exercise id="32" title="What Did We Just Learn?" type="slides">
+<slides source="module1_32">
 </slides>
 </exercise>

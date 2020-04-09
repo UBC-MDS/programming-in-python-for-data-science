@@ -35,6 +35,7 @@ pd.set_option('display.width', 400)
 np.set_printoptions(linewidth=400)
 
 pd.set_option('display.max_columns', 15)
+pd.set_option('display.max_rows', 16)
 ```
 
 
@@ -146,7 +147,7 @@ Using the logic we learned in the last set of slides, we would use the following
 df.iloc[ : ,  3:9 ]
 ```
 
-We would need to specify all rows using ` : ` as we did when we used `df.loc[]`. The column `protein` is at index position 3 and `sugars` is at index position 8, but since we want to include the 8th column we need to use the 9th position to make sure we get all the columns _BEFORE_ the upper bound.
+We would need to specify all rows using ` : ` as we did when we used `df.loc[]`. The column `protein` is at index position 3 (we do not include the index label as a column) and `sugars` is at index position 8, but since we want to include the 8th column we need to use the 9th position to make sure we get all the columns _BEFORE_ the upper bound.
 
 
 Notes: Script here.
@@ -196,7 +197,7 @@ Let’s say we want the rows `Cheerios`, `Basic 4` and `Apple Jacks`  with the c
 
 **Columns**   
 `rating` is located at position 14.  
-`fat` is located at position 4. 
+`fat` is located at position 4.    
 `type` is located at position 1.  
 
 Notes: Script here.

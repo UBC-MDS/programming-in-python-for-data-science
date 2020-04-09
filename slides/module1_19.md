@@ -213,10 +213,10 @@ Wheaties Honey Gold              2    1     200    1.0   16.0       8
 ```
 
 We would need to specify all rows using `:` as we did when we used
-`df.loc[]`. The column `protein` is at index position 3 and `sugars` is
-at index position 8, but since we want to include the 8th column we need
-to use the 9th position to make sure we get all the columns *BEFORE* the
-upper bound.
+`df.loc[]`. The column `protein` is at index position 3 (we do not
+include the index label as a column) and `sugars` is at index position
+8, but since we want to include the 8th column we need to use the 9th
+position to make sure we get all the columns *BEFORE* the upper bound.
 
 Notes: Script here.
 
@@ -288,7 +288,8 @@ the columns `rating`, `fat` and `type` *in that order*.
 
 **Columns**  
 `rating` is located at position 14.  
-`fat` is located at position 4. `type` is located at position 1.
+`fat` is located at position 4.  
+`type` is located at position 1.
 
 Notes: Script here.
 
