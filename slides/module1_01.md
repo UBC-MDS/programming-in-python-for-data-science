@@ -94,7 +94,7 @@ slide named “candybars.csv”. If we were to open this data in a plain
 text editor, we would see each row on its own line, and each entry in
 the table separated by a comma:
 
-<img src='module1/csv-file.png' width="50%" alt="404 image"/>
+<img src='module1/csv-text.png' width="50%" alt="404 image"/>
 
 Notes: Script here.
 
