@@ -52,11 +52,12 @@ By the end of the module, students are expected to:
 #### Topics 
 
 - Read different  files using Pandas `pd.read_csv()` and other functions
-- Review wrangling, practice creation of plots
 - Simple dataframe manipulations and operations
 - filtering using `df[]` and introduce `df.query()` notation
-- `df.grouby()` and `df.agg()` 
 - Chaining 
+- `df.grouby()` and `df.agg()` 
+- Modify values in a dataframe using `df.apply()` and `df.applymap()`.
+
 
 
 #### Learning Outcomes 
@@ -64,22 +65,21 @@ By the end of the module, students are expected to:
 By the end of the module, students are expected to:
 
 - Demonstrate how to rename columns of a dataframe using `df.rename()`.
-- Create new rows or columns in a dataframe using `df[]` notation.
-- Sort a dataframe using `df.sort_values()`.
-- Use `df[]` and `df.query()` notation to filter rows of a dataframe.
-- Perform aggregating methods on grouped or ungrouped objects such as finding the minimum, maximum and sum of values in a dataframe using `df.agg()`.
-- Demonstrate chaining over multiple lines.
+- Create new rows or columns in a dataframe using [`df.assign`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.assign.html) notation.
+- Use `df[]` notation to filter rows of a dataframe.
+- Perform aggregating methods on grouped objects using `groupby` and `df.agg()`.
+- Demonstrate chaining over multiple lines and methods.
+- Use pandas to modify values in a dataframe using `df.apply()` and `df.applymap()`.
 
 
-### Module 3: It's Tidy up time! (Time and Tidy Data)
+### Module 3: It's Tidy up Time! (Tidy Data)
 
 #### Topics 
 
 - Tidy data - what is it?
 - Manipulating data using `df.melt()` and `df.pivot()`
-- Working with DateTime format 
-- Identifying and handling missing/erroneous values 
-- Pandas profiling 
+- Dataframe stacking and unstacking 
+- Combining dataframes 
 
 
 #### Learning Outcomes 
@@ -87,29 +87,12 @@ By the end of the module, students are expected to:
 
 - Explain what tidy data is.
 - Use `df.melt() `and `df.pivot() `to reshape dataframes, specifically to make tidy data.
-- Identify missing and erroneous values in a dataframe and manage them by removing (using `df.dropna()`) or replacing (`df.fillna()`).
-- Manipulate non-standard date/time formats into standard Pandas datetime using `pd.to_datetime()`.
-
-### Module 4: Marriage & the Whole Package: (Joining Dataframes)
-
-#### Topics 
-
-- Working with strings in dataframes ? regex??? (Mike suggestion)
-- Dataframe stacking and unstacking 
-- Combining dataframes 
-- Modify values in a dataframe using `df.apply()` and `df.applymap()` (mike said it was too early before so, relocated from 2 to 5) 
-
-#### Learning Outcomes 
-
-By the end of the module, students are expected to:
-
-- Find, replace and extract text from a dataframe using methods such as `df.replace()` with regular expressions.
 - Use stacking and unstacking operations to reshape a dataframe.
 - Combine dataframes using `df.merge()` and `pd.concat()` and know when to use these different methods.
-- Use pandas to modify values in a dataframe using `df.apply()` and `df.applymap()`.
+- Understand the different joining methods. 
 
 
-### Module 5: Python without the "eek": Basic Python 
+### Module 4: Python without the "eek": Basic Python 
 
 #### Topics 
 
@@ -131,7 +114,7 @@ By the end of the module, students are expected to:
 - Describe what python packages/libraries are, as well as explain when and why they are useful.
 
 
-### Module 6: Loops & Functions 
+### Module 5: Loops & Functions 
 
 #### Topics 
 
@@ -156,7 +139,7 @@ By the end of the module, students are expected to:
 - Source and use functions stored as python code in another file, as well as those in
 
 
-### Module 7: A Slice of NumPy (NumPy Arrays)
+### Module 6: A Slice of NumPy (NumPy Arrays)
 
 #### Topics 
 
@@ -176,6 +159,25 @@ By the end of the module, students are expected to:
 - Access values from a NumPy ndarray by indexing and slicing.
 - Compare and contrast np.ndarray, pd.Series and pd.DataFrame objects in Python.
 - Convert between a NumPy ndarray, Pandas Series, & Pandas Dataframe.
+
+### Module 7: Handling other advanced(?) data formats and missing & erroneous values
+
+#### Topics 
+
+- Working with DateTime format 
+- Working with strings in dataframes?
+- Identifying and handling missing/erroneous values 
+- Pandas profiling 
+
+#### Learning Outcomes 
+
+By the end of the module, students are expected to:
+
+- Manipulate non-standard date/time formats into standard Pandas datetime using `pd.to_datetime()`.
+- Find, replace and extract text from a dataframe using methods such as `df.replace()` with regular expressions.
+- Identify missing and erroneous values in a dataframe and manage them by removing (using `df.dropna()`) or replacing (`df.fillna()`).
+- extract information from the Pandas profiling package. 
+
 
 ### Module 8: Vogue Code the Style Guide (Readable code and libraries)
 
