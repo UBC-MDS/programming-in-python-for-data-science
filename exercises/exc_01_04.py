@@ -1,14 +1,9 @@
-import pandas as pd
+# Import pandas 
+____ as pd
 
 # Read in the dataset 
+____ = pd.____('data/____', ____)
 
-hockey_players = pd.read_csv('data/canucks.csv', index_col=0)
 
-# Find the column names of `hockey_players` save it as `columns_hockey` 
-
+# Display the dataframe
 ____
-
-# Display it by writing the object name.
-
-____ 
-

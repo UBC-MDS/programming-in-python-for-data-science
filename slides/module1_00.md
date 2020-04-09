@@ -4,7 +4,7 @@ type: slides
 
 # Module Learning Outcomes
 
-Notes: In this module you will be introduced to data frames, tidy data, the python pandas package and learn how to manipute data.
+Notes: In this module you will be introduced to dataframes, the Python Pandas package and learn how to manipute data.
 
 ---
 
@@ -19,12 +19,15 @@ Your browser does not support the video tag.
 Notes:
 By the end of the module, students are expected to:
 - Describe the components of a Dataframe.
-- Read a standard .csv file using Pandas `pd.read_csv()`.
-- Explain modules and import libraries.
+- Read a standard `.csv` file using Pandas `pd.read_csv()`.
+- Import Pandas.
 - Demonstrate indexing and slicing with `df.loc[]` and `df.iloc[]`.
-- Demonstrate Selecting and filtering columns of a dataframe using `df[]` notation.
-- Create simple summary statistics using `pd.describe()` and `pd.summary()`.
-- Construct simple visualizations using pandas.
+- Demonstrate Selecting columns of a dataframe using `df[]` notation.
+- Obtain values from a dataframe using `df.loc[]`
+- Sort a dataframe using `df.sort_values()`.
+- Create simple summary statistics using `pd.describe()`.
+- construct simple visualizations using pandas.
+- create a `.csv` file from a dataframe using `df.to_csv()`.
 
 ---
 

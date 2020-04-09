@@ -25,7 +25,8 @@ id: 1
 
 <exercise id="2" title="Describing a Dataframe">
 
-**What are dataframes comparable to?**
+**Question 1**          
+What are dataframes comparable to?
 
 
 <choice id="1" >
@@ -47,12 +48,41 @@ Are we storing pictures in a dataframe?
 
 </opt>
 
-</choice>
+</choice> 
 
-**What is Pandas?**   
-
+**Question 2**         
+If a `csv` file was opened in a plain text editor, what character would be separating the values of each variable? 
 
 <choice id="2">
+<opt text='<code> : </code>'>
+
+The "C" in `csv` does not stand for colon. 
+
+</opt>
+
+<opt text='<code> ; </code>'>
+
+ `csv` is an acronym for _______ Separated Values format, so likely not "Semi-Colon".
+
+</opt>
+
+<opt text='<code> , </code>' correct="true">
+
+Great! You have been paying attention.
+
+</opt>
+
+</choice >
+
+</exercise>
+
+<exercise id="3" title="Definitions">
+
+**Question 1**           
+What is Pandas?
+
+
+<choice id="1">
 <opt text="A useful tool for data manipulation in Python" correct="true">
 
 Nice work! Pandas is a tool we use in conjunction with Python.
@@ -73,14 +103,40 @@ Not quite. You may want to review the module slides.
 
 </choice >
 
-</exercise>
 
-<exercise id="3" title="Your First Code!">
+
+**Question 2**           
+Which of the following statements is true?
+
+
+<choice id="2">
+<opt text="Attribute and methods can be thought of as nouns and functions as verbs." >
+
+Functions can be compared to verbs but you may want to revisit methods.
+
+</opt>
+
+<opt text="Attribute can be thought of as nouns and functions and methods as verbs." correct="true">
+
+You got it!
+
+</opt>
+
+<opt text="functions and methods can be thought of as nouns and attributes as verbs.">
+
+It may be a good idea to look over this section. 
+
+</opt>
+
+</choice >
+
+</exercise >
+
+<exercise id="4" title="Your First Code!">
 
 Let's try importing pandas and loading in our data.
 
-**Instructions:**
-
+**Instructions:**    
 When you run a coding exercise for the first time, it could take a bit of time for everything to load.
 
 **When you see `____` in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.**
@@ -91,7 +147,7 @@ Tasks:
 - Save the dataframe as `hockey_players`.
 - Display the first 5 rows of the dataframe.
 
-<codeblock id="01_03">
+<codeblock id="01_04">
 
 - Are you sure you are saving your dataframe as `hockey_players`?
 - Are you using `pd.read_csv()`?
@@ -100,13 +156,13 @@ Tasks:
 
 </exercise>
 
-<exercise id="4" title="Your Second Code!">
+<exercise id="5" title="Your Second Code!">
 
 
 Let's display the column names of `hockey_players` and save it as `columns_hockey`.
 
 
-<codeblock id="01_04">
+<codeblock id="01_05a">
 
 - Are you sure you are saving your objects as `columns_hockey`?
 - Are you using `df.columns`?
@@ -116,7 +172,7 @@ Let's display the column names of `hockey_players` and save it as `columns_hocke
 
 What is the shape of the hockey dataframe? Save the result as `hockey_shape`.
 
-<codeblock id="01_04b">
+<codeblock id="01_05b">
 
 - Are you sure you are saving your objects as `hockey_shape`?
 - Are you using `df.shape`?
@@ -125,15 +181,15 @@ What is the shape of the hockey dataframe? Save the result as `hockey_shape`.
 
 </exercise>
 
-<exercise id="5" title="Slicing Rows Using df.loc[]" type="slides">
+<exercise id="6" title="Slicing Rows Using df.loc[]" type="slides">
 
-<slides source="module1_05">
+<slides source="module1_06">
 </slides>
 
 </exercise>
 
 
-<exercise id="6" title="Slicing and Dicing Practice">
+<exercise id="7" title="Slicing and Dicing Practice">
 
 My dataframe object name is `fruit_salad` with the index label as the `name` column.
 
@@ -151,8 +207,7 @@ dragon-fruit    magenta      china    True   round      False          96       
        lemon     yellow     mexico   False    oval      False          83          65
 ```
 
-**Question 1**
-
+**Question 1**    
 If you wanted only the rows from `cantaloupe` to  `kiwi`, what would your code look like using index labels?
 
 <choice id="1" >
@@ -182,8 +237,7 @@ Good job! This has both `loc` and "quotation" which are both needed to slice her
 
 </choice >
 
-**Question 2**
-
+**Question 2**    
 If you wanted all the rows between `cantaloupe` and `fig` and only columns `name` to `seed`? What would your code look like using index labels?
 
 <choice id="2" >
@@ -215,12 +269,11 @@ I think you are missing something important.
 
 </exercise>
 
-<exercise id="7" title=" Practicing Rows Slicing">
+<exercise id="8" title=" Practicing Rows Slicing">
 
 
-**Instructions:**
-
-When you run a coding exercise for the first time, it could take a bit of time for everything to load.
+**Instructions:**    
+When you run a coding exercise for the first time, it could take a bit of time for everything to load.    
 
 **When you see `____` in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.**
 
@@ -244,7 +297,7 @@ Tasks:
 
 
 
-<codeblock id="01_07">
+<codeblock id="01_08">
 
 - Are you using `df.loc[]`?
 - Are you using the correct dataframe labels? Check your spelling and punctuation in row and column labels.
@@ -255,10 +308,9 @@ Tasks:
 
 </exercise>
 
-<exercise id="8" title="Practicing Column Slicing">
+<exercise id="9" title="Practicing Column Slicing">
 
-**Instructions:**
-
+**Instructions:**     
 When you run a coding exercise for the first time, it could take a bit of time for everything to load.
 
 **When you see `____` in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.**
@@ -279,7 +331,7 @@ Tasks:
 - Save the new sliced dataframe as object `star_players`.
 - Display it.
 
-<codeblock id="01_08">
+<codeblock id="01_09">
 
 - Are you using `df.loc[]`?
 - Are you using the correct dataframe labels? Check your spelling and punctuation in row and column labels.
@@ -290,12 +342,12 @@ Tasks:
 
 </exercise>
 
-<exercise id="9" title=" Slicing Columns Using df.loc[]" type="slides">
-<slides source="module1_08">
+<exercise id="10" title=" Slicing Columns Using df.loc[]" type="slides">
+<slides source="module1_10">
 </slides>
 </exercise>
 
-<exercise id="10" title="Slicing Columns Only">
+<exercise id="11" title="Slicing Columns Only">
 
 Using my dataframe object name is `fruit_salad` with the index label as the `name` column, Let's answer some slicing questions.
 
@@ -313,8 +365,7 @@ dragon-fruit    magenta      china    True   round      False          96       
        lemon     yellow     mexico   False    oval      False          83          65
 ```
 
-**Question 1**
-
+**Question**    
 If you wanted all the rows and only columns `seeds`, `shape`, `sweetness` and  `water-content` what would your code look like using index labels?
 
 <choice id="1" >
@@ -332,13 +383,13 @@ This is almost right but it's missing something important! Try looking at the ti
 
 <opt text='<code>fruit_salad[ "apple": "lemon" , "seeds" : "water-content"]</code>' >
 
-This is almost right but it's missing something important! Try looking at the title of the slides we just finished.
+This is almost right but it's missing something important and it could be condensed! Try looking at the title of the slides we just finished.
 
 </opt>
 
 <opt text='<code>fruit_salad.loc[  :  , "seeds" : "water-content"]</code>' correct="true">
 
-Good job! This has both `loc` and "quotation" which are both needed to slice here.
+Good job! This has both `loc` and includes the columns we wish to slice here.
 
 </opt>
 
@@ -348,13 +399,13 @@ Good job! This has both `loc` and "quotation" which are both needed to slice her
 
 
 
-<exercise id="11" title="Selecting Using df.loc[]" type="slides">
-<slides source="module1_11">
+<exercise id="12" title="Selecting Using df.loc[]" type="slides">
+<slides source="module1_12">
 </slides>
 </exercise>
 
 
-<exercise id="12" title="Rearranging Columns and Rows">
+<exercise id="13" title="Rearranging Columns and Rows">
 
 Using my `fruit_salad` dataframe from earlier?
 
@@ -371,7 +422,7 @@ dragon-fruit    magenta      china    True   round      False          96       
         kiwi      brown      china    True   round       True          80          76
        lemon     yellow     mexico   False    oval      False          83          65
 ```
-
+**Question**    
 If I wanted to make a tropical salad and the recipe calls for `kiwi`, `cantaloupe` and `guava` in this order and I am only interested in columns ordered as `sweetness`, `weight`, `seed` and  `location`, 
 what would my code look like?
 
@@ -403,32 +454,7 @@ Remember we are rearranging here.
 </exercise>
 
 
-<exercise id="13" title="Selecting Single Columns" type="slides">
-<slides source="module1_13">
-</slides>
-</exercise>
-
-
-<exercise id="14" title="Practicing Selecting">
-
-Let's try selecting a specific column.
-
-Tasks:
-- Select all the rows from column `Salary` only and save it as `player salary`. (_Hint: you don't need `loc` here_)
-- Display it.
-
-
-<codeblock id="01_14">
-
-- Are you using the correct dataframe labels?
-- Are you using double `[]` brackets?
-- Are you using "quotations"?
-
-</codeblock>
-
-</exercise>
-
-<exercise id="15" title="Practicing Selecting Using Index Labels">
+<exercise id="14" title="Practicing Selecting Using Index Labels">
 
 Now let's select specific players and columns.
 
@@ -440,7 +466,7 @@ Tasks:
 - Display it.
 
 
-<codeblock id="01_15">
+<codeblock id="01_14">
 
 - Are you using `df.loc[]`?
 - Are you using the correct dataframe labels? Are you using names as your row labels?
@@ -453,12 +479,75 @@ Tasks:
 </exercise>
 
 
-<exercise id="16" title="Slicing and Selecting Using df.iloc[]" type="slides">
-<slides source="module1_16">
+<exercise id="15" title="Selecting Values from a Dataframe" type="slides">
+<slides source="module1_15">
 </slides>
 </exercise>
 
-<exercise id="17" title="Practicing Slicing and Selecting Using Index Position">
+
+<exercise id="16" title="Practicing Selecting Values">
+
+
+Use the output of the following code chunk to help complete the next tasks.
+
+<codeblock id="hockey_players">
+
+</codeblock>
+
+Using our `hockey_players` data, try finding the following values and save them in their repective object names. 
+
+
+_**Make sure you remove the hash (`#`) symbol in the coding portions of this question. We have commented them so that the line won't execute and you can test your code after each step.**_ 
+
+Tasks:
+- Save`Thatcher Demko`'s salary in an object named`demko_paid`. 
+- How old is `Zack MacEwen`? Save it as object `macewen_age`.
+- What position does `Jacob Markstrom` play? Save this as object `markstrom_position`.
+- When was `Justin Bailey` born? Save it as an object named `bailey_birth`. 
+
+
+<codeblock id="01_16">
+
+- Are you using `df.loc[]` to select the specific values?
+- Are you using single `[]` brackets?
+- Are you using "quotations"?
+
+</codeblock>
+
+</exercise>
+
+
+<exercise id="17" title="Selecting Single Columns" type="slides">
+<slides source="module1_17">
+</slides>
+</exercise>
+
+
+<exercise id="18" title="Practicing Selecting">
+
+Let's try selecting a specific column.
+
+Tasks:
+- Select all the rows from column `Salary` only and save it as `player salary`. (_Hint: you don't need `loc` here_)
+- Display it.
+
+
+<codeblock id="01_18">
+
+- Are you using the correct dataframe labels?
+- Are you using double `[]` brackets?
+- Are you using "quotations"?
+
+</codeblock>
+
+</exercise>
+
+<exercise id="19" title="Slicing and Selecting Using df.iloc[]" type="slides">
+<slides source="module1_19">
+</slides>
+</exercise>
+
+<exercise id="20" title="Practicing Slicing and Selecting Using Index Position">
 
 Here is our `fruit_salad` data again:
 
@@ -479,7 +568,6 @@ dragon-fruit    magenta      china    True   round      False          96       
 ```
 
 **Question 1**
-
 If I wanted the rows `elderberry`  to `kiwi` and only columns `seeds`, `shape`, `sweetness` and  `water-content` what would my code look like if I was using index positions?
 
 <choice id="1" >
@@ -510,7 +598,6 @@ Are you forgetting that in the Python language we start counting at 0?
 </choice >
 
 **Question 2**
-
 If I wanted the rows `lemon` and `cantaloupe`  but only the columns `colour`, `weight` and `seeds` in that order, what would my code look like if I was using index position?
 
 <choice id="2" >
@@ -542,7 +629,7 @@ I think you are missing something important!
 
 </exercise>
 
-<exercise id="18" title="Practicing Slicing Using Index Position">
+<exercise id="21" title="Practicing Slicing Using Index Position">
 
  In previous questions, we tried slicing using index labels on our Canack dataset. Let's try something similar but using the index positions.
 To make life a little easier for you we will be reading in the data without `index_loc=0`. This means that no column is being assigned as an index and will have an index labeled with row numbers.
@@ -553,7 +640,7 @@ Tasks:
 - Display it.
 
 
-<codeblock id="01_18">
+<codeblock id="01_21">
 
 - Are you using `df.iloc[]`?
 - Are you using the correct dataframe positions? Are you counting starting from 0?
@@ -563,7 +650,7 @@ Tasks:
 
 </exercise>
 
-<exercise id="19" title="Practicing Selecting Using Index Position">
+<exercise id="22" title="Practicing Selecting Using Index Position">
 
 These unfortunate Canuck players have various forms of injuries, so let's make a dataframe of players who have injuries by selecting them using their index position.
 
@@ -572,7 +659,7 @@ Tasks:
 - Save this dataframe as object `injured_players`.
 - Don't forget to display it.
 
-<codeblock id="01_19">
+<codeblock id="01_22">
 
 - Are you using `df.iloc[]`?
 - Are you using the correct dataframe positions? Are you counting starting from 0?
@@ -582,16 +669,15 @@ Tasks:
 
 </exercise>
 
-<exercise id="20" title="Summary Statistics" type="slides">
-<slides source="module1_20">
+<exercise id="23" title="Summary Statistics" type="slides">
+<slides source="module1_23">
 </slides>
 </exercise>
 
 
-<exercise id="21" title="Fruit Bowl Statistics">
+<exercise id="24" title="Fruit Bowl Statistics">
 
 **Question 1**
-
 Let's say I have a dataframe named  `fruit_salad` with a column of interest named `colour`.  
 How would you find the frequency of the column `colour` using `pd.value_counts()`?
 
@@ -623,7 +709,6 @@ This won't give us the correct output for `pd.value_counts()`. Check the slides 
 </choice >
 
 **Question 2**
-
 We need summary statistics of both quantitative and categorical columns of the dataframe `fruit_salad`. What code would be suitable for this?
 
 <choice id="2" >
@@ -655,15 +740,34 @@ Is `summary` the correct command here?
 
 </exercise>
 
-<exercise id="22" title="Using df.describe()">
+<exercise id="25" title="Practice Sorting">
+
+Let's sort our hockey dataframe
+
+Task:
+- Sort your `hockey_players` dataframe by Salary from most to least and name your new dataframe as `rich_players`
+- Display it
+
+
+<codeblock id="01_25">
+
+- Are you sure you are using `sort_values`?
+- Are you using the argument `ascending=False` to order `Salary` in descending order?
+
+</codeblock>
+
+</exercise>
+
+<exercise id="26" title="Using df.describe()">
 
 Let's try and obtain some statistics from our hockey data we've been playing with.
 
 Task:
 - Find the statistics of both categorical and quantitative columns. Save the dataframe in an object called `hockey_stats`
+- Display it
 
 
-<codeblock id="01_22a">
+<codeblock id="01_26a">
 
 - Are you sure you are saving your objects correctly?
 - Are you using using `df.describe(include = "all")` ?
@@ -675,52 +779,56 @@ Task:
 - Find the total salary of the team and save it in an object called `player_cost`
 
 
+<codeblock id="01_26b">
 
-<codeblock id="01_22b">
 
+- Are you using df[["column-name"]].sum() to find the total of a column?
 
-- Are you using df[["column-name"]].sum() for find totals of a column?
 </codeblock>
 
 
 </exercise>
 
-<exercise id="23" title="Practicing Frequency Tables">
+<exercise id="27" title="Practicing Frequency Tables">
 
-Let's get the frequencies of some of our values! We spoke in the slides about the steps we needed to follow to get a frequency table.
+Let's get the frequencies of some of our values! We spoke in the slides about the steps we needed to follow to get a frequency table.    
+    
+_**Make sure you remove the hash (`#`) symbol in the coding portions of this question. We have commented them so that the line won't execute and you can test your code after each step.**_ 
 
 Task:
 - Let's make an object named `position_column` that consists of just the `Position` column. Note we will be using this for `value_counts` so we must do this with only using single `[]` brackets.
 - Find the frequencies of the position for the hockey team using `df.value_counts()` and save it as `position_freq`.
-- Next, let's convert that to a dataframe. and save it as object `temp_df`.
-- You will need to rename the column `Position` of `temp_df` to `freq` using `df.rename(columns = {})`. Save the object with the name `position_freq_df`.
+- Export position_freq  to a csv named `position_frequencies.csv` using `pd.to_csv()`.
+- Don't forget to display it.
 
-
-<codeblock id="01_23">
+<codeblock id="01_27">
 
 - Are you sure you are using single `[]` brackets for `position_column`?
-- Are you using `pd.DataFrame()` to save `position_freq` as a dataframe?
-- Are you renaming your dataframe using the `{"old-column-name" : "new-column-name"}`?
+- Are you using `pd.to_csv()` to save your `csv`?
+- Are you naming your `csv` correctly as "position_frequencies.csv"?
 
 </codeblock>
 
 </exercise>
 
-<exercise id="24" title="Quick Viz with Pandas" type="slides">
-<slides source="module1_24">
+<exercise id="28" title="Quick Viz with Pandas" type="slides">
+<slides source="module1_28">
 </slides>
 </exercise>
 
-<exercise id="25" title="Practicing Bar Charts">
+<exercise id="29" title="Practicing Bar Charts">
 
-Now you are going to use the frequency table from the questions in the last section and plot it!
+You are going to load the frequency table from the questions that we exported as a `csv` in the last section and plot it!
+
+_**Make sure you remove the hash (`#`) symbol in the coding portions of this question. We have commented them so that the line won't execute and you can test your code after each step.**_ 
 
 Tasks:
+- load in the csv named `position_frequencies.csv` you made in exercise 24 and save it as `position_freq`. 
 - Use `plot.bar()` with `position_freq` and save the plot in an object named `position_bar`
 - Assign a `color` as `Teal`, set opacity to 0.5.
 - Don't forget to add a title as "Canuck Player Positions".
 
-<codeblock id="01_25">
+<codeblock id="01_29">
 
 - Are you sure you using `alpha` as opacify?
 - Are you using the correct Dataframe?
@@ -731,7 +839,7 @@ Tasks:
 
 </exercise>
 
-<exercise id="26" title="Practicing Scatterplots">
+<exercise id="30" title="Practicing Scatterplots">
 
 Ok, let's try our luck with a scatterplot. We want to explore the relationship between `Age` and `Salary`.
 
@@ -740,7 +848,7 @@ Tasks:
 - Set color to `Darkblue` and opacity to 0.4.
 - Don't forget to assign a title as "Canuck players Age vs. Salary".
 
-<codeblock id="01_26">
+<codeblock id="01_30">
 
 - Are you using `df.plot.scatter()`
 - Are you sure you using `alpha` as opacify?
@@ -753,7 +861,7 @@ Tasks:
 
 </exercise>
 
-<exercise id="27" title="What Did We Just Learn?" type="slides">
-<slides source="module1_27">
+<exercise id="31" title="What Did We Just Learn?" type="slides">
+<slides source="module1_31">
 </slides>
 </exercise>

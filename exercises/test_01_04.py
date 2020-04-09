@@ -6,6 +6,9 @@ def test():
 
     # If an assertion fails, the message will be displayed
 
-    assert "columns_hockey = hockey_players.columns" in __solution__ , "There seems to be a problem with finding the column names of the dataset"
-    assert list(columns_hockey) ==  ['No.', 'Age', 'Height', 'Weight', 'Country', 'Position', 'Experience', 'Birth Date', 'Salary'], "Your column names do not seem correct"
+    assert "import pandas" in __solution__ , "Are you using the right commands to import pandas?"
+    assert "read_csv" in __solution__ , "Are you reading in the data properly?"
+    assert "index_col=0" in __solution__, "Are you making sure to add index_col=0 ?"
+    assert hockey_players.shape == (22, 9), "You may not have the correct dataset"
+    assert list(hockey_players.columns) ==  [ 'No.', 'Age', 'Height', 'Weight', 'Country', 'Position', 'Experience', 'Birth Date', 'Salary'], "Your column names do not seem correct"
     __msg__.good("Nice work, well done!")

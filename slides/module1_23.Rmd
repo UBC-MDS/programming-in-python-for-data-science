@@ -1,0 +1,281 @@
+---
+title: "module1_23"
+output: 
+  md_document:
+    variant: gfm
+---
+
+
+```{r setup, include=FALSE}
+library(rmarkdown)
+knitr::opts_chunk$set(echo = TRUE)
+knitr_opts <- knitr_options( opts_knit = NULL,
+                             opts_chunk = NULL,
+                             knit_hooks = NULL,
+                             opts_hooks = NULL,
+                             opts_template = NULL)
+md_document_custom <- md_document(variant = "gfm")
+output_format(knitr = knitr_opts,
+              pandoc = NULL,
+              base_format = md_document_custom)
+library(reticulate)
+```
+
+
+```{python include=FALSE}
+import pandas as pd
+import numpy as np
+pd.set_option('display.width', 400)
+
+np.set_printoptions(linewidth=400)
+
+pd.set_option('display.max_columns', 15)
+df = pd.read_csv('cereal.csv', index_col=0)
+```
+
+
+type: slides
+
+# Summary Statistics!
+
+Notes: Script here.
+<html>
+<audio controls >
+<source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+Now we've learned about how to get our dataframe how we want it, let's try and make some fun of it!
+
+We have our data, now what? 
+
+We usually like to learn from it. We want to find out about maybe some summary statistics about the features of the data. 
+
+Let's load in our cereal dataset again. 
+
+Notes: Script here.
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+```{python}
+df = pd.read_csv('cereal.csv', index_col = 0)
+df.head(15)
+```
+
+Notes: Script here.
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+## Sorting
+
+When we load in our data, it is generally ordered in the same way it is stored. We can easily sort a dataframe based on it's column values. The tool for that? `df.sort_values()`. 
+
+As an example, if I wanted to order the cereals based on sugar content, I could do the following: 
+
+```{python}
+df.sort_values(by="sugars")
+```
+
+This allows us to see the cereals with lower sugar content on the top. 
+
+Notes: Script here.
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+What if I wanted the ones with a higher sugar on the top? Then I would order them in `descending` order by setting the parameter `ascending` to "False": 
+
+```{python}
+df.sort_values(by="sugars", ascending=False)
+```
+
+Ahh, now we have the high sugar content cereals at the top. 
+
+
+Notes: Script here.
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+
+## Pandas describe()
+
+Pandas has a lot up it's sleeve but one of the most useful functions is called describe and it does exactly that. it _describes_ our data.  Let's try it out. 
+
+
+```{python}
+df.describe()
+```
+
+
+
+Notes: Script here.
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+```{python echo=FALSE}
+df.describe()
+```
+
+
+This table will tell us about:
+
+- `count`: The number of non-NA/null observations.
+- `mean`: The mean of  column 
+- `std` : The standard deviation of a column
+- `min`: The min value for a column
+- `max`: The max value for a column 
+- By default the 25, 50 and 75 percentile of the observations
+
+Notes: Script here.
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+We can make changes to either limit how much is shown or extend it with the additional argument `include = "all"` in the `describe` brackets. 
+
+```{python}
+df.describe(include = "all")
+```
+
+
+Notes: Script here.
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+```{python echo=FALSE}
+df.describe(include = "all")
+```
+
+Adding `include = "all"` within the brackets adds some additional statistics about categorical columns.
+
+- `unique`: how many observations are unique
+- `top`: which observation value is most occuring
+- `freq`: what is the frequency of the most occuring observation 
+
+Notes: Script here.
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+
+---
+
+We can also get single statistics of each column using:
+either `df.mean()`,`df.std()`, `df.count()`, `df.median()`, `df.sum()`. 
+
+Let's see the sum of the cereal ratings.
+
+
+```{python}
+ratings = df['rating'] 
+ratings.sum()
+```
+
+Or maybe the median calories of the cereals. 
+
+
+```{python}
+calories = df['calories'] 
+calories.median()
+```
+
+
+Notes: Script here.
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+## Frequency Tables
+
+If we want to get a frequency table of a categorical column, there are a few steps that need to be followed. 
+In the previous slides we talked about getting a single column from a dataframe using double brackets like `df[['column-name']]`.  Instead of getting a single column with double brackets we only use single brackets to get a column for frequency tables. 
+
+
+```{python}
+manufacturer_column = df["mfr"]
+manufacturer_column
+```
+
+Notes: Script here.
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+We saved the object in a variable called `manufacturer_column` in the same way as we have other dataframes before.  
+Next we cant use `pd.value_counts()` referencing that the column we saved as `manufacturer_column`.  
+
+
+```{python}
+manufacturer_freq = manufacturer_column.value_counts()
+manufacturer_freq
+```
+
+We can then see the frequency of each qualitative value.   
+
+Notes: Script here.
+<html>
+<audio controls >
+<source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+Sometimes it's useful to save a new dataframe as a `csv` file for future use or to use in another application. We can save dataframes using the function `df.to_csv()`. Simply put our desired `csv` file name in quotations within the parentheses. 
+
+```{python echo = FALSE}
+manufacturer_freq.to_csv("manufacturer_frequency.csv")
+```
+
+
+Notes: Script here.
+
+<html>
+<audio controls >
+<source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+
+
+# Let’s apply what we learned!
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>

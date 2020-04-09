@@ -29,6 +29,7 @@ pd.set_option('display.width', 400)
 np.set_printoptions(linewidth=400)
 
 pd.set_option('display.max_columns', 15)
+pd.set_option('display.max_rows', 20)
 ```
 
 type: slides
@@ -42,17 +43,62 @@ Notes: Script here.
   <source src="placeholder_audio.mp3" />
 </audio></html>
 
+
 ---
 
-When working with information, it must be stored in a manner that is organized, readable and accessible.    
+## What is a Dataframe? 
 
-A dataframe makes it easy to calculate statistics and clean and store data.
+Often, the first thing we need to do in data analysis is to load in data. 
+In this case, we will be using the programming language _Python_.
+When we bring spreadsheet-like (think Microsoft Excel tables) data, generally shaped like a rectangle, into Python, it is represented as what we call a dataframe object. It is very similar to a spreadsheet. 
 
-From a data perspective, it is a rectangle where the rows are the observations. 
-(Essentially, they look like excel sheets)
+<img src='module1/spreadsheet.png'  alt="404 image"/>
+
+
+Notes: Script here.
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+The rows in a dataframe are the collected observations.
 
 <img src='module1/df_obs.png' width="70%" alt="404 image"/>
 
+Notes: Script here.
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+And the columns are the variables.
+
+<img src='module1/df_var.png' width="50%" alt="404 image"/>
+
+
+When working with information, it must be stored in a manner that is organized, readable and accessible.    
+
+
+Notes: Script here.
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+## What is a CSV file?
+
+The first kind of data we will learn how to load into Python (as a data frame) is the spreadsheet-like comma-separated values format (.csv for short). These files have names ending in .csv, and can be opened open and saved from common spreadsheet programs like Microsoft Excel and Google Sheets.
+
+For example, we will be importing the .csv file you saw in the first slide named "candybars.csv". If we were to open this data in a plain text editor, we would see each row on its own line, and each entry in the table separated by a comma:
+
+
+<img src='module1/csv-file.png' width="50%" alt="404 image"/>
 
 Notes: Script here.
 <html>
@@ -62,18 +108,6 @@ Notes: Script here.
 
 ---
  
-The columns are the variables.
-
-<img src='module1/df_var.png' width="50%" alt="404 image"/>
-
-
-Notes: Script here.
-<html>
-<audio controls >
-  <source src="placeholder_audio.mp3" />
-</audio></html>
-
----
 
 # Enter Pandas
 
@@ -89,9 +123,9 @@ Notes: Script here.
 
 ## Importing Pandas
 
-To analyze dataframes, we need to make sure that we import something called `pandas`. This will help us store and manipulate dataframes. 
+To analyze dataframes and load these `csv` files, we need to make sure that we import something called `pandas`. 
 
-Before we start writing any valuable code, we need to import pandas. 
+Before we start writing any valuable code, we import it with the following code. 
 
 ```{python}
 import pandas as pd
@@ -107,7 +141,7 @@ Notes: Script here.
 
 ## Reading in Data
 
-Next we can bring in our data  named `candybars` which is stored as a `.csv` with the following code:
+Next we can bring in our data  named `candybars` which is stored as a `.csv`:
 
 ```{python}
 df = pd.read_csv('candybars.csv', index_col=0)
@@ -117,12 +151,11 @@ let's break this up:
 
 `pd`: this is the short form for pandas, which we are using to manipulate our dataframes.  
 `read_csv()`: The tool that does the job and, in this case, it is reading in the `csv` file named `candybars.csv`.    
-`index_col =0`: This specifies to use the first column in the csv as an index (we will talk about this in a moment).          
-`df`: The dataframe is now saved as an object called `df`
+`index_col=0`: This specifies to use the first column in the csv as an index (we will talk about this shortly).          
+`df`: The dataframe is now saved as an object called `df`.
 
 In these slides you can differentiate between what we typed in (our code) in light gray and the output of this will be coloured in a dark grey background. 
 
-You can see what the object `df` looks like on the next slide. 
 
 Notes: Script here.
 <html>
@@ -131,6 +164,8 @@ Notes: Script here.
 </audio></html>
 
 ---
+
+The dataframe is stored in an object named `df` and looks like this:
 
 ```{python}
 df
@@ -158,7 +193,7 @@ df.shape
 ```
 
 
-Breaking up this code it just means "From our dataframe that we saved as `df` tell me the `columns` or tell me the `shape`.
+Breaking up this code it just means "From our dataframe that we saved as `df` tell me the `columns`/`shape`.
 
 
 Notes: Script here.
@@ -168,15 +203,16 @@ Notes: Script here.
 </audio></html>
 ---
 
-Another important method to know is what if we don't want to output the whole table   
-We can then specify how many rows of the dataset to show with `df.head()`
+What if we don't want to output the whole table when displaying a dataframe?
+We can specify how many rows of the dataset to show with `df.head()`.  This will output the first few rows of the dataframe. 
 
 ```{python}
 df.head(2)
 ```
 
 
-This specifies only 2 rows will be shown. We can specify any number of rows within the brackets or we can leave it empty which will default to 5 rows.
+The above code specifies only 2 rows to display. We can specify any number of rows within the parentheses or we can leave it empty which will default to the first 5 rows.
+
 
 
 ```{python}
@@ -193,7 +229,77 @@ Notes: Script here.
 
 ---
 
-# let’s apply what we learned!
+## Functions/Methods and Attributes
+
+Something you may have noticed is that when we use `pd.read_csv()` we put our argument within the parentheses, whereas, when we use `.shape` or `.head()` the object comes before our desired command. In Python, there are different command types called **functions**, **attributes** and **methods**.  These are special words in Python that takes in instructions (we call these arguments) and do something.
+
+
+<br>
+
+Attributes can be distinguished from methods and functions as they do not have parentheses.          
+Attributes can be thought of as nouns or adjectives that describe an object.          
+
+
+`df.shape` is an example of this.       
+In this case, our dataframe `df` is our object and `.shape` is the attribute describing it.       
+
+
+ 
+Notes: Script here.
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+
+<br>
+
+<br>
+
+Function and methods have parentheses.        
+They can be thought of as verbs that complete an action.          
+`pd.read_csv()`  does the action of reading in your data. 
+
+
+This is going to be discussed in more detail later in the course but now, be aware of the way we write the different instructions.
+
+ 
+Notes: Script here.
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+## Comments 
+
+While we write code, it's often useful to annotate it or include information that you do not want to excuted. 
+The easiest way to do this is with a hash (`#`) symbol. This creates a single line comment and prevents anything written after it from being executed. 
+
+```{python}
+# This line does not excute anything. 
+```
+
+You can also use it beside code. 
+
+```{python eval=FALSE}
+df.shape  # This will output the shape of the dataframe
+```
+
+You'll notice we use comments frequently in the exercises. It's good practice to use them frequently to explain your code so if you or someone else wants to read it at a later date, it's easier to understand.  
+
+Notes: Script here.
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+# Let’s apply what we learned!
 
 Notes: Script here.
 <html>

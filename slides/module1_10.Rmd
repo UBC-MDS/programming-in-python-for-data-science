@@ -1,6 +1,5 @@
 ---
-title: "module1_09"
-author: "Hayley Boyce"
+title: "module1_10"
 output: 
   md_document:
     variant: gfm
@@ -34,12 +33,28 @@ pd.set_option('display.max_columns', 15)
 df = pd.read_csv('cereal.csv', index_col=0)
 ```
 
-```
-
-
 type: slides
 
-# Selecting using df.loc[]
+## Slicing Only Columns using df.loc[]
+
+
+Notes: Script here.
+<html>
+<audio controls >
+<source src="placeholder_audio.mp3" />
+</audio></html>
+
+
+---
+
+What happens now if we wanted all the rows of the dataframe but only the columns `calories` to `fiber`?
+
+we would simply use `:` to indicate from "end" to "end" for rows.
+
+```{python}
+df.loc[ : , "calories" : "fiber"]
+```
+
 
 Notes: Script here.
 <html>
@@ -49,57 +64,35 @@ Notes: Script here.
 
 ---
 
-## Unordered Indexing
-
-We have our trusty `cereal.csv` data again with the cereal names as the index labels.
-
-
-```{python echo = FALSE}
-df
+## So Far
+    
+`loc` is used to slice columns and rows by **label** and within an interval.
+We always specify **row** indexing first, then **columns**.
+  
+ ```python
+df.loc[ "row name start" : "row name end", "column name start" : "column name end"]
 ```
-
-
-What would we do if we want to select columns and rows that don't fall consecutively or if we want to rearrange them?
-
-
+  
+- If we aren’t slicing any columns, we can simply say `df.loc[ "row name start": "row name end"]` since columns specification follow rows.
+- However, the reverse is not true. If we want all the rows with only specific columns, we specify rows first and therefore we would need to make it clear with `df.loc[  : , "column name start" : "column name end"]`.
+- We can read `:` as **"to"**
+- If the indices are labeled with numbers, we do not need "quotations" when calling them.
+  
 Notes: Script here.
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+<source src="placeholder_audio.mp3" />
 </audio></html>
 
+    
 ---
-
-Let's say we wanted only the rows labeled `Clusters`, `Trix` and `Wheaties` and the columns `type`, `sugars` and `rating`
-How would we obtain them now?
-
-We need to specify each column and row label that we want between square brackets `[]`, separated with commas.
-
-
-```{python}
-df.loc[ ["Clusters", "Trix", "Wheaties"] , ["type", "sugars", "rating"] ]
-```
-
-
-We can also reorder it to change the column and row order.
-
+    
+# Let’s apply what we learned!
+    
 Notes: Script here.
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+<source src="placeholder_audio.mp3" />
 </audio></html>
 
----
-
-What if we wanted the rows to be in the order  `Wheaties`, `Trix` and `Clusters` and columns in the order `type`, `rating` and `sugars`
-How would we obtain that?
-
-
-
-# Let's explore that in an exercise!
-
-Notes: Script here
-<html>
-<audio controls >
-  <source src="placeholder_audio.mp3" />
-</audio></html>
+    

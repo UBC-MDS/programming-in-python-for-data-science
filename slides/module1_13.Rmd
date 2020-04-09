@@ -47,23 +47,6 @@ Notes: Script here.
 
 ---
 
-So to answer the question where we left off, after giving it a try, you know that rearranging column or row order is as easy as changing the column name order!
-
-So if we wanted the rows to be in the order  `Wheaties`, `Trix` and `Clusters` and columns in the order `type`, `rating` and `sugars` from our cereal dataframe,
-we would obtain it like so:
-
-```{python}
-df.loc[ ["Wheaties", "Trix", "Clusters"] , ["type", "rating", "sugars"] ]
-```
-
-
-Notes: Script here.
-<html>
-<audio controls >
-  <source src="placeholder_audio.mp3" />
-</audio></html>
-
----
 
 # Selecting a Single Column
 
@@ -89,7 +72,7 @@ Notes: Script here.
 
 ---
 
-You can omit `loc` altogether and use double square brackets:
+We can omit `loc` altogether and use double square brackets:
 
 ``` Python
 df[['column-name']]

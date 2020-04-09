@@ -4,10 +4,9 @@ import pandas as pd
 
 hockey_players = pd.read_csv('data/canucks.csv', index_col=0)
 
-# Select all the rows from column `Salary` only and save it as `player_cost` 
-# (Hint: you don't need `loc` here) 
+# Select the rows and columns and save the new dataframe as `penalty_players`
 
-____ = ____
+# ____ = ____.____[____, ____]
 
 # Display it
 

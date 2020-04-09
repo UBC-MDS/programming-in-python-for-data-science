@@ -4,12 +4,10 @@ import pandas as pd
 
 hockey_players = pd.read_csv('data/canucks.csv', index_col=0)
 
-# Slice the rows and columns and save the new dataframe as `star_players`
+# Slice the rows and columns and save the new dataframe as `benched_players`
 
-star_players = ____.____[____ : ____ , ____ : ____]
+benched_players = ____.____[____ : ____ ]
 
 # Display it
 
-____ 
-
-
+____

@@ -6,12 +6,13 @@ def test():
 
     # If an assertion fails, the message will be displayed
 
-    assert 'bar' in __solution__ , "You don't seem to be plotting a bar chart "
-    assert 'alpha' in __solution__ , "You have not specified an alpha parameter"
-    assert '0.5' in __solution__ , "Your alpha value is not correct"
-    assert 'color' in __solution__ , "Your have not specified a color parameter"
-    assert '"Teal"' in __solution__ , "Your colour parameter is not correct"
-    assert 'title' in __solution__ , "You have not specified a title"
-    assert '"Canuck player positions"' in __solution__ , "Your title is not correct"
-    assert "position_freq_df"in __solution__ , "the dataframe you are calling is not correct"
+    assert rich_players.shape == (22, 9), "Your dataframe is the wrong dimentions "
+    assert 'sort_values' in __solution__ , "are you using sort_values?"
+    assert 'ascending=False' in __solution__ , "are you sorting in descending order?"
+    assert list(rich_players.columns) ==  ['No.', 'Age', 'Height', 'Weight', 'Country', 'Position',
+ 'Experience', 'Birth Date', 'Salary'], "Your columns do not seem to be correct for rich_players"
+    assert list(rich_players.index) == ['Alexander Edler', 'Tyler Myers', 'J.T. Miller', 'Bo Horvat\xa0(C)',
+       'Loui Eriksson', 'Brandon Sutter', 'Jacob Markstrom', 'Tanner Pearson', 'Antoine Roussel', 'Jay Beagle',
+        'Jordie Benn', 'Troy Stecher', 'Tim Schaller', 'Jake Virtanen', 'Elias Pettersson', 'Zack MacEwen','Adam Gaudette',
+         'Thatcher Demko', 'Guillaume Brisebois', 'Justin Bailey', 'Quinn Hughes', 'Christopher Tanev'], "Did you order in descending order?"
     __msg__.good("Nice work, well done!")

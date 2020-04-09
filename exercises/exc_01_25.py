@@ -1,13 +1,14 @@
 import pandas as pd
 
-# Bring in previous frequency table we had saved as position_freq_df ignore this for now
+# The database 
 
-position_freq_df = pd.read_csv('data/position_freq_df.csv', index_col=0)
+hockey_players = pd.read_csv('data/canucks.csv', index_col = 0)
 
-# Use `plot.bar()` with `position_freq`.
-# Assign a `color` as `Teal`and set opacity to 0.5.      
-# Don't forget to add a title as "Canuck Player Positions". 
+# Sort the hockey_player dataframe by salary in descending order    
+# Save it with the name "rich_players"   
 
-____ = ____.____.____(____ = ____,
-                      ____ = ____,
-                      ____ = ____)
+____ = ____.____(____, ____)
+
+# Display it
+
+____
