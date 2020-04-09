@@ -174,8 +174,8 @@ index (we will talk about this shortly).
 `df`: The dataframe is now saved as an object called `df`.
 
 In these slides you can differentiate between what we typed in (our
-code) in light gray and the output of this will be coloured in a dark
-grey background.
+code) in light gray and the output of it, which will be coloured with a
+dark grey background.
 
 Notes: Script here.
 
@@ -396,9 +396,8 @@ df.shape  # This will output the shape of the dataframe
 ```
 
 You’ll notice we use comments frequently in the exercises. It’s good
-practice to use them frequently to explain your code so if you or
-someone else wants to read it at a later date, it’s easier to
-understand.
+practice to use them to explain your code so if you or someone else
+wants to read it at a later date, it’s easier to understand.
 
 Notes: Script here.
 
