@@ -122,7 +122,7 @@ You got it!
 
 </opt>
 
-<opt text="functions and methods can be thought of as nouns and attributes as verbs.">
+<opt text="Functions and methods can be thought of as nouns and attributes as verbs.">
 
 It may be a good idea to look over this section. 
 
@@ -159,7 +159,16 @@ Tasks:
 <exercise id="5" title="Your Second Code!">
 
 
-Let's display the column names of `hockey_players` and save it as `columns_hockey`.
+**Instructions:**    
+When you run a coding exercise for the first time, it could take a bit of time for everything to load.
+
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.**
+
+What are the column names of the hockey_players dataframe?
+
+Tasks:
+- Find the column names of `hockey_players` and save it as `columns_hockey`.
+- Display it
 
 
 <codeblock id="01_05a">
@@ -170,7 +179,12 @@ Let's display the column names of `hockey_players` and save it as `columns_hocke
 </codeblock>
 
 
-What is the shape of the hockey dataframe? Save the result as `hockey_shape`.
+What is the shape of the hockey dataframe?
+
+Tasks:
+- Find the shape of `hockey_players` and save the result as `hockey_shape`.
+- Display it
+
 
 <codeblock id="01_05b">
 
@@ -211,19 +225,19 @@ dragon-fruit    magenta      china    True   round      False          96       
 If you wanted only the rows from `cantaloupe` to  `kiwi`, what would your code look like using index labels?
 
 <choice id="1" >
-<opt text='<code>fruit_salad.loc[ "cantaloupe", "kiwi"]</code>'>
+<opt text='<code>fruit_salad.loc["cantaloupe", "kiwi"]</code>'>
 
 This is not the right syntax or number of rows.
 
 </opt>
 
-<opt text='<code>fruit_salad[ "cantaloupe", "kiwi"]</code>' >
+<opt text='<code>fruit_salad["cantaloupe", "kiwi"]</code>' >
 
 This is not using the right syntax.
 
 </opt>
 
-<opt text='<code>fruit_salad[ "cantaloupe": "kiwi"]</code>' >
+<opt text='<code>fruit_salad["cantaloupe": "kiwi"]</code>' >
 
 This is missing something rather important.
 
@@ -241,13 +255,13 @@ Good job! This has both `loc` and "quotation" which are both needed to slice her
 If you wanted all the rows between `cantaloupe` and `fig` and only columns `name` to `seed`, what would your code look like using index labels?
 
 <choice id="2" >
-<opt text='<code>fruit_salad.loc[ "cantaloupe" : "fig", "name" : "seed"]</code>'>
+<opt text='<code>fruit_salad.loc["cantaloupe" : "fig", "name" : "seed"]</code>'>
 
 Remember that the "name" column is the index and does not need to be specified.
 
 </opt>
 
-<opt text='<code>fruit_salad.loc[ "cantaloupe" : "fig", "colour": "seed" ]</code>' correct="true">
+<opt text='<code>fruit_salad.loc["cantaloupe" : "fig", "colour": "seed" ]</code>' correct="true">
 
 Great! This is correct since we don't need to start our slicing at name since it is our index.
 
@@ -259,7 +273,7 @@ This seems to be backward.
 
 </opt>
 
-<opt text= '<code>fruit_salad[ "cantaloupe" : "kiwi", "colour": "seed"  ]</code>'  >
+<opt text= '<code>fruit_salad["cantaloupe" : "kiwi", "colour": "seed"  ]</code>'  >
 
 I think you are missing something important.  
 

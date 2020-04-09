@@ -57,7 +57,7 @@ Notes: Script here.
 
 ## Cereal Data
 
-Let's import pandas and bring in our dataset named `cereal.csv` using the name of the candy bar as the index like we did last time with `index_col=0`.
+Let's import pandas and bring in a dataset named `cereal.csv` using the name of the cereals as the index like we did last time with `index_col=0`.
 
 
 ```{python }
@@ -110,25 +110,16 @@ Notes: Script here.
 
 ---
 
-So now let's say we want the 5 rows past `Almond Delight`. That means we want rows with the index labels `Apple Cinnamon Cheerios` to `Cap'n'Crunch`.  
+So now let's say we want the 5 rows past `Almond Delight`. That means we want rows with the index labels `Apple Cinnamon Cheerios` to `Cap'n'Crunch`.    
+The following code cuts the dataframe from  "Apple Cinnamon Cheerios" to "Cap'n'Crunch" keeping all the columns.
 
 ```{python}
 df.loc[ "Apple Cinnamon Cheerios" : "Cap'n'Crunch"]
 ```
 
-Notes: Script here.
-<html>
-<audio controls >
-<source src="placeholder_audio.mp3"/>
-</audio></html>
-
----
-
 ```df.loc[ "Apple Cinnamon Cheerios" : "Cap'n'Crunch"]```
 
-This essentially means the _dataframe location from `Apple Cinnamon Cheerios` to `Cap'n'Crunch`._   
-
-
+This essentially means to   _Obtain the values in the dataframe location from `Apple Cinnamon Cheerios` to `Cap'n'Crunch`._   
 Notes: Script here.
 <html>
 <audio controls >
@@ -139,7 +130,8 @@ Notes: Script here.
 
 What if we only wanted certain columns now?
 
-Perhaps we were only interested in the `calories` to `fiber` columns of those rows?
+Perhaps we were only interested in the `calories` to `fiber` columns of the "Apple Cinnamon Cheerios" to "Cap'n'Crunch" rows?
+We put our desired rows first, then columns and separate them with a comma.  
 
 
 ```{python}
@@ -151,7 +143,7 @@ df.loc[ "Apple Cinnamon Cheerios" : "Cap'n'Crunch", "calories" : "fiber"]
 The general format to slice both rows and columns together looks like this:
 
 ```python
-`df.loc[ row-name-start : row-name-end , "column name start" : "column name end"]`
+`df.loc[ "row name start" : "row name end" , "column name start" : "column name end"]`
 ```
 
 

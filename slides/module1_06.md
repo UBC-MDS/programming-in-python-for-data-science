@@ -39,8 +39,8 @@ Notes: Script here.
 
 ## Cereal Data
 
-Let’s import pandas and bring in our dataset named `cereal.csv` using
-the name of the candy bar as the index like we did last time with
+Let’s import pandas and bring in a dataset named `cereal.csv` using the
+name of the cereals as the index like we did last time with
 `index_col=0`.
 
 ``` python
@@ -148,7 +148,10 @@ Notes: Script here.
 
 So now let’s say we want the 5 rows past `Almond Delight`. That means we
 want rows with the index labels `Apple Cinnamon Cheerios` to
-`Cap'n'Crunch`.
+`Cap'n'Crunch`.  
+The following code cuts the dataframe from “Apple Cinnamon Cheerios” to
+“Cap’n’Crunch” keeping all the
+    columns.
 
 ``` python
 df.loc[ "Apple Cinnamon Cheerios" : "Cap'n'Crunch"]
@@ -165,25 +168,10 @@ Bran Flakes               P  Cold        90        3    0     210    5.0   13.0 
 Cap'n'Crunch              Q  Cold       120        1    2     220    0.0   12.0      12      35        25      2    1.00  0.75  18.042851
 ```
 
-Notes: Script here.
-
-<html>
-
-<audio controls >
-
-<source src="placeholder_audio.mp3"/>
-
-</audio>
-
-</html>
-
----
-
 `df.loc[ "Apple Cinnamon Cheerios" : "Cap'n'Crunch"]`
 
-This essentially means the *dataframe location from `Apple Cinnamon
-Cheerios` to `Cap'n'Crunch`.*
-
+This essentially means to *Obtain the values in the dataframe location
+from `Apple Cinnamon Cheerios` to `Cap'n'Crunch`.*  
 Notes: Script here.
 
 <html>
@@ -201,8 +189,9 @@ Notes: Script here.
 What if we only wanted certain columns now?
 
 Perhaps we were only interested in the `calories` to `fiber` columns of
-those
-rows?
+the “Apple Cinnamon Cheerios” to “Cap’n’Crunch” rows? We put our desired
+rows first, then columns and separate them with a
+comma.
 
 ``` python
 df.loc[ "Apple Cinnamon Cheerios" : "Cap'n'Crunch", "calories" : "fiber"]
@@ -226,7 +215,7 @@ The general format to slice both rows and columns together looks like
 this:
 
 ``` python
-`df.loc[ row-name-start : row-name-end , "column name start" : "column name end"]`
+`df.loc[ "row name start" : "row name end" , "column name start" : "column name end"]`
 ```
 
 Notes: Script here.
