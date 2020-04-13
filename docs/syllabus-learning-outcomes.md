@@ -56,7 +56,7 @@ By the end of the module, students are expected to:
 - filtering using `df[]` and introduce `df.query()` notation
 - Chaining 
 - `df.grouby()` and `df.agg()` 
-- Modify values in a dataframe using `df.apply()` and `df.applymap()`.
+- Modify values in a dataframe using `df.apply()` and `df.applymap()`
 
 
 
