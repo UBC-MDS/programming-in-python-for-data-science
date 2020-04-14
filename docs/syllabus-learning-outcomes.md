@@ -53,7 +53,7 @@ By the end of the module, students are expected to:
 
 - Read different  files using Pandas `pd.read_csv()` and other functions
 - Simple dataframe manipulations and operations
-- filtering using `df[]` and introduce `df.query()` notation
+- filtering using `df[]`
 - Chaining 
 - `df.grouby()` and `df.agg()` 
 - Modify values in a dataframe using `df.apply()` and `df.applymap()`
