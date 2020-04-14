@@ -169,7 +169,9 @@ Almond Delight              R  Cold       110        2    2     200    1.0   14.
 Apple Cinnamon Cheerios     G  Cold       110        2    2     180    1.5   10.5      10      70        25      1     1.0  0.75  29.509541
 ```
 
-Ah, that’s better.
+If we reflect about this a bit a bit it actually make some sense. Think
+about the calculation `6 - 2 = 4` . We get 4 items remaining which is
+the amount of cereals we want in our in new dataframe.
 
 Notes: Script here.
 
@@ -278,7 +280,8 @@ Notes: Script here.
 ## Selecting with df.iloc\[\]
 
 Selecting using `iloc` is done identically to `loc`, however, the items
-within each set of square parentheses **MUST** be numeric.
+within each set of square brackets **MUST** be integers, and not in
+quotation marks.
 
 Let’s say we want the rows `Cheerios`, `Basic 4` and `Apple Jacks` with
 the columns `rating`, `fat` and `type` *in that order*.
@@ -309,8 +312,8 @@ Notes: Script here.
 
 Now let’s put those position into square backing within `df.iloc[]`
 
-Recap the locations: `Cheerios` = 2, `Basic 4` = 5 and `Apple Jacks` =
-3, `rating` = 14, `fat` = 4, `type` = 1.
+Recap the locations: `Cheerios` = 11, `Basic 4` = 7 and `Apple Jacks` =
+6, `rating` = 14, `fat` = 4, `type` = 1.
 
 ``` python
 df.iloc[[11, 7, 6], [14, 4, 1]]

@@ -154,7 +154,7 @@ The following code cuts the dataframe from “Apple Cinnamon Cheerios” to
     columns.
 
 ``` python
-df.loc[ "Apple Cinnamon Cheerios" : "Cap'n'Crunch"]
+df.loc[ 'Apple Cinnamon Cheerios' : "Cap'n'Crunch"]
 ```
 
 ```out
@@ -168,10 +168,17 @@ Bran Flakes               P  Cold        90        3    0     210    5.0   13.0 
 Cap'n'Crunch              Q  Cold       120        1    2     220    0.0   12.0      12      35        25      2    1.00  0.75  18.042851
 ```
 
-`df.loc[ "Apple Cinnamon Cheerios" : "Cap'n'Crunch"]`
+`df.loc[ 'Apple Cinnamon Cheerios' : "Cap'n'Crunch"]`
 
 This essentially means to *Obtain the values in the dataframe location
-from `Apple Cinnamon Cheerios` to `Cap'n'Crunch`.*  
+from `Apple Cinnamon Cheerios` to `Cap'n'Crunch`.*
+
+*Quotation remark: You may notice that we use single quotes for `Apple
+Cinnamon Cheerios` and double quotes for `Cap'n'Crunch`. This is because
+there are apostrophes in the name \`Cap’n’Crunch which prevents the
+outer ones from working properly. Using double quotations in this case
+will fix this problem.*
+
 Notes: Script here.
 
 <html>
@@ -194,7 +201,7 @@ rows first, then columns and separate them with a
 comma.
 
 ``` python
-df.loc[ "Apple Cinnamon Cheerios" : "Cap'n'Crunch", "calories" : "fiber"]
+df.loc[ 'Apple Cinnamon Cheerios' : "Cap'n'Crunch", 'calories' : 'fiber']
 ```
 
 ```out
@@ -215,7 +222,7 @@ The general format to slice both rows and columns together looks like
 this:
 
 ``` python
-`df.loc[ "row name start" : "row name end" , "column name start" : "column name end"]`
+`df.loc[ 'row name start' : 'row name end' , 'column name start' : 'column name end']`
 ```
 
 Notes: Script here.

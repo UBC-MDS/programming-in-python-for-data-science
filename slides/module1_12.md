@@ -68,7 +68,7 @@ brackets `[]`, separated with
 commas.
 
 ``` python
-df.loc[ ["Clusters", "Trix", "Wheaties"] , ["type", "sugars", "rating"] ]
+df.loc[ ['Clusters', 'Trix', 'Wheaties'] , ['type', 'sugars', 'rating'] ]
 ```
 
 ```out
@@ -102,7 +102,7 @@ It’s as simple as rearranging the order you target your rows and
 columns\!
 
 ``` python
-df.loc[ ["Wheaties", "Trix", "Clusters"] , ["type", "rating", "sugars"] ]
+df.loc[ ['Wheaties', 'Trix', 'Clusters'] , ['type', 'rating', 'sugars'] ]
 ```
 
 ```out

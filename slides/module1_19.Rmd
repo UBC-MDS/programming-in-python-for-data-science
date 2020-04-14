@@ -123,14 +123,14 @@ Notes: Script here.
 
 ---
 
-That's because when we use slicing by index position, it will take all the indices including the lower bound but _EXCLUDING_ the upper bound. If we wanted to include `Apple Cinnamon Cheerios` we would have to go 1 index position further.
+That's because when we use slicing by index position, it will take all the indices including the lower bound but _EXCLUDING_ the upper bound. If we wanted to include `Apple Cinnamon Cheerios` we would have to go 1 index position further. 
 
 ```{python}
 df.iloc[2:6]
 ```
 
 
-Ah, that's better.  
+If we reflect about this a bit a bit it actually make some sense. Think about the calculation `6 - 2 = 4` . We get 4 items remaining which is the amount of cereals we want in our in new dataframe. 
 
 Notes: Script here.
 <html>
@@ -186,7 +186,7 @@ Notes: Script here.
 
 ## Selecting with df.iloc[]
 
-Selecting using `iloc` is done identically to `loc`, however, the items within each set of square parentheses **MUST** be numeric.
+Selecting using `iloc` is done identically to `loc`, however, the items within each set of square brackets **MUST** be integers, and not in quotation marks.
 
 Let’s say we want the rows `Cheerios`, `Basic 4` and `Apple Jacks`  with the columns `rating`, `fat` and `type` _in that order_.
 
@@ -210,7 +210,7 @@ Notes: Script here.
 
 Now let's put those position into square backing within `df.iloc[]`
 
-Recap the locations: `Cheerios` = 2, `Basic 4` = 5 and `Apple Jacks` = 3, `rating` = 14, `fat` = 4, `type` = 1.   
+Recap the locations: `Cheerios` = 11, `Basic 4` = 7 and `Apple Jacks` = 6, `rating` = 14, `fat` = 4, `type` = 1.   
 
 ```{python}
 df.iloc[[11, 7, 6], [14, 4, 1]]

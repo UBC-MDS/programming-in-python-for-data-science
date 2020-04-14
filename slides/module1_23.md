@@ -21,36 +21,36 @@ Notes: Script here.
 ## Sorting
 
 When we load in our data, it is generally ordered in the same way it is
-stored. We can easily sort a dataframe based on its column values. The
-tool for that? `df.sort_values()`.
+stored. We can easily sort the rows of a dataframe based on its column
+values. The verb for that? `df.sort_values()`.
 
-As an example, if we wanted to order the cereals based on sugar content,
-we could do the
+As an example, if we wanted to order the cereals based on rating, we
+could do the
     following:
 
 ``` python
-df.sort_values(by="sugars")
+df.sort_values(by='rating')
 ```
 
 ```out
                           mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
 name                                                                                                                                       
-Puffed Wheat                Q  Cold        50        2    0       0    1.0   10.0       0      50         0      3    0.50  1.00  63.005645
-Cream of Wheat (Quick)      N   Hot       100        3    0      80    1.0   21.0       0       1         0      2    1.00  1.00  64.533816
-Shredded Wheat              N  Cold        80        2    0       0    3.0   16.0       0      95         0      1    0.83  1.00  68.235885
-All-Bran with Extra Fiber   K  Cold        50        4    0     140   14.0    8.0       0     330        25      3    1.00  0.50  93.704912
-Shredded Wheat 'n'Bran      N  Cold        90        3    0       0    4.0   19.0       0     140         0      1    1.00  0.67  74.472949
+Cap'n'Crunch                Q  Cold       120        1    2     220    0.0   12.0      12      35        25      2    1.00  0.75  18.042851
+Cinnamon Toast Crunch       G  Cold       120        1    3     210    0.0   13.0       9      45        25      2    1.00  0.75  19.823573
+Honey Graham Ohs            Q  Cold       120        1    2     220    1.0   12.0      11      45        25      2    1.00  1.00  21.871292
+Count Chocula               G  Cold       110        1    1     180    0.0   12.0      13      65        25      2    1.00  1.00  22.396513
+Cocoa Puffs                 G  Cold       110        1    1     180    0.0   12.0      13      55        25      2    1.00  1.00  22.736446
 ...                        ..   ...       ...      ...  ...     ...    ...    ...     ...     ...       ...    ...     ...   ...        ...
-Post Nat. Raisin Bran       P  Cold       120        3    1     200    6.0   11.0      14     260        25      3    1.33  0.67  37.840594
-Apple Jacks                 K  Cold       110        2    0     125    1.0   11.0      14      30        25      2    1.00  1.00  33.174094
-Total Raisin Bran           G  Cold       140        3    1     190    4.0   15.0      14     230       100      3    1.50  1.00  28.592785
-Smacks                      K  Cold       110        2    1      70    1.0    9.0      15      40        25      2    1.00  0.75  31.230054
-Golden Crisp                P  Cold       100        2    0      45    0.0   11.0      15      40        25      1    1.00  0.88  35.252444
+Shredded Wheat              N  Cold        80        2    0       0    3.0   16.0       0      95         0      1    0.83  1.00  68.235885
+100% Bran                   N  Cold        70        4    1     130   10.0    5.0       6     280        25      3    1.00  0.33  68.402973
+Shredded Wheat spoon size   N  Cold        90        3    0       0    3.0   20.0       0     120         0      1    1.00  0.67  72.801787
+Shredded Wheat 'n'Bran      N  Cold        90        3    0       0    4.0   19.0       0     140         0      1    1.00  0.67  74.472949
+All-Bran with Extra Fiber   K  Cold        50        4    0     140   14.0    8.0       0     330        25      3    1.00  0.50  93.704912
 
 [77 rows x 15 columns]
 ```
 
-This allows us to see the cereals with lower sugar content on the top.
+This allows us to see the cereals with lower ratings on the top.
 
 Notes: Script here.
 
@@ -66,34 +66,34 @@ Notes: Script here.
 
 ---
 
-What if we wanted the ones with a higher sugar first? Then we would
-order them in `descending` order by setting the parameter `ascending` to
-“False”:
+What if we wanted the cereals with a higher rating on the top? Then we
+would order them in `descending` order by setting the parameter
+`ascending=False`:
 
 ``` python
-sorted_sugar = df.sort_values(by="sugars", ascending=False)
-sorted_sugar
+sorted_ratings = df.sort_values(by='rating', ascending=False)
+sorted_ratings
 ```
 
 ```out
                           mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
 name                                                                                                                                       
-Smacks                      K  Cold       110        2    1      70    1.0    9.0      15      40        25      2    1.00  0.75  31.230054
-Golden Crisp                P  Cold       100        2    0      45    0.0   11.0      15      40        25      1    1.00  0.88  35.252444
-Total Raisin Bran           G  Cold       140        3    1     190    4.0   15.0      14     230       100      3    1.50  1.00  28.592785
-Post Nat. Raisin Bran       P  Cold       120        3    1     200    6.0   11.0      14     260        25      3    1.33  0.67  37.840594
-Apple Jacks                 K  Cold       110        2    0     125    1.0   11.0      14      30        25      2    1.00  1.00  33.174094
-...                        ..   ...       ...      ...  ...     ...    ...    ...     ...     ...       ...    ...     ...   ...        ...
 All-Bran with Extra Fiber   K  Cold        50        4    0     140   14.0    8.0       0     330        25      3    1.00  0.50  93.704912
-Puffed Wheat                Q  Cold        50        2    0       0    1.0   10.0       0      50         0      3    0.50  1.00  63.005645
-Puffed Rice                 Q  Cold        50        1    0       0    0.0   13.0       0      15         0      3    0.50  1.00  60.756112
-Cream of Wheat (Quick)      N   Hot       100        3    0      80    1.0   21.0       0       1         0      2    1.00  1.00  64.533816
+Shredded Wheat 'n'Bran      N  Cold        90        3    0       0    4.0   19.0       0     140         0      1    1.00  0.67  74.472949
+Shredded Wheat spoon size   N  Cold        90        3    0       0    3.0   20.0       0     120         0      1    1.00  0.67  72.801787
+100% Bran                   N  Cold        70        4    1     130   10.0    5.0       6     280        25      3    1.00  0.33  68.402973
 Shredded Wheat              N  Cold        80        2    0       0    3.0   16.0       0      95         0      1    0.83  1.00  68.235885
+...                        ..   ...       ...      ...  ...     ...    ...    ...     ...     ...       ...    ...     ...   ...        ...
+Cocoa Puffs                 G  Cold       110        1    1     180    0.0   12.0      13      55        25      2    1.00  1.00  22.736446
+Count Chocula               G  Cold       110        1    1     180    0.0   12.0      13      65        25      2    1.00  1.00  22.396513
+Honey Graham Ohs            Q  Cold       120        1    2     220    1.0   12.0      11      45        25      2    1.00  1.00  21.871292
+Cinnamon Toast Crunch       G  Cold       120        1    3     210    0.0   13.0       9      45        25      2    1.00  0.75  19.823573
+Cap'n'Crunch                Q  Cold       120        1    2     220    0.0   12.0      12      35        25      2    1.00  0.75  18.042851
 
 [77 rows x 15 columns]
 ```
 
-Perfect, now we have the high sugar content cereals at the top of the
+Perfect, now we have the highest rated cereals at the top of the
 dataframe.
 
 Notes: Script here.

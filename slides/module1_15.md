@@ -25,7 +25,7 @@ number?
 We specify the row we are targeting, followed by the column.
 
 ``` python
-df.loc["Shredded Wheat", "calories"]
+df.loc['Shredded Wheat', 'calories']
 ```
 
 ```out
@@ -51,7 +51,7 @@ Notes: Script here.
 What about if we wanted the rating of `Smacks`?
 
 ``` python
-df.loc["Smacks", "rating"]
+df.loc['Smacks', 'rating']
 ```
 
 ```out

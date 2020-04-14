@@ -51,7 +51,7 @@ Are we storing pictures in a dataframe?
 </choice> 
 
 **Question 2**         
-If a `csv` file was opened in a plain text editor, what character would be separating the values of each variable? 
+If a `csv` file was opened in a plain text editor, what character would be separating the values of each column? 
 
 <choice id="2">
 <opt text='<code> : </code>'>
@@ -102,7 +102,6 @@ Not quite. You may want to review the module slides.
 </opt>
 
 </choice >
-
 
 
 **Question 2**           
@@ -167,7 +166,7 @@ What are the column names of the hockey_players dataframe?
 
 Tasks:
 - Find the column names of `hockey_players` and save it as `columns_hockey`.
-- Display it
+- Display it.
 
 
 <codeblock id="01_05a">
@@ -182,7 +181,7 @@ What is the shape of the hockey dataframe?
 
 Tasks:
 - Find the shape of `hockey_players` and save the result as `hockey_shape`.
-- Display it
+- Display it.
 
 
 <codeblock id="01_05b">
@@ -207,7 +206,8 @@ Tasks:
 My dataframe object name is `fruit_salad` with the index label as the `name` column.
 
 ```out
-        name     colour    location   seed   shape    sweetness   water-content  weight
+                 colour    location   seed   shape    sweetness   water-content  weight
+        name                        
        apple        red     canada    True   round       True          84         100
       banana     yellow     mexico   False    long       True          75         120
   cantaloupe     orange      spain    True   round       True          90        1360
@@ -244,7 +244,7 @@ This is missing something rather important.
 
 <opt text='<code>fruit_salad.loc["cantaloupe": "kiwi"]</code>' correct="true">
 
-Good job! This has both `loc` and "quotation" which are both needed to slice here.
+Good job! 
 
 </opt>
 
@@ -364,7 +364,8 @@ Tasks:
 Using my dataframe object name is `fruit_salad` with the index label as the `name` column, Let's answer some slicing questions.
 
 ```out
-        name     colour    location   seed   shape    sweetness   water-content  weight
+                 colour    location   seed   shape    sweetness   water-content  weight
+        name                        
        apple        red     canada    True   round       True          84         100
       banana     yellow     mexico   False    long       True          75         120
   cantaloupe     orange      spain    True   round       True          90        1360
@@ -376,6 +377,7 @@ dragon-fruit    magenta      china    True   round      False          96       
         kiwi      brown      china    True   round       True          80          76
        lemon     yellow     mexico   False    oval      False          83          65
 ```
+
 
 **Question**    
 If you wanted all the rows and only columns `seeds`, `shape`, `sweetness` and  `water-content` what would your code look like using index labels?
@@ -422,7 +424,8 @@ Good job! This has both `loc` and includes the columns we wish to slice here.
 Using my `fruit_salad` dataframe from earlier?
 
 ```out
-        name     colour    location   seed   shape    sweetness   water-content  weight
+                 colour    location   seed   shape    sweetness   water-content  weight
+        name                        
        apple        red     canada    True   round       True          84         100
       banana     yellow     mexico   False    long       True          75         120
   cantaloupe     orange      spain    True   round       True          90        1360
@@ -434,6 +437,7 @@ dragon-fruit    magenta      china    True   round      False          96       
         kiwi      brown      china    True   round       True          80          76
        lemon     yellow     mexico   False    oval      False          83          65
 ```
+
 **Question**    
 If I wanted to make a tropical salad and the recipe calls for `kiwi`, `cantaloupe` and `guava` in this order and I am only interested in columns ordered as `sweetness`, `weight`, `seed` and  `location`, what would my code look like?
 
@@ -476,10 +480,8 @@ Running a coding exercise for the first time, could take a bit of time for every
 Now let's select specific players and columns.
 
 Tasks:
-- Select the players `Zack MacEwan`, `Jake Virtanen` and `Jordie Benn` in that order and the columns 
-`Height`, `Weight`, `Salary` and 
-`Country` in that order.
-- Save the new sliced dataframe as object `penalty players`.
+- Select the players `Zack MacEwan`, `Jake Virtanen` and `Jordie Benn` in that order and the columns `Height`, `Weight`, `Salary` and `Country` in that order.
+- Save the new sliced dataframe as object `penalty_players`.
 - Display it.
 
 
@@ -578,9 +580,9 @@ Tasks:
 
 Here is our `fruit_salad` data again:
 
-
 ```out
-        name     colour    location   seed   shape    sweetness   water-content  weight
+                 colour    location   seed   shape    sweetness   water-content  weight
+        name                        
        apple        red     canada    True   round       True          84         100
       banana     yellow     mexico   False    long       True          75         120
   cantaloupe     orange      spain    True   round       True          90        1360
@@ -591,8 +593,8 @@ dragon-fruit    magenta      china    True   round      False          96       
  huckleberry       blue     canada    True   round       True          73           5
         kiwi      brown      china    True   round       True          80          76
        lemon     yellow     mexico   False    oval      False          83          65
-
 ```
+
 
 **Question 1**
 If I wanted the rows `elderberry`  to `kiwi` and only columns `seeds`, `shape`, `sweetness` and  `water-content` what would my code look like if I was using index positions?
@@ -663,8 +665,14 @@ Running a coding exercise for the first time, could take a bit of time for every
 
 **When you see `____` in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.**
 
+Use the output of the following code chunk to help complete the next tasks.
+
+<codeblock id="hockey_players_i">
+
+</codeblock>
+
  In previous questions, we tried slicing using index labels on our Canack dataset. Let's try something similar but using the index positions.
-To make life a little easier for you we will be reading in the data without `index_loc=0`. This means that no column is being assigned as an index and will have an index labeled with row numbers.
+To make life a little easier for you we will be reading in the data without `index_col=0`. This means that no column is being assigned as an index and will have an index labeled with row numbers.
 
 Tasks:
 - Slice the players `Jacob Markstrom` to `Tim Schaller` and the columns `Player` to `Height`.
@@ -688,6 +696,12 @@ Tasks:
 Running a coding exercise for the first time, could take a bit of time for everything to load. Be patient, it could take a few minutes. 
 
 **When you see `____` in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.**
+
+Use the output of the following code chunk to help complete the next tasks.
+
+<codeblock id="hockey_players_i">
+
+</codeblock>
 
 These unfortunate Canuck players have various forms of injuries, so let's make a dataframe of players who have injuries by selecting them using their index position.
 
@@ -721,8 +735,8 @@ Running a coding exercise for the first time, could take a bit of time for every
 Let's sort our hockey dataframe
 
 Task:
-- Sort your `hockey_players` dataframe by Salary from most to least and name your new dataframe as `rich_players`
-- Display it
+- Sort your `hockey_players` dataframe by Salary from most to least and name your new dataframe as `rich_players`.
+- Display it.
 
 
 <codeblock id="01_24">
@@ -741,39 +755,9 @@ Task:
 
 <exercise id="26" title="Fruit Bowl Statistics">
 
-**Question 1**
-Let's say I have a dataframe named  `fruit_salad` with a column of interest named `colour`.  
-Which of the following will give us the desired input if we wanted to make a frequency table of the column `colour` using `pd.value_counts()`?
+**Question **
 
-<choice id="1" >
-<opt text='<code>fruit_salad[colour]</code>'>
-
-Almost there. What is missing from this?
-
-</opt>
-
-<opt text='<code>fruit_salad["colour"]</code>' correct="true">
-
-Good job!
-
-</opt>
-
-<opt text='<code>fruit_salad.loc["colour"]</code>' >
-
-We don't need to use `loc`. Let's try again.
-
-</opt>
-
-<opt text='<code>fruit_salad.loc[ : , ["colour"]]</code>' >
-
-This won't give us the correct output for `pd.value_counts()`. Check the slides to double-check.
-
-</opt>
-
-</choice >
-
-**Question 2**
-We need summary statistics of both quantitative and categorical columns of the dataframe `fruit_salad`. What code would be suitable for this?
+We need summary statistics of both quantitative and categorical columns of the dataframe `vegetable_salad`. What code would be suitable for this?
 
 <choice id="2" >
 <opt text='<code>df.describe()</code>'>
@@ -782,19 +766,19 @@ Is our dataframe named `df`? Will this get summary statistics for all the column
 
 </opt>
 
-<opt text='<code>fruit_salad.describe()</code>' >
+<opt text='<code>vegetable_salad.describe()</code>' >
 
 We want statistics of both quantitative and categorical columns.
 
 </opt>
 
-<opt text='<code>fruit_salad.describe(include = "all")</code>' correct="true">
+<opt text='<code>vegetable_salad.describe(include = "all")</code>' correct="true">
 
 This looks great! Well done! 
 
 </opt>
 
-<opt text='<code>fruit_salad.summary(include = "all")</code>' >
+<opt text='<code>vegetable_salad.summary(include = "all")</code>' >
 
 Is `summary` the correct command here?
 
@@ -813,9 +797,9 @@ Running a coding exercise for the first time, could take a bit of time for every
 
 Let's try and obtain some statistics from our hockey data we've been playing with.
 
-Task:
-- Find the statistics of both categorical and quantitative columns. Save the dataframe in an object called `hockey_stats`
-- Display it
+Tasks:
+- Find the statistics of both categorical and quantitative columns. Save the dataframe in an object called `hockey_stats`.
+- Display it.
 
 
 <codeblock id="01_27a">
@@ -826,8 +810,8 @@ Task:
 </codeblock>
 
 
-Task:
-- Find the total salary of the team and save it in an object called `player_cost`
+Tasks:
+- Find the total salary of the team and save it in an object called `player_cost`.
 
 
 <codeblock id="01_27b">
@@ -852,10 +836,10 @@ Let's get the frequencies of some of our values! We spoke in the slides about th
     
 _**Make sure you remove the hash (`#`) symbol in the coding portions of this question. We have commented them so that the line won't execute and you can test your code after each step.**_ 
 
-Task:
+Tasks:
 - Let's make an object named `position_column` that consists of just the `Position` column. Note we will be using this for `value_counts` so we must do this with only using single `[]` brackets.
-- Find the frequencies of the position for the hockey team using `df.value_counts()` and save it as `position_freq`.
-- Export position_freq  to a csv named `position_frequencies.csv` using `pd.to_csv()`.
+- Find the frequencies of the position for the hockey team using `value_counts()` and save it as `position_freq`.
+- Export `position_freq`  to a csv named `position_frequencies.csv` using `pd.to_csv()`.
 - Don't forget to display it.
 
 <codeblock id="01_28">
@@ -885,8 +869,8 @@ You are going to load the frequency table from the questions that we exported as
 _**Make sure you remove the hash (`#`) symbol in the coding portions of this question. We have commented them so that the line won't execute and you can test your code after each step.**_ 
 
 Tasks:
-- load in the csv named `position_frequencies.csv` you made in exercise 24 and save it as `position_freq`. 
-- Use `plot.bar()` with `position_freq` and save the plot in an object named `position_bar`
+- Load in the csv named `position_frequencies.csv` you made in the earlier exercise and save it as `position_freq`. 
+- Use `plot.bar()` with `position_freq` and save the plot in an object named `position_bar`.
 - Assign a `color` as `Teal`, set opacity to 0.5.
 - Don't forget to add a title as "Canuck Player Positions".
 
@@ -911,7 +895,7 @@ Running a coding exercise for the first time, could take a bit of time for every
 Ok, let's try our luck with a scatterplot. We want to explore the relationship between `Age` and `Salary`.
 
 Tasks:
-- Plots x as `Age` and y as `Salary`. using a scatterplot and save the plot in an object named `age_salary_scatter`
+- Plots x as `Age` and y as `Salary` using a scatterplot and save the plot in an object named `age_salary_scatter`.
 - Set color to `Darkblue` and opacity to 0.4.
 - Don't forget to assign a title as "Canuck players Age vs. Salary".
 

@@ -61,7 +61,7 @@ Notes: Script here.
 
 ---
 
-If we want to visualize things using different plots we can do that pretty quickly and with little code! Take `manufacturer_freq` object we made in the last deck of slide.
+If we want to visualize things using different plots we can do that pretty quickly and with little code! Take `manufacturer_freq` object we made in the last slide deck.
 
 ```{python}
 manufacturer_freq
@@ -115,10 +115,10 @@ Notes: Script here.
 
 ---
 
-Something you may have noticed is that there are 77 cereals but there doesn't seem to be 77 data points! That's because some of them are lying on top of each other with the same sugar ar calorie values. It may be of use to set an opacity to the graph to differential those points. Opacity is set with the argument `alpha` and accepts values between 0 and 1, 1 being full intensity.  
+Something you may have noticed is that there are 77 cereals but there doesn't seem to be 77 data points! That's because some of them are lying on top of each other with the same sugar ar calorie values. It may be of use to set an opacity to the graph to differential those points. Opacity is set with the argument `alpha` and accepts values between 0 and 1, with 1 being full intensity.
 
 ```{python fig.width = 6, fig.height = 4}
-df.plot.scatter(x='sugars',y='calories', alpha= 0.3)
+df.plot.scatter(x='sugars', y='calories', alpha=0.3)
 ```
 
 Notes: Script here.
@@ -133,10 +133,10 @@ Look at that! Now we can see there are multiple cereals that have 2.5g of sugar 
 What if we wanted to change the colour to purple? Enter parameter `color`! We can also add a bit of readability by separating the arguments into separate lines.
 
 ```{python fig.width = 6, fig.height = 4}
-df.plot.scatter(x="sugars", 
-                y="calories", 
-                alpha= .3, 
-                color= "purple")
+df.plot.scatter(x='sugars', 
+                y='calories', 
+                alpha=.3, 
+                color='purple')
 ```
 
 
@@ -149,15 +149,15 @@ Notes: Script here.
 
 ---
 
-Those data points look pretty small. To enlarge them, the argument `s` should do the trick. Also every good graph should havew a title! Let's take this opportunity to finish off this graph and set the argument `title` to something as well. 
+Those data points look pretty small. To enlarge them, the argument `s` should do the trick. Also every good graph should have a title! Let's take this opportunity to finish off this graph and set the argument `title` to something as well. 
 
 ```{python fig.width = 6, fig.height = 4}
 df.plot.scatter(x="sugars",
                 y="calories",
                 alpha= 0.3, 
                 color="purple",
-                s= 80, 
-                title = "The relationship between sugar and calories in cereals")
+                s=80, 
+                title ="The relationship between sugar and calories in cereals")
 ```
 
 
@@ -169,7 +169,7 @@ Notes: Script here.
 
 ---
 
-# let’s apply what we learned!
+# Let’s apply what we learned!
 
 Notes: Script here
 <html>

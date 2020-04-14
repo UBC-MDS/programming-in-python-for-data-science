@@ -83,9 +83,9 @@ Notes: Script here.
 
 ## Pandas describe()
 
-Pandas has a lot up it’s sleeve but one of the most useful functions is
-called describe and it does exactly that. it *describes* our data. Let’s
-try it
+Pandas has a lot up its sleeve but one of the most useful methods is
+called `describe` and it does exactly that. it *describes* our data.
+Let’s try it
     out.
 
 ``` python
@@ -159,7 +159,7 @@ the additional argument `include = "all"` in the `describe`
     brackets.
 
 ``` python
-df.describe(include = "all")
+df.describe(include = 'all')
 ```
 
 ```out
@@ -207,7 +207,7 @@ min     NaN   NaN   50.000000   1.000000   0.000000    0.000000   0.000000   1.0
 max     NaN   NaN  160.000000   6.000000   5.000000  320.000000  14.000000  23.000000  15.000000  330.000000  100.000000   3.000000   1.500000   1.500000  93.704912
 ```
 
-Adding `include = "all"` within the brackets adds some additional
+Adding `include = 'all'` within the brackets adds some additional
 statistics about categorical columns.
 
   - `unique`: how many observations are unique
@@ -274,12 +274,12 @@ Notes: Script here.
 
 If we want to get a frequency table of a categorical column, there are a
 few steps that need to be followed. Up untill now, we discussed getting
-a single column from a dataframe using double parentheses -
+a single column from a dataframe using double brackets -
 `df[['column-name']]`. For frequency tables, however, we only use single
-parentheses to obtain the column values.
+brackets to obtain the column values.
 
 ``` python
-manufacturer_column = df["mfr"]
+manufacturer_column = df['mfr']
 manufacturer_column
 ```
 
@@ -335,9 +335,10 @@ Name: mfr, dtype: int64
 ```
 
 We can then see the frequency of each qualitative value. If we used
-double parentheses with `pd.value_counts()` we would get an error along
-the lines of `AttributeError: 'DataFrame' object has no attribute
-'value_counts'`. Take care with using the correct number of parentheses.
+double square brackets with `pd.value_counts()` we would get an error
+along the lines of `AttributeError: 'DataFrame' object has no attribute
+'value_counts'`. Take care with using the correct number of square
+brackets.
 
 Notes: Script here.
 

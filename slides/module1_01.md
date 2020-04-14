@@ -253,8 +253,8 @@ df.shape
 (25, 10)
 ```
 
-Breaking up this code it just means "From our dataframe that we saved as
-`df` tell me the `columns`/`shape`.
+Breaking up this code it just means “From our dataframe that we saved as
+`df` tell me the `columns`/`shape`”.
 
 Notes: Script here.
 
@@ -322,11 +322,14 @@ Notes: Script here.
 ## Functions/Methods and Attributes
 
 Something you may have noticed is that when we use `pd.read_csv()` we
-put our argument within the parentheses, whereas, when we use `.shape`
-or `.head()` the object comes before our desired command. In Python,
-there are different command types called **functions**, **attributes**
-and **methods**. These are special words in Python that takes in
-instructions (we call these arguments) and do something.
+put our instructions within the parentheses, whereas, when we use
+`.shape` or `.head()` the object comes before our desired command. In
+Python, we use **functions**, **methods** and **attributes**. These are
+special words in Python that takes in instructions (we call these
+arguments) and do something.
+
+\<img src=‘module1/argument.png’ width=“50%” alt=“404 image”,
+align=“middle”/\>
 
 <br>
 

@@ -1,0 +1,223 @@
+---
+params:
+  dynamictitle: "module2_04"
+title: "`r params$dynamictitle`"
+output: 
+  md_document:
+    variant: gfm
+---
+
+
+```{r setup, include=FALSE}
+## DO NOT FORGET TO CHANGE THIS ACCORDINGLY 
+library(rmarkdown)
+# MAke sure you are updating your title 
+knitr::opts_chunk$set(echo = TRUE,
+                      base.dir = ".", 
+                      base.url = "/",
+                      fig.path = paste("../static/module2/", params$dynamictitle,"/", sep = ""))
+
+knitr_opts <- knitr_options( opts_knit = NULL,
+                             opts_chunk = NULL,
+                             knit_hooks = NULL,
+                             opts_hooks = NULL,
+                             opts_template = NULL)
+md_document_custom <- md_document(variant = "gfm")
+output_format(knitr = knitr_opts,
+              pandoc = NULL,
+              base_format = md_document_custom)
+library(reticulate)
+
+```
+
+
+```{python include=FALSE}
+import pandas as pd
+import numpy as np
+pd.set_option('display.width', 350)
+
+np.set_printoptions(linewidth=400)
+
+pd.set_option('display.max_columns', 15)
+pd.set_option('display.max_rows', 12)
+
+df = pd.read_csv('cereal.csv', index_col=0)
+```
+
+
+type: slides
+
+## Reading Arguments
+
+We have talked about quite a few different arguments when reading in different file types such as `index_col`, `delimiter` and for excel files `sheet_name` but there are mant others that are important to know so we can to read in the file the way we want it to appear in our code. 
+
+To recap from the last module, `index_col` is an argument that indicates which column will be acting as our index label. In most of the cases we have encountered, it was the very first column. 
+
+We are going to introduce a few: 
+
+- `header`
+- `nrows`
+- `usecols`
+- `true_values` and `false_values`
+
+If you wish to know more, you can find the documentation at the following links:
+
+- [`pd.read_csv()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html) 
+- [`pd.read_excel()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_excel.html)
+      
+_Please note that these arguments can be used for both `pd.read_csv()` and `pd.read_excel()`._ 
+
+Notes: Script here.
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+## header
+
+We have been pretty lucky up until now that all of the data we have loaded in has been particularly straight forward. Sometimes with data, there are a few lines of text explaining a few important points about the file. We do not want to include this in our dataframe and therefore we need to specify exactly when our dataframe begins. This is where `header` comes in. 
+Take the next file as an example `candybars-h.csv`.  
+
+```{python}
+candybars = pd.read_csv('candybars-h.csv')
+candybars.head()
+```
+
+We see that there are no clear column names and things are in quite a disarray. 
+
+
+Notes: Script here.
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+ 
+If we look at the data with a regular text editor, the data doesn't start until line 3 which would be the equivalent of position 2 (since we begin at index 0). 
+
+<img src='module2/header_textedit.png'  alt="404 image"/>
+
+Notes: Script here.
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+We use `header=2` to indicate where our dataframe begins.
+
+```{python}
+candybars = pd.read_csv('candybars-h.csv', header=2)
+candybars.head()
+```
+
+
+Notes: Script here.
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+## nrows
+
+nrows is useful when you only want to load in a portion of a file. Perhaps the file you have is large and you only want a sample of it. `nrows` will limit the of rows of file to read. 
+Take our regular `candybar.csv` file but perhaps we only want 7 of the rows. 
+
+```{python}
+candybars = pd.read_csv('candybars.csv', nrows=7)
+candybars
+```
+
+
+Notes: Script here.
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+## usecols
+
+Similarly to how `nrows` specifies how many rows to read in, `usecols` selects which columns to use in the dataframe. Maybe all that's relevant to our analysis are the columns `name`, `weight` and `available_canada_america`. 
+Do you remember when we were selecting columns using `iloc` in the last module we would specified the index position? We use a similar syntax here. We put the desired column index positions in square brackets for the argument. 
+
+```{python}
+candybars = pd.read_csv('candybars.csv', usecols=[0,1,10 ])
+candybars
+```
+
+
+Notes: Script here.
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+## usecols
+
+Similarly to how `nrows` specifies how many rows to read in, `usecols` selects which columns to use in the dataframe. Maybe all that's relevant to our analysis are the columns `name`, `weight` and `available_canada_america`. 
+Do you remember when we were selecting columns using `iloc` in the last module we would specified the index position? We use a similar syntax here. We put the desired column index positions in square brackets for the argument. 
+
+```{python}
+candybars = pd.read_csv('candybars.csv', usecols=[0,1,10 ])
+candybars
+```
+
+Let's practice before 
+
+Notes: Script here.
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+## true_values and false_values
+
+Here are 2 arguments that can be useful if we want to add some clarity in our dataframes. 
+
+Bringing in new `candybars-tf.csv` we have a number of columns that have binary values of `yes` and `no` such as ` chocolate`, `peanuts`, `caramel` and `nougat`. 
+
+```{python}
+candybars = pd.read_csv('candybars-tf.csv' )
+candybars
+```
+
+We can changes these values to more direct values such as `True` and `False` since these are more familiar to our Python programming Language.
+
+
+Notes: Script here.
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+In order to change our `yes`'s to `True` and the `no`s to `False` we need to specify **BOTH** arguments with the values in square brackets. 
+
+```{python}
+candybars = pd.read_csv('candybars-tf.csv', true_values= ['yes'], false_values= ['no'] )
+candybars
+```
+
+This is now more familiar to Python. For these arguments, mmultiple values can also be specified too. 
+
+# Let’s apply what we learned!
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+

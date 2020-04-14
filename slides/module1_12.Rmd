@@ -74,7 +74,7 @@ We need to specify each column and row label that we want between square bracket
 
 
 ```{python}
-df.loc[ ["Clusters", "Trix", "Wheaties"] , ["type", "sugars", "rating"] ]
+df.loc[ ['Clusters', 'Trix', 'Wheaties'] , ['type', 'sugars', 'rating'] ]
 ```
 
 
@@ -93,7 +93,7 @@ How would we obtain that?
 It's as simple as rearranging the order you target your rows and columns!
 
 ```{python}
-df.loc[ ["Wheaties", "Trix", "Clusters"] , ["type", "rating", "sugars"] ]
+df.loc[ ['Wheaties', 'Trix', 'Clusters'] , ['type', 'rating', 'sugars'] ]
 ```
 
 

@@ -23,12 +23,12 @@ Notes: Script here.
 Something extremely useful is getting a single column from a dataframe.
 We can use `df.loc[]` which would look something like this:
 
-    df.loc[ : , [ "column-name"] ]
+    df.loc[ : , [ 'column-name'] ]
 
 For example, if we wanted the column `type` from our cereal dataframe.
 
 ``` python
-df.loc[ : , [ "type"] ]
+df.loc[ : , [ 'type'] ]
 ```
 
 ```out
@@ -64,13 +64,13 @@ Notes: Script here.
 ---
 
 But there is a better way of doing this. We can omit `loc` altogether
-and use double square parentheses:
+and use double square brackets:
 
 ``` python
 df[['column-name']]
 ```
 
-Selecting the column `type` would be as simple as so:
+Selecting the column `type` would be as simple as:
 
 ``` python
 df[['type']]

@@ -20,7 +20,7 @@ Notes: Script here.
 
 If we want to visualize things using different plots we can do that
 pretty quickly and with little code\! Take `manufacturer_freq` object we
-made in the last deck of slide.
+made in the last slide deck.
 
 ``` python
 manufacturer_freq
@@ -30,8 +30,8 @@ manufacturer_freq
 K    23
 G    22
 P     9
-Q     8
 R     8
+Q     8
 N     6
 A     1
 Name: mfr, dtype: int64
@@ -118,11 +118,11 @@ doesn’t seem to be 77 data points\! That’s because some of them are
 lying on top of each other with the same sugar ar calorie values. It may
 be of use to set an opacity to the graph to differential those points.
 Opacity is set with the argument `alpha` and accepts values between 0
-and 1, 1 being full
+and 1, with 1 being full
 intensity.
 
 ``` python
-df.plot.scatter(x='sugars',y='calories', alpha= 0.3)
+df.plot.scatter(x='sugars', y='calories', alpha=0.3)
 ```
 
 <img src="module1/module1_29/unnamed-chunk-6-1.png" width="576" />
@@ -147,10 +147,10 @@ purple? Enter parameter `color`\! We can also add a bit of readability
 by separating the arguments into separate lines.
 
 ``` python
-df.plot.scatter(x="sugars", 
-                y="calories", 
-                alpha= .3, 
-                color= "purple")
+df.plot.scatter(x='sugars', 
+                y='calories', 
+                alpha=.3, 
+                color='purple')
 ```
 
 <img src="module1/module1_29/unnamed-chunk-7-1.png" width="576" />
@@ -170,7 +170,7 @@ Notes: Script here.
 ---
 
 Those data points look pretty small. To enlarge them, the argument `s`
-should do the trick. Also every good graph should havew a title\! Let’s
+should do the trick. Also every good graph should have a title\! Let’s
 take this opportunity to finish off this graph and set the argument
 `title` to something as well.
 
@@ -179,8 +179,8 @@ df.plot.scatter(x="sugars",
                 y="calories",
                 alpha= 0.3, 
                 color="purple",
-                s= 80, 
-                title = "The relationship between sugar and calories in cereals")
+                s=80, 
+                title ="The relationship between sugar and calories in cereals")
 ```
 
 <img src="module1/module1_29/unnamed-chunk-8-1.png" width="576" />
@@ -199,7 +199,7 @@ Notes: Script here.
 
 ---
 
-# let’s apply what we learned\!
+# Let’s apply what we learned\!
 
 Notes: Script here
 

@@ -21,10 +21,10 @@ Notes: Script here.
 What happens now if we wanted all the rows of the dataframe but only the
 columns `calories` to `fiber`?
 
-we would simply use `:` to indicate from “end” to “end” for rows.
+We would simply use `:` to indicate from “end” to “end” for rows.
 
 ``` python
-df.loc[ : , "calories" : "fiber"]
+df.loc[ : , 'calories' : 'fiber']
 ```
 
 ```out
@@ -66,16 +66,16 @@ interval. We always specify **row** indexing first, then
 **columns**.
 
 ``` python
-df.loc[ "row name start" : "row name end", "column name start" : "column name end"]
+df.loc[ 'row name start' : 'row name end', 'column name start' : 'column name end']
 ```
 
-  - If we aren’t slicing any columns, we can simply say `df.loc[ "row
-    name start": "row name end"]` since columns specification follow
+  - If we aren’t slicing any columns, we can simply say `df.loc[ 'row
+    name start': 'row name end']` since columns specification follow
     rows.
   - However, the reverse is not true. If we want all the rows with only
     specific columns, we specify rows first and therefore we would need
-    to make it clear with `df.loc[ : , "column name start" : "column
-    name end"]`.
+    to make it clear with `df.loc[ : , 'column name start' : 'column
+    name end']`.
   - We can read `:` as **“to”**
   - If the indices are labeled with numbers, we do not need “quotations”
     when calling them.
