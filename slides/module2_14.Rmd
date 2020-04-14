@@ -47,9 +47,9 @@ df = pd.read_csv('cereal.csv', index_col=0)
 
 type: slides
 
-## Chaining . notation  
+## Chaining notation  
 
-<img src='module2/chainsfinal.png'  alt="404 image"/>
+
 
 Notes: Script here
 <html>
@@ -59,7 +59,9 @@ Notes: Script here
 
 ---
 
+## What is Chaining ?
 
+<img src='module2/chainsfinal.png'  alt="404 image"/>
 
 Notes: Script here
 <html>
