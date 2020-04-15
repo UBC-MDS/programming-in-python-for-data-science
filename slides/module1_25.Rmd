@@ -75,6 +75,24 @@ Notes: Script here.
 
 ---
 
+## Numerical and Categorical Columns 
+
+Before we go further, let's quickly discuss the 2 different types of data.  
+
+- Categorical data: consists of qualitative observations such as characteristics - things generally containing names or words. 
+- Numerical data: are usually expressed with numbers. 
+
+This means that in our dataframe our columns can be classified as either of these.
+
+
+Notes: Script here.
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
 ## Pandas describe()
 
 Pandas has a lot up its sleeve but one of the most useful methods is called `describe` and it does exactly that. it _describes_ our data.  Let's try it out. 
@@ -84,7 +102,7 @@ Pandas has a lot up its sleeve but one of the most useful methods is called `des
 df.describe()
 ```
 
-
+By default `df.describe()` only shows numerical columns.
 
 Notes: Script here.
 <html>
@@ -116,7 +134,7 @@ Notes: Script here.
 
 ---
 
-We can make changes to either limit how much is shown or extend it with the additional argument `include = "all"` in the `describe` brackets. 
+We can make changes to either limit how much is shown or extend it with the additional argument `include = "all"` in the `describe` brackets. This expands the dataframe to contain both categorical and numerical columns now. 
 
 ```{python}
 df.describe(include = 'all')
@@ -178,62 +196,6 @@ Notes: Script here.
 </audio></html>
 
 ---
-
-## Frequency Tables
-
-If we want to get a frequency table of a categorical column, there are a few steps that need to be followed. 
-Up untill now,  we discussed getting a single column from a dataframe using double brackets - `df[['column-name']]`. For frequency tables, however, we only use single brackets to obtain the column values.
-
-```{python}
-manufacturer_column = df['mfr']
-manufacturer_column
-```
-
-Notes: Script here.
-<html>
-<audio controls >
-  <source src="placeholder_audio.mp3" />
-</audio></html>
-
----
-
-We saved the object in a variable called `manufacturer_column` in the same way we have saved objects before.    
-Next we can use `pd.value_counts()` referencing that the column we saved as `manufacturer_column`.  
-
-
-```{python}
-manufacturer_freq = manufacturer_column.value_counts()
-manufacturer_freq
-```
-
-We can then see the frequency of each qualitative value.
-If we used double square brackets with `pd.value_counts()` we would get an error along the lines of `AttributeError: 'DataFrame' object has no attribute 'value_counts'`. Take care with using the correct number of square brackets.
-
-Notes: Script here.
-<html>
-<audio controls >
-<source src="placeholder_audio.mp3" />
-</audio></html>
-
----
-
-Sometimes it's useful to save a new dataframe as a `csv` file for future use or to use in another application. We can save dataframes using the method `df.to_csv()`. Simply put our desired `csv` file name in quotations within the parentheses. 
-
-```{python echo = FALSE}
-manufacturer_freq.to_csv('manufacturer_frequency.csv')
-```
-
-
-Notes: Script here.
-
-<html>
-<audio controls >
-<source src="placeholder_audio.mp3" />
-</audio></html>
-
----
-
-
 
 # Let’s apply what we learned!
 

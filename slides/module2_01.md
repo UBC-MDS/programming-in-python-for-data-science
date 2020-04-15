@@ -193,12 +193,12 @@ candybars.head()
 ```
 
 ```out
-           name  weight  chocolate  peanuts  caramel  nougat  cookie_wafer_rice  coconut  white_chocolate  multi available_canada_america
-0  Coffee Crisp      50          1        0        0       0                  1        0                0      0                   Canada
-1  Butterfinger     184          1        1        1       0                  0        0                0      0                  America
-2          Skor      39          1        0        1       0                  0        0                0      0                     Both
-3      Smarties      45          1        0        0       0                  0        0                0      1                   Canada
-4          Twix      58          1        0        1       0                  1        0                0      1                     Both
+  This dataset was created by Hayley Boyce in February 2020. Unnamed: 1 Unnamed: 2 Unnamed: 3 Unnamed: 4 Unnamed: 5         Unnamed: 6 Unnamed: 7       Unnamed: 8 Unnamed: 9               Unnamed: 10
+0  Note this is not a complete dataset and there ...                NaN        NaN        NaN        NaN        NaN                NaN        NaN              NaN        NaN                       NaN
+1                                               name             weight  chocolate    peanuts    caramel     nougat  cookie_wafer_rice    coconut  white_chocolate      multi  available_canada_america
+2                                       Coffee Crisp                 50          1          0          0          0                  1          0                0          0                    Canada
+3                                       Butterfinger                184          1          1          1          0                  0          0                0          0                   America
+4                                               Skor                 39          1          0          1          0                  0          0                0          0                      Both
 ```
 
 Notes: Script here.

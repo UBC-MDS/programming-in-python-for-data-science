@@ -2,7 +2,7 @@
 type: slides
 ---
 
-## Filtering
+# Filtering
 
 Notes: Script here
 
@@ -369,7 +369,7 @@ Special K                   K  Cold       110        6    0     230    1.0   16.
 
 Python will now move from left to right and in this case it will select
 all the cereals with a fiber content greater than 6 *or* all the cereal
-satisfying a protein content above 5 made by “K” manufacturer.
+satisfying a protein content above 5 made by manufacturer “K”.
 
 Notes: Script here
 

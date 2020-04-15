@@ -81,6 +81,32 @@ Notes: Script here.
 
 ---
 
+## Numerical and Categorical Columns
+
+Before we go further, let’s quickly discuss the 2 different types of
+data.
+
+  - Categorical data: consists of qualitative observations such as
+    characteristics - things generally containing names or words.
+  - Numerical data: are usually expressed with numbers.
+
+This means that in our dataframe our columns can be classified as either
+of these.
+
+Notes: Script here.
+
+<html>
+
+<audio controls >
+
+<source src="placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
 ## Pandas describe()
 
 Pandas has a lot up its sleeve but one of the most useful methods is
@@ -103,6 +129,8 @@ min     50.000000   1.000000   0.000000    0.000000   0.000000   1.000000   0.00
 75%    110.000000   3.000000   2.000000  210.000000   3.000000  17.000000  11.000000  120.000000   25.000000   3.000000   1.000000   1.000000  50.828392
 max    160.000000   6.000000   5.000000  320.000000  14.000000  23.000000  15.000000  330.000000  100.000000   3.000000   1.500000   1.500000  93.704912
 ```
+
+By default `df.describe()` only shows numerical columns.
 
 Notes: Script
     here.
@@ -155,8 +183,10 @@ Notes: Script here.
 ---
 
 We can make changes to either limit how much is shown or extend it with
-the additional argument `include = "all"` in the `describe`
-    brackets.
+the additional argument `include = "all"` in the `describe` brackets.
+This expands the dataframe to contain both categorical and numerical
+columns
+    now.
 
 ``` python
 df.describe(include = 'all')
@@ -255,109 +285,6 @@ calories.median()
 calories    110.0
 dtype: float64
 ```
-
-Notes: Script here.
-
-<html>
-
-<audio controls >
-
-<source src="placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
-
-## Frequency Tables
-
-If we want to get a frequency table of a categorical column, there are a
-few steps that need to be followed. Up untill now, we discussed getting
-a single column from a dataframe using double brackets -
-`df[['column-name']]`. For frequency tables, however, we only use single
-brackets to obtain the column values.
-
-``` python
-manufacturer_column = df['mfr']
-manufacturer_column
-```
-
-```out
-name
-100% Bran                    N
-100% Natural Bran            Q
-All-Bran                     K
-All-Bran with Extra Fiber    K
-Almond Delight               R
-                            ..
-Triples                      G
-Trix                         G
-Wheat Chex                   R
-Wheaties                     G
-Wheaties Honey Gold          G
-Name: mfr, Length: 77, dtype: object
-```
-
-Notes: Script here.
-
-<html>
-
-<audio controls >
-
-<source src="placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
-
-We saved the object in a variable called `manufacturer_column` in the
-same way we have saved objects before.  
-Next we can use `pd.value_counts()` referencing that the column we saved
-as `manufacturer_column`.
-
-``` python
-manufacturer_freq = manufacturer_column.value_counts()
-manufacturer_freq
-```
-
-```out
-K    23
-G    22
-P     9
-Q     8
-R     8
-N     6
-A     1
-Name: mfr, dtype: int64
-```
-
-We can then see the frequency of each qualitative value. If we used
-double square brackets with `pd.value_counts()` we would get an error
-along the lines of `AttributeError: 'DataFrame' object has no attribute
-'value_counts'`. Take care with using the correct number of square
-brackets.
-
-Notes: Script here.
-
-<html>
-
-<audio controls >
-
-<source src="placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
-
-Sometimes it’s useful to save a new dataframe as a `csv` file for future
-use or to use in another application. We can save dataframes using the
-method `df.to_csv()`. Simply put our desired `csv` file name in
-quotations within the parentheses.
 
 Notes: Script here.
 

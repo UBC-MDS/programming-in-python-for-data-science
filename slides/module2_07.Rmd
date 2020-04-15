@@ -47,7 +47,16 @@ df = pd.read_csv('cereal.csv', index_col=0)
 
 type: slides
 
-## Column Renaming and Column Creation
+# Column Renaming and Column Creation
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
 
 Remember our `candybars.csv` dataframe? Let's bring it back. 
 
@@ -117,6 +126,7 @@ Notes: Script here
 </audio></html>
 
 ---
+
 ## Column Dropping 
 
 Ok, so we know how to create a new column but what if I want to drop 1 or multiple columns? In a similar way to `df.assign()`, `df,drop()` will delete selected columns.
@@ -136,6 +146,8 @@ Notes: Script here
 <audio controls >
   <source src="placeholder_audio.mp3" />
 </audio></html>
+
+---
 
 # Let’s apply what we learned!
 

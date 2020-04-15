@@ -1,0 +1,152 @@
+---
+title: "module1_28"
+output: 
+  md_document:
+    variant: gfm
+---
+
+
+```{r setup, include=FALSE}
+library(rmarkdown)
+knitr::opts_chunk$set(echo = TRUE)
+knitr_opts <- knitr_options( opts_knit = NULL,
+                             opts_chunk = NULL,
+                             knit_hooks = NULL,
+                             opts_hooks = NULL,
+                             opts_template = NULL)
+md_document_custom <- md_document(variant = "gfm")
+output_format(knitr = knitr_opts,
+              pandoc = NULL,
+              base_format = md_document_custom)
+library(reticulate)
+```
+
+
+```{python include=FALSE}
+import pandas as pd
+import numpy as np
+pd.set_option('display.width', 400)
+
+np.set_printoptions(linewidth=400)
+
+pd.set_option('display.max_columns', 15)
+df = pd.read_csv('cereal.csv', index_col=0)
+df2 = pd.read_csv('candybars.csv', index_col=0)
+df_mini = df2.head(7).loc[:, ['weight', 'available_canada_america' ]]
+```
+
+
+type: slides
+
+# Frequency Tables and Writing CSVs 
+
+Notes: Script here.
+<html>
+<audio controls >
+<source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+## What is Frequency?
+
+Before we explain what a frequency table is, you must know what frequency means first. 
+
+_*Frequency*_ is simply put, the number of times a value occurs within the data. For example, let's say we have a sample of our candybars data. 
+
+```{python}
+df_mini
+```
+
+The frequency of the value `Both` in the `available_canada_america` column is 3. 
+
+A frequency table is a manner of displaying all the possible values of a column in our data and the number of occurrences (frequencies) each value occurs. These are particularly useful when we want to visualize our data.
+
+Notes: Script here.
+<html>
+<audio controls >
+<source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+## What is a Frequency Table?
+
+_*A frequency Table*_ is a manner of displaying all the possible values of a column in our data and the number of occurrences (frequencies) each value occurs. These are particularly useful when we want to visualize our data.
+
+For our sample data,  a frequency table for the `available_canada_america` column would look like this: 
+
+```{python echo=FALSE}
+
+df_mini['available_canada_america'].value_counts()
+```
+
+
+
+Notes: Script here.
+<html>
+<audio controls >
+<source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+If we want to get a frequency table of a categorical column, there are a few steps that need to be followed. 
+Up untill now,  we discussed getting a single column from a dataframe using double brackets - `df[['column-name']]`. For frequency tables, however, we only use single brackets to obtain the column values.
+
+```{python}
+manufacturer_column = df['mfr']
+manufacturer_column
+```
+
+Notes: Script here.
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+We saved the object in a variable called `manufacturer_column` in the same way we have saved objects before.    
+Next we can use `pd.value_counts()` referencing that the column we saved as `manufacturer_column`.  
+
+
+```{python}
+manufacturer_freq = manufacturer_column.value_counts()
+manufacturer_freq
+```
+
+We can then see the frequency of each qualitative value.
+If we used double square brackets with `pd.value_counts()` we would get an error along the lines of `AttributeError: 'DataFrame' object has no attribute 'value_counts'`. Take care with using the correct number of square brackets.
+
+Notes: Script here.
+<html>
+<audio controls >
+<source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+Sometimes it's useful to save a new dataframe as a `csv` file for future use or to use in another application. We can save dataframes using the method `df.to_csv()`. Simply put our desired `csv` file name in quotations within the parentheses. 
+
+```{python echo = FALSE}
+manufacturer_freq.to_csv('manufacturer_frequency.csv')
+```
+
+
+Notes: Script here.
+
+<html>
+<audio controls >
+<source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+# Let’s apply what we learned!
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>

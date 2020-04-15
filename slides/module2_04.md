@@ -2,7 +2,23 @@
 type: slides
 ---
 
-## Reading Arguments
+# Reading Arguments
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+## Arguments
 
 We have talked about quite a few different arguments when reading in
 different file types such as `index_col`, `delimiter` and for excel
@@ -342,6 +358,20 @@ candybars
 
 This is now more familiar to Python. For these arguments, mmultiple
 values can also be specified too.
+
+Notes: Script here.
+
+<html>
+
+<audio controls >
+
+<source src="placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
 
 # Let’s apply what we learned\!
 

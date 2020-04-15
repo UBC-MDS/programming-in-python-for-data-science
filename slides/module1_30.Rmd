@@ -1,6 +1,6 @@
 ---
 params:
-  dynamictitle: "module1_29"
+  dynamictitle: "module1_30"
 title: "`r params$dynamictitle`"
 output: 
   md_document:

@@ -755,9 +755,59 @@ Task:
 
 <exercise id="26" title="Fruit Bowl Statistics">
 
-**Question **
+Bringing back our Fruit Salad dataframe
 
-We need summary statistics of both quantitative and categorical columns of the dataframe `vegetable_salad`. What code would be suitable for this?
+```out
+                 colour    location   seed   shape    sweetness   water-content  weight
+        name                        
+       apple        red     canada    True   round       True          84         100
+      banana     yellow     mexico   False    long       True          75         120
+  cantaloupe     orange      spain    True   round       True          90        1360
+dragon-fruit    magenta      china    True   round      False          96         600
+  elderberry     purple    austria   False   round       True          80           5
+         fig     purple     turkey   False    oval      False          78          40
+       guava      green     mexico    True    oval       True          83         450
+ huckleberry       blue     canada    True   round       True          73           5
+        kiwi      brown      china    True   round       True          80          76
+       lemon     yellow     mexico   False    oval      False          83          65
+```
+
+
+**Question 1**
+
+Which of the following columns contain numerical data?
+
+<choice id="1" >
+<opt text='<code>colour</code>,<code>shape</code>,<code>water-content</code>'>
+
+Maybe it would be a good idea to take a look back at the slides again.
+
+</opt>
+
+<opt text='<code>colour</code>, <code>seed</code>, <code>water-content</code>, <code>weight</code>' >
+
+Some of the columns maybe in here though!
+
+</opt>
+
+<opt text='<code>water-content</code>, <code>weight</code>' correct="true">
+
+This looks great! Well done! 
+
+</opt>
+
+<opt text='All of them' >
+
+Maybe it would be a good idea to take a look back at the slides again.
+
+</opt>
+
+</choice >
+
+
+**Question 2**
+
+We need summary statistics of both numerical and categorical columns of the dataframe `fruit_salad`. What code would be suitable for this?
 
 <choice id="2" >
 <opt text='<code>df.describe()</code>'>
@@ -797,7 +847,6 @@ Running a coding exercise for the first time, could take a bit of time for every
 
 Let's try and obtain some statistics from our hockey data we've been playing with.
 
-Tasks:
 - Find the statistics of both categorical and quantitative columns. Save the dataframe in an object called `hockey_stats`.
 - Display it.
 
@@ -821,10 +870,16 @@ Tasks:
 
 </codeblock>
 
-
 </exercise>
 
-<exercise id="28" title="Practicing Frequency Tables">
+
+<exercise id="28" title=" Frequency Tables and Writing CSVs " type="slides">
+<slides source="module1_28">
+</slides>
+</exercise>
+
+
+<exercise id="29" title="Practicing Frequency Tables">
 
 **Instructions:**    
 Running a coding exercise for the first time, could take a bit of time for everything to load. Be patient, it could take a few minutes. 
@@ -842,7 +897,7 @@ Tasks:
 - Export `position_freq`  to a csv named `position_frequencies.csv` using `pd.to_csv()`.
 - Don't forget to display it.
 
-<codeblock id="01_28">
+<codeblock id="01_29">
 
 - Are you sure you are using single `[]` brackets for `position_column`?
 - Are you using `pd.to_csv()` to save your `csv`?
@@ -852,12 +907,12 @@ Tasks:
 
 </exercise>
 
-<exercise id="29" title="Quick Viz with Pandas" type="slides">
-<slides source="module1_29">
+<exercise id="30" title="Quick Viz with Pandas" type="slides">
+<slides source="module1_30">
 </slides>
 </exercise>
 
-<exercise id="30" title="Practicing Bar Charts">
+<exercise id="31" title="Practicing Bar Charts">
 
 **Instructions:**    
 Running a coding exercise for the first time, could take a bit of time for everything to load. Be patient, it could take a few minutes. 
@@ -874,7 +929,7 @@ Tasks:
 - Assign a `color` as `Teal`, set opacity to 0.5.
 - Don't forget to add a title as "Canuck Player Positions".
 
-<codeblock id="01_30">
+<codeblock id="01_31">
 
 - Are you sure you using `alpha` as opacify?
 - Are you using the correct Dataframe?
@@ -885,7 +940,7 @@ Tasks:
 
 </exercise>
 
-<exercise id="31" title="Practicing Scatterplots">
+<exercise id="32" title="Practicing Scatterplots">
 
 **Instructions:**    
 Running a coding exercise for the first time, could take a bit of time for everything to load. Be patient, it could take a few minutes. 
@@ -899,7 +954,7 @@ Tasks:
 - Set color to `Darkblue` and opacity to 0.4.
 - Don't forget to assign a title as "Canuck players Age vs. Salary".
 
-<codeblock id="01_31">
+<codeblock id="01_32">
 
 - Are you using `df.plot.scatter()`
 - Are you sure you using `alpha` as opacify?
@@ -912,7 +967,7 @@ Tasks:
 
 </exercise>
 
-<exercise id="32" title="What Did We Just Learn?" type="slides">
-<slides source="module1_32">
+<exercise id="33" title="What Did We Just Learn?" type="slides">
+<slides source="module1_33">
 </slides>
 </exercise>

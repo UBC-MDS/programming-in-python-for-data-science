@@ -47,7 +47,7 @@ df = pd.read_csv('cereal.csv', index_col=0)
 
 type: slides
 
-## Filtering 
+# Filtering 
 
 Notes: Script here
 <html>
@@ -224,7 +224,7 @@ We need to take great care on including parentheses when needed. If we did not i
 df[ (df['fiber'] > 6) | (df['protein'] > 5) & (df['mfr'] == 'K') ]
 ```
 
-Python will now move from left to right and in this case it will select all the cereals with a fiber content greater than 6 *or* all the cereal satisfying a protein content above 5 made by "K" manufacturer. 
+Python will now move from left to right and in this case it will select all the cereals with a fiber content greater than 6 *or* all the cereal satisfying a protein content above 5 made by manufacturer  "K". 
 
 
 Notes: Script here
@@ -234,7 +234,6 @@ Notes: Script here
 </audio></html>
 
 ---
-
 
 # Let’s apply what we learned!
 

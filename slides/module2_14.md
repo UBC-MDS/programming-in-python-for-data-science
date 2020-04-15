@@ -2,7 +2,7 @@
 type: slides
 ---
 
-## Chaining notation
+# Chaining Notation
 
 Notes: Script here
 
@@ -25,9 +25,9 @@ have been saving each new object under a new object name. Chaining
 allows us to do multiple actions in a single line of code without these
 intermediate object.
 
-You can imagine that we are linking verbs together similar to a chaine.
+You can imagine that we are linking verbs together similar to a chain.
 
-<img src='module2/chainsfinal.png'  alt="404 image" />
+<img src='module2/chainsfinal.png'  alt="404 image" />  
 [Attribution](https://unsplash.com/photos/42ui88Qrxhw)
 
 Notes: Script here
@@ -44,33 +44,26 @@ Notes: Script here
 
 ---
 
-Notes: Script here
+When we made our pivot table in Module 1, we first saved the single
+column as an object before we used `value_counts()` We can do this all
+in one line with chaining
 
-<html>
+``` python
+df['mfr'].value_counts()
+```
 
-<audio controls >
+```out
+K    23
+G    22
+P     9
+Q     8
+R     8
+N     6
+A     1
+Name: mfr, dtype: int64
+```
 
-<source src="placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
+This is not the extent of chaining however.
 
 Notes: Script here
 
@@ -86,33 +79,21 @@ Notes: Script here
 
 ---
 
-Notes: Script here
+## Methods vs Functions
 
-<html>
+Chaining is used specifically with methods and cannot be used with
+functions. We have made the comparison that attributes can be compared
+to nouns, while methods and functions are compared to verbs. But what
+exactly are the two?
 
-<audio controls >
+Functions: Execute an action. Methods : Are functions that execute an
+action but are associated with an object.
 
-<source src="placeholder_audio.mp3" />
+Let’s compare `pd.read_csv()` with `head()`
 
-</audio>
-
-</html>
-
----
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
+In `pd.read_csv()` we add an argument instructing the file name we wish
+to bring in. `head()` requires an object, specifally a dataframe, in
+order to execute.
 
 Notes: Script here
 
@@ -128,6 +109,24 @@ Notes: Script here
 
 ---
 
+Methods generally have the form `object-name.method()` whereas function
+can take in arguments that don’t necessarily have to be objects.
+Functions will have the form `function-name(argument)`.
+
+Here is an example of how a function does not need an object. `abs()` in
+a function that will return the absolute value of a number. `abs()`
+takes in an argument - in this case, a number and not an object.
+
+``` python
+abs(-6)
+```
+
+```out
+6
+```
+
+Chaining is the design of performing each method in a sequential manner.
+
 Notes: Script here
 
 <html>
@@ -142,19 +141,28 @@ Notes: Script here
 
 ---
 
-Notes: Script here
+Here is an example where we perform 4 actions all in a single chain. 1.
+Filter our dataframe for cereals only from manufacturer “K” 2. We select
+the columns `calories`, `sugars` and `rating` using the method `loc` 3.
+We then use the `describe` method to find some summary statistics 4.
+`head()` is the final method used to obtain the first 5 rows of the
+describe
+dataframe
 
-<html>
+``` python
+df[df['mfr'] == 'K'].loc[:, ["calories", "sugars", "rating"]].describe().head()
+```
 
-<audio controls >
+```out
+         calories     sugars     rating
+count   23.000000  23.000000  23.000000
+mean   108.695652   7.565217  44.038462
+std     22.218818   4.500768  14.457434
+min     50.000000   0.000000  29.924285
+25%    100.000000   3.000000  34.478442
+```
 
-<source src="placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
+This chain avoided the use of 3 intermediate objects.
 
 Notes: Script here
 

@@ -2,7 +2,21 @@
 type: slides
 ---
 
-## Column Renaming and Column Creation
+# Column Renaming and Column Creation
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
 
 Remember our `candybars.csv` dataframe? Let’s bring it back.
 
@@ -52,7 +66,7 @@ Here is the code to do that:
 
 ``` python
 
-df = df.rename(columns={"available_canada_america" : "availability"})
+df = df.rename(columns={'available_canada_america' : 'availability'})
 df.head()
 ```
 
@@ -95,7 +109,7 @@ We can add that to our current dataframe using the `assign` function and
 naming the column `weight_oz`. The conversion for 1 oz = 28.3495 g.
 
 ``` python
-df = df.assign(weight_oz= df["weight"]/28.3495)
+df = df.assign(weight_oz= df['weight']/28.3495)
 df
 ```
 
@@ -115,8 +129,53 @@ Cookies and Cream      43          0        0        0       0                  
 [25 rows x 11 columns]
 ```
 
-It’s important that we alway save the dataframe to an object or the
+It’s important that we always save the dataframe to an object or the
 column will not be saved in our dataframe.
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+## Column Dropping
+
+Ok, so we know how to create a new column but what if I want to drop 1
+or multiple columns? In a similar way to `df.assign()`, `df,drop()` will
+delete selected columns. Let’s delete the column `weight_oz` that we
+just made.
+
+``` python
+df = df.drop( columns= 'weight_oz')
+df
+```
+
+```out
+                   weight  chocolate  peanuts  caramel  nougat  cookie_wafer_rice  coconut  white_chocolate  multi availability
+name                                                                                                                           
+Coffee Crisp           50          1        0        0       0                  1        0                0      0       Canada
+Butterfinger          184          1        1        1       0                  0        0                0      0      America
+Skor                   39          1        0        1       0                  0        0                0      0         Both
+Smarties               45          1        0        0       0                  0        0                0      1       Canada
+...                   ...        ...      ...      ...     ...                ...      ...              ...    ...          ...
+Whatchamacallits       45          1        1        0       0                  1        0                0      0      America
+Almond Joy             46          1        0        0       0                  0        1                0      0      America
+Oh Henry               51          1        1        1       0                  0        0                0      0         Both
+Cookies and Cream      43          0        0        0       0                  1        0                1      0         Both
+
+[25 rows x 10 columns]
+```
+
+Again make sure that we always save the dataframe to an object or the
+column will not be deleted from the dataframe.
 
 Notes: Script here
 

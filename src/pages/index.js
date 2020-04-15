@@ -22,10 +22,10 @@ export default ({ data }) => {
                 <h1 className={classes.subtitle}> DSCI 511 - Programming in Python for Data Science </h1>
                 <div className={classes.introduction}>
                 <p>
-         Welcome to DSCI 511!  This course is part of UBC's Mid-Careers Learning program. In this course we hope to introduce you to basic programming in Python. You will leave this course with an overview of iteration and flow control as well as 
+                <center> Welcome to DSCI 511!  This course is part of UBC's Mid-Careers Learning program. In this course we hope to introduce you to basic programming in Python. You will leave this course with an overview of iteration and flow control as well as 
 data types relevant to data exploration and analysis. You will learn about pre-existing
 libraries, numerical data types with Numpy and tabular data with Pandas. No course would be complete without knowing how to wrangle your data. With the help from Pandas you will learn how to converting data from the form in which it is collected to the form needed for analysis. 
-
+</center>
     </p>
     <p>
         <strong>Course prerequisites:</strong> None
