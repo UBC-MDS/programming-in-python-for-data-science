@@ -1,5 +1,6 @@
 ---
-title: "module1_20"
+title: "module1_13"
+author: "Hayley Boyce"
 output: 
   md_document:
     variant: gfm
@@ -33,11 +34,9 @@ pd.set_option('display.max_columns', 15)
 df = pd.read_csv('cereal.csv', index_col=0)
 ```
 
-
 type: slides
 
-# Sorting Dataframes 
-
+# Selecting using df.loc[]
 
 Notes: Script here.
 <html>
@@ -47,35 +46,17 @@ Notes: Script here.
 
 ---
 
-## Sorting
+## Unordered Indexing
 
-When we load in our data, it is generally ordered in the same way it is stored.  We can easily sort the rows of a dataframe based on its column values. 
-The verb for that?  `df.sort_values()`.
+We have our trusty `cereal.csv` data again with the cereal names as the index labels.
 
-As an example, if we wanted to order the cereals based on rating, we could do the following:
 
-```{python}
-df.sort_values(by='rating')
+```{python echo = FALSE}
+df
 ```
 
-This allows us to see the cereals with lower ratings on the top.
 
-Notes: Script here.
-<html>
-<audio controls >
-  <source src="placeholder_audio.mp3" />
-</audio></html>
-
----
-
-What if we wanted the cereals with a higher rating on the top?  Then we would order them in `descending` order by setting the parameter `ascending=False`:
-
-```{python}
-sorted_ratings = df.sort_values(by='rating', ascending=False)
-sorted_ratings
-```
-
-Perfect, now we have the highest rated cereals at the top of the dataframe.  
+What would we do if we want to select columns and rows that don't fall consecutively or if we want to rearrange them?
 
 
 Notes: Script here.
@@ -86,6 +67,43 @@ Notes: Script here.
 
 ---
 
+Let's say we wanted only the rows labeled `Clusters`, `Trix` and `Wheaties` and the columns `type`, `sugars` and `rating`
+How would we obtain them now?
+
+We need to specify each column and row label that we want between square brackets `[]`, separated with commas.
+
+
+```{python}
+df.loc[ ['Clusters', 'Trix', 'Wheaties'] , ['type', 'sugars', 'rating'] ]
+```
+
+
+We can also reorder it to change the column and row order.
+
+Notes: Script here.
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+What if we wanted the rows to be in the order  `Wheaties`, `Trix` and `Clusters` and columns in the order `type`, `rating` and `sugars`
+How would we obtain that?    
+It's as simple as rearranging the order you target your rows and columns!
+
+```{python}
+df.loc[ ['Wheaties', 'Trix', 'Clusters'] , ['type', 'rating', 'sugars'] ]
+```
+
+
+Notes: Script here.
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
 
 # Let’s apply what we learned!
 

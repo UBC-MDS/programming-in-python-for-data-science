@@ -3,12 +3,11 @@ import pandas as pd
 # The database 
 
 hockey_players = pd.read_csv('data/canucks.csv')
-hockey_players
 
-# Slice the rows and columns and save the new dataframe as `injured_players`
+# Slice the rows and columns and save the new dataframe as `skilled_players`
 
-injured_players = hockey_players.iloc[[16, 4, 21, 1], [0, 8, 7, 9]]
+skilled_players = hockey_players.iloc[11:18, 0:4]
 
 # Display it
 
-injured_players 
+skilled_players 

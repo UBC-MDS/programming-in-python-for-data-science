@@ -1,5 +1,5 @@
 ---
-title: "module1_25"
+title: "module1_26"
 output: 
   md_document:
     variant: gfm
@@ -186,6 +186,21 @@ What about median calories of the cereals.
 ```{python}
 calories = df[['calories']]
 calories.median()
+```
+
+
+Notes: Script here.
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+We can also use this on the entire dataframe.
+
+```{python}
+df.mean()
 ```
 
 

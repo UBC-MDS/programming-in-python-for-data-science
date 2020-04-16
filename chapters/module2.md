@@ -319,7 +319,6 @@ Tasks:
 **Question 1**          
 
 
-
 <choice id="1" >
 <opt text='<code>header</code>'>
 
@@ -397,3 +396,105 @@ Tasks:
 
 </exercise>
 
+
+<exercise id="18" title="Grouping and Aggregating Quick Questions">
+
+**Question 1**          
+
+
+<choice id="1" >
+<opt text='<code>header</code>'>
+
+You may want to look over this before moving forward.
+
+</opt>
+
+<opt text='<code>ncols</code>'>
+
+You may want to look over this before moving forward.
+
+</opt>
+
+<opt text='<code>index_col</code>' correct="true">
+
+Good job!
+
+</opt>
+
+</choice> 
+
+
+**Question 2**         
+
+
+<choice id="2" >
+<opt text='<code>header</code>'>
+
+Note quite but you are on the right track. 
+
+</opt>
+
+<opt text= '<code>nrows</code>' correct="true">
+
+Note quite but you are on the right track. 
+
+</opt>
+
+<opt text='<code>usecols</code>'  correct="true">
+
+Good job!
+
+</opt>
+
+</choice> 
+
+</exercise>
+
+<exercise id="19" title="Practice Chaining">
+
+  
+      
+**Instructions:**    
+Running a coding exercise for the first time, could take a bit of time for everything to load. Be patient, it could take a few minutes. 
+
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.**
+
+Tasks:
+
+
+<codeblock id="02_19">
+
+- Are you sure you are saving your dataframe as the correct object names?
+- Are you using `pd.read_csv()` and `pd.read_excel()` in the correct locations?
+
+</codeblock>
+
+</exercise>
+
+<exercise id="20" title="Practice Chaining">
+
+  
+      
+**Instructions:**    
+Running a coding exercise for the first time, could take a bit of time for everything to load. Be patient, it could take a few minutes. 
+
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.**
+
+Tasks:
+
+
+<codeblock id="02_20">
+
+- Are you sure you are saving your dataframe as the correct object names?
+- Are you using `pd.read_csv()` and `pd.read_excel()` in the correct locations?
+
+</codeblock>
+
+</exercise>
+
+<exercise id="21" title="Grouping and Aggregating" type="slides">
+
+<slides source="module2_21">
+</slides>
+
+</exercise>

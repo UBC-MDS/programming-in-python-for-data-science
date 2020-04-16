@@ -300,6 +300,43 @@ Notes: Script here.
 
 ---
 
+We can also use this on the entire dataframe.
+
+``` python
+df.mean()
+```
+
+```out
+calories    106.883117
+protein       2.545455
+fat           1.012987
+sodium      159.675325
+fiber         2.151948
+carbo        14.623377
+sugars        6.948052
+potass       96.129870
+vitamins     28.246753
+shelf         2.207792
+weight        1.029610
+cups          0.821039
+rating       42.665705
+dtype: float64
+```
+
+Notes: Script here.
+
+<html>
+
+<audio controls >
+
+<source src="placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
 # Let’s apply what we learned\!
 
 Notes: Script here

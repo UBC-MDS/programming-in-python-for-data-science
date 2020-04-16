@@ -1,6 +1,5 @@
 ---
-title: "module1_17"
-author: "Hayley Boyce"
+title: "module1_24"
 output: 
   md_document:
     variant: gfm
@@ -37,31 +36,7 @@ df = pd.read_csv('cereal.csv', index_col=0)
 
 type: slides
 
-# Selecting using df.loc[]
-
-Notes: Script here.
-<html>
-<audio controls >
-<source src="placeholder_audio.mp3" />
-</audio></html>
-
----
-
-
-# Selecting a Single Column
-
-Something extremely useful is getting a single column from a dataframe.
-We can use `df.loc[]` which would look something like this:
-
-```
-df.loc[ : , [ 'column-name'] ]
-```
-
-For example, if we wanted the column `type` from our cereal dataframe.
-```{python}
-df.loc[ : , [ 'type'] ]
-```
-
+# Sorting Dataframes 
 
 
 Notes: Script here.
@@ -72,20 +47,45 @@ Notes: Script here.
 
 ---
 
-But there is a better way of doing this.
-We can omit `loc` altogether and use double square brackets:
+## Sorting
 
-``` Python
-df[['column-name']]
-```
+When we load in our data, it is generally ordered in the same way it is stored.  We can easily sort the rows of a dataframe based on its column values. 
+The verb for that?  `df.sort_values()`.
 
-Selecting the column `type` would be as simple as:
+As an example, if we wanted to order the cereals based on rating, we could do the following:
 
 ```{python}
-df[['type']]
+df.sort_values(by='rating')
 ```
 
+This allows us to see the cereals with lower ratings on the top.
+
+Notes: Script here.
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
 ---
+
+What if we wanted the cereals with a higher rating on the top?  Then we would order them in `descending` order by setting the parameter `ascending=False`:
+
+```{python}
+sorted_ratings = df.sort_values(by='rating', ascending=False)
+sorted_ratings
+```
+
+Perfect, now we have the highest rated cereals at the top of the dataframe.  
+
+
+Notes: Script here.
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
 
 # Let’s apply what we learned!
 

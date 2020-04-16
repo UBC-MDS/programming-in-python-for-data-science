@@ -1,5 +1,6 @@
 ---
-title: "module1_15"
+title: "module1_18"
+author: "Hayley Boyce"
 output: 
   md_document:
     variant: gfm
@@ -36,27 +37,7 @@ df = pd.read_csv('cereal.csv', index_col=0)
 
 type: slides
 
-
-## Obtaining dataframe Values
-
-Notes: Script here.
-<html>
-<audio controls >
-<source src="placeholder_audio.mp3" />
-</audio></html>
-
----
-
-Now we know how to get a subset of an existing dataframe but what if we just want to get a single value from it?
-For example, what if I wanted to save the calorie content of `Shredded Wheat` without typing in the number?    
-We specify the row we are targeting, followed by the column.
-
-
-```{python}
-df.loc['Shredded Wheat', 'calories']
-```
-
-This displays the value.
+# Selecting using df.loc[]
 
 Notes: Script here.
 <html>
@@ -66,19 +47,43 @@ Notes: Script here.
 
 ---
 
-What about if we wanted the rating of `Smacks`?
 
-```{python}
-df.loc['Smacks', 'rating']
+# Selecting a Single Column
+
+Something extremely useful is getting a single column from a dataframe.
+We can use `df.loc[]` which would look something like this:
+
+```
+df.loc[ : , [ 'column-name'] ]
 ```
 
-You will be using this often so let's make sure we practice this one right away!
+For example, if we wanted the column `type` from our cereal dataframe.
+```{python}
+df.loc[ : , [ 'type'] ]
+```
+
+
 
 Notes: Script here.
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+<source src="placeholder_audio.mp3" />
 </audio></html>
+
+---
+
+But there is a better way of doing this.
+We can omit `loc` altogether and use double square brackets:
+
+``` Python
+df[['column-name']]
+```
+
+Selecting the column `type` would be as simple as:
+
+```{python}
+df[['type']]
+```
 
 ---
 

@@ -76,8 +76,8 @@ For our sample data, a frequency table for the
 
 ```out
 Both       3
-America    2
 Canada     2
+America    2
 Name: available_canada_america, dtype: int64
 ```
 

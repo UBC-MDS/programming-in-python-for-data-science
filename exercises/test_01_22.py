@@ -16,3 +16,7 @@ def test():
     assert list(skilled_players.columns) ==  ['Player', 'No.', 'Age', 'Height'], "Your columns do not seem to be correct"
     assert list(skilled_players.index) == [11, 12, 13, 14, 15, 16, 17], "Your rows do not seem to be correct"
     __msg__.good("Nice work, well done!")
+
+
+
+
