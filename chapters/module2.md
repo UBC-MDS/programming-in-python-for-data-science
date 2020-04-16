@@ -91,24 +91,24 @@ Running a coding exercise for the first time, could take a bit of time for every
 
 Tasks:
 
-- Use `pd.read_csv()` to read in the data from [this url](https://raw.githubusercontent.com/UBC-MDS/MCL-DSCI-511-programming-in-python/master/data/pokemon.csv) and save it as pokeman_df.
-- Use the pokemon column name as the index.
--  Display  the first 10 rows
+- Use `pd.read_csv()` to read in the data from [this url](https://raw.githubusercontent.com/UBC-MDS/MCL-DSCI-511-programming-in-python/master/data/pokemon.csv) and save it as `pokeman_df`.
+- Use the Pokemon column name as the index.
+- Display the first 10 rows.
 
 
 
 <codeblock id="02_03">
 
-- Are you sure you are saving your dataframe as the correct object names?
-- Are you using `pd.read_csv()` and `pd.read_excel()` in the correct locations?
+- Are you sure you are saving your dataframe as `pokeman_df`?
+- Are you using `pd.read_csv()`?
 
 </codeblock>
 
 </exercise>
 
-<exercise id="3" title="Reading in CSV files">
+<exercise id="4" title="Reading in a Text File">
 
-Let's try reading in some different files using `pd.read_csv()` and `pd.read_excel()`.      
+Let's try reading in a `.txt` file.     
       
 **Instructions:**    
 Running a coding exercise for the first time, could take a bit of time for everything to load. Be patient, it could take a few minutes. 
@@ -117,19 +117,24 @@ Running a coding exercise for the first time, could take a bit of time for every
 
 Tasks:
 
+- Read in the data from a text file name `pokemon-text.txt` and save it as `pokeman_df`.
+- it's a good idea to see what the delimiter.
+- Use the Pokemon column name as the index.
+- Display the first 10 rows.
 
-<codeblock id="02_03">
+<codeblock id="02_04">
 
 - Are you sure you are saving your dataframe as the correct object names?
-- Are you using `pd.read_csv()` and `pd.read_excel()` in the correct locations?
+- Are you using `pd.read_csv()`?
+- Check that your delimiter argument is correct.   
 
 </codeblock>
 
 </exercise>
 
-<exercise id="3" title="Reading in CSV files">
+<exercise id="5" title="Reading in an Excel File">
 
-Let's try reading in some different files using `pd.read_csv()` and `pd.read_excel()`.      
+Let's try reading in a `.txt` file.    
       
 **Instructions:**    
 Running a coding exercise for the first time, could take a bit of time for everything to load. Be patient, it could take a few minutes. 
@@ -137,12 +142,17 @@ Running a coding exercise for the first time, could take a bit of time for every
 **When you see `____` in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.**
 
 Tasks:
+- Read in the data from a text file name `pokemon-text.txt` and save it as `pokeman_df`.
+- it's a good idea to see what the delimiter.
+- Use the Pokemon column name as the index.
+- Display the first 10 rows.
 
+<codeblock id="02_05">
 
-<codeblock id="02_03">
 
 - Are you sure you are saving your dataframe as the correct object names?
-- Are you using `pd.read_csv()` and `pd.read_excel()` in the correct locations?
+- Are you using `pd.read_csv()`?
+- Check that your delimiter argument is correct. 
 
 </codeblock>
 
