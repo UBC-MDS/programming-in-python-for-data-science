@@ -3,6 +3,7 @@
     width: calc(100% + 4rem)
     margin-bottom: 5rem
 
+
 .cell
     background: var(--syntax-background)
     border-top: 1px solid var(--color-subtle-medium)
@@ -27,10 +28,12 @@
             z-index: 5
 
 .output
-    padding: 2rem 9rem 2rem 3rem
+    padding: 3rem 1rem 1rem 1rem !important
     background: var(--syntax-output)
     color: var(--syntax-background)
     position: relative
+    overflow-x: scroll
+
 
     &:before
         content: "Output"
@@ -41,7 +44,8 @@
         padding: 0 0.5rem
         position: absolute
         top: 1rem
-        right: 1.5rem
+        right: .5rem
         font-size: var(--font-size-xs)
         font-weight: bold
         text-transform: uppercase
+        overflow-x: scroll

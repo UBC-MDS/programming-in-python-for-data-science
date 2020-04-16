@@ -1,16 +1,9 @@
 import pandas as pd
 
-# The database
+# Read in the data from the URL using the pokemon name as the index
 
-hockey_players = pd.read_csv('data/canucks.csv', index_col=0)
+____ = ____('data/____', ____)
 
-# Question here 
+# Display  the first 10 rows
 
-hockey_players
-
-
-
-benched_players = ____.____[____ : ____ ]
-
-# Display it
-____
+____.____

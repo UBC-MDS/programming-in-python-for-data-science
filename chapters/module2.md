@@ -80,6 +80,53 @@ Note quite but you are on the right track.
 </exercise>
 
 
+<exercise id="3" title="Reading in a URL">
+
+Let's try reading in some data from a URL using `pd.read_csv()`.      
+      
+**Instructions:**    
+Running a coding exercise for the first time, could take a bit of time for everything to load. Be patient, it could take a few minutes. 
+
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.**
+
+Tasks:
+
+- Use `pd.read_csv()` to read in the data from [this url](https://raw.githubusercontent.com/UBC-MDS/MCL-DSCI-511-programming-in-python/master/data/pokemon.csv) and save it as pokeman_df.
+- Use the pokemon column name as the index.
+-  Display  the first 10 rows
+
+
+
+<codeblock id="02_03">
+
+- Are you sure you are saving your dataframe as the correct object names?
+- Are you using `pd.read_csv()` and `pd.read_excel()` in the correct locations?
+
+</codeblock>
+
+</exercise>
+
+<exercise id="3" title="Reading in CSV files">
+
+Let's try reading in some different files using `pd.read_csv()` and `pd.read_excel()`.      
+      
+**Instructions:**    
+Running a coding exercise for the first time, could take a bit of time for everything to load. Be patient, it could take a few minutes. 
+
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.**
+
+Tasks:
+
+
+<codeblock id="02_03">
+
+- Are you sure you are saving your dataframe as the correct object names?
+- Are you using `pd.read_csv()` and `pd.read_excel()` in the correct locations?
+
+</codeblock>
+
+</exercise>
+
 <exercise id="3" title="Reading in CSV files">
 
 Let's try reading in some different files using `pd.read_csv()` and `pd.read_excel()`.      

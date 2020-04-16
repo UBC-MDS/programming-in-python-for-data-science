@@ -965,7 +965,7 @@ Tasks:
 - Set color to `Darkblue` and opacity to 0.4.
 - Don't forget to assign a title as "Canuck players Age vs. Salary".
 
-_After you successfully create this graph you may notice `1e6` on the top left of your graph. The letter `e` is the scientific notation meaning "10 to the power of". In this case, `1e6` means "to to the power of 6" which is 1,000,000. The `Salary` axis then is expressed with the unit of 1 million_
+_After you successfully create this graph you may notice `1e6` on the top left of your graph. The letter `e` is the scientific notation meaning "10 to the power of". In this case, `1e6` means "to to the power of 6" which is 1,000,000. The `Salary` axis then is expressed with the unit of a million. _
 
 <codeblock id="01_33">
 
