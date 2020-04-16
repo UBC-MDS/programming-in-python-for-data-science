@@ -44,9 +44,9 @@ Notes: Script here
 
 ---
 
-When we made our pivot table in Module 1, we first saved the single
+When we made our frequency table in Module 1, we first saved the single
 column as an object before we used `value_counts()` We can do this all
-in one line with chaining
+in one line with chaining:
 
 ``` python
 df['mfr'].value_counts()
@@ -63,7 +63,7 @@ A     1
 Name: mfr, dtype: int64
 ```
 
-This is not the extent of chaining however.
+However, this is not the extent of chaining.
 
 Notes: Script here
 
@@ -177,6 +177,31 @@ Notes: Script here
 </html>
 
 ---
+
+Ok so great, we can cut out creating intermediate variable but now we
+just have a really long line of code that’s a bit hard to read\!
+
+How can we make this easier to understand? In this course we suggests
+giving a new line for each method. We can do this by wrapping our code
+in parenthesis and making a new line before each period. It’s good
+practice to indent and have the methods line up to make it espectially
+clear.
+
+``` python
+(df[df['mfr'] == 'K'].loc[:, ["calories", "sugars", "rating"]]
+                     .describe()
+                     .head()
+)
+```
+
+```out
+         calories     sugars     rating
+count   23.000000  23.000000  23.000000
+mean   108.695652   7.565217  44.038462
+std     22.218818   4.500768  14.457434
+min     50.000000   0.000000  29.924285
+25%    100.000000   3.000000  34.478442
+```
 
 # Let’s apply what we learned\!
 

@@ -159,6 +159,19 @@ Notes: Script here
 
 ---
 
+Ok so great, we can cut out creating intermediate variable but now we just have a really long line of code that's a bit hard to read! 
+
+How can we make this easier to understand? 
+In this course we suggests giving a new line for each method. We can do this by wrapping our code in parenthesis and making a new line before each period. It's good practice to indent and have the methods line up to make it espectially clear. 
+
+```{python}
+(df[df['mfr'] == 'K'].loc[:, ["calories", "sugars", "rating"]]
+                     .describe()
+                     .head()
+)
+```
+
+
 # Let’s apply what we learned!
 
 Notes: Script here

@@ -492,9 +492,3 @@ Tasks:
 
 </exercise>
 
-<exercise id="21" title="Grouping and Aggregating" type="slides">
-
-<slides source="module2_21">
-</slides>
-
-</exercise>
