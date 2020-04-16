@@ -6,8 +6,8 @@ def test():
 
     # If an assertion fails, the message will be displayed
 
-    assert '["Zack MacEwen", "Jake Virtanen", "Jordie Benn"]' in __solution__ , "It looks like there is a problem with the row labels you selected"
-    assert '["Height", "Weight", "Salary", "Country"]' in __solution__ , "It looks like there is a problem with the columns labels you selected"
+    assert "['Zack MacEwen', 'Jake Virtanen', 'Jordie Benn']" in __solution__ , "It looks like there is a problem with the row labels you selected"
+    assert "['Height', 'Weight', 'Salary', 'Country']" in __solution__ , "It looks like there is a problem with the columns labels you selected"
     assert penalty_players.shape == (3, 4), "You may not have selected correctly "
     assert len(penalty_players) == 3, "You may not have selected correctly "
     assert list(penalty_players.columns) ==  ['Height', 'Weight', 'Salary', 'Country'], "Your columns do not seem to be correct"
