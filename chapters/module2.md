@@ -165,7 +165,7 @@ Tasks:
 
 </exercise>
 
-<exercise id="5" title="Name that Argument!">
+<exercise id="7" title="Name that Argument!">
 
 **Question 1**          
 Which argument will assign your index label when reading in your data with `pd.read_excel()`?
@@ -220,9 +220,9 @@ Good job!
 </exercise>
 
 
-<exercise id="6" title="Using Arguments when reading in files">
+<exercise id="8" title="Using Arguments when reading in files">
 
-Let's  read in some our hockey_players file using `pd.read_csv()` using different arguments to satisfy certain requiresments.    
+  
       
 **Instructions:**    
 Running a coding exercise for the first time, could take a bit of time for everything to load. Be patient, it could take a few minutes. 
