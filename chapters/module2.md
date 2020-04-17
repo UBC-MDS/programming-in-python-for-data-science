@@ -134,7 +134,7 @@ Tasks:
 
 <exercise id="5" title="Reading in an Excel File">
 
-Let's try reading in a `.txt` file.    
+Let's try reading in a Excel file.    
       
 **Instructions:**    
 Running a coding exercise for the first time, could take a bit of time for everything to load. Be patient, it could take a few minutes. 
@@ -142,8 +142,8 @@ Running a coding exercise for the first time, could take a bit of time for every
 **When you see `____` in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.**
 
 Tasks:
-- Read in the data from a text file name `pokemon-text.txt` and save it as `pokeman_df`.
-- it's a good idea to see what the delimiter.
+- Read in the data from a text file name `pokemon.xlsx` and save it as `pokeman_df`.
+- there is a sheet in the excel file named `pokemon` which is where the data is stored. .
 - Use the Pokemon column name as the index.
 - Display the first 10 rows.
 
@@ -151,16 +151,16 @@ Tasks:
 
 
 - Are you sure you are saving your dataframe as the correct object names?
-- Are you using `pd.read_csv()`?
-- Check that your delimiter argument is correct. 
+- Are you using `pd.read_excel()`?
+- Check that you are using `sheet_name="pokemon"`. 
 
 </codeblock>
 
 </exercise>
 
-<exercise id="4" title="Arguments for Reading Data" type="slides">
+<exercise id="6" title="Arguments for Reading Data" type="slides">
 
-<slides source="module2_04">
+<slides source="module2_06">
 </slides>
 
 </exercise>
