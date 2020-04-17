@@ -85,7 +85,9 @@ These have a special meaning but for now, you only need to concentrate
 your attention on the fact that the argument `columns` needs to have the
 format:
 
-    columns={"old column name" : "new-column-name"}
+``` 
+ columns={"old column name" : "new-column-name"}
+```
 
 Notes: Script here
 

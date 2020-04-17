@@ -1,9 +1,12 @@
 import pandas as pd
 
-# Read in the data from the text file using the pokemon name as the index
+# Read in the data from the text file using the full pathway
+# Use the pokemon name as the index
 
-pokeman_df = pd.read_csv('data/pokemon-text.txt', index_col=0, delimiter=";")
+pokemon_df = pd.read_csv('data/pokemon-text.txt',
+                         index_col=0, 
+                         delimiter=";")
 
-# Display  the first 10 rows
+# Display the first 10 rows
 
-pokeman_df.head()
+pokemon_df.head()

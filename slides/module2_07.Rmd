@@ -1,6 +1,6 @@
 ---
 params:
-  dynamictitle: "module2_07"
+  dynamictitle: "module2_10"
 title: "`r params$dynamictitle`"
 output: 
   md_document:
@@ -93,7 +93,7 @@ This code uses something we've never seen before - {} curly brackets.
 These have a special meaning but for now, you only need to concentrate your attention on the fact that the argument `columns` needs to have the format:
 
 ```
-columns={"old column name" : "new-column-name"}
+ columns={"old column name" : "new-column-name"}
 ```
 
 Notes: Script here
@@ -116,7 +116,7 @@ df = df.assign(weight_oz= df['weight']/28.3495)
 df
 ```
 
-It's important that we always save the dataframe to an object or the column will not be saved in our dataframe.
+It's important that we always save the dataframe to an object when renaming or adding a new column or the changes will not be saved in our dataframe.
 
 
 Notes: Script here

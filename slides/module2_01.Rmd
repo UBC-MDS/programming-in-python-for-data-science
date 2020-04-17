@@ -163,6 +163,30 @@ Notes: Script here.
 
 ---
 
+## Reading in Data from a Different File
+
+Something you've seen in the previous exercises is that when we  read in the data there is alway a `data/` before the file name.    
+This is because the file we are running the current code in, is located in a different folder than the data. 
+The `data` folder is a folder in our current directory (folder). We need to specify the path to the `csv` file through the subfile.
+
+<img src='module2/datafile.png'  alt="404 image" />   
+
+This translates to the syntax `data/canucks.csv` 
+
+This syntax is not restricted to a single subfolder and could even have multiple folder between the current location and the final file name. 
+_Example:_ `data/module1/question3/candybars.csv`
+
+In this course we save all our data in a file called `data` so when asked to read in data, take care in future exercises to add the full path to the required file.  
+
+
+Notes: Script here.
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
 # Let’s apply what we learned!
 
 Notes: Script here

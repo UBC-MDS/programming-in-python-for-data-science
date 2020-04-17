@@ -99,7 +99,7 @@ Tasks:
 
 <codeblock id="02_03">
 
-- Are you sure you are saving your dataframe as `pokeman_df`?
+- Are you sure you are saving your dataframe as `pokemon_df`?
 - Are you using `pd.read_csv()`?
 
 </codeblock>
@@ -117,7 +117,7 @@ Running a coding exercise for the first time, could take a bit of time for every
 
 Tasks:
 
-- Read in the data from a text file name `pokemon-text.txt` and save it as `pokeman_df`.
+- Read in the data from a text file name `pokemon-text.txt` located in the `data` folder and save it as `pokemon_df`.
 - it's a good idea to see what the delimiter.
 - Use the Pokemon column name as the index.
 - Display the first 10 rows.
@@ -126,6 +126,7 @@ Tasks:
 
 - Are you sure you are saving your dataframe as the correct object names?
 - Are you using `pd.read_csv()`?
+- Are you including the full path through the `data/` folder when calling the file name?
 - Check that your delimiter argument is correct.   
 
 </codeblock>
@@ -142,8 +143,8 @@ Running a coding exercise for the first time, could take a bit of time for every
 **When you see `____` in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.**
 
 Tasks:
-- Read in the data from a text file name `pokemon.xlsx` and save it as `pokeman_df`.
-- there is a sheet in the excel file named `pokemon` which is where the data is stored. .
+- Read in the data from the text file name `pokemon.xlsx` located in the `data` folder and save it as `pokemon_df`.
+- there is a sheet in the excel file named `pokemon` which is where the data is stored.
 - Use the Pokemon column name as the index.
 - Display the first 10 rows.
 
@@ -153,6 +154,7 @@ Tasks:
 - Are you sure you are saving your dataframe as the correct object names?
 - Are you using `pd.read_excel()`?
 - Check that you are using `sheet_name="pokemon"`. 
+- Are you including the full path through the `data/` folder when calling the file name?
 
 </codeblock>
 
@@ -194,7 +196,7 @@ Good job!
 
 
 **Question 2**         
-Which argument will select only specific columns of the file for your dataframe with `pd.read_csv()`?
+Which argument will select only specific columns of the data file  with `pd.read_csv()`?
 
 <choice id="2" >
 <opt text='<code>header</code>'>
@@ -220,9 +222,9 @@ Good job!
 </exercise>
 
 
-<exercise id="8" title="Using Arguments when reading in files">
+<exercise id="8" title="Using Arguments when Reading in Files">
 
-  
+Load in the data using the most suitable arguments. 
       
 **Instructions:**    
 Running a coding exercise for the first time, could take a bit of time for everything to load. Be patient, it could take a few minutes. 
@@ -230,20 +232,60 @@ Running a coding exercise for the first time, could take a bit of time for every
 **When you see `____` in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.**
 
 Tasks:
+Read in the `pokemon.csv` file using the full pathway.
+Save it as `pokemon_sample`.   
+Only load in the first 100 rows and only load in columns  `name`, `total_bs`, `type`. 
+Display the entire dataframe.
 
 
-<codeblock id="02_06">
+<codeblock id="02_08">
 
-- Are you sure you are saving your dataframe as the correct object names?
-- Are you using `pd.read_csv()` and `pd.read_excel()` in the correct locations?
+- Are you sure you are saving your dataframe as `pokeman_df`?
+- Are you using `pd.read_csv()`?
+- Are you including the full path through the `data/` folder when calling the file name?
+- Do you have an argument `nrows=100`?
+- Are you loading in the specified column index labels?
+- Perhaps you are using `index_col=0` when it was not required?
 
 </codeblock>
 
+</exercise>
+
+<exercise id="9" title="Using Arguments when Reading in Files">
+
+Let's read in a new pokemon data file using `pd.read_csv()` and the most suitable arguments to satisfie the task requirements.    
+      
+**Instructions:**    
+Running a coding exercise for the first time, could take a bit of time for everything to load. Be patient, it could take a few minutes. 
+
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.**
+
+
+Tasks:
+- Read in the data from a csv file name `pokemon2.csv` using the full pathway
+- Save it as `pokemon_df2`.
+- It may be a good idea to look at the data via [this link](https://github.com/UBC-MDS/MCL-DSCI-511-programming-in-python/blob/binder/data/pokemon2.csv) first. 
+- Use the Pokemon column name as the index.
+- Change the values in column `legendary` from `yes` to `True` the values `no` to `False`. 
+- Only load in the column named `attack`,	`defense`, `speed`, `type` and `lengendary`.
+- Display the dataframe. 
+
+<codeblock id="02_09">
+
+- Are you sure you are saving your dataframe as the correct object names?
+- Are you using `pd.read_csv()` ?
+- Are you including the full path through the `data/` folder when calling the file name?
+- Did you use `header=4`?
+- Did you make sure to use square brackets with `usecols`?
+- Did you use both `true_values` `false_values`?
+
+
+</codeblock>
 
 </exercise>
 
 
-<exercise id="7" title="Column Renaming and Creation" type="slides">
+<exercise id="10" title="Column Renaming and Creation" type="slides">
 
 <slides source="module2_07">
 </slides>
@@ -251,9 +293,84 @@ Tasks:
 </exercise>
 
 
-<exercise id="8" title="Renaming a Column">
+<exercise id="11" title="Column Edit Questions">
 
-Let's  read in some our hockey_players file using `pd.read_csv()` using different arguments to satisfy certain requiresments.    
+**Question 1**          
+If we do not assign an object name when renaming a column (`df = df.rename()`)  or creating a new dataframe column  (`df = df.assign()`) what will happen?
+
+
+<choice id="1" >
+<opt text='The code will not run'>
+
+You may want to look over this before moving forward.
+
+</opt>
+
+<opt text='The dataframe will not be displayed'>
+
+You may want to look over this before moving forward.
+
+</opt>
+
+<opt text='The new column or column name will not be saved' correct="true">
+
+Good job!
+
+</opt>
+
+</choice> 
+
+
+**Question 2**   
+If you want your dataframe to drop a column for good using `df.drop()`, it is necessary to assign it to an object. 
+
+
+<choice id="2" >
+<opt text='<code>True</code>'>
+When using `df.drop()` we need to save the dataframe in a object for the changes to be permanent
+
+</opt>
+
+<opt text='False'  correct="true">
+
+Good job!
+
+</opt>
+
+</choice> 
+
+</exercise>
+
+
+<exercise id="11" title="Renaming a Column Index">
+
+Let's rename one of the columns in our `pokemon.csv` data.     
+      
+**Instructions:**    
+Running a coding exercise for the first time, could take a bit of time for everything to load. Be patient, it could take a few minutes. 
+
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.**
+
+Tasks:
+
+- Load in the data 
+
+
+<codeblock id="02_11">
+
+- Are you sure you are saving your dataframe as the correct object names?
+- Are you using `pd.read_csv()` ?
+- Did you use `header=4`?
+- Did you make sure to use square brackets with `usecols`?
+- Did you use both `true_values` `false_values`?
+
+</codeblock>
+
+</exercise>
+
+<exercise id="12" title="Creating a New Column">
+
+Load in the `pokemon.csv file only taking the first 500 values of the dataset. 
       
 **Instructions:**    
 Running a coding exercise for the first time, could take a bit of time for everything to load. Be patient, it could take a few minutes. 
@@ -263,28 +380,7 @@ Running a coding exercise for the first time, could take a bit of time for every
 Tasks:
 
 
-<codeblock id="02_08">
-
-- Are you sure you are saving your dataframe as the correct object names?
-- Are you using `pd.read_csv()` and `pd.read_excel()` in the correct locations?
-
-</codeblock>
-
-</exercise>
-
-<exercise id="9" title="Creating a New Column">
-
-Let's  read in some our hockey_players file using `pd.read_csv()` using different arguments to satisfy certain requiresments.    
-      
-**Instructions:**    
-Running a coding exercise for the first time, could take a bit of time for everything to load. Be patient, it could take a few minutes. 
-
-**When you see `____` in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.**
-
-Tasks:
-
-
-<codeblock id="02_09">
+<codeblock id="02_12">
 
 - Are you sure you are saving your dataframe as the correct object names?
 - Are you using `pd.read_csv()` and `pd.read_excel()` in the correct locations?
@@ -294,14 +390,14 @@ Tasks:
 </exercise>
 
 
-<exercise id="10" title="Data Filtering" type="slides">
+<exercise id="13" title="Data Filtering" type="slides">
 
 <slides source="module2_10">
 </slides>
 
 </exercise>
 
-<exercise id="11" title="Single Condition Filtering">
+<exercise id="14" title="Single Condition Filtering">
 
 Let's  read in some our hockey_players file using `pd.read_csv()` using different arguments to satisfy certain requiresments.    
       
@@ -322,7 +418,7 @@ Tasks:
 
 </exercise>
 
-<exercise id="12" title='Filtering using "and" or "or"'>
+<exercise id="15" title='Filtering using "and" or "or"'>
 
 Let's  read in some our hockey_players file using `pd.read_csv()` using different arguments to satisfy certain requiresments.    
       
@@ -343,7 +439,7 @@ Tasks:
 
 </exercise>
 
-<exercise id="13" title='Filtering using "and" and "or"'>
+<exercise id="16" title='Filtering using "and" and "or"'>
 
 Let's  read in some our hockey_players file using `pd.read_csv()` using different arguments to satisfy certain requiresments.    
       
@@ -364,14 +460,14 @@ Tasks:
 
 </exercise>
 
-<exercise id="14" title="Chaining and Method Chaining" type="slides">
+<exercise id="17" title="Chaining and Method Chaining" type="slides">
 
 <slides source="module2_14">
 </slides>
 
 </exercise>
 
-<exercise id="15" title="Function vs. Attributes">
+<exercise id="18" title="Function vs. Attributes">
 
 **Question 1**          
 
@@ -425,7 +521,7 @@ Good job!
 </exercise>
 
 
-<exercise id="16" title="Practice Chaining">
+<exercise id="19" title="Practice Chaining">
 
   
       
@@ -446,7 +542,7 @@ Tasks:
 
 </exercise>
 
-<exercise id="17" title="Grouping and Aggregating" type="slides">
+<exercise id="20" title="Grouping and Aggregating" type="slides">
 
 <slides source="module2_17">
 </slides>
@@ -454,7 +550,7 @@ Tasks:
 </exercise>
 
 
-<exercise id="18" title="Grouping and Aggregating Quick Questions">
+<exercise id="21" title="Grouping and Aggregating Quick Questions">
 
 **Question 1**          
 
@@ -507,7 +603,7 @@ Good job!
 
 </exercise>
 
-<exercise id="19" title="Practice Chaining">
+<exercise id="22" title="Practice Chaining">
 
   
       
@@ -528,7 +624,7 @@ Tasks:
 
 </exercise>
 
-<exercise id="20" title="Practice Chaining">
+<exercise id="23" title="Practice Chaining">
 
   
       
