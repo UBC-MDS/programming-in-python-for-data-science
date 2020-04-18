@@ -656,52 +656,70 @@ Tasks:
 </exercise>
 
 
-<exercise id="21" title="Grouping and Aggregating Quick Questions">
+<exercise id="21" title="Fruit Salad Grouping and Aggregating">
+
+Remember the fruit salad dataframe named `fruit_salad`? vRefer to it to answer the next 2 questions:
+
+```out
+                 colour    location   seed   shape    sweetness   water-content  weight
+        name                        
+       apple        red     canada    True   round       True          84         100
+      banana     yellow     mexico   False    long       True          75         120
+  cantaloupe     orange      spain    True   round       True          90        1360
+dragon-fruit    magenta      china    True   round      False          96         600
+  elderberry     purple    austria   False   round       True          80           5
+         fig     purple     turkey   False    oval      False          78          40
+       guava      green     mexico    True    oval       True          83         450
+ huckleberry       blue     canada    True   round       True          73           5
+        kiwi      brown      china    True   round       True          80          76
+       lemon     yellow     mexico   False    oval      False          83          65
+```
+
+
 
 **Question 1**          
-
+Which code would create a grouby object for the column `shape`? 
 
 <choice id="1" >
-<opt text='<code>header</code>'>
+<opt text="<code>fruit_salad.get_groups(by='shape')</code>">
 
-You may want to look over this before moving forward.
-
-</opt>
-
-<opt text='<code>ncols</code>'>
-
-You may want to look over this before moving forward.
+Not quite but you are on the right track. 
 
 </opt>
 
-<opt text='<code>index_col</code>' correct="true">
+<opt text="<code>fruit_salad.groupby(by='shape')</code>" correct="true">
 
-Good job!
+Great work!
+
+</opt>
+
+<opt text="<code>fruit_salad.group(by='shape')</code>" >
+
+Not quite but you are on the right track. 
 
 </opt>
 
 </choice> 
 
-
 **Question 2**         
-
+Which of the follow would be used get the full dataframe of the `round` group from the grouby object named `shape_groups`?
 
 <choice id="2" >
-<opt text='<code>header</code>'>
-
-Note quite but you are on the right track. 
-
-</opt>
-
-<opt text= '<code>nrows</code>' correct="true">
-
-Note quite but you are on the right track. 
-
-</opt>
-
-<opt text='<code>usecols</code>'  correct="true">
+<opt text="<code>shape_groups.get_group('round')</code>" correct="true">
 
 Good job!
+
+</opt>
+
+<opt text= "<code>shape_groups.groups['round']</code>">
+
+This will give you the row labels and not the complete dataframe. 
+
+</opt>
+
+<opt text="<code>shape_groups.get_group['round']</code>">
+
+Are you using the right type of parentheses? 
 
 </opt>
 
@@ -709,28 +727,41 @@ Good job!
 
 </exercise>
 
-<exercise id="22" title="Practice Chaining">
+<exercise id="22" title="Practice Grouping">
 
-  
+Find the mean of some Pokemon "types" using `.mean()` and `.groupby()`.
+
       
 **Instructions:**    
 Running a coding exercise for the first time, could take a bit of time for everything to load. Be patient, it could take a few minutes. 
 
 **When you see `____` in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.**
 
+_**Make sure you remove the hash (`#`) symbol in the coding portions of this question. We have commented them so that the line won't execute and you can test your code after each step.**_ 
+
 Tasks:
 
+- Slice the pokemon from `attack` to `type` and save the new dataframe over object `pokemon`.
+- Make a groupby object on the column `type` and name it pokemon_type.
+- Using `.loc[]`, obtain from the `type_means` dataframe, the mean `speed` of the following pokemon types: 
+    - `fire` and save it in an object named `fire_mean`
+    - `ice` and save it in an object named `ice_mean`
+    - `water` and save it in an object named `water_mean`
 
-<codeblock id="02_19">
 
-- Are you sure you are saving your dataframe as the correct object names?
-- Are you using `pd.read_csv()` and `pd.read_excel()` in the correct locations?
+<codeblock id="02_22">
+
+- Are slicing the dataframe with `pokemon.loc[ : , 'attack': 'type']`? 
+- Are you grouping by `type`? 
+- Are your using `.mean()` on the `pokemon_type` dataframe?
+- Are you naming the mean speed objects correctly?
+- Are you obtaining the mean values using `.loc[]`?
 
 </codeblock>
 
 </exercise>
 
-<exercise id="23" title="Practice Chaining">
+<exercise id="23" title="Practice Aggregating">
 
   
       

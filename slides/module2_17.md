@@ -31,12 +31,13 @@ mfr_group
 ```
 
 ```out
-<pandas.core.groupby.generic.DataFrameGroupBy object at 0x119af3f60>
+<pandas.core.groupby.generic.DataFrameGroupBy object at 0x1256826d8>
 ```
 
 This returns a `DataFrame GroupBy object`. What is that though?
 
-Notes: Script here
+Notes: Script
+here
 
 <html>
 
@@ -50,7 +51,7 @@ Notes: Script here
 
 ---
 
-<img src='module2/groupby.png'  alt="404 image" />
+<img src='module2/groupby.png'  alt="404 image" width = "80%" align="middle"/>
 
 Notes: Script here
 

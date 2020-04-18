@@ -293,14 +293,13 @@ I think you are missing something important.
 
 <exercise id="9" title=" Practicing Rows Slicing">
 
+This following code chunk will be used to give you an output of the data `hockey_players`. This will help answer and code in the exercises following it.
 
 **Instructions:**    
 Running a coding exercise for the first time, could take a bit of time for everything to load. Be patient, it could take a few minutes.   
 
 **When you see `____` in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.**
 
-
-This following code chunk will be used to give you an output of the data `hockey_players`. This will help answer and code in the exercises following it.
 
 <codeblock id="hockey_players">
 
@@ -331,13 +330,12 @@ Tasks:
 
 <exercise id="10" title="Practicing Column Slicing">
 
+Use the output of the following code chunk to help answer the next question.
+
 **Instructions:**     
 Running a coding exercise for the first time, could take a bit of time for everything to load. Be patient it could take a few minutes. 
 
 **When you see `____` in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.**
-
-
-Use the output of the following code chunk to help answer the next question.
 
 <codeblock id="hockey_players">
 
@@ -480,13 +478,13 @@ Remember we are rearranging here.
 
 <exercise id="15" title="Practicing Selecting Using Index Labels">
 
+Now let's select specific players and columns.
+
 **Instructions:**    
 Running a coding exercise for the first time, could take a bit of time for everything to load. Be patient, it could take a few minutes. 
 
 **When you see `____` in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.**
 
-
-Now let's select specific players and columns.
 
 Tasks:
 - Select the players `Zack MacEwan`, `Jake Virtanen` and `Jordie Benn` in that order and the columns `Height`, `Weight`, `Salary` and `Country` in that order.
@@ -515,20 +513,18 @@ Tasks:
 
 <exercise id="17" title="Practicing Selecting Values">
 
+Use the output of the following code chunk to help complete the next tasks.
+
 **Instructions:**    
 Running a coding exercise for the first time, could take a bit of time for everything to load. Be patient, it could take a few minutes.   
 
 **When you see `____` in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.**
-
-
-Use the output of the following code chunk to help complete the next tasks.
 
 <codeblock id="hockey_players">
 
 </codeblock>
 
 Using our `hockey_players` data, try finding the following values and save them in their repective object names. 
-
 
 _**Make sure you remove the hash (`#`) symbol in the coding portions of this question. We have commented them so that the line won't execute and you can test your code after each step.**_ 
 
@@ -558,12 +554,12 @@ Tasks:
 
 <exercise id="19" title="Practicing Selecting">
 
+Let's try selecting a specific column.
+
 **Instructions:**    
 Running a coding exercise for the first time, could take a bit of time for everything to load. Be patient, it could take a few minutes. 
 
 **When you see `____` in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.**
-
-Let's try selecting a specific column.
 
 Tasks:
 - Select all the rows from column `Salary` only and save it as `player salary`. (_Hint: you don't need `loc` here_)
@@ -669,12 +665,12 @@ I think you are missing something important!
 
 <exercise id="22" title="Practicing Slicing Using Index Position">
 
+Use the output of the following code chunk to help complete the next tasks.
+
 **Instructions:**    
 Running a coding exercise for the first time, could take a bit of time for everything to load. Be patient, it could take a few minutes. 
 
 **When you see `____` in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.**
-
-Use the output of the following code chunk to help complete the next tasks.
 
 <codeblock id="hockey_players_i">
 
@@ -701,12 +697,12 @@ Tasks:
 
 <exercise id="23" title="Practicing Selecting Using Index Position">
 
+Use the output of the following code chunk to help complete the next tasks.
+
 **Instructions:**    
 Running a coding exercise for the first time, could take a bit of time for everything to load. Be patient, it could take a few minutes. 
 
 **When you see `____` in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.**
-
-Use the output of the following code chunk to help complete the next tasks.
 
 <codeblock id="hockey_players_i">
 
@@ -736,12 +732,12 @@ Tasks:
 
 <exercise id="25" title="Practice Sorting">
 
+Let's sort our hockey dataframe.
+
 **Instructions:**    
 Running a coding exercise for the first time, could take a bit of time for everything to load. Be patient, it could take a few minutes. 
 
 **When you see `____` in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.**
-
-Let's sort our hockey dataframe
 
 Task:
 - Sort your `hockey_players` dataframe by Salary from most to least and name your new dataframe as `rich_players`.
@@ -849,12 +845,12 @@ Is `summary` the correct command here?
 
 <exercise id="28" title="Using df.describe()">
 
+Let's try and obtain some statistics from our hockey data we've been playing with.
+
 **Instructions:**    
 Running a coding exercise for the first time, could take a bit of time for everything to load. Be patient, it could take a few minutes. 
 
 **When you see `____` in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.**
-
-Let's try and obtain some statistics from our hockey data we've been playing with.
 
 - Find the statistics of both categorical and quantitative columns. Save the dataframe in an object called `hockey_stats`.
 - Display it.
@@ -890,13 +886,13 @@ Tasks:
 
 <exercise id="30" title="Practicing Frequency Tables">
 
+Let's get the frequencies of some of our values! We spoke in the slides about the steps we needed to follow to get a frequency table.  
+
 **Instructions:**    
 Running a coding exercise for the first time, could take a bit of time for everything to load. Be patient, it could take a few minutes. 
 
 **When you see `____` in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.**
 
-
-Let's get the frequencies of some of our values! We spoke in the slides about the steps we needed to follow to get a frequency table.    
     
 _**Make sure you remove the hash (`#`) symbol in the coding portions of this question. We have commented them so that the line won't execute and you can test your code after each step.**_ 
 
@@ -925,12 +921,12 @@ _If you get a warning along with your output, that's fine. We will explain why t
 
 <exercise id="32" title="Practicing Bar Charts">
 
+You are going to load the frequency table from the questions that we exported as a `csv` in the last section and plot it!
+
 **Instructions:**    
 Running a coding exercise for the first time, could take a bit of time for everything to load. Be patient, it could take a few minutes. 
 
 **When you see `____` in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.**
-
-You are going to load the frequency table from the questions that we exported as a `csv` in the last section and plot it!
 
 _**Make sure you remove the hash (`#`) symbol in the coding portions of this question. We have commented them so that the line won't execute and you can test your code after each step.**_ 
 
@@ -953,12 +949,12 @@ Tasks:
 
 <exercise id="33" title="Practicing Scatterplots">
 
+Ok, let's try our luck with a scatterplot. We want to explore the relationship between `Age` and `Salary`.
+
 **Instructions:**    
 Running a coding exercise for the first time, could take a bit of time for everything to load. Be patient, it could take a few minutes. 
 
 **When you see `____` in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.**
-
-Ok, let's try our luck with a scatterplot. We want to explore the relationship between `Age` and `Salary`.
 
 Tasks:
 - Plots x as `Age` and y as `Salary` using a scatterplot and save the plot in an object named `age_salary_scatter`.

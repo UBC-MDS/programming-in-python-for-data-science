@@ -80,7 +80,7 @@ Notes: Script here
 
 ---
 
-<img src='module2/groupby.png'  alt="404 image" />  
+<img src='module2/groupby.png'  alt="404 image" width = "80%" align="middle"/>  
 
 Notes: Script here
 <html>

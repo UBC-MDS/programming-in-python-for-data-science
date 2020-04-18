@@ -222,14 +222,34 @@ the data there is alway a `data/` before the file name.
 This is because the file we are running the current code in, is located
 in a different folder than the data. The `data` folder is a folder in
 our current directory (folder). We need to specify the path to the `csv`
-file through the subfile.
+file through the
+subfile.
 
-<img src='module2/datafile.png'  alt="404 image"  width="30%"/>
+<center>
+
+<img src='module2/datafile.png'  alt="404 image"  width="50%" align="middle"/>
+
+</center>
 
 This translates to the syntax `data/canucks.csv`
 
+Notes: Script here.
+
+<html>
+
+<audio controls >
+
+<source src="placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
 This syntax is not restricted to a single subfolder and could even have
 multiple folder between the current location and the final file name.
+
 *Example:* `data/module1/question3/candybars.csv`
 
 In this course we save all our data in a file called `data` so when
