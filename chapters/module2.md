@@ -741,7 +741,7 @@ _**Make sure you remove the hash (`#`) symbol in the coding portions of this que
 
 Tasks:
 
-- Slice the pokemon from `attack` to `type` and save the new dataframe over object `pokemon`.
+- Slice the pokemon columns from `attack` to `type` and save the new dataframe over object `pokemon`.
 - Make a groupby object on the column `type` and name it pokemon_type.
 - Using `.loc[]`, obtain from the `type_means` dataframe, the mean `speed` of the following pokemon types: 
     - `fire` and save it in an object named `fire_mean`
@@ -771,12 +771,22 @@ Running a coding exercise for the first time, could take a bit of time for every
 **When you see `____` in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.**
 
 Tasks:
+- Select the pokemon columns `attack`, `defense`, `capture_rt`, `total_bs`, and `legendary`.
+- Save the new dataframe over object `pokemon`.
+- Make a groupby object on the column `legendary` and name it pokemon_type.
+- Make a new dataframe named `legendary_stats` using `.agg()` containing the `max` and `min` values of legendary groups.
+- Using `.loc[]` obtain from the `legendary_stats` dataframe, the following values:
+    - The capture rate (capture_rt) stats for non legendary (`=0`) pokemon and save them as object `capture_0` 
+    - The total base score (total_bs) stats for legendary (`=1`) pokemon and save them as object `total_1`
 
 
-<codeblock id="02_20">
+<codeblock id="02_23">
 
-- Are you sure you are saving your dataframe as the correct object names?
-- Are you using `pd.read_csv()` and `pd.read_excel()` in the correct locations?
+- Are selecting the dataframe with `pokemon.loc[ : , ['attack',  'defense', 'capture_rt', 'total_bs', 'legendary']]`? 
+- Are you grouping by `legendary`? 
+- Are your using `.agg()` on the `legendary_stats` dataframe?
+- Are you naming the objects correctly?
+- Are you obtaining the stats using `.loc[]`?
 
 </codeblock>
 
