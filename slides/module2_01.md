@@ -224,7 +224,7 @@ in a different folder than the data. The `data` folder is a folder in
 our current directory (folder). We need to specify the path to the `csv`
 file through the subfile.
 
-<img src='module2/datafile.png'  alt="404 image" />
+<img src='module2/datafile.png'  alt="404 image"  width="30%"/>
 
 This translates to the syntax `data/canucks.csv`
 

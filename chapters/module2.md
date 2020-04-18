@@ -326,7 +326,7 @@ If you want your dataframe to drop a column for good using `df.drop()`, it is ne
 
 
 <choice id="2" >
-<opt text='<code>True</code>'>
+<opt text='True'>
 When using `df.drop()` we need to save the dataframe in a object for the changes to be permanent
 
 </opt>
@@ -353,16 +353,15 @@ Running a coding exercise for the first time, could take a bit of time for every
 
 Tasks:
 
-- Load in the data 
+- Rename the column `sp_attack` to `special_a` and `sp_defense` to `special_d` using `df.rename()` only once.
+- Save the new dataframe as `pokemon_special`.
 
 
 <codeblock id="02_11">
 
-- Are you sure you are saving your dataframe as the correct object names?
-- Are you using `pd.read_csv()` ?
-- Did you use `header=4`?
-- Did you make sure to use square brackets with `usecols`?
-- Did you use both `true_values` `false_values`?
+- Are you using `pokemon.rename()`?
+- Are you saving the new dataframe as the correct name?
+- Are you using the argument `columns ={'sp_attack' : 'special_a','sp_defense' : 'special_d'}`?
 
 </codeblock>
 
@@ -370,7 +369,7 @@ Tasks:
 
 <exercise id="12" title="Creating a New Column">
 
-Load in the `pokemon.csv file only taking the first 500 values of the dataset. 
+For this exercise we are going to create and drop some column from our dataframe. 
       
 **Instructions:**    
 Running a coding exercise for the first time, could take a bit of time for everything to load. Be patient, it could take a few minutes. 
@@ -379,11 +378,18 @@ Running a coding exercise for the first time, could take a bit of time for every
 
 Tasks:
 
+- Create a new column named `total_special` that is the sum of column `sp_attack` and `sp_defense`.
+- Save it as an object named `pokemon_new_col`.
+- Drop the column `deck_no` from `pokemon_new_col` and save this dataframe as an object named `pokemon_dropped`.
+
 
 <codeblock id="02_12">
 
-- Are you sure you are saving your dataframe as the correct object names?
-- Are you using `pd.read_csv()` and `pd.read_excel()` in the correct locations?
+- Are you using `pokemon.assign()`?
+- Are you saving the new dataframes as the correct names?
+- For the new column does `total_special  = pokemon['sp_attack'] + pokemon['sp_defense']`?
+- Are you using `pokemon_new_col.drop()` and specifying `columns= 'deck_no'`?
+
 
 </codeblock>
 
@@ -399,7 +405,7 @@ Tasks:
 
 <exercise id="14" title="Single Condition Filtering">
 
-Let's  read in some our hockey_players file using `pd.read_csv()` using different arguments to satisfy certain requiresments.    
+Let's start the exercises with some straight forward single conditions.    
       
 **Instructions:**    
 Running a coding exercise for the first time, could take a bit of time for everything to load. Be patient, it could take a few minutes. 
@@ -408,19 +414,46 @@ Running a coding exercise for the first time, could take a bit of time for every
 
 Tasks:
 
+- Create a new dataframe named `fire_pokemon`n containing only the rows of `type` "fire".
+- Display the first 10 rows of the dataframe.
 
-<codeblock id="02_11">
+
+<codeblock id="02_14">
 
 - Are you sure you are saving your dataframe as the correct object names?
-- Are you using `pd.read_csv()` and `pd.read_excel()` in the correct locations?
+- Are you using `pokemon['type'] == 'fire'` as your condition?
 
 </codeblock>
+
+Use the coding cell above to do any coding that will help answer the following question:        
+**How many fire Pokemon are there?**
+
+<choice id="1" >
+<opt text='11'>
+
+You can answer this question using <code>fire_pokemon.shape</code>
+
+</opt>
+
+<opt text='52' correct="true">
+
+That's great! Did you use <code>fire_pokemon.shape</code>?
+
+</opt>
+
+<opt text='776' >
+
+You can answer this question using <code>fire_pokemon.shape</code>
+
+</opt>
+
+</choice> 
 
 </exercise>
 
 <exercise id="15" title='Filtering using "and" or "or"'>
 
-Let's  read in some our hockey_players file using `pd.read_csv()` using different arguments to satisfy certain requiresments.    
+Let's find all the pokemon that meet multiple requirements.  
       
 **Instructions:**    
 Running a coding exercise for the first time, could take a bit of time for everything to load. Be patient, it could take a few minutes. 
@@ -429,19 +462,54 @@ Running a coding exercise for the first time, could take a bit of time for every
 
 Tasks:
 
+- Filter the dataframe for the pokemon that have `attack` and `defense` values both greater than 100. 
+- Save this dataframe as an object named `mighty_pokemon`.
+- Display the first 10 rows of the dataframe.
 
-<codeblock id="02_12">
+
+<codeblock id="02_15">
 
 - Are you sure you are saving your dataframe as the correct object names?
-- Are you using `pd.read_csv()` and `pd.read_excel()` in the correct locations?
+- Are you separating your conditions with brackets?
+- Are you using the symbol` & ` to get the intersect?
+- Are you using `pokemon['defense'] > 100` and  `pokemon['attack'] > 100` as your conditions?
 
 </codeblock>
+
+
+Use the coding cell above to do any coding that will help answer the following question: 
+**which `type` have the most Pokemon with attack and defense scores greater than 100?**
+
+<choice id="1"  correct="true">
+<opt text='Rock and Bug'>
+
+You must have used <code>mighty_pokemon['type'].value_counts()</code>!
+
+</opt>
+
+<opt text='Water and Rock'>
+
+You can use <code>mighty_pokemon['type'].value_counts()</code> to find out.
+
+</opt>
+
+<opt text='Bug and Water' >
+
+You can use <code>mighty_pokemon['type'].value_counts()</code> to find out.
+
+</opt>
+
+</choice> 
+
+</exercise>
+
+
 
 </exercise>
 
 <exercise id="16" title='Filtering using "and" and "or"'>
 
-Let's  read in some our hockey_players file using `pd.read_csv()` using different arguments to satisfy certain requiresments.    
+Let's find all the pokemon that meet multiple requirements.  
       
 **Instructions:**    
 Running a coding exercise for the first time, could take a bit of time for everything to load. Be patient, it could take a few minutes. 
@@ -450,11 +518,42 @@ Running a coding exercise for the first time, could take a bit of time for every
 
 Tasks:
 
+- Filter the dataframe for the pokemon that have either a total base score (`total_bs`) greater than 650 or a `speed` greater than 140.
+- All the pokeman must be `legendary` as well(=1). 
+- Save this dataframe as an object named `legendary_pokemon`.
 
-<codeblock id="02_13">
+<codeblock id="02_16">
 
 - Are you sure you are saving your dataframe as the correct object names?
-- Are you using `pd.read_csv()` and `pd.read_excel()` in the correct locations?
+- Are you separating your conditions with brackets?
+- Are you using the symbol` & ` and  ` | `  to get the intersect?
+- Are you using making you have enough parentheses separating your `&` and `|` conditions?
+
+
+Use the coding cell above to do any coding that will help answer the following question: 
+**How many pokemon are of generation (`gen`) 7?**
+
+<choice id="1"  >
+<opt text='4'>
+
+You can use <code>mighty_pokemon['gen'].value_counts()</code> or filter the new dataframe to find out.
+
+</opt>
+
+<opt text='0'>
+
+You can use <code>mighty_pokemon['gen'].value_counts()</code> or filter the new dataframe to find out.
+
+</opt>
+
+<opt text='3' correct="true" >
+
+Nice work!
+
+</opt>
+
+</choice> 
+
 
 </codeblock>
 
@@ -470,22 +569,22 @@ Tasks:
 <exercise id="18" title="Function vs. Attributes">
 
 **Question 1**          
-
+Which of the following statements is true?
 
 <choice id="1" >
-<opt text='<code>header</code>'>
+<opt text='We can do chaining with both methods and functions '>
 
 You may want to look over this before moving forward.
 
 </opt>
 
-<opt text='<code>ncols</code>'>
+<opt text='We can only do chaining with functions'>
 
 You may want to look over this before moving forward.
 
 </opt>
 
-<opt text='<code>index_col</code>' correct="true">
+<opt text='We can only do chaining with methods' correct="true">
 
 Good job!
 
@@ -495,24 +594,24 @@ Good job!
 
 
 **Question 2**         
-
+Which of the following statements is true?
 
 <choice id="2" >
-<opt text='<code>header</code>'>
+<opt text='Functions are associate with an object'>
 
-Note quite but you are on the right track. 
-
-</opt>
-
-<opt text= '<code>nrows</code>' correct="true">
-
-Note quite but you are on the right track. 
+Functions are not associated with any object 
 
 </opt>
 
-<opt text='<code>usecols</code>'  correct="true">
+<opt text= 'Method are associated with an object' correct="true">
 
-Good job!
+Nice work!
+
+</opt>
+
+<opt text='Functions are a type of method'  correct="true">
+
+The reverse is true; methods are a type of function. 
 
 </opt>
 
@@ -523,7 +622,7 @@ Good job!
 
 <exercise id="19" title="Practice Chaining">
 
-  
+ Using our Pokemon dataset we are going to make a plot.  
       
 **Instructions:**    
 Running a coding exercise for the first time, could take a bit of time for everything to load. Be patient, it could take a few minutes. 
@@ -532,8 +631,15 @@ Running a coding exercise for the first time, could take a bit of time for every
 
 Tasks:
 
+- Chain the following methods in the order specified.
+- Name the full chain `pokemon_plot`.
+- First, create a new column named `AD_total` by adding the `attack` and `defense` columns from the pokemon dataset.
+- Next drop the `legendary` column.
+- Use `loc[]` and slice from `speed` to `AD_total`.
+- Finally use `.plot.scatter()` to plot `AD_total` on the x-axis and `capture_rt` on the y-axis.
+- Use a new line for each method.
 
-<codeblock id="02_16">
+<codeblock id="02_19">
 
 - Are you sure you are saving your dataframe as the correct object names?
 - Are you using `pd.read_csv()` and `pd.read_excel()` in the correct locations?

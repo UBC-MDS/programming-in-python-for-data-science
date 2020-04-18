@@ -104,7 +104,22 @@ Notes: Script here
 
 ---
 
+You can also rename multiple columns at once by simple adding a comma between the new and old column pairs between the curly brackets. 
 
+```{python}
+df = df.rename(columns={'available_canada_america' : 'availability',
+                          'weight' : 'weight_g'})
+df.head()
+```
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
 ## Column Creation 
 
 Creating a new column is extremely useful when we need to add additional information. Perhaps we want to covert the weight from grams to ounces. We can add that to our current dataframe using the `assign` function and naming the column `weight_oz`. 
@@ -112,7 +127,7 @@ The conversion for 1 oz = 28.3495 g.
 
 
 ```{python}
-df = df.assign(weight_oz= df['weight']/28.3495)
+df = df.assign(weight_oz= df['weight_g']/28.3495)
 df
 ```
 

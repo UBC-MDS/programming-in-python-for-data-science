@@ -13,6 +13,6 @@ ____ = ____(____,
             ____, 
             ____)
 
-# Display  the first 10 rows
+# Display the first 10 rows
 
 ____
