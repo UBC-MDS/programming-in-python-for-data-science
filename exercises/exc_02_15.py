@@ -2,8 +2,7 @@ import pandas as pd
 
 pokemon = pd.read_csv('data/pokemon.csv', index_col=0)
 
-# Filter the dataframe for the pokemon that have attack and defense values both greater than 100
-# Save this dataframe as an object named mighty_pokemon
+# Create a new dataframe named fire_pokemon containing only the rows of type "fire" 
 
 ____ = ____
 

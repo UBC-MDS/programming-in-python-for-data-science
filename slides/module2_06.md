@@ -22,7 +22,7 @@ Notes: Script here
 
 We have talked about quite a few different arguments when reading in
 different file types such as `index_col`, `delimiter` and for excel
-files `sheet_name` but there are mant others that are important to know
+files `sheet_name` but there are many others that are important to know
 so we can to read in the file the way we want it to appear in our code.
 
 To recap from the last module, `index_col` is an argument that indicates
@@ -62,12 +62,12 @@ Notes: Script here.
 
 ## header
 
-We have been pretty lucky up until now that all of the data we have
-loaded in has been particularly straight forward. Sometimes with data,
-there are a few lines of text explaining a few important points about
-the file. We do not want to include this in our dataframe and therefore
-we need to specify exactly when our dataframe begins. This is where
-`header` comes in. Take the next file as an example `candybars-h.csv`.
+We have been lucky up until now that all the data we have loaded in has
+been particularly straight forward. Sometimes with data, there are a few
+lines of text explaining a few important points about the file. We do
+not want to include this in our dataframe and therefore we need to
+specify exactly when our dataframe begins. This is where `header` comes
+in. Take the next file as an example `candybars-h.csv`.
 
 ``` python
 candybars = pd.read_csv('candybars-h.csv')
@@ -75,12 +75,12 @@ candybars.head()
 ```
 
 ```out
-           name  weight  chocolate  peanuts  caramel  nougat  cookie_wafer_rice  coconut  white_chocolate  multi available_canada_america
-0  Coffee Crisp    50.0        1.0      0.0      0.0     0.0                1.0      0.0              0.0    0.0                   Canada
-1  Butterfinger   184.0        1.0      1.0      1.0     0.0                0.0      0.0              0.0    0.0                  America
-2          Skor    39.0        1.0      0.0      1.0     0.0                0.0      0.0              0.0    0.0                     Both
-3      Smarties    45.0        1.0      0.0      0.0     0.0                0.0      0.0              0.0    1.0                   Canada
-4          Twix    58.0        1.0      0.0      1.0     0.0                1.0      0.0              0.0    1.0                     Both
+  This dataset was created by Hayley Boyce in February 2020. Unnamed: 1 Unnamed: 2 Unnamed: 3 Unnamed: 4 Unnamed: 5         Unnamed: 6 Unnamed: 7       Unnamed: 8 Unnamed: 9               Unnamed: 10
+0  Note this is not a complete dataset and there ...                NaN        NaN        NaN        NaN        NaN                NaN        NaN              NaN        NaN                       NaN
+1                                               name             weight  chocolate    peanuts    caramel     nougat  cookie_wafer_rice    coconut  white_chocolate      multi  available_canada_america
+2                                       Coffee Crisp                 50          1          0          0          0                  1          0                0          0                    Canada
+3                                       Butterfinger                184          1          1          1          0                  0          0                0          0                   America
+4                                               Skor                 39          1          0          1          0                  0          0                0          0                      Both
 ```
 
 We see that there are no clear column names and things are in quite a
@@ -128,12 +128,12 @@ candybars.head()
 ```
 
 ```out
-                Butterfinger   184    1  1.1  1.2    0  0.1  0.2  0.3  0.4  America
-0                       Skor  39.0  1.0  0.0  1.0  0.0  0.0  0.0  0.0  0.0     Both
-1                   Smarties  45.0  1.0  0.0  0.0  0.0  0.0  0.0  0.0  1.0   Canada
-2                       Twix  58.0  1.0  0.0  1.0  0.0  1.0  0.0  0.0  1.0     Both
-3  Reeses Peanutbutter Cups   43.0  1.0  1.0  0.0  0.0  0.0  0.0  0.0  1.0     Both
-4               3 Musketeers  54.0  1.0  0.0  0.0  1.0  0.0  0.0  0.0  0.0  America
+           name  weight  chocolate  peanuts  caramel  nougat  cookie_wafer_rice  coconut  white_chocolate  multi available_canada_america
+0  Coffee Crisp      50          1        0        0       0                  1        0                0      0                   Canada
+1  Butterfinger     184          1        1        1       0                  0        0                0      0                  America
+2          Skor      39          1        0        1       0                  0        0                0      0                     Both
+3      Smarties      45          1        0        0       0                  0        0                0      1                   Canada
+4          Twix      58          1        0        1       0                  1        0                0      1                     Both
 ```
 
 Notes: Script here.
@@ -189,16 +189,16 @@ Notes: Script here.
 
 ## usecols
 
-Similarly to how `nrows` specifies how many rows to read in, `usecols`
-selects which columns to use in the dataframe. Maybe all that’s relevant
-to our analysis are the columns `name`, `weight` and
-`available_canada_america`. Do you remember when we were selecting
-columns using `iloc` in the last module we would specified the index
-position? We use a similar syntax here. We put the desired column index
-positions in square brackets for the argument.
+Similarly, to how `nrows` specifies how many rows to read in, `usecols`
+selects which columns to load from the data. Perhaps the only columns
+relevant to our analysis are the columns `name`, `weight` and
+`available_canada_america`. We can forgo the other columns when reading
+the data in. The `usecols` argument accepts either index positions or
+labels. We put the desired column index positions in square brackets for
+the argument.
 
 ``` python
-candybars = pd.read_csv('candybars.csv', usecols=[0,1,10 ])
+candybars = pd.read_csv('candybars.csv', usecols=[0, 1, 10])
 candybars
 ```
 
@@ -233,18 +233,11 @@ Notes: Script here.
 
 ---
 
-## usecols
-
-Similarly to how `nrows` specifies how many rows to read in, `usecols`
-selects which columns to use in the dataframe. Maybe all that’s relevant
-to our analysis are the columns `name`, `weight` and
-`available_canada_america`. Do you remember when we were selecting
-columns using `iloc` in the last module we would specified the index
-position? We use a similar syntax here. We put the desired column index
-positions in square brackets for the argument.
+Or we could use the column label in square
+brackets.
 
 ``` python
-candybars = pd.read_csv('candybars.csv', usecols=[0,1,10 ])
+candybars = pd.read_csv('candybars.csv', usecols=['name', 'weight', 'available_canada_america'])
 candybars
 ```
 
@@ -264,8 +257,6 @@ candybars
 
 [25 rows x 3 columns]
 ```
-
-Let’s practice before
 
 Notes: Script here.
 
@@ -283,12 +274,10 @@ Notes: Script here.
 
 ## true\_values and false\_values
 
-Here are 2 arguments that can be useful if we want to add some clarity
-in our dataframes.
-
-Bringing in new `candybars-tf.csv` we have a number of columns that have
-binary values of `yes` and `no` such as `chocolate`, `peanuts`,
-`caramel` and `nougat`.
+These 2 arguments can be useful if we want to add some clarity in our
+dataframes. Bringing in new `candybars-tf.csv` we have several columns
+that have binary values of `yes` and `no` such as `chocolate`,
+`peanuts`, `caramel` and `nougat`.
 
 ``` python
 candybars = pd.read_csv('candybars-tf.csv' )
@@ -312,9 +301,8 @@ candybars
 [25 rows x 11 columns]
 ```
 
-We can changes these values to more direct values such as `True` and
-`False` since these are more familiar to our Python programming
-Language.
+We can change these values to something more familiar to the Python
+programming language such as `True` and `False`.
 
 Notes: Script here.
 
@@ -330,8 +318,9 @@ Notes: Script here.
 
 ---
 
-In order to change our `yes`’s to `True` and the `no`s to `False` we
-need to specify **BOTH** arguments with the values in square
+To change the `yes` values to `True` and the `no` values to `False` we
+need to specify **BOTH** arguments with the values we wish to change in
+square
 brackets.
 
 ``` python
@@ -356,8 +345,49 @@ candybars
 [25 rows x 11 columns]
 ```
 
-This is now more familiar to Python. For these arguments, mmultiple
-values can also be specified too.
+This is now more familiar to Python.
+
+Notes: Script here.
+
+<html>
+
+<audio controls >
+
+<source src="placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+We can also specify multiple values as either `True` or
+`False`.
+
+``` python
+candybars = pd.read_csv('candybars-tf.csv', true_values= ['Canada', 'Both'], false_values= ['America'] ) 
+candybars
+```
+
+```out
+                 name  weight chocolate peanuts caramel nougat cookie_wafer_rice coconut white_chocolate multi  available_canada_america
+0        Coffee Crisp      50       yes      no      no     no               yes      no              no    no                      True
+1        Butterfinger     184       yes     yes     yes     no                no      no              no    no                     False
+2                Skor      39       yes      no     yes     no                no      no              no    no                      True
+3            Smarties      45       yes      no      no     no                no      no              no   yes                      True
+4                Twix      58       yes      no     yes     no               yes      no              no   yes                      True
+..                ...     ...       ...     ...     ...    ...               ...     ...             ...   ...                       ...
+20             Take 5      43       yes     yes     yes     no               yes      no              no    no                     False
+21   Whatchamacallits      45       yes     yes      no     no               yes      no              no    no                     False
+22         Almond Joy      46       yes      no      no     no                no     yes              no    no                     False
+23           Oh Henry      51       yes     yes     yes     no                no      no              no    no                      True
+24  Cookies and Cream      43        no      no      no     no               yes      no             yes    no                      True
+
+[25 rows x 11 columns]
+```
+
+Now all the `Canada` and `Both` values have been converted to `True` and
+`America` values to `False`.
 
 Notes: Script here.
 

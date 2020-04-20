@@ -222,58 +222,6 @@ Notes: Script here
 
 </html>
 
----
-
-If you scroll back to the last slide you’ll notice we didn’t save over
-the dataframe so the dataframe `df` still will contain
-    `weight_oz`.
-
-``` python
-df.head()
-```
-
-```out
-              weight_g  chocolate  peanuts  caramel  nougat  cookie_wafer_rice  coconut  white_chocolate  multi availability  weight_oz
-name                                                                                                                                   
-Coffee Crisp        50          1        0        0       0                  1        0                0      0       Canada   1.763700
-Butterfinger       184          1        1        1       0                  0        0                0      0      America   6.490414
-Skor                39          1        0        1       0                  0        0                0      0         Both   1.375686
-Smarties            45          1        0        0       0                  0        0                0      1       Canada   1.587330
-Twix                58          1        0        1       0                  1        0                0      1         Both   2.045891
-```
-
-Let’s save it this time and remove `weight_oz` and `coconut` together.
-We have to put the columns we want to drop in square brackets.
-
-``` python
-df = df.drop(columns=['weight_oz', 'coconut'])
-df.head()
-```
-
-```out
-              weight_g  chocolate  peanuts  caramel  nougat  cookie_wafer_rice  white_chocolate  multi availability
-name                                                                                                               
-Coffee Crisp        50          1        0        0       0                  1                0      0       Canada
-Butterfinger       184          1        1        1       0                  0                0      0      America
-Skor                39          1        0        1       0                  0                0      0         Both
-Smarties            45          1        0        0       0                  0                0      1       Canada
-Twix                58          1        0        1       0                  1                0      1         Both
-```
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
-
 # Let’s apply what we learned\!
 
 Notes: Script here

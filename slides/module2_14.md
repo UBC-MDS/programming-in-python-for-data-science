@@ -2,7 +2,7 @@
 type: slides
 ---
 
-# Chaining Notation
+# Filtering
 
 Notes: Script here
 
@@ -18,52 +18,37 @@ Notes: Script here
 
 ---
 
-## What is Chaining ?
+Filtering is probably one of the most frequent data manipulations you
+will do in data analysis. Filtering is often used when we are either
+trying to rid the dataframe of unwanted rows or analyze rows with a
+particular column value.
 
-Up until now, when we want to perform mutiple actions on a object we
-have been saving each new object under a new object name. Chaining
-allows us to do multiple actions in a single line of code without these
-intermediate object.
+Think of it as a sieve keeping only the rows matching conditions you
+have set.
 
-You can imagine that we are linking verbs together similar to a chain.
-
-<img src='module2/chainsfinal.png'  alt="404 image" />  
-[Attribution](https://unsplash.com/photos/42ui88Qrxhw)
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
-
-When we made our frequency table in Module 1, we first saved the single
-column as an object before we used `value_counts()` We can do this all
-in one line with chaining:
+Let’s welcome back the `cereal.csv` data we have worked with in Module
+1.
 
 ``` python
-df['mfr'].value_counts()
+df = pd.read_csv('cereal.csv', index_col=0)
+df.head()
 ```
 
 ```out
-K    23
-G    22
-P     9
-Q     8
-R     8
-N     6
-A     1
-Name: mfr, dtype: int64
+                          mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
+name                                                                                                                                       
+100% Bran                   N  Cold        70        4    1     130   10.0    5.0       6     280        25      3     1.0  0.33  68.402973
+100% Natural Bran           Q  Cold       120        3    5      15    2.0    8.0       8     135         0      3     1.0  1.00  33.983679
+All-Bran                    K  Cold        70        4    1     260    9.0    7.0       5     320        25      3     1.0  0.33  59.425505
+All-Bran with Extra Fiber   K  Cold        50        4    0     140   14.0    8.0       0     330        25      3     1.0  0.50  93.704912
+Almond Delight              R  Cold       110        2    2     200    1.0   14.0       8       1        25      3     1.0  0.75  34.384843
 ```
 
-However, this is not the extent of chaining.
+Attribution:  
+*“[80 Cereals](https://www.kaggle.com/crawford/80-cereals/)” (c) by
+[Chris Crawford](https://www.linkedin.com/in/crawforc3/) is licensed
+under [Creative Commons Attribution-ShareAlike 3.0
+Unported](http://creativecommons.org/licenses/by-sa/3.0/)*
 
 Notes: Script here
 
@@ -79,53 +64,28 @@ Notes: Script here
 
 ---
 
-## Methods vs Functions
+## Standard filtering
 
-Chaining is used specifically with methods and cannot be used with
-functions. We have made the comparison that attributes can be compared
-to nouns, while methods and functions are compared to verbs. But what
-exactly are the two?
-
-Functions: Execute an action. Methods : Are functions that execute an
-action but are associated with an object.
-
-Let’s compare `pd.read_csv()` with `head()`
-
-In `pd.read_csv()` we add an argument instructing the file name we wish
-to bring in. `head()` requires an object, specifally a dataframe, in
-order to execute.
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
-
-Methods generally have the form `object-name.method()` whereas function
-can take in arguments that don’t necessarily have to be objects.
-Functions will have the form `function-name(argument)`.
-
-Here is an example of how a function does not need an object. `abs()` in
-a function that will return the absolute value of a number. `abs()`
-takes in an argument - in this case, a number and not an object.
+Suppose you are trying to find a cereal with a protein content greater
+than 4g per serving. We can find those rows with the following
+    code.
 
 ``` python
-abs(-6)
+df[ df['protein'] > 4]
 ```
 
 ```out
-6
+               mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
+name                                                                                                                            
+Cheerios         G  Cold       110        6    2     290    2.0   17.0       1     105        25      1     1.0  1.25  50.764999
+Quaker Oatmeal   Q   Hot       100        5    2       0    2.7    1.0       1     110         0      1     1.0  0.67  50.828392
+Special K        K  Cold       110        6    0     230    1.0   16.0       3      55        25      1     1.0  1.00  53.131324
 ```
 
-Chaining is the design of performing each method in a sequential manner.
+This is a little tricky because we first specify the dataframe `df` and
+within its square brackets, we specify the column attempting to be
+filtered from the dataframe with `df['protein']` followed by the
+condition.
 
 Notes: Script here
 
@@ -141,28 +101,29 @@ Notes: Script here
 
 ---
 
-Here is an example where we perform 4 actions all in a single chain. 1.
-Filter our dataframe for cereals only from manufacturer “K” 2. We select
-the columns `calories`, `sugars` and `rating` using the method `loc` 3.
-We then use the `describe` method to find some summary statistics 4.
-`head()` is the final method used to obtain the first 5 rows of the
-describe
-dataframe
+We can do this with equalities to as
+    well.
 
 ``` python
-df[df['mfr'] == 'K'].loc[:, ["calories", "sugars", "rating"]].describe().head()
+df[ df['protein'] == 4]
 ```
 
 ```out
-         calories     sugars     rating
-count   23.000000  23.000000  23.000000
-mean   108.695652   7.565217  44.038462
-std     22.218818   4.500768  14.457434
-min     50.000000   0.000000  29.924285
-25%    100.000000   3.000000  34.478442
+                                  mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
+name                                                                                                                                               
+100% Bran                           N  Cold        70        4    1     130   10.0    5.0       6     280        25      3     1.0  0.33  68.402973
+All-Bran                            K  Cold        70        4    1     260    9.0    7.0       5     320        25      3     1.0  0.33  59.425505
+All-Bran with Extra Fiber           K  Cold        50        4    0     140   14.0    8.0       0     330        25      3     1.0  0.50  93.704912
+Life                                Q  Cold       100        4    2     150    2.0   12.0       6      95        25      2     1.0  0.67  45.328074
+Maypo                               A   Hot       100        4    1       0    0.0   16.0       3      95        25      2     1.0  1.00  54.850917
+Muesli Raisins; Dates; & Almonds    R  Cold       150        4    3      95    3.0   16.0      11     170        25      3     1.0  1.00  37.136863
+Muesli Raisins; Peaches; & Pecans   R  Cold       150        4    3     150    3.0   16.0      11     170        25      3     1.0  1.00  34.139765
+Quaker Oat Squares                  Q  Cold       100        4    1     135    2.0   14.0       6     110        25      3     1.0  0.50  49.511874
 ```
 
-This chain avoided the use of 3 intermediate objects.
+Now we get all the cereals with a protein content of 4g per serving. The
+key point to remember here is that we use **2** equal signs, else our
+code will return an error.
 
 Notes: Script here
 
@@ -178,30 +139,259 @@ Notes: Script here
 
 ---
 
-Ok so great, we can cut out creating intermediate variable but now we
-just have a really long line of code that’s a bit hard to read\!
-
-How can we make this easier to understand? In this course we suggests
-giving a new line for each method. We can do this by wrapping our code
-in parenthesis and making a new line before each period. It’s good
-practice to indent and have the methods line up to make it espectially
-clear.
+We can filter on categorical columns too. In this example maybe I want
+only cereals from the manufacturer “Q” (For
+    Quakers)
 
 ``` python
-(df[df['mfr'] == 'K'].loc[:, ["calories", "sugars", "rating"]]
-                     .describe()
-                     .head()
-)
+df[ df['mfr'] == 'Q']
 ```
 
 ```out
-         calories     sugars     rating
-count   23.000000  23.000000  23.000000
-mean   108.695652   7.565217  44.038462
-std     22.218818   4.500768  14.457434
-min     50.000000   0.000000  29.924285
-25%    100.000000   3.000000  34.478442
+                   mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
+name                                                                                                                                
+100% Natural Bran    Q  Cold       120        3    5      15    2.0    8.0       8     135         0      3     1.0  1.00  33.983679
+Cap'n'Crunch         Q  Cold       120        1    2     220    0.0   12.0      12      35        25      2     1.0  0.75  18.042851
+Honey Graham Ohs     Q  Cold       120        1    2     220    1.0   12.0      11      45        25      2     1.0  1.00  21.871292
+Life                 Q  Cold       100        4    2     150    2.0   12.0       6      95        25      2     1.0  0.67  45.328074
+Puffed Rice          Q  Cold        50        1    0       0    0.0   13.0       0      15         0      3     0.5  1.00  60.756112
+Puffed Wheat         Q  Cold        50        2    0       0    1.0   10.0       0      50         0      3     0.5  1.00  63.005645
+Quaker Oat Squares   Q  Cold       100        4    1     135    2.0   14.0       6     110        25      3     1.0  0.50  49.511874
+Quaker Oatmeal       Q   Hot       100        5    2       0    2.7    1.0       1     110         0      1     1.0  0.67  50.828392
 ```
+
+Here we are using the double equal signs we saw in the last slide.
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+## Multiple Condition Filtering - “and”
+
+We now know how to filter on one condition but how do we filter if we
+have many? Let’s say we only wanted cereals with a protein content
+between 4 to 5
+    grams?
+
+``` python
+df[ (df['protein'] >= 4) & (df['protein'] <= 5) ]
+```
+
+```out
+                                  mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
+name                                                                                                                                               
+100% Bran                           N  Cold        70        4    1     130   10.0    5.0       6     280        25      3     1.0  0.33  68.402973
+All-Bran                            K  Cold        70        4    1     260    9.0    7.0       5     320        25      3     1.0  0.33  59.425505
+All-Bran with Extra Fiber           K  Cold        50        4    0     140   14.0    8.0       0     330        25      3     1.0  0.50  93.704912
+Life                                Q  Cold       100        4    2     150    2.0   12.0       6      95        25      2     1.0  0.67  45.328074
+...                                ..   ...       ...      ...  ...     ...    ...    ...     ...     ...       ...    ...     ...   ...        ...
+Muesli Raisins; Dates; & Almonds    R  Cold       150        4    3      95    3.0   16.0      11     170        25      3     1.0  1.00  37.136863
+Muesli Raisins; Peaches; & Pecans   R  Cold       150        4    3     150    3.0   16.0      11     170        25      3     1.0  1.00  34.139765
+Quaker Oat Squares                  Q  Cold       100        4    1     135    2.0   14.0       6     110        25      3     1.0  0.50  49.511874
+Quaker Oatmeal                      Q   Hot       100        5    2       0    2.7    1.0       1     110         0      1     1.0  0.67  50.828392
+
+[9 rows x 15 columns]
+```
+
+Code Explained:  
+We need to use the special symbol `&` meaning “and”. This means that
+both conditions must hold to be returned in the new dataframe. Each
+condition is wrapped with parentheses to distinguish the conditions from
+one another.
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+Next we will look at a case where we filter on 2 different columns.
+Let’s say we only want hot cereals with a fiber content greater than
+2.
+
+``` python
+df[ (df['type'] == 'Hot') & (df['fiber'] > 2)]
+```
+
+```out
+               mfr type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
+name                                                                                                                           
+Quaker Oatmeal   Q  Hot       100        5    2       0    2.7    1.0       1     110         0      1     1.0  0.67  50.828392
+```
+
+The same rules apply to 2 different column conditions.
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+## Multiple Condition Filtering - or
+
+Ssuppose that we are interested in cereals that either have a fiber
+content greater that 6 **OR** a protein content above 5. We only need
+one of these conditions to hold to return a
+    row.
+
+``` python
+df[ (df['fiber'] > 6) | (df['protein'] > 5)]
+```
+
+```out
+                          mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
+name                                                                                                                                       
+100% Bran                   N  Cold        70        4    1     130   10.0    5.0       6     280        25      3     1.0  0.33  68.402973
+All-Bran                    K  Cold        70        4    1     260    9.0    7.0       5     320        25      3     1.0  0.33  59.425505
+All-Bran with Extra Fiber   K  Cold        50        4    0     140   14.0    8.0       0     330        25      3     1.0  0.50  93.704912
+Cheerios                    G  Cold       110        6    2     290    2.0   17.0       1     105        25      1     1.0  1.25  50.764999
+Special K                   K  Cold       110        6    0     230    1.0   16.0       3      55        25      1     1.0  1.00  53.131324
+```
+
+Instead of using the `&` symbol, we use `|` which is called the “pipe
+operator”. This means “or” in the Python programming language.
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+If we wanted a dataframe that met both of these conditions we would
+replace `|` with “and” (`&`) resulting in the following:
+
+``` python
+df[ (df['fiber'] > 6) & (df['protein'] > 5)]
+```
+
+```out
+Empty DataFrame
+Columns: [mfr, type, calories, protein, fat, sodium, fiber, carbo, sugars, potass, vitamins, shelf, weight, cups, rating]
+Index: []
+```
+
+Since no rows meet both conditions, a dataframe with zero rows is
+returned.
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+## Multiple Condition Filtering
+
+Let’s do one more example where we use both “and” as well as “or”
+conditions together.
+
+Let’s build on the conditions of cereals having a fiber content greater
+that 6 **OR** a protein content above 5 but this time we only want
+cereals from the manufacturer “K”.
+
+``` python
+
+df[ ((df['fiber'] > 6) | (df['protein'] > 5)) & (df['mfr'] == 'K') ]
+```
+
+```out
+                          mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
+name                                                                                                                                       
+All-Bran                    K  Cold        70        4    1     260    9.0    7.0       5     320        25      3     1.0  0.33  59.425505
+All-Bran with Extra Fiber   K  Cold        50        4    0     140   14.0    8.0       0     330        25      3     1.0  0.50  93.704912
+Special K                   K  Cold       110        6    0     230    1.0   16.0       3      55        25      1     1.0  1.00  53.131324
+```
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+We need to take great care on including additional parentheses when
+needed. If we did not include another set of parentheses around our “or”
+conditions, this is what would have been
+    returned:
+
+``` python
+df[ (df['fiber'] > 6) | (df['protein'] > 5) & (df['mfr'] == 'K') ]
+```
+
+```out
+                          mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
+name                                                                                                                                       
+100% Bran                   N  Cold        70        4    1     130   10.0    5.0       6     280        25      3     1.0  0.33  68.402973
+All-Bran                    K  Cold        70        4    1     260    9.0    7.0       5     320        25      3     1.0  0.33  59.425505
+All-Bran with Extra Fiber   K  Cold        50        4    0     140   14.0    8.0       0     330        25      3     1.0  0.50  93.704912
+Special K                   K  Cold       110        6    0     230    1.0   16.0       3      55        25      1     1.0  1.00  53.131324
+```
+
+Python will now move from left to right and in this case, it will select
+all the cereals with a fiber content greater than 6 *or* all the cereal
+satisfying a protein content above 5 made by manufacturer “K”.
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
 
 # Let’s apply what we learned\!
 

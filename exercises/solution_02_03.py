@@ -7,4 +7,4 @@ pokemon_df = pd.read_csv('https://raw.githubusercontent.com/UBC-MDS/MCL-DSCI-511
 
 # Display the first 10 rows
 
-pokemon_df.head()
+pokemon_df.head(10)

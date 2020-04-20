@@ -59,8 +59,8 @@ Notes: Script here.
 
 Let's import pandas and bring in a dataset named `cereal.csv` using the name of the cereals as the index like we did last time with `index_col=0`.
 
-Attribution: 
-_“[80 Cereals](https://www.kaggle.com/crawford/80-cereals/)” (c) by [Chris Crawford](https://www.linkedin.com/in/crawforc3/) is licensed under [Creative Commons Attribution-ShareAlike 3.0 Unported](http://creativecommons.org/licenses/by-sa/3.0/)
+Attribution:     
+_“[80 Cereals](https://www.kaggle.com/crawford/80-cereals/)” (c) by [Chris Crawford](https://www.linkedin.com/in/crawforc3/) is licensed under [Creative Commons Attribution-ShareAlike 3.0 Unported](http://creativecommons.org/licenses/by-sa/3.0/)_
 
 ```{python }
 import pandas as pd

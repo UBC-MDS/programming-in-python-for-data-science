@@ -20,8 +20,8 @@ Notes: Script here.
 
 ## Reading in Different File Types
 
-In the last module we learned how to read in a `csv` file but we are not
-restricted to that file type.  
+In the last module, we learned how to read in a `csv` file but loading
+in data is not restricted to this file type.  
 `pandas` facilitates the loading of data from many different file types
 including:
 
@@ -31,11 +31,11 @@ including:
     module and it is generally a simple manner of storing data.  
   - An `xlsx` file: This is a classic Excel spreadsheet. This is
     different than a regular `csv` file as an Excel file can contain
-    many different sheets and can be formated uniquely and specifically
-    for an idividual’s needs.
+    many different sheets and can be formatted uniquely and specifically
+    for an individual’s needs.
 
-Of course there are many others , but we will focus on these for this
-course.
+Of course, there are many other file types but we will focus on these
+for this course.
 
 Notes: Script here.
 
@@ -55,16 +55,17 @@ Notes: Script here.
 
 If the data is accessible publicly on a website, you can read in data
 directly from the webpage it is stored on. For example, this code and
-all the files that make up this course is all open and can be [viewed
+all the files that make up this course are all openly available and can
+be [viewed
 online](https://github.com/UBC-MDS/MCL-DSCI-511-programming-in-python).
 The `candybar.csv` file that we used in the last module is stored at
 this
-url:  
+URL:  
 <https://raw.githubusercontent.com/UBC-MDS/MCL-DSCI-511-programming-in-python/master/data/candybars.csv>  
 You can see that it looks like a plain `txt` file with each line being a
 row and each column value separated with a comma.
 
-The code required to read in this url looks like this:
+The code required to read in this URL looks like this:
 
 ``` python
 
@@ -82,8 +83,7 @@ candybars.head()
 ```
 
 It uses the same `pd.read_csv()` function we saw when reading in `csv`
-files.  
-Pretty simple right?
+files.
 
 Notes: Script here.
 
@@ -101,13 +101,13 @@ Notes: Script here.
 
 ## Reading in a Text File
 
-Reading in `txt` files can be a little less standard in nature.
-Sometimes the character separating column values are not always commas
-like we saw above. There are many different options and when we read in
-the data, we need to specify how how data needs to be recognized. Let’s
-load in the `candybars-text.txt` file. This is the same candybar data
-but saved as a \`txt1 file. Let’s see what happen’s when we load it in
-using the same syntax we are use to.
+Reading in `txt` files can be a little less standard. Sometimes the
+character separating column values are not always commas like we saw
+above. There are many different options and when we read in the data, we
+need to specify how the data should be recognized. Let’s load in the
+`candybars-text.txt` file. This is the same as the `candybars.csv` data
+but saved as a `txt` file. Look what happens when we load it in using
+the same syntax we are used to.
 
 ``` python
 candybars = pd.read_csv('candybars-text.txt')
@@ -123,9 +123,9 @@ candybars.head()
 4             Twix\t58\t1\t0\t1\t0\t1\t0\t0\t1\tBoth
 ```
 
-Oh no\! This is not ideal. What you should notice is instead of each
-column value being separated by a column, it is now separated by `\t`.
-This is called the *Delimiter*.
+This is not ideal. What you should notice is instead of each column
+value being separated by a column, it is now separated by `\t`. This is
+called the **delimiter**.
 
 Notes: Script here.
 
@@ -158,8 +158,10 @@ candybars.head()
 4          Twix      58          1        0        1       0                  1        0                0      1                     Both
 ```
 
-Ah. That’s much better. We are not married to the delimiter being `\t`.
-We can specify any character combination to accomodate other data files.
+That’s much better. `txt` files are not married to the delimiter being
+`\t`. The character combination is endless to accommodate other txt
+files.
+
 Notes: Script here.
 
 <html>
@@ -177,28 +179,28 @@ Notes: Script here.
 ## Reading in an Excel File (`xlsx`)
 
 Excel files need special attention because they give the user the
-capability of additional formating including saving multiple dataframes
+capability of additional formatting including saving multiple dataframes
 on different “sheets” within a single file. This means that if that is
 the case, we need to specify which one we want. Since this is a new type
-of animal we also need a new function. Enter `read_excel()`.
+of animal, we also need a new verb. Enter `read_excel()`.
 
-We have our candybars dataframe saved as an excel spreadsheet named
-`foods.xlsx` on a sheet named `candybars`.  
+We have our “candybars” dataframe saved as an excel spreadsheet named
+`foods.xlsx` on a sheet named `chocolate`.  
 Here is how we would read it in:
 
 ``` python
 
-candybars = pd.read_excel('foods.xlsx', sheet_name='candybars')
+candybars = pd.read_excel('foods.xlsx', sheet_name='chocolate')
 candybars.head()
 ```
 
 ```out
-  This dataset was created by Hayley Boyce in February 2020. Unnamed: 1 Unnamed: 2 Unnamed: 3 Unnamed: 4 Unnamed: 5         Unnamed: 6 Unnamed: 7       Unnamed: 8 Unnamed: 9               Unnamed: 10
-0  Note this is not a complete dataset and there ...                NaN        NaN        NaN        NaN        NaN                NaN        NaN              NaN        NaN                       NaN
-1                                               name             weight  chocolate    peanuts    caramel     nougat  cookie_wafer_rice    coconut  white_chocolate      multi  available_canada_america
-2                                       Coffee Crisp                 50          1          0          0          0                  1          0                0          0                    Canada
-3                                       Butterfinger                184          1          1          1          0                  0          0                0          0                   America
-4                                               Skor                 39          1          0          1          0                  0          0                0          0                      Both
+           name  weight  chocolate  peanuts  caramel  nougat  cookie_wafer_rice  coconut  white_chocolate  multi available_canada_america
+0  Coffee Crisp      50          1        0        0       0                  1        0                0      0                   Canada
+1  Butterfinger     184          1        1        1       0                  0        0                0      0                  America
+2          Skor      39          1        0        1       0                  0        0                0      0                     Both
+3      Smarties      45          1        0        0       0                  0        0                0      1                   Canada
+4          Twix      58          1        0        1       0                  1        0                0      1                     Both
 ```
 
 Notes: Script here.
@@ -217,12 +219,12 @@ Notes: Script here.
 
 ## Reading in Data from a Different File
 
-Something you’ve seen in the previous exercises is that when we read in
-the data there is alway a `data/` before the file name.  
-This is because the file we are running the current code in, is located
-in a different folder than the data. The `data` folder is a folder in
-our current directory (folder). We need to specify the path to the `csv`
-file through the
+Something you have seen in Module 1’s exercises is that when reading in
+the data there is always a `data/` before the file name.  
+This is because the file in which we are running the current code is
+located in a different folder than the data. The `data` is specifying a
+folder in our current directory (folder). We need to specify the path to
+the `csv` file through the
 subfile.
 
 <center>
@@ -248,11 +250,11 @@ Notes: Script here.
 ---
 
 This syntax is not restricted to a single subfolder and could even have
-multiple folder between the current location and the final file name.
+multiple folders between the current location and the final file name.
 
 *Example:* `data/module1/question3/candybars.csv`
 
-In this course we save all our data in a file called `data` so when
+In this course, we save all our data in a file called `data` so when
 asked to read in data, take care in future exercises to add the full
 path to the required file.
 

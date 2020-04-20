@@ -1,13 +1,12 @@
 ---
 title: 'Module 2: Not So Scary Wrangling (Table Manipulation and Chaining)'
 description:
-  'In this module you will learn how to import different types of files, perform more advanced table manipulations (modifying columns inplace with and without the apply function) as well ast method chaining conventions (style, including multi-line).'
+  'In this module, you will learn how to import different types of files, perform more advanced table manipulations (modifying and creating new columns) as well as method chaining conventions (style, including multi-line).'
 prev: /module1
 next: /module3
 type: chapter
 id: 2
 ---
-
 
 
 <exercise id="0" title="Module Learning Outcomes" type="slides">
@@ -32,19 +31,19 @@ What is a delimiter?
 
 
 <choice id="1" >
-<opt text="It defines how column values are separated." correct="true">
+<opt text="It defines how column values are separated" correct="true">
 
 Good job!
 
 </opt>
 
-<opt text="It prevents a limitation on the data being read it.">
+<opt text="It prevents a limitation on the data being read it">
 
 You may want to look over this before moving forward.
 
 </opt>
 
-<opt text="It is a manner of deleting values from a dataframe." >
+<opt text="It is a manner of deleting values from a dataframe" >
 
 You may want to look over this before moving forward.
 
@@ -54,12 +53,12 @@ You may want to look over this before moving forward.
 
 
 **Question 2**         
-What argument is needed if we want to read in our data with from an Excel spreadsheet where there are multiple dataframes saved on different sheets?
+What argument is needed if we want to read in data from an Excel spreadsheet where there is data saved on different sheets?
 
 <choice id="2" >
 <opt text='<code>header</code>'>
 
-This is not specifying a particular sheet. You want want to review this section. 
+This is not specifying a sheet.  You may want to review this section. 
 
 </opt>
 
@@ -71,7 +70,7 @@ Good job!
 
 <opt text='<code>sheet</code>' >
 
-Note quite but you are on the right track. 
+Not quite but you are on the right track. 
 
 </opt>
 
@@ -85,9 +84,9 @@ Note quite but you are on the right track.
 Let's try reading in some data from a URL using `pd.read_csv()`.      
       
 **Instructions:**    
-Running a coding exercise for the first time, could take a bit of time for everything to load. Be patient, it could take a few minutes. 
+Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
 
-**When you see `____` in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.**
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
 
 Tasks:
 
@@ -111,14 +110,14 @@ Tasks:
 Let's try reading in a `.txt` file.     
       
 **Instructions:**    
-Running a coding exercise for the first time, could take a bit of time for everything to load. Be patient, it could take a few minutes. 
+Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
 
-**When you see `____` in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.**
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
 
 Tasks:
 
 - Read in the data from a text file name `pokemon-text.txt` located in the `data` folder and save it as `pokemon_df`.
-- it's a good idea to see what the delimiter.
+- it's a good idea to see what the [delimiter](https://github.com/UBC-MDS/MCL-DSCI-511-programming-in-python/blob/binder/data/pokemon-text.txt) is.
 - Use the Pokemon column name as the index.
 - Display the first 10 rows.
 
@@ -135,12 +134,12 @@ Tasks:
 
 <exercise id="5" title="Reading in an Excel File">
 
-Let's try reading in a Excel file.    
+Let's try reading in an Excel file.    
       
 **Instructions:**    
-Running a coding exercise for the first time, could take a bit of time for everything to load. Be patient, it could take a few minutes. 
+Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
 
-**When you see `____` in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.**
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
 
 Tasks:
 - Read in the data from the text file name `pokemon.xlsx` located in the `data` folder and save it as `pokemon_df`.
@@ -170,13 +169,13 @@ Tasks:
 <exercise id="7" title="Name that Argument!">
 
 **Question 1**          
-Which argument will assign your index label when reading in your data with `pd.read_excel()`?
+Which argument will assign your row index labels when reading in your data with `pd.read_excel()`?
 
 
 <choice id="1" >
 <opt text='<code>header</code>'>
 
-You may want to look over this before moving forward.
+This labels your column names, not your row index labels. 
 
 </opt>
 
@@ -196,18 +195,18 @@ Good job!
 
 
 **Question 2**         
-Which argument will select only specific columns of the data file  with `pd.read_csv()`?
+Which argument will select only specific columns of the data file with `pd.read_csv()`?
 
 <choice id="2" >
 <opt text='<code>header</code>'>
 
-Note quite but you are on the right track. 
+Not quite but you are on the right track. 
 
 </opt>
 
 <opt text= '<code>nrows</code>' correct="true">
 
-Note quite but you are on the right track. 
+Not quite but you are on the right track. 
 
 </opt>
 
@@ -224,18 +223,18 @@ Good job!
 
 <exercise id="8" title="Using Arguments when Reading in Files">
 
-Load in the data using the most suitable arguments. 
+Load in the data using the most suitable arguments.     
       
 **Instructions:**    
-Running a coding exercise for the first time, could take a bit of time for everything to load. Be patient, it could take a few minutes. 
+Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
 
-**When you see `____` in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.**
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
 
 Tasks:
-Read in the `pokemon.csv` file using the full pathway.
-Save it as `pokemon_sample`.   
-Only load in the first 100 rows and only load in columns  `name`, `total_bs`, `type`. 
-Display the entire dataframe.
+- Read in the `pokemon.csv` file using the full pathway.
+- Save it as `pokemon_sample`.   
+- Only load in the first 100 rows and only load in columns  `name`, `total_bs`, `type`. 
+- Display the entire dataframe.
 
 
 <codeblock id="02_08">
@@ -243,7 +242,7 @@ Display the entire dataframe.
 - Are you sure you are saving your dataframe as `pokeman_df`?
 - Are you using `pd.read_csv()`?
 - Are you including the full path through the `data/` folder when calling the file name?
-- Do you have an argument `nrows=100`?
+- Do you the argument `nrows=100`?
 - Are you loading in the specified column index labels?
 - Perhaps you are using `index_col=0` when it was not required?
 
@@ -253,12 +252,12 @@ Display the entire dataframe.
 
 <exercise id="9" title="Using Arguments when Reading in Files">
 
-Let's read in a new pokemon data file using `pd.read_csv()` and the most suitable arguments to satisfie the task requirements.    
+Let's read in a new pokemon data file using `pd.read_csv()` and suitable arguments to satisfy the task requirements.    
       
 **Instructions:**    
-Running a coding exercise for the first time, could take a bit of time for everything to load. Be patient, it could take a few minutes. 
+Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
 
-**When you see `____` in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.**
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
 
 
 Tasks:
@@ -267,7 +266,7 @@ Tasks:
 - It may be a good idea to look at the data via [this link](https://github.com/UBC-MDS/MCL-DSCI-511-programming-in-python/blob/binder/data/pokemon2.csv) first. 
 - Use the Pokemon column name as the index.
 - Change the values in column `legendary` from `yes` to `True` the values `no` to `False`. 
-- Only load in the column named `attack`,	`defense`, `speed`, `type` and `lengendary`.
+- Only load in the column named `attack`,    `defense`, `speed`, `type` and `legendary`.
 - Display the dataframe. 
 
 <codeblock id="02_09">
@@ -287,7 +286,7 @@ Tasks:
 
 <exercise id="10" title="Column Renaming and Creation" type="slides">
 
-<slides source="module2_07">
+<slides source="module2_10">
 </slides>
 
 </exercise>
@@ -326,14 +325,16 @@ If you want your dataframe to drop a column for good using `df.drop()`, it is ne
 
 
 <choice id="2" >
-<opt text='True'>
-When using `df.drop()` we need to save the dataframe in a object for the changes to be permanent
+<opt text='True' correct="true">
+
+Good job!
+
 
 </opt>
 
-<opt text='False'  correct="true">
+<opt text='False' >
 
-Good job!
+When using `df.drop()` we need to save the dataframe in an object for the changes to be permanent
 
 </opt>
 
@@ -342,48 +343,50 @@ Good job!
 </exercise>
 
 
-<exercise id="11" title="Renaming a Column Index">
+<exercise id="12" title="Renaming a Column Index">
 
 Let's rename one of the columns in our `pokemon.csv` data.     
       
 **Instructions:**    
-Running a coding exercise for the first time, could take a bit of time for everything to load. Be patient, it could take a few minutes. 
+Running a coding exercise for the first time, could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
 
-**When you see `____` in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.**
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
 
 Tasks:
 
 - Rename the column `sp_attack` to `special_a` and `sp_defense` to `special_d` using `df.rename()` only once.
 - Save the new dataframe as `pokemon_special`.
+- Display the first 5 rows of the dataframe.
 
 
-<codeblock id="02_11">
+<codeblock id="02_12">
 
 - Are you using `pokemon.rename()`?
 - Are you saving the new dataframe as the correct name?
-- Are you using the argument `columns ={'sp_attack' : 'special_a','sp_defense' : 'special_d'}`?
+- Are you using the argument `columns ={'sp_attack' : 'special_a', 'sp_defense' : 'special_d'}`?
 
 </codeblock>
 
 </exercise>
 
-<exercise id="12" title="Creating a New Column">
+<exercise id="13" title="Creating a New Column">
 
-For this exercise we are going to create and drop some column from our dataframe. 
+For this exercise, we are going to create and drop some columns from our dataframe. 
       
 **Instructions:**    
-Running a coding exercise for the first time, could take a bit of time for everything to load. Be patient, it could take a few minutes. 
+Running a coding exercise for the first time, could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
 
-**When you see `____` in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.**
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
 
 Tasks:
 
 - Create a new column named `total_special` that is the sum of column `sp_attack` and `sp_defense`.
 - Save it as an object named `pokemon_new_col`.
 - Drop the column `deck_no` from `pokemon_new_col` and save this dataframe as an object named `pokemon_dropped`.
+- Display the first 5 rows of the dataframe.
 
 
-<codeblock id="02_12">
+<codeblock id="02_13">
 
 - Are you using `pokemon.assign()`?
 - Are you saving the new dataframes as the correct names?
@@ -396,29 +399,29 @@ Tasks:
 </exercise>
 
 
-<exercise id="13" title="Data Filtering" type="slides">
+<exercise id="14" title="Data Filtering" type="slides">
 
-<slides source="module2_10">
+<slides source="module2_14">
 </slides>
 
 </exercise>
 
-<exercise id="14" title="Single Condition Filtering">
+<exercise id="15" title="Single Condition Filtering">
 
-Let's start the exercises with some straight forward single conditions.    
+Starting the exercises with some straight forward single condition filtering.    
       
 **Instructions:**    
-Running a coding exercise for the first time, could take a bit of time for everything to load. Be patient, it could take a few minutes. 
+Running a coding exercise for the first time, could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
 
-**When you see `____` in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.**
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
 
 Tasks:
 
-- Create a new dataframe named `fire_pokemon`n containing only the rows of `type` "fire".
+- Create a new dataframe named `fire_pokemon` containing only the rows of `type` "fire".
 - Display the first 10 rows of the dataframe.
 
 
-<codeblock id="02_14">
+<codeblock id="02_15">
 
 - Are you sure you are saving your dataframe as the correct object names?
 - Are you using `pokemon['type'] == 'fire'` as your condition?
@@ -437,7 +440,7 @@ You can answer this question using <code>fire_pokemon.shape</code>
 
 <opt text='52' correct="true">
 
-That's great! Did you use <code>fire_pokemon.shape</code>?
+That's great!  Did you use <code>fire_pokemon.shape</code>?
 
 </opt>
 
@@ -451,14 +454,14 @@ You can answer this question using <code>fire_pokemon.shape</code>
 
 </exercise>
 
-<exercise id="15" title='Filtering using "and" or "or"'>
+<exercise id="16" title='Filtering using "and" or "or"'>
 
 Let's find all the pokemon that meet multiple requirements.  
       
 **Instructions:**    
-Running a coding exercise for the first time, could take a bit of time for everything to load. Be patient, it could take a few minutes. 
+Running a coding exercise for the first time, could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
 
-**When you see `____` in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.**
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
 
 Tasks:
 
@@ -467,7 +470,7 @@ Tasks:
 - Display the first 10 rows of the dataframe.
 
 
-<codeblock id="02_15">
+<codeblock id="02_16">
 
 - Are you sure you are saving your dataframe as the correct object names?
 - Are you separating your conditions with brackets?
@@ -478,24 +481,24 @@ Tasks:
 
 
 Use the coding cell above to do any coding that will help answer the following question: 
-**which `type` have the most Pokemon with attack and defense scores greater than 100?**
+**which `type` has the most Pokemon with attack and defense scores greater than 100?**
 
-<choice id="1"  correct="true">
-<opt text='Rock and Bug'>
+<choice id="1">
+<opt text='Rock and Bug' correct="true">
 
-You must have used <code>mighty_pokemon['type'].value_counts()</code>!
+Well done!
 
 </opt>
 
 <opt text='Water and Rock'>
 
-You can use <code>mighty_pokemon['type'].value_counts()</code> to find out.
+You can use `mighty_pokemon['type'].value_counts()` to find out.
 
 </opt>
 
 <opt text='Bug and Water' >
 
-You can use <code>mighty_pokemon['type'].value_counts()</code> to find out.
+You can use `mighty_pokemon['type'].value_counts()` to find out.
 
 </opt>
 
@@ -507,22 +510,23 @@ You can use <code>mighty_pokemon['type'].value_counts()</code> to find out.
 
 </exercise>
 
-<exercise id="16" title='Filtering using "and" and "or"'>
+<exercise id="17" title='Filtering using "and" and "or"'>
 
 Let's find all the pokemon that meet multiple requirements.  
       
 **Instructions:**    
-Running a coding exercise for the first time, could take a bit of time for everything to load. Be patient, it could take a few minutes. 
+Running a coding exercise for the first time, could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
 
-**When you see `____` in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.**
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
 
 Tasks:
 
 - Filter the dataframe for the pokemon that have either a total base score (`total_bs`) greater than 650 or a `speed` greater than 140.
-- All the pokeman must be `legendary` as well(=1). 
+- All the pokemon must be `legendary` as well(=1). 
 - Save this dataframe as an object named `legendary_pokemon`.
+- Display the first 10 rows of the dataframe.
 
-<codeblock id="02_16">
+<codeblock id="02_17">
 
 - Are you sure you are saving your dataframe as the correct object names?
 - Are you separating your conditions with brackets?
@@ -559,14 +563,14 @@ Nice work!
 
 </exercise>
 
-<exercise id="17" title="Chaining and Method Chaining" type="slides">
+<exercise id="18" title="Chaining and Method Chaining" type="slides">
 
-<slides source="module2_14">
+<slides source="module2_18">
 </slides>
 
 </exercise>
 
-<exercise id="18" title="Function vs. Attributes">
+<exercise id="19" title="Function vs. Attributes">
 
 **Question 1**          
 Which of the following statements is true?
@@ -597,9 +601,9 @@ Good job!
 Which of the following statements is true?
 
 <choice id="2" >
-<opt text='Functions are associate with an object'>
+<opt text='Functions are associated with an object'>
 
-Functions are not associated with any object 
+Functions are not associated with any object.
 
 </opt>
 
@@ -620,26 +624,26 @@ The reverse is true; methods are a type of function.
 </exercise>
 
 
-<exercise id="19" title="Practice Chaining">
+<exercise id="20" title="Practice Chaining">
 
- Using our Pokemon dataset we are going to make a plot.  
+ Make a plot using our Pokemon dataset and chaining.     
       
 **Instructions:**    
-Running a coding exercise for the first time, could take a bit of time for everything to load. Be patient, it could take a few minutes. 
+Running a coding exercise for the first time, could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
 
-**When you see `____` in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.**
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
 
 Tasks:
 
 - Chain the following methods in the order specified.
 - Name the full chain `pokemon_plot`.
-- First, create a new column named `AD_total` by adding the `attack` and `defense` columns from the pokemon dataset.
-- Next drop the `legendary` column.
-- Use `loc[]` and slice from `speed` to `AD_total`.
+- First, create a new column named `AD_total` by adding the `attack` and `defense` columns from the pokemon dataset( `.assign()` may come in handy here). 
+- Next, drop the `legendary` column using the method `.drop()`.
+- Use `loc[]` and slice from column `speed` to `AD_total`.
 - Finally use `.plot.scatter()` to plot `AD_total` on the x-axis and `capture_rt` on the y-axis.
 - Use a new line for each method.
 
-<codeblock id="02_19">
+<codeblock id="02_20">
 
 - Are you sure you are saving your dataframe as the correct object names?
 - Are you using `pd.read_csv()` and `pd.read_excel()` in the correct locations?
@@ -648,17 +652,17 @@ Tasks:
 
 </exercise>
 
-<exercise id="20" title="Grouping and Aggregating" type="slides">
+<exercise id="21" title="Grouping and Aggregating" type="slides">
 
-<slides source="module2_17">
+<slides source="module2_21">
 </slides>
 
 </exercise>
 
 
-<exercise id="21" title="Fruit Salad Grouping and Aggregating">
+<exercise id="22" title="Fruit Salad Grouping and Aggregating">
 
-Remember the fruit salad dataframe named `fruit_salad`? vRefer to it to answer the next 2 questions:
+Remember the fruit salad dataframe named `fruit_salad`?  Refer to it to answer the next 2 questions:
 
 ```out
                  colour    location   seed   shape    sweetness   water-content  weight
@@ -702,7 +706,7 @@ Not quite but you are on the right track.
 </choice> 
 
 **Question 2**         
-Which of the follow would be used get the full dataframe of the `round` group from the grouby object named `shape_groups`?
+Which of the following, would be used to get the full dataframe of the `round` group from the grouby object named `shape_groups`?
 
 <choice id="2" >
 <opt text="<code>shape_groups.get_group('round')</code>" correct="true">
@@ -727,17 +731,17 @@ Are you using the right type of parentheses?
 
 </exercise>
 
-<exercise id="22" title="Practice Grouping">
+<exercise id="23" title="Practice Grouping">
 
 Find the mean of some Pokemon "types" using `.mean()` and `.groupby()`.
 
       
 **Instructions:**    
-Running a coding exercise for the first time, could take a bit of time for everything to load. Be patient, it could take a few minutes. 
+Running a coding exercise for the first time, could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
 
-**When you see `____` in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.**
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
 
-_**Make sure you remove the hash (`#`) symbol in the coding portions of this question. We have commented them so that the line won't execute and you can test your code after each step.**_ 
+_**Make sure you remove the hash (`#`) symbol in the coding portions of this question.  We have commented them so that the line won't execute and you can test your code after each step.**_ 
 
 Tasks:
 
@@ -749,11 +753,11 @@ Tasks:
     - `water` and save it in an object named `water_mean`
 
 
-<codeblock id="02_22">
+<codeblock id="02_23">
 
 - Are slicing the dataframe with `pokemon.loc[ : , 'attack': 'type']`? 
 - Are you grouping by `type`? 
-- Are your using `.mean()` on the `pokemon_type` dataframe?
+- Are you using `.mean()` on the `pokemon_type` dataframe?
 - Are you naming the mean speed objects correctly?
 - Are you obtaining the mean values using `.loc[]`?
 
@@ -761,30 +765,30 @@ Tasks:
 
 </exercise>
 
-<exercise id="23" title="Practice Aggregating">
+<exercise id="24" title="Practice Aggregating">
 
   
       
 **Instructions:**    
-Running a coding exercise for the first time, could take a bit of time for everything to load. Be patient, it could take a few minutes. 
+Running a coding exercise for the first time, could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
 
-**When you see `____` in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.**
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
 
 Tasks:
 - Select the pokemon columns `attack`, `defense`, `capture_rt`, `total_bs`, and `legendary`.
 - Save the new dataframe over object `pokemon`.
 - Make a groupby object on the column `legendary` and name it pokemon_type.
 - Make a new dataframe named `legendary_stats` using `.agg()` containing the `max` and `min` values of legendary groups.
-- Using `.loc[]` obtain from the `legendary_stats` dataframe, the following values:
-    - The capture rate (capture_rt) stats for non legendary (`=0`) pokemon and save them as object `capture_0` 
+- Using `.loc[],` obtain from the `legendary_stats` dataframe, the following values:
+    - The capture rate (capture_rt) stats for non-legendary (`=0`) pokemon and save them as object `capture_0` 
     - The total base score (total_bs) stats for legendary (`=1`) pokemon and save them as object `total_1`
 
 
-<codeblock id="02_23">
+<codeblock id="02_24">
 
 - Are selecting the dataframe with `pokemon.loc[ : , ['attack',  'defense', 'capture_rt', 'total_bs', 'legendary']]`? 
 - Are you grouping by `legendary`? 
-- Are your using `.agg()` on the `legendary_stats` dataframe?
+- Are you using `.agg()` on the `legendary_stats` dataframe?
 - Are you naming the objects correctly?
 - Are you obtaining the stats using `.loc[]`?
 
@@ -792,3 +796,8 @@ Tasks:
 
 </exercise>
 
+
+<exercise id="25" title="What Did We Just Learn?" type="slides">
+<slides source="module2_25">
+</slides>
+</exercise>

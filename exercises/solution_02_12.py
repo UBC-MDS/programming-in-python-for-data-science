@@ -2,17 +2,16 @@ import pandas as pd
 
 pokemon = pd.read_csv('data/pokemon.csv', index_col=0)
 
-# Create a new column named total_special that is the sum of column sp_attack and sp_defense
-# Save it as an object named pokemon_new_col
+# Rename the column sp_attack to special_a and
+# sp_defense to special_d using df.rename() once  
+# Save the new dataframe as `pokemon_special`
 
-pokemon_new_col = pokemon.assign(total_special = pokemon['sp_attack'] + pokemon['sp_defense'])
 
-# Drop the column deck_no from pokemon_new_col and save this dataframe as an object named pokemon_dropped
-
-pokemon_dropped = pokemon_new_col.drop(columns='deck_no')
+pokemon_special = pokemon.rename(columns ={'sp_attack' : 'special_a',
+                                           'sp_defense' : 'special_d'})
 
 # Display the first 5 rows of the dataframe
 
-pokemon_dropped
+pokemon_special.head()
 
 

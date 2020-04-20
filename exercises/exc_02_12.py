@@ -2,12 +2,9 @@ import pandas as pd
 
 pokemon = pd.read_csv('data/pokemon.csv', index_col=0)
 
-# Create a new column named total_special that is the sum of column sp_attack and sp_defense
-# Save it as an object named pokemon_new_col
-
-____ = ____
-
-# Drop the column deck_no from pokemon_new_col and save this dataframe as an object named pokemon_dropped
+# Rename the column sp_attack to special_a and
+# sp_defense to special_d using df.rename() once  
+# Save the new dataframe as `pokemon_special`
 
 ____ = ____
 

@@ -150,6 +150,7 @@ Let's delete the column `weight_oz` that we just made.
 
 ```{python}
 df.drop( columns= 'weight_oz')
+
 ```
 
 
@@ -161,14 +162,13 @@ Notes: Script here
 </audio></html>
 
 ---
-
-If you scroll back to the last slide you'll notice we didn't save over the dataframe so the dataframe `df` still will contain `weight_oz`.
+if you scroll back to the last slide you'll notice we didn't save over the dataframe so the dataframe `df` still will contain `weight_oz`
 
 ```{python}
 df.head()
 ```
 
-Let's save it this time and remove `weight_oz` and `coconut` together. We have to put the columns we want to drop in square brackets. 
+Let's save it this time and remove `weight_oz` and `coconut` together. We put the columns we want to drop in square brackets. 
 
 ```{python}
 df = df.drop(columns=['weight_oz', 'coconut'])

@@ -2,29 +2,35 @@ import pandas as pd
 
 pokemon = pd.read_csv('data/pokemon.csv', index_col=0)
 
-# Select the pokemon columns attack, defense, capture_rt, total_bs, and legendary 
+# Slice the pokemon columns from attack to type 
 # Save the new dataframe over object pokemon
 
-pokemon = pokemon.loc[ : , ['attack',  'defense', 'capture_rt', 'total_bs', 'legendary']]
-pokemon
+pokemon = pokemon.loc[ : , 'attack': 'type']
 
-# Make a groupby object on the column legendary and name it pokemon_type
+# Make a groupby object on the column type and name it pokemon_type
 
-pokemon_legendary = pokemon.groupby(by='legendary')
+pokemon_type = pokemon.groupby(by='type')
 
-# Make a new dataframe named legendary_stats using .agg() containing the max and min values of legendary groups
+# Make a new dataframe named type_means using .mean() 
+# containing the mean values of each pokemon type 
 
-legendary_stats = pokemon_legendary.agg(['max', 'min']) 
-legendary_stats
+type_means = pokemon_type.mean() 
+type_means
 
-# Using .loc[] obtain from the legendary_stats dataframe, the following values:
+# Using .loc[] obtain from the type_means dataframe, the mean speed value of the 
+# following pokemon types:
+ 
+# fire and save it in an object named fire_mean_speed
 
-# The capture rate (capture_rt) stats for non legendary (=0) pokemon and save them as object capture_0
+fire_mean_speed = type_means.loc['fire', 'speed']
+fire_mean_speed
 
-capture_0 = legendary_stats.loc[0, 'capture_rt']
-capture_0
+# ice and save it in an object named ice_mean_speed
 
-# The total base score (total_bs) stats for legendary (=1) pokemon and save them as object total_1
+ice_mean_speed = type_means.loc['ice', 'speed']
+ice_mean_speed
 
-total_1 = legendary_stats.loc[ 1, 'total_bs']
-total_1
+# water and save it in an object named water_mean_speed
+
+ice_mean = type_means.loc['water', 'speed']
+ice_mean

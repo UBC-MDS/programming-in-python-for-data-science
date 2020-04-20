@@ -2,13 +2,12 @@ import pandas as pd
 
 pokemon = pd.read_csv('data/pokemon.csv', index_col=0)
 
-# Filter the dataframe for the pokemon that have attack and defense values both greater than 100
-# Save this dataframe as an object named mighty_pokemon
+# Create a new dataframe named fire_pokemon containing only the rows of type "fire" 
 
-mighty_pokemon = pokemon[(pokemon['defense'] > 100) & (pokemon['attack'] > 100)]
+fire_pokemon = pokemon[pokemon['type'] == 'fire']
 
 # Display the first 10 rows of the dataframe
 
-mighty_pokemon.head()
+fire_pokemon.head(10)
 
 

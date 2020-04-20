@@ -2,19 +2,24 @@
 type: slides
 ---
 
-# Module Learning Outcomes
+# What Did we Learn and What to Expect in Assignment 1
 
-Notes: In this module, you will learn how to import different types of files, perform more advanced table manipulations (modifying and creating new columns) as well as method chaining conventions (style, including multi-line).
+Notes: Script here
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
 
 ---
 
-# Module Learning Outcomes
+# Summary  
 
 <html>
 <video style="display:block; margin: 0 auto;" width="60%" height="auto" controls >
   <source src="sample_video.mp4" type="video/mp4">
 Your browser does not support the video tag.
 </video></html>
+
 
 Notes:
 By the end of the module, students are expected to:
@@ -26,10 +31,43 @@ By the end of the module, students are expected to:
 
 ---
 
-# Let's Start!
+# Assignment Instructions
+
+The assignment will concentrate not only on the learning objectives above.
 
 Notes: Script here
 <html>
 <audio controls >
   <source src="placeholder_audio.mp3" />
 </audio></html>
+
+---
+
+## Attribution
+
+The [cereal dataset]:
+
+ “[80 Cereals](https://www.kaggle.com/crawford/80-cereals/)” (c) by [Chris Crawford](https://www.linkedin.com/in/crawforc3/) is licensed
+under [Creative Commons Attribution-ShareAlike 3.0 Unported](http://creativecommons.org/licenses/by-sa/3.0/)
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+
+# On to Assignment 2!
+
+Notes: Insert audio here.
+
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+
+

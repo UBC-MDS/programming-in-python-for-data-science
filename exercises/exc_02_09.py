@@ -4,7 +4,7 @@ import pandas as pd
 # Save it as pokemon_df2
 # Use the pokemon name as the index          
 # Change the values in column legendary from yes to True the values no, to False     
-# Only load in the column named attack, defense, speed, type and legendary 
+# Only load in the columns named attack, defense, speed, type and legendary 
 
 ____ = ____(____,
             ____,
