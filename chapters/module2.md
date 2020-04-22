@@ -660,7 +660,7 @@ Tasks:
 
 <exercise id="22" title="Fruit Salad Grouping and Aggregating">
 
-Remember the fruit salad dataframe named `fruit_salad`?  Refer to it to answer the next 2 questions:
+Remember the fruit salad dataframe named `fruit_salad`?  Refer to it for the next two questions.
 
 ```out
                  colour    location   seed   shape    sweetness   water-content  weight
@@ -677,14 +677,12 @@ dragon-fruit    magenta      china    True   round      False          96       
        lemon     yellow     mexico   False    oval      False          83          65
 ```
 
-
-
 **Question 1**          
 Which code would create a grouby object for the column `shape`? 
 
 <choice id="1" >
 <opt text="<code>fruit_salad.get_groups(by='shape')</code>">
-
+z
 Not quite but you are on the right track. 
 
 </opt>
@@ -704,7 +702,7 @@ Not quite but you are on the right track.
 </choice> 
 
 **Question 2**         
-Which of the following, would be used to get the full dataframe of the `round` group from the grouby object named `shape_groups`?
+Which of the following would be used to get the full dataframe of the `round` group from the grouby object named `shape_groups`?
 
 <choice id="2" >
 <opt text="<code>shape_groups.get_group('round')</code>" correct="true">

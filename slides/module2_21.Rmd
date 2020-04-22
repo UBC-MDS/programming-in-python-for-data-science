@@ -60,7 +60,7 @@ Notes: Script here
 
 # Grouping a Dataframe 
 
-Often, we are interested in examining specific groups in our data.  `df.groupby()` allows us to group our data based on a column
+Often, we are interested in examining specific groups in our data.  `df.groupby()` allows us to group our data based on a column.
 
 Let's group our candybars dataframe on the `mfr` column and save it as `mfr_group`.
 
@@ -90,7 +90,7 @@ Notes: Script here
 
 ---
 
-A `DataFrame GroupBy` object contains information about the groups of the dataframe.  We can access it with the `.groups` attribute (noun)
+A `DataFrame GroupBy` object contains information about the groups of the dataframe.  We can access it with the `.groups` attribute (noun).
 
 ```{python}
 mfr_group.groups
@@ -120,7 +120,7 @@ Notes: Script here
 
 ---
 
-We can get the full dataframe of just the group `K` using the method `get_group()`
+We can get the full dataframe of just the group `K` using the method `get_group()`.
 
 ```{python}
 mfr_group.get_group('K')
@@ -173,7 +173,7 @@ Notes: Script here
 
 "Aggregating" means to combine elements. 
 Luckily there is a particular method that allows us to collect multiple statistics together- aggregating them in 1 step. 
-`df.agg()` can be used on its own:
+`df.agg()` can be used on its own, without groupby:
 
 ```{python}
 df.agg('mean')
