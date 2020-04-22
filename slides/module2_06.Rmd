@@ -72,8 +72,9 @@ We are going to introduce a few:
 
 If you wish to know more, you can find the documentation at the following links:
 
-- [`pd.read_csv()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html) 
-- [`pd.read_excel()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_excel.html)
+- <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html" target="_blank">`pd.read_csv()`</a>
+- <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_excel.html" target="_blank">`pd.read_excel()`</a>
+
       
 _Please note that these arguments can be used for both `pd.read_csv()` and `pd.read_excel()`._ 
 
@@ -88,14 +89,8 @@ Notes: Script here.
 ## header
 
 We have been lucky up until now that all the data we have loaded in has been particularly straight forward.  Sometimes with data, there are a few lines of text explaining a few important points about the file.  We do not want to include this in our dataframe and therefore we need to specify exactly when our dataframe begins.  This is where `header` comes in. 
-Take the next file as an example `candybars-h.csv`.  
+Take a look at the <a href="https://github.com/UBC-MDS/MCL-DSCI-511-programming-in-python/blob/master/slides/candybars-h.csv" target="_blank">`candybars-h.csv` file </a> as an example.
 
-```{python}
-candybars = pd.read_csv('candybars-h.csv')
-candybars.head()
-```
-
-We see that there are no clear column names and things are in quite a disarray. 
 
 
 Notes: Script here.
@@ -106,9 +101,10 @@ Notes: Script here.
 
 ---
  
-If we look at the data with a regular text editor, the data doesn't start until line 3 which would be the equivalent of position 2 (since we begin at index 0). 
+If we look at the data with a regular text editor, the data doesn't start until line 3 which would be the equivalent of position 2 (since we begin at index 0).
 
 <img src='module2/header_textedit.png'  alt="404 image"/>
+
 
 Notes: Script here.
 <html>
@@ -118,13 +114,31 @@ Notes: Script here.
 
 ---
 
-We use `header=2` to indicate where our dataframe begins.
+If we load this data in without any arguments this is the result. 
+
+```{python}
+candybars = pd.read_csv('candybars-h.csv')
+candybars.head()
+```
+
+We see that there are no clear column names and things are in quite a disarray. 
+
+Notes: Script here.
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+We use `header=2` to indicate where our dataframe begins. (2 being the index position the column labels)
 
 ```{python}
 candybars = pd.read_csv('candybars-h.csv', header=2)
 candybars.head()
 ```
 
+That's looking much better. 
 
 Notes: Script here.
 <html>
@@ -155,7 +169,7 @@ Notes: Script here.
 
 ## usecols
 
-Similarly, to how `nrows` specifies how many rows to read in, `usecols` selects which columns to load from the data.  Perhaps the only columns relevant to our analysis are the columns `name`, `weight` and `available_canada_america`.  We can forgo the other columns when reading the data in. 
+Similarly to how `nrows` specifies how many rows to read in, `usecols` selects which columns to load from the data.  Perhaps the only columns relevant to our analysis are the columns `name`, `weight` and `available_canada_america`.  We can forgo the other columns when reading the data in. 
 The `usecols` argument accepts either index positions or labels.  We put the desired column index positions in square brackets for the argument. 
 
 ```{python}
@@ -171,7 +185,7 @@ Notes: Script here.
 
 ---
 
-Or we could use the column label in square brackets.
+Or we could use the column labels, also in square brackets.
 
 ```{python}
 candybars = pd.read_csv('candybars.csv', usecols=['name', 'weight', 'available_canada_america'])

@@ -37,11 +37,10 @@ We are going to introduce a few:
   - `true_values` and `false_values`
 
 If you wish to know more, you can find the documentation at the
-following
-    links:
+following links:
 
-  - [`pd.read_csv()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html)
-  - [`pd.read_excel()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_excel.html)
+  - <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html" target="_blank">`pd.read_csv()`</a>
+  - <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_excel.html" target="_blank">`pd.read_excel()`</a>
 
 *Please note that these arguments can be used for both `pd.read_csv()`
 and `pd.read_excel()`.*
@@ -67,24 +66,9 @@ been particularly straight forward. Sometimes with data, there are a few
 lines of text explaining a few important points about the file. We do
 not want to include this in our dataframe and therefore we need to
 specify exactly when our dataframe begins. This is where `header` comes
-in. Take the next file as an example `candybars-h.csv`.
-
-``` python
-candybars = pd.read_csv('candybars-h.csv')
-candybars.head()
-```
-
-```out
-  This dataset was created by Hayley Boyce in February 2020. Unnamed: 1 Unnamed: 2 Unnamed: 3 Unnamed: 4 Unnamed: 5         Unnamed: 6 Unnamed: 7       Unnamed: 8 Unnamed: 9               Unnamed: 10
-0  Note this is not a complete dataset and there ...                NaN        NaN        NaN        NaN        NaN                NaN        NaN              NaN        NaN                       NaN
-1                                               name             weight  chocolate    peanuts    caramel     nougat  cookie_wafer_rice    coconut  white_chocolate      multi  available_canada_america
-2                                       Coffee Crisp                 50          1          0          0          0                  1          0                0          0                    Canada
-3                                       Butterfinger                184          1          1          1          0                  0          0                0          0                   America
-4                                               Skor                 39          1          0          1          0                  0          0                0          0                      Both
-```
-
-We see that there are no clear column names and things are in quite a
-disarray.
+in. Take a look at the
+<a href="https://github.com/UBC-MDS/MCL-DSCI-511-programming-in-python/blob/master/slides/candybars-h.csv" target="_blank">`candybars-h.csv`
+file </a> as an example.
 
 Notes: Script here.
 
@@ -120,7 +104,41 @@ Notes: Script here.
 
 ---
 
-We use `header=2` to indicate where our dataframe begins.
+If we load this data in without any arguments this is the result.
+
+``` python
+candybars = pd.read_csv('candybars-h.csv')
+candybars.head()
+```
+
+```out
+  This dataset was created by Hayley Boyce in February 2020. Unnamed: 1 Unnamed: 2 Unnamed: 3 Unnamed: 4 Unnamed: 5         Unnamed: 6 Unnamed: 7       Unnamed: 8 Unnamed: 9               Unnamed: 10
+0  Note this is not a complete dataset and there ...                NaN        NaN        NaN        NaN        NaN                NaN        NaN              NaN        NaN                       NaN
+1                                               name             weight  chocolate    peanuts    caramel     nougat  cookie_wafer_rice    coconut  white_chocolate      multi  available_canada_america
+2                                       Coffee Crisp                 50          1          0          0          0                  1          0                0          0                    Canada
+3                                       Butterfinger                184          1          1          1          0                  0          0                0          0                   America
+4                                               Skor                 39          1          0          1          0                  0          0                0          0                      Both
+```
+
+We see that there are no clear column names and things are in quite a
+disarray.
+
+Notes: Script here.
+
+<html>
+
+<audio controls >
+
+<source src="placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+We use `header=2` to indicate where our dataframe begins. (2 being the
+index position the column labels)
 
 ``` python
 candybars = pd.read_csv('candybars-h.csv', header=2)
@@ -135,6 +153,8 @@ candybars.head()
 3      Smarties      45          1        0        0       0                  0        0                0      1                   Canada
 4          Twix      58          1        0        1       0                  1        0                0      1                     Both
 ```
+
+That’s looking much better.
 
 Notes: Script here.
 
@@ -189,7 +209,7 @@ Notes: Script here.
 
 ## usecols
 
-Similarly, to how `nrows` specifies how many rows to read in, `usecols`
+Similarly to how `nrows` specifies how many rows to read in, `usecols`
 selects which columns to load from the data. Perhaps the only columns
 relevant to our analysis are the columns `name`, `weight` and
 `available_canada_america`. We can forgo the other columns when reading
@@ -233,8 +253,7 @@ Notes: Script here.
 
 ---
 
-Or we could use the column label in square
-brackets.
+Or we could use the column labels, also in square brackets.
 
 ``` python
 candybars = pd.read_csv('candybars.csv', usecols=['name', 'weight', 'available_canada_america'])
@@ -320,8 +339,7 @@ Notes: Script here.
 
 To change the `yes` values to `True` and the `no` values to `False` we
 need to specify **BOTH** arguments with the values we wish to change in
-square
-brackets.
+square brackets.
 
 ``` python
 candybars = pd.read_csv('candybars-tf.csv', true_values= ['yes'], false_values= ['no'] )
@@ -361,8 +379,7 @@ Notes: Script here.
 
 ---
 
-We can also specify multiple values as either `True` or
-`False`.
+We can also specify multiple values as either `True` or `False`.
 
 ``` python
 candybars = pd.read_csv('candybars-tf.csv', true_values= ['Canada', 'Both'], false_values= ['America'] ) 

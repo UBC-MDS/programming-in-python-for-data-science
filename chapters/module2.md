@@ -90,9 +90,10 @@ Running a coding exercise for the first time could take a bit of time for everyt
 
 Tasks:
 
-- Use `pd.read_csv()` to read in the data from [this url](https://raw.githubusercontent.com/UBC-MDS/MCL-DSCI-511-programming-in-python/master/data/pokemon.csv) and save it as `pokeman_df`.
+- Use `pd.read_csv()` to read in the data from [this url](https://raw.githubusercontent.com/UBC-MDS/MCL-DSCI-511-programming-in-python/master/data/pokemon.csv) using the Pokemon column name as the index.
+- Save the resulting dataframe as `pokemon_df`.
 - Use the Pokemon column name as the index.
-- Display the first 10 rows.
+- Display the first 10 rows of `pokemon_df`.
 
 
 
@@ -116,10 +117,10 @@ Running a coding exercise for the first time could take a bit of time for everyt
 
 Tasks:
 
-- Read in the data from a text file name `pokemon-text.txt` located in the `data` folder and save it as `pokemon_df`.
+- Read in the data from a text file name `pokemon-text.txt` located in the `data` folder useing the Pokemon column name as the index.
+- Save the resulting dataframe as `pokemon_df`.
 - it's a good idea to see what the [delimiter](https://github.com/UBC-MDS/MCL-DSCI-511-programming-in-python/blob/binder/data/pokemon-text.txt) is.
-- Use the Pokemon column name as the index.
-- Display the first 10 rows.
+- Display the first 10 rows of `pokemon_df`.
 
 <codeblock id="02_04">
 
@@ -142,10 +143,9 @@ Running a coding exercise for the first time could take a bit of time for everyt
 **When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
 
 Tasks:
-- Read in the data from the text file name `pokemon.xlsx` located in the `data` folder and save it as `pokemon_df`.
-- there is a sheet in the excel file named `pokemon` which is where the data is stored.
-- Use the Pokemon column name as the index.
-- Display the first 10 rows.
+- Read in the data from the sheet named `pokemon` from the Excel file `pokemon.xlsx` located in the `data` folder using the Pokemon column name as the index. 
+- Save the resulting dataframe as `pokemon_df`.
+- Display the first 10 rows of `pokemon_df`.
 
 <codeblock id="02_05">
 
@@ -231,10 +231,9 @@ Running a coding exercise for the first time could take a bit of time for everyt
 **When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
 
 Tasks:
-- Read in the `pokemon.csv` file using the full pathway.
-- Save it as `pokemon_sample`.   
-- Only load in the first 100 rows and only load in columns  `name`, `total_bs`, `type`. 
-- Display the entire dataframe.
+-  Read in the first 100 rows and columns name, total_bs and type from the file `pokemon.csv`, which is located in the data directory.
+- Save the resulting dataframe as `pokemon_sample`. 
+- Display `pokemon_sample`.
 
 
 <codeblock id="02_08">
@@ -261,13 +260,12 @@ Running a coding exercise for the first time could take a bit of time for everyt
 
 
 Tasks:
-- Read in the data from a csv file name `pokemon2.csv` using the full pathway
-- Save it as `pokemon_df2`.
+- Read in the data from a csv file name `pokemon2.csv`  located in the `data` directory using the Pokemon column name as the index.
 - It may be a good idea to look at the data via [this link](https://github.com/UBC-MDS/MCL-DSCI-511-programming-in-python/blob/binder/data/pokemon2.csv) first. 
-- Use the Pokemon column name as the index.
 - Change the values in column `legendary` from `yes` to `True` the values `no` to `False`. 
-- Only load in the column named `attack`,    `defense`, `speed`, `type` and `legendary`.
-- Display the dataframe. 
+- Only load in the column named `attack`, `defense`, `speed`, `type` and `legendary`.
+- Save the resulting dataframe as  `pokemon_df2`.
+- Display pokemon_df2. 
 
 <codeblock id="02_09">
 
@@ -295,7 +293,7 @@ Tasks:
 <exercise id="11" title="Column Edit Questions">
 
 **Question 1**          
-If we do not assign an object name when renaming a column (`df = df.rename()`)  or creating a new dataframe column  (`df = df.assign()`) what will happen?
+If we do not assign an object name when renaming a column (` df.rename()`)  or creating a new dataframe column  (`df.assign()`) what will happen?
 
 
 <choice id="1" >
@@ -481,7 +479,7 @@ Tasks:
 
 
 Use the coding cell above to do any coding that will help answer the following question: 
-**which `type` has the most Pokemon with attack and defense scores greater than 100?**
+**which `type` has the most Pokemon with attack and defense scores greater than 100?** *Hint: Think about how we counted the frequency of categorical columns in module 1*
 
 <choice id="1">
 <opt text='Rock and Bug' correct="true">
@@ -576,9 +574,9 @@ Nice work!
 Which of the following statements is true?
 
 <choice id="1" >
-<opt text='We can do chaining with both methods and functions '>
+<opt text='Chaining removes the need for intermediate objects' correct="true>
 
-You may want to look over this before moving forward.
+Good job!
 
 </opt>
 
@@ -588,9 +586,9 @@ You may want to look over this before moving forward.
 
 </opt>
 
-<opt text='We can only do chaining with methods' correct="true">
+<opt text='Chaining can only be done with methods' >
 
-Good job!
+Not quite! We can do certain actions that do not require a method with chaining. 
 
 </opt>
 

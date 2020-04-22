@@ -25,8 +25,8 @@ in data is not restricted to this file type.
 `pandas` facilitates the loading of data from many different file types
 including:
 
-  - A `URL`: If the data is stored publicly on a webpage, pandas can
-    read it directly in from the page address.
+  - A URL: If the data is stored publicly on a webpage, pandas can read
+    it directly in from the page address.
   - A `txt` file: We saw what a plain text file looked like in the last
     module and it is generally a simple manner of storing data.  
   - An `xlsx` file: This is a classic Excel spreadsheet. This is
@@ -56,12 +56,11 @@ Notes: Script here.
 If the data is accessible publicly on a website, you can read in data
 directly from the webpage it is stored on. For example, this code and
 all the files that make up this course are all openly available and can
-be [viewed
-online](https://github.com/UBC-MDS/MCL-DSCI-511-programming-in-python).
-The `candybar.csv` file that we used in the last module is stored at
-this
-URL:  
-<https://raw.githubusercontent.com/UBC-MDS/MCL-DSCI-511-programming-in-python/master/data/candybars.csv>  
+be
+<a href="https://github.com/UBC-MDS/MCL-DSCI-511-programming-in-python" target="_blank">viewed
+online</a>. The `candybar.csv` file that we used in the last module is
+stored at this URL:  
+<a href="https://raw.githubusercontent.com/UBC-MDS/MCL-DSCI-511-programming-in-python/master/data/candybars.csv" target="_blank">https://raw.githubusercontent.com/UBC-MDS/MCL-DSCI-511-programming-in-python/master/data/candybars.csv</a>
 You can see that it looks like a plain `txt` file with each line being a
 row and each column value separated with a comma.
 
@@ -159,8 +158,7 @@ candybars.head()
 ```
 
 That’s much better. `txt` files are not married to the delimiter being
-`\t`. The character combination is endless to accommodate other txt
-files.
+`\t`.
 
 Notes: Script here.
 
@@ -224,8 +222,7 @@ the data there is always a `data/` before the file name.
 This is because the file in which we are running the current code is
 located in a different folder than the data. The `data` is specifying a
 folder in our current directory (folder). We need to specify the path to
-the `csv` file through the
-subfile.
+the `csv` file through the subdirectory.
 
 <center>
 
@@ -249,14 +246,22 @@ Notes: Script here.
 
 ---
 
-This syntax is not restricted to a single subfolder and could even have
-multiple folders between the current location and the final file name.
+This syntax is not restricted to a single subdirectory and could even
+have multiple folders between the current location and the final file
+name.
 
 *Example:* `data/module1/question3/candybars.csv`
 
-In this course, we save all our data in a file called `data` so when
+In this course, we save all our data in a folder called `data` so when
 asked to read in data, take care in future exercises to add the full
 path to the required file.
+
+You can see the whole course structure and it’s subdirectories
+<a href="https://github.com/UBC-MDS/MCL-DSCI-511-programming-in-python" target="_blank">openly
+online</a>. It may also be a good idea to look in the
+<a href="https://github.com/UBC-MDS/MCL-DSCI-511-programming-in-python/tree/master/data" target="_blank">data
+folder</a> data folder to see exactly where the data you are loading in
+the exercises is coming from.
 
 Notes: Script here.
 

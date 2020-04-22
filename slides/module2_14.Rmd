@@ -88,8 +88,10 @@ Suppose you are trying to find a cereal with a protein content greater than 4g p
 df[ df['protein'] > 4]
 ```
 
-This is a little tricky because we first specify the dataframe `df` and within its square brackets, we specify the column attempting to be filtered from the dataframe with `df['protein']` followed by the condition. 
+This is a little tricky because we first specify the dataframe `df` and within its square brackets, we specify the column attempting to be filtered from the dataframe with `df['protein']` followed by the condition.    
+The code can be translated essentially to "select the rows of the dataframe where the dataframe protein value is greater than 4". 
 
+We can see from the output of this code that all the values from the protein column are above 4. 
 
 Notes: Script here
 <html>
@@ -99,13 +101,15 @@ Notes: Script here
 
 ---
 
-We can do this with equalities to as well. 
+We can do this with equalities as well. 
 
 ```{python}
 df[ df['protein'] == 4]
 ```
 
-Now we get all the cereals with a protein content of 4g per serving.  The key point to remember here is that we use **2** equal signs, else our code will return an error. 
+Now we get all the cereals with a protein content of 4g per serving.  The key point to remember here is that we use **2** equal signs.
+In python a single `=` is used as an assignment operator. We set objects equal to something. 
+`==` is a used in python for comparison. We check if certain values are equivalent to one another. 
 
 Notes: Script here
 <html>
@@ -115,7 +119,7 @@ Notes: Script here
 
 ---
 
-We can filter on categorical columns too.  In this example maybe I want only cereals from the manufacturer "Q" (For Quakers)
+We can filter on categorical columns too.  In this example maybe I want only cereals from the manufacturer "Q" (For Quaker)
 
 ```{python}
 df[ df['mfr'] == 'Q']
@@ -140,6 +144,7 @@ Let's say we only wanted cereals with a protein content between 4 to 5 grams?
 df[ (df['protein'] >= 4) & (df['protein'] <= 5) ]
 ```
 
+
 Code Explained:     
 We need to use the special symbol `&` meaning "and".  This means that both conditions must hold to be returned in the new dataframe. 
 Each condition is wrapped with parentheses to distinguish the conditions from one another. 
@@ -152,13 +157,13 @@ Notes: Script here
 
 ---
 
-Next we will look at a case where we filter on 2 different columns.  Let's say we only want hot cereals with a fiber content greater than 2. 
+Next we will look at a case where we filter on 2 different columns.  Let's say we only want cereals from the Quaker manufacturer, with a protein content greater than 4. 
 
 ```{python}
-df[ (df['type'] == 'Hot') & (df['fiber'] > 2)]
+df[ (df['mfr'] == 'Q') & (df['protein'] > 4)]
 ```
 
-The same rules apply to 2 different column conditions. 
+The same rules apply to two different column conditions. 
 
 Notes: Script here
 <html>
@@ -170,13 +175,15 @@ Notes: Script here
 
 ##  Multiple Condition Filtering - or
 
-Ssuppose that we are interested in cereals that either have a fiber content greater that 6 **OR** a protein content above 5.  We only need one of these conditions to hold to return a row. 
+Ssuppose that we are interested in cereals that either are made from the Quaker manufacturer **OR** a protein content above 4.  We only need one of these conditions to hold to return a row. 
 
 ```{python}
-df[ (df['fiber'] > 6) | (df['protein'] > 5)]
+df[ (df['mfr'] == 'Q') | (df['protein'] > 4)]
 ```
 
 Instead of using the ` & ` symbol, we use ` | ` which is called the "pipe operator".  This means "or" in the Python programming language. 
+
+This filter resulted in 10 cereals meeting either of the conditions instead of only 1 cereal when both condition needed to be met. 
 
 Notes: Script here
 <html>

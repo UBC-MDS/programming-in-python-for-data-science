@@ -48,7 +48,7 @@ Notes: Script here
 
 ## Attribution
 
-The [cereal dataset]:
+The cereal dataset:
 
  “[80 Cereals](https://www.kaggle.com/crawford/80-cereals/)” (c) by [Chris Crawford](https://www.linkedin.com/in/crawforc3/) is licensed
 under [Creative Commons Attribution-ShareAlike 3.0 Unported](http://creativecommons.org/licenses/by-sa/3.0/)

@@ -59,7 +59,7 @@ Notes: Script here
 
 ## What is Chaining?
 
-Up until now, when we want to perform multiple actions on an object, After each action we have been saving the results under a new object name. 
+Up until now, when we want to perform multiple actions on an object, after each action we have been saving the results under a new object name. 
 Chaining allows us to do multiple actions in a single line of code without these intermediate objects. 
 
 You can imagine that we are linking verbs together similar to a chain. 
@@ -76,7 +76,7 @@ Notes: Script here
 
 ---
 
-When we made our frequency table in Module 1, we first saved the single column as an object before we used `value_counts()` 
+When we made our frequency table in Module 1, we first saved the single column as an object before we used `value_counts()`.
 We can do this all in one line with chaining:
 
 ```{python}
@@ -96,12 +96,12 @@ Notes: Script here
 
 ## Methods vs Functions 
 
-Chaining is used specifically with methods and cannot be used with functions.  We have made the comparison that attributes are as nouns, as methods and functions are to verbs. 
+Chaining is usually used methods. We have made the comparison that attributes are as nouns, as methods and functions are to verbs. 
 But what makes these two verbs different? 
 
 
 **Functions**: Execute an action.       
-**Methods**: Are functions that execute an action but are associated with an object.      
+**Methods**: Are functions that execute an action but are associated with an object and return an object.      
 
 Let's compare the function`pd.read_csv()` with the method `head()`.
 
@@ -147,21 +147,26 @@ Notes: Script here
 ---
 
 Chaining is the design of performing each method in a sequential manner. 
+Let's say we want to perform 3 actions:     
+1. Filter our dataframe for cereals only from manufacturer "K" 
+2. Select the columns `calories`, `sugars` and `rating` using the method `loc`.
+3. Use the `mean()` method to find the mean of each column.
 
-Here is an example where we perform 4 actions all in a single chain. 
-
-1. Filter our dataframe for cereals only from manufacturer "K" -> The results of this action is our object for the next method. 
-2. We select the columns `calories`, `sugars` and `rating` using the method `loc`.
-3. We then use the `describe` method to find some summary statistics.
-4. `head()` is the final method used to obtain the first 5 rows of the describe dataframe.
-
-
+Normally our code would look like this:
 ```{python}
-df[df['mfr'] == 'K'].loc[ : , ["calories", "sugars", "rating"]].describe().head()
+mfr_k = df[df['mfr'] == 'K']
+csr_df = mfr_k.loc[ : , ["calories", "sugars", "rating"]]
+cereal_mean = csr_df.mean()
+cereal_mean
 ```
 
-This chain avoided the use of 3 intermediate objects. 
+Instead we can chain them:
+```{python}
+cereal_mean = df[df['mfr'] == 'K'].loc[ : , ["calories", "sugars", "rating"]].mean()
+cereal_mean
+```
 
+This chain avoided the use of 3 intermediate objects `mfr_k`, `csr_df` and `cereal_stats`. 
 
 Notes: Script here
 <html>
@@ -183,6 +188,7 @@ In this course, we suggest giving a new line for each method.  We can do this by
 )
 ```
 
+---
 
 # Let’s apply what we learned!
 
