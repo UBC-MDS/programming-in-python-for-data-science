@@ -702,10 +702,16 @@ Not quite but you are on the right track.
 </choice> 
 
 **Question 2**         
-Consider this dataframe.
+Consider this output made from the `fruit_salad` dataframe:
+
 
 <html>
-<img src=“https://raw.githubusercontent.com/UBC-MDS/MCL-DSCI-511-programming-in-python/master/static/module2/question22output.png”></html>
+<img src=“module2/question22output.png”>
+
+new 
+<center> <img src='module2/question22output.png'  alt="404 image"  width="50%" align="middle"/></center>
+
+bye
 
 
 Which of the following code returns the dataframe above. 
