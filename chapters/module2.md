@@ -705,14 +705,7 @@ Not quite but you are on the right track.
 Consider this output made from the `fruit_salad` dataframe:
 
 
-<html>
-<img src=“module2/question22output.png”>
-
-new 
-<center> <img src='module2/question22output.png'  alt="404 image"  width="50%" align="middle"/></center>
-
-bye
-
+<center> <img src='module2/question22output.png'  alt="404 image" /></center>
 
 Which of the following code returns the dataframe above. 
 
