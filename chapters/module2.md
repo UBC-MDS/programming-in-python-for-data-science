@@ -710,21 +710,21 @@ Consider this output made from the `fruit_salad` dataframe:
 Which of the following code returns the dataframe above. 
 
 <choice id="2" >
-<opt text="<code>shape_groups.get_group('round')</code>" correct="true">
+<opt text="<code>fruit_salad.groupby(by ='shape').get_group('oval')</code>" correct="true">
 
 Good job!
 
 </opt>
 
-<opt text= "<code>shape_groups.groups['round']</code>">
+<opt text= "<code>fruit_salad.groupby(by ='shape').get_group['oval']</code>">
 
-This will give you the row labels and not the complete dataframe. 
+Take care of which type of brackets are needed. 
 
 </opt>
 
-<opt text="<code>shape_groups.get_group['round']</code>">
+<opt text="<code>fruit_salad.get_group(by ='shape').group['oval']</code>">
 
-Are you using the right type of parentheses? 
+Are you using the correct verbs?
 
 </opt>
 
