@@ -682,7 +682,7 @@ Which code would create a grouby object for the column `shape`?
 
 <choice id="1" >
 <opt text="<code>fruit_salad.get_groups(by='shape')</code>">
-z
+
 Not quite but you are on the right track. 
 
 </opt>
@@ -702,7 +702,13 @@ Not quite but you are on the right track.
 </choice> 
 
 **Question 2**         
-Which of the following would be used to get the full dataframe of the `round` group from the grouby object named `shape_groups`?
+Consider this dataframe.
+
+<html>
+<img src=“https://raw.githubusercontent.com/UBC-MDS/MCL-DSCI-511-programming-in-python/master/static/module2/question22output.png”></html>
+
+
+Which of the following code returns the dataframe above. 
 
 <choice id="2" >
 <opt text="<code>shape_groups.get_group('round')</code>" correct="true">
