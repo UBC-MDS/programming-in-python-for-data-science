@@ -97,8 +97,7 @@ Notes: Script here.
 
 ---
 
-The dataframe is stored in an object named `df` and looks like
-    this:
+The dataframe is stored in an object named `df` and looks like this:
 
 ``` python
 df
@@ -137,8 +136,7 @@ Notes: Script here.
 ---
 
 From this dataframe, we can see that there are 25 different candy bars
-and 10 columns. We can obtain the names of the columns using this
-    code:
+and 10 columns. We can obtain the names of the columns using this code:
 
 ``` python
 df.columns
@@ -178,8 +176,7 @@ Notes: Script here.
 
 What if we don’t want to output the whole table when displaying a
 dataframe? We can specify how many rows of the dataset to show with
-`df.head()`. This will output the first few rows of the
-    dataframe.
+`df.head()`. This will output the first few rows of the dataframe.
 
 ``` python
 df.head(2)
@@ -194,8 +191,7 @@ Butterfinger     184          1        1        1       0                  0    
 
 The above code specifies only 2 rows to display. We can specify any
 number of rows within the parentheses or we can leave it empty which
-will default to the first 5
-    rows.
+will default to the first 5 rows.
 
 ``` python
 df.head()
@@ -241,10 +237,9 @@ align=“middle”/\>
 
 Attributes can be distinguished from methods and functions as they do
 not have parentheses.  
-Attributes can be thought of as nouns or adjectives that describe an
-object.
+They can be thought of as nouns or adjectives that describe an object.
 
-`df.shape` is an example of this.  
+Take `df.shape` as an example.  
 In this case, our dataframe `df` is our object and `.shape` is the
 attribute describing it.
 
@@ -266,12 +261,13 @@ Notes: Script here.
 
 <br>
 
-Function and methods have parentheses.  
+Functions and methods have parentheses.  
 They can be thought of as verbs that complete an action.  
-`pd.read_csv()` does the action of reading in your data.
+In the example of `pd.read_csv()`, this function does the action of
+reading in your data.
 
 This is going to be discussed in more detail later in the course but
-now, be aware of the way we write the different instructions.
+now, simply be aware of the way we write different instructions.
 
 Notes: Script here.
 

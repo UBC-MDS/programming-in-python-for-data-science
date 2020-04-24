@@ -1,12 +1,7 @@
 import pandas as pd
 
 pokemon = pd.read_csv('data/pokemon.csv', index_col=0)
-
-# Select the pokemon columns attack, defense, capture_rt, total_bs, and legendary 
-# Save the new dataframe over object pokemon
-
 pokemon = pokemon.loc[ : , ['attack',  'defense', 'capture_rt', 'total_bs', 'legendary']]
-pokemon
 
 # Make a groupby object on the column legendary and name it pokemon_type
 

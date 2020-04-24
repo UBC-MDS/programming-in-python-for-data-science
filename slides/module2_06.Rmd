@@ -68,7 +68,6 @@ We are going to introduce a few:
 - `header`
 - `nrows`
 - `usecols`
-- `true_values` and `false_values`
 
 If you wish to know more, you can find the documentation at the following links:
 
@@ -193,62 +192,6 @@ candybars
 ```
 
 
-
-Notes: Script here.
-<html>
-<audio controls >
-  <source src="placeholder_audio.mp3" />
-</audio></html>
-
----
-
-## true_values and false_values
-
-These 2 arguments can be useful if we want to add some clarity in our dataframes. 
-Bringing in new `candybars-tf.csv` we have several columns that have binary values of `yes` and `no` such as ` chocolate`, `peanuts`, `caramel` and `nougat`. 
-
-```{python}
-candybars = pd.read_csv('candybars-tf.csv' )
-candybars
-```
-
-We can change these values to something more familiar to the Python programming language such as `True` and `False`. 
-
-
-Notes: Script here.
-<html>
-<audio controls >
-  <source src="placeholder_audio.mp3" />
-</audio></html>
-
----
-
-To change the `yes` values to `True` and the `no` values to `False` we need to specify **BOTH** arguments with the values we wish to change in square brackets. 
-
-```{python}
-candybars = pd.read_csv('candybars-tf.csv', true_values= ['yes'], false_values= ['no'] )
-candybars
-```
-
-This is now more familiar to Python.  
-
-
-Notes: Script here.
-<html>
-<audio controls >
-  <source src="placeholder_audio.mp3" />
-</audio></html>
-
----
-
-We can also specify multiple values as either `True` or `False`.
-
-```{python}
-candybars = pd.read_csv('candybars-tf.csv', true_values= ['Canada', 'Both'], false_values= ['America'] ) 
-candybars
-```
-
-Now all the `Canada` and `Both` values have been converted to `True` and `America` values to `False`.
 
 Notes: Script here.
 <html>

@@ -174,10 +174,9 @@ Something you may have noticed is that when we use `pd.read_csv()` we put our in
 <br>
 
 Attributes can be distinguished from methods and functions as they do not have parentheses.          
-Attributes can be thought of as nouns or adjectives that describe an object.          
+They can be thought of as nouns or adjectives that describe an object.          
 
-
-`df.shape` is an example of this.       
+Take `df.shape` as an example.       
 In this case, our dataframe `df` is our object and `.shape` is the attribute describing it.       
 
 
@@ -195,12 +194,12 @@ Notes: Script here.
 
 <br>
 
-Function and methods have parentheses.        
+Functions and methods have parentheses.        
 They can be thought of as verbs that complete an action.          
-`pd.read_csv()`  does the action of reading in your data. 
+In the example of `pd.read_csv()`, this function does the action of reading in your data. 
 
 
-This is going to be discussed in more detail later in the course but now, be aware of the way we write the different instructions.
+This is going to be discussed in more detail later in the course but now, simply be aware of the way we write different instructions.
 
  
 Notes: Script here.

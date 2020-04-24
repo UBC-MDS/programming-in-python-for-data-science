@@ -249,9 +249,45 @@ Tasks:
 
 </exercise>
 
-<exercise id="9" title="Using Arguments when Reading in Files">
 
-Let's read in a new pokemon data file using `pd.read_csv()` and suitable arguments to satisfy the task requirements.    
+<exercise id="9" title="Column Arithmatic" type="slides">
+
+<slides source="module2_09">
+</slides>
+
+</exercise>
+
+<exercise id="10" title="Column creation Questions ">
+
+**Question 1**          
+
+
+<choice id="1" >
+<opt text='1'>
+
+You may want to look over this before moving forward.
+
+</opt>
+
+<opt text='2'>
+
+You may want to look over this before moving forward.
+
+</opt>
+
+<opt text='3' correct="true">
+
+Good job!
+
+</opt>
+
+</choice> 
+
+</exercise>
+
+<exercise id="11" title="Using Arguments when Reading in Files">
+
+ 
       
 **Instructions:**    
 Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
@@ -260,21 +296,10 @@ Running a coding exercise for the first time could take a bit of time for everyt
 
 
 Tasks:
-- Read in the data from a csv file name `pokemon2.csv`  located in the `data` directory using the Pokemon column name as the index.
-- It may be a good idea to look at the data via [this link](https://github.com/UBC-MDS/MCL-DSCI-511-programming-in-python/blob/binder/data/pokemon2.csv) first. 
-- Change the values in column `legendary` from `yes` to `True` the values `no` to `False`. 
-- Only load in the column named `attack`, `defense`, `speed`, `type` and `legendary`.
-- Save the resulting dataframe as  `pokemon_df2`.
+
 - Display pokemon_df2. 
 
-<codeblock id="02_09">
-
-- Are you sure you are saving your dataframe as the correct object names?
-- Are you using `pd.read_csv()` ?
-- Are you including the full path through the `data/` folder when calling the file name?
-- Did you use `header=4`?
-- Did you make sure to use square brackets with `usecols`?
-- Did you use both `true_values` `false_values`?
+<codeblock id="02_11">
 
 
 </codeblock>
@@ -746,8 +771,8 @@ _**Make sure you remove the hash (`#`) symbol in the coding portions of this que
 
 Tasks:
 
-- Slice the pokemon columns from `attack` to `type` and save the new dataframe over object `pokemon`.
-- Make a groupby object on the column `type` and name it pokemon_type.
+- Make a groupby object on the column `type` and name it `pokemon_type`.
+- Make a new dataframe named `type_means` using `.mean()` containing the mean values of each pokemon type.
 - Using `.loc[]`, obtain from the `type_means` dataframe, the mean `speed` of the following pokemon types: 
     - `fire` and save it in an object named `fire_mean`
     - `ice` and save it in an object named `ice_mean`
@@ -756,7 +781,6 @@ Tasks:
 
 <codeblock id="02_23">
 
-- Are slicing the dataframe with `pokemon.loc[ : , 'attack': 'type']`? 
 - Are you grouping by `type`? 
 - Are you using `.mean()` on the `pokemon_type` dataframe?
 - Are you naming the mean speed objects correctly?
@@ -768,7 +792,7 @@ Tasks:
 
 <exercise id="24" title="Practice Aggregating">
 
-  
+Let's practice using `.agg()`  
       
 **Instructions:**    
 Running a coding exercise for the first time, could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
@@ -776,13 +800,11 @@ Running a coding exercise for the first time, could take a bit of time for every
 **When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
 
 Tasks:
-- Select the pokemon columns `attack`, `defense`, `capture_rt`, `total_bs`, and `legendary`.
-- Save the new dataframe over object `pokemon`.
 - Make a groupby object on the column `legendary` and name it pokemon_type.
 - Make a new dataframe named `legendary_stats` using `.agg()` containing the `max` and `min` values of legendary groups.
 - Using `.loc[],` obtain from the `legendary_stats` dataframe, the following values:
-    - The capture rate (capture_rt) stats for non-legendary (`=0`) pokemon and save them as object `capture_0` 
-    - The total base score (total_bs) stats for legendary (`=1`) pokemon and save them as object `total_1`
+    - The capture rates (`capture_rt`) for non-legendary (`=0`) pokemon and save them as object `capture_0` 
+    - The total base scores (`total_bs`)for legendary (`=1`) pokemon and save them as object `total_1`
 
 
 <codeblock id="02_24">

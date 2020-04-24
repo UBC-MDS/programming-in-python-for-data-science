@@ -1,11 +1,7 @@
 import pandas as pd
 
 pokemon = pd.read_csv('data/pokemon.csv', index_col=0)
-
-# Slice the pokemon columns from attack to type 
-# Save the new dataframe over object pokemon
-
-____ = ____.____[____]
+pokemon = pokemon.loc[ : , 'attack': 'type']
 
 # Make a groupby object on the column type and name it pokemon_type
 
