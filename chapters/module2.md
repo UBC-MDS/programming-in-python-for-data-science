@@ -288,7 +288,7 @@ Good job!
 <exercise id="11" title="Using Arguments when Reading in Files">
 
  
-      
+    
 **Instructions:**    
 Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
 
@@ -307,7 +307,7 @@ Tasks:
 </exercise>
 
 
-<exercise id="10" title="Column Renaming and Creation" type="slides">
+<exercise id="12" title="Column Renaming and Creation" type="slides">
 
 <slides source="module2_10">
 </slides>
@@ -315,7 +315,7 @@ Tasks:
 </exercise>
 
 
-<exercise id="11" title="Column Edit Questions">
+<exercise id="13" title="Column Edit Questions">
 
 **Question 1**          
 If we do not assign an object name when renaming a column (` df.rename()`)  or creating a new dataframe column  (`df.assign()`) what will happen?
@@ -366,7 +366,7 @@ When using `df.drop()` we need to save the dataframe in an object for the change
 </exercise>
 
 
-<exercise id="12" title="Renaming a Column Index">
+<exercise id="14" title="Renaming a Column Index">
 
 Let's rename one of the columns in our `pokemon.csv` data.     
       
@@ -392,7 +392,7 @@ Tasks:
 
 </exercise>
 
-<exercise id="13" title="Creating a New Column">
+<exercise id="15" title="Creating a New Column">
 
 For this exercise, we are going to create and drop some columns from our dataframe. 
       
@@ -422,14 +422,14 @@ Tasks:
 </exercise>
 
 
-<exercise id="14" title="Data Filtering" type="slides">
+<exercise id="16" title="Data Filtering" type="slides">
 
 <slides source="module2_14">
 </slides>
 
 </exercise>
 
-<exercise id="15" title="Single Condition Filtering">
+<exercise id="17" title="Single Condition Filtering">
 
 Starting the exercises with some straight forward single condition filtering.    
       
@@ -477,7 +477,7 @@ You can answer this question using <code>fire_pokemon.shape</code>
 
 </exercise>
 
-<exercise id="16" title='Filtering using "and" or "or"'>
+<exercise id="18" title='Filtering using "and" or "or"'>
 
 Let's find all the pokemon that meet multiple requirements.  
       
@@ -533,7 +533,7 @@ You can use `mighty_pokemon['type'].value_counts()` to find out.
 
 </exercise>
 
-<exercise id="17" title='Filtering using "and" and "or"'>
+<exercise id="19" title='Filtering using "and" and "or"'>
 
 Let's find all the pokemon that meet multiple requirements.  
       
@@ -586,14 +586,14 @@ Nice work!
 
 </exercise>
 
-<exercise id="18" title="Chaining and Method Chaining" type="slides">
+<exercise id="20" title="Chaining and Method Chaining" type="slides">
 
 <slides source="module2_18">
 </slides>
 
 </exercise>
 
-<exercise id="19" title="Function vs. Attributes">
+<exercise id="21" title="Function vs. Attributes">
 
 **Question 1**          
 Which of the following statements is true?
@@ -647,7 +647,7 @@ The reverse is true; methods are a type of function.
 </exercise>
 
 
-<exercise id="20" title="Practice Chaining">
+<exercise id="22" title="Practice Chaining">
 
  Make a plot using our Pokemon dataset and chaining.     
       
@@ -675,7 +675,7 @@ Tasks:
 
 </exercise>
 
-<exercise id="21" title="Grouping and Aggregating" type="slides">
+<exercise id="23" title="Grouping and Aggregating" type="slides">
 
 <slides source="module2_21">
 </slides>
@@ -683,7 +683,7 @@ Tasks:
 </exercise>
 
 
-<exercise id="22" title="Fruit Salad Grouping and Aggregating">
+<exercise id="24" title="Fruit Salad Grouping and Aggregating">
 
 Remember the fruit salad dataframe named `fruit_salad`?  Refer to it for the next two questions.
 
@@ -757,7 +757,7 @@ Are you using the correct verbs?
 
 </exercise>
 
-<exercise id="23" title="Practice Grouping">
+<exercise id="25" title="Practice Grouping">
 
 Find the mean of some Pokemon "types" using `.mean()` and `.groupby()`.
 
@@ -779,7 +779,7 @@ Tasks:
     - `water` and save it in an object named `water_mean`
 
 
-<codeblock id="02_23">
+<codeblock id="02_26">
 
 - Are you grouping by `type`? 
 - Are you using `.mean()` on the `pokemon_type` dataframe?
@@ -790,7 +790,7 @@ Tasks:
 
 </exercise>
 
-<exercise id="24" title="Practice Aggregating">
+<exercise id="27" title="Practice Aggregating">
 
 Let's practice using `.agg()`  
       
@@ -820,7 +820,7 @@ Tasks:
 </exercise>
 
 
-<exercise id="25" title="What Did We Just Learn?" type="slides">
+<exercise id="28" title="What Did We Just Learn?" type="slides">
 <slides source="module2_25">
 </slides>
 </exercise>
