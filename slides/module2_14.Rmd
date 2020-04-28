@@ -209,43 +209,6 @@ Notes: Script here
 
 ---
 
-## Multiple Condition Filtering 
-
-Let's do one more example where we use both "and" as well as "or" conditions together.
-
-Let's build on the conditions of cereals having a fiber content greater that 6 **OR** a protein content above 5 but this time we only want cereals from the manufacturer "K". 
-
-```{python}
-
-df[ ((df['fiber'] > 6) | (df['protein'] > 5)) & (df['mfr'] == 'K') ]
-```
-
-
-Notes: Script here
-<html>
-<audio controls >
-  <source src="placeholder_audio.mp3" />
-</audio></html>
-
----
-
-We need to take great care on including additional parentheses when needed.  If we did not include another set of parentheses around our "or" conditions, this is what would have been returned:
-
-```{python}
-df[ (df['fiber'] > 6) | (df['protein'] > 5) & (df['mfr'] == 'K') ]
-```
-
-Python will now move from left to right and in this case, it will select all the cereals with a fiber content greater than 6 *or* all the cereal satisfying a protein content above 5 made by manufacturer  "K". 
-
-
-Notes: Script here
-<html>
-<audio controls >
-  <source src="placeholder_audio.mp3" />
-</audio></html>
-
----
-
 # Let’s apply what we learned!
 
 Notes: Script here

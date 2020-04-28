@@ -18,7 +18,11 @@ Notes: Script here.
 
 ---
 
-<img src='module1/pandas.gif' width="50%" alt="404 image"/>
+<center>
+
+<img src='module1/pandas.gif'  alt="404 image"  width="50%" align="middle"/>
+
+</center>
 
 Notes: Script here.
 
@@ -230,10 +234,11 @@ Python, we use **functions**, **methods** and **attributes**. These are
 special words in Python that takes in instructions (we call these
 arguments) and do something.
 
-\<img src=‘module1/argument.png’ width=“50%” alt=“404 image”,
-align=“middle”/\>
+<center>
 
-<br>
+<img src='module1/argument.png'  alt="404 image"  width="50%" align="middle"/>
+
+</center>
 
 Attributes can be distinguished from methods and functions as they do
 not have parentheses.  

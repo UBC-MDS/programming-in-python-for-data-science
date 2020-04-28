@@ -46,7 +46,7 @@ Notes: Script here.
 
 ---
 
-<img src='module1/pandas.gif' width="50%" alt="404 image"/>
+<center> <img src='module1/pandas.gif'  alt="404 image"  width="50%" align="middle"/></center>
 
 Notes: Script here.
 <html>
@@ -169,9 +169,7 @@ Notes: Script here.
 Something you may have noticed is that when we use `pd.read_csv()` we put our instructions within the parentheses, whereas, when we use `.shape` or `.head()` the object comes before our desired command. In Python, we use  **functions**, **methods** and  **attributes**. These are special words in Python that takes in instructions (we call these arguments) and do something.
 
 
-<img src='module1/argument.png' width="50%" alt="404 image", align="middle"/>
-
-<br>
+<center> <img src='module1/argument.png'  alt="404 image"  width="50%" align="middle"/></center>
 
 Attributes can be distinguished from methods and functions as they do not have parentheses.          
 They can be thought of as nouns or adjectives that describe an object.          

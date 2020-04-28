@@ -44,7 +44,11 @@ Notes: Script here.
 
 The rows in a dataframe are the collected observations.
 
-<img src='module1/df_obs.png' width="70%" alt="404 image"/>
+<center>
+
+<img src='module1/df_obs.png'  alt="404 image"/>
+
+</center>
 
 Notes: Script here.
 
@@ -62,7 +66,11 @@ Notes: Script here.
 
 And the columns are the variables.
 
-<img src='module1/df_var.png' width="50%" alt="404 image"/>
+<center>
+
+<img src='module1/df_var.png'  alt="404 image" />
+
+</center>
 
 When working with information, it must be stored in a manner that is
 organized, readable and accessible.

@@ -63,78 +63,7 @@ A     1
 Name: mfr, dtype: int64
 ```
 
-However, this is not the extent of chaining. Before we move forward,
-it’s important we know the difference between functions and methods.
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
-
-## Methods vs Functions
-
-Chaining is usually used methods. We have made the comparison that
-attributes are as nouns, as methods and functions are to verbs. But what
-makes these two verbs different?
-
-**Functions**: Execute an action.  
-**Methods**: Are functions that execute an action but are associated
-with an object and return an object.
-
-Let’s compare the function`pd.read_csv()` with the method `head()`.
-
-In `pd.read_csv()` we add an argument instructing the file name we wish
-to bring in.
-
-Example:
-
-    pd.read_csv('cereal.csv')
-
-`head()` requires an object, specifically a dataframe, in order to
-execute.
-
-Example:
-
-    df.head()
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
-
-Methods generally have the form `object-name.method()` whereas functions
-can take in arguments that don’t necessarily have to be objects.
-Functions will have the form `function-name(argument)`.
-
-Here is an example of how a function does not need an object. `abs()` is
-a function that will return the absolute value of a number. `abs()`
-takes in an argument - in this case, a number.
-
-``` python
-abs(-6)
-```
-
-```out
-6
-```
+However, this is not the extent of chaining.
 
 Notes: Script here
 
@@ -152,9 +81,9 @@ Notes: Script here
 
 Chaining is the design of performing each method in a sequential manner.
 Let’s say we want to perform 3 actions:  
-1\. Filter our dataframe for cereals only from manufacturer “K” 2.
-Select the columns `calories`, `sugars` and `rating` using the method
-`loc`. 3. Use the `mean()` method to find the mean of each column.
+1\. Filter the dataframe for cereals only from manufacturer “K” 2.
+Select the columns `calories`, `sugars` and `rating` using the verb
+`loc`. 3. Find the mean of each column using `.mean()`
 
 Normally our code would look like this:
 
@@ -203,8 +132,8 @@ Notes: Script here
 
 ---
 
-Ok so great, we can cut out creating intermediate variable but now we
-just have a really long line of code and it’s a bit hard to read.
+Great, we can cut out creating intermediate variable but now we just
+have a really long line of code and it’s a bit hard to read.
 
 How can we make this easier to understand?  
 In this course, we suggest giving a new line for each method. We can do

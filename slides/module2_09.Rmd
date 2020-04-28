@@ -130,7 +130,7 @@ Let's delete the column `coconut`.
 
 
 ```{python}
-df.drop( columns= 'coconut')
+df.drop(columns='coconut')
 ```
 
 

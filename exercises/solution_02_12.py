@@ -2,16 +2,11 @@ import pandas as pd
 
 pokemon = pd.read_csv('data/pokemon.csv', index_col=0)
 
-# Rename the column sp_attack to special_a and
-# sp_defense to special_d using df.rename() once  
-# Save the new dataframe as `pokemon_special`
+# Drop the columns deck_no, capture_rt, and legendary
+# Make sure to overwrite the new dataframe to object pokemon
 
-
-pokemon_special = pokemon.rename(columns ={'sp_attack' : 'special_a',
-                                           'sp_defense' : 'special_d'})
+pokemon = pokemon.drop(columns=['deck_no', 'capture_rt', 'legendary'])
 
 # Display the first 5 rows of the dataframe
 
-pokemon_special.head()
-
-
+pokemon.head()

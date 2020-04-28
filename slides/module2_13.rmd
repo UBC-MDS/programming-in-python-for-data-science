@@ -1,0 +1,267 @@
+---
+params:
+  dynamictitle: "module2_13"
+title: "`r params$dynamictitle`"
+output: 
+  md_document:
+    variant: gfm
+---
+
+
+```{r setup, include=FALSE}
+## DO NOT FORGET TO CHANGE THIS ACCORDINGLY 
+library(rmarkdown)
+# MAke sure you are updating your title 
+knitr::opts_chunk$set(echo = TRUE,
+                      base.dir = ".", 
+                      base.url = "/",
+                      fig.path = paste("../static/module2/", params$dynamictitle,"/", sep = ""))
+
+knitr_opts <- knitr_options( opts_knit = NULL,
+                             opts_chunk = NULL,
+                             knit_hooks = NULL,
+                             opts_hooks = NULL,
+                             opts_template = NULL)
+md_document_custom <- md_document(variant = "gfm")
+output_format(knitr = knitr_opts,
+              pandoc = NULL,
+              base_format = md_document_custom)
+library(reticulate)
+
+```
+
+
+```{python include=FALSE}
+import pandas as pd
+import numpy as np
+pd.set_option('display.width', 350)
+
+np.set_printoptions(linewidth=400)
+
+pd.set_option('display.max_columns', 15)
+pd.set_option('display.max_rows', 8)
+
+df = pd.read_csv('cereal.csv', index_col=0)
+```
+
+type: slides
+
+
+# Column Arithmetic and Creation
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+Doing some sort of transformation on the columns of a dataframe will most likely come up in your analysis somewhere and it's not always straight forward.
+
+Using only the first 5 rows of our cereal dataset, Let's explore the next few scenarios.
+
+```{python}
+df = df.iloc[ 0: 5]
+df
+```
+
+Perhaps the column `fat` was instead expressing the grams of fat above 2g.  This means that the actual fat content of each cereal is actually an additional 2 grams.  How do we rectify this?
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+We need to add 2 to each of the row's fat value.
+
+<center> <img src='module2/plus2.png'  alt="404 image" /></center>
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+Here is where some magic happens.  Python doesn't require us to make a whole column filled with 2s to get the result we want.  It would simply add 2 to each column.
+
+```{python}
+df['fat'] + 2
+```
+
+Notice how each row has changed in value. Notice that for operations on columns, we use single square brackets.
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+We can do the same thing with multiplication/division too.
+let's multiply the rating of each cereal by 2. 
+Note that  `*` is used in Python for multiplication.  
+
+```{python}
+df['rating'] * 2
+```
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+Every rows value is changed by the operation.
+
+<center> <img src='module2/times2.png'  alt="404 image" /></center>
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+We are not limited to simply taking a column and transforming it by a single number. We can do operations involving multiple columns as well.  Perhaps we wanted to know the amount of sugar (`sugar`) per cup of cereal (`cups`).
+
+The expected result would look something like this:
+
+
+<center> <img src='module2/sugarcups.png'  alt="404 image" /></center>
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+Keeping with the syntax of using only single square brackets on our columns, to get our desired output we can do the following. 
+Each sugar row value is divided by its respected cups value.
+
+```{python}
+df['sugars'] / df['cups']
+```
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+Just to stress the point of why we use single square brackets for our operation here is what happens when we use double square brackets:
+
+```{python}
+df[['sugars']] / df[['cups']]
+```
+
+Not very useful for us.
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+Up until now, all of these operations have been done without being added to our cereal dataframe.  Let's explore how we can add new columns to our complete cereal dataframe.
+
+```{python}
+df = pd.read_csv('cereal.csv', index_col=0)
+df
+```
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+## Column Creation
+
+Now we have decided that we want a column in the dataframe that shows the weight of each cereal in grams instead of ounces
+We can add this to our current dataframe using the `assign` function.  
+We are going to save the conversion factor of grams to ounces in an object named `oz_to_g` to add some clarity and flexibility to our code.
+The operation for this desired result would be:
+
+```{python}
+oz_to_g = 28.3495
+df['weight'] * oz_to_g
+```
+
+Let's combine this with the `assign()` verb so that we can save this as a new column in our dataframe named `weight_g`. 
+
+```{python}
+df = df.assign(weight_g=df['weight'] * oz_to_g)
+df.head()
+```
+
+Perfect!
+Remember from earlier in module 2 how it's important that we always save the dataframe to an object when making changes involving columns.
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+We learned how to do operations involving multiple columns in a dataframe  let's implement this by saving the results as a new column.
+This time adding a column indicating how many calories there are in 1 cup of each cereal.
+
+The operation for this would be
+
+
+```{python}
+df['calories'] / df['cups']
+```
+
+let's combine this with `assign()` naming the column `cals_per_cup`.
+
+```{python}
+df = df.assign(cals_per_cup=df['calories'] / df['cups'])
+df.head()
+```
+
+Great! let's put this to practice. 
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+# Let’s apply what we learned!
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="place

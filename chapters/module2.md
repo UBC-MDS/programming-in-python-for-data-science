@@ -250,75 +250,18 @@ Tasks:
 </exercise>
 
 
-<exercise id="9" title="Column Arithmatic" type="slides">
+<exercise id="9" title="Column Renaming and Dropping" type="slides">
 
 <slides source="module2_09">
 </slides>
 
 </exercise>
 
-<exercise id="10" title="Column creation Questions ">
+
+<exercise id="10" title="Column Editing Questions">
 
 **Question 1**          
-
-
-<choice id="1" >
-<opt text='1'>
-
-You may want to look over this before moving forward.
-
-</opt>
-
-<opt text='2'>
-
-You may want to look over this before moving forward.
-
-</opt>
-
-<opt text='3' correct="true">
-
-Good job!
-
-</opt>
-
-</choice> 
-
-</exercise>
-
-<exercise id="11" title="Using Arguments when Reading in Files">
-
- 
-    
-**Instructions:**    
-Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
-
-**When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
-
-
-Tasks:
-
-- Display pokemon_df2. 
-
-<codeblock id="02_11">
-
-
-</codeblock>
-
-</exercise>
-
-
-<exercise id="12" title="Column Renaming and Creation" type="slides">
-
-<slides source="module2_10">
-</slides>
-
-</exercise>
-
-
-<exercise id="13" title="Column Edit Questions">
-
-**Question 1**          
-If we do not assign an object name when renaming a column (` df.rename()`)  or creating a new dataframe column  (`df.assign()`) what will happen?
+If we do not assign an object name when renaming a column (`df.rename()`) what will happen?
 
 
 <choice id="1" >
@@ -344,7 +287,7 @@ Good job!
 
 
 **Question 2**   
-If you want your dataframe to drop a column for good using `df.drop()`, it is necessary to assign it to an object. 
+If you want your dataframe to drop a column permanently using `df.drop()`, it is necessary to assign it to an object. 
 
 
 <choice id="2" >
@@ -366,7 +309,7 @@ When using `df.drop()` we need to save the dataframe in an object for the change
 </exercise>
 
 
-<exercise id="14" title="Renaming a Column Index">
+<exercise id="11" title="Renaming a Column Index">
 
 Let's rename one of the columns in our `pokemon.csv` data.     
       
@@ -382,13 +325,82 @@ Tasks:
 - Display the first 5 rows of the dataframe.
 
 
-<codeblock id="02_12">
+<codeblock id="02_11">
 
 - Are you using `pokemon.rename()`?
 - Are you saving the new dataframe as the correct name?
 - Are you using the argument `columns ={'sp_attack' : 'special_a', 'sp_defense' : 'special_d'}`?
 
 </codeblock>
+
+</exercise>
+
+<exercise id="12" title="Droping Columns in a Dataframe">
+
+Some of the columns in `pokemon.csv` we have deemed not useful. Let's get rid of them! 
+    
+**Instructions:**    
+Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
+
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
+
+
+Tasks:
+
+- Drop the columns `deck_no`, `capture_rt`, and `legendary`.
+- Make sure to overwrite the new dataframe to object `pokemon`.
+- Display the first 5 rows of the dataframe.
+
+<codeblock id="02_12">
+
+- Are you using `pokemon.drop()`?
+- Are you overwriting the new dataframe to object `pokemon`?
+- Are you using square brackets in the argument `columns`?
+
+</codeblock>
+
+</exercise>
+
+
+<exercise id="13" title="Column Arithmetic and Creation" type="slides">
+
+<slides source="module2_13">
+</slides>
+
+</exercise>
+
+<exercise id="14" title=" Column Arithmetic Questions ">
+
+What is the result if we multiply 2 columns together using the syntax 
+
+```
+df[['Column_A']] * df[['Column_B']]
+```
+
+<choice id="1" >
+<opt text='A new column in our dataframe with each column value multiplied together per row.'>
+
+Take care of the syntax being used. Are we using `.assign()` and the correct number of square brackets? 
+
+</opt>
+
+<opt text='A single column with each column value multiplied together per row.'>
+
+You may want to look over this before moving forward.  Are we using the correct number of square brackets? 
+
+</opt>
+
+<opt text='A dataframe with 2 new columns with `NAN` values' correct="true">
+
+Good job!
+
+</opt>
+
+</choice> 
+
+</exercise>
+
+
 
 </exercise>
 
@@ -404,8 +416,7 @@ Running a coding exercise for the first time, could take a bit of time for every
 Tasks:
 
 - Create a new column named `total_special` that is the sum of column `sp_attack` and `sp_defense`.
-- Save it as an object named `pokemon_new_col`.
-- Drop the column `deck_no` from `pokemon_new_col` and save this dataframe as an object named `pokemon_dropped`.
+- Save it, overwriting the dataframe named `pokemon`
 - Display the first 5 rows of the dataframe.
 
 
@@ -414,7 +425,6 @@ Tasks:
 - Are you using `pokemon.assign()`?
 - Are you saving the new dataframes as the correct names?
 - For the new column does `total_special  = pokemon['sp_attack'] + pokemon['sp_defense']`?
-- Are you using `pokemon_new_col.drop()` and specifying `columns= 'deck_no'`?
 
 
 </codeblock>
@@ -441,7 +451,6 @@ Running a coding exercise for the first time, could take a bit of time for every
 Tasks:
 
 - Create a new dataframe named `fire_pokemon` containing only the rows of `type` "fire".
-- Display the first 10 rows of the dataframe.
 
 
 <codeblock id="02_15">
@@ -451,8 +460,9 @@ Tasks:
 
 </codeblock>
 
-Use the coding cell above to do any coding that will help answer the following question:        
+Add to the coding cell above code to answer the following question:    
 **How many fire Pokemon are there?**
+*Hint: Think about how we obtain dataframe row and column size from the previous module*
 
 <choice id="1" >
 <opt text='11'>
@@ -490,7 +500,6 @@ Tasks:
 
 - Filter the dataframe for the pokemon that have `attack` and `defense` values both greater than 100. 
 - Save this dataframe as an object named `mighty_pokemon`.
-- Display the first 10 rows of the dataframe.
 
 
 <codeblock id="02_16">
@@ -503,8 +512,9 @@ Tasks:
 </codeblock>
 
 
-Use the coding cell above to do any coding that will help answer the following question: 
-**which `type` has the most Pokemon with attack and defense scores greater than 100?** *Hint: Think about how we counted the frequency of categorical columns in module 1*
+Add to the coding cell above code to answer the following question: 
+**which `type` has the most Pokemon with attack and defense scores greater than 100?**     
+*Hint: Think about how we counted the frequency of categorical columns in module 1*
 
 <choice id="1">
 <opt text='Rock and Bug' correct="true">
@@ -530,12 +540,17 @@ You can use `mighty_pokemon['type'].value_counts()` to find out.
 </exercise>
 
 
+<exercise id="19" title="Conditional Value Replacement" type="slides">
+
+<slides source="module2_16">
+</slides>
 
 </exercise>
 
-<exercise id="19" title='Filtering using "and" and "or"'>
 
-Let's find all the pokemon that meet multiple requirements.  
+<exercise id="20" title='Practice Replacing Values'>
+
+Our pokemon dataset may need some conditional changes. 
       
 **Instructions:**    
 Running a coding exercise for the first time, could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
@@ -544,79 +559,34 @@ Running a coding exercise for the first time, could take a bit of time for every
 
 Tasks:
 
-- Filter the dataframe for the pokemon that have either a total base score (`total_bs`) greater than 650 or a `speed` greater than 140.
-- All the pokemon must be `legendary` as well(=1). 
-- Save this dataframe as an object named `legendary_pokemon`.
-- Display the first 10 rows of the dataframe.
 
 <codeblock id="02_17">
-
-- Are you sure you are saving your dataframe as the correct object names?
-- Are you separating your conditions with brackets?
-- Are you using the symbol` & ` and  ` | `  to get the intersect?
-- Are you using making you have enough parentheses separating your `&` and `|` conditions?
-
-
-Use the coding cell above to do any coding that will help answer the following question: 
-**How many pokemon are of generation (`gen`) 7?**
-
-<choice id="1"  >
-<opt text='4'>
-
-You can use <code>mighty_pokemon['gen'].value_counts()</code> or filter the new dataframe to find out.
-
-</opt>
-
-<opt text='0'>
-
-You can use <code>mighty_pokemon['gen'].value_counts()</code> or filter the new dataframe to find out.
-
-</opt>
-
-<opt text='3' correct="true" >
-
-Nice work!
-
-</opt>
-
-</choice> 
 
 
 </codeblock>
 
 </exercise>
 
-<exercise id="20" title="Chaining and Method Chaining" type="slides">
-
-<slides source="module2_18">
-</slides>
-
-</exercise>
 
 <exercise id="21" title="Function vs. Attributes">
 
 **Question 1**          
-Which of the following statements is true?
+Is the following statements is true or false: 
+_Chaining removes the need for intermediate objects_
+
 
 <choice id="1" >
-<opt text='Chaining removes the need for intermediate objects' correct="true>
+<opt text='True' correct="true>
 
 Good job!
 
 </opt>
 
-<opt text='We can only do chaining with functions'>
+<opt text='False'>
 
 You may want to look over this before moving forward.
 
 </opt>
-
-<opt text='Chaining can only be done with methods' >
-
-Not quite! We can do certain actions that do not require a method with chaining. 
-
-</opt>
-
 </choice> 
 
 
@@ -659,12 +629,11 @@ Running a coding exercise for the first time, could take a bit of time for every
 Tasks:
 
 - Chain the following methods in the order specified.
-- Name the full chain `pokemon_plot`.
-- First, create a new column named `AD_total` by adding the `attack` and `defense` columns from the pokemon dataset( `.assign()` may come in handy here). 
-- Next, drop the `legendary` column using the method `.drop()`.
-- Use `loc[]` and slice from column `speed` to `AD_total`.
-- Finally use `.plot.scatter()` to plot `AD_total` on the x-axis and `capture_rt` on the y-axis.
-- Use a new line for each method.
+- First, rename the column `capture_rt` to `capture_rate`.
+- Create a new column named `AD_total` by adding the `attack` and `defense` columns from the pokemon dataset
+- Finally use `.plot.scatter()` to plot `AD_total` on the x-axis and `capture_rate` on the y-axis
+- Name the full chain `pokemon_plot`
+- Use a new line for each method
 
 <codeblock id="02_20">
 

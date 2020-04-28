@@ -18,27 +18,29 @@ Notes: Script here
 
 ---
 
-# Grouping a Dataframe
-
 Often, we are interested in examining specific groups in our data.
-`df.groupby()` allows us to group our data based on a column
+Perhaps the question we want to answer is:  
+*_Which manufacturer has the highest mean sugar content?_*
 
-Let’s group our candybars dataframe on the `mfr` column and save it as
-`mfr_group`.
+We found out in previous section using `.value_counts()` that there were
+7 different manufacturers; “K”, “G”, “P”, “R”, “Q”, “N” and “A”.
 
 ``` python
-mfr_group = df.groupby(by='mfr')
-mfr_group
+df['mfr'].value_counts()
 ```
 
 ```out
-<pandas.core.groupby.generic.DataFrameGroupBy object at 0x11be23fd0>
+K    23
+G    22
+P     9
+R     8
+Q     8
+N     6
+A     1
+Name: mfr, dtype: int64
 ```
 
-This returns a `DataFrame GroupBy` object. What is that though?
-
-Notes: Script
-here
+Notes: Script here
 
 <html>
 
@@ -52,7 +54,87 @@ here
 
 ---
 
-<img src='module2/groupby.png'  alt="404 image" width = "80%" align="middle"/>
+To find the mean sugar content of each manufacturer, we could filter on
+each manufacturer and calculate the mean sugar content using `.mean()`.
+We can chain to make this process a little faster too.
+
+Let’s start with K:
+
+``` python
+df[df['mfr'] == 'K'].mean().loc['sugars']
+```
+
+```out
+7.565217391304348
+```
+
+Next “G”:
+
+Let’s start with K:
+
+``` python
+df[df['mfr'] == 'G'].mean().loc['sugars']
+```
+
+```out
+7.954545454545454
+```
+
+We could do this for the remaining 5 manufacturers; however, this is not
+ideal. It’s already taking quite a bit of time and it’ seem like a lot
+of work to do this another 5 times. Imagine how tedious this would be if
+we had 100 different manufacturers?
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+# Using groupby
+
+Pandas has a solution for this. It’s not uncommon to be interested in
+examining specific groups in our data hence there is a verb helpful in
+grouping like-rows together. `df.groupby()` allows us to group our data
+based on a column.
+
+Let’s group our candybars dataframe on the `mfr` column and save it as
+object `mfr_group`.
+
+``` python
+mfr_group = df.groupby(by='mfr')
+mfr_group
+```
+
+```out
+<pandas.core.groupby.generic.DataFrameGroupBy object at 0x1278562b0>
+```
+
+This returns a `DataFrame GroupBy` object. What exactly is this?
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+<img src='module2/groupby3.png'  alt="404 image" width = "80%" align="middle"/>
 
 Notes: Script here
 
@@ -69,8 +151,7 @@ Notes: Script here
 ---
 
 A `DataFrame GroupBy` object contains information about the groups of
-the dataframe. We can access it with the `.groups` attribute
-    (noun)
+the dataframe. We can access it with the `.groups` attribute (noun).
 
 ``` python
 mfr_group.groups
@@ -103,9 +184,8 @@ Notes: Script here
 ---
 
 We can obtain all the row index names of a group by specifying the group
-name in square brakets after the `groups` method. Take the group `K` as
-an
-    example.
+name in square brackets after the `groups` method. Take the group `K` as
+an example.
 
 ``` python
 mfr_group.groups['K']
@@ -131,8 +211,8 @@ Notes: Script here
 
 ---
 
-We can get the full dataframe of just the group `K` using the method
-`get_group()`
+We can get the full dataframe of the group `K` alone using the method
+`get_group()`.
 
 ``` python
 mfr_group.get_group('K')
@@ -172,9 +252,11 @@ Notes: Script here
 
 ## Summary Statistics with Groups
 
-What now? We have this new groupby object, what do we do with it? We can
-calculate some summary statistics with
-    them\!
+What now? This doesn’t answer our initial question of *_Which
+manufacturer has the highest mean sugar content?_*  
+Where do we go from here?  
+We need to calculate the mean sugar content in each manufacturing
+group\!
 
 ``` python
 mfr_group.mean()
@@ -192,41 +274,16 @@ Q     95.000000  2.625000  1.750000   92.500000  1.337500  10.250000  5.500000  
 R    115.000000  2.500000  1.250000  198.125000  1.875000  17.625000  6.125000   89.500000  25.000000  2.000000  1.000000  0.871250  41.542997
 ```
 
-This shows up the mean value of each column for each group, we can do
-the same thing for other statistics too.
+This answers the initial question and confirms that manufacturer “P” has
+the highest mean sugar content across cereals. See how convenient this
+was to do in comparison to our initial method? Not only does this give
+us the result quicker, but it also gives us the mean of each column of
+the dataframe. Think of how many filtering and mean calculations would
+have to be done if we were to do this using our initial method.
 
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
-
-Let’s try it with the minimum values using
-    `min()`
-
-``` python
-mfr_group.min()
-```
-
-```out
-     type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
-mfr                                                                                                              
-A     Hot       100        4    1       0    0.0   16.0       3      95        25      2    1.00  1.00  54.850917
-G    Cold       100        1    1     140    0.0   10.5       1      25        25      1    1.00  0.50  19.823573
-K    Cold        50        1    0       0    0.0    7.0       0      20        25      1    1.00  0.33  29.924285
-N    Cold        70        2    0       0    1.0    5.0       0       1         0      1    0.83  0.33  59.363993
-P    Cold        90        1    0      45    0.0   11.0       3      25        25      1    1.00  0.25  28.025765
-Q    Cold        50        1    0       0    0.0    1.0       0      15         0      1    0.50  0.50  18.042851
-R    Cold        90        1    0      95    0.0   14.0       2       1        25      1    1.00  0.67  34.139765
-```
+Of course, using groups is not limited to finding the only the mean, we
+can do the same thing for other statistics too like `.min()` and
+`.max()`.
 
 Notes: Script here
 
@@ -244,9 +301,11 @@ Notes: Script here
 
 ## Aggregating dataframes
 
-“Aggregating” means to combine elements. Luckily there is a particular
-method that allows us to collect multiple statistics together-
-aggregating them in 1 step. `df.agg()` can be used on its own:
+In situations where we want to collect multiple statistics together, we
+can aggregate them in 1 step using is a verb called `.agg()`.
+
+`df.agg()` can be used on its own using a single measurement, without
+groupby:
 
 ``` python
 df.agg('mean')
@@ -283,8 +342,8 @@ Notes: Script here
 
 ---
 
-but then it is essentially the same thing as calling the statistic
-`mean()` on the dataframe.
+This is essentially the same thing as calling the statistic `mean()` on
+the dataframe.
 
 ``` python
 df.mean()
@@ -321,10 +380,9 @@ Notes: Script here
 
 ---
 
-`df.agg()` gets a chance to shine when we want several specific
-measures. Let’s say we want just the `max` `min` and `median`. We
-specify them in square brackets within our `df.agg()`
-    method.
+`df.agg()` gets a chance to really shine when we want several specific
+measures. Let’s say we want the `max`, `min` and `median`. We specify
+them in square brackets within our `df.agg()` method.
 
 ``` python
 df.agg(['max', 'min', 'median'])
@@ -337,8 +395,8 @@ min       A  Cold      50.0      1.0  0.0     0.0    0.0    1.0     0.0     1.0 
 median  NaN   NaN     110.0      3.0  1.0   180.0    2.0   14.0     7.0    90.0      25.0    2.0     1.0  0.75  40.400208
 ```
 
-It produces a nice dataframe giving the value for each statistic, for
-each column.
+It produces a convenient dataframe giving the value for each statistic,
+for each column.
 
 Notes: Script here
 
@@ -357,24 +415,23 @@ Notes: Script here
 ## Aggregating groupby objects
 
 `df.agg()` is particularly useful with groupby objects. Let’s try it on
-our `mfr_group` `DataFrame GroupBy`
-    object.
+our manufacturer `groupby` object named `mfr_group`.
 
 ``` python
 mfr_group.agg(['max', 'min', 'median'])
 ```
 
 ```out
-              calories           protein           fat              sodium               fiber               carbo              sugars            potass             vitamins            shelf              weight                cups                       rating                      
-         max   min   median   max min median  max  min  median    max  min median   max   min  median    max  min  median    max min median    max min median      max min median    max  min median    max   min  median    max  min  median        max      min       median
+    calories             protein            fat            sodium             fiber             carbo              sugars            potass            vitamins            shelf            weight               cups                  rating                      
+         max  min median     max min median max min median    max  min median   max  min median   max   min median    max min median    max min median      max min median   max min median    max   min median   max   min median        max        min     median
 mfr                                                                                                                                                                                                                                                                
-A        100   100     100     4   4    4.0     1   1    1        0     0    0.0    0.0   0.0    0.0    16.0  16.0  16.00      3   3    3.0     95  95   95.0       25  25   25.0     2   2    2.0     1.00   1.00  1.0     1.00  1.00  1.000    54.850917  54.850917  54.850917
-G        140   100     110     6   1    2.0     3   1    1       290  140  200.0    4.0   0.0    1.5    21.0  10.5  14.25     14   1    8.5    230  25   80.0      100  25   25.0     3   1    2.0     1.50   1.00  1.0     1.50  0.50  0.875    51.592193  19.823573  36.181877
-K        160    50     110     6   1    3.0     3   0    0       320    0  170.0   14.0   0.0    1.0    22.0   7.0  15.00     15   0    7.0    330  20   60.0      100  25   25.0     3   1    3.0     1.50   1.00  1.0     1.00  0.33  0.750    93.704912  29.924285  40.560159
-N        100    70      90     4   2    3.0     1   0    0       130    0    7.5   10.0   1.0    3.0    21.0   5.0  17.50      6   0    0.0    280   1  107.5       25   0    0.0     3   1    1.5     1.00   0.83  1.0     1.00  0.33  0.835    74.472949  59.363993  68.319429
-P        120    90     110     3   1    3.0     3   0    1       210   45  160.0    6.0   0.0    3.0    17.0  11.0  13.00     15   3   10.0    260  25   90.0       25  25   25.0     3   1    3.0     1.33   1.00  1.0     1.33  0.25  0.670    53.371007  28.025765  40.917047
-Q        120    50     100     5   1    2.5     5   0    2       220    0   75.0    2.7   0.0    1.5    14.0   1.0  12.00     12   0    6.0    135  15   72.5       25   0   12.5     3   1    2.5     1.00   0.50  1.0     1.00  0.50  0.875    63.005645  18.042851  47.419974
-R        150    90     110     4   1    2.0     3   0    1       280   95  200.0    4.0   0.0    2.0    23.0  14.0  16.50     11   2    5.5    170   1   97.5       25  25   25.0     3   1    2.0     1.00   1.00  1.0     1.13  0.67  0.875    49.787445  34.139765  41.721976
+A        100  100    100       4   4    4.0   1   1      1      0    0    0.0   0.0  0.0    0.0  16.0  16.0  16.00      3   3    3.0     95  95   95.0       25  25   25.0     2   2    2.0   1.00  1.00    1.0  1.00  1.00  1.000  54.850917  54.850917  54.850917
+G        140  100    110       6   1    2.0   3   1      1    290  140  200.0   4.0  0.0    1.5  21.0  10.5  14.25     14   1    8.5    230  25   80.0      100  25   25.0     3   1    2.0   1.50  1.00    1.0  1.50  0.50  0.875  51.592193  19.823573  36.181877
+K        160   50    110       6   1    3.0   3   0      0    320    0  170.0  14.0  0.0    1.0  22.0   7.0  15.00     15   0    7.0    330  20   60.0      100  25   25.0     3   1    3.0   1.50  1.00    1.0  1.00  0.33  0.750  93.704912  29.924285  40.560159
+N        100   70     90       4   2    3.0   1   0      0    130    0    7.5  10.0  1.0    3.0  21.0   5.0  17.50      6   0    0.0    280   1  107.5       25   0    0.0     3   1    1.5   1.00  0.83    1.0  1.00  0.33  0.835  74.472949  59.363993  68.319429
+P        120   90    110       3   1    3.0   3   0      1    210   45  160.0   6.0  0.0    3.0  17.0  11.0  13.00     15   3   10.0    260  25   90.0       25  25   25.0     3   1    3.0   1.33  1.00    1.0  1.33  0.25  0.670  53.371007  28.025765  40.917047
+Q        120   50    100       5   1    2.5   5   0      2    220    0   75.0   2.7  0.0    1.5  14.0   1.0  12.00     12   0    6.0    135  15   72.5       25   0   12.5     3   1    2.5   1.00  0.50    1.0  1.00  0.50  0.875  63.005645  18.042851  47.419974
+R        150   90    110       4   1    2.0   3   0      1    280   95  200.0   4.0  0.0    2.0  23.0  14.0  16.50     11   2    5.5    170   1   97.5       25  25   25.0     3   1    2.0   1.00  1.00    1.0  1.13  0.67  0.875  49.787445  34.139765  41.721976
 ```
 
 This gives a value for each group and for each statistic we specified.
@@ -402,17 +459,19 @@ columns.
 
 Let’s say we are concerned about the `max` and `min` calorie values, the
 total `sum` of the ratings and the `mean` and `median` sugar content for
-each manufacturing group.
+each manufacturing group. We wrapped everything in curly brackets and we
+use a colon to separate the column name from the statistics values. We
+need to put the statistics within square brackets.
 
 ``` python
-mfr_group.agg({"calories": ['max', 'min'], 
-         "rating": ['sum'],  
-         "sugars": ['mean', 'median']})
+mfr_group.agg({"calories": ['max', 'min'],
+                 "rating": ['sum'],  
+                 "sugars": ['mean', 'median']})
 ```
 
 ```out
-         calories      rating         sugars       
-         max  min       sum        mean   median
+    calories            rating    sugars       
+         max  min          sum      mean median
 mfr                                            
 A        100  100    54.850917  3.000000    3.0
 G        140  100   758.688737  7.954545    8.5
@@ -422,6 +481,8 @@ P        120   90   375.351697  8.777778   10.0
 Q        120   50   343.327919  5.500000    6.0
 R        150   90   332.343977  6.125000    5.5
 ```
+
+Now this is a bit easier to read.
 
 Notes: Script here
 
