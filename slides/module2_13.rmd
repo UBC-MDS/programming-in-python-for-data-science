@@ -60,14 +60,35 @@ Notes: Script here
 
 Doing some sort of transformation on the columns of a dataframe will most likely come up in your analysis somewhere and it's not always straight forward.
 
-Using only the first 5 rows of our cereal dataset, Let's explore the next few scenarios.
+Let's welcome back the `cereal.csv` data we have worked with in Module 1. 
+
+
+```{python}
+df = pd.read_csv('cereal.csv', index_col=0)
+df.head()
+```
+
+Attribution:     
+_“[80 Cereals](https://www.kaggle.com/crawford/80-cereals/)” (c) by [Chris Crawford](https://www.linkedin.com/in/crawforc3/) is licensed under [Creative Commons Attribution-ShareAlike 3.0 Unported](http://creativecommons.org/licenses/by-sa/3.0/)_
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+
+To make things especially clear, for the next few scenarios let only use the first 5 rows of the dataset.
 
 ```{python}
 df = df.iloc[ 0: 5]
 df
 ```
 
-Perhaps the column `fat` was instead expressing the grams of fat above 2g.  This means that the actual fat content of each cereal is actually an additional 2 grams.  How do we rectify this?
+Perhaps we recently read some documentation regarding the `fat` column in the data is being expressed as the number of grams of fat above 2.  This means that the actual fat content of each cereal is actually an additional 2 grams.  How do we rectify this?
 
 Notes: Script here
 <html>
@@ -213,6 +234,15 @@ oz_to_g = 28.3495
 df['weight'] * oz_to_g
 ```
 
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
 Let's combine this with the `assign()` verb so that we can save this as a new column in our dataframe named `weight_g`. 
 
 ```{python}
@@ -241,6 +271,15 @@ The operation for this would be
 ```{python}
 df['calories'] / df['cups']
 ```
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
 
 let's combine this with `assign()` naming the column `cals_per_cup`.
 

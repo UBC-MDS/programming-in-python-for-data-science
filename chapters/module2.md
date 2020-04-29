@@ -401,7 +401,6 @@ Good job!
 </exercise>
 
 
-
 </exercise>
 
 <exercise id="15" title="Creating a New Column">
@@ -420,7 +419,7 @@ Tasks:
 - Display the first 5 rows of the dataframe.
 
 
-<codeblock id="02_13">
+<codeblock id="02_15">
 
 - Are you using `pokemon.assign()`?
 - Are you saving the new dataframes as the correct names?
@@ -434,7 +433,7 @@ Tasks:
 
 <exercise id="16" title="Data Filtering" type="slides">
 
-<slides source="module2_14">
+<slides source="module2_16">
 </slides>
 
 </exercise>
@@ -453,7 +452,7 @@ Tasks:
 - Create a new dataframe named `fire_pokemon` containing only the rows of `type` "fire".
 
 
-<codeblock id="02_15">
+<codeblock id="02_17">
 
 - Are you sure you are saving your dataframe as the correct object names?
 - Are you using `pokemon['type'] == 'fire'` as your condition?
@@ -502,7 +501,7 @@ Tasks:
 - Save this dataframe as an object named `mighty_pokemon`.
 
 
-<codeblock id="02_16">
+<codeblock id="02_18">
 
 - Are you sure you are saving your dataframe as the correct object names?
 - Are you separating your conditions with brackets?
@@ -542,7 +541,8 @@ You can use `mighty_pokemon['type'].value_counts()` to find out.
 
 <exercise id="19" title="Conditional Value Replacement" type="slides">
 
-<slides source="module2_16">
+<slides source="module2_19">
+
 </slides>
 
 </exercise>
@@ -560,7 +560,7 @@ Running a coding exercise for the first time, could take a bit of time for every
 Tasks:
 
 
-<codeblock id="02_17">
+<codeblock id="02_20">
 
 
 </codeblock>
@@ -568,15 +568,25 @@ Tasks:
 </exercise>
 
 
-<exercise id="21" title="Function vs. Attributes">
+<exercise id="21" title="Chaining and Method Chaining" type="slides">
+
+<slides source="module2_21">
+
+</slides>
+
+</exercise>
+
+
+
+<exercise id="22" title="Chaining True/False">
 
 **Question 1**          
-Is the following statements is true or false: 
+Is the following statements is true or false:        
 _Chaining removes the need for intermediate objects_
 
 
 <choice id="1" >
-<opt text='True' correct="true>
+<opt text='True' correct="true">
 
 Good job!
 
@@ -587,39 +597,15 @@ Good job!
 You may want to look over this before moving forward.
 
 </opt>
-</choice> 
-
-
-**Question 2**         
-Which of the following statements is true?
-
-<choice id="2" >
-<opt text='Functions are associated with an object'>
-
-Functions are not associated with any object.
-
-</opt>
-
-<opt text= 'Method are associated with an object' correct="true">
-
-Nice work!
-
-</opt>
-
-<opt text='Functions are a type of method'  correct="true">
-
-The reverse is true; methods are a type of function. 
-
-</opt>
 
 </choice> 
 
 </exercise>
 
 
-<exercise id="22" title="Practice Chaining">
+<exercise id="23" title="Practice Chaining">
 
- Make a plot using our Pokemon dataset and chaining.     
+ Make a plot using our Pokemon dataset by chaining actions sequentially.   
       
 **Instructions:**    
 Running a coding exercise for the first time, could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
@@ -635,7 +621,7 @@ Tasks:
 - Name the full chain `pokemon_plot`
 - Use a new line for each method
 
-<codeblock id="02_20">
+<codeblock id="02_23">
 
 - Are you sure you are saving your dataframe as the correct object names?
 - Are you using `pd.read_csv()` and `pd.read_excel()` in the correct locations?
@@ -644,15 +630,15 @@ Tasks:
 
 </exercise>
 
-<exercise id="23" title="Grouping and Aggregating" type="slides">
+<exercise id="24" title="Grouping and Aggregating" type="slides">
 
-<slides source="module2_21">
+<slides source="module2_24">
 </slides>
 
 </exercise>
 
 
-<exercise id="24" title="Fruit Salad Grouping and Aggregating">
+<exercise id="25" title="Fruit Salad Grouping and Aggregating">
 
 Remember the fruit salad dataframe named `fruit_salad`?  Refer to it for the next two questions.
 
@@ -726,7 +712,7 @@ Are you using the correct verbs?
 
 </exercise>
 
-<exercise id="25" title="Practice Grouping">
+<exercise id="26" title="Practice Grouping">
 
 Find the mean of some Pokemon "types" using `.mean()` and `.groupby()`.
 
@@ -741,16 +727,16 @@ _**Make sure you remove the hash (`#`) symbol in the coding portions of this que
 Tasks:
 
 - Make a groupby object on the column `type` and name it `pokemon_type`.
-- Make a new dataframe named `type_means` using `.mean()` containing the mean values of each pokemon type.
-- Using `.loc[]`, obtain from the `type_means` dataframe, the mean `speed` of the following pokemon types: 
-    - `fire` and save it in an object named `fire_mean`
-    - `ice` and save it in an object named `ice_mean`
-    - `water` and save it in an object named `water_mean`
+- Find the mean value of each column for each pokemon `type` using `.mean()` and save the resulting dataframe as `type_means`.
+- Obtain from the `type_means` dataframe, the mean `speed` of the following pokemon types by using `df.loc[]`: 
+    - `fire` and save it in an object named `fire_mean_speed`
+    - `ice` and save it in an object named `ice_mean_speed`
+    - `water` and save it in an object named `water_mean_speed`
 
 
 <codeblock id="02_26">
 
-- Are you grouping by `type`? 
+- Are you grouping by the column named `type`? 
 - Are you using `.mean()` on the `pokemon_type` dataframe?
 - Are you naming the mean speed objects correctly?
 - Are you obtaining the mean values using `.loc[]`?
@@ -768,18 +754,19 @@ Running a coding exercise for the first time, could take a bit of time for every
 
 **When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
 
+_**Make sure you remove the hash (`#`) symbol in the coding portions of this question.  We have commented them so that the line won't execute and you can test your code after each step.**_ 
+
 Tasks:
-- Make a groupby object on the column `legendary` and name it pokemon_type.
-- Make a new dataframe named `legendary_stats` using `.agg()` containing the `max` and `min` values of legendary groups.
-- Using `.loc[],` obtain from the `legendary_stats` dataframe, the following values:
+- Make a groupby object on the column `legendary` and name it pokemon_legendary..
+- Find the maximum and minimum value of each column for each legendary groups using `.agg()` and save the resulting dataframe as `legendary_stats`.
+- Obtain from the `legendary_stats` dataframe, the following values by using `df.loc[]`:
     - The capture rates (`capture_rt`) for non-legendary (`=0`) pokemon and save them as object `capture_0` 
     - The total base scores (`total_bs`)for legendary (`=1`) pokemon and save them as object `total_1`
 
 
-<codeblock id="02_24">
+<codeblock id="02_27">
 
-- Are selecting the dataframe with `pokemon.loc[ : , ['attack',  'defense', 'capture_rt', 'total_bs', 'legendary']]`? 
-- Are you grouping by `legendary`? 
+- Are you grouping by the column named `legendary`? 
 - Are you using `.agg()` on the `legendary_stats` dataframe?
 - Are you naming the objects correctly?
 - Are you obtaining the stats using `.loc[]`?
@@ -789,7 +776,72 @@ Tasks:
 </exercise>
 
 
-<exercise id="28" title="What Did We Just Learn?" type="slides">
-<slides source="module2_25">
+<exercise id="28" title="Plotting a Groupby Object">
+
+Let's attempt to answer the question _*"which pokemon type has the highest mean attack value?"*_ by making a bar chart from a groupby object. 
+      
+**Instructions:**    
+Running a coding exercise for the first time, could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
+
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
+
+Tasks:       
+Create a plot by chaining the following actions.   
+- Make a groupby object on the column `type` and name it pokemon_type.
+- Use `.mean()` on the new groupby object.
+- Use `.loc[]` to select the `attack` column.
+- Sort the pokemon mean attack values in descending order using `.sort_values()`.
+- Finally plot the graph and give it an appropriate title. 
+- Name the object `attack_plot`.
+
+
+<codeblock id="02_28">
+
+- Are you grouping by the column named `type`? 
+- Are you using `.loc[ :, 'attack']`?
+- While sorting, are you using the argument `ascending=False`?
+- Are you giving your plot a title??
+
+</codeblock>
+
+
+Which Pokemon type has the highest mean attack value? 
+
+<choice id="1">
+<opt text='Steel' >
+
+Take another look at the plot.
+
+</opt>
+
+<opt text='Ground'>
+
+Take another look at the plot. 
+
+</opt>
+
+<opt text='Dragon' correct="true">
+
+Well done!
+
+</opt>
+
+
+<opt text='Fighting' >
+
+Take another look at the plot.
+
+</opt>
+
+
+</choice> 
+
+
+
+</exercise>
+
+
+<exercise id="29" title="What Did We Just Learn?" type="slides">
+<slides source="module2_29">
 </slides>
 </exercise>

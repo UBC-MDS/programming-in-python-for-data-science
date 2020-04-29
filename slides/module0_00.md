@@ -5,7 +5,10 @@ type: slides
 # Welcome 
 
 Notes: Welcome to DSCI 511 Programming in Python for Data Science  
-
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
 ---
 
 # Course Learning Outcomes 

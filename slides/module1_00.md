@@ -5,6 +5,10 @@ type: slides
 # Module Learning Outcomes
 
 Notes: In this module you will be introduced to dataframes, the Python Pandas package and learn how to manipute data.
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
 
 ---
 

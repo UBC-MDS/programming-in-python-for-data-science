@@ -1,32 +1,18 @@
 import pandas as pd
 
 pokemon = pd.read_csv('data/pokemon.csv', index_col=0)
-pokemon = pokemon.loc[ : , 'attack': 'type']
 
-# Make a groupby object on the column type and name it pokemon_type
+# First, rename the column capture_rt to capture_rate
+# Create a new column named AD_total 
+# by adding the attack and defense columns from the pokemon dataset
+# Finally use .plot.scatter() to plot AD_total on the x-axis 
+# and capture_rt on the y-axis
+# Name the full chain pokemon_plot
+# Use a new line for each method
 
-pokemon_type = pokemon.groupby(by='type')
+pokemon_plot = (pokemon.rename(columns={'capture_rt': 'capture_rate'})
+                       .assign(AD_total=pokemon['defense'] + pokemon['defense'])
+                       .plot.scatter(x='AD_total', y='capture_rate')
+                )
 
-# Make a new dataframe named type_means using .mean() 
-# containing the mean values of each pokemon type 
 
-type_means = pokemon_type.mean() 
-type_means
-
-# Using .loc[] obtain from the type_means dataframe, the mean speed value of the 
-# following pokemon types:
- 
-# fire and save it in an object named fire_mean_speed
-
-fire_mean_speed = type_means.loc['fire', 'speed']
-fire_mean_speed
-
-# ice and save it in an object named ice_mean_speed
-
-ice_mean_speed = type_means.loc['ice', 'speed']
-ice_mean_speed
-
-# water and save it in an object named water_mean_speed
-
-ice_mean = type_means.loc['water', 'speed']
-ice_mean

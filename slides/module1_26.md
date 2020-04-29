@@ -2,7 +2,7 @@
 type: slides
 ---
 
-# Summary Statistics\!
+# Summary Statistics
 
 Notes: Script here.
 
@@ -111,8 +111,7 @@ Notes: Script here.
 
 Pandas has a lot up its sleeve but one of the most useful methods is
 called `describe` and it does exactly that. it *describes* our data.
-Let’s try it
-    out.
+Let’s try it out.
 
 ``` python
 df.describe()
@@ -132,8 +131,7 @@ max    160.000000   6.000000   5.000000  320.000000  14.000000  23.000000  15.00
 
 By default `df.describe()` only shows numerical columns.
 
-Notes: Script
-    here.
+Notes: Script here.
 
 <html>
 
@@ -185,8 +183,7 @@ Notes: Script here.
 We can make changes to either limit how much is shown or extend it with
 the additional argument `include = "all"` in the `describe` brackets.
 This expands the dataframe to contain both categorical and numerical
-columns
-    now.
+columns now.
 
 ``` python
 df.describe(include = 'all')
@@ -207,8 +204,7 @@ min     NaN   NaN   50.000000   1.000000   0.000000    0.000000   0.000000   1.0
 max     NaN   NaN  160.000000   6.000000   5.000000  320.000000  14.000000  23.000000  15.000000  330.000000  100.000000   3.000000   1.500000   1.500000  93.704912
 ```
 
-Notes: Script
-    here.
+Notes: Script here.
 
 <html>
 

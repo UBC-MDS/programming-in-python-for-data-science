@@ -2,7 +2,7 @@
 type: slides
 ---
 
-# Conditional Value Replacement
+# Filtering
 
 Notes: Script here
 
@@ -18,16 +18,15 @@ Notes: Script here
 
 ---
 
-# Building on things we know
+Filtering is probably one of the most frequent data manipulations you
+will do in data analysis. Filtering is often used when we are either
+trying to rid the dataframe of unwanted rows or analyze rows with a
+particular column value.
 
-Last module we explored `.loc[]` and how it can help slice and select
-specific columns and rows in a dataframe. The power of it however is not
-limited to just that. This section marks the return of `.loc[]` and how
-it canreplace certain values within a dataframe that meet specified
-conditions.
+Think of it as a sieve keeping only the rows matching conditions you
+have set.
 
-As routine practice, we are bringing in our cereal dataset in once
-again. Are you starting to get familiar with it yet?
+Let’s try to filter the `cereal.csv` dataset.
 
 ``` python
 df = pd.read_csv('cereal.csv', index_col=0)
@@ -58,23 +57,91 @@ Notes: Script here
 
 ---
 
-# The return of loc
+## Standard filtering
 
-In the previous module we discussed how `.loc[]` take the *_location_*
-of specified columns and rows labels of the dataframe and returns them.
-In this module, loc will continue to locate specific rows conditionally
-on certain column values similarly to how filter is used, however. now
-we are replacing the column value.
-
-In our cereal dataframe, the manufacturer value “Q” isn’t that
-informative and it might be easier to understand if we change all these
-values to something more understandable like “Quaker”.
-
-Let’s start by simply finding all the cereals made by the “Quaker Oats”
-manufacturer:
+Suppose you are trying to find a cereal with a protein content greater
+than 4g per serving. We can find those rows with the following code.
 
 ``` python
-df.loc[df['mfr'] == 'Q']
+df[ df['protein'] > 4]
+```
+
+```out
+               mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
+name                                                                                                                            
+Cheerios         G  Cold       110        6    2     290    2.0   17.0       1     105        25      1     1.0  1.25  50.764999
+Quaker Oatmeal   Q   Hot       100        5    2       0    2.7    1.0       1     110         0      1     1.0  0.67  50.828392
+Special K        K  Cold       110        6    0     230    1.0   16.0       3      55        25      1     1.0  1.00  53.131324
+```
+
+This is a little tricky because we first specify the dataframe `df` and
+within its square brackets, we specify the column attempting to be
+filtered from the dataframe with `df['protein']` followed by the
+condition.  
+The code can be translated essentially to “select the rows of the
+dataframe where the dataframe protein value is greater than 4”.
+
+We can see from the output of this code that all the values from the
+protein column are above 4.
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+We can do this with equalities as well.
+
+``` python
+df[ df['protein'] == 4]
+```
+
+```out
+                                  mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
+name                                                                                                                                               
+100% Bran                           N  Cold        70        4    1     130   10.0    5.0       6     280        25      3     1.0  0.33  68.402973
+All-Bran                            K  Cold        70        4    1     260    9.0    7.0       5     320        25      3     1.0  0.33  59.425505
+All-Bran with Extra Fiber           K  Cold        50        4    0     140   14.0    8.0       0     330        25      3     1.0  0.50  93.704912
+Life                                Q  Cold       100        4    2     150    2.0   12.0       6      95        25      2     1.0  0.67  45.328074
+Maypo                               A   Hot       100        4    1       0    0.0   16.0       3      95        25      2     1.0  1.00  54.850917
+Muesli Raisins; Dates; & Almonds    R  Cold       150        4    3      95    3.0   16.0      11     170        25      3     1.0  1.00  37.136863
+Muesli Raisins; Peaches; & Pecans   R  Cold       150        4    3     150    3.0   16.0      11     170        25      3     1.0  1.00  34.139765
+Quaker Oat Squares                  Q  Cold       100        4    1     135    2.0   14.0       6     110        25      3     1.0  0.50  49.511874
+```
+
+Now we get all the cereals with a protein content of 4g per serving. The
+key point to remember here is that we use **2** equal signs. In python a
+single `=` is used as an assignment operator. We set objects equal to
+something. `==` is a used in python for comparison. We check if certain
+values are equivalent to one another.
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+We can filter on categorical columns too. In this example maybe I want
+only cereals from the manufacturer “Q” (For Quaker)
+
+``` python
+df[ df['mfr'] == 'Q']
 ```
 
 ```out
@@ -90,46 +157,7 @@ Quaker Oat Squares   Q  Cold       100        4    1     135    2.0   14.0      
 Quaker Oatmeal       Q   Hot       100        5    2       0    2.7    1.0       1     110         0      1     1.0  0.67  50.828392
 ```
 
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
-
-You may look at the above syntax and think “Wait, we did something
-similar when we were filtering in the last section?”. You’re right\!
-
-We used simiar syntax when we filter, however, now we’ve added the verb
-`.loc[]`. In order to replace “Q” with “Quaker”, however, we need to
-indicate which column we are editing as the second argument (which we
-can’t do, if we leave out `.loc[]`) . In this example we are editing the
-`mfr` column. This code results in a single column dataframe with only
-“Q” values.
-
-``` python
-df.loc[df['mfr'] == 'Q', 'mfr']  
-```
-
-```out
-name
-100% Natural Bran     Q
-Cap'n'Crunch          Q
-Honey Graham Ohs      Q
-Life                  Q
-Puffed Rice           Q
-Puffed Wheat          Q
-Quaker Oat Squares    Q
-Quaker Oatmeal        Q
-Name: mfr, dtype: object
-```
+Here we are using the double equal signs we saw in the last slide.
 
 Notes: Script here
 
@@ -145,32 +173,37 @@ Notes: Script here
 
 ---
 
-Lastly, to complete our code we need to specify what we want to change
-the values to\! What we want these values to *equal* to now.
+## Multiple Condition Filtering - “and”
+
+We now know how to filter on one condition but how do we filter if we
+have many? Let’s say we only wanted cereals with a protein content
+between 4 to 5 grams?
 
 ``` python
-df.loc[df['mfr'] == 'Q', 'mfr'] = 'Quaker'
-```
-
-Wait\! Nothing was outputted with this code\! What happened? Let’s take
-a look at our dataframe
-
-``` python
-df.head()
+df[ (df['protein'] >= 4) & (df['protein'] <= 5) ]
 ```
 
 ```out
-                              mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
-name                                                                                                                                           
-100% Bran                       N  Cold        70        4    1     130   10.0    5.0       6     280        25      3     1.0  0.33  68.402973
-100% Natural Bran          Quaker  Cold       120        3    5      15    2.0    8.0       8     135         0      3     1.0  1.00  33.983679
-All-Bran                        K  Cold        70        4    1     260    9.0    7.0       5     320        25      3     1.0  0.33  59.425505
-All-Bran with Extra Fiber       K  Cold        50        4    0     140   14.0    8.0       0     330        25      3     1.0  0.50  93.704912
-Almond Delight                  R  Cold       110        2    2     200    1.0   14.0       8       1        25      3     1.0  0.75  34.384843
+                                  mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
+name                                                                                                                                               
+100% Bran                           N  Cold        70        4    1     130   10.0    5.0       6     280        25      3     1.0  0.33  68.402973
+All-Bran                            K  Cold        70        4    1     260    9.0    7.0       5     320        25      3     1.0  0.33  59.425505
+All-Bran with Extra Fiber           K  Cold        50        4    0     140   14.0    8.0       0     330        25      3     1.0  0.50  93.704912
+Life                                Q  Cold       100        4    2     150    2.0   12.0       6      95        25      2     1.0  0.67  45.328074
+...                                ..   ...       ...      ...  ...     ...    ...    ...     ...     ...       ...    ...     ...   ...        ...
+Muesli Raisins; Dates; & Almonds    R  Cold       150        4    3      95    3.0   16.0      11     170        25      3     1.0  1.00  37.136863
+Muesli Raisins; Peaches; & Pecans   R  Cold       150        4    3     150    3.0   16.0      11     170        25      3     1.0  1.00  34.139765
+Quaker Oat Squares                  Q  Cold       100        4    1     135    2.0   14.0       6     110        25      3     1.0  0.50  49.511874
+Quaker Oatmeal                      Q   Hot       100        5    2       0    2.7    1.0       1     110         0      1     1.0  0.67  50.828392
+
+[9 rows x 15 columns]
 ```
 
-I can now see that `100% Natural Bran`’s manufacturer value has changed
-to `Quaker` but what about the rest of them?
+Code Explained:  
+We need to use the special symbol `&` meaning “and”. This means that
+both conditions must hold to be returned in the new dataframe. Each
+condition is wrapped with parentheses to distinguish the conditions from
+one another.
 
 Notes: Script here
 
@@ -186,28 +219,21 @@ Notes: Script here
 
 ---
 
-Let’s filter and see\!
+Next we will look at a case where we filter on 2 different columns.
+Let’s say we only want cereals from the Quaker manufacturer, with a
+protein content greater than 4.
 
 ``` python
-df[df['mfr'] == 'Quaker']  
+df[ (df['mfr'] == 'Q') & (df['protein'] > 4)]
 ```
 
 ```out
-                       mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
-name                                                                                                                                    
-100% Natural Bran   Quaker  Cold       120        3    5      15    2.0    8.0       8     135         0      3     1.0  1.00  33.983679
-Cap'n'Crunch        Quaker  Cold       120        1    2     220    0.0   12.0      12      35        25      2     1.0  0.75  18.042851
-Honey Graham Ohs    Quaker  Cold       120        1    2     220    1.0   12.0      11      45        25      2     1.0  1.00  21.871292
-Life                Quaker  Cold       100        4    2     150    2.0   12.0       6      95        25      2     1.0  0.67  45.328074
-Puffed Rice         Quaker  Cold        50        1    0       0    0.0   13.0       0      15         0      3     0.5  1.00  60.756112
-Puffed Wheat        Quaker  Cold        50        2    0       0    1.0   10.0       0      50         0      3     0.5  1.00  63.005645
-Quaker Oat Squares  Quaker  Cold       100        4    1     135    2.0   14.0       6     110        25      3     1.0  0.50  49.511874
-Quaker Oatmeal      Quaker   Hot       100        5    2       0    2.7    1.0       1     110         0      1     1.0  0.67  50.828392
+               mfr type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
+name                                                                                                                           
+Quaker Oatmeal   Q  Hot       100        5    2       0    2.7    1.0       1     110         0      1     1.0  0.67  50.828392
 ```
 
-Great, all the “Q” values have been replaced with “Quaker”. We see that
-when we use this syntax, we do not need to save the results in a new
-dataframe, like we had to with `.assign()` and `.drop()`.
+The same rules apply to two different column conditions.
 
 Notes: Script here
 
@@ -223,44 +249,67 @@ Notes: Script here
 
 ---
 
-This also works for inequality conditions. Let’s say instead of
-displaying the protein protein content numerically, we instead either
-have high or low protein levels. Let’s classify 3 grams or larger as
-“high” protein and anything less, as low.
+## Multiple Condition Filtering - or
 
-Let’s change the “high” protein values first:
-
-``` python
-df.loc[df['protein'] >= 3, 'protein']  = 'High' 
-```
-
-Followed by the “low” values.
+Ssuppose that we are interested in cereals that either are made from the
+Quaker manufacturer **OR** a protein content above 4. We only need one
+of these conditions to hold to return a row.
 
 ``` python
-#df.loc[df['protein'] < 2, 'protein']  = 'low' 
-```
-
-``` python
-df
+df[ (df['mfr'] == 'Q') | (df['protein'] > 4)]
 ```
 
 ```out
-                              mfr  type  calories protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
-name                                                                                                                                          
-100% Bran                       N  Cold        70    High    1     130   10.0    5.0       6     280        25      3     1.0  0.33  68.402973
-100% Natural Bran          Quaker  Cold       120    High    5      15    2.0    8.0       8     135         0      3     1.0  1.00  33.983679
-All-Bran                        K  Cold        70    High    1     260    9.0    7.0       5     320        25      3     1.0  0.33  59.425505
-All-Bran with Extra Fiber       K  Cold        50    High    0     140   14.0    8.0       0     330        25      3     1.0  0.50  93.704912
-Almond Delight                  R  Cold       110       2    2     200    1.0   14.0       8       1        25      3     1.0  0.75  34.384843
-...                           ...   ...       ...     ...  ...     ...    ...    ...     ...     ...       ...    ...     ...   ...        ...
-Triples                         G  Cold       110       2    1     250    0.0   21.0       3      60        25      3     1.0  0.75  39.106174
-Trix                            G  Cold       110       1    1     140    0.0   13.0      12      25        25      2     1.0  1.00  27.753301
-Wheat Chex                      R  Cold       100    High    1     230    3.0   17.0       3     115        25      1     1.0  0.67  49.787445
-Wheaties                        G  Cold       100    High    1     200    3.0   17.0       3     110        25      1     1.0  1.00  51.592193
-Wheaties Honey Gold             G  Cold       110       2    1     200    1.0   16.0       8      60        25      1     1.0  0.75  36.187559
+                   mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
+name                                                                                                                                
+100% Natural Bran    Q  Cold       120        3    5      15    2.0    8.0       8     135         0      3     1.0  1.00  33.983679
+Cap'n'Crunch         Q  Cold       120        1    2     220    0.0   12.0      12      35        25      2     1.0  0.75  18.042851
+Cheerios             G  Cold       110        6    2     290    2.0   17.0       1     105        25      1     1.0  1.25  50.764999
+Honey Graham Ohs     Q  Cold       120        1    2     220    1.0   12.0      11      45        25      2     1.0  1.00  21.871292
+...                 ..   ...       ...      ...  ...     ...    ...    ...     ...     ...       ...    ...     ...   ...        ...
+Puffed Wheat         Q  Cold        50        2    0       0    1.0   10.0       0      50         0      3     0.5  1.00  63.005645
+Quaker Oat Squares   Q  Cold       100        4    1     135    2.0   14.0       6     110        25      3     1.0  0.50  49.511874
+Quaker Oatmeal       Q   Hot       100        5    2       0    2.7    1.0       1     110         0      1     1.0  0.67  50.828392
+Special K            K  Cold       110        6    0     230    1.0   16.0       3      55        25      1     1.0  1.00  53.131324
 
-[77 rows x 15 columns]
+[10 rows x 15 columns]
 ```
+
+Instead of using the `&` symbol, we use `|` which is called the “pipe
+operator”. This means “or” in the Python programming language.
+
+This filter resulted in 10 cereals meeting either of the conditions
+instead of only 1 cereal when both condition needed to be met.
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+If we wanted a dataframe that met both of these conditions we would
+replace `|` with “and” (`&`) resulting in the following:
+
+``` python
+df[ (df['fiber'] > 6) & (df['protein'] > 5)]
+```
+
+```out
+Empty DataFrame
+Columns: [mfr, type, calories, protein, fat, sodium, fiber, carbo, sugars, potass, vitamins, shelf, weight, cups, rating]
+Index: []
+```
+
+Since no rows meet both conditions, a dataframe with zero rows is
+returned.
 
 Notes: Script here
 

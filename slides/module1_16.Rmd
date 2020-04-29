@@ -37,7 +37,7 @@ df = pd.read_csv('cereal.csv', index_col=0)
 type: slides
 
 
-## Obtaining dataframe Values
+# Obtaining dataframe Values
 
 Notes: Script here.
 <html>

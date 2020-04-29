@@ -22,8 +22,46 @@ Doing some sort of transformation on the columns of a dataframe will
 most likely come up in your analysis somewhere and it’s not always
 straight forward.
 
-Using only the first 5 rows of our cereal dataset, Let’s explore the
-next few scenarios.
+Let’s welcome back the `cereal.csv` data we have worked with in Module
+1.
+
+``` python
+df = pd.read_csv('cereal.csv', index_col=0)
+df.head()
+```
+
+```out
+                          mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
+name                                                                                                                                       
+100% Bran                   N  Cold        70        4    1     130   10.0    5.0       6     280        25      3     1.0  0.33  68.402973
+100% Natural Bran           Q  Cold       120        3    5      15    2.0    8.0       8     135         0      3     1.0  1.00  33.983679
+All-Bran                    K  Cold        70        4    1     260    9.0    7.0       5     320        25      3     1.0  0.33  59.425505
+All-Bran with Extra Fiber   K  Cold        50        4    0     140   14.0    8.0       0     330        25      3     1.0  0.50  93.704912
+Almond Delight              R  Cold       110        2    2     200    1.0   14.0       8       1        25      3     1.0  0.75  34.384843
+```
+
+Attribution:  
+*“[80 Cereals](https://www.kaggle.com/crawford/80-cereals/)” (c) by
+[Chris Crawford](https://www.linkedin.com/in/crawforc3/) is licensed
+under [Creative Commons Attribution-ShareAlike 3.0
+Unported](http://creativecommons.org/licenses/by-sa/3.0/)*
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+To make things especially clear, for the next few scenarios let only use
+the first 5 rows of the dataset.
 
 ``` python
 df = df.iloc[ 0: 5]
@@ -40,8 +78,9 @@ All-Bran with Extra Fiber   K  Cold        50        4    0     140   14.0    8.
 Almond Delight              R  Cold       110        2    2     200    1.0   14.0       8       1        25      3     1.0  0.75  34.384843
 ```
 
-Perhaps the column `fat` was instead expressing the grams of fat above
-2g. This means that the actual fat content of each cereal is actually an
+Perhaps we recently read some documentation regarding the `fat` column
+in the data is being expressed as the number of grams of fat above 2.
+This means that the actual fat content of each cereal is actually an
 additional 2 grams. How do we rectify this?
 
 Notes: Script here
@@ -328,6 +367,20 @@ Wheaties Honey Gold          28.3495
 Name: weight, Length: 77, dtype: float64
 ```
 
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
 Let’s combine this with the `assign()` verb so that we can save this as
 a new column in our dataframe named `weight_g`.
 
@@ -390,6 +443,20 @@ Wheaties                     100.000000
 Wheaties Honey Gold          146.666667
 Length: 77, dtype: float64
 ```
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
 
 let’s combine this with `assign()` naming the column `cals_per_cup`.
 

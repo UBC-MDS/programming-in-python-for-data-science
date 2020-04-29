@@ -2,7 +2,7 @@
 type: slides
 ---
 
-## Slicing Only Columns using df.loc\[\]
+# Slicing Only Columns using df.loc\[\]
 
 Notes: Script here.
 
@@ -62,8 +62,7 @@ Notes: Script here.
 ## So Far
 
 `loc` is used to slice columns and rows by **label** and within an
-interval. We always specify **row** indexing first, then
-**columns**.
+interval. We always specify **row** indexing first, then **columns**.
 
 ``` python
 df.loc[ 'row name start' : 'row name end', 'column name start' : 'column name end']

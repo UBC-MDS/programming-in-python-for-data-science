@@ -6,6 +6,11 @@ type: slides
 
 Notes: In this module, you will learn how to import different types of files, perform more advanced table manipulations (modifying and creating new columns) as well as method chaining conventions (style, including multi-line).
 
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
 ---
 
 # Module Learning Outcomes
