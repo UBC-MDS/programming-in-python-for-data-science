@@ -1,6 +1,6 @@
 import pandas as pd
 
-pokemon = pd.read_csv('pokemon_sw.csv', index_col=0)
+pokemon = pd.read_csv('data/pokemon_sw.csv', index_col=0)
 
 # Create an object using single brackets to obtain the column base_score and name it bs_column
 
