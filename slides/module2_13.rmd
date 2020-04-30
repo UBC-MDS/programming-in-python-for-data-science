@@ -59,7 +59,6 @@ Notes: Script here
 ---
 
 Doing some sort of transformation on the columns of a dataframe will most likely come up in your analysis somewhere and it's not always straight forward.
-
 Let's welcome back the `cereal.csv` data we have worked with in Module 1. 
 
 

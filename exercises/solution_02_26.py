@@ -13,20 +13,12 @@ pokemon_type = pokemon.groupby(by='type')
 type_means = pokemon_type.mean() 
 type_means
 
-# Obtain from the type_means dataframe, the mean speed of the following 
-# pokemon types by using df.loc[]:
- 
-# fire and save it in an object named fire_mean_speed
-
-fire_mean_speed = type_means.loc['fire', 'speed']
-fire_mean_speed
-
-# ice and save it in an object named ice_mean_speed
-
-ice_mean_speed = type_means.loc['ice', 'speed']
-ice_mean_speed
-
-# water and save it in an object named water_mean_speed
+# Obtain from the type_means dataframe, the mean speed of the
+# water type pokemon by using df.loc[]
+# # Save it in an object named water_mean_speed
 
 water_mean_speed = type_means.loc['water', 'speed']
+
+# Display it 
+
 water_mean_speed

@@ -115,7 +115,7 @@ mfr_group
 ```
 
 ```out
-<pandas.core.groupby.generic.DataFrameGroupBy object at 0x1220d9e80>
+<pandas.core.groupby.generic.DataFrameGroupBy object at 0x119054f98>
 ```
 
 This returns a `DataFrame GroupBy` object. What exactly is this?
@@ -534,6 +534,8 @@ Notes: Script here
 ```
 
 <img src="module2/module2_24/unnamed-chunk-15-1.png" width="576" />
+This plot, however, looks a little unfinished. We need to add a title
+and label our y axis.
 
 Notes: Script here
 
@@ -549,9 +551,8 @@ Notes: Script here
 
 ---
 
-This plot, however, looks a little unfinished. We need to add a title
-and label our y axis. We’ve added a title before, nothing new there but
-adding a y-axis label is a little different than what we are used to.
+We’ve added a title before, nothing new there but adding a y-axis label
+is a little different than what we are used to.
 
 ``` python
 sugar_plot = (df.groupby(by='mfr')
@@ -600,6 +601,26 @@ nutrition_plot
 <img src="module2/module2_24/unnamed-chunk-17-1.png" width="576" />
 
 I think we are ready to practice\!
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+It’s important to note that using `pandas` to plot groupby objects is
+very limited and is not possible for many other plot types including
+scatter plots. If you wish to learn more advanced visualization and
+Python plotting package **Altair**, come back soon and visit our in
+development course ***DSCI-531 Exploratory Data Visualization***.
 
 Notes: Script here
 

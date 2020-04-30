@@ -539,7 +539,7 @@ You can use `mighty_pokemon['type'].value_counts()` to find out.
 </exercise>
 
 
-<exercise id="19" title="Conditional Value Replacement" type="slides">
+<exercise id="19" title="Conditional Value Replacement and Assignmemt" type="slides">
 
 <slides source="module2_19">
 
@@ -550,7 +550,7 @@ You can use `mighty_pokemon['type'].value_counts()` to find out.
 
 <exercise id="20" title='Practice Replacing Values'>
 
-Our pokemon dataset may need some conditional changes. 
+Let's make a new column assigning the each pokemon base score as either "strong" or "weak"
       
 **Instructions:**    
 Running a coding exercise for the first time, could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
@@ -558,10 +558,31 @@ Running a coding exercise for the first time, could take a bit of time for every
 **When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
 
 Tasks:
+- Create a new column in the dataframe by assigning values 500 or greater from the column `total_bs` as 'strong' pokemon and values less than 500 as 'weak' pokemon.
+- Name the column `base_score`.
+- Display the first 10 rows of the Dataframe. 
+
+<codeblock id="02_20a">
+
+- Are you naming the new column named `base_score`? 
+- Are you using `.loc[df['total_bs'] >= 500, 'base_score']` and assigning it to the correct value ?
+- Are you using single equality signs for the assignment?
+
+</codeblock>
 
 
-<codeblock id="02_20">
 
+Using the new column `base_score` we made above, make a bar graph showing the frequency of the `strong` and `weak` pokemon.
+
+Tasks:
+- Create an object using single brackets to obtain the column `base_score` and name it `bs_column`.
+- Find the frequency of each using `.value_counts()` and save this as object `score_freq`.
+- Plot the object `score_freq` using `.plot.bar()` and save this graph as `score_plot`.
+
+
+<codeblock id="02_20b">
+- Are you using single square brackets or obtain the column `base_score`? 
+- Are you saving the objects with the correct names?
 
 </codeblock>
 
@@ -581,8 +602,7 @@ Tasks:
 <exercise id="22" title="Chaining True/False">
 
 **Question 1**          
-Is the following statements is true or false:        
-_Chaining removes the need for intermediate objects_
+_Chaining removes the need for intermediate objects._
 
 
 <choice id="1" >
@@ -728,10 +748,9 @@ Tasks:
 
 - Make a groupby object on the column `type` and name it `pokemon_type`.
 - Find the mean value of each column for each pokemon `type` using `.mean()` and save the resulting dataframe as `type_means`.
-- Obtain from the `type_means` dataframe, the mean `speed` of the following pokemon types by using `df.loc[]`: 
-    - `fire` and save it in an object named `fire_mean_speed`
-    - `ice` and save it in an object named `ice_mean_speed`
-    - `water` and save it in an object named `water_mean_speed`
+- Obtain from the type_means dataframe, the mean speed of the `water` type pokemon by using `.loc[]`.
+- Save it in an object named `water_mean_speed`.
+- Display it.
 
 
 <codeblock id="02_26">
@@ -759,9 +778,9 @@ _**Make sure you remove the hash (`#`) symbol in the coding portions of this que
 Tasks:
 - Make a groupby object on the column `legendary` and name it pokemon_legendary..
 - Find the maximum and minimum value of each column for each legendary groups using `.agg()` and save the resulting dataframe as `legendary_stats`.
-- Obtain from the `legendary_stats` dataframe, the following values by using `df.loc[]`:
-    - The capture rates (`capture_rt`) for non-legendary (`=0`) pokemon and save them as object `capture_0` 
-    - The total base scores (`total_bs`)for legendary (`=1`) pokemon and save them as object `total_1`
+- Obtain from the `legendary_stats` dataframe the capture rate (`capture_rt`) for non legendary (`=0`) pokemon using `.loc[]`.
+- Save this as object `nonlegend_cap_rate`.
+- Display it.
 
 
 <codeblock id="02_27">
