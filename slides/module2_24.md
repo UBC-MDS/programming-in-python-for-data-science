@@ -22,8 +22,8 @@ Often, we are interested in examining specific groups in our data.
 Perhaps the question we want to answer is:  
 *_Which manufacturer has the highest mean sugar content?_*
 
-We found out in previous section using `.value_counts()` that there were
-7 different manufacturers; “K”, “G”, “P”, “R”, “Q”, “N” and “A”.
+We found in module 1 using `.value_counts()` that there are 7 different
+manufacturers; “K”, “G”, “P”, “R”, “Q”, “N” and “A”.
 
 ``` python
 df['mfr'].value_counts()
@@ -33,8 +33,8 @@ df['mfr'].value_counts()
 K    23
 G    22
 P     9
-Q     8
 R     8
+Q     8
 N     6
 A     1
 Name: mfr, dtype: int64
@@ -70,8 +70,6 @@ df[df['mfr'] == 'K'].mean().loc['sugars']
 
 Next “G”:
 
-Let’s start with K:
-
 ``` python
 df[df['mfr'] == 'G'].mean().loc['sugars']
 ```
@@ -80,10 +78,10 @@ df[df['mfr'] == 'G'].mean().loc['sugars']
 7.954545454545454
 ```
 
-We could do this for the remaining 5 manufacturers; however, this is not
-ideal. It’s already taking quite a bit of time and it’ seem like a lot
-of work to do this another 5 times. Imagine how tedious this would be if
-we had 100 different manufacturers?
+We could do this for the remaining 5 manufacturers, however, it’s
+obvious that it’s time consuming and a lot of work to do this
+repeatedly. Imagine how tedious this would be if we had 100 different
+manufacturers?
 
 Notes: Script here
 
@@ -104,7 +102,7 @@ Notes: Script here
 Pandas has a solution for this. It’s not uncommon to be interested in
 examining specific groups in our data hence there is a verb helpful in
 grouping like-rows together. `df.groupby()` allows us to group our data
-based on a column.
+based on a specified column.
 
 Let’s group our candybars dataframe on the `mfr` column and save it as
 object `mfr_group`.
@@ -115,7 +113,7 @@ mfr_group
 ```
 
 ```out
-<pandas.core.groupby.generic.DataFrameGroupBy object at 0x119054f98>
+<pandas.core.groupby.generic.DataFrameGroupBy object at 0x117f2a5f8>
 ```
 
 This returns a `DataFrame GroupBy` object. What exactly is this?
@@ -134,7 +132,7 @@ Notes: Script here
 
 ---
 
-<img src='module2/groupby3.png'  alt="404 image" width = "80%" align="middle"/>
+<img src='module2/groupby7.png'  alt="404 image" width = "80%" align="middle"/>
 
 Notes: Script here
 
@@ -252,8 +250,8 @@ Notes: Script here
 
 ## Summary Statistics with Groups
 
-What now? This doesn’t answer our initial question of *_Which
-manufacturer has the highest mean sugar content?_*  
+What now? This doesn’t answer our initial question of ***Which
+manufacturer has the highest mean sugar content?***  
 Where do we go from here?  
 We need to calculate the mean sugar content in each manufacturing
 group\!
@@ -279,8 +277,7 @@ the highest mean sugar content across cereals. See how convenient this
 was to do in comparison to our initial method? Not only does this give
 us the result quicker, but it also gives us the mean of each column of
 the dataframe. Think of how many filtering and mean calculations would
-have to be done if we were to do this using our initial method.
-
+have to be done if we were to do this using our initial method.  
 Of course, using groups is not limited to finding the only the mean, we
 can do the same thing for other statistics too like `.min()` and
 `.max()`.
@@ -302,7 +299,7 @@ Notes: Script here
 ## Aggregating dataframes
 
 In situations where we want to collect multiple statistics together, we
-can aggregate them in 1 step using is a verb called `.agg()`.
+can aggregate them in 1 step using a verb called `.agg()`.
 
 `df.agg()` can be used on its own using a single measurement, without
 groupby:
@@ -504,7 +501,7 @@ Let’s return to question we asked at the begining of this section:
 *_Which manufacturer has the highest mean sugar content?_*
 
 A nice way of showing our results would be to graph this. A bar chart
-should do the job. Let’s use our chaining technique for this as well.
+should do the trick\! Let’s use our chaining technique for this as well.
 
 Here are the steps we are following to get our eventual plot.  
 \- We create a grouby object and calculate the mean for each column in
@@ -512,7 +509,8 @@ the dataframe.
 \- Next we take the single column we are interested in using `.loc[]`.  
 \- Our last action is the plot everything using `.plot.bar()`.
 
-Notes: Script here
+We are going to save our plot as an object named `sugar_plot`. Notes:
+Script here
 
 <html>
 
@@ -527,13 +525,16 @@ Notes: Script here
 ---
 
 ``` python
-(df.groupby(by='mfr')
-   .mean().loc[:,'sugars']
-   .plot.bar()
-)
+sugar_plot = (df.groupby(by='mfr')
+                .mean()
+                .loc[:,'sugars']
+                .plot.bar()
+             )
+sugar_plot
 ```
 
 <img src="module2/module2_24/unnamed-chunk-15-1.png" width="576" />
+
 This plot, however, looks a little unfinished. We need to add a title
 and label our y axis.
 
@@ -551,8 +552,8 @@ Notes: Script here
 
 ---
 
-We’ve added a title before, nothing new there but adding a y-axis label
-is a little different than what we are used to.
+We’ve added a title before, so there is nothing new there but adding a
+y-axis label is a little different than what we are used to.
 
 ``` python
 sugar_plot = (df.groupby(by='mfr')
@@ -561,14 +562,12 @@ sugar_plot = (df.groupby(by='mfr')
                 .plot.bar(title = 'Mean sugar content among manufacturers')
               )
 sugar_plot.set_ylabel('Sugar content (in grams)')
-sugar_plot
 ```
 
 <img src="module2/module2_24/unnamed-chunk-16-1.png" width="576" />
 
 In this case we reference our initial plot and use the verb
-`set_ylabel()` with the axis label as the argument. We finish by calling
-our object `sugar_plot` to display it.
+`set_ylabel()` with the desired axis label as the argument.
 
 Notes: Script here
 
@@ -600,8 +599,6 @@ nutrition_plot
 
 <img src="module2/module2_24/unnamed-chunk-17-1.png" width="576" />
 
-I think we are ready to practice\!
-
 Notes: Script here
 
 <html>
@@ -616,11 +613,11 @@ Notes: Script here
 
 ---
 
-It’s important to note that using `pandas` to plot groupby objects is
-very limited and is not possible for many other plot types including
-scatter plots. If you wish to learn more advanced visualization and
-Python plotting package **Altair**, come back soon and visit our in
-development course ***DSCI-531 Exploratory Data Visualization***.
+Using `pandas` to plot groupby objects is very limited and is not
+possible for many other plot types such as scatter plots. If you wish to
+learn more advanced visualization and Python plotting package
+**Altair**, come back soon and visit our in development course
+**DSCI-531 Exploratory Data Visualization**.
 
 Notes: Script here
 

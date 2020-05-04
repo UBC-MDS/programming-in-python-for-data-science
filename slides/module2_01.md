@@ -67,7 +67,6 @@ row and each column value separated with a comma.
 The code required to read in this URL looks like this:
 
 ``` python
-
 candybars = pd.read_csv('https://raw.githubusercontent.com/UBC-MDS/MCL-DSCI-511-programming-in-python/master/data/candybars.csv')
 candybars.head()
 ```
@@ -103,10 +102,10 @@ Notes: Script here.
 Reading in `txt` files can be a little less standard. Sometimes the
 character separating column values are not always commas like we saw
 above. There are many different options and when we read in the data, we
-need to specify how the data should be recognized. Let’s load in the
-`candybars-text.txt` file. This is the same as the `candybars.csv` data
-but saved as a `txt` file. Look what happens when we load it in using
-the same syntax we are used to.
+need to specify how the data should be recognized.  
+Let’s load in the `candybars-text.txt` file. This is the same as the
+`candybars.csv` data but saved as a `txt` file. Look what happens when
+we load it in using the same syntax we are used to.
 
 ``` python
 candybars = pd.read_csv('candybars-text.txt')
@@ -157,8 +156,9 @@ candybars.head()
 4          Twix      58          1        0        1       0                  1        0                0      1                     Both
 ```
 
-That’s much better. `txt` files are not married to the delimiter being
-`\t`.
+That’s much better.  
+The delimiter won’t always be `\t` for `txt` files. The most common
+delimiters are `;`, `,`, `\t`, and sometimes even just spaces.
 
 Notes: Script here.
 
@@ -182,12 +182,11 @@ on different “sheets” within a single file. This means that if that is
 the case, we need to specify which one we want. Since this is a new type
 of animal, we also need a new verb. Enter `read_excel()`.
 
-We have our “candybars” dataframe saved as an excel spreadsheet named
+Our candybars dataframe is now saved as an excel spreadsheet named
 `foods.xlsx` on a sheet named `chocolate`.  
 Here is how we would read it in:
 
 ``` python
-
 candybars = pd.read_excel('foods.xlsx', sheet_name='chocolate')
 candybars.head()
 ```
@@ -219,14 +218,14 @@ Notes: Script here.
 
 Something you have seen in Module 1’s exercises is that when reading in
 the data there is always a `data/` before the file name.  
-This is because the file in which we are running the current code is
-located in a different folder than the data. The `data` is specifying a
-folder in our current directory (folder). We need to specify the path to
-the `csv` file through the subdirectory.
+This is because the file in which we are running the current code, is
+located in a different folder than the data.  
+The `data` is specifying a folder in our current directory (folder). We
+need to specify the path to the `csv` file through the subdirectory.
 
 <center>
 
-<img src='module2/datafile.png'  alt="404 image"  width="50%" align="middle"/>
+<img src='module2/datafile.png'  alt="404 image"  width="75%" align="middle"/>
 
 </center>
 
@@ -258,7 +257,8 @@ path to the required file.
 
 You can see the whole course structure and it’s subdirectories
 <a href="https://github.com/UBC-MDS/MCL-DSCI-511-programming-in-python" target="_blank">openly
-online</a>. It may also be a good idea to look in the
+online</a>.  
+It may also be a good idea to look in the
 <a href="https://github.com/UBC-MDS/MCL-DSCI-511-programming-in-python/tree/master/data" target="_blank">data
 folder</a> data folder to see exactly where the data you are loading in
 the exercises is coming from.

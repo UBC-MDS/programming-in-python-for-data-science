@@ -6,8 +6,3 @@ pokemon = pd.read_csv('data/pokemon.csv', index_col=0)
 
 ____ = ____
 
-# Display the first 10 rows of the dataframe
-
-____
-
-

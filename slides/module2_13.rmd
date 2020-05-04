@@ -83,11 +83,12 @@ Notes: Script here
 To make things especially clear, for the next few scenarios let only use the first 5 rows of the dataset.
 
 ```{python}
-df = df.iloc[ 0: 5]
+df = df.iloc[0:5]
 df
 ```
 
-Perhaps we recently read some documentation regarding the `fat` column in the data is being expressed as the number of grams of fat above 2.  This means that the actual fat content of each cereal is actually an additional 2 grams.  How do we rectify this?
+Let's explore the next scenario. Perhaps we recently read the cereal data's documentation explaining that the `fat` column is being expressed as the number of grams of fat above 2.   
+This means that the actual fat content of each cereal is actually an additional 2 grams.  How can we rectify this?
 
 Notes: Script here
 <html>
@@ -98,6 +99,8 @@ Notes: Script here
 ---
 
 We need to add 2 to each of the row's fat value.
+
+<br>
 
 <center> <img src='module2/plus2.png'  alt="404 image" /></center>
 
@@ -116,7 +119,7 @@ Here is where some magic happens.  Python doesn't require us to make a whole col
 df['fat'] + 2
 ```
 
-Notice how each row has changed in value. Notice that for operations on columns, we use single square brackets.
+See how each row has changed in value? When we do any type of operations on columns, we use single square brackets.
 
 
 Notes: Script here
@@ -127,9 +130,9 @@ Notes: Script here
 
 ---
 
-We can do the same thing with multiplication/division too.
-let's multiply the rating of each cereal by 2. 
-Note that  `*` is used in Python for multiplication.  
+We can do the same thing with multiplication/division too.     
+let's multiply the rating of each cereal by 2.       
+In python we use `*` for multiplication.  
 
 ```{python}
 df['rating'] * 2
@@ -173,13 +176,14 @@ Notes: Script here
 
 ---
 
-Keeping with the syntax of using only single square brackets on our columns, to get our desired output we can do the following. 
-Each sugar row value is divided by its respected cups value.
+Remember with any column operation we use only single square brackets on our columns.   
+To get our desired output of sugar content per cup our code looks like this:
 
 ```{python}
 df['sugars'] / df['cups']
 ```
 
+Each sugar row value is divided by its respected cups value.
 
 Notes: Script here
 <html>
@@ -189,13 +193,13 @@ Notes: Script here
 
 ---
 
-Just to stress the point of why we use single square brackets for our operation here is what happens when we use double square brackets:
+Just to stress the point of why we use single square brackets for our operations, here is what happens when we use double square brackets:
 
 ```{python}
 df[['sugars']] / df[['cups']]
 ```
 
-Not very useful for us.
+This doesnt appear very useful.
 
 Notes: Script here
 <html>
@@ -223,10 +227,11 @@ Notes: Script here
 
 ## Column Creation
 
-Now we have decided that we want a column in the dataframe that shows the weight of each cereal in grams instead of ounces
-We can add this to our current dataframe using the `assign` function.  
-We are going to save the conversion factor of grams to ounces in an object named `oz_to_g` to add some clarity and flexibility to our code.
-The operation for this desired result would be:
+In the next scenario, we have decided that a column in the dataframe that shows the weight of each cereal in grams instead of ounces is needed.
+   
+We are going to save the conversion factor of grams to ounces in an object named `oz_to_g` to add some clarity and flexibility to our code.   
+  
+Let's start with just the operation for this desired result:
 
 ```{python}
 oz_to_g = 28.3495
@@ -242,15 +247,18 @@ Notes: Script here
 
 ---
 
-Let's combine this with the `assign()` verb so that we can save this as a new column in our dataframe named `weight_g`. 
+Next, we combine our operation with the implementation of adding it as a new column to the dataframe. 
+The verb `.assign()` allows us to specify a  column name to our operation using just an equal sign `=`.    
+
+We are going to name our new column `weight_g`. 
 
 ```{python}
 df = df.assign(weight_g=df['weight'] * oz_to_g)
 df.head()
 ```
 
-Perfect!
-Remember from earlier in module 2 how it's important that we always save the dataframe to an object when making changes involving columns.
+
+Just like we did earlier in module, we need to save the dataframe to an object when making changes involving columns. This will permanently save the column `weight_g` to the dataframe `df`. 
 
 
 Notes: Script here
@@ -261,14 +269,13 @@ Notes: Script here
 
 ---
 
-We learned how to do operations involving multiple columns in a dataframe  let's implement this by saving the results as a new column.
-This time adding a column indicating how many calories there are in 1 cup of each cereal.
-
-The operation for this would be
+Let's try another example. 
+This time we want to save our sugar content per cereal cup as a column in our exisiting dataframe. 
+We established the operation for this is 
 
 
 ```{python}
-df['calories'] / df['cups']
+df['sugars'] / df['cups']
 ```
 
 Notes: Script here
@@ -279,15 +286,14 @@ Notes: Script here
 
 ---
 
-
-let's combine this with `assign()` naming the column `cals_per_cup`.
+Now we combine it with `assign()` naming the column `sugar_per_cup`.
 
 ```{python}
-df = df.assign(cals_per_cup=df['calories'] / df['cups'])
+df = df.assign(sugar_per_cup=df['sugars'] / df['cups'])
 df.head()
 ```
 
-Great! let's put this to practice. 
+That's not so bad right? Give it a shot in the exercises now on your own.
 
 Notes: Script here
 <html>

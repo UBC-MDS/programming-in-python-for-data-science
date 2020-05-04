@@ -77,9 +77,10 @@ Special K        K  Cold       110        6    0     230    1.0   16.0       3  
 This is a little tricky because we first specify the dataframe `df` and
 within its square brackets, we specify the column attempting to be
 filtered from the dataframe with `df['protein']` followed by the
-condition.  
-The code can be translated essentially to “select the rows of the
-dataframe where the dataframe protein value is greater than 4”.
+condition.
+
+The code can be translated to “select the rows from the dataframe `df`
+where the dataframe protein value is greater than 4”.
 
 We can see from the output of this code that all the values from the
 protein column are above 4.
@@ -118,10 +119,12 @@ Quaker Oat Squares                  Q  Cold       100        4    1     135    2
 ```
 
 Now we get all the cereals with a protein content of 4g per serving. The
-key point to remember here is that we use **2** equal signs. In python a
-single `=` is used as an assignment operator. We set objects equal to
-something. `==` is a used in python for comparison. We check if certain
-values are equivalent to one another.
+key point to remember here is that we use **2** equal signs.
+
+In python a single `=` is used as an assignment operator. We are setting
+objects equal to something. Double equal signs, `==`, is a used in
+python for comparison. We check if certain values are equivalent to one
+another.
 
 Notes: Script here
 
@@ -137,8 +140,8 @@ Notes: Script here
 
 ---
 
-We can filter on categorical columns too. In this example maybe I want
-only cereals from the manufacturer “Q” (For Quaker)
+We can filter categorical columns too. In this example, I only want
+cereals from the manufacturer “Q” (For Quaker)
 
 ``` python
 df[ df['mfr'] == 'Q']
@@ -176,8 +179,8 @@ Notes: Script here
 ## Multiple Condition Filtering - “and”
 
 We now know how to filter on one condition but how do we filter if we
-have many? Let’s say we only wanted cereals with a protein content
-between 4 to 5 grams?
+have many? Perhaps we only want cereals with a protein content between 4
+to 5 grams?
 
 ``` python
 df[ (df['protein'] >= 4) & (df['protein'] <= 5) ]
@@ -200,7 +203,7 @@ Quaker Oatmeal                      Q   Hot       100        5    2       0    2
 ```
 
 Code Explained:  
-We need to use the special symbol `&` meaning “and”. This means that
+We need to use the special symbol `&` indicating “and”. This means that
 both conditions must hold to be returned in the new dataframe. Each
 condition is wrapped with parentheses to distinguish the conditions from
 one another.
@@ -233,7 +236,7 @@ name
 Quaker Oatmeal   Q  Hot       100        5    2       0    2.7    1.0       1     110         0      1     1.0  0.67  50.828392
 ```
 
-The same rules apply to two different column conditions.
+The same coing syntax can be applied to two different column conditions.
 
 Notes: Script here
 
@@ -251,9 +254,9 @@ Notes: Script here
 
 ## Multiple Condition Filtering - or
 
-Ssuppose that we are interested in cereals that either are made from the
-Quaker manufacturer **OR** a protein content above 4. We only need one
-of these conditions to hold to return a row.
+Suppose that we are interested in cereals that either are made from the
+Quaker manufacturer **OR** a protein content above 4.  
+We only need one of these conditions to hold to return a row.
 
 ``` python
 df[ (df['mfr'] == 'Q') | (df['protein'] > 4)]
@@ -278,38 +281,9 @@ Special K            K  Cold       110        6    0     230    1.0   16.0      
 Instead of using the `&` symbol, we use `|` which is called the “pipe
 operator”. This means “or” in the Python programming language.
 
-This filter resulted in 10 cereals meeting either of the conditions
-instead of only 1 cereal when both condition needed to be met.
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
-
-If we wanted a dataframe that met both of these conditions we would
-replace `|` with “and” (`&`) resulting in the following:
-
-``` python
-df[ (df['fiber'] > 6) & (df['protein'] > 5)]
-```
-
-```out
-Empty DataFrame
-Columns: [mfr, type, calories, protein, fat, sodium, fiber, carbo, sugars, potass, vitamins, shelf, weight, cups, rating]
-Index: []
-```
-
-Since no rows meet both conditions, a dataframe with zero rows is
-returned.
+Filtering this time resulted in 10 cereals meeting either of the
+conditions instead of only 1 cereal when both condition needed to be
+met.
 
 Notes: Script here
 

@@ -19,10 +19,9 @@ Notes: Script here
 ---
 
 Doing some sort of transformation on the columns of a dataframe will
-most likely come up in your analysis somewhere and it’s not always straight forward.
-
-Let’s welcome back the `cereal.csv` data we have worked with in Module
-1.
+most likely come up in your analysis somewhere and it’s not always
+straight forward. Let’s welcome back the `cereal.csv` data we have
+worked with in Module 1.
 
 ``` python
 df = pd.read_csv('cereal.csv', index_col=0)
@@ -63,7 +62,7 @@ To make things especially clear, for the next few scenarios let only use
 the first 5 rows of the dataset.
 
 ``` python
-df = df.iloc[ 0: 5]
+df = df.iloc[0:5]
 df
 ```
 
@@ -77,10 +76,11 @@ All-Bran with Extra Fiber   K  Cold        50        4    0     140   14.0    8.
 Almond Delight              R  Cold       110        2    2     200    1.0   14.0       8       1        25      3     1.0  0.75  34.384843
 ```
 
-Perhaps we recently read some documentation regarding the `fat` column
-in the data is being expressed as the number of grams of fat above 2.
+Let’s explore the next scenario. Perhaps we recently read the cereal
+data’s documentation explaining that the `fat` column is being expressed
+as the number of grams of fat above 2.  
 This means that the actual fat content of each cereal is actually an
-additional 2 grams. How do we rectify this?
+additional 2 grams. How can we rectify this?
 
 Notes: Script here
 
@@ -97,6 +97,8 @@ Notes: Script here
 ---
 
 We need to add 2 to each of the row’s fat value.
+
+<br>
 
 <center>
 
@@ -136,8 +138,8 @@ Almond Delight               4
 Name: fat, dtype: int64
 ```
 
-Notice how each row has changed in value. Notice that for operations on
-columns, we use single square brackets.
+See how each row has changed in value? When we do any type of operations
+on columns, we use single square brackets.
 
 Notes: Script here
 
@@ -153,9 +155,9 @@ Notes: Script here
 
 ---
 
-We can do the same thing with multiplication/division too. let’s
-multiply the rating of each cereal by 2. Note that `*` is used in Python
-for multiplication.
+We can do the same thing with multiplication/division too.  
+let’s multiply the rating of each cereal by 2.  
+In python we use `*` for multiplication.
 
 ``` python
 df['rating'] * 2
@@ -234,9 +236,10 @@ Notes: Script here
 
 ---
 
-Keeping with the syntax of using only single square brackets on our
-columns, to get our desired output we can do the following. Each sugar
-row value is divided by its respected cups value.
+Remember with any column operation we use only single square brackets on
+our columns.  
+To get our desired output of sugar content per cup our code looks like
+this:
 
 ``` python
 df['sugars'] / df['cups']
@@ -251,6 +254,8 @@ All-Bran with Extra Fiber     0.000000
 Almond Delight               10.666667
 dtype: float64
 ```
+
+Each sugar row value is divided by its respected cups value.
 
 Notes: Script here
 
@@ -267,7 +272,7 @@ Notes: Script here
 ---
 
 Just to stress the point of why we use single square brackets for our
-operation here is what happens when we use double square brackets:
+operations, here is what happens when we use double square brackets:
 
 ``` python
 df[['sugars']] / df[['cups']]
@@ -283,7 +288,7 @@ All-Bran with Extra Fiber   NaN     NaN
 Almond Delight              NaN     NaN
 ```
 
-Not very useful for us.
+This doesnt appear very useful.
 
 Notes: Script here
 
@@ -340,12 +345,14 @@ Notes: Script here
 
 ## Column Creation
 
-Now we have decided that we want a column in the dataframe that shows
-the weight of each cereal in grams instead of ounces We can add this to
-our current dataframe using the `assign` function.  
+In the next scenario, we have decided that a column in the dataframe
+that shows the weight of each cereal in grams instead of ounces is
+needed.
+
 We are going to save the conversion factor of grams to ounces in an
 object named `oz_to_g` to add some clarity and flexibility to our code.
-The operation for this desired result would be:
+
+Let’s start with just the operation for this desired result:
 
 ``` python
 oz_to_g = 28.3495
@@ -380,8 +387,11 @@ Notes: Script here
 
 ---
 
-Let’s combine this with the `assign()` verb so that we can save this as
-a new column in our dataframe named `weight_g`.
+Next, we combine our operation with the implementation of adding it as a
+new column to the dataframe. The verb `.assign()` allows us to specify a
+column name to our operation using just an equal sign `=`.
+
+We are going to name our new column `weight_g`.
 
 ``` python
 df = df.assign(weight_g=df['weight'] * oz_to_g)
@@ -400,9 +410,9 @@ Almond Delight              R  Cold       110        2    2     200    1.0  ... 
 [5 rows x 16 columns]
 ```
 
-Perfect\! Remember from earlier in module 2 how it’s important that we
-always save the dataframe to an object when making changes involving
-columns.
+Just like we did earlier in module, we need to save the dataframe to an
+object when making changes involving columns. This will permanently save
+the column `weight_g` to the dataframe `df`.
 
 Notes: Script here
 
@@ -418,28 +428,25 @@ Notes: Script here
 
 ---
 
-We learned how to do operations involving multiple columns in a
-dataframe let’s implement this by saving the results as a new column.
-This time adding a column indicating how many calories there are in 1
-cup of each cereal.
-
-The operation for this would be
+Let’s try another example. This time we want to save our sugar content
+per cereal cup as a column in our exisiting dataframe. We established
+the operation for this is
 
 ``` python
-df['calories'] / df['cups']
+df['sugars'] / df['cups']
 ```
 
 ```out
 name
-100% Bran                    212.121212
-100% Natural Bran            120.000000
-All-Bran                     212.121212
-All-Bran with Extra Fiber    100.000000
-                                ...    
-Trix                         110.000000
-Wheat Chex                   149.253731
-Wheaties                     100.000000
-Wheaties Honey Gold          146.666667
+100% Bran                    18.181818
+100% Natural Bran             8.000000
+All-Bran                     15.151515
+All-Bran with Extra Fiber     0.000000
+                               ...    
+Trix                         12.000000
+Wheat Chex                    4.477612
+Wheaties                      3.000000
+Wheaties Honey Gold          10.666667
 Length: 77, dtype: float64
 ```
 
@@ -457,26 +464,27 @@ Notes: Script here
 
 ---
 
-let’s combine this with `assign()` naming the column `cals_per_cup`.
+Now we combine it with `assign()` naming the column `sugar_per_cup`.
 
 ``` python
-df = df.assign(cals_per_cup=df['calories'] / df['cups'])
+df = df.assign(sugar_per_cup=df['sugars'] / df['cups'])
 df.head()
 ```
 
 ```out
-                          mfr  type  calories  protein  fat  sodium  fiber  ...  vitamins  shelf  weight  cups     rating  weight_g  cals_per_cup
-name                                                                        ...                                                                  
-100% Bran                   N  Cold        70        4    1     130   10.0  ...        25      3     1.0  0.33  68.402973   28.3495    212.121212
-100% Natural Bran           Q  Cold       120        3    5      15    2.0  ...         0      3     1.0  1.00  33.983679   28.3495    120.000000
-All-Bran                    K  Cold        70        4    1     260    9.0  ...        25      3     1.0  0.33  59.425505   28.3495    212.121212
-All-Bran with Extra Fiber   K  Cold        50        4    0     140   14.0  ...        25      3     1.0  0.50  93.704912   28.3495    100.000000
-Almond Delight              R  Cold       110        2    2     200    1.0  ...        25      3     1.0  0.75  34.384843   28.3495    146.666667
+                          mfr  type  calories  protein  fat  sodium  fiber  ...  vitamins  shelf  weight  cups     rating  weight_g  sugar_per_cup
+name                                                                        ...                                                                   
+100% Bran                   N  Cold        70        4    1     130   10.0  ...        25      3     1.0  0.33  68.402973   28.3495      18.181818
+100% Natural Bran           Q  Cold       120        3    5      15    2.0  ...         0      3     1.0  1.00  33.983679   28.3495       8.000000
+All-Bran                    K  Cold        70        4    1     260    9.0  ...        25      3     1.0  0.33  59.425505   28.3495      15.151515
+All-Bran with Extra Fiber   K  Cold        50        4    0     140   14.0  ...        25      3     1.0  0.50  93.704912   28.3495       0.000000
+Almond Delight              R  Cold       110        2    2     200    1.0  ...        25      3     1.0  0.75  34.384843   28.3495      10.666667
 
 [5 rows x 17 columns]
 ```
 
-Great\! let’s put this to practice.
+That’s not so bad right? Give it a shot in the exercises now on your
+own.
 
 Notes: Script here
 

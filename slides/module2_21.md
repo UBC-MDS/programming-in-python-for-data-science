@@ -20,10 +20,10 @@ Notes: Script here
 
 ## What is Chaining?
 
-Up until now, when we want to perform multiple actions on an object,
-after each action we have been saving the results under a new object
-name. Chaining allows us to do multiple actions in a single line of code
-without these intermediate objects.
+Up until now, when we perform multiple actions on an object, we have
+been saving the results under a new object name. Chaining allows us to
+do multiple actions in a single line of code without the need to save
+each action in an intermediate object.
 
 You can imagine that we are linking verbs together similar to a chain.
 
@@ -45,8 +45,9 @@ Notes: Script here
 ---
 
 When we made our frequency table in Module 1, we first saved the single
-column as an object before we used `value_counts()`. We can do this all
-in one line with chaining:
+column as an object before we used `value_counts()`. Instead of saving
+the column in advance, we can skip this step and do this and the
+frequency table in one line with chaining:
 
 ``` python
 df['mfr'].value_counts()
@@ -63,7 +64,7 @@ A     1
 Name: mfr, dtype: int64
 ```
 
-However, this is not the extent of chaining.
+The convinience doesn’t stop there either.
 
 Notes: Script here
 
@@ -80,11 +81,12 @@ Notes: Script here
 ---
 
 Chaining is the design of performing each method in a sequential manner.
-Let’s say we want to perform 3 actions:  
-1\. Filter the dataframe for cereals only from manufacturer “K”.  
-2\. Select the columns `calories`, `sugars` and `rating` using the verb
-`loc`.  
-3\. Find the mean of each column using `.mean()`.
+Let’s say we want to perform 3 actions:
+
+1.  Filter the dataframe for cereals only from manufacturer “K”.  
+2.  Select the columns `calories`, `sugars` and `rating` using the verb
+    `loc`.  
+3.  Find the mean of each column using `.mean()`.
 
 Normally our code would look like this:
 
@@ -101,6 +103,8 @@ sugars        7.565217
 rating       44.038462
 dtype: float64
 ```
+
+Notes: Script here
 
 <html>
 
@@ -128,8 +132,8 @@ rating       44.038462
 dtype: float64
 ```
 
-This chain avoided the use of 3 intermediate objects `mfr_k`, `csr_df`
-and `cereal_stats`.
+This chain avoided the use of 2 intermediate objects; `mfr_k` and
+`csr_df`.
 
 Notes: Script here
 
@@ -145,30 +149,33 @@ Notes: Script here
 
 ---
 
-Great, we can cut out creating intermediate variable but now we just
-have a really long line of code and it’s a bit hard to read.
+We can cut out creating intermediate variable which is great but now we
+just have a really long line of code and it’s a bit hard to read.
 
 How can we make this easier to understand?  
-In this course, we suggest giving a new line for each method. We can do
+In this course, we suggest giving a new line for each verb We can do
 this by wrapping our code in parentheses and making a new line before
-each period (`.`). It’s good practice to indent and have the methods
-line up to make it especially clear.
+each period (`.`). It’s a good habit to indent and have the verbs lined
+up for additional clarity.
 
 ``` python
-(df[df['mfr'] == 'K'].loc[ : , ["calories", "sugars", "rating"]]
-                     .describe()
-                     .head()
-)
+cereal_mean = (df[df['mfr'] == 'K'].loc[ : , ["calories", "sugars", "rating"]]
+                                   .describe()
+                                   .head()
+              )
 ```
 
-```out
-         calories     sugars     rating
-count   23.000000  23.000000  23.000000
-mean   108.695652   7.565217  44.038462
-std     22.218818   4.500768  14.457434
-min     50.000000   0.000000  29.924285
-25%    100.000000   3.000000  34.478442
-```
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="placeholder_audio.mp3" />
+
+</audio>
+
+</html>
 
 ---
 

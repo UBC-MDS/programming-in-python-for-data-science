@@ -62,10 +62,10 @@ Notes: Script here.
 
 We have been lucky up until now that all the data we have loaded in has
 been particularly straight forward. Sometimes with data, there are a few
-lines of text explaining a few important points about the file. We do
-not want to include this in our dataframe and therefore we need to
-specify exactly when our dataframe begins. This is where `header` comes
-in. Take a look at the
+lines of text explaining important points about the file. We do not want
+to include this in our dataframe and therefore we need to specify
+exactly when our dataframe begins. This is where `header` comes in. Take
+a look at the
 <a href="https://github.com/UBC-MDS/MCL-DSCI-511-programming-in-python/blob/master/slides/candybars-h.csv" target="_blank">`candybars-h.csv`
 file </a> as an example.
 
@@ -137,7 +137,7 @@ Notes: Script here.
 ---
 
 We use `header=2` to indicate where our dataframe begins. (2 being the
-index position the column labels)
+index position or the row that containd the column labels)
 
 ``` python
 candybars = pd.read_csv('candybars-h.csv', header=2)
@@ -171,10 +171,10 @@ Notes: Script here.
 
 ## nrows
 
-nrows is useful when you only want to load in a portion of a file.
+`nrows` is useful when you only want to load in slice of the dataframe.
 Perhaps the file you have is large and you only want a sample of it.
-`nrows` will limit the of rows of file to read. Take our regular
-`candybar.csv` file but perhaps we only want 7 of the rows.
+`nrows` will limit the number of rows from the file to read in. Take our
+regular `candybar.csv` file, where we only want 7 of the rows of data.
 
 ``` python
 candybars = pd.read_csv('candybars.csv', nrows=7)
@@ -212,9 +212,9 @@ Similarly to how `nrows` specifies how many rows to read in, `usecols`
 selects which columns to load from the data. Perhaps the only columns
 relevant to our analysis are the columns `name`, `weight` and
 `available_canada_america`. We can forgo the other columns when reading
-the data in. The `usecols` argument accepts either index positions or
-labels. We put the desired column index positions in square brackets for
-the argument.
+the data in. In a similar way to selecting columns using `.iloc[]`. We
+put the desired column index positions in square brackets for the
+argument.
 
 ``` python
 candybars = pd.read_csv('candybars.csv', usecols=[0, 1, 10])
@@ -252,7 +252,8 @@ Notes: Script here.
 
 ---
 
-Or we could use the column labels, also in square brackets.
+The `usecols` argument accepts either index positions or labels so we
+could also use the column names in square brackets.
 
 ``` python
 candybars = pd.read_csv('candybars.csv', usecols=['name', 'weight', 'available_canada_america'])

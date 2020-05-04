@@ -27,16 +27,15 @@ By the end of the module, students are expected to:
 - Create new or columns in a dataframe using [`df.assign`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.assign.html) notation.
 - Drop columns in a dataframe using [`df.drop`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.drop.html)
 - Use `df[]` notation to filter rows of a dataframe.
-- Perform aggregating methods on grouped objects using [`groupby`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.groupby.html) and [`df.agg()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.agg.html).
+- Calculate summary statistics on grouped objects using [`groupby`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.groupby.html) and [`df.agg()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.agg.html).
 - Explain when chaining is appropriate.
-- Compare and contrast functions and methods.
-- Demonstrate chaining over multiple lines and methods.
+- Demonstrate chaining over multiple lines and verbs.
 
 ---
 
 # Assignment Instructions
 
-The assignment will concentrate on the learning objectives.
+The assignment will concentrate on the learning objectives as well as building knowledge on existing concepts. 
 
 Notes: Script here
 <html>

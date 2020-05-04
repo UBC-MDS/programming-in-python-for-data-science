@@ -77,7 +77,7 @@ Great! You have been paying attention.
 </exercise>
 
 
-<exercise id="3" title="Introduction to Pandas " type="slides">
+<exercise id="3" title="Introduction to Pandas" type="slides">
 
 <slides source="module1_03">
 </slides>

@@ -6,8 +6,3 @@ pokemon = pd.read_csv('data/pokemon.csv', index_col=0)
 
 fire_pokemon = pokemon[pokemon['type'] == 'fire']
 
-# Display the first 10 rows of the dataframe
-
-fire_pokemon.head(10)
-
-

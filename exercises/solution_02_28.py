@@ -9,6 +9,7 @@ pokemon = pd.read_csv('data/pokemon.csv', index_col=0)
 # Sort the pokemon mean attack values in descending order using .sort_values()
 # Finally plot the graph and give it an appropriate title
 # Name the object attack_plot 
+# Name the y-axis "Attack scores"
  
 attack_plot = (pokemon.groupby('type')
                       .mean()
@@ -17,3 +18,4 @@ attack_plot = (pokemon.groupby('type')
                       .plot.bar(title = 'Mean attack value among Pokemon types')
               )
 
+attack_plot.set_ylabel('Attack score')

@@ -6,10 +6,10 @@ pokemon = pd.read_csv('data/pokemon.csv', index_col=0)
 # that is the sum of column sp_attack and sp_defense
 # Save it, overwriting the dataframe named pokemon 
 
-pokemon_new_col = pokemon.assign(total_special = pokemon['sp_attack'] + pokemon['sp_defense'])
+pokemon = pokemon.assign(total_special = pokemon['sp_attack'] + pokemon['sp_defense'])
 
 # Display the first 5 rows of the dataframe
 
-pokemon_dropped.head()
+pokemon.head()
 
 

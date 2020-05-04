@@ -59,13 +59,12 @@ Notes: Script here
 
 There will be times where you are unsatisfied with the column names and
 you may want to change them. The proper syntax to do that is with
-`df.rename()`.  
+`df.rename()` and saving the dataframe as an object.  
 The column named `available_canada_america` is a bit long. Perhaps it
 would be a good idea to change it something shorter like `availability`.
-Here is the code to do that:
+Here is how we can acomplish that.
 
 ``` python
-
 df = df.rename(columns={'available_canada_america' : 'availability'})
 df.head()
 ```
@@ -104,7 +103,7 @@ Notes: Script here
 ---
 
 You can also rename multiple columns at once by simple adding a comma
-between the new and old column pairs between the curly brackets.
+between the new and old column pairs within the curly brackets.
 
 ``` python
 df = df.rename(columns={'available_canada_america' : 'availability',
@@ -142,8 +141,8 @@ Notes: Script here
 ## Column Dropping
 
 `df.drop()` is used when renaming the column labels is not enough and we
-simply want to drop one or multiple columns completely. Let’s delete the
-column `coconut`.
+just don’t want certain columns in the dataframe at all. Let’s delete
+the column `coconut`.
 
 ``` python
 df.drop(columns='coconut')
@@ -199,7 +198,8 @@ Twix                58          1        0        1       0                  1  
 
 Let’s overwrite this and remove multiple columns at the same time. Let’s
 drop `nougat` and `coconut` together. We put the columns we want to drop
-in square brackets.
+in square brackets and this time we will remember to overwrite over the
+`df` object.
 
 ``` python
 df = df.drop(columns=['nougat', 'coconut'])

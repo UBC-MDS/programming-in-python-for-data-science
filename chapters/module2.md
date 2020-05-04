@@ -90,10 +90,9 @@ Running a coding exercise for the first time could take a bit of time for everyt
 
 Tasks:
 
-- Use `pd.read_csv()` to read in the data from [this url](https://raw.githubusercontent.com/UBC-MDS/MCL-DSCI-511-programming-in-python/master/data/pokemon.csv) using the Pokemon column name as the index.
+- Use `pd.read_csv()` to read in the data from [this url](https://raw.githubusercontent.com/UBC-MDS/MCL-DSCI-511-programming-in-python/master/data/pokemon.csv) using the name column as the index.
 - Save the resulting dataframe as `pokemon_df`.
-- Use the Pokemon column name as the index.
-- Display the first 10 rows of `pokemon_df`.
+- Display the first 10 rows of the dataframe.
 
 
 
@@ -175,13 +174,13 @@ Which argument will assign your row index labels when reading in your data with 
 <choice id="1" >
 <opt text='<code>header</code>'>
 
-This labels your column names, not your row index labels. 
+This specifies where your column names are located, not your row index labels. 
 
 </opt>
 
 <opt text='<code>ncols</code>'>
 
-You may want to look over this before moving forward.
+This argument returns a selection of rows from the file. 
 
 </opt>
 
@@ -204,7 +203,7 @@ Not quite but you are on the right track.
 
 </opt>
 
-<opt text= '<code>nrows</code>' correct="true">
+<opt text= '<code>nrows</code>'>
 
 Not quite but you are on the right track. 
 
@@ -337,8 +336,8 @@ Tasks:
 
 <exercise id="12" title="Droping Columns in a Dataframe">
 
-Some of the columns in `pokemon.csv` we have deemed not useful. Let's get rid of them! 
-    
+Some of the columns in `pokemon.csv` we have deemed not useful. Let's get rid of them!     
+
 **Instructions:**    
 Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
 
@@ -346,7 +345,6 @@ Running a coding exercise for the first time could take a bit of time for everyt
 
 
 Tasks:
-
 - Drop the columns `deck_no`, `capture_rt`, and `legendary`.
 - Make sure to overwrite the new dataframe to object `pokemon`.
 - Display the first 5 rows of the dataframe.
@@ -378,19 +376,19 @@ df[['Column_A']] * df[['Column_B']]
 ```
 
 <choice id="1" >
-<opt text='A new column in our dataframe with each column value multiplied together per row.'>
+<opt text='A new column in our dataframe with each column value multiplied together for each row.'>
 
 Take care of the syntax being used. Are we using `.assign()` and the correct number of square brackets? 
 
 </opt>
 
-<opt text='A single column with each column value multiplied together per row.'>
+<opt text='A single column with each column value multiplied together for each row.'>
 
 You may want to look over this before moving forward.  Are we using the correct number of square brackets? 
 
 </opt>
 
-<opt text='A dataframe with 2 new columns with `NAN` values' correct="true">
+<opt text='A dataframe containing 2 new columns with `NAN` values' correct="true">
 
 Good job!
 
@@ -459,9 +457,9 @@ Tasks:
 
 </codeblock>
 
-Add to the coding cell above code to answer the following question:    
-**How many fire Pokemon are there?**
-*Hint: Think about how we obtain dataframe row and column size from the previous module*
+Add to the coding cell above code to answer the following question:        
+**How many fire Pokemon are there?**        
+*(Hint: Think about how we obtain dataframe row and column size from the previous module.)*
 
 <choice id="1" >
 <opt text='11'>
@@ -511,9 +509,9 @@ Tasks:
 </codeblock>
 
 
-Add to the coding cell above code to answer the following question: 
-**which `type` has the most Pokemon with attack and defense scores greater than 100?**     
-*Hint: Think about how we counted the frequency of categorical columns in module 1*
+Add to the coding cell above code to answer the following question:    
+**Which type has the most Pokemon with attack and defense scores greater than 100?**     
+*(Hint: Think about how we counted the frequency of categorical columns in module 1)*
 
 <choice id="1">
 <opt text='Rock and Bug' correct="true">
@@ -539,7 +537,7 @@ You can use `mighty_pokemon['type'].value_counts()` to find out.
 </exercise>
 
 
-<exercise id="19" title="Conditional Value Replacement and Assignmemt" type="slides">
+<exercise id="19" title="Conditional Value Replacement and Assignment" type="slides">
 
 <slides source="module2_19">
 
@@ -550,7 +548,7 @@ You can use `mighty_pokemon['type'].value_counts()` to find out.
 
 <exercise id="20" title='Practice Replacing Values'>
 
-Let's make a new column assigning the each pokemon base score as either "strong" or "weak"
+Let's make a new column by assigning each pokemon base score as either "strong" or "weak"
       
 **Instructions:**    
 Running a coding exercise for the first time, could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
@@ -598,7 +596,6 @@ Tasks:
 </exercise>
 
 
-
 <exercise id="22" title="Chaining True/False">
 
 **Question 1**          
@@ -613,6 +610,32 @@ Good job!
 </opt>
 
 <opt text='False'>
+
+You may want to look over this before moving forward.
+
+</opt>
+
+</choice> 
+
+
+**Question 2**          
+What needs to be included when giving a line break for each verb in chaining? 
+
+<choice id="2" >
+
+<opt text='Square brackets around the complete chain' >
+
+You may want to look over this before moving forward.
+
+</opt>
+
+<opt text='Parentheses around the complete chain' correct="true" >
+
+Great work!
+
+</opt>
+
+<opt text='Parentheses around each verb' >
 
 You may want to look over this before moving forward.
 
@@ -706,7 +729,7 @@ Consider this output made from the `fruit_salad` dataframe:
 
 
 <center> <img src='module2/question22output.png'  alt="404 image" /></center>
-
+   
 Which of the following code returns the dataframe above. 
 
 <choice id="2" >
@@ -734,7 +757,7 @@ Are you using the correct verbs?
 
 <exercise id="26" title="Practice Grouping">
 
-Find the mean of some Pokemon "types" using `.mean()` and `.groupby()`.
+Find the mean of each column for every Pokemon types using `.mean()` and `.groupby()`.
 
       
 **Instructions:**    
@@ -746,7 +769,7 @@ _**Make sure you remove the hash (`#`) symbol in the coding portions of this que
 
 Tasks:
 
-- Make a groupby object on the column `type` and name it `pokemon_type`.
+- Make a groupby object on the column `type`.
 - Find the mean value of each column for each pokemon `type` using `.mean()` and save the resulting dataframe as `type_means`.
 - Obtain from the type_means dataframe, the mean speed of the `water` type pokemon by using `.loc[]`.
 - Save it in an object named `water_mean_speed`.
@@ -776,7 +799,7 @@ Running a coding exercise for the first time, could take a bit of time for every
 _**Make sure you remove the hash (`#`) symbol in the coding portions of this question.  We have commented them so that the line won't execute and you can test your code after each step.**_ 
 
 Tasks:
-- Make a groupby object on the column `legendary` and name it pokemon_legendary..
+- Make a groupby object on the column `legendary`.
 - Find the maximum and minimum value of each column for each legendary groups using `.agg()` and save the resulting dataframe as `legendary_stats`.
 - Obtain from the `legendary_stats` dataframe the capture rate (`capture_rt`) for non legendary (`=0`) pokemon using `.loc[]`.
 - Save this as object `nonlegend_cap_rate`.
@@ -797,7 +820,7 @@ Tasks:
 
 <exercise id="28" title="Plotting a Groupby Object">
 
-Let's attempt to answer the question _*"which pokemon type has the highest mean attack value?"*_ by making a bar chart from a groupby object. 
+Let's attempt to answer the question ***"Which pokemon type has the highest mean attack value?"*** by making a bar chart from a groupby object. 
       
 **Instructions:**    
 Running a coding exercise for the first time, could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
@@ -810,8 +833,9 @@ Create a plot by chaining the following actions.
 - Use `.mean()` on the new groupby object.
 - Use `.loc[]` to select the `attack` column.
 - Sort the pokemon mean attack values in descending order using `.sort_values()`.
-- Finally plot the graph and give it an appropriate title. 
+- Plot the graph and give it an appropriate title. 
 - Name the object `attack_plot`.
+- Name the y-axis "Attack scores".
 
 
 <codeblock id="02_28">

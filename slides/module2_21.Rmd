@@ -59,8 +59,8 @@ Notes: Script here
 
 ## What is Chaining?
 
-Up until now, when we want to perform multiple actions on an object, after each action we have been saving the results under a new object name. 
-Chaining allows us to do multiple actions in a single line of code without these intermediate objects. 
+Up until now, when we perform multiple actions on an object, we have been saving the results under a new object name. 
+Chaining allows us to do multiple actions in a single line of code without the need to save each action in an intermediate object. 
 
 You can imagine that we are linking verbs together similar to a chain. 
 
@@ -77,13 +77,13 @@ Notes: Script here
 ---
 
 When we made our frequency table in Module 1, we first saved the single column as an object before we used `value_counts()`.
-We can do this all in one line with chaining:
+Instead of saving the column in advance, we can skip this step and do this and the frequency table in one line with chaining:
 
 ```{python}
 df['mfr'].value_counts()
 ```
 
-However, this is not the extent of chaining.
+The convinience doesn't stop there either. 
 
 
 Notes: Script here
@@ -96,6 +96,7 @@ Notes: Script here
 
 Chaining is the design of performing each method in a sequential manner. 
 Let's say we want to perform 3 actions:     
+  
 1. Filter the dataframe for cereals only from manufacturer "K".       
 2. Select the columns `calories`, `sugars` and `rating` using the verb `loc`.       
 3. Find the mean of each column using `.mean()`.     
@@ -108,6 +109,7 @@ cereal_mean = csr_df.mean()
 cereal_mean
 ```
 
+Notes: Script here
 <html>
 <audio controls >
   <source src="placeholder_audio.mp3" />
@@ -121,7 +123,7 @@ cereal_mean = df[df['mfr'] == 'K'].loc[ : , ["calories", "sugars", "rating"]].me
 cereal_mean
 ```
 
-This chain avoided the use of 3 intermediate objects `mfr_k`, `csr_df` and `cereal_stats`. 
+This chain avoided the use of 2 intermediate objects; `mfr_k` and `csr_df`. 
 
 Notes: Script here
 <html>
@@ -131,17 +133,23 @@ Notes: Script here
 
 ---
 
-Great, we can cut out creating intermediate variable but now we just have a really long line of code and it's a bit hard to read.
+We can cut out creating intermediate variable which is great but now we just have a really long line of code and it's a bit hard to read.
 
 How can we make this easier to understand?     
-In this course, we suggest giving a new line for each method.  We can do this by wrapping our code in parentheses and making a new line before each period (` . `).  It's good practice to indent and have the methods line up to make it especially clear. 
+In this course, we suggest giving a new line for each verb  We can do this by wrapping our code in parentheses and making a new line before each period (` . `).  It's a good habit to indent and have the verbs lined up for additional clarity. 
 
 ```{python}
-(df[df['mfr'] == 'K'].loc[ : , ["calories", "sugars", "rating"]]
-                     .describe()
-                     .head()
-)
+cereal_mean = (df[df['mfr'] == 'K'].loc[ : , ["calories", "sugars", "rating"]]
+                                   .describe()
+                                   .head()
+              )
 ```
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
 
 ---
 
