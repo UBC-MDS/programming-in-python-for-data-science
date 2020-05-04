@@ -835,7 +835,7 @@ Create a plot by chaining the following actions.
 - Sort the pokemon mean attack values in descending order using `.sort_values()`.
 - Plot the graph and give it an appropriate title. 
 - Name the object `attack_plot`.
-- Name the y-axis "Attack scores".
+- Name the y-axis " Mean attack score".
 
 
 <codeblock id="02_28">
