@@ -79,8 +79,8 @@ Almond Delight              R  Cold       110        2    2     200    1.0   14.
 Let’s explore the next scenario. Perhaps we recently read the cereal
 data’s documentation explaining that the `fat` column is being expressed
 as the number of grams of fat above 2.  
-This means that the actual fat content of each cereal is actually an
-additional 2 grams. How can we rectify this?
+This means that the fat content of each cereal is actually an additional
+2 grams. How can we rectify this?
 
 Notes: Script here
 
@@ -157,7 +157,7 @@ Notes: Script here
 
 We can do the same thing with multiplication/division too.  
 let’s multiply the rating of each cereal by 2.  
-In python we use `*` for multiplication.
+In Python we use `*` for multiplication.
 
 ``` python
 df['rating'] * 2
@@ -187,7 +187,7 @@ Notes: Script here
 
 ---
 
-Every rows value is changed by the operation.
+Every row’s value is changed by the operation.
 
 <center>
 
@@ -288,7 +288,7 @@ All-Bran with Extra Fiber   NaN     NaN
 Almond Delight              NaN     NaN
 ```
 
-This doesnt appear very useful.
+This doesn’t appear very useful.
 
 Notes: Script here
 
@@ -410,9 +410,9 @@ Almond Delight              R  Cold       110        2    2     200    1.0  ... 
 [5 rows x 16 columns]
 ```
 
-Just like we did earlier in module, we need to save the dataframe to an
-object when making changes involving columns. This will permanently save
-the column `weight_g` to the dataframe `df`.
+Just like we did earlier in the module, we need to save the dataframe to
+an object when making changes involving columns. This will permanently
+save the column `weight_g` to the dataframe `df`.
 
 Notes: Script here
 
@@ -429,8 +429,8 @@ Notes: Script here
 ---
 
 Let’s try another example. This time we want to save our sugar content
-per cereal cup as a column in our exisiting dataframe. We established
-the operation for this is
+per cereal cup as a column in our existing dataframe. We established the
+operation for this is:
 
 ``` python
 df['sugars'] / df['cups']
@@ -483,8 +483,7 @@ Almond Delight              R  Cold       110        2    2     200    1.0  ... 
 [5 rows x 17 columns]
 ```
 
-That’s not so bad right? Give it a shot in the exercises now on your
-own.
+Give it a shot in the exercises now on your own.
 
 Notes: Script here
 

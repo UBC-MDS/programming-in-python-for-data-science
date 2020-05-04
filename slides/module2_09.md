@@ -62,7 +62,7 @@ you may want to change them. The proper syntax to do that is with
 `df.rename()` and saving the dataframe as an object.  
 The column named `available_canada_america` is a bit long. Perhaps it
 would be a good idea to change it something shorter like `availability`.
-Here is how we can acomplish that.
+Here is how we can accomplish that.
 
 ``` python
 df = df.rename(columns={'available_canada_america' : 'availability'})

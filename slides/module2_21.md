@@ -44,7 +44,7 @@ Notes: Script here
 
 ---
 
-When we made our frequency table in Module 1, we first saved the single
+When we made our frequency table in module 1, we first saved the single
 column as an object before we used `value_counts()`. Instead of saving
 the column in advance, we can skip this step and do this and the
 frequency table in one line with chaining:
@@ -64,7 +64,7 @@ A     1
 Name: mfr, dtype: int64
 ```
 
-The convinience doesn’t stop there either.
+The convenience doesn’t stop there either.
 
 Notes: Script here
 
@@ -80,8 +80,8 @@ Notes: Script here
 
 ---
 
-Chaining is the design of performing each method in a sequential manner.
-Let’s say we want to perform 3 actions:
+Chaining is the design of performing each method sequentially. Let’s say
+we want to perform 3 actions:
 
 1.  Filter the dataframe for cereals only from manufacturer “K”.  
 2.  Select the columns `calories`, `sugars` and `rating` using the verb
@@ -149,8 +149,8 @@ Notes: Script here
 
 ---
 
-We can cut out creating intermediate variable which is great but now we
-just have a really long line of code and it’s a bit hard to read.
+We cut out creating intermediate variables which is great but now we
+have a really long line of code and it’s a bit hard to read.
 
 How can we make this easier to understand?  
 In this course, we suggest giving a new line for each verb We can do

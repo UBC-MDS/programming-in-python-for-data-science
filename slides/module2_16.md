@@ -121,9 +121,9 @@ Quaker Oat Squares                  Q  Cold       100        4    1     135    2
 Now we get all the cereals with a protein content of 4g per serving. The
 key point to remember here is that we use **2** equal signs.
 
-In python a single `=` is used as an assignment operator. We are setting
-objects equal to something. Double equal signs, `==`, is a used in
-python for comparison. We check if certain values are equivalent to one
+In Python, a single `=` is used as an assignment operator. We are
+setting objects equal to something. Double equal signs, `==`, is used
+for comparison. We check if certain values are equivalent to one
 another.
 
 Notes: Script here
@@ -179,7 +179,7 @@ Notes: Script here
 ## Multiple Condition Filtering - “and”
 
 We now know how to filter on one condition but how do we filter if we
-have many? Perhaps we only want cereals with a protein content between 4
+have many? Perhaps we only want cereals with protein content between 4
 to 5 grams?
 
 ``` python
@@ -222,7 +222,7 @@ Notes: Script here
 
 ---
 
-Next we will look at a case where we filter on 2 different columns.
+Next, we will look at a case where we filter on 2 different columns.
 Let’s say we only want cereals from the Quaker manufacturer, with a
 protein content greater than 4.
 
@@ -236,7 +236,8 @@ name
 Quaker Oatmeal   Q  Hot       100        5    2       0    2.7    1.0       1     110         0      1     1.0  0.67  50.828392
 ```
 
-The same coing syntax can be applied to two different column conditions.
+The same coding syntax can be applied to two different column
+conditions.
 
 Notes: Script here
 
@@ -281,9 +282,9 @@ Special K            K  Cold       110        6    0     230    1.0   16.0      
 Instead of using the `&` symbol, we use `|` which is called the “pipe
 operator”. This means “or” in the Python programming language.
 
-Filtering this time resulted in 10 cereals meeting either of the
-conditions instead of only 1 cereal when both condition needed to be
-met.
+This time, filtering using “or” resulted in 10 cereals that met either
+of the conditions. When we filtered using “and”, only 1 cereal met both
+conditions.
 
 Notes: Script here
 

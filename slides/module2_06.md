@@ -103,7 +103,7 @@ Notes: Script here.
 
 ---
 
-If we load this data in without any arguments this is the result.
+If we load this data without any arguments this is the result.
 
 ``` python
 candybars = pd.read_csv('candybars-h.csv')
@@ -137,7 +137,7 @@ Notes: Script here.
 ---
 
 We use `header=2` to indicate where our dataframe begins. (2 being the
-index position or the row that containd the column labels)
+index position or the row that contains the column labels)
 
 ``` python
 candybars = pd.read_csv('candybars-h.csv', header=2)
@@ -171,10 +171,11 @@ Notes: Script here.
 
 ## nrows
 
-`nrows` is useful when you only want to load in slice of the dataframe.
-Perhaps the file you have is large and you only want a sample of it.
-`nrows` will limit the number of rows from the file to read in. Take our
-regular `candybar.csv` file, where we only want 7 of the rows of data.
+`nrows` is useful when you only want to load in a slice of the
+dataframe. Perhaps the file you have is large and you only want a sample
+of it. `nrows` will limit the number of rows from the file to read in.
+Take our regular `candybar.csv` file, where we only want 7 of the rows
+of data.
 
 ``` python
 candybars = pd.read_csv('candybars.csv', nrows=7)

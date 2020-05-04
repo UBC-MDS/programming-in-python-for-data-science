@@ -20,7 +20,7 @@ Notes: Script here
 
 # Building on things we know
 
-In the last module we explored `.loc[]` and how it can help slice and
+In the last module, we explored `.loc[]` and how it can help slice and
 select specific columns and rows in a dataframe, however, the power of
 `.loc[]` does not stop there.  
 This section marks the return of `.loc[]` and how it can replace certain
@@ -60,15 +60,15 @@ Notes: Script here
 
 # The return of loc
 
-In the previous module we discussed how `.loc[]` returns only specified
-columns and rows of the dataframe. In this module, `loc[]` will be used
-to locate specific rows conditionally on their column values. This is
-done similarly to how we filtered our dataframe but with 2 distinct
+We have discussed how `.loc[]` can select and return specified columns
+and rows of the dataframe. In this module, `loc[]` will be used to
+locate specific rows conditionally on their column values. This is done
+similarly to how we filtered our dataframe but with 2 distinct
 differences:
 
 1.  We use `.loc[]` to find the rows specifying certain conditions.  
 2.  Once we have obtained our desired rows we replace their values in
-    either a specified column or create a new column all together.
+    either a specified column or create a new column altogether.
 
 Notes: Script here
 
@@ -164,7 +164,7 @@ Notes: Script here
 
 ---
 
-Lastly, we need to specify what we want to change the values to. In our
+Lastly, we need to specify yo what we want to change the values. In our
 case, we are replacing “Q” with “Quaker”.
 
 ``` python
@@ -253,7 +253,7 @@ Perhaps we want just 2 categories for protein levels -“high” and “low”.
 Any cereal above 3 grams of protein will be considered a “high” protein
 level and anything less, as a “low” protein level.
 
-Let’s assign the “high” protein values first. The only differences here
+Let’s assign the “high” protein values first. The only difference here
 from earlier is we now use an inequality for our condition and we
 designate a new column name instead of an existing one. Let’s save the
 values in a column named `protein_level`.
@@ -282,7 +282,7 @@ Notes: Script here
 
 ---
 
-Let’s see the results by scrolling to right of the dataframe.
+Let’s see the results by scrolling to the right of the dataframe.
 
 ``` python
 df.head()

@@ -33,8 +33,8 @@ df['mfr'].value_counts()
 K    23
 G    22
 P     9
-R     8
 Q     8
+R     8
 N     6
 A     1
 Name: mfr, dtype: int64
@@ -79,7 +79,7 @@ df[df['mfr'] == 'G'].mean().loc['sugars']
 ```
 
 We could do this for the remaining 5 manufacturers, however, it’s
-obvious that it’s time consuming and a lot of work to do this
+obvious that it’s time-consuming and a lot of work to do this
 repeatedly. Imagine how tedious this would be if we had 100 different
 manufacturers?
 
@@ -100,9 +100,9 @@ Notes: Script here
 # Using groupby
 
 Pandas has a solution for this. It’s not uncommon to be interested in
-examining specific groups in our data hence there is a verb helpful in
-grouping like-rows together. `df.groupby()` allows us to group our data
-based on a specified column.
+examining specific groups in our data hence there is a verb that is
+helpful in grouping like-rows together. `df.groupby()` allows us to
+group our data based on a specified column.
 
 Let’s group our candybars dataframe on the `mfr` column and save it as
 object `mfr_group`.
@@ -113,7 +113,7 @@ mfr_group
 ```
 
 ```out
-<pandas.core.groupby.generic.DataFrameGroupBy object at 0x117f2a5f8>
+<pandas.core.groupby.generic.DataFrameGroupBy object at 0x1171da9e8>
 ```
 
 This returns a `DataFrame GroupBy` object. What exactly is this?
@@ -496,7 +496,7 @@ Notes: Script here
 
 ## Plotting Groupby Objects
 
-Let’s return to question we asked at the begining of this section:
+Let’s return to thequestion we asked at the beginning of this section:
 
 *_Which manufacturer has the highest mean sugar content?_*
 
@@ -504,9 +504,10 @@ A nice way of showing our results would be to graph this. A bar chart
 should do the trick\! Let’s use our chaining technique for this as well.
 
 Here are the steps we are following to get our eventual plot.  
-\- We create a grouby object and calculate the mean for each column in
+\- We create a groupby object and calculate the mean for each column in
 the dataframe.  
-\- Next we take the single column we are interested in using `.loc[]`.  
+\- Next, we take the single column we are interested in using
+`.loc[]`.  
 \- Our last action is the plot everything using `.plot.bar()`.
 
 We are going to save our plot as an object named `sugar_plot`. Notes:
@@ -536,7 +537,7 @@ sugar_plot
 <img src="module2/module2_24/unnamed-chunk-15-1.png" width="576" />
 
 This plot, however, looks a little unfinished. We need to add a title
-and label our y axis.
+and label our y-axis.
 
 Notes: Script here
 
@@ -566,7 +567,7 @@ sugar_plot.set_ylabel('Sugar content (in grams)')
 
 <img src="module2/module2_24/unnamed-chunk-16-1.png" width="576" />
 
-In this case we reference our initial plot and use the verb
+In this case, we reference our initial plot and use the verb
 `set_ylabel()` with the desired axis label as the argument.
 
 Notes: Script here
@@ -583,18 +584,18 @@ Notes: Script here
 
 ---
 
-In the last plot we used `.loc[:,'sugars']` to select a single column to
-plot, however we can show multiple mean column values in a single plot
-by selecting more columns. The columns `fat`, `fiber` and `protein` seem
-like good choices.
+In the last plot, we used `.loc[:,'sugars']` to select a single column
+to the plot, however, we can show multiple mean column values in a
+single plot by selecting more columns. The columns `fat`, `fiber` and
+`protein` seem like good choices.
 
 ``` python
 nutrition_plot = (df.groupby(by='mfr')
                     .mean()
                     .loc[:, ['fat', 'fiber', 'protein']]
-                    .plot.bar(title="Mean nutritrion value over different manufacturers")
+                    .plot.bar(title='Mean nutritrion value over different manufacturers')
                  )
-nutrition_plot              
+nutrition_plot.set_ylabel('Content (in grams)')            
 ```
 
 <img src="module2/module2_24/unnamed-chunk-17-1.png" width="576" />

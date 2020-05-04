@@ -165,7 +165,7 @@ Notes: Script here.
 ## Reading in Data from a Different File
 
 Something you have seen in Module 1’s exercises is that when reading in the data there is always a `data/` before the file name.    
-This is because the file in which we are running the current code, is located in a different folder than the data.        
+This is because we are running the current code in a file that is located in a different folder than the data.        
 The `data` is specifying a folder in our current directory (folder). We need to specify the path to the `csv` file through the subdirectory.       
 
 
