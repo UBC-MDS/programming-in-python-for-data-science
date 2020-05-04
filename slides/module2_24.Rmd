@@ -331,9 +331,9 @@ We've added a title before, so there is nothing new there but adding a y-axis la
 sugar_plot = (df.groupby(by='mfr')
                 .mean()
                 .loc[:,'sugars']
-                .plot.bar(title = 'Mean sugar content among manufacturers')
+                .plot.bar(title='Mean sugar content among manufacturers')
               )
-sugar_plot.set_ylabel('Sugar content (in grams)')
+sugar_plot.set_ylabel('Sugar content (in grams)');
 ```
 
 In this case, we reference our initial plot and use the verb `set_ylabel()` with the desired axis label as the argument. 
@@ -354,7 +354,7 @@ nutrition_plot = (df.groupby(by='mfr')
                     .loc[:, ['fat', 'fiber', 'protein']]
                     .plot.bar(title='Mean nutritrion value over different manufacturers')
                  )
-nutrition_plot.set_ylabel('Content (in grams)')            
+nutrition_plot.set_ylabel('Content (in grams)');           
 ```
 
 Notes: Script here
