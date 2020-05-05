@@ -365,7 +365,8 @@ Notes: Script here
 
 ---
 
-Using `pandas` to plot groupby objects is very limited and is not possible for many other plot types such as scatter plots. If you wish to learn more advanced visualization and Python plotting package **Altair**, come back soon and visit our in development course **DSCI-531 Exploratory Data Visualization**. 
+Using `pandas` to plot groupby objects is very limited and is not possible for many other plot types such as scatter plots.      
+If you wish to learn more advanced visualization and Python plotting package **Altair**, come back soon and visit our in development course **DSCI-531 Exploratory Data Visualization**. 
 
 Notes: Script here
 <html>

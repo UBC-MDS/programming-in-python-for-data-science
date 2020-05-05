@@ -33,8 +33,8 @@ df['mfr'].value_counts()
 K    23
 G    22
 P     9
-Q     8
 R     8
+Q     8
 N     6
 A     1
 Name: mfr, dtype: int64
@@ -113,7 +113,7 @@ mfr_group
 ```
 
 ```out
-<pandas.core.groupby.generic.DataFrameGroupBy object at 0x1171da9e8>
+<pandas.core.groupby.generic.DataFrameGroupBy object at 0x1243143c8>
 ```
 
 This returns a `DataFrame GroupBy` object. What exactly is this?
@@ -560,9 +560,9 @@ y-axis label is a little different than what we are used to.
 sugar_plot = (df.groupby(by='mfr')
                 .mean()
                 .loc[:,'sugars']
-                .plot.bar(title = 'Mean sugar content among manufacturers')
+                .plot.bar(title='Mean sugar content among manufacturers')
               )
-sugar_plot.set_ylabel('Sugar content (in grams)')
+sugar_plot.set_ylabel('Sugar content (in grams)');
 ```
 
 <img src="module2/module2_24/unnamed-chunk-16-1.png" width="576" />
@@ -595,7 +595,7 @@ nutrition_plot = (df.groupby(by='mfr')
                     .loc[:, ['fat', 'fiber', 'protein']]
                     .plot.bar(title='Mean nutritrion value over different manufacturers')
                  )
-nutrition_plot.set_ylabel('Content (in grams)')            
+nutrition_plot.set_ylabel('Content (in grams)');           
 ```
 
 <img src="module2/module2_24/unnamed-chunk-17-1.png" width="576" />
@@ -615,9 +615,9 @@ Notes: Script here
 ---
 
 Using `pandas` to plot groupby objects is very limited and is not
-possible for many other plot types such as scatter plots. If you wish to
-learn more advanced visualization and Python plotting package
-**Altair**, come back soon and visit our in development course
+possible for many other plot types such as scatter plots.  
+If you wish to learn more advanced visualization and Python plotting
+package **Altair**, come back soon and visit our in development course
 **DSCI-531 Exploratory Data Visualization**.
 
 Notes: Script here
