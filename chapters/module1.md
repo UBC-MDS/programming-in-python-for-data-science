@@ -118,19 +118,19 @@ Which of the following statements is true?
 
 
 <choice id="2">
-<opt text="Attribute and methods can be thought of as nouns and functions as verbs." >
+<opt text="Attribute and methods can be thought of as nouns and functions as verbs" >
 
 Functions can be compared to verbs but you may want to revisit methods.
 
 </opt>
 
-<opt text="Attribute can be thought of as nouns and functions and methods as verbs." correct="true">
+<opt text="Attribute can be thought of as nouns and functions and methods as verbs" correct="true">
 
 You got it!
 
 </opt>
 
-<opt text="Functions and methods can be thought of as nouns and attributes as verbs.">
+<opt text="Functions and methods can be thought of as nouns and attributes as verbs">
 
 It may be a good idea to look over this section. 
 
@@ -181,7 +181,7 @@ Tasks:
 <codeblock id="01_06a">
 
 - Are you sure you are saving your objects as `columns_hockey`?
-- Are you using `df.columns`?
+- Are you using `.columns`?
 
 </codeblock>
 
@@ -196,7 +196,7 @@ Tasks:
 <codeblock id="01_06b">
 
 - Are you sure you are saving your objects as `hockey_shape`?
-- Are you using `df.shape`?
+- Are you using `.shape`?
 
 </codeblock>
 
@@ -245,13 +245,13 @@ This is not using the right syntax.
 
 </opt>
 
-<opt text='<code>fruit_salad["cantaloupe": "kiwi"]</code>' >
+<opt text='<code>fruit_salad["cantaloupe":"kiwi"]</code>' >
 
 This is missing something rather important.
 
 </opt>
 
-<opt text='<code>fruit_salad.loc["cantaloupe": "kiwi"]</code>' correct="true">
+<opt text='<code>fruit_salad.loc["cantaloupe":"kiwi"]</code>' correct="true">
 
 Good job! 
 
@@ -263,25 +263,25 @@ Good job!
 If you wanted all the rows between `cantaloupe` and `fig` and only columns `name` to `seed`, what would your code look like using index labels?
 
 <choice id="2" >
-<opt text='<code>fruit_salad.loc["cantaloupe" : "fig", "name" : "seed"]</code>'>
+<opt text='<code>fruit_salad.loc["cantaloupe":"fig", "name":"seed"]</code>'>
 
 Remember that the "name" column is the index and does not need to be specified.
 
 </opt>
 
-<opt text='<code>fruit_salad.loc["cantaloupe" : "fig", "colour": "seed" ]</code>' correct="true">
+<opt text='<code>fruit_salad.loc["cantaloupe":"fig", "colour":"seed"]</code>' correct="true">
 
 Great! This is correct since we don't need to start our slicing at name since it is our index.
 
 </opt>
 
-<opt text='<code>fruit_salad.loc["colour": "seed", cantaloupe : "fig"]</code>' >
+<opt text='<code>fruit_salad.loc["colour":"seed", "cantaloupe":"fig"]</code>' >
 
 This seems to be backward.
 
 </opt>
 
-<opt text= '<code>fruit_salad["cantaloupe" : "kiwi", "colour": "seed"  ]</code>'  >
+<opt text= '<code>fruit_salad["cantaloupe":"kiwi", "colour":"seed"]</code>'  >
 
 I think you are missing something important.  
 
@@ -319,7 +319,7 @@ Tasks:
 
 <codeblock id="01_09">
 
-- Are you using `df.loc[]`?
+- Are you using `.loc[]`?
 - Are you using the correct dataframe labels? Check your spelling and punctuation in row and column labels.
 - Did you slice both columns and rows?
 - Are you using "quotations"?
@@ -352,7 +352,7 @@ Tasks:
 
 <codeblock id="01_10">
 
-- Are you using `df.loc[]`?
+- Are you using `.loc[]`?
 - Are you using the correct dataframe labels? Check your spelling and punctuation in row and column labels.
 - Did you slice both columns and rows?
 - Are you using "quotations"?
@@ -361,7 +361,7 @@ Tasks:
 
 </exercise>
 
-<exercise id="11" title=" Slicing Columns Using df.loc[]" type="slides">
+<exercise id="11" title=" Slicing Columns Using .loc[]" type="slides">
 <slides source="module1_11">
 </slides>
 </exercise>
@@ -390,27 +390,27 @@ dragon-fruit    magenta      china    True   round      False          96       
 If you wanted all the rows and only columns `seeds`, `shape`, `sweetness` and  `water-content` what would your code look like using index labels?
 
 <choice id="1" >
-<opt text='<code>fruit_salad.loc[  :  , "seed" : "weight"]</code>'>
+<opt text='<code>fruit_salad.loc[:, "seed":"weight"]</code>'>
 
 This is almost right but it may be good to check your columns.
 
 </opt>
 
-<opt text='<code>fruit_salad[  :  , "seeds" : "water-content"]</code>' >
+<opt text='<code>fruit_salad[:, "seeds":"water-content"]</code>' >
 
 This is almost right but it's missing something important! Try looking at the title of the slides we just finished.
 
 </opt>
 
-<opt text='<code>fruit_salad["apple": "lemon" , "seeds" : "water-content"]</code>' >
+<opt text='<code>fruit_salad["apple":"lemon", "seeds":"water-content"]</code>' >
 
 This is almost right but it's missing something important and it could be condensed! Try looking at the title of the slides we just finished.
 
 </opt>
 
-<opt text='<code>fruit_salad.loc[  :  , "seeds" : "water-content"]</code>' correct="true">
+<opt text='<code>fruit_salad.loc[:, "seeds":"water-content"]</code>' correct="true">
 
-Good job! This has both `loc` and includes the columns we wish to slice here.
+Good job! This has both `.loc[]` and includes the columns we wish to slice here.
 
 </opt>
 
@@ -449,25 +449,25 @@ dragon-fruit    magenta      china    True   round      False          96       
 If I wanted to make a tropical salad and the recipe calls for `kiwi`, `cantaloupe` and `guava` in this order and I am only interested in columns ordered as `sweetness`, `weight`, `seed` and  `location`, what would my code look like?
 
 <choice >
-<opt text='<code>fruit_salad.loc["kiwi", "cantaloupe", "guava" : "sweetness", "weight", "seed", "location"]</code>' >
+<opt text='<code>fruit_salad.loc["kiwi", "cantaloupe", "guava":"sweetness", "weight", "seed", "location"]</code>' >
 
 Unfortunately, this code has many errors in it.
 
 </opt>
 
-<opt text='<code>fruit_salad.loc[ ["kiwi", "cantaloupe", "guava"] : ["sweetness", "weight", "seed", "location"] ]</code>' >
+<opt text='<code>fruit_salad.loc[["kiwi", "cantaloupe", "guava"]:["sweetness", "weight", "seed", "location"]]</code>' >
 
 The way that the rows and columns are separated may need to be looked over.
 
 </opt>
 
-<opt text='<code>fruit_salad.loc[["kiwi", "cantaloupe", "guava"] , ["sweetness", "weight", "seed", "location"] ]</code>' correct="true">
+<opt text='<code>fruit_salad.loc[["kiwi", "cantaloupe", "guava"], ["sweetness", "weight", "seed", "location"]]</code>' correct="true">
 
 Yes, this looks right!
 
 </opt>
 
-<opt text='<code>fruit_salad.loc["cantaloupe", "kiwi", "guava"] , ["weight", "seed”, “sweetness", "location"]]</code>'>
+<opt text='<code>fruit_salad.loc["cantaloupe", "kiwi", "guava"], ["weight", "seed”, “sweetness", "location"]]</code>'>
 
 Remember we are rearranging here.
 
@@ -494,7 +494,7 @@ Tasks:
 
 <codeblock id="01_15">
 
-- Are you using `df.loc[]`?
+- Are you using `.loc[]`?
 - Are you using the correct dataframe labels? Are you using names as your row labels?
 - Did you slice both columns and rows?
 - Are you using 2 sets of `[]` brackets?
@@ -537,7 +537,7 @@ Tasks:
 
 <codeblock id="01_17">
 
-- Are you using `df.loc[]` to select the specific values?
+- Are you using `.loc[]` to select the specific values?
 - Are you using single `[]` brackets?
 - Are you using "quotations"?
 
@@ -562,7 +562,7 @@ Running a coding exercise for the first time, could take a bit of time for every
 **When you see `____` in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.**
 
 Tasks:
-- Select all the rows from column `Salary` only and save it as `player salary`. (_Hint: you don't need `loc` here_)
+- Select all the rows from column `Salary` only and save it as `player salary`. (_Hint: you don't need `.loc[]` here_)
 - Display it.
 
 
@@ -605,25 +605,25 @@ dragon-fruit    magenta      china    True   round      False          96       
 If I wanted the rows `elderberry`  to `kiwi` and only columns `seeds`, `shape`, `sweetness` and  `water-content` what would my code look like if I was using index positions?
 
 <choice id="1" >
-<opt text='<code>fruit_salad.iloc[4 : 9 , 2 : 6]</code>' correct="true">
+<opt text='<code>fruit_salad.iloc[4:9, 2:6]</code>' correct="true">
 
-This is correct! We need to use `iloc` and go one position further than the last bound to select it
+This is correct! We need to use `.iloc[]` and go one position further than the last bound to select it
 
 </opt>
 
-<opt text='<code>fruit_salad.iloc[4 : 8 , 2 : 6]</code>' >
+<opt text='<code>fruit_salad.iloc[4:8, 2:6]</code>' >
 
 Not quite, but you are halfway there. 
 
 </opt>
 
-<opt text='<code>fruit_salad.iloc[4 : 9 , 3 : 6]</code>' >
+<opt text='<code>fruit_salad.iloc[4:9, 3:6]</code>' >
 
 Not quite, but you are halfway there. 
 
 </opt>
 
-<opt text='<code>fruit_salad.iloc[5 : 10 , 3 : 7]</code>'>
+<opt text='<code>fruit_salad.iloc[5:10, 3:7]</code>'>
 
 Are you forgetting that in the Python language we start counting at 0?
 
@@ -637,7 +637,7 @@ If I wanted the rows `lemon` and `cantaloupe`  but only the columns `colour`, `w
 <choice id="2" >
 <opt text='<code>fruit_salad.iloc[[lemon, cantaloupe], [colour, weight, seeds]]</code>'>
 
-We need to use the index position for this question and when using `iloc`.
+We need to use the index position for this question and when using `.iloc[]`.
 
 </opt>
 
@@ -687,7 +687,7 @@ Tasks:
 
 <codeblock id="01_22">
 
-- Are you using `df.iloc[]`?
+- Are you using `.iloc[]`?
 - Are you using the correct dataframe positions? Are you counting starting from 0?
 - Are you going 1 index past the bound you want?
 
@@ -717,7 +717,7 @@ Tasks:
 
 <codeblock id="01_23">
 
-- Are you using `df.iloc[]`?
+- Are you using `.iloc[]`?
 - Are you using the correct dataframe positions? Are you counting starting from 0?
 - Are you using two sets of `[]` square brackets within your `iloc` brackets?
 
@@ -783,7 +783,7 @@ dragon-fruit    magenta      china    True   round      False          96       
 Which of the following columns contain numerical data?
 
 <choice id="1" >
-<opt text='<code>colour</code>,<code>shape</code>,<code>water-content</code>'>
+<opt text='<code>colour</code>, <code>shape</code>, <code>water-content</code>'>
 
 Maybe it would be a good idea to take a look back at the slides again.
 
@@ -827,13 +827,13 @@ We want statistics of both quantitative and categorical columns.
 
 </opt>
 
-<opt text='<code>vegetable_salad.describe(include = "all")</code>' correct="true">
+<opt text='<code>vegetable_salad.describe(include="all")</code>' correct="true">
 
 This looks great! Well done! 
 
 </opt>
 
-<opt text='<code>vegetable_salad.summary(include = "all")</code>' >
+<opt text='<code>vegetable_salad.summary(include="all")</code>' >
 
 Is `summary` the correct command here?
 
@@ -859,7 +859,7 @@ Running a coding exercise for the first time, could take a bit of time for every
 <codeblock id="01_28a">
 
 - Are you sure you are saving your objects correctly?
-- Are you using using `df.describe(include = "all")` ?
+- Are you using using `.describe(include="all")` ?
 
 </codeblock>
 
@@ -871,14 +871,14 @@ Tasks:
 <codeblock id="01_28b">
 
 
-- Are you using df[["column-name"]].sum() to find the total of a column?
+- Are you using `df[["column-name"]].sum()` to find the total of a column?
 
 </codeblock>
 
 </exercise>
 
 
-<exercise id="29" title=" Frequency Tables and Writing CSVs " type="slides">
+<exercise id="29" title="Frequency Tables and Writing CSVs" type="slides">
 <slides source="module1_29">
 </slides>
 </exercise>
@@ -898,8 +898,8 @@ _**Make sure you remove the hash (`#`) symbol in the coding portions of this que
 
 Tasks:
 - Let's make an object named `position_column` that consists of just the `Position` column. Note we will be using this for `value_counts` so we must do this with only using single `[]` brackets.
-- Find the frequencies of the position for the hockey team using `value_counts()` and save it as `position_freq`.
-- Export `position_freq`  to a csv named `position_frequencies.csv` using `to_csv()`.
+- Find the frequencies of the position for the hockey team using `.value_counts()` and save it as `position_freq`.
+- Export `position_freq`  to a csv named `position_frequencies.csv` using `.to_csv()`.
 - Don't forget to display it.
 
 _If you get a warning along with your output, that's fine. We will explain why this happens further in the course._
@@ -907,7 +907,7 @@ _If you get a warning along with your output, that's fine. We will explain why t
 <codeblock id="01_30">
 
 - Are you sure you are using single `[]` brackets for `position_column`?
-- Are you using `to_csv()` to save your `csv`?
+- Are you using `.to_csv()` to save your `csv`?
 - Are you naming your `csv` correctly as "position_frequencies.csv"?
 
 </codeblock>
@@ -932,7 +932,7 @@ _**Make sure you remove the hash (`#`) symbol in the coding portions of this que
 
 Tasks:
 - Load in the csv named `position_frequencies.csv` you made in the earlier exercise and save it as `position_freq`. 
-- Use `plot.bar()` with `position_freq` and save the plot in an object named `position_bar`.
+- Use `.plot.bar()` with `position_freq` and save the plot in an object named `position_bar`.
 - Assign a `color` as `Teal`, set opacity to 0.5.
 - Don't forget to add a title as "Canuck Player Positions".
 
@@ -940,7 +940,7 @@ Tasks:
 
 - Are you sure you using `alpha` as opacify?
 - Are you using the correct Dataframe?
-- Did you assign the correct values to color, title and alpha?
+- Did you assign the correct values to `color`, `title` and `alpha`?
 - Are you spelling color in the American manner?
 
 </codeblock>
@@ -965,8 +965,8 @@ _After you successfully create this graph you may notice `1e6` on the top left o
 
 <codeblock id="01_33">
 
-- Are you using `df.plot.scatter()`
-- Are you sure you using `alpha` as opacify?
+- Are you using `.plot.scatter()`
+- Are you sure you using `alpha` as opacity?
 - Are you using the correct Dataframe?
 - Are you assigning variables x and y to the correct columns
 - Did you assign the correct values to color, title and alpha?

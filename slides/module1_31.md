@@ -30,8 +30,8 @@ manufacturer_freq
 K    23
 G    22
 P     9
-R     8
 Q     8
+R     8
 N     6
 A     1
 Name: mfr, dtype: int64
@@ -56,8 +56,7 @@ Notes: Script here.
 1.  We take the dataframe we wish to plot, in this case `freq_mfr_df`.  
 2.  Next we add `.plot` since we want to plot it\!  
 3.  But what kind of plot do we want?\! A bar chart in this case would
-    work nicely so lets add `.bar()` after
-that.
+    work nicely so lets add `.bar()` after that.
 
 <!-- end list -->
 
@@ -90,8 +89,7 @@ cereals?
 This would require a `scatter` plot\!  
 In the code we would need to specify the x and y axis which means we
 would need to specify the column names for each axis; In this case the
-x-axis is the `sugars` column and the y-axis is the `calories`
-column.
+x-axis is the `sugars` column and the y-axis is the `calories` column.
 
 ``` python
 df.plot.scatter(x='sugars', y='calories')
@@ -118,8 +116,7 @@ doesn’t seem to be 77 data points\! That’s because some of them are
 lying on top of each other with the same sugar ar calorie values. It may
 be of use to set an opacity to the graph to differential those points.
 Opacity is set with the argument `alpha` and accepts values between 0
-and 1, with 1 being full
-intensity.
+and 1, with 1 being full intensity.
 
 ``` python
 df.plot.scatter(x='sugars', y='calories', alpha=0.3)
@@ -180,7 +177,7 @@ df.plot.scatter(x="sugars",
                 alpha= 0.3, 
                 color="purple",
                 s=80, 
-                title ="The relationship between sugar and calories in cereals")
+                title="The relationship between sugar and calories in cereals")
 ```
 
 <img src="module1/module1_31/unnamed-chunk-8-1.png" width="576" />

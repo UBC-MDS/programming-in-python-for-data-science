@@ -63,7 +63,7 @@ Suppose you are trying to find a cereal with a protein content greater
 than 4g per serving. We can find those rows with the following code.
 
 ``` python
-df[ df['protein'] > 4]
+df[df['protein'] > 4]
 ```
 
 ```out
@@ -102,7 +102,7 @@ Notes: Script here
 We can do this with equalities as well.
 
 ``` python
-df[ df['protein'] == 4]
+df[df['protein'] == 4]
 ```
 
 ```out
@@ -144,7 +144,7 @@ We can filter categorical columns too. In this example, I only want
 cereals from the manufacturer “Q” (For Quaker)
 
 ``` python
-df[ df['mfr'] == 'Q']
+df[df['mfr'] == 'Q']
 ```
 
 ```out
@@ -183,7 +183,7 @@ have many? Perhaps we only want cereals with protein content between 4
 to 5 grams?
 
 ``` python
-df[ (df['protein'] >= 4) & (df['protein'] <= 5) ]
+df[(df['protein'] >= 4) & (df['protein'] <= 5)]
 ```
 
 ```out
@@ -227,7 +227,7 @@ Let’s say we only want cereals from the Quaker manufacturer, with a
 protein content greater than 4.
 
 ``` python
-df[ (df['mfr'] == 'Q') & (df['protein'] > 4)]
+df[(df['mfr'] == 'Q') & (df['protein'] > 4)]
 ```
 
 ```out
@@ -260,7 +260,7 @@ Quaker manufacturer **OR** a protein content above 4.
 We only need one of these conditions to hold to return a row.
 
 ``` python
-df[ (df['mfr'] == 'Q') | (df['protein'] > 4)]
+df[(df['mfr'] == 'Q') | (df['protein'] > 4)]
 ```
 
 ```out

@@ -70,7 +70,7 @@ Notes: Script here.
 ---
 
 ```{python}
-df = pd.read_csv('cereal.csv', index_col = 0)
+df = pd.read_csv('cereal.csv', index_col=0)
 df.head(15)
 ```
 
@@ -144,7 +144,7 @@ The same concepts can apply to the columns of the dataframe. Let's say we want a
 Using the logic we learned in the last set of slides, we would use the following code:
 
 ```{python}
-df.iloc[ : ,  3:9 ]
+df.iloc[:, 3:9]
 ```
 
 We would need to specify all rows using ` : ` as we did when we used `df.loc[]`. The column `protein` is at index position 3 (we do not include the index label as a column) and `sugars` is at index position 8, but since we want to include the 8th column we need to use the 9th position to make sure we get all the columns _BEFORE_ the upper bound.

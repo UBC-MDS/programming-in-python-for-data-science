@@ -83,7 +83,7 @@ Notes: Script here
 Suppose you are trying to find a cereal with a protein content greater than 4g per serving.  We can find those rows with the following code.  
 
 ```{python}
-df[ df['protein'] > 4]
+df[df['protein'] > 4]
 ```
 
 This is a little tricky because we first specify the dataframe `df` and within its square brackets, we specify the column attempting to be filtered from the dataframe with `df['protein']` followed by the condition.      
@@ -103,7 +103,7 @@ Notes: Script here
 We can do this with equalities as well. 
 
 ```{python}
-df[ df['protein'] == 4]
+df[df['protein'] == 4]
 ```
 
 Now we get all the cereals with a protein content of 4g per serving.  The key point to remember here is that we use **2** equal signs.       
@@ -122,7 +122,7 @@ Notes: Script here
 We can filter categorical columns too.  In this example,  I only want cereals from the manufacturer "Q" (For Quaker)
 
 ```{python}
-df[ df['mfr'] == 'Q']
+df[df['mfr'] == 'Q']
 ```
 
 Here we are using the double equal signs we saw in the last slide. 
@@ -141,7 +141,7 @@ We now know how to filter on one condition but how do we filter if we have many?
 Perhaps we only want cereals with protein content between 4 to 5 grams?
 
 ```{python}
-df[ (df['protein'] >= 4) & (df['protein'] <= 5) ]
+df[(df['protein'] >= 4) & (df['protein'] <= 5)]
 ```
 
 
@@ -160,7 +160,7 @@ Notes: Script here
 Next, we will look at a case where we filter on 2 different columns.  Let's say we only want cereals from the Quaker manufacturer, with a protein content greater than 4. 
 
 ```{python}
-df[ (df['mfr'] == 'Q') & (df['protein'] > 4)]
+df[(df['mfr'] == 'Q') & (df['protein'] > 4)]
 ```
 
 The same coding syntax can be applied to two different column conditions. 
@@ -179,7 +179,7 @@ Suppose that we are interested in cereals that either are made from the Quaker m
 We only need one of these conditions to hold to return a row. 
 
 ```{python}
-df[ (df['mfr'] == 'Q') | (df['protein'] > 4)]
+df[(df['mfr'] == 'Q') | (df['protein'] > 4)]
 ```
 
 Instead of using the ` & ` symbol, we use ` | ` which is called the "pipe operator".  This means "or" in the Python programming language. 

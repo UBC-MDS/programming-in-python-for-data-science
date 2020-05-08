@@ -24,7 +24,7 @@ columns `calories` to `fiber`?
 We would simply use `:` to indicate from “end” to “end” for rows.
 
 ``` python
-df.loc[ : , 'calories' : 'fiber']
+df.loc[:, 'calories':'fiber']
 ```
 
 ```out
@@ -65,7 +65,7 @@ Notes: Script here.
 interval. We always specify **row** indexing first, then **columns**.
 
 ``` python
-df.loc[ 'row name start' : 'row name end', 'column name start' : 'column name end']
+df.loc['row name start':'row name end', 'column name start':'column name end']
 ```
 
   - If we aren’t slicing any columns, we can simply say `df.loc[ 'row

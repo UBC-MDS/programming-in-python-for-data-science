@@ -61,7 +61,7 @@ Notes: Script here
 # The return of loc
 
 We have discussed how `.loc[]` can select and return specified columns
-and rows of the dataframe. In this module, `loc[]` will be used to
+and rows of the dataframe. In this module, `.loc[]` will be used to
 locate specific rows conditionally on their column values. This is done
 similarly to how we filtered our dataframe but with 2 distinct
 differences:

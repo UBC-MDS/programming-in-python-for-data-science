@@ -270,9 +270,9 @@ You might have noticed that when we used `df.agg()`,  we calculated the same 3 s
 Let's say we are concerned about the `max` and `min` calorie values, the total `sum` of the ratings and the `mean` and `median` sugar content for each manufacturing group.     
 We wrapped everything in curly brackets and we use a colon to separate the column name from the statistics values. We need to put the statistics within square brackets. 
 ```{python}
-mfr_group.agg({"calories": ['max', 'min'],
-                 "rating": ['sum'],  
-                 "sugars": ['mean', 'median']})
+mfr_group.agg({"calories":['max', 'min'],
+                 "rating":['sum'],  
+                 "sugars":['mean', 'median']})
 ```
 Now this is a bit easier to read. 
 

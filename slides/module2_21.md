@@ -92,7 +92,7 @@ Normally our code would look like this:
 
 ``` python
 mfr_k = df[df['mfr'] == 'K']
-csr_df = mfr_k.loc[ : , ["calories", "sugars", "rating"]]
+csr_df = mfr_k.loc[:, ["calories", "sugars", "rating"]]
 cereal_mean = csr_df.mean()
 cereal_mean
 ```
@@ -121,7 +121,7 @@ Notes: Script here
 Instead we can chain them:
 
 ``` python
-cereal_mean = df[df['mfr'] == 'K'].loc[ : , ["calories", "sugars", "rating"]].mean()
+cereal_mean = df[df['mfr'] == 'K'].loc[:, ["calories", "sugars", "rating"]].mean()
 cereal_mean
 ```
 
@@ -159,7 +159,7 @@ each period (`.`). It’s a good habit to indent and have the verbs lined
 up for additional clarity.
 
 ``` python
-cereal_mean = (df[df['mfr'] == 'K'].loc[ : , ["calories", "sugars", "rating"]]
+cereal_mean = (df[df['mfr'] == 'K'].loc[:, ["calories", "sugars", "rating"]]
                                    .describe()
                                    .head()
               )

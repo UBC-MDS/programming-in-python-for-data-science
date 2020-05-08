@@ -43,7 +43,7 @@ Notes: Script here.
 ---
 
 ``` python
-df = pd.read_csv('cereal.csv', index_col = 0)
+df = pd.read_csv('cereal.csv', index_col=0)
 df.head(15)
 ```
 
@@ -186,7 +186,7 @@ This expands the dataframe to contain both categorical and numerical
 columns now.
 
 ``` python
-df.describe(include = 'all')
+df.describe(include='all')
 ```
 
 ```out
@@ -233,7 +233,7 @@ min     NaN   NaN   50.000000   1.000000   0.000000    0.000000   0.000000   1.0
 max     NaN   NaN  160.000000   6.000000   5.000000  320.000000  14.000000  23.000000  15.000000  330.000000  100.000000   3.000000   1.500000   1.500000  93.704912
 ```
 
-Adding `include = 'all'` within the brackets adds some additional
+Adding `include='all'` within the brackets adds some additional
 statistics about categorical columns.
 
   - `unique`: how many observations are unique

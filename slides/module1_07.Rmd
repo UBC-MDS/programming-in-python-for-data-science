@@ -116,7 +116,7 @@ So now let's say we want the 5 rows past `Almond Delight`. That means we want ro
 The following code cuts the dataframe from  "Apple Cinnamon Cheerios" to "Cap'n'Crunch" keeping all the columns.
 
 ```{python}
-df.loc[ 'Apple Cinnamon Cheerios' : "Cap'n'Crunch"]
+df.loc['Apple Cinnamon Cheerios':"Cap'n'Crunch"]
 ```
 
 ```df.loc[ 'Apple Cinnamon Cheerios' : "Cap'n'Crunch"]```
@@ -140,7 +140,7 @@ We put our desired rows first, then columns and separate them with a comma.
 
 
 ```{python}
-df.loc[ 'Apple Cinnamon Cheerios' : "Cap'n'Crunch", 'calories' : 'fiber']
+df.loc['Apple Cinnamon Cheerios':"Cap'n'Crunch", 'calories':'fiber']
 ```
 
 `loc` is used to slice columns and rows by **label** and within an interval.
@@ -148,7 +148,7 @@ df.loc[ 'Apple Cinnamon Cheerios' : "Cap'n'Crunch", 'calories' : 'fiber']
 The general format to slice both rows and columns together looks like this:
 
 ```python
-`df.loc[ 'row name start' : 'row name end' , 'column name start' : 'column name end']`
+`df.loc['row name start':'row name end' , 'column name start':'column name end']`
 ```
 
 

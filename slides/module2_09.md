@@ -65,7 +65,7 @@ would be a good idea to change it something shorter like `availability`.
 Here is how we can accomplish that.
 
 ``` python
-df = df.rename(columns={'available_canada_america' : 'availability'})
+df = df.rename(columns={'available_canada_america':'availability'})
 df.head()
 ```
 
@@ -85,7 +85,7 @@ your attention on the fact that the argument `columns` needs to have the
 format:
 
 ``` 
- columns={'old-column-name' : 'new-column-name'}
+ columns={'old-column-name':'new-column-name'}
 ```
 
 Notes: Script here

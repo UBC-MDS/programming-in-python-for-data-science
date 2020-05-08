@@ -180,7 +180,7 @@ Remember with any column operation we use only single square brackets on our col
 To get our desired output of sugar content per cup our code looks like this:
 
 ```{python}
-df['sugars'] / df['cups']
+df['sugars']/df['cups']
 ```
 
 Each sugar row value is divided by its respected cups value.
@@ -196,7 +196,7 @@ Notes: Script here
 Just to stress the point of why we use single square brackets for our operations, here is what happens when we use double square brackets:
 
 ```{python}
-df[['sugars']] / df[['cups']]
+df[['sugars']]/df[['cups']]
 ```
 
 This doesn't appear very useful.
@@ -235,7 +235,7 @@ Let's start with just the operation for this desired result:
 
 ```{python}
 oz_to_g = 28.3495
-df['weight'] * oz_to_g
+df['weight']*oz_to_g
 ```
 
 
@@ -253,7 +253,7 @@ The verb `.assign()` allows us to specify a  column name to our operation using 
 We are going to name our new column `weight_g`. 
 
 ```{python}
-df = df.assign(weight_g=df['weight'] * oz_to_g)
+df = df.assign(weight_g=df['weight']*oz_to_g)
 df.head()
 ```
 
@@ -275,7 +275,7 @@ We established the operation for this is:
 
 
 ```{python}
-df['sugars'] / df['cups']
+df['sugars']/df['cups']
 ```
 
 Notes: Script here
@@ -289,7 +289,7 @@ Notes: Script here
 Now we combine it with `assign()` naming the column `sugar_per_cup`.
 
 ```{python}
-df = df.assign(sugar_per_cup=df['sugars'] / df['cups'])
+df = df.assign(sugar_per_cup=df['sugars']/df['cups'])
 df.head()
 ```
 

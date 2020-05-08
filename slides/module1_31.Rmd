@@ -157,7 +157,7 @@ df.plot.scatter(x="sugars",
                 alpha= 0.3, 
                 color="purple",
                 s=80, 
-                title ="The relationship between sugar and calories in cereals")
+                title="The relationship between sugar and calories in cereals")
 ```
 
 

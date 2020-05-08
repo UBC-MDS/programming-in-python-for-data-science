@@ -81,7 +81,7 @@ Here is how we can accomplish that.
 
 
 ```{python}
-df = df.rename(columns={'available_canada_america' : 'availability'})
+df = df.rename(columns={'available_canada_america':'availability'})
 df.head()
 ```
 
@@ -90,7 +90,7 @@ This code uses something we've never seen before - {} curly brackets.
 These have a special meaning but for now, you only need to concentrate your attention on the fact that the argument `columns` needs to have the format:
 
 ```
- columns={'old-column-name' : 'new-column-name'}
+ columns={'old-column-name':'new-column-name'}
 ```
 
 Notes: Script here

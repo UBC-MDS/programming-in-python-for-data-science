@@ -44,7 +44,7 @@ Notes: Script here.
 ---
 
 ``` python
-df = pd.read_csv('cereal.csv', index_col = 0)
+df = pd.read_csv('cereal.csv', index_col=0)
 df.head(15)
 ```
 
@@ -85,8 +85,7 @@ Notes: Script here.
 Let’s say we want the rows `All-Bran` to `Apple Cinnamon Cheerios` but
 we want to slice based on their position.  
 Using Python’s counting method of starting at zero, we conclude
-`All-Bran` to be at position to
-    2.
+`All-Bran` to be at position to 2.
 
 ```out
                           mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
@@ -117,8 +116,7 @@ Notes: Script here.
 ---
 
 We can use the same coding structure we learned with `df.loc`, but this
-time using row positions instead of labels with
-    `df.iloc[]`
+time using row positions instead of labels with `df.iloc[]`
 
 ``` python
 df.iloc[2:5]
@@ -153,8 +151,7 @@ Notes: Script here.
 That’s because when we use slicing by index position, it will take all
 the indices including the lower bound but *EXCLUDING* the upper bound.
 If we wanted to include `Apple Cinnamon Cheerios` we would have to go 1
-index position
-    further.
+index position further.
 
 ``` python
 df.iloc[2:6]
@@ -191,11 +188,10 @@ The same concepts can apply to the columns of the dataframe. Let’s say
 we want all the rows but we only want the columns starting at `protein`
 and ending (including) at column `sugars`.  
 Using the logic we learned in the last set of slides, we would use the
-following
-    code:
+following code:
 
 ``` python
-df.iloc[ : ,  3:9 ]
+df.iloc[:, 3:9]
 ```
 
 ```out
@@ -244,8 +240,7 @@ Cheerios` and `protein` to `sugars`.
 `Apple Cinnamon Cheerios` is located at position 5.  
 **Columns**  
 `protein` is located at position 3.  
-`sugar` is located at position
-    8.
+`sugar` is located at position 8.
 
 ``` python
 df.iloc[2:6, 3:9]

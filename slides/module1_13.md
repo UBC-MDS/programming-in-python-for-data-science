@@ -21,8 +21,7 @@ Notes: Script here.
 ## Unordered Indexing
 
 We have our trusty `cereal.csv` data again with the cereal names as the
-index
-    labels.
+index labels.
 
 ```out
                           mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
@@ -64,11 +63,10 @@ Let’s say we wanted only the rows labeled `Clusters`, `Trix` and
 obtain them now?
 
 We need to specify each column and row label that we want between square
-brackets `[]`, separated with
-commas.
+brackets `[]`, separated with commas.
 
 ``` python
-df.loc[ ['Clusters', 'Trix', 'Wheaties'] , ['type', 'sugars', 'rating'] ]
+df.loc[['Clusters', 'Trix', 'Wheaties'], ['type', 'sugars', 'rating']]
 ```
 
 ```out
@@ -102,7 +100,7 @@ It’s as simple as rearranging the order you target your rows and
 columns\!
 
 ``` python
-df.loc[ ['Wheaties', 'Trix', 'Clusters'] , ['type', 'rating', 'sugars'] ]
+df.loc[['Wheaties', 'Trix', 'Clusters'], ['type', 'rating', 'sugars']]
 ```
 
 ```out

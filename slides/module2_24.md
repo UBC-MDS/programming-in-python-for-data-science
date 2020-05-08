@@ -113,7 +113,7 @@ mfr_group
 ```
 
 ```out
-<pandas.core.groupby.generic.DataFrameGroupBy object at 0x1243143c8>
+<pandas.core.groupby.generic.DataFrameGroupBy object at 0x11e3acc88>
 ```
 
 This returns a `DataFrame GroupBy` object. What exactly is this?
@@ -460,9 +460,9 @@ the column name from the statistics values. We need to put the
 statistics within square brackets.
 
 ``` python
-mfr_group.agg({"calories": ['max', 'min'],
-                 "rating": ['sum'],  
-                 "sugars": ['mean', 'median']})
+mfr_group.agg({"calories":['max', 'min'],
+                 "rating":['sum'],  
+                 "sugars":['mean', 'median']})
 ```
 
 ```out

@@ -82,7 +82,7 @@ Notes: Script here
 # The return of loc
 
 We have discussed how `.loc[]` can select and return specified columns and rows of the dataframe. 
-In this module, `loc[]` will be used to locate specific rows conditionally on their column values. This is done similarly to how we filtered our dataframe but with 2 distinct differences:    
+In this module, `.loc[]` will be used to locate specific rows conditionally on their column values. This is done similarly to how we filtered our dataframe but with 2 distinct differences:    
   
 1. We use `.loc[]` to find the rows specifying certain conditions.      
 2. Once we have obtained our desired rows we replace their values in either a specified column or create a new column altogether.       

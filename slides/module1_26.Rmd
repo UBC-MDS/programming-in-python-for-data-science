@@ -63,7 +63,7 @@ Notes: Script here.
 ---
 
 ```{python}
-df = pd.read_csv('cereal.csv', index_col = 0)
+df = pd.read_csv('cereal.csv', index_col=0)
 df.head(15)
 ```
 
@@ -137,7 +137,7 @@ Notes: Script here.
 We can make changes to either limit how much is shown or extend it with the additional argument `include = "all"` in the `describe` brackets. This expands the dataframe to contain both categorical and numerical columns now. 
 
 ```{python}
-df.describe(include = 'all')
+df.describe(include='all')
 ```
 
 
@@ -150,10 +150,10 @@ Notes: Script here.
 ---
 
 ```{python echo=FALSE}
-df.describe(include = 'all')
+df.describe(include='all')
 ```
 
-Adding `include = 'all'` within the brackets adds some additional statistics about categorical columns.
+Adding `include='all'` within the brackets adds some additional statistics about categorical columns.
 
 - `unique`: how many observations are unique
 - `top`: which observation value is most occuring
