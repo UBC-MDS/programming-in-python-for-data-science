@@ -260,7 +260,7 @@ Tasks:
 <exercise id="10" title="Column Editing Questions">
 
 **Question 1**          
-If we do not assign an object name when renaming a column (`df.rename()`) what will happen?
+If we do not assign an object name when renaming a column (`.rename()`) what will happen?
 
 
 <choice id="1" >
@@ -286,7 +286,7 @@ Good job!
 
 
 **Question 2**   
-If you want your dataframe to drop a column permanently using `df.drop()`, it is necessary to assign it to an object. 
+If you want your dataframe to drop a column permanently using `.drop()`, it is necessary to assign it to an object. 
 
 
 <choice id="2" >
@@ -299,7 +299,7 @@ Good job!
 
 <opt text='False' >
 
-When using `df.drop()` we need to save the dataframe in an object for the changes to be permanent
+When using `.drop()` we need to save the dataframe in an object for the changes to be permanent
 
 </opt>
 
@@ -319,7 +319,7 @@ Running a coding exercise for the first time, could take a bit of time for every
 
 Tasks:
 
-- Rename the column `sp_attack` to `special_a` and `sp_defense` to `special_d` using `df.rename()` only once.
+- Rename the column `sp_attack` to `special_a` and `sp_defense` to `special_d` using `.rename()` only once.
 - Save the new dataframe as `pokemon_special`.
 - Display the first 5 rows of the dataframe.
 
@@ -841,7 +841,7 @@ Create a plot by chaining the following actions.
 <codeblock id="02_28">
 
 - Are you grouping by the column named `type`? 
-- Are you using `.loc[ :, 'attack']`?
+- Are you using `.loc[:, 'attack']`?
 - While sorting, are you using the argument `ascending=False`?
 - Are you giving your plot a title??
 
