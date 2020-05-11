@@ -25,51 +25,51 @@ id: 3
 
 <exercise id="2" title="Tidy Data Questions">
 
-**Question 1**          
-What is required for .....?
+**Question 1**         
 
+Tidy data is defined differently for every dataset.
 
 <choice id="1" >
-<opt text="1" correct="true">
+<opt text='True'>
 
-Good job!
-
-</opt>
-
-<opt text="2">
-
-You may want to look over this before moving forward.
+All datasets although informatively different, all have the same anatomy. 
 
 </opt>
 
-<opt text="3" >
+<opt text= 'False' correct="true">
 
-You may want to look over this before moving forward.
+Good job! Although dataset can contain different information and data, they are consist of the same semantics. 
 
 </opt>
 
 </choice> 
 
+**Question 2**          
 
-**Question 2**         
-
+Which of the following does not characterize a tidy dataset?
 
 <choice id="2" >
-<opt text='1'>
+<opt text="Each row is a single observation">
 
-This is not specifying a sheet.  You may want to review this section. 
-
-</opt>
-
-<opt text= '2' correct="true">
-
-Good job!
+You may want to look over this before moving forward.
 
 </opt>
 
-<opt text='3' >
+<opt text="Each column is a single variable">
 
-Not quite but you are on the right track. 
+You may want to look over this before moving forward.
+
+</opt>
+
+<opt text="Each value is a single cell" >
+
+You may want to look over this before moving forward.
+
+</opt>
+
+<opt text="There are no <code>NA</code> values in the dataset" correct="true">
+
+You are right. It is possible to still have tidy data with missing values. 
 
 </opt>
 
@@ -77,16 +77,61 @@ Not quite but you are on the right track.
 
 </exercise>
 
+<exercise id="3" title="Is it tidy?">
 
-<exercise id="3" title="Transforming to Tidy Data" type="slides">
+Would this dataframe be defined as tidy?
 
-<slides source="module3_03">
+<center> <img src='module3/crit3fail.png'  alt="404 image" /></center>
+
+<choice id="1" >
+<opt text='True'>
+
+Not quite!  
+
+</opt>
+
+<opt text= 'False' correct="true">
+
+Good job!
+
+</opt>
+
+</choice> 
+
+</exercise>
+
+<exercise id="4" title="Is it tidy?">
+
+Would this dataframe be defined as tidy?
+
+<center> <img src='module3/Q4.png'  alt="404 image" /></center>
+
+<choice id="1" >
+<opt text='True'>
+
+Not quite!  
+
+</opt>
+
+<opt text= 'False' correct="true">
+
+Good job!
+
+</opt>
+
+</choice> 
+
+</exercise>
+
+<exercise id="5" title="Reshaping to Tidy Data" type="slides">
+
+<slides source="module3_01">
 </slides>
 
 </exercise>
 
 
-<exercise id="4" title="Melting and Pivoting Questions ">
+<exercise id="6" title="Melting and Pivoting Questions">
 
 **Question 1**          
 What is required for .....?
@@ -141,7 +186,7 @@ Not quite but you are on the right track.
 </exercise>
 
 
-<exercise id="5" title="Applying Melt">
+<exercise id="7" title="Applying Melt">
 
 .....     
       
@@ -154,13 +199,13 @@ Tasks:
 
 
 
-<codeblock id="03_05">
+<codeblock id="03_07">
 
 </codeblock>
 
 </exercise>
 
-<exercise id="6" title="Applying Pivot">
+<exercise id="8" title="Applying Pivot">
 
 Let's try reading in a `.txt` file.     
       
@@ -172,7 +217,7 @@ Running a coding exercise for the first time could take a bit of time for everyt
 Tasks:
 
 
-<codeblock id="03_06">
+<codeblock id="03_08">
 
 </codeblock>
 

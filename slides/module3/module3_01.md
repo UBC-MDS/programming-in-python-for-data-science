@@ -54,6 +54,28 @@ Notes: Script here
 
 ---
 
+We tidy our data in such a way so that we can create a standard across
+multiple analysis tools. It changes the focus from the figuring out the
+logistics of getting the data a certain way, to answering the actual
+analysis question being asked.
+
+This standard now sets precedent for the input arguments of certain
+analysis verbs (like `.describe()` and other predictive methods).
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
 Let’s explore some different versions of our cereal dataset and
 determine if they fit the “tidy” criteria.
 
@@ -129,8 +151,8 @@ Notes: Script here
 
 <img src="module3/tidy-crit3.png" width="550" />
 
-From the dataframe we can see that each cereal and each variable value
-has it’s own cell, confirming that criterion \#3 is met\!
+The variable value for each cereal has it’s own cell, confirming that
+criterion \#3 is met\!
 
 Notes: Script here
 
@@ -146,8 +168,8 @@ Notes: Script here
 
 ---
 
-As expected, the cereal data we have been working with is **"Tidy
-Data**. Let’s look at a example where this is not the case.
+As expected, the cereal data we have been working with is **“Tidy
+Data”**. Let’s look at a example where this is not the case.
 
 <img src="module3/tidy2-table.png" width="550" />
 
