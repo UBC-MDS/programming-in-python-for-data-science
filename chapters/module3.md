@@ -83,7 +83,7 @@ Would this dataframe be defined as tidy?
 
 <center> <img src='module3/crit3fail.png'  alt="404 image" /></center>
 
-<choice id="1" >
+<choice>
 <opt text='True'>
 
 Not quite!  
@@ -106,7 +106,7 @@ Would this dataframe be defined as tidy?
 
 <center> <img src='module3/Q4.png'  alt="404 image" /></center>
 
-<choice id="1" >
+<choice>
 <opt text='True'>
 
 Not quite!  
@@ -123,15 +123,15 @@ Good job!
 
 </exercise>
 
-<exercise id="5" title="Reshaping to Tidy Data" type="slides">
+<exercise id="6" title="Reshaping to Tidy Data" type="slides">
 
-<slides source="module3_01">
+<slides source="module3_05">
 </slides>
 
 </exercise>
 
 
-<exercise id="6" title="Melting and Pivoting Questions">
+<exercise id="7" title="Melting and Pivoting Questions">
 
 **Question 1**          
 What is required for .....?
@@ -186,7 +186,7 @@ Not quite but you are on the right track.
 </exercise>
 
 
-<exercise id="7" title="Applying Melt">
+<exercise id="8" title="Applying Melt">
 
 .....     
       
@@ -205,7 +205,7 @@ Tasks:
 
 </exercise>
 
-<exercise id="8" title="Applying Pivot">
+<exercise id="9" title="Applying Pivot">
 
 Let's try reading in a `.txt` file.     
       

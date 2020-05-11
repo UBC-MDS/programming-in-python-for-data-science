@@ -102,7 +102,11 @@ Notes: Script here
 
 *Each row is a single observation*
 
+<center>
+
 <img src="module3/tidy-crit1.png" width="550" />
+
+</center>
 
 From the dataframe we can see that each cereal has it’s own row.
 Criterion \#1 is met\!
@@ -125,7 +129,11 @@ Notes: Script here
 
 *Each variable is a single column*
 
+<center>
+
 <img src="module3/tidy-crit2.png" width="550" />
+
+</center>
 
 From the dataframe we can see that each of the variables `name`, `mfr`,
 `calories` and `sugar` have their own column. We can validate that
@@ -149,7 +157,11 @@ Notes: Script here
 
 *Each value is a single cell*
 
+<center>
+
 <img src="module3/tidy-crit3.png" width="550" />
+
+</center>
 
 The variable value for each cereal has it’s own cell, confirming that
 criterion \#3 is met\!
@@ -171,7 +183,11 @@ Notes: Script here
 As expected, the cereal data we have been working with is **“Tidy
 Data”**. Let’s look at a example where this is not the case.
 
-<img src="module3/tidy2-table.png" width="550" />
+<center>
+
+<img src="module3/tidy2-table.png" width="500" />
+
+<center>
 
 Notes: Script here
 
@@ -191,7 +207,11 @@ Notes: Script here
 
 *Each row is a single observation*
 
-<img src="module3/tidy2-crit1.png" width="550" />
+<center>
+
+<img src="module3/tidy2-crit1.png" width="500" />
+
+</center>
 
 From the dataframe we can see that each observation has it’s own row.
 There are 2 rows per cereal but each row is unique. We can confirm that
@@ -215,7 +235,11 @@ Notes: Script here
 
 *Each variable is a single column*
 
-<img src="module3/tidy2-crit2.png" width="550" />
+<center>
+
+<img src="module3/tidy2-crit2.png" width="500" />
+
+</center>
 
 It looks like we have a problem here. In this dataframe, two of our
 variables are contained in a single column. This is making the data
