@@ -7,12 +7,10 @@ def test():
     # If an assertion fails, the message will be displayed
 
     assert "iloc" in __solution__ , "Are you using iloc to slice?"
-    assert "11" in __solution__ , "You may be indexing the wrong position"
-    assert "18" in __solution__ , "You may be indexing the wrong position"
-    assert "0" in __solution__ , "You may be indexing the wrong position"
-    assert "4" in __solution__ , "You may be indexing the wrong position"
-    assert skilled_players.shape == (7, 4), "You may not have selected correctly "
-    assert len(skilled_players) == 7, "You may not have selected correctly "
-    assert list(skilled_players.columns) ==  ['Player', 'No.', 'Age', 'Height'], "Your columns do not seem to be correct"
-    assert list(skilled_players.index) == [11, 12, 13, 14, 15, 16, 17], "Your rows do not seem to be correct"
+    assert "[16, 4, 21, 1]" in __solution__ , "You may be indexing the wrong position"
+    assert "[0, 8, 7, 9]" in __solution__ , "You may be indexing the wrong position"
+    assert injured_players.shape == (4, 4), "You may not have selected correctly "
+    assert len(injured_players) == 4, "You may not have selected correctly "
+    assert list(injured_players.columns) ==  ['Player', 'Birth Date', 'Experience', 'Salary'], "Your columns do not seem to be correct"
+    assert list(injured_players.index) == [16, 4, 21, 1], "Your rows do not seem to be correct"
     __msg__.good("Nice work, well done!")

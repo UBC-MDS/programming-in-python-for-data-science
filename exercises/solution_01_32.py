@@ -10,6 +10,6 @@ position_freq
 # Assign a `color` as `Teal`and set opacity to 0.5.      
 # Don't forget to add a title as "Canuck Player Positions". 
 
-position_bar = position_freq.plot.bar(color = 'Teal', 
-                                         alpha = 0.5, 
-                                         title = 'Canuck player positions')
+position_bar = position_freq.plot.bar(color='Teal', 
+                                         alpha=0.5, 
+                                         title='Canuck player positions')
