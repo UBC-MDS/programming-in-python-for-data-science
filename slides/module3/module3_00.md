@@ -24,10 +24,10 @@ Your browser does not support the video tag.
 Notes:
 By the end of the module, students are expected to:
 - Explain what tidy data is.
-Use df.melt() and df.pivot() to reshape dataframes, specifically to make tidy data.
-Use stacking and unstacking operations to reshape a dataframe.
-Combine dataframes using df.merge() and pd.concat() and know when to use these different methods.
-Understand the different joining methods.
+- Use `.melt()` and `.pivot()` to reshape dataframes, specifically to make tidy data.
+- Use stacking and unstacking operations to reshape a dataframe.
+- Combine dataframes using `.merge()` and `.concat()` and know when to use these different methods.
+- Understand the different joining methods.
 
 ---
 

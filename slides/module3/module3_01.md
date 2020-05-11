@@ -1,0 +1,249 @@
+---
+type: slides
+---
+
+# Tidy Data
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+When we first hear “tidy data”, you likely think of clean, organized and
+orderly data. The same applies here however the concept of ***Tidy
+Data*** stems from
+<a href="https://vita.had.co.nz/papers/tidy-data.pdf" target="_blank">`a
+paper written by Hadley Wickham in 2014`</a>.
+
+### What is the concept of tidy data?
+
+A tidy data is one that is satified by these three criteria:
+
+  - Each row is a single observation,
+  - Each variable is a single column, and
+  - Each value is a single cell (i.e., its row, column position in the
+    data frame is not shared with another value)
+
+<img src="https://d33wubrfki0l68.cloudfront.net/6f1ddb544fc5c69a2478e444ab8112fb0eea23f8/91adc/images/tidy-1.png" width="550" />
+
+What is a variable and an observation may depend on your immediate goal.
+
+*Source: [R for Data Science](https://r4ds.had.co.nz/) by Garrett
+Grolemund & Hadley Wickham*
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+Let’s explore some different versions of our cereal dataset and
+determine if they fit the “tidy” criteria.
+
+Selecting a few rows from out unaltered cereal dataset, does it fit all
+three criteria?
+
+<img src="module3/tidy-table.png" width="550" />
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+## Criterion \#1
+
+*Each row is a single observation*
+
+<img src="module3/tidy-crit1.png" width="550" />
+
+From the dataframe we can see that each cereal has it’s own row.
+Criterion \#1 is met\!
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+## Criterion \#2
+
+*Each variable is a single column*
+
+<img src="module3/tidy-crit2.png" width="550" />
+
+From the dataframe we can see that each of the variables `name`, `mfr`,
+`calories` and `sugar` have their own column. We can validate that
+criterion \#2 is also met.
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+## Criterion \#3
+
+*Each value is a single cell*
+
+<img src="module3/tidy-crit3.png" width="550" />
+
+From the dataframe we can see that each cereal and each variable value
+has it’s own cell, confirming that criterion \#3 is met\!
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+As expected, the cereal data we have been working with is **"Tidy
+Data**. Let’s look at a example where this is not the case.
+
+<img src="module3/tidy2-table.png" width="550" />
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+## Criterion \#1
+
+*Each row is a single observation*
+
+<img src="module3/tidy2-crit1.png" width="550" />
+
+From the dataframe we can see that each observation has it’s own row.
+There are 2 rows per cereal but each row is unique. We can confirm that
+criterion 1 is met.
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+## Criterion \#2
+
+*Each variable is a single column*
+
+<img src="module3/tidy2-crit2.png" width="550" />
+
+It looks like we have a problem here. In this dataframe, two of our
+variables are contained in a single column. This is making the data
+untidy and difficult to work with and we would need to transform it.
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+At this point you may be asking yourself the question \_“Are there any
+verbs using pandas, that would easily convert the `Nutrition` column
+into it’s separate variables?”
+
+If you are, then you are ahead of the game\! We will discuss this in the
+next section\!
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+# Let’s practice what we know about Tidy Data first\!
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="placeholder_audio.mp3" />
+
+</audio>
+
+</html>

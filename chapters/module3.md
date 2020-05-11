@@ -1,5 +1,5 @@
 ---
-title: 'Module 3: Missing Values and Joining Dataframes'
+title: 'Module 3: Tidy Data and Joining Dataframes'
 description:
   'In this module you will learn about tidy data and how to transform your dataset into a tidy format. It will also focus on how to combine and stack multiple dataframes.'
 prev: /module2
@@ -18,7 +18,7 @@ id: 3
 
 <exercise id="1" title="What is Tidy Data?" type="slides">
 
-<slides source="module3_01">
+<slides source="module3/module3_01">
 </slides>
 
 </exercise>
