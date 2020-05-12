@@ -116,15 +116,16 @@ Running a coding exercise for the first time could take a bit of time for everyt
 
 Tasks:
 
-- Read in the data from a text file name `pokemon-text.txt` located in the `data` folder useing the Pokemon column name as the index.
+- Read in the data from a text file name `pokemon-text.txt` located in the `data` folder using the Pokemon column name as the index.
 - Save the resulting dataframe as `pokemon_df`.
-- it's a good idea to see what the [delimiter](https://github.com/UBC-MDS/MCL-DSCI-511-programming-in-python/blob/binder/data/pokemon-text.txt) is.
+- It's a good idea to see what the [delimiter](https://github.com/UBC-MDS/MCL-DSCI-511-programming-in-python/blob/binder/data/pokemon-text.txt) is.
 - Display the first 10 rows of `pokemon_df`.
 
 <codeblock id="02_04">
 
 - Are you sure you are saving your dataframe as the correct object names?
 - Are you using `pd.read_csv()`?
+- Did you check to see what the [delimiter](https://github.com/UBC-MDS/MCL-DSCI-511-programming-in-python/blob/binder/data/pokemon-text.txt) is.
 - Are you including the full path through the `data/` folder when calling the file name?
 - Check that your delimiter argument is correct.   
 
@@ -142,7 +143,7 @@ Running a coding exercise for the first time could take a bit of time for everyt
 **When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
 
 Tasks:
-- Read in the data from the sheet named `pokemon` from the Excel file `pokemon.xlsx` located in the `data` folder using the Pokemon column name as the index. 
+- Read in the data from the sheet named `pokemon` from the Excel file `pokemon.xlsx` located in the `data` folder specifying column 0 as the index column.
 - Save the resulting dataframe as `pokemon_df`.
 - Display the first 10 rows of `pokemon_df`.
 
@@ -230,7 +231,7 @@ Running a coding exercise for the first time could take a bit of time for everyt
 **When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
 
 Tasks:
--  Read in the first 100 rows and columns name, total_bs and type from the file `pokemon.csv`, which is located in the data directory.
+-  Read in the first 100 rows and columns `name`, `total_bs` and `type` from the file `pokemon.csv`, which is located in the data directory.
 - Save the resulting dataframe as `pokemon_sample`. 
 - Display `pokemon_sample`.
 
@@ -413,7 +414,7 @@ Running a coding exercise for the first time, could take a bit of time for every
 Tasks:
 
 - Create a new column named `total_special` that is the sum of column `sp_attack` and `sp_defense`.
-- Save it, overwriting the dataframe named `pokemon`
+- Save it, overwriting the dataframe named `pokemon`.
 - Display the first 5 rows of the dataframe.
 
 
@@ -548,7 +549,7 @@ You can use `mighty_pokemon['type'].value_counts()` to find out.
 
 <exercise id="20" title='Practice Replacing Values'>
 
-Let's make a new column by assigning each pokemon base score as either "strong" or "weak"
+Let's make a new column by assigning each pokemon base score as either "strong" or "weak".
       
 **Instructions:**    
 Running a coding exercise for the first time, could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
@@ -556,14 +557,13 @@ Running a coding exercise for the first time, could take a bit of time for every
 **When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
 
 Tasks:
-- Create a new column in the dataframe by assigning values 500 or greater from the column `total_bs` as 'strong' pokemon and values less than 500 as 'weak' pokemon.
-- Name the column `base_score`.
-- Display the first 10 rows of the Dataframe. 
+- Create a new column in the dataframe named `base_score` by assigning values 500 or greater from the column `total_bs` as 'strong' pokemon and values less than 500 as 'weak' pokemon.
+- Display the first 10 rows of the dataframe. 
 
 <codeblock id="02_20a">
 
 - Are you naming the new column named `base_score`? 
-- Are you using `.loc[df['total_bs'] >= 500, 'base_score']` and assigning it to the correct value ?
+- Are you using `.loc[df['total_bs'] >= 500, 'base_score']` and assigning it to the correct value?
 - Are you using single equality signs for the assignment?
 
 </codeblock>
@@ -659,10 +659,10 @@ Tasks:
 
 - Chain the following methods in the order specified.
 - First, rename the column `capture_rt` to `capture_rate`.
-- Create a new column named `AD_total` by adding the `attack` and `defense` columns from the pokemon dataset
-- Finally use `.plot.scatter()` to plot `AD_total` on the x-axis and `capture_rate` on the y-axis
-- Name the full chain `pokemon_plot`
-- Use a new line for each method
+- Then, create a new column named `AD_total` by adding the `attack` and `defense` columns from the pokemon dataset.
+- Finally use `.plot.scatter()` to plot `AD_total` on the x-axis and `capture_rate` on the y-axis.
+- Name the full chain `pokemon_plot`.
+- Use a new line for each method.
 
 <codeblock id="02_23">
 
@@ -757,7 +757,7 @@ Are you using the correct verbs?
 
 <exercise id="26" title="Practice Grouping">
 
-Find the mean of each column for every Pokemon types using `.mean()` and `.groupby()`.
+Find the mean speed of each column for every Pokemon types using `.mean()` and `.groupby()`.
 
       
 **Instructions:**    
@@ -771,8 +771,8 @@ Tasks:
 
 - Make a groupby object on the column `type`.
 - Find the mean value of each column for each pokemon `type` using `.mean()` and save the resulting dataframe as `type_means`.
-- Obtain from the type_means dataframe, the mean speed of the `water` type pokemon by using `.loc[]`.
-- Save it in an object named `water_mean_speed`.
+- Obtain the mean speed of each pokemon type from the dataframe `type_means` by using `.loc[]`.
+- Save it in an object named mean_speed.
 - Display it.
 
 
@@ -820,7 +820,7 @@ Tasks:
 
 <exercise id="28" title="Plotting a Groupby Object">
 
-Let's attempt to answer the question ***"Which pokemon type has the highest mean attack value?"*** by making a bar chart from a groupby object. 
+Let's attempt to answer the question ***"Which pokemon type has the highest mean attack score?"*** by making a bar chart from a groupby object.   
       
 **Instructions:**    
 Running a coding exercise for the first time, could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
@@ -834,8 +834,8 @@ Create a plot by chaining the following actions.
 - Use `.loc[]` to select the `attack` column.
 - Sort the pokemon mean attack values in descending order using `.sort_values()`.
 - Plot the graph and give it an appropriate title. 
-- Name the object `attack_plot`.
-- Name the y-axis " Mean attack score".
+- Name the y-axis "Mean attack scores"
+- Name the object attack_plot 
 
 
 <codeblock id="02_28">

@@ -11,7 +11,7 @@ pokemon = pd.read_csv('data/pokemon.csv', index_col=0)
 # Use a new line for each method
 
 pokemon_plot = (pokemon.rename(columns={'capture_rt': 'capture_rate'})
-                       .assign(AD_total=pokemon['defense'] + pokemon['defense'])
+                       .assign(AD_total=pokemon['defense'] + pokemon['attack'])
                        .plot.scatter(x='AD_total', y='capture_rate')
                 )
 

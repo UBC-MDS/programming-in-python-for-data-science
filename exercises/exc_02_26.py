@@ -10,9 +10,9 @@ pokemon = pokemon.loc[ : , 'attack': 'type']
 # ____ = ____.____(____).____()
 # ____
 
-# Obtain from the type_means dataframe, the mean speed of the
-# water type pokemon by using df.loc[]
-# Save it in an object named water_mean_speed
+# Obtain the mean speed of each pokemon type from the dataframe 
+# type_means by using .loc[]
+# Save it in an object named mean_speed
 
 # ____ = ____.____[____]
 

@@ -10,12 +10,12 @@ pokemon = pokemon.loc[ : , 'attack': 'type']
 type_means = pokemon.groupby(by='type').mean() 
 type_means
 
-# Obtain from the type_means dataframe, the mean speed of the
-# water type pokemon by using df.loc[]
-# Save it in an object named water_mean_speed
+# Obtain the mean speed of each pokemon type from the dataframe 
+# type_means by using .loc[]
+# Save it in an object named mean_speed
 
-water_mean_speed = type_means.loc['water', 'speed']
+mean_speed = type_means.loc[:, 'speed']
 
 # Display it 
 
-water_mean_speed
+mean_speed
