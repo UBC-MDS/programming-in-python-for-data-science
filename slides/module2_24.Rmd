@@ -325,15 +325,16 @@ Notes: Script here
 
 ---
 
-We've added a title before, so there is nothing new there but adding a y-axis label is a little different than what we are used to. 
+We've added a title before, so there is nothing new there but adding a y-axis label is an extra item to add to our chain. 
 
 ```{python fig.width = 6, fig.height = 4}
 sugar_plot = (df.groupby(by='mfr')
                 .mean()
                 .loc[:,'sugars']
                 .plot.bar(title='Mean sugar content among manufacturers')
+                .set_ylabel('Sugar content (in grams)')
               )
-sugar_plot.set_ylabel('Sugar content (in grams)');
+sugar_plot
 ```
 
 In this case, we reference our initial plot and use the verb `set_ylabel()` with the desired axis label as the argument. 
@@ -353,8 +354,9 @@ nutrition_plot = (df.groupby(by='mfr')
                     .mean()
                     .loc[:, ['fat', 'fiber', 'protein']]
                     .plot.bar(title='Mean nutritrion value over different manufacturers')
+                    .set_ylabel('Content (in grams)')
                  )
-nutrition_plot.set_ylabel('Content (in grams)');           
+nutrition_plot
 ```
 
 Notes: Script here
