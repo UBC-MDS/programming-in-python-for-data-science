@@ -7,6 +7,7 @@ output:
     variant: gfm
 ---
 
+
 ```{r setup, include=FALSE}
 ## DO NOT FORGET TO CHANGE THIS ACCORDINGLY 
 library(rmarkdown)
@@ -44,6 +45,8 @@ df = pd.read_csv('cereal.csv', index_col=0)
 ```
 
 
+type: slides
+
 # Reshaping using pivot
 
 Notes: Script here
@@ -59,6 +62,10 @@ Notes: Script here
 -  <a href="https://pandas.pydata.org/docs/reference/api/pandas.melt.html" target="_blank">`.melt()`</a> to make wide dataframe long (convert columns to row) 
 - <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.pivot.html" target="_blank">`.pivot()`</a>  to make long data wide (convert rows to columns)
 
+We are going to begin with the latter. 
+
+<center><img src='module3/spread_py.gif' width="400"></center>
+"Source: Alison Presmanes Hill, https://github.com/apreshill/teachthat"
 
 Notes: Script here
 <html>
@@ -68,6 +75,22 @@ Notes: Script here
 
 ---
 
+## Pivot
+
+`.pivot()` can be used in situations where our data may not meet criterion #2 _ Each variable is a single column_
+
+It can be used to then elongate the dataframe: to convert the variables to their own columns that were previously being stored in a single column.
+
+
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
 # Let’s practice what we know about Tidy Data first!
 
 Notes: Script here

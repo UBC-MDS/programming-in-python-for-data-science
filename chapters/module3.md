@@ -81,16 +81,16 @@ You are right. It is possible to still have tidy data with missing values.
 
 Would this dataframe be defined as tidy?
 
-<center> <img src='module3/crit3fail.png'  alt="404 image" /></center>
+<center> <img src='module3/crit3fail.png'  alt="404 image"/></center>
 
 <choice>
-<opt text='True'>
+<opt text="True">
 
 Not quite!  
 
 </opt>
 
-<opt text= 'False' correct="true">
+<opt text= "False"" correct="true">
 
 Good job!
 
@@ -104,16 +104,16 @@ Good job!
 
 Would this dataframe be defined as tidy?
 
-<center> <img src='module3/Q4.png'  alt="404 image" /></center>
+<center> <img src='module3/Q4.png'  alt="404 image"/></center>
 
 <choice>
-<opt text='True'>
+<opt text="True">
 
 Not quite!  
 
 </opt>
 
-<opt text= 'False' correct="true">
+<opt text= "False" correct="true">
 
 Good job!
 
@@ -123,13 +123,13 @@ Good job!
 
 </exercise>
 
-<exercise id="6" title="Reshaping to Tidy Data" type="slides">
+<exercise id="5" title="Reshaping to Tidy Data" type="slides">
 
-<slides source="module3_05">
+<slides source="module3/module3_05">
+
 </slides>
 
 </exercise>
-
 
 <exercise id="7" title="Melting and Pivoting Questions">
 

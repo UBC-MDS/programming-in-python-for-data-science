@@ -33,7 +33,11 @@ A tidy data is one that is satified by these three criteria:
   - Each value is a single cell (i.e., its row, column position in the
     data frame is not shared with another value)
 
+<center>
+
 <img src="https://d33wubrfki0l68.cloudfront.net/6f1ddb544fc5c69a2478e444ab8112fb0eea23f8/91adc/images/tidy-1.png" width="550" />
+
+</center>
 
 What is a variable and an observation may depend on your immediate goal.
 
@@ -82,7 +86,11 @@ determine if they fit the “tidy” criteria.
 Selecting a few rows from out unaltered cereal dataset, does it fit all
 three criteria?
 
+<center>
+
 <img src="module3/tidy-table.png" width="550" />
+
+</center>
 
 Notes: Script here
 
