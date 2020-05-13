@@ -62,15 +62,14 @@ The code for this verb takes quite a few arguments that can be a bit
 tricky so we are going to go through it.
 
     df.pivot(index=['index label'], columns='column_name', values='new_colum_name')
-    )
 
   - `df` to express with dataframe we want to pivot
   - `index` is going to be use to make the new dataframe’s index.
-  - `columns` is the column that currently exists but that you want to
+  - `columns` is the column that currently exists but that we want to
     create new columns labels from. Each unique value in this column
     will become a new column label.
   - `values` is the name of the column that currently exists but that
-    contains the cell values you want. These values will be display in
+    contains the cell values we want. These values will be display in
     the respective newly created columns.
 
 Notes: Script here
@@ -87,15 +86,332 @@ Notes: Script here
 
 ---
 
-This animation made by Alison Presmanes Hill “Source: Alison Presmanes
-Hill, <https://github.com/apreshill/teachthat> explains well what is
-happening.
+We must take care with the `index` argument when transforming
+dataframes. This argument will only accept column labels and not column
+index labels. Before we do any type of transformation, it’s a good idea
+to reset and remove and labels an an index.  
+This can be done with `.reset_index()` This converts the index to a
+regular column. On our trusty cereal dataset, we see the name column as
+our index and we can reset it by calling `.reset_index()`
+
+``` python
+cereal.head()
+```
+
+```out
+                          mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
+name                                                                                                                                       
+100% Bran                   N  Cold        70        4    1     130   10.0    5.0       6     280        25      3     1.0  0.33  68.402973
+100% Natural Bran           Q  Cold       120        3    5      15    2.0    8.0       8     135         0      3     1.0  1.00  33.983679
+All-Bran                    K  Cold        70        4    1     260    9.0    7.0       5     320        25      3     1.0  0.33  59.425505
+All-Bran with Extra Fiber   K  Cold        50        4    0     140   14.0    8.0       0     330        25      3     1.0  0.50  93.704912
+Almond Delight              R  Cold       110        2    2     200    1.0   14.0       8       1        25      3     1.0  0.75  34.384843
+```
+
+``` python
+cereal.reset_index().head()
+```
+
+```out
+                        name mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
+0                  100% Bran   N  Cold        70        4    1     130   10.0    5.0       6     280        25      3     1.0  0.33  68.402973
+1          100% Natural Bran   Q  Cold       120        3    5      15    2.0    8.0       8     135         0      3     1.0  1.00  33.983679
+2                   All-Bran   K  Cold        70        4    1     260    9.0    7.0       5     320        25      3     1.0  0.33  59.425505
+3  All-Bran with Extra Fiber   K  Cold        50        4    0     140   14.0    8.0       0     330        25      3     1.0  0.50  93.704912
+4             Almond Delight   R  Cold       110        2    2     200    1.0   14.0       8       1        25      3     1.0  0.75  34.384843
+```
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+The process of pivoting and it’s argument can be explained well using
+the animation made by
+<a href="https://github.com/apreshill/teachthat" target="_blank"> Alison
+Presmanes Hill</a>
 
 <center>
 
-<img src='module3/spread_py.gif' width="400">
+<img src='module3/spread_py.gif' width="600">
 
 </center>
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+Let’s try an example. Our cereal dataframe has information on 77
+different cereals,
+
+``` python
+cereal
+```
+
+```out
+                          mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
+name                                                                                                                                       
+100% Bran                   N  Cold        70        4    1     130   10.0    5.0       6     280        25      3     1.0  0.33  68.402973
+100% Natural Bran           Q  Cold       120        3    5      15    2.0    8.0       8     135         0      3     1.0  1.00  33.983679
+All-Bran                    K  Cold        70        4    1     260    9.0    7.0       5     320        25      3     1.0  0.33  59.425505
+All-Bran with Extra Fiber   K  Cold        50        4    0     140   14.0    8.0       0     330        25      3     1.0  0.50  93.704912
+Almond Delight              R  Cold       110        2    2     200    1.0   14.0       8       1        25      3     1.0  0.75  34.384843
+...                        ..   ...       ...      ...  ...     ...    ...    ...     ...     ...       ...    ...     ...   ...        ...
+Triples                     G  Cold       110        2    1     250    0.0   21.0       3      60        25      3     1.0  0.75  39.106174
+Trix                        G  Cold       110        1    1     140    0.0   13.0      12      25        25      2     1.0  1.00  27.753301
+Wheat Chex                  R  Cold       100        3    1     230    3.0   17.0       3     115        25      1     1.0  0.67  49.787445
+Wheaties                    G  Cold       100        3    1     200    3.0   17.0       3     110        25      1     1.0  1.00  51.592193
+Wheaties Honey Gold         G  Cold       110        2    1     200    1.0   16.0       8      60        25      1     1.0  0.75  36.187559
+
+[77 rows x 15 columns]
+```
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+Our amended one that we want to tidy looks like this:
+
+``` python
+cereal_long
+```
+
+```out
+                     fat  sodium  fiber  carbo  potass  vitamins  shelf  weight  cups     rating nutrition  measure
+name                                                                                                               
+100% Bran              1     130   10.0    5.0     280        25      3     1.0  0.33  68.402973   protein        4
+100% Bran              1     130   10.0    5.0     280        25      3     1.0  0.33  68.402973  calories       70
+100% Bran              1     130   10.0    5.0     280        25      3     1.0  0.33  68.402973    sugars        6
+100% Natural Bran      5      15    2.0    8.0     135         0      3     1.0  1.00  33.983679   protein        3
+100% Natural Bran      5      15    2.0    8.0     135         0      3     1.0  1.00  33.983679  calories      120
+...                  ...     ...    ...    ...     ...       ...    ...     ...   ...        ...       ...      ...
+Wheaties               1     200    3.0   17.0     110        25      1     1.0  1.00  51.592193   protein        3
+Wheaties               1     200    3.0   17.0     110        25      1     1.0  1.00  51.592193  calories      100
+Wheaties Honey Gold    1     200    1.0   16.0      60        25      1     1.0  0.75  36.187559  calories      110
+Wheaties Honey Gold    1     200    1.0   16.0      60        25      1     1.0  0.75  36.187559   protein        2
+Wheaties Honey Gold    1     200    1.0   16.0      60        25      1     1.0  0.75  36.187559    sugars        8
+
+[231 rows x 12 columns]
+```
+
+We can see there are 231 rows and the `nutrition` column is made up of 3
+variables; `protein`, `calories` and `sugar`. That means there are 3
+rows for each of the 77 cereals. This explains why this untidy dataframe
+contains 231 rows (77 cereals \* 3 variables = 231 rows).
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+To transform this into tidy data we would specify the following
+arguments.  
+\- Indicate `index` as the `name` column.  
+\- Target the column `nutrition` with the values contained as new
+columns labels.  
+\- Specify `measure` as the values associated with each of the new
+columns.
+
+Also we can’t forget to reset the index\!  
+(Just like any other dataframe, if we want to keep the changes, makes
+sure to assign it to an object)
+
+``` python
+tidy_pivot = (cereal_long.reset_index()
+            .pivot(index='name', columns='nutrition', values='measure')
+             )
+tidy_pivot
+```
+
+```out
+nutrition                  calories  protein  sugars
+name                                                
+100% Bran                        70        4       6
+100% Natural Bran               120        3       8
+All-Bran                         70        4       5
+All-Bran with Extra Fiber        50        4       0
+Almond Delight                  110        2       8
+...                             ...      ...     ...
+Triples                         110        2       3
+Trix                            110        1      12
+Wheat Chex                      100        3       3
+Wheaties                        100        3       3
+Wheaties Honey Gold             110        2       8
+
+[77 rows x 3 columns]
+```
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+```out
+nutrition                  calories  protein  sugars
+name                                                
+100% Bran                        70        4       6
+100% Natural Bran               120        3       8
+All-Bran                         70        4       5
+All-Bran with Extra Fiber        50        4       0
+Almond Delight                  110        2       8
+...                             ...      ...     ...
+Triples                         110        2       3
+Trix                            110        1      12
+Wheat Chex                      100        3       3
+Wheaties                        100        3       3
+Wheaties Honey Gold             110        2       8
+
+[77 rows x 3 columns]
+```
+
+Now we are back to 77 rows and it looks like we’ve tidied our data up\!
+There appears to be a problem though. `pivot` works well when we are
+only concerned with the columns we are pivoting but as we can see we lot
+all our other columns in the dataset. There is a solution for this and
+it’s called `.pivot_table()`
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+## Pivot\_table
+
+`.pivot_table()` works with multiple indexes and duplicate values. That
+just means we can keep all the columns that we are not pivoting. Let’s
+attempt at fixing our untidy data again but keeping all our columns. The
+only problem is after we pivot we want to reset our index to avoid any
+confusion.
+
+``` python
+tidy_pivot = (cereal_long.reset_index()
+            .pivot_table(index=['name','fat', 'sodium',
+                                'fiber', 'carbo', 'potass',
+                                'vitamins', 'shelf', 'weight',
+                                'cups', 'rating'],
+                         columns='nutrition', 
+                         values='measure').reset_index()
+             )
+tidy_pivot.head()
+```
+
+```out
+nutrition                       name  fat  sodium  fiber  carbo  potass  vitamins  shelf  weight  cups     rating  calories  protein  sugars
+0                          100% Bran    1     130   10.0    5.0     280        25      3     1.0  0.33  68.402973        70        4       6
+1                  100% Natural Bran    5      15    2.0    8.0     135         0      3     1.0  1.00  33.983679       120        3       8
+2                           All-Bran    1     260    9.0    7.0     320        25      3     1.0  0.33  59.425505        70        4       5
+3          All-Bran with Extra Fiber    0     140   14.0    8.0     330        25      3     1.0  0.50  93.704912        50        4       0
+4                     Almond Delight    2     200    1.0   14.0       1        25      3     1.0  0.75  34.384843       110        2       8
+```
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+we currently have no index now\! To set our new index back to just the
+cereal name using `.set_index('name')`
+
+``` python
+tidy_pivot.set_index('name')
+```
+
+```out
+nutrition                  fat  sodium  fiber  carbo  potass  vitamins  shelf  weight  cups     rating  calories  protein  sugars
+name                                                                                                                             
+100% Bran                    1     130   10.0    5.0     280        25      3     1.0  0.33  68.402973        70        4       6
+100% Natural Bran            5      15    2.0    8.0     135         0      3     1.0  1.00  33.983679       120        3       8
+All-Bran                     1     260    9.0    7.0     320        25      3     1.0  0.33  59.425505        70        4       5
+All-Bran with Extra Fiber    0     140   14.0    8.0     330        25      3     1.0  0.50  93.704912        50        4       0
+Almond Delight               2     200    1.0   14.0       1        25      3     1.0  0.75  34.384843       110        2       8
+...                        ...     ...    ...    ...     ...       ...    ...     ...   ...        ...       ...      ...     ...
+Triples                      1     250    0.0   21.0      60        25      3     1.0  0.75  39.106174       110        2       3
+Trix                         1     140    0.0   13.0      25        25      2     1.0  1.00  27.753301       110        1      12
+Wheat Chex                   1     230    3.0   17.0     115        25      1     1.0  0.67  49.787445       100        3       3
+Wheaties                     1     200    3.0   17.0     110        25      1     1.0  1.00  51.592193       100        3       3
+Wheaties Honey Gold          1     200    1.0   16.0      60        25      1     1.0  0.75  36.187559       110        2       8
+
+[77 rows x 13 columns]
+```
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
 
 # Let’s practice what we know about Tidy Data first\!
 

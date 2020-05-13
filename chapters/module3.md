@@ -84,13 +84,14 @@ Would this dataframe be defined as tidy?
 <center> <img src='module3/crit3fail.png'  alt="404 image"/></center>
 
 <choice>
+
 <opt text="True">
 
 Not quite!  
 
 </opt>
 
-<opt text= "False"" correct="true">
+<opt text= "False" correct="true">
 
 Good job!
 
@@ -131,28 +132,22 @@ Good job!
 
 </exercise>
 
-<exercise id="7" title="Melting and Pivoting Questions">
+<exercise id="6" title="Pivoting Questions">
 
 **Question 1**          
-What is required for .....?
+We use pivoting to convert a wide dataframe with multiple columns into a long dataframe with fewer columns 
 
 
 <choice id="1" >
-<opt text="1" correct="true">
+<opt text="True" >
 
-Good job!
-
-</opt>
-
-<opt text="2">
-
-You may want to look over this before moving forward.
+The reverse is true. Please review this section before continuing.
 
 </opt>
 
-<opt text="3" >
+<opt text="False" correct="true">
 
-You may want to look over this before moving forward.
+Great work!
 
 </opt>
 
@@ -160,24 +155,24 @@ You may want to look over this before moving forward.
 
 
 **Question 2**         
+What must you do before you use `.pivot()`?
 
-
-<choice id="2" >
+<choice id="Rename your column label to numbers" >
 <opt text='1'>
 
-This is not specifying a sheet.  You may want to review this section. 
+It may be a good idea to look over the last section again. 
 
 </opt>
 
-<opt text= '2' correct="true">
+<opt text= 'Reset your index' correct="true">
 
 Good job!
 
 </opt>
 
-<opt text='3' >
+<opt text='sort your dataframe by index' >
 
-Not quite but you are on the right track. 
+It may be a good idea to look over the last section again. 
 
 </opt>
 
@@ -186,7 +181,7 @@ Not quite but you are on the right track.
 </exercise>
 
 
-<exercise id="8" title="Applying Melt">
+<exercise id="7" title="Applying Melt">
 
 .....     
       
