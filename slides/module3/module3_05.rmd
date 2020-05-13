@@ -77,9 +77,9 @@ Notes: Script here
 
 ## Pivot
 
-`.pivot()` can be used in situations where our data may not meet criterion #2: _ Each variable is a single column_
+`.pivot()` can be used in situations where our data may not meet criterion #2: _ Each variable is a single column_.
 
-It can be used to then elongate the dataframe: to convert the variables to their own columns that were previously being stored in a single column.
+It can be used to elongate the dataframe: it convert variables to their own columns that were previously being stored in a single column.
 
 The code for this verb takes quite a few arguments that can be a bit tricky so we are going to go through it. 
 
@@ -140,13 +140,15 @@ Let's try an example. Our cereal dataframe has information on 77 different cerea
 ```{python include=FALSE}
 cereal = pd.read_csv('cereal.csv', index_col=0)
 again = (cereal.reset_index()
-               .melt(id_vars=['name','fat', 'sodium',
+               .melt(id_vars=['name','mfr', 'type', 'fat', 'sodium',
                               'fiber', 'carbo', 'potass', 
                               'vitamins', 'shelf', 'weight',
                               'cups', 'rating'], 
                      value_vars=['protein', 'calories', 'sugars'], 
                      var_name="nutrition", 
                      value_name="measure").set_index('name')
+                     )
+again
 cereal_long= again.sort_index()
 ```
 
@@ -162,7 +164,7 @@ Notes: Script here
 
 ---
 
-Our amended one that we want to tidy looks like this:
+Our dataframe that we want to tidy looks like this:
 ```{python}
 cereal_long
 ```
@@ -225,14 +227,13 @@ The only problem is after we pivot we want to reset our index to avoid any index
 
 ```{python}
 tidy_pivot = (cereal_long.reset_index()
-            .pivot_table(index=['name','fat', 'sodium',
-                                'fiber', 'carbo', 'potass',
-                                'vitamins', 'shelf', 'weight',
-                                'cups', 'rating'],
+            .pivot_table(index=['name','mfr', 'type','fat',
+                                'sodium', 'fiber', 'carbo', 
+                                'potass', 'vitamins', 'shelf',
+                                'weight', 'cups', 'rating'],
                          columns='nutrition', 
                          values='measure').reset_index()
              )
-tidy_pivot.head()
 ```
 
 
@@ -248,7 +249,7 @@ Look's like we are back to fully tidied data with all the columns.
 We just need to reassign our index back the cereal name using `.set_index('name')`
 
 ```{python}
-tidy_pivot.set_index('name')
+tidy_pivot = tidy_pivot.set_index('name')
 ```
 
 Perfect! 

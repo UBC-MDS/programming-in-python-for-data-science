@@ -77,7 +77,7 @@ You are right. It is possible to still have tidy data with missing values.
 
 </exercise>
 
-<exercise id="3" title="Is it tidy?">
+<exercise id="3" title="Is it Tidy I ?">
 
 Would this dataframe be defined as tidy?
 
@@ -101,7 +101,7 @@ Good job!
 
 </exercise>
 
-<exercise id="4" title="Is it tidy?">
+<exercise id="4" title="Is it Tidy II?">
 
 Would this dataframe be defined as tidy?
 
@@ -124,7 +124,7 @@ Good job!
 
 </exercise>
 
-<exercise id="5" title="Reshaping to Tidy Data" type="slides">
+<exercise id="5" title="Reshaping Using Pivot" type="slides">
 
 <slides source="module3/module3_05">
 
@@ -181,7 +181,7 @@ It may be a good idea to look over the last section again.
 </exercise>
 
 
-<exercise id="7" title="Applying Melt">
+<exercise id="7" title="Applying Pivot I">
 
 .....     
       
@@ -200,9 +200,9 @@ Tasks:
 
 </exercise>
 
-<exercise id="9" title="Applying Pivot">
+<exercise id="8" title="Applying Pivot II">
 
-Let's try reading in a `.txt` file.     
+  
       
 **Instructions:**    
 Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
@@ -215,5 +215,14 @@ Tasks:
 <codeblock id="03_08">
 
 </codeblock>
+
+</exercise>
+
+
+<exercise id="9" title="Reshaping Using Melt" type="slides">
+
+<slides source="module3/module3_09">
+
+</slides>
 
 </exercise>
