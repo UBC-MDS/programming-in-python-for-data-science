@@ -10,7 +10,7 @@ Notes: Script here.
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -56,7 +56,7 @@ Notes: Script here.
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -76,8 +76,8 @@ For our sample data, a frequency table for the
 
 ```out
 Both       3
-Canada     2
 America    2
+Canada     2
 Name: available_canada_america, dtype: int64
 ```
 
@@ -87,7 +87,7 @@ Notes: Script here.
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -128,7 +128,7 @@ Notes: Script here.
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -138,7 +138,7 @@ Notes: Script here.
 
 We saved the object in a variable called `manufacturer_column` in the
 same way we have saved objects before.  
-Next we can use `pd.value_counts()` referencing that the column we saved
+Next we can use `.value_counts()` referencing that the column we saved
 as `manufacturer_column`.
 
 ``` python
@@ -169,7 +169,7 @@ Notes: Script here.
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -179,8 +179,8 @@ Notes: Script here.
 
 Sometimes it’s useful to save a new dataframe as a `csv` file for future
 use or to use in another application. We can save dataframes using the
-method `df.to_csv()`. Simply put our desired `csv` file name in
-quotations within the parentheses.
+method `.to_csv()`. Simply put our desired `csv` file name in quotations
+within the parentheses.
 
 Notes: Script here.
 
@@ -188,7 +188,7 @@ Notes: Script here.
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -204,7 +204,7 @@ Notes: Script here
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 

@@ -37,12 +37,12 @@ df = pd.read_csv('cereal.csv', index_col=0)
 type: slides
 
 
-# Obtaining dataframe Values
+# Obtaining Dataframe Values
 
 Notes: Script here.
 <html>
 <audio controls >
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -61,7 +61,7 @@ This displays the value.
 Notes: Script here.
 <html>
 <audio controls >
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -77,7 +77,7 @@ You will be using this often so let's make sure we practice this one right away!
 Notes: Script here.
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -87,5 +87,5 @@ Notes: Script here.
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>

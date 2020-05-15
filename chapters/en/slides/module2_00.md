@@ -8,7 +8,7 @@ Notes: In this module, you will learn how to import different types of files, pe
 
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -28,7 +28,7 @@ By the end of the module, students are expected to:
 Notes:
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html> 
 
 ---
@@ -38,5 +38,5 @@ Notes:
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>

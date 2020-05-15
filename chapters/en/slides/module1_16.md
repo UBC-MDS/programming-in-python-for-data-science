@@ -2,7 +2,7 @@
 type: slides
 ---
 
-# Obtaining dataframe Values
+# Obtaining Dataframe Values
 
 Notes: Script here.
 
@@ -10,7 +10,7 @@ Notes: Script here.
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -40,7 +40,7 @@ Notes: Script here.
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -67,7 +67,7 @@ Notes: Script here.
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -83,7 +83,7 @@ Notes: Script here
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 

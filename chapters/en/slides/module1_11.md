@@ -2,7 +2,7 @@
 type: slides
 ---
 
-# Slicing Only Columns using df.loc\[\]
+# Slicing Only Columns using .loc\[\]
 
 Notes: Script here.
 
@@ -10,7 +10,7 @@ Notes: Script here.
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -51,7 +51,7 @@ Notes: Script here.
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -85,7 +85,7 @@ Notes: Script here.
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -101,7 +101,7 @@ Notes: Script here.
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 

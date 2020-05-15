@@ -10,7 +10,7 @@ Notes: Script here
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -33,8 +33,8 @@ df['mfr'].value_counts()
 K    23
 G    22
 P     9
-R     8
 Q     8
+R     8
 N     6
 A     1
 Name: mfr, dtype: int64
@@ -46,7 +46,7 @@ Notes: Script here
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -89,7 +89,7 @@ Notes: Script here
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -113,7 +113,7 @@ mfr_group
 ```
 
 ```out
-<pandas.core.groupby.generic.DataFrameGroupBy object at 0x124ef3320>
+<pandas.core.groupby.generic.DataFrameGroupBy object at 0x122635208>
 ```
 
 This returns a `DataFrame GroupBy` object. What exactly is this?
@@ -124,7 +124,7 @@ Notes: Script here
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -132,7 +132,7 @@ Notes: Script here
 
 ---
 
-<img src='module2/groupby7.png'  alt="404 image" width = "80%" align="middle"/>
+<img src='/module2/groupby7.png'  alt="404 image" width = "80%" align="middle"/>
 
 Notes: Script here
 
@@ -140,7 +140,7 @@ Notes: Script here
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -173,7 +173,7 @@ Notes: Script here
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -201,7 +201,7 @@ Notes: Script here
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -240,7 +240,7 @@ Notes: Script here
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -280,7 +280,7 @@ Notes: Script here
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -319,7 +319,7 @@ Notes: Script here
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -367,7 +367,7 @@ Notes: Script here
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -380,7 +380,7 @@ Notes: Script here
 In situations where we want to collect multiple statistics together, we
 can aggregate them in 1 step using a verb called `.agg()`.
 
-`df.agg()` can be used on its own using a single measurement, without
+`.agg()` can be used on its own using a single measurement, without
 groupby:
 
 ``` python
@@ -410,7 +410,7 @@ Notes: Script here
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -448,7 +448,7 @@ Notes: Script here
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -456,9 +456,9 @@ Notes: Script here
 
 ---
 
-`df.agg()` gets a chance to really shine when we want several specific
+`.agg()` gets a chance to really shine when we want several specific
 measures. Let’s say we want the `max`, `min` and `median`. We specify
-them in square brackets within our `df.agg()` method.
+them in square brackets within our `.agg()` method.
 
 ``` python
 df.agg(['max', 'min', 'median'])
@@ -480,7 +480,7 @@ Notes: Script here
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -490,7 +490,7 @@ Notes: Script here
 
 ## Aggregating groupby objects
 
-`df.agg()` is particularly useful with groupby objects. Let’s try it on
+`.agg()` is particularly useful with groupby objects. Let’s try it on
 our manufacturer `groupby` object named `mfr_group`.
 
 ``` python
@@ -518,7 +518,7 @@ Notes: Script here
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -528,7 +528,7 @@ Notes: Script here
 
 ## Extra Fancy Aggregation
 
-You might have noticed that when we used `df.agg()`, we calculated the
+You might have noticed that when we used `.agg()`, we calculated the
 same 3 statistics for every column in the dataframe but we can calculate
 different statistics for different columns.  
 Let’s say we are concerned about the `max` and `min` calorie values, the
@@ -565,7 +565,7 @@ Notes: Script here
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -596,7 +596,7 @@ Script here
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -613,7 +613,7 @@ sugar_plot = (df.groupby(by='mfr')
 sugar_plot
 ```
 
-<img src="module2/module2_24/unnamed-chunk-18-1.png" width="576" />
+<img src="/module2/module2_24/unnamed-chunk-18-1.png" width="576" />
 
 This plot, however, looks a little unfinished. We need to add a title
 and label our y-axis.
@@ -624,7 +624,7 @@ Notes: Script here
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -645,10 +645,10 @@ sugar_plot = (df.groupby(by='mfr')
 sugar_plot
 ```
 
-<img src="module2/module2_24/unnamed-chunk-19-1.png" width="576" />
+<img src="/module2/module2_24/unnamed-chunk-19-1.png" width="576" />
 
 In this case, we reference our initial plot and use the verb
-`set_ylabel()` with the desired axis label as the argument.
+`.set_ylabel()` with the desired axis label as the argument.
 
 Notes: Script here
 
@@ -656,7 +656,7 @@ Notes: Script here
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -679,7 +679,7 @@ nutrition_plot = (df.groupby(by='mfr')
 nutrition_plot
 ```
 
-<img src="module2/module2_24/unnamed-chunk-20-1.png" width="576" />
+<img src="/module2/module2_24/unnamed-chunk-20-1.png" width="576" />
 
 Notes: Script here
 
@@ -687,7 +687,7 @@ Notes: Script here
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -707,7 +707,7 @@ Notes: Script here
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -723,7 +723,7 @@ Notes: Script here
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 

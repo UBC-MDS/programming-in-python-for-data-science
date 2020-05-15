@@ -53,7 +53,7 @@ type: slides
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -74,7 +74,7 @@ _“[80 Cereals](https://www.kaggle.com/crawford/80-cereals/)” (c) by [Chris C
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -93,7 +93,7 @@ This means that the fat content of each cereal is actually an additional 2 grams
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -102,13 +102,13 @@ We need to add 2 to each of the row's fat value.
 
 <br>
 
-<center> <img src='module2/plus2.png'  alt="404 image" /></center>
+<center> <img src='/module2/plus2.png'  alt="404 image" /></center>
 
 
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -125,7 +125,7 @@ See how each row has changed in value? When we do any type of operations on colu
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -142,20 +142,20 @@ df['rating'] * 2
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
 
 Every row's value is changed by the operation.
 
-<center> <img src='module2/times2.png'  alt="404 image" /></center>
+<center> <img src='/module2/times2.png'  alt="404 image" /></center>
 
 
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -165,13 +165,13 @@ We are not limited to simply taking a column and transforming it by a single num
 The expected result would look something like this:
 
 
-<center> <img src='module2/sugarcups.png'  alt="404 image" /></center>
+<center> <img src='/module2/sugarcups.png'  alt="404 image" /></center>
 
 
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -188,7 +188,7 @@ Each sugar row value is divided by its respected cups value.
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -204,7 +204,7 @@ This doesn't appear very useful.
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -220,7 +220,7 @@ df
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -242,7 +242,7 @@ df['weight']*oz_to_g
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -264,7 +264,7 @@ Just like we did earlier in the module, we need to save the dataframe to an obje
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -281,7 +281,7 @@ df['sugars']/df['cups']
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -298,7 +298,7 @@ Give it a shot in the exercises now on your own.
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -308,4 +308,5 @@ Notes: Script here
 Notes: Script here
 <html>
 <audio controls >
-  <source src="place
+  <source src="/placeholder_audio.mp3" />
+</audio></html>

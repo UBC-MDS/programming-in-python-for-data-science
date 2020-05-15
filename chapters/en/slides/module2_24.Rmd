@@ -53,7 +53,7 @@ type: slides
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -71,7 +71,7 @@ df['mfr'].value_counts()
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -95,7 +95,7 @@ We could do this for the remaining 5 manufacturers, however, it's obvious that i
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -117,17 +117,17 @@ This returns a `DataFrame GroupBy` object.  What exactly is this?
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
 
-<img src='module2/groupby7.png'  alt="404 image" width = "80%" align="middle"/> 
+<img src='/module2/groupby7.png'  alt="404 image" width = "80%" align="middle"/> 
 
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -143,7 +143,7 @@ Reading carefully, we can see there are 7 groups: `A`, `G`, `K`,  `N`, `P`, `Q` 
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -157,7 +157,7 @@ mfr_group.groups['K']
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -172,7 +172,7 @@ mfr_group.get_group('K')
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -195,7 +195,7 @@ mfr_type_group.ngroups
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -210,7 +210,7 @@ mfr_type_group.get_group(('K', 'Cold'))
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -230,7 +230,7 @@ Of course, using groups is not limited to finding the only the mean, we can do t
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -239,7 +239,7 @@ Notes: Script here
 
 In situations where we want to collect multiple statistics together, we can aggregate them in 1 step using a verb called `.agg()`.
 
-`df.agg()` can be used on its own using a single measurement, without groupby:
+`.agg()` can be used on its own using a single measurement, without groupby:
 
 ```{python}
 df.agg('mean')
@@ -249,7 +249,7 @@ df.agg('mean')
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -263,12 +263,12 @@ df.mean()
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
 
-`df.agg()` gets a chance to really shine when we want several specific measures.  Let's say we want the `max`, `min` and `median`.  We specify them in square brackets within our `df.agg()` method.
+`.agg()` gets a chance to really shine when we want several specific measures.  Let's say we want the `max`, `min` and `median`.  We specify them in square brackets within our `.agg()` method.
 
 ```{python}
 df.agg(['max', 'min', 'median'])
@@ -279,14 +279,14 @@ dataframe giving the value for each statistic, for each column.
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
 
 ## Aggregating groupby objects
 
-`df.agg()` is particularly useful with groupby objects.  Let's try it on our manufacturer  `groupby` object named `mfr_group`.
+`.agg()` is particularly useful with groupby objects.  Let's try it on our manufacturer  `groupby` object named `mfr_group`.
 
 ```{python}
 mfr_group.agg(['max', 'min', 'median'])
@@ -297,14 +297,14 @@ This gives a value for each group and for each statistic we specified.
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
 
 ## Extra Fancy Aggregation
 
-You might have noticed that when we used `df.agg()`,  we calculated the same 3 statistics for every column in the dataframe but we can calculate different statistics for different columns.    
+You might have noticed that when we used `.agg()`,  we calculated the same 3 statistics for every column in the dataframe but we can calculate different statistics for different columns.    
 Let's say we are concerned about the `max` and `min` calorie values, the total `sum` of the ratings and the `mean` and `median` sugar content for each manufacturing group.     
 We wrapped everything in curly brackets and we use a colon to separate the column name from the statistics values. We need to put the statistics within square brackets. 
 ```{python}
@@ -317,7 +317,7 @@ Now this is a bit easier to read.
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -339,7 +339,7 @@ We are going to save our plot as an object named `sugar_plot`.
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -358,7 +358,7 @@ This plot, however, looks a little unfinished. We need to add a title and label 
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -375,12 +375,12 @@ sugar_plot = (df.groupby(by='mfr')
 sugar_plot
 ```
 
-In this case, we reference our initial plot and use the verb `set_ylabel()` with the desired axis label as the argument. 
+In this case, we reference our initial plot and use the verb `.set_ylabel()` with the desired axis label as the argument. 
 
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -400,7 +400,7 @@ nutrition_plot
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -411,7 +411,7 @@ If you wish to learn more advanced visualization and Python plotting package **A
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -423,5 +423,5 @@ Notes: Script here
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>

@@ -10,7 +10,7 @@ Notes: Script here.
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -22,7 +22,7 @@ Notes: Script here.
 
 When we load in our data, it is generally ordered in the same way it is
 stored. We can easily sort the rows of a dataframe based on its column
-values. The verb for that? `df.sort_values()`.
+values. The verb for that? `.sort_values()`.
 
 As an example, if we wanted to order the cereals based on rating, we
 could do the following:
@@ -57,7 +57,7 @@ Notes: Script here.
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -101,7 +101,7 @@ Notes: Script here.
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -117,7 +117,7 @@ Notes: Script here
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 

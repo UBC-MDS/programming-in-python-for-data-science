@@ -10,7 +10,7 @@ Notes: Script here.
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -21,9 +21,9 @@ Notes: Script here.
 ## Slicing Dataframe
 
 Up to this point, we have been manipulating our dataframe with column
-and row ***labels*** using `df. loc`.  
+and row ***labels*** using `.loc[]`.  
 Slicing can also be done by the location position of each row with
-`df.iloc`. `df.iloc` is very similar, however, the “i” in `iloc` refers
+`df.iloc`. `.iloc[]` is very similar, however, the “i” in `iloc` refers
 to the index ***integer*** position.
 
 We are going to return to our cereal dataset and take a look at the
@@ -35,7 +35,7 @@ Notes: Script here.
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -74,7 +74,7 @@ Notes: Script here.
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -107,7 +107,7 @@ Notes: Script here.
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -115,8 +115,8 @@ Notes: Script here.
 
 ---
 
-We can use the same coding structure we learned with `df.loc`, but this
-time using row positions instead of labels with `df.iloc[]`
+We can use the same coding structure we learned with `.loc[]`, but this
+time using row positions instead of labels with `.iloc[]`
 
 ``` python
 df.iloc[2:5]
@@ -140,7 +140,7 @@ Notes: Script here.
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -176,7 +176,7 @@ Notes: Script here.
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -213,10 +213,10 @@ Wheaties Honey Gold              2    1     200    1.0   16.0       8
 ```
 
 We would need to specify all rows using `:` as we did when we used
-`df.loc[]`. The column `protein` is at index position 3 (we do not
-include the index label as a column) and `sugars` is at index position
-8, but since we want to include the 8th column we need to use the 9th
-position to make sure we get all the columns *BEFORE* the upper bound.
+`.loc[]`. The column `protein` is at index position 3 (we do not include
+the index label as a column) and `sugars` is at index position 8, but
+since we want to include the 8th column we need to use the 9th position
+to make sure we get all the columns *BEFORE* the upper bound.
 
 Notes: Script here.
 
@@ -224,7 +224,7 @@ Notes: Script here.
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -264,7 +264,7 @@ Notes: Script here.
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -272,7 +272,7 @@ Notes: Script here.
 
 ---
 
-## Selecting with df.iloc\[\]
+## Selecting with .iloc\[\]
 
 Selecting using `iloc` is done identically to `loc`, however, the items
 within each set of square brackets **MUST** be integers, and not in
@@ -328,7 +328,7 @@ Notes: Script here.
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -344,7 +344,7 @@ Notes: Script here
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 

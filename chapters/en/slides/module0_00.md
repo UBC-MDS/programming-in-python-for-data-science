@@ -7,7 +7,7 @@ type: slides
 Notes: Welcome to DSCI 511 Programming in Python for Data Science  
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 ---
 
@@ -32,7 +32,7 @@ Notes: Welcome to DSCI 511 Programming in Python for Data Science
 Notes:
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 
@@ -44,5 +44,5 @@ Notes: This course is designed to give you a solid foundation of coding in Pytho
 
 <html>
 <audio controls >
-  <source src="module0/511_Module0.mp3" />
+  <source src="/module0/511_Module0.mp3" />
 </audio></html>

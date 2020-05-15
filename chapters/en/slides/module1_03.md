@@ -10,7 +10,7 @@ Notes: Script here.
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -20,7 +20,7 @@ Notes: Script here.
 
 <center>
 
-<img src='module1/pandas.gif'  alt="404 image"  width="50%" align="middle"/>
+<img src='/module1/pandas.gif'  alt="404 image"  width="50%" align="middle"/>
 
 </center>
 
@@ -30,7 +30,7 @@ Notes: Script here.
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -56,7 +56,7 @@ Notes: Script here.
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -93,7 +93,7 @@ Notes: Script here.
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -131,7 +131,7 @@ Notes: Script here.
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -170,7 +170,7 @@ Notes: Script here.
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -180,7 +180,7 @@ Notes: Script here.
 
 What if we don’t want to output the whole table when displaying a
 dataframe? We can specify how many rows of the dataset to show with
-`df.head()`. This will output the first few rows of the dataframe.
+`.head()`. This will output the first few rows of the dataframe.
 
 ``` python
 df.head(2)
@@ -217,7 +217,7 @@ Notes: Script here.
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -236,7 +236,7 @@ arguments) and do something.
 
 <center>
 
-<img src='module1/argument.png'  alt="404 image"  width="50%" align="middle"/>
+<img src='/module1/argument.png'  alt="404 image"  width="50%" align="middle"/>
 
 </center>
 
@@ -254,7 +254,7 @@ Notes: Script here.
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -280,7 +280,7 @@ Notes: Script here.
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -315,7 +315,7 @@ Notes: Script here.
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -331,7 +331,7 @@ Notes: Script here.
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 

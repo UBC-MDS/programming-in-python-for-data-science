@@ -2,7 +2,7 @@
 type: slides
 ---
 
-# Slicing with Pandas Using df.loc
+# Slicing with Pandas Using .loc
 
 Notes: Script here.
 
@@ -10,7 +10,7 @@ Notes: Script here.
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -29,7 +29,7 @@ Notes: Script here.
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -72,7 +72,7 @@ Notes: Script here.
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -85,7 +85,7 @@ Notes: Script here.
 We can see all the columns and the first 5 rows of the dataframe. Let’s
 say we only want certain rows of the whole dataframe or certain columns.
 
-We talked about how `df.head()` will generate the first few rows (5 as
+We talked about how `.head()` will generate the first few rows (5 as
 default) of a dataframe but what if we wanted rows 5-10?
 
 The first column of this dataframe is called the `index`. This is what
@@ -102,7 +102,7 @@ Notes: Script here.
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -143,7 +143,7 @@ Notes: Script here.
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -189,7 +189,7 @@ Notes: Script here.
 
 <audio controls >
 
-<source src="placeholder_audio.mp3"/>
+<source src="/placeholder_audio.mp3"/>
 
 </audio>
 
@@ -234,7 +234,7 @@ Notes: Script here.
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -250,7 +250,7 @@ Notes: Script here
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 

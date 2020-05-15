@@ -35,13 +35,13 @@ df = pd.read_csv('cereal.csv', index_col=0)
 
 type: slides
 
-# Slicing Only Columns using df.loc[]
+# Slicing Only Columns using .loc[]
 
 
 Notes: Script here.
 <html>
 <audio controls >
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 </audio></html>
 
 
@@ -59,7 +59,7 @@ df.loc[:, 'calories':'fiber']
 Notes: Script here.
 <html>
 <audio controls >
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -81,7 +81,7 @@ df.loc['row name start':'row name end', 'column name start':'column name end']
 Notes: Script here.
 <html>
 <audio controls >
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 </audio></html>
 
     
@@ -92,7 +92,7 @@ Notes: Script here.
 Notes: Script here.
 <html>
 <audio controls >
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 </audio></html>
 
     

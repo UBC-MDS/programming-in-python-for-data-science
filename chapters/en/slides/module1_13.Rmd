@@ -36,12 +36,12 @@ df = pd.read_csv('cereal.csv', index_col=0)
 
 type: slides
 
-# Selecting using df.loc[]
+# Selecting using .loc[]
 
 Notes: Script here.
 <html>
 <audio controls >
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -62,7 +62,7 @@ What would we do if we want to select columns and rows that don't fall consecuti
 Notes: Script here.
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -83,7 +83,7 @@ We can also reorder it to change the column and row order.
 Notes: Script here.
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -100,7 +100,7 @@ df.loc[['Wheaties', 'Trix', 'Clusters'], ['type', 'rating', 'sugars']]
 Notes: Script here.
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -110,5 +110,5 @@ Notes: Script here.
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>

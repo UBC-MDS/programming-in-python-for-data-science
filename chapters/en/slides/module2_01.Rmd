@@ -52,7 +52,7 @@ type: slides
 Notes: Script here.
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -72,7 +72,7 @@ Of course, there are many other file types but we will focus on these for this c
 Notes: Script here.
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -97,7 +97,7 @@ It uses the same `pd.read_csv()` function we saw when reading in `csv` files.
 Notes: Script here.
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -117,7 +117,7 @@ This is not ideal. What you should notice is instead of each column value being 
 Notes: Script here.
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -135,7 +135,7 @@ The delimiter won't always be `\t` for `txt` files. The most common delimiters a
 Notes: Script here.
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -157,7 +157,7 @@ candybars.head()
 Notes: Script here.
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -169,7 +169,7 @@ This is because we are running the current code in a file that is located in a d
 The `data` is specifying a folder in our current directory (folder). We need to specify the path to the `csv` file through the subdirectory.       
 
 
-<center> <img src='module2/datafile.png'  alt="404 image"  width="75%" align="middle"/></center>
+<center> <img src='/module2/datafile.png'  alt="404 image"  width="75%" align="middle"/></center>
 
 
 This translates to the syntax `data/canucks.csv`
@@ -177,7 +177,7 @@ This translates to the syntax `data/canucks.csv`
 Notes: Script here.
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -195,7 +195,7 @@ It may also be a good idea to look in the  <a href="https://github.com/UBC-MDS/M
 Notes: Script here.
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -205,5 +205,5 @@ Notes: Script here.
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>

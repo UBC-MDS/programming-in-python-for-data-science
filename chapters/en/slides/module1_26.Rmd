@@ -41,7 +41,7 @@ type: slides
 Notes: Script here.
 <html>
 <audio controls >
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -57,7 +57,7 @@ Let's load in our cereal dataset again.
 Notes: Script here.
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -70,7 +70,7 @@ df.head(15)
 Notes: Script here.
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -88,14 +88,14 @@ This means that in our dataframe our columns can be classified as either of thes
 Notes: Script here.
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
 
 ## Pandas describe()
 
-Pandas has a lot up its sleeve but one of the most useful methods is called `describe` and it does exactly that. it _describes_ our data.  Let's try it out. 
+Pandas has a lot up its sleeve but one of the most useful methods is called `.describe()` and it does exactly that. it _describes_ our data.  Let's try it out. 
 
 
 ```{python}
@@ -107,7 +107,7 @@ By default `df.describe()` only shows numerical columns.
 Notes: Script here.
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -129,7 +129,7 @@ This table will tell us about:
 Notes: Script here.
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -144,7 +144,7 @@ df.describe(include='all')
 Notes: Script here.
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -162,14 +162,14 @@ Adding `include='all'` within the brackets adds some additional statistics about
 Notes: Script here.
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 
 ---
 
 We can also get single statistics of each column using:
-either `df.mean()`,`df.std()`, `df.count()`, `df.median()`, `df.sum()`. 
+either `.mean()`,`.std()`, `.count()`, `.median()`, `.sum()`. 
 
 First segregate the column we want to explore further, then add the method. 
 As an example, what the sum of the cereal ratings?
@@ -192,7 +192,7 @@ calories.median()
 Notes: Script here.
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -207,7 +207,7 @@ df.mean()
 Notes: Script here.
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -217,5 +217,5 @@ Notes: Script here.
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>

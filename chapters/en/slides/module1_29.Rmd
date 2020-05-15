@@ -43,7 +43,7 @@ type: slides
 Notes: Script here.
 <html>
 <audio controls >
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -65,7 +65,7 @@ A frequency table is a manner of displaying all the possible values of a column 
 Notes: Script here.
 <html>
 <audio controls >
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -74,7 +74,7 @@ Notes: Script here.
 
 _*A frequency Table*_ is a manner of displaying all the possible values of a column in our data and the number of occurrences (frequencies) each value occurs. These are particularly useful when we want to visualize our data.
 
-For our sample data,  a frequency table for the `available_canada_america` column would look like this: 
+For our sample data, a frequency table for the `available_canada_america` column would look like this: 
 
 ```{python echo=FALSE}
 
@@ -86,7 +86,7 @@ df_mini['available_canada_america'].value_counts()
 Notes: Script here.
 <html>
 <audio controls >
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -102,13 +102,13 @@ manufacturer_column
 Notes: Script here.
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
 
 We saved the object in a variable called `manufacturer_column` in the same way we have saved objects before.    
-Next we can use `pd.value_counts()` referencing that the column we saved as `manufacturer_column`.  
+Next we can use `.value_counts()` referencing that the column we saved as `manufacturer_column`.  
 
 
 ```{python}
@@ -122,12 +122,12 @@ If we used double square brackets with `pd.value_counts()` we would get an error
 Notes: Script here.
 <html>
 <audio controls >
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
 
-Sometimes it's useful to save a new dataframe as a `csv` file for future use or to use in another application. We can save dataframes using the method `df.to_csv()`. Simply put our desired `csv` file name in quotations within the parentheses. 
+Sometimes it's useful to save a new dataframe as a `csv` file for future use or to use in another application. We can save dataframes using the method `.to_csv()`. Simply put our desired `csv` file name in quotations within the parentheses. 
 
 ```{python echo = FALSE}
 manufacturer_freq.to_csv('manufacturer_frequency.csv')
@@ -138,7 +138,7 @@ Notes: Script here.
 
 <html>
 <audio controls >
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -148,5 +148,5 @@ Notes: Script here.
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>

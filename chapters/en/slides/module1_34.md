@@ -7,7 +7,7 @@ type: slides
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -18,20 +18,20 @@ By the end of the module, students are expected to:
 - Describe the components of a Dataframe.
 - Read a standard `.csv` file using Pandas `pd.read_csv()`.
 - Import Pandas.
-- Demonstrate indexing and slicing with `df.loc[]` and `df.iloc[]`.
+- Demonstrate indexing and slicing with `.loc[]` and `.iloc[]`.
 - Demonstrate Selecting columns of a dataframe using `df[]` notation.
-- Obtain values from a dataframe using `df.loc[]`
-- Sort a dataframe using `df.sort_values()`.
-- Create simple summary statistics using `pd.describe()`.
+- Obtain values from a dataframe using `.loc[]`
+- Sort a dataframe using `.sort_values()`.
+- Create simple summary statistics using `.describe()`.
 - construct simple visualizations using pandas.
-- create a `.csv` file from a dataframe using `df.to_csv()`.
+- create a `.csv` file from a dataframe using `.to_csv()`.
 
 
 
 Notes:
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 
@@ -48,7 +48,7 @@ The assignment will concentrate not only on the learning objectives above but al
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -64,7 +64,7 @@ under [Creative Commons Attribution-ShareAlike 3.0 Unported](http://creativecomm
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -76,5 +76,5 @@ Notes: Insert audio here.
 
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>

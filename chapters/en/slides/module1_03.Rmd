@@ -40,18 +40,18 @@ type: slides
 Notes: Script here.
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 
 ---
 
-<center> <img src='module1/pandas.gif'  alt="404 image"  width="50%" align="middle"/></center>
+<center> <img src='/module1/pandas.gif'  alt="404 image"  width="50%" align="middle"/></center>
 
 Notes: Script here.
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -69,7 +69,7 @@ import pandas as pd
 Notes: Script here.
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -95,7 +95,7 @@ In these slides you can differentiate between what we typed in (our code) in lig
 Notes: Script here.
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -109,7 +109,7 @@ df
 Notes: Script here.
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -134,12 +134,12 @@ Breaking up this code it just means "From our dataframe that we saved as `df` te
 Notes: Script here.
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 ---
 
 What if we don't want to output the whole table when displaying a dataframe?
-We can specify how many rows of the dataset to show with `df.head()`.  This will output the first few rows of the dataframe. 
+We can specify how many rows of the dataset to show with `.head()`.  This will output the first few rows of the dataframe. 
 
 ```{python}
 df.head(2)
@@ -159,7 +159,7 @@ df.head()
 Notes: Script here.
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -169,7 +169,7 @@ Notes: Script here.
 Something you may have noticed is that when we use `pd.read_csv()` we put our instructions within the parentheses, whereas, when we use `.shape` or `.head()` the object comes before our desired command. In Python, we use  **functions**, **methods** and  **attributes**. These are special words in Python that takes in instructions (we call these arguments) and do something.
 
 
-<center> <img src='module1/argument.png'  alt="404 image"  width="50%" align="middle"/></center>
+<center> <img src='/module1/argument.png'  alt="404 image"  width="50%" align="middle"/></center>
 
 Attributes can be distinguished from methods and functions as they do not have parentheses.          
 They can be thought of as nouns or adjectives that describe an object.          
@@ -182,7 +182,7 @@ In this case, our dataframe `df` is our object and `.shape` is the attribute des
 Notes: Script here.
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -203,7 +203,7 @@ This is going to be discussed in more detail later in the course but now, simply
 Notes: Script here.
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -228,7 +228,7 @@ You'll notice we use comments frequently in the exercises. It's good practice to
 Notes: Script here.
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -238,5 +238,5 @@ Notes: Script here.
 Notes: Script here.
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
