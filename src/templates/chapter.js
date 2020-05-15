@@ -1,54 +1,67 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useContext } from 'react'
 import { graphql, navigate } from 'gatsby'
 import useLocalStorage from '@illinois/react-use-local-storage'
 
 import { renderAst } from '../markdown'
-import { ChapterContext } from '../context'
+import { ChapterContext, LocaleContext } from '../context'
 import Layout from '../components/layout'
 import { Button } from '../components/button'
 
 import classes from '../styles/chapter.module.sass'
 
-const Template = ({ data, location }) => {
-    const { markdownRemark, site } = data
-    const { courseId } = site.siteMetadata
-    const { frontmatter, htmlAst } = markdownRemark
-    const { title, description, prev, next, id } = frontmatter
-    const [activeExc, setActiveExc] = useState(null)
-    const [completed, setCompleted] = useLocalStorage(`${courseId}-completed-${id}`, [])
-    const html = renderAst(htmlAst)
+const Pagination = ({ prev, next, lang }) => {
+    const { uiText } = useContext(LocaleContext)
     const buttons = [
-        { slug: prev, text: '« Previous Chapter' },
-        { slug: next, text: 'Next Chapter »' },
+        { slug: prev, text: `« ${uiText.prevChapter}` },
+        { slug: next, text: `${uiText.nextChapter} »` },
     ]
-    const handleSetActiveExc = id => {
-        window.location.hash = `${id}`
-        setActiveExc(id)
+
+    return (
+        <section className={classes.pagination}>
+            {buttons.map(({ slug, text }) => (
+                <div key={slug}>
+                    {slug && (
+                        <Button
+                            variant="secondary"
+                            small
+                            onClick={() => navigate(`${lang}/${slug}`)}
+                        >
+                            {text}
+                        </Button>
+                    )}
+                </div>
+            ))}
+        </section>
+    )
+}
+
+const Template = ({ data }) => {
+    const { markdownRemark } = data
+    const { frontmatter, htmlAst, parent, fields } = markdownRemark
+    const { title, description, prev, next, id } = frontmatter
+    const { lang } = fields
+    const [activeExc, setActiveExc] = useState(null)
+    const [completed, setCompleted] = useLocalStorage(`spacy-course-completed-${id}`, [])
+    const [slideType, setSlideType] = useLocalStorage(`spacy-course-slide-type`, 'video')
+    const context = {
+        lang,
+        activeExc,
+        setActiveExc,
+        completed,
+        setCompleted,
+        slideType,
+        setSlideType,
     }
-    useEffect(() => {
-        if (location.hash) {
-            setActiveExc(parseInt(location.hash.split('#')[1]))
-        }
-    }, [location.hash])
+    const html = renderAst(htmlAst)
 
     return (
         <ChapterContext.Provider
-            value={{ activeExc, setActiveExc: handleSetActiveExc, completed, setCompleted }}
+            value={context}
         >
-            <Layout title={title} description={description}>
+            <Layout lang={lang} title={title} description={description} pageName={parent.name}>
                 {html}
 
-                <section className={classes.pagination}>
-                    {buttons.map(({ slug, text }) => (
-                        <div key={slug}>
-                            {slug && (
-                                <Button variant="secondary" small onClick={() => navigate(slug)}>
-                                    {text}
-                                </Button>
-                            )}
-                        </div>
-                    ))}
-                </section>
+                <Pagination prev={prev} next={next} lang={lang} />
             </Layout>
         </ChapterContext.Provider>
     )
@@ -58,11 +71,6 @@ export default Template
 
 export const pageQuery = graphql`
     query($slug: String!) {
-        site {
-            siteMetadata {
-                courseId
-            }
-        }
         markdownRemark(fields: { slug: { eq: $slug } }) {
             htmlAst
             frontmatter {
@@ -71,6 +79,14 @@ export const pageQuery = graphql`
                 description
                 next
                 prev
+            }
+            fields {
+                lang
+            }
+            parent {
+                ... on File {
+                    name
+                }
             }
         }
     }

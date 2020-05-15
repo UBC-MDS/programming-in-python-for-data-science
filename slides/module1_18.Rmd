@@ -53,7 +53,7 @@ Notes: Script here.
 Something extremely useful is getting a single column from a dataframe.
 We can use `df.loc[]` which would look something like this:
 
-```
+```Python
 df.loc[:, ['column-name']]
 ```
 

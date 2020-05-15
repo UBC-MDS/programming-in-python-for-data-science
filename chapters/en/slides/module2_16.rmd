@@ -1,0 +1,203 @@
+---
+params:
+  dynamictitle: "module2_16"
+title: "`r params$dynamictitle`"
+output: 
+  md_document:
+    variant: gfm
+---
+
+
+```{r setup, include=FALSE}
+## DO NOT FORGET TO CHANGE THIS ACCORDINGLY 
+library(rmarkdown)
+# MAke sure you are updating your title 
+knitr::opts_chunk$set(echo = TRUE,
+                      base.dir = ".", 
+                      base.url = "/",
+                      fig.path = paste("../static/module2/", params$dynamictitle,"/", sep = ""))
+
+knitr_opts <- knitr_options( opts_knit = NULL,
+                             opts_chunk = NULL,
+                             knit_hooks = NULL,
+                             opts_hooks = NULL,
+                             opts_template = NULL)
+md_document_custom <- md_document(variant = "gfm")
+output_format(knitr = knitr_opts,
+              pandoc = NULL,
+              base_format = md_document_custom)
+library(reticulate)
+
+```
+
+
+```{python include=FALSE}
+import pandas as pd
+import numpy as np
+pd.set_option('display.width', 350)
+
+np.set_printoptions(linewidth=400)
+
+pd.set_option('display.max_columns', 15)
+pd.set_option('display.max_rows', 8)
+
+df = pd.read_csv('cereal.csv', index_col=0)
+```
+
+
+type: slides
+
+# Filtering 
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+Filtering is probably one of the most frequent data manipulations you will do in data analysis.  Filtering is often used when we are either trying to rid the dataframe of unwanted rows or analyze rows with a particular column value. 
+
+Think of it as a sieve keeping only the rows matching conditions you have set. 
+
+Let's try to filter the `cereal.csv` dataset.
+
+
+```{python}
+df = pd.read_csv('cereal.csv', index_col=0)
+df.head()
+```
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+## Standard filtering 
+
+Suppose you are trying to find a cereal with a protein content greater than 4g per serving.  We can find those rows with the following code.  
+
+```{python}
+df[df['protein'] > 4]
+```
+
+This is a little tricky because we first specify the dataframe `df` and within its square brackets, we specify the column attempting to be filtered from the dataframe with `df['protein']` followed by the condition.      
+    
+The code can be translated to "select the rows from the dataframe `df` where the dataframe protein value is greater than 4". 
+
+We can see from the output of this code that all the values from the protein column are above 4. 
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+We can do this with equalities as well. 
+
+```{python}
+df[df['protein'] == 4]
+```
+
+Now we get all the cereals with a protein content of 4g per serving.  The key point to remember here is that we use **2** equal signs.       
+   
+In Python, a single `=` is used as an assignment operator. We are setting objects equal to something. 
+Double equal signs,  `==`,  is  used for comparison. We check if certain values are equivalent to one another. 
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+We can filter categorical columns too.  In this example,  I only want cereals from the manufacturer "Q" (For Quaker)
+
+```{python}
+df[df['mfr'] == 'Q']
+```
+
+Here we are using the double equal signs we saw in the last slide. 
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+##  Multiple Condition Filtering - "and"
+
+We now know how to filter on one condition but how do we filter if we have many? 
+Perhaps we only want cereals with protein content between 4 to 5 grams?
+
+```{python}
+df[(df['protein'] >= 4) & (df['protein'] <= 5)]
+```
+
+
+Code Explained:     
+We need to use the special symbol `&` indicating "and".  This means that both conditions must hold to be returned in the new dataframe. 
+Each condition is wrapped with parentheses to distinguish the conditions from one another. 
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+Next, we will look at a case where we filter on 2 different columns.  Let's say we only want cereals from the Quaker manufacturer, with a protein content greater than 4. 
+
+```{python}
+df[(df['mfr'] == 'Q') & (df['protein'] > 4)]
+```
+
+The same coding syntax can be applied to two different column conditions. 
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+##  Multiple Condition Filtering - or
+
+Suppose that we are interested in cereals that either are made from the Quaker manufacturer **OR** a protein content above 4.     
+We only need one of these conditions to hold to return a row. 
+
+```{python}
+df[(df['mfr'] == 'Q') | (df['protein'] > 4)]
+```
+
+Instead of using the ` & ` symbol, we use ` | ` which is called the "pipe operator".  This means "or" in the Python programming language. 
+
+This time, filtering using "or" resulted in 10 cereals that met either of the conditions. When we filtered using "and",  only 1 cereal met both conditions. 
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+# Let’s apply what we learned!
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>

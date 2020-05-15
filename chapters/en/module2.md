@@ -9,13 +9,12 @@ id: 2
 ---
 
 
-<exercise id="0" title="Module Learning Outcomes" type="slides">
+<exercise id="0" title="Module Learning Outcomes" type="slides,video">
 
-<slides source="module2_00">
+<slides source="module2_00" start="0:165" end="3:01">
 </slides>
 
 </exercise>
-
 
 <exercise id="1" title="Reading in Different File Types" type="slides">
 
@@ -870,7 +869,7 @@ Take another look at the plot.
 </exercise>
 
 
-<exercise id="29" title="What Did We Just Learn?" type="slides">
-<slides source="module2_29">
+<exercise id="29" title="What Did We Just Learn?" type="slides,video">
+<slides source="module2_29" start="0:165" end="3:01">>
 </slides>
 </exercise>

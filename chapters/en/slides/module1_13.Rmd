@@ -1,0 +1,114 @@
+---
+title: "module1_13"
+author: "Hayley Boyce"
+output: 
+  md_document:
+    variant: gfm
+---
+
+
+```{r setup, include=FALSE}
+library(rmarkdown)
+knitr::opts_chunk$set(echo = TRUE)
+knitr_opts <- knitr_options( opts_knit = NULL,
+                             opts_chunk = NULL,
+                             knit_hooks = NULL,
+                             opts_hooks = NULL,
+                             opts_template = NULL)
+md_document_custom <- md_document(variant = "gfm")
+output_format(knitr = knitr_opts,
+              pandoc = NULL,
+              base_format = md_document_custom)
+library(reticulate)
+```
+
+
+```{python include=FALSE}
+import pandas as pd
+import numpy as np
+pd.set_option('display.width', 400)
+
+np.set_printoptions(linewidth=400)
+
+pd.set_option('display.max_columns', 15)
+df = pd.read_csv('cereal.csv', index_col=0)
+```
+
+type: slides
+
+# Selecting using df.loc[]
+
+Notes: Script here.
+<html>
+<audio controls >
+<source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+## Unordered Indexing
+
+We have our trusty `cereal.csv` data again with the cereal names as the index labels.
+
+
+```{python echo = FALSE}
+df
+```
+
+
+What would we do if we want to select columns and rows that don't fall consecutively or if we want to rearrange them?
+
+
+Notes: Script here.
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+Let's say we wanted only the rows labeled `Clusters`, `Trix` and `Wheaties` and the columns `type`, `sugars` and `rating`
+How would we obtain them now?
+
+We need to specify each column and row label that we want between square brackets `[]`, separated with commas.
+
+
+```{python}
+df.loc[['Clusters', 'Trix', 'Wheaties'], ['type', 'sugars', 'rating']]
+```
+
+
+We can also reorder it to change the column and row order.
+
+Notes: Script here.
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+What if we wanted the rows to be in the order  `Wheaties`, `Trix` and `Clusters` and columns in the order `type`, `rating` and `sugars`
+How would we obtain that?    
+It's as simple as rearranging the order you target your rows and columns!
+
+```{python}
+df.loc[['Wheaties', 'Trix', 'Clusters'], ['type', 'rating', 'sugars']]
+```
+
+
+Notes: Script here.
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+# Let’s apply what we learned!
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>

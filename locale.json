@@ -1,0 +1,49 @@
+{
+    "en": {
+        "langName": "English",
+        "title": "DSCI 511 - Programming in Python for Data Science",
+        "slogan": "Part of UBC's Mid-Career Learning program",
+        "description": "Basic programming in Python. Overview of iteration and flow control and data types relevant to data exploration and analysis. When and how to exploit pre-existing libraries. Numerical data types with Numpy and tabular data with Pandas.",
+        "bio": "The University of British Columbia (UBC) is a comprehensive research-intensive university, consistently ranked among the 40 best universities in the world. The MDS Mid Career Learners program was launched in September 2020 and is offered by  the MDS program who are a collaboration between the UBC Department of Computer Science and Department of Statistics. ",
+        "video": "/5fPGBCfcwpA",
+        "footerLinks": [
+            { "text": "Website",
+                "url": "https://masterdatascience.ubc.ca" 
+           },
+           {
+               "text": "Source",
+                "url": "https://github.com/UBC-MDS/MCL-DSCI-511-programming-in-python"
+           },
+           {
+               "text": "Built with ♥",
+                "url": "https://github.com/ines/course-starter-python"
+            }
+        ],
+        "socialImage": "social.jpg",
+        "uiText": {
+            "aboutMe": "About me",
+            "aboutCourse": "About this course",
+            "markAsCompleted": "Mark as completed",
+            "removeFromCompleted": "Remove from completed",
+            "completed": "Completed",
+            "submit": "Submit",
+            "correct": "That's correct!",
+            "incorrect": "Incorrect.",
+            "showSolution": "Show solution",
+            "reset": "Reset",
+            "runCode": "Run code",
+            "next": "Next",
+            "showHints": "Show hints",
+            "hideHints": "Hide hints",
+            "loading": "Loading...",
+            "connectingFailed": "Connecting failed. Please reload and try again.",
+            "launchingDocker": "Launching Docker container on",
+            "reconnectingDocker": "Reconnecting to Docker container on",
+            "prevChapter": "Previous Chapter",
+            "nextChapter": "Next Chapter",
+            "start": "Start",
+            "video": "Video",
+            "slides": "Slides"
+        }
+    }
+}

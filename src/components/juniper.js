@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import CodeMirror from 'codemirror'
+import python from 'codemirror/mode/python/python' // eslint-disable-line no-unused-vars
 import { Widget } from '@phosphor/widgets'
 import { Kernel, ServerConnection } from '@jupyterlab/services'
 import { OutputArea, OutputAreaModel } from '@jupyterlab/outputarea'
@@ -20,15 +21,17 @@ class Juniper extends React.Component {
         kernelType: 'python3',
         lang: 'python',
         theme: 'default',
-        isolateCells: false,
+        isolateCells: true,
         useBinder: true,
         storageKey: 'juniper',
         useStorage: true,
         storageExpire: 60,
-        debug: true,
+        debug: false,
         msgButton: 'run',
         msgLoading: 'Loading...',
         msgError: 'Connecting failed. Please reload and try again.',
+        msgLaunchDocker: 'Launching to Docker container on',
+        msgReconnectDocker: 'Reconnecting to Docker container on',
         classNames: {
             cell: 'juniper-cell',
             input: 'juniper-input',
@@ -232,12 +235,14 @@ class Juniper extends React.Component {
         }
         this.log(() => console.info('requesting kernel'))
         const url = this.props.url.split('//')[1]
-        const action = !this.state.fromStorage ? 'Launching' : 'Reconnecting to'
+        const action = !this.state.fromStorage
+            ? this.props.msgLaunchDocker
+            : this.props.msgReconnectDocker
         outputArea.model.clear()
         outputArea.model.add({
             output_type: 'stream',
             name: 'stdout',
-            text: `${action} Docker container on ${url}...`,
+            text: `${action} ${url}...`,
         })
         new Promise((resolve, reject) =>
             this.getKernel()

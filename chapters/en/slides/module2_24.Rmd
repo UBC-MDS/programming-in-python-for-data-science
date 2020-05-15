@@ -1,0 +1,427 @@
+---
+params:
+  dynamictitle: "module2_24"
+title: "`r params$dynamictitle`"
+output: 
+  md_document:
+    variant: gfm
+---
+
+
+```{r setup, include=FALSE}
+## DO NOT FORGET TO CHANGE THIS ACCORDINGLY 
+library(rmarkdown)
+# MAke sure you are updating your title 
+knitr::opts_chunk$set(echo = TRUE,
+                      base.dir = ".", 
+                      base.url = "/",
+                      fig.path = paste("../static/module2/", params$dynamictitle,"/", sep = ""))
+
+knitr_opts <- knitr_options( opts_knit = NULL,
+                             opts_chunk = NULL,
+                             knit_hooks = NULL,
+                             opts_hooks = NULL,
+                             opts_template = NULL)
+md_document_custom <- md_document(variant = "gfm")
+output_format(knitr = knitr_opts,
+              pandoc = NULL,
+              base_format = md_document_custom)
+library(reticulate)
+
+```
+
+
+```{python include=FALSE}
+import pandas as pd
+import numpy as np
+pd.set_option('display.width', 350)
+
+np.set_printoptions(linewidth=400)
+
+pd.set_option('display.max_columns', 50)
+pd.set_option('display.max_rows', 15)
+
+df = pd.read_csv('cereal.csv', index_col=0)
+```
+
+
+type: slides
+
+# Grouping and Aggregating
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+Often, we are interested in examining specific groups in our data.  Perhaps the question we want to answer is:       
+_*Which manufacturer has the highest mean sugar content?*_
+
+We found in module 1 using `.value_counts()` that there are 7 different manufacturers; "K", "G", "P", "R", "Q", "N" and "A".
+
+```{python}
+df['mfr'].value_counts()
+```
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+To find the mean sugar content of each manufacturer, we could filter on each manufacturer and calculate the mean sugar content using `.mean()`.  We can chain to make this process a little faster too.
+
+Let's start with K:
+```{python}
+df[df['mfr'] == 'K'].mean().loc['sugars']
+```
+
+Next "G":
+
+```{python}
+df[df['mfr'] == 'G'].mean().loc['sugars']
+```
+
+We could do this for the remaining 5 manufacturers, however, it's obvious that it's time-consuming and a lot of work to do this repeatedly.  Imagine how tedious this would be if we had 100 different manufacturers?
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+# Using groupby
+
+Pandas has a solution for this.  It's not uncommon to be interested in examining specific groups in our data hence there is a verb that is helpful in grouping like-rows together.  `df.groupby()` allows us to group our data based on a  specified column.
+
+Let's group our candybars dataframe on the `mfr` column and save it as object `mfr_group`.
+
+```{python}
+mfr_group = df.groupby(by='mfr')
+mfr_group
+```
+
+This returns a `DataFrame GroupBy` object.  What exactly is this?
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+<img src='module2/groupby7.png'  alt="404 image" width = "80%" align="middle"/> 
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+A `DataFrame GroupBy` object contains information about the groups of the dataframe.  We can access it with the `.groups` attribute (noun).
+
+```{python}
+mfr_group.groups
+```
+
+Reading carefully, we can see there are 7 groups: `A`, `G`, `K`,  `N`, `P`, `Q` and  `R`, and it lists the index labels (cereal names) in each group.
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+We can obtain all the row index names of a group by specifying the group name in square brackets after the `groups` method.  Take the group `K` as an example.
+```{python}
+mfr_group.groups['K']
+```
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+We can get the full dataframe of the group `K` alone using the method `get_group()`.
+
+```{python}
+mfr_group.get_group('K')
+```
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+We can also group by multiple columns,
+For example we can grouping by not only manufacturer but also by cereal type! All we do is put both both column labels in square brackets within `.groupby()`
+
+```{python}
+mfr_type_group = df.groupby(by=['mfr', 'type'])
+mfr_type_group.groups
+```
+
+The attribute `ngroups` indicates how many groups exist. 
+
+```{python}
+mfr_type_group.ngroups
+```
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+If we want to get the dataframe of a specific group now, we put the value of each column in parenthesis. 
+
+```{python}
+mfr_type_group.get_group(('K', 'Cold'))
+```
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+## Summary Statistics with Groups
+
+What now?  Grouping doesn't answer our initial question of ***Which manufacturer has the highest mean sugar content?***     
+Where do we go from here?      
+We need to calculate the mean sugar content in each manufacturing group!
+```{python}
+mfr_group.mean()
+```
+This answers the initial question and confirms that manufacturer "P" has the highest mean sugar content across cereals.  See how convenient this was to do in comparison to our initial method?  Not only does this give us the result quicker, but it also gives us the mean of each column of the dataframe.  Think of how many filtering and mean calculations would have to be done if we were to do this using our initial method.      
+Of course, using groups is not limited to finding the only the mean, we can do the same thing for other statistics too like `.min()` and `.max()`.
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+## Aggregating dataframes
+
+In situations where we want to collect multiple statistics together, we can aggregate them in 1 step using a verb called `.agg()`.
+
+`df.agg()` can be used on its own using a single measurement, without groupby:
+
+```{python}
+df.agg('mean')
+```
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+This is essentially the same thing as calling the statistic `mean()` on the dataframe.
+
+```{python}
+df.mean()
+```
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+`df.agg()` gets a chance to really shine when we want several specific measures.  Let's say we want the `max`, `min` and `median`.  We specify them in square brackets within our `df.agg()` method.
+
+```{python}
+df.agg(['max', 'min', 'median'])
+```
+It produces a convenient 
+dataframe giving the value for each statistic, for each column.
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+## Aggregating groupby objects
+
+`df.agg()` is particularly useful with groupby objects.  Let's try it on our manufacturer  `groupby` object named `mfr_group`.
+
+```{python}
+mfr_group.agg(['max', 'min', 'median'])
+```
+
+This gives a value for each group and for each statistic we specified.
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+## Extra Fancy Aggregation
+
+You might have noticed that when we used `df.agg()`,  we calculated the same 3 statistics for every column in the dataframe but we can calculate different statistics for different columns.    
+Let's say we are concerned about the `max` and `min` calorie values, the total `sum` of the ratings and the `mean` and `median` sugar content for each manufacturing group.     
+We wrapped everything in curly brackets and we use a colon to separate the column name from the statistics values. We need to put the statistics within square brackets. 
+```{python}
+mfr_group.agg({"calories":['max', 'min'],
+                 "rating":['sum'],  
+                 "sugars":['mean', 'median']})
+```
+Now this is a bit easier to read. 
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+## Plotting Groupby Objects
+
+Let's return to thequestion we asked at the beginning of this section: 
+
+_*Which manufacturer has the highest mean sugar content?*_   
+
+A nice way of showing our results would be to graph this. A bar chart should do the trick! Let's use our chaining technique for this as well. 
+
+Here are the steps we are following to get our eventual plot.     
+- We create a groupby object and calculate the mean for each column in the dataframe.       
+- Next, we take the single column we are interested in using `.loc[]`.              
+- Our last action is the plot everything using `.plot.bar()`.          
+
+We are going to save our plot as an object named `sugar_plot`.
+Notes: Script here
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+```{python fig.width = 6, fig.height = 4}
+sugar_plot = (df.groupby(by='mfr')
+                .mean()
+                .loc[:,'sugars']
+                .plot.bar()
+             )
+sugar_plot
+```
+  
+This plot, however, looks a little unfinished. We need to add a title and label our y-axis. 
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+We've added a title before, so there is nothing new there but adding a y-axis label is an extra item to add to our chain. 
+
+```{python fig.width = 6, fig.height = 4}
+sugar_plot = (df.groupby(by='mfr')
+                .mean()
+                .loc[:,'sugars']
+                .plot.bar(title='Mean sugar content among manufacturers')
+                .set_ylabel('Sugar content (in grams)')
+              )
+sugar_plot
+```
+
+In this case, we reference our initial plot and use the verb `set_ylabel()` with the desired axis label as the argument. 
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+In the last plot, we used `.loc[:,'sugars']` to select a single column to the plot, however, we can show multiple mean column values in a single plot by selecting more columns. The columns `fat`, `fiber` and `protein` seem like good choices. 
+
+```{python fig.width = 6, fig.height = 4}
+nutrition_plot = (df.groupby(by='mfr')
+                    .mean()
+                    .loc[:, ['fat', 'fiber', 'protein']]
+                    .plot.bar(title='Mean nutritrion value over different manufacturers')
+                    .set_ylabel('Content (in grams)')
+                 )
+nutrition_plot
+```
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+Using `pandas` to plot groupby objects is very limited and is not possible for many other plot types such as scatter plots.      
+If you wish to learn more advanced visualization and Python plotting package **Altair**, come back soon and visit our in development course **DSCI-531 Exploratory Data Visualization**. 
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+
+
+# Let’s apply what we learned!
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>

@@ -8,9 +8,9 @@ type: chapter
 id: 0
 ---
 
-<exercise id="1" title="DSCI-511 Programming in Python for Data Science" type="slides">
+<exercise id="1" title="DSCI-511 Programming in Python for Data Science" type="slides,video">
 
-<slides source="module0_00">
+<slides source="module0_00" start="0:165" end="3:01">
 </slides>
 
 </exercise>

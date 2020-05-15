@@ -1,0 +1,221 @@
+---
+title: "module1_26"
+output: 
+  md_document:
+    variant: gfm
+---
+
+
+```{r setup, include=FALSE}
+library(rmarkdown)
+knitr::opts_chunk$set(echo = TRUE)
+knitr_opts <- knitr_options( opts_knit = NULL,
+                             opts_chunk = NULL,
+                             knit_hooks = NULL,
+                             opts_hooks = NULL,
+                             opts_template = NULL)
+md_document_custom <- md_document(variant = "gfm")
+output_format(knitr = knitr_opts,
+              pandoc = NULL,
+              base_format = md_document_custom)
+library(reticulate)
+```
+
+
+```{python include=FALSE}
+import pandas as pd
+import numpy as np
+pd.set_option('display.width', 400)
+
+np.set_printoptions(linewidth=400)
+
+pd.set_option('display.max_columns', 15)
+df = pd.read_csv('cereal.csv', index_col=0)
+```
+
+
+type: slides
+
+# Summary Statistics
+
+Notes: Script here.
+<html>
+<audio controls >
+<source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+Now we've learned about how to get our dataframe how we want it, let's try and make some fun of it!
+
+We have our data, now what? 
+
+We usually like to learn from it. We want to find out about maybe some summary statistics about the features of the data. 
+
+Let's load in our cereal dataset again. 
+
+Notes: Script here.
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+```{python}
+df = pd.read_csv('cereal.csv', index_col=0)
+df.head(15)
+```
+
+Notes: Script here.
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+## Numerical and Categorical Columns 
+
+Before we go further, let's quickly discuss the 2 different types of data.  
+
+- Categorical data: consists of qualitative observations such as characteristics - things generally containing names or words. 
+- Numerical data: are usually expressed with numbers. 
+
+This means that in our dataframe our columns can be classified as either of these.
+
+
+Notes: Script here.
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+## Pandas describe()
+
+Pandas has a lot up its sleeve but one of the most useful methods is called `describe` and it does exactly that. it _describes_ our data.  Let's try it out. 
+
+
+```{python}
+df.describe()
+```
+
+By default `df.describe()` only shows numerical columns.
+
+Notes: Script here.
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+```{python echo=FALSE}
+df.describe()
+```
+
+
+This table will tell us about:
+
+- `count`: The number of non-NA/null observations.
+- `mean`: The mean of  column 
+- `std` : The standard deviation of a column
+- `min`: The min value for a column
+- `max`: The max value for a column 
+- By default the 25, 50 and 75 percentile of the observations
+
+Notes: Script here.
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+We can make changes to either limit how much is shown or extend it with the additional argument `include = "all"` in the `describe` brackets. This expands the dataframe to contain both categorical and numerical columns now. 
+
+```{python}
+df.describe(include='all')
+```
+
+
+Notes: Script here.
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+```{python echo=FALSE}
+df.describe(include='all')
+```
+
+Adding `include='all'` within the brackets adds some additional statistics about categorical columns.
+
+- `unique`: how many observations are unique
+- `top`: which observation value is most occuring
+- `freq`: what is the frequency of the most occuring observation 
+
+Notes: Script here.
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+
+---
+
+We can also get single statistics of each column using:
+either `df.mean()`,`df.std()`, `df.count()`, `df.median()`, `df.sum()`. 
+
+First segregate the column we want to explore further, then add the method. 
+As an example, what the sum of the cereal ratings?
+
+
+```{python}
+ratings = df[['rating']]
+ratings.sum()
+```
+
+What about median calories of the cereals. 
+
+
+```{python}
+calories = df[['calories']]
+calories.median()
+```
+
+
+Notes: Script here.
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+We can also use this on the entire dataframe.
+
+```{python}
+df.mean()
+```
+
+
+Notes: Script here.
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+# Let’s apply what we learned!
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>

@@ -1,0 +1,174 @@
+---
+params:
+  dynamictitle: "module2_10"
+title: "`r params$dynamictitle`"
+output: 
+  md_document:
+    variant: gfm
+---
+
+
+```{r setup, include=FALSE}
+## DO NOT FORGET TO CHANGE THIS ACCORDINGLY 
+library(rmarkdown)
+# MAke sure you are updating your title 
+knitr::opts_chunk$set(echo = TRUE,
+                      base.dir = ".", 
+                      base.url = "/",
+                      fig.path = paste("../static/module2/", params$dynamictitle,"/", sep = ""))
+
+knitr_opts <- knitr_options( opts_knit = NULL,
+                             opts_chunk = NULL,
+                             knit_hooks = NULL,
+                             opts_hooks = NULL,
+                             opts_template = NULL)
+md_document_custom <- md_document(variant = "gfm")
+output_format(knitr = knitr_opts,
+              pandoc = NULL,
+              base_format = md_document_custom)
+library(reticulate)
+
+```
+
+
+```{python include=FALSE}
+import pandas as pd
+import numpy as np
+pd.set_option('display.width', 350)
+
+np.set_printoptions(linewidth=400)
+
+pd.set_option('display.max_columns', 15)
+pd.set_option('display.max_rows', 8)
+
+df = pd.read_csv('cereal.csv', index_col=0)
+```
+
+
+type: slides
+
+# Column Renaming and Column Creation
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+Remember our `candybars.csv` dataframe? Let's bring it back. 
+
+
+```{python}
+df = pd.read_csv('candybars.csv', index_col=0)
+df
+```
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+## Column Renaming
+
+There will be times where you are unsatisfied with the column names and you want want to change them. The proper syntax to do that is with `df.rename()`.    
+The column named `available_canada_america` is a bit long. Perhaps it would be a good idea to change it something shorter like `availability`. 
+Here is the code to do that:
+
+
+```{python}
+
+df = df.rename(columns={'available_canada_america' : 'availability'})
+df.head()
+
+```
+
+
+This code uses something we've never seen before - {} curly brackets.
+These have a special meaning but for now, you only need to concentrate your attention on the fact that the argument `columns` needs to have the format:
+
+```
+ columns={"old column name" : "new-column-name"}
+```
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+You can also rename multiple columns at once by simple adding a comma between the new and old column pairs between the curly brackets. 
+
+```{python}
+df = df.rename(columns={'available_canada_america' : 'availability',
+                          'weight' : 'weight_g'})
+df.head()
+```
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+## Column Creation 
+
+Creating a new column is extremely useful when we need to add additional information. Perhaps we want to covert the weight from grams to ounces. We can add that to our current dataframe using the `assign` function and naming the column `weight_oz`. 
+The conversion for 1 oz = 28.3495 g. 
+
+
+```{python}
+df = df.assign(weight_oz= df['weight_g']/28.3495)
+df
+```
+
+It's important that we always save the dataframe to an object when renaming or adding a new column or the changes will not be saved in our dataframe.
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+## Column Dropping 
+
+Ok, so we know how to create a new column but what if I want to drop 1 or multiple columns? In a similar way to `df.assign()`, `df,drop()` will delete selected columns.
+Let's delete the column `weight_oz` that we just made. 
+
+
+```{python}
+df = df.drop( columns= 'weight_oz')
+df
+```
+
+Again make sure that we always save the dataframe to an object or the column will not be deleted from the dataframe.
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+# Let’s apply what we learned!
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+

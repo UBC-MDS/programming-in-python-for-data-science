@@ -1,13 +1,9 @@
 {
-    "courseId": "DSCI-511",
-    "title": "DSCI 511 - Programming in Python for Data Science",
-    "slogan": "Part of UBC's Mid-Career Learning program",
-    "description": "Basic programming in Python. Overview of iteration and flow control and data types relevant to data exploration and analysis. When and how to exploit pre-existing libraries. Numerical data types with Numpy and tabular data with Pandas.",
-    "bio": "The University of British Columbia (UBC) is a comprehensive research-intensive university, consistently ranked among the 40 best universities in the world. The MDS Mid Career Learners program was launched in September 2020 and is offered by  the MDS program who are a collaboration between the UBC Department of Computer Science and Department of Statistics. ",
     "siteUrl": "https://mcl-dsci-511-programming-in-python.netlify.com/",
     "twitter": "UBCMDS",
     "fonts": "IBM+Plex+Mono:500|IBM+Plex+Sans:700|Lato:400,400i,700,700i",
-    "testTemplate": "from wasabi import Printer\n__msg__ = Printer()\n__solution__ = \"\"\"${solution}\"\"\"\n\n${solution}\n\n${test}\n\ntry:\n    test()\nexcept AssertionError as e:\n    __msg__.fail(e)",
+    "testTemplate": "from wasabi import msg\nfrom black import format_str, FileMode\n\nfile_mode = FileMode()\n\ndef blacken(code):\n    try:\n        return format_str(code, mode=file_mode)\n    except:\n        return code\n\n__msg__ = msg\n__solution__ = blacken(\"\"\"${solution}\"\"\")\n\n${solution}\n\n${test}\n\ntry:\n    test()\nexcept AssertionError as e:\n    __msg__.fail(e)",
+    "pytestTemplate": "from wasabi import msg\nfrom black import format_str, FileMode\n\nfile_mode = FileMode()\n\ndef blacken(code):\n    try:\n        return format_str(code, mode=file_mode)\n    except:\n        return code\n\n__msg__ = msg\n__solution__ = blacken(\"\"\"${solution}\"\"\")\n\n${solution}\n\n${test}\n\ntest()",
     "juniper": {
         "repo": "UBC-MDS/MCL-DSCI-511-programming-in-python",
         "branch": "binder",
@@ -15,11 +11,5 @@
         "kernelType": "python3",
         "debug": false
     },
-    "showProfileImage": true,
-    "footerLinks": [
-        { "text": "Website", "url": "https://masterdatascience.ubc.ca" },
-        { "text": "Source", "url": "https://github.com/UBC-MDS/MCL-DSCI-511-programming-in-python" },
-        { "text": "Built with ♥", "url": "https://github.com/ines/course-starter-python" }
-    ],
     "theme": "#0BB5D4"
 }

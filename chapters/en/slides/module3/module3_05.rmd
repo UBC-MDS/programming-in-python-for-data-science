@@ -1,0 +1,285 @@
+---
+params:
+  dynamictitle: "module3_05"
+title: "`r params$dynamictitle`"
+output: 
+  md_document:
+    variant: gfm
+---
+
+
+```{r setup, include=FALSE}
+## DO NOT FORGET TO CHANGE THIS ACCORDINGLY 
+library(rmarkdown)
+# MAke sure you are updating your title 
+knitr::opts_chunk$set(echo = TRUE,
+                      base.dir = ".", 
+                      base.url = "/",
+                      fig.path = paste("../../static/module3/", params$dynamictitle,"/", sep = ""))
+
+knitr_opts <- knitr_options( opts_knit = NULL,
+                             opts_chunk = NULL,
+                             knit_hooks = NULL,
+                             opts_hooks = NULL,
+                             opts_template = NULL)
+md_document_custom <- md_document(variant = "gfm")
+output_format(knitr = knitr_opts,
+              pandoc = NULL,
+              base_format = md_document_custom)
+library(reticulate)
+
+```
+
+
+```{python include=FALSE}
+import pandas as pd
+import numpy as np
+pd.set_option('display.width', 350)
+
+np.set_printoptions(linewidth=400)
+
+pd.set_option('display.max_columns', 50)
+pd.set_option('display.max_rows', 15)
+
+df = pd.read_csv('cereal.csv', index_col=0)
+cereal = pd.read_csv('cereal.csv', index_col=0)
+```
+
+
+type: slides
+
+# Reshaping using pivot
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+`pandas` provides 2 functions for reshaping data:   
+
+-  <a href="https://pandas.pydata.org/docs/reference/api/pandas.melt.html" target="_blank">`.melt()`</a> to make a wide dataframe long (convert columns to row) 
+- <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.pivot.html" target="_blank">`.pivot()`</a>  to make a long dataframe wide (convert rows to columns)
+
+<center><img src='module3/pivot_melt.gif' width="400"></center>
+"Source: Garrick Aden-Buie, https://github.com/gadenbuie/tidyexplain#spread-and-gather and
+Tomas Beuzen, DSCI 523 Data Wrangling" 
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+## Pivot
+
+`.pivot()` can be used in situations where our data may not meet criterion #2: _ Each variable is a single column_.
+
+It can be used to elongate the dataframe: it convert variables to their own columns that were previously being stored in a single column.
+
+The code for this verb takes quite a few arguments that can be a bit tricky so we are going to go through it. 
+
+  ```
+  df.pivot(index=['index label'], columns='column_name', values='new_colum_name')
+  ```
+  
+  - `df` to express with dataframe we want to pivot
+  - `index` is going to be use to make the new dataframe's index. 
+  - `columns` is the column that currently exists but that we want to create new columns labels from. Each unique value in this column will become a new column label. 
+  - `values` is the name of the column that currently exists but that contains the cell values we want. These values will be display in the respective newly created columns. 
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+We must take care with the `index` argument when transforming dataframes. This argument will only accept column labels and not column index labels. 
+Before we do any type of transformation, it's a good idea to reset and remove and labels an an index.   
+This can be done with `.reset_index()`
+This converts the index to a regular column. 
+ On our trusty cereal dataset, we see the name column as our index and we can reset it by calling `.reset_index()`
+ 
+```{python}
+cereal.head()
+```
+
+```{python}
+cereal.reset_index().head()
+```
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+The process of pivoting and it's argument can be explained well using the animation made by  <a href="https://github.com/apreshill/teachthat" target="_blank"> Alison Presmanes Hill</a>  
+
+<center><img src='module3/spread_py.gif' width="600"></center>
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+Or if we wanted to use our cereal dataframe as an example, the diagram below shows the spreading of column `nutrition` into 2 columns named `calories` and `protein` which were the 2 values contained in the `nutrition` column. 
+
+
+<center><img src='module3/pivot_cereal.gif' width="600"></center>
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+Let's try an example. Our cereal dataframe has information on 77 different cereals,
+```{python include=FALSE}
+cereal = pd.read_csv('cereal.csv', index_col=0)
+again = (cereal.reset_index()
+               .melt(id_vars=['name','mfr', 'type', 'fat', 'sodium',
+                              'fiber', 'carbo', 'potass', 
+                              'vitamins', 'shelf', 'weight',
+                              'cups', 'rating'], 
+                     value_vars=['protein', 'calories', 'sugars'], 
+                     var_name="nutrition", 
+                     value_name="measure").set_index('name')
+                     )
+again
+cereal_long= again.sort_index()
+```
+
+```{python}
+cereal
+```
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+Our dataframe that we want to tidy looks like this:
+```{python}
+cereal_long
+```
+
+We can see there are 231 rows and the `nutrition` column is made up of 3 variables; `protein`, `calories` and `sugar`. That means there are 3 rows for each of the 77 cereals. This explains why this untidy dataframe contains 231 rows (77 cereals * 3 variables = 231 rows). 
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+To transform this into tidy data we would specify the following arguments.    
+- Indicate `index` as the `name` column.    
+- Target the column `nutrition` with the values contained as new columns labels.     
+- Specify `measure` as the values associated with each of the new columns.       
+
+Also we can't forget to reset the index!    
+(Just like any other dataframe, if we want to keep the changes, makes sure to assign it to an object)
+
+```{python}
+tidy_pivot = (cereal_long.reset_index()
+            .pivot(index='name', columns='nutrition', values='measure')
+             )
+tidy_pivot
+```
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+```{python echo=FALSE}
+tidy_pivot
+```
+ 
+We are now back to 77 rows and it looks like we've tidied our data up! There appears to be a  problem though.
+`pivot` works well when we are only concerned with the columns we are pivoting but as we can see we lost all our other columns in the dataset. 
+There is a solution for this and it's called `.pivot_table()`.
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+## Pivot_table
+
+`.pivot_table()` works with multiple indexes and duplicate values. That just means we can keep all the columns that we are not pivoting. 
+Let's attempt at fixing our untidy data again but keeping all our columns. 
+The only problem is after we pivot we want to reset our index to avoid any indexing confusion.
+
+```{python}
+tidy_pivot = (cereal_long.reset_index()
+            .pivot_table(index=['name','mfr', 'type','fat',
+                                'sodium', 'fiber', 'carbo', 
+                                'potass', 'vitamins', 'shelf',
+                                'weight', 'cups', 'rating'],
+                         columns='nutrition', 
+                         values='measure').reset_index()
+             )
+```
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+Look's like we are back to fully tidied data with all the columns. 
+We just need to reassign our index back the cereal name using `.set_index('name')`
+
+```{python}
+tidy_pivot = tidy_pivot.set_index('name')
+```
+
+Perfect! 
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+# Let’s practice what we learned!
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+  

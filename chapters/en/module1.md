@@ -8,9 +8,9 @@ type: chapter
 id: 1
 ---
 
-<exercise id="0" title="Module Learning Outcomes" type="slides">
+<exercise id="0" title="Module Learning Outcomes" type="slides,video">
 
-<slides source="module1_00">
+<slides source="module1_00" start="0:165" end="3:01">
 </slides>
 
 </exercise>
@@ -975,7 +975,7 @@ _After you successfully create this graph you may notice `1e6` on the top left o
 
 </exercise>
 
-<exercise id="34" title="What Did We Just Learn?" type="slides">
-<slides source="module1_34">
+<exercise id="34" title="What Did We Just Learn?" type="slides,video">
+<slides source="module1_34" start="0:165" end="3:01">
 </slides>
 </exercise>

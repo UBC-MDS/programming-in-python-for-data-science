@@ -1,11 +1,10 @@
 {
-    "name": "DSCI-511",
+    "name": "MCL-DSCI-511",
     "private": true,
     "description": "Basic programming in Python. Overview of iteration and flow control and data types relevant to data exploration and analysis. When and how to exploit pre-existing libraries. Numerical data types with Numpy and tabular data with Pandas.",
     "bio": "The University of British Columbia (UBC) is a comprehensive research-intensive university, consistently ranked among the 40 best universities in the world. The MDS Mid Career Learners program was launched in September 2020 and is offered by  the MDS program who are a collaboration between the UBC Department of Computer Science and Department of Statistics. The Mid Career program involves 5 approximately 30 hour courses each offering a final Project.",
     "version": "0.0.1",
     "author": "Hayley Boyce <hayleyfboyce@gmail.com>",
-    "main": "main.js",
     "dependencies": {
         "@illinois/react-use-local-storage": "^1.1.0",
         "@jupyterlab/outputarea": "^0.19.1",
@@ -33,14 +32,14 @@
         "gatsby-transformer-sharp": "^2.1.17",
         "juniper-js": "^0.1.0",
         "node-sass": "^4.11.0",
+        "plyr": "^3.6.2",
         "prismjs": "^1.15.0",
         "react": "^16.8.2",
         "react-dom": "^16.8.2",
-        "react-helmet": "^5.2.0",
+        "react-helmet": "^5.2.1",
         "rehype-react": "^3.1.0",
         "remark-react": "^5.0.1",
-        "reveal.js": "^3.8.0",
-        "electron-serve": "^0.2.1"
+        "reveal.js": "^3.8.0"
     },
     "scripts": {
         "build": "gatsby build",
@@ -48,43 +47,14 @@
         "lint": "eslint **",
         "clear": "rm -rf .cache",
         "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\"",
-        "dist": "electron-builder"
+        "pytest": "python -m pytest __tests__"
     },
     "devDependencies": {
         "browser-monads": "^1.0.0",
-        "electron": "^4.2.0",
-        "electron-builder": "^20.40.2",
         "prettier": "^1.16.4"
     },
     "repository": {
         "type": "git",
         "url": "https://github.com/UBC-MDS/MCL-DSCI-571-machine-learning"
-    },
-    "build": {
-        "appId": "com.ubc-mds.mcl-dsci-571-machine-learning",
-        "dmg": {
-            "contents": [
-                {
-                    "x": 110,
-                    "y": 200
-                },
-                {
-                    "x": 375,
-                    "y": 200,
-                    "type": "link",
-                    "path": "/Applications"
-                }
-            ]
-        },
-        "linux": {
-            "target": [
-                "AppImage",
-                "deb"
-            ]
-        },
-        "win": {
-            "target": "squirrel",
-            "icon": "build/icon.ico"
-        }
     }
 }
