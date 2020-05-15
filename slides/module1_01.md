@@ -27,7 +27,7 @@ generally shaped like a rectangle, into Python, it is represented as
 what we call a dataframe object. It is very similar to a spreadsheet.
 
 
-<img src='/module1/spreadsheet.png'  alt="spreadsheet"/>
+<img src='module1/spreadsheet.png'  alt="spreadsheet"/>
 
 Notes: Script here.
 
