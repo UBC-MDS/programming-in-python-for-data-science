@@ -177,9 +177,47 @@ Notes: Script here
 
 ---
 
+We can also group by multiple columns,
+For example we can grouping by not only manufacturer but also by cereal type! All we do is put both both column labels in square brackets within `.groupby()`
+
+```{python}
+mfr_type_group = df.groupby(by=['mfr', 'type'])
+mfr_type_group.groups
+```
+
+The attribute `ngroups` indicates how many groups exist. 
+
+```{python}
+mfr_type_group.ngroups
+```
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+If we want to get the dataframe of a specific group now, we put the value of each column in parenthesis. 
+
+```{python}
+mfr_type_group.get_group(('K', 'Cold'))
+```
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
 ## Summary Statistics with Groups
 
-What now?  This doesn't answer our initial question of ***Which manufacturer has the highest mean sugar content?***     
+What now?  Grouping doesn't answer our initial question of ***Which manufacturer has the highest mean sugar content?***     
 Where do we go from here?      
 We need to calculate the mean sugar content in each manufacturing group!
 ```{python}

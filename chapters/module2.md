@@ -81,15 +81,14 @@ Not quite but you are on the right track.
 
 <exercise id="3" title="Reading in a URL">
 
-Let's try reading in some data from a URL using `pd.read_csv()`.      
-      
 **Instructions:**    
 Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
 
 **When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
 
-Tasks:
+Let's try reading in some data from a URL using `pd.read_csv()`.  
 
+Tasks:     
 - Use `pd.read_csv()` to read in the data from [this url](https://raw.githubusercontent.com/UBC-MDS/MCL-DSCI-511-programming-in-python/master/data/pokemon.csv) using the name column as the index.
 - Save the resulting dataframe as `pokemon_df`.
 - Display the first 10 rows of the dataframe.
@@ -107,15 +106,14 @@ Tasks:
 
 <exercise id="4" title="Reading in a Text File">
 
-Let's try reading in a `.txt` file.     
-      
 **Instructions:**    
 Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
 
 **When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
 
-Tasks:
+Let's try reading in a `.txt` file.   
 
+Tasks:     
 - Read in the data from a text file name `pokemon-text.txt` located in the `data` folder using the Pokemon column name as the index.
 - Save the resulting dataframe as `pokemon_df`.
 - It's a good idea to see what the [delimiter](https://github.com/UBC-MDS/MCL-DSCI-511-programming-in-python/blob/binder/data/pokemon-text.txt) is.
@@ -135,20 +133,19 @@ Tasks:
 
 <exercise id="5" title="Reading in an Excel File">
 
-Let's try reading in an Excel file.    
-      
 **Instructions:**    
 Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
 
 **When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
 
-Tasks:
+Let's try reading in an Excel file.   
+
+Tasks:     
 - Read in the data from the sheet named `pokemon` from the Excel file `pokemon.xlsx` located in the `data` folder specifying column 0 as the index column.
 - Save the resulting dataframe as `pokemon_df`.
 - Display the first 10 rows of `pokemon_df`.
 
 <codeblock id="02_05">
-
 
 - Are you sure you are saving your dataframe as the correct object names?
 - Are you using `pd.read_excel()`?
@@ -223,14 +220,14 @@ Good job!
 
 <exercise id="8" title="Using Arguments when Reading in Files">
 
-Load in the data using the most suitable arguments.     
-      
 **Instructions:**    
 Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
 
 **When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
 
-Tasks:
+Load in the data using the most suitable arguments.    
+
+Tasks:     
 -  Read in the first 100 rows and columns `name`, `total_bs` and `type` from the file `pokemon.csv`, which is located in the data directory.
 - Save the resulting dataframe as `pokemon_sample`. 
 - Display `pokemon_sample`.
@@ -311,15 +308,14 @@ When using `.drop()` we need to save the dataframe in an object for the changes 
 
 <exercise id="11" title="Renaming a Column Index">
 
-Let's rename one of the columns in our `pokemon.csv` data.     
-      
 **Instructions:**    
 Running a coding exercise for the first time, could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
 
 **When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
 
-Tasks:
+Let's rename one of the columns in our `pokemon.csv` data.  
 
+Tasks:      
 - Rename the column `sp_attack` to `special_a` and `sp_defense` to `special_d` using `.rename()` only once.
 - Save the new dataframe as `pokemon_special`.
 - Display the first 5 rows of the dataframe.
@@ -337,15 +333,14 @@ Tasks:
 
 <exercise id="12" title="Droping Columns in a Dataframe">
 
-Some of the columns in `pokemon.csv` we have deemed not useful. Let's get rid of them!     
-
 **Instructions:**    
 Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
 
 **When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
 
+Some of the columns in `pokemon.csv` we have deemed not useful. Let's get rid of them!   
 
-Tasks:
+Tasks:         
 - Drop the columns `deck_no`, `capture_rt`, and `legendary`.
 - Make sure to overwrite the new dataframe to object `pokemon`.
 - Display the first 5 rows of the dataframe.
@@ -404,15 +399,14 @@ Good job!
 
 <exercise id="15" title="Creating a New Column">
 
-For this exercise, we are going to create and drop some columns from our dataframe. 
-      
 **Instructions:**    
 Running a coding exercise for the first time, could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
 
 **When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
 
-Tasks:
+For this exercise, we are going to create and drop some columns from our dataframe. 
 
+Tasks:      
 - Create a new column named `total_special` that is the sum of column `sp_attack` and `sp_defense`.
 - Save it, overwriting the dataframe named `pokemon`.
 - Display the first 5 rows of the dataframe.
@@ -439,15 +433,14 @@ Tasks:
 
 <exercise id="17" title="Single Condition Filtering">
 
-Starting the exercises with some straight forward single condition filtering.    
-      
 **Instructions:**    
 Running a coding exercise for the first time, could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
 
 **When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
 
-Tasks:
+Try to filter the dataframe to obtain only a certain Pokemon type using single condition filtering.   
 
+Tasks:     
 - Create a new dataframe named `fire_pokemon` containing only the rows of `type` "fire".
 
 
@@ -487,15 +480,14 @@ You can answer this question using <code>fire_pokemon.shape</code>
 
 <exercise id="18" title='Filtering using "and" or "or"'>
 
-Let's find all the pokemon that meet multiple requirements.  
-      
 **Instructions:**    
 Running a coding exercise for the first time, could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
 
 **When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
 
-Tasks:
+Let's find all the pokemon that meet multiple conditions.  
 
+Tasks:      
 - Filter the dataframe for the pokemon that have `attack` and `defense` values both greater than 100. 
 - Save this dataframe as an object named `mighty_pokemon`.
 
@@ -549,14 +541,14 @@ You can use `mighty_pokemon['type'].value_counts()` to find out.
 
 <exercise id="20" title='Practice Replacing Values'>
 
-Let's make a new column by assigning each pokemon base score as either "strong" or "weak".
-      
 **Instructions:**    
 Running a coding exercise for the first time, could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
 
 **When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
 
-Tasks:
+Let's make a new column by assigning each pokemon base score as either "strong" or "weak".
+
+Tasks:     
 - Create a new column in the dataframe named `base_score` by assigning values 500 or greater from the column `total_bs` as 'strong' pokemon and values less than 500 as 'weak' pokemon.
 - Display the first 10 rows of the dataframe. 
 
@@ -648,15 +640,14 @@ You may want to look over this before moving forward.
 
 <exercise id="23" title="Practice Chaining">
 
- Make a plot using our Pokemon dataset by chaining actions sequentially.   
-      
 **Instructions:**    
 Running a coding exercise for the first time, could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
 
 **When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
 
-Tasks:
+ Make a plot using our Pokemon dataset by chaining actions sequentially.   
 
+Tasks:     
 - Chain the following methods in the order specified.
 - First, rename the column `capture_rt` to `capture_rate`.
 - Then, create a new column named `AD_total` by adding the `attack` and `defense` columns from the pokemon dataset.
@@ -757,9 +748,6 @@ Are you using the correct verbs?
 
 <exercise id="26" title="Practice Grouping">
 
-Find the mean speed of each column for every Pokemon types using `.mean()` and `.groupby()`.
-
-      
 **Instructions:**    
 Running a coding exercise for the first time, could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
 
@@ -767,8 +755,9 @@ Running a coding exercise for the first time, could take a bit of time for every
 
 _**Make sure you remove the hash (`#`) symbol in the coding portions of this question.  We have commented them so that the line won't execute and you can test your code after each step.**_ 
 
-Tasks:
+Find the mean speed of each column for every Pokemon types using `.mean()` and `.groupby()`.
 
+Tasks:
 - Make a groupby object on the column `type`.
 - Find the mean value of each column for each pokemon `type` using `.mean()` and save the resulting dataframe as `type_means`.
 - Obtain the mean speed of each pokemon type from the dataframe `type_means` by using `.loc[]`.
@@ -789,8 +778,6 @@ Tasks:
 
 <exercise id="27" title="Practice Aggregating">
 
-Let's practice using `.agg()`  
-      
 **Instructions:**    
 Running a coding exercise for the first time, could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
 
@@ -798,11 +785,11 @@ Running a coding exercise for the first time, could take a bit of time for every
 
 _**Make sure you remove the hash (`#`) symbol in the coding portions of this question.  We have commented them so that the line won't execute and you can test your code after each step.**_ 
 
-Tasks:
+Let's practice using `.agg()`  
+
+Tasks:    
 - Make a groupby object on the column `legendary`.
 - Find the maximum and minimum value of each column for each legendary groups using `.agg()` and save the resulting dataframe as `legendary_stats`.
-- Obtain from the `legendary_stats` dataframe the capture rate (`capture_rt`) for non legendary (`=0`) pokemon using `.loc[]`.
-- Save this as object `nonlegend_cap_rate`.
 - Display it.
 
 
@@ -811,7 +798,6 @@ Tasks:
 - Are you grouping by the column named `legendary`? 
 - Are you using `.agg()` on the `legendary_stats` dataframe?
 - Are you naming the objects correctly?
-- Are you obtaining the stats using `.loc[]`?
 
 </codeblock>
 
@@ -820,12 +806,12 @@ Tasks:
 
 <exercise id="28" title="Plotting a Groupby Object">
 
-Let's attempt to answer the question ***"Which pokemon type has the highest mean attack score?"*** by making a bar chart from a groupby object.   
-      
 **Instructions:**    
 Running a coding exercise for the first time, could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
 
 **When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
+
+Let's attempt to answer the question ***"Which pokemon type has the highest mean attack score?"*** by making a bar chart from a groupby object.
 
 Tasks:       
 Create a plot by chaining the following actions.   

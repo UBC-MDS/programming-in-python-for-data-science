@@ -93,7 +93,31 @@ transform a dataframe using melt.
 
 <center>
 
-<img src='module3/gather_py.gif' width="600">
+<img src='module3/gather_py.gif'>
+
+</center>
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+`.melt()` is the oposite transformation of `.pivot()`. In the last
+section we saw our cereal dataset widen when we pivoted the dataframe,
+however melt is the verb if we wanted to reverse that.
+
+<center>
+
+<img src='module3/piv_melt.png'>
 
 </center>
 

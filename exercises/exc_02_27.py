@@ -8,15 +8,9 @@ pokemon = pokemon.loc[ : , ['attack',  'defense', 'capture_rt', 'total_bs', 'leg
 # .agg() and save the resulting dataframe as legendary_stats
 
 ____ = ____.____[____].____(____) 
-____
-
-# Obtain from the legendary_stats dataframe the capture rate (capture_rt)
-# for non legendary (=0) pokemon using df.loc[]
-# Save this as object nonlegend_cap_rate
-
-# ____ = ____.____[____]
 
 # Display it 
 
-# ____
+____
+
 

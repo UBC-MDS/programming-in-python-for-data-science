@@ -115,6 +115,20 @@ Notes: Script here
 
 ---
 
+`.melt()` is the oposite transformation of `.pivot()`. In the last section we saw our cereal dataset widen when we pivoted the dataframe, however melt is the verb if we wanted to reverse that. 
+
+
+<center><img src='module3/piv_melt.png'></center>
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="placeholder_audio.mp3" />
+</audio></html>
+
+---
+
 Let's sweeten this section up a bit and practice using `.melt()` with our candybar dataset.  
  
 ```{python}

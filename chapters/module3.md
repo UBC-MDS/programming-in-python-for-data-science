@@ -135,7 +135,7 @@ Good job!
 <exercise id="6" title="Pivoting Questions">
 
 **Question 1**          
-We use pivoting to convert a wide dataframe with multiple columns into a long dataframe with fewer columns 
+We use pivoting to convert a wide dataframe with multiple columns into a long dataframe with fewer columns.
 
 
 <choice id="1" >
@@ -157,8 +157,8 @@ Great work!
 **Question 2**         
 What must you do before you use `.pivot()`?
 
-<choice id="Rename your column label to numbers" >
-<opt text='1'>
+<choice id="2" >
+<opt text='Rename your column label to numbers'>
 
 It may be a good idea to look over the last section again. 
 
@@ -170,7 +170,7 @@ Good job!
 
 </opt>
 
-<opt text='sort your dataframe by index' >
+<opt text='Sort your dataframe by index' >
 
 It may be a good idea to look over the last section again. 
 
@@ -194,7 +194,7 @@ Tasks:
 
 
 
-<codeblock id="03_07">
+<codeblock id="module3/03_07">
 
 </codeblock>
 
@@ -226,3 +226,227 @@ Tasks:
 </slides>
 
 </exercise>
+
+
+<exercise id="10" title="Melting Questions">
+
+**Question 1**          
+We use melt to convert a wide dataframe with multiple columns into a long dataframe with fewer columns.
+
+
+<choice id="1" >
+<opt text="True"  correct="true" >
+
+Great work! 
+
+</opt>
+
+<opt text="False">
+
+It may be a good idea to look over the last section again. 
+
+</opt>
+
+</choice> 
+
+
+**Question 2**         
+`.melt()` has the same arguments as `.pivot()`?
+
+<choice id="2" >
+<opt text='True'>
+
+It may be a good idea to look over the last section again. 
+
+</opt>
+
+<opt text= 'False' correct="true">
+
+Good job!
+
+</opt>
+
+</choice> 
+
+</exercise>
+
+
+**Question 3**         
+`.melt()`  and `.pivot()` always transforms the data into "Tidy Data"
+
+<choice id="3" >
+<opt text='True'>
+
+It may be a good idea to look over the last section again. 
+
+</opt>
+
+<opt text= 'False' correct="true">
+
+Good job! Just because the data is transformed doesn't mean that it's transformed for the better! 
+
+</opt>
+
+</choice> 
+
+</exercise>
+
+
+<exercise id="11" title="Applying Melt">
+
+.....     
+      
+**Instructions:**    
+Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
+
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
+
+Tasks:
+
+
+
+<codeblock id="03_11">
+
+</codeblock>
+
+
+Is this data tidy? 
+
+<choice id="1">
+<opt text='Yes' >
+
+
+</opt>
+
+<opt text='No' correct="true">
+
+</opt>
+
+
+</choice> 
+
+</exercise>
+
+
+<exercise id="12" title="Hierarchical Indexing" type="slides">
+
+<slides source="module3/module3_12">
+
+</slides>
+
+</exercise>
+
+
+<exercise id="13" title="Hierarchical Indexing Questions">
+
+**Question 1**          
+
+
+
+<choice id="1" >
+<opt text="True"  correct="true" >
+
+Great work! 
+
+</opt>
+
+<opt text="False">
+
+It may be a good idea to look over the last section again. 
+
+</opt>
+
+</choice> 
+
+
+**Question 2**         
+
+<choice id="2" >
+<opt text='True'>
+
+It may be a good idea to look over the last section again. 
+
+</opt>
+
+<opt text= 'False' correct="true">
+
+Good job!
+
+</opt>
+
+</choice> 
+
+</exercise>
+
+
+**Question 3**         
+
+
+<choice id="3" >
+<opt text='True'>
+
+It may be a good idea to look over the last section again. 
+
+</opt>
+
+<opt text= 'False' correct="true">
+
+Good job! Just because the data is transformed doesn't mean that it's transformed for the better! 
+
+</opt>
+
+</choice> 
+
+</exercise>
+
+
+<exercise id="14" title="Setting Multiple Indexes">
+
+.....     
+      
+**Instructions:**    
+Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
+
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
+
+Tasks:
+
+
+
+<codeblock id="03_14">
+
+</codeblock>
+
+
+</exercise>
+
+<exercise id="15" title="Applying Stacking">
+
+  
+      
+**Instructions:**    
+Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
+
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
+
+Tasks:
+
+
+<codeblock id="03_15">
+
+</codeblock>
+
+</exercise>
+
+<exercise id="16" title="Concate" type="slides">
+
+<slides source="module3/module3_16">
+
+</slides>
+
+</exercise>
+
+
+
+
+

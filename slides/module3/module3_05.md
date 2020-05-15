@@ -159,6 +159,31 @@ Notes: Script here
 
 ---
 
+Or if we wanted to use our cereal dataframe as an example, the diagram
+below shows the spreading of column `nutrition` into 2 columns named
+`calories` and `protein` which were the 2 values contained in the
+`nutrition` column.
+
+<center>
+
+<img src='module3/pivot_cereal.gif' width="600">
+
+</center>
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
 Let’s try an example. Our cereal dataframe has information on 77
 different cereals,
 
