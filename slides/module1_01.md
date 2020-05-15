@@ -26,7 +26,8 @@ When we bring spreadsheet-like (think Microsoft Excel tables) data,
 generally shaped like a rectangle, into Python, it is represented as
 what we call a dataframe object. It is very similar to a spreadsheet.
 
-<img src='module1/spreadsheet.png'  alt="404 image"/>
+
+<img src='/module1/spreadsheet.png'  alt="404 image"/>
 
 Notes: Script here.
 
