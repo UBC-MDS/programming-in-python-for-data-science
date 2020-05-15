@@ -149,6 +149,7 @@ class SlideDeck extends React.Component {
                 RevealMarkdown.init()
                 Reveal.initialize({
                     center: false,
+                    slideNumber: true,
                     progress: false,
                     showNotes: true,
                     controls: true,
