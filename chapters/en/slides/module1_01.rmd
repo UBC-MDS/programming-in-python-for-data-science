@@ -40,7 +40,7 @@ type: slides
 Notes: Script here.
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 
@@ -52,32 +52,32 @@ Often, the first thing we need to do in data analysis is to load in data.
 In this case, we will be using the programming language _Python_.
 When we bring spreadsheet-like (think Microsoft Excel tables) data, generally shaped like a rectangle, into Python, it is represented as what we call a dataframe object. It is very similar to a spreadsheet. 
 
-<img src='module1/spreadsheet.png'  alt="404 image"/>
+<img src='/module1/spreadsheet.png'  alt="404 image"/>
 
 
 Notes: Script here.
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
 
 The rows in a dataframe are the collected observations.
 
-<center> <img src='module1/df_obs.png'  alt="404 image"/></center>
+<center> <img src='/module1/df_obs.png'  alt="404 image"/></center>
 
 Notes: Script here.
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
 
 And the columns are the variables.
 
-<center> <img src='module1/df_var.png'  alt="404 image" /></center>
+<center> <img src='/module1/df_var.png'  alt="404 image" /></center>
 
 
 When working with information, it must be stored in a manner that is organized, readable and accessible.    
@@ -86,7 +86,7 @@ When working with information, it must be stored in a manner that is organized, 
 Notes: Script here.
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -98,12 +98,12 @@ The first kind of data we will learn how to load into Python (as a data frame) i
 For example, we will be importing the .csv file you saw in the first slide named "candybars.csv". If we were to open this data in a plain text editor, we would see each row on its own line, and each entry in the table separated by a comma:
 
 
-<img src='module1/csv-text.png' width="50%" alt="404 image"/>
+<img src='/module1/csv-text.png' width="50%" alt="404 image"/>
 
 Notes: Script here.
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -114,5 +114,5 @@ Notes: Script here.
 Notes: Script here.
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>

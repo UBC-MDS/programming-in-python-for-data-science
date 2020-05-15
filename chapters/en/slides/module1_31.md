@@ -64,7 +64,7 @@ Notes: Script here.
 manufacturer_freq.plot.bar()
 ```
 
-<img src="module1/module1_31/unnamed-chunk-4-1.png" width="576" />
+<img src="/module1/module1_31/unnamed-chunk-4-1.png" width="576" />
 
 See how quick that was? The important things to notice here is that we
 want to `.plot` a `.bar()` graph.
@@ -95,7 +95,7 @@ x-axis is the `sugars` column and the y-axis is the `calories` column.
 df.plot.scatter(x='sugars', y='calories')
 ```
 
-<img src="module1/module1_31/unnamed-chunk-5-1.png" width="576" />
+<img src="/module1/module1_31/unnamed-chunk-5-1.png" width="576" />
 
 Notes: Script here.
 
@@ -122,7 +122,7 @@ and 1, with 1 being full intensity.
 df.plot.scatter(x='sugars', y='calories', alpha=0.3)
 ```
 
-<img src="module1/module1_31/unnamed-chunk-6-1.png" width="576" />
+<img src="/module1/module1_31/unnamed-chunk-6-1.png" width="576" />
 
 Notes: Script here.
 
@@ -150,7 +150,7 @@ df.plot.scatter(x='sugars',
                 color='purple')
 ```
 
-<img src="module1/module1_31/unnamed-chunk-7-1.png" width="576" />
+<img src="/module1/module1_31/unnamed-chunk-7-1.png" width="576" />
 
 Notes: Script here.
 
@@ -180,7 +180,7 @@ df.plot.scatter(x="sugars",
                 title="The relationship between sugar and calories in cereals")
 ```
 
-<img src="module1/module1_31/unnamed-chunk-8-1.png" width="576" />
+<img src="/module1/module1_31/unnamed-chunk-8-1.png" width="576" />
 
 Notes: Script here.
 

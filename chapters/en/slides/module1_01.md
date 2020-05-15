@@ -10,7 +10,7 @@ Notes: Script here.
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -26,8 +26,7 @@ When we bring spreadsheet-like (think Microsoft Excel tables) data,
 generally shaped like a rectangle, into Python, it is represented as
 what we call a dataframe object. It is very similar to a spreadsheet.
 
-
-<img src='/module1/spreadsheet.png'  alt="spreadsheet"/>
+<img src='/module1/spreadsheet.png'  alt="404 image"/>
 
 Notes: Script here.
 
@@ -35,7 +34,7 @@ Notes: Script here.
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -47,7 +46,7 @@ The rows in a dataframe are the collected observations.
 
 <center>
 
-<img src='module1/df_obs.png'  alt="404 image"/>
+<img src='/module1/df_obs.png'  alt="404 image"/>
 
 </center>
 
@@ -57,7 +56,7 @@ Notes: Script here.
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -69,7 +68,7 @@ And the columns are the variables.
 
 <center>
 
-<img src='module1/df_var.png'  alt="404 image" />
+<img src='/module1/df_var.png'  alt="404 image" />
 
 </center>
 
@@ -82,7 +81,7 @@ Notes: Script here.
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -103,7 +102,7 @@ slide named “candybars.csv”. If we were to open this data in a plain
 text editor, we would see each row on its own line, and each entry in
 the table separated by a comma:
 
-<img src='module1/csv-text.png' width="50%" alt="404 image"/>
+<img src='/module1/csv-text.png' width="50%" alt="404 image"/>
 
 Notes: Script here.
 
@@ -111,7 +110,7 @@ Notes: Script here.
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -127,7 +126,7 @@ Notes: Script here.
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 

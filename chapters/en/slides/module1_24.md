@@ -25,8 +25,7 @@ stored. We can easily sort the rows of a dataframe based on its column
 values. The verb for that? `df.sort_values()`.
 
 As an example, if we wanted to order the cereals based on rating, we
-could do the
-    following:
+could do the following:
 
 ``` python
 df.sort_values(by='rating')

@@ -23,7 +23,7 @@ main <- function(input) {
   text <- read_file(md_input)
   
   # replace global enviromnent with relative  
-  text <- str_replace_all( text, "/Users/.+/static/", "" )
+  text <- str_replace_all( text, "/Users/.+/static", "" )
 
   # replace \n-----\n with \n---\n to denote slide breaks
   text <- str_replace_all(string = text, 
