@@ -8,26 +8,25 @@ Notes: In this module you will learn about tidy data and how to transform your d
 
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
 
 # Module Learning Outcomes
 
-<html>
-<video style="display:block; margin: 0 auto;" width="60%" height="auto" controls >
-  <source src="sample_video.mp4" type="video/mp4">
-Your browser does not support the video tag.
-</video></html>
-
-Notes:
 By the end of the module, students are expected to:
 - Explain what tidy data is.
 - Use `.melt()` and `.pivot()` to reshape dataframes, specifically to make tidy data.
 - Use stacking and unstacking operations to reshape a dataframe.
 - Combine dataframes using `.merge()` and `.concat()` and know when to use these different methods.
 - Understand the different joining methods.
+
+Notes:
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
 
 ---
 
@@ -36,5 +35,5 @@ By the end of the module, students are expected to:
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>

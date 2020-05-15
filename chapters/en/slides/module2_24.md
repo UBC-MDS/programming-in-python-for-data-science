@@ -113,7 +113,7 @@ mfr_group
 ```
 
 ```out
-<pandas.core.groupby.generic.DataFrameGroupBy object at 0x122635208>
+<pandas.core.groupby.generic.DataFrameGroupBy object at 0x11b4fed68>
 ```
 
 This returns a `DataFrame GroupBy` object. What exactly is this?
