@@ -41,8 +41,8 @@ const Template = ({ data }) => {
     const { title, description, prev, next, id } = frontmatter
     const { lang } = fields
     const [activeExc, setActiveExc] = useState(null)
-    const [completed, setCompleted] = useLocalStorage(`spacy-course-completed-${id}`, [])
-    const [slideType, setSlideType] = useLocalStorage(`spacy-course-slide-type`, 'video')
+    const [completed, setCompleted] = useLocalStorage(`course-completed-${id}`, [])
+    const [slideType, setSlideType] = useLocalStorage(`course-slide-type`, 'video')
     const context = {
         lang,
         activeExc,
