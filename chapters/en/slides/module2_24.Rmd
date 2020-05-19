@@ -122,7 +122,7 @@ Notes: Script here
 
 ---
 
-<img src='/module2/groupby7.png'  alt="404 image" width = "70%" align="middle"/> 
+<center><img src='/module2/groupby7.png'  alt="404 image" width = "70%" align="middle"/></center>
 
 Notes: Script here
 <html>
@@ -178,16 +178,14 @@ Notes: Script here
 ---
 
 We can also group by multiple columns,
-For example we can grouping by not only manufacturer but also by cereal type! All we do is put both both column labels in square brackets within `.groupby()`
+For example we can grouping by not only manufacturer but also by cereal type! All we do is put both both column labels in square brackets within `.groupby()`.
 
 ```{python}
 mfr_type_group = df.groupby(by=['mfr', 'type'])
 mfr_type_group.groups
 ```
 
-
-The attribute `ngroups` indicates how many groups exist. 
-
+The attribute `ngroups` indicates how many groups there are.  
 
 ```{python}
 mfr_type_group.ngroups

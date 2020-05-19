@@ -41,7 +41,7 @@ main <- function(input) {
                           replacement = "\n\n```out\n    ##")
   
   # add backtick code fence to end of output code chunks
-  text <- str_replace_all(text, "(?<=    ## .{0,900})\n\n", "\n```\n\n")
+  text <- str_replace_all(text, "(?<=    ## .{0,2000})\n\n", "\n```\n\n")
   
   # remove comment blocks and indentation from output code chunks
   text <- str_replace_all(string = text, 
