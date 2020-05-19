@@ -83,7 +83,7 @@ It can be used to elongate the dataframe: it convert variables to their own colu
 
 The code for this verb takes quite a few arguments that can be a bit tricky so we are going to go through it. 
 
-  ```
+  ```python
   df.pivot(index=['index label'], columns='column_name', values='new_colum_name')
   ```
   

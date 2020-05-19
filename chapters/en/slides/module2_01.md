@@ -225,7 +225,7 @@ need to specify the path to the `csv` file through the subdirectory.
 
 <center>
 
-<img src='/module2/datafile.png'  alt="404 image"  width="60%" align="middle"/>
+<img src='/module2/datafile.png'  alt="404 image"  width="60%" height="60%" align="middle"/>
 
 </center>
 

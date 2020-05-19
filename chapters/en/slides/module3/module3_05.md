@@ -60,7 +60,9 @@ own columns that were previously being stored in a single column.
 The code for this verb takes quite a few arguments that can be a bit
 tricky so we are going to go through it.
 
-    df.pivot(index=['index label'], columns='column_name', values='new_colum_name')
+``` python
+df.pivot(index=['index label'], columns='column_name', values='new_colum_name')
+```
 
   - `df` to express with dataframe we want to pivot
   - `index` is going to be use to make the new dataframe’s index.

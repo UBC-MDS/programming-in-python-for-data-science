@@ -33,8 +33,8 @@ df['mfr'].value_counts()
 K    23
 G    22
 P     9
-Q     8
 R     8
+Q     8
 N     6
 A     1
 Name: mfr, dtype: int64
@@ -113,7 +113,7 @@ mfr_group
 ```
 
 ```out
-<pandas.core.groupby.generic.DataFrameGroupBy object at 0x1189a5e48>
+<pandas.core.groupby.generic.DataFrameGroupBy object at 0x11f2234e0>
 ```
 
 This returns a `DataFrame GroupBy` object. What exactly is this?
@@ -692,7 +692,7 @@ nutrition_plot = nutrition_plot.set_xlabel('Manufacturer', fontsize=12)
 nutrition_plot
 ```
 
-<img src="/module2/module2_24/unnamed-chunk-20-1.png" width="480" />
+<img src="/module2/module2_24/unnamed-chunk-20-1.png" width="384" />
 
 Notes: Script here
 
