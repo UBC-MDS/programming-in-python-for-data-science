@@ -15,7 +15,7 @@ library(rmarkdown)
 knitr::opts_chunk$set(echo = TRUE,
                       base.dir = ".", 
                       base.url = "/",
-                      fig.path = paste("../../static/module3/", params$dynamictitle,"/", sep = ""))
+                      fig.path = paste("../../../static/module3/", params$dynamictitle,"/", sep = ""))
 
 knitr_opts <- knitr_options( opts_knit = NULL,
                              opts_chunk = NULL,
@@ -53,7 +53,7 @@ type: slides
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -61,8 +61,8 @@ Notes: Script here
 Up until this moment, we have been working with a single dataframe. Single dataframe can we great to see all your data in one convinient place, however this is less convinient when it comes to storage space. Many company's split their data into multiple tables and join them together depending on what columns they need for their analysis.  
 There are 2 different verbs we use for joining dataframes together: 
 
-- <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.concat.html" target="_blank">`.concat()`</a>; A forceful way of joining dataframes across rows or columns. A useful analogy is the glueing or taping of 2 pieces of paper together so the shapes match up. 
-- <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.merge.html" target="_blank">`.merge()`</a> A more precision based approach for combining data on common columns or indices. This can be compared to stiching fabric together so that the pattern/print lines up. 
+- <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.concat.html" target="_blank">`pd.concat()`</a>; A  way of joining dataframes across rows or columns. 
+- <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.merge.html" target="_blank">`.merge()`</a> This approach can only combining data on common columns or indices but have different types of joining methods. We will look into this in the next section
 
 
 
@@ -70,175 +70,180 @@ There are 2 different verbs we use for joining dataframes together:
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
 
-Multi level indexing allows the possibility of some much more advanced data analysis, however, that also can open the door to more complex issues and bugs. 
+## Concatenation 
 
-We are going keep this as simple and elegant as possible by introducing you to the concept and how to transform dataframe with hierarchical indexing.  
+Concatenation works extremely well when you have similar dataframe where both dataframes share identical column or row index labels.  
+`.concat()`.
+
+<center><img src='/module3/concat.gif' width="400"></center>
+
 
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
 
-Believe it or not but you have already seen this concepts when we explained the concept of grouping and aggregating. 
+For the next couple examples we are going to look at our candybars dataframe.
 
 ```{python}
-cereal.groupby('mfr').agg(['max', 'min'])
-```
-
-Here you can see that each of the original cereal dataframe columns have subcolumns `max` and `min` and that there a hierarchy of index labels. 
-
-Notes: Script here
-<html>
-<audio controls >
-  <source src="placeholder_audio.mp3" />
-</audio></html>
-
----
-
-## Setting indexes 
-
-In the last section you learned how to set a single index using `.set_index()`. Here we are going use the same verb but set `caramel` AND `name` as the indexes from the candy dataframe. 
-Remember in the last section where we explained that `pandas` doesn't recognize indexes as columns and we needed to `.reset_index()` to makes sure we has all the columns in our dataframe? The same applies here, we are going to avoid resetting by reading the data without assigning any index with the `index_col` argument. 
-```{python}
-df = pd.read_csv('candybars.csv')
-```
-
-Notes: Script here
-<html>
-<audio controls >
-  <source src="placeholder_audio.mp3" />
-</audio></html>
----
-
-Next we can assign multiple indexes using square brackets within the `.set_index()` verb and sort the dataframe according to the index using verb `sort_index()`. (`.sort_index()` is similar to `.sort_values()` however now we can sort by the index!)
-
-```{python}
-df2 = df.set_index(['caramel', 'name']).sort_index()
-df2
-```
-
-Notes: Script here
-<html>
-<audio controls >
-  <source src="placeholder_audio.mp3" />
-</audio></html>
-
----
-
-To get the entire picture, the image belows shows the complete dataset. It almost looks like there are 2 separate dataframes on top of one another. The top dataframe containing non-caramel chocolate bars and the second dataframe containing caramel filled chocolate bars. 
-
-<center><img src='module3/candy_index.png' width="400"></center>
-
-
-Notes: Script here
-<html>
-<audio controls >
-  <source src="placeholder_audio.mp3" />
-</audio></html>
-
----
-
-Some of you may now be asking "How do we select and slice now?". The answer is just like before but now we specify 2 indexes! 
-To specify 2 indexes, we wrap them in parenthesis. 
-Perhaps I wanted the non-caramel filled "3 Musketeers" bar. I would use `0` to represent the first index of "non-caramel filled" and `3 Musketeers` for the bar name.
-
-```{python}
-df2.loc[(0, '3 Musketeers')]
+candy = pd.read_csv('candybars.csv', index_col=0)
+candy
 ```
 
 
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
 
-This works if I want a specific cell value too. Let's say I wanted the non-caramel filled "3 Musketeers" bar weight.
+## Horizontal Concatination
+
+`candybars2.csv` has new nutritional information about each candy bar and we want to combine it with `candy` horozontally.
 
 ```{python}
-df2.loc[(0,'3 Musketeers'), 'weight']
+candy2 = pd.read_csv('candybars2.csv', index_col=0)
+candy2
 ```
+
+Both `candy1` and `candy2` have 25 rows and it looks like the index name in the `candy2` dataframe is identical as `candy`.
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+We can combine these two dataframes using `pd.concat()` but we need to clarify which axes to combine. 
+We use square brackets around the dataframes we wish to combine and since we are combining horonzontally we need to use the argument `axis=1`. 
+
+```{python}
+pd.concat([candy, candy2], axis=1)
+```
+
+This results in the same 25 rows but now we have 13 columns. 
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+## Vertical Concatination
+
+Our second example uses new dataset`candybars_more.csv` which has 3 additional candybars that we wish to add to the original `candy` dataframe. 
+
+```{python}
+candy_more = pd.read_csv('candybars_more.csv', index_col=0)
+candy_more
+```
+
 
 
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
 
-## Stacking 
-
-If this organization is no ideal for your analysis you may want to *transpose* your data (swap columns to rows or rows to columns). This can be done with something called **Stacking**. Stacking is exactly what it sounds like, we _stack_ values. 
+When we want to vertically combine dataframes, we us the argument`axis=0` with `pd.concat()`. 
 
 ```{python}
-stacked = df2.stack()
-stacked
+pd.concat([candy,candy_more], axis=0)
 ```
 
-This dataframe now all the columns available in a single column and our dataframe has elongated from 25 rows to 225 rows. 
-
-Notes: Script here
-<html>
-<audio controls >
-  <source src="placeholder_audio.mp3" />
-</audio></html>
-
----
-## Unstacking 
-
-```{python}
-stacked.unstack()
-```
+In this situation we now have 28 rows and the same 10 columns that all align correctly. 
 
 
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
 
-Just for fun, let's bring back the example we used of hierarchical indexing involving our groupby cereal aggregated dataframe.
+## Concatenating incomplete dataframes.
+
+`pd.concat()` is not limited to complete dataframes. We can still add dataframes together that do not have all the same rows or columns. 
+Let's take a selection of our `candy2` dataframe that we used to combine horozontally with `candy`.
 
 ```{python}
-cereal.groupby('mfr').agg(['max', 'min'])
+slice_of_candy2 = candy2.loc[['Coffee Crisp','Smarties', 'Take 5', 'Oh Henry']]
+slice_of_candy2
 ```
-
 
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
 
-The dataframe is currently unstacked but we can stack the `max` and `min` values, to elongate the dataframe. 
+What happens when we concatenate `candy1` and `candy2` now that it has less rows?
 
 ```{python}
-cereal.groupby('mfr').agg(['max', 'min']).stack()
+pd.concat([candy, slice_of_candy2], axis=1)
 ```
 
-This now shows the `max` and `min` values for each manufacturer on top of each other instead of side by side.  
-Which way do you prefer?    
+Any rows that are not present in the both dataframes is replaced with `NaN`. That's because we are using a default argument `join='outer'`
 
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+## The Join argument
+
+Ok so what does `join` do then? 
+`pd.concat()` take a specific argument called `join` that can take the values `inner` or `outer`. 
+
+- `inner`: inner join will returns only the rows index values that are present in both the tables. 
+- `outer`: outer join will return not only the rows that are present in both tables but also the rows in both tables that are unmatched.
+
+Notice now when I do the same join with `candy` and `slice_of_candy2` but this time specifying `join='inner`.
+
+```{python}
+pd.concat([candy, slice_of_candy2], axis=1, join='inner')
+```
+
+This only returns a dataframe with the matched rows from both columns. 
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+One key thing to remember that if you want to save the new dataframe, don't forget to assign your new dataframe to an object name. We did not do it in this section since we didn't need need the new dataframes again! 
+You'll likely want to reuse your new dataframe unlike us so don't foget to save the new product! 
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -248,5 +253,5 @@ Notes: Script here
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
   

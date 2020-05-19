@@ -54,7 +54,7 @@ type: slides
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -78,7 +78,7 @@ What is a variable and an observation may depend on your immediate goal.
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -91,7 +91,7 @@ This standard now sets precedent for the input arguments of certain analysis ver
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -100,13 +100,13 @@ Let's explore some different versions of our cereal dataset and determine if the
 
 Selecting a few rows from out unaltered cereal dataset, does it fit all three criteria? 
 
-<center><img src="module3/tidy-table.png" width="550" /></center>
+<center><img src="/module3/tidy-table.png" width="550" /></center>
 
 
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -114,14 +114,14 @@ Notes: Script here
 ## Criterion #1
 _Each row is a single observation_ 
 
-<center><img src="module3/tidy-crit1.png" width="550" /></center>
+<center><img src="/module3/tidy-crit1.png" width="550" /></center>
 
 From the dataframe we can see that each cereal has it's own row. Criterion #1 is met! 
 
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -129,14 +129,14 @@ Notes: Script here
 ## Criterion #2
 _Each variable is a single column_ 
 
-<center><img src="module3/tidy-crit2.png" width="550" /></center>
+<center><img src="/module3/tidy-crit2.png" width="550" /></center>
 
 From the dataframe we can see that each of the variables `name`, `mfr`, `calories` and `sugar` have their own column. We can validate that criterion #2 is also met. 
 
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -144,14 +144,14 @@ Notes: Script here
 ## Criterion #3
 _Each value is a single cell_ 
 
-<center><img src="module3/tidy-crit3.png" width="550" /></center>
+<center><img src="/module3/tidy-crit3.png" width="550" /></center>
 
 The variable value for each cereal has it's own cell, confirming that criterion #3 is met! 
 
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -159,12 +159,12 @@ Notes: Script here
 As expected, the cereal data we have been working with is **"Tidy Data"**. 
 Let's look at a example where this is not the case. 
 
-<center><img src="module3/tidy2-table.png" width="500" /><center>
+<center><img src="/module3/tidy2-table.png" width="500" /><center>
 
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -172,7 +172,7 @@ Notes: Script here
 ## Criterion #1
 _Each row is a single observation_ 
 
-<center><img src="module3/tidy2-crit1.png" width="500" /></center>
+<center><img src="/module3/tidy2-crit1.png" width="500" /></center>
 
 From the dataframe we can see that each observation has it's own row. There are 2 rows per cereal but each row is unique. 
 We can confirm that criterion 1 is met. 
@@ -180,7 +180,7 @@ We can confirm that criterion 1 is met.
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -188,7 +188,7 @@ Notes: Script here
 ## Criterion #2
 _Each variable is a single column_ 
 
-<center><img src="module3/tidy2-crit2.png" width="500" /></center>
+<center><img src="/module3/tidy2-crit2.png" width="500" /></center>
 
 It looks like we have a problem here. In this dataframe, two of our variables are contained in a single column. This is making the data untidy and difficult to work with and we would need to transform it. 
 
@@ -196,7 +196,7 @@ It looks like we have a problem here. In this dataframe, two of our variables ar
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -208,7 +208,7 @@ If you are, then you are ahead of the game! We will discuss this in the next sec
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -218,5 +218,5 @@ Notes: Script here
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>

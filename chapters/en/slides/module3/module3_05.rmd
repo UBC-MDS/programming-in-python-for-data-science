@@ -53,7 +53,7 @@ type: slides
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -63,14 +63,14 @@ Notes: Script here
 -  <a href="https://pandas.pydata.org/docs/reference/api/pandas.melt.html" target="_blank">`.melt()`</a> to make a wide dataframe long (convert columns to row) 
 - <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.pivot.html" target="_blank">`.pivot()`</a>  to make a long dataframe wide (convert rows to columns)
 
-<center><img src='module3/pivot_melt.gif' width="400"></center>
+<center><img src='/module3/pivot_melt.gif' width="400"></center>
 "Source: Garrick Aden-Buie, https://github.com/gadenbuie/tidyexplain#spread-and-gather and
 Tomas Beuzen, DSCI 523 Data Wrangling" 
 
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -96,7 +96,7 @@ The code for this verb takes quite a few arguments that can be a bit tricky so w
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -119,19 +119,19 @@ cereal.reset_index().head()
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
 
 The process of pivoting and it's argument can be explained well using the animation made by  <a href="https://github.com/apreshill/teachthat" target="_blank"> Alison Presmanes Hill</a>  
 
-<center><img src='module3/spread_py.gif' width="600"></center>
+<center><img src='/module3/spread_py.gif' width="600"></center>
 
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -139,13 +139,13 @@ Notes: Script here
 Or if we wanted to use our cereal dataframe as an example, the diagram below shows the spreading of column `nutrition` into 2 columns named `calories` and `protein` which were the 2 values contained in the `nutrition` column. 
 
 
-<center><img src='module3/pivot_cereal.gif' width="600"></center>
+<center><img src='/module3/pivot_cereal.gif' width="600"></center>
 
 
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -173,7 +173,7 @@ cereal
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -189,7 +189,7 @@ We can see there are 231 rows and the `nutrition` column is made up of 3 variabl
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -212,7 +212,7 @@ tidy_pivot
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -228,7 +228,7 @@ There is a solution for this and it's called `.pivot_table()`.
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -254,7 +254,7 @@ tidy_pivot = (cereal_long.reset_index()
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -271,7 +271,7 @@ Perfect!
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -281,5 +281,5 @@ Notes: Script here
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
   

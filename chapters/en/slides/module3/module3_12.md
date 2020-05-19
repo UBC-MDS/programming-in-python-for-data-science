@@ -10,7 +10,7 @@ Notes: Script here
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -28,7 +28,7 @@ the capability of a dataframe posessing multiple levels of index labels.
 
 <center>
 
-<img src='module3/hierarchy.png' width="400">
+<img src='/module3/hierarchy.png' width="400">
 
 </center>
 
@@ -38,7 +38,7 @@ Notes: Script here
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -60,7 +60,7 @@ Notes: Script here
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -97,7 +97,7 @@ Notes: Script here
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -126,7 +126,7 @@ Notes: Script here
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -168,7 +168,7 @@ Notes: Script here
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -183,7 +183,7 @@ second dataframe containing caramel filled chocolate bars.
 
 <center>
 
-<img src='module3/candy_index.png' width="400">
+<img src='/module3/candy_index.png' width="400">
 
 </center>
 
@@ -193,7 +193,7 @@ Notes: Script here
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -230,7 +230,7 @@ Notes: Script here
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -255,7 +255,7 @@ Notes: Script here
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -300,7 +300,7 @@ Notes: Script here
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -332,7 +332,7 @@ Notes: Script here
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -344,26 +344,7 @@ The dataframe is currently unstacked but we can stack the `max` and
 `min` values, to elongate the dataframe.
 
 ``` python
-cereal.groupby('mfr').agg(['max', 'min']).stack()
-```
-
-```out
-         type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
-mfr                                                                                                                  
-A   max   Hot       100        4    1       0    0.0   16.0       3      95        25      2    1.00  1.00  54.850917
-    min   Hot       100        4    1       0    0.0   16.0       3      95        25      2    1.00  1.00  54.850917
-G   max  Cold       140        6    3     290    4.0   21.0      14     230       100      3    1.50  1.50  51.592193
-    min  Cold       100        1    1     140    0.0   10.5       1      25        25      1    1.00  0.50  19.823573
-K   max  Cold       160        6    3     320   14.0   22.0      15     330       100      3    1.50  1.00  93.704912
-    min  Cold        50        1    0       0    0.0    7.0       0      20        25      1    1.00  0.33  29.924285
-N   max   Hot       100        4    1     130   10.0   21.0       6     280        25      3    1.00  1.00  74.472949
-    min  Cold        70        2    0       0    1.0    5.0       0       1         0      1    0.83  0.33  59.363993
-P   max  Cold       120        3    3     210    6.0   17.0      15     260        25      3    1.33  1.33  53.371007
-    min  Cold        90        1    0      45    0.0   11.0       3      25        25      1    1.00  0.25  28.025765
-Q   max   Hot       120        5    5     220    2.7   14.0      12     135        25      3    1.00  1.00  63.005645
-    min  Cold        50        1    0       0    0.0    1.0       0      15         0      1    0.50  0.50  18.042851
-R   max  Cold       150        4    3     280    4.0   23.0      11     170        25      3    1.00  1.13  49.787445
-    min  Cold        90        1    0      95    0.0   14.0       2       1        25      1    1.00  0.67  34.139765
+x = cereal.groupby('mfr').agg(['max', 'min']).stack()
 ```
 
 This now shows the `max` and `min` values for each manufacturer on top
@@ -376,7 +357,7 @@ Notes: Script here
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -392,4 +373,4 @@ Notes: Script here
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />

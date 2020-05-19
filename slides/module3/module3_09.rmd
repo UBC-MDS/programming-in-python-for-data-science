@@ -158,7 +158,7 @@ Just like with `.pivot()`, we must reset our index before doing any type of tran
 
 (Just like any other dataframe, if we want to keep the changes, makes sure to assign it to an object)
 
-```
+```python
 candy_melt = (candy.reset_index()
                    .melt(id_vars=['name', 'weight', 'peanuts', 'caramel',
                                   'nougat', 'cookie_wafer_rice', 'coconut',
@@ -167,7 +167,6 @@ candy_melt = (candy.reset_index()
                         var_name='chocolate_type', 
                         value_name='present')
 )
-
 ```
 
 Notes: Script here

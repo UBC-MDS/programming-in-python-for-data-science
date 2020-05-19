@@ -33,8 +33,8 @@ df['mfr'].value_counts()
 K    23
 G    22
 P     9
-Q     8
 R     8
+Q     8
 N     6
 A     1
 Name: mfr, dtype: int64
@@ -113,7 +113,7 @@ mfr_group
 ```
 
 ```out
-<pandas.core.groupby.generic.DataFrameGroupBy object at 0x11b4fed68>
+<pandas.core.groupby.generic.DataFrameGroupBy object at 0x11c664f60>
 ```
 
 This returns a `DataFrame GroupBy` object. What exactly is this?
@@ -632,23 +632,30 @@ Notes: Script here
 
 ---
 
-We’ve added a title before, so there is nothing new there but adding a
-y-axis label is an extra item to add to our chain.
+We’ve added a title before, so there is nothing new there but adding x
+and y-axis labels is a little different. We can increase the label font
+sizes using the argument `fontsize`. In this case, we reference our
+initial plot and use the verb `.set_ylabel()` and `.set_xlabel()` with
+the desired axis label as an argument and `fontsize` to assign a desired
+label size. To avoid unnecessary information that will be returned
+otherwise, whatever our last verb being used with our plot (named
+\`sugar\_plot) has to be reassigned back to the object. If we did this
+any other way, we would not have the ability to do more transformations
+on our plot, or we would get additional information with the plot
+output.
 
 ``` python
 sugar_plot = (df.groupby(by='mfr')
                 .mean()
                 .loc[:,'sugars']
                 .plot.bar(title='Mean sugar content among manufacturers')
-                .set_ylabel('Sugar content (in grams)')
               )
+sugar_plot.set_ylabel('Sugar content (in grams)', fontsize=12)
+sugar_plot = sugar_plot.set_xlabel('Manufacturer', fontsize=12)
 sugar_plot
 ```
 
 <img src="/module2/module2_24/unnamed-chunk-19-1.png" width="576" />
-
-In this case, we reference our initial plot and use the verb
-`.set_ylabel()` with the desired axis label as the argument.
 
 Notes: Script here
 
@@ -674,8 +681,9 @@ nutrition_plot = (df.groupby(by='mfr')
                     .mean()
                     .loc[:, ['fat', 'fiber', 'protein']]
                     .plot.bar(title='Mean nutritrion value over different manufacturers')
-                    .set_ylabel('Content (in grams)')
                  )
+nutrition_plot.set_ylabel('Content (in grams)', fontsize=12)
+nutrition_plot = nutrition_plot.set_xlabel('Manufacturer', fontsize=12)
 nutrition_plot
 ```
 

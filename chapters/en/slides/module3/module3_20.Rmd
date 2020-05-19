@@ -1,0 +1,223 @@
+---
+params:
+  dynamictitle: "module3_20"
+title: "`r params$dynamictitle`"
+output: 
+  md_document:
+    variant: gfm
+---
+
+
+```{r setup, include=FALSE}
+## DO NOT FORGET TO CHANGE THIS ACCORDINGLY 
+library(rmarkdown)
+# MAke sure you are updating your title 
+knitr::opts_chunk$set(echo = TRUE,
+                      base.dir = ".", 
+                      base.url = "/",
+                      fig.path = paste("../../../static/module3/", params$dynamictitle,"/", sep = ""))
+
+knitr_opts <- knitr_options( opts_knit = NULL,
+                             opts_chunk = NULL,
+                             knit_hooks = NULL,
+                             opts_hooks = NULL,
+                             opts_template = NULL)
+md_document_custom <- md_document(variant = "gfm")
+output_format(knitr = knitr_opts,
+              pandoc = NULL,
+              base_format = md_document_custom)
+library(reticulate)
+
+```
+
+
+```{python include=FALSE}
+import pandas as pd
+import numpy as np
+pd.set_option('display.width', 350)
+
+np.set_printoptions(linewidth=400)
+
+pd.set_option('display.max_columns', 50)
+pd.set_option('display.max_rows', 15)
+
+candy = pd.read_csv('candybars.csv', index_col=0)
+cereal = pd.read_csv('cereal.csv', index_col=0)
+```
+
+
+type: slides
+
+# Merge
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+We discussed concatenation in the last section and it covers quite a number of things so what would we need a second verb for? 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.merge.html" target="_blank">`.merge()`</a> gives more joining options and unlike `pd.concat()`, where we identify like rows purely on the index labels,  `merge()` can select which column to use as the identifer in each dataframe. 
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+## Column Identifier  
+
+`.merge` give mores versatility when assigning columns to act as identifiers. For examples, we can use the index on one dataframe and a column label on the other, indexes from both dataframes or no indexes at all!
+
+Let bring back the candybar dataset to explain this concept further. 
+
+```{python}
+candy = pd.read_csv('candybars.csv', index_col=0)
+candy.head()
+```
+
+Candy clearly has an index label of `name` which has unique candy bar names. 
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+With the next dataset, we load it without assigning an index.
+
+```{python}
+candy2m = pd.read_csv('candybars_merge.csv')
+candy2m
+```
+
+ This dataframe has new columns and three new rows not in the `candy` dataframe (`Kinder Bueno`, `5th Avenue`, `Crunch`)
+ The column name that identifies the rows is named `chocolate_bar` something quite different than `name` index from `candy`. 
+ If we were to use `pd.concat()`  to join `candy` and `candy2m` it would be a little challenging, however `.merge()` makes this a little easier for us.  
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+When we use merge it's quite different than `pd.concat()`. 
+First we decide which dataframe will be our left dataframe by implementing the merge verb on the selected df. 
+
+```python
+candy.merge(...)
+```
+
+Next we specify the right dataframe as the first argument in `.merge()`
+
+```python
+candy.merge(candy2m)
+```
+
+The last step, which is the bulk of the work, is specifying the arguments. 
+We need to make sure we indicate which columns are the identifying columns for each dataframe and what type of joining we want in our resulting dataframe. 
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+## Merge Arguments 
+
+- `left_on` - indicates the left dataframe identifying column label.
+- `right_on` = indicate the right dataframe identifying column label.
+
+Or if one of the columns is an index:
+- `left_index` - Set to `True` if the identifying column is the index in the left dataframe.
+- `right_index` - Set to `True` if the identifying column is the index in the right dataframe.
+
+In the example we are using, our left dataframe identifying column is the index labeled `name` and the right dataframe's identifying column is `chocolate_bar`.
+
+```{python}
+candy.merge(candy2m, left_index=True, right_on='chocolate_bar')
+```
+
+Great! we've combined the 2 dataframes horozontally (in the future we will likely will want to rename `chocolate_bar` and assign it as an index again).
+This join used the default `inner` join, which returns only the rows present in both dataframes. We can change that with the argument `how`.
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+## how
+
+We talked about `inner` and `outer` joins from the last section but we have 2 more joins to discuss: 
+- `left`: Will only output the rows that are in the left dataframe and if they are missing from the right dataframe, `NaN` values will occur. 
+
+
+```{python}
+candy.merge(candy2m, left_index=True, right_on='chocolate_bar', how='left')
+```
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+- `right`: Will only output the rows that are in the right dataframe and if they are missing from the left dataframe, `NaN` values will occur. 
+
+```{python}
+candy.merge(candy2m, left_index=True, right_on='chocolate_bar', how='right')
+```
+
+
+One thing that all 4 joins have in common, is they all will have the same columns labels that came from both dataframes. 
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+## indicator
+
+If we want to do an outer join and show all the possible rows from both dataframes. a useful argument is `indicator`. 
+`indicator` makes a new column name `_merge` and informs us from which dataframe the row originated from. 
+
+```{python}
+candy.merge(candy2m, left_index=True, right_on='chocolate_bar', how='outer', indicator=True)
+```
+
+Here we can see three possible values `left_only`, `right_only` or `both` which informs us if the row came from the left daframe, the right dataframe or from both dataframes.
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+# Let’s practice what we learned!
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />

@@ -52,7 +52,7 @@ type: slides
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -62,7 +62,7 @@ We are going to spend this next section discussing `.melt()` which is simply the
 
 
 
-<center><img src='module3/pivot_melt.gif' width="400"></center>
+<center><img src="/module3/pivot_melt.gif" width="400"></center>
 "Source: Garrick Aden-Buie, https://github.com/gadenbuie/tidyexplain#spread-and-gather and
 Tomas Beuzen, DSCI 523 Data Wrangling" 
 
@@ -71,7 +71,7 @@ Tomas Beuzen, DSCI 523 Data Wrangling"
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -98,19 +98,19 @@ Let's take some time to fully understand the arguments this verb needs to run.
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
 
 Thanks to  <a href="https://github.com/apreshill/teachthat" target="_blank"> Alison Presmanes Hill</a>, we can see exactly what is happening when we transform a dataframe using melt. 
 
-<center><img src='module3/gather_py.gif'></center>
+<center><img src='/module3/gather_py.gif'></center>
 
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -118,13 +118,13 @@ Notes: Script here
 `.melt()` is the oposite transformation of `.pivot()`. In the last section we saw our cereal dataset widen when we pivoted the dataframe, however melt is the verb if we wanted to reverse that. 
 
 
-<center><img src='module3/piv_melt.png'></center>
+<center><img src='/module3/piv_melt.png'></center>
 
 
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -140,7 +140,7 @@ We can see there are 25 rows in our dataframe. There are 2 columns for "chocolat
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -158,7 +158,7 @@ Just like with `.pivot()`, we must reset our index before doing any type of tran
 
 (Just like any other dataframe, if we want to keep the changes, makes sure to assign it to an object)
 
-```
+```python
 candy_melt = (candy.reset_index()
                    .melt(id_vars=['name', 'weight', 'peanuts', 'caramel',
                                   'nougat', 'cookie_wafer_rice', 'coconut',
@@ -167,13 +167,12 @@ candy_melt = (candy.reset_index()
                         var_name='chocolate_type', 
                         value_name='present')
 )
-
 ```
 
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -195,7 +194,7 @@ We havde 50 rows in this new dataframe which makes sense since we now have 2 cho
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -211,7 +210,7 @@ Perfect!
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -221,5 +220,5 @@ Notes: Script here
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
   

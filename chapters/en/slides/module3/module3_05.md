@@ -10,7 +10,7 @@ Notes: Script here
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -27,7 +27,7 @@ Notes: Script here
 
 <center>
 
-<img src='module3/pivot_melt.gif' width="400">
+<img src='/module3/pivot_melt.gif' width="400">
 
 </center>
 
@@ -41,7 +41,7 @@ Notes: Script here
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -77,7 +77,7 @@ Notes: Script here
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -126,7 +126,7 @@ Notes: Script here
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -141,7 +141,7 @@ Presmanes Hill</a>
 
 <center>
 
-<img src='module3/spread_py.gif' width="600">
+<img src='/module3/spread_py.gif' width="600">
 
 </center>
 
@@ -151,7 +151,7 @@ Notes: Script here
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -166,7 +166,7 @@ below shows the spreading of column `nutrition` into 2 columns named
 
 <center>
 
-<img src='module3/pivot_cereal.gif' width="600">
+<img src='/module3/pivot_cereal.gif' width="600">
 
 </center>
 
@@ -176,7 +176,7 @@ Notes: Script here
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -215,7 +215,7 @@ Notes: Script here
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -258,7 +258,7 @@ Notes: Script here
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -309,7 +309,7 @@ Notes: Script here
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -347,7 +347,7 @@ Notes: Script here
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -380,7 +380,7 @@ Notes: Script here
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -404,7 +404,7 @@ Notes: Script here
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -420,4 +420,4 @@ Notes: Script here
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />

@@ -438,7 +438,7 @@ Tasks:
 
 </exercise>
 
-<exercise id="16" title="Concate" type="slides">
+<exercise id="16" title="Concat" type="slides">
 
 <slides source="module3/module3_16">
 
@@ -446,7 +446,223 @@ Tasks:
 
 </exercise>
 
+<exercise id="17" title="Concat questions">
 
+**Question 1**          
+
+
+
+<choice id="1" >
+<opt text="True"  correct="true" >
+
+Great work! 
+
+</opt>
+
+<opt text="False">
+
+It may be a good idea to look over the last section again. 
+
+</opt>
+
+</choice> 
+
+
+**Question 2**     
+
+
+<choice id="2" >
+<opt text='True'>
+
+It may be a good idea to look over the last section again. 
+
+</opt>
+
+<opt text= 'False' correct="true">
+
+Good job!
+
+</opt>
+
+</choice> 
+
+</exercise>
+
+
+**Question 3**         
+
+
+<choice id="3" >
+<opt text='True'>
+
+It may be a good idea to look over the last section again. 
+
+</opt>
+
+<opt text= 'False' correct="true">
+
+Good job! Just because the data is transformed doesn't mean that it's transformed for the better! 
+
+</opt>
+
+</choice> 
+
+</exercise>
+
+
+<exercise id="18" title="Concatenating Rows">
+
+.....     
+      
+**Instructions:**    
+Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
+
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
+
+Tasks:
+
+
+
+<codeblock id="03_18">
+
+</codeblock>
+
+
+</exercise>
+
+<exercise id="19" title="Concatenating Columns">
+
+  
+      
+**Instructions:**    
+Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
+
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
+
+Tasks:
+
+
+<codeblock id="03_19">
+
+</codeblock>
+
+</exercise>
+
+<exercise id="20" title="Merge" type="slides">
+
+<slides source="module3/module3_20">
+
+</slides>
+
+</exercise>
+
+
+<exercise id="21" title="Merge Questions">
+
+**Question 1**          
+
+
+
+<choice id="1" >
+<opt text="True"  correct="true" >
+
+Great work! 
+
+</opt>
+
+<opt text="False">
+
+It may be a good idea to look over the last section again. 
+
+</opt>
+
+</choice> 
+
+
+**Question 2**         
+
+<choice id="2" >
+<opt text='True'>
+
+It may be a good idea to look over the last section again. 
+
+</opt>
+
+<opt text= 'False' correct="true">
+
+Good job!
+
+</opt>
+
+</choice> 
+
+</exercise>
+
+
+**Question 3**         
+
+
+<choice id="3" >
+<opt text='True'>
+
+It may be a good idea to look over the last section again. 
+
+</opt>
+
+<opt text= 'False' correct="true">
+
+Good job! Just because the data is transformed doesn't mean that it's transformed for the better! 
+
+</opt>
+
+</choice> 
+
+</exercise>
+
+
+<exercise id="22" title="Merging I">
+
+.....     
+      
+**Instructions:**    
+Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
+
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
+
+Tasks:
+
+
+
+<codeblock id="03_22">
+
+</codeblock>
+
+
+</exercise>
+
+<exercise id="23" title="Merging II">
+
+  
+      
+**Instructions:**    
+Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
+
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
+
+Tasks:
+
+
+<codeblock id="03_23">
+
+</codeblock>
+
+</exercise>
+
+
+<exercise id="24" title="What Did We Just Learn?" type="slides,video">
+<slides source="module3/module3_23" start="0:165" end="3:01">>
+</slides>
+</exercise>
 
 
 

@@ -10,7 +10,7 @@ Notes: Script here
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -28,7 +28,7 @@ simply the reverse transformation of `.pivot()`.
 
 <center>
 
-<img src='module3/pivot_melt.gif' width="400">
+<img src="/module3/pivot_melt.gif" width="400">
 
 </center>
 
@@ -42,7 +42,7 @@ Notes: Script here
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -78,7 +78,7 @@ Notes: Script here
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -93,7 +93,7 @@ transform a dataframe using melt.
 
 <center>
 
-<img src='module3/gather_py.gif'>
+<img src='/module3/gather_py.gif'>
 
 </center>
 
@@ -103,7 +103,7 @@ Notes: Script here
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -117,7 +117,7 @@ however melt is the verb if we wanted to reverse that.
 
 <center>
 
-<img src='module3/piv_melt.png'>
+<img src='/module3/piv_melt.png'>
 
 </center>
 
@@ -127,7 +127,7 @@ Notes: Script here
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -170,7 +170,7 @@ Notes: Script here
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -198,14 +198,16 @@ of transformation.
 (Just like any other dataframe, if we want to keep the changes, makes
 sure to assign it to an object)
 
-    candy_melt = (candy.reset_index()
-                       .melt(id_vars=['name', 'weight', 'peanuts', 'caramel',
-                                      'nougat', 'cookie_wafer_rice', 'coconut',
-                                      'multi', 'available_canada_america'] , 
-                            value_vars=['chocolate', 'white_chocolate'], 
-                            var_name='chocolate_type', 
-                            value_name='present')
-    )
+``` python
+candy_melt = (candy.reset_index()
+                   .melt(id_vars=['name', 'weight', 'peanuts', 'caramel',
+                                  'nougat', 'cookie_wafer_rice', 'coconut',
+                                  'multi', 'available_canada_america'] , 
+                        value_vars=['chocolate', 'white_chocolate'], 
+                        var_name='chocolate_type', 
+                        value_name='present')
+)
+```
 
 Notes: Script here
 
@@ -213,7 +215,7 @@ Notes: Script here
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -260,7 +262,7 @@ Notes: Script here
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -283,7 +285,7 @@ Notes: Script here
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -299,4 +301,4 @@ Notes: Script here
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />

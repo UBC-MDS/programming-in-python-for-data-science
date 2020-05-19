@@ -10,7 +10,7 @@ Notes: Script here
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -50,7 +50,7 @@ Notes: Script here
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -72,7 +72,7 @@ Notes: Script here
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -88,7 +88,7 @@ three criteria?
 
 <center>
 
-<img src="module3/tidy-table.png" width="550" />
+<img src="/module3/tidy-table.png" width="550" />
 
 </center>
 
@@ -98,7 +98,7 @@ Notes: Script here
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -112,7 +112,7 @@ Notes: Script here
 
 <center>
 
-<img src="module3/tidy-crit1.png" width="550" />
+<img src="/module3/tidy-crit1.png" width="550" />
 
 </center>
 
@@ -125,7 +125,7 @@ Notes: Script here
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -139,7 +139,7 @@ Notes: Script here
 
 <center>
 
-<img src="module3/tidy-crit2.png" width="550" />
+<img src="/module3/tidy-crit2.png" width="550" />
 
 </center>
 
@@ -153,7 +153,7 @@ Notes: Script here
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -167,7 +167,7 @@ Notes: Script here
 
 <center>
 
-<img src="module3/tidy-crit3.png" width="550" />
+<img src="/module3/tidy-crit3.png" width="550" />
 
 </center>
 
@@ -180,7 +180,7 @@ Notes: Script here
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -193,7 +193,7 @@ Data”**. Let’s look at a example where this is not the case.
 
 <center>
 
-<img src="module3/tidy2-table.png" width="500" />
+<img src="/module3/tidy2-table.png" width="500" />
 
 <center>
 
@@ -203,7 +203,7 @@ Notes: Script here
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -217,7 +217,7 @@ Notes: Script here
 
 <center>
 
-<img src="module3/tidy2-crit1.png" width="500" />
+<img src="/module3/tidy2-crit1.png" width="500" />
 
 </center>
 
@@ -231,7 +231,7 @@ Notes: Script here
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -245,7 +245,7 @@ Notes: Script here
 
 <center>
 
-<img src="module3/tidy2-crit2.png" width="500" />
+<img src="/module3/tidy2-crit2.png" width="500" />
 
 </center>
 
@@ -259,7 +259,7 @@ Notes: Script here
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -280,7 +280,7 @@ Notes: Script here
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 
@@ -296,7 +296,7 @@ Notes: Script here
 
 <audio controls >
 
-<source src="placeholder_audio.mp3" />
+<source src="/placeholder_audio.mp3" />
 
 </audio>
 

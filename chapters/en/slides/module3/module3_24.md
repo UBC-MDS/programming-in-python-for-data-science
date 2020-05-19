@@ -2,7 +2,7 @@
 type: slides
 ---
 
-# What Did we Learn and What to Expect in Assignment 2
+# What Did we Learn and What to Expect in Assignment 3
 
 Notes: Script here
 <html>
@@ -15,21 +15,17 @@ Notes: Script here
 # Summary  
 
 By the end of the module, students are expected to:
-- Demonstrate how to rename columns of a dataframe using [`.rename()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.rename.html).
-- Create new or columns in a dataframe using [`.assign()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.assign.html) notation.
-- Drop columns in a dataframe using [`.drop()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.drop.html)
-- Use `df[]` notation to filter rows of a dataframe.
-- Calculate summary statistics on grouped objects using [`.groupby()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.groupby.html) and [`.agg()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.agg.html).
-- Explain when chaining is appropriate.
-- Demonstrate chaining over multiple lines and verbs.
+- Explain what tidy data is.
+- Use `.melt()` and `.pivot()` to reshape dataframes, specifically to make tidy data.
+- Use stacking and unstacking operations to reshape a dataframe.
+- Combine dataframes using `.merge()` and `.concat()` and know when to use these different methods.
+- Understand the different joining methods.
 
 Notes:
 <html>
 <audio controls >
   <source src="/placeholder_audio.mp3" />
 </audio></html>
-
-
 
 ---
 
@@ -61,8 +57,7 @@ Notes: Script here
 
 ---
 
-
-# On to Assignment 2!
+# On to Assignment 3!
 
 Notes: Insert audio here.
 

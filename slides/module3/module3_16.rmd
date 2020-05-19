@@ -15,7 +15,7 @@ library(rmarkdown)
 knitr::opts_chunk$set(echo = TRUE,
                       base.dir = ".", 
                       base.url = "/",
-                      fig.path = paste("../../../../static/module3/", params$dynamictitle,"/", sep = ""))
+                      fig.path = paste("../../../static/module3/", params$dynamictitle,"/", sep = ""))
 
 knitr_opts <- knitr_options( opts_knit = NULL,
                              opts_chunk = NULL,
@@ -75,9 +75,11 @@ Notes: Script here
 
 ---
 
-Multi level indexing allows the possibility of some much more advanced data analysis, however, that also can open the door to more complex issues and bugs. 
+## Concatenation 
 
-We are going keep this as simple and elegant as possible by introducing you to the concept and how to transform dataframe with hierarchical indexing.  
+Of the way to combine dataframes, and if we are comparing this to crafting,  concatenation takes less skills. Don't confuse this with not being useful though. 
+Concatenation works extremely well when you have similar dataframe where either both dataframes share identical column or row index labels.  
+`.concat()` does not look at the column or row labels to which the dataframes are being glued before hand. If both data frames shat the same d
 
 Notes: Script here
 <html>

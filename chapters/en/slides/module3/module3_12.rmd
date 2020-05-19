@@ -53,7 +53,7 @@ type: slides
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -64,12 +64,12 @@ Notes: Script here
 This helps explain the concept of ***hierarchical indexing***  which is the capability of a dataframe posessing multiple levels of index labels. 
 
 
-<center><img src='module3/hierarchy.png' width="400"></center>
+<center><img src='/module3/hierarchy.png' width="400"></center>
 
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -81,7 +81,7 @@ We are going keep this as simple and elegant as possible by introducing you to t
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -97,7 +97,7 @@ Here you can see that each of the original cereal dataframe columns have subcolu
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -113,7 +113,7 @@ df = pd.read_csv('candybars.csv')
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 ---
 
@@ -127,20 +127,20 @@ df2
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
 
 To get the entire picture, the image belows shows the complete dataset. It almost looks like there are 2 separate dataframes on top of one another. The top dataframe containing non-caramel chocolate bars and the second dataframe containing caramel filled chocolate bars. 
 
-<center><img src='module3/candy_index.png' width="400"></center>
+<center><img src='/module3/candy_index.png' width="400"></center>
 
 
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -157,7 +157,7 @@ df2.loc[(0, '3 Musketeers')]
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -172,7 +172,7 @@ df2.loc[(0,'3 Musketeers'), 'weight']
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -191,7 +191,7 @@ This dataframe now all the columns available in a single column and our datafram
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -205,7 +205,7 @@ stacked.unstack()
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -220,7 +220,7 @@ cereal.groupby('mfr').agg(['max', 'min'])
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -237,7 +237,7 @@ Which way do you prefer?
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
@@ -247,5 +247,5 @@ Notes: Script here
 Notes: Script here
 <html>
 <audio controls >
-  <source src="placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" />
   
