@@ -268,10 +268,8 @@ Good job!
 
 </choice> 
 
-</exercise>
+**Question 3**     
 
-
-**Question 3**         
 `.melt()`  and `.pivot()` always transforms the data into "Tidy Data"
 
 <choice id="3" >
@@ -375,9 +373,6 @@ Good job!
 </opt>
 
 </choice> 
-
-</exercise>
-
 
 **Question 3**         
 
@@ -486,9 +481,6 @@ Good job!
 
 </choice> 
 
-</exercise>
-
-
 **Question 3**         
 
 
@@ -595,9 +587,6 @@ Good job!
 </opt>
 
 </choice> 
-
-</exercise>
-
 
 **Question 3**         
 
