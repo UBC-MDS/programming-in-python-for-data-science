@@ -253,7 +253,7 @@ Notes: Script here
 
 ---
 
-## Multiple Condition Filtering - or
+## Multiple Condition Filtering - “or”
 
 Suppose that we are interested in cereals that either are made from the
 Quaker manufacturer **OR** a protein content above 4.  

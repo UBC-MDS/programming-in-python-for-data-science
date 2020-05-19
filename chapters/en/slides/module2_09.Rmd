@@ -89,7 +89,7 @@ df.head()
 This code uses something we've never seen before - {} curly brackets.
 These have a special meaning but for now, you only need to concentrate your attention on the fact that the argument `columns` needs to have the format:
 
-```
+```python
  columns={'old-column-name':'new-column-name'}
 ```
 
@@ -151,7 +151,7 @@ Let's overwrite this and remove multiple columns at the same time. Let's drop `n
 
 ```{python}
 df = df.drop(columns=['nougat', 'coconut'])
-df.head()
+df.head(3)
 ```
 
 
