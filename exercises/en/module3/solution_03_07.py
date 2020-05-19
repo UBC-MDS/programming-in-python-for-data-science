@@ -12,7 +12,7 @@ new = (lego.reset_index()
      .sort_values('set_num').set_index('set_num')
      
 )
-lego.to_csv(new, 'lego_untidy')
+new.to_csv('lego_untidy.csv')
 # -
 
 lego = pd.read_csv('data/lego-themes.csv', index_col=0)

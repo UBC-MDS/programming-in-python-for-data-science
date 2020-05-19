@@ -183,12 +183,12 @@ It may be a good idea to look over the last section again.
 
 <exercise id="7" title="Applying Pivot I">
 
-.....     
-      
 **Instructions:**    
 Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
 
 **When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
+
+Let's convert new dataframe `lego` into Tidy Data using `.pivot()`   
 
 Tasks:
 
