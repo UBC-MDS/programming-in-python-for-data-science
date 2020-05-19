@@ -193,7 +193,6 @@ Let's convert new dataframe `lego` into Tidy Data using `.pivot()`
 Tasks:
 
 
-
 <codeblock id="module3/03_07">
 
 </codeblock>

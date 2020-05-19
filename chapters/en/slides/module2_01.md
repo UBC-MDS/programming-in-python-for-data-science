@@ -225,7 +225,7 @@ need to specify the path to the `csv` file through the subdirectory.
 
 <center>
 
-<img src='/module2/datafile.png'  alt="404 image"  width="75%" align="middle"/>
+<img src='/module2/datafile.png'  alt="404 image"  width="60%" align="middle"/>
 
 </center>
 
@@ -249,7 +249,7 @@ This syntax is not restricted to a single subdirectory and could even
 have multiple folders between the current location and the final file
 name.
 
-*Example:* `data/module1/question3/candybars.csv`
+*Example:* data/module1/question3/candybars.csv
 
 In this course, we save all our data in a folder called `data` so when
 asked to read in data, take care in future exercises to add the full

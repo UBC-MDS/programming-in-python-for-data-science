@@ -169,7 +169,7 @@ This is because we are running the current code in a file that is located in a d
 The `data` is specifying a folder in our current directory (folder). We need to specify the path to the `csv` file through the subdirectory.       
 
 
-<center> <img src='/module2/datafile.png'  alt="404 image"  width="75%" align="middle"/></center>
+<center> <img src='/module2/datafile.png'  alt="404 image"  width="60%" align="middle"/></center>
 
 
 This translates to the syntax `data/canucks.csv`
@@ -184,7 +184,7 @@ Notes: Script here.
 
 This syntax is not restricted to a single subdirectory and could even have multiple folders between the current location and the final file name.
      
-_Example:_ `data/module1/question3/candybars.csv`
+_Example:_ data/module1/question3/candybars.csv   
 
 In this course, we save all our data in a folder called `data` so when asked to read in data, take care in future exercises to add the full path to the required file.  
 
