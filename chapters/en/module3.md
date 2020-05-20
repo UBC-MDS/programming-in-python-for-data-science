@@ -188,12 +188,18 @@ Running a coding exercise for the first time could take a bit of time for everyt
 
 **When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
 
-Let's convert new dataframe `lego` into Tidy Data using `.pivot()`   
+Let's convert the dataframe `lego` into Tidy Data using `.pivot()`.
 
 Tasks:
 
+- Convert the untidy data into tidy data using `.pivot()`.
+- Name the new dataframe `tidied_lego`.
+
 
 <codeblock id="03_07">
+- Are you using the correct arguments such as `index`, `columns`, and `values`?
+- Are you pivoting the correct column named `lego_info` with `values='value'`?
+- Are you resetting your index before you pivot?
 
 </codeblock>
 
@@ -201,17 +207,25 @@ Tasks:
 
 <exercise id="8" title="Applying Pivot II">
 
-  
-      
 **Instructions:**    
 Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
 
 **When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
 
+Let's convert the dataframe `lego` into Tidy Data but this time preserve all the columns in the dataframe by using `.pivot_table()`.
+
 Tasks:
 
+- Convert the untidy data into tidy data using `.pivot_table()`.
+- Make sure that you only assign `set_num` as your index.
+- Name the new dataframe `tidied_lego`.
 
 <codeblock id="03_08">
+- Are you using the correct arguments such as `index`, `columns`, and `values`?
+- Are you pivoting the correct column named `lego_info` with `values='value'`?
+- Are you resetting your index before you pivot?
+- Are you making sure to use `index=['set_num', 'name', 'year']`
+- Are you reseting and setting your index again after you pivot?
 
 </codeblock>
 
@@ -250,7 +264,7 @@ It may be a good idea to look over the last section again.
 
 
 **Question 2**         
-`.melt()` has the same arguments as `.pivot()`?
+`.melt()` has the same arguments as `.pivot()`.
 
 <choice id="2" >
 <opt text='True'>
@@ -269,7 +283,7 @@ Good job!
 
 **Question 3**     
 
-`.melt()`  and `.pivot()` always transforms the data into "Tidy Data"
+`.melt()`  and `.pivot()` always transforms the data into "Tidy Data".
 
 <choice id="3" >
 <opt text='True'>
@@ -291,8 +305,6 @@ Good job! Just because the data is transformed doesn't mean that it's transforme
 
 <exercise id="11" title="Applying Melt">
 
-.....     
-      
 **Instructions:**    
 Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
 

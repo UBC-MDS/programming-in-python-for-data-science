@@ -168,7 +168,7 @@ below shows the spreading of column `nutrition` into 2 columns named
 
 <center>
 
-<img src='/module3/pivot_cereal.gif' width="600">
+<img src='/module3/pivot_cereal.png' width="600">
 
 </center>
 
@@ -374,6 +374,16 @@ tidy_pivot = (cereal_long.reset_index()
                          columns='nutrition', 
                          values='measure').reset_index()
              )
+tidy_pivot.head()
+```
+
+```out
+nutrition                       name mfr  type  fat  sodium  fiber  carbo  potass  vitamins  shelf  weight  cups     rating  calories  protein  sugars
+0                          100% Bran   N  Cold    1     130   10.0    5.0     280        25      3     1.0  0.33  68.402973        70        4       6
+1                  100% Natural Bran   Q  Cold    5      15    2.0    8.0     135         0      3     1.0  1.00  33.983679       120        3       8
+2                           All-Bran   K  Cold    1     260    9.0    7.0     320        25      3     1.0  0.33  59.425505        70        4       5
+3          All-Bran with Extra Fiber   K  Cold    0     140   14.0    8.0     330        25      3     1.0  0.50  93.704912        50        4       0
+4                     Almond Delight   R  Cold    2     200    1.0   14.0       1        25      3     1.0  0.75  34.384843       110        2       8
 ```
 
 Notes: Script here
@@ -396,6 +406,17 @@ just need to reassign our index back the cereal name using
 
 ``` python
 tidy_pivot = tidy_pivot.set_index('name')
+tidy_pivot.head()
+```
+
+```out
+nutrition                 mfr  type  fat  sodium  fiber  carbo  potass  vitamins  shelf  weight  cups     rating  calories  protein  sugars
+name                                                                                                                                       
+100% Bran                   N  Cold    1     130   10.0    5.0     280        25      3     1.0  0.33  68.402973        70        4       6
+100% Natural Bran           Q  Cold    5      15    2.0    8.0     135         0      3     1.0  1.00  33.983679       120        3       8
+All-Bran                    K  Cold    1     260    9.0    7.0     320        25      3     1.0  0.33  59.425505        70        4       5
+All-Bran with Extra Fiber   K  Cold    0     140   14.0    8.0     330        25      3     1.0  0.50  93.704912        50        4       0
+Almond Delight              R  Cold    2     200    1.0   14.0       1        25      3     1.0  0.75  34.384843       110        2       8
 ```
 
 Perfect\!

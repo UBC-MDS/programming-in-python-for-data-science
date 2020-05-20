@@ -93,7 +93,7 @@ transform a dataframe using melt.
 
 <center>
 
-<img src='/module3/gather_py.gif'>
+<img src='/module3/melt_py.gif'>
 
 </center>
 

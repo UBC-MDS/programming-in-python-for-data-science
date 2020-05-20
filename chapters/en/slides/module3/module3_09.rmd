@@ -105,7 +105,7 @@ Notes: Script here
 
 Thanks to  <a href="https://github.com/apreshill/teachthat" target="_blank"> Alison Presmanes Hill</a>, we can see exactly what is happening when we transform a dataframe using melt. 
 
-<center><img src='/module3/gather_py.gif'></center>
+<center><img src='/module3/melt_py.gif'></center>
 
 Notes: Script here
 <html>

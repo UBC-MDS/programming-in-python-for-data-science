@@ -1,34 +1,14 @@
 import pandas as pd
 
-lego = pd.read_csv('data/lego-sets.csv', index_col=0)
-lego
+lego = pd.read_csv('data/lego_untidy.csv', index_col=0)
 
-# +
-new = (lego.reset_index()
-     .melt(id_vars=['set_num'], 
-           value_vars=['theme_id', 'num_parts'],
-           var_name="lego_info",
-           value_name="value")
-     .sort_values('set_num').set_index('set_num')
-     
-)
-new.to_csv('lego_untidy.csv')
-# -
+# Convert the untidy data into tidy data using pivot 
+# Name the new dataframe tidied_lego
 
-lego = pd.read_csv('data/lego-themes.csv', index_col=0)
-lego
+____ = (____.____()
+            .____(____)
+       )
 
-# +
-new = (lego.reset_index()
-           .pivot(index=['set_num'], 
-                 columns=['theme_id', 'num_parts'],
-                 var_name="lego_info",
-                 value_name="value")
-           .sort_values('set_num').set_index('set_num')
-         
-)
-new.to_csv('lego_untidy.csv')
-# -
+# Display the first 5 rows
 
-df.pivot(index=['index label'], columns='column_name', values='new_colum_name')
-df to e
+____
