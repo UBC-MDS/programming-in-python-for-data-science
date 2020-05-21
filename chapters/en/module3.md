@@ -819,7 +819,7 @@ Running a coding exercise for the first time could take a bit of time for everyt
 
 **When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
 
-In this exercise you are going to join the two dataframes `lego_base` and `lego_opacity` but this time you are going to want to use an
+In this exercise you are going to join the two dataframes `lego_base` and `lego_opacity` but this time you are going to want to use an outter join. Next we are going to make a scatter plot that 
 
 Tasks:
 
