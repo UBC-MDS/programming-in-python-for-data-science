@@ -8,13 +8,12 @@ type: chapter
 id: 3
 ---
 
-<exercise id="0" title="Module Learning Outcomes" type="slides">
+<exercise id="0" title="Module Learning Outcomes" type="slides,video">
 
-<slides source="module3/module3_00">
+<slides source="module3/module3_00" start="0:165" end="3:01">
 </slides>
 
-</exercise>
-
+</exercise> 
 
 <exercise id="1" title="What is Tidy Data?" type="slides">
 
@@ -501,8 +500,8 @@ Running a coding exercise for the first time could take a bit of time for everyt
 Let's find the maximum and minimum number of pieces per set there are in each lego theme. 
 
 Tasks:
-- From the lego dataframe, make groups from the theme_name columns.
-- Find the max and min values for the `num_parts` column only using .agg().
+- From the `lego` dataframe, make groups from the `theme_name` columns.
+- Find the max and min values for the `num_parts` column only using `.agg()`.
 - Stack the max and min values using `.stack()`.
 - Name the new dataframe `stacked_lego`.
 
@@ -629,9 +628,7 @@ I think you got mixed up. Try reading over the notes again.
 
 
 <exercise id="19" title="Concatenating Rows">
-
-.....     
-      
+ 
 **Instructions:**    
 Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
 
@@ -643,16 +640,17 @@ Sometime we accumulate additional data that we need to combine with our exisitin
 
 Tasks:
 
-- Combine the two dataframes `lego_top` and `lego_bottom` vertically to make 1 large complete dataframe
-- Name the new dataframe full_set 
-- Save the new dimension of full_set in an object named full_set_shape
-- Display the new dataframe
+- Combine the two dataframes `lego_top` and `lego_bottom` vertically to make 1 large complete dataframe.
+- Name the new dataframe full_set.
+- Save the new dimension of `full_set` in an object named `full_set_shape`.
+- Display the new dataframe.
 
 
 <codeblock id="03_19">
 - Are you using `pd.concat()`?
 - Are you concatenating in the correct order with `lego_top` first and `lego_bottom` second?
-- Are you putting your dataframe within square brackets? 
+- Are you putting your dataframes within square brackets? 
+- Are you using `axis=0`
 - Are you using `.shape` to find the dimension of the new dataframe?
 
 </codeblock>
@@ -661,23 +659,39 @@ Tasks:
 
 <exercise id="20" title="Concatenating Columns">
 
-  
-      
 **Instructions:**    
 Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
 
 **When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
 
+_**Make sure you remove the hash (`#`) symbol in the coding portions of this question.  We have commented them so that the line won't execute and you can test your code after each step.**_ 
+
+Our goal is to obtain a dataframe with the lego_set names and the total amount of pieces in each set but we only have 2 lego dataframes (with the same indexes). One dataframe has the set names and the other contains information amount the number of matte and transparent pieces included in each set. Complete this question by using `pd.concat()` and techniques we learned in the previous model.
+
 Tasks:
 
+- Combine the two dataframes horizontally to make 1 large complete dataframe using an outer join.
+- Name the new dataframe `lego_full`.
+- Make a new column named `total_pieces` by adding up columns `matte` and `transparent`.
+- Sort the dataframe by `total_pieces` in descending order.
+- Save this in an object named `lego_details`.
+- Display the new dataframe.
 
-<codeblock id="03_21">
+
+<codeblock id="03_20">
+
+- Are you using `pd.concat()`?
+- Are you concatenating the dataframes `lego_base` with `lego_opacity`?
+- Are you putting your dataframes within square brackets? 
+- Are you using `axis=1` and `join='outer'`
+- Are you using `.assign()` to make a new column named `total_pieces`?
+- Are you using using `.sort_values()` with the argument `ascending=False`
 
 </codeblock>
 
 </exercise>
 
-<exercise id="20" title="Merge" type="slides">
+<exercise id="21" title="Merge" type="slides">
 
 <slides source="module3/module3_20">
 
@@ -690,36 +704,71 @@ Tasks:
 
 **Question 1**          
 
-
+Which of the following are **not** ways in which you can join dataframes using `.merge()`
 
 <choice id="1" >
-<opt text="True"  correct="true" >
+<opt text="Vertically"  correct="true" >
 
-Great work! 
+Great work! We cannot join dataframes vertically with `.merge()`. 
 
 </opt>
 
-<opt text="False">
+<opt text="Outer">
 
-It may be a good idea to look over the last section again. 
+"Outer" joins are possible with the `how` argument in `merge()`.
+
+</opt>
+
+<opt text="Inner">
+
+"Inner" joins are possible with the `how` argument in `merge()`.
+
+</opt>
+
+<opt text="Left">
+
+"Left" joins are possible with the `how` argument in `merge()`.
+
+</opt>
+
+<opt text="Right">
+
+"Right" joins are possible with the `how` argument in `merge()`.
 
 </opt>
 
 </choice> 
 
 
-**Question 2**         
+**Question 2**    
+
+Which join is defaulted when using `.merge()`
 
 <choice id="2" >
-<opt text='True'>
+<opt text='Outer'>
 
-It may be a good idea to look over the last section again. 
+Are you confusing `.pd.concate()`'s default joining type?
 
 </opt>
 
-<opt text= 'False' correct="true">
+<opt text= 'Inner' correct="true">
 
-Good job!
+Good job! Unlike `.pd.concate()`, "inner" is the default join for `.merge()`.
+
+</opt>
+
+<opt text='Left'>
+
+This is an option for the argument `how` but not the default. 
+
+</opt>
+
+
+</opt>
+
+<opt text='Vertical'>
+
+Are you confusing `.merge()` with `.pd.concate()`?
 
 </opt>
 
@@ -727,19 +776,35 @@ Good job!
 
 **Question 3**         
 
+What is outcome that is similar between all 4 types of joins? 
 
 <choice id="3" >
-<opt text='True'>
+<opt text='They all need at least 1 of the dataframe's identifying key column to be an index.'>
 
 It may be a good idea to look over the last section again. 
 
 </opt>
 
-<opt text= 'False' correct="true">
+<opt text= 'They all will produce a new dataframe will columns from both of the initial dataframes' correct="true">
 
 Good job! Just because the data is transformed doesn't mean that it's transformed for the better! 
 
 </opt>
+
+<choice id="3" >
+<opt text='They all produce rows with <code>NaN</code> values'>
+
+What about inner joins that only result with the rows present in both dataframes?
+
+</opt>
+
+<choice id="3" >
+<opt text='They all must be the same dimensions'>
+
+It's still possible to have dataframes that have completely different dimensions joined together. 
+
+</opt>
+
 
 </choice> 
 
@@ -748,18 +813,25 @@ Good job! Just because the data is transformed doesn't mean that it's transforme
 
 <exercise id="23" title="Merging I">
 
-.....     
       
 **Instructions:**    
 Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
 
 **When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
 
+In this exercise you are going to join the two dataframes `lego_base` and `lego_opacity` but this time you are going to want to use an
+
 Tasks:
 
+- Combine the two dataframes horizontally to make 1 large complete dataframe using an inner join.
+- Name the new dataframe `lego_full`.
+- Make a new column named `total_pieces` by adding up columns `matte` and `transparent`.
+- Sort the dataframe by `total_pieces` in descending order.
+- Save this in an object named `lego_details`.
+- Display the new dataframe.
 
 
-<codeblock id="03_22">
+<codeblock id="03_23">
 
 </codeblock>
 
