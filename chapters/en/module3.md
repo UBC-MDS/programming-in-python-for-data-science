@@ -484,9 +484,10 @@ Tasks:
 
 
 <codeblock id="03_15">
+- Are you using the verb `.set_index()`?
+- Are you wrapping the column days with square brackets?
 
 </codeblock>
-
 
 </exercise>
 
@@ -501,12 +502,15 @@ Let's find the maximum and minimum number of pieces per set there are in each le
 
 Tasks:
 - From the lego dataframe, make groups from the theme_name columns.
-- Find the max and min values for the `num_parts` column only.
+- Find the max and min values for the `num_parts` column only using .agg().
 - Stack the max and min values using `.stack()`.
 - Name the new dataframe `stacked_lego`.
 
 
 <codeblock id="03_16">
+- Are you using the verb `.groupby()` witht the correct column named `theme_name`?
+- Are you using arg where you can designate different statistics to different columns to obtain only the `num_parts` column?
+- Are you remembering to `.stack()`?
 
 </codeblock>
 
@@ -524,10 +528,9 @@ Tasks:
 
 **Question 1**          
 
-How many axis are we able to concatenate on 
+Which ways can we combine dataframes using `.concat()`?
 
 <choice id="1" >
-
 
 <opt text="Horizontally Only">
 
@@ -535,7 +538,7 @@ You are halfway there. You may want to think about why you chose this way and no
 
 </opt>
 
-<opt text="Vertically Only ">
+<opt text="Vertically Only">
 
 You are halfway there. You may want to think about why you chose this way and not horozontally  as well. 
 
@@ -564,7 +567,7 @@ Great work! We cann combine rows from two dataframes or combine columns.
 <choice id="2" >
 <opt text='They would appear in the new dataframe as <code>NaN</code> values'>
 
-This would happen with an **Outer** join.  
+This would happen with an **outer** join.  
 
 </opt>
 
@@ -634,14 +637,25 @@ Running a coding exercise for the first time could take a bit of time for everyt
 
 **When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
 
+_**Make sure you remove the hash (`#`) symbol in the coding portions of this question.  We have commented them so that the line won't execute and you can test your code after each step.**_ 
+
+Sometime we accumulate additional data that we need to combine with our exisiting data. In the following question, we need to combine our dataframes together to have a complete collection of all the lego sets that exist. 
+
 Tasks:
 
+- Combine the two dataframes `lego_top` and `lego_bottom` vertically to make 1 large complete dataframe
+- Name the new dataframe full_set 
+- Save the new dimension of full_set in an object named full_set_shape
+- Display the new dataframe
 
 
-<codeblock id="03_18">
+<codeblock id="03_19">
+- Are you using `pd.concat()`?
+- Are you concatenating in the correct order with `lego_top` first and `lego_bottom` second?
+- Are you putting your dataframe within square brackets? 
+- Are you using `.shape` to find the dimension of the new dataframe?
 
 </codeblock>
-
 
 </exercise>
 

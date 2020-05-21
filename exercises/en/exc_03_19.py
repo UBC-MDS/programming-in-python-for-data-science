@@ -1,18 +1,22 @@
 import pandas as pd
 
-lego = pd.read_csv('data/lego-theme-hi.csv')
-lego
+# We are going to import lego_top and lego_bottom which have 5001 rows and 6672 rows respectively.
 
-# From the lego dataframe, make groups from the theme_name columns
-# Find the max and min values for the num_parts column only 
-# Stack the max and min values using .stack()
-# Name the new dataframe stacked_lego
+lego_top = pd.read_csv('data/lego_top.csv')
+lego_bottom = pd.read_csv('data/lego_bottom.csv')
 
-____ = (____.____(____)
-            .____({____})
-            .____()
-       )
+# Combine the two dataframes vertically to make 1 large complete dataframe
+# Name the new dataframe full_set 
 
-# Display the dataframe
+____  = ____
 
-____
+# Save the new dimension of full_set in an object named full_set_shape
+
+# ____ = ____
+
+# Display the new dataframe
+
+# ____
+
+
+
