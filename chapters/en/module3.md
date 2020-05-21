@@ -314,8 +314,8 @@ Let's melt the `lego` dataframe. The `lego` dataframe has 2 new columns named `m
 Tasks:
 
 - `melt` the dataframe columns `matte` and `transparent` into a single column named `opacity` and name the values column `quantity`.
-- Name the new dataframe `tidied_lego`.
 - Assign `set_num` ad the index in your new dataframe. 
+- Name the new dataframe `tidied_lego`.
 
 <codeblock id="03_11">
 
@@ -467,16 +467,20 @@ I think you are missing a verb in your sentence!
 
 
 <exercise id="15" title="Setting Multiple Indexes">
-
-.....     
+   
       
 **Instructions:**    
 Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
 
 **When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
 
-Tasks:
 
+Let's start simple. Set multiple indexes for one of our lego dataframes. 
+
+
+Tasks:
+- Create hierarchical indexes from the columns `set_num` and `name`.
+- Name the new dataframe `lego_build`.
 
 
 <codeblock id="03_15">
@@ -487,15 +491,19 @@ Tasks:
 </exercise>
 
 <exercise id="16" title="Applying Stacking">
-
-  
       
 **Instructions:**    
-Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
+Running a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes. 
 
 **When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
 
+Let's find the maximum and minimum number of pieces per set there are in each lego theme. 
+
 Tasks:
+- From the lego dataframe, make groups from the theme_name columns.
+- Find the max and min values for the `num_parts` column only.
+- Stack the max and min values using `.stack()`.
+- Name the new dataframe `stacked_lego`.
 
 
 <codeblock id="03_16">
@@ -516,18 +524,33 @@ Tasks:
 
 **Question 1**          
 
-
+How many axis are we able to concatenate on 
 
 <choice id="1" >
-<opt text="True"  correct="true" >
 
-Great work! 
+
+<opt text="Horizontally Only">
+
+You are halfway there. You may want to think about why you chose this way and not vertically as well. 
 
 </opt>
 
-<opt text="False">
+<opt text="Vertically Only ">
+
+You are halfway there. You may want to think about why you chose this way and not horozontally  as well. 
+
+
+</opt>
+
+<opt text="Neither Horizontally or Vertically" >
 
 It may be a good idea to look over the last section again. 
+
+</opt>
+
+<opt text="Both Horizontally and Vertically" correct="true" >
+
+Great work! We cann combine rows from two dataframes or combine columns. 
 
 </opt>
 
@@ -536,17 +559,31 @@ It may be a good idea to look over the last section again.
 
 **Question 2**     
 
+ If we concatinated Dataframe A with Dataframe B using an **inner** join, What happens to the row indices only available in  Dataframe A?
 
 <choice id="2" >
-<opt text='True'>
+<opt text='They would appear in the new dataframe as <code>NaN</code> values'>
 
-It may be a good idea to look over the last section again. 
+This would happen with an **Outer** join.  
 
 </opt>
 
-<opt text= 'False' correct="true">
+<opt text= 'They would not appear in the new dataframe but all the columns from Dataframe B would.'  correct="true">
 
 Good job!
+
+</opt>
+
+<opt text= 'They would not appear in the new dataframe and all the columns from Dataframe B would not be present in the final dataframe'  correct="true">
+
+With any join type, All columns would be in the new dataframe.
+
+</opt>
+
+
+<opt text= 'An error message would occur and no new dataframe would be produced'  correct="true">
+
+Why wouldn't the code work? 
 
 </opt>
 
@@ -554,17 +591,32 @@ Good job!
 
 **Question 3**         
 
+Which of the following are correct? 
+
 
 <choice id="3" >
-<opt text='True'>
+<opt text='Concatinating horizontally requires the argument <code>axis=1</code>', correct="true">
 
-It may be a good idea to look over the last section again. 
+Good job! Maybe more solutions are correct...
+
 
 </opt>
 
-<opt text= 'False' correct="true">
+<opt text='Concatinating vertically requires the argument <code>axis=0</code>'  correct="true">
 
-Good job! Just because the data is transformed doesn't mean that it's transformed for the better! 
+Good job! Did you get multiple correct answers? 
+
+</opt>
+
+<opt text='Concatinating vertically requires the argument <code>axis=1</code>'>
+
+I think you got mixed up. Try reading over the notes again. 
+
+</opt>
+
+<opt text='Concatinating horizontally requires the argument <code>axis=0</code>'>
+
+I think you got mixed up. Try reading over the notes again. 
 
 </opt>
 
