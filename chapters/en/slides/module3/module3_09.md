@@ -53,7 +53,7 @@ Notes: Script here
 ## Melt
 
 Similarly to`.pivot()`, `.melt()` can be used in situations where our
-data may not meet criterion \#2: \_ Each variable is a single column\_.
+data may not meet criterion \#2: *Each variable is a single column*.
 
 It can be used convert values that have been put into their own
 dataframe, back into a single column

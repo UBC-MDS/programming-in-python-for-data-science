@@ -48,7 +48,7 @@ cereal = pd.read_csv('cereal.csv', index_col=0)
 
 type: slides
 
-# Hierarchical indexing
+# Hierarchical Indexing
 
 Notes: Script here
 <html>
@@ -58,8 +58,9 @@ Notes: Script here
 
 ---
 
-***Hierarchy*** is defined by <a href="https://dictionary.cambridge.org/dictionary/english/hierarchy" target="_blank"> as
-> "a system in which people or things are put at various levels or ranks according to their importance". 
+***Hierarchy*** is defined by <a href="https://dictionary.cambridge.org/dictionary/english/hierarchy" target="_blank">Cambridge Dictionary </a> as
+
+ _*"a system in which people or things are put at various levels or ranks according to their importance".*_ 
 
 This helps explain the concept of ***hierarchical indexing***  which is the capability of a dataframe posessing multiple levels of index labels. 
 
@@ -92,7 +93,7 @@ Believe it or not but you have already seen this concepts when we explained the 
 cereal.groupby('mfr').agg(['max', 'min'])
 ```
 
-Here you can see that each of the original cereal dataframe columns have subcolumns `max` and `min` and that there a hierarchy of index labels. 
+Here you can see that each of the original cereal dataframe columns have subcolumns `max` and `min` and that there is a hierarchy of index labels. 
 
 Notes: Script here
 <html>
@@ -104,8 +105,9 @@ Notes: Script here
 
 ## Setting indexes 
 
-In the last section you learned how to set a single index using `.set_index()`. Here we are going use the same verb but set `caramel` AND `name` as the indexes from the candy dataframe. 
+In the last section you learned how to set a single index using `.set_index()`. Here we are going use the same verb but set `caramel` ***and*** `name` as the indexes from the candy dataframe. 
 Remember in the last section where we explained that `pandas` doesn't recognize indexes as columns and we needed to `.reset_index()` to makes sure we has all the columns in our dataframe? The same applies here, we are going to avoid resetting by reading the data without assigning any index with the `index_col` argument. 
+
 ```{python}
 df = pd.read_csv('candybars.csv')
 ```
@@ -117,7 +119,8 @@ Notes: Script here
 </audio></html>
 ---
 
-Next we can assign multiple indexes using square brackets within the `.set_index()` verb and sort the dataframe according to the index using verb `sort_index()`. (`.sort_index()` is similar to `.sort_values()` however now we can sort by the index!)
+Next we can assign multiple indexes using square brackets within the `.set_index()` verb and sort the dataframe according to the index using verb `sort_index()`.   
+(`.sort_index()` is similar to `.sort_values()` however now we can sort by the index!)
 
 ```{python}
 df2 = df.set_index(['caramel', 'name']).sort_index()
@@ -195,6 +198,7 @@ Notes: Script here
 </audio></html>
 
 ---
+
 ## Unstacking 
 
 ```{python}

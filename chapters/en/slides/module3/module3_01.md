@@ -19,10 +19,10 @@ Notes: Script here
 ---
 
 When we first hear “tidy data”, you likely think of clean, organized and
-orderly data. The same applies here however the concept of ***Tidy
-Data*** stems from
-<a href="https://vita.had.co.nz/papers/tidy-data.pdf" target="_blank">`a
-paper written by Hadley Wickham in 2014`</a>.
+orderly data. The same applies here however the concept of ***tidy
+data*** stems from
+<a href="https://vita.had.co.nz/papers/tidy-data.pdf" target="_blank">a
+paper written by Hadley Wickham in 2014</a>.
 
 ### What is the concept of tidy data?
 
@@ -188,8 +188,8 @@ Notes: Script here
 
 ---
 
-As expected, the cereal data we have been working with is **“Tidy
-Data”**. Let’s look at a example where this is not the case.
+As expected, the cereal data we have been working with is **“tidy
+data”**. Let’s look at a example where this is not the case.
 
 <center>
 
@@ -288,7 +288,7 @@ Notes: Script here
 
 ---
 
-# Let’s practice what we know about Tidy Data first\!
+# Let’s practice what we know about tidy data first\!
 
 Notes: Script here
 

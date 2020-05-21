@@ -6,9 +6,11 @@ lego = pd.read_csv('data/lego_untidy.csv', index_col=0)
 # Name the new dataframe tidied_lego
 
 ____ = (____.____()
-            .____(____)
+            .pivot(index=____,
+                   columns=____,
+                   values=____)
        )
 
 # Display the first 5 rows
 
-____
+# ____

@@ -188,7 +188,7 @@ Running a coding exercise for the first time could take a bit of time for everyt
 
 **When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
 
-Let's convert the dataframe `lego` into Tidy Data using `.pivot()`.
+Let's convert the dataframe `lego` into tidy data using `.pivot()`.
 
 Tasks:
 
@@ -197,7 +197,6 @@ Tasks:
 
 
 <codeblock id="03_07">
-- Are you using the correct arguments such as `index`, `columns`, and `values`?
 - Are you pivoting the correct column named `lego_info` with `values='value'`?
 - Are you resetting your index before you pivot?
 
@@ -212,12 +211,12 @@ Running a coding exercise for the first time could take a bit of time for everyt
 
 **When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
 
-Let's convert the dataframe `lego` into Tidy Data but this time preserve all the columns in the dataframe by using `.pivot_table()`.
+Let's convert the dataframe `lego` into tidy data but this time preserve all the columns in the dataframe by using `.pivot_table()`.
 
 Tasks:
 
-- Convert the untidy data into tidy data using `.pivot_table()`.
-- Make sure that you only assign `set_num` as your index.
+- Convert the untidy data into tidy data using `.pivot_table()` making sure to keep all the columns. 
+- Assign your new dataframe `set_num` as your index.
 - Name the new dataframe `tidied_lego`.
 
 <codeblock id="03_08">
@@ -283,7 +282,7 @@ Good job!
 
 **Question 3**     
 
-`.melt()`  and `.pivot()` always transforms the data into "Tidy Data".
+`.melt()`  and `.pivot()` always transforms the data into "tidy data".
 
 <choice id="3" >
 <opt text='True'>
@@ -310,24 +309,35 @@ Running a coding exercise for the first time could take a bit of time for everyt
 
 **When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
 
+Let's melt the `lego` dataframe. The `lego` dataframe has 2 new columns named `matte` and `transparent`. These columns refers to the opacity of the blocks and the values refer to the number of pieces of each included in the set. 
+
 Tasks:
 
-
+- `melt` the dataframe columns `matte` and `transparent` into a single column named `opacity` and name the values column `quantity`.
+- Name the new dataframe `tidied_lego`.
+- Assign `set_num` ad the index in your new dataframe. 
 
 <codeblock id="03_11">
 
+- Are you melting the correct columns named `matte` and `transparent`?
+- Are you resetting your index before you pivot?
+- Are you making sure to use all the columns (except `matte` and  `transparent` in the argument `id_vars`?
+- Are you setting your index again after you melt?
+
 </codeblock>
 
-
-Is this data tidy? 
+Have we made the data tidied by melting these 2 columns? 
 
 <choice id="1">
-<opt text='Yes' >
+<opt text='Yes' correct="true">
 
+The data now meets all 3 criteria. 
 
 </opt>
 
-<opt text='No' correct="true">
+<opt text='No'>
+
+Start by going through the tidy data criteria. Does this data meet all three? 
 
 </opt>
 
@@ -350,16 +360,28 @@ Is this data tidy?
 
 **Question 1**          
 
-
+What verb is used to sort the values in the index? 
 
 <choice id="1" >
-<opt text="True"  correct="true" >
+<opt text="<code>.sort_index()</code>"  correct="true" >
 
 Great work! 
 
 </opt>
 
-<opt text="False">
+<opt text="<code>.sort_values()</code>">
+
+This is used to sort columns. Index values are not recognized as a typical column. 
+
+</opt>
+
+<opt text="<code>.index_sort()</code>">
+
+You are on the right track but I think you may have it backwards!
+
+</opt>
+
+<opt text="<code>.sort()</code>">
 
 It may be a good idea to look over the last section again. 
 
@@ -368,36 +390,74 @@ It may be a good idea to look over the last section again.
 </choice> 
 
 
-**Question 2**         
+**Question 2**      
+
+Is the following `fruit_salad` dataframe stacked or unstacked?
+
+<center> <img src='module3/hi_fruit.png'  alt="404 image" /></center>
+
 
 <choice id="2" >
-<opt text='True'>
+<opt text='Stacked' correct="true">
 
-It may be a good idea to look over the last section again. 
+Nice! The columns are stacked on top of each other.  
 
 </opt>
 
-<opt text= 'False' correct="true">
+<opt text= 'Unstacked'>
 
-Good job!
+Do you notice anything interesting about the third column? 
 
 </opt>
 
 </choice> 
 
-**Question 3**         
+</exercise>
+ 
+<exercise id="14" title="Hierarchical Indexing slicing">
 
+Oh look it's time for dessert! Bring in the dataset `fruit_salad` . 
 
-<choice id="3" >
-<opt text='True'>
+```out
+                           location   seed   shape    sweetness   water-content  weight
+        name      colour                    
+       apple        red     canada    True   round       True          84         100
+      banana     yellow     mexico   False    long       True          75         120
+  cantaloupe     orange      spain    True   round       True          90        1360
+dragon-fruit    magenta      china    True   round      False          96         600
+  elderberry     purple    austria   False   round       True          80           5
+         fig     purple     turkey   False    oval      False          78          40
+       guava      green     mexico    True    oval       True          83         450
+ huckleberry       blue     canada    True   round       True          73           5
+        kiwi      brown      china    True   round       True          80          76
+       lemon     yellow     mexico   False    oval      False          83          65
+```
 
-It may be a good idea to look over the last section again. 
+It appears that there are 2 indexes this time around `name` ***and*** `colour`! How would you select the `guava` row now? 
+
+<choice id="1" >
+
+<opt text= "<code>fruit_salad.loc[['guava, 'green']]</code>">
+
+hhhhmmm, something seems a little off with your parentheses. Are you sure they are all the right type? 
 
 </opt>
 
-<opt text= 'False' correct="true">
+<opt text= "<code>fruit_salad.loc['guava]</code>">
 
 Good job! Just because the data is transformed doesn't mean that it's transformed for the better! 
+
+</opt>
+
+<opt text= "<code>fruit_salad.loc[('guava, 'green')]</code>"  correct="true">
+
+Nice work! You definitely paid attention!
+
+</opt>
+
+<opt text= "<code>fruit_salad[('guava, 'green')]</code>">
+
+I think you are missing a verb in your sentence!  
 
 </opt>
 
@@ -406,7 +466,7 @@ Good job! Just because the data is transformed doesn't mean that it's transforme
 </exercise>
 
 
-<exercise id="14" title="Setting Multiple Indexes">
+<exercise id="15" title="Setting Multiple Indexes">
 
 .....     
       
@@ -419,14 +479,14 @@ Tasks:
 
 
 
-<codeblock id="03_14">
+<codeblock id="03_15">
 
 </codeblock>
 
 
 </exercise>
 
-<exercise id="15" title="Applying Stacking">
+<exercise id="16" title="Applying Stacking">
 
   
       
@@ -438,13 +498,13 @@ Running a coding exercise for the first time could take a bit of time for everyt
 Tasks:
 
 
-<codeblock id="03_15">
+<codeblock id="03_16">
 
 </codeblock>
 
 </exercise>
 
-<exercise id="16" title="Concat" type="slides">
+<exercise id="17" title="Concat" type="slides">
 
 <slides source="module3/module3_16">
 
@@ -452,7 +512,7 @@ Tasks:
 
 </exercise>
 
-<exercise id="17" title="Concat questions">
+<exercise id="18" title="Concat questions">
 
 **Question 1**          
 
@@ -513,7 +573,7 @@ Good job! Just because the data is transformed doesn't mean that it's transforme
 </exercise>
 
 
-<exercise id="18" title="Concatenating Rows">
+<exercise id="19" title="Concatenating Rows">
 
 .....     
       
@@ -533,7 +593,7 @@ Tasks:
 
 </exercise>
 
-<exercise id="19" title="Concatenating Columns">
+<exercise id="20" title="Concatenating Columns">
 
   
       
@@ -545,7 +605,7 @@ Running a coding exercise for the first time could take a bit of time for everyt
 Tasks:
 
 
-<codeblock id="03_19">
+<codeblock id="03_21">
 
 </codeblock>
 
@@ -560,7 +620,7 @@ Tasks:
 </exercise>
 
 
-<exercise id="21" title="Merge Questions">
+<exercise id="22" title="Merge Questions">
 
 **Question 1**          
 
@@ -620,7 +680,7 @@ Good job! Just because the data is transformed doesn't mean that it's transforme
 </exercise>
 
 
-<exercise id="22" title="Merging I">
+<exercise id="23" title="Merging I">
 
 .....     
       
@@ -640,7 +700,7 @@ Tasks:
 
 </exercise>
 
-<exercise id="23" title="Merging II">
+<exercise id="24" title="Merging II">
 
   
       
@@ -659,8 +719,8 @@ Tasks:
 </exercise>
 
 
-<exercise id="24" title="What Did We Just Learn?" type="slides,video">
-<slides source="module3/module3_23" start="0:165" end="3:01">>
+<exercise id="25" title="What Did We Just Learn?" type="slides,video">
+<slides source="module3/module3_25" start="0:165" end="3:01">>
 </slides>
 </exercise>
 

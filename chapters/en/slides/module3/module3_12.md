@@ -2,7 +2,7 @@
 type: slides
 ---
 
-# Hierarchical indexing
+# Hierarchical Indexing
 
 Notes: Script here
 
@@ -19,9 +19,11 @@ Notes: Script here
 ---
 
 ***Hierarchy*** is defined by
-<a href="https://dictionary.cambridge.org/dictionary/english/hierarchy" target="_blank">
-as \> “a system in which people or things are put at various levels or
-ranks according to their importance”.
+<a href="https://dictionary.cambridge.org/dictionary/english/hierarchy" target="_blank">Cambridge
+Dictionary </a> as
+
+*_“a system in which people or things are put at various levels or ranks
+according to their importance”._*
 
 This helps explain the concept of ***hierarchical indexing*** which is
 the capability of a dataframe posessing multiple levels of index labels.
@@ -89,7 +91,8 @@ R    Cold  Cold      150   90       4   1   3   0    280   95   4.0  0.0  23.0  
 ```
 
 Here you can see that each of the original cereal dataframe columns have
-subcolumns `max` and `min` and that there a hierarchy of index labels.
+subcolumns `max` and `min` and that there is a hierarchy of index
+labels.
 
 Notes: Script here
 
@@ -109,12 +112,12 @@ Notes: Script here
 
 In the last section you learned how to set a single index using
 `.set_index()`. Here we are going use the same verb but set `caramel`
-AND `name` as the indexes from the candy dataframe. Remember in the last
-section where we explained that `pandas` doesn’t recognize indexes as
-columns and we needed to `.reset_index()` to makes sure we has all the
-columns in our dataframe? The same applies here, we are going to avoid
-resetting by reading the data without assigning any index with the
-`index_col` argument.
+***and*** `name` as the indexes from the candy dataframe. Remember in
+the last section where we explained that `pandas` doesn’t recognize
+indexes as columns and we needed to `.reset_index()` to makes sure we
+has all the columns in our dataframe? The same applies here, we are
+going to avoid resetting by reading the data without assigning any index
+with the `index_col` argument.
 
 ``` python
 df = pd.read_csv('candybars.csv')
@@ -136,8 +139,9 @@ Notes: Script here
 
 Next we can assign multiple indexes using square brackets within the
 `.set_index()` verb and sort the dataframe according to the index using
-verb `sort_index()`. (`.sort_index()` is similar to `.sort_values()`
-however now we can sort by the index\!)
+verb `sort_index()`.  
+(`.sort_index()` is similar to `.sort_values()` however now we can sort
+by the index\!)
 
 ``` python
 df2 = df.set_index(['caramel', 'name']).sort_index()
@@ -305,6 +309,46 @@ Notes: Script here
 </audio>
 
 </html>
+
+---
+
+## Unstacking
+
+``` python
+stacked.unstack()
+```
+
+```out
+                          weight chocolate peanuts nougat cookie_wafer_rice coconut white_chocolate multi available_canada_america
+caramel name                                                                                                                      
+0       3 Musketeers          54         1       0      1                 0       0               0     0                  America
+        Aero                  42         1       0      0                 0       0               0     0                   Canada
+        Almond Joy            46         1       0      0                 0       1               0     0                  America
+        Coffee Crisp          50         1       0      0                 1       0               0     0                   Canada
+        Cookies and Cream     43         0       0      0                 1       0               1     0                     Both
+...                          ...       ...     ...    ...               ...     ...             ...   ...                      ...
+1       Skor                  39         1       0      0                 0       0               0     0                     Both
+        Snickers              48         1       1      1                 0       0               0     0                     Both
+        Take 5                43         1       1      0                 1       0               0     0                  America
+        Twix                  58         1       0      0                 1       0               0     1                     Both
+        Wonderbar             58         1       1      0                 0       0               0     0                   Canada
+
+[25 rows x 9 columns]
+```
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
 
 Just for fun, let’s bring back the example we used of hierarchical
 indexing involving our groupby cereal aggregated dataframe.

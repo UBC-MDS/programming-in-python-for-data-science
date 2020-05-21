@@ -68,7 +68,7 @@ And the columns are the variables.
 
 <center>
 
-<img src='/module1/df_var.png'  alt="404 image" />
+<img src='/module1/df_var.png' width="70%" alt="404 image" />
 
 </center>
 
