@@ -8,11 +8,11 @@
 1. Understand the key data structures in Python.
 1. Read data into Python data from vanilla (e.g., .csv) and non-standard plain text files, as well as common spreadsheet file types (e.g., .xls).
 1. Construct simple plots using pandas.
-1. Manipulate a single data table by:
-    6.1 Filtering rows based on a criterion or combination of criteria.
-    6.2 Selecting variables.
-    6.3 Creating new variables and modifying pre-existing ones.
-    6.4 Rearranging the observations or variables by sorting.
+1. Manipulate a single data table by:   
+    7.1 Filtering rows based on a criterion or combination of criteria.   
+    7.2 Selecting variables.   
+    7.3 Creating new variables and modifying pre-existing ones.   
+    7.4 Rearranging the observations or variables by sorting.   
 1. Manage and manipulate data with dates and times, missing values and categorical variables as well as renaming dataframe columns.
 1. Use the split-apply-combine approach to iterate over and summarize data by groups.
 1. Produce human-readable code that incorporates best practices of programming and coding style.
