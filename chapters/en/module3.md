@@ -80,7 +80,7 @@ You are right. It is possible to still have tidy data with missing values.
 
 Would this dataframe be defined as tidy?
 
-<center> <img src='module3/crit3fail.png'  alt="404 image"/></center>
+<center> <img src='/module3/crit3fail.png'  alt="404 image"/></center>
 
 <choice>
 
@@ -104,7 +104,7 @@ Good job!
 
 Would this dataframe be defined as tidy?
 
-<center> <img src='module3/Q4.png'  alt="404 image"/></center>
+<center> <img src='/module3/Q4.png'  alt="404 image"/></center>
 
 <choice>
 <opt text="True">
@@ -393,7 +393,7 @@ It may be a good idea to look over the last section again.
 
 Is the following `fruit_salad` dataframe stacked or unstacked?
 
-<center> <img src='module3/hi_fruit.png'  alt="404 image" /></center>
+<center> <img src='/module3/hi_fruit.png'  alt="404 image" /></center>
 
 
 <choice id="2" >
