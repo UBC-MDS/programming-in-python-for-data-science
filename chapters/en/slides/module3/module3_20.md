@@ -243,9 +243,13 @@ Notes: Script here
 ## how
 
 We talked about `inner` and `outer` joins from the last section but we
-have 2 more joins to discuss: - `left`: Will only output the rows that
-are in the left dataframe and if they are missing from the right
-dataframe, `NaN` values will occur.
+have 2 more joins to discuss:
+
+  - `left`: Will only output the rows that are in the left dataframe and
+    if they are missing from the right dataframe, `NaN` values will
+    occur.
+
+<!-- end list -->
 
 ``` python
 candy.merge(candy2m, left_index=True, right_on='chocolate_bar', how='left')

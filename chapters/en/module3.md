@@ -938,11 +938,11 @@ Running a coding exercise for the first time could take a bit of time for everyt
 This question may be a bit more challenging. We are wondering about the inventory of a store. We want to see which Lego sets are in stock and if so how many? Afterall, the store needs to make sure there is enough sets in stock to meet demand. 
 
 Tasks:
-- Combine the two dataframes to make 1 large complete dataframe by using an inner join.
+- Combine the two dataframes to make one large complete dataframe by using an inner join.
 - Name the new dataframe `lego_stock`.
 - Group the new dataframe by `set_num` and find how many groups there are using `.ngroups`
 
-This question is in two parts and we are going to walk you through how to tackle this issue. 
+This question is in two parts and we are going to walk you through how to tackle it. 
 
 <codeblock id="03_24">
 - Are you naming your new dataframe `lego_stock`? 
@@ -951,14 +951,89 @@ This question is in two parts and we are going to walk you through how to tackle
 </codeblock>
 
 
-We need to sum up all the rows of the different sets and we can do this with skills we have already learned! 
+Ah, it appears we have multiple rows for some of the same sets.   
+How are we going to get the quantity of each set in stock?    
+We are going to have to sum up the quantity of each set. Luckily we can do this with skills we have already learned! 
+
+Tasks:
+- Use `.groupby()` and `.agg()` to sum up the quantity of each set and save this as `store_inventory`. 
+- Inner join `store_inventory` with `lego_sets` and use chaining to sort the dataframe in descending order based on in stock quantity
+- Save this new dataframe as store_inventory_details 
+- Display the new dataframe.
 
 
-<codeblock id="03_24">
-- Are you naming your new dataframe `lego_tower`? 
-- Are you using the arguments  `left_on='color_id'` `right_index=True`  `how='outer'`, `indicator=True`?
+<codeblock id="03_24b">
+
+- Are you naming your new dataframe `store_inventory`? 
+- Are you aggregating using `.agg({'quantity':'sum'})`?
+- Are you using the arguments `left_index=True, right_index=True, how='inner'`?
+- Are you sorting in descending order of `quantity`?
+
 </codeblock>
 
+Now we can return to our initial problem of identifying how many Lego sets are in stock.
+
+**Question 1**  
+
+How many different Lego sets are in stock?
+
+<choice id="1" >
+<opt text='11673'>
+
+Did you look at the wrong dataframe?
+
+</opt>
+
+<opt text='2846'>
+
+Did you look at the wrong dataframe?
+
+</opt>
+
+<opt text='3654' >
+
+Did you look at the wrong dataframe?
+
+</opt>
+
+<opt text='2306' correct="true">
+
+You got it!
+
+</opt>
+
+</choice> 
+
+**Question 2**  
+
+What's the largest quantity of stock avilable by any particular Lego set? 
+
+<choice id="2" >
+<opt text='12'>
+
+Did you look at the wrong dataframe?
+
+</opt>
+
+<opt text='1'>
+
+Did you look at the wrong dataframe?
+
+</opt>
+
+<opt text='60' correct="true">
+
+Great! You saw the top quantity of `lego_stock`.
+
+</opt>
+
+<opt text='65'>
+
+Did you look at the wrong dataframe?
+
+</opt>
+
+</choice> 
 
 </exercise>
 
