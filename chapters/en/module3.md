@@ -929,19 +929,36 @@ Maybe explore the `_merge` column by filtering or grouping and seeing if there a
 
 <exercise id="24" title="Merging II">
 
-  
       
 **Instructions:**    
 Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
 
 **When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
 
+This question may be a bit more challenging. We are wondering about the inventory of a store. We want to see which Lego sets are in stock and if so how many? Afterall, the store needs to make sure there is enough sets in stock to meet demand. 
+
 Tasks:
+- Combine the two dataframes to make 1 large complete dataframe by using an inner join.
+- Name the new dataframe `lego_stock`.
+- Group the new dataframe by `set_num` and find how many groups there are using `.ngroups`
+
+This question is in two parts and we are going to walk you through how to tackle this issue. 
+
+<codeblock id="03_24">
+- Are you naming your new dataframe `lego_stock`? 
+- Are you using the arguments  `left_on='set_num'`, `right_index=True` and `how='inner'`?
+- Are you grouping my using `groupby('set_num`)? 
+</codeblock>
+
+
+We need to sum up all the rows of the different sets and we can do this with skills we have already learned! 
 
 
 <codeblock id="03_24">
-
+- Are you naming your new dataframe `lego_tower`? 
+- Are you using the arguments  `left_on='color_id'` `right_index=True`  `how='outer'`, `indicator=True`?
 </codeblock>
+
 
 </exercise>
 
