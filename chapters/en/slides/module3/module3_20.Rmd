@@ -58,7 +58,7 @@ Notes: Script here
 
 ---
 
-We discussed concatenation in the last section and it covers several things so what would we need a second verb for? 
+We discussed concatenation in the last section and it how it covers several things so what would we need a second verb for? 
 <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.merge.html" target="_blank">`.merge()`</a> gives more joining options and unlike `pd.concat()`, where we identify alike rows purely on the index labels,  `.merge()` can select which column to use as the identifier in each dataframe. 
 
 
@@ -72,7 +72,7 @@ Notes: Script here
 
 ## Column Identifier  
 
-`.merge()` give more versatility when assigning columns to act as connect between the dataframes.  For example, we can use the index on one dataframe and a column label on the other, indexes from both dataframes or no indexes at all to make a connection between the two dataframes. 
+`.merge()` give more versatility when assigning columns to act as a connection between the dataframes.  For example, we can use the index on one dataframe and a column label on the other, indexes from both dataframes or no indexes at all to make a connection between the two dataframes. 
 
 Let bring back the candy bar dataset to explain this concept further. 
 
@@ -98,9 +98,9 @@ candy2m = pd.read_csv('candybars_merge.csv', index_col=0)
 candy2m
 ```
 
- This dataframe has new columns and three new rows not in the `candy` dataframe (`Kinder Bueno`, `5th Avenue`, `Crunch`)
- The column name that identifies the rows is named `chocolate_bar`, something quite different than `name` index from `candy`.   
- If we were to use `pd.concat()` to join `candy` and `candy2m` it would be a little challenging, however `.merge()` makes this a little easier for us.  
+This dataframe has new columns and three new rows not in the `candy` dataframe (`Kinder Bueno`, `5th Avenue` and `Crunch`).
+The column in this dataframe that shares values with the `candy` dataframe is named `chocolate_bar`. 
+If we were to use `pd.concat()` to join `candy` and `candy2m` while keeping the id_number as the index in `candy2m` it would be a little challenging, however `.merge()` makes this a little easier for us.  
 
 Notes: Script here
 <html>
@@ -143,8 +143,8 @@ Dataframe A can have the index label `cereal` and Dataframe B could have a colum
 
 To choose our key columns, we use the following arguments:    
 
-- `left_on` - indicates the left dataframe identifying key column label.
-- `right_on` - indicates the right dataframe identifying key column label.
+- `left_on` - The left dataframe identifying key column label.
+- `right_on` - The right dataframe identifying key column label.
 
 Or if one or both of the key columns is an index:   
 
@@ -167,6 +167,7 @@ candy.merge(candy2m, left_index=True, right_on='chocolate_bar')
 ```
 
 Great! we've combined the 2 dataframes horizontally (in the future we will likely want to rename `chocolate_bar` and assign it as an index again).
+   
 This join uses the default `inner` join, which returns only the rows present in both dataframes.  We can change that with the argument `how`.
 
 
@@ -182,7 +183,7 @@ Notes: Script here
 
 We talked about `inner` and `outer` joins from the last section but we have 2 more joins to discuss:      
 
-- `left`: This will only output the rows that are in the left dataframe and if they are missing from the right dataframe, `NaN` values will occur. 
+- `left`: This will only output the rows that are in the left dataframe and if they are missing from the right dataframe, `NaN` values will occur. No candy bars that are only present in the right dataframe will be present.
 
 
 ```{python}
@@ -197,7 +198,7 @@ Notes: Script here
 
 ---
 
-- `right`: Will only output the rows that are in the right dataframe and if they are missing from the left dataframe, `NaN` values will occur. 
+- `right`: Will only output the rows that are in the right dataframe and if they are missing from the left dataframe, `NaN` values will occur. No candy bars that are only present in the left dataframe will be present. 
 
 ```{python}
 candy.merge(candy2m, left_index=True, right_on='chocolate_bar', how='right')

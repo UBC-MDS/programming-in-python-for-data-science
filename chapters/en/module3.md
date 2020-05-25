@@ -25,7 +25,6 @@ id: 3
 <exercise id="2" title="Tidy Data Questions">
 
 **Question 1**         
-
 Tidy data is defined differently for every dataset.
 
 <choice id="1" >
@@ -44,7 +43,6 @@ Good job!  Although dataset can contain different information and data, they con
 </choice> 
 
 **Question 2**          
-
 Which of the following does not characterize a tidy dataset?
 
 <choice id="2" >
@@ -280,7 +278,6 @@ Good job!
 </choice> 
 
 **Question 3**     
-
 `.melt()`  and `.pivot()` always transforms the data into "tidy data".
 
 <choice id="3" >
@@ -358,10 +355,7 @@ Start by going through the tidy data criteria.  Does this data meet all three?
 <exercise id="13" title="Hierarchical Indexing Questions">
 
 **Question 1**          
-
 Which of the following is used to sort values in a dataframe's index? 
-
-<br>
 
 
 <choice id="1" >
@@ -393,7 +387,6 @@ It may be a good idea to look over the last section again.
 
 
 **Question 2**      
-
 Is the following `fruit_salad` dataframe stacked or unstacked?
 
 <center> <img src='/module3/hi_fruit.png'  alt="404 image" /></center>
@@ -531,7 +524,6 @@ Tasks:
 <exercise id="18" title="Concat questions">
 
 **Question 1**          
-
 What is the default argument for `join` when using `pd.concat()`?
 
 <choice id="1" >
@@ -566,8 +558,7 @@ Great work!  `pd.concat()` by default uses an `outer` join.
 
 
 **Question 2**     
-
- If we concatenated Dataframe A with Dataframe B using an **inner** join, what happens to the row indices only available in  Dataframe A?
+If we concatenated Dataframe A with Dataframe B using an **inner** join, what happens to the row indices only available in  Dataframe A?
 
 <choice id="2" >
 <opt text='They would appear in the new dataframe as <code>NaN</code> values'>
@@ -598,7 +589,6 @@ Why wouldn't the code work?
 </choice> 
 
 **Question 3**         
-
 Which of the following statements are correct?
 
 
@@ -710,7 +700,6 @@ Tasks:
 <exercise id="22" title="Merge Questions">
 
 **Question 1**          
-
 Which of the following are **not** ways in which you can join dataframes using `.merge()`?
 
 <choice id="1" >
@@ -747,7 +736,6 @@ Great work!  We cannot join dataframes vertically with `.merge()`.
 </choice> 
 
 **Question 2**    
-
 Which join is the default when using `.merge()`?
 
 <choice id="2" >
@@ -779,7 +767,6 @@ Are you confusing `.merge()` with `.pd.concat()`?
 </choice> 
 
 **Question 3**         
-
 What is the similarity between all 4 types of joins? 
 
 <choice id="3" >
@@ -839,7 +826,6 @@ Tasks:
 </codeblock>
 
 **Question 1**  
-
 Which of the following colours don't have any pieces in inventory? 
 
 <choice id="1" >
@@ -870,7 +856,6 @@ You may want to try filtering using the `_merge` column
 </choice> 
 
 **Question 2**  
-
 Which colour has the largest number of pieces in the inventory? 
 
 <choice id="2" >
@@ -901,7 +886,6 @@ You can use `lego_tower.groupby('name').sum().sort_values('quantity', ascending=
 </choice> 
 
 **Question 3**  
-
 How many Lego pieces from the `lego_inventory` dataframe do not have any matching rows in the `lego_colors` dataframe? 
 
 <choice id="3" >
@@ -980,7 +964,6 @@ Tasks:
 Now we can return to our initial problem of identifying how many Lego sets are in stock.
 
 **Question 1**  
-
 How many different Lego sets are in stock?
 
 <choice id="1" >
@@ -1011,7 +994,6 @@ You got it!
 </choice> 
 
 **Question 2**  
-
 What's the largest quantity of stock available by any particular Lego set? 
 
 <choice id="2" >
