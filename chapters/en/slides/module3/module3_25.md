@@ -6,7 +6,7 @@ type: slides
 
 Notes: Script here
 <html>
-<audio controls >
+<audio controls  style="width: 100%;">
   <source src="/placeholder_audio.mp3" />
 </audio></html>
 

@@ -2,7 +2,7 @@
 type: slides
 ---
 
-# Concatenating
+# Concatenation
 
 Notes: Script here
 
@@ -19,18 +19,18 @@ Notes: Script here
 ---
 
 Up until this moment, we have been working with a single dataframe.
-Single dataframe can we great to see all your data in one convinient
-place, however this is less convinient when it comes to storage space.
-Many company’s split their data into multiple tables and join them
+Single dataframes can be great to see all your data in one convenient
+place, however, this is less convenient when it comes to storage space.
+Many companies split their data into multiple tables and join them
 together depending on what columns they need for their analysis.  
 There are 2 different verbs we use for joining dataframes together:
 
-  - <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.concat.html" target="_blank">`pd.concat()`</a>;
-    A way of joining dataframes across rows or columns.
+  - <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.concat.html" target="_blank">`pd.concat()`</a>
+    - A way of joining dataframes across rows or columns.
   - <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.merge.html" target="_blank">`.merge()`</a>
-    This approach can only combining data on common columns or indices
+    - This approach can only combine data on common columns or indices
     but have different types of joining methods. We will look into this
-    in the next section
+    in the next section.
 
 Notes: Script here
 
@@ -48,13 +48,14 @@ Notes: Script here
 
 ## Concatenation
 
-Concatenation works extremely well when you have similar dataframe where
-both dataframes share identical column or row index labels.  
-`.concat()`.
+Concatenation works extremely well when you have similar dataframes
+where both share identical column or row index labels.  
+`.concat()` can stich the 2 dataframes together either horizontally or
+vertically.
 
 <center>
 
-<img src='/module3/concat.gif' width="400">
+<img src='/module3/concat.gif' width="600">
 
 </center>
 
@@ -72,7 +73,7 @@ Notes: Script here
 
 ---
 
-For the next couple examples we are going to look at our candybars
+For the next couple of examples, we are going to look at our candy bars
 dataframe.
 
 ``` python
@@ -112,10 +113,9 @@ Notes: Script here
 
 ---
 
-## Horizontal Concatination
+## Horizontal Concatenation
 
-`candybars2.csv` has new nutritional information about each candy bar
-and we want to combine it with `candy` horozontally.
+`candybars2.csv` has new nutritional information about each candy bar.
 
 ``` python
 candy2 = pd.read_csv('candybars2.csv', index_col=0)
@@ -140,6 +140,8 @@ Cookies and Cream       220  12.0   13.0
 [25 rows x 3 columns]
 ```
 
+We want to combine `candy2` with `candy` horizontally.
+
 Both `candy1` and `candy2` have 25 rows and it looks like the index name
 in the `candy2` dataframe is identical as `candy`.
 
@@ -159,8 +161,8 @@ Notes: Script here
 
 We can combine these two dataframes using `pd.concat()` but we need to
 clarify which axes to combine. We use square brackets around the
-dataframes we wish to combine and since we are combining horonzontally
-we need to use the argument `axis=1`.
+dataframes we wish to combine and since we are combining horizontally we
+need to use the argument `axis=1`.
 
 ``` python
 pd.concat([candy, candy2], axis=1)
@@ -200,10 +202,10 @@ Notes: Script here
 
 ---
 
-## Vertical Concatination
+## Vertical Concatenation
 
 Our second example uses new dataset`candybars_more.csv` which has 3
-additional candybars that we wish to add to the original `candy`
+additional candy bars that we wish to add to the original `candy`
 dataframe.
 
 ``` python
@@ -233,11 +235,11 @@ Notes: Script here
 
 ---
 
-When we want to vertically combine dataframes, we us the
-argument`axis=0` with `pd.concat()`.
+When we want to vertically combine dataframes, we use the argument
+`axis=0` with `pd.concat()`.
 
 ``` python
-pd.concat([candy,candy_more], axis=0)
+pd.concat([candy, candy_more], axis=0)
 ```
 
 ```out
@@ -258,7 +260,7 @@ Crunch                 44          1        0        0       0                  
 [28 rows x 10 columns]
 ```
 
-In this situation we now have 28 rows and the same 10 columns that all
+After combining them now have 28 rows and the same 10 columns that all
 align correctly.
 
 Notes: Script here
@@ -278,12 +280,12 @@ Notes: Script here
 ## Concatenating incomplete dataframes.
 
 `pd.concat()` is not limited to complete dataframes. We can still add
-dataframes together that do not have all the same rows or columns. Let’s
-take a selection of our `candy2` dataframe that we used to combine
-horozontally with `candy`.
+dataframes together that do not have all the same rows or columns.  
+Let’s take a selection of our `candy2` dataframe that we used to combine
+horizontally with `candy` and save it as `slice_of_candy2`.
 
 ``` python
-slice_of_candy2 = candy2.loc[['Coffee Crisp','Smarties', 'Take 5', 'Oh Henry']]
+slice_of_candy2 = candy2.loc[['Coffee Crisp', 'Smarties', 'Take 5', 'Oh Henry']]
 slice_of_candy2
 ```
 
@@ -311,7 +313,7 @@ Notes: Script here
 ---
 
 What happens when we concatenate `candy1` and `candy2` now that it has
-less rows?
+fewer rows?
 
 ``` python
 pd.concat([candy, slice_of_candy2], axis=1)
@@ -334,8 +336,9 @@ Cookies and Cream      43          0        0        0       0                  
 [25 rows x 13 columns]
 ```
 
-Any rows that are not present in the both dataframes is replaced with
-`NaN`. That’s because we are using a default argument `join='outer'`
+If we scroll to the right we can see any rows that are not present in
+both dataframes are replaced with `NaN`. That’s because we are using a
+default argument `join='outer'`.
 
 Notes: Script here
 
@@ -351,18 +354,18 @@ Notes: Script here
 
 ---
 
-## The Join argument
+## The Join Argument
 
 Ok so what does `join` do then? `pd.concat()` take a specific argument
 called `join` that can take the values `inner` or `outer`.
 
-  - `inner`: inner join will returns only the rows index values that are
-    present in both the tables.
-  - `outer`: outer join will return not only the rows that are present
-    in both tables but also the rows in both tables that are unmatched.
+  - `inner`: Will return only the rows index values that are present in
+    both the tables.
+  - `outer`: Will return not only the rows that are present in both
+    tables but also the rows in both tables that are unmatched.
 
-Notice now when I do the same join with `candy` and `slice_of_candy2`
-but this time specifying `join='inner`.
+Notice when I do the same join with `candy` and `slice_of_candy2` but
+this time specifying `join='inner`.
 
 ``` python
 pd.concat([candy, slice_of_candy2], axis=1, join='inner')
@@ -395,9 +398,9 @@ Notes: Script here
 
 One key thing to remember that if you want to save the new dataframe,
 don’t forget to assign your new dataframe to an object name. We did not
-do it in this section since we didn’t need need the new dataframes
-again\! You’ll likely want to reuse your new dataframe unlike us so
-don’t foget to save the new product\!
+do it in this section since we didn’t need the new dataframes again\!
+You’ll likely want to reuse your new dataframe unlike us so don’t forget
+to save the new product\!
 
 Notes: Script here
 

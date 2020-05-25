@@ -58,8 +58,8 @@ Notes: Script here
 
 ---
 
-We discussed concatenation in the last section and it covers quite a number of things so what would we need a second verb for? 
-<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.merge.html" target="_blank">`.merge()`</a> gives more joining options and unlike `pd.concat()`, where we identify like rows purely on the index labels,  `merge()` can select which column to use as the identifer in each dataframe. 
+We discussed concatenation in the last section and it covers several things so what would we need a second verb for? 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.merge.html" target="_blank">`.merge()`</a> gives more joining options and unlike `pd.concat()`, where we identify alike rows purely on the index labels,  `.merge()` can select which column to use as the identifier in each dataframe. 
 
 
 Notes: Script here
@@ -72,16 +72,16 @@ Notes: Script here
 
 ## Column Identifier  
 
-`.merge()` give mores versatility when assigning columns to act as identifiers. For examples, we can use the index on one dataframe and a column label on the other, indexes from both dataframes or no indexes at all!
+`.merge()` give more versatility when assigning columns to act as connect between the dataframes.  For example, we can use the index on one dataframe and a column label on the other, indexes from both dataframes or no indexes at all to make a connection between the two dataframes. 
 
-Let bring back the candybar dataset to explain this concept further. 
+Let bring back the candy bar dataset to explain this concept further. 
 
 ```{python}
 candy = pd.read_csv('candybars.csv', index_col=0)
 candy.head()
 ```
 
-Candy clearly has an index label of `name` which has unique candy bar names. 
+`Candy` has an index label of `name` which has unique candy bar names. 
 
 Notes: Script here
 <html>
@@ -91,16 +91,16 @@ Notes: Script here
 
 ---
 
-With the next dataset, we load it without assigning an index.
+Let's load in the next dataset.
 
 ```{python}
-candy2m = pd.read_csv('candybars_merge.csv')
+candy2m = pd.read_csv('candybars_merge.csv', index_col=0)
 candy2m
 ```
 
  This dataframe has new columns and three new rows not in the `candy` dataframe (`Kinder Bueno`, `5th Avenue`, `Crunch`)
- The column name that identifies the rows is named `chocolate_bar` something quite different than `name` index from `candy`. 
- If we were to use `pd.concat()`  to join `candy` and `candy2m` it would be a little challenging, however `.merge()` makes this a little easier for us.  
+ The column name that identifies the rows is named `chocolate_bar`, something quite different than `name` index from `candy`.   
+ If we were to use `pd.concat()` to join `candy` and `candy2m` it would be a little challenging, however `.merge()` makes this a little easier for us.  
 
 Notes: Script here
 <html>
@@ -111,16 +111,16 @@ Notes: Script here
 ---
 
 When we use merge it's quite different than `pd.concat()`. 
-First we decide which dataframe will be our left dataframe by implementing the merge verb on the selected df. 
+First we decide which dataframe will be our left dataframe by implementing the merge verb on the selected dataframe. We are going to choose `candy` as our left dataframe.
 
 ```python
 candy.merge(...)
 ```
 
-Next we specify the right dataframe as the first argument in `.merge()`
+Next, we specify the right dataframe as the first argument in `.merge()`. In our case, thats `candy2m`.
 
 ```python
-candy.merge(candy2m)
+candy.merge(candy2m, ...)
 ```
 
 The last step, which is the bulk of the work, is specifying the arguments. 
@@ -136,9 +136,10 @@ Notes: Script here
 
 ## Key Columns
 
-Unlike `pd.concat()`, where dataframes are joined on common indexes, `.merge()` needs arguments that identifies a common **key** column. This is a column present in both dataframes which contain common values. Key columns can be an index, a regular column or a combination of both. 
+Unlike `pd.concat()`, where dataframes are joined on common indexes, `.merge()` needs arguments that identify a common **key** column.  This is a column present in both dataframes which contain common values.  Key columns can be an index, a regular column, or a combination of both.     
+
 For example:  
-Dataframe A can have the index label `cereal` and Dataframe B could have a column (that is not the index) labelled `product_name` that both share cereal names. We can join these two dataframes together even though Dataframe B has a different index. 
+Dataframe A can have the index label `cereal` and Dataframe B could have a column (that is not the index) labeled `product_name` that both share cereal names.  We can join these two dataframes together even though Dataframe B has a different index. 
 
 To choose our key columns, we use the following arguments:    
 
@@ -159,14 +160,14 @@ Notes: Script here
 
 ---
 
-In this example we are using, our left dataframe identifying key column is the index labeled `name` and the right dataframe's identifying column is `chocolate_bar`.
+In this example, our left dataframe key column is the index labeled `name` and the right dataframe's key column is `chocolate_bar`.
 
 ```{python}
 candy.merge(candy2m, left_index=True, right_on='chocolate_bar')
 ```
 
-Great! we've combined the 2 dataframes horozontally (in the future we will likely will want to rename `chocolate_bar` and assign it as an index again).
-This join used the default `inner` join, which returns only the rows present in both dataframes. We can change that with the argument `how`.
+Great! we've combined the 2 dataframes horizontally (in the future we will likely want to rename `chocolate_bar` and assign it as an index again).
+This join uses the default `inner` join, which returns only the rows present in both dataframes.  We can change that with the argument `how`.
 
 
 Notes: Script here
@@ -181,7 +182,7 @@ Notes: Script here
 
 We talked about `inner` and `outer` joins from the last section but we have 2 more joins to discuss:      
 
-- `left`: Will only output the rows that are in the left dataframe and if they are missing from the right dataframe, `NaN` values will occur. 
+- `left`: This will only output the rows that are in the left dataframe and if they are missing from the right dataframe, `NaN` values will occur. 
 
 
 ```{python}
@@ -215,14 +216,14 @@ Notes: Script here
 
 ## indicator
 
-If we want to do an outer join and show all the possible rows from both dataframes. a useful argument is `indicator`. 
+If we want to do an outer join and show all the possible rows from both dataframes there is  a useful argument called `indicator`. 
 `indicator` makes a new column name `_merge` and informs us from which dataframe the row originated from. 
 
 ```{python}
 candy.merge(candy2m, left_index=True, right_on='chocolate_bar', how='outer', indicator=True)
 ```
 
-Here we can see three possible values `left_only`, `right_only` or `both` which informs us if the row came from the left daframe, the right dataframe or from both dataframes.
+Here we can see three possible values `left_only`, `right_only` or `both` which informs us if the row came from the left dataframe, the right dataframe or if the row index label is shared between both dataframes.
 
 Notes: Script here
 <html>

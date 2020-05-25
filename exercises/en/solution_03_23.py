@@ -9,4 +9,9 @@ lego_colors = pd.read_csv('data/lego-colors.csv', index_col=0)
 # Make sure to set the argument indicator to True
 # Name the new dataframe lego_tower
 
-lego_tower = lego_inventory.merge(lego_colors, left_on='color_id', right_index=True,  how='outer', indicator=True)
+lego_tower = (lego_inventory.merge(lego_colors, 
+                                  left_on='color_id', 
+                                  right_index=True, 
+                                  how='outer', 
+                                  indicator=True)
+             )

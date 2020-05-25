@@ -57,7 +57,7 @@ Notes: Script here
 
 ---
 
-In the last section we discussed how `pandas` provides 2 functions for reshaping data; <a href="https://pandas.pydata.org/docs/reference/api/pandas.melt.html" target="_blank">`.melt()`</a>  and <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.pivot.html" target="_blank">`.pivot()`</a> . 
+In the last section we discussed how `pandas` provides 2 functions for reshaping data; <a href="https://pandas.pydata.org/docs/reference/api/pandas.melt.html" target="_blank">`.melt()`</a> and <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.pivot.html" target="_blank">`.pivot()`</a> . 
 We are going to spend this next section discussing `.melt()` which is simply the reverse transformation of `.pivot()`. 
 
 
@@ -78,20 +78,21 @@ Notes: Script here
 
 ## Melt
 
-Similarly to`.pivot()`, `.melt()` can be used in situations where our data may not meet criterion #2: _Each variable is a single column_.
+Similarly to `.pivot()`, `.melt()` can be used in situations where our data may not meet criterion #2: _Each variable is a single column_.
 
-It can be used convert values that have been put into their own dataframe, back into a single column 
+Let's take some time to fully understand the arguments this verb uses.  
 
-Let's take some time to fully understand the arguments this verb needs to run. 
-
-  ```
-  df.melt(id_vars=['indentifier-columns'], value_vars=['variable-value1', 'variable-value2'], var_name="new-column-name-labels", value_name="new-column-name-values")
+  ```python
+  df.melt(id_vars=['identifier columns'],
+          value_vars=['variable value1', 'variable value2'],
+          var_name="new column name labels",
+          value_name="new column name values")
   ```
   
   - `df` to express with dataframe we want to melt
   - `id_vars` indicates the identifier columns of the dataframe.  
-  - `value_vars` are columns that exists but that we want to create a single column from with the labels as the values.
-  - `var_name` is the name of the the new column that will contain the `value_vars` column labels as values.
+  - `value_vars` are columns that exist but that we want to create a single column from with the labels as the values.
+  - `var_name` is the name of the new column that will contain the `value_vars` column labels as values.
   - `value_name` is the name of the new column that will contain the values of the `value_vars` columns. 
 
 
@@ -115,7 +116,7 @@ Notes: Script here
 
 ---
 
-`.melt()` is the oposite transformation of `.pivot()`. In the last section we saw our cereal dataset widen when we pivoted the dataframe, however melt is the verb if we wanted to reverse that. 
+`.melt()` is the opposite transformation of `.pivot()`.  In the last section we saw our cereal dataset widen when we pivoted the dataframe, however, melting elongates our dataframe. 
 
 
 <center><img src='/module3/piv_melt.png'></center>
@@ -129,13 +130,13 @@ Notes: Script here
 
 ---
 
-Let's sweeten this section up a bit and practice using `.melt()` with our candybar dataset.  
+Let's sweeten this section up a bit and practice using `.melt()` with our candy bar dataset.  
  
 ```{python}
 candy
 ```
 
-We can see there are 25 rows in our dataframe. There are 2 columns for "chocolate type"; `white_chocolate` and `chocolate`. Maybe for our analysis a single column called `chocolate_type` is better suited. 
+We can see there are 25 rows in our dataframe.  There are 2 columns for "chocolate type"; `white_chocolate` and `chocolate`.  Maybe for our analysis a single column called `chocolate_type` is better suited. 
 
 Notes: Script here
 <html>
@@ -145,18 +146,22 @@ Notes: Script here
 
 ---
 
-To transform this and obtain our new `chocolate_type` column, we would specify the following arguments. 
-- to keep all our other columns we need to specify the all the columns we wish to remain in the dataframe unchanged in the `id_vars` argument. this translates to 
+To transform this and obtain our new `chocolate_type` column, we would specify the following arguments:   
+
+- to keep all our other columns, we need to specify them in the `id_vars` argument. 
+
+```python 
+id_vars=['name', 'weight', 'peanuts', 'caramel',
+        'nougat', 'cookie_wafer_rice', 'coconut',
+        'multi', 'available_canada_america'] 
 ```
-id_vars=['name', 'weight', 'peanuts', 'caramel', 'nougat', 'cookie_wafer_rice', 'coconut', 'multi', 'available_canada_america'] 
-```
-- The columns we are converting to a single one are named `chocolate` and `white_chocolate` resulting in our `value_vars` .
-- We name our new column `chocolate_type` which is the value we assign to the `var_name` argument.
-- The values within those chocolate columns will go into a new column we are going to name `present`hence ` value_name='present'`
+- The columns we are converting to a single one are named `chocolate` and `white_chocolate` resulting in our `value_vars`.
+- We name our new column `chocolate_type`, which we assign to the `var_name` argument.
+- The values within those chocolate columns will go into a new column named `present` therefore `value_name='present'`.
 
 Just like with `.pivot()`, we must reset our index before doing any type of transformation. 
 
-(Just like any other dataframe, if we want to keep the changes, makes sure to assign it to an object)
+(And since we want to keep the changes, we makes sure to assign it to an object)
 
 ```python
 candy_melt = (candy.reset_index()
@@ -166,7 +171,7 @@ candy_melt = (candy.reset_index()
                         value_vars=['chocolate', 'white_chocolate'], 
                         var_name='chocolate_type', 
                         value_name='present')
-)
+              )
 ```
 
 Notes: Script here
@@ -189,7 +194,7 @@ melted_candy = (candy.reset_index()
 melted_candy
 ```
  
-We havde 50 rows in this new dataframe which makes sense since we now have 2 chocolate types for each candy bar ( 25 candy bars * 2 chocolate types = 50 rows).
+We have 50 rows in this new dataframe which makes sense since we now have 2 chocolate types for each candy bar ( 25 candy bars * 2 chocolate types = 50 rows).
 
 Notes: Script here
 <html>
@@ -199,10 +204,11 @@ Notes: Script here
 
 ---
 
-To finish things off lets reassign our index back the cereal name using `.set_index('name')`
+To finish things off let's reassign our index back the cereal name using `.set_index('name')`
 
 ```{python}
 melted_candy = melted_candy.set_index('name')
+melted_candy
 ```
 
 Perfect! 
@@ -220,5 +226,4 @@ Notes: Script here
 Notes: Script here
 <html>
 <audio controls >
-  <source src="/placeholder_audio.mp3" />
-  
+  <source src="/placeholder_audio.mp3" />  

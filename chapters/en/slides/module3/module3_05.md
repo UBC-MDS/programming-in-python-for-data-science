@@ -52,26 +52,26 @@ Notes: Script here
 ## Pivot
 
 `.pivot()` can be used in situations where our data may not meet
-criterion \#2: \_ Each variable is a single column\_.
+criterion \#2: *Each variable is a single column*.
 
-It can be used to elongate the dataframe: it convert variables to their
-own columns that were previously being stored in a single column.
+It can be used to widen the dataframe by converting the variables to
+their own columns that were previously being stored in a single column.
 
 The code for this verb takes quite a few arguments that can be a bit
-tricky so we are going to go through it.
+tricky to remember so we are going to go through it.
 
 ``` python
-df.pivot(index=['index-label'], columns='column-name', values='new_colum-name')
+df.pivot(index=['index label'], columns='column name', values='new column name')
 ```
 
-  - `df` to express with dataframe we want to pivot
-  - `index` is going to be use to make the new dataframe’s index.
-  - `columns` is the column that currently exists but that we want to
+  - `df`: The dataframe we want to pivot.
+  - `index`: Used to make the new dataframe’s index.
+  - `columns`: The column that currently exists but that we want to
     create new columns labels from. Each unique value in this column
     will become a new column label.
-  - `values` is the name of the column that currently exists but that
-    contains the cell values we want. These values will be display in
-    the respective newly created columns.
+  - `values`: The name of the column that currently exists but that
+    contains the cell values we want to relocate to new columns. These
+    values will be displayed in the respective newly created columns.
 
 Notes: Script here
 
@@ -87,13 +87,18 @@ Notes: Script here
 
 ---
 
-We must take care with the `index` argument when transforming
-dataframes. This argument will only accept column labels and not column
-index labels. Before we do any type of transformation, it’s a good idea
-to reset and remove and labels an an index.  
-This can be done with `.reset_index()` This converts the index to a
-regular column. On our trusty cereal dataset, we see the name column as
-our index and we can reset it by calling `.reset_index()`
+## Resetting the Index
+
+We must take extra precautions with the `index` argument when
+transforming dataframes. This argument will only accept column labels
+and not column index labels.
+
+Before we do any type of transformation, it’s a good idea to reset and
+remove and labels an index. This can be done with `.reset_index()` which
+converts the index to a regular column.
+
+On our cereal dataset, we see `name` as the index and we can reset it by
+calling `.reset_index()`.
 
 ``` python
 cereal.head()
@@ -136,14 +141,14 @@ Notes: Script here
 
 ---
 
-The process of pivoting and it’s argument can be explained well using
-the animation made by
+The process of pivoting can be explained using the animation made by
 <a href="https://github.com/apreshill/teachthat" target="_blank"> Alison
-Presmanes Hill</a>
+Presmanes Hill</a>. It shows exactly the relocation of values, when a
+dataframe undergoes a pivot transformation.
 
 <center>
 
-<img src='/module3/pivot_py.gif' width="600">
+<img src='/module3/pivot_py.gif' width="850">
 
 </center>
 
@@ -161,14 +166,14 @@ Notes: Script here
 
 ---
 
-Or if we wanted to use our cereal dataframe as an example, the diagram
-below shows the spreading of column `nutrition` into 2 columns named
-`calories` and `protein` which were the 2 values contained in the
-`nutrition` column.
+We can do the same thing for our cereal dataframe as an example. The
+diagram below shows the column `nutrition` being spread into 2 columns
+named `calories` and `protein` which were the two unique values
+contained in the column.
 
 <center>
 
-<img src='/module3/pivot_cereal.png' width="600">
+<img src='/module3/pivot_cereal.png' width="850">
 
 </center>
 
@@ -186,8 +191,8 @@ Notes: Script here
 
 ---
 
-Let’s try an example. Our cereal dataframe has information on 77
-different cereals,
+Let’s attempt this with code.  
+This cereal dataframe has information on 77 different cereals:
 
 ``` python
 cereal
@@ -251,8 +256,8 @@ Wheaties Honey Gold   G  Cold    1     200    1.0   16.0      60        25      
 
 We can see there are 231 rows and the `nutrition` column is made up of 3
 variables; `protein`, `calories` and `sugar`. That means there are 3
-rows for each of the 77 cereals. This explains why this untidy dataframe
-contains 231 rows (77 cereals \* 3 variables = 231 rows).
+rows for each of the 77 kinds of cereal which explains the 231 rows (77
+kinds of cereal \* 3 variables = 231 rows).
 
 Notes: Script here
 
@@ -270,13 +275,13 @@ Notes: Script here
 
 To transform this into tidy data we would specify the following
 arguments.  
-\- Indicate `index` as the `name` column.  
+\- Set `index` as the `name` column.  
 \- Target the column `nutrition` with the values contained as new
 columns labels.  
 \- Specify `measure` as the values associated with each of the new
 columns.
 
-Also we can’t forget to reset the index\!  
+Also, we can’t forget to reset the index\!  
 (Just like any other dataframe, if we want to keep the changes, makes
 sure to assign it to an object)
 
@@ -319,6 +324,26 @@ Notes: Script here
 
 ---
 
+Can you see the difference?
+
+``` python
+cereal_long.head()
+```
+
+```out
+                  mfr  type  fat  sodium  fiber  carbo  potass  vitamins  shelf  weight  cups     rating nutrition  measure
+name                                                                                                                       
+100% Bran           N  Cold    1     130   10.0    5.0     280        25      3     1.0  0.33  68.402973   protein        4
+100% Bran           N  Cold    1     130   10.0    5.0     280        25      3     1.0  0.33  68.402973  calories       70
+100% Bran           N  Cold    1     130   10.0    5.0     280        25      3     1.0  0.33  68.402973    sugars        6
+100% Natural Bran   Q  Cold    5      15    2.0    8.0     135         0      3     1.0  1.00  33.983679   protein        3
+100% Natural Bran   Q  Cold    5      15    2.0    8.0     135         0      3     1.0  1.00  33.983679  calories      120
+```
+
+``` python
+tidy_pivot.head()
+```
+
 ```out
 nutrition                  calories  protein  sugars
 name                                                
@@ -327,21 +352,14 @@ name
 All-Bran                         70        4       5
 All-Bran with Extra Fiber        50        4       0
 Almond Delight                  110        2       8
-...                             ...      ...     ...
-Triples                         110        2       3
-Trix                            110        1      12
-Wheat Chex                      100        3       3
-Wheaties                        100        3       3
-Wheaties Honey Gold             110        2       8
-
-[77 rows x 3 columns]
 ```
 
 We are now back to 77 rows and it looks like we’ve tidied our data up\!
-There appears to be a problem though. `pivot` works well when we are
-only concerned with the columns we are pivoting but as we can see we
-lost all our other columns in the dataset. There is a solution for this
-and it’s called `.pivot_table()`.
+There appears to be a problem though. `.pivot()` works well when we are
+only concerned with the columns we are pivoting but as we can see, we
+lost all our other columns in the dataset like `type`, `fat` and
+`fibre`.  
+There is a solution for this and it’s called `.pivot_table()`.
 
 Notes: Script here
 
@@ -357,17 +375,16 @@ Notes: Script here
 
 ---
 
-## Pivot\_table
+## Pivot\_table()
 
-`.pivot_table()` works with multiple indexes and duplicate values. That
-just means we can keep all the columns that we are not pivoting. Let’s
-attempt at fixing our untidy data again but keeping all our columns. The
-only problem is after we pivot we want to reset our index to avoid any
-indexing confusion.
+`.pivot_table()` works with multiple indexes (we will take about this
+shortly). That just means we can keep all the columns that we are not
+pivoting. Let’s attempt fixing our untidy data again but this time,
+keeping all our columns.
 
 ``` python
 tidy_pivot = (cereal_long.reset_index()
-            .pivot_table(index=['name','mfr', 'type','fat',
+            .pivot_table(index=['name','mfr', 'type', 'fat',
                                 'sodium', 'fiber', 'carbo', 
                                 'potass', 'vitamins', 'shelf',
                                 'weight', 'cups', 'rating'],
@@ -386,6 +403,9 @@ nutrition                       name mfr  type  fat  sodium  fiber  carbo  potas
 4                     Almond Delight   R  Cold    2     200    1.0   14.0       1        25      3     1.0  0.75  34.384843       110        2       8
 ```
 
+After we pivot, we have multiple column indexes which we should reset to
+avoid any confusion.
+
 Notes: Script here
 
 <html>
@@ -400,23 +420,22 @@ Notes: Script here
 
 ---
 
-Look’s like we are back to fully tidied data with all the columns. We
-just need to reassign our index back the cereal name using
-`.set_index('name')`
+We have to `.reset_index()` and then reassign a single index such as
+`name` using `.set_index()`
 
 ``` python
-tidy_pivot = tidy_pivot.set_index('name')
+tidy_pivot = tidy_pivot.reset_index().set_index('name')
 tidy_pivot.head()
 ```
 
 ```out
-nutrition                 mfr  type  fat  sodium  fiber  carbo  potass  vitamins  shelf  weight  cups     rating  calories  protein  sugars
-name                                                                                                                                       
-100% Bran                   N  Cold    1     130   10.0    5.0     280        25      3     1.0  0.33  68.402973        70        4       6
-100% Natural Bran           Q  Cold    5      15    2.0    8.0     135         0      3     1.0  1.00  33.983679       120        3       8
-All-Bran                    K  Cold    1     260    9.0    7.0     320        25      3     1.0  0.33  59.425505        70        4       5
-All-Bran with Extra Fiber   K  Cold    0     140   14.0    8.0     330        25      3     1.0  0.50  93.704912        50        4       0
-Almond Delight              R  Cold    2     200    1.0   14.0       1        25      3     1.0  0.75  34.384843       110        2       8
+nutrition                  index mfr  type  fat  sodium  fiber  carbo  potass  vitamins  shelf  weight  cups     rating  calories  protein  sugars
+name                                                                                                                                              
+100% Bran                      0   N  Cold    1     130   10.0    5.0     280        25      3     1.0  0.33  68.402973        70        4       6
+100% Natural Bran              1   Q  Cold    5      15    2.0    8.0     135         0      3     1.0  1.00  33.983679       120        3       8
+All-Bran                       2   K  Cold    1     260    9.0    7.0     320        25      3     1.0  0.33  59.425505        70        4       5
+All-Bran with Extra Fiber      3   K  Cold    0     140   14.0    8.0     330        25      3     1.0  0.50  93.704912        50        4       0
+Almond Delight                 4   R  Cold    2     200    1.0   14.0       1        25      3     1.0  0.75  34.384843       110        2       8
 ```
 
 Perfect\!
