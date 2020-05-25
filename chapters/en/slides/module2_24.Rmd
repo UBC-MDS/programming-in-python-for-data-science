@@ -344,7 +344,7 @@ Notes: Script here
 
 ---
 
-```{python fig.width = 6, fig.height = 4}
+```{python fig.width = 6, fig.height = 4, fig.asp = .62}
 sugar_plot = (df.groupby(by='mfr')
                 .mean()
                 .loc[:,'sugars']
@@ -366,7 +366,7 @@ Notes: Script here
 We've added a title before, so there is nothing new there but adding x and y-axis labels is a little different. We can increase the label font sizes using the argument `fontsize`. In this case, we reference our initial plot and use the verb `.set_ylabel()` and `.set_xlabel()` with the desired axis label as an argument and `fontsize` to assign a desired label size. 
 To avoid unnecessary information that will be returned otherwise, whatever our last verb being used with our plot (named `sugar_plot) has to be reassigned back to the object. If we did this any other way, we would not have the ability to do more transformations on our plot, or we would get additional information with the plot output. 
 
-```{python fig.width = 4, fig.height = 2}
+```{python out.width = "55%", fig.asp = .62}
 sugar_plot = (df.groupby(by='mfr')
                 .mean()
                 .loc[:,'sugars']
@@ -389,7 +389,7 @@ Notes: Script here
 
 In the last plot, we used `.loc[:,'sugars']` to select a single column to the plot, however, we can show multiple mean column values in a single plot by selecting more columns. The columns `fat`, `fiber` and `protein` seem like good choices. 
 
-```{python fig.width = 4, fig.height = 2}
+```{python out.width = "50%"}
 nutrition_plot = (df.groupby(by='mfr')
                     .mean()
                     .loc[:, ['fat', 'fiber', 'protein']]

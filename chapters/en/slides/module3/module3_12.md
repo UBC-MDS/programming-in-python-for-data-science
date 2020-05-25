@@ -22,11 +22,12 @@ Notes: Script here
 <a href="https://dictionary.cambridge.org/dictionary/english/hierarchy" target="_blank">Cambridge
 Dictionary </a> as
 
-*_“a system in which people or things are put at various levels or ranks
-according to their importance”._*
+*_" a system in which people or things are put at various levels or
+ranks according to their importance."_*
 
 This helps explain the concept of ***hierarchical indexing*** which is
-the capability of a dataframe posessing multiple levels of index labels.
+the capability of a dataframe possessing multiple levels of index
+labels.
 
 <center>
 
@@ -48,13 +49,13 @@ Notes: Script here
 
 ---
 
-Multi level indexing allows the possibility of some much more advanced
-data analysis, however, that also can open the door to more complex
+Multi-level indexing allows the possibility of some much more advanced
+data analysis, however, that can also open the door to more complex
 issues and bugs.
 
-We are going keep this as simple and elegant as possible by introducing
-you to the concept and how to transform dataframe with hierarchical
-indexing.
+We are going to keep this as simple and elegant as possible by
+introducing you to the concept and how to transform dataframe with
+hierarchical indexing.
 
 Notes: Script here
 
@@ -70,7 +71,7 @@ Notes: Script here
 
 ---
 
-Believe it or not but you have already seen this concepts when we
+Believe it or not but you have already seen this concept when we
 explained the concept of grouping and aggregating.
 
 ``` python
@@ -91,7 +92,7 @@ R    Cold  Cold      150   90       4   1   3   0    280   95   4.0  0.0  23.0  
 ```
 
 Here you can see that each of the original cereal dataframe columns have
-subcolumns `max` and `min` and that there is a hierarchy of index
+the sub columns `max` and `min` and that there is a hierarchy of index
 labels.
 
 Notes: Script here
@@ -110,17 +111,26 @@ Notes: Script here
 
 ## Setting indexes
 
-In the last section you learned how to set a single index using
-`.set_index()`. Here we are going use the same verb but set `caramel`
-***and*** `name` as the indexes from the candy dataframe. Remember in
+You have already learned how to set a single index using `.set_index()`.
+Here we are going use the same verb but this time set both `caramel`
+***and*** `name` as the indexes for the candy bar dataframe. Remember in
 the last section where we explained that `pandas` doesn’t recognize
 indexes as columns and we needed to `.reset_index()` to makes sure we
-has all the columns in our dataframe? The same applies here, we are
-going to avoid resetting by reading the data without assigning any index
-with the `index_col` argument.
+have all the columns in our dataframe? The same applies here. We should
+first reset the index on our `candy` dataframe.
 
 ``` python
-df = pd.read_csv('candybars.csv')
+candy = candy.reset_index()
+candy.head()
+```
+
+```out
+           name  weight  chocolate  peanuts  caramel  nougat  cookie_wafer_rice  coconut  white_chocolate  multi available_canada_america
+0  Coffee Crisp      50          1        0        0       0                  1        0                0      0                   Canada
+1  Butterfinger     184          1        1        1       0                  0        0                0      0                  America
+2          Skor      39          1        0        1       0                  0        0                0      0                     Both
+3      Smarties      45          1        0        0       0                  0        0                0      1                   Canada
+4          Twix      58          1        0        1       0                  1        0                0      1                     Both
 ```
 
 Notes: Script here
@@ -137,15 +147,15 @@ Notes: Script here
 
 ---
 
-Next we can assign multiple indexes using square brackets within the
-`.set_index()` verb and sort the dataframe according to the index using
-verb `sort_index()`.  
+Next, we can assign multiple indexes using square brackets within
+`.set_index()` and sort the dataframe according to the index using
+`sort_index()`.  
 (`.sort_index()` is similar to `.sort_values()` however now we can sort
 by the index\!)
 
 ``` python
-df2 = df.set_index(['caramel', 'name']).sort_index()
-df2
+candy2 = candy.set_index(['caramel', 'name']).sort_index()
+candy2
 ```
 
 ```out
@@ -180,14 +190,14 @@ Notes: Script here
 
 ---
 
-To get the entire picture, the image belows shows the complete dataset.
+To get the entire picture, the image below shows the complete dataset.
 It almost looks like there are 2 separate dataframes on top of one
-another. The top dataframe containing non-caramel chocolate bars and the
-second dataframe containing caramel filled chocolate bars.
+another. One containing non-caramel chocolate bars and the second
+containing caramel-filled chocolate bars.
 
 <center>
 
-<img src='/module3/candy_index.png' width="400">
+<img src='/module3/candy_index.png' width="600">
 
 </center>
 
@@ -205,14 +215,14 @@ Notes: Script here
 
 ---
 
-Some of you may now be asking “How do we select and slice now?”. The
-answer is just like before but now we specify 2 indexes\! To specify 2
-indexes, we wrap them in parenthesis. Perhaps I wanted the non-caramel
+Some of you may now be wondering “How do we select and slice now?”.  
+The answer is just like before but now we specify 2 indexes\! To specify
+2 indexes, we wrap them in parentheses. Perhaps I wanted the non-caramel
 filled “3 Musketeers” bar. I would use `0` to represent the first index
 of “non-caramel filled” and `3 Musketeers` for the bar name.
 
 ``` python
-df2.loc[(0, '3 Musketeers')]
+candy2.loc[(0, '3 Musketeers')]
 ```
 
 ```out
@@ -243,10 +253,10 @@ Notes: Script here
 ---
 
 This works if I want a specific cell value too. Let’s say I wanted the
-non-caramel filled “3 Musketeers” bar weight.
+non-caramel filled “3 Musketeers” bar’s weight.
 
 ``` python
-df2.loc[(0,'3 Musketeers'), 'weight']
+candy2.loc[(0,'3 Musketeers'), 'weight']
 ```
 
 ```out
@@ -269,14 +279,14 @@ Notes: Script here
 
 ## Stacking
 
-If this organization is no ideal for your analysis you may want to
-*transpose* your data (swap columns to rows or rows to columns). This
-can be done with something called **Stacking**. Stacking is exactly what
-it sounds like, we *stack* values.
+If this dataframe’s organization is not ideal for your analysis you may
+want to *transpose* your data (swap columns to rows or rows to columns).
+This can be done with something called **Stacking**. Stacking is exactly
+what it sounds like, we *stack* our values.
 
 ``` python
-stacked = df2.stack()
-stacked
+stacked_df = candy2.stack()
+stacked_df
 ```
 
 ```out
@@ -295,8 +305,8 @@ caramel  name
 Length: 225, dtype: object
 ```
 
-This dataframe now all the columns available in a single column and our
-dataframe has elongated from 25 rows to 225 rows.
+This dataframe now has all the columns available in a single column and
+our dataframe has elongated from 25 rows to 225 rows.
 
 Notes: Script here
 
@@ -314,8 +324,10 @@ Notes: Script here
 
 ## Unstacking
 
+To unstack our data, we simply used `.unstack()`
+
 ``` python
-stacked.unstack()
+stacked_df.unstack()
 ```
 
 ```out
@@ -350,11 +362,11 @@ Notes: Script here
 
 ---
 
-Just for fun, let’s bring back the example we used of hierarchical
-indexing involving our groupby cereal aggregated dataframe.
+Let’s bring back our groupby cereal aggregated dataframe.
 
 ``` python
-cereal.groupby('mfr').agg(['max', 'min'])
+max_min_df = cereal.groupby('mfr').agg(['max', 'min'])
+max_min_df
 ```
 
 ```out
@@ -388,7 +400,27 @@ The dataframe is currently unstacked but we can stack the `max` and
 `min` values, to elongate the dataframe.
 
 ``` python
-x = cereal.groupby('mfr').agg(['max', 'min']).stack()
+max_min_df_stacked = max_min_df.stack()
+max_min_df_stacked
+```
+
+```out
+         type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
+mfr                                                                                                                  
+A   max   Hot       100        4    1       0    0.0   16.0       3      95        25      2    1.00  1.00  54.850917
+    min   Hot       100        4    1       0    0.0   16.0       3      95        25      2    1.00  1.00  54.850917
+G   max  Cold       140        6    3     290    4.0   21.0      14     230       100      3    1.50  1.50  51.592193
+    min  Cold       100        1    1     140    0.0   10.5       1      25        25      1    1.00  0.50  19.823573
+K   max  Cold       160        6    3     320   14.0   22.0      15     330       100      3    1.50  1.00  93.704912
+    min  Cold        50        1    0       0    0.0    7.0       0      20        25      1    1.00  0.33  29.924285
+N   max   Hot       100        4    1     130   10.0   21.0       6     280        25      3    1.00  1.00  74.472949
+    min  Cold        70        2    0       0    1.0    5.0       0       1         0      1    0.83  0.33  59.363993
+P   max  Cold       120        3    3     210    6.0   17.0      15     260        25      3    1.33  1.33  53.371007
+    min  Cold        90        1    0      45    0.0   11.0       3      25        25      1    1.00  0.25  28.025765
+Q   max   Hot       120        5    5     220    2.7   14.0      12     135        25      3    1.00  1.00  63.005645
+    min  Cold        50        1    0       0    0.0    1.0       0      15         0      1    0.50  0.50  18.042851
+R   max  Cold       150        4    3     280    4.0   23.0      11     170        25      3    1.00  1.13  49.787445
+    min  Cold        90        1    0      95    0.0   14.0       2       1        25      1    1.00  0.67  34.139765
 ```
 
 This now shows the `max` and `min` values for each manufacturer on top
