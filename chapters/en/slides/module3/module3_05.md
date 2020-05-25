@@ -2,7 +2,7 @@
 type: slides
 ---
 
-# Reshaping using pivot
+# Reshaping Using Pivot
 
 Notes: Script here
 
@@ -57,8 +57,47 @@ criterion \#2: *Each variable is a single column*.
 It can be used to widen the dataframe by converting the variables to
 their own columns that were previously being stored in a single column.
 
+Before we go into detail, let’s introduce the code that converts this
+cereal dataset
+
+``` python
+cereal_long_sample
+```
+
+```out
+                  mfr  type  cups nutrition  measure
+name                                                
+100% Bran           N  Cold  0.33   protein        4
+100% Bran           N  Cold  0.33  calories       70
+100% Bran           N  Cold  0.33    sugars        6
+100% Natural Bran   Q  Cold  1.00   protein        3
+100% Natural Bran   Q  Cold  1.00  calories      120
+100% Natural Bran   Q  Cold  1.00    sugars        8
+All-Bran            K  Cold  0.33   protein        4
+All-Bran            K  Cold  0.33  calories       70
+```
+
+into a wide dataset
+
+``` python
+tidy_pivot = (cereal_long_sample.reset_index()
+            .pivot(index='name', columns='nutrition', values='measure')
+             )
+tidy_pivot
+```
+
+```out
+nutrition          calories  protein  sugars
+name                                        
+100% Bran              70.0      4.0     6.0
+100% Natural Bran     120.0      3.0     8.0
+All-Bran               70.0      4.0     NaN
+```
+
+---
+
 The code for this verb takes quite a few arguments that can be a bit
-tricky to remember so we are going to go through it.
+tricky to remember so we are going to explain each argument.
 
 ``` python
 df.pivot(index=['index label'], columns='column name', values='new column name')
@@ -97,34 +136,34 @@ Before we do any type of transformation, it’s a good idea to reset and
 remove and labels an index. This can be done with `.reset_index()` which
 converts the index to a regular column.
 
-On our cereal dataset, we see `name` as the index and we can reset it by
-calling `.reset_index()`.
+On our example dataset, we see `name` as the index and we can reset it
+by calling `.reset_index()`.
 
 ``` python
-cereal.head()
+cereal_long_sample.head()
 ```
 
 ```out
-                          mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
-name                                                                                                                                       
-100% Bran                   N  Cold        70        4    1     130   10.0    5.0       6     280        25      3     1.0  0.33  68.402973
-100% Natural Bran           Q  Cold       120        3    5      15    2.0    8.0       8     135         0      3     1.0  1.00  33.983679
-All-Bran                    K  Cold        70        4    1     260    9.0    7.0       5     320        25      3     1.0  0.33  59.425505
-All-Bran with Extra Fiber   K  Cold        50        4    0     140   14.0    8.0       0     330        25      3     1.0  0.50  93.704912
-Almond Delight              R  Cold       110        2    2     200    1.0   14.0       8       1        25      3     1.0  0.75  34.384843
+                  mfr  type  cups nutrition  measure
+name                                                
+100% Bran           N  Cold  0.33   protein        4
+100% Bran           N  Cold  0.33  calories       70
+100% Bran           N  Cold  0.33    sugars        6
+100% Natural Bran   Q  Cold  1.00   protein        3
+100% Natural Bran   Q  Cold  1.00  calories      120
 ```
 
 ``` python
-cereal.reset_index().head()
+cereal_long_sample.reset_index().head()
 ```
 
 ```out
-                        name mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
-0                  100% Bran   N  Cold        70        4    1     130   10.0    5.0       6     280        25      3     1.0  0.33  68.402973
-1          100% Natural Bran   Q  Cold       120        3    5      15    2.0    8.0       8     135         0      3     1.0  1.00  33.983679
-2                   All-Bran   K  Cold        70        4    1     260    9.0    7.0       5     320        25      3     1.0  0.33  59.425505
-3  All-Bran with Extra Fiber   K  Cold        50        4    0     140   14.0    8.0       0     330        25      3     1.0  0.50  93.704912
-4             Almond Delight   R  Cold       110        2    2     200    1.0   14.0       8       1        25      3     1.0  0.75  34.384843
+                name mfr  type  cups nutrition  measure
+0          100% Bran   N  Cold  0.33   protein        4
+1          100% Bran   N  Cold  0.33  calories       70
+2          100% Bran   N  Cold  0.33    sugars        6
+3  100% Natural Bran   Q  Cold  1.00   protein        3
+4  100% Natural Bran   Q  Cold  1.00  calories      120
 ```
 
 Notes: Script here
@@ -152,6 +191,9 @@ dataframe undergoes a pivot transformation.
 
 </center>
 
+We see the `var_name` values becoming new columns labels and the
+`var_value` being relocated to it’s respective new column.
+
 Notes: Script here
 
 <html>
@@ -168,8 +210,8 @@ Notes: Script here
 
 We can do the same thing for our cereal dataframe as an example. The
 diagram below shows the column `nutrition` being spread into 2 columns
-named `calories` and `protein` which were the two unique values
-contained in the column.
+named `calories` and `protein` which are the two unique values contained
+in that column.
 
 <center>
 
@@ -191,44 +233,7 @@ Notes: Script here
 
 ---
 
-Let’s attempt this with code.  
-This cereal dataframe has information on 77 different cereals:
-
-``` python
-cereal
-```
-
-```out
-                          mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
-name                                                                                                                                       
-100% Bran                   N  Cold        70        4    1     130   10.0    5.0       6     280        25      3     1.0  0.33  68.402973
-100% Natural Bran           Q  Cold       120        3    5      15    2.0    8.0       8     135         0      3     1.0  1.00  33.983679
-All-Bran                    K  Cold        70        4    1     260    9.0    7.0       5     320        25      3     1.0  0.33  59.425505
-All-Bran with Extra Fiber   K  Cold        50        4    0     140   14.0    8.0       0     330        25      3     1.0  0.50  93.704912
-Almond Delight              R  Cold       110        2    2     200    1.0   14.0       8       1        25      3     1.0  0.75  34.384843
-...                        ..   ...       ...      ...  ...     ...    ...    ...     ...     ...       ...    ...     ...   ...        ...
-Triples                     G  Cold       110        2    1     250    0.0   21.0       3      60        25      3     1.0  0.75  39.106174
-Trix                        G  Cold       110        1    1     140    0.0   13.0      12      25        25      2     1.0  1.00  27.753301
-Wheat Chex                  R  Cold       100        3    1     230    3.0   17.0       3     115        25      1     1.0  0.67  49.787445
-Wheaties                    G  Cold       100        3    1     200    3.0   17.0       3     110        25      1     1.0  1.00  51.592193
-Wheaties Honey Gold         G  Cold       110        2    1     200    1.0   16.0       8      60        25      1     1.0  0.75  36.187559
-
-[77 rows x 15 columns]
-```
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
+Let’s attempt this with code.
 
 Our dataframe that we want to tidy looks like this:
 
@@ -237,21 +242,21 @@ cereal_long
 ```
 
 ```out
-                    mfr  type  fat  sodium  fiber  carbo  potass  vitamins  shelf  weight  cups     rating nutrition  measure
-name                                                                                                                         
-100% Bran             N  Cold    1     130   10.0    5.0     280        25      3     1.0  0.33  68.402973   protein        4
-100% Bran             N  Cold    1     130   10.0    5.0     280        25      3     1.0  0.33  68.402973  calories       70
-100% Bran             N  Cold    1     130   10.0    5.0     280        25      3     1.0  0.33  68.402973    sugars        6
-100% Natural Bran     Q  Cold    5      15    2.0    8.0     135         0      3     1.0  1.00  33.983679   protein        3
-100% Natural Bran     Q  Cold    5      15    2.0    8.0     135         0      3     1.0  1.00  33.983679  calories      120
-...                  ..   ...  ...     ...    ...    ...     ...       ...    ...     ...   ...        ...       ...      ...
-Wheaties              G  Cold    1     200    3.0   17.0     110        25      1     1.0  1.00  51.592193   protein        3
-Wheaties              G  Cold    1     200    3.0   17.0     110        25      1     1.0  1.00  51.592193  calories      100
-Wheaties Honey Gold   G  Cold    1     200    1.0   16.0      60        25      1     1.0  0.75  36.187559  calories      110
-Wheaties Honey Gold   G  Cold    1     200    1.0   16.0      60        25      1     1.0  0.75  36.187559   protein        2
-Wheaties Honey Gold   G  Cold    1     200    1.0   16.0      60        25      1     1.0  0.75  36.187559    sugars        8
+                    mfr  type  weight  cups     rating nutrition  measure
+name                                                                     
+100% Bran             N  Cold     1.0  0.33  68.402973   protein        4
+100% Bran             N  Cold     1.0  0.33  68.402973  calories       70
+100% Bran             N  Cold     1.0  0.33  68.402973    sugars        6
+100% Natural Bran     Q  Cold     1.0  1.00  33.983679   protein        3
+100% Natural Bran     Q  Cold     1.0  1.00  33.983679  calories      120
+...                  ..   ...     ...   ...        ...       ...      ...
+Wheaties              G  Cold     1.0  1.00  51.592193   protein        3
+Wheaties              G  Cold     1.0  1.00  51.592193  calories      100
+Wheaties Honey Gold   G  Cold     1.0  0.75  36.187559  calories      110
+Wheaties Honey Gold   G  Cold     1.0  0.75  36.187559   protein        2
+Wheaties Honey Gold   G  Cold     1.0  0.75  36.187559    sugars        8
 
-[231 rows x 14 columns]
+[231 rows x 7 columns]
 ```
 
 We can see there are 231 rows and the `nutrition` column is made up of 3
@@ -331,13 +336,13 @@ cereal_long.head()
 ```
 
 ```out
-                  mfr  type  fat  sodium  fiber  carbo  potass  vitamins  shelf  weight  cups     rating nutrition  measure
-name                                                                                                                       
-100% Bran           N  Cold    1     130   10.0    5.0     280        25      3     1.0  0.33  68.402973   protein        4
-100% Bran           N  Cold    1     130   10.0    5.0     280        25      3     1.0  0.33  68.402973  calories       70
-100% Bran           N  Cold    1     130   10.0    5.0     280        25      3     1.0  0.33  68.402973    sugars        6
-100% Natural Bran   Q  Cold    5      15    2.0    8.0     135         0      3     1.0  1.00  33.983679   protein        3
-100% Natural Bran   Q  Cold    5      15    2.0    8.0     135         0      3     1.0  1.00  33.983679  calories      120
+                  mfr  type  weight  cups     rating nutrition  measure
+name                                                                   
+100% Bran           N  Cold     1.0  0.33  68.402973   protein        4
+100% Bran           N  Cold     1.0  0.33  68.402973  calories       70
+100% Bran           N  Cold     1.0  0.33  68.402973    sugars        6
+100% Natural Bran   Q  Cold     1.0  1.00  33.983679   protein        3
+100% Natural Bran   Q  Cold     1.0  1.00  33.983679  calories      120
 ```
 
 ``` python
@@ -357,8 +362,8 @@ Almond Delight                  110        2       8
 We are now back to 77 rows and it looks like we’ve tidied our data up\!
 There appears to be a problem though. `.pivot()` works well when we are
 only concerned with the columns we are pivoting but as we can see, we
-lost all our other columns in the dataset like `type`, `fat` and
-`fibre`.  
+lost all our other columns in the dataset like `type`, `weight` and
+`cups`.  
 There is a solution for this and it’s called `.pivot_table()`.
 
 Notes: Script here
@@ -384,9 +389,7 @@ keeping all our columns.
 
 ``` python
 tidy_pivot = (cereal_long.reset_index()
-            .pivot_table(index=['name','mfr', 'type', 'fat',
-                                'sodium', 'fiber', 'carbo', 
-                                'potass', 'vitamins', 'shelf',
+            .pivot_table(index=['name','mfr', 'type',
                                 'weight', 'cups', 'rating'],
                          columns='nutrition', 
                          values='measure').reset_index()
@@ -395,16 +398,17 @@ tidy_pivot.head()
 ```
 
 ```out
-nutrition                       name mfr  type  fat  sodium  fiber  carbo  potass  vitamins  shelf  weight  cups     rating  calories  protein  sugars
-0                          100% Bran   N  Cold    1     130   10.0    5.0     280        25      3     1.0  0.33  68.402973        70        4       6
-1                  100% Natural Bran   Q  Cold    5      15    2.0    8.0     135         0      3     1.0  1.00  33.983679       120        3       8
-2                           All-Bran   K  Cold    1     260    9.0    7.0     320        25      3     1.0  0.33  59.425505        70        4       5
-3          All-Bran with Extra Fiber   K  Cold    0     140   14.0    8.0     330        25      3     1.0  0.50  93.704912        50        4       0
-4                     Almond Delight   R  Cold    2     200    1.0   14.0       1        25      3     1.0  0.75  34.384843       110        2       8
+nutrition                       name mfr  type  weight  cups     rating  calories  protein  sugars
+0                          100% Bran   N  Cold     1.0  0.33  68.402973        70        4       6
+1                  100% Natural Bran   Q  Cold     1.0  1.00  33.983679       120        3       8
+2                           All-Bran   K  Cold     1.0  0.33  59.425505        70        4       5
+3          All-Bran with Extra Fiber   K  Cold     1.0  0.50  93.704912        50        4       0
+4                     Almond Delight   R  Cold     1.0  0.75  34.384843       110        2       8
 ```
 
 After we pivot, we have multiple column indexes which we should reset to
-avoid any confusion.
+avoid any confusion. Don’t worry, we wil talk about multiple indexes in
+this module.
 
 Notes: Script here
 
@@ -420,8 +424,9 @@ Notes: Script here
 
 ---
 
-We have to `.reset_index()` and then reassign a single index such as
-`name` using `.set_index()`
+To get our dataframe back to a structure we are used to, we have to
+`.reset_index()` and then reassign a single index such as `name` using
+`.set_index()`.
 
 ``` python
 tidy_pivot = tidy_pivot.reset_index().set_index('name')
@@ -429,13 +434,13 @@ tidy_pivot.head()
 ```
 
 ```out
-nutrition                  index mfr  type  fat  sodium  fiber  carbo  potass  vitamins  shelf  weight  cups     rating  calories  protein  sugars
-name                                                                                                                                              
-100% Bran                      0   N  Cold    1     130   10.0    5.0     280        25      3     1.0  0.33  68.402973        70        4       6
-100% Natural Bran              1   Q  Cold    5      15    2.0    8.0     135         0      3     1.0  1.00  33.983679       120        3       8
-All-Bran                       2   K  Cold    1     260    9.0    7.0     320        25      3     1.0  0.33  59.425505        70        4       5
-All-Bran with Extra Fiber      3   K  Cold    0     140   14.0    8.0     330        25      3     1.0  0.50  93.704912        50        4       0
-Almond Delight                 4   R  Cold    2     200    1.0   14.0       1        25      3     1.0  0.75  34.384843       110        2       8
+nutrition                  index mfr  type  weight  cups     rating  calories  protein  sugars
+name                                                                                          
+100% Bran                      0   N  Cold     1.0  0.33  68.402973        70        4       6
+100% Natural Bran              1   Q  Cold     1.0  1.00  33.983679       120        3       8
+All-Bran                       2   K  Cold     1.0  0.33  59.425505        70        4       5
+All-Bran with Extra Fiber      3   K  Cold     1.0  0.50  93.704912        50        4       0
+Almond Delight                 4   R  Cold     1.0  0.75  34.384843       110        2       8
 ```
 
 Perfect\!

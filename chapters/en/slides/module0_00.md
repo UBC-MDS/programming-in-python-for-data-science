@@ -34,8 +34,6 @@ Notes:
 <audio controls >
   <source src="/placeholder_audio.mp3" />
 </audio></html>
-
-
  
 ---
 # Let's Learn Python for Data Science  

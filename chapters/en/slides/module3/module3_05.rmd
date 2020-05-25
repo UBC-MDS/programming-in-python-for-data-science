@@ -45,11 +45,25 @@ df = pd.read_csv('cereal.csv', index_col=0)
 cereal = pd.read_csv('cereal.csv', index_col=0)
 ```
 
+```{python include=FALSE}
+cereal = pd.read_csv('cereal.csv', index_col=0)
+again = (cereal.reset_index()
+               .melt(id_vars=['name','mfr', 'type', 'weight',
+                              'cups', 'rating'], 
+                     value_vars=['protein', 'calories', 'sugars'], 
+                     var_name="nutrition", 
+                     value_name="measure").set_index('name')
+                     )
+again
+cereal_long = again.sort_index()
+
+cereal_long_sample = cereal_long.loc[:, ['mfr', 'type', 'cups', 'nutrition', 'measure']].head(8)
+```
 
 
 type: slides
 
-# Reshaping using pivot
+# Reshaping with Pivot
 
 Notes: Script here
 <html>
@@ -82,7 +96,24 @@ Notes: Script here
 
 It can be used to widen the dataframe by converting the variables to their own columns that were previously being stored in a single column.
 
-The code for this verb takes quite a few arguments that can be a bit tricky to remember so we are going to go through it. 
+Before we go into detail, let's introduce the code that converts this cereal dataset 
+
+```{python}
+cereal_long_sample
+```
+
+into a wide dataset
+
+```{python}
+tidy_pivot = (cereal_long_sample.reset_index()
+            .pivot(index='name', columns='nutrition', values='measure')
+             )
+tidy_pivot
+```
+
+---
+
+The code for this verb takes quite a few arguments that can be a bit tricky to remember so we are going to explain each argument. 
 
   ```python
   df.pivot(index=['index label'], columns='column name', values='new column name')
@@ -108,14 +139,14 @@ We must take extra precautions with the `index` argument when transforming dataf
 
 Before we do any type of transformation, it's a good idea to reset and remove and labels an index. This can be done with `.reset_index()` which converts the index to a regular column. 
 
- On our cereal dataset, we see `name` as the index and we can reset it by calling `.reset_index()`.
+ On our example dataset, we see `name` as the index and we can reset it by calling `.reset_index()`.
  
 ```{python}
-cereal.head()
+cereal_long_sample.head()
 ```
 
 ```{python}
-cereal.reset_index().head()
+cereal_long_sample.reset_index().head()
 ```
 
 
@@ -131,6 +162,8 @@ The process of pivoting can be explained using the animation made by  <a href="h
 
 <center><img src='/module3/pivot_py.gif' width="850"></center>
 
+We see the `var_name` values becoming new columns labels and the `var_value` being relocated to it's respective new column. 
+
 Notes: Script here
 <html>
 <audio controls >
@@ -139,10 +172,12 @@ Notes: Script here
 
 ---
 
-We can do the same thing for our cereal dataframe as an example.  The diagram below shows the column `nutrition` being spread into 2 columns named `calories` and `protein` which were the two unique values contained in the column. 
+We can do the same thing for our cereal dataframe as an example.  The diagram below shows the column `nutrition` being spread into 2 columns named `calories` and `protein` which are the two unique values contained in that column. 
 
 
 <center><img src='/module3/pivot_cereal.png' width="850"></center>
+
+
 
 
 Notes: Script here
@@ -154,33 +189,6 @@ Notes: Script here
 ---
 
 Let's attempt this with code.  
-This cereal dataframe has information on 77 different cereals:
-```{python include=FALSE}
-cereal = pd.read_csv('cereal.csv', index_col=0)
-again = (cereal.reset_index()
-               .melt(id_vars=['name','mfr', 'type', 'fat', 'sodium',
-                              'fiber', 'carbo', 'potass', 
-                              'vitamins', 'shelf', 'weight',
-                              'cups', 'rating'], 
-                     value_vars=['protein', 'calories', 'sugars'], 
-                     var_name="nutrition", 
-                     value_name="measure").set_index('name')
-                     )
-again
-cereal_long = again.sort_index()
-```
-
-```{python}
-cereal
-```
-
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
-
----
 
 Our dataframe that we want to tidy looks like this:
 ```{python}
@@ -233,7 +241,7 @@ tidy_pivot.head()
 ```
  
 We are now back to 77 rows and it looks like we've tidied our data up!  There appears to be a problem though.
-`.pivot()` works well when we are only concerned with the columns we are pivoting but as we can see, we lost all our other columns in the dataset like `type`, `fat` and `fibre`.        
+`.pivot()` works well when we are only concerned with the columns we are pivoting but as we can see, we lost all our other columns in the dataset like `type`, `weight` and `cups`.        
 There is a solution for this and it's called `.pivot_table()`.
 
 Notes: Script here
@@ -252,9 +260,7 @@ Let's attempt fixing our untidy data again but this time, keeping all our column
 
 ```{python}
 tidy_pivot = (cereal_long.reset_index()
-            .pivot_table(index=['name','mfr', 'type', 'fat',
-                                'sodium', 'fiber', 'carbo', 
-                                'potass', 'vitamins', 'shelf',
+            .pivot_table(index=['name','mfr', 'type',
                                 'weight', 'cups', 'rating'],
                          columns='nutrition', 
                          values='measure').reset_index()
@@ -262,7 +268,7 @@ tidy_pivot = (cereal_long.reset_index()
 tidy_pivot.head()
 ```
 
-After we pivot, we have multiple column indexes which we should reset to avoid any confusion.
+After we pivot, we have multiple column indexes which we should reset to avoid any confusion. Don't worry,  we wil talk about multiple indexes in this module. 
 
 Notes: Script here
 <html>
@@ -272,7 +278,7 @@ Notes: Script here
 
 ---
 
-We have to `.reset_index()` and then reassign a single index such as `name` using `.set_index()`
+To get our dataframe back to a structure we are used to, we have to `.reset_index()` and then reassign a single index such as `name` using `.set_index()`.
 
 ```{python}
 tidy_pivot = tidy_pivot.reset_index().set_index('name')

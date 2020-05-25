@@ -60,8 +60,8 @@ Notes: Script here
 Up until this moment, we have been working with a single dataframe.  Single dataframes can be great to see all your data in one convenient place, however, this is less convenient when it comes to storage space.  Many companies split their data into multiple tables and join them together depending on what columns they need for their analysis.  
 There are 2 different verbs we use for joining dataframes together: 
 
-- <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.concat.html" target="_blank">`pd.concat()`</a> -  A way of joining dataframes across rows or columns. 
-- <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.merge.html" target="_blank">`.merge()`</a> - This approach can only combine data on common columns or indices but have different types of joining methods.  We will look into this in the next section.
+- <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.concat.html" target="_blank">`pd.concat()`</a>: A way of joining dataframes across rows or columns. 
+- <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.merge.html" target="_blank">`.merge()`</a>: This approach can only combine data on common columns or indices but have different types of joining methods.  We will look into this in the next section.
 
 
 
@@ -90,10 +90,10 @@ Notes: Script here
 
 ---
 
-For the next couple of examples, we are going to look at our candy bars dataframe.
+For the next couple of examples, we are going to look at concatenating with our a subset of our original candy bars dataframe.
 
 ```{python}
-candy = pd.read_csv('candybars.csv', index_col=0)
+candy = pd.read_csv('candybars.csv', index_col=0).loc[:, 'weight':'nougat']
 candy
 ```
 
@@ -108,7 +108,7 @@ Notes: Script here
 
 ## Horizontal Concatenation
 
-`candybars2.csv` has new nutritional information about each candy bar. 
+`candybars2.csv` is a new dataframe that has additional nutritional information about each candy bar. 
 
 ```{python}
 candy2 = pd.read_csv('candybars2.csv', index_col=0)
@@ -127,14 +127,14 @@ Notes: Script here
 
 ---
 
-We can combine these two dataframes using `pd.concat()` but we need to clarify which axes to combine. 
+We can combine these two dataframes using `pd.concat()` but we need to clarify on which axis to combine. 
 We use square brackets around the dataframes we wish to combine and since we are combining horizontally we need to use the argument `axis=1`. 
 
 ```{python}
 pd.concat([candy, candy2], axis=1)
 ```
 
-This results in the same 25 rows but now we have 13 columns. 
+This results in the same 25 rows but now we have 8 columns. 
 
 Notes: Script here
 <html>
@@ -146,7 +146,7 @@ Notes: Script here
 
 ## Vertical Concatenation
 
-Our second example uses new dataset`candybars_more.csv` which has 3 additional candy bars that we wish to add to the original `candy` dataframe. 
+The new dataset `candybars_more.csv` has 3 additional candy bars that we wish to add to the original `candy` dataframe. 
 
 ```{python}
 candy_more = pd.read_csv('candybars_more.csv', index_col=0)
@@ -169,7 +169,7 @@ When we want to vertically combine dataframes, we use the argument `axis=0` with
 pd.concat([candy, candy_more], axis=0)
 ```
 
-After combining them now have 28 rows and the same 10 columns that all align correctly. 
+After combining them now have 28 rows and the same 5 columns that all align correctly. 
 
 
 Notes: Script here
@@ -183,11 +183,11 @@ Notes: Script here
 ## Concatenating incomplete dataframes.
 
 `pd.concat()` is not limited to complete dataframes.  We can still add dataframes together that do not have all the same rows or columns.      
-Let's take a selection of our `candy2` dataframe that we used to combine horizontally with `candy` and save it as `slice_of_candy2`.
+Let's look at `snacksize_candybars.csv`. This contains only a few of the candy bars from `candy` and three new ones named `Kinder Bueno`, `Crunch` and `5th Avenue`
 
 ```{python}
-slice_of_candy2 = candy2.loc[['Coffee Crisp', 'Smarties', 'Take 5', 'Oh Henry']]
-slice_of_candy2
+snacksize_candybars = pd.read_csv('snacksize_candybars.csv', index_col=0)
+snacksize_candybars
 ```
 
 Notes: Script here
@@ -198,13 +198,13 @@ Notes: Script here
 
 ---
 
-What happens when we concatenate `candy1` and `candy2` now that it has fewer rows?
+What happens when we concatenate `candy` and `snacksize_candybars` now that it has different rows?
 
 ```{python}
-pd.concat([candy, slice_of_candy2], axis=1)
+pd.concat([candy, snacksize_candybars], axis=1)
 ```
 
-If we scroll to the right we can see any rows that are not present in both dataframes are replaced with `NaN`.  That's because we are using a default argument `join='outer'`.
+We can see any rows that are not present in both dataframes have column values that are filled with `NaN` .  That's because we are using a default argument `join='outer'`.
 
 Notes: Script here
 <html>
@@ -219,16 +219,16 @@ Notes: Script here
 Ok so what does `join` do then? 
 `pd.concat()` take a specific argument called `join` that can take the values `inner` or `outer`. 
 
-- `inner`: Will return only the rows index values that are present in both the tables. 
-- `outer`: Will return not only the rows that are present in both tables but also the rows in both tables that are unmatched.
+- `inner`: Will return only the rows with index labels that are present in both the tables. 
+- `outer`: Will return not only the rows with index labels that are present in both tables but all the rows in both tables. If there are any column values that the row is missing, it will be filled with a `NaN` value. 
 
 Notice when I do the same join with `candy` and `slice_of_candy2` but this time specifying `join='inner`.
 
 ```{python}
-pd.concat([candy, slice_of_candy2], axis=1, join='inner')
+pd.concat([candy, snacksize_candybars], axis=1, join='inner')
 ```
 
-This only returns a dataframe with the matched rows from both columns. 
+This only returns a dataframe with the matched index labels rows from both columns. 
 
 Notes: Script here
 <html>

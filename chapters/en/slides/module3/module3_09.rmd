@@ -47,7 +47,7 @@ candy = pd.read_csv('candybars.csv', index_col=0)
 
 type: slides
 
-# Reshaping using melt
+# Reshaping with Melt
 
 Notes: Script here
 <html>
@@ -80,6 +80,27 @@ Notes: Script here
 
 Similarly to `.pivot()`, `.melt()` can be used in situations where our data may not meet criterion #2: _Each variable is a single column_.
 
+In this situation the code converted the 2 columns `chocolate`and `white_chocolate`into a single column named `chocolate_type`. 
+```{python }
+melted_candy = (candy.reset_index()
+                   .melt(id_vars=['name', 'weight','multi',
+                                  'available_canada_america'] , 
+                        value_vars=['chocolate', 'white_chocolate'], 
+                        var_name='chocolate_type', 
+                        value_name='present')
+)
+melted_candy.head()
+```
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
 Let's take some time to fully understand the arguments this verb uses.  
 
   ```python
@@ -89,11 +110,11 @@ Let's take some time to fully understand the arguments this verb uses.
           value_name="new column name values")
   ```
   
-  - `df` to express with dataframe we want to melt
-  - `id_vars` indicates the identifier columns of the dataframe.  
-  - `value_vars` are columns that exist but that we want to create a single column from with the labels as the values.
-  - `var_name` is the name of the new column that will contain the `value_vars` column labels as values.
-  - `value_name` is the name of the new column that will contain the values of the `value_vars` columns. 
+  - `df`: The dataframe we want to melt.
+  - `id_vars`: The key identifier column(s) of the dataframe.  
+  - `value_vars`: The columns that exist but that we want to create a single column from with the labels as the values.
+  - `var_name`: The name of the new column that will contain the `value_vars` column labels as values.
+  - `value_name`: The name of the new column that will contain the values of the `value_vars` columns. 
 
 
 Notes: Script here
@@ -107,6 +128,8 @@ Notes: Script here
 Thanks to  <a href="https://github.com/apreshill/teachthat" target="_blank"> Alison Presmanes Hill</a>, we can see exactly what is happening when we transform a dataframe using melt. 
 
 <center><img src='/module3/melt_py.gif'></center>
+
+`cinnamon_1`, `cardamom_2` and `nutmeg_3` column labels are relocated to the `spice` column and the values within the 3 columns are all melted into the `correct` column.
 
 Notes: Script here
 <html>
@@ -155,7 +178,7 @@ id_vars=['name', 'weight', 'peanuts', 'caramel',
         'nougat', 'cookie_wafer_rice', 'coconut',
         'multi', 'available_canada_america'] 
 ```
-- The columns we are converting to a single one are named `chocolate` and `white_chocolate` resulting in our `value_vars`.
+- The columns we are converting to a single one are named `chocolate` and `white_chocolate` resulting in `value_vars= ['chocolate', 'white_chocolate']`.
 - We name our new column `chocolate_type`, which we assign to the `var_name` argument.
 - The values within those chocolate columns will go into a new column named `present` therefore `value_name='present'`.
 

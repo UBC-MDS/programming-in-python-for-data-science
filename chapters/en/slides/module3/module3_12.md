@@ -50,7 +50,7 @@ Notes: Script here
 ---
 
 Multi-level indexing allows the possibility of some much more advanced
-data analysis, however, that also can open the door to more complex
+data analysis, however, that can also open the door to more complex
 issues and bugs.
 
 We are going to keep this as simple and elegant as possible by
@@ -116,14 +116,12 @@ Here we are going use the same verb but this time set both `caramel`
 ***and*** `name` as the indexes for the candy bar dataframe. Remember in
 the last section where we explained that `pandas` doesn’t recognize
 indexes as columns and we needed to `.reset_index()` to makes sure we
-have all the columns in our dataframe? The same applies here.
-
-We are going to avoid resetting by reading the data without assigning
-any index with the `index_col` argument.
+have all the columns in our dataframe? The same applies here. We should
+first reset the index on our `candy` dataframe.
 
 ``` python
-df = pd.read_csv('candybars.csv')
-df.head()
+candy = candy.reset_index()
+candy.head()
 ```
 
 ```out
@@ -156,8 +154,8 @@ Next, we can assign multiple indexes using square brackets within
 by the index\!)
 
 ``` python
-df2 = df.set_index(['caramel', 'name']).sort_index()
-df2
+candy2 = candy.set_index(['caramel', 'name']).sort_index()
+candy2
 ```
 
 ```out
@@ -217,14 +215,14 @@ Notes: Script here
 
 ---
 
-Some of you may now be wondering “How do we select and slice now?”. The
-answer is just like before but now we specify 2 indexes\! To specify 2
-indexes, we wrap them in parentheses. Perhaps I wanted the non-caramel
+Some of you may now be wondering “How do we select and slice now?”.  
+The answer is just like before but now we specify 2 indexes\! To specify
+2 indexes, we wrap them in parentheses. Perhaps I wanted the non-caramel
 filled “3 Musketeers” bar. I would use `0` to represent the first index
 of “non-caramel filled” and `3 Musketeers` for the bar name.
 
 ``` python
-df2.loc[(0, '3 Musketeers')]
+candy2.loc[(0, '3 Musketeers')]
 ```
 
 ```out
@@ -258,7 +256,7 @@ This works if I want a specific cell value too. Let’s say I wanted the
 non-caramel filled “3 Musketeers” bar’s weight.
 
 ``` python
-df2.loc[(0,'3 Musketeers'), 'weight']
+candy2.loc[(0,'3 Musketeers'), 'weight']
 ```
 
 ```out
@@ -287,7 +285,7 @@ This can be done with something called **Stacking**. Stacking is exactly
 what it sounds like, we *stack* our values.
 
 ``` python
-stacked_df = df2.stack()
+stacked_df = candy2.stack()
 stacked_df
 ```
 
@@ -364,11 +362,11 @@ Notes: Script here
 
 ---
 
-Let’s Bring back the example we used of hierarchical indexing involving
-our groupby cereal aggregated dataframe.
+Let’s bring back our groupby cereal aggregated dataframe.
 
 ``` python
-cereal.groupby('mfr').agg(['max', 'min'])
+max_min_df = cereal.groupby('mfr').agg(['max', 'min'])
+max_min_df
 ```
 
 ```out
@@ -402,8 +400,8 @@ The dataframe is currently unstacked but we can stack the `max` and
 `min` values, to elongate the dataframe.
 
 ``` python
-max_min_df = cereal.groupby('mfr').agg(['max', 'min']).stack()
-max_min_df
+max_min_df_stacked = max_min_df.stack()
+max_min_df_stacked
 ```
 
 ```out

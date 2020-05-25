@@ -123,7 +123,7 @@ Good job!  You must have seen the duplicate rows of `Ivysaur` and `Charmeleon`.
 
 </exercise>
 
-<exercise id="5" title="Reshaping Using Pivot" type="slides">
+<exercise id="5" title="Reshaping with Pivot" type="slides">
 
 <slides source="module3/module3_05">
 
@@ -230,7 +230,7 @@ Tasks:
 </exercise>
 
 
-<exercise id="9" title="Reshaping Using Melt" type="slides">
+<exercise id="9" title="Reshaping with Melt" type="slides">
 
 <slides source="module3/module3_09">
 
@@ -325,7 +325,7 @@ Tasks:
 
 </codeblock>
 
-Have we made the data tidied by melting these 2 columns? 
+Have we made the data tidy by melting these 2 columns? 
 
 <choice id="1">
 <opt text='Yes' correct="true">

@@ -60,11 +60,11 @@ Notes: Script here
 
 We tidy our data in such a way so that we can create a standard across
 multiple analysis tools. It changes the focus from figuring out the
-logistics of getting the data a certain way, to answering the actual
+logistics of how the data be structured, to answering the actual
 analysis question being asked.
 
 This standard now sets precedent for the input arguments of certain
-analysis verbs (like `.describe()` and other predictive methods).
+analysis verbs like `.describe()` and other predictive methods.
 
 Notes: Script here
 
