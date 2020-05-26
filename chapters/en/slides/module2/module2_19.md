@@ -259,7 +259,7 @@ designate a new column name instead of an existing one. Let’s save the
 values in a column named `protein_level`.
 
 ``` python
-df.loc[df['protein'] >= 3, 'protein_level']  = 'High' 
+df.loc[df['protein'] >= 3, 'protein_level']  = 'high' 
 ```
 
 Next by the “low” values.
@@ -291,14 +291,12 @@ df.head()
 ```out
                               mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating protein_level
 name                                                                                                                                                         
-100% Bran                       N  Cold        70        4    1     130   10.0    5.0       6     280        25      3     1.0  0.33  68.402973          High
-100% Natural Bran          Quaker  Cold       120        3    5      15    2.0    8.0       8     135         0      3     1.0  1.00  33.983679          High
-All-Bran                        K  Cold        70        4    1     260    9.0    7.0       5     320        25      3     1.0  0.33  59.425505          High
-All-Bran with Extra Fiber       K  Cold        50        4    0     140   14.0    8.0       0     330        25      3     1.0  0.50  93.704912          High
+100% Bran                       N  Cold        70        4    1     130   10.0    5.0       6     280        25      3     1.0  0.33  68.402973          high
+100% Natural Bran          Quaker  Cold       120        3    5      15    2.0    8.0       8     135         0      3     1.0  1.00  33.983679          high
+All-Bran                        K  Cold        70        4    1     260    9.0    7.0       5     320        25      3     1.0  0.33  59.425505          high
+All-Bran with Extra Fiber       K  Cold        50        4    0     140   14.0    8.0       0     330        25      3     1.0  0.50  93.704912          high
 Almond Delight                  R  Cold       110        2    2     200    1.0   14.0       8       1        25      3     1.0  0.75  34.384843           low
 ```
-
-Super\!
 
 Notes: Script here
 

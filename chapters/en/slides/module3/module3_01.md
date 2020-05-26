@@ -18,15 +18,15 @@ Notes: Script here
 
 ---
 
-When we first hear “tidy data”, you likely think of clean, organized and
-orderly data. The same applies here however the concept of ***Tidy
-Data*** stems from
-<a href="https://vita.had.co.nz/papers/tidy-data.pdf" target="_blank">`a
-paper written by Hadley Wickham in 2014`</a>.
+When we first hear “tidy data”, you likely think of clean, organized,
+and orderly data. The same applies here, however, the concept of ***tidy
+data*** stems from
+<a href="https://vita.had.co.nz/papers/tidy-data.pdf" target="_blank">a
+paper </a> written by Hadley Wickham in 2014.
 
 ### What is the concept of tidy data?
 
-A tidy data is one that is satified by these three criteria:
+A tidy data is one that is satisfied by these three criteria:
 
   - Each row is a single observation,
   - Each variable is a single column, and
@@ -39,7 +39,7 @@ A tidy data is one that is satified by these three criteria:
 
 </center>
 
-What is a variable and an observation may depend on your immediate goal.
+What a variable and an observation is may depend on your immediate goal.
 
 *Source: [R for Data Science](https://r4ds.had.co.nz/) by Garrett
 Grolemund & Hadley Wickham*
@@ -59,12 +59,12 @@ Notes: Script here
 ---
 
 We tidy our data in such a way so that we can create a standard across
-multiple analysis tools. It changes the focus from the figuring out the
-logistics of getting the data a certain way, to answering the actual
+multiple analysis tools. It changes the focus from figuring out the
+logistics of how the data be structured, to answering the actual
 analysis question being asked.
 
 This standard now sets precedent for the input arguments of certain
-analysis verbs (like `.describe()` and other predictive methods).
+analysis verbs like `.describe()` and other predictive methods.
 
 Notes: Script here
 
@@ -81,9 +81,9 @@ Notes: Script here
 ---
 
 Let’s explore some different versions of our cereal dataset and
-determine if they fit the “tidy” criteria.
+determine if they fit the *tidy* criteria.
 
-Selecting a few rows from out unaltered cereal dataset, does it fit all
+Here are a few rows from our unaltered cereal dataset. Does it fit all
 three criteria?
 
 <center>
@@ -116,7 +116,7 @@ Notes: Script here
 
 </center>
 
-From the dataframe we can see that each cereal has it’s own row.
+From the dataframe we can see that each cereal has its own row.
 Criterion \#1 is met\!
 
 Notes: Script here
@@ -188,8 +188,8 @@ Notes: Script here
 
 ---
 
-As expected, the cereal data we have been working with is **“Tidy
-Data”**. Let’s look at a example where this is not the case.
+As expected, the cereal data we have been working with is *tidy data*.  
+Let’s look at an example where this is not the case.
 
 <center>
 
@@ -217,11 +217,11 @@ Notes: Script here
 
 <center>
 
-<img src="/module3/tidy2-crit1.png" width="500" />
+<img src="/module3/tidy2-crit1.png" width="400" />
 
 </center>
 
-From the dataframe we can see that each observation has it’s own row.
+From the dataframe we can see that each observation has its own row.
 There are 2 rows per cereal but each row is unique. We can confirm that
 criterion 1 is met.
 
@@ -245,13 +245,14 @@ Notes: Script here
 
 <center>
 
-<img src="/module3/tidy2-crit2.png" width="500" />
+<img src="/module3/tidy2-crit2.png" width="400" />
 
 </center>
 
 It looks like we have a problem here. In this dataframe, two of our
 variables are contained in a single column. This is making the data
-untidy and difficult to work with and we would need to transform it.
+untidy and potentially a problem to work with. We would need to
+transform it.
 
 Notes: Script here
 
@@ -267,12 +268,12 @@ Notes: Script here
 
 ---
 
-At this point you may be asking yourself the question \_“Are there any
-verbs using pandas, that would easily convert the `Nutrition` column
-into it’s separate variables?”
+At this point you may be asking yourself the question *“Are there any
+verbs, that would easily convert the `Nutrition` column into its
+separate variables?”*
 
 If you are, then you are ahead of the game\! We will discuss this in the
-next section\!
+next section.
 
 Notes: Script here
 
@@ -288,7 +289,7 @@ Notes: Script here
 
 ---
 
-# Let’s practice what we know about Tidy Data first\!
+# Let’s practice what we know about tidy data first\!
 
 Notes: Script here
 

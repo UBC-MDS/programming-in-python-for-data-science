@@ -48,7 +48,7 @@ cereal = pd.read_csv('cereal.csv', index_col=0)
 
 type: slides
 
-# Hierarchical indexing
+# Hierarchical Indexing
 
 Notes: Script here
 <html>
@@ -58,10 +58,11 @@ Notes: Script here
 
 ---
 
-***Hierarchy*** is defined by <a href="https://dictionary.cambridge.org/dictionary/english/hierarchy" target="_blank"> as
-> "a system in which people or things are put at various levels or ranks according to their importance". 
+***Hierarchy*** is defined by <a href="https://dictionary.cambridge.org/dictionary/english/hierarchy" target="_blank">Cambridge Dictionary </a> as
 
-This helps explain the concept of ***hierarchical indexing***  which is the capability of a dataframe posessing multiple levels of index labels. 
+ _*" a system in which people or things are put at various levels or ranks according to their importance."*_ 
+
+This helps explain the concept of ***hierarchical indexing***  which is the capability of a dataframe possessing multiple levels of index labels. 
 
 
 <center><img src='/module3/hierarchy.png' width="400"></center>
@@ -74,9 +75,9 @@ Notes: Script here
 
 ---
 
-Multi level indexing allows the possibility of some much more advanced data analysis, however, that also can open the door to more complex issues and bugs. 
+Multi-level indexing allows the possibility of some much more advanced data analysis, however, that can also open the door to more complex issues and bugs. 
 
-We are going keep this as simple and elegant as possible by introducing you to the concept and how to transform dataframe with hierarchical indexing.  
+We are going to keep this as simple and elegant as possible by introducing you to the concept and how to transform dataframe with hierarchical indexing.  
 
 Notes: Script here
 <html>
@@ -86,13 +87,13 @@ Notes: Script here
 
 ---
 
-Believe it or not but you have already seen this concepts when we explained the concept of grouping and aggregating. 
+Believe it or not but you have already seen this concept when we explained the concept of grouping and aggregating. 
 
 ```{python}
 cereal.groupby('mfr').agg(['max', 'min'])
 ```
 
-Here you can see that each of the original cereal dataframe columns have subcolumns `max` and `min` and that there a hierarchy of index labels. 
+Here you can see that each of the original cereal dataframe columns have the sub columns `max` and `min` and that there is a hierarchy of index labels. 
 
 Notes: Script here
 <html>
@@ -104,10 +105,13 @@ Notes: Script here
 
 ## Setting indexes 
 
-In the last section you learned how to set a single index using `.set_index()`. Here we are going use the same verb but set `caramel` AND `name` as the indexes from the candy dataframe. 
-Remember in the last section where we explained that `pandas` doesn't recognize indexes as columns and we needed to `.reset_index()` to makes sure we has all the columns in our dataframe? The same applies here, we are going to avoid resetting by reading the data without assigning any index with the `index_col` argument. 
+You have already learned how to set a single index using `.set_index()`.  Here we are going use the same verb but this time set both `caramel` ***and*** `name` as the indexes for the candy bar dataframe. 
+Remember in the last section where we explained that `pandas` doesn't recognize indexes as columns and we needed to `.reset_index()` to makes sure we have all the columns in our dataframe?  The same applies here. We should first reset the index on our `candy` dataframe.
+
+
 ```{python}
-df = pd.read_csv('candybars.csv')
+candy = candy.reset_index()
+candy.head()
 ```
 
 Notes: Script here
@@ -117,11 +121,12 @@ Notes: Script here
 </audio></html>
 ---
 
-Next we can assign multiple indexes using square brackets within the `.set_index()` verb and sort the dataframe according to the index using verb `sort_index()`. (`.sort_index()` is similar to `.sort_values()` however now we can sort by the index!)
+Next, we can assign multiple indexes using square brackets within `.set_index()` and sort the dataframe according to the index using `sort_index()`.   
+(`.sort_index()` is similar to `.sort_values()` however now we can sort by the index!)
 
 ```{python}
-df2 = df.set_index(['caramel', 'name']).sort_index()
-df2
+candy2 = candy.set_index(['caramel', 'name']).sort_index()
+candy2
 ```
 
 Notes: Script here
@@ -132,9 +137,9 @@ Notes: Script here
 
 ---
 
-To get the entire picture, the image belows shows the complete dataset. It almost looks like there are 2 separate dataframes on top of one another. The top dataframe containing non-caramel chocolate bars and the second dataframe containing caramel filled chocolate bars. 
+To get the entire picture, the image below shows the complete dataset.  It almost looks like there are 2 separate dataframes on top of one another.  One containing non-caramel chocolate bars and the second  containing caramel-filled chocolate bars. 
 
-<center><img src='/module3/candy_index.png' width="400"></center>
+<center><img src='/module3/candy_index.png' width="600"></center>
 
 
 Notes: Script here
@@ -145,12 +150,13 @@ Notes: Script here
 
 ---
 
-Some of you may now be asking "How do we select and slice now?". The answer is just like before but now we specify 2 indexes! 
-To specify 2 indexes, we wrap them in parenthesis. 
-Perhaps I wanted the non-caramel filled "3 Musketeers" bar. I would use `0` to represent the first index of "non-caramel filled" and `3 Musketeers` for the bar name.
+Some of you may now be wondering "How do we select and slice now?".    
+The answer is just like before but now we specify 2 indexes! 
+To specify 2 indexes, we wrap them in parentheses. 
+Perhaps I wanted the non-caramel filled "3 Musketeers" bar.  I would use `0` to represent the first index of "non-caramel filled" and `3 Musketeers` for the bar name.
 
 ```{python}
-df2.loc[(0, '3 Musketeers')]
+candy2.loc[(0, '3 Musketeers')]
 ```
 
 
@@ -162,10 +168,10 @@ Notes: Script here
 
 ---
 
-This works if I want a specific cell value too. Let's say I wanted the non-caramel filled "3 Musketeers" bar weight.
+This works if I want a specific cell value too.  Let's say I wanted the non-caramel filled "3 Musketeers" bar's weight.
 
 ```{python}
-df2.loc[(0,'3 Musketeers'), 'weight']
+candy2.loc[(0,'3 Musketeers'), 'weight']
 ```
 
 
@@ -179,14 +185,14 @@ Notes: Script here
 
 ## Stacking 
 
-If this organization is no ideal for your analysis you may want to *transpose* your data (swap columns to rows or rows to columns). This can be done with something called **Stacking**. Stacking is exactly what it sounds like, we _stack_ values. 
+If this dataframe's organization is not ideal for your analysis you may want to *transpose* your data (swap columns to rows or rows to columns).  This can be done with something called **Stacking**.  Stacking is exactly what it sounds like, we _stack_ our values. 
 
 ```{python}
-stacked = df2.stack()
-stacked
+stacked_df = candy2.stack()
+stacked_df
 ```
 
-This dataframe now all the columns available in a single column and our dataframe has elongated from 25 rows to 225 rows. 
+This dataframe now has all the columns available in a single column and our dataframe has elongated from 25 rows to 225 rows. 
 
 Notes: Script here
 <html>
@@ -195,10 +201,13 @@ Notes: Script here
 </audio></html>
 
 ---
+
 ## Unstacking 
 
+To unstack our data, we simply used `.unstack()`
+
 ```{python}
-stacked.unstack()
+stacked_df.unstack()
 ```
 
 
@@ -210,10 +219,11 @@ Notes: Script here
 
 ---
 
-Just for fun, let's bring back the example we used of hierarchical indexing involving our groupby cereal aggregated dataframe.
+Let's bring back our groupby cereal aggregated dataframe.
 
 ```{python}
-cereal.groupby('mfr').agg(['max', 'min'])
+max_min_df = cereal.groupby('mfr').agg(['max', 'min'])
+max_min_df
 ```
 
 
@@ -228,7 +238,8 @@ Notes: Script here
 The dataframe is currently unstacked but we can stack the `max` and `min` values, to elongate the dataframe. 
 
 ```{python}
-x = cereal.groupby('mfr').agg(['max', 'min']).stack()
+max_min_df_stacked = max_min_df.stack()
+max_min_df_stacked
 ```
 
 This now shows the `max` and `min` values for each manufacturer on top of each other instead of side by side.  

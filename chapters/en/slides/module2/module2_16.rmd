@@ -173,7 +173,7 @@ Notes: Script here
 
 ---
 
-##  Multiple Condition Filtering - or
+##  Multiple Condition Filtering - "or"
 
 Suppose that we are interested in cereals that either are made from the Quaker manufacturer **OR** a protein content above 4.     
 We only need one of these conditions to hold to return a row. 

@@ -183,7 +183,7 @@ Perhaps we want just 2 categories for protein levels -"high" and "low".  Any cer
 Let's assign the "high" protein values first.  The only difference here from earlier is we now use an inequality for our condition and we designate a new column name instead of an existing one.  Let's save the values in a column named `protein_level`.
 
 ```{python}
-df.loc[df['protein'] >= 3, 'protein_level']  = 'High' 
+df.loc[df['protein'] >= 3, 'protein_level']  = 'high' 
 ```
 
 Next by the "low" values.
@@ -205,7 +205,6 @@ Let's see the results by scrolling to the right of the dataframe.
 df.head()
 ```
 
-Super!
 
 Notes: Script here
 <html>

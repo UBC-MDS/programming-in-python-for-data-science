@@ -22,7 +22,7 @@ By the end of the module, students are expected to:
 - Combine dataframes using `.merge()` and `.concat()` and know when to use these different methods.
 - Understand the different joining methods.
 
-Notes:
+Notes: Script here
 <html>
 <audio controls >
   <source src="/placeholder_audio.mp3" />

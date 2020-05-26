@@ -33,8 +33,8 @@ df['mfr'].value_counts()
 K    23
 G    22
 P     9
-R     8
 Q     8
+R     8
 N     6
 A     1
 Name: mfr, dtype: int64
@@ -113,7 +113,7 @@ mfr_group
 ```
 
 ```out
-<pandas.core.groupby.generic.DataFrameGroupBy object at 0x11c664f60>
+<pandas.core.groupby.generic.DataFrameGroupBy object at 0x12759ae80>
 ```
 
 This returns a `DataFrame GroupBy` object. What exactly is this?
@@ -132,7 +132,11 @@ Notes: Script here
 
 ---
 
-<img src='/module2/groupby7.png'  alt="404 image" width = "80%" align="middle"/>
+<center>
+
+<img src='/module2/groupby7.png'  alt="404 image" width = "70%" align="middle"/>
+
+</center>
 
 Notes: Script here
 
@@ -250,7 +254,7 @@ Notes: Script here
 
 We can also group by multiple columns, For example we can grouping by
 not only manufacturer but also by cereal type\! All we do is put both
-both column labels in square brackets within `.groupby()`
+both column labels in square brackets within `.groupby()`.
 
 ``` python
 mfr_type_group = df.groupby(by=['mfr', 'type'])
@@ -263,8 +267,9 @@ mfr_type_group.groups
       dtype='object', name='name'), ('K', 'Cold'): Index(['All-Bran', 'All-Bran with Extra Fiber', 'Apple Jacks', 'Corn Flakes', 'Corn Pops', 'Cracklin' Oat Bran', 'Crispix', 'Froot Loops', 'Frosted Flakes', 'Frosted Mini-Wheats', 'Fruitful Bran', 'Just Right Crunchy  Nuggets', 'Just Right Fruit & Nut', 'Mueslix Crispy Blend', 'Nut&Honey Crunch', 'Nutri-Grain Almond-Raisin', 'Nutri-grain Wheat',
        'Product 19', 'Raisin Bran', 'Raisin Squares', 'Rice Krispies', 'Smacks', 'Special K'],
       dtype='object', name='name'), ('N', 'Cold'): Index(['100% Bran', 'Shredded Wheat', 'Shredded Wheat 'n'Bran', 'Shredded Wheat spoon size', 'Strawberry Fruit Wheats'], dtype='object', name='name'), ('N', 'Hot'): Index(['Cream of Wheat (Quick)'], dtype='object', name='name'), ('P', 'Cold'): Index(['Bran Flakes', 'Fruit & Fibre Dates; Walnuts; and Oats', 'Fruity Pebbles', 'Golden Crisp', 'Grape Nuts Flakes', 'Grape-Nuts', 'Great Grains Pecan', 'Honey-comb', 'Post Nat. Raisin Bran'], dtype='object', name='name'), ('Q', 'Cold'): Index(['100% Natural Bran', 'Cap'n'Crunch', 'Honey Graham Ohs', 'Life', 'Puffed Rice', 'Puffed Wheat', 'Quaker Oat Squares'], dtype='object', name='name'), ('Q', 'Hot'): Index(['Quaker Oatmeal'], dtype='object', name='name'), ('R', 'Cold'): Index(['Almond Delight', 'Bran Chex', 'Corn Chex', 'Double Chex', 'Muesli Raisins; Dates; & Almonds', 'Muesli Raisins; Peaches; & Pecans', 'Rice Chex', 'Wheat Chex'], dtype='object', name='name')}
+```
 
-The attribute `ngroups` indicates how many groups exist.
+The attribute `ngroups` indicates how many groups there are.
 
 ``` python
 mfr_type_group.ngroups
@@ -655,7 +660,7 @@ sugar_plot = sugar_plot.set_xlabel('Manufacturer', fontsize=12)
 sugar_plot
 ```
 
-<img src="/module2/module2_24/unnamed-chunk-19-1.png" width="576" />
+<img src="/module2/module2_24/unnamed-chunk-19-1.png" width="55%" />
 
 Notes: Script here
 
@@ -687,7 +692,7 @@ nutrition_plot = nutrition_plot.set_xlabel('Manufacturer', fontsize=12)
 nutrition_plot
 ```
 
-<img src="/module2/module2_24/unnamed-chunk-20-1.png" width="576" />
+<img src="/module2/module2_24/unnamed-chunk-20-1.png" width="50%" />
 
 Notes: Script here
 

@@ -718,7 +718,7 @@ Not quite but you are on the right track.
 Consider this output made from the `fruit_salad` dataframe:
 
 
-<center> <img src='module2/question22output.png'  alt="404 image" /></center>
+<center> <img src='/module2/question22output.png'  alt="404 image" /></center>
    
 Which of the following code returns the dataframe above. 
 

@@ -84,7 +84,7 @@ These have a special meaning but for now, you only need to concentrate
 your attention on the fact that the argument `columns` needs to have the
 format:
 
-``` 
+``` python
  columns={'old-column-name':'new-column-name'}
 ```
 
@@ -203,7 +203,7 @@ in square brackets and this time we will remember to overwrite over the
 
 ``` python
 df = df.drop(columns=['nougat', 'coconut'])
-df.head()
+df.head(3)
 ```
 
 ```out
@@ -212,8 +212,6 @@ name
 Coffee Crisp        50          1        0        0                  1                0      0       Canada
 Butterfinger       184          1        1        1                  0                0      0      America
 Skor                39          1        0        1                  0                0      0         Both
-Smarties            45          1        0        0                  0                0      1       Canada
-Twix                58          1        0        1                  1                0      1         Both
 ```
 
 Notes: Script here
