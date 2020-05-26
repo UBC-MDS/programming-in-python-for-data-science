@@ -10,7 +10,7 @@ id: 1
 
 <exercise id="0" title="Module Learning Outcomes" type="slides,video">
 
-<slides source="module1_00" start="0:165" end="3:01">
+<slides source="module1/module1_00" start="0:165" end="3:01">
 </slides>
 
 </exercise>
@@ -18,7 +18,7 @@ id: 1
 
 <exercise id="1" title="Introduction to Dataframes " type="slides">
 
-<slides source="module1_01">
+<slides source="module1/module1_01">
 </slides>
 
 </exercise>
@@ -79,7 +79,7 @@ Great! You have been paying attention.
 
 <exercise id="3" title="Introduction to Pandas" type="slides">
 
-<slides source="module1_03">
+<slides source="module1/module1_03">
 </slides>
 
 </exercise>
@@ -204,7 +204,7 @@ Tasks:
 
 <exercise id="7" title="Slicing Rows Using df.loc[]" type="slides">
 
-<slides source="module1_07">
+<slides source="module1/module1_07">
 </slides>
 
 </exercise>
@@ -361,7 +361,7 @@ Tasks:
 </exercise>
 
 <exercise id="11" title=" Slicing Columns Using .loc[]" type="slides">
-<slides source="module1_11">
+<slides source="module1/module1_11">
 </slides>
 </exercise>
 
@@ -420,7 +420,7 @@ Good job! This has both `.loc[]` and includes the columns we wish to slice here.
 
 
 <exercise id="13" title="Selecting Using df.loc[]" type="slides">
-<slides source="module1_13">
+<slides source="module1/module1_13">
 </slides>
 </exercise>
 
@@ -504,7 +504,7 @@ Tasks:
 
 
 <exercise id="16" title="Selecting Values from a Dataframe" type="slides">
-<slides source="module1_16">
+<slides source="module1/module1_16">
 </slides>
 </exercise>
 
@@ -545,7 +545,7 @@ Tasks:
 
 
 <exercise id="18" title="Selecting Single Columns" type="slides">
-<slides source="module1_18">
+<slides source="module1/module1_18">
 </slides>
 </exercise>
 
@@ -575,7 +575,7 @@ Tasks:
 </exercise>
 
 <exercise id="20" title="Slicing and Selecting Using df.iloc[]" type="slides">
-<slides source="module1_20">
+<slides source="module1/module1_20">
 </slides>
 </exercise>
 
@@ -724,7 +724,7 @@ Tasks:
 </exercise>
 
 <exercise id="24" title="Sorting Dataframes" type="slides">
-<slides source="module1_24">
+<slides source="module1/module1_24">
 </slides>
 </exercise>
 
@@ -752,7 +752,7 @@ Tasks:
 </exercise>
 
 <exercise id="26" title="Summary Statistics" type="slides">
-<slides source="module1_26">
+<slides source="module1/module1_26">
 </slides>
 </exercise>
 
@@ -878,7 +878,7 @@ Tasks:
 
 
 <exercise id="29" title="Frequency Tables and Writing CSVs" type="slides">
-<slides source="module1_29">
+<slides source="module1/module1_29">
 </slides>
 </exercise>
 
@@ -914,7 +914,7 @@ _If you get a warning along with your output, that's fine. We will explain why t
 </exercise>
 
 <exercise id="31" title="Quick Viz with Pandas" type="slides">
-<slides source="module1_31">
+<slides source="module1/module1_31">
 </slides>
 </exercise>
 
@@ -976,6 +976,6 @@ _After you successfully create this graph you may notice `1e6` on the top left o
 </exercise>
 
 <exercise id="34" title="What Did We Just Learn?" type="slides,video">
-<slides source="module1_34" start="0:165" end="3:01">
+<slides source="module1/module1_34" start="0:165" end="3:01">
 </slides>
 </exercise>

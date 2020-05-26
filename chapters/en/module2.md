@@ -11,14 +11,14 @@ id: 2
 
 <exercise id="0" title="Module Learning Outcomes" type="slides,video">
 
-<slides source="module2_00" start="0:165" end="3:01">
+<slides source="module2/module2_00" start="0:165" end="3:01">
 </slides>
 
 </exercise>
 
 <exercise id="1" title="Reading in Different File Types" type="slides">
 
-<slides source="module2_01">
+<slides source="module2/module2_01">
 </slides>
 
 </exercise>
@@ -157,7 +157,7 @@ Tasks:
 
 <exercise id="6" title="Arguments for Reading Data" type="slides">
 
-<slides source="module2_06">
+<slides source="module2/module2_06">
 </slides>
 
 </exercise>
@@ -248,7 +248,7 @@ Tasks:
 
 <exercise id="9" title="Column Renaming and Dropping" type="slides">
 
-<slides source="module2_09">
+<slides source="module2/module2_09">
 </slides>
 
 </exercise>
@@ -357,7 +357,7 @@ Tasks:
 
 <exercise id="13" title="Column Arithmetic and Creation" type="slides">
 
-<slides source="module2_13">
+<slides source="module2/module2_13">
 </slides>
 
 </exercise>
@@ -425,7 +425,7 @@ Tasks:
 
 <exercise id="16" title="Data Filtering" type="slides">
 
-<slides source="module2_16">
+<slides source="module2/module2_16">
 </slides>
 
 </exercise>
@@ -531,7 +531,7 @@ You can use `mighty_pokemon['type'].value_counts()` to find out.
 
 <exercise id="19" title="Conditional Value Replacement and Assignment" type="slides">
 
-<slides source="module2_19">
+<slides source="module2/module2_19">
 
 </slides>
 
@@ -580,7 +580,7 @@ Tasks:
 
 <exercise id="21" title="Chaining and Method Chaining" type="slides">
 
-<slides source="module2_21">
+<slides source="module2/module2_21">
 
 </slides>
 
@@ -665,7 +665,7 @@ Tasks:
 
 <exercise id="24" title="Grouping and Aggregating" type="slides">
 
-<slides source="module2_24">
+<slides source="module2/module2_24">
 </slides>
 
 </exercise>
@@ -870,6 +870,6 @@ Take another look at the plot.
 
 
 <exercise id="29" title="What Did We Just Learn?" type="slides,video">
-<slides source="module2_29" start="0:165" end="3:01">>
+<slides source="module2/module2_29" start="0:165" end="3:01">>
 </slides>
 </exercise>
