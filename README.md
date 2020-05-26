@@ -1,4 +1,5 @@
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/UBC-MDS/DSCI_531_data-visualization-course/binder) [![Netlify Status](https://api.netlify.com/api/v1/badges/78480e30-5dca-45d9-a28f-8dc797de8a87/deploy-status)](https://app.netlify.com/sites/dsci-531-data-visualization-course/deploys)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/UBC-MDS/MCL-DSCI-511-programming-in-python/binder)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/dab56220-f2ae-4008-a57f-0747c40b259d/deploy-status)](https://app.netlify.com/sites/mcl-dsci-511-programming-in-python/deploys)
 
 # MCL-DSCI 511 Programming in Python for Data Science 
 
