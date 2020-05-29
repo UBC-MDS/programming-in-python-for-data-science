@@ -10,6 +10,6 @@ def test():
     assert "capture_rate" in __solution__ , "Are you renaming 'capture_rt' to capture_rate?"
     assert "AD_total" in __solution__ , "Are you creating a new column 'AD_total' by adding 'defense' and 'attack'?"
     assert "plot.scatter" in __solution__ , "Are you using 'plot.scatter' as your final chain command?"
-    assert list(pokemon_plot.get_ylim()) == [-9.6, 267.59999999999997], "The y-axis limits are incorrect. Is 'capture_rate' on the y-axis?"
-    assert list(pokemon_plot.get_xlim()) == [-7.999999999999998, 387.99999999999994], "X-axis limits are incorrect. Is 'AD_total' on the x-axis?"
+    assert list(pokemon_plot.get_ylim()) == [-9.6, 267.59999999999997], "\nThe y-axis labels are incorrect. Is 'capture_rate' on the y-axis?"
+    assert list(pokemon_plot.get_xlim()) == [-7.999999999999998, 387.99999999999994], "\n The x-axis labels are incorrect. Is 'AD_total' on the x-axis?"
     __msg__.good("Nice work, well done!")

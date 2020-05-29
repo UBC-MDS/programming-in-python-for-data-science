@@ -5,10 +5,8 @@ def test():
     # in the meta.json for details.
 
     # If an assertion fails, the message will be displayed
-
-    assert "data/pokemon.csv" in __solution__ , "Are you specifying the correct data path?"
-    assert "index_col=0" in __solution__ , "Are you making sure to add index_col=0 ?"
-    assert "sp_attack':'special_a" , "are you changing 'sp_attack' to 'special_a' using ':' "
-    assert "sp_defense':'special_a" , "are you changing 'sp_defense' to 'special_d' using ':' "
+    assert "rename" in __solution__ , "Are you using the 'rename' function?"
+    assert not {"sp_attack"}.issubset(set(pokemon_special.columns)), "Are you changing 'sp_attack' to 'special_a' using ':'?"
+    assert not {"sp_defense"}.issubset(set(pokemon_special.columns)), "Are you changing 'sp_defense' to 'special_d' using ':'?"
     __msg__.good("Nice work, well done!")
 

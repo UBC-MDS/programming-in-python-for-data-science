@@ -5,8 +5,8 @@ def test():
     # in the meta.json for details.
 
     # If an assertion fails, the message will be displayed
-    assert "data/pokemon.csv" in __solution__ , "Are you specifying the correct data path?"
-    assert "index_col=0" in __solution__ , "Are you making sure to add index_col=0 ?"
     assert "drop" in __solution__ , "Are you using the 'drop' function on the dataframe?"
-    assert ['deck_no', 'capture_rt', 'legendary'] not in list(pokemon.columns)
+    assert not {'deck_no'}.issubset(set(pokemon.columns)) , "Have you dropped the 'deck_no' column?"
+    assert not {"capture_rt"}.issubset(set(pokemon.columns)) , "Have you dropped the 'capture_rt' column?"
+    assert not {"legendary"}.issubset(set(pokemon.columns)) , "Have you dropped the 'legendary' column?"
     __msg__.good("Nice work, well done!")

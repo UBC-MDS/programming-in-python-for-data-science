@@ -8,6 +8,6 @@ def test():
     assert "groupby" in __solution__ , "Are you using the 'groupby' function?"
     assert "mean" in __solution__ , "Are you chaining the mean function with the groupby function?"
     assert "type" not in list(type_means.columns), "Are you grouping by 'type'?"
-    assert round(mean_speed.values.mean()) == 68.0, "The average speed values are incorrect. Are you taking the mean after grouping by type?"
-    assert round(max(mean_speed.values)) == 100.0, "The maximum average speed is incorrect. Are you taking the mean after grouping by type?"
+    assert round(mean_speed.values.mean()) == 68.0, "\nThe average speed values are incorrect. Are you taking the mean after grouping by type?"
+    assert round(max(mean_speed.values)) == 100.0, "\nThe maximum average speed is incorrect. Are you taking the mean after grouping by type?"
     __msg__.good("Nice work, well done!")

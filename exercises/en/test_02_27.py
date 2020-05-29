@@ -10,6 +10,6 @@ def test():
     assert "legendary" not in list(legendary_stats.columns), "Are you grouping by 'legendary'?"
     assert "max" in __solution__ , "Are you aggregating by the 'max' value?"
     assert "min" in __solution__ , "Are you aggreating by the 'min' value?"
-    assert list(legendary_stats.values)[0].sum() == 1563, "Stats values are incorrect. Are you aggregating by 'min' and 'max'?"
-    assert list(legendary_stats.values)[1].sum() == 1679, "Stats values are incorrect. Are you aggregating by 'min' and 'max'?"
+    assert sum(max(legendary_stats.values.tolist())) == 1563, "Your  maximum values are incorrect. Are you aggregating by 'min' and 'max'?"
+    assert sum(min(legendary_stats.values.tolist())) == 1679, "Your  minimum values are incorrect. Are you aggregating by 'min' and 'max'?"
     __msg__.good("Nice work, well done!")
