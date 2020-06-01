@@ -22,8 +22,8 @@ Notes: Script here
 
 So far, we have accumulated many different skills to wrangle our data.
 One type of transformation that you may use often is replacing values
-within a column depending on a certain condition. Let’s start with a
-goal for a smaller version of our cereal dataset.
+within a column depending on a certain condition. Let’s bring in a
+smaller version of our cereal dataset.
 
 ``` python
 df = pd.read_csv('cereal.csv',
@@ -46,8 +46,8 @@ In the dataframe, the manufacturer value “Q” isn’t that informative and
 it might be easier to understand our data if we change all these values
 to something more complete like “Quaker”.
 
-This leads to our task: *_Replace the values with `mfr` equal to “Q”, to
-a new value of “Quaker”_*
+This leads to to our task:  
+***Replace the “Q” manufacturer values, with a new value of “Quaker”***
 
 Notes: Script here
 
@@ -63,10 +63,10 @@ Notes: Script here
 
 ---
 
-Our first instinct may be to first filter on those rows using the
-technique we learned in our last section. Perhaps you may have thought
-of assigning our new filtered selection with the new values with similar
-code to below:
+Our first instinct may be to first filter those rows using the technique
+we learned in our last section. From our new filtered selection, perhaps
+we could assign values of “Quaker” to column `mfr` using similar code to
+below:
 
 ``` python
 df[df['mfr'] == 'Q'].assign(mfr = 'Quaker')
@@ -85,14 +85,13 @@ Quaker Oat Squares  Quaker  Cold       100        4     1.0  49.511874
 Quaker Oatmeal      Quaker   Hot       100        5     1.0  50.828392
 ```
 
-That looks about right on what we want but what happened to the rest of
-our dataframe? Remember that we only want to replace the values in our
+That looks like it did what we want but what happened to the rest of our
+dataframe? Remember that we only want to replace the values in our
 existing dataframe and not create a new one.
 
 When we use the `.assign()` verb, it creates a new dataframe instead of
 altering the current one. This is problematic since we still want the
-original dataframe but with simply new values for a selection of our
-rows. This means we need to come up with a new method.
+original dataframe but with certain values updated. So what do we do?
 
 Notes: Script here
 
@@ -110,10 +109,9 @@ Notes: Script here
 
 # Building on more things we know
 
-Remember our friend `.loc[]`? We are going to get reacquainted with
-them. Similarly, to how `.loc[]` can select and return specified columns
-and rows of the dataframe, it can filter on conditions too.
-
+Remember our friend `.loc[]`? We are going to get reacquainted with it.
+Similarly, to how `.loc[]` can select and return specified columns and
+rows of the dataframe, it can filter on conditions too.  
 We are used to seeing code involving `.loc[]` like this:
 
 ``` python
@@ -167,9 +165,9 @@ Notes: Script here
 
 ---
 
-Some may now be asking, “Why don’t we do all our filtering like this
+Some people may be asking, “Why don’t we do all our filtering like this
 then?” Well, the answer is, you can, but we prefer not to. Filtering
-without loc is a bit more readable and more efficient when doing
+without `.loc[]` is a bit more readable and more efficient when doing
 analysis.
 
 Let’s concentrate back on our task of only replacing `mfr` values equal
@@ -291,6 +289,20 @@ Wheaties Honey Gold          False
 Name: mfr, Length: 77, dtype: bool
 ```
 
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
 Essentially our code is finding the rows with `True` values and
 replacing the values in the `mfr` column (like we specified) the new
 value of ‘Quaker’.
@@ -311,12 +323,33 @@ Notes: Script here
 
 ---
 
-You can split up how this code works into 2 steps:
+You can split up how this code works into 3 steps:
 
-1.  We use `.loc[]` to find the rows specifying certain conditions.  
-2.  Once we have obtained our desired rows (with a hidden column with
-    True/False values) we replace their values in either a specified
-    column.
+1.  We use `.loc[]` to find the rows specifying certain conditions.
+
+<!-- end list -->
+
+``` python
+df.loc[df['mfr'] == 'Q']
+```
+
+2.  We next indicate which column we wish to replace with the new values
+
+<!-- end list -->
+
+``` python
+df.loc[df['mfr'] == 'Q', 'mfr'] 
+```
+
+3.  Once we have obtained our desired rows and the column which we are
+    editing, we assign a value to the row meeting the condition ( a
+    “True” value)
+
+<!-- end list -->
+
+``` python
+df.loc[df['mfr'] == 'Q', 'mfr'] = 'Quaker'
+```
 
 Notes: Script here
 
@@ -343,7 +376,8 @@ TypeError: 'Series' objects are mutable, thus they cannot be hashed
 ```
 
 Unfortunately, we are not able to replace values in this manner and it
-results in an error.
+results in an error since filtering this way does not allow us to
+specify columns like this.
 
 Notes: Script here
 
@@ -399,10 +433,45 @@ Notes: Script here
 
 ---
 
+Let’s take a look at the dataframe now:
+
+``` python
+df.head(10)
+```
+
+```out
+                              mfr  type  calories  protein  weight     rating protein_level
+name                                                                                       
+100% Bran                       N  Cold        70        4    1.00  68.402973          high
+100% Natural Bran          Quaker  Cold       120        3    1.00  33.983679          high
+All-Bran                        K  Cold        70        4    1.00  59.425505          high
+All-Bran with Extra Fiber       K  Cold        50        4    1.00  93.704912          high
+Almond Delight                  R  Cold       110        2    1.00  34.384843           low
+Apple Cinnamon Cheerios         G  Cold       110        2    1.00  29.509541           low
+Apple Jacks                     K  Cold       110        2    1.00  33.174094           low
+Basic 4                         G  Cold       130        3    1.33  37.038562          high
+Bran Chex                       R  Cold        90        2    1.00  49.120253           low
+Bran Flakes                     P  Cold        90        3    1.00  53.313813          high
+```
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
 ## Creating new columns
 
 You may have noticed we did not use `.assign()` to create our new
-column. That’s because as we mentioned earlier when we use `.assign()`
+column. That’s because as we mentioned earlier, when we use `.assign()`
 it creates a brand new dataframe. When we are replacing values, we don’t
 want a new dataframe and instead, we just want to alter the current
 values in the existing dataframe.
@@ -432,7 +501,7 @@ new one. We prefer `.assign()` where possible since it provides more
 flexibility. It gives us an opportunity to name the new dataframe
 something different and keep our original dataframe untransformed. This
 prevents the need to re-read in our data to get our original dataframe
-back (which could take time depending on the size).
+back (which could take a long time if the dataset is large).
 
 Notes: Script here
 

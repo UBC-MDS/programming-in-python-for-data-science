@@ -60,7 +60,7 @@ Notes: Script here
 
 # Building on things we know
 
-So far, we have accumulated many different skills to wrangle our data.  One type of transformation that you may use often is replacing values within a column depending on a certain condition.  Let's start with a goal for a smaller version of our cereal dataset.
+So far, we have accumulated many different skills to wrangle our data.  One type of transformation that you may use often is replacing values within a column depending on a certain condition.  Let's bring in a smaller version of our cereal dataset.
 
 ```{python}
 df = pd.read_csv('cereal.csv',
@@ -71,7 +71,8 @@ df.head()
 
 In the dataframe, the manufacturer value "Q" isn't that informative and it might be easier to understand our data if we change all these values to something more complete like "Quaker".
 
-This leads to our task:  _*Replace the values with `mfr` equal to "Q", to a new value of "Quaker"*_
+This leads to to our task:    
+***Replace the "Q" manufacturer values, with a new value of "Quaker"***
 
 
 
@@ -83,17 +84,17 @@ Notes: Script here
 
 ---
 
-Our first instinct may be to first filter on those rows using the technique we learned in our last section.  Perhaps you may have thought of assigning our new filtered selection with the new values with similar code to below: 
+Our first instinct may be to first filter those rows using the technique we learned in our last section.  From our new filtered selection, perhaps we could assign values of "Quaker"  to column `mfr` using similar code to below: 
 
 ```{python}
 df[df['mfr'] == 'Q'].assign(mfr = 'Quaker')
 ```
 
 
-That looks about right on what we want but what happened to the rest of our dataframe? 
+That looks like it did what we want but what happened to the rest of our dataframe? 
 Remember that we only want to replace the values in our existing dataframe and not create a new one. 
 
-When we use the `.assign()` verb, it creates a new dataframe instead of altering the current one.  This is problematic since we still want the original dataframe but with simply new values for a selection of our rows.  This means we need to come up with a new method. 
+When we use the `.assign()` verb, it creates a new dataframe instead of altering the current one.  This is problematic since we still want the original dataframe but with certain values updated. So what do we do?
 
 
 
@@ -107,9 +108,7 @@ Notes: Script here
 
 # Building on more things we know
 
-
-Remember our friend `.loc[]`?  We are going to get reacquainted with them.  Similarly, to how `.loc[]` can select and return specified columns and rows of the dataframe, it can filter on conditions too. 
-
+Remember our friend `.loc[]`?  We are going to get reacquainted with it.  Similarly, to how `.loc[]` can select and return specified columns and rows of the dataframe, it can filter on conditions too.    
 We are used to seeing code involving `.loc[]` like this:
 
 ```{python}
@@ -133,7 +132,7 @@ Notes: Script here
 
 ---
 
-Some may now be asking, "Why don't we do all our filtering like this then?" Well, the answer is, you can, but we prefer not to.  Filtering without loc is a bit more readable and more efficient when doing analysis. 
+Some people may be asking, "Why don't we do all our filtering like this then?" Well, the answer is, you can, but we prefer not to.  Filtering without `.loc[]` is a bit more readable and more efficient when doing analysis. 
 
 Let's concentrate back on our task of only replacing `mfr` values equal to "Q" to "Quaker".  How can `.loc[]` help us with this? 
 
@@ -186,6 +185,15 @@ It produces a dataframe containing all the rows with True/False values depending
 df['mfr'] == 'Q'
 ```
 
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
 Essentially our code is finding the rows with `True` values and replacing the values in the `mfr` column (like we specified) the new value of 'Quaker'.  
 
 <img src='/module2/tf_quaker.png'  alt="404 image" />   
@@ -199,10 +207,26 @@ Notes: Script here
 
 ---
 
-You can split up how this code works into 2 steps: 
+You can split up how this code works into 3 steps: 
 
-1. We use `.loc[]` to find the rows specifying certain conditions.      
-2. Once we have obtained our desired rows (with a hidden column with True/False values) we replace their values in either a specified column.
+1. We use `.loc[]` to find the rows specifying certain conditions:   
+
+```python
+df.loc[df['mfr'] == 'Q']
+```
+
+2. We next indicate which column we wish to replace with the new values:
+
+```python
+df.loc[df['mfr'] == 'Q', 'mfr'] 
+```
+
+3. Once we have obtained our desired rows and the column which we are editing, we assign a value to the row meeting the condition (a "True" value):
+
+```python
+df.loc[df['mfr'] == 'Q', 'mfr'] = 'Quaker'
+```
+
 
 Notes: Script here
 <html>
@@ -223,7 +247,7 @@ df[df['mfr'] == 'Q', 'mfr'] = 'Quaker'
 TypeError: 'Series' objects are mutable, thus they cannot be hashed
 ```
 
-Unfortunately, we are not able to replace values in this manner and it results in an error.
+Unfortunately, we are not able to replace values in this manner and it results in an error since filtering this way does not allow us to specify columns like this.
 
 
 
@@ -264,9 +288,24 @@ Notes: Script here
 
 ---
 
+Let's take a look at the dataframe now: 
+
+```{python}
+df.head(10)
+```
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
 ## Creating new columns 
 
-You may have noticed we did not use `.assign()` to create our new column.  That's because as we mentioned earlier when we use `.assign()` it creates a brand new dataframe.  When we are replacing values, we don't want a new dataframe and instead, we just want to alter the current values in the existing dataframe.
+You may have noticed we did not use `.assign()` to create our new column.  That's because as we mentioned earlier, when we use `.assign()` it creates a brand new dataframe.  When we are replacing values, we don't want a new dataframe and instead, we just want to alter the current values in the existing dataframe.
 
 When we are not doing conditional value replacement, we could create new columns with a similar syntax.  Take the example of converting the weight from ounces into grams and making a new column named `weight_g`. 
 
@@ -277,7 +316,7 @@ df.head()
 ```
 
 
-This syntax is editing the existing dataframe `df` instead of creating a new one.  We prefer `.assign()` where possible since it provides more flexibility.  It gives us an opportunity to name the new dataframe something different and keep our original dataframe untransformed.  This prevents the need to re-read in our data to get our original dataframe back (which could take time depending on the size).
+This syntax is editing the existing dataframe `df` instead of creating a new one.  We prefer `.assign()` where possible since it provides more flexibility.  It gives us an opportunity to name the new dataframe something different and keep our original dataframe untransformed.  This prevents the need to re-read in our data to get our original dataframe back (which could take a long time if the dataset is large).
 
 
 Notes: Script here
