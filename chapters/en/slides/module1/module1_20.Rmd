@@ -184,6 +184,46 @@ Notes: Script here.
 
 ---
 
+There are multiple different syntaxes you may want to use when you are selecting items from the begining or end of your data. Perhaps you only want the first 3 rows of your data. We can use `.head(3)` or we can use `.iloc()`. Normally you would this syntax if using the latter:
+
+```{python}
+df.iloc[0:3]
+```
+
+However, if we are indicating the begining of the dataframe we can omit the `0`. 
+```{python}
+df.iloc[:3]
+```
+
+Notes: Script here.
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+---
+
+We can do something similar for end of a dataframe. This time we want the last 3 rows. 
+
+Instead of writing this:
+
+```{python}
+df.iloc[74:77]
+```
+
+We can specify a negative number which represents that we are counting from the other end of the data. Since we are collecting data to the end of the dataframe, we do not need to include the ending row index number. 
+
+```{python}
+df.iloc[-3:]
+```
+
+
+Notes: Script here.
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+---
+
 ## Selecting with .iloc[]
 
 Selecting using `iloc` is done identically to `loc`, however, the items within each set of square brackets **MUST** be integers, and not in quotation marks.

@@ -272,6 +272,99 @@ Notes: Script here.
 
 ---
 
+There are multiple different syntaxes you may want to use when you are
+selecting items from the begining or end of your data. Perhaps you only
+want the first 3 rows of your data. We can use `.head(3)` or we can use
+`.iloc()`. Normally you would this syntax if using the latter:
+
+``` python
+df.iloc[0:3]
+```
+
+```out
+                  mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
+name                                                                                                                               
+100% Bran           N  Cold        70        4    1     130   10.0    5.0       6     280        25      3     1.0  0.33  68.402973
+100% Natural Bran   Q  Cold       120        3    5      15    2.0    8.0       8     135         0      3     1.0  1.00  33.983679
+All-Bran            K  Cold        70        4    1     260    9.0    7.0       5     320        25      3     1.0  0.33  59.425505
+```
+
+However, if we are indicating the begining of the dataframe we can omit
+the `0`.
+
+``` python
+df.iloc[:3]
+```
+
+```out
+                  mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
+name                                                                                                                               
+100% Bran           N  Cold        70        4    1     130   10.0    5.0       6     280        25      3     1.0  0.33  68.402973
+100% Natural Bran   Q  Cold       120        3    5      15    2.0    8.0       8     135         0      3     1.0  1.00  33.983679
+All-Bran            K  Cold        70        4    1     260    9.0    7.0       5     320        25      3     1.0  0.33  59.425505
+```
+
+Notes: Script here.
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+We can do something similar for end of a dataframe. This time we want
+the last 3 rows.
+
+Instead of writing this:
+
+``` python
+df.iloc[74:77]
+```
+
+```out
+                    mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
+name                                                                                                                                 
+Wheat Chex            R  Cold       100        3    1     230    3.0   17.0       3     115        25      1     1.0  0.67  49.787445
+Wheaties              G  Cold       100        3    1     200    3.0   17.0       3     110        25      1     1.0  1.00  51.592193
+Wheaties Honey Gold   G  Cold       110        2    1     200    1.0   16.0       8      60        25      1     1.0  0.75  36.187559
+```
+
+We can specify a negative number which represents that we are counting
+from the other end of the data. Since we are collecting data to the end
+of the dataframe, we do not need to include the ending row index number.
+
+``` python
+df.iloc[-3:]
+```
+
+```out
+                    mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
+name                                                                                                                                 
+Wheat Chex            R  Cold       100        3    1     230    3.0   17.0       3     115        25      1     1.0  0.67  49.787445
+Wheaties              G  Cold       100        3    1     200    3.0   17.0       3     110        25      1     1.0  1.00  51.592193
+Wheaties Honey Gold   G  Cold       110        2    1     200    1.0   16.0       8      60        25      1     1.0  0.75  36.187559
+```
+
+Notes: Script here.
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
 ## Selecting with .iloc\[\]
 
 Selecting using `iloc` is done identically to `loc`, however, the items

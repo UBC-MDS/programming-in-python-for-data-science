@@ -164,8 +164,9 @@ Tasks:
 
 <exercise id="7" title="Name that Argument!">
 
-**Question 1**          
-Which argument will assign your row index labels when reading in your data with `pd.read_excel()`?
+**Question 1**    
+
+Which argument will assign the index when reading in your data with `pd.read_excel()`?
 
 
 <choice id="1" >
@@ -192,6 +193,7 @@ Good job!
 
 **Question 2**         
 Which argument will select only specific columns of the data file with `pd.read_csv()`?
+
 
 <choice id="2" >
 <opt text='<code>header</code>'>
@@ -256,26 +258,54 @@ Tasks:
 
 <exercise id="10" title="Column Editing Questions">
 
+Here is our `fruit_salad` dataframe once again. 
+
+```out
+                 colour    location   seed   shape    sweetness   water-content  weight
+        name                        
+       apple        red     canada    True   round       True          84         100
+      banana     yellow     mexico   False    long       True          75         120
+  cantaloupe     orange      spain    True   round       True          90        1360
+dragon-fruit    magenta      china    True   round      False          96         600
+  elderberry     purple    austria   False   round       True          80           5
+         fig     purple     turkey   False    oval      False          78          40
+       guava      green     mexico    True    oval       True          83         450
+ huckleberry       blue     canada    True   round       True          73           5
+        kiwi      brown      china    True   round       True          80          76
+       lemon     yellow     mexico   False    oval      False          83          65
+```
+
+Let's say we run the following code:
+
+```python
+fruit_salad.drop(columns = ['colour', 'shape', 'sweetness'])
+fruit_salad = fruit_salad.rename(columns={'location':'country',
+                                          'weight':'weight_g'})
+```
+
+Use the dataframe and code above to answer the next 2 questions.
+
+
 **Question 1**          
-If we do not assign an object name when renaming a column (`.rename()`) what will happen?
+After running the code above, How many columns (not including the index) are there in `fruit_salad` ? 
 
 
 <choice id="1" >
-<opt text='The code will not run'>
+<opt text='8'>
 
-You may want to look over this before moving forward.
-
-</opt>
-
-<opt text='The dataframe will not be displayed'>
-
-You may want to look over this before moving forward.
+Did you count the index? 
 
 </opt>
 
-<opt text='The new column or column name will not be saved' correct="true">
+<opt text='4'>
 
-Good job!
+Did you notice that we did not save the new fruit_salad in an object when dropping the columns? 
+
+</opt>
+
+<opt text='7' correct="true">
+
+Good job! Nothing was dropped since we did not save the changes in an object. 
 
 </opt>
 
@@ -283,20 +313,21 @@ Good job!
 
 
 **Question 2**   
-If you want your dataframe to drop a column permanently using `.drop()`, it is necessary to assign it to an object. 
+
+After running the code above, which of the following is a column in the dataframe `fruit_salad`? 
 
 
 <choice id="2" >
-<opt text='True' correct="true">
+<opt text='<code>country</code>' correct="true">
 
-Good job!
+Good job! The code successful renamed the column `location` to `country` since we save the changes in an object named `fruit_salad`.
 
 
 </opt>
 
-<opt text='False' >
+<opt text='<code>location</code>' >
 
-When using `.drop()` we need to save the dataframe in an object for the changes to be permanent
+Did the code renamed the column `location` to `country`?  Did we save the changes in an object named `fruit_salad`.
 
 </opt>
 
@@ -383,9 +414,33 @@ You may want to look over this before moving forward.  Are we using the correct 
 
 </opt>
 
-<opt text='A dataframe containing 2 new columns with `NAN` values' correct="true">
+<opt text='A dataframe containing 2 new columns with `NaN` values' correct="true">
 
 Good job!
+
+</opt>
+
+</choice>
+
+What is the correct syntax to multiply `Column_A` and `Column_B` from dataframe `df` and save it as a new column named `new_column`?
+
+
+<choice id="2" >
+<opt text="<code>df = df.assign('new_column'=df['Column_A'] * df['Column_B'])</code></code>">
+
+Do you need to put your new column name in between quotations?
+
+</opt>
+
+<opt text="<code>df = df.assign(new_column=df['Column_A'] * df['Column_B'])</code>" correct="true">
+
+You must have been paying attention. 
+
+</opt>
+
+<opt text="<code>df = df.assign[new_column=df('Column_A') * df('Column_B')]</code>" correct="true">
+
+Are you sure that you are using the correct parentheses for this?
 
 </opt>
 
@@ -393,8 +448,6 @@ Good job!
 
 </exercise>
 
-
-</exercise>
 
 <exercise id="15" title="Creating a New Column">
 
@@ -590,7 +643,7 @@ Tasks:
 <exercise id="22" title="Chaining True/False">
 
 **Question 1**          
-_Chaining removes the need for intermediate objects._
+Chaining removes the need for intermediate objects.
 
 
 <choice id="1" >

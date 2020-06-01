@@ -22,7 +22,7 @@ Often, we are interested in examining specific groups in our data.
 Perhaps the question we want to answer is:  
 *_Which manufacturer has the highest mean sugar content?_*
 
-We found in module 1 using `.value_counts()` that there are 7 different
+We found in Module 1 using `.value_counts()` that there are 7 different
 manufacturers; “K”, “G”, “P”, “R”, “Q”, “N” and “A”.
 
 ``` python
@@ -33,8 +33,8 @@ df['mfr'].value_counts()
 K    23
 G    22
 P     9
-Q     8
 R     8
+Q     8
 N     6
 A     1
 Name: mfr, dtype: int64
@@ -78,7 +78,7 @@ df[df['mfr'] == 'G'].mean().loc['sugars']
 7.954545454545454
 ```
 
-We could do this for the remaining 5 manufacturers, however, it’s
+We could do this for the remaining 5 manufacturers. However, it’s
 obvious that it’s time-consuming and a lot of work to do this
 repeatedly. Imagine how tedious this would be if we had 100 different
 manufacturers?
@@ -113,7 +113,7 @@ mfr_group
 ```
 
 ```out
-<pandas.core.groupby.generic.DataFrameGroupBy object at 0x12759ae80>
+<pandas.core.groupby.generic.DataFrameGroupBy object at 0x11de24b70>
 ```
 
 This returns a `DataFrame GroupBy` object. What exactly is this?
@@ -132,9 +132,11 @@ Notes: Script here
 
 ---
 
+For example if we only had 2 manufacturers, this would be the output:
+
 <center>
 
-<img src='/module2/groupby7.png'  alt="404 image" width = "70%" align="middle"/>
+<img src='/module2/groupby.png'  alt="404 image" width = "70%" align="middle"/>
 
 </center>
 
@@ -252,86 +254,6 @@ Notes: Script here
 
 ---
 
-We can also group by multiple columns, For example we can grouping by
-not only manufacturer but also by cereal type\! All we do is put both
-both column labels in square brackets within `.groupby()`.
-
-``` python
-mfr_type_group = df.groupby(by=['mfr', 'type'])
-mfr_type_group.groups
-```
-
-```out
-{('A', 'Hot'): Index(['Maypo'], dtype='object', name='name'), ('G', 'Cold'): Index(['Apple Cinnamon Cheerios', 'Basic 4', 'Cheerios', 'Cinnamon Toast Crunch', 'Clusters', 'Cocoa Puffs', 'Count Chocula', 'Crispy Wheat & Raisins', 'Golden Grahams', 'Honey Nut Cheerios', 'Kix', 'Lucky Charms', 'Multi-Grain Cheerios', 'Oatmeal Raisin Crisp', 'Raisin Nut Bran', 'Total Corn Flakes', 'Total Raisin Bran', 'Total Whole Grain',
-       'Triples', 'Trix', 'Wheaties', 'Wheaties Honey Gold'],
-      dtype='object', name='name'), ('K', 'Cold'): Index(['All-Bran', 'All-Bran with Extra Fiber', 'Apple Jacks', 'Corn Flakes', 'Corn Pops', 'Cracklin' Oat Bran', 'Crispix', 'Froot Loops', 'Frosted Flakes', 'Frosted Mini-Wheats', 'Fruitful Bran', 'Just Right Crunchy  Nuggets', 'Just Right Fruit & Nut', 'Mueslix Crispy Blend', 'Nut&Honey Crunch', 'Nutri-Grain Almond-Raisin', 'Nutri-grain Wheat',
-       'Product 19', 'Raisin Bran', 'Raisin Squares', 'Rice Krispies', 'Smacks', 'Special K'],
-      dtype='object', name='name'), ('N', 'Cold'): Index(['100% Bran', 'Shredded Wheat', 'Shredded Wheat 'n'Bran', 'Shredded Wheat spoon size', 'Strawberry Fruit Wheats'], dtype='object', name='name'), ('N', 'Hot'): Index(['Cream of Wheat (Quick)'], dtype='object', name='name'), ('P', 'Cold'): Index(['Bran Flakes', 'Fruit & Fibre Dates; Walnuts; and Oats', 'Fruity Pebbles', 'Golden Crisp', 'Grape Nuts Flakes', 'Grape-Nuts', 'Great Grains Pecan', 'Honey-comb', 'Post Nat. Raisin Bran'], dtype='object', name='name'), ('Q', 'Cold'): Index(['100% Natural Bran', 'Cap'n'Crunch', 'Honey Graham Ohs', 'Life', 'Puffed Rice', 'Puffed Wheat', 'Quaker Oat Squares'], dtype='object', name='name'), ('Q', 'Hot'): Index(['Quaker Oatmeal'], dtype='object', name='name'), ('R', 'Cold'): Index(['Almond Delight', 'Bran Chex', 'Corn Chex', 'Double Chex', 'Muesli Raisins; Dates; & Almonds', 'Muesli Raisins; Peaches; & Pecans', 'Rice Chex', 'Wheat Chex'], dtype='object', name='name')}
-```
-
-The attribute `ngroups` indicates how many groups there are.
-
-``` python
-mfr_type_group.ngroups
-```
-
-```out
-9
-```
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
-
-If we want to get the dataframe of a specific group now, we put the
-value of each column in parenthesis.
-
-``` python
-mfr_type_group.get_group(('K', 'Cold'))
-```
-
-```out
-                          mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
-name                                                                                                                                       
-All-Bran                    K  Cold        70        4    1     260    9.0    7.0       5     320        25      3    1.00  0.33  59.425505
-All-Bran with Extra Fiber   K  Cold        50        4    0     140   14.0    8.0       0     330        25      3    1.00  0.50  93.704912
-Apple Jacks                 K  Cold       110        2    0     125    1.0   11.0      14      30        25      2    1.00  1.00  33.174094
-Corn Flakes                 K  Cold       100        2    0     290    1.0   21.0       2      35        25      1    1.00  1.00  45.863324
-Corn Pops                   K  Cold       110        1    0      90    1.0   13.0      12      20        25      2    1.00  1.00  35.782791
-...                        ..   ...       ...      ...  ...     ...    ...    ...     ...     ...       ...    ...     ...   ...        ...
-Raisin Bran                 K  Cold       120        3    1     210    5.0   14.0      12     240        25      2    1.33  0.75  39.259197
-Raisin Squares              K  Cold        90        2    0       0    2.0   15.0       6     110        25      3    1.00  0.50  55.333142
-Rice Krispies               K  Cold       110        2    0     290    0.0   22.0       3      35        25      1    1.00  1.00  40.560159
-Smacks                      K  Cold       110        2    1      70    1.0    9.0      15      40        25      2    1.00  0.75  31.230054
-Special K                   K  Cold       110        6    0     230    1.0   16.0       3      55        25      1    1.00  1.00  53.131324
-
-[23 rows x 15 columns]
-```
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
-
 ## Summary Statistics with Groups
 
 What now? Grouping doesn’t answer our initial question of ***Which
@@ -383,7 +305,7 @@ Notes: Script here
 ## Aggregating dataframes
 
 In situations where we want to collect multiple statistics together, we
-can aggregate them in 1 step using a verb called `.agg()`.
+can aggregate them in one step using a verb called `.agg()`.
 
 `.agg()` can be used on its own using a single measurement, without
 groupby:
@@ -516,6 +438,12 @@ R        150   90    110       4   1    2.0   3   0      1    280   95  200.0   
 ```
 
 This gives a value for each group and for each statistic we specified.
+For example:
+
+Look at the ‘150’ in the bottom row on the far left. The interpretation
+is that, for cases where the manufacturer is ‘R’, the max number of
+calories is 150. In a similar manner if the manufacturer is ‘P’ the
+minumum amount of sodium, is 45.
 
 Notes: Script here
 
@@ -580,22 +508,50 @@ Notes: Script here
 
 ## Plotting Groupby Objects
 
-Let’s return to thequestion we asked at the beginning of this section:
+Let’s return to the question we asked at the beginning of this section:
 
 *_Which manufacturer has the highest mean sugar content?_*
 
 A nice way of showing our results would be to graph this. A bar chart
-should do the trick\! Let’s use our chaining technique for this as well.
+like this should do the trick\!
 
-Here are the steps we are following to get our eventual plot.  
-\- We create a groupby object and calculate the mean for each column in
-the dataframe.  
-\- Next, we take the single column we are interested in using
-`.loc[]`.  
-\- Our last action is the plot everything using `.plot.bar()`.
+<img src="/module2/module2_24/unnamed-chunk-15-1.png" width="576" />
 
-We are going to save our plot as an object named `sugar_plot`. Notes:
-Script here
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+Let’s go through the steps that are needed to make this plot.
+
+  - We are going to save our plot as an object named `sugar_plot` and
+    use our chaining technique as well.
+  - We create a groupby object and calculate the mean for each column in
+    the dataframe.  
+  - Next, we take the single column we are interested in using
+    `.loc[]`.  
+  - Our last action is the plot everything using `.plot.bar()`.
+
+<!-- end list -->
+
+``` python
+sugar_plot = (df.groupby(by='mfr')
+                .mean()
+                .loc[:,'sugars']
+                .plot.bar()
+             )
+```
+
+Notes: Script here
 
 <html>
 
@@ -618,7 +574,7 @@ sugar_plot = (df.groupby(by='mfr')
 sugar_plot
 ```
 
-<img src="/module2/module2_24/unnamed-chunk-18-1.png" width="576" />
+<img src="/module2/module2_24/unnamed-chunk-16-1.png" width="576" />
 
 This plot, however, looks a little unfinished. We need to add a title
 and label our y-axis.
@@ -655,12 +611,12 @@ sugar_plot = (df.groupby(by='mfr')
                 .loc[:,'sugars']
                 .plot.bar(title='Mean sugar content among manufacturers')
               )
-sugar_plot.set_ylabel('Sugar content (in grams)', fontsize=12)
-sugar_plot = sugar_plot.set_xlabel('Manufacturer', fontsize=12)
+sugar_plot.set_ylabel('Sugar content (in grams)', fontsize=9)
+sugar_plot = sugar_plot.set_xlabel('Manufacturer', fontsize=9)
 sugar_plot
 ```
 
-<img src="/module2/module2_24/unnamed-chunk-19-1.png" width="55%" />
+<img src="/module2/module2_24/unnamed-chunk-17-1.png" width="45%" />
 
 Notes: Script here
 
@@ -687,12 +643,126 @@ nutrition_plot = (df.groupby(by='mfr')
                     .loc[:, ['fat', 'fiber', 'protein']]
                     .plot.bar(title='Mean nutritrion value over different manufacturers')
                  )
-nutrition_plot.set_ylabel('Content (in grams)', fontsize=12)
-nutrition_plot = nutrition_plot.set_xlabel('Manufacturer', fontsize=12)
+nutrition_plot.set_ylabel('Content (in grams)', fontsize=9)
+nutrition_plot = nutrition_plot.set_xlabel('Manufacturer', fontsize=9)
 nutrition_plot
 ```
 
-<img src="/module2/module2_24/unnamed-chunk-20-1.png" width="50%" />
+<img src="/module2/module2_24/unnamed-chunk-18-1.png" width="60%" />
+
+If you want high fibre and low fat, consider having N’s cereals for
+breakfast (or lunch or dinner)\!
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+## Multiple Grouping
+
+We can group by multiple columns as well. For example we can grouping by
+not only manufacturer but also by cereal type\! All we do is put both
+both column labels in square brackets within `.groupby()`.
+
+``` python
+mfr_type_group = df.groupby(by=['mfr', 'type'])
+mfr_type_group.groups
+```
+
+```out
+{('A', 'Hot'): Index(['Maypo'], dtype='object', name='name'), ('G', 'Cold'): Index(['Apple Cinnamon Cheerios', 'Basic 4', 'Cheerios', 'Cinnamon Toast Crunch', 'Clusters', 'Cocoa Puffs', 'Count Chocula', 'Crispy Wheat & Raisins', 'Golden Grahams', 'Honey Nut Cheerios', 'Kix', 'Lucky Charms', 'Multi-Grain Cheerios', 'Oatmeal Raisin Crisp', 'Raisin Nut Bran', 'Total Corn Flakes', 'Total Raisin Bran', 'Total Whole Grain',
+       'Triples', 'Trix', 'Wheaties', 'Wheaties Honey Gold'],
+      dtype='object', name='name'), ('K', 'Cold'): Index(['All-Bran', 'All-Bran with Extra Fiber', 'Apple Jacks', 'Corn Flakes', 'Corn Pops', 'Cracklin' Oat Bran', 'Crispix', 'Froot Loops', 'Frosted Flakes', 'Frosted Mini-Wheats', 'Fruitful Bran', 'Just Right Crunchy  Nuggets', 'Just Right Fruit & Nut', 'Mueslix Crispy Blend', 'Nut&Honey Crunch', 'Nutri-Grain Almond-Raisin', 'Nutri-grain Wheat',
+       'Product 19', 'Raisin Bran', 'Raisin Squares', 'Rice Krispies', 'Smacks', 'Special K'],
+      dtype='object', name='name'), ('N', 'Cold'): Index(['100% Bran', 'Shredded Wheat', 'Shredded Wheat 'n'Bran', 'Shredded Wheat spoon size', 'Strawberry Fruit Wheats'], dtype='object', name='name'), ('N', 'Hot'): Index(['Cream of Wheat (Quick)'], dtype='object', name='name'), ('P', 'Cold'): Index(['Bran Flakes', 'Fruit & Fibre Dates; Walnuts; and Oats', 'Fruity Pebbles', 'Golden Crisp', 'Grape Nuts Flakes', 'Grape-Nuts', 'Great Grains Pecan', 'Honey-comb', 'Post Nat. Raisin Bran'], dtype='object', name='name'), ('Q', 'Cold'): Index(['100% Natural Bran', 'Cap'n'Crunch', 'Honey Graham Ohs', 'Life', 'Puffed Rice', 'Puffed Wheat', 'Quaker Oat Squares'], dtype='object', name='name'), ('Q', 'Hot'): Index(['Quaker Oatmeal'], dtype='object', name='name'), ('R', 'Cold'): Index(['Almond Delight', 'Bran Chex', 'Corn Chex', 'Double Chex', 'Muesli Raisins; Dates; & Almonds', 'Muesli Raisins; Peaches; & Pecans', 'Rice Chex', 'Wheat Chex'], dtype='object', name='name')}
+```
+
+The attribute `ngroups` indicates how many groups there are.
+
+``` python
+mfr_type_group.ngroups
+```
+
+```out
+9
+```
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+If we want to get the dataframe of a specific group now, we put the
+value of each column in parentheses.
+
+``` python
+mfr_type_group.get_group(('K', 'Cold'))
+```
+
+```out
+                          mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
+name                                                                                                                                       
+All-Bran                    K  Cold        70        4    1     260    9.0    7.0       5     320        25      3    1.00  0.33  59.425505
+All-Bran with Extra Fiber   K  Cold        50        4    0     140   14.0    8.0       0     330        25      3    1.00  0.50  93.704912
+Apple Jacks                 K  Cold       110        2    0     125    1.0   11.0      14      30        25      2    1.00  1.00  33.174094
+Corn Flakes                 K  Cold       100        2    0     290    1.0   21.0       2      35        25      1    1.00  1.00  45.863324
+Corn Pops                   K  Cold       110        1    0      90    1.0   13.0      12      20        25      2    1.00  1.00  35.782791
+...                        ..   ...       ...      ...  ...     ...    ...    ...     ...     ...       ...    ...     ...   ...        ...
+Raisin Bran                 K  Cold       120        3    1     210    5.0   14.0      12     240        25      2    1.33  0.75  39.259197
+Raisin Squares              K  Cold        90        2    0       0    2.0   15.0       6     110        25      3    1.00  0.50  55.333142
+Rice Krispies               K  Cold       110        2    0     290    0.0   22.0       3      35        25      1    1.00  1.00  40.560159
+Smacks                      K  Cold       110        2    1      70    1.0    9.0      15      40        25      2    1.00  0.75  31.230054
+Special K                   K  Cold       110        6    0     230    1.0   16.0       3      55        25      1    1.00  1.00  53.131324
+
+[23 rows x 15 columns]
+```
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+We can plot in the same way as before
+
+``` python
+type_plot = (df.groupby(by=['mfr', 'type'])
+                    .mean()
+                    .loc[:, ['sugars']]
+                    .plot.bar(title='Mean sugar value over different manufacturers and types')
+            )
+type_plot.set_ylabel('Sugar (in grams)', fontsize=16)
+type_plot.set_xlabel('Manufacturer and cereal type', fontsize=16)
+type_plot
+```
+
+<img src="/module2/module2_24/unnamed-chunk-22-1.png" width="70%" />
 
 Notes: Script here
 

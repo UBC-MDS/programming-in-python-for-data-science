@@ -18,7 +18,7 @@ main <- function(input) {
   
   # render the rmd and give variable to created md path
   render(input) 
-  str_input <- gsub(input, pattern=".rmd$", replacement="")
+  str_input <- gsub(input, pattern=".rmd$|.Rmd$", replacement="")
   md_input = paste(str_input, ".md", sep = "")
   text <- read_file(md_input)
   

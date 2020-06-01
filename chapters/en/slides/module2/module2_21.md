@@ -44,10 +44,27 @@ Notes: Script here
 
 ---
 
-When we made our frequency table in module 1, we first saved the single
-column as an object before we used `value_counts()`. Instead of saving
-the column in advance, we can skip this step and do this and the
-frequency table in one line with chaining:
+When we made our frequency table in Module 1, we first saved the single
+column as an object before we used `value_counts()` like so:
+
+``` python
+manufacturer_column = df['mfr']
+manufacturer_column.value_counts()
+```
+
+```out
+K    23
+G    22
+P     9
+R     8
+Q     8
+N     6
+A     1
+Name: mfr, dtype: int64
+```
+
+Instead of saving the column in advance, we can skip this step and do
+this and the frequency table in one line with chaining:
 
 ``` python
 df['mfr'].value_counts()
@@ -57,8 +74,8 @@ df['mfr'].value_counts()
 K    23
 G    22
 P     9
-Q     8
 R     8
+Q     8
 N     6
 A     1
 Name: mfr, dtype: int64
@@ -153,7 +170,7 @@ We cut out creating intermediate variables which is great but now we
 have a really long line of code and it’s a bit hard to read.
 
 How can we make this easier to understand?  
-In this course, we suggest giving a new line for each verb We can do
+In this course, we suggest giving a new line for each verb. We can do
 this by wrapping our code in parentheses and making a new line before
 each period (`.`). It’s a good habit to indent and have the verbs lined
 up for additional clarity.
@@ -164,6 +181,30 @@ cereal_mean = (df[df['mfr'] == 'K'].loc[:, ["calories", "sugars", "rating"]]
                                    .head()
               )
 ```
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+## Coding Preferences
+
+Although we have seen how chaining has advantages, it’s a coding style
+that is adopted by the person writing the code. Some argue that it can
+add restrictions to your code. One thing that is for certain the
+readability of the code written. Someone else (or more often, future
+you\!) must be able to understand what is being accomplished. This is
+why comments (`#`) are so important. If a lot is going on in your code,
+it’s good habits to explain it whether it’s with chaining, or without.
 
 Notes: Script here
 

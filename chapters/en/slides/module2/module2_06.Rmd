@@ -59,11 +59,21 @@ Notes: Script here
 
 ## Arguments 
 
-We have talked about quite a few different arguments when reading in different file types such as `index_col`, `delimiter` and for excel files `sheet_name` but there are many others that are important to know so we can to read in the file the way we want it to appear in our code. 
+When we load in our data we use different arguments to make sure it's organized how we want it. 
 
-To recap from the last module, `index_col` is an argument that indicates which column will be acting as our index label.  In most of the cases we have encountered, it was the very first column. 
+Remember how we load the majority of our data? 
 
-We are going to introduce a few: 
+```python
+pd.read_csv('cereal.csv', index_col=0)
+```
+
+`index_col` is an argument that indicates which column will be acting as our index label.  In most of the cases we have encountered, it was the very first column.  
+
+`delimiter` is another argument we have already discussed that instructs on how to separate each value in the data. 
+
+This is only the tip of the iceburg.  There are many others that are helpful when reading in our data. 
+
+Here, we are going to introduce a few more arguments to `pd.read_csv()` and `pd.read_excel()`: 
 
 - `header`
 - `nrows`
@@ -74,8 +84,6 @@ If you wish to know more, you can find the documentation at the following links:
 - <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html" target="_blank">`pd.read_csv()`</a>
 - <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_excel.html" target="_blank">`pd.read_excel()`</a>
 
-      
-_Please note that these arguments can be used for both `pd.read_csv()` and `pd.read_excel()`._ 
 
 Notes: Script here.
 <html>
@@ -87,7 +95,7 @@ Notes: Script here.
 
 ## header
 
-We have been lucky up until now that all the data we have loaded in has been particularly straight forward.  Sometimes with data, there are a few lines of text explaining important points about the file.  We do not want to include this in our dataframe and therefore we need to specify exactly when our dataframe begins.  This is where `header` comes in. 
+We have been lucky up until now that all the data we have loaded in has been particularly straightforward.  Sometimes with data, there are a few lines of text explaining important points about the file.  We do not want to include this in our dataframe and therefore we need to specify exactly when our dataframe begins.  This is where `header` comes in. 
 Take a look at the <a href="https://github.com/UBC-MDS/MCL-DSCI-511-programming-in-python/blob/master/slides/candybars-h.csv" target="_blank">`candybars-h.csv` file </a> as an example.
 
 
@@ -113,7 +121,7 @@ Notes: Script here.
 
 ---
 
-If we load this data without any arguments this is the result. 
+"If we load this data without any arguments, this is the result:
 
 ```{python}
 candybars = pd.read_csv('candybars-h.csv')
@@ -169,7 +177,7 @@ Notes: Script here.
 ## usecols
 
 Similarly to how `nrows` specifies how many rows to read in, `usecols` selects which columns to load from the data.  Perhaps the only columns relevant to our analysis are the columns `name`, `weight` and `available_canada_america`.  We can forgo the other columns when reading the data in. 
-In a similar way to selecting columns using `.iloc[]`. We put the desired column index positions in square brackets for the argument. 
+In a similar way to selecting columns using `.iloc[]`, we put the desired column index positions in square brackets for the argument. 
 
 ```{python}
 candybars = pd.read_csv('candybars.csv', usecols=[0, 1, 10])

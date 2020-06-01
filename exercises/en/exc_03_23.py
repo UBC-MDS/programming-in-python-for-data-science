@@ -5,9 +5,7 @@ import pandas as pd
 lego_inventory = pd.read_csv('data/lego_inventory_parts.csv', index_col=0)
 lego_colors = pd.read_csv('data/lego-colors.csv', index_col=0)
 
-# Combine the two dataframes to make 1 large complete dataframe by using an outer join
-# Make sure to set the argument indicator to True
-# Name the new dataframe lego_tower
+# Combine the two dataframes and name the new dataframe lego_tower
 
 ____ = ____.____(____)
 

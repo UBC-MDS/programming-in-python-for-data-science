@@ -20,8 +20,8 @@ Notes: Script here
 
 Doing some sort of transformation on the columns of a dataframe will
 most likely come up in your analysis somewhere and it’s not always
-straight forward. Let’s welcome back the `cereal.csv` data we have
-worked with in Module 1.
+straightforward. Let’s welcome back the `cereal.csv` data we have worked
+with in Module 1.
 
 ``` python
 df = pd.read_csv('cereal.csv', index_col=0)
@@ -58,11 +58,11 @@ Notes: Script here
 
 ---
 
-To make things especially clear, for the next few scenarios let only use
-the first 5 rows of the dataset.
+To make things especially clear, for the next few scenarios let’s only
+use the first 5 rows of the dataset.
 
 ``` python
-df = df.iloc[0:5]
+df = df.iloc[:5]
 df
 ```
 
@@ -76,11 +76,10 @@ All-Bran with Extra Fiber   K  Cold        50        4    0     140   14.0    8.
 Almond Delight              R  Cold       110        2    2     200    1.0   14.0       8       1        25      3     1.0  0.75  34.384843
 ```
 
-Let’s explore the next scenario. Perhaps we recently read the cereal
-data’s documentation explaining that the `fat` column is being expressed
-as the number of grams of fat above 2.  
-This means that the fat content of each cereal is actually an additional
-2 grams. How can we rectify this?
+Take this next scenario. Perhaps we recently read the cereal data’s
+documentation explaining that the `fat` column is being expressed as
+grams and we are interested in miligrams.  
+How can we rectify this?
 
 Notes: Script here
 
@@ -96,13 +95,13 @@ Notes: Script here
 
 ---
 
-We need to add 2 to each of the row’s fat value.
+We need to multiply each of the row’s fat value by 1000.
 
 <br>
 
 <center>
 
-<img src='/module2/plus2.png'  alt="404 image" />
+<img src='/module2/times1000.png'  alt="404 image" />
 
 </center>
 
@@ -121,20 +120,39 @@ Notes: Script here
 ---
 
 Here is where some magic happens. Python doesn’t require us to make a
-whole column filled with 2s to get the result we want. It would simply
-add 2 to each column.
+whole column filled with 1000s to get the result we want. It would
+simply multiply 1000 to each column. (In Python we use `*` for
+multiplication.)
+
+So our original fat column in the cereal dataframe:
 
 ``` python
-df['fat'] + 2
+df['fat']
 ```
 
 ```out
 name
-100% Bran                    3
-100% Natural Bran            7
-All-Bran                     3
-All-Bran with Extra Fiber    2
-Almond Delight               4
+100% Bran                    1
+100% Natural Bran            5
+All-Bran                     1
+All-Bran with Extra Fiber    0
+Almond Delight               2
+Name: fat, dtype: int64
+```
+
+Is transformed to this:
+
+``` python
+df['fat'] * 1000
+```
+
+```out
+name
+100% Bran                    1000
+100% Natural Bran            5000
+All-Bran                     1000
+All-Bran with Extra Fiber       0
+Almond Delight               2000
 Name: fat, dtype: int64
 ```
 
@@ -155,21 +173,39 @@ Notes: Script here
 
 ---
 
-We can do the same thing with multiplication/division too.  
-let’s multiply the rating of each cereal by 2.  
-In Python we use `*` for multiplication.
+We can do the same thing with any operation too.  
+Let’s divide the rating of each cereal by 10 so it lies on a 10 point
+scale.
+
+The ratings column
 
 ``` python
-df['rating'] * 2
+df['rating'] 
 ```
 
 ```out
 name
-100% Bran                    136.805946
-100% Natural Bran             67.967358
-All-Bran                     118.851010
-All-Bran with Extra Fiber    187.409824
-Almond Delight                68.769686
+100% Bran                    68.402973
+100% Natural Bran            33.983679
+All-Bran                     59.425505
+All-Bran with Extra Fiber    93.704912
+Almond Delight               34.384843
+Name: rating, dtype: float64
+```
+
+Gets transformed to this:
+
+``` python
+df['rating'] / 10
+```
+
+```out
+name
+100% Bran                    6.840297
+100% Natural Bran            3.398368
+All-Bran                     5.942551
+All-Bran with Extra Fiber    9.370491
+Almond Delight               3.438484
 Name: rating, dtype: float64
 ```
 
@@ -191,7 +227,7 @@ Every row’s value is changed by the operation.
 
 <center>
 
-<img src='/module2/times2.png'  alt="404 image" />
+<img src='/module2/divide10.png'  alt="404 image" />
 
 </center>
 
@@ -212,29 +248,14 @@ Notes: Script here
 We are not limited to simply taking a column and transforming it by a
 single number. We can do operations involving multiple columns as well.
 Perhaps we wanted to know the amount of sugar (`sugar`) per cup of
-cereal (`cups`).
-
+cereal (`cups`).  
 The expected result would look something like this:
 
 <center>
 
-<img src='/module2/sugarcups.png'  alt="404 image" />
+<img src='/module2/sugarcups.png'  width="450" alt="404 image" />
 
 </center>
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
 
 Remember with any column operation we use only single square brackets on
 our columns.  
@@ -255,7 +276,7 @@ Almond Delight               10.666667
 dtype: float64
 ```
 
-Each sugar row value is divided by its respected cups value.
+Each sugar row value is divided by its respective cups value.
 
 Notes: Script here
 
@@ -305,28 +326,30 @@ Notes: Script here
 ---
 
 Up until now, all of these operations have been done without being added
-to our cereal dataframe. Let’s explore how we can add new columns to our
-complete cereal dataframe.
+to our cereal dataframe. Let’s explore how we can add new columns to a
+less detailed version of our cereal dataframe. Remember the argument
+`use_cols`? We are going to use it bring in only a selection of columns
+so it’s easier to follow the examples.
 
 ``` python
-df = pd.read_csv('cereal.csv', index_col=0)
+df = pd.read_csv('cereal.csv', index_col=0, usecols=['mfr','type', 'fat', 'sugars', 'weight', 'cups','rating'])
 df
 ```
 
 ```out
-                          mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
-name                                                                                                                                       
-100% Bran                   N  Cold        70        4    1     130   10.0    5.0       6     280        25      3     1.0  0.33  68.402973
-100% Natural Bran           Q  Cold       120        3    5      15    2.0    8.0       8     135         0      3     1.0  1.00  33.983679
-All-Bran                    K  Cold        70        4    1     260    9.0    7.0       5     320        25      3     1.0  0.33  59.425505
-All-Bran with Extra Fiber   K  Cold        50        4    0     140   14.0    8.0       0     330        25      3     1.0  0.50  93.704912
-...                        ..   ...       ...      ...  ...     ...    ...    ...     ...     ...       ...    ...     ...   ...        ...
-Trix                        G  Cold       110        1    1     140    0.0   13.0      12      25        25      2     1.0  1.00  27.753301
-Wheat Chex                  R  Cold       100        3    1     230    3.0   17.0       3     115        25      1     1.0  0.67  49.787445
-Wheaties                    G  Cold       100        3    1     200    3.0   17.0       3     110        25      1     1.0  1.00  51.592193
-Wheaties Honey Gold         G  Cold       110        2    1     200    1.0   16.0       8      60        25      1     1.0  0.75  36.187559
+     type  fat  sugars  weight  cups     rating
+mfr                                            
+N    Cold    1       6     1.0  0.33  68.402973
+Q    Cold    5       8     1.0  1.00  33.983679
+K    Cold    1       5     1.0  0.33  59.425505
+K    Cold    0       0     1.0  0.50  93.704912
+..    ...  ...     ...     ...   ...        ...
+G    Cold    1      12     1.0  1.00  27.753301
+R    Cold    1       3     1.0  0.67  49.787445
+G    Cold    1       3     1.0  1.00  51.592193
+G    Cold    1       8     1.0  0.75  36.187559
 
-[77 rows x 15 columns]
+[77 rows x 6 columns]
 ```
 
 Notes: Script here
@@ -360,16 +383,16 @@ df['weight']*oz_to_g
 ```
 
 ```out
-name
-100% Bran                    28.3495
-100% Natural Bran            28.3495
-All-Bran                     28.3495
-All-Bran with Extra Fiber    28.3495
-                              ...   
-Trix                         28.3495
-Wheat Chex                   28.3495
-Wheaties                     28.3495
-Wheaties Honey Gold          28.3495
+mfr
+N    28.3495
+Q    28.3495
+K    28.3495
+K    28.3495
+      ...   
+G    28.3495
+R    28.3495
+G    28.3495
+G    28.3495
 Name: weight, Length: 77, dtype: float64
 ```
 
@@ -399,15 +422,13 @@ df.head()
 ```
 
 ```out
-                          mfr  type  calories  protein  fat  sodium  fiber  ...  potass  vitamins  shelf  weight  cups     rating  weight_g
-name                                                                        ...                                                            
-100% Bran                   N  Cold        70        4    1     130   10.0  ...     280        25      3     1.0  0.33  68.402973   28.3495
-100% Natural Bran           Q  Cold       120        3    5      15    2.0  ...     135         0      3     1.0  1.00  33.983679   28.3495
-All-Bran                    K  Cold        70        4    1     260    9.0  ...     320        25      3     1.0  0.33  59.425505   28.3495
-All-Bran with Extra Fiber   K  Cold        50        4    0     140   14.0  ...     330        25      3     1.0  0.50  93.704912   28.3495
-Almond Delight              R  Cold       110        2    2     200    1.0  ...       1        25      3     1.0  0.75  34.384843   28.3495
-
-[5 rows x 16 columns]
+     type  fat  sugars  weight  cups     rating  weight_g
+mfr                                                      
+N    Cold    1       6     1.0  0.33  68.402973   28.3495
+Q    Cold    5       8     1.0  1.00  33.983679   28.3495
+K    Cold    1       5     1.0  0.33  59.425505   28.3495
+K    Cold    0       0     1.0  0.50  93.704912   28.3495
+R    Cold    2       8     1.0  0.75  34.384843   28.3495
 ```
 
 Just like we did earlier in the module, we need to save the dataframe to
@@ -437,16 +458,16 @@ df['sugars']/df['cups']
 ```
 
 ```out
-name
-100% Bran                    18.181818
-100% Natural Bran             8.000000
-All-Bran                     15.151515
-All-Bran with Extra Fiber     0.000000
-                               ...    
-Trix                         12.000000
-Wheat Chex                    4.477612
-Wheaties                      3.000000
-Wheaties Honey Gold          10.666667
+mfr
+N    18.181818
+Q     8.000000
+K    15.151515
+K     0.000000
+       ...    
+G    12.000000
+R     4.477612
+G     3.000000
+G    10.666667
 Length: 77, dtype: float64
 ```
 
@@ -472,15 +493,13 @@ df.head()
 ```
 
 ```out
-                          mfr  type  calories  protein  fat  sodium  fiber  ...  vitamins  shelf  weight  cups     rating  weight_g  sugar_per_cup
-name                                                                        ...                                                                   
-100% Bran                   N  Cold        70        4    1     130   10.0  ...        25      3     1.0  0.33  68.402973   28.3495      18.181818
-100% Natural Bran           Q  Cold       120        3    5      15    2.0  ...         0      3     1.0  1.00  33.983679   28.3495       8.000000
-All-Bran                    K  Cold        70        4    1     260    9.0  ...        25      3     1.0  0.33  59.425505   28.3495      15.151515
-All-Bran with Extra Fiber   K  Cold        50        4    0     140   14.0  ...        25      3     1.0  0.50  93.704912   28.3495       0.000000
-Almond Delight              R  Cold       110        2    2     200    1.0  ...        25      3     1.0  0.75  34.384843   28.3495      10.666667
-
-[5 rows x 17 columns]
+     type  fat  sugars  weight  cups     rating  weight_g  sugar_per_cup
+mfr                                                                     
+N    Cold    1       6     1.0  0.33  68.402973   28.3495      18.181818
+Q    Cold    5       8     1.0  1.00  33.983679   28.3495       8.000000
+K    Cold    1       5     1.0  0.33  59.425505   28.3495      15.151515
+K    Cold    0       0     1.0  0.50  93.704912   28.3495       0.000000
+R    Cold    2       8     1.0  0.75  34.384843   28.3495      10.666667
 ```
 
 Give it a shot in the exercises now on your own.

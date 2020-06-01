@@ -29,7 +29,7 @@ including:
     it directly in from the page address.
   - A `txt` file: We saw what a plain text file looked like in the last
     module and it is generally a simple manner of storing data.  
-  - An `xlsx` file: This is a classic Excel spreadsheet. This is
+  - An `xlsx` file: This is a Microsoft Excel spreadsheet. This is
     different than a regular `csv` file as an Excel file can contain
     many different sheets and can be formatted uniquely and specifically
     for an individual’s needs.
@@ -60,8 +60,8 @@ be
 <a href="https://github.com/UBC-MDS/MCL-DSCI-511-programming-in-python" target="_blank">viewed
 online</a>. The `candybar.csv` file that we used in the last module is
 stored at this URL:  
-<a href="https://raw.githubusercontent.com/UBC-MDS/MCL-DSCI-511-programming-in-python/master/data/candybars.csv" target="_blank">https://raw.githubusercontent.com/UBC-MDS/MCL-DSCI-511-programming-in-python/master/data/candybars.csv</a>
-You can see that it looks like a plain `txt` file with each line being a
+<a href="https://raw.githubusercontent.com/UBC-MDS/MCL-DSCI-511-programming-in-python/master/data/candybars.csv" target="_blank">https://raw.githubusercontent.com/UBC-MDS/MCL-DSCI-511-programming-in-python/master/data/candybars.csv</a>.
+You can see that it looks like a plain text file with each line being a
 row and each column value separated with a comma.
 
 The code required to read in this URL looks like this:
@@ -80,8 +80,8 @@ candybars.head()
 4          Twix      58          1        0        1       0                  1        0                0      1                     Both
 ```
 
-It uses the same `pd.read_csv()` function we saw when reading in `csv`
-files.
+It uses the same `pd.read_csv()` function we saw when reading in csv
+files locally.
 
 Notes: Script here.
 
@@ -123,7 +123,8 @@ candybars.head()
 
 This is not ideal. What you should notice is instead of each column
 value being separated by a column, it is now separated by `\t`. This is
-called the **delimiter**.
+called the **delimiter**. In this specific case, a `\t` delimiter is a
+“tab”.
 
 Notes: Script here.
 
@@ -178,9 +179,9 @@ Notes: Script here.
 
 Excel files need special attention because they give the user the
 capability of additional formatting including saving multiple dataframes
-on different “sheets” within a single file. This means that if that is
-the case, we need to specify which one we want. Since this is a new type
-of animal, we also need a new verb. Enter `read_excel()`.
+on different “sheets” within a single file. If this is the case, we need
+to specify which sheet we want. Since this is a new type of animal, we
+also need a new verb. Enter `read_excel()`.
 
 Our candybars dataframe is now saved as an excel spreadsheet named
 `foods.xlsx` on a sheet named `chocolate`.  

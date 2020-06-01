@@ -38,8 +38,8 @@ pd.set_option('display.width', 350)
 
 np.set_printoptions(linewidth=400)
 
-pd.set_option('display.max_columns', 15)
-pd.set_option('display.max_rows', 8)
+pd.set_option('display.max_columns', 20)
+pd.set_option('display.max_rows', 30)
 
 df = pd.read_csv('cereal.csv', index_col=0)
 ```
@@ -78,19 +78,23 @@ Notes: Script here
 
 ---
 
-## Standard filtering 
+## Conditions
 
-Suppose you are trying to find a cereal with a protein content greater than 4g per serving.  We can find those rows with the following code.  
+Suppose you are trying to find the information for cereals with a protein content greater than 4g per serving.
+Our first instinct would be something along the line of 
 
 ```{python}
-df[df['protein'] > 4]
+df['protein'] > 4
 ```
 
-This is a little tricky because we first specify the dataframe `df` and within its square brackets, we specify the column attempting to be filtered from the dataframe with `df['protein']` followed by the condition.      
-    
-The code can be translated to "select the rows from the dataframe `df` where the dataframe protein value is greater than 4". 
+This can be translated as "From the `protein` column in the dataframe `df`, which have values greater than 4? 
 
-We can see from the output of this code that all the values from the protein column are above 4. 
+The output shows all the index labels and a column with True or False values depending on if the row meets the condition.
+Cereals with `True`  have a protein content greater than 4 and  `False` if they do not.  
+
+But we want a dataframe will all the information that only contains the rows with protein above 4. How can that be achieved?
+
+
 
 Notes: Script here
 <html>
@@ -100,7 +104,28 @@ Notes: Script here
 
 ---
 
-We can do this with equalities as well. 
+We wrap in within our dataframe similarly to how we slice. 
+
+```{python}
+df[df['protein'] > 4]
+```
+
+Normally we use `df['column name':'column name']` to select certain rows by location, but now we are selecting based on if a condition results in "True" columns. 
+    
+The code can be translated to 
+> Only select the rows from the dataframe `df` that from the `protein` column in the dataframe `df`, have values greater than 4"
+
+We can see from the output that only the rows meeting the condition as displayed. 
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+We can do this with equalities as well:
 
 ```{python}
 df[df['protein'] == 4]
@@ -119,7 +144,7 @@ Notes: Script here
 
 ---
 
-We can filter categorical columns too.  In this example,  I only want cereals from the manufacturer "Q" (For Quaker)
+We can filter categorical columns too.  In this example,  I only want cereals from the manufacturer "Q" (For Quaker):
 
 ```{python}
 df[df['mfr'] == 'Q']
@@ -139,6 +164,39 @@ Notes: Script here
 
 We now know how to filter on one condition but how do we filter if we have many? 
 Perhaps we only want cereals with protein content between 4 to 5 grams?
+The cereals that meet protein contents greater or equal to 4 are the following:   
+
+```{python}
+df[df['protein'] >= 4]
+```
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+And the cereals that meet the condition of protein content below or equal to 5 grams are the following:
+
+```{python}
+df[df['protein'] <= 5]
+
+```
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+We add the 2 conditions together in code that looks like this:
+
 
 ```{python}
 df[(df['protein'] >= 4) & (df['protein'] <= 5)]
@@ -148,6 +206,19 @@ df[(df['protein'] >= 4) & (df['protein'] <= 5)]
 Code Explained:     
 We need to use the special symbol `&` indicating "and".  This means that both conditions must hold to be returned in the new dataframe. 
 Each condition is wrapped with parentheses to distinguish the conditions from one another. 
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+That means that only rows present in **both** dataframes will be selected. 
+
+<img src='/module2/condition_and.png'  alt="404 image" />   
+
 
 Notes: Script here
 <html>
@@ -184,8 +255,6 @@ df[(df['mfr'] == 'Q') | (df['protein'] > 4)]
 
 Instead of using the ` & ` symbol, we use ` | ` which is called the "pipe operator".  This means "or" in the Python programming language. 
 
-This time, filtering using "or" resulted in 10 cereals that met either of the conditions. When we filtered using "and",  only 1 cereal met both conditions. 
-
 Notes: Script here
 <html>
 <audio controls >
@@ -193,6 +262,12 @@ Notes: Script here
 </audio></html>
 
 ---
+
+This time, filtering using "or" resulted in 10 cereals that met either of the conditions. When we filtered using "and",  only 1 cereal met both conditions. 
+
+<img src='/module2/condition_or.png'  alt="404 image" />   
+
+
 
 # Let’s apply what we learned!
 

@@ -20,55 +20,34 @@ Notes: Script here
 
 # Building on things we know
 
-In the last module, we explored `.loc[]` and how it can help slice and
-select specific columns and rows in a dataframe, however, the power of
-`.loc[]` does not stop there.  
-This section marks the return of `.loc[]` and how it can replace certain
-values within a dataframe that meet specified conditions.
-
-Keeping with our routine, we are bringing in our cereal dataset in once
-again. Are you starting to get familiar with this dataset yet?
+So far, we have accumulated many different skills to wrangle our data.
+One type of transformation that you may use often is replacing values
+within a column depending on a certain condition. Let’s start with a
+goal for a smaller version of our cereal dataset.
 
 ``` python
-df = pd.read_csv('cereal.csv', index_col=0)
+df = pd.read_csv('cereal.csv',
+                  index_col=0, 
+                  usecols=['name', 'mfr', 'type', 'calories', 'protein', 'weight', 'rating'])
 df.head()
 ```
 
 ```out
-                          mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
-name                                                                                                                                       
-100% Bran                   N  Cold        70        4    1     130   10.0    5.0       6     280        25      3     1.0  0.33  68.402973
-100% Natural Bran           Q  Cold       120        3    5      15    2.0    8.0       8     135         0      3     1.0  1.00  33.983679
-All-Bran                    K  Cold        70        4    1     260    9.0    7.0       5     320        25      3     1.0  0.33  59.425505
-All-Bran with Extra Fiber   K  Cold        50        4    0     140   14.0    8.0       0     330        25      3     1.0  0.50  93.704912
-Almond Delight              R  Cold       110        2    2     200    1.0   14.0       8       1        25      3     1.0  0.75  34.384843
+                          mfr  type  calories  protein  weight     rating
+name                                                                     
+100% Bran                   N  Cold        70        4     1.0  68.402973
+100% Natural Bran           Q  Cold       120        3     1.0  33.983679
+All-Bran                    K  Cold        70        4     1.0  59.425505
+All-Bran with Extra Fiber   K  Cold        50        4     1.0  93.704912
+Almond Delight              R  Cold       110        2     1.0  34.384843
 ```
 
-Notes: Script here
+In the dataframe, the manufacturer value “Q” isn’t that informative and
+it might be easier to understand our data if we change all these values
+to something more complete like “Quaker”.
 
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
-
-# The return of loc
-
-We have discussed how `.loc[]` can select and return specified columns
-and rows of the dataframe. In this module, `.loc[]` will be used to
-locate specific rows conditionally on their column values. This is done
-similarly to how we filtered our dataframe but with 2 distinct
-differences:
-
-1.  We use `.loc[]` to find the rows specifying certain conditions.  
-2.  Once we have obtained our desired rows we replace their values in
-    either a specified column or create a new column altogether.
+This leads to our task: *_Replace the values with `mfr` equal to “Q”, to
+a new value of “Quaker”_*
 
 Notes: Script here
 
@@ -84,29 +63,95 @@ Notes: Script here
 
 ---
 
-In our cereal dataframe, the manufacturer value “Q” isn’t that
-informative and it might be easier to understand our data if we change
-all these values to something more complete like “Quaker”.
+Our first instinct may be to first filter on those rows using the
+technique we learned in our last section. Perhaps you may have thought
+of assigning our new filtered selection with the new values with similar
+code to below:
 
-Let’s start by simply finding all the cereals made by the “Quaker Oats”
-manufacturer:
+``` python
+df[df['mfr'] == 'Q'].assign(mfr = 'Quaker')
+```
+
+```out
+                       mfr  type  calories  protein  weight     rating
+name                                                                  
+100% Natural Bran   Quaker  Cold       120        3     1.0  33.983679
+Cap'n'Crunch        Quaker  Cold       120        1     1.0  18.042851
+Honey Graham Ohs    Quaker  Cold       120        1     1.0  21.871292
+Life                Quaker  Cold       100        4     1.0  45.328074
+Puffed Rice         Quaker  Cold        50        1     0.5  60.756112
+Puffed Wheat        Quaker  Cold        50        2     0.5  63.005645
+Quaker Oat Squares  Quaker  Cold       100        4     1.0  49.511874
+Quaker Oatmeal      Quaker   Hot       100        5     1.0  50.828392
+```
+
+That looks about right on what we want but what happened to the rest of
+our dataframe? Remember that we only want to replace the values in our
+existing dataframe and not create a new one.
+
+When we use the `.assign()` verb, it creates a new dataframe instead of
+altering the current one. This is problematic since we still want the
+original dataframe but with simply new values for a selection of our
+rows. This means we need to come up with a new method.
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+# Building on more things we know
+
+Remember our friend `.loc[]`? We are going to get reacquainted with
+them. Similarly, to how `.loc[]` can select and return specified columns
+and rows of the dataframe, it can filter on conditions too.
+
+We are used to seeing code involving `.loc[]` like this:
+
+``` python
+df.loc['Trix'] 
+```
+
+```out
+mfr               G
+type           Cold
+calories        110
+protein           1
+weight            1
+rating      27.7533
+Name: Trix, dtype: object
+```
+
+But we get introduced to a new side of it when we use it to filter as
+well.
 
 ``` python
 df.loc[df['mfr'] == 'Q']
 ```
 
 ```out
-                   mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
-name                                                                                                                                
-100% Natural Bran    Q  Cold       120        3    5      15    2.0    8.0       8     135         0      3     1.0  1.00  33.983679
-Cap'n'Crunch         Q  Cold       120        1    2     220    0.0   12.0      12      35        25      2     1.0  0.75  18.042851
-Honey Graham Ohs     Q  Cold       120        1    2     220    1.0   12.0      11      45        25      2     1.0  1.00  21.871292
-Life                 Q  Cold       100        4    2     150    2.0   12.0       6      95        25      2     1.0  0.67  45.328074
-Puffed Rice          Q  Cold        50        1    0       0    0.0   13.0       0      15         0      3     0.5  1.00  60.756112
-Puffed Wheat         Q  Cold        50        2    0       0    1.0   10.0       0      50         0      3     0.5  1.00  63.005645
-Quaker Oat Squares   Q  Cold       100        4    1     135    2.0   14.0       6     110        25      3     1.0  0.50  49.511874
-Quaker Oatmeal       Q   Hot       100        5    2       0    2.7    1.0       1     110         0      1     1.0  0.67  50.828392
+                   mfr  type  calories  protein  weight     rating
+name                                                              
+100% Natural Bran    Q  Cold       120        3     1.0  33.983679
+Cap'n'Crunch         Q  Cold       120        1     1.0  18.042851
+Honey Graham Ohs     Q  Cold       120        1     1.0  21.871292
+Life                 Q  Cold       100        4     1.0  45.328074
+Puffed Rice          Q  Cold        50        1     0.5  60.756112
+Puffed Wheat         Q  Cold        50        2     0.5  63.005645
+Quaker Oat Squares   Q  Cold       100        4     1.0  49.511874
+Quaker Oatmeal       Q   Hot       100        5     1.0  50.828392
 ```
+
+We can use the same syntax (`df['mfr'] == 'Q'`) we normally would when
+filtering, however this time, we wrap the whole thing within `.loc[]`
 
 Notes: Script here
 
@@ -122,19 +167,20 @@ Notes: Script here
 
 ---
 
-You may look at the above syntax and think “Wait, didn’t we do something
-similar when we were filtering in the last section?”. You’re right\!
+Some may now be asking, “Why don’t we do all our filtering like this
+then?” Well, the answer is, you can, but we prefer not to. Filtering
+without loc is a bit more readable and more efficient when doing
+analysis.
 
-We used similar syntax when we filter, however, now we’ve added the verb
-`.loc[]`.
+Let’s concentrate back on our task of only replacing `mfr` values equal
+to “Q” to “Quaker”. How can `.loc[]` help us with this?
 
-To replace “Q” with “Quaker”, we indicate which column we are editing as
-the second argument (which we can’t do, if we do not use `.loc[]`).  
-In our scenario, we are editing the `mfr` column.  
-This code results in a single column dataframe with only “Q” values.
+Unlike with filtering, `.loc[]` accepts more arguments within it. We
+have the ability to specify not only the target rows matching a specific
+condition but our column of interest as well.
 
 ``` python
-df.loc[df['mfr'] == 'Q', 'mfr']  
+df.loc[df['mfr'] == 'Q', 'mfr']
 ```
 
 ```out
@@ -150,46 +196,14 @@ Quaker Oatmeal        Q
 Name: mfr, dtype: object
 ```
 
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src=/"placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
-
-Lastly, we need to specify yo what we want to change the values. In our
-case, we are replacing “Q” with “Quaker”.
+Once we have that we can then assign these rows the new values ‘Quaker’
+in the `mfr` column.
 
 ``` python
 df.loc[df['mfr'] == 'Q', 'mfr'] = 'Quaker'
 ```
 
-Wait\! Nothing was outputted with this code\! What happened? Let’s take
-a look at our dataframe.
-
-``` python
-df.head()
-```
-
-```out
-                              mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
-name                                                                                                                                           
-100% Bran                       N  Cold        70        4    1     130   10.0    5.0       6     280        25      3     1.0  0.33  68.402973
-100% Natural Bran          Quaker  Cold       120        3    5      15    2.0    8.0       8     135         0      3     1.0  1.00  33.983679
-All-Bran                        K  Cold        70        4    1     260    9.0    7.0       5     320        25      3     1.0  0.33  59.425505
-All-Bran with Extra Fiber       K  Cold        50        4    0     140   14.0    8.0       0     330        25      3     1.0  0.50  93.704912
-Almond Delight                  R  Cold       110        2    2     200    1.0   14.0       8       1        25      3     1.0  0.75  34.384843
-```
-
-We can now see that `100% Natural Bran's` manufacturer value has changed
-to `Quaker` but what about the rest of them?
+Wait\! Nothing was outputted\! What happened?
 
 Notes: Script here
 
@@ -205,28 +219,131 @@ Notes: Script here
 
 ---
 
-Let’s filter and see\!
+Let’s take a look at the original dataframe
 
 ``` python
-df[df['mfr'] == 'Quaker']  
+df.head(14)
 ```
 
 ```out
-                       mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
-name                                                                                                                                    
-100% Natural Bran   Quaker  Cold       120        3    5      15    2.0    8.0       8     135         0      3     1.0  1.00  33.983679
-Cap'n'Crunch        Quaker  Cold       120        1    2     220    0.0   12.0      12      35        25      2     1.0  0.75  18.042851
-Honey Graham Ohs    Quaker  Cold       120        1    2     220    1.0   12.0      11      45        25      2     1.0  1.00  21.871292
-Life                Quaker  Cold       100        4    2     150    2.0   12.0       6      95        25      2     1.0  0.67  45.328074
-Puffed Rice         Quaker  Cold        50        1    0       0    0.0   13.0       0      15         0      3     0.5  1.00  60.756112
-Puffed Wheat        Quaker  Cold        50        2    0       0    1.0   10.0       0      50         0      3     0.5  1.00  63.005645
-Quaker Oat Squares  Quaker  Cold       100        4    1     135    2.0   14.0       6     110        25      3     1.0  0.50  49.511874
-Quaker Oatmeal      Quaker   Hot       100        5    2       0    2.7    1.0       1     110         0      1     1.0  0.67  50.828392
+                              mfr  type  calories  protein  weight     rating
+name                                                                         
+100% Bran                       N  Cold        70        4    1.00  68.402973
+100% Natural Bran          Quaker  Cold       120        3    1.00  33.983679
+All-Bran                        K  Cold        70        4    1.00  59.425505
+All-Bran with Extra Fiber       K  Cold        50        4    1.00  93.704912
+Almond Delight                  R  Cold       110        2    1.00  34.384843
+Apple Cinnamon Cheerios         G  Cold       110        2    1.00  29.509541
+Apple Jacks                     K  Cold       110        2    1.00  33.174094
+Basic 4                         G  Cold       130        3    1.33  37.038562
+Bran Chex                       R  Cold        90        2    1.00  49.120253
+Bran Flakes                     P  Cold        90        3    1.00  53.313813
+Cap'n'Crunch               Quaker  Cold       120        1    1.00  18.042851
+Cheerios                        G  Cold       110        6    1.00  50.764999
+Cinnamon Toast Crunch           G  Cold       120        1    1.00  19.823573
+Clusters                        G  Cold       110        3    1.00  40.400208
 ```
 
-Great, all the “Q” values have been replaced with “Quaker”.  
+We can now see that the `Q` manufacturer values have changed to
+`Quaker`.
+
 When we use this syntax, we do not need to save the results in a new
 object name like we had to with `.assign()` and `.drop()`.
+
+Let’s discuss what really is happening behind the scenes.
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+Remember what the condition `df['mfr'] == 'Q'` returns?
+
+It produces a dataframe containing all the rows with True/False values
+depending on if the row meets the condition.
+
+``` python
+df['mfr'] == 'Q'
+```
+
+```out
+name
+100% Bran                    False
+100% Natural Bran            False
+All-Bran                     False
+All-Bran with Extra Fiber    False
+Almond Delight               False
+                             ...  
+Triples                      False
+Trix                         False
+Wheat Chex                   False
+Wheaties                     False
+Wheaties Honey Gold          False
+Name: mfr, Length: 77, dtype: bool
+```
+
+Essentially our code is finding the rows with `True` values and
+replacing the values in the `mfr` column (like we specified) the new
+value of ‘Quaker’.
+
+<img src='/module2/tf_quaker.png'  alt="404 image" />
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+You can split up how this code works into 2 steps:
+
+1.  We use `.loc[]` to find the rows specifying certain conditions.  
+2.  Once we have obtained our desired rows (with a hidden column with
+    True/False values) we replace their values in either a specified
+    column.
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+Does this work without using `.loc[]`? Let’s give it a try.
+
+``` python
+df[df['mfr'] == 'Q', 'mfr'] = 'Quaker'
+```
+
+``` out
+TypeError: 'Series' objects are mutable, thus they cannot be hashed
+```
+
+Unfortunately, we are not able to replace values in this manner and it
+results in an error.
 
 Notes: Script here
 
@@ -244,12 +361,12 @@ Notes: Script here
 
 # Replacing with Inequalities.
 
-This also works for inequality conditions.
+This syntax also works for inequality conditions.
 
 If we are replacing numerical values with characters or words (or vice
 versa) we need to assign our desired values to a **new column** and not
 the existing one.  
-Perhaps we want just 2 categories for protein levels -“high” and “low”.
+Perhaps we want just 2 categories for protein levels - “high” and “low”.
 Any cereal above 3 grams of protein will be considered a “high” protein
 level and anything less, as a “low” protein level.
 
@@ -282,21 +399,40 @@ Notes: Script here
 
 ---
 
-Let’s see the results by scrolling to the right of the dataframe.
+## Creating new columns
+
+You may have noticed we did not use `.assign()` to create our new
+column. That’s because as we mentioned earlier when we use `.assign()`
+it creates a brand new dataframe. When we are replacing values, we don’t
+want a new dataframe and instead, we just want to alter the current
+values in the existing dataframe.
+
+When we are not doing conditional value replacement, we could create new
+columns with a similar syntax. Take the example of converting the weight
+from ounces into grams and making a new column named `weight_g`.
 
 ``` python
+oz_to_g = 28.3495
+df['weight_g'] = df['weight']*oz_to_g
 df.head()
 ```
 
 ```out
-                              mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating protein_level
-name                                                                                                                                                         
-100% Bran                       N  Cold        70        4    1     130   10.0    5.0       6     280        25      3     1.0  0.33  68.402973          high
-100% Natural Bran          Quaker  Cold       120        3    5      15    2.0    8.0       8     135         0      3     1.0  1.00  33.983679          high
-All-Bran                        K  Cold        70        4    1     260    9.0    7.0       5     320        25      3     1.0  0.33  59.425505          high
-All-Bran with Extra Fiber       K  Cold        50        4    0     140   14.0    8.0       0     330        25      3     1.0  0.50  93.704912          high
-Almond Delight                  R  Cold       110        2    2     200    1.0   14.0       8       1        25      3     1.0  0.75  34.384843           low
+                              mfr  type  calories  protein  weight     rating protein_level  weight_g
+name                                                                                                 
+100% Bran                       N  Cold        70        4     1.0  68.402973          high   28.3495
+100% Natural Bran          Quaker  Cold       120        3     1.0  33.983679          high   28.3495
+All-Bran                        K  Cold        70        4     1.0  59.425505          high   28.3495
+All-Bran with Extra Fiber       K  Cold        50        4     1.0  93.704912          high   28.3495
+Almond Delight                  R  Cold       110        2     1.0  34.384843           low   28.3495
 ```
+
+This syntax is editing the existing dataframe `df` instead of creating a
+new one. We prefer `.assign()` where possible since it provides more
+flexibility. It gives us an opportunity to name the new dataframe
+something different and keep our original dataframe untransformed. This
+prevents the need to re-read in our data to get our original dataframe
+back (which could take time depending on the size).
 
 Notes: Script here
 
