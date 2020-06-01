@@ -43,7 +43,7 @@ Good job!  Although dataset can contain different information and data, they con
 </choice> 
 
 **Question 2**          
-Which of the following does not characterize a tidy dataset?
+Which of the following does **not** characterize a tidy dataset?
 
 <choice id="2" >
 <opt text="Each row is a single observation">
@@ -82,13 +82,13 @@ Would this dataframe be defined as tidy?
 
 <choice>
 
-<opt text="True">
+<opt text="Yes">
 
 Not quite!  Take a specific look at the column named `special_attack_defense` is this meeting criterion #3?
 
 </opt>
 
-<opt text= "False" correct="true">
+<opt text= "No" correct="true">
 
 Good job!  Did you notice that `special_attack_defense` had two values per cell defying criterion #3?
 
@@ -105,13 +105,13 @@ Would this dataframe be defined as tidy?
 <center> <img src='/module3/Q4.png'  alt="404 image"/></center>
 
 <choice>
-<opt text="True">
+<opt text="Yes">
 
 Not quite!  Do you notice anything about the rows?  Are they meeting Criterion #1? 
 
 </opt>
 
-<opt text= "False" correct="true">
+<opt text= "No" correct="true">
 
 Good job!  You must have seen the duplicate rows of `Ivysaur` and `Charmeleon`.
 

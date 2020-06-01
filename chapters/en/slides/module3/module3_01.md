@@ -22,16 +22,16 @@ When we first hear “tidy data”, you likely think of clean, organized,
 and orderly data. The same applies here, however, the concept of ***tidy
 data*** stems from
 <a href="https://vita.had.co.nz/papers/tidy-data.pdf" target="_blank">a
-paper </a> written by Hadley Wickham in 2014.
+paper </a> written by renowned data scientist Hadley Wickham in 2014.
 
 ### What is the concept of tidy data?
 
-A tidy data is one that is satisfied by these three criteria:
+Tidy data satisfies the following three criteria:
 
   - Each row is a single observation,
   - Each variable is a single column, and
   - Each value is a single cell (i.e., its row, column position in the
-    data frame is not shared with another value)
+    dataframe is not shared with another value)
 
 <center>
 
@@ -41,8 +41,8 @@ A tidy data is one that is satisfied by these three criteria:
 
 What a variable and an observation is may depend on your immediate goal.
 
-*Source: [R for Data Science](https://r4ds.had.co.nz/) by Garrett
-Grolemund & Hadley Wickham*
+  - Image Source: [R for Data Science](https://r4ds.had.co.nz/) by
+    Garrett Grolemund & Hadley Wickham\*
 
 Notes: Script here
 
@@ -60,10 +60,10 @@ Notes: Script here
 
 We tidy our data in such a way so that we can create a standard across
 multiple analysis tools. It changes the focus from figuring out the
-logistics of how the data be structured, to answering the actual
+logistics of how the data is structured, to answering the actual
 analysis question being asked.
 
-This standard now sets precedent for the input arguments of certain
+This approach allows us to standardize input arguments of certain
 analysis verbs like `.describe()` and other predictive methods.
 
 Notes: Script here
@@ -106,9 +106,7 @@ Notes: Script here
 
 ---
 
-## Criterion \#1
-
-*Each row is a single observation*
+## Criterion \#1: Each row is a single observation
 
 <center>
 
@@ -133,9 +131,7 @@ Notes: Script here
 
 ---
 
-## Criterion \#2
-
-*Each variable is a single column*
+## Criterion \#2: Each variable is a single column
 
 <center>
 
@@ -161,9 +157,7 @@ Notes: Script here
 
 ---
 
-## Criterion \#3
-
-*Each value is a single cell*
+## Criterion \#3: Each value is a single cell
 
 <center>
 
@@ -189,7 +183,7 @@ Notes: Script here
 ---
 
 As expected, the cereal data we have been working with is *tidy data*.  
-Let’s look at an example where this is not the case.
+Let’s look at an example where this is not the case:
 
 <center>
 
@@ -211,9 +205,7 @@ Notes: Script here
 
 ---
 
-## Criterion \#1
-
-*Each row is a single observation*
+## Criterion \#1 Each row is a single observation
 
 <center>
 
@@ -239,9 +231,7 @@ Notes: Script here
 
 ---
 
-## Criterion \#2
-
-*Each variable is a single column*
+## Criterion \#2: Each variable is a single column
 
 <center>
 
@@ -251,8 +241,62 @@ Notes: Script here
 
 It looks like we have a problem here. In this dataframe, two of our
 variables are contained in a single column. This is making the data
-untidy and potentially a problem to work with. We would need to
-transform it.
+untidy and potentially a problem to work with. For example, what if I
+wanted to know the average calorie content of the cereals?
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+``` python
+cereal2.head(10)
+```
+
+```out
+                          mfr nutrition  value
+name                                          
+100% Bran                   N   protein      4
+100% Bran                   N  calories     70
+100% Natural Bran           Q  calories    120
+100% Natural Bran           Q   protein      3
+All-Bran                    K   protein      4
+All-Bran                    K  calories     70
+All-Bran with Extra Fiber   K   protein      4
+All-Bran with Extra Fiber   K  calories     50
+Almond Delight              R  calories    110
+Almond Delight              R   protein      2
+```
+
+We could either groupby nutrition value or filter on ’calories\` first
+before getting our results:
+
+``` python
+cereal2[cereal2['nutrition'] == 'calories']['value'].mean()
+```
+
+```out
+106.88311688311688
+```
+
+Where as if we had tidy data we could have simply done:
+
+``` python
+cereal['calories'].mean()
+```
+
+```out
+106.88311688311688
+```
 
 Notes: Script here
 
