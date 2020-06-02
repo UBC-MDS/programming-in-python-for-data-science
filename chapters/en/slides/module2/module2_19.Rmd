@@ -142,7 +142,7 @@ Unlike with filtering, `.loc[]` accepts more arguments within it.  We have the a
 df.loc[df['mfr'] == 'Q', 'mfr']
 ```
 
-Once we have that we can then assign these rows the new values 'Quaker' in the `mfr` column. 
+Once we have that, we can then assign these rows the new values 'Quaker' in the `mfr` column. 
 ```{python}
 df.loc[df['mfr'] == 'Q', 'mfr'] = 'Quaker'
 ```

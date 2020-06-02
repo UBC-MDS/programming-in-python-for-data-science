@@ -57,7 +57,7 @@ Notes: Script here
 
 ---
 
-Up until this moment, we have been working with a single dataframe.  Single dataframes can be great to see all your data in one convenient place, however, this is less convenient when it comes to storage space.  Many companies split their data into multiple tables and join them together depending on what columns they need for their analysis.  
+Up until this moment, we have been working with a single dataframe. Many organizations split their data into multiple tables and join them together depending on what columns they need for their analysis.  
 There are 2 different verbs we use for joining dataframes together: 
 
 - <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.concat.html" target="_blank">`pd.concat()`</a>: A way of joining dataframes across rows or columns. 
@@ -76,7 +76,7 @@ Notes: Script here
 
 ## Concatenation 
 
-Concatenation works extremely well when you have similar dataframes where both share identical column or row index labels.  
+Concatenation works extremely well when you have similar dataframes which both share identical column or row index labels.  
 `.concat()` can stich the 2 dataframes together either horizontally or vertically. 
 
 <center><img src='/module3/concat.gif' width="600"></center>
@@ -90,7 +90,7 @@ Notes: Script here
 
 ---
 
-For the next couple of examples, we are going to look at concatenating with our a subset of our original candy bars dataframe.
+For the next couple of examples, we are going to look at concatenating with a subset of our original candy bars dataframe.
 
 ```{python}
 candy = pd.read_csv('candybars.csv', index_col=0).loc[:, 'weight':'nougat']

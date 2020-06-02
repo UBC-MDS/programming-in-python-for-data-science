@@ -78,13 +78,13 @@ You are right.  It is possible to still have tidy data with missing values.
 
 Would this dataframe be defined as tidy?
 
-<center> <img src='/module3/crit3fail.png'  alt="404 image"/></center>
+<center> <img src='/module3/Q3.png'  alt="404 image"/></center>
 
 <choice>
 
 <opt text="Yes">
 
-Not quite!  Take a specific look at the column named `special_attack_defense` is this meeting criterion #3?
+Not quite!  Take a specific look at the column named `special_attack_defense`. Is this meeting criterion #3?
 
 </opt>
 
@@ -113,7 +113,7 @@ Not quite!  Do you notice anything about the rows?  Are they meeting Criterion #
 
 <opt text= "No" correct="true">
 
-Good job!  You must have seen the duplicate rows of `Ivysaur` and `Charmeleon`.
+Good job!  You must have seen the duplicate rows of `Ivysaur`, `Charmeleon` and `Squirtle`.
 
 </opt>
 
@@ -185,13 +185,22 @@ Running a coding exercise for the first time could take a bit of time for everyt
 
 **When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
 
-Let's convert the dataframe `lego` into tidy data using `.pivot()`.
+
+Let's take a look at the new dataset named `lego`.
+
+<codeblock id="lego_untidy">
+</codeblock>
+
+
+
+Let's convert the dataframe `lego` into tidy data using `.pivot()`.  
 
 Tasks:
 
 - Convert the untidy data into tidy data using `.pivot()`.
 - Name the new dataframe `tidied_lego`.
-
+  
+     
 
 <codeblock id="03_07">
 - Are you pivoting the correct column named `lego_info` with `values='value'`?
@@ -278,7 +287,7 @@ Good job!
 </choice> 
 
 **Question 3**     
-`.melt()`  and `.pivot()` always transforms the data into "tidy data".
+`.melt()`  and `.pivot()` always transform the data into "tidy data".
 
 <choice id="3" >
 <opt text='True'>
@@ -305,7 +314,14 @@ Running a coding exercise for the first time could take a bit of time for everyt
 
 **When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
 
-Let's melt a dataframe.  The `lego` dataframe has 2 new columns named `matte` and `transparent`.  These columns refer to the opacity of the blocks and the values refer to the number of pieces of each included in the set. 
+Let's take a look at some new untidy data that we have named `lego`. 
+
+<codeblock id="lego_untidy2">
+</codeblock>
+
+
+
+Let's melt this so that the 2 new columns named `matte` and `transparent` become a single one.  These columns refer to the opacity of the blocks and the values refer to the number of pieces of each included in the set. 
 
 Tasks:
 

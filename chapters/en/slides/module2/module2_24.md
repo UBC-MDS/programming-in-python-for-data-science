@@ -113,7 +113,7 @@ mfr_group
 ```
 
 ```out
-<pandas.core.groupby.generic.DataFrameGroupBy object at 0x11de24b70>
+<pandas.core.groupby.generic.DataFrameGroupBy object at 0x119299630>
 ```
 
 This returns a `DataFrame GroupBy` object. What exactly is this?
@@ -254,6 +254,55 @@ Notes: Script here
 
 ---
 
+Similarly to how we made frequency tables using `.value_counts()`:
+
+``` python
+df['mfr'].value_counts()
+```
+
+```out
+K    23
+G    22
+P     9
+R     8
+Q     8
+N     6
+A     1
+Name: mfr, dtype: int64
+```
+
+We can now use `.size()` to obtain the amount of rows in each group:
+
+``` python
+mfr_group.size()
+```
+
+```out
+mfr
+A     1
+G    22
+K    23
+N     6
+P     9
+Q     8
+R     8
+dtype: int64
+```
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
 ## Summary Statistics with Groups
 
 What now? Grouping doesn’t answer our initial question of ***Which
@@ -284,9 +333,8 @@ was to do in comparison to our initial method? Not only does this give
 us the result quicker, but it also gives us the mean of each column of
 the dataframe. Think of how many filtering and mean calculations would
 have to be done if we were to do this using our initial method.  
-Of course, using groups is not limited to finding the only the mean, we
-can do the same thing for other statistics too like `.min()` and
-`.max()`.
+Of course, using groups is not limited to finding only the mean. We can
+do the same thing for other statistics too like `.min()` and `.max()`.
 
 Notes: Script here
 
@@ -515,7 +563,7 @@ Let’s return to the question we asked at the beginning of this section:
 A nice way of showing our results would be to graph this. A bar chart
 like this should do the trick\!
 
-<img src="/module2/module2_24/unnamed-chunk-15-1.png" width="576" />
+<img src="/module2/module2_24/unnamed-chunk-17-1.png" width="576" />
 
 Notes: Script here
 
@@ -574,7 +622,7 @@ sugar_plot = (df.groupby(by='mfr')
 sugar_plot
 ```
 
-<img src="/module2/module2_24/unnamed-chunk-16-1.png" width="576" />
+<img src="/module2/module2_24/unnamed-chunk-18-1.png" width="576" />
 
 This plot, however, looks a little unfinished. We need to add a title
 and label our y-axis.
@@ -616,7 +664,7 @@ sugar_plot = sugar_plot.set_xlabel('Manufacturer', fontsize=9)
 sugar_plot
 ```
 
-<img src="/module2/module2_24/unnamed-chunk-17-1.png" width="45%" />
+<img src="/module2/module2_24/unnamed-chunk-19-1.png" width="45%" />
 
 Notes: Script here
 
@@ -648,7 +696,7 @@ nutrition_plot = nutrition_plot.set_xlabel('Manufacturer', fontsize=9)
 nutrition_plot
 ```
 
-<img src="/module2/module2_24/unnamed-chunk-18-1.png" width="60%" />
+<img src="/module2/module2_24/unnamed-chunk-20-1.png" width="60%" />
 
 If you want high fibre and low fat, consider having N’s cereals for
 breakfast (or lunch or dinner)\!
@@ -762,7 +810,7 @@ type_plot.set_xlabel('Manufacturer and cereal type', fontsize=16)
 type_plot
 ```
 
-<img src="/module2/module2_24/unnamed-chunk-22-1.png" width="70%" />
+<img src="/module2/module2_24/unnamed-chunk-24-1.png" width="70%" />
 
 Notes: Script here
 

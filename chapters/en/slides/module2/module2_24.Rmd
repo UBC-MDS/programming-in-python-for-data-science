@@ -179,6 +179,26 @@ Notes: Script here
 
 ---
 
+Similarly to how we made frequency tables using `.value_counts()`:
+
+```{python}
+df['mfr'].value_counts()
+```
+
+We can now use `.size()` to obtain the amount of rows in each group: 
+```{python}
+mfr_group.size()
+```
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
 ## Summary Statistics with Groups
 
 What now?  Grouping doesn't answer our initial question of ***Which manufacturer has the highest mean sugar content?***     
@@ -188,7 +208,7 @@ We need to calculate the mean sugar content in each manufacturing group!
 mfr_group.mean()
 ```
 This answers the initial question and confirms that manufacturer "P" has the highest mean sugar content across cereals.  See how convenient this was to do in comparison to our initial method?  Not only does this give us the result quicker, but it also gives us the mean of each column of the dataframe.  Think of how many filtering and mean calculations would have to be done if we were to do this using our initial method.      
-Of course, using groups is not limited to finding the only the mean, we can do the same thing for other statistics too like `.min()` and `.max()`.
+Of course, using groups is not limited to finding only the mean. We can do the same thing for other statistics too like `.min()` and `.max()`.
 
 
 Notes: Script here
