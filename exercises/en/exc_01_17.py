@@ -2,7 +2,7 @@ import pandas as pd
 
 # The database 
 
-hockey_players = pd.read_csv('data/canucks.csv', index_col = 0)
+hockey_players = pd.read_csv('data/canucks.csv')
 
 # Save`Thatcher Demko`'s salary in an object named`demko_paid`. 
 

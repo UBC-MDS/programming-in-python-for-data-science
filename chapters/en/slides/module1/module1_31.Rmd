@@ -40,7 +40,7 @@ np.set_printoptions(linewidth=400)
 
 pd.set_option('display.max_columns', 15)
 
-df = pd.read_csv('cereal.csv', index_col=0)
+df = pd.read_csv('cereal.csv')
 ```
 
 ```{python include=FALSE}

@@ -2,7 +2,7 @@
 type: slides
 ---
 
-# Slicing Only Columns using .loc\[\]
+# Slicing only columns using .loc\[\]
 
 Notes: Script here.
 
@@ -21,26 +21,25 @@ Notes: Script here.
 What happens now if we wanted all the rows of the dataframe but only the
 columns `calories` to `fiber`?
 
-We would simply use `:` to indicate from “end” to “end” for rows.
+We would simply use `:` to indicate from “end” to “end” for rows:
 
 ``` python
 df.loc[:, 'calories':'fiber']
 ```
 
 ```out
-                           calories  protein  fat  sodium  fiber
-name                                                            
-100% Bran                        70        4    1     130   10.0
-100% Natural Bran               120        3    5      15    2.0
-All-Bran                         70        4    1     260    9.0
-All-Bran with Extra Fiber        50        4    0     140   14.0
-Almond Delight                  110        2    2     200    1.0
-...                             ...      ...  ...     ...    ...
-Triples                         110        2    1     250    0.0
-Trix                            110        1    1     140    0.0
-Wheat Chex                      100        3    1     230    3.0
-Wheaties                        100        3    1     200    3.0
-Wheaties Honey Gold             110        2    1     200    1.0
+    calories  protein  fat  sodium  fiber
+0         70        4    1     130   10.0
+1        120        3    5      15    2.0
+2         70        4    1     260    9.0
+3         50        4    0     140   14.0
+4        110        2    2     200    1.0
+..       ...      ...  ...     ...    ...
+72       110        2    1     250    0.0
+73       110        1    1     140    0.0
+74       100        3    1     230    3.0
+75       100        3    1     200    3.0
+76       110        2    1     200    1.0
 
 [77 rows x 5 columns]
 ```

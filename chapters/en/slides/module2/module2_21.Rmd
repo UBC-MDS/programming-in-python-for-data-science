@@ -41,13 +41,13 @@ np.set_printoptions(linewidth=400)
 pd.set_option('display.max_columns', 15)
 pd.set_option('display.max_rows', 8)
 
-df = pd.read_csv('cereal.csv', index_col=0)
+df = pd.read_csv('cereal.csv')
 ```
 
 
 type: slides
 
-# Chaining Notation  
+# Chaining notation  
 
 Notes: Script here
 <html>

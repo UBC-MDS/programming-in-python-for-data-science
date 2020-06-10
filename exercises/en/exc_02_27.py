@@ -1,6 +1,6 @@
 import pandas as pd
 
-pokemon = pd.read_csv('data/pokemon.csv', index_col=0)
+pokemon = pd.read_csv('data/pokemon.csv')
 pokemon = pokemon.loc[ : , ['attack',  'defense', 'capture_rt', 'total_bs', 'legendary']]
 
 # Make a groupby object on the column legendary 

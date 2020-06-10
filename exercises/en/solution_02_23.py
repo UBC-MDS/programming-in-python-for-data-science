@@ -1,6 +1,6 @@
 import pandas as pd
 
-pokemon = pd.read_csv('data/pokemon.csv', index_col=0)
+pokemon = pd.read_csv('data/pokemon.csv')
 
 # First, rename the column capture_rt to capture_rate
 # Create a new column named AD_total 

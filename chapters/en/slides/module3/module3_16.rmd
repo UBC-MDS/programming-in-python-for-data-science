@@ -117,7 +117,7 @@ candy2
 
 We want to combine `candy2` with `candy` horizontally.
 
-Both `candy1` and `candy2` have 25 rows and it looks like the index name in the `candy2` dataframe is identical as `candy`.
+Both `candy1` and `candy2` have 25 rows and it looks like the index name in the `candy2` dataframe is identical to `candy`.
 
 Notes: Script here
 <html>

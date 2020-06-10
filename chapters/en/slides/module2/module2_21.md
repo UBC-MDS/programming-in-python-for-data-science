@@ -2,7 +2,7 @@
 type: slides
 ---
 
-# Chaining Notation
+# Chaining notation
 
 Notes: Script here
 
@@ -56,8 +56,8 @@ manufacturer_column.value_counts()
 K    23
 G    22
 P     9
-R     8
 Q     8
+R     8
 N     6
 A     1
 Name: mfr, dtype: int64
@@ -74,8 +74,8 @@ df['mfr'].value_counts()
 K    23
 G    22
 P     9
-R     8
 Q     8
+R     8
 N     6
 A     1
 Name: mfr, dtype: int64

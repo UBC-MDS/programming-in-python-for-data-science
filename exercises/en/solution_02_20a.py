@@ -1,5 +1,5 @@
 import pandas as pd
-pokemon = pd.read_csv('data/pokemon.csv', index_col=0)
+pokemon = pd.read_csv('data/pokemon.csv')
 
 # Create a new column in the dataframe Name the column base_score, 
 # by assigning values 500 or greater from the column total_bs

@@ -2,7 +2,7 @@
 type: slides
 ---
 
-# Column Arithmetic and Creation
+# Column arithmetic and creation
 
 Notes: Script here
 
@@ -332,24 +332,23 @@ less detailed version of our cereal dataframe. Remember the argument
 so it’s easier to follow the examples.
 
 ``` python
-df = pd.read_csv('cereal.csv', index_col=0, usecols=['mfr','type', 'fat', 'sugars', 'weight', 'cups','rating'])
+df = pd.read_csv('cereal.csv', usecols=['name', 'mfr','type', 'fat', 'sugars', 'weight', 'cups','rating'])
 df
 ```
 
 ```out
-     type  fat  sugars  weight  cups     rating
-mfr                                            
-N    Cold    1       6     1.0  0.33  68.402973
-Q    Cold    5       8     1.0  1.00  33.983679
-K    Cold    1       5     1.0  0.33  59.425505
-K    Cold    0       0     1.0  0.50  93.704912
-..    ...  ...     ...     ...   ...        ...
-G    Cold    1      12     1.0  1.00  27.753301
-R    Cold    1       3     1.0  0.67  49.787445
-G    Cold    1       3     1.0  1.00  51.592193
-G    Cold    1       8     1.0  0.75  36.187559
+                         name mfr  type  fat  sugars  weight  cups     rating
+0                   100% Bran   N  Cold    1       6     1.0  0.33  68.402973
+1           100% Natural Bran   Q  Cold    5       8     1.0  1.00  33.983679
+2                    All-Bran   K  Cold    1       5     1.0  0.33  59.425505
+3   All-Bran with Extra Fiber   K  Cold    0       0     1.0  0.50  93.704912
+..                        ...  ..   ...  ...     ...     ...   ...        ...
+73                       Trix   G  Cold    1      12     1.0  1.00  27.753301
+74                 Wheat Chex   R  Cold    1       3     1.0  0.67  49.787445
+75                   Wheaties   G  Cold    1       3     1.0  1.00  51.592193
+76        Wheaties Honey Gold   G  Cold    1       8     1.0  0.75  36.187559
 
-[77 rows x 6 columns]
+[77 rows x 8 columns]
 ```
 
 Notes: Script here
@@ -383,16 +382,15 @@ df['weight']*oz_to_g
 ```
 
 ```out
-mfr
-N    28.3495
-Q    28.3495
-K    28.3495
-K    28.3495
-      ...   
-G    28.3495
-R    28.3495
-G    28.3495
-G    28.3495
+0     28.3495
+1     28.3495
+2     28.3495
+3     28.3495
+       ...   
+73    28.3495
+74    28.3495
+75    28.3495
+76    28.3495
 Name: weight, Length: 77, dtype: float64
 ```
 
@@ -422,13 +420,12 @@ df.head()
 ```
 
 ```out
-     type  fat  sugars  weight  cups     rating  weight_g
-mfr                                                      
-N    Cold    1       6     1.0  0.33  68.402973   28.3495
-Q    Cold    5       8     1.0  1.00  33.983679   28.3495
-K    Cold    1       5     1.0  0.33  59.425505   28.3495
-K    Cold    0       0     1.0  0.50  93.704912   28.3495
-R    Cold    2       8     1.0  0.75  34.384843   28.3495
+                        name mfr  type  fat  sugars  weight  cups     rating  weight_g
+0                  100% Bran   N  Cold    1       6     1.0  0.33  68.402973   28.3495
+1          100% Natural Bran   Q  Cold    5       8     1.0  1.00  33.983679   28.3495
+2                   All-Bran   K  Cold    1       5     1.0  0.33  59.425505   28.3495
+3  All-Bran with Extra Fiber   K  Cold    0       0     1.0  0.50  93.704912   28.3495
+4             Almond Delight   R  Cold    2       8     1.0  0.75  34.384843   28.3495
 ```
 
 Just like we did earlier in the module, we need to save the dataframe to
@@ -458,16 +455,15 @@ df['sugars']/df['cups']
 ```
 
 ```out
-mfr
-N    18.181818
-Q     8.000000
-K    15.151515
-K     0.000000
-       ...    
-G    12.000000
-R     4.477612
-G     3.000000
-G    10.666667
+0     18.181818
+1      8.000000
+2     15.151515
+3      0.000000
+        ...    
+73    12.000000
+74     4.477612
+75     3.000000
+76    10.666667
 Length: 77, dtype: float64
 ```
 
@@ -493,13 +489,12 @@ df.head()
 ```
 
 ```out
-     type  fat  sugars  weight  cups     rating  weight_g  sugar_per_cup
-mfr                                                                     
-N    Cold    1       6     1.0  0.33  68.402973   28.3495      18.181818
-Q    Cold    5       8     1.0  1.00  33.983679   28.3495       8.000000
-K    Cold    1       5     1.0  0.33  59.425505   28.3495      15.151515
-K    Cold    0       0     1.0  0.50  93.704912   28.3495       0.000000
-R    Cold    2       8     1.0  0.75  34.384843   28.3495      10.666667
+                        name mfr  type  fat  sugars  weight  cups     rating  weight_g  sugar_per_cup
+0                  100% Bran   N  Cold    1       6     1.0  0.33  68.402973   28.3495      18.181818
+1          100% Natural Bran   Q  Cold    5       8     1.0  1.00  33.983679   28.3495       8.000000
+2                   All-Bran   K  Cold    1       5     1.0  0.33  59.425505   28.3495      15.151515
+3  All-Bran with Extra Fiber   K  Cold    0       0     1.0  0.50  93.704912   28.3495       0.000000
+4             Almond Delight   R  Cold    2       8     1.0  0.75  34.384843   28.3495      10.666667
 ```
 
 Give it a shot in the exercises now on your own.

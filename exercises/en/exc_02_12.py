@@ -1,6 +1,6 @@
 import pandas as pd
 
-pokemon = pd.read_csv('data/pokemon.csv', index_col=0)
+pokemon = pd.read_csv('data/pokemon.csv')
 
 # Drop the columns deck_no, capture_rt, and legendary
 # Make sure to overwrite the new dataframe to object pokemon

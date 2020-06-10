@@ -25,7 +25,8 @@ We can use `.loc[]` which would look something like this:
 
     df.loc[:, ['column name']]
 
-For example, if we wanted the column `type` from our cereal dataframe.
+Iff we wanted the column `type` from our cereal dataframe we would do
+the following:
 
 ``` python
 df.loc[:, ['type']]

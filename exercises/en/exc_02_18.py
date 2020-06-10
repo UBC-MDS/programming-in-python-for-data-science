@@ -1,6 +1,6 @@
 import pandas as pd
 
-pokemon = pd.read_csv('data/pokemon.csv', index_col=0)
+pokemon = pd.read_csv('data/pokemon.csv')
 
 # Filter the dataframe for the pokemon that have attack and
 # defense values both greater than 100

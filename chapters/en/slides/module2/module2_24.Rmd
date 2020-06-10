@@ -41,13 +41,13 @@ np.set_printoptions(linewidth=400)
 pd.set_option('display.max_columns', 50)
 pd.set_option('display.max_rows', 15)
 
-df = pd.read_csv('cereal.csv', index_col=0)
+df = pd.read_csv('cereal.csv')
 ```
 
 
 type: slides
 
-# Grouping and Aggregating
+# Grouping and aggregating
 
 
 Notes: Script here
@@ -58,7 +58,7 @@ Notes: Script here
 
 ---
 
-Often, we are interested in examining specific groups in our data.  Perhaps the question we want to answer is:       
+Often, we are interested in examining specific groups in our data.  Perhaps the question we want to answer from the cereal dataset is:       
 _*Which manufacturer has the highest mean sugar content?*_
 
 We found in Module 1 using `.value_counts()` that there are 7 different manufacturers; "K", "G", "P", "R", "Q", "N" and "A".
@@ -80,13 +80,13 @@ To find the mean sugar content of each manufacturer, we could filter on each man
 
 Let's start with K:
 ```{python}
-df[df['mfr'] == 'K'].mean().loc['sugars']
+df[df['mfr'] == 'K'].mean()[['sugars']]
 ```
 
 Next "G":
 
 ```{python}
-df[df['mfr'] == 'G'].mean().loc['sugars']
+df[df['mfr'] == 'G'].mean()[['sugars']]
 ```
 
 We could do this for the remaining 5 manufacturers. However, it's obvious that it's time-consuming and a lot of work to do this repeatedly.  Imagine how tedious this would be if we had 100 different manufacturers?
@@ -473,7 +473,7 @@ Notes: Script here
 
 We can plot in the same way as before 
 
-```{python fig.width = 16, fig.height = 9,  out.width = '70%'}
+```{python fig.width = 16, fig.height = 9.5,  out.width = '85%'}
 type_plot = (df.groupby(by=['mfr', 'type'])
                     .mean()
                     .loc[:, ['sugars']]
@@ -496,7 +496,7 @@ Notes: Script here
 ---
 
 Using `pandas` to plot groupby objects is very limited and is not possible for many other plot types such as scatter plots.      
-If you wish to learn more advanced visualization and Python plotting package **Altair**, come back soon and visit our in development course **DSCI-531 Exploratory Data Visualization**. 
+If you wish to learn more advanced visualization and Python plotting package **Altair**, come back soon and visit our in development course **DSCI-031 Exploratory Data Visualization**. 
 
 Notes: Script here
 <html>

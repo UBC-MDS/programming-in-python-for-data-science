@@ -30,7 +30,7 @@ pd.set_option('display.width', 400)
 np.set_printoptions(linewidth=400)
 
 pd.set_option('display.max_columns', 15)
-df = pd.read_csv('cereal.csv', index_col=0)
+df = pd.read_csv('cereal.csv')
 ```
 
 
@@ -63,7 +63,7 @@ Notes: Script here.
 ---
 
 ```{python}
-df = pd.read_csv('cereal.csv', index_col=0)
+df = pd.read_csv('cereal.csv')
 df.head(15)
 ```
 
@@ -197,12 +197,13 @@ Notes: Script here.
 
 ---
 
-We can also use this on the entire dataframe.
+We can also use this on the entire dataframe. 
 
 ```{python}
 df.mean()
 ```
 
+You'll notice that only the numerical variables are calculated which makes sense since we would not be able to calculate the mean of categorical data. 
 
 Notes: Script here.
 <html>

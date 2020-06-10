@@ -47,7 +47,7 @@ df = pd.read_csv('cereal.csv', index_col=0)
 type: slides
 
 
-# Column Arithmetic and Creation
+# Column arithmetic and creation
 
 
 Notes: Script here
@@ -218,7 +218,7 @@ Notes: Script here
 Up until now, all of these operations have been done without being added to our cereal dataframe.  Let's explore how we can add new columns to a less detailed version of our cereal dataframe. Remember the argument `use_cols`? We are going to use it bring in only a selection of columns so it's easier to follow the examples.
 
 ```{python}
-df = pd.read_csv('cereal.csv', index_col=0, usecols=['mfr','type', 'fat', 'sugars', 'weight', 'cups','rating'])
+df = pd.read_csv('cereal.csv', usecols=['name', 'mfr','type', 'fat', 'sugars', 'weight', 'cups','rating'])
 df
 ```
 

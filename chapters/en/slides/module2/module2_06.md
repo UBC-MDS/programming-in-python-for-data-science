@@ -2,7 +2,7 @@
 type: slides
 ---
 
-# Reading Arguments
+# Reading arguments
 
 Notes: Script here
 
@@ -23,25 +23,16 @@ Notes: Script here
 When we load in our data we use different arguments to make sure it’s
 organized how we want it.
 
-Remember how we load the majority of our data?
-
-``` python
-pd.read_csv('cereal.csv', index_col=0)
-```
-
-`index_col` is an argument that indicates which column will be acting as
-our index label. In most of the cases we have encountered, it was the
-very first column.
-
-`delimiter` is another argument we have already discussed that instructs
-on how to separate each value in the data.
+`delimiter` is an argument we have already discussed that instructs on
+how to separate each value in the data.
 
 This is only the tip of the iceburg. There are many others that are
 helpful when reading in our data.
 
-Here, we are going to introduce a few more arguments to `pd.read_csv()`
+Here, we are going to introduce different arguments for `pd.read_csv()`
 and `pd.read_excel()`:
 
+  - `index_col`
   - `header`
   - `nrows`
   - `usecols`
@@ -51,6 +42,65 @@ following links:
 
   - <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html" target="_blank">`pd.read_csv()`</a>
   - <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_excel.html" target="_blank">`pd.read_excel()`</a>
+
+Notes: Script here.
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+## index\_col
+
+`index_col` is an argument that indicates which column will be acting as
+the index label. In most of the cases we have encountered, we did not
+use this argument. For the majority of the data we have seen, each
+dataframe’s index was just a column of with a unique number for each
+row.  
+We can, however, specify a column with to be the index. It’s in our best
+interest that the column we choose have unique values.  
+For our `cereal.csv` let’s specify the `name` column as our index:
+
+``` python
+df = pd.read_csv('cereal.csv', index_col="name")
+df.head()
+```
+
+```out
+                          mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
+name                                                                                                                                       
+100% Bran                   N  Cold        70        4    1     130   10.0    5.0       6     280        25      3     1.0  0.33  68.402973
+100% Natural Bran           Q  Cold       120        3    5      15    2.0    8.0       8     135         0      3     1.0  1.00  33.983679
+All-Bran                    K  Cold        70        4    1     260    9.0    7.0       5     320        25      3     1.0  0.33  59.425505
+All-Bran with Extra Fiber   K  Cold        50        4    0     140   14.0    8.0       0     330        25      3     1.0  0.50  93.704912
+Almond Delight              R  Cold       110        2    2     200    1.0   14.0       8       1        25      3     1.0  0.75  34.384843
+```
+
+The `index_col` argument also take in positions. the `name` column in
+our data in in the 0th position so we can also specify the index like
+so:
+
+``` python
+df = pd.read_csv('cereal.csv', index_col=0)
+df.head()
+```
+
+```out
+                          mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
+name                                                                                                                                       
+100% Bran                   N  Cold        70        4    1     130   10.0    5.0       6     280        25      3     1.0  0.33  68.402973
+100% Natural Bran           Q  Cold       120        3    5      15    2.0    8.0       8     135         0      3     1.0  1.00  33.983679
+All-Bran                    K  Cold        70        4    1     260    9.0    7.0       5     320        25      3     1.0  0.33  59.425505
+All-Bran with Extra Fiber   K  Cold        50        4    0     140   14.0    8.0       0     330        25      3     1.0  0.50  93.704912
+Almond Delight              R  Cold       110        2    2     200    1.0   14.0       8       1        25      3     1.0  0.75  34.384843
+```
 
 Notes: Script here.
 

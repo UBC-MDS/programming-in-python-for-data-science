@@ -44,7 +44,7 @@ To analyze dataframes and load these `csv` files, we need to make sure
 that we import something called `pandas`.
 
 Before we start writing any valuable code, we import it with the
-following code.
+following code:
 
 ``` python
 import pandas as pd
@@ -70,7 +70,7 @@ Next we can bring in our data named `candybars` which is stored as a
 `.csv`:
 
 ``` python
-df = pd.read_csv('candybars.csv', index_col=0)
+df = pd.read_csv('candybars.csv')
 ```
 
 let’s break this up:
@@ -79,8 +79,6 @@ let’s break this up:
 manipulate our dataframes.  
 `read_csv()`: The tool that does the job and, in this case, it is
 reading in the `csv` file named `candybars.csv`.  
-`index_col=0`: This specifies to use the first column in the csv as an
-index (we will talk about this shortly).  
 `df`: The dataframe is now saved as an object called `df`.
 
 In these slides you can differentiate between what we typed in (our
@@ -108,21 +106,20 @@ df
 ```
 
 ```out
-                   weight  chocolate  peanuts  caramel  nougat  cookie_wafer_rice  coconut  white_chocolate  multi available_canada_america
-name                                                                                                                                       
-Coffee Crisp           50          1        0        0       0                  1        0                0      0                   Canada
-Butterfinger          184          1        1        1       0                  0        0                0      0                  America
-Skor                   39          1        0        1       0                  0        0                0      0                     Both
-Smarties               45          1        0        0       0                  0        0                0      1                   Canada
-Twix                   58          1        0        1       0                  1        0                0      1                     Both
-...                   ...        ...      ...      ...     ...                ...      ...              ...    ...                      ...
-Take 5                 43          1        1        1       0                  1        0                0      0                  America
-Whatchamacallits       45          1        1        0       0                  1        0                0      0                  America
-Almond Joy             46          1        0        0       0                  0        1                0      0                  America
-Oh Henry               51          1        1        1       0                  0        0                0      0                     Both
-Cookies and Cream      43          0        0        0       0                  1        0                1      0                     Both
+                 name  weight  chocolate  peanuts  caramel  nougat  cookie_wafer_rice  coconut  white_chocolate  multi available_canada_america
+0        Coffee Crisp      50          1        0        0       0                  1        0                0      0                   Canada
+1        Butterfinger     184          1        1        1       0                  0        0                0      0                  America
+2                Skor      39          1        0        1       0                  0        0                0      0                     Both
+3            Smarties      45          1        0        0       0                  0        0                0      1                   Canada
+4                Twix      58          1        0        1       0                  1        0                0      1                     Both
+..                ...     ...        ...      ...      ...     ...                ...      ...              ...    ...                      ...
+20             Take 5      43          1        1        1       0                  1        0                0      0                  America
+21   Whatchamacallits      45          1        1        0       0                  1        0                0      0                  America
+22         Almond Joy      46          1        0        0       0                  0        1                0      0                  America
+23           Oh Henry      51          1        1        1       0                  0        0                0      0                     Both
+24  Cookies and Cream      43          0        0        0       0                  1        0                1      0                     Both
 
-[25 rows x 10 columns]
+[25 rows x 11 columns]
 ```
 
 Notes: Script here.
@@ -140,14 +137,14 @@ Notes: Script here.
 ---
 
 From this dataframe, we can see that there are 25 different candy bars
-and 10 columns. We can obtain the names of the columns using this code:
+and 11 columns. We can obtain the names of the columns using this code:
 
 ``` python
 df.columns
 ```
 
 ```out
-Index(['weight', 'chocolate', 'peanuts', 'caramel', 'nougat', 'cookie_wafer_rice', 'coconut', 'white_chocolate', 'multi', 'available_canada_america'], dtype='object')
+Index(['name', 'weight', 'chocolate', 'peanuts', 'caramel', 'nougat', 'cookie_wafer_rice', 'coconut', 'white_chocolate', 'multi', 'available_canada_america'], dtype='object')
 ```
 
 Or if you wanted to see the dimensions of the whole dataframe you could
@@ -158,7 +155,7 @@ df.shape
 ```
 
 ```out
-(25, 10)
+(25, 11)
 ```
 
 Breaking up this code it just means “From our dataframe that we saved as
@@ -180,17 +177,16 @@ Notes: Script here.
 
 What if we don’t want to output the whole table when displaying a
 dataframe? We can specify how many rows of the dataset to show with
-`.head()`. This will output the first few rows of the dataframe.
+`.head()`. This will output the first few rows of the dataframe:
 
 ``` python
 df.head(2)
 ```
 
 ```out
-              weight  chocolate  peanuts  caramel  nougat  cookie_wafer_rice  coconut  white_chocolate  multi available_canada_america
-name                                                                                                                                  
-Coffee Crisp      50          1        0        0       0                  1        0                0      0                   Canada
-Butterfinger     184          1        1        1       0                  0        0                0      0                  America
+           name  weight  chocolate  peanuts  caramel  nougat  cookie_wafer_rice  coconut  white_chocolate  multi available_canada_america
+0  Coffee Crisp      50          1        0        0       0                  1        0                0      0                   Canada
+1  Butterfinger     184          1        1        1       0                  0        0                0      0                  America
 ```
 
 The above code specifies only 2 rows to display. We can specify any
@@ -202,13 +198,12 @@ df.head()
 ```
 
 ```out
-              weight  chocolate  peanuts  caramel  nougat  cookie_wafer_rice  coconut  white_chocolate  multi available_canada_america
-name                                                                                                                                  
-Coffee Crisp      50          1        0        0       0                  1        0                0      0                   Canada
-Butterfinger     184          1        1        1       0                  0        0                0      0                  America
-Skor              39          1        0        1       0                  0        0                0      0                     Both
-Smarties          45          1        0        0       0                  0        0                0      1                   Canada
-Twix              58          1        0        1       0                  1        0                0      1                     Both
+           name  weight  chocolate  peanuts  caramel  nougat  cookie_wafer_rice  coconut  white_chocolate  multi available_canada_america
+0  Coffee Crisp      50          1        0        0       0                  1        0                0      0                   Canada
+1  Butterfinger     184          1        1        1       0                  0        0                0      0                  America
+2          Skor      39          1        0        1       0                  0        0                0      0                     Both
+3      Smarties      45          1        0        0       0                  0        0                0      1                   Canada
+4          Twix      58          1        0        1       0                  1        0                0      1                     Both
 ```
 
 Notes: Script here.

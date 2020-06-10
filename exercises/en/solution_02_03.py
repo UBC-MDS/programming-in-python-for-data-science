@@ -2,9 +2,9 @@ import pandas as pd
 
 url = 'https://raw.githubusercontent.com/UBC-MDS/MCL-DSCI-511-programming-in-python/master/data/pokemon.csv'
 
-# Read in the data from the URL using the pokemon name as the index
+# Read in the data from the URL 
 
-pokemon_df = pd.read_csv(url,index_col=0)
+pokemon_df = pd.read_csv(url)
 
 # Display the first 10 rows
 

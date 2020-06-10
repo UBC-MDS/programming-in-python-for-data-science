@@ -6,8 +6,7 @@ def test():
 
     # If an assertion fails, the message will be displayed
 
-    assert "index_col=0" in __solution__ , "Are you making sure to add index_col=0?"
     assert "delimiter=\";\"" in __solution__ , "Are you making sure to set the delimeter to ;?"
-    assert pokemon_df.shape == (801, 11), "The dimensions are incorrect. You may not have the correct dataset"
-    assert sorted(list(pokemon_df.columns)) ==  sorted(['deck_no','attack','defense','sp_attack','sp_defense','speed','capture_rt','total_bs','type','gen','legendary']), "\nYour column names do not seem correct"
+    assert pokemon_df.shape == (801, 12), "The dimensions are incorrect. You may not have the correct dataset"
+    assert sorted(list(pokemon_df.columns)) ==  sorted(['name', 'deck_no','attack','defense','sp_attack','sp_defense','speed','capture_rt','total_bs','type','gen','legendary']), "\nYour column names do not seem correct"
     __msg__.good("Nice work, well done!")

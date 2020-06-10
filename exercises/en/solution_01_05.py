@@ -2,7 +2,7 @@
 import pandas as pd
 
 # Read in the dataset 
-hockey_players = pd.read_csv('data/canucks.csv', index_col=0)
+hockey_players = pd.read_csv('data/canucks.csv')
 
 
 # Display the dataframe

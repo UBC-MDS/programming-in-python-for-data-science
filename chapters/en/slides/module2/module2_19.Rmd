@@ -41,13 +41,13 @@ np.set_printoptions(linewidth=400)
 pd.set_option('display.max_columns', 50)
 pd.set_option('display.max_rows', 20 )
 
-df = pd.read_csv('cereal.csv', index_col=0)
+df = pd.read_csv('cereal.csv')
 ```
 
 
 type: slides
 
-# Conditional Value Replacement and Assignment 
+# Conditional value replacement and assignment 
 
 
 Notes: Script here
@@ -64,14 +64,13 @@ So far, we have accumulated many different skills to wrangle our data.  One type
 
 ```{python}
 df = pd.read_csv('cereal.csv',
-                  index_col=0, 
                   usecols=['name', 'mfr', 'type', 'calories', 'protein', 'weight', 'rating'])
 df.head()
 ```
 
 In the dataframe, the manufacturer value "Q" isn't that informative and it might be easier to understand our data if we change all these values to something more complete like "Quaker".
 
-This leads to to our task:    
+This leads us toour task:    
 ***Replace the "Q" manufacturer values, with a new value of "Quaker"***
 
 
@@ -94,8 +93,7 @@ df[df['mfr'] == 'Q'].assign(mfr = 'Quaker')
 That looks like it did what we want but what happened to the rest of our dataframe? 
 Remember that we only want to replace the values in our existing dataframe and not create a new one. 
 
-When we use the `.assign()` verb, it creates a new dataframe instead of altering the current one.  This is problematic since we still want the original dataframe but with certain values updated. So what do we do?
-
+When we use the `.assign()` verb, it creates a new dataframe with only the rows that meet the condition ```df['mfr'] == 'Q'``` .  This is problematic since we still want the original dataframe and the rows with `mfr` values not equal "Q". So what do we do?
 
 
 Notes: Script here
@@ -112,7 +110,7 @@ Remember our friend `.loc[]`?  We are going to get reacquainted with it.  Simila
 We are used to seeing code involving `.loc[]` like this:
 
 ```{python}
-df.loc['Trix'] 
+df.loc[73] 
 ```
 
 But we get introduced to a new side of it when we use it to filter as well. 

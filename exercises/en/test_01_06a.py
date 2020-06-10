@@ -6,6 +6,7 @@ def test():
 
     # If an assertion fails, the message will be displayed
 
-    assert "columns_hockey = hockey_players.columns" in __solution__ , "There seems to be a problem with finding the column names of the dataset"
-    assert list(columns_hockey) ==  ['No.', 'Age', 'Height', 'Weight', 'Country', 'Position', 'Experience', 'Birth Date', 'Salary'], "Your column names do not seem correct"
+    assert "columns_hockey = hockey_players.columns" in __solution__, "There seems to be a problem with finding the column names of the dataset"
+    assert list(columns_hockey) == ['Player', 'No.', 'Age', 'Height', 'Weight', 'Country',
+                                    'Position', 'Experience', 'Birth Date', 'Salary'], "Your column names do not seem correct"
     __msg__.good("Nice work, well done!")

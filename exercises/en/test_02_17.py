@@ -5,6 +5,6 @@ def test():
     # in the meta.json for details.
 
     # If an assertion fails, the message will be displayed
-    assert fire_pokemon.shape == (52, 11), "Your dataframe imensions are incorrect. Are you selecting only the fire pokemons?"
+    assert fire_pokemon.shape == (52, 12), "Your dataframe imensions are incorrect. Are you selecting only the fire pokemons?"
     assert set(list(fire_pokemon.type)) == {'fire'} , "There are more than one pokemon types present. \n Are you selecting only fire pokemons?"
     __msg__.good("Nice work, well done!")

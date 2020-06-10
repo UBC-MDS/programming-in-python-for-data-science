@@ -41,12 +41,12 @@ np.set_printoptions(linewidth=400)
 pd.set_option('display.max_columns', 15)
 pd.set_option('display.max_rows', 8)
 
-df = pd.read_csv('cereal.csv', index_col=0)
+df = pd.read_csv('cereal.csv')
 ```
 
 type: slides
 
-# Column Renaming and Column Dropping
+# Column renaming and column dropping
 
 
 Notes: Script here
@@ -61,7 +61,7 @@ Remember our `candybars.csv` dataframe?  Let's bring it back.
 
 
 ```{python}
-df = pd.read_csv('candybars.csv', index_col=0)
+df = pd.read_csv('candybars.csv')
 df
 ```
 

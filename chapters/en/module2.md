@@ -113,7 +113,7 @@ Running a coding exercise for the first time could take a bit of time for everyt
 Let's try reading in a `.txt` file.   
 
 Tasks:     
-- Read in the data from a text file name `pokemon-text.txt` located in the `data` folder using the Pokemon column name as the index.
+- Read in the data from a text file name `pokemon-text.txt` located in the `data` folder.
 - Save the resulting dataframe as `pokemon_df`.
 - It's a good idea to see what the [delimiter](https://github.com/UBC-MDS/MCL-DSCI-511-programming-in-python/blob/binder/data/pokemon-text.txt) is.
 - Display the first 10 rows of `pokemon_df`.
@@ -140,7 +140,7 @@ Running a coding exercise for the first time could take a bit of time for everyt
 Let's try reading in an Excel file.   
 
 Tasks:     
-- Read in the data from the sheet named `pokemon` from the Excel file `pokemon.xlsx` located in the `data` folder specifying column 0 as the index column.
+- Read in the data from the sheet named `pokemon` from the Excel file `pokemon.xlsx` located in the `data` folder.
 - Save the resulting dataframe as `pokemon_df`.
 - Display the first 10 rows of `pokemon_df`.
 
@@ -261,18 +261,17 @@ Tasks:
 Here is our `fruit_salad` dataframe once again. 
 
 ```out
-                 colour    location   seed   shape    sweetness   water-content  weight
-        name                        
-       apple        red     canada    True   round       True          84         100
-      banana     yellow     mexico   False    long       True          75         120
-  cantaloupe     orange      spain    True   round       True          90        1360
-dragon-fruit    magenta      china    True   round      False          96         600
-  elderberry     purple    austria   False   round       True          80           5
-         fig     purple     turkey   False    oval      False          78          40
-       guava      green     mexico    True    oval       True          83         450
- huckleberry       blue     canada    True   round       True          73           5
-        kiwi      brown      china    True   round       True          80          76
-       lemon     yellow     mexico   False    oval      False          83          65
+           name    colour    location    seed   shape  sweetness   water-content  weight
+0         apple       red     canada    True   round     True          84         100
+1        banana    yellow     mexico   False    long     True          75         120
+2    cantaloupe    orange      spain    True   round     True          90        1360
+3  dragon-fruit   magenta      china    True   round    False          96         600
+4    elderberry    purple    austria   False   round     True          80           5
+5           fig    purple     turkey   False    oval    False          78          40
+6         guava     green     mexico    True    oval     True          83         450
+7   huckleberry      blue     canada    True   round     True          73           5
+8          kiwi     brown      china    True   round     True          80          76
+9         lemon    yellow     mexico   False    oval    False          83          65
 ```
 
 Let's say we run the following code:
@@ -729,18 +728,17 @@ Tasks:
 Remember the fruit salad dataframe named `fruit_salad`?  Refer to it for the next two questions.
 
 ```out
-                 colour    location   seed   shape    sweetness   water-content  weight
-        name                        
-       apple        red     canada    True   round       True          84         100
-      banana     yellow     mexico   False    long       True          75         120
-  cantaloupe     orange      spain    True   round       True          90        1360
-dragon-fruit    magenta      china    True   round      False          96         600
-  elderberry     purple    austria   False   round       True          80           5
-         fig     purple     turkey   False    oval      False          78          40
-       guava      green     mexico    True    oval       True          83         450
- huckleberry       blue     canada    True   round       True          73           5
-        kiwi      brown      china    True   round       True          80          76
-       lemon     yellow     mexico   False    oval      False          83          65
+           name    colour    location    seed   shape  sweetness   water-content  weight
+0         apple       red     canada    True   round     True          84         100
+1        banana    yellow     mexico   False    long     True          75         120
+2    cantaloupe    orange      spain    True   round     True          90        1360
+3  dragon-fruit   magenta      china    True   round    False          96         600
+4    elderberry    purple    austria   False   round     True          80           5
+5           fig    purple     turkey   False    oval    False          78          40
+6         guava     green     mexico    True    oval     True          83         450
+7   huckleberry      blue     canada    True   round     True          73           5
+8          kiwi     brown      china    True   round     True          80          76
+9    
 ```
 
 **Question 1**          
@@ -771,7 +769,7 @@ Not quite but you are on the right track.
 Consider this output made from the `fruit_salad` dataframe:
 
 
-<center> <img src='/module2/question22output.png'  alt="404 image" /></center>
+<center> <img src='/module2/Q25_2.png'  alt="404 image" /></center>
    
 Which of the following code returns the dataframe above. 
 

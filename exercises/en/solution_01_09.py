@@ -1,15 +1,13 @@
 import pandas as pd
 
-# The database  
+# The database
 
-hockey_players = pd.read_csv('data/canucks.csv', index_col=0)
+hockey_players = pd.read_csv('data/canucks.csv')
 
-# Slice the rows and columns and save the new dataframe as `benched_players` 
+# Slice the rows and columns and save the new dataframe as `benched_players`
 
-benched_players = hockey_players.loc['Guillaume Brisebois' : 'Quinn Hughes']
+benched_players = hockey_players.loc[3:9]
 
 # Display it
 
-benched_players 
-
-
+benched_players

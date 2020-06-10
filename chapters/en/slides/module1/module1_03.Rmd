@@ -35,7 +35,7 @@ pd.set_option('display.max_rows', 20)
 type: slides
 
 
-# What is a Pandas?
+# What is Pandas?
 
 Notes: Script here.
 <html>
@@ -60,7 +60,7 @@ Notes: Script here.
 
 To analyze dataframes and load these `csv` files, we need to make sure that we import something called `pandas`. 
 
-Before we start writing any valuable code, we import it with the following code. 
+Before we start writing any valuable code, we import it with the following code:
 
 ```{python}
 import pandas as pd
@@ -79,14 +79,13 @@ Notes: Script here.
 Next we can bring in our data  named `candybars` which is stored as a `.csv`:
 
 ```{python}
-df = pd.read_csv('candybars.csv', index_col=0)
+df = pd.read_csv('candybars.csv')
 ```
 
 let's break this up:
 
 `pd`: this is the short form for pandas, which we are using to manipulate our dataframes.  
 `read_csv()`: The tool that does the job and, in this case, it is reading in the `csv` file named `candybars.csv`.    
-`index_col=0`: This specifies to use the first column in the csv as an index (we will talk about this shortly).          
 `df`: The dataframe is now saved as an object called `df`.
 
 In these slides you can differentiate between what we typed in (our code) in light gray and the output of it, which will be coloured with a dark grey background. 
@@ -114,7 +113,7 @@ Notes: Script here.
 
 ---
 
-From this dataframe, we can see that there are 25 different candy bars and 10 columns.
+From this dataframe, we can see that there are 25 different candy bars and 11 columns.
 We can obtain the names of the columns using this code:
 
 ```{python}
@@ -139,7 +138,8 @@ Notes: Script here.
 ---
 
 What if we don't want to output the whole table when displaying a dataframe?
-We can specify how many rows of the dataset to show with `.head()`.  This will output the first few rows of the dataframe. 
+We can specify how many rows of the dataset to show with `.head()`. 
+This will output the first few rows of the dataframe:
 
 ```{python}
 df.head(2)
@@ -147,8 +147,6 @@ df.head(2)
 
 
 The above code specifies only 2 rows to display. We can specify any number of rows within the parentheses or we can leave it empty which will default to the first 5 rows.
-
-
 
 ```{python}
 df.head()
@@ -217,7 +215,7 @@ The easiest way to do this is with a hash (`#`) symbol. This creates a single li
 # This line does not excute anything. 
 ```
 
-You can also use it beside code. 
+You can also use it beside code.
 
 ```{python eval=FALSE}
 df.shape  # This will output the shape of the dataframe

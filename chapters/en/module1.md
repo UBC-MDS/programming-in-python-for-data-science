@@ -212,46 +212,45 @@ Tasks:
 
 <exercise id="8" title="Slicing and Dicing Practice">
 
-My dataframe object name is `fruit_salad` with the index label as the `name` column.
+My dataframe object name is `fruit_salad`.
 
 ```out
-                 colour    location   seed   shape    sweetness   water-content  weight
-        name                        
-       apple        red     canada    True   round       True          84         100
-      banana     yellow     mexico   False    long       True          75         120
-  cantaloupe     orange      spain    True   round       True          90        1360
-dragon-fruit    magenta      china    True   round      False          96         600
-  elderberry     purple    austria   False   round       True          80           5
-         fig     purple     turkey   False    oval      False          78          40
-       guava      green     mexico    True    oval       True          83         450
- huckleberry       blue     canada    True   round       True          73           5
-        kiwi      brown      china    True   round       True          80          76
-       lemon     yellow     mexico   False    oval      False          83          65
+           name    colour    location    seed   shape  sweetness   water-content  weight
+0         apple       red     canada    True   round     True          84         100
+1        banana    yellow     mexico   False    long     True          75         120
+2    cantaloupe    orange      spain    True   round     True          90        1360
+3  dragon-fruit   magenta      china    True   round    False          96         600
+4    elderberry    purple    austria   False   round     True          80           5
+5           fig    purple     turkey   False    oval    False          78          40
+6         guava     green     mexico    True    oval     True          83         450
+7   huckleberry      blue     canada    True   round     True          73           5
+8          kiwi     brown      china    True   round     True          80          76
+9         lemon    yellow     mexico   False    oval    False          83          65
 ```
 
 **Question 1**    
 If you wanted only the rows from `cantaloupe` to  `kiwi`, what would your code look like using index labels?
 
 <choice id="1" >
-<opt text='<code>fruit_salad.loc["cantaloupe", "kiwi"]</code>'>
+<opt text='<code>fruit_salad.loc[2, 8]</code>'>
 
 This is not the right syntax or number of rows.
 
 </opt>
 
-<opt text='<code>fruit_salad["cantaloupe", "kiwi"]</code>' >
+<opt text='<code>fruit_salad[2, 8]</code>' >
 
 This is not using the right syntax.
 
 </opt>
 
-<opt text='<code>fruit_salad["cantaloupe":"kiwi"]</code>' >
+<opt text='<code>fruit_salad[2:8]</code>' >
 
 This is missing something rather important.
 
 </opt>
 
-<opt text='<code>fruit_salad.loc["cantaloupe":"kiwi"]</code>' correct="true">
+<opt text='<code>fruit_salad.loc[2:8]</code>' correct="true">
 
 Good job! 
 
@@ -263,25 +262,25 @@ Good job!
 If you wanted all the rows between `cantaloupe` and `fig` and only columns `name` to `seed`, what would your code look like using index labels?
 
 <choice id="2" >
-<opt text='<code>fruit_salad.loc["cantaloupe":"fig", "name":"seed"]</code>'>
+<opt text='<code>fruit_salad.loc[2:5, "colour":"seed"]</code>'>
 
-Remember that the "name" column is the index and does not need to be specified.
-
-</opt>
-
-<opt text='<code>fruit_salad.loc["cantaloupe":"fig", "colour":"seed"]</code>' correct="true">
-
-Great! This is correct since we don't need to start our slicing at name since it is our index.
+I think you are missing the `name` column.
 
 </opt>
 
-<opt text='<code>fruit_salad.loc["colour":"seed", "cantaloupe":"fig"]</code>' >
+<opt text='<code>fruit_salad.loc[2:5, "name":"seed"]</code>' correct="true">
+
+Great!
+
+</opt>
+
+<opt text='<code>fruit_salad.loc["name":"seed", 2:5]</code>' >
 
 This seems to be backward.
 
 </opt>
 
-<opt text= '<code>fruit_salad["cantaloupe":"kiwi", "colour":"seed"]</code>'  >
+<opt text= '<code>fruit_salad[2:8, "name":"seed"]</code>'  >
 
 I think you are missing something important.  
 
@@ -306,7 +305,7 @@ This following code chunk will be used to give you an output of the data `hockey
 </codeblock>
 
 
-Using our `hockey_players` data from the last few questions with the index labeled with `Player` name, Let's try slicing it.
+Using our `hockey_players` data from the last few questions, let's try slicing it.
 
 
 Tasks:
@@ -320,8 +319,6 @@ Tasks:
 
 - Are you using `.loc[]`?
 - Are you using the correct dataframe labels? Check your spelling and punctuation in row and column labels.
-- Did you slice both columns and rows?
-- Are you using "quotations"?
 
 </codeblock>
 
@@ -341,11 +338,11 @@ Use the output of the following code chunk to help answer the next question.
 </codeblock>
 
 
-Using our `hockey_players` data from the last few questions with the index labeled with `Player` name, Let's try slicing it.
+Using our `hockey_players` data from the last few questions, let's try slicing it.
 
 
 Tasks:   
-- Select the players `Adam Gaudette` to `Brandon Sutter` and the columns `No.`, `Age`, `Height`, `Weight` and `Country`.
+- Select the players `Adam Gaudette` to `Brandon Sutter` and the columns `Player`, `No.`, `Age`, `Height`, `Weight` and `Country`.
 - Save the new sliced dataframe as object `star_players`.
 - Display it.
 
@@ -367,21 +364,20 @@ Tasks:
 
 <exercise id="12" title="Slicing Columns Only">
 
-Using my dataframe object name is `fruit_salad` with the index label as the `name` column, Let's answer some slicing questions.
+Using my dataframe object named `fruit_salad`, let's answer some slicing questions.
 
 ```out
-                 colour    location   seed   shape    sweetness   water-content  weight
-        name                        
-       apple        red     canada    True   round       True          84         100
-      banana     yellow     mexico   False    long       True          75         120
-  cantaloupe     orange      spain    True   round       True          90        1360
-dragon-fruit    magenta      china    True   round      False          96         600
-  elderberry     purple    austria   False   round       True          80           5
-         fig     purple     turkey   False    oval      False          78          40
-       guava      green     mexico    True    oval       True          83         450
- huckleberry       blue     canada    True   round       True          73           5
-        kiwi      brown      china    True   round       True          80          76
-       lemon     yellow     mexico   False    oval      False          83          65
+           name    colour    location    seed   shape  sweetness   water-content  weight
+0         apple       red     canada    True   round     True          84         100
+1        banana    yellow     mexico   False    long     True          75         120
+2    cantaloupe    orange      spain    True   round     True          90        1360
+3  dragon-fruit   magenta      china    True   round    False          96         600
+4    elderberry    purple    austria   False   round     True          80           5
+5           fig    purple     turkey   False    oval    False          78          40
+6         guava     green     mexico    True    oval     True          83         450
+7   huckleberry      blue     canada    True   round     True          73           5
+8          kiwi     brown      china    True   round     True          80          76
+9         lemon    yellow     mexico   False    oval    False          83          65
 ```
 
 
@@ -401,7 +397,7 @@ This is almost right but it's missing something important! Try looking at the ti
 
 </opt>
 
-<opt text='<code>fruit_salad["apple":"lemon", "seeds":"water-content"]</code>' >
+<opt text='<code>fruit_salad[0:9, "seeds":"water-content"]</code>' >
 
 This is almost right but it's missing something important and it could be condensed! Try looking at the title of the slides we just finished.
 
@@ -430,43 +426,42 @@ Good job! This has both `.loc[]` and includes the columns we wish to slice here.
 Using my `fruit_salad` dataframe from earlier?
 
 ```out
-                 colour    location   seed   shape    sweetness   water-content  weight
-        name                        
-       apple        red     canada    True   round       True          84         100
-      banana     yellow     mexico   False    long       True          75         120
-  cantaloupe     orange      spain    True   round       True          90        1360
-dragon-fruit    magenta      china    True   round      False          96         600
-  elderberry     purple    austria   False   round       True          80           5
-         fig     purple     turkey   False    oval      False          78          40
-       guava      green     mexico    True    oval       True          83         450
- huckleberry       blue     canada    True   round       True          73           5
-        kiwi      brown      china    True   round       True          80          76
-       lemon     yellow     mexico   False    oval      False          83          65
+           name    colour    location    seed   shape  sweetness   water-content  weight
+0         apple       red     canada    True   round     True          84         100
+1        banana    yellow     mexico   False    long     True          75         120
+2    cantaloupe    orange      spain    True   round     True          90        1360
+3  dragon-fruit   magenta      china    True   round    False          96         600
+4    elderberry    purple    austria   False   round     True          80           5
+5           fig    purple     turkey   False    oval    False          78          40
+6         guava     green     mexico    True    oval     True          83         450
+7   huckleberry      blue     canada    True   round     True          73           5
+8          kiwi     brown      china    True   round     True          80          76
+9         lemon    yellow     mexico   False    oval    False          83          65
 ```
 
 **Question**    
 If I wanted to make a tropical salad and the recipe calls for `kiwi`, `cantaloupe` and `guava` in this order and I am only interested in columns ordered as `sweetness`, `weight`, `seed` and  `location`, what would my code look like?
 
 <choice >
-<opt text='<code>fruit_salad.loc["kiwi", "cantaloupe", "guava":"sweetness", "weight", "seed", "location"]</code>' >
+<opt text='<code>fruit_salad.loc[8, 2, 6:"sweetness", "weight", "seed", "location"]</code>' >
 
 Unfortunately, this code has many errors in it.
 
 </opt>
 
-<opt text='<code>fruit_salad.loc[["kiwi", "cantaloupe", "guava"]:["sweetness", "weight", "seed", "location"]]</code>' >
+<opt text='<code>fruit_salad.loc[[8, 2, 6]:["sweetness", "weight", "seed", "location"]]</code>' >
 
 The way that the rows and columns are separated may need to be looked over.
 
 </opt>
 
-<opt text='<code>fruit_salad.loc[["kiwi", "cantaloupe", "guava"], ["sweetness", "weight", "seed", "location"]]</code>' correct="true">
+<opt text='<code>fruit_salad.loc[[8, 2, 6], ["sweetness", "weight", "seed", "location"]]</code>' correct="true">
 
 Yes, this looks right!
 
 </opt>
 
-<opt text='<code>fruit_salad.loc["cantaloupe", "kiwi", "guava"], ["weight", "seed”, “sweetness", "location"]]</code>'>
+<opt text='<code>fruit_salad.loc[[2, 6, 8], ["location", "seed”, “sweetness", "weight"]]</code>'>
 
 Remember we are rearranging here.
 
@@ -482,7 +477,14 @@ Running a coding exercise for the first time, could take a bit of time for every
 
 **When you see `____` in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.**
 
-Now let's select specific players and columns.
+Use the output of the following code chunk to help answer the next question.
+
+<codeblock id="hockey_players">
+
+</codeblock>
+
+
+Let's select specific players and columns.
 
 Tasks:
 - Select the players `Zack MacEwan`, `Jake Virtanen` and `Jordie Benn` in that order and the columns `Height`, `Weight`, `Salary` and `Country` in that order.
@@ -584,18 +586,17 @@ Tasks:
 Here is our `fruit_salad` data again:
 
 ```out
-                 colour    location   seed   shape    sweetness   water-content  weight
-        name                        
-       apple        red     canada    True   round       True          84         100
-      banana     yellow     mexico   False    long       True          75         120
-  cantaloupe     orange      spain    True   round       True          90        1360
-dragon-fruit    magenta      china    True   round      False          96         600
-  elderberry     purple    austria   False   round       True          80           5
-         fig     purple     turkey   False    oval      False          78          40
-       guava      green     mexico    True    oval       True          83         450
- huckleberry       blue     canada    True   round       True          73           5
-        kiwi      brown      china    True   round       True          80          76
-       lemon     yellow     mexico   False    oval      False          83          65
+           name    colour    location    seed   shape  sweetness   water-content  weight
+0         apple       red     canada    True   round     True          84         100
+1        banana    yellow     mexico   False    long     True          75         120
+2    cantaloupe    orange      spain    True   round     True          90        1360
+3  dragon-fruit   magenta      china    True   round    False          96         600
+4    elderberry    purple    austria   False   round     True          80           5
+5           fig    purple     turkey   False    oval    False          78          40
+6         guava     green     mexico    True    oval     True          83         450
+7   huckleberry      blue     canada    True   round     True          73           5
+8          kiwi     brown      china    True   round     True          80          76
+9         lemon    yellow     mexico   False    oval    False          83          65
 ```
 
 
@@ -603,25 +604,25 @@ dragon-fruit    magenta      china    True   round      False          96       
 If I wanted the rows `elderberry`  to `kiwi` and only columns `seeds`, `shape`, `sweetness` and  `water-content` what would my code look like if I was using index positions?
 
 <choice id="1" >
-<opt text='<code>fruit_salad.iloc[4:9, 2:6]</code>' correct="true">
+<opt text='<code>fruit_salad.iloc[4:9, 3:]</code>' correct="true">
 
-This is correct! We need to use `.iloc[]` and go one position further than the last bound to select it
+This is correct!
 
 </opt>
 
-<opt text='<code>fruit_salad.iloc[4:8, 2:6]</code>' >
+<opt text='<code>fruit_salad.iloc[4:8, 3:7]</code>' >
 
 Not quite, but you are halfway there. 
 
 </opt>
 
-<opt text='<code>fruit_salad.iloc[4:9, 3:6]</code>' >
+<opt text='<code>fruit_salad.iloc[4:9, 4:7]</code>' >
 
 Not quite, but you are halfway there. 
 
 </opt>
 
-<opt text='<code>fruit_salad.iloc[5:10, 3:7]</code>'>
+<opt text='<code>fruit_salad.iloc[5:10, 4:8]</code>'>
 
 Are you forgetting that in the Python language we start counting at 0?
 
@@ -639,19 +640,19 @@ We need to use the index position for this question and when using `.iloc[]`.
 
 </opt>
 
-<opt text='<code>fruit_salad.iloc[[10, 3], [1, 7, 3]]</code>' >
+<opt text='<code>fruit_salad.iloc[[10, 3], [2, 8, 4]]</code>' >
 
 Great! You don't need to specify the second column part because by default the code will slice all the columns.
 
 </opt>
 
-<opt text='<code>fruit_salad.iloc[[9, 2], [0, 6, 2]]</code>' correct="true">
+<opt text='<code>fruit_salad.iloc[[9, 2], [1, 7, 3]]</code>' correct="true">
 
 Great Work!
 
 </opt>
 
-<opt text= '<code>fruit_salad[[9, 2], [0, 6, 2]]</code>'  >
+<opt text= '<code>fruit_salad[[9, 2], [1, 7, 3]]</code>'  >
 
 I think you are missing something important!
 
@@ -675,7 +676,6 @@ Use the output of the following code chunk to help complete the next tasks.
 </codeblock>
 
  In previous questions, we tried slicing using index labels on our Canack dataset. Let's try something similar but using the index positions.
-To make life a little easier for you we will be reading in the data without `index_col=0`. This means that no column is being assigned as an index and will have an index labeled with row numbers.
 
 Tasks:
 - Slice the players `Jacob Markstrom` to `Tim Schaller` and the columns `Player` to `Height`.
@@ -761,18 +761,17 @@ Tasks:
 Bringing back our Fruit Salad dataframe
 
 ```out
-                 colour    location   seed   shape    sweetness   water-content  weight
-        name                        
-       apple        red     canada    True   round       True          84         100
-      banana     yellow     mexico   False    long       True          75         120
-  cantaloupe     orange      spain    True   round       True          90        1360
-dragon-fruit    magenta      china    True   round      False          96         600
-  elderberry     purple    austria   False   round       True          80           5
-         fig     purple     turkey   False    oval      False          78          40
-       guava      green     mexico    True    oval       True          83         450
- huckleberry       blue     canada    True   round       True          73           5
-        kiwi      brown      china    True   round       True          80          76
-       lemon     yellow     mexico   False    oval      False          83          65
+           name    colour    location    seed   shape  sweetness   water-content  weight
+0         apple       red     canada    True   round     True          84         100
+1        banana    yellow     mexico   False    long     True          75         120
+2    cantaloupe    orange      spain    True   round     True          90        1360
+3  dragon-fruit   magenta      china    True   round    False          96         600
+4    elderberry    purple    austria   False   round     True          80           5
+5           fig    purple     turkey   False    oval    False          78          40
+6         guava     green     mexico    True    oval     True          83         450
+7   huckleberry      blue     canada    True   round     True          73           5
+8          kiwi     brown      china    True   round     True          80          76
+9         lemon    yellow     mexico   False    oval    False          83          65
 ```
 
 
@@ -799,7 +798,7 @@ This looks great! Well done!
 
 </opt>
 
-<opt text='All of them' >
+<opt text='All of the columns are categorical' >
 
 Maybe it would be a good idea to take a look back at the slides again.
 
@@ -819,19 +818,19 @@ Is our dataframe named `df`? Will this get summary statistics for all the column
 
 </opt>
 
-<opt text='<code>vegetable_salad.describe()</code>' >
+<opt text='<code>fruit_salad.describe()</code>' >
 
 We want statistics of both quantitative and categorical columns.
 
 </opt>
 
-<opt text='<code>vegetable_salad.describe(include="all")</code>' correct="true">
+<opt text='<code>fruit_salad.describe(include="all")</code>' correct="true">
 
 This looks great! Well done! 
 
 </opt>
 
-<opt text='<code>vegetable_salad.summary(include="all")</code>' >
+<opt text='<code>fruit_salad.summary(include="all")</code>' >
 
 Is `summary` the correct command here?
 

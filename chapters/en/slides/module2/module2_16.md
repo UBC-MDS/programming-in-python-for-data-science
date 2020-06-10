@@ -29,18 +29,17 @@ have set.
 Let’s try to filter the `cereal.csv` dataset.
 
 ``` python
-df = pd.read_csv('cereal.csv', index_col=0)
+df = pd.read_csv('cereal.csv')
 df.head()
 ```
 
 ```out
-                          mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
-name                                                                                                                                       
-100% Bran                   N  Cold        70        4    1     130   10.0    5.0       6     280        25      3     1.0  0.33  68.402973
-100% Natural Bran           Q  Cold       120        3    5      15    2.0    8.0       8     135         0      3     1.0  1.00  33.983679
-All-Bran                    K  Cold        70        4    1     260    9.0    7.0       5     320        25      3     1.0  0.33  59.425505
-All-Bran with Extra Fiber   K  Cold        50        4    0     140   14.0    8.0       0     330        25      3     1.0  0.50  93.704912
-Almond Delight              R  Cold       110        2    2     200    1.0   14.0       8       1        25      3     1.0  0.75  34.384843
+                        name mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
+0                  100% Bran   N  Cold        70        4    1     130   10.0    5.0       6     280        25      3     1.0  0.33  68.402973
+1          100% Natural Bran   Q  Cold       120        3    5      15    2.0    8.0       8     135         0      3     1.0  1.00  33.983679
+2                   All-Bran   K  Cold        70        4    1     260    9.0    7.0       5     320        25      3     1.0  0.33  59.425505
+3  All-Bran with Extra Fiber   K  Cold        50        4    0     140   14.0    8.0       0     330        25      3     1.0  0.50  93.704912
+4             Almond Delight   R  Cold       110        2    2     200    1.0   14.0       8       1        25      3     1.0  0.75  34.384843
 ```
 
 Notes: Script here
@@ -68,18 +67,17 @@ df['protein'] > 4
 ```
 
 ```out
-name
-100% Bran                    False
-100% Natural Bran            False
-All-Bran                     False
-All-Bran with Extra Fiber    False
-Almond Delight               False
-                             ...  
-Triples                      False
-Trix                         False
-Wheat Chex                   False
-Wheaties                     False
-Wheaties Honey Gold          False
+0     False
+1     False
+2     False
+3     False
+4     False
+      ...  
+72    False
+73    False
+74    False
+75    False
+76    False
 Name: protein, Length: 77, dtype: bool
 ```
 
@@ -114,11 +112,10 @@ df[df['protein'] > 4]
 ```
 
 ```out
-               mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
-name                                                                                                                            
-Cheerios         G  Cold       110        6    2     290    2.0   17.0       1     105        25      1     1.0  1.25  50.764999
-Quaker Oatmeal   Q   Hot       100        5    2       0    2.7    1.0       1     110         0      1     1.0  0.67  50.828392
-Special K        K  Cold       110        6    0     230    1.0   16.0       3      55        25      1     1.0  1.00  53.131324
+              name mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
+11        Cheerios   G  Cold       110        6    2     290    2.0   17.0       1     105        25      1     1.0  1.25  50.764999
+57  Quaker Oatmeal   Q   Hot       100        5    2       0    2.7    1.0       1     110         0      1     1.0  0.67  50.828392
+67       Special K   K  Cold       110        6    0     230    1.0   16.0       3      55        25      1     1.0  1.00  53.131324
 ```
 
 Normally we use `df['column name':'column name']` to select certain rows
@@ -153,16 +150,15 @@ df[df['protein'] == 4]
 ```
 
 ```out
-                                  mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
-name                                                                                                                                               
-100% Bran                           N  Cold        70        4    1     130   10.0    5.0       6     280        25      3     1.0  0.33  68.402973
-All-Bran                            K  Cold        70        4    1     260    9.0    7.0       5     320        25      3     1.0  0.33  59.425505
-All-Bran with Extra Fiber           K  Cold        50        4    0     140   14.0    8.0       0     330        25      3     1.0  0.50  93.704912
-Life                                Q  Cold       100        4    2     150    2.0   12.0       6      95        25      2     1.0  0.67  45.328074
-Maypo                               A   Hot       100        4    1       0    0.0   16.0       3      95        25      2     1.0  1.00  54.850917
-Muesli Raisins; Dates; & Almonds    R  Cold       150        4    3      95    3.0   16.0      11     170        25      3     1.0  1.00  37.136863
-Muesli Raisins; Peaches; & Pecans   R  Cold       150        4    3     150    3.0   16.0      11     170        25      3     1.0  1.00  34.139765
-Quaker Oat Squares                  Q  Cold       100        4    1     135    2.0   14.0       6     110        25      3     1.0  0.50  49.511874
+                                 name mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
+0                           100% Bran   N  Cold        70        4    1     130   10.0    5.0       6     280        25      3     1.0  0.33  68.402973
+2                            All-Bran   K  Cold        70        4    1     260    9.0    7.0       5     320        25      3     1.0  0.33  59.425505
+3           All-Bran with Extra Fiber   K  Cold        50        4    0     140   14.0    8.0       0     330        25      3     1.0  0.50  93.704912
+41                               Life   Q  Cold       100        4    2     150    2.0   12.0       6      95        25      2     1.0  0.67  45.328074
+43                              Maypo   A   Hot       100        4    1       0    0.0   16.0       3      95        25      2     1.0  1.00  54.850917
+44   Muesli Raisins; Dates; & Almonds   R  Cold       150        4    3      95    3.0   16.0      11     170        25      3     1.0  1.00  37.136863
+45  Muesli Raisins; Peaches; & Pecans   R  Cold       150        4    3     150    3.0   16.0      11     170        25      3     1.0  1.00  34.139765
+56                 Quaker Oat Squares   Q  Cold       100        4    1     135    2.0   14.0       6     110        25      3     1.0  0.50  49.511874
 ```
 
 Now we get all the cereals with a protein content of 4g per serving. The
@@ -195,16 +191,15 @@ df[df['mfr'] == 'Q']
 ```
 
 ```out
-                   mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
-name                                                                                                                                
-100% Natural Bran    Q  Cold       120        3    5      15    2.0    8.0       8     135         0      3     1.0  1.00  33.983679
-Cap'n'Crunch         Q  Cold       120        1    2     220    0.0   12.0      12      35        25      2     1.0  0.75  18.042851
-Honey Graham Ohs     Q  Cold       120        1    2     220    1.0   12.0      11      45        25      2     1.0  1.00  21.871292
-Life                 Q  Cold       100        4    2     150    2.0   12.0       6      95        25      2     1.0  0.67  45.328074
-Puffed Rice          Q  Cold        50        1    0       0    0.0   13.0       0      15         0      3     0.5  1.00  60.756112
-Puffed Wheat         Q  Cold        50        2    0       0    1.0   10.0       0      50         0      3     0.5  1.00  63.005645
-Quaker Oat Squares   Q  Cold       100        4    1     135    2.0   14.0       6     110        25      3     1.0  0.50  49.511874
-Quaker Oatmeal       Q   Hot       100        5    2       0    2.7    1.0       1     110         0      1     1.0  0.67  50.828392
+                  name mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
+1    100% Natural Bran   Q  Cold       120        3    5      15    2.0    8.0       8     135         0      3     1.0  1.00  33.983679
+10        Cap'n'Crunch   Q  Cold       120        1    2     220    0.0   12.0      12      35        25      2     1.0  0.75  18.042851
+35    Honey Graham Ohs   Q  Cold       120        1    2     220    1.0   12.0      11      45        25      2     1.0  1.00  21.871292
+41                Life   Q  Cold       100        4    2     150    2.0   12.0       6      95        25      2     1.0  0.67  45.328074
+54         Puffed Rice   Q  Cold        50        1    0       0    0.0   13.0       0      15         0      3     0.5  1.00  60.756112
+55        Puffed Wheat   Q  Cold        50        2    0       0    1.0   10.0       0      50         0      3     0.5  1.00  63.005645
+56  Quaker Oat Squares   Q  Cold       100        4    1     135    2.0   14.0       6     110        25      3     1.0  0.50  49.511874
+57      Quaker Oatmeal   Q   Hot       100        5    2       0    2.7    1.0       1     110         0      1     1.0  0.67  50.828392
 ```
 
 Here we are using the double equal signs we saw in the last slide.
@@ -235,19 +230,18 @@ df[df['protein'] >= 4]
 ```
 
 ```out
-                                  mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
-name                                                                                                                                               
-100% Bran                           N  Cold        70        4    1     130   10.0    5.0       6     280        25      3     1.0  0.33  68.402973
-All-Bran                            K  Cold        70        4    1     260    9.0    7.0       5     320        25      3     1.0  0.33  59.425505
-All-Bran with Extra Fiber           K  Cold        50        4    0     140   14.0    8.0       0     330        25      3     1.0  0.50  93.704912
-Cheerios                            G  Cold       110        6    2     290    2.0   17.0       1     105        25      1     1.0  1.25  50.764999
-Life                                Q  Cold       100        4    2     150    2.0   12.0       6      95        25      2     1.0  0.67  45.328074
-Maypo                               A   Hot       100        4    1       0    0.0   16.0       3      95        25      2     1.0  1.00  54.850917
-Muesli Raisins; Dates; & Almonds    R  Cold       150        4    3      95    3.0   16.0      11     170        25      3     1.0  1.00  37.136863
-Muesli Raisins; Peaches; & Pecans   R  Cold       150        4    3     150    3.0   16.0      11     170        25      3     1.0  1.00  34.139765
-Quaker Oat Squares                  Q  Cold       100        4    1     135    2.0   14.0       6     110        25      3     1.0  0.50  49.511874
-Quaker Oatmeal                      Q   Hot       100        5    2       0    2.7    1.0       1     110         0      1     1.0  0.67  50.828392
-Special K                           K  Cold       110        6    0     230    1.0   16.0       3      55        25      1     1.0  1.00  53.131324
+                                 name mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
+0                           100% Bran   N  Cold        70        4    1     130   10.0    5.0       6     280        25      3     1.0  0.33  68.402973
+2                            All-Bran   K  Cold        70        4    1     260    9.0    7.0       5     320        25      3     1.0  0.33  59.425505
+3           All-Bran with Extra Fiber   K  Cold        50        4    0     140   14.0    8.0       0     330        25      3     1.0  0.50  93.704912
+11                           Cheerios   G  Cold       110        6    2     290    2.0   17.0       1     105        25      1     1.0  1.25  50.764999
+41                               Life   Q  Cold       100        4    2     150    2.0   12.0       6      95        25      2     1.0  0.67  45.328074
+43                              Maypo   A   Hot       100        4    1       0    0.0   16.0       3      95        25      2     1.0  1.00  54.850917
+44   Muesli Raisins; Dates; & Almonds   R  Cold       150        4    3      95    3.0   16.0      11     170        25      3     1.0  1.00  37.136863
+45  Muesli Raisins; Peaches; & Pecans   R  Cold       150        4    3     150    3.0   16.0      11     170        25      3     1.0  1.00  34.139765
+56                 Quaker Oat Squares   Q  Cold       100        4    1     135    2.0   14.0       6     110        25      3     1.0  0.50  49.511874
+57                     Quaker Oatmeal   Q   Hot       100        5    2       0    2.7    1.0       1     110         0      1     1.0  0.67  50.828392
+67                          Special K   K  Cold       110        6    0     230    1.0   16.0       3      55        25      1     1.0  1.00  53.131324
 ```
 
 Notes: Script here
@@ -272,21 +266,20 @@ df[df['protein'] <= 5]
 ```
 
 ```out
-                          mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
-name                                                                                                                                       
-100% Bran                   N  Cold        70        4    1     130   10.0    5.0       6     280        25      3     1.0  0.33  68.402973
-100% Natural Bran           Q  Cold       120        3    5      15    2.0    8.0       8     135         0      3     1.0  1.00  33.983679
-All-Bran                    K  Cold        70        4    1     260    9.0    7.0       5     320        25      3     1.0  0.33  59.425505
-All-Bran with Extra Fiber   K  Cold        50        4    0     140   14.0    8.0       0     330        25      3     1.0  0.50  93.704912
-Almond Delight              R  Cold       110        2    2     200    1.0   14.0       8       1        25      3     1.0  0.75  34.384843
-...                        ..   ...       ...      ...  ...     ...    ...    ...     ...     ...       ...    ...     ...   ...        ...
-Triples                     G  Cold       110        2    1     250    0.0   21.0       3      60        25      3     1.0  0.75  39.106174
-Trix                        G  Cold       110        1    1     140    0.0   13.0      12      25        25      2     1.0  1.00  27.753301
-Wheat Chex                  R  Cold       100        3    1     230    3.0   17.0       3     115        25      1     1.0  0.67  49.787445
-Wheaties                    G  Cold       100        3    1     200    3.0   17.0       3     110        25      1     1.0  1.00  51.592193
-Wheaties Honey Gold         G  Cold       110        2    1     200    1.0   16.0       8      60        25      1     1.0  0.75  36.187559
+                         name mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
+0                   100% Bran   N  Cold        70        4    1     130   10.0    5.0       6     280        25      3     1.0  0.33  68.402973
+1           100% Natural Bran   Q  Cold       120        3    5      15    2.0    8.0       8     135         0      3     1.0  1.00  33.983679
+2                    All-Bran   K  Cold        70        4    1     260    9.0    7.0       5     320        25      3     1.0  0.33  59.425505
+3   All-Bran with Extra Fiber   K  Cold        50        4    0     140   14.0    8.0       0     330        25      3     1.0  0.50  93.704912
+4              Almond Delight   R  Cold       110        2    2     200    1.0   14.0       8       1        25      3     1.0  0.75  34.384843
+..                        ...  ..   ...       ...      ...  ...     ...    ...    ...     ...     ...       ...    ...     ...   ...        ...
+72                    Triples   G  Cold       110        2    1     250    0.0   21.0       3      60        25      3     1.0  0.75  39.106174
+73                       Trix   G  Cold       110        1    1     140    0.0   13.0      12      25        25      2     1.0  1.00  27.753301
+74                 Wheat Chex   R  Cold       100        3    1     230    3.0   17.0       3     115        25      1     1.0  0.67  49.787445
+75                   Wheaties   G  Cold       100        3    1     200    3.0   17.0       3     110        25      1     1.0  1.00  51.592193
+76        Wheaties Honey Gold   G  Cold       110        2    1     200    1.0   16.0       8      60        25      1     1.0  0.75  36.187559
 
-[75 rows x 15 columns]
+[75 rows x 16 columns]
 ```
 
 Notes: Script here
@@ -310,17 +303,16 @@ df[(df['protein'] >= 4) & (df['protein'] <= 5)]
 ```
 
 ```out
-                                  mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
-name                                                                                                                                               
-100% Bran                           N  Cold        70        4    1     130   10.0    5.0       6     280        25      3     1.0  0.33  68.402973
-All-Bran                            K  Cold        70        4    1     260    9.0    7.0       5     320        25      3     1.0  0.33  59.425505
-All-Bran with Extra Fiber           K  Cold        50        4    0     140   14.0    8.0       0     330        25      3     1.0  0.50  93.704912
-Life                                Q  Cold       100        4    2     150    2.0   12.0       6      95        25      2     1.0  0.67  45.328074
-Maypo                               A   Hot       100        4    1       0    0.0   16.0       3      95        25      2     1.0  1.00  54.850917
-Muesli Raisins; Dates; & Almonds    R  Cold       150        4    3      95    3.0   16.0      11     170        25      3     1.0  1.00  37.136863
-Muesli Raisins; Peaches; & Pecans   R  Cold       150        4    3     150    3.0   16.0      11     170        25      3     1.0  1.00  34.139765
-Quaker Oat Squares                  Q  Cold       100        4    1     135    2.0   14.0       6     110        25      3     1.0  0.50  49.511874
-Quaker Oatmeal                      Q   Hot       100        5    2       0    2.7    1.0       1     110         0      1     1.0  0.67  50.828392
+                                 name mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
+0                           100% Bran   N  Cold        70        4    1     130   10.0    5.0       6     280        25      3     1.0  0.33  68.402973
+2                            All-Bran   K  Cold        70        4    1     260    9.0    7.0       5     320        25      3     1.0  0.33  59.425505
+3           All-Bran with Extra Fiber   K  Cold        50        4    0     140   14.0    8.0       0     330        25      3     1.0  0.50  93.704912
+41                               Life   Q  Cold       100        4    2     150    2.0   12.0       6      95        25      2     1.0  0.67  45.328074
+43                              Maypo   A   Hot       100        4    1       0    0.0   16.0       3      95        25      2     1.0  1.00  54.850917
+44   Muesli Raisins; Dates; & Almonds   R  Cold       150        4    3      95    3.0   16.0      11     170        25      3     1.0  1.00  37.136863
+45  Muesli Raisins; Peaches; & Pecans   R  Cold       150        4    3     150    3.0   16.0      11     170        25      3     1.0  1.00  34.139765
+56                 Quaker Oat Squares   Q  Cold       100        4    1     135    2.0   14.0       6     110        25      3     1.0  0.50  49.511874
+57                     Quaker Oatmeal   Q   Hot       100        5    2       0    2.7    1.0       1     110         0      1     1.0  0.67  50.828392
 ```
 
 Code Explained:  
@@ -371,9 +363,8 @@ df[(df['mfr'] == 'Q') & (df['protein'] > 4)]
 ```
 
 ```out
-               mfr type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
-name                                                                                                                           
-Quaker Oatmeal   Q  Hot       100        5    2       0    2.7    1.0       1     110         0      1     1.0  0.67  50.828392
+              name mfr type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
+57  Quaker Oatmeal   Q  Hot       100        5    2       0    2.7    1.0       1     110         0      1     1.0  0.67  50.828392
 ```
 
 The same coding syntax can be applied to two different column
@@ -404,18 +395,17 @@ df[(df['mfr'] == 'Q') | (df['protein'] > 4)]
 ```
 
 ```out
-                   mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
-name                                                                                                                                
-100% Natural Bran    Q  Cold       120        3    5      15    2.0    8.0       8     135         0      3     1.0  1.00  33.983679
-Cap'n'Crunch         Q  Cold       120        1    2     220    0.0   12.0      12      35        25      2     1.0  0.75  18.042851
-Cheerios             G  Cold       110        6    2     290    2.0   17.0       1     105        25      1     1.0  1.25  50.764999
-Honey Graham Ohs     Q  Cold       120        1    2     220    1.0   12.0      11      45        25      2     1.0  1.00  21.871292
-Life                 Q  Cold       100        4    2     150    2.0   12.0       6      95        25      2     1.0  0.67  45.328074
-Puffed Rice          Q  Cold        50        1    0       0    0.0   13.0       0      15         0      3     0.5  1.00  60.756112
-Puffed Wheat         Q  Cold        50        2    0       0    1.0   10.0       0      50         0      3     0.5  1.00  63.005645
-Quaker Oat Squares   Q  Cold       100        4    1     135    2.0   14.0       6     110        25      3     1.0  0.50  49.511874
-Quaker Oatmeal       Q   Hot       100        5    2       0    2.7    1.0       1     110         0      1     1.0  0.67  50.828392
-Special K            K  Cold       110        6    0     230    1.0   16.0       3      55        25      1     1.0  1.00  53.131324
+                  name mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
+1    100% Natural Bran   Q  Cold       120        3    5      15    2.0    8.0       8     135         0      3     1.0  1.00  33.983679
+10        Cap'n'Crunch   Q  Cold       120        1    2     220    0.0   12.0      12      35        25      2     1.0  0.75  18.042851
+11            Cheerios   G  Cold       110        6    2     290    2.0   17.0       1     105        25      1     1.0  1.25  50.764999
+35    Honey Graham Ohs   Q  Cold       120        1    2     220    1.0   12.0      11      45        25      2     1.0  1.00  21.871292
+41                Life   Q  Cold       100        4    2     150    2.0   12.0       6      95        25      2     1.0  0.67  45.328074
+54         Puffed Rice   Q  Cold        50        1    0       0    0.0   13.0       0      15         0      3     0.5  1.00  60.756112
+55        Puffed Wheat   Q  Cold        50        2    0       0    1.0   10.0       0      50         0      3     0.5  1.00  63.005645
+56  Quaker Oat Squares   Q  Cold       100        4    1     135    2.0   14.0       6     110        25      3     1.0  0.50  49.511874
+57      Quaker Oatmeal   Q   Hot       100        5    2       0    2.7    1.0       1     110         0      1     1.0  0.67  50.828392
+67           Special K   K  Cold       110        6    0     230    1.0   16.0       3      55        25      1     1.0  1.00  53.131324
 ```
 
 Instead of using the `&` symbol, we use `|` which is called the “pipe

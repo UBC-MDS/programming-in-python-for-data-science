@@ -31,7 +31,7 @@ pd.set_option('display.width', 400)
 np.set_printoptions(linewidth=400)
 
 pd.set_option('display.max_columns', 15)
-df = pd.read_csv('cereal.csv', index_col=0)
+df = pd.read_csv('cereal.csv')
 ```
 
 type: slides
@@ -48,7 +48,7 @@ Notes: Script here.
 
 ## Unordered Indexing
 
-We have our trusty `cereal.csv` data again with the cereal names as the index labels.
+We have our trusty `cereal.csv` data once again.
 
 
 ```{python echo = FALSE}
@@ -67,18 +67,18 @@ Notes: Script here.
 
 ---
 
-Let's say we wanted only the rows labeled `Clusters`, `Trix` and `Wheaties` and the columns `type`, `sugars` and `rating`
+Let's say we wanted only the rows labeled `Clusters` (13), `Trix` (73) and `Wheaties` (75) and the columns `name`, `type`, `sugars` and `rating`.
 How would we obtain them now?
 
-We need to specify each column and row label that we want between square brackets `[]`, separated with commas.
+We need to specify each column and row label that we want between square brackets `[]`, separated with commas:
 
 
 ```{python}
-df.loc[['Clusters', 'Trix', 'Wheaties'], ['type', 'sugars', 'rating']]
+df.loc[[13,73,75], ['name', 'type', 'sugars', 'rating']]
 ```
 
 
-We can also reorder it to change the column and row order.
+We can also reorder the entries to change the column and row order.
 
 Notes: Script here.
 <html>
@@ -88,12 +88,12 @@ Notes: Script here.
 
 ---
 
-What if we wanted the rows to be in the order  `Wheaties`, `Trix` and `Clusters` and columns in the order `type`, `rating` and `sugars`
+What if we wanted the rows to be in the order `Wheaties`, `Trix` and `Clusters` and columns in the order `name`, `type`, `rating` and `sugars`
 How would we obtain that?    
-It's as simple as rearranging the order you target your rows and columns!
+It's as simple as rearranging the order you target your rows and columns:
 
 ```{python}
-df.loc[['Wheaties', 'Trix', 'Clusters'], ['type', 'rating', 'sugars']]
+df.loc[[75, 73, 13], ['name', 'type', 'rating', 'sugars']]
 ```
 
 

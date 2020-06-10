@@ -2,7 +2,7 @@
 type: slides
 ---
 
-# Column Renaming and Column Dropping
+# Column renaming and column dropping
 
 Notes: Script here
 
@@ -21,24 +21,23 @@ Notes: Script here
 Remember our `candybars.csv` dataframe? Let’s bring it back.
 
 ``` python
-df = pd.read_csv('candybars.csv', index_col=0)
+df = pd.read_csv('candybars.csv')
 df
 ```
 
 ```out
-                   weight  chocolate  peanuts  caramel  nougat  cookie_wafer_rice  coconut  white_chocolate  multi available_canada_america
-name                                                                                                                                       
-Coffee Crisp           50          1        0        0       0                  1        0                0      0                   Canada
-Butterfinger          184          1        1        1       0                  0        0                0      0                  America
-Skor                   39          1        0        1       0                  0        0                0      0                     Both
-Smarties               45          1        0        0       0                  0        0                0      1                   Canada
-...                   ...        ...      ...      ...     ...                ...      ...              ...    ...                      ...
-Whatchamacallits       45          1        1        0       0                  1        0                0      0                  America
-Almond Joy             46          1        0        0       0                  0        1                0      0                  America
-Oh Henry               51          1        1        1       0                  0        0                0      0                     Both
-Cookies and Cream      43          0        0        0       0                  1        0                1      0                     Both
+                 name  weight  chocolate  peanuts  caramel  nougat  cookie_wafer_rice  coconut  white_chocolate  multi available_canada_america
+0        Coffee Crisp      50          1        0        0       0                  1        0                0      0                   Canada
+1        Butterfinger     184          1        1        1       0                  0        0                0      0                  America
+2                Skor      39          1        0        1       0                  0        0                0      0                     Both
+3            Smarties      45          1        0        0       0                  0        0                0      1                   Canada
+..                ...     ...        ...      ...      ...     ...                ...      ...              ...    ...                      ...
+21   Whatchamacallits      45          1        1        0       0                  1        0                0      0                  America
+22         Almond Joy      46          1        0        0       0                  0        1                0      0                  America
+23           Oh Henry      51          1        1        1       0                  0        0                0      0                     Both
+24  Cookies and Cream      43          0        0        0       0                  1        0                1      0                     Both
 
-[25 rows x 10 columns]
+[25 rows x 11 columns]
 ```
 
 Notes: Script here
@@ -70,13 +69,12 @@ df.head()
 ```
 
 ```out
-              weight  chocolate  peanuts  caramel  nougat  cookie_wafer_rice  coconut  white_chocolate  multi availability
-name                                                                                                                      
-Coffee Crisp      50          1        0        0       0                  1        0                0      0       Canada
-Butterfinger     184          1        1        1       0                  0        0                0      0      America
-Skor              39          1        0        1       0                  0        0                0      0         Both
-Smarties          45          1        0        0       0                  0        0                0      1       Canada
-Twix              58          1        0        1       0                  1        0                0      1         Both
+           name  weight  chocolate  peanuts  caramel  nougat  cookie_wafer_rice  coconut  white_chocolate  multi availability
+0  Coffee Crisp      50          1        0        0       0                  1        0                0      0       Canada
+1  Butterfinger     184          1        1        1       0                  0        0                0      0      America
+2          Skor      39          1        0        1       0                  0        0                0      0         Both
+3      Smarties      45          1        0        0       0                  0        0                0      1       Canada
+4          Twix      58          1        0        1       0                  1        0                0      1         Both
 ```
 
 This code uses something we’ve never seen before - {} curly brackets.
@@ -112,13 +110,12 @@ df.head()
 ```
 
 ```out
-              weight_g  chocolate  peanuts  caramel  nougat  cookie_wafer_rice  coconut  white_chocolate  multi availability
-name                                                                                                                        
-Coffee Crisp        50          1        0        0       0                  1        0                0      0       Canada
-Butterfinger       184          1        1        1       0                  0        0                0      0      America
-Skor                39          1        0        1       0                  0        0                0      0         Both
-Smarties            45          1        0        0       0                  0        0                0      1       Canada
-Twix                58          1        0        1       0                  1        0                0      1         Both
+           name  weight_g  chocolate  peanuts  caramel  nougat  cookie_wafer_rice  coconut  white_chocolate  multi availability
+0  Coffee Crisp        50          1        0        0       0                  1        0                0      0       Canada
+1  Butterfinger       184          1        1        1       0                  0        0                0      0      America
+2          Skor        39          1        0        1       0                  0        0                0      0         Both
+3      Smarties        45          1        0        0       0                  0        0                0      1       Canada
+4          Twix        58          1        0        1       0                  1        0                0      1         Both
 ```
 
 It’s important that we always save the dataframe to an object when
@@ -149,19 +146,18 @@ df.drop(columns='coconut')
 ```
 
 ```out
-                   weight_g  chocolate  peanuts  caramel  nougat  cookie_wafer_rice  white_chocolate  multi availability
-name                                                                                                                    
-Coffee Crisp             50          1        0        0       0                  1                0      0       Canada
-Butterfinger            184          1        1        1       0                  0                0      0      America
-Skor                     39          1        0        1       0                  0                0      0         Both
-Smarties                 45          1        0        0       0                  0                0      1       Canada
-...                     ...        ...      ...      ...     ...                ...              ...    ...          ...
-Whatchamacallits         45          1        1        0       0                  1                0      0      America
-Almond Joy               46          1        0        0       0                  0                0      0      America
-Oh Henry                 51          1        1        1       0                  0                0      0         Both
-Cookies and Cream        43          0        0        0       0                  1                1      0         Both
+                 name  weight_g  chocolate  peanuts  caramel  nougat  cookie_wafer_rice  white_chocolate  multi availability
+0        Coffee Crisp        50          1        0        0       0                  1                0      0       Canada
+1        Butterfinger       184          1        1        1       0                  0                0      0      America
+2                Skor        39          1        0        1       0                  0                0      0         Both
+3            Smarties        45          1        0        0       0                  0                0      1       Canada
+..                ...       ...        ...      ...      ...     ...                ...              ...    ...          ...
+21   Whatchamacallits        45          1        1        0       0                  1                0      0      America
+22         Almond Joy        46          1        0        0       0                  0                0      0      America
+23           Oh Henry        51          1        1        1       0                  0                0      0         Both
+24  Cookies and Cream        43          0        0        0       0                  1                1      0         Both
 
-[25 rows x 9 columns]
+[25 rows x 10 columns]
 ```
 
 Notes: Script here
@@ -187,13 +183,12 @@ df.head()
 ```
 
 ```out
-              weight_g  chocolate  peanuts  caramel  nougat  cookie_wafer_rice  coconut  white_chocolate  multi availability
-name                                                                                                                        
-Coffee Crisp        50          1        0        0       0                  1        0                0      0       Canada
-Butterfinger       184          1        1        1       0                  0        0                0      0      America
-Skor                39          1        0        1       0                  0        0                0      0         Both
-Smarties            45          1        0        0       0                  0        0                0      1       Canada
-Twix                58          1        0        1       0                  1        0                0      1         Both
+           name  weight_g  chocolate  peanuts  caramel  nougat  cookie_wafer_rice  coconut  white_chocolate  multi availability
+0  Coffee Crisp        50          1        0        0       0                  1        0                0      0       Canada
+1  Butterfinger       184          1        1        1       0                  0        0                0      0      America
+2          Skor        39          1        0        1       0                  0        0                0      0         Both
+3      Smarties        45          1        0        0       0                  0        0                0      1       Canada
+4          Twix        58          1        0        1       0                  1        0                0      1         Both
 ```
 
 Let’s overwrite this and remove multiple columns at the same time. Let’s
@@ -207,11 +202,10 @@ df.head(3)
 ```
 
 ```out
-              weight_g  chocolate  peanuts  caramel  cookie_wafer_rice  white_chocolate  multi availability
-name                                                                                                       
-Coffee Crisp        50          1        0        0                  1                0      0       Canada
-Butterfinger       184          1        1        1                  0                0      0      America
-Skor                39          1        0        1                  0                0      0         Both
+           name  weight_g  chocolate  peanuts  caramel  cookie_wafer_rice  white_chocolate  multi availability
+0  Coffee Crisp        50          1        0        0                  1                0      0       Canada
+1  Butterfinger       184          1        1        1                  0                0      0      America
+2          Skor        39          1        0        1                  0                0      0         Both
 ```
 
 Notes: Script here

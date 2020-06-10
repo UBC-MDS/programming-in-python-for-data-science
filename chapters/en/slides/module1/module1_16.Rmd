@@ -29,15 +29,16 @@ pd.set_option('display.width', 400)
 
 np.set_printoptions(linewidth=400)
 
-pd.set_option('display.max_columns', 15)
-df = pd.read_csv('cereal.csv', index_col=0)
+pd.set_option('display.max_columns', 20)
+pd.set_option('display.max_rows', 20)
+df = pd.read_csv('cereal.csv')
 ```
 
 
 type: slides
 
 
-# Obtaining Dataframe Values
+# Obtaining dataframe values
 
 Notes: Script here.
 <html>
@@ -48,12 +49,18 @@ Notes: Script here.
 ---
 
 Now we know how to get a subset of an existing dataframe but what if we just want to get a single value from it?
-For example, what if I wanted to save the calorie content of `Shredded Wheat` without typing in the number?    
-We specify the row we are targeting, followed by the column.
+For example, what if I wanted to save the calorie content of `Shredded Wheat` without typing in the number?
+
+```{python echo=FALSE}
+df.loc[63:63]
+```
+
+
+We specify the row we are targeting (63), followed by the column:
 
 
 ```{python}
-df.loc['Shredded Wheat', 'calories']
+df.loc[63, 'calories']
 ```
 
 This displays the value.
@@ -68,8 +75,13 @@ Notes: Script here.
 
 What about if we wanted the rating of `Smacks`?
 
+```{python echo=FALSE}
+df.loc[66:66]
+```
+
+
 ```{python}
-df.loc['Smacks', 'rating']
+df.loc[66, 'rating']
 ```
 
 You will be using this often so let's make sure we practice this one right away!

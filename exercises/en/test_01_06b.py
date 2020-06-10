@@ -6,6 +6,6 @@ def test():
 
     # If an assertion fails, the message will be displayed
 
-    assert "hockey_shape = hockey_players.shape" in __solution__ , "There seems to be a problem with the dimension of the datset"
-    assert hockey_shape == (22, 9), "You may not have the correct dataset"
+    assert "hockey_shape = hockey_players.shape" in __solution__, "There seems to be a problem with the dimension of the datset"
+    assert hockey_shape == (22, 10), "You may not have the correct dataset"
     __msg__.good("Nice work, well done!")

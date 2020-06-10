@@ -65,7 +65,7 @@ Let's try to filter the `cereal.csv` dataset.
 
 
 ```{python}
-df = pd.read_csv('cereal.csv', index_col=0)
+df = pd.read_csv('cereal.csv')
 df.head()
 ```
 

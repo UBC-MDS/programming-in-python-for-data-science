@@ -6,7 +6,6 @@ def test():
 
     # If an assertion fails, the message will be displayed
 
-    assert "position_column = hockey_players['Position']" in __solution__ , "There seems to be a problem with finding the column names of the dataset"
     assert "value_counts" in __solution__ , "It looks like you didn't use value_counts"
     assert "to_csv" in __solution__ , "It looks like you didn't use to_csv to export your dataframe"
     assert "position_frequencies.csv" in __solution__ , "It looks like you didn't save your dataframe with the correct name"

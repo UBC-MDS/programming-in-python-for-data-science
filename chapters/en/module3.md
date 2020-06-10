@@ -371,7 +371,7 @@ Start by going through the tidy data criteria.  Does this data meet all three?
 <exercise id="13" title="Hierarchical Indexing Questions">
 
 **Question 1**          
-Which of the following is used to sort values in a dataframe's index? 
+Which of the following is used to sort values by a dataframe's index? 
 
 
 <choice id="1" >

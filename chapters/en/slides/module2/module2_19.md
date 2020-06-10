@@ -2,7 +2,7 @@
 type: slides
 ---
 
-# Conditional Value Replacement and Assignment
+# Conditional value replacement and assignment
 
 Notes: Script here
 
@@ -27,26 +27,24 @@ smaller version of our cereal dataset.
 
 ``` python
 df = pd.read_csv('cereal.csv',
-                  index_col=0, 
                   usecols=['name', 'mfr', 'type', 'calories', 'protein', 'weight', 'rating'])
 df.head()
 ```
 
 ```out
-                          mfr  type  calories  protein  weight     rating
-name                                                                     
-100% Bran                   N  Cold        70        4     1.0  68.402973
-100% Natural Bran           Q  Cold       120        3     1.0  33.983679
-All-Bran                    K  Cold        70        4     1.0  59.425505
-All-Bran with Extra Fiber   K  Cold        50        4     1.0  93.704912
-Almond Delight              R  Cold       110        2     1.0  34.384843
+                        name mfr  type  calories  protein  weight     rating
+0                  100% Bran   N  Cold        70        4     1.0  68.402973
+1          100% Natural Bran   Q  Cold       120        3     1.0  33.983679
+2                   All-Bran   K  Cold        70        4     1.0  59.425505
+3  All-Bran with Extra Fiber   K  Cold        50        4     1.0  93.704912
+4             Almond Delight   R  Cold       110        2     1.0  34.384843
 ```
 
 In the dataframe, the manufacturer value “Q” isn’t that informative and
 it might be easier to understand our data if we change all these values
 to something more complete like “Quaker”.
 
-This leads to to our task:  
+This leads us toour task:  
 ***Replace the “Q” manufacturer values, with a new value of “Quaker”***
 
 Notes: Script here
@@ -73,25 +71,25 @@ df[df['mfr'] == 'Q'].assign(mfr = 'Quaker')
 ```
 
 ```out
-                       mfr  type  calories  protein  weight     rating
-name                                                                  
-100% Natural Bran   Quaker  Cold       120        3     1.0  33.983679
-Cap'n'Crunch        Quaker  Cold       120        1     1.0  18.042851
-Honey Graham Ohs    Quaker  Cold       120        1     1.0  21.871292
-Life                Quaker  Cold       100        4     1.0  45.328074
-Puffed Rice         Quaker  Cold        50        1     0.5  60.756112
-Puffed Wheat        Quaker  Cold        50        2     0.5  63.005645
-Quaker Oat Squares  Quaker  Cold       100        4     1.0  49.511874
-Quaker Oatmeal      Quaker   Hot       100        5     1.0  50.828392
+                  name     mfr  type  calories  protein  weight     rating
+1    100% Natural Bran  Quaker  Cold       120        3     1.0  33.983679
+10        Cap'n'Crunch  Quaker  Cold       120        1     1.0  18.042851
+35    Honey Graham Ohs  Quaker  Cold       120        1     1.0  21.871292
+41                Life  Quaker  Cold       100        4     1.0  45.328074
+54         Puffed Rice  Quaker  Cold        50        1     0.5  60.756112
+55        Puffed Wheat  Quaker  Cold        50        2     0.5  63.005645
+56  Quaker Oat Squares  Quaker  Cold       100        4     1.0  49.511874
+57      Quaker Oatmeal  Quaker   Hot       100        5     1.0  50.828392
 ```
 
 That looks like it did what we want but what happened to the rest of our
 dataframe? Remember that we only want to replace the values in our
 existing dataframe and not create a new one.
 
-When we use the `.assign()` verb, it creates a new dataframe instead of
-altering the current one. This is problematic since we still want the
-original dataframe but with certain values updated. So what do we do?
+When we use the `.assign()` verb, it creates a new dataframe with only
+the rows that meet the condition `df['mfr'] == 'Q'` . This is
+problematic since we still want the original dataframe and the rows with
+`mfr` values not equal “Q”. So what do we do?
 
 Notes: Script here
 
@@ -115,17 +113,18 @@ rows of the dataframe, it can filter on conditions too.
 We are used to seeing code involving `.loc[]` like this:
 
 ``` python
-df.loc['Trix'] 
+df.loc[73] 
 ```
 
 ```out
+name           Trix
 mfr               G
 type           Cold
 calories        110
 protein           1
 weight            1
 rating      27.7533
-Name: Trix, dtype: object
+Name: 73, dtype: object
 ```
 
 But we get introduced to a new side of it when we use it to filter as
@@ -136,16 +135,15 @@ df.loc[df['mfr'] == 'Q']
 ```
 
 ```out
-                   mfr  type  calories  protein  weight     rating
-name                                                              
-100% Natural Bran    Q  Cold       120        3     1.0  33.983679
-Cap'n'Crunch         Q  Cold       120        1     1.0  18.042851
-Honey Graham Ohs     Q  Cold       120        1     1.0  21.871292
-Life                 Q  Cold       100        4     1.0  45.328074
-Puffed Rice          Q  Cold        50        1     0.5  60.756112
-Puffed Wheat         Q  Cold        50        2     0.5  63.005645
-Quaker Oat Squares   Q  Cold       100        4     1.0  49.511874
-Quaker Oatmeal       Q   Hot       100        5     1.0  50.828392
+                  name mfr  type  calories  protein  weight     rating
+1    100% Natural Bran   Q  Cold       120        3     1.0  33.983679
+10        Cap'n'Crunch   Q  Cold       120        1     1.0  18.042851
+35    Honey Graham Ohs   Q  Cold       120        1     1.0  21.871292
+41                Life   Q  Cold       100        4     1.0  45.328074
+54         Puffed Rice   Q  Cold        50        1     0.5  60.756112
+55        Puffed Wheat   Q  Cold        50        2     0.5  63.005645
+56  Quaker Oat Squares   Q  Cold       100        4     1.0  49.511874
+57      Quaker Oatmeal   Q   Hot       100        5     1.0  50.828392
 ```
 
 We can use the same syntax (`df['mfr'] == 'Q'`) we normally would when
@@ -182,19 +180,18 @@ df.loc[df['mfr'] == 'Q', 'mfr']
 ```
 
 ```out
-name
-100% Natural Bran     Q
-Cap'n'Crunch          Q
-Honey Graham Ohs      Q
-Life                  Q
-Puffed Rice           Q
-Puffed Wheat          Q
-Quaker Oat Squares    Q
-Quaker Oatmeal        Q
+1     Q
+10    Q
+35    Q
+41    Q
+54    Q
+55    Q
+56    Q
+57    Q
 Name: mfr, dtype: object
 ```
 
-Once we have that we can then assign these rows the new values ‘Quaker’
+Once we have that, we can then assign these rows the new values ‘Quaker’
 in the `mfr` column.
 
 ``` python
@@ -224,22 +221,21 @@ df.head(14)
 ```
 
 ```out
-                              mfr  type  calories  protein  weight     rating
-name                                                                         
-100% Bran                       N  Cold        70        4    1.00  68.402973
-100% Natural Bran          Quaker  Cold       120        3    1.00  33.983679
-All-Bran                        K  Cold        70        4    1.00  59.425505
-All-Bran with Extra Fiber       K  Cold        50        4    1.00  93.704912
-Almond Delight                  R  Cold       110        2    1.00  34.384843
-Apple Cinnamon Cheerios         G  Cold       110        2    1.00  29.509541
-Apple Jacks                     K  Cold       110        2    1.00  33.174094
-Basic 4                         G  Cold       130        3    1.33  37.038562
-Bran Chex                       R  Cold        90        2    1.00  49.120253
-Bran Flakes                     P  Cold        90        3    1.00  53.313813
-Cap'n'Crunch               Quaker  Cold       120        1    1.00  18.042851
-Cheerios                        G  Cold       110        6    1.00  50.764999
-Cinnamon Toast Crunch           G  Cold       120        1    1.00  19.823573
-Clusters                        G  Cold       110        3    1.00  40.400208
+                         name     mfr  type  calories  protein  weight     rating
+0                   100% Bran       N  Cold        70        4    1.00  68.402973
+1           100% Natural Bran  Quaker  Cold       120        3    1.00  33.983679
+2                    All-Bran       K  Cold        70        4    1.00  59.425505
+3   All-Bran with Extra Fiber       K  Cold        50        4    1.00  93.704912
+4              Almond Delight       R  Cold       110        2    1.00  34.384843
+5     Apple Cinnamon Cheerios       G  Cold       110        2    1.00  29.509541
+6                 Apple Jacks       K  Cold       110        2    1.00  33.174094
+7                     Basic 4       G  Cold       130        3    1.33  37.038562
+8                   Bran Chex       R  Cold        90        2    1.00  49.120253
+9                 Bran Flakes       P  Cold        90        3    1.00  53.313813
+10               Cap'n'Crunch  Quaker  Cold       120        1    1.00  18.042851
+11                   Cheerios       G  Cold       110        6    1.00  50.764999
+12      Cinnamon Toast Crunch       G  Cold       120        1    1.00  19.823573
+13                   Clusters       G  Cold       110        3    1.00  40.400208
 ```
 
 We can now see that the `Q` manufacturer values have changed to
@@ -274,18 +270,17 @@ df['mfr'] == 'Q'
 ```
 
 ```out
-name
-100% Bran                    False
-100% Natural Bran            False
-All-Bran                     False
-All-Bran with Extra Fiber    False
-Almond Delight               False
-                             ...  
-Triples                      False
-Trix                         False
-Wheat Chex                   False
-Wheaties                     False
-Wheaties Honey Gold          False
+0     False
+1     False
+2     False
+3     False
+4     False
+      ...  
+72    False
+73    False
+74    False
+75    False
+76    False
 Name: mfr, Length: 77, dtype: bool
 ```
 
@@ -325,7 +320,7 @@ Notes: Script here
 
 You can split up how this code works into 3 steps:
 
-1.  We use `.loc[]` to find the rows specifying certain conditions.
+1.  We use `.loc[]` to find the rows specifying certain conditions:
 
 <!-- end list -->
 
@@ -333,7 +328,8 @@ You can split up how this code works into 3 steps:
 df.loc[df['mfr'] == 'Q']
 ```
 
-2.  We next indicate which column we wish to replace with the new values
+2.  We next indicate which column we wish to replace with the new
+    values:
 
 <!-- end list -->
 
@@ -342,8 +338,8 @@ df.loc[df['mfr'] == 'Q', 'mfr']
 ```
 
 3.  Once we have obtained our desired rows and the column which we are
-    editing, we assign a value to the row meeting the condition ( a
-    “True” value)
+    editing, we assign a value to the row meeting the condition (a
+    “True” value):
 
 <!-- end list -->
 
@@ -440,18 +436,17 @@ df.head(10)
 ```
 
 ```out
-                              mfr  type  calories  protein  weight     rating protein_level
-name                                                                                       
-100% Bran                       N  Cold        70        4    1.00  68.402973          high
-100% Natural Bran          Quaker  Cold       120        3    1.00  33.983679          high
-All-Bran                        K  Cold        70        4    1.00  59.425505          high
-All-Bran with Extra Fiber       K  Cold        50        4    1.00  93.704912          high
-Almond Delight                  R  Cold       110        2    1.00  34.384843           low
-Apple Cinnamon Cheerios         G  Cold       110        2    1.00  29.509541           low
-Apple Jacks                     K  Cold       110        2    1.00  33.174094           low
-Basic 4                         G  Cold       130        3    1.33  37.038562          high
-Bran Chex                       R  Cold        90        2    1.00  49.120253           low
-Bran Flakes                     P  Cold        90        3    1.00  53.313813          high
+                        name     mfr  type  calories  protein  weight     rating protein_level
+0                  100% Bran       N  Cold        70        4    1.00  68.402973          high
+1          100% Natural Bran  Quaker  Cold       120        3    1.00  33.983679          high
+2                   All-Bran       K  Cold        70        4    1.00  59.425505          high
+3  All-Bran with Extra Fiber       K  Cold        50        4    1.00  93.704912          high
+4             Almond Delight       R  Cold       110        2    1.00  34.384843           low
+5    Apple Cinnamon Cheerios       G  Cold       110        2    1.00  29.509541           low
+6                Apple Jacks       K  Cold       110        2    1.00  33.174094           low
+7                    Basic 4       G  Cold       130        3    1.33  37.038562          high
+8                  Bran Chex       R  Cold        90        2    1.00  49.120253           low
+9                Bran Flakes       P  Cold        90        3    1.00  53.313813          high
 ```
 
 Notes: Script here
@@ -487,13 +482,12 @@ df.head()
 ```
 
 ```out
-                              mfr  type  calories  protein  weight     rating protein_level  weight_g
-name                                                                                                 
-100% Bran                       N  Cold        70        4     1.0  68.402973          high   28.3495
-100% Natural Bran          Quaker  Cold       120        3     1.0  33.983679          high   28.3495
-All-Bran                        K  Cold        70        4     1.0  59.425505          high   28.3495
-All-Bran with Extra Fiber       K  Cold        50        4     1.0  93.704912          high   28.3495
-Almond Delight                  R  Cold       110        2     1.0  34.384843           low   28.3495
+                        name     mfr  type  calories  protein  weight     rating protein_level  weight_g
+0                  100% Bran       N  Cold        70        4     1.0  68.402973          high   28.3495
+1          100% Natural Bran  Quaker  Cold       120        3     1.0  33.983679          high   28.3495
+2                   All-Bran       K  Cold        70        4     1.0  59.425505          high   28.3495
+3  All-Bran with Extra Fiber       K  Cold        50        4     1.0  93.704912          high   28.3495
+4             Almond Delight       R  Cold       110        2     1.0  34.384843           low   28.3495
 ```
 
 This syntax is editing the existing dataframe `df` instead of creating a

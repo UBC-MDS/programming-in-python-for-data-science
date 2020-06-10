@@ -6,6 +6,5 @@ def test():
 
     # If an assertion fails, the message will be displayed
 
-    assert "hockey_players[['Salary']]" in __solution__ , "There seems to be a problem with getting all the rows from a single"
     assert (player_cost.sum() == 63325000.0).any, "Did you create player_cost properly?"
     __msg__.good("Nice work, well done!")
