@@ -73,14 +73,36 @@ Notes: Script here
 
 ---
 
-`pandas` provides 2 functions for reshaping data:   
+In this section we will explore two useful pandas functions for reshaping our data that can be handy to convert it into tidy data. 
 
--  <a href="https://pandas.pydata.org/docs/reference/api/pandas.melt.html" target="_blank">`.melt()`</a> to make a wide dataframe long (convert columns to row) 
+- <a href="https://pandas.pydata.org/docs/reference/api/pandas.melt.html" target="_blank">`.melt()`</a> to make a wide dataframe long (convert columns to row) 
 - <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.pivot.html" target="_blank">`.pivot()`</a>  to make a long dataframe wide (convert rows to columns)
 
-<center><img src='/module3/pivot_melt.gif' width="400"></center>
-"Source: Garrick Aden-Buie, https://github.com/gadenbuie/tidyexplain#spread-and-gather and
-Tomas Beuzen, DSCI 523 Data Wrangling" 
+Before going forward we should understand the difference between ***wide*** data and ***long*** data.
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+## Wide and long dataframes
+
+#### Wide
+
+We are used to seeing the data presented in a wide format, where there is a column for each measurement. We know that with a wide format, the data may not be tidy. 
+
+<center><img src='/module3/wide.png' width="30%"></center>
+
+
+### Long
+
+A long dataframe would consist of the same information as contained in a wide dataframe, however in this case, for each datapoint there is a row for each measurement. 
+
+<center><img src='/module3/long.png' width="30%"></center>
+
 
 Notes: Script here
 <html>

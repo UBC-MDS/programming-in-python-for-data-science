@@ -4,7 +4,7 @@ import { navigate } from 'gatsby'
 import SEO from './seo'
 import { Link } from './link'
 import { H3 } from './typography'
-import { Logo } from './logo'
+import Logo from '../../static/logo.svg'
 import { LocaleContext } from '../context'
 
 import '../styles/index.sass'
@@ -45,7 +45,7 @@ const Layout = ({ isHome, title, description, lang, pageName, children }) => {
                     {!isHome && (
                         <h1 className={classes.logo}>
                             <Link hidden to={`/${lang}`}>
-                                <Logo lang={lang} width={150} height={54} />
+                                <Logo width={150} height={54} />
                             </Link>
                         </h1>
                     )}

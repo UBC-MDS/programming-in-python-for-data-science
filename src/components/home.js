@@ -3,7 +3,7 @@ import { graphql, StaticQuery } from 'gatsby'
 
 import Layout from './layout'
 import { Link } from './link'
-import { Logo } from './logo'
+import Logo from '../../static/logo.svg'
 
 import classes from '../styles/index.module.sass'
 
@@ -21,12 +21,12 @@ export default ({ lang = 'en' }) => {
                     }))
                 return (
                     <Layout isHome lang={lang}>
-                        <Logo lang={lang} className={classes.logo} />
+                        <Logo className={classes.logo} />
                         <section>
-                                <h1 className={classes.subtitle}><center>DSCI 511 - Programming in Python for Data Science</center></h1>
+                                <h1 className={classes.subtitle}><center>DSCI 011 - Programming in Python for Data Science</center></h1>
                                     <div className={classes.introduction}>
                                         <p>
-                                        <center> Welcome to DSCI 511!  This course is part of UBC's Mid-Careers Learning program. In this course we hope to introduce you to basic programming in Python. You will leave this course with an overview of iteration and flow control as well as data types relevant to data exploration and analysis. You will learn about pre-existing libraries, numerical data types with Numpy and tabular data with Pandas. No course would be complete without knowing how to wrangle your data. With the help from Pandas, you will learn how to convert data from the form in which it is collected to the form needed for analysis. 
+                                        <center> Welcome to DSCI 011!  This course is part of UBC's Mid-Careers Learning program. In this course we hope to introduce you to basic programming in Python. You will leave this course with an overview of iteration and flow control as well as data types relevant to data exploration and analysis. You will learn about pre-existing libraries, numerical data types with Numpy and tabular data with Pandas. No course would be complete without knowing how to wrangle your data. With the help from Pandas, you will learn how to convert data from the form in which it is collected to the form needed for analysis. 
                                         </center>
                                         </p>
                                         <p>

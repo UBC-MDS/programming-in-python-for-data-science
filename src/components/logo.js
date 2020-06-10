@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 
 import { LocaleContext } from '../context'
-import Logos from '../../static/logos.svg'
+import Logos from '../../static/logo.svg'
 
 export const Logo = ({ width = 300, height = 107, lang, className, ...props }) => {
     const { title } = useContext(LocaleContext)

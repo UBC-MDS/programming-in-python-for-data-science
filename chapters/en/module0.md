@@ -8,16 +8,16 @@ type: chapter
 id: 0
 ---
 
-<exercise id="1" title="DSCI-511 Programming in Python for Data Science" type="slides,video">
+<exercise id="1" title="DSCI-011 Programming in Python for Data Science" type="slides,video">
 
-<slides source="module0_00" start="0:165" end="3:01">
+<slides source="module0/module0_00" start="0:165" end="3:01">
 </slides>
 
 </exercise>
 
 <exercise id="2" title="Are you ready?">
 
-Are you ready to start the course **DSCI-511 Programming in Python for Data Science**?
+Are you ready to start the course **DSCI-011 Programming in Python for Data Science**?
 
 
 <choice>

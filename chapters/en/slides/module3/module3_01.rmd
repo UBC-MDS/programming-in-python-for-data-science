@@ -49,7 +49,7 @@ cereal = pd.read_csv('cereal.csv', index_col=0)
 type: slides
 
 
-# Tidy Data 
+# Tidy data 
 
 
 Notes: Script here
@@ -203,7 +203,7 @@ cereal2 = (cereal.reset_index()
                .melt(id_vars=['name','mfr'], 
                      value_vars=['protein', 'calories'], 
                      var_name="nutrition", 
-                     value_name="value").set_index('name')
+                     value_name="value")
                .sort_index()
                      )
 ```

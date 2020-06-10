@@ -2,7 +2,7 @@
 type: slides
 ---
 
-# Tidy Data
+# Tidy data
 
 Notes: Script here
 
@@ -241,8 +241,9 @@ Notes: Script here
 
 It looks like we have a problem here. In this dataframe, two of our
 variables are contained in a single column. This is making the data
-untidy and potentially a problem to work with. For example, what if I
-wanted to know the average calorie content of the cereals?
+untidy and potentially a problem to work with.  
+For example, what if I wanted to know the average calorie content of the
+cereals?
 
 Notes: Script here
 
@@ -263,18 +264,17 @@ cereal2.head(10)
 ```
 
 ```out
-                          mfr nutrition  value
-name                                          
-100% Bran                   N   protein      4
-100% Bran                   N  calories     70
-100% Natural Bran           Q  calories    120
-100% Natural Bran           Q   protein      3
-All-Bran                    K   protein      4
-All-Bran                    K  calories     70
-All-Bran with Extra Fiber   K   protein      4
-All-Bran with Extra Fiber   K  calories     50
-Almond Delight              R  calories    110
-Almond Delight              R   protein      2
+                        name mfr nutrition  value
+0                  100% Bran   N   protein      4
+1          100% Natural Bran   Q   protein      3
+2                   All-Bran   K   protein      4
+3  All-Bran with Extra Fiber   K   protein      4
+4             Almond Delight   R   protein      2
+5    Apple Cinnamon Cheerios   G   protein      2
+6                Apple Jacks   K   protein      2
+7                    Basic 4   G   protein      3
+8                  Bran Chex   R   protein      2
+9                Bran Flakes   P   protein      3
 ```
 
 We could either groupby nutrition value or filter on ’calories\` first

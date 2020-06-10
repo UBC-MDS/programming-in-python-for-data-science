@@ -4,11 +4,12 @@ type: slides
 
 # Welcome 
 
-Notes: Welcome to DSCI 511 Programming in Python for Data Science  
+Notes: Welcome to DSCI 011 Programming in Python for Data Science  
 <html>
 <audio controls >
   <source src="/placeholder_audio.mp3" />
 </audio></html>
+
 ---
 
 # Course Learning Outcomes 
@@ -36,6 +37,7 @@ Notes:
 </audio></html>
  
 ---
+
 # Let's Learn Python for Data Science  
 
 Notes: This course is designed to give you a solid foundation of coding in Python. No prior python knowledge is needed for this course. 
