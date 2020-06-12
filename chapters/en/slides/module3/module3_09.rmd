@@ -108,6 +108,8 @@ melted_candy.head()
 
 ```{python}
 
+print(alt.__version__)
+
 bars = alt.Chart(cereal).mark_bar().encode(
     x='name:N',
     y="calories:Q"
