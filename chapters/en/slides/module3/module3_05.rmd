@@ -46,24 +46,20 @@ cereal = pd.read_csv('cereal.csv', index_col=0)
 ```
 
 ```{python include=FALSE}
-cereal = pd.read_csv('cereal.csv', index_col=0)
-again = (cereal.reset_index()
-               .melt(id_vars=['name','mfr', 'type', 'weight',
-                              'cups', 'rating'], 
-                     value_vars=['protein', 'calories', 'sugars'], 
+cereal = pd.read_csv('cereal.csv', index_col=0).loc[['Special K', 'Apple Jacks', 'Raisin Bran', 'Cheerios', 'Wheaties' ]].reset_index()
+sample = (cereal.melt(id_vars=['name','mfr'], 
+                     value_vars=['protein', 'calories'], 
                      var_name="nutrition", 
-                     value_name="measure").set_index('name')
+                     value_name="value").sort_values('name')
                      )
-again
-cereal_long = again.sort_index()
 
-cereal_long_sample = cereal_long.loc[:, ['mfr', 'type', 'cups', 'nutrition', 'measure']].head(8)
+cereal_long = sample.loc[[5, 0, 6, 1, 7, 2, 8, 3, 9, 4 ]].reset_index().drop(columns='index')
 ```
 
 
 type: slides
 
-# Reshaping with Pivot
+# Reshaping with pivot
 
 Notes: Script here
 <html>
@@ -73,7 +69,7 @@ Notes: Script here
 
 ---
 
-In this section we will explore two useful pandas functions for reshaping our data that can be handy to convert it into tidy data. 
+In this section, we will explore two useful pandas functions for reshaping our data that can be handy to convert it into tidy data. 
 
 - <a href="https://pandas.pydata.org/docs/reference/api/pandas.melt.html" target="_blank">`.melt()`</a> to make a wide dataframe long (convert columns to row) 
 - <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.pivot.html" target="_blank">`.pivot()`</a>  to make a long dataframe wide (convert rows to columns)
@@ -92,16 +88,16 @@ Notes: Script here
 
 #### Wide
 
-We are used to seeing the data presented in a wide format, where there is a column for each measurement. We know that with a wide format, the data may not be tidy. 
+We are used to seeing the data presented in a wide format, where there is a column for each measurement.  We know that with a wide format, the data may not be tidy. 
 
 <center><img src='/module3/wide.png' width="30%"></center>
 
 
 ### Long
 
-A long dataframe would consist of the same information as contained in a wide dataframe, however in this case, for each datapoint there is a row for each measurement. 
+A long dataframe would consist of the same information as contained in a wide dataframe, however in this case, for each data point there is a row for each measurement. 
 
-<center><img src='/module3/long.png' width="30%"></center>
+<center><img src='/module3/long.png' width="25%"></center>
 
 
 Notes: Script here
@@ -114,38 +110,13 @@ Notes: Script here
 
 ## Pivot
 
-`.pivot()` can be used in situations where our data may not meet criterion #2: _Each variable is a single column_.
+`.pivot()` can be used in situations where our data may not meet our tidy data criteria.     
+Consider the dataframe below: 
 
-It can be used to widen the dataframe by converting the variables to their own columns that were previously being stored in a single column.
+<center><img src='/module3/cereal_long2.png' width="60%"></center>
 
-Before we go into detail, let's introduce the code that converts this cereal dataset 
-
-```{python}
-cereal_long_sample
-```
-
-into a wide dataset
-
-```{python}
-tidy_pivot = (cereal_long_sample.reset_index()
-            .pivot(index='name', columns='nutrition', values='measure')
-             )
-tidy_pivot
-```
-
----
-
-The code for this verb takes quite a few arguments that can be a bit tricky to remember so we are going to explain each argument. 
-
-  ```python
-  df.pivot(index=['index label'], columns='column name', values='new column name')
-  ```
-  
-  - `df`: The dataframe we want to pivot.
-  - `index`: Used to make the new dataframe's index. 
-  - `columns`: The column that currently exists but that we want to create new columns labels from.  Each unique value in this column will become a new column label. 
-  - `values`:  The name of the column that currently exists but that contains the cell values we want to relocate to new columns. These values will be displayed in the respective newly created columns. 
-
+Here we can see that _Criterion #1: Each row is a single observation_ does not hold.  Each cereal has 2 rows for different measurements.
+How do we convert it to tidy data? 
 
 Notes: Script here
 <html>
@@ -155,70 +126,13 @@ Notes: Script here
 
 ---
 
-## Resetting the Index
+Here is the same dataframe that we have named `cereal_long`:
 
-We must take extra precautions with the `index` argument when transforming dataframes.  This argument will only accept column labels and not column index labels.      
-
-Before we do any type of transformation, it's a good idea to reset and remove and labels an index. This can be done with `.reset_index()` which converts the index to a regular column. 
-
- On our example dataset, we see `name` as the index and we can reset it by calling `.reset_index()`.
- 
-```{python}
-cereal_long_sample.head()
-```
-
-```{python}
-cereal_long_sample.reset_index().head()
-```
-
-
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
-
----
-
-The process of pivoting can be explained using the animation made by  <a href="https://github.com/apreshill/teachthat" target="_blank"> Alison Presmanes Hill</a>. It shows exactly the relocation of values, when a dataframe undergoes a pivot transformation. 
-
-<center><img src='/module3/pivot_py.gif' width="850"></center>
-
-We see the `var_name` values becoming new columns labels and the `var_value` being relocated to it's respective new column. 
-
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
-
----
-
-We can do the same thing for our cereal dataframe as an example.  The diagram below shows the column `nutrition` being spread into 2 columns named `calories` and `protein` which are the two unique values contained in that column. 
-
-
-<center><img src='/module3/pivot_cereal.png' width="850"></center>
-
-
-
-
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
-
----
-
-Let's attempt this with code.  
-
-Our dataframe that we want to tidy looks like this:
 ```{python}
 cereal_long
 ```
 
-We can see there are 231 rows and the `nutrition` column is made up of 3 variables; `protein`, `calories` and `sugar`. That means there are 3 rows for each of the 77 kinds of cereal which explains the  231 rows (77 kinds of cereal * 3 variables = 231 rows). 
-
+We can see there are 14 rows and the `nutrition` column is made up of 2 variables; `calories` and `protein`.  That means there are 2 rows for each of the 7 kinds of cereal.  This explains the  14 rows (7 kinds of cereal * 2 variables = 14 rows). 
 
 Notes: Script here
 <html>
@@ -228,18 +142,17 @@ Notes: Script here
 
 ---
 
-To transform this into tidy data we would specify the following arguments.    
-- Set `index` as the `name` column.    
-- Target the column `nutrition` with the values contained as new columns labels.     
-- Specify `measure` as the values associated with each of the new columns.       
+We use `pivot` in the following way to transform it into a wide dataframe.
 
-Also, we can't forget to reset the index!    
-(Just like any other dataframe, if we want to keep the changes, makes sure to assign it to an object)
+We:   
+
+- Set `index` as the `name` column.
+- Target the column `nutrition` with the values contained as new columns labels.     
+- Specify `value` as the `values` argument.      
+
 
 ```{python}
-tidy_pivot = (cereal_long.reset_index()
-            .pivot(index='name', columns='nutrition', values='measure')
-             )
+tidy_pivot = cereal_long.pivot(index='name', columns='nutrition', values='value')
 tidy_pivot
 ```
 
@@ -254,17 +167,28 @@ Notes: Script here
 Can you see the difference? 
 
 ```{python}
-cereal_long.head()
+cereal_long
 ```
 
 
 ```{python}
-tidy_pivot.head()
+tidy_pivot
 ```
  
-We are now back to 77 rows and it looks like we've tidied our data up!  There appears to be a problem though.
-`.pivot()` works well when we are only concerned with the columns we are pivoting but as we can see, we lost all our other columns in the dataset like `type`, `weight` and `cups`.        
-There is a solution for this and it's called `.pivot_table()`.
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+
+---
+
+The following diagram explains what is happening in the transformation. 
+
+<center><img src='/module3/piv_cereal3.png' width="100%"></center>
+
 
 Notes: Script here
 <html>
@@ -274,23 +198,19 @@ Notes: Script here
 
 ---
 
-## Pivot_table()
+<center><img src='/module3/piv_cereal3.png' width="80%"></center>
 
-`.pivot_table()` works with multiple indexes (we will take about this shortly). That just means we can keep all the columns that we are not pivoting. 
-Let's attempt fixing our untidy data again but this time, keeping all our columns. 
-
-
-```{python}
-tidy_pivot = (cereal_long.reset_index()
-            .pivot_table(index=['name','mfr', 'type',
-                                'weight', 'cups', 'rating'],
-                         columns='nutrition', 
-                         values='measure').reset_index()
-             )
-tidy_pivot.head()
+```python
+tidy_pivot = cereal_long.pivot(index='name', columns='nutrition', values='value')
 ```
 
-After we pivot, we have multiple column indexes which we should reset to avoid any confusion. Don't worry,  we wil talk about multiple indexes in this module. 
+Here are a few important things to notice:    
+
+- Our index is reassigned to the `name` column which we assigned to the `index` argument.  This also acts as the identifier for which rows in the original dataframe get compiled to a single one in the new dataframe.      
+- The unique values in the `nutrition` column depict what will be the new columns after the transformation.  We assigned this in the `columns` argument.      
+- The values in the `value` column are transformed into the values in the newly created `protein` and `calories` columns.  This was defined in the `values` argument of the code.
+- We lost the `mfr` column!
+
 
 Notes: Script here
 <html>
@@ -300,14 +220,245 @@ Notes: Script here
 
 ---
 
-To get our dataframe back to a structure we are used to, we have to `.reset_index()` and then reassign a single index such as `name` using `.set_index()`.
+## Resetting the Index
 
+When we pivot our dataframe, we need to specify which rows are being combined to create a single elongated row.  This is determined by the `index` argument.  While pivoting we transformed the `name` column as our index.  This may not be the most ideal structure for our data and we can adjust this and return to the original index of a column of number by using the verb `.reset_index()`. 
+
+On our example dataset `tidy_pivot`:
+ 
 ```{python}
-tidy_pivot = tidy_pivot.reset_index().set_index('name')
-tidy_pivot.head()
+tidy_pivot.head(2)
 ```
 
-Perfect! 
+We can remove the `name` index by doing the following:
+```{python}
+tidy_pivot.reset_index().head(2)
+```
+For now, we can ignore the `nutrition` label in the top left of the dataframe. 
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+## Pivot Table
+
+We discussed that one of the effects of using `.pivot()` on our `cereal_long` dataframe was that the new dataframe was missing the column `mfr`. 
+
+<center><img src='/module3/piv_cereal3.png' width="90%"></center>
+
+That's because `.pivot()` discards any columns that are not being directly affected by the pivot.  Only the column that is specified as the index and the columns that need to be transformed are present in the new dataframe. 
+
+That's where `pivot_table` steps in! 
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+`.pivot_table()` has the same arguments as `.pivot()` but the biggest difference is that it allows us to include multiple columns under the `index` argument.  That just means we can keep any of the columns that are not directly affected by the pivot. 
+
+<center><img src='/module3/piv_table_cereal.png' width="90%"></center>
+
+Let's try to convert our dataframe again but this time keeping the `mfr` column with `.pivot_table()`. 
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+Here is our long dataframe:
+
+```{python}
+cereal_long
+```
+
+We include any columns that we wish to keep under the `index` argument contained in square brackets. 
+
+```python
+tidy_pivot2 = cereal_long.pivot_table(index=['name', 'mfr'], columns='nutrition', values='value')
+tidy_pivot2
+```
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+```{python}
+tidy_pivot2 = cereal_long.pivot_table(index=['name','mfr'], columns='nutrition', values='value')
+```
+
+
+```{python}
+tidy_pivot2
+```
+
+
+And just like before, if we want to return to our original dataframe with a column of numbers for our index, we use `.reset_index()`:
+
+```{python}
+tidy_pivot2.reset_index()
+```
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+
+
+<center><img src='/module3/piv_table_cereal.png' width="100%"></center>
+
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+## Why use pivot at all then? 
+
+When we use `.pivot_table()` we have to proceed with caution. 
+
+We talked about how `.pivot()` and `.pivot_table()` take the arguments `index` and `columns`. 
+What happens if we have multiple rows with the same `index` and `column` values? 
+
+Take the following example where we see that Special K has 2 rows with differing values for `calories`. 
+
+
+<center><img src='/module3/problem_table.png' width="60%"></center>
+
+
+What happens when we try to pivot this? 
+
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+
+```{python include = FALSE}
+df1 = cereal_long.loc[:3]
+df1.loc[((df1['name'] == 'Special K') & (df1['nutrition'] == 'calories')), 'value' ] = 100
+line = pd.DataFrame({'name': 'Special K', 'mfr':'K', 'nutrition':'calories', 'value':130}, index=[1])
+cereal_problem = pd.concat([df1.iloc[:1], line, df1.iloc[1:]]).reset_index(drop=True)
+cereal_problem
+```
+
+Here is our dataframe:
+```{python}
+cereal_problem
+```
+
+And here is what happens when we use the same arguments as before:
+```{python error=TRUE}
+cereal_problem.pivot(index='name', columns='nutrition', values='value')
+```
+
+We get the error message above.  This is a useful error message, letting us know that there are "duplicate entries, cannot reshape" which means there are non-unique rows.  We will need us to do something before going any further.  
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+`.pivot()` throws an error message.  This is a useful error message, letting us know that there are "duplicate entries, cannot reshape" which means there are non-unique rows.  We will need to do something before going any further. 
+
+<center><img src='/module3/problem_pivot.png' width="100%"></center>
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+Let's see what happens when we use `.pivot_table()`:
+
+```{python}
+cereal_problem.pivot_table(index=['name', 'mfr'], columns='nutrition', values='value')
+```
+
+Ok, that's odd.  We don't get an error this time but instead get a `calories` value of 115 which is neither of the original values of 130 or 100. 
+
+`.pivot_table()` instead by default takes the average of the duplicated columns and continues to execute.
+
+
+<center><img src='/module3/problem_pivot_table.png' width="100%"></center>
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+When we use `.pivot_table()` we recommend checking if there are duplicate values in columns we use in the `index` and `columns` arguments before we proceed.  We can do this with the `.duplicated()` verb by putting the columns from the `index` and `columns` arguments in a `subset` argument.  We set the argument `keep` to `False` to make sure all the rows are identified and not just the repeated ones. 
+
+```{python}
+cereal_problem.duplicated(subset=['name', 'nutrition'], keep=False)
+```
+
+Without the `keep` argument, only index labeled `1` will be identified as a duplicate. 
+
+```{python}
+cereal_problem.duplicated(subset=['name', 'nutrition'])
+```
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+```{python }
+cereal_problem.duplicated(subset=['name', 'nutrition'], keep=False)
+```
+
+We see that the 1st and 2nd rows are duplicates by the `True` values.
+We obtain the rows from the original dataframe by filtering on the duplicate information:
+
+```{python}
+duplicate_info =cereal_problem.duplicated(subset=['name', 'nutrition'], keep=False)
+cereal_problem[duplicate_info]
+```
+
+Once we have decided which row we want to keep we can use `.drop()` that we learned in the previous Module to remove it. 
 
 Notes: Script here
 <html>
@@ -323,4 +474,3 @@ Notes: Script here
 <html>
 <audio controls >
   <source src="/placeholder_audio.mp3" />
-

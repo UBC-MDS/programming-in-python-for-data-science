@@ -65,7 +65,7 @@ for each measurement.
 
 <center>
 
-<img src='/module3/long.png' width="30%">
+<img src='/module3/long.png' width="20%">
 
 </center>
 
@@ -85,148 +85,19 @@ Notes: Script here
 
 ## Pivot
 
-`.pivot()` can be used in situations where our data may not meet
-criterion \#2: *Each variable is a single column*.
-
-It can be used to widen the dataframe by converting the variables to
-their own columns that were previously being stored in a single column.
-
-Before we go into detail, let’s introduce the code that converts this
-cereal dataset
-
-``` python
-cereal_long_sample
-```
-
-```out
-                  mfr  type  cups nutrition  measure
-name                                                
-100% Bran           N  Cold  0.33   protein        4
-100% Bran           N  Cold  0.33  calories       70
-100% Bran           N  Cold  0.33    sugars        6
-100% Natural Bran   Q  Cold  1.00   protein        3
-100% Natural Bran   Q  Cold  1.00  calories      120
-100% Natural Bran   Q  Cold  1.00    sugars        8
-All-Bran            K  Cold  0.33   protein        4
-All-Bran            K  Cold  0.33  calories       70
-```
-
-into a wide dataset
-
-``` python
-tidy_pivot = (cereal_long_sample.reset_index()
-            .pivot(index='name', columns='nutrition', values='measure')
-             )
-tidy_pivot
-```
-
-```out
-nutrition          calories  protein  sugars
-name                                        
-100% Bran              70.0      4.0     6.0
-100% Natural Bran     120.0      3.0     8.0
-All-Bran               70.0      4.0     NaN
-```
-
----
-
-The code for this verb takes quite a few arguments that can be a bit
-tricky to remember so we are going to explain each argument.
-
-``` python
-df.pivot(index=['index label'], columns='column name', values='new column name')
-```
-
-  - `df`: The dataframe we want to pivot.
-  - `index`: Used to make the new dataframe’s index.
-  - `columns`: The column that currently exists but that we want to
-    create new columns labels from. Each unique value in this column
-    will become a new column label.
-  - `values`: The name of the column that currently exists but that
-    contains the cell values we want to relocate to new columns. These
-    values will be displayed in the respective newly created columns.
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
-
-## Resetting the Index
-
-We must take extra precautions with the `index` argument when
-transforming dataframes. This argument will only accept column labels
-and not column index labels.
-
-Before we do any type of transformation, it’s a good idea to reset and
-remove and labels an index. This can be done with `.reset_index()` which
-converts the index to a regular column.
-
-On our example dataset, we see `name` as the index and we can reset it
-by calling `.reset_index()`.
-
-``` python
-cereal_long_sample.head()
-```
-
-```out
-                  mfr  type  cups nutrition  measure
-name                                                
-100% Bran           N  Cold  0.33   protein        4
-100% Bran           N  Cold  0.33  calories       70
-100% Bran           N  Cold  0.33    sugars        6
-100% Natural Bran   Q  Cold  1.00   protein        3
-100% Natural Bran   Q  Cold  1.00  calories      120
-```
-
-``` python
-cereal_long_sample.reset_index().head()
-```
-
-```out
-                name mfr  type  cups nutrition  measure
-0          100% Bran   N  Cold  0.33   protein        4
-1          100% Bran   N  Cold  0.33  calories       70
-2          100% Bran   N  Cold  0.33    sugars        6
-3  100% Natural Bran   Q  Cold  1.00   protein        3
-4  100% Natural Bran   Q  Cold  1.00  calories      120
-```
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
-
-The process of pivoting can be explained using the animation made by
-<a href="https://github.com/apreshill/teachthat" target="_blank"> Alison
-Presmanes Hill</a>. It shows exactly the relocation of values, when a
-dataframe undergoes a pivot transformation.
+`.pivot()` can be used in situations where our data may not meet our
+tidy data criteria.  
+Consider the dataframe below:
 
 <center>
 
-<img src='/module3/pivot_py.gif' width="850">
+<img src='/module3/cereal_long2.png' width="60%">
 
 </center>
 
-We see the `var_name` values becoming new columns labels and the
-`var_value` being relocated to it’s respective new column.
+Here we can see that *Criterion \#1: Each row is a single observation*
+does not hold. Each cereal has 2 rows for different measurements. How do
+we convert it to tidy data?
 
 Notes: Script here
 
@@ -242,61 +113,30 @@ Notes: Script here
 
 ---
 
-We can do the same thing for our cereal dataframe as an example. The
-diagram below shows the column `nutrition` being spread into 2 columns
-named `calories` and `protein` which are the two unique values contained
-in that column.
-
-<center>
-
-<img src='/module3/pivot_cereal.png' width="850">
-
-</center>
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
-
-Let’s attempt this with code.
-
-Our dataframe that we want to tidy looks like this:
+Here is the same dataframe that we have named `cereal_long`:
 
 ``` python
 cereal_long
 ```
 
 ```out
-                    mfr  type  weight  cups     rating nutrition  measure
-name                                                                     
-100% Bran             N  Cold     1.0  0.33  68.402973   protein        4
-100% Bran             N  Cold     1.0  0.33  68.402973  calories       70
-100% Bran             N  Cold     1.0  0.33  68.402973    sugars        6
-100% Natural Bran     Q  Cold     1.0  1.00  33.983679   protein        3
-100% Natural Bran     Q  Cold     1.0  1.00  33.983679  calories      120
-...                  ..   ...     ...   ...        ...       ...      ...
-Wheaties              G  Cold     1.0  1.00  51.592193   protein        3
-Wheaties              G  Cold     1.0  1.00  51.592193  calories      100
-Wheaties Honey Gold   G  Cold     1.0  0.75  36.187559  calories      110
-Wheaties Honey Gold   G  Cold     1.0  0.75  36.187559   protein        2
-Wheaties Honey Gold   G  Cold     1.0  0.75  36.187559    sugars        8
-
-[231 rows x 7 columns]
+          name mfr nutrition  value
+0    Special K   K  calories    110
+1    Special K   K   protein      6
+2  Apple Jacks   K  calories    110
+3  Apple Jacks   K   protein      2
+4  Raisin Bran   K  calories    120
+5  Raisin Bran   K   protein      3
+6     Cheerios   G  calories    110
+7     Cheerios   G   protein      6
+8     Wheaties   G  calories    100
+9     Wheaties   G   protein      3
 ```
 
-We can see there are 231 rows and the `nutrition` column is made up of 3
-variables; `protein`, `calories` and `sugar`. That means there are 3
-rows for each of the 77 kinds of cereal which explains the 231 rows (77
-kinds of cereal \* 3 variables = 231 rows).
+We can see there are 14 rows and the `nutrition` column is made up of 2
+variables; `calories` and `protein`. That means there are 2 rows for
+each of the 7 kinds of cereal. This explains the 14 rows (7 kinds of
+cereal \* 2 variables = 14 rows).
 
 Notes: Script here
 
@@ -312,41 +152,31 @@ Notes: Script here
 
 ---
 
-To transform this into tidy data we would specify the following
-arguments.  
-\- Set `index` as the `name` column.  
-\- Target the column `nutrition` with the values contained as new
-columns labels.  
-\- Specify `measure` as the values associated with each of the new
-columns.
+We use `pivot` in the following way to transform it into a wide
+dataframe.
 
-Also, we can’t forget to reset the index\!  
-(Just like any other dataframe, if we want to keep the changes, makes
-sure to assign it to an object)
+We:
+
+  - Set `index` as the `name` column.
+  - Target the column `nutrition` with the values contained as new
+    columns labels.  
+  - Specify `value` as the `values` argument.
+
+<!-- end list -->
 
 ``` python
-tidy_pivot = (cereal_long.reset_index()
-            .pivot(index='name', columns='nutrition', values='measure')
-             )
+tidy_pivot = cereal_long.pivot(index='name', columns='nutrition', values='value')
 tidy_pivot
 ```
 
 ```out
-nutrition                  calories  protein  sugars
-name                                                
-100% Bran                        70        4       6
-100% Natural Bran               120        3       8
-All-Bran                         70        4       5
-All-Bran with Extra Fiber        50        4       0
-Almond Delight                  110        2       8
-...                             ...      ...     ...
-Triples                         110        2       3
-Trix                            110        1      12
-Wheat Chex                      100        3       3
-Wheaties                        100        3       3
-Wheaties Honey Gold             110        2       8
-
-[77 rows x 3 columns]
+nutrition    calories  protein
+name                          
+Apple Jacks       110        2
+Cheerios          110        6
+Raisin Bran       120        3
+Special K         110        6
+Wheaties          100        3
 ```
 
 Notes: Script here
@@ -366,39 +196,36 @@ Notes: Script here
 Can you see the difference?
 
 ``` python
-cereal_long.head()
+cereal_long
 ```
 
 ```out
-                  mfr  type  weight  cups     rating nutrition  measure
-name                                                                   
-100% Bran           N  Cold     1.0  0.33  68.402973   protein        4
-100% Bran           N  Cold     1.0  0.33  68.402973  calories       70
-100% Bran           N  Cold     1.0  0.33  68.402973    sugars        6
-100% Natural Bran   Q  Cold     1.0  1.00  33.983679   protein        3
-100% Natural Bran   Q  Cold     1.0  1.00  33.983679  calories      120
+          name mfr nutrition  value
+0    Special K   K  calories    110
+1    Special K   K   protein      6
+2  Apple Jacks   K  calories    110
+3  Apple Jacks   K   protein      2
+4  Raisin Bran   K  calories    120
+5  Raisin Bran   K   protein      3
+6     Cheerios   G  calories    110
+7     Cheerios   G   protein      6
+8     Wheaties   G  calories    100
+9     Wheaties   G   protein      3
 ```
 
 ``` python
-tidy_pivot.head()
+tidy_pivot
 ```
 
 ```out
-nutrition                  calories  protein  sugars
-name                                                
-100% Bran                        70        4       6
-100% Natural Bran               120        3       8
-All-Bran                         70        4       5
-All-Bran with Extra Fiber        50        4       0
-Almond Delight                  110        2       8
+nutrition    calories  protein
+name                          
+Apple Jacks       110        2
+Cheerios          110        6
+Raisin Bran       120        3
+Special K         110        6
+Wheaties          100        3
 ```
-
-We are now back to 77 rows and it looks like we’ve tidied our data up\!
-There appears to be a problem though. `.pivot()` works well when we are
-only concerned with the columns we are pivoting but as we can see, we
-lost all our other columns in the dataset like `type`, `weight` and
-`cups`.  
-There is a solution for this and it’s called `.pivot_table()`.
 
 Notes: Script here
 
@@ -414,35 +241,13 @@ Notes: Script here
 
 ---
 
-## Pivot\_table()
+The following diagram explains what is happening in the transformation.
 
-`.pivot_table()` works with multiple indexes (we will take about this
-shortly). That just means we can keep all the columns that we are not
-pivoting. Let’s attempt fixing our untidy data again but this time,
-keeping all our columns.
+<center>
 
-``` python
-tidy_pivot = (cereal_long.reset_index()
-            .pivot_table(index=['name','mfr', 'type',
-                                'weight', 'cups', 'rating'],
-                         columns='nutrition', 
-                         values='measure').reset_index()
-             )
-tidy_pivot.head()
-```
+<img src='/module3/piv_cereal3.png' width="100%">
 
-```out
-nutrition                       name mfr  type  weight  cups     rating  calories  protein  sugars
-0                          100% Bran   N  Cold     1.0  0.33  68.402973        70        4       6
-1                  100% Natural Bran   Q  Cold     1.0  1.00  33.983679       120        3       8
-2                           All-Bran   K  Cold     1.0  0.33  59.425505        70        4       5
-3          All-Bran with Extra Fiber   K  Cold     1.0  0.50  93.704912        50        4       0
-4                     Almond Delight   R  Cold     1.0  0.75  34.384843       110        2       8
-```
-
-After we pivot, we have multiple column indexes which we should reset to
-avoid any confusion. Don’t worry, we wil talk about multiple indexes in
-this module.
+</center>
 
 Notes: Script here
 
@@ -458,26 +263,500 @@ Notes: Script here
 
 ---
 
-To get our dataframe back to a structure we are used to, we have to
-`.reset_index()` and then reassign a single index such as `name` using
-`.set_index()`.
+<center>
+
+<img src='/module3/piv_cereal3.png' width="70%">
+
+</center>
 
 ``` python
-tidy_pivot = tidy_pivot.reset_index().set_index('name')
-tidy_pivot.head()
+tidy_pivot = cereal_long.pivot(index='name', columns='nutrition', values='value')
+```
+
+Here are a few important things to notice:
+
+  - Our index is reassigned to the `name` column which we assigned to
+    the `index` argument. This also acts as the identifier for which
+    rows in the original dataframe get compiled to a single one in the
+    new dataframe.  
+  - The unique values in the `nutrition` column depict what will be the
+    new columns after the transformation. We assigned this in the
+    `columns` argument.  
+  - The values in `value` column are transformed into the values in the
+    newly created `protein` and `calories` columns. This was defined in
+    the `values` argument of the code.
+  - We lost the `mfr` column\!
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+## Resetting the Index
+
+When we pivot our dataframe, we need to specify which rows are being
+combined to create a single elongated row. This is determined with the
+`index` argument. While pivoting we transformed the `name` column as our
+index. This may not be the most ideal structure for our data and we can
+adjust this and return to the original index of a column of number by
+using the verb `.reset_index()`.
+
+On our example dataset `tidy_pivot`:
+
+``` python
+tidy_pivot.head(2)
 ```
 
 ```out
-nutrition                  index mfr  type  weight  cups     rating  calories  protein  sugars
-name                                                                                          
-100% Bran                      0   N  Cold     1.0  0.33  68.402973        70        4       6
-100% Natural Bran              1   Q  Cold     1.0  1.00  33.983679       120        3       8
-All-Bran                       2   K  Cold     1.0  0.33  59.425505        70        4       5
-All-Bran with Extra Fiber      3   K  Cold     1.0  0.50  93.704912        50        4       0
-Almond Delight                 4   R  Cold     1.0  0.75  34.384843       110        2       8
+nutrition    calories  protein
+name                          
+Apple Jacks       110        2
+Cheerios          110        6
 ```
 
-Perfect\!
+We can remove the `name` index by doing the following:
+
+``` python
+tidy_pivot.reset_index().head(2)
+```
+
+```out
+nutrition         name  calories  protein
+0          Apple Jacks       110        2
+1             Cheerios       110        6
+```
+
+For now, we can ignore the `nutrition` label in the top left of the
+dataframe.
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+## Pivot Table
+
+We discussed that one of the effects of using `.pivot()` on our
+`cereal_long` dataframe was that the new dataframe was missing the
+column `mfr`.
+
+<center>
+
+<img src='/module3/piv_cereal3.png' width="80%">
+
+</center>
+
+That’s because `.pivot()` discards any columns that are not being
+directly effected by the pivot. Only the column that is specified as the
+index and the columns that need to be transformed are present in the new
+dataframe.
+
+Pandas recongnizes this is a nuissance so that’s where `pivot_table`
+steps in\!
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+`.pivot_table()` has the same arguments as `.pivot()` but the biggest
+difference is that it allows us to include multiple columns under the
+`index` argument. That just means we can keep any of the columns that
+are not directly effected by the pivot.
+
+<center>
+
+<img src='/module3/piv_table_cereal.png' width="80%">
+
+</center>
+
+Let’s try to convert our dataframe again but this time keeping the `mfr`
+column with `.pivot_table()`.
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+Here is our long dataframe:
+
+``` python
+cereal_long
+```
+
+```out
+          name mfr nutrition  value
+0    Special K   K  calories    110
+1    Special K   K   protein      6
+2  Apple Jacks   K  calories    110
+3  Apple Jacks   K   protein      2
+4  Raisin Bran   K  calories    120
+5  Raisin Bran   K   protein      3
+6     Cheerios   G  calories    110
+7     Cheerios   G   protein      6
+8     Wheaties   G  calories    100
+9     Wheaties   G   protein      3
+```
+
+We include any columns that we wish to keep under the `index` argument
+contained in square brackets.
+
+``` python
+tidy_pivot2 = cereal_long.pivot_table(index=['name','mfr'], columns='nutrition', values='value')
+tidy_pivot2
+```
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+``` python
+tidy_pivot2
+```
+
+```out
+nutrition        calories  protein
+name        mfr                   
+Apple Jacks K         110        2
+Cheerios    G         110        6
+Raisin Bran K         120        3
+Special K   K         110        6
+Wheaties    G         100        3
+```
+
+And just like before, if we want to return to our original dataframe
+with a column of numbers for our index, we use `.reset_index()`
+
+``` python
+tidy_pivot2.reset_index()
+```
+
+```out
+nutrition         name mfr  calories  protein
+0          Apple Jacks   K       110        2
+1             Cheerios   G       110        6
+2          Raisin Bran   K       120        3
+3            Special K   K       110        6
+4             Wheaties   G       100        3
+```
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+<center>
+
+<img src='/module3/piv_table_cereal.png' width="100%">
+
+</center>
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+## Why use pivot at all then?
+
+When we use `.pivot_table()` we have to proceed with caution.
+
+We talked about how `.pivot()` and `.pivot_table()` take the arguments
+`index` and `columns`. What happens if we have multiple rows with the
+same `index` and `column` values?
+
+Take the following example where we see that Special K has 2 rows with
+differing values for `calories`.
+
+<center>
+
+<img src='/module3/problem_table.png' width="60%">
+
+</center>
+
+What happens when we try to pivot this?
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+Here is our dataframe:
+
+``` python
+cereal_problem
+```
+
+```out
+          name mfr nutrition  value
+0    Special K   K  calories    100
+1    Special K   K  calories    130
+2    Special K   K   protein      6
+3  Apple Jacks   K  calories    110
+4  Apple Jacks   K   protein      2
+```
+
+Let’s try pivoting using the same arguments as before
+
+``` python
+cereal_problem.pivot(index='name', columns='nutrition', values='value')
+```
+
+```out
+Error in py_call_impl(callable, dots$args, dots$keywords): ValueError: Index contains duplicate entries, cannot reshape
+
+Detailed traceback: 
+  File "<string>", line 1, in <module>
+  File "//anaconda3/lib/python3.7/site-packages/pandas/core/frame.py", line 5923, in pivot
+    return pivot(self, index=index, columns=columns, values=values)
+  File "//anaconda3/lib/python3.7/site-packages/pandas/core/reshape/pivot.py", line 448, in pivot
+    return indexed.unstack(columns)
+  File "//anaconda3/lib/python3.7/site-packages/pandas/core/series.py", line 3550, in unstack
+    return unstack(self, level, fill_value)
+  File "//anaconda3/lib/python3.7/site-packages/pandas/core/reshape/reshape.py", line 419, in unstack
+    constructor=obj._constructor_expanddim,
+  File "//anaconda3/lib/python3.7/site-packages/pandas/core/reshape/reshape.py", line 141, in __init__
+    self._make_selectors()
+  File "//anaconda3/lib/python3.7/site-packages/pandas/core/reshape/reshape.py", line 179, in _make_selectors
+    raise ValueError("Index contains duplicate entries, cannot reshape")
+```
+
+We get the error message above. This is a useful error message, letting
+us know that there are “duplicate entries, cannot reshape” which means
+there are non unique rows. We will need us to do something before going
+any further.
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+`.pivot()` throws an error message. This is a useful error message,
+letting us know that there are “duplicate entries, cannot reshape” which
+means there are non unique rows. We will need to do something before
+going any further.
+
+<center>
+
+<img src='/module3/problem_pivot.png' width="100%">
+
+</center>
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+Let’s try the same thing with `.pivot_table()`
+
+``` python
+cereal_problem.pivot_table(index=['name','mfr'], columns='nutrition', values='value')
+```
+
+```out
+nutrition        calories  protein
+name        mfr                   
+Apple Jacks K         110        2
+Special K   K         115        6
+```
+
+Ok, that’s odd. We don’t get an error this time but instead get a
+`calories` value of 115 which is neither of the original values of 130
+or 100.
+
+`.pivot_table()` instead by default takes the average of the duplicated
+columns and continues to execute.
+
+<center>
+
+<img src='/module3/problem_pivot_table.png' width="100%">
+
+</center>
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+When we use `.pivot_table()` we recommend checking if there are
+duplicate values in columns we use in the `index` and `columns`
+arguments before we proceed. We can do this with the `.duplicated()`
+verb by putting the columns from the `index` and `columns` arguments in
+a `subset` argument. We set the argument `keep` to `False` to make sure
+all the rows are identified and not just the repeated ones.
+
+``` python
+cereal_problem.duplicated(subset=['name','nutrition'], keep=False)
+```
+
+```out
+0     True
+1     True
+2    False
+3    False
+4    False
+dtype: bool
+```
+
+Without the `keep` argument, only index labeled `1` will be identified
+as a duplicate.
+
+``` python
+cereal_problem.duplicated(subset=['name','nutrition'])
+```
+
+```out
+0    False
+1     True
+2    False
+3    False
+4    False
+dtype: bool
+```
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+``` python
+cereal_problem.duplicated(subset=['name','nutrition'], keep=False)
+```
+
+```out
+0     True
+1     True
+2    False
+3    False
+4    False
+dtype: bool
+```
+
+We see that the 1st and 2nd row are duplicates by the `True` values. We
+obtain the rows from the original dataframe by filtering on the
+duplicate information:
+
+``` python
+duplicate_info =cereal_problem.duplicated(subset=['name','nutrition'], keep=False)
+cereal_problem[duplicate_info]
+```
+
+```out
+        name mfr nutrition  value
+0  Special K   K  calories    100
+1  Special K   K  calories    130
+```
+
+Once we have decided which row we want to keep we can use `.drop()` that
+we learned in the previous Module to remove it.
 
 Notes: Script here
 

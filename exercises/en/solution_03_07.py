@@ -1,18 +1,20 @@
 import pandas as pd
 
-lego = pd.read_csv('data/lego_untidy.csv', index_col=0)
+lego = pd.read_csv('data/lego_untidy.csv')
 
 # Convert the untidy data into tidy data using pivot 
 # Name the new dataframe tidied_lego
 
-tidied_lego = (lego.reset_index()
-                   .pivot(index='set_num',
+tidied_lego = (lego.pivot(index='set_num',
                           columns='lego_info',
                           values='value')
+                   .reset_index()
               )
 
-# Display the first 5 rows
+# Save the mean number of parts (num_parts) of the Lego sets in an object named set_parts_mean
 
-tidied_lego.head()
+set_parts_mean = tidied_lego[['num_parts']].mean().round()
+
+set_parts_mean
 
 

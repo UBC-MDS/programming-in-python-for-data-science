@@ -150,26 +150,20 @@ Great work!
 
 </choice> 
 
-
-**Question 2**         
-What must you do before you use `.pivot()`?
+       
+**Question 2**          
+Which of the following does not continue to execute when there are duplicate rows in the dataframe?
 
 <choice id="2" >
-<opt text='Rename your column label to numbers'>
+<opt text="<code>.pivot()</code>">
 
-It may be a good idea to look over the last section again. 
-
-</opt>
-
-<opt text= 'Reset your index' correct="true">
-
-Good job!
+You may want to look over this before moving forward.
 
 </opt>
 
-<opt text='Sort your dataframe by index' >
+<opt text="<code>.pivot_table()</code>" correct="true">
 
-It may be a good idea to look over the last section again. 
+You may want to look over this before moving forward.
 
 </opt>
 
@@ -198,13 +192,15 @@ Let's convert the dataframe `lego` into tidy data using `.pivot()`.
 Tasks:
 
 - Convert the untidy data into tidy data using `.pivot()`.
+- Don't forget to reset your index.
 - Name the new dataframe `tidied_lego`.
+- Save the mean number of parts (`num_parts`) of the Lego sets in an object named `set_parts_mean`. (We've added a verb named `.round()` to round to the nearest whole number)
   
      
 
 <codeblock id="03_07">
 - Are you pivoting the correct column named `lego_info` with `values='value'`?
-- Are you resetting your index before you pivot?
+- Are you resetting your index after you pivot?
 
 </codeblock>
 
@@ -224,13 +220,12 @@ Tasks:
 - Convert the untidy data into tidy data using `.pivot_table()` making sure to keep all the columns. 
 - Assign your new dataframe `set_num` as your index.
 - Name the new dataframe `tidied_lego`.
+- Find the mean number of parts for each production year and save it in an object name `year_parts_mean`. (We've added a verb named `.round()` to round to the nearest whole number)
 
 <codeblock id="03_08">
 - Are you using the correct arguments such as `index`, `columns`, and `values`?
 - Are you pivoting the correct column named `lego_info` with `values='value'`?
-- Are you resetting your index before you pivot?
-- Are you making sure to use `index=['set_num', 'name', 'year']`
-- Are you resetting and setting your index again after you pivot?
+- Are you resetting  your index again after you pivot?
 
 </codeblock>
 

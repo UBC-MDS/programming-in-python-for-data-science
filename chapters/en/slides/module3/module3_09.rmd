@@ -34,6 +34,7 @@ library(reticulate)
 ```{python include=FALSE}
 import pandas as pd
 import numpy as np
+import altair as alt
 pd.set_option('display.width', 350)
 
 np.set_printoptions(linewidth=400)
@@ -42,8 +43,14 @@ pd.set_option('display.max_columns', 50)
 pd.set_option('display.max_rows', 15)
 
 candy = pd.read_csv('candybars.csv', index_col=0)
+cereal = pd.read_csv('cereal.csv', index_col=0).loc[['Special K', 'Apple Jacks', 'Raisin Bran', 'Cheerios', 'Wheaties' ], [ 'mfr', 'type', 'calories', 'protein']].reset_index()
+cereal
 ```
 
+```{python}
+cereal = pd.read_csv('cereal.csv', index_col=0).loc[['Special K', 'Apple Jacks', 'Raisin Bran', 'Cheerios', 'Wheaties' ], [ 'mfr', 'type', 'calories', 'protein']].reset_index()
+cereal
+```
 
 type: slides
 
@@ -60,12 +67,7 @@ Notes: Script here
 In the last section we discussed how `pandas` provides 2 functions for reshaping data; <a href="https://pandas.pydata.org/docs/reference/api/pandas.melt.html" target="_blank">`.melt()`</a> and <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.pivot.html" target="_blank">`.pivot()`</a> . 
 We are going to spend this next section discussing `.melt()` which is simply the reverse transformation of `.pivot()`. 
 
-
-
-<center><img src="/module3/pivot_melt.gif" width="400"></center>
-"Source: Garrick Aden-Buie, https://github.com/gadenbuie/tidyexplain#spread-and-gather and
-Tomas Beuzen, DSCI 523 Data Wrangling" 
-
+Instead of converting a long dataframe to a wide one as we do in `.pivot()`, we do the opposite and convert a `wide` dataframe into a long one. 
 
 
 Notes: Script here
@@ -76,13 +78,24 @@ Notes: Script here
 
 ---
 
+Let's take a look at a subset of our the cereal data we've been working with. 
+
+```{python}
+cereal
+```
+
+When we use other verbs and tools while coding, especially doing visualization (such as Altair) our input dataframes are required to be in a long format. 
+Thank means we will need to convert our current wide cereal dataframe into a long one.
+
+We can see there are 5 rows and 2 numerical columns; `calories` and `protein`.  
+
 ## Melt
 
-Similarly to `.pivot()`, `.melt()` can be used in situations where our data may not meet criterion #2: _Each variable is a single column_.
+In order to plot our 
 
-In this situation the code converted the 2 columns `chocolate`and `white_chocolate`into a single column named `chocolate_type`. 
+In this situation the code converted the 2 columns `chocolate` and `white_chocolate`into a single column named `chocolate_type`. 
 ```{python }
-melted_candy = (candy.reset_index()
+melted_cereal  = (candybars.reset_index()
                    .melt(id_vars=['name', 'weight','multi',
                                   'available_canada_america'] , 
                         value_vars=['chocolate', 'white_chocolate'], 
@@ -91,6 +104,37 @@ melted_candy = (candy.reset_index()
 )
 melted_candy.head()
 ```
+
+
+```{python}
+
+bars = alt.Chart(cereal).mark_bar().encode(
+    x='name:N',
+    y="calories:Q"
+)
+bars
+
+import altair as alt
+from vega_datasets import data
+
+source = data.wheat()
+
+bars = alt.Chart(source).mark_bar().encode(
+    x='wheat:Q',
+    y="year:O"
+)
+
+text = bars.mark_text(
+    align='left',
+    baseline='middle',
+    dx=3  # Nudges text to right so it doesn't appear on top of the bar
+).encode(
+    text='wheat:Q'
+)
+
+(bars + text).properties(height=900)
+```
+
 
 
 Notes: Script here

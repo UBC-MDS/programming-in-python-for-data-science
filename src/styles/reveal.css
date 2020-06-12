@@ -1832,10 +1832,10 @@
     height: 100%;
     top: 0;
     left: 100%;
-    padding: 14px 18px 14px 18px;
+    padding: 3px 18px 14px 18px;
     z-index: 1;
     font-size: 18px;
-    line-height: 1.4;
+    line-height: 1.0;
     border: 1px solid rgba(0, 0, 0, 0.05);
     color: #222;
     background-color: #f5f5f5;
