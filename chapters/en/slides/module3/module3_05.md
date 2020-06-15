@@ -626,6 +626,11 @@ going any further.
 
 </center>
 
+\*Atribution: Nikolay Grozev,
+<a href=" https://nikgrozev.com/2015/07/01/reshaping-in-pandas-pivot-pivot-table-stack-and-unstack-explained-with-pictures/" target="_blank">RReshaping
+in Pandas - Pivot, Pivot-Table, Stack, and Unstack explained with
+Pictures</a>
+
 Notes: Script here
 
 <html>
@@ -665,10 +670,6 @@ columns and continues to execute.
 <img src='/module3/problem_pivot_table.png' width="100%">
 
 </center>
-
-\*Atribution: Nikolay Grozev,
-<a href=" https://nikgrozev.com/2015/07/01/reshaping-in-pandas-pivot-pivot-table-stack-and-unstack-explained-with-pictures/" target="_blank">Reshaping
-in Pandas </a>
 
 Notes: Script here
 
