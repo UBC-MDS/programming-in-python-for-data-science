@@ -47,7 +47,7 @@ cereal = pd.read_csv('cereal.csv', index_col=0)
 
 type: slides
 
-# Concatenation
+# Concatenating dataframes
 
 Notes: Script here
 <html>

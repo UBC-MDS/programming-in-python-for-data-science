@@ -2,7 +2,7 @@
 type: slides
 ---
 
-# Merge
+# Joining dataframes using merge
 
 Notes: Script here
 
@@ -25,8 +25,8 @@ different sizes where rows need to be matched up?
 <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.merge.html" target="_blank">`.merge()`</a>
 if a verb that give more precision and options when we join dataframes.
 
-We compared `.merge()` to stitching fabric together, where we line up
-the patterns of each piece of cloth.
+We compared `.merge()` in the last section to stitching fabric together,
+where we line up the patterns of each piece of cloth.
 
 <center>
 
@@ -52,7 +52,9 @@ Notes: Script here
 
 With `.merge()`, we need to identify a column in each dataframe that
 acts as a connection between them. It’s a column where the values in
-Dataframe A are alike to those in Dataframe B.
+Dataframe A are the same variable to those in Dataframe B. In the
+easiest situations both columns are named the same thing, but that
+doesn’t have to be the case.
 
 Let’s use a subset of the candy bars dataset to explain this concept
 further.
@@ -103,10 +105,10 @@ candy2m
 4      85254       244   16   41.2  Kinder Bueno
 ```
 
-This dataframe has new columns and the rows not in the `candy` dataframe
-(`3 Musketeers`, `Aero`, and `Kinder Bueno`). We can see that the column
-in this dataframe has a column named `chocolate_bar` that shares the
-same variable as the `name` column in the `candy` dataframe.
+This dataframe has new columns androws not in the `candy` dataframe (`3
+Musketeers`, `Aero`, and `Kinder Bueno`). We can see that a column named
+`chocolate_bar` is the same variable as the `name` column in the `candy`
+dataframe.
 
 Notes: Script here
 
@@ -233,7 +235,7 @@ Notes: Script here
 
 ---
 
-We combine that with the earlier code
+We combine that with the earlier code to get the following:
 
 ``` python
 candy.merge(candy2m, left_on='name', right_on='chocolate_bar')
@@ -245,11 +247,13 @@ candy.merge(candy2m, left_on='name', right_on='chocolate_bar')
 1  Butterfinger     184          1        1      45623       798   30   72.0  Butterfinger
 ```
 
-Great\! we’ve combined the 2 dataframes horizontally (in the future we
-will likely want to drop the columns named `chocolate_bar`).
+Great\! we’ve combined the 2 dataframes horizontally in the future we
+may want to drop the columns named `chocolate_bar` or rename it before
+we merge. If our identifying columns are named the same in both
+dataframes, `.merge()` only keeps one of them.
 
-What happened? we now only have 2 rows\! We seemed to have lost all the
-rows that are not in both columns.
+Ok so what happened? we now only have 2 rows\! We seemed to have lost
+all the rows that are not in both columns.
 
 This is because `.merge()` uses a default joining method called `inner`
 join, which returns only the rows present in both dataframes. We can
@@ -271,11 +275,10 @@ Notes: Script here
 
 ## how
 
-This argument specifies ***How*** our dataframes are joined.
+This argument specifies ***“how”*** our dataframes are joined.
 
-We discussed the default argument value for this verb called `inner`
-that will only the rows with identifying column values that are present
-in both dataframes:
+We mentioned that the default argument value`inner` which will only the
+rows with identifying column values that are present in both dataframes:
 
 ``` python
 candy.merge(candy2m, left_on='name', right_on='chocolate_bar', how='inner')
@@ -333,11 +336,11 @@ candy.merge(candy2m, left_on='name', right_on='chocolate_bar', how='outer')
 
 Here we see that `Coffee Crisp` and `Butterfinger` have complete rows.
 Rows from the left dataframe that were not present in the right
-dataframe are `Skor`, `Smarties` and `Twix` therefore have `NaN` values
-for columns from the right table. The opposite occurs for the values `3
-Musketeers`, `Aero` and `Kinder Bueno` which are present in the right
-dataframe and not the left one. This results in `NaN` for values in the
-left dataframe columns.
+dataframe are `Skor`, `Smarties` and `Twix` and therefore have `NaN`
+values for columns from the right table. The opposite occurs for the
+values `3 Musketeers`, `Aero` and `Kinder Bueno` which are present in
+the right dataframe and not the left one. This results in `NaN` for
+values in the left dataframe columns.
 
 Notes: Script here
 
@@ -374,7 +377,8 @@ candy.merge(candy2m, left_on='name', right_on='chocolate_bar', how='left')
 ```
 
 Here we can see the values `3 Musketeers`, `Aero` and `Kinder Bueno` are
-not present as they are only present in the right dataframe.
+not present in the resulting dataframe as they are only present in the
+right one.
 
 Notes: Script here
 

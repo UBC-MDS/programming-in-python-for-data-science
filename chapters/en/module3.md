@@ -355,7 +355,7 @@ Start by going through the tidy data criteria.  Does this data meet all three?
 
 
 
-<exercise id="12" title="Concat" type="slides">
+<exercise id="12" title="Concatenation" type="slides">
 
 <slides source="module3/module3_12">
 
@@ -539,7 +539,7 @@ Tasks:
 
 </exercise>
 
-<exercise id="16" title="Merge" type="slides">
+<exercise id="16" title="Joining Dataframes using Merge" type="slides">
 
 <slides source="module3/module3_16">
 
