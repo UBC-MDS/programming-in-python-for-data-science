@@ -1,13 +1,27 @@
 import pandas as pd
 
-lego = pd.read_csv('data/lego-sets.csv')
-lego
+# We are going to import the dataframes lego_base and lego_opacity.
 
-# Create hierarchical indexes from the columns set_num and name.
-# Name the new dataframe lego_build.
+lego_base = pd.read_csv('data/lego_theme_minimal.csv')
+lego_opacity = pd.read_csv('data/lego_opacity.csv')
 
-____ = ____
+# Combine the two dataframes horizontally to make 1 large complete 
+# dataframe and name it lego_full
+
+____ = ____(____)
+
+# Make sure you are dropping any duplicated columns
+
+# ____ = ____.____[____]
+
+# Make a new column named total_pieces from the  columns matte and transparent
+# Sort the dataframe and save this in an object named lego_details
+
+# ____ = (____.____(____)
+#             .____(____)
+#        )
 
 # Display the dataframe
 
-____
+# ____
+

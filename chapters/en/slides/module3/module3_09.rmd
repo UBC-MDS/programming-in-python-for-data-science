@@ -43,12 +43,7 @@ pd.set_option('display.max_columns', 50)
 pd.set_option('display.max_rows', 15)
 
 candy = pd.read_csv('candybars.csv', index_col=0)
-cereal = pd.read_csv('cereal.csv', index_col=0).loc[['Special K', 'Apple Jacks', 'Raisin Bran', 'Cheerios', 'Wheaties' ], [ 'mfr', 'type', 'calories', 'protein']].reset_index()
-cereal
-```
-
-```{python}
-cereal = pd.read_csv('cereal.csv', index_col=0).loc[['Special K', 'Apple Jacks', 'Raisin Bran', 'Cheerios', 'Wheaties' ], [ 'mfr', 'type', 'calories', 'protein']].reset_index()
+cereal = pd.read_csv('cereal.csv', index_col=0).loc[['Special K', 'Apple Jacks', 'Raisin Bran', 'Cheerios', 'Wheaties' ], [ 'mfr', 'calories', 'protein']].reset_index()
 cereal
 ```
 
@@ -84,59 +79,45 @@ Let's take a look at a subset of our the cereal data we've been working with.
 cereal
 ```
 
-When we use other verbs and tools while coding, especially doing visualization (such as Altair) our input dataframes are required to be in a long format. 
-Thank means we will need to convert our current wide cereal dataframe into a long one.
-
 We can see there are 5 rows and 2 numerical columns; `calories` and `protein`.  
+Perhaps we would prefer if this was transformed into a long dataframe. How would we do it?
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+<center><img src='/module3/melt_right.png' width="100%"></center>
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
 
 ## Melt
 
-In order to plot our 
+Let's attempt to melt the `calories` and `protein` columns into a single one named `nutrition` with the values expressed in a column named `value`. Exactly like we started with when we used `.pivot()` in the last section.
 
-In this situation the code converted the 2 columns `chocolate` and `white_chocolate`into a single column named `chocolate_type`. 
+
 ```{python }
-melted_cereal  = (candybars.reset_index()
-                   .melt(id_vars=['name', 'weight','multi',
-                                  'available_canada_america'] , 
-                        value_vars=['chocolate', 'white_chocolate'], 
-                        var_name='chocolate_type', 
-                        value_name='present')
-)
-melted_candy.head()
+melted_cereal  = (cereal.melt(id_vars=['name', 'mfr'] , 
+                              value_vars=['calories', 'protein'], 
+                              var_name='nutrition', 
+                              value_name='value')
+                  )
+melted_cereal
 ```
 
 
-```{python}
-
-print(alt.__version__)
-
-bars = alt.Chart(cereal).mark_bar().encode(
-    x='name:N',
-    y="calories:Q"
-)
-bars
-
-import altair as alt
-from vega_datasets import data
-
-source = data.wheat()
-
-bars = alt.Chart(source).mark_bar().encode(
-    x='wheat:Q',
-    y="year:O"
-)
-
-text = bars.mark_text(
-    align='left',
-    baseline='middle',
-    dx=3  # Nudges text to right so it doesn't appear on top of the bar
-).encode(
-    text='wheat:Q'
-)
-
-(bars + text).properties(height=900)
-```
-
+It's not quite in the same order, but we can agree that its what we want.
 
 
 Notes: Script here
@@ -147,35 +128,25 @@ Notes: Script here
 
 ---
 
-Let's take some time to fully understand the arguments this verb uses.  
+Let's try to understand what happened. 
+
+<center><img src='/module3/melt_right.png' width="60%"></center>
+
 
   ```python
-  df.melt(id_vars=['identifier columns'],
-          value_vars=['variable value1', 'variable value2'],
-          var_name="new column name labels",
-          value_name="new column name values")
+melted_cereal  = (cereal.melt(id_vars=['name', 'mfr'], 
+                              value_vars=['calories', 'protein'], 
+                              var_name='nutrition', 
+                              value_name='value')
+                  )
   ```
   
-  - `df`: The dataframe we want to melt.
-  - `id_vars`: The key identifier column(s) of the dataframe.  
-  - `value_vars`: The columns that exist but that we want to create a single column from with the labels as the values.
-  - `var_name`: The name of the new column that will contain the `value_vars` column labels as values.
-  - `value_name`: The name of the new column that will contain the values of the `value_vars` columns. 
-
-
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
-
----
-
-Thanks to  <a href="https://github.com/apreshill/teachthat" target="_blank"> Alison Presmanes Hill</a>, we can see exactly what is happening when we transform a dataframe using melt. 
-
-<center><img src='/module3/melt_py.gif'></center>
-
-`cinnamon_1`, `cardamom_2` and `nutmeg_3` column labels are relocated to the `spice` column and the values within the 3 columns are all melted into the `correct` column.
+  - The identifing column and the columns we wanted to keep are specified in the `id_vars` argument 
+  - the columns `calories` and `protein` are called in `value_vars` which are then melted down into a single column named `nutrition`. 
+  - We named the new column using the argument `var_name`.
+  - The calorie and protein measurements are housed in the new column named `value` that we name using the `value_name` argument. 
+  
+Although this verb takes 4 arguments and pivot only takes 3, we do not need to reset our index after melting. 
 
 Notes: Script here
 <html>
@@ -185,110 +156,7 @@ Notes: Script here
 
 ---
 
-`.melt()` is the opposite transformation of `.pivot()`.  In the last section we saw our cereal dataset widen when we pivoted the dataframe, however, melting elongates our dataframe. 
-
-
-<center><img src='/module3/piv_melt.png'></center>
-
-
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
-
----
-
-Let's sweeten this section up a bit and practice using `.melt()` with our candy bar dataset.  
- 
-```{python}
-candy
-```
-
-We can see there are 25 rows in our dataframe.  There are 2 columns for "chocolate type"; `white_chocolate` and `chocolate`.  Maybe for our analysis a single column called `chocolate_type` is better suited. 
-
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
-
----
-
-To transform this and obtain our new `chocolate_type` column, we would specify the following arguments:   
-
-- to keep all our other columns, we need to specify them in the `id_vars` argument. 
-
-```python 
-id_vars=['name', 'weight', 'peanuts', 'caramel',
-        'nougat', 'cookie_wafer_rice', 'coconut',
-        'multi', 'available_canada_america'] 
-```
-- The columns we are converting to a single one are named `chocolate` and `white_chocolate` resulting in `value_vars= ['chocolate', 'white_chocolate']`.
-- We name our new column `chocolate_type`, which we assign to the `var_name` argument.
-- The values within those chocolate columns will go into a new column named `present` therefore `value_name='present'`.
-
-Just like with `.pivot()`, we must reset our index before doing any type of transformation. 
-
-(And since we want to keep the changes, we makes sure to assign it to an object)
-
-```python
-candy_melt = (candy.reset_index()
-                   .melt(id_vars=['name', 'weight', 'peanuts', 'caramel',
-                                  'nougat', 'cookie_wafer_rice', 'coconut',
-                                  'multi', 'available_canada_america'] , 
-                        value_vars=['chocolate', 'white_chocolate'], 
-                        var_name='chocolate_type', 
-                        value_name='present')
-              )
-```
-
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
-
----
-
-```{python }
-melted_candy = (candy.reset_index()
-                   .melt(id_vars=['name', 'weight', 'peanuts', 'caramel',
-                                  'nougat', 'cookie_wafer_rice', 'coconut',
-                                  'multi', 'available_canada_america'] , 
-                        value_vars=['chocolate', 'white_chocolate'], 
-                        var_name='chocolate_type', 
-                        value_name='present')
-)
-melted_candy
-```
- 
-We have 50 rows in this new dataframe which makes sense since we now have 2 chocolate types for each candy bar ( 25 candy bars * 2 chocolate types = 50 rows).
-
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
-
----
-
-To finish things off let's reassign our index back the cereal name using `.set_index('name')`
-
-```{python}
-melted_candy = melted_candy.set_index('name')
-melted_candy
-```
-
-Perfect! 
-
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
-
----
+Something important to 
 
 # Let’s practice what we learned!
 

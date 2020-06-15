@@ -1,9 +1,10 @@
 import pandas as pd
 
-# We are going to import lego_top and lego_bottom which have 5001 rows and 6672 rows respectively.
+# We are going to import lego_top and lego_bottom which have 5001 rows and 6672 rows
+# respectively.
 
-lego_top = pd.read_csv('data/lego_top.csv', index_col=0)
-lego_bottom = pd.read_csv('data/lego_bottom.csv', index_col=0)
+lego_top = pd.read_csv('data/lego_top.csv')
+lego_bottom = pd.read_csv('data/lego_bottom.csv')
 
 # Combine the two dataframes vertically to make 1 large complete dataframe
 # Name the new dataframe full_set 

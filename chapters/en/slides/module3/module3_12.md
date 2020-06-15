@@ -2,7 +2,7 @@
 type: slides
 ---
 
-# Hierarchical Indexing
+# Concatenation
 
 Notes: Script here
 
@@ -18,20 +18,44 @@ Notes: Script here
 
 ---
 
-***Hierarchy*** is defined by
-<a href="https://dictionary.cambridge.org/dictionary/english/hierarchy" target="_blank">Cambridge
-Dictionary </a> as
+Up until this moment, we have been working with a single dataframe. Many
+organizations split their data into multiple tables and join them
+together depending on what columns they need for their analysis.  
+There are 2 different verbs we use for joining dataframes together:
 
-*_" a system in which people or things are put at various levels or
-ranks according to their importance."_*
+  - <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.concat.html" target="_blank">`.concat()`</a>;
+    A forceful way of joining dataframes across rows or columns. A
+    useful analogy is the gluing or taping of 2 pieces of paper together
+    so the shapes match up.
+  - <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.merge.html" target="_blank">`.merge()`</a>
+    A more precision based approach for combining data on common columns
+    or indices. This can be compared to stitching fabric together so
+    that the pattern/print lines up.
 
-This helps explain the concept of ***hierarchical indexing*** which is
-the capability of a dataframe possessing multiple levels of index
-labels.
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+## Concatenation
+
+Concatenation works extremely well when you have similar dataframes
+which both share identical column or row index labels.  
+`.concat()` can glue the 2 dataframes together either horizontally or
+vertically.
 
 <center>
 
-<img src='/module3/hierarchy.png' width="400">
+<img src='/module3/concatx.gif' width="600">
 
 </center>
 
@@ -49,51 +73,24 @@ Notes: Script here
 
 ---
 
-Multi-level indexing allows the possibility of some much more advanced
-data analysis, however, that can also open the door to more complex
-issues and bugs.
-
-We are going to keep this as simple and elegant as possible by
-introducing you to the concept and how to transform dataframe with
-hierarchical indexing.
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
-
-Believe it or not but you have already seen this concept when we
-explained the concept of grouping and aggregating.
+For the next couple of examples, we are going to look at concatenating
+with a subset of our original candy bars dataframe.
 
 ``` python
-cereal.groupby('mfr').agg(['max', 'min'])
+candy = pd.read_csv('candybars.csv').loc[:4, 'name': 'peanuts']
+candy
 ```
 
 ```out
-     type       calories      protein     fat     sodium      fiber      carbo       sugars     potass     vitamins     shelf     weight        cups           rating           
-      max   min      max  min     max min max min    max  min   max  min   max   min    max min    max min      max min   max min    max   min   max   min        max        min
-mfr                                                                                                                                                                             
-A     Hot   Hot      100  100       4   4   1   1      0    0   0.0  0.0  16.0  16.0      3   3     95  95       25  25     2   2   1.00  1.00  1.00  1.00  54.850917  54.850917
-G    Cold  Cold      140  100       6   1   3   1    290  140   4.0  0.0  21.0  10.5     14   1    230  25      100  25     3   1   1.50  1.00  1.50  0.50  51.592193  19.823573
-K    Cold  Cold      160   50       6   1   3   0    320    0  14.0  0.0  22.0   7.0     15   0    330  20      100  25     3   1   1.50  1.00  1.00  0.33  93.704912  29.924285
-N     Hot  Cold      100   70       4   2   1   0    130    0  10.0  1.0  21.0   5.0      6   0    280   1       25   0     3   1   1.00  0.83  1.00  0.33  74.472949  59.363993
-P    Cold  Cold      120   90       3   1   3   0    210   45   6.0  0.0  17.0  11.0     15   3    260  25       25  25     3   1   1.33  1.00  1.33  0.25  53.371007  28.025765
-Q     Hot  Cold      120   50       5   1   5   0    220    0   2.7  0.0  14.0   1.0     12   0    135  15       25   0     3   1   1.00  0.50  1.00  0.50  63.005645  18.042851
-R    Cold  Cold      150   90       4   1   3   0    280   95   4.0  0.0  23.0  14.0     11   2    170   1       25  25     3   1   1.00  1.00  1.13  0.67  49.787445  34.139765
+           name  weight  chocolate  peanuts
+0  Coffee Crisp      50          1        0
+1  Butterfinger     184          1        1
+2          Skor      39          1        0
+3      Smarties      45          1        0
+4          Twix      58          1        0
 ```
 
-Here you can see that each of the original cereal dataframe columns have
-the sub columns `max` and `min` and that there is a hierarchy of index
-labels.
+This dataframe has 5 rows and 4 columns.
 
 Notes: Script here
 
@@ -109,97 +106,27 @@ Notes: Script here
 
 ---
 
-## Setting indexes
+## Horizontal Concatenation
 
-You have already learned how to set a single index using `.set_index()`.
-Here we are going use the same verb but this time set both `caramel`
-***and*** `name` as the indexes for the candy bar dataframe. Remember in
-the last section where we explained that `pandas` doesn’t recognize
-indexes as columns and we needed to `.reset_index()` to makes sure we
-have all the columns in our dataframe? The same applies here. We should
-first reset the index on our `candy` dataframe.
+`candybars2.csv` is a new dataframe that has additional nutritional
+information about each candy bar. You’ll notice that this dataframe has
+the same number and order of candy bars and 4 columns.
 
 ``` python
-candy = candy.reset_index()
-candy.head()
-```
-
-```out
-           name  weight  chocolate  peanuts  caramel  nougat  cookie_wafer_rice  coconut  white_chocolate  multi available_canada_america
-0  Coffee Crisp      50          1        0        0       0                  1        0                0      0                   Canada
-1  Butterfinger     184          1        1        1       0                  0        0                0      0                  America
-2          Skor      39          1        0        1       0                  0        0                0      0                     Both
-3      Smarties      45          1        0        0       0                  0        0                0      1                   Canada
-4          Twix      58          1        0        1       0                  1        0                0      1                     Both
-```
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
-
-Next, we can assign multiple indexes using square brackets within
-`.set_index()` and sort the dataframe according to the index using
-`sort_index()`.  
-(`.sort_index()` is similar to `.sort_values()` however now we can sort
-by the index\!)
-
-``` python
-candy2 = candy.set_index(['caramel', 'name']).sort_index()
+candy2 = pd.read_csv('candy_bars2.csv')
 candy2
 ```
 
 ```out
-                           weight  chocolate  peanuts  nougat  cookie_wafer_rice  coconut  white_chocolate  multi available_canada_america
-caramel name                                                                                                                              
-0       3 Musketeers           54          1        0       1                  0        0                0      0                  America
-        Aero                   42          1        0       0                  0        0                0      0                   Canada
-        Almond Joy             46          1        0       0                  0        1                0      0                  America
-        Coffee Crisp           50          1        0       0                  1        0                0      0                   Canada
-        Cookies and Cream      43          0        0       0                  1        0                1      0                     Both
-...                           ...        ...      ...     ...                ...      ...              ...    ...                      ...
-1       Skor                   39          1        0       0                  0        0                0      0                     Both
-        Snickers               48          1        1       1                  0        0                0      0                     Both
-        Take 5                 43          1        1       0                  1        0                0      0                  America
-        Twix                   58          1        0       0                  1        0                0      1                     Both
-        Wonderbar              58          1        1       0                  0        0                0      0                   Canada
-
-[25 rows x 9 columns]
+           name  calories  fat  sugar
+0  Coffee Crisp       260   13     25
+1  Butterfinger       798   30     72
+2          Skor       209   12     23
+3      Smarties       210    6     33
+4          Twix       250   12     25
 ```
 
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
-
-To get the entire picture, the image below shows the complete dataset.
-It almost looks like there are 2 separate dataframes on top of one
-another. One containing non-caramel chocolate bars and the second
-containing caramel-filled chocolate bars.
-
-<center>
-
-<img src='/module3/candy_index.png' width="600">
-
-</center>
+We want to combine `candy2` with `candy` horizontally.
 
 Notes: Script here
 
@@ -215,28 +142,28 @@ Notes: Script here
 
 ---
 
-Some of you may now be wondering “How do we select and slice now?”.  
-The answer is just like before but now we specify 2 indexes\! To specify
-2 indexes, we wrap them in parentheses. Perhaps I wanted the non-caramel
-filled “3 Musketeers” bar. I would use `0` to represent the first index
-of “non-caramel filled” and `3 Musketeers` for the bar name.
+We can combine these two dataframes using `pd.concat()` but we need to
+clarify on which axis to combine. We use square brackets around the
+dataframes we wish to glue together. In the context of dataframes, it’s
+normal to refer to `axis=1` as the columns of the dataframe and `axis=0`
+as the rows. Since we are performing a horizontal concatenation, we need
+to use the argument `axis=1`.
 
 ``` python
-candy2.loc[(0, '3 Musketeers')]
+candy_nutrition = pd.concat([candy, candy2], axis=1)
+candy_nutrition
 ```
 
 ```out
-weight                           54
-chocolate                         1
-peanuts                           0
-nougat                            1
-cookie_wafer_rice                 0
-coconut                           0
-white_chocolate                   0
-multi                             0
-available_canada_america    America
-Name: (0, 3 Musketeers), dtype: object
+           name  weight  chocolate  peanuts          name  calories  fat  sugar
+0  Coffee Crisp      50          1        0  Coffee Crisp       260   13     25
+1  Butterfinger     184          1        1  Butterfinger       798   30     72
+2          Skor      39          1        0          Skor       209   12     23
+3      Smarties      45          1        0      Smarties       210    6     33
+4          Twix      58          1        0          Twix       250   12     25
 ```
+
+This results in the same 4 rows but now we have 8 columns.
 
 Notes: Script here
 
@@ -252,61 +179,42 @@ Notes: Script here
 
 ---
 
-This works if I want a specific cell value too. Let’s say I wanted the
-non-caramel filled “3 Musketeers” bar’s weight.
+After inspection, we can see that there are 2 `name` columns, which
+isn’t necessary.
 
 ``` python
-candy2.loc[(0,'3 Musketeers'), 'weight']
+candy_nutrition
 ```
 
 ```out
-54
+           name  weight  chocolate  peanuts          name  calories  fat  sugar
+0  Coffee Crisp      50          1        0  Coffee Crisp       260   13     25
+1  Butterfinger     184          1        1  Butterfinger       798   30     72
+2          Skor      39          1        0          Skor       209   12     23
+3      Smarties      45          1        0      Smarties       210    6     33
+4          Twix      58          1        0          Twix       250   12     25
 ```
 
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
-
-## Stacking
-
-If this dataframe’s organization is not ideal for your analysis you may
-want to *transpose* your data (swap columns to rows or rows to columns).
-This can be done with something called **Stacking**. Stacking is exactly
-what it sounds like, we *stack* our values.
+We can remove any duplicate columns by using both `.duplicated()` and
+`.loc[]`:
 
 ``` python
-stacked_df = candy2.stack()
-stacked_df
+candy_nutrition.loc[:,~candy_nutrition.columns.duplicated()]
 ```
 
 ```out
-caramel  name                                  
-0        3 Musketeers  weight                          54
-                       chocolate                        1
-                       peanuts                          0
-                       nougat                           1
-                       cookie_wafer_rice                0
-                                                    ...  
-1        Wonderbar     cookie_wafer_rice                0
-                       coconut                          0
-                       white_chocolate                  0
-                       multi                            0
-                       available_canada_america    Canada
-Length: 225, dtype: object
+           name  weight  chocolate  peanuts  calories  fat  sugar
+0  Coffee Crisp      50          1        0       260   13     25
+1  Butterfinger     184          1        1       798   30     72
+2          Skor      39          1        0       209   12     23
+3      Smarties      45          1        0       210    6     33
+4          Twix      58          1        0       250   12     25
 ```
 
-This dataframe now has all the columns available in a single column and
-our dataframe has elongated from 25 rows to 225 rows.
+This removed one of the `name` columns. The code simply means that we
+are selecting all the rows using and only the non-duplicated rows for
+columns. You may have noticed a new symbol `~`that we have not seen
+before\! Meet the bitwise operator, also known as ***Tilde***.
 
 Notes: Script here
 
@@ -322,110 +230,46 @@ Notes: Script here
 
 ---
 
-## Unstacking
+### Tilde
 
-To unstack our data, we simply used `.unstack()`
+***Tilde*** gives us the ability to return the compliment of the code
+following it. Let’s take a closer look. This code shows us whether a
+column is a duplicated column not:
 
 ``` python
-stacked_df.unstack()
+candy_nutrition.columns.duplicated()
 ```
 
 ```out
-                          weight chocolate peanuts nougat cookie_wafer_rice coconut white_chocolate multi available_canada_america
-caramel name                                                                                                                      
-0       3 Musketeers          54         1       0      1                 0       0               0     0                  America
-        Aero                  42         1       0      0                 0       0               0     0                   Canada
-        Almond Joy            46         1       0      0                 0       1               0     0                  America
-        Coffee Crisp          50         1       0      0                 1       0               0     0                   Canada
-        Cookies and Cream     43         0       0      0                 1       0               1     0                     Both
-...                          ...       ...     ...    ...               ...     ...             ...   ...                      ...
-1       Skor                  39         1       0      0                 0       0               0     0                     Both
-        Snickers              48         1       1      1                 0       0               0     0                     Both
-        Take 5                43         1       1      0                 1       0               0     0                  America
-        Twix                  58         1       0      0                 1       0               0     1                     Both
-        Wonderbar             58         1       1      0                 0       0               0     0                   Canada
-
-[25 rows x 9 columns]
+array([False, False, False, False,  True, False, False, False])
 ```
 
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
-
-Let’s bring back our groupby cereal aggregated dataframe.
+Using `.loc[]` without `~` selects only the columns with a “True” value,
+similarly to what happens when we filter.
 
 ``` python
-max_min_df = cereal.groupby('mfr').agg(['max', 'min'])
-max_min_df
+candy_nutrition.loc[:,candy_nutrition.columns.duplicated()].head()
 ```
 
 ```out
-     type       calories      protein     fat     sodium      fiber      carbo       sugars     potass     vitamins     shelf     weight        cups           rating           
-      max   min      max  min     max min max min    max  min   max  min   max   min    max min    max min      max min   max min    max   min   max   min        max        min
-mfr                                                                                                                                                                             
-A     Hot   Hot      100  100       4   4   1   1      0    0   0.0  0.0  16.0  16.0      3   3     95  95       25  25     2   2   1.00  1.00  1.00  1.00  54.850917  54.850917
-G    Cold  Cold      140  100       6   1   3   1    290  140   4.0  0.0  21.0  10.5     14   1    230  25      100  25     3   1   1.50  1.00  1.50  0.50  51.592193  19.823573
-K    Cold  Cold      160   50       6   1   3   0    320    0  14.0  0.0  22.0   7.0     15   0    330  20      100  25     3   1   1.50  1.00  1.00  0.33  93.704912  29.924285
-N     Hot  Cold      100   70       4   2   1   0    130    0  10.0  1.0  21.0   5.0      6   0    280   1       25   0     3   1   1.00  0.83  1.00  0.33  74.472949  59.363993
-P    Cold  Cold      120   90       3   1   3   0    210   45   6.0  0.0  17.0  11.0     15   3    260  25       25  25     3   1   1.33  1.00  1.33  0.25  53.371007  28.025765
-Q     Hot  Cold      120   50       5   1   5   0    220    0   2.7  0.0  14.0   1.0     12   0    135  15       25   0     3   1   1.00  0.50  1.00  0.50  63.005645  18.042851
-R    Cold  Cold      150   90       4   1   3   0    280   95   4.0  0.0  23.0  14.0     11   2    170   1       25  25     3   1   1.00  1.00  1.13  0.67  49.787445  34.139765
+           name
+0  Coffee Crisp
+1  Butterfinger
+2          Skor
+3      Smarties
+4          Twix
 ```
 
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
-
-The dataframe is currently unstacked but we can stack the `max` and
-`min` values, to elongate the dataframe.
+The ***tilde*** inverses the True/False values so we can select the
+opposite values.
 
 ``` python
-max_min_df_stacked = max_min_df.stack()
-max_min_df_stacked
+~candy_nutrition.columns.duplicated()
 ```
 
 ```out
-         type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
-mfr                                                                                                                  
-A   max   Hot       100        4    1       0    0.0   16.0       3      95        25      2    1.00  1.00  54.850917
-    min   Hot       100        4    1       0    0.0   16.0       3      95        25      2    1.00  1.00  54.850917
-G   max  Cold       140        6    3     290    4.0   21.0      14     230       100      3    1.50  1.50  51.592193
-    min  Cold       100        1    1     140    0.0   10.5       1      25        25      1    1.00  0.50  19.823573
-K   max  Cold       160        6    3     320   14.0   22.0      15     330       100      3    1.50  1.00  93.704912
-    min  Cold        50        1    0       0    0.0    7.0       0      20        25      1    1.00  0.33  29.924285
-N   max   Hot       100        4    1     130   10.0   21.0       6     280        25      3    1.00  1.00  74.472949
-    min  Cold        70        2    0       0    1.0    5.0       0       1         0      1    0.83  0.33  59.363993
-P   max  Cold       120        3    3     210    6.0   17.0      15     260        25      3    1.33  1.33  53.371007
-    min  Cold        90        1    0      45    0.0   11.0       3      25        25      1    1.00  0.25  28.025765
-Q   max   Hot       120        5    5     220    2.7   14.0      12     135        25      3    1.00  1.00  63.005645
-    min  Cold        50        1    0       0    0.0    1.0       0      15         0      1    0.50  0.50  18.042851
-R   max  Cold       150        4    3     280    4.0   23.0      11     170        25      3    1.00  1.13  49.787445
-    min  Cold        90        1    0      95    0.0   14.0       2       1        25      1    1.00  0.67  34.139765
+array([ True,  True,  True,  True, False,  True,  True,  True])
 ```
-
-This now shows the `max` and `min` values for each manufacturer on top
-of each other instead of side by side.  
-Which way do you prefer?
 
 Notes: Script here
 
@@ -440,6 +284,217 @@ Notes: Script here
 </html>
 
 ---
+
+So, when we select the non-duplicated columns by converting their values
+from “False” to “True” using the `~` operator:
+
+``` python
+candy_nutrition_cleaned = candy_nutrition.loc[:,~candy_nutrition.columns.duplicated()]
+candy_nutrition_cleaned
+```
+
+```out
+           name  weight  chocolate  peanuts  calories  fat  sugar
+0  Coffee Crisp      50          1        0       260   13     25
+1  Butterfinger     184          1        1       798   30     72
+2          Skor      39          1        0       209   12     23
+3      Smarties      45          1        0       210    6     33
+4          Twix      58          1        0       250   12     25
+```
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+## Vertical Concatenation
+
+The new dataset `candybars_more.csv` has 3 additional candy bars that we
+wish to add to the original `candy` dataframe. The columns in this
+dataframe have the same order as in the `candy` dataframe.
+
+``` python
+candy_more = pd.read_csv('candybars_more.csv')
+candy_more
+```
+
+```out
+           name  weight  chocolate  peanuts
+0  Kinder Bueno      43          1        0
+1    5th Avenue      56          1        1
+2        Crunch      44          1        0
+```
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+When we want to vertically combine dataframes (add rows), we use the
+argument `axis=0` with `pd.concat()`.
+
+``` python
+large_candybars = pd.concat([candy, candy_more], axis=0)
+large_candybars
+```
+
+```out
+           name  weight  chocolate  peanuts
+0  Coffee Crisp      50          1        0
+1  Butterfinger     184          1        1
+2          Skor      39          1        0
+3      Smarties      45          1        0
+4          Twix      58          1        0
+0  Kinder Bueno      43          1        0
+1    5th Avenue      56          1        1
+2        Crunch      44          1        0
+```
+
+After combining them now have 8 rows and the same 4 columns. But wait\!
+The index column has non-unique values. It may be a good idea to reset
+this so we use our friend `reset_index()` with the argument `drop=True`
+to remove the original index:
+
+``` python
+large_candybars_cleaned = large_candybars.reset_index(drop=True)
+large_candybars_cleaned
+```
+
+```out
+           name  weight  chocolate  peanuts
+0  Coffee Crisp      50          1        0
+1  Butterfinger     184          1        1
+2          Skor      39          1        0
+3      Smarties      45          1        0
+4          Twix      58          1        0
+5  Kinder Bueno      43          1        0
+6    5th Avenue      56          1        1
+7        Crunch      44          1        0
+```
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+## Be careful of order\!
+
+`pd.concat()` is great when our dataframes have the same order for each
+observation. What happens if our dataframes have different orders for
+the candy bars? Let’s use an example with the
+dataframe`snacksize_candybars.csv`. This contains the candy bars from
+`candy` in a shuffled order.
+
+``` python
+snacksize_candybars = pd.read_csv('snacksize_candybars.csv')
+snacksize_candybars
+```
+
+```out
+           name  calories  fat  sugar
+0  Butterfinger       798   30     72
+1          Skor       209   12     23
+2          Twix       250   12     25
+3  Coffee Crisp       260   13     25
+4      Smarties       210    6     33
+```
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+What happens when we concatenate `candy` and `snacksize_candybars` now
+that it has different rows?
+
+``` python
+pd.concat([candy, snacksize_candybars], axis=1)
+```
+
+```out
+           name  weight  chocolate  peanuts          name  calories  fat  sugar
+0  Coffee Crisp      50          1        0  Butterfinger       798   30     72
+1  Butterfinger     184          1        1          Skor       209   12     23
+2          Skor      39          1        0          Twix       250   12     25
+3      Smarties      45          1        0  Coffee Crisp       260   13     25
+4          Twix      58          1        0      Smarties       210    6     33
+```
+
+Oh no. This does not look good. You can see that the 2 `name` columns
+have different values in each row which means this concatenation would
+produce incorrect results\!
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+### Remember…
+
+The biggest takeaway remark with concatenation is that it works well
+when we are trying to glue two dataframes together horizontally or
+vertically where the rows and columns are in the same order.
+
+If your dataframes don’t have the same row values, your data will be
+displayed incorrectly and therefore your results will also have no
+meaning.
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
 
 # Let’s practice what we learned\!
 

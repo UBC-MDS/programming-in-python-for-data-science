@@ -2,7 +2,7 @@
 type: slides
 ---
 
-# Reshaping with Pivot
+# Reshaping with pivot
 
 Notes: Script here
 
@@ -18,7 +18,7 @@ Notes: Script here
 
 ---
 
-In this section we will explore two useful pandas functions for
+In this section, we will explore two useful pandas functions for
 reshaping our data that can be handy to convert it into tidy data.
 
   - <a href="https://pandas.pydata.org/docs/reference/api/pandas.melt.html" target="_blank">`.melt()`</a>
@@ -60,12 +60,12 @@ data may not be tidy.
 ### Long
 
 A long dataframe would consist of the same information as contained in a
-wide dataframe, however in this case, for each datapoint there is a row
+wide dataframe, however in this case, for each data point there is a row
 for each measurement.
 
 <center>
 
-<img src='/module3/long.png' width="20%">
+<img src='/module3/long.png' width="25%">
 
 </center>
 
@@ -265,7 +265,7 @@ Notes: Script here
 
 <center>
 
-<img src='/module3/piv_cereal3.png' width="70%">
+<img src='/module3/piv_cereal3.png' width="80%">
 
 </center>
 
@@ -282,9 +282,9 @@ Here are a few important things to notice:
   - The unique values in the `nutrition` column depict what will be the
     new columns after the transformation. We assigned this in the
     `columns` argument.  
-  - The values in `value` column are transformed into the values in the
-    newly created `protein` and `calories` columns. This was defined in
-    the `values` argument of the code.
+  - The values in the `value` column are transformed into the values in
+    the newly created `protein` and `calories` columns. This was defined
+    in the `values` argument of the code.
   - We lost the `mfr` column\!
 
 Notes: Script here
@@ -304,7 +304,7 @@ Notes: Script here
 ## Resetting the Index
 
 When we pivot our dataframe, we need to specify which rows are being
-combined to create a single elongated row. This is determined with the
+combined to create a single elongated row. This is determined by the
 `index` argument. While pivoting we transformed the `name` column as our
 index. This may not be the most ideal structure for our data and we can
 adjust this and return to the original index of a column of number by
@@ -360,17 +360,16 @@ column `mfr`.
 
 <center>
 
-<img src='/module3/piv_cereal3.png' width="80%">
+<img src='/module3/piv_cereal3.png' width="90%">
 
 </center>
 
 That’s because `.pivot()` discards any columns that are not being
-directly effected by the pivot. Only the column that is specified as the
+directly affected by the pivot. Only the column that is specified as the
 index and the columns that need to be transformed are present in the new
 dataframe.
 
-Pandas recongnizes this is a nuissance so that’s where `pivot_table`
-steps in\!
+That’s where `pivot_table` steps in\!
 
 Notes: Script here
 
@@ -389,11 +388,11 @@ Notes: Script here
 `.pivot_table()` has the same arguments as `.pivot()` but the biggest
 difference is that it allows us to include multiple columns under the
 `index` argument. That just means we can keep any of the columns that
-are not directly effected by the pivot.
+are not directly affected by the pivot.
 
 <center>
 
-<img src='/module3/piv_table_cereal.png' width="80%">
+<img src='/module3/piv_table_cereal.png' width="90%">
 
 </center>
 
@@ -438,7 +437,7 @@ We include any columns that we wish to keep under the `index` argument
 contained in square brackets.
 
 ``` python
-tidy_pivot2 = cereal_long.pivot_table(index=['name','mfr'], columns='nutrition', values='value')
+tidy_pivot2 = cereal_long.pivot_table(index=['name', 'mfr'], columns='nutrition', values='value')
 tidy_pivot2
 ```
 
@@ -457,6 +456,10 @@ Notes: Script here
 ---
 
 ``` python
+tidy_pivot2 = cereal_long.pivot_table(index=['name','mfr'], columns='nutrition', values='value')
+```
+
+``` python
 tidy_pivot2
 ```
 
@@ -471,7 +474,7 @@ Wheaties    G         100        3
 ```
 
 And just like before, if we want to return to our original dataframe
-with a column of numbers for our index, we use `.reset_index()`
+with a column of numbers for our index, we use `.reset_index()`:
 
 ``` python
 tidy_pivot2.reset_index()
@@ -568,7 +571,7 @@ cereal_problem
 4  Apple Jacks   K   protein      2
 ```
 
-Let’s try pivoting using the same arguments as before
+And here is what happens when we use the same arguments as before:
 
 ``` python
 cereal_problem.pivot(index='name', columns='nutrition', values='value')
@@ -595,7 +598,7 @@ Detailed traceback:
 
 We get the error message above. This is a useful error message, letting
 us know that there are “duplicate entries, cannot reshape” which means
-there are non unique rows. We will need us to do something before going
+there are non-unique rows. We will need us to do something before going
 any further.
 
 Notes: Script here
@@ -614,7 +617,7 @@ Notes: Script here
 
 `.pivot()` throws an error message. This is a useful error message,
 letting us know that there are “duplicate entries, cannot reshape” which
-means there are non unique rows. We will need to do something before
+means there are non-unique rows. We will need to do something before
 going any further.
 
 <center>
@@ -637,10 +640,10 @@ Notes: Script here
 
 ---
 
-Let’s try the same thing with `.pivot_table()`
+Let’s see what happens when we use `.pivot_table()`:
 
 ``` python
-cereal_problem.pivot_table(index=['name','mfr'], columns='nutrition', values='value')
+cereal_problem.pivot_table(index=['name', 'mfr'], columns='nutrition', values='value')
 ```
 
 ```out
@@ -685,7 +688,7 @@ a `subset` argument. We set the argument `keep` to `False` to make sure
 all the rows are identified and not just the repeated ones.
 
 ``` python
-cereal_problem.duplicated(subset=['name','nutrition'], keep=False)
+cereal_problem.duplicated(subset=['name', 'nutrition'], keep=False)
 ```
 
 ```out
@@ -701,7 +704,7 @@ Without the `keep` argument, only index labeled `1` will be identified
 as a duplicate.
 
 ``` python
-cereal_problem.duplicated(subset=['name','nutrition'])
+cereal_problem.duplicated(subset=['name', 'nutrition'])
 ```
 
 ```out
@@ -728,7 +731,7 @@ Notes: Script here
 ---
 
 ``` python
-cereal_problem.duplicated(subset=['name','nutrition'], keep=False)
+cereal_problem.duplicated(subset=['name', 'nutrition'], keep=False)
 ```
 
 ```out
@@ -740,12 +743,12 @@ cereal_problem.duplicated(subset=['name','nutrition'], keep=False)
 dtype: bool
 ```
 
-We see that the 1st and 2nd row are duplicates by the `True` values. We
+We see that the 1st and 2nd rows are duplicates by the `True` values. We
 obtain the rows from the original dataframe by filtering on the
 duplicate information:
 
 ``` python
-duplicate_info =cereal_problem.duplicated(subset=['name','nutrition'], keep=False)
+duplicate_info =cereal_problem.duplicated(subset=['name', 'nutrition'], keep=False)
 cereal_problem[duplicate_info]
 ```
 

@@ -1,7 +1,7 @@
 import pandas as pd
 
-lego_sets = pd.read_csv('data/lego-sets.csv', index_col=0)
-lego_inventory = pd.read_csv('data/inventory_sets.csv', index_col=0)
+lego_sets = pd.read_csv('data/lego-sets.csv')
+lego_inventory = pd.read_csv('data/inventory_sets.csv')
 
 # Combine the two dataframes to make 1 large complete dataframe by using an inner join
 # Name the new dataframe lego_stock

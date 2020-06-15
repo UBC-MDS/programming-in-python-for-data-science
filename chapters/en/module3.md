@@ -1,7 +1,7 @@
 ---
 title: 'Module 3: Tidy Data and Joining Dataframes'
 description:
-  'In this module you will learn about tidy data and how to transform your dataset into a tidy format. It will also focus on how to combine and stack multiple dataframes.'
+  'In this Module, you will learn about tidy data and how to transform your dataset into a tidy format. It will also focus on how to combine and stack multiple dataframes.'
 prev: /module2
 next: /module4
 type: chapter
@@ -225,7 +225,7 @@ Tasks:
 <codeblock id="03_08">
 - Are you using the correct arguments such as `index`, `columns`, and `values`?
 - Are you pivoting the correct column named `lego_info` with `values='value'`?
-- Are you resetting  your index again after you pivot?
+- Are you resetting your index again after you pivot?
 
 </codeblock>
 
@@ -354,7 +354,8 @@ Start by going through the tidy data criteria.  Does this data meet all three?
 </exercise>
 
 
-<exercise id="12" title="Hierarchical Indexing" type="slides">
+
+<exercise id="12" title="Concat" type="slides">
 
 <slides source="module3/module3_12">
 
@@ -362,206 +363,51 @@ Start by going through the tidy data criteria.  Does this data meet all three?
 
 </exercise>
 
-
-<exercise id="13" title="Hierarchical Indexing Questions">
+<exercise id="13" title="Concat questions">
 
 **Question 1**          
-Which of the following is used to sort values by a dataframe's index? 
+If the output of 
 
-
-<choice id="1" >
-<opt text="<code>.sort_index()</code>"  correct="true" >
-
-Great work! 
-
-</opt>
-
-<opt text="<code>.sort_values()</code>">
-
-This is used to sort columns.  Index values are not recognized as a typical column. 
-
-</opt>
-
-<opt text="<code>.index_sort()</code>">
-
-You are on the right track but I think you may have it reversed!
-
-</opt>
-
-<opt text="<code>.sort()</code>">
-
-It may be a good idea to look over the last section again. 
-
-</opt>
-
-</choice> 
-
-
-**Question 2**      
-Is the following `fruit_salad` dataframe stacked or unstacked?
-
-<center> <img src='/module3/hi_fruit.png'  alt="404 image" /></center>
-
-
-<choice id="2" >
-<opt text='Stacked' correct="true">
-
-Nice!  The columns are stacked on top of each other.  
-
-</opt>
-
-<opt text= 'Unstacked'>
-
-Do you notice anything interesting about the third column? 
-
-</opt>
-
-</choice> 
-
-</exercise>
+```python 
+df['location'] == 'Canada'
+```
+ is 
  
-<exercise id="14" title="Hierarchical Indexing slicing">
-
-It’s time for dessert!  Bring in the dataset `fruit_salad`. 
-
-```out
-                           location   seed   shape    sweetness   water-content  weight
-        name      colour                    
-       apple        red     canada    True   round       True          84         100
-      banana     yellow     mexico   False    long       True          75         120
-  cantaloupe     orange      spain    True   round       True          90        1360
-dragon-fruit    magenta      china    True   round      False          96         600
-  elderberry     purple    austria   False   round       True          80           5
-         fig     purple     turkey   False    oval      False          78          40
-       guava      green     mexico    True    oval       True          83         450
- huckleberry       blue     canada    True   round       True          73           5
-        kiwi      brown      china    True   round       True          80          76
-       lemon     yellow     mexico   False    oval      False          83          65
+ ```out
+ [ True, False, False, True]
+ ```
+ 
+ What would be the output of 
+ 
+ ```python
+  ~(df['location'] == 'Canada')
 ```
 
-It appears that there are 2 indexes this time around `name` ***and*** `colour`!  How would you select the `guava` row now? 
-
 <choice id="1" >
 
-<opt text= "<code>fruit_salad.loc[['guava, 'green']]</code>">
+<opt text="<code>[True, False, False, True]</code>">
 
-hmmm, something seems a little off with your parentheses.  Are you sure they are all the right type? 
-
-</opt>
-
-<opt text= "<code>fruit_salad.loc['guava]</code>">
-
-Good job!  Just because the data is transformed doesn't mean that it's transformed for the better! 
+You may want to review the Tilde section.
 
 </opt>
 
-<opt text= "<code>fruit_salad.loc[('guava, 'green')]</code>"  correct="true">
+<opt text="<code>[False, False, False, False]</code>">
 
-Nice work!  You definitely paid attention!
-
-</opt>
-
-<opt text= "<code>fruit_salad[('guava, 'green')]</code>">
-
-I think you are missing a verb in your sentence!  
-
-</opt>
-
-</choice> 
-
-</exercise>
-
-
-<exercise id="15" title="Setting Multiple Indexes">
-   
-
-**Instructions:**    
-Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
-
-**When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
-
-
-Let's start simple.  Set multiple indexes for one of our Lego dataframes. 
-
-
-Tasks:
-- Create hierarchical indexes from the columns `set_num` and `name`.
-- Name the new dataframe `lego_build`.
-
-
-<codeblock id="03_15">
-- Are you using the verb `.set_index()`?
-- Are you wrapping the column days with square brackets?
-
-</codeblock>
-
-</exercise>
-
-<exercise id="16" title="Applying Stacking">
-      
-
-      
-**Instructions:**    
-Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
-
-**When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
-
-Let's find the minimum and the maximum number of pieces per set there are in each Lego theme. 
-
-Tasks:
-- From the `lego` dataframe, make groups from the `theme_name` columns.
-- Find the max and min values for the `num_parts` column only using `.agg()`.
-- Stack the max and min values using `.stack()`.
-- Name the new dataframe `stacked_lego`.
-
-
-<codeblock id="03_16">
-- Are you using the verb `.groupby()` with the correct column named `theme_name`?
-- Are you using `.arg()` where you can designate different statistics to different columns to obtain only the `num_parts` column?
-- Are you remembering to `.stack()`?
-
-</codeblock>
-
-</exercise>
-
-<exercise id="17" title="Concat" type="slides">
-
-<slides source="module3/module3_16">
-
-</slides>
-
-</exercise>
-
-<exercise id="18" title="Concat questions">
-
-**Question 1**          
-What is the default argument for `join` when using `pd.concat()`?
-
-<choice id="1" >
-
-<opt text="<code>inside</code>">
-
-You may want to think about the vocabulary you are using. 
-
-</opt>
-
-<opt text="<code>outside</code>">
-
-You may want to think about the vocabulary you are using. 
+You may want to review the Tilde section.
 
 
 </opt>
 
-<opt text="<code>inner</code>" >
+<opt text="<code>[True, True, True, True]</code>" >
 
- It may be a good idea to look over the last section again.
+You may want to review the Tilde section.
 
 </opt>
 
-<opt text="<code>outer</code>" correct="true">
+<opt text="<code>[False, True, True, False]</code>" correct="true">
 
  
-Great work!  `pd.concat()` by default uses an `outer` join.
+Great work! 
 
 </opt>
 
@@ -569,31 +415,24 @@ Great work!  `pd.concat()` by default uses an `outer` join.
 
 
 **Question 2**     
-If we concatenated Dataframe A with Dataframe B using an **inner** join, what happens to the row indices only available in  Dataframe A?
+If we wanted to concatenate Dataframe A with Dataframe B horizontally, what do we need to make sure **before** proceeding
 
 <choice id="2" >
-<opt text='They would appear in the new dataframe as <code>NaN</code> values'>
+<opt text="There are no <code>NaN</code> values">
 
-This would happen with an **outer** join.  
+We can still concatenate with missing values.
 
 </opt>
 
-<opt text= 'They would not appear in the new dataframe but all the columns from Dataframe B would.'  correct="true">
+<opt text= "The order of the rows in each dataframe are the same"  correct="true">
 
 Good job!
 
 </opt>
 
-<opt text= 'They would not appear in the new dataframe and all the columns from Dataframe B would not be present in the final dataframe'  correct="true">
+<opt text= "The columns are not duplicated">
 
-With any join type, all columns would be in the new dataframe.
-
-</opt>
-
-
-<opt text= 'An error message would occur and no new dataframe would be produced'>
-
-Why wouldn't the code work? 
+We can remove duplicated columns after concatenation. 
 
 </opt>
 
@@ -634,7 +473,7 @@ I think you got mixed up.  Try reading over the notes again.
 </exercise>
 
 
-<exercise id="19" title="Concatenating Vertically">
+<exercise id="14" title="Concatenating Vertically">
 
 
 **Instructions:** 
@@ -648,13 +487,13 @@ Sometimes we accumulate additional data that we need to combine with our existin
 
 Tasks:
 
-- Combine the two dataframes `lego_top` and `lego_bottom` vertically to make one large complete dataframe.
+- Combine the two dataframes <a href="https://github.com/UBC-MDS/MCL-DSCI-011-programming-in-python/blob/master/data/lego_top.csv" target="_blank">`lego_top`</a> and  <a href="https://github.com/UBC-MDS/MCL-DSCI-011-programming-in-python/blob/master/data/lego_bottom.csv" target="_blank">`lego_bottom`</a>  vertically to make one large complete dataframe.
 - Name the new dataframe `full_set`.
 - Save the new dimension of `full_set` in an object named `full_set_shape`.
 - Display the new dataframe.
 
 
-<codeblock id="03_19">
+<codeblock id="03_14">
 - Are you using `pd.concat()`?
 - Are you concatenating in the correct order with `lego_top` first and `lego_bottom` second?
 - Are you putting your dataframes within square brackets? 
@@ -665,7 +504,7 @@ Tasks:
 
 </exercise>
 
-<exercise id="20" title="Concatenating Horizontally">
+<exercise id="15" title="Concatenating Horizontally">
 
 **Instructions:**    
 Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
@@ -678,20 +517,21 @@ Our goal is to obtain a dataframe with the `lego_set` names and the total amount
 
 Tasks:
 
-- Combine the two dataframes horizontally to make 1 large complete dataframe using an outer join.
-- Name the new dataframe `lego_full`.
+- Combine the two dataframes horizontally to make 1 large complete dataframe and name the new dataframe `lego_full`.
+- Drop any duplicated columns using `.loc[]` and `.duplicate()`and save this new dataframe as `washed_lego`.
 - Make a new column named `total_pieces` by adding up columns `matte` and `transparent`.
 - Sort the dataframe by `total_pieces` in descending order.
 - Save this in an object named `lego_details`.
 - Display the new dataframe.
 
 
-<codeblock id="03_20">
+<codeblock id="03_15">
 
 - Are you using `pd.concat()`?
 - Are you concatenating the dataframes `lego_base` with `lego_opacity`?
 - Are you putting your dataframes within square brackets? 
-- Are you using `axis=1` and `join='outer'`
+- Are you removing any duplicated columns?
+- Are you using `axis=1`?
 - Are you using `.assign()` to make a new column named `total_pieces`?
 - Are you using using `.sort_values()` with the argument `ascending=False`
 
@@ -699,16 +539,16 @@ Tasks:
 
 </exercise>
 
-<exercise id="21" title="Merge" type="slides">
+<exercise id="16" title="Merge" type="slides">
 
-<slides source="module3/module3_20">
+<slides source="module3/module3_16">
 
 </slides>
 
 </exercise>
 
 
-<exercise id="22" title="Merge Questions">
+<exercise id="17" title="Merge Questions">
 
 **Question 1**          
 Which of the following are **not** ways in which you can join dataframes using `.merge()`?
@@ -787,7 +627,7 @@ It may be a good idea to look over the last section again.
 
 </opt>
 
-<opt text= 'They all will produce a new dataframe with columns from both of the initial dataframes' correct="true">
+<opt text= 'They all will produce a dataframe with columns from both of the initial dataframes' correct="true">
 
 Good job!  Just because the data is transformed doesn't mean that it's transformed for the better! 
 
@@ -812,7 +652,7 @@ It's still possible to have dataframes that have completely different dimensions
 </exercise>
 
 
-<exercise id="23" title="Merging I">
+<exercise id="18" title="Merging I">
 
       
 **Instructions:**    
@@ -820,7 +660,7 @@ Running a coding exercise for the first time could take a bit of time for everyt
 
 **When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
 
-In this exercise you are going to join two dataframes `lego_inventory_parts.csv` and `lego-colors.csv` and answer a few multiple-choice questions.  The multiple-choice questions are being asked with the intention of using the code cell to write your own code in any way that helps to answer the question. 
+In this exercise, you are going to join two dataframes `lego_inventory_parts.csv` and `lego-colors.csv` and answer a few multiple-choice questions.  The multiple-choice questions are being asked with the intention of using the code cell to write your own code in any way that helps to answer the question. 
 
 
 Tasks:
@@ -830,14 +670,15 @@ Tasks:
 - Name the new dataframe `lego_tower`.
 
 
-<codeblock id="03_23">
+<codeblock id="03_18">
 - Are you naming your new dataframe `lego_tower`? 
-- Are you using the arguments  `left_on='color_id'` `right_index=True`  `how='outer'`, `indicator=True`?
+- Are you using the arguments  `left_on='color_id'`, `right_on=id`,  `how='outer'` and `indicator=True`?
 
 </codeblock>
 
 **Question 1**  
-Which of the following colours don't have any pieces in inventory? 
+Which of the following colours don't have any pieces in inventory?       
+*Hint: You can filter using the `_merge` column.*
 
 <choice id="1" >
 <opt text='Chrome Blue'>
@@ -867,7 +708,8 @@ You may want to try filtering using the `_merge` column
 </choice> 
 
 **Question 2**  
-Which colour has the largest number of pieces in the inventory? 
+Which colour has the largest number of pieces in the inventory?            
+*Hint: You can use `.group_by()`  and `.sum()` to find the total amount of pieces for each set. Also`.sort_values()` may come in handy.*
 
 <choice id="2" >
 <opt text='White'>
@@ -896,8 +738,9 @@ You can use `lego_tower.groupby('name').sum().sort_values('quantity', ascending=
 
 </choice> 
 
-**Question 3**  
-How many Lego pieces from the `lego_inventory` dataframe do not have any matching rows in the `lego_colors` dataframe? 
+**Question 3**   
+How many Lego pieces from the `lego_inventory` dataframe do not have any matching rows in the `lego_colors` dataframe?     
+*Hint: Filtering on the `_merge` column and using `.shape` can be useful here.* 
 
 <choice id="3" >
 <opt text='0' correct="true">
@@ -928,7 +771,7 @@ Maybe explore the `_merge` column by filtering or grouping and see if there are 
 
 </exercise>
 
-<exercise id="24" title="Merging II">
+<exercise id="19" title="Merging II">
 
       
 **Instructions:**    
@@ -945,7 +788,7 @@ Tasks:
 
 This question is in two parts and we are going to walk you through how to tackle it. 
 
-<codeblock id="03_24">
+<codeblock id="03_19a">
 - Are you naming your new dataframe `lego_stock`? 
 - Are you using the arguments  `left_on='set_num'`, `right_index=True` and `how='inner'`?
 - Are you grouping my using `groupby('set_num`)? 
@@ -959,11 +802,11 @@ We are going to have to sum up the quantity of each set.  Luckily we can do this
 Tasks:
 - Use `.groupby()` and `.agg()` to sum up the quantity of each set and save this as `store_inventory`. 
 - Inner join `store_inventory` with `lego_sets` and use chaining to sort the dataframe in descending order based on in-stock quantity
-- Save this new dataframe as store_inventory_details 
+- Save this new dataframe as  `store_inventory_details`.
 - Display the new dataframe.
 
 
-<codeblock id="03_24b">
+<codeblock id="03_19b">
 
 - Are you naming your new dataframe `store_inventory`? 
 - Are you aggregating using `.agg({'quantity':'sum'})`?
@@ -1037,7 +880,7 @@ Did you look at the wrong dataframe?
 </exercise>
 
 
-<exercise id="25" title="What Did We Just Learn?" type="slides, video">
-<slides source="module3/module3_25" start="0:165" end="3:01">>
+<exercise id="20" title="What Did We Just Learn?" type="slides, video">
+<slides source="module3/module3_20" start="0:165" end="3:01">>
 </slides>
 </exercise>

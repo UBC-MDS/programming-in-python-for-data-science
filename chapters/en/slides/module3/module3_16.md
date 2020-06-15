@@ -2,7 +2,7 @@
 type: slides
 ---
 
-# Concatenation
+# Merge
 
 Notes: Script here
 
@@ -18,44 +18,19 @@ Notes: Script here
 
 ---
 
-Up until this moment, we have been working with a single dataframe.
-Single dataframes can be great to see all your data in one convenient
-place, however, this is less convenient when it comes to storage space.
-Many companies split their data into multiple tables and join them
-together depending on what columns they need for their analysis.  
-There are 2 different verbs we use for joining dataframes together:
+We discussed concatenation in the last section and it how it glues
+dataframe together, but what if we needed to combine dataframe of
+different sizes where rows need to be matched up?
 
-  - <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.concat.html" target="_blank">`pd.concat()`</a>:
-    A way of joining dataframes across rows or columns.
-  - <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.merge.html" target="_blank">`.merge()`</a>:
-    This approach can only combine data on common columns or indices but
-    have different types of joining methods. We will look into this in
-    the next section.
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.merge.html" target="_blank">`.merge()`</a>
+if a verb that give more precision and options when we join dataframes.
 
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
-
-## Concatenation
-
-Concatenation works extremely well when you have similar dataframes
-where both share identical column or row index labels.  
-`.concat()` can stich the 2 dataframes together either horizontally or
-vertically.
+We compared `.merge()` to stitching fabric together, where we line up
+the patterns of each piece of cloth.
 
 <center>
 
-<img src='/module3/concat.gif' width="600">
+<img src='/module3/mergex.gif' width="600">
 
 </center>
 
@@ -73,78 +48,176 @@ Notes: Script here
 
 ---
 
-For the next couple of examples, we are going to look at concatenating
-with our a subset of our original candy bars dataframe.
+## Introducing the Data
+
+With `.merge()`, we need to identify a column in each dataframe that
+acts as a connection between them. It’s a column where the values in
+Dataframe A are alike to those in Dataframe B.
+
+Let’s use a subset of the candy bars dataset to explain this concept
+further.
 
 ``` python
-candy = pd.read_csv('candybars.csv', index_col=0).loc[:, 'weight':'nougat']
+candy = pd.read_csv('candybars.csv', nrows=5, usecols=['name', 'weight', 'chocolate', 'peanuts'])
+candy.head()
+```
+
+```out
+           name  weight  chocolate  peanuts
+0  Coffee Crisp      50          1        0
+1  Butterfinger     184          1        1
+2          Skor      39          1        0
+3      Smarties      45          1        0
+4          Twix      58          1        0
+```
+
+`candy` has a column labeled `name` which has unique candy bar names.
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+Let’s load in the next dataset.
+
+``` python
+candy2m = pd.read_csv('candybars_merge.csv')
+candy2m
+```
+
+```out
+   id_number  calories  fat  sugar chocolate_bar
+0      45623       798   30   72.0  Butterfinger
+1      34534       262    8   40.0  3 Musketeers
+2      32686       220   12   25.0          Aero
+3      12482       260   13   25.0  Coffee Crisp
+4      85254       244   16   41.2  Kinder Bueno
+```
+
+This dataframe has new columns and the rows not in the `candy` dataframe
+(`3 Musketeers`, `Aero`, and `Kinder Bueno`). We can see that the column
+in this dataframe has a column named `chocolate_bar` that shares the
+same variable as the `name` column in the `candy` dataframe.
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+When we combine dataframes using `.merge()`, it’s quite different than
+`pd.concat()`. First, we decide which dataframe will be our left
+dataframe by implementing the merge verb on the selected dataframe. We
+are going to choose `candy` as our left dataframe.
+
+``` python
+candy.merge(...)
+```
+
+Next, we specify the right dataframe as the first argument in
+`.merge()`. In our case, that’s `candy2m`.
+
+``` python
+candy.merge(candy2m, ...)
+```
+
+The last step, which is the bulk of the work, is specifying the
+arguments. We need to make sure we indicate which columns are the
+identifying key columns for each dataframe and what type of joining we
+want in our resulting dataframe.
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+## Key Columns
+
+`.merge()` needs arguments that identify a common **key** column. This
+is a column present in both dataframes which contain common values. Key
+columns can be an index, a regular column, or a combination of both.
+
+For example:  
+Dataframe A can have a column labeled `cereal` and Dataframe B could
+have a column labeled `product_name` that both share cereal names.
+
+To choose our key columns in each dataframe, we use the following
+arguments:
+
+  - `left_on` - The left dataframe identifying key column label.
+  - `right_on` - The right dataframe identifying key column label.
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+Our `candy` dataframe which we said was our left dataframe, would use
+the argument `left_on='name'`
+
+``` python
 candy
 ```
 
 ```out
-                   weight  chocolate  peanuts  caramel  nougat
-name                                                          
-Coffee Crisp           50          1        0        0       0
-Butterfinger          184          1        1        1       0
-Skor                   39          1        0        1       0
-Smarties               45          1        0        0       0
-Twix                   58          1        0        1       0
-...                   ...        ...      ...      ...     ...
-Take 5                 43          1        1        1       0
-Whatchamacallits       45          1        1        0       0
-Almond Joy             46          1        0        0       0
-Oh Henry               51          1        1        1       0
-Cookies and Cream      43          0        0        0       0
-
-[25 rows x 5 columns]
+           name  weight  chocolate  peanuts
+0  Coffee Crisp      50          1        0
+1  Butterfinger     184          1        1
+2          Skor      39          1        0
+3      Smarties      45          1        0
+4          Twix      58          1        0
 ```
 
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
-
-## Horizontal Concatenation
-
-`candybars2.csv` is a new dataframe that has additional nutritional
-information about each candy bar.
+our `candy2m` dataframe is our right dataframe and would use the
+argument `right_on='chocolate_bar'`
 
 ``` python
-candy2 = pd.read_csv('candybars2.csv', index_col=0)
-candy2
+candy2m
 ```
 
 ```out
-                   calories   fat  sugar
-name                                    
-Coffee Crisp            260  13.0   25.0
-Butterfinger            798  30.0   72.0
-Skor                    209  12.0   23.0
-Smarties                210   6.0   33.0
-Twix                    250  12.0   25.0
-...                     ...   ...    ...
-Take 5                  200  11.0   18.0
-Whatchamacallits        237  11.0   13.0
-Almond Joy              234  13.0   24.0
-Oh Henry                263  13.0   26.0
-Cookies and Cream       220  12.0   13.0
-
-[25 rows x 3 columns]
+   id_number  calories  fat  sugar chocolate_bar
+0      45623       798   30   72.0  Butterfinger
+1      34534       262    8   40.0  3 Musketeers
+2      32686       220   12   25.0          Aero
+3      12482       260   13   25.0  Coffee Crisp
+4      85254       244   16   41.2  Kinder Bueno
 ```
-
-We want to combine `candy2` with `candy` horizontally.
-
-Both `candy1` and `candy2` have 25 rows and it looks like the index name
-in the `candy2` dataframe is identical as `candy`.
 
 Notes: Script here
 
@@ -160,34 +233,27 @@ Notes: Script here
 
 ---
 
-We can combine these two dataframes using `pd.concat()` but we need to
-clarify on which axis to combine. We use square brackets around the
-dataframes we wish to combine and since we are combining horizontally we
-need to use the argument `axis=1`.
+We combine that with the earlier code
 
 ``` python
-pd.concat([candy, candy2], axis=1)
+candy.merge(candy2m, left_on='name', right_on='chocolate_bar')
 ```
 
 ```out
-                   weight  chocolate  peanuts  caramel  nougat  calories   fat  sugar
-name                                                                                 
-Coffee Crisp           50          1        0        0       0       260  13.0   25.0
-Butterfinger          184          1        1        1       0       798  30.0   72.0
-Skor                   39          1        0        1       0       209  12.0   23.0
-Smarties               45          1        0        0       0       210   6.0   33.0
-Twix                   58          1        0        1       0       250  12.0   25.0
-...                   ...        ...      ...      ...     ...       ...   ...    ...
-Take 5                 43          1        1        1       0       200  11.0   18.0
-Whatchamacallits       45          1        1        0       0       237  11.0   13.0
-Almond Joy             46          1        0        0       0       234  13.0   24.0
-Oh Henry               51          1        1        1       0       263  13.0   26.0
-Cookies and Cream      43          0        0        0       0       220  12.0   13.0
-
-[25 rows x 8 columns]
+           name  weight  chocolate  peanuts  id_number  calories  fat  sugar chocolate_bar
+0  Coffee Crisp      50          1        0      12482       260   13   25.0  Coffee Crisp
+1  Butterfinger     184          1        1      45623       798   30   72.0  Butterfinger
 ```
 
-This results in the same 25 rows but now we have 8 columns.
+Great\! we’ve combined the 2 dataframes horizontally (in the future we
+will likely want to drop the columns named `chocolate_bar`).
+
+What happened? we now only have 2 rows\! We seemed to have lost all the
+rows that are not in both columns.
+
+This is because `.merge()` uses a default joining method called `inner`
+join, which returns only the rows present in both dataframes. We can
+change that with the argument `how`.
 
 Notes: Script here
 
@@ -203,23 +269,30 @@ Notes: Script here
 
 ---
 
-## Vertical Concatenation
+## how
 
-The new dataset `candybars_more.csv` has 3 additional candy bars that we
-wish to add to the original `candy` dataframe.
+This argument specifies ***How*** our dataframes are joined.
+
+We discussed the default argument value for this verb called `inner`
+that will only the rows with identifying column values that are present
+in both dataframes:
 
 ``` python
-candy_more = pd.read_csv('candybars_more.csv', index_col=0)
-candy_more
+candy.merge(candy2m, left_on='name', right_on='chocolate_bar', how='inner')
 ```
 
 ```out
-              weight  chocolate  peanuts  caramel  nougat
-name                                                     
-Kinder Bueno      43          1        0        0       0
-5th Avenue        56          1        1        0       0
-Crunch            44          1        0        0       0
+           name  weight  chocolate  peanuts  id_number  calories  fat  sugar chocolate_bar
+0  Coffee Crisp      50          1        0      12482       260   13   25.0  Coffee Crisp
+1  Butterfinger     184          1        1      45623       798   30   72.0  Butterfinger
 ```
+
+But there are 4 types of joins we could choose from:
+
+  - `inner`
+  - `outer`
+  - `left`
+  - `right`
 
 Notes: Script here
 
@@ -235,33 +308,36 @@ Notes: Script here
 
 ---
 
-When we want to vertically combine dataframes, we use the argument
-`axis=0` with `pd.concat()`.
+  - `outer`: Will return not only the rows with identifying column
+    values that are present in both tables but all the rows in both
+    tables. If there are any rows where any of the column values are
+    missing, it will be filled with a `NaN` value.
+
+<!-- end list -->
 
 ``` python
-pd.concat([candy, candy_more], axis=0)
+candy.merge(candy2m, left_on='name', right_on='chocolate_bar', how='outer')
 ```
 
 ```out
-                   weight  chocolate  peanuts  caramel  nougat
-name                                                          
-Coffee Crisp           50          1        0        0       0
-Butterfinger          184          1        1        1       0
-Skor                   39          1        0        1       0
-Smarties               45          1        0        0       0
-Twix                   58          1        0        1       0
-...                   ...        ...      ...      ...     ...
-Oh Henry               51          1        1        1       0
-Cookies and Cream      43          0        0        0       0
-Kinder Bueno           43          1        0        0       0
-5th Avenue             56          1        1        0       0
-Crunch                 44          1        0        0       0
-
-[28 rows x 5 columns]
+           name  weight  chocolate  peanuts  id_number  calories   fat  sugar chocolate_bar
+0  Coffee Crisp    50.0        1.0      0.0    12482.0     260.0  13.0   25.0  Coffee Crisp
+1  Butterfinger   184.0        1.0      1.0    45623.0     798.0  30.0   72.0  Butterfinger
+2          Skor    39.0        1.0      0.0        NaN       NaN   NaN    NaN           NaN
+3      Smarties    45.0        1.0      0.0        NaN       NaN   NaN    NaN           NaN
+4          Twix    58.0        1.0      0.0        NaN       NaN   NaN    NaN           NaN
+5           NaN     NaN        NaN      NaN    34534.0     262.0   8.0   40.0  3 Musketeers
+6           NaN     NaN        NaN      NaN    32686.0     220.0  12.0   25.0          Aero
+7           NaN     NaN        NaN      NaN    85254.0     244.0  16.0   41.2  Kinder Bueno
 ```
 
-After combining them now have 28 rows and the same 5 columns that all
-align correctly.
+Here we see that `Coffee Crisp` and `Butterfinger` have complete rows.
+Rows from the left dataframe that were not present in the right
+dataframe are `Skor`, `Smarties` and `Twix` therefore have `NaN` values
+for columns from the right table. The opposite occurs for the values `3
+Musketeers`, `Aero` and `Kinder Bueno` which are present in the right
+dataframe and not the left one. This results in `NaN` for values in the
+left dataframe columns.
 
 Notes: Script here
 
@@ -277,36 +353,28 @@ Notes: Script here
 
 ---
 
-## Concatenating incomplete dataframes.
+  - `left`: This will only output the rows that are in the left
+    dataframe and if they are missing from the right dataframe, `NaN`
+    values will occur. No candy bars that are only present in the right
+    dataframe will be present.
 
-`pd.concat()` is not limited to complete dataframes. We can still add
-dataframes together that do not have all the same rows or columns.  
-Let’s look at `snacksize_candybars.csv`. This contains only a few of the
-candy bars from `candy` and three new ones named `Kinder Bueno`,
-`Crunch` and `5th Avenue`
+<!-- end list -->
 
 ``` python
-snacksize_candybars = pd.read_csv('snacksize_candybars.csv', index_col=0)
-snacksize_candybars
+candy.merge(candy2m, left_on='name', right_on='chocolate_bar', how='left')
 ```
 
 ```out
-                   calories   fat  sugar
-name                                    
-Coffee Crisp            260  13.0   25.0
-Butterfinger            798  30.0   72.0
-Kinder Bueno            244  16.0   41.2
-M & M                   230   9.0   31.0
-Glosettes               210   8.0   31.0
-KitKat                  239  12.0   22.0
-Crunch                  220  11.0   24.0
-Mars                    228   8.5   30.5
-Snickers                229  11.0   22.0
-Crunchie                210   8.0   22.0
-5th Avenue              270  13.0   26.0
-Whatchamacallits        237  11.0   13.0
-Cookies and Cream       220  12.0   13.0
+           name  weight  chocolate  peanuts  id_number  calories   fat  sugar chocolate_bar
+0  Coffee Crisp      50          1        0    12482.0     260.0  13.0   25.0  Coffee Crisp
+1  Butterfinger     184          1        1    45623.0     798.0  30.0   72.0  Butterfinger
+2          Skor      39          1        0        NaN       NaN   NaN    NaN           NaN
+3      Smarties      45          1        0        NaN       NaN   NaN    NaN           NaN
+4          Twix      58          1        0        NaN       NaN   NaN    NaN           NaN
 ```
+
+Here we can see the values `3 Musketeers`, `Aero` and `Kinder Bueno` are
+not present as they are only present in the right dataframe.
 
 Notes: Script here
 
@@ -322,33 +390,31 @@ Notes: Script here
 
 ---
 
-What happens when we concatenate `candy` and `snacksize_candybars` now
-that it has different rows?
+  - `right`: Will only output the rows that are in the right dataframe
+    and if they are missing from the left dataframe, `NaN` values will
+    occur. No candy bars that are only present in the left dataframe
+    will be present.
+
+<!-- end list -->
 
 ``` python
-pd.concat([candy, snacksize_candybars], axis=1)
+candy.merge(candy2m, left_on='name', right_on='chocolate_bar', how='right')
 ```
 
 ```out
-                   weight  chocolate  peanuts  caramel  nougat  calories   fat  sugar
-Coffee Crisp         50.0        1.0      0.0      0.0     0.0     260.0  13.0   25.0
-Butterfinger        184.0        1.0      1.0      1.0     0.0     798.0  30.0   72.0
-Skor                 39.0        1.0      0.0      1.0     0.0       NaN   NaN    NaN
-Smarties             45.0        1.0      0.0      0.0     0.0       NaN   NaN    NaN
-Twix                 58.0        1.0      0.0      1.0     0.0       NaN   NaN    NaN
-...                   ...        ...      ...      ...     ...       ...   ...    ...
-Oh Henry             51.0        1.0      1.0      1.0     0.0       NaN   NaN    NaN
-Cookies and Cream    43.0        0.0      0.0      0.0     0.0     220.0  12.0   13.0
-Kinder Bueno          NaN        NaN      NaN      NaN     NaN     244.0  16.0   41.2
-Crunch                NaN        NaN      NaN      NaN     NaN     220.0  11.0   24.0
-5th Avenue            NaN        NaN      NaN      NaN     NaN     270.0  13.0   26.0
-
-[28 rows x 8 columns]
+           name  weight  chocolate  peanuts  id_number  calories  fat  sugar chocolate_bar
+0  Coffee Crisp    50.0        1.0      0.0      12482       260   13   25.0  Coffee Crisp
+1  Butterfinger   184.0        1.0      1.0      45623       798   30   72.0  Butterfinger
+2           NaN     NaN        NaN      NaN      34534       262    8   40.0  3 Musketeers
+3           NaN     NaN        NaN      NaN      32686       220   12   25.0          Aero
+4           NaN     NaN        NaN      NaN      85254       244   16   41.2  Kinder Bueno
 ```
 
-We can see any rows that are not present in both dataframes have column
-values that are filled with `NaN` . That’s because we are using a
-default argument `join='outer'`.
+We can see that the rows `Skor`, `Smarties` and `Twix` that were only
+present in the left dataframe, have been dropped.
+
+One thing that all 4 joins have in common, is they all will have the
+same columns labels that came from both dataframes.
 
 Notes: Script here
 
@@ -364,62 +430,33 @@ Notes: Script here
 
 ---
 
-## The Join Argument
+## indicator
 
-Ok so what does `join` do then? `pd.concat()` take a specific argument
-called `join` that can take the values `inner` or `outer`.
-
-  - `inner`: Will return only the rows with index labels that are
-    present in both the tables.
-  - `outer`: Will return not only the rows with index labels that are
-    present in both tables but all the rows in both tables. If there are
-    any column values that the row is missing, it will be filled with a
-    `NaN` value.
-
-Notice when I do the same join with `candy` and `slice_of_candy2` but
-this time specifying `join='inner`.
+If we want to do an outer join and show all the possible rows from both
+dataframes there is a useful argument called `indicator`. `indicator`
+makes a new column name `_merge` and informs us from which dataframe the
+row originated from.
 
 ``` python
-pd.concat([candy, snacksize_candybars], axis=1, join='inner')
+candy.merge(candy2m, left_on='name', right_on='chocolate_bar', how='outer', indicator=True)
 ```
 
 ```out
-                   weight  chocolate  peanuts  caramel  nougat  calories   fat  sugar
-name                                                                                 
-Coffee Crisp           50          1        0        0       0       260  13.0   25.0
-Butterfinger          184          1        1        1       0       798  30.0   72.0
-M & M                  48          1        1        0       0       230   9.0   31.0
-Glosettes              50          1        0        0       0       210   8.0   31.0
-KitKat                 45          1        0        0       0       239  12.0   22.0
-Mars                   51          1        0        1       1       228   8.5   30.5
-Snickers               48          1        1        1       1       229  11.0   22.0
-Crunchie               26          1        0        0       0       210   8.0   22.0
-Whatchamacallits       45          1        1        0       0       237  11.0   13.0
-Cookies and Cream      43          0        0        0       0       220  12.0   13.0
+           name  weight  chocolate  peanuts  id_number  calories   fat  sugar chocolate_bar      _merge
+0  Coffee Crisp    50.0        1.0      0.0    12482.0     260.0  13.0   25.0  Coffee Crisp        both
+1  Butterfinger   184.0        1.0      1.0    45623.0     798.0  30.0   72.0  Butterfinger        both
+2          Skor    39.0        1.0      0.0        NaN       NaN   NaN    NaN           NaN   left_only
+3      Smarties    45.0        1.0      0.0        NaN       NaN   NaN    NaN           NaN   left_only
+4          Twix    58.0        1.0      0.0        NaN       NaN   NaN    NaN           NaN   left_only
+5           NaN     NaN        NaN      NaN    34534.0     262.0   8.0   40.0  3 Musketeers  right_only
+6           NaN     NaN        NaN      NaN    32686.0     220.0  12.0   25.0          Aero  right_only
+7           NaN     NaN        NaN      NaN    85254.0     244.0  16.0   41.2  Kinder Bueno  right_only
 ```
 
-This only returns a dataframe with the matched index labels rows from
-both columns.
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
-
-One key thing to remember that if you want to save the new dataframe,
-don’t forget to assign your new dataframe to an object name. We did not
-do it in this section since we didn’t need the new dataframes again\!
-You’ll likely want to reuse your new dataframe unlike us so don’t forget
-to save the new product\!
+Here we can see three possible values `left_only`, `right_only` or
+`both` which informs us if the row came from the left dataframe, the
+right dataframe or if the row index label is shared between both
+dataframes.
 
 Notes: Script here
 

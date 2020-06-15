@@ -57,10 +57,10 @@ If the data is accessible publicly on a website, you can read in data
 directly from the webpage it is stored on. For example, this code and
 all the files that make up this course are all openly available and can
 be
-<a href="https://github.com/UBC-MDS/MCL-DSCI-511-programming-in-python" target="_blank">viewed
+<a href="https://github.com/UBC-MDS/MCL-DSCI-011-programming-in-python" target="_blank">viewed
 online</a>. The `candybar.csv` file that we used in the last module is
 stored at this URL:  
-<a href="https://raw.githubusercontent.com/UBC-MDS/MCL-DSCI-511-programming-in-python/master/data/candybars.csv" target="_blank">https://raw.githubusercontent.com/UBC-MDS/MCL-DSCI-511-programming-in-python/master/data/candybars.csv</a>.
+<a href="https://raw.githubusercontent.com/UBC-MDS/MCL-DSCI-011-programming-in-python/master/data/candybars.csv" target="_blank">https://raw.githubusercontent.com/UBC-MDS/MCL-DSCI-011-programming-in-python/master/data/candybars.csv</a>.
 You can see that it looks like a plain text file with each line being a
 row and each column value separated with a comma.
 

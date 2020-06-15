@@ -3,8 +3,8 @@ import pandas as pd
 # We are loading in  lego_stock from the last cell and the
 # lego_sets dataframe
 
-lego_stock = pd.read_csv('data/lego_stock.csv', index_col=0)
-lego_sets = pd.read_csv('data/lego-sets.csv', index_col=0)
+lego_stock = pd.read_csv('data/lego_stock.csv')
+lego_sets = pd.read_csv('data/lego-sets.csv')
 
 # Use groupby and agg to sum up the quantity of each set
 # Save this as store_inventory 
