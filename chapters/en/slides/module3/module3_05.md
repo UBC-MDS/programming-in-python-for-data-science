@@ -326,7 +326,8 @@ Cheerios          110        6
 We can remove the `name` index by doing the following:
 
 ``` python
-tidy_pivot.reset_index().head(2)
+tidy_pivot_messy = tidy_pivot.reset_index()
+tidy_pivot_messy.head(2)
 ```
 
 ```out
@@ -335,8 +336,42 @@ nutrition         name  calories  protein
 1             Cheerios       110        6
 ```
 
-For now, we can ignore the `nutrition` label in the top left of the
-dataframe.
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+If we want to remove the `nutrition` label that is in the top left of
+the dataframe, we can rename the “axis” using `.rename_axis()`. We
+simple add in quotations what we want to rename the index label as the
+first argument (we are going to rename it tosomething blank hence empty
+quotations) and specify that in the `axis` argument that we are renaming
+the “columns” index.
+
+``` python
+tidy_pivot_cleaned = tidy_pivot_messy.rename_axis("", axis="columns")
+tidy_pivot_cleaned.head()
+```
+
+```out
+          name  calories  protein
+0  Apple Jacks       110        2
+1     Cheerios       110        6
+2  Raisin Bran       120        3
+3    Special K       110        6
+4     Wheaties       100        3
+```
+
+That looks all cleaned up\!
 
 Notes: Script here
 
@@ -474,19 +509,20 @@ Wheaties    G         100        3
 ```
 
 And just like before, if we want to return to our original dataframe
-with a column of numbers for our index, we use `.reset_index()`:
+with a column of numbers for our index, we use `.reset_index()` and
+`rename_axis()` to clean up the index label.
 
 ``` python
-tidy_pivot2.reset_index()
+tidy_pivot2.reset_index().rename_axis("", axis="columns")
 ```
 
 ```out
-nutrition         name mfr  calories  protein
-0          Apple Jacks   K       110        2
-1             Cheerios   G       110        6
-2          Raisin Bran   K       120        3
-3            Special K   K       110        6
-4             Wheaties   G       100        3
+          name mfr  calories  protein
+0  Apple Jacks   K       110        2
+1     Cheerios   G       110        6
+2  Raisin Bran   K       120        3
+3    Special K   K       110        6
+4     Wheaties   G       100        3
 ```
 
 Notes: Script here
