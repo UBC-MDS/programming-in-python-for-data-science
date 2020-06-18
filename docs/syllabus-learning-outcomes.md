@@ -112,7 +112,6 @@ By the end of the module, students are expected to:
 - Compare and contrast python's key data types.
 - Compare and contrast python's key data structures. 
 - Use python to determine the type and structure of an object.
-- Write conditional statements with `if`, `elif` and `else` to run different code depending on the input.
 - Demonstrate how to create data structures and convert them to another.
 - Describe what python packages/libraries are, as well as explain when and why they are useful.
 
@@ -146,10 +145,8 @@ By the end of the module, students are expected to:
 
 #### Topics 
 
-- NumPy arrays 
-- NumPy array dimensions  
-- NumPy indexing and slicing 
-- Explain broadcasting 
+
+
 - Compare arrays with Pandas series and dataframes
 
 #### Learning Outcomes 
@@ -163,9 +160,11 @@ By the end of the module, students are expected to:
 - Compare and contrast np.ndarray, pd.Series and pd.DataFrame objects in Python.
 - Convert between a NumPy ndarray, Pandas Series, & Pandas Dataframe.
 
-### Module 7: Handling other advanced(?) data formats and missing & erroneous values
+### ~Module 7: Handling other advanced(?) data formats and missing & erroneous values~
 
 #### Topics 
+
+(Perhaps - - NumPy arrays, pandas relationship explained) 
 
 - Working with DateTime format 
 - Working with strings in dataframes?
@@ -190,7 +189,7 @@ _Things to add here? Definitely my weakest module!_
 - Unit tests, corner cases
 - Importing your created functions from a different file
 - Style guides and coding style 
-- Python debugger (PDB)
+- Python debugger (PDB) ( video in notebook instead with MC question) 
 
 #### Learning Outcomes 
 
@@ -203,3 +202,16 @@ By the end of the module, students are expected to:
 - Identify where code can be improved concerning variable names, magic numbers, comments and whitespace
 - Write code that is human readable and follows the pep8 style guide.
 - Explain how the python debugger can help rectify your code.
+
+
+# Revision Topics
+
+## Module 5: Loops and Conditions 
+
+## Module 6: Functions
+
+## Module 7: Handling other advanced(?) data formats and missing & erroneous values
+- As is 
+
+## Module 8 : 
+ - As is
