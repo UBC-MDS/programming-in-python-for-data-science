@@ -358,7 +358,7 @@ quotations) and specify that in the `axis` argument that we are renaming
 the “columns” index.
 
 ``` python
-tidy_pivot_cleaned = tidy_pivot_messy.rename_axis("", axis="columns")
+tidy_pivot_cleaned = tidy_pivot_messy.rename_axis('', axis='columns')
 tidy_pivot_cleaned.head()
 ```
 

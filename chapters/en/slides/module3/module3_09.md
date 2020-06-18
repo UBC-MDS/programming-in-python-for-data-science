@@ -30,6 +30,12 @@ Instead of converting a long dataframe to a wide one as we do in
 `.pivot()`, we do the opposite and convert a `wide` dataframe into a
 long one.
 
+<center>
+
+<img src='/module3/melt_piv.png' width="80%">
+
+</center>
+
 Notes: Script here
 
 <html>
@@ -186,8 +192,6 @@ Notes: Script here
 </html>
 
 ---
-
-Something important to
 
 # Let’s practice what we learned\!
 

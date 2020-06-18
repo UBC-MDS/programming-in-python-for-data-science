@@ -159,8 +159,6 @@ Notes: Script here
 
 ---
 
-Something important to 
-
 # Let’s practice what we learned!
 
 Notes: Script here

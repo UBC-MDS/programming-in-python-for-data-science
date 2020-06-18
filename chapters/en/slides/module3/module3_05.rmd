@@ -249,7 +249,7 @@ If we want to remove the `nutrition` label that is in the top left of the datafr
 We simple add in quotations what we want to rename the index label as the first argument (we are going to rename it tosomething blank hence empty quotations) and specify that in the `axis` argument that we are renaming the "columns" index. 
 
 ```{python}
-tidy_pivot_cleaned = tidy_pivot_messy.rename_axis("", axis="columns")
+tidy_pivot_cleaned = tidy_pivot_messy.rename_axis('', axis='columns')
 tidy_pivot_cleaned.head()
 ```
 
