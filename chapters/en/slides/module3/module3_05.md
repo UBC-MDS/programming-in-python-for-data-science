@@ -513,7 +513,7 @@ with a column of numbers for our index, we use `.reset_index()` and
 `rename_axis()` to clean up the index label.
 
 ``` python
-tidy_pivot2.reset_index().rename_axis("", axis="columns")
+tidy_pivot2.reset_index().rename_axis('', axis='columns')
 ```
 
 ```out
