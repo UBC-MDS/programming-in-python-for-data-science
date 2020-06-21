@@ -127,10 +127,10 @@ Notes: Script here.
 
 ---
 
-Sometimes it's useful to save a new dataframe as a `csv` file for future use or to use in another application. We can save dataframes using the method `.to_csv()`. Simply put our desired `csv` file name in quotations within the parentheses. 
+Sometimes it's useful to save a new dataframe as a `csv` file for future use or to use in another application. We can save dataframes using the method `.to_csv()`. Simply put our desired `csv` file name in quotations within the parentheses. We include the argument `index=False` so we don't export our index column which is just numbering our rows. 
 
 ```{python}
-manufacturer_freq.to_csv('manufacturer_frequency.csv')
+manufacturer_freq.to_csv('manufacturer_frequency.csv', index=False)
 ```
 
 

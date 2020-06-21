@@ -110,14 +110,12 @@ Notes: Script here
 
 ## Pivot
 
-`.pivot()` can be used in situations where our data may not meet our tidy data criteria.     
+`.pivot()` can be used in situations to transform our long dataframes into wide ones.     
 Consider the dataframe below: 
 
 <center><img src='/module3/cereal_long2.png' width="60%"></center>
 
-Here we can see that _Criterion #1: Each row is a single observation_ does not hold.  Each cereal has 2 rows for different measurements.
-How do we convert it to tidy data? 
-
+How can we convert it though? 
 Notes: Script here
 <html>
 <audio controls >
@@ -142,9 +140,11 @@ Notes: Script here
 
 ---
 
-We use `pivot` in the following way to transform it into a wide dataframe.
+```{python}
+cereal_long.head(2)
+```
 
-We:   
+We use `pivot` in the following way to transform it into a wide dataframe.
 
 - Set `index` as the `name` column.
 - Target the column `nutrition` with the values contained as new columns labels.     
@@ -152,8 +152,8 @@ We:
 
 
 ```{python}
-tidy_pivot = cereal_long.pivot(index='name', columns='nutrition', values='value')
-tidy_pivot
+cereal_wide = cereal_long.pivot(index='name', columns='nutrition', values='value')
+cereal_wide
 ```
 
 Notes: Script here
@@ -172,7 +172,7 @@ cereal_long
 
 
 ```{python}
-tidy_pivot
+cereal_wide
 ```
  
 
@@ -201,7 +201,7 @@ Notes: Script here
 <center><img src='/module3/piv_cereal3.png' width="80%"></center>
 
 ```python
-tidy_pivot = cereal_long.pivot(index='name', columns='nutrition', values='value')
+cereal_wide = cereal_long.pivot(index='name', columns='nutrition', values='value')
 ```
 
 Here are a few important things to notice:    
@@ -222,18 +222,20 @@ Notes: Script here
 
 ## Resetting the Index
 
-When we pivot our dataframe, we need to specify which rows are being combined to create a single elongated row.  This is determined by the `index` argument.  While pivoting we transformed the `name` column as our index.  This may not be the most ideal structure for our data and we can adjust this and return to the original index of a column of number by using the verb `.reset_index()`. 
+Let's take a brief detour and discuss resetting the index. 
 
-On our example dataset `tidy_pivot`:
+Here is our dataset `cereal_wide`:
  
 ```{python}
-tidy_pivot.head(2)
+cereal_wide.head(2)
 ```
+
+While pivoting we transformed the `name` column as our index. 
 
 We can remove the `name` index by doing the following:
 ```{python}
-tidy_pivot_messy = tidy_pivot.reset_index()
-tidy_pivot_messy.head(2)
+cereal_wide_messy = cereal_wide.reset_index()
+cereal_wide_messy.head(2)
 ```
 
 
@@ -245,12 +247,17 @@ Notes: Script here
 
 ---
 
+```{python}
+cereal_wide_messy.head()
+```
+
+
 If we want to remove the `nutrition` label that is in the top left of the dataframe, we can rename the "axis" using `.rename_axis()`.
-We simple add in quotations what we want to rename the index label as the first argument (we are going to rename it tosomething blank hence empty quotations) and specify that in the `axis` argument that we are renaming the "columns" index. 
+We simple add in quotations what we want to rename the index label as the first argument (we are going to rename it to something blank hence empty quotations) and specify that in the `axis` argument that we are renaming the "columns" index. 
 
 ```{python}
-tidy_pivot_cleaned = tidy_pivot_messy.rename_axis('', axis='columns')
-tidy_pivot_cleaned.head()
+cereal_wide_cleaned = cereal_wide_messy.rename_axis('', axis='columns')
+cereal_wide_cleaned.head()
 ```
 
 That looks all cleaned up!
@@ -307,8 +314,8 @@ cereal_long
 We include any columns that we wish to keep under the `index` argument contained in square brackets. 
 
 ```python
-tidy_pivot2 = cereal_long.pivot_table(index=['name', 'mfr'], columns='nutrition', values='value')
-tidy_pivot2
+cereal_wider = cereal_long.pivot_table(index=['name', 'mfr'], columns='nutrition', values='value')
+cereal_wider
 ```
 
 
@@ -321,19 +328,19 @@ Notes: Script here
 ---
 
 ```{python}
-tidy_pivot2 = cereal_long.pivot_table(index=['name','mfr'], columns='nutrition', values='value')
+cereal_wider = cereal_long.pivot_table(index=['name','mfr'], columns='nutrition', values='value')
 ```
 
 
 ```{python}
-tidy_pivot2
+cereal_wider
 ```
 
 
 And just like before, if we want to return to our original dataframe with a column of numbers for our index, we use `.reset_index()` and `rename_axis()` to clean up the index label. 
 
 ```{python}
-tidy_pivot2.reset_index().rename_axis('', axis='columns')
+cereal_wider.reset_index().rename_axis('', axis='columns')
 ```
 
 Notes: Script here
@@ -415,7 +422,7 @@ Notes: Script here
 `.pivot()` throws an error message.  This is a useful error message, letting us know that there are "duplicate entries, cannot reshape" which means there are non-unique rows.  We will need to do something before going any further. 
 
 <center><img src='/module3/problem_pivot.png' width="100%"></center>
-*Atribution: Nikolay Grozev, <a href=" https://nikgrozev.com/2015/07/01/reshaping-in-pandas-pivot-pivot-table-stack-and-unstack-explained-with-pictures/" target="_blank">RReshaping in Pandas - Pivot, Pivot-Table, Stack, and Unstack explained with Pictures</a> 
+*Attribution: Nikolay Grozev, <a href=" https://nikgrozev.com/2015/07/01/reshaping-in-pandas-pivot-pivot-table-stack-and-unstack-explained-with-pictures/" target="_blank">RReshaping in Pandas - Pivot, Pivot-Table, Stack, and Unstack explained with Pictures</a> 
 
 Notes: Script here
 <html>

@@ -11,6 +11,7 @@ output:
 ```{r setup, include=FALSE}
 ## DO NOT FORGET TO CHANGE THIS ACCORDINGLY 
 library(rmarkdown)
+library(htmltools)
 # MAke sure you are updating your title 
 knitr::opts_chunk$set(echo = TRUE,
                       base.dir = ".", 
@@ -26,7 +27,12 @@ md_document_custom <- md_document(variant = "gfm")
 output_format(knitr = knitr_opts,
               pandoc = NULL,
               base_format = md_document_custom)
+
+Sys.setenv(RETICULATE_PYTHON = "/usr/local/bin/python3")
 library(reticulate)
+py_config()
+
+# pd.options.plotting.backend = 'plotly'
 
 ```
 
@@ -34,6 +40,7 @@ library(reticulate)
 ```{python include=FALSE}
 import pandas as pd
 import numpy as np
+
 pd.set_option('display.width', 350)
 
 np.set_printoptions(linewidth=400)
@@ -86,7 +93,6 @@ Notes: Script here.
 ```{python fig.width = 6, fig.height = 4}
 manufacturer_freq.plot.bar()
 ```
-
 See how quick that was?
 The important things to notice here is that we want to `.plot` a `.bar()` graph. 
 
@@ -152,6 +158,7 @@ Notes: Script here.
 Those data points look pretty small. To enlarge them, the argument `s` should do the trick. Also every good graph should have a title! Let's take this opportunity to finish off this graph and set the argument `title` to something as well. 
 
 ```{python fig.width = 6, fig.height = 4}
+
 df.plot.scatter(x="sugars",
                 y="calories",
                 alpha= 0.3, 

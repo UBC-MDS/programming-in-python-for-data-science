@@ -15,7 +15,7 @@ position_freq = position_column.value_counts()
 
 # Export it to a csv named `position_frequencies.csv`
 
-position_freq.to_csv('position_frequencies.csv')
+position_freq.to_csv('position_frequencies.csv', index=False)
 
 # Don't forget to display it
 

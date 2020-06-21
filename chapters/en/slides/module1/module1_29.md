@@ -148,8 +148,8 @@ manufacturer_freq
 K    23
 G    22
 P     9
-R     8
 Q     8
+R     8
 N     6
 A     1
 Name: mfr, dtype: int64
@@ -178,10 +178,11 @@ Notes: Script here.
 Sometimes it’s useful to save a new dataframe as a `csv` file for future
 use or to use in another application. We can save dataframes using the
 method `.to_csv()`. Simply put our desired `csv` file name in quotations
-within the parentheses.
+within the parentheses. We include the argument `index=False` so we
+don’t export our index column which is just numbering our rows.
 
 ``` python
-manufacturer_freq.to_csv('manufacturer_frequency.csv')
+manufacturer_freq.to_csv('manufacturer_frequency.csv', index=False)
 ```
 
 Notes: Script here.

@@ -313,7 +313,7 @@ Notes: Script here
 ---
 
 At this point you may be asking yourself the question *“Are there any
-verbs, that would easily convert the `Nutrition` column into its
+verbs, that would easily convert the `nutrition` column into its
 separate variables?”*
 
 If you are, then you are ahead of the game\! We will discuss this in the

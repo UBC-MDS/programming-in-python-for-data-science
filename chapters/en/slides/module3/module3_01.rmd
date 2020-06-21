@@ -236,7 +236,7 @@ Notes: Script here
 
 ---
 
-At this point you may be asking yourself the question _"Are there any verbs, that would easily convert the `Nutrition` column into its separate variables?"_
+At this point you may be asking yourself the question _"Are there any verbs, that would easily convert the `nutrition` column into its separate variables?"_
 
 If you are, then you are ahead of the game!  We will discuss this in the next section.
 

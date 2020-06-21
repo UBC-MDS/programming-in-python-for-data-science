@@ -64,7 +64,7 @@ You may want to look over this before moving forward.
 
 </opt>
 
-<opt text="There are no <code>NA</code> values in the dataset" correct="true">
+<opt text="There are no <code>NaN</code> values in the dataset" correct="true">
 
 You are right.  It is possible to still have tidy data with missing values. 
 
@@ -152,7 +152,7 @@ Great work!
 
        
 **Question 2**          
-Which of the following does not continue to execute when there are duplicate rows in the dataframe?
+Which of the following does ***NOT*** continue to execute when there are duplicate rows in the dataframe?
 
 <choice id="2" >
 <opt text="<code>.pivot()</code>">
