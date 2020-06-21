@@ -1,7 +1,7 @@
 # Import pandas 
 ____ as pd
 
-# Read in the dataset 
+# Read in the data
 ____ = pd.____('data/____')
 
 

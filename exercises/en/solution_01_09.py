@@ -1,10 +1,11 @@
 import pandas as pd
 
-# The database
+# The data
 
 hockey_players = pd.read_csv('data/canucks.csv')
 
-# Slice the rows and columns and save the new dataframe as `benched_players`
+# Slice the rows and columns 
+# Save the new dataframe as benched_players
 
 benched_players = hockey_players.loc[3:9]
 

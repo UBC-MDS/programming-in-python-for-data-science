@@ -1,7 +1,7 @@
 # Import pandas 
 import pandas as pd
 
-# Read in the dataset 
+# Read in the data
 hockey_players = pd.read_csv('data/canucks.csv')
 
 
