@@ -16,7 +16,7 @@ library(htmltools)
 knitr::opts_chunk$set(echo = TRUE,
                       base.dir = ".", 
                       base.url = "/",
-                      fig.path = paste("../../../static/module1/", params$dynamictitle,"/", sep = ""))
+                      fig.path = paste("../../../../static/module1/", params$dynamictitle,"/", sep = ""))
 
 knitr_opts <- knitr_options( opts_knit = NULL,
                              opts_chunk = NULL,
@@ -138,7 +138,7 @@ Notes: Script here.
 Look at that! Now we can see there are multiple cereals that have 2.5g of sugar with 100 calories. 
 What if we wanted to change the colour to purple? Enter parameter `color`! We can also add a bit of readability by separating the arguments into separate lines.
 
-```{python fig.width = 6, fig.height = 4}
+```{python fig.width = 8, fig.height = 5,  out.width = '60%'}
 df.plot.scatter(x='sugars', 
                 y='calories', 
                 alpha=.3, 
@@ -157,8 +157,7 @@ Notes: Script here.
 
 Those data points look pretty small. To enlarge them, the argument `s` should do the trick. Also every good graph should have a title! Let's take this opportunity to finish off this graph and set the argument `title` to something as well. 
 
-```{python fig.width = 6, fig.height = 4}
-
+```{python fig.width = 8, fig.height = 5,  out.width = '60%'}
 df.plot.scatter(x="sugars",
                 y="calories",
                 alpha= 0.3, 
@@ -167,12 +166,6 @@ df.plot.scatter(x="sugars",
                 title="The relationship between sugar and calories in cereals")
 ```
 
-
-Notes: Script here.
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
 
 ---
 

@@ -229,6 +229,37 @@ Tasks:
 
 </codeblock>
 
+Which year has the highest average number of parts? 
+_Hint: use `.sort_values()`
+
+<choice id="1" >
+<opt text='2016'>
+
+Are your sorting by `ascending=False`?
+
+</opt>
+
+<opt text='2006'>
+
+Are your sorting by `ascending=False`?
+
+</opt>
+
+<opt text= '2017' correct="true">
+
+Good job! 
+
+</opt>
+
+<opt text='2007'>
+
+Are your sorting by `ascending=False`?
+
+</opt>
+
+</choice> 
+
+
 </exercise>
 
 
