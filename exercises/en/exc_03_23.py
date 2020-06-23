@@ -7,4 +7,4 @@ lego_colors = pd.read_csv('data/lego-colors.csv')
 
 # Combine the two dataframes and name the new dataframe lego_tower
 
-____ = ____.____(____)
+# ____ = ____.____(____)

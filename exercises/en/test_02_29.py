@@ -6,8 +6,10 @@ def test():
 
     # If an assertion fails, the message will be displayed
     assert "groupby" in __solution__ , "Are you using the 'groupby' function?"
+    assert "type" in __solution__ , "Are you grouping by 'type'?"
     assert "mean" in __solution__ , "Are you chaining the mean function with the groupby function?"
-    assert "type" not in list(type_means.columns), "Are you grouping by 'type'?"
-    assert round(mean_speed.values.mean()) == 68.0, "\nThe average speed values are incorrect. Are you taking the mean after grouping by type?"
-    assert round(max(mean_speed.values)) == 100.0, "\nThe maximum average speed is incorrect. Are you taking the mean after grouping by type?"
+    assert "loc" in __solution__ , "Are you using the loc function to select the 'attack' column?"
+    assert "ascending=False" in __solution__ , "Are you sorting in 'decending' order?"
+    assert "plot.bar" in __solution__ , "Are you uing the 'plot.bar' function to create a barplot?"
+    assert "set_ylabel" in __solution__ , "Are you setting the y-axis label to 'Mean attack score' using the 'set_ylabel' function?"
     __msg__.good("Nice work, well done!")

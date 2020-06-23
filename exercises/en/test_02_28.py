@@ -6,10 +6,10 @@ def test():
 
     # If an assertion fails, the message will be displayed
     assert "groupby" in __solution__ , "Are you using the 'groupby' function?"
-    assert "type" in __solution__ , "Are you grouping by 'type'?"
-    assert "mean" in __solution__ , "Are you chaining the mean function with the groupby function?"
-    assert "loc" in __solution__ , "Are you using the loc function to select the 'attack' column?"
-    assert "ascending=False" in __solution__ , "Are you sorting in 'decending' order?"
-    assert "plot.bar" in __solution__ , "Are you uing the 'plot.bar' function to create a barplot?"
-    assert "set_ylabel" in __solution__ , "Are you setting the y-axis label to 'Mean attack score' using the 'set_ylabel' function?"
+    assert "agg" in __solution__ , "Are you chaining the aggregate function with the groupby function?"
+    assert "legendary" not in list(legendary_stats.columns), "Are you grouping by 'legendary'?"
+    assert "max" in __solution__ , "Are you aggregating by the 'max' value?"
+    assert "min" in __solution__ , "Are you aggreating by the 'min' value?"
+    assert sum(max(legendary_stats.values.tolist())) == 1563, "Your maximum values are incorrect. Are you aggregating by 'min' and 'max'?"
+    assert sum(min(legendary_stats.values.tolist())) == 1679, "Your minimum values are incorrect. Are you aggregating by 'min' and 'max'?"
     __msg__.good("Nice work, well done!")

@@ -5,9 +5,6 @@ def test():
     # in the meta.json for details.
 
     # If an assertion fails, the message will be displayed
-    assert  min(list(mighty_pokemon.defense)) == 101, "Are you selecting pokemons with attack and defense > 100?"
-    assert mighty_pokemon.defense.sum() == 6693 , "Some values in the 'defense;'column are wrong. \n Are you selecting pokemons with defense > 100?"
-    assert  max(list(mighty_pokemon.attack)) == 185, "Are you selecting pokemons with attack and defense > 100?"
-    assert mighty_pokemon.attack.sum() == 6856 , "Some values in the 'attack' column are wrong. \n Are you selecting pokemons with attack > 100?"
-    assert "&" in __solution__ , "Are you using the logic and operator '&'?"
+    assert fire_pokemon.shape == (52, 12), "Your dataframe imensions are incorrect. Are you selecting only the fire pokemons?"
+    assert set(list(fire_pokemon.type)) == {'fire'} , "There are more than one pokemon types present. \n Are you selecting only fire pokemons?"
     __msg__.good("Nice work, well done!")

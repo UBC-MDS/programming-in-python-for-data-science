@@ -8,11 +8,11 @@ lego_opacity = pd.read_csv('data/lego_opacity.csv')
 # Combine the two dataframes horizontally to make 1 large complete 
 # dataframe and name it lego_full
 
-lego_full = pd.concat([lego_base,lego_opacity], axis=1)
+lego_full = pd.concat([lego_base, lego_opacity], axis=1)
 
 # Make sure you are dropping any duplicated columns
 
-washed_lego = lego_full.loc[:,~lego_full.columns.duplicated()]
+washed_lego = lego_full.loc[:, ~lego_full.columns.duplicated()]
 
 # Make a new column named total_pieces from the  columns matte and transparent
 # Sort the dataframe and save this in an object named lego_details

@@ -482,7 +482,60 @@ Tasks:
 
 </exercise>
 
-<exercise id="17" title="Single Condition Filtering">
+
+<exercise id="17" title="Filtering Question">
+
+If the output of 
+
+```python 
+df['location'] == 'Canada'
+```
+ is 
+ 
+ ```out
+ [ True, False, False, True]
+ ```
+ 
+ What would be the output of 
+ 
+ ```python
+  ~(df['location'] == 'Canada')
+```
+
+<choice id="1" >
+
+<opt text="<code>[True, False, False, True]</code>">
+
+You may want to review the Tilde section.
+
+</opt>
+
+<opt text="<code>[False, False, False, False]</code>">
+
+You may want to review the Tilde section.
+
+
+</opt>
+
+<opt text="<code>[True, True, True, True]</code>" >
+
+You may want to review the Tilde section.
+
+</opt>
+
+<opt text="<code>[False, True, True, False]</code>" correct="true">
+
+ 
+Great work! 
+
+</opt>
+
+</choice> 
+
+</exercise>
+
+
+<exercise id="18" title="Single Condition Filtering">
 
 **Instructions:**    
 Running a coding exercise for the first time, could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
@@ -495,7 +548,7 @@ Tasks:
 - Create a new dataframe named `fire_pokemon` containing only the rows of `type` "fire".
 
 
-<codeblock id="02_17">
+<codeblock id="02_18">
 
 - Are you sure you are saving your dataframe as the correct object names?
 - Are you using `pokemon['type'] == 'fire'` as your condition?
@@ -529,7 +582,7 @@ You can answer this question using <code>fire_pokemon.shape</code>
 
 </exercise>
 
-<exercise id="18" title='Filtering using "and" or "or"'>
+<exercise id="19" title='Filtering using "and"'>
 
 **Instructions:**    
 Running a coding exercise for the first time, could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
@@ -543,7 +596,7 @@ Tasks:
 - Save this dataframe as an object named `mighty_pokemon`.
 
 
-<codeblock id="02_18">
+<codeblock id="02_19">
 
 - Are you sure you are saving your dataframe as the correct object names?
 - Are you separating your conditions with brackets?
@@ -581,16 +634,16 @@ You can use `mighty_pokemon['type'].value_counts()` to find out.
 </exercise>
 
 
-<exercise id="19" title="Conditional Value Replacement and Assignment" type="slides">
+<exercise id="20" title="Conditional Value Replacement and Assignment" type="slides">
 
-<slides source="module2/module2_19">
+<slides source="module2/module2_20">
 
 </slides>
 
 </exercise>
 
 
-<exercise id="20" title='Practice Replacing Values'>
+<exercise id="21" title='Practice Replacing Values'>
 
 **Instructions:**    
 Running a coding exercise for the first time, could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
@@ -603,7 +656,7 @@ Tasks:
 - Create a new column in the dataframe named `base_score` by assigning values 500 or greater from the column `total_bs` as 'strong' pokemon and values less than 500 as 'weak' pokemon.
 - Display the first 10 rows of the dataframe. 
 
-<codeblock id="02_20a">
+<codeblock id="02_21a">
 
 - Are you naming the new column named `base_score`? 
 - Are you using `.loc[df['total_bs'] >= 500, 'base_score']` and assigning it to the correct value?
@@ -621,7 +674,7 @@ Tasks:
 - Plot the object `score_freq` using `.plot.bar()` and save this graph as `score_plot`.
 
 
-<codeblock id="02_20b">
+<codeblock id="02_21b">
 - Are you using single square brackets or obtain the column `base_score`? 
 - Are you saving the objects with the correct names?
 
@@ -630,16 +683,16 @@ Tasks:
 </exercise>
 
 
-<exercise id="21" title="Chaining and Method Chaining" type="slides">
+<exercise id="22" title="Chaining Notation" type="slides">
 
-<slides source="module2/module2_21">
+<slides source="module2/module2_22">
 
 </slides>
 
 </exercise>
 
 
-<exercise id="22" title="Chaining True/False">
+<exercise id="23" title="Chaining True/False">
 
 **Question 1**          
 Chaining removes the need for intermediate objects.
@@ -689,7 +742,7 @@ You may want to look over this before moving forward.
 </exercise>
 
 
-<exercise id="23" title="Practice Chaining">
+<exercise id="24" title="Practice Chaining">
 
 **Instructions:**    
 Running a coding exercise for the first time, could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
@@ -706,7 +759,7 @@ Tasks:
 - Name the full chain `pokemon_plot`.
 - Use a new line for each method.
 
-<codeblock id="02_23">
+<codeblock id="02_24">
 
 - Are you sure you are saving your dataframe as the correct object names?
 - Are you using `pd.read_csv()` and `pd.read_excel()` in the correct locations?
@@ -715,15 +768,15 @@ Tasks:
 
 </exercise>
 
-<exercise id="24" title="Grouping and Aggregating" type="slides">
+<exercise id="25" title="Grouping and Aggregating" type="slides">
 
-<slides source="module2/module2_24">
+<slides source="module2/module2_25">
 </slides>
 
 </exercise>
 
 
-<exercise id="25" title="Fruit Salad Grouping and Aggregating">
+<exercise id="26" title="Fruit Salad Grouping and Aggregating">
 
 Remember the fruit salad dataframe named `fruit_salad`?  Refer to it for the next two questions.
 
@@ -769,7 +822,7 @@ Not quite but you are on the right track.
 Consider this output made from the `fruit_salad` dataframe:
 
 
-<center> <img src='/module2/Q25_2.png'  alt="404 image" /></center>
+<center> <img src='/module2/Q26_2.png'  alt="404 image" /></center>
    
 Which of the following code returns the dataframe above. 
 
@@ -796,7 +849,7 @@ Are you using the correct verbs?
 
 </exercise>
 
-<exercise id="26" title="Practice Grouping">
+<exercise id="27" title="Practice Grouping">
 
 **Instructions:**    
 Running a coding exercise for the first time, could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
@@ -815,7 +868,7 @@ Tasks:
 - Display it.
 
 
-<codeblock id="02_26">
+<codeblock id="02_27">
 
 - Are you grouping by the column named `type`? 
 - Are you using `.mean()` on the `pokemon_type` dataframe?
@@ -826,7 +879,7 @@ Tasks:
 
 </exercise>
 
-<exercise id="27" title="Practice Aggregating">
+<exercise id="28" title="Practice Aggregating">
 
 **Instructions:**    
 Running a coding exercise for the first time, could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
@@ -843,7 +896,7 @@ Tasks:
 - Display it.
 
 
-<codeblock id="02_27">
+<codeblock id="02_28">
 
 - Are you grouping by the column named `legendary`? 
 - Are you using `.agg()` on the `legendary_stats` dataframe?
@@ -854,7 +907,7 @@ Tasks:
 </exercise>
 
 
-<exercise id="28" title="Plotting a Groupby Object">
+<exercise id="29" title="Plotting a Groupby Object">
 
 **Instructions:**    
 Running a coding exercise for the first time, could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
@@ -874,7 +927,7 @@ Create a plot by chaining the following actions.
 - Name the object attack_plot 
 
 
-<codeblock id="02_28">
+<codeblock id="02_29">
 
 - Are you grouping by the column named `type`? 
 - Are you using `.loc[:, 'attack']`?
@@ -920,7 +973,7 @@ Take another look at the plot.
 </exercise>
 
 
-<exercise id="29" title="What Did We Just Learn?" type="slides,video">
-<slides source="module2/module2_29" start="0:165" end="3:01">>
+<exercise id="30" title="What Did We Just Learn?" type="slides,video">
+<slides source="module2/module2_30" start="0:165" end="3:01">>
 </slides>
 </exercise>

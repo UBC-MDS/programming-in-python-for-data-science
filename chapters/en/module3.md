@@ -121,7 +121,7 @@ Good job!  You must have seen the duplicate rows of `Ivysaur`, `Charmeleon` and 
 
 </exercise>
 
-<exercise id="5" title="Reshaping with Pivot" type="slides">
+<exercise id="5" title="Wide and Long Dataframe" type="slides">
 
 <slides source="module3/module3_05">
 
@@ -129,7 +129,71 @@ Good job!  You must have seen the duplicate rows of `Ivysaur`, `Charmeleon` and 
 
 </exercise>
 
-<exercise id="6" title="Pivoting Questions">
+<exercise id="6" title="Wide vs Long Questions">
+
+Which of the following is the **wide** dataframe 
+
+
+**Dataframe A**
+<center> <img src='/module3/Q5a.png'  alt="404 image"/></center>
+
+
+**Dataframe B**
+<center> <img src='/module3/Q5b.png'  alt="404 image"/></center>
+
+
+<choice>
+<opt text="Dataframe A">
+
+Not quite! Maybe try re-reading over the content. 
+
+</opt>
+
+<opt text= "Dataframe B" correct="true">
+
+Good job! 
+
+</opt>
+
+</choice> 
+
+</exercise>
+
+
+<exercise id="7" title="Wide vs Long Questions">
+
+Is the following statement True or False?      
+
+_A long dataframe is always a tidy dataframe._
+
+
+<choice>
+<opt text="True">
+
+Did you read this section? 
+
+</opt>
+
+<opt text= "False" correct="true">
+
+Good job! Of course it depends on the statistical question!
+
+</opt>
+
+</choice> 
+
+</exercise>
+
+
+<exercise id="8" title="Reshaping with Pivot" type="slides">
+
+<slides source="module3/module3_08">
+
+</slides>
+
+</exercise>
+
+<exercise id="9" title="Pivoting Questions">
 
 **Question 1**          
 We use `.pivot()` to convert a wide dataframe with multiple columns into a long dataframe with fewer columns.
@@ -172,7 +236,7 @@ You may want to look over this before moving forward.
 </exercise>
 
 
-<exercise id="7" title="Applying Pivot I">
+<exercise id="10" title="Applying Pivot">
 
 **Instructions:**    
 Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
@@ -198,16 +262,19 @@ Tasks:
   
      
 
-<codeblock id="03_07">
+<codeblock id="03_10">
 - Are you pivoting the correct column named `lego_info` with `values='value'`?
 - Are you resetting your index after you pivot?
 
 </codeblock>
 
 
-<exercise id="8" title="Reshaping with Pivot Table" type="slides">
+</exercise>
 
-<slides source="module3/module3_08">
+
+<exercise id="11" title="Reshaping with Pivot Table" type="slides">
+
+<slides source="module3/module3_11">
 
 </slides>
 
@@ -216,7 +283,7 @@ Tasks:
 
 </exercise>
 
-<exercise id="9" title="Pivot Table Questions">
+<exercise id="12" title="Pivot Table Questions">
 
 **Question 1**          
 Which of the following does ***NOT*** continue to execute when there are duplicate rows in the dataframe?
@@ -259,7 +326,7 @@ You may want to look over this before moving forward.
 
 
 
-<exercise id="10" title="Applying Pivot II">
+<exercise id="13" title="Applying Pivot Table">
 
 **Instructions:**    
 Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
@@ -275,7 +342,7 @@ Tasks:
 - Name the new dataframe `tidied_lego`.
 - Find the mean number of parts for each production year and save it in an object name `year_parts_mean`. (We've added a verb named `.round()` to round to the nearest whole number)
 
-<codeblock id="03_08">
+<codeblock id="03_13">
 - Are you using the correct arguments such as `index`, `columns`, and `values`?
 - Are you pivoting the correct column named `lego_info` with `values='value'`?
 - Are you resetting your index again after you pivot?
@@ -317,16 +384,16 @@ Are your sorting by `ascending=False`?
 
 
 
-<exercise id="11" title="Reshaping with Melt" type="slides">
+<exercise id="14" title="Reshaping with Melt" type="slides">
 
-<slides source="module3/module3_09">
+<slides source="module3/module3_14">
 
 </slides>
 
 </exercise>
 
 
-<exercise id="12" title="Melting Questions">
+<exercise id="15" title="Melting Questions">
 
 **Question 1**          
 We use `.melt()` to convert a wide dataframe with multiple columns into a long dataframe with fewer columns.
@@ -367,7 +434,7 @@ Good job!
 </choice> 
 
 **Question 3**     
-`.melt()`  and `.pivot()` always transform the data into "tidy data".
+`.melt()`  and `.pivot()` always transform the data into tidy data.
 
 <choice id="3" >
 <opt text='True'>
@@ -387,7 +454,7 @@ Good job!  Just because the data is transformed doesn't mean that it's transform
 </exercise>
 
 
-<exercise id="13" title="Applying Melt">
+<exercise id="16" title="Applying Melt">
 
 **Instructions:**    
 Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
@@ -406,15 +473,12 @@ Let's melt this so that the 2 new columns named `matte` and `transparent` become
 Tasks:
 
 - `melt` the dataframe columns `matte` and `transparent` into a single column named `opacity` and name the values column `quantity`.
-- Assign `set_num` ad the index in your new dataframe. 
 - Name the new dataframe `tidied_lego`.
 
-<codeblock id="03_11">
+<codeblock id="03_16">
 
 - Are you melting the correct columns named `matte` and `transparent`?
-- Are you resetting your index before you pivot?
 - Are you making sure to use all the columns (except `matte` and  `transparent` in the argument `id_vars`?
-- Are you setting your index again after you melt?
 
 </codeblock>
 
@@ -440,69 +504,20 @@ Start by going through the tidy data criteria.  Does this data meet all three?
 
 
 
-<exercise id="14" title="Concatenation" type="slides">
+<exercise id="17" title="Concatenation" type="slides">
 
-<slides source="module3/module3_14">
+<slides source="module3/module3_17">
 
 </slides>
 
 </exercise>
 
-<exercise id="15" title="Concat questions">
+<exercise id="18" title="Concat questions">
 
-**Question 1**          
-If the output of 
-
-```python 
-df['location'] == 'Canada'
-```
- is 
- 
- ```out
- [ True, False, False, True]
- ```
- 
- What would be the output of 
- 
- ```python
-  ~(df['location'] == 'Canada')
-```
-
-<choice id="1" >
-
-<opt text="<code>[True, False, False, True]</code>">
-
-You may want to review the Tilde section.
-
-</opt>
-
-<opt text="<code>[False, False, False, False]</code>">
-
-You may want to review the Tilde section.
-
-
-</opt>
-
-<opt text="<code>[True, True, True, True]</code>" >
-
-You may want to review the Tilde section.
-
-</opt>
-
-<opt text="<code>[False, True, True, False]</code>" correct="true">
-
- 
-Great work! 
-
-</opt>
-
-</choice> 
-
-
-**Question 2**     
+**Question 1**     
 If we wanted to concatenate Dataframe A with Dataframe B horizontally, what do we need to make sure **before** proceeding
 
-<choice id="2" >
+<choice id="1" >
 <opt text="There are no <code>NaN</code> values">
 
 We can still concatenate with missing values.
@@ -523,11 +538,11 @@ We can remove duplicated columns after concatenation.
 
 </choice> 
 
-**Question 3**         
+**Question 2**         
 Which of the following statements are correct?
 
 
-<choice id="3" >
+<choice id="2" >
 <opt text='Concatenating horizontally requires the argument <code>axis=1</code>', correct="true">
 
 Good job!  Maybe more solutions are correct...
@@ -558,7 +573,7 @@ I think you got mixed up.  Try reading over the notes again.
 </exercise>
 
 
-<exercise id="16" title="Concatenating Vertically">
+<exercise id="19" title="Concatenating Vertically">
 
 
 **Instructions:** 
@@ -578,7 +593,7 @@ Tasks:
 - Display the new dataframe.
 
 
-<codeblock id="03_17">
+<codeblock id="03_19">
 - Are you using `pd.concat()`?
 - Are you concatenating in the correct order with `lego_top` first and `lego_bottom` second?
 - Are you putting your dataframes within square brackets? 
@@ -589,7 +604,7 @@ Tasks:
 
 </exercise>
 
-<exercise id="17" title="Concatenating Horizontally">
+<exercise id="20" title="Concatenating Horizontally">
 
 **Instructions:**    
 Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
@@ -610,7 +625,7 @@ Tasks:
 - Display the new dataframe.
 
 
-<codeblock id="03_15">
+<codeblock id="03_20">
 
 - Are you using `pd.concat()`?
 - Are you concatenating the dataframes `lego_base` with `lego_opacity`?
@@ -624,16 +639,16 @@ Tasks:
 
 </exercise>
 
-<exercise id="18" title="Joining Dataframes using Merge" type="slides">
+<exercise id="21" title="Joining Dataframes using Merge" type="slides">
 
-<slides source="module3/module3_18">
+<slides source="module3/module3_21>
 
 </slides>
 
 </exercise>
 
 
-<exercise id="19" title="Merge Questions">
+<exercise id="22" title="Merge Questions">
 
 **Question 1**          
 Which of the following are **not** ways in which you can join dataframes using `.merge()`?
@@ -737,7 +752,7 @@ It's still possible to have dataframes that have completely different dimensions
 </exercise>
 
 
-<exercise id="20" title="Merging I">
+<exercise id="23" title="Merging I">
 
       
 **Instructions:**    
@@ -755,7 +770,7 @@ Tasks:
 - Name the new dataframe `lego_tower`.
 
 
-<codeblock id="03_18">
+<codeblock id="03_23">
 - Are you naming your new dataframe `lego_tower`? 
 - Are you using the arguments  `left_on='color_id'`, `right_on=id`,  `how='outer'` and `indicator=True`?
 
@@ -856,7 +871,7 @@ Maybe explore the `_merge` column by filtering or grouping and see if there are 
 
 </exercise>
 
-<exercise id="21" title="Merging II">
+<exercise id="24" title="Merging II">
 
       
 **Instructions:**    
@@ -873,16 +888,19 @@ Tasks:
 
 This question is in two parts and we are going to walk you through how to tackle it. 
 
-<codeblock id="03_19a">
+<codeblock id="03_24a">
 - Are you naming your new dataframe `lego_stock`? 
 - Are you using the arguments  `left_on='set_num'`, `right_index=True` and `how='inner'`?
 - Are you grouping my using `groupby('set_num`)? 
 </codeblock>
 
 
-Ah, it appears we have multiple rows for some of the same sets. Although it shows initially the we have 2846 different sets due to the number of rows in `lego_stock`, when we group them by `set_num` we actually only get 2306 different sets. This means that we have some rows with the same `set_num` but with different inventory quantities. 
-How are we going to get the stock quantity of each set now?    
-We are going to have to sum up the quantity of each set.  Luckily we can do this with the skills we have already learned! 
+Ah, it appears we have multiple rows for some of the same sets.   
+     
+Although it shows initially the we have 2846 different sets due to the number of rows in `lego_stock`, when we group them by `set_num` we actually only get 2306 different sets. This means that we have some rows with the same `set_num` but with different inventory quantities.       
+       
+How are we going to get the stock quantity of each set now?         
+We are going to have to sum up the quantity of each set using `.groupby()` and`.agg()`. 
 
 Tasks:
 - Use `.groupby()` and `.agg()` to sum up the quantity of each set and save this as `store_inventory`. 
@@ -891,7 +909,7 @@ Tasks:
 - Display the new dataframe.
 
 
-<codeblock id="03_19b">
+<codeblock id="03_24b">
 
 - Are you naming your new dataframe `store_inventory`? 
 - Are you aggregating using `.agg({'quantity':'sum'})`?
@@ -965,7 +983,7 @@ Did you look at the wrong dataframe?
 </exercise>
 
 
-<exercise id="22" title="What Did We Just Learn?" type="slides, video">
-<slides source="module3/module3_22" start="0:165" end="3:01">>
+<exercise id="25" title="What Did We Just Learn?" type="slides, video">
+<slides source="module3/module3_25" start="0:165" end="3:01">>
 </slides>
 </exercise>

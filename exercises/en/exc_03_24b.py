@@ -9,9 +9,9 @@ lego_sets = pd.read_csv('data/lego-sets.csv')
 # Use groupby and agg to sum up the quantity of each set
 # Save this as store_inventory 
 
-____ = (____.____(____)
-            .____({____})
-       )
+# ____ = (____.____(____)
+#            .____({____})
+#        )
 
 # We still want to know the set name, year, theme_id and number of parts that are
 # accessible from the lego_sets dataframe.
@@ -20,9 +20,8 @@ ____ = (____.____(____)
 # Use chaining to sort the dataframe in descending order based on in stock quantity
 # Save this new dataframe as store_inventory_details 
 
-____ = (____.____(____)
-            .____(____)
-       )
+# ____ = (____.____(____)
+#             .____(____)
+#        )
 
-# Display the full dataframe
-____
+

@@ -27,7 +27,6 @@ store_inventory_details = (store_inventory.merge(lego_sets,
                                           .sort_values('quantity', ascending=False)
                           )
 
-# Display the full dataframe
-store_inventory_details
+
 
 
