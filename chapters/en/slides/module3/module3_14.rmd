@@ -58,7 +58,7 @@ Notes: Script here
 ---
 
 Up until this moment, we have been working with a single dataframe.  Many organizations split their data into multiple tables and join them together depending on what columns they need for their analysis.  
-There are 2 different verbs we use for joining dataframes together: 
+There are 2 different verbs we will use for joining dataframes together: 
 
 - <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.concat.html" target="_blank">`.concat()`</a>; A forceful way of joining dataframes across rows or columns.  A useful analogy is the gluing or taping of 2 pieces of paper together so the shapes match up. 
 - <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.merge.html" target="_blank">`.merge()`</a> A more precision based approach for combining data on common columns or indices.  This can be compared to stitching fabric together so that the pattern/print lines up. 
@@ -148,15 +148,7 @@ After inspection, we can see that there are 2 `name` columns, which isn't necess
 ```{python}
 candy_nutrition
 ```
-
-We can remove any duplicate columns by using both `.duplicated()` and `.loc[]`:
-
-```{python}
-candy_nutrition.loc[:,~candy_nutrition.columns.duplicated()]
-```
-
-This removed one of the `name` columns.  The code simply means that we are selecting all the rows using and only the non-duplicated rows for columns. 
-You may have noticed a new symbol `~`that we have not seen before!  Meet the bitwise operator, also known as ***Tilde***.  
+Is there a convinient way to remove duplicated columns? 
 
 Notes: Script here
 <html>
@@ -166,22 +158,28 @@ Notes: Script here
 
 ---
 
-### Tilde
+We can remove any duplicate columns by using both `.duplicated()`, `.loc[]` and the _Tilde_ operator we discussed in Module 2:
 
-***Tilde*** gives us the ability to return the compliment of the code following it.  Let's take a closer look.
-This code shows us whether a column is a duplicated column not:
+```{python}
+candy_nutrition.loc[:,~candy_nutrition.columns.duplicated()]
+```
+
+This removed one of the `name` columns. But what's going on in the background?
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+This code shows us whether a column is duplicated  by assigning the column position with either a `True` or `False` value:
 
 ```{python}
 candy_nutrition.columns.duplicated()
 ```
 
-Using `.loc[]` without `~` selects only the columns with a "True" value, similarly to what happens when we filter. 
-
-```{python}
-candy_nutrition.loc[:,candy_nutrition.columns.duplicated()].head()
-```
-
-The ***tilde*** inverses the True/False values so we can select the opposite values. 
+Since we need to instead keep all `False` columns, we can easily use the  _Tilde_ operator to convert all the `False` values to `True` and vice versa.   
 
 ```{python}
 ~candy_nutrition.columns.duplicated()
@@ -196,7 +194,8 @@ Notes: Script here
 
 ---
 
-So, when we select the non-duplicated columns by converting their values from "False" to "True" using the `~` operator: 
+When we combine this with `.loc[]` to select which columns to display, the output omits the column that was identified as a duplicate. 
+
 ```{python}
 candy_nutrition_cleaned = candy_nutrition.loc[:,~candy_nutrition.columns.duplicated()]
 candy_nutrition_cleaned
@@ -236,18 +235,26 @@ When we want to vertically combine dataframes (add rows), we use the argument `a
 large_candybars = pd.concat([candy, candy_more], axis=0)
 large_candybars
 ```
+After combining them, there are now 8 rows and the same 4 columns.  But wait! 
+The index column has non-unique values.
 
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
 
-After combining them now have 8 rows and the same 4 columns.  But wait! 
-The index column has non-unique values. It may be a good idea to reset this so we use our friend `reset_index()` with the argument `drop=True` to remove the original index:
+---
+
+```{python}
+large_candybars
+```
+We can reset the index with `reset_index()` and the argument `drop=True` to remove the original index:
 
 ```{python}
 large_candybars_cleaned = large_candybars.reset_index(drop=True)
 large_candybars_cleaned
-
 ```
-
-
 
 
 Notes: Script here
@@ -260,7 +267,7 @@ Notes: Script here
 
 ## Be careful of order!
 
- `pd.concat()` is great when our dataframes have the same order for each observation.  What happens if our dataframes have different orders for the candy bars?  Let's use an example with the dataframe`snacksize_candybars.csv`.  This contains the candy bars from `candy`  in a shuffled order. 
+ `pd.concat()` is great when our dataframes have the same order for each observation.  What happens if our dataframes have different orders for the candy bars?  Let's use an horizontal concatenation example with the dataframe`snacksize_candybars.csv`.  This data contains the candy bars from `candy` in a shuffled order. 
 
 ```{python}
 snacksize_candybars = pd.read_csv('snacksize_candybars.csv')
@@ -302,6 +309,8 @@ Notes: Script here
 <audio controls >
   <source src="/placeholder_audio.mp3" />
 </audio></html>
+
+---
 
 
 # Let’s practice what we learned!

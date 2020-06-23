@@ -58,13 +58,15 @@ Notes: Script here
 
 ---
 
-We discussed concatenation in the last section and it how it glues dataframe together, but what if we needed to combine dataframe of different sizes where rows need to be matched up?       
+We discussed concatenation in the last section and it how it glues dataframes together, but what if we needed to combine dataframes of different sizes where rows need to be matched up?       
 
 <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.merge.html" target="_blank">`.merge()`</a> if a verb that give more precision and options when we join dataframes. 
 
 We compared `.merge()` in the last section to stitching fabric together, where we line up the patterns of each piece of cloth. 
 
-<center><img src='/module3/mergex.gif' width="600"></center>
+Unlike `pd.concat()`, `.merge()` can only combined dataframes horizontally but it can do so in many different ways. 
+
+<center><img src='/module3/mergex.gif' width="560"></center>
 
 
 Notes: Script here
@@ -74,6 +76,7 @@ Notes: Script here
 </audio></html>
 
 ---
+
 
 ## Introducing the Data  
 
@@ -104,7 +107,7 @@ candy2m = pd.read_csv('candybars_merge.csv')
 candy2m
 ```
 
-This dataframe has new columns androws not in the `candy` dataframe (`3 Musketeers`, `Aero`, and `Kinder Bueno`).
+This dataframe has new columns and rows not in the `candy` dataframe (`3 Musketeers`, `Aero`, and `Kinder Bueno`).
 We can see that a column named `chocolate_bar` is the same variable as the `name` column in the `candy` dataframe. 
 
 
@@ -190,7 +193,7 @@ We combine that with the earlier code to get the following:
 candy.merge(candy2m, left_on='name', right_on='chocolate_bar')
 ```
 
-Great! we've combined the 2 dataframes horizontally in the future we may  want to drop the columns named `chocolate_bar` or rename it before we merge.
+Great! we've combined the 2 dataframes horizontally. In the future, we may want to drop the columns named `chocolate_bar` or rename it before we merge.
 If our identifying columns are named the same in both dataframes, `.merge()` only keeps one of them.
 
 Ok so what happened? we now only have 2 rows!  We seemed to have lost all the rows that are not in both columns. 
@@ -217,7 +220,22 @@ We mentioned that the default argument value`inner` which  will only the rows wi
 candy.merge(candy2m, left_on='name', right_on='chocolate_bar', how='inner')
 ```
 
-But there are 4 types of joins we could choose from: 
+
+<br>
+
+<img src='/module3/inner.png' width="900">
+
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+But there are 4 types of joins we could choose from for the `how` argument: 
 
 - `inner`
 - `outer`
@@ -251,6 +269,21 @@ Notes: Script here
 
 ---
 
+<br>
+<br>
+<br>
+
+<img src='/module3/outer.png' width="900">
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
 
 - `left`: This will only output the rows that are in the left dataframe and if they are missing from the right dataframe, `NaN` values will occur.  No candy bars that are only present in the right dataframe will be present.
 
@@ -260,6 +293,23 @@ candy.merge(candy2m, left_on='name', right_on='chocolate_bar', how='left')
 ```
 
 Here we can see the values `3 Musketeers`, `Aero` and `Kinder Bueno` are not present in the resulting dataframe as they are only present in the right one. 
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<img src='/module3/left.png' width="900">
+
 
 Notes: Script here
 <html>
@@ -279,6 +329,23 @@ We can see that the rows `Skor`, `Smarties` and `Twix` that were only present in
 
 
 One thing that all 4 joins have in common, is they all will have the same columns labels that came from both dataframes. 
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<img src='/module3/right.png' width="900">
+
 
 Notes: Script here
 <html>

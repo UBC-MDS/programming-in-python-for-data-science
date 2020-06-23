@@ -431,6 +431,167 @@ conditions.
 
 <img src='/module2/condition_or.png'  alt="404 image" />
 
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+## Tilde
+
+We saw that all our filtering are expressed with an underlying column
+with `True` or `False` values indicating if the rows meet the
+conditions:
+
+``` python
+df['protein'] > 4
+```
+
+```out
+0     False
+1     False
+2     False
+3     False
+4     False
+      ...  
+72    False
+73    False
+74    False
+75    False
+76    False
+Name: protein, Length: 77, dtype: bool
+```
+
+But what if I wanted the rows that were the complement of this?
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+Of course we could do `df['protein'] <= 4` in this situation, but
+sometimes the inverse equation is not so straightforward. This is where
+*Tilde* (`~`) can be helpful.
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+*Tilde* (`~`) gives us the ability to return the complement of the code
+following it.
+
+``` python
+(df['protein'] > 4).head()
+```
+
+```out
+0    False
+1    False
+2    False
+3    False
+4    False
+Name: protein, dtype: bool
+```
+
+Tilda converts all the `True` values to `False` and all the `False`
+values, to `True.`
+
+``` python
+(~(df['protein'] > 4)).head()
+```
+
+```out
+0    True
+1    True
+2    True
+3    True
+4    True
+Name: protein, dtype: bool
+```
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+We can obtain the complete dataframe by putting the entire condition
+within our square brackets like we did before:
+
+``` python
+df[~(df['protein'] > 4)]
+```
+
+```out
+                         name mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
+0                   100% Bran   N  Cold        70        4    1     130   10.0    5.0       6     280        25      3     1.0  0.33  68.402973
+1           100% Natural Bran   Q  Cold       120        3    5      15    2.0    8.0       8     135         0      3     1.0  1.00  33.983679
+2                    All-Bran   K  Cold        70        4    1     260    9.0    7.0       5     320        25      3     1.0  0.33  59.425505
+3   All-Bran with Extra Fiber   K  Cold        50        4    0     140   14.0    8.0       0     330        25      3     1.0  0.50  93.704912
+4              Almond Delight   R  Cold       110        2    2     200    1.0   14.0       8       1        25      3     1.0  0.75  34.384843
+..                        ...  ..   ...       ...      ...  ...     ...    ...    ...     ...     ...       ...    ...     ...   ...        ...
+72                    Triples   G  Cold       110        2    1     250    0.0   21.0       3      60        25      3     1.0  0.75  39.106174
+73                       Trix   G  Cold       110        1    1     140    0.0   13.0      12      25        25      2     1.0  1.00  27.753301
+74                 Wheat Chex   R  Cold       100        3    1     230    3.0   17.0       3     115        25      1     1.0  0.67  49.787445
+75                   Wheaties   G  Cold       100        3    1     200    3.0   17.0       3     110        25      1     1.0  1.00  51.592193
+76        Wheaties Honey Gold   G  Cold       110        2    1     200    1.0   16.0       8      60        25      1     1.0  0.75  36.187559
+
+[74 rows x 16 columns]
+```
+
+This gives us more versatility when filtering, especially when we want
+the inverse of more complicated conditions and verbs (you’ll see this in
+Module 3).
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
 # Let’s apply what we learned\!
 
 Notes: Script here

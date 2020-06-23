@@ -39,7 +39,7 @@ pd.set_option('display.width', 350)
 np.set_printoptions(linewidth=400)
 
 pd.set_option('display.max_columns', 20)
-pd.set_option('display.max_rows', 30)
+pd.set_option('display.max_rows', 20)
 
 df = pd.read_csv('cereal.csv', index_col=0)
 ```
@@ -144,7 +144,7 @@ Notes: Script here
 
 ---
 
-We can filter categorical columns too.  In this example,  I only want cereals from the manufacturer "Q" (For Quaker):
+We can filter categorical columns too.  In this example, I only want cereals from the manufacturer "Q" (For Quaker):
 
 ```{python}
 df[df['mfr'] == 'Q']
@@ -267,7 +267,74 @@ This time, filtering using "or" resulted in 10 cereals that met either of the co
 
 <img src='/module2/condition_or.png'  alt="404 image" />   
 
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
 
+---
+
+## Tilde 
+
+We saw that all our filtering are expressed with an underlying column with `True` or `False` values indicating if the rows meet the conditions:
+
+```{python}
+df['protein'] > 4
+```
+But what if I wanted the rows that were the complement of this? 
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+Of course we could do `df['protein'] <= 4` in this situation, but sometimes the inverse equation is not so straightforward. This is where _Tilde_ (`~`) can be helpful.  
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+_Tilde_ (`~`) gives us the ability to return the complement of the code following it. 
+
+```{python}
+(df['protein'] > 4).head()
+```
+Tilda converts all the `True` values to `False` and all the `False` values, to `True.` 
+
+```{python}
+(~(df['protein'] > 4)).head()
+```
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+We can obtain the complete dataframe by putting the entire condition within our square brackets like we did before: 
+```{python}
+df[~(df['protein'] > 4)]
+```
+
+This gives us more versatility when filtering, especially when we want the inverse of more complicated conditions and verbs (you'll see this in Module 3).
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
 
 # Let’s apply what we learned!
 

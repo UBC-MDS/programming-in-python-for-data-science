@@ -152,16 +152,16 @@ Great work!
 
        
 **Question 2**          
-Which of the following does ***NOT*** continue to execute when there are duplicate rows in the dataframe?
+Which of the following will reset your index?
 
 <choice id="2" >
-<opt text="<code>.pivot()</code>">
+<opt text="<code>.index_reset()</code>">
 
 You may want to look over this before moving forward.
 
 </opt>
 
-<opt text="<code>.pivot_table()</code>" correct="true">
+<opt text="<code>.reset_index()</code>" correct="true">
 
 You may want to look over this before moving forward.
 
@@ -204,9 +204,62 @@ Tasks:
 
 </codeblock>
 
+
+<exercise id="8" title="Reshaping with Pivot Table" type="slides">
+
+<slides source="module3/module3_08">
+
+</slides>
+
 </exercise>
 
-<exercise id="8" title="Applying Pivot II">
+
+</exercise>
+
+<exercise id="9" title="Pivot Table Questions">
+
+**Question 1**          
+Which of the following does ***NOT*** continue to execute when there are duplicate rows in the dataframe?
+
+<choice id="1" >
+<opt text="<code>.pivot()</code>">
+
+You may want to look over this before moving forward.
+
+</opt>
+
+<opt text="<code>.pivot_table()</code>" correct="true">
+
+You may want to look over this before moving forward.
+
+</opt>
+
+</choice> 
+
+
+**Question 2**          
+What must we do before we use pivot table? 
+
+<choice id="2" >
+<opt text="Check for duplicate values of the columns in the arguments <code>index</code> and <code>columns</code>" correct="true" >
+
+You may want to look over this before moving forward.
+
+</opt>
+
+<opt text="Remove any <code>NaN</code>s from the dataframe">
+
+You may want to look over this before moving forward.
+
+</opt>
+
+</choice> 
+
+</exercise>
+
+
+
+<exercise id="10" title="Applying Pivot II">
 
 **Instructions:**    
 Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
@@ -229,8 +282,8 @@ Tasks:
 
 </codeblock>
 
-Which year has the highest average number of parts? 
-_Hint: use `.sort_values()`
+Which year has the highest average number of parts?    
+*Hint: use `.sort_values()`.*
 
 <choice id="1" >
 <opt text='2016'>
@@ -264,7 +317,7 @@ Are your sorting by `ascending=False`?
 
 
 
-<exercise id="9" title="Reshaping with Melt" type="slides">
+<exercise id="11" title="Reshaping with Melt" type="slides">
 
 <slides source="module3/module3_09">
 
@@ -273,7 +326,7 @@ Are your sorting by `ascending=False`?
 </exercise>
 
 
-<exercise id="10" title="Melting Questions">
+<exercise id="12" title="Melting Questions">
 
 **Question 1**          
 We use `.melt()` to convert a wide dataframe with multiple columns into a long dataframe with fewer columns.
@@ -334,7 +387,7 @@ Good job!  Just because the data is transformed doesn't mean that it's transform
 </exercise>
 
 
-<exercise id="11" title="Applying Melt">
+<exercise id="13" title="Applying Melt">
 
 **Instructions:**    
 Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
@@ -348,7 +401,7 @@ Let's take a look at some new untidy data that we have named `lego`.
 
 
 
-Let's melt this so that the 2 new columns named `matte` and `transparent` become a single one.  These columns refer to the opacity of the blocks and the values refer to the number of pieces of each included in the set. 
+Let's melt this so that the 2 new columns named `matte` and `transparent` become a single one.  These columns refer to the opacity of the blocks and the values refer to the number of pieces of each included in the set. Since our variable of interest in this scenario is `opacity`, we need to combine the two measurements into one column.
 
 Tasks:
 
@@ -387,15 +440,15 @@ Start by going through the tidy data criteria.  Does this data meet all three?
 
 
 
-<exercise id="12" title="Concatenation" type="slides">
+<exercise id="14" title="Concatenation" type="slides">
 
-<slides source="module3/module3_12">
+<slides source="module3/module3_14">
 
 </slides>
 
 </exercise>
 
-<exercise id="13" title="Concat questions">
+<exercise id="15" title="Concat questions">
 
 **Question 1**          
 If the output of 
@@ -505,7 +558,7 @@ I think you got mixed up.  Try reading over the notes again.
 </exercise>
 
 
-<exercise id="14" title="Concatenating Vertically">
+<exercise id="16" title="Concatenating Vertically">
 
 
 **Instructions:** 
@@ -525,7 +578,7 @@ Tasks:
 - Display the new dataframe.
 
 
-<codeblock id="03_14">
+<codeblock id="03_17">
 - Are you using `pd.concat()`?
 - Are you concatenating in the correct order with `lego_top` first and `lego_bottom` second?
 - Are you putting your dataframes within square brackets? 
@@ -536,7 +589,7 @@ Tasks:
 
 </exercise>
 
-<exercise id="15" title="Concatenating Horizontally">
+<exercise id="17" title="Concatenating Horizontally">
 
 **Instructions:**    
 Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
@@ -571,16 +624,16 @@ Tasks:
 
 </exercise>
 
-<exercise id="16" title="Joining Dataframes using Merge" type="slides">
+<exercise id="18" title="Joining Dataframes using Merge" type="slides">
 
-<slides source="module3/module3_16">
+<slides source="module3/module3_18">
 
 </slides>
 
 </exercise>
 
 
-<exercise id="17" title="Merge Questions">
+<exercise id="19" title="Merge Questions">
 
 **Question 1**          
 Which of the following are **not** ways in which you can join dataframes using `.merge()`?
@@ -684,7 +737,7 @@ It's still possible to have dataframes that have completely different dimensions
 </exercise>
 
 
-<exercise id="18" title="Merging I">
+<exercise id="20" title="Merging I">
 
       
 **Instructions:**    
@@ -709,7 +762,7 @@ Tasks:
 </codeblock>
 
 **Question 1**  
-Which of the following colours don't have any pieces in inventory?       
+Which of the following colours doesn't have any pieces in inventory?       
 *Hint: You can filter using the `_merge` column.*
 
 <choice id="1" >
@@ -741,7 +794,7 @@ You may want to try filtering using the `_merge` column
 
 **Question 2**  
 Which colour has the largest number of pieces in the inventory?            
-*Hint: You can use `.group_by()`  and `.sum()` to find the total amount of pieces for each set. Also`.sort_values()` may come in handy.*
+*Hint: You can use `.groupby()`  and `.sum()` to find the total amount of pieces for each set. Also`.sort_values()` may come in handy.*
 
 <choice id="2" >
 <opt text='White'>
@@ -803,7 +856,7 @@ Maybe explore the `_merge` column by filtering or grouping and see if there are 
 
 </exercise>
 
-<exercise id="19" title="Merging II">
+<exercise id="21" title="Merging II">
 
       
 **Instructions:**    
@@ -827,8 +880,8 @@ This question is in two parts and we are going to walk you through how to tackle
 </codeblock>
 
 
-Ah, it appears we have multiple rows for some of the same sets.   
-How are we going to get the stock quantity of each set?    
+Ah, it appears we have multiple rows for some of the same sets. Although it shows initially the we have 2846 different sets due to the number of rows in `lego_stock`, when we group them by `set_num` we actually only get 2306 different sets. This means that we have some rows with the same `set_num` but with different inventory quantities. 
+How are we going to get the stock quantity of each set now?    
 We are going to have to sum up the quantity of each set.  Luckily we can do this with the skills we have already learned! 
 
 Tasks:
@@ -912,7 +965,7 @@ Did you look at the wrong dataframe?
 </exercise>
 
 
-<exercise id="20" title="What Did We Just Learn?" type="slides, video">
-<slides source="module3/module3_20" start="0:165" end="3:01">>
+<exercise id="22" title="What Did We Just Learn?" type="slides, video">
+<slides source="module3/module3_22" start="0:165" end="3:01">>
 </slides>
 </exercise>
