@@ -162,7 +162,7 @@ Good job!
 
 <exercise id="7" title="Wide vs Long Questions">
 
-Is the following statement True or False?      
+Is the following statement true or false?      
 
 _A long dataframe is always a tidy dataframe._
 
@@ -227,7 +227,7 @@ You may want to look over this before moving forward.
 
 <opt text="<code>.reset_index()</code>" correct="true">
 
-You may want to look over this before moving forward.
+Good job!
 
 </opt>
 
@@ -297,7 +297,7 @@ You may want to look over this before moving forward.
 
 <opt text="<code>.pivot_table()</code>" correct="true">
 
-You may want to look over this before moving forward.
+Great studying!
 
 </opt>
 
@@ -310,13 +310,13 @@ What must we do before we use pivot table?
 <choice id="2" >
 <opt text="Check for duplicate values of the columns in the arguments <code>index</code> and <code>columns</code>" correct="true" >
 
-You may want to look over this before moving forward.
+This is extremely important so we don't get averaging values! Well done. 
 
 </opt>
 
 <opt text="Remove any <code>NaN</code>s from the dataframe">
 
-You may want to look over this before moving forward.
+This is extremely important so you will want to look over this before moving forward.
 
 </opt>
 
@@ -332,6 +332,9 @@ You may want to look over this before moving forward.
 Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
 
 **When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
+
+
+_**Make sure you remove the hash (`#`) symbol in the coding portions of this question.  We have commented them so that the line won't execute and you can test your code after each step.**_
 
 Let's convert the dataframe `lego` into tidy data but this time preserve all the columns in the dataframe by using `.pivot_table()`.
 
@@ -460,6 +463,8 @@ Good job!  Just because the data is transformed doesn't mean that it's transform
 Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
 
 **When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
+
+_**Make sure you remove the hash (`#`) symbol in the coding portions of this question.  We have commented them so that the line won't execute and you can test your code after each step.**_
 
 Let's take a look at some new untidy data that we have named `lego`. 
 
@@ -760,6 +765,8 @@ Running a coding exercise for the first time could take a bit of time for everyt
 
 **When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
 
+_**Make sure you remove the hash (`#`) symbol in the coding portions of this question.  We have commented them so that the line won't execute and you can test your code after each step.**_
+
 In this exercise, you are going to join two dataframes `lego_inventory_parts.csv` and `lego-colors.csv` and answer a few multiple-choice questions.  The multiple-choice questions are being asked with the intention of using the code cell to write your own code in any way that helps to answer the question. 
 
 
@@ -878,6 +885,10 @@ Maybe explore the `_merge` column by filtering or grouping and see if there are 
 Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
 
 **When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
+
+
+_**Make sure you remove the hash (`#`) symbol in the coding portions of this question.  We have commented them so that the line won't execute and you can test your code after each step.**_ 
+
 
 This question may be a bit more challenging.  We are wondering about the inventory of a store.  We want to see which Lego sets are in stock and if so how many?  After all, the store needs to make sure there are enough sets in stock to meet demand. 
 
