@@ -103,7 +103,6 @@ By the end of the module, students are expected to:
 - Lists and tuples
 - String methods
 - Dictionaries how to convert them to a dataframe? 
-- Conditionals also how this can be mapped to apply? 
 
 #### Learning Outcomes 
 
@@ -116,23 +115,36 @@ By the end of the module, students are expected to:
 - Describe what python packages/libraries are, as well as explain when and why they are useful.
 
 
-### Module 5: Loops & Functions 
+### Module 5: Loops and Conditions 
 
 #### Topics 
 
 - Loops 
-- Functions example in plotting, add data to a dataframe?
-- DRY principle 
-- Keyword arguments 
-- Docstrings 
-- Multiple return values 
-- Demonstrate how to import classes and functions for different python libraries
+- Loops to read in data 
+- Conditions in loops 
+
 
 #### Learning Outcomes 
 
 By the end of the module, students are expected to:
 
 - Write for loops to repeatedly run code
+- Write conditional statements with if, elif and else to run different code, depending on the input.
+
+### Module 6:  Functions
+
+#### Topics
+
+- Functions example in plotting, add data to a dataframe?
+- DRY principle 
+- Keyword arguments 
+- Docstrings 
+- Multiple return values 
+- Demonstrate how to import classes and functions for different python libraries
+- Lambda
+
+#### Learning Outcomes 
+
 - Evaluate the readability, complexity and performance of a function
 - Explain what the DRY principle is
 - Define and use a named function that accepts parameters and returns values
@@ -140,32 +152,11 @@ By the end of the module, students are expected to:
 - Write comments within a function to improve readability
 - Source and use functions stored as python code in another file, as well as those in
 
-
-### Module 6: A Slice of NumPy (NumPy Arrays)
-
-#### Topics 
-
-
-
-- Compare arrays with Pandas series and dataframes
-
-#### Learning Outcomes 
-
-By the end of the module, students are expected to:
-
-- Explain what broadcasting is and how to use it  (Mikes L3+ Tom's L1 _Mike asks do we need it?_)
-- Use NumPy to create ndarrays from existing data with `np.array()` and from functions such as `np.arrange()`, `np.linspace()` and `np.full()`
-- Describe resulting array shapes from operations  
-- Access values from a NumPy ndarray by indexing and slicing.
-- Compare and contrast np.ndarray, pd.Series and pd.DataFrame objects in Python.
-- Convert between a NumPy ndarray, Pandas Series, & Pandas Dataframe.
-
-### ~Module 7: Handling other advanced(?) data formats and missing & erroneous values~
+### Module 7: Handling other advanced(?) data formats and missing & erroneous values
 
 #### Topics 
 
-(Perhaps - - NumPy arrays, pandas relationship explained) 
-
+- (Perhaps - - NumPy arrays, pandas relationship explained from old Module 6) 
 - Working with DateTime format 
 - Working with strings in dataframes?
 - Identifying and handling missing/erroneous values 
@@ -204,14 +195,27 @@ By the end of the module, students are expected to:
 - Explain how the python debugger can help rectify your code.
 
 
-# Revision Topics
 
-## Module 5: Loops and Conditions 
+## APPENDIX: 
 
-## Module 6: Functions
+### OLD MODULE 6: A Slice of NumPy (NumPy Arrays)
 
-## Module 7: Handling other advanced(?) data formats and missing & erroneous values
-- As is 
+#### Topics 
 
-## Module 8 : 
- - As is
+- NumPy arrays
+- NumPy array dimensions
+- NumPy indexing and slicing
+- Explain broadcasting
+- Compare arrays with Pandas series and dataframes
+- Compare arrays with Pandas series and dataframes
+
+#### Learning Outcomes 
+
+By the end of the module, students are expected to:
+
+- Explain what broadcasting is and how to use it  (Mikes L3+ Tom's L1 _Mike asks do we need it?_)
+- Use NumPy to create ndarrays from existing data with `np.array()` and from functions such as `np.arrange()`, `np.linspace()` and `np.full()`
+- Describe resulting array shapes from operations  
+- Access values from a NumPy ndarray by indexing and slicing.
+- Compare and contrast np.ndarray, pd.Series and pd.DataFrame objects in Python.
+- Convert between a NumPy ndarray, Pandas Series, & Pandas Dataframe.
