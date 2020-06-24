@@ -21,7 +21,7 @@ pd.set_option('display.max_columns',10)
 ```
 
 
-```{python }
+```{python}
 
 fruit = {'name': ['apple', 'banana', 'cantaloupe', 'dragon-fruit', 'elderberry', 'fig', 'guava',
                    'huckleberry', 'kiwi', 'lemon'],
@@ -37,7 +37,12 @@ fruit = {'name': ['apple', 'banana', 'cantaloupe', 'dragon-fruit', 'elderberry',
          
 
 df = pd.DataFrame(fruit, columns = list(fruit.keys()))
-df
+new = df.loc[[0,1,2],['name', 'colour','seed', 'shape']]
+new.melt(id_vars='name',value_vars=['colour','seed','shape'], var_name ='observation', value_name='value')
 ```
+```{python}
+new.melt(id_vars='name',value_vars=['colour','seed','shape'], var_name ='observation', value_name='value')
+```
+
 
 

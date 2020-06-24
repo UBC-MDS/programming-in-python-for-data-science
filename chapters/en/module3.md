@@ -131,17 +131,17 @@ Good job!  You must have seen the duplicate rows of `Ivysaur`, `Charmeleon` and 
 
 <exercise id="6" title="Wide vs Long Questions">
 
-Which of the following is the **wide** dataframe 
+Which of the following is the **wide** dataframe? 
 
 
 **Dataframe A**
-<center> <img src='/module3/Q5a.png'  alt="404 image"/></center>
+<center> <img src='/module3/Q5a.png'  alt="404 image" width="60%"/></center>
 
 
 **Dataframe B**
-<center> <img src='/module3/Q5b.png'  alt="404 image"/></center>
+<center> <img src='/module3/Q5b.png'  alt="404 image" width="60%"/></center>
 
-
+<br>
 <choice>
 <opt text="Dataframe A">
 
