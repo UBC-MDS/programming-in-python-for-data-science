@@ -220,7 +220,7 @@ Notes: Script here
 `.pivot()` throws an error message.  This is a useful error message, letting us know that there are "duplicate entries, cannot reshape" which means there are non-unique rows.  We will need to do something before going any further. 
 
 <center><img src='/module3/problem_pivot.png' width="100%"></center>
-*Attribution: Nikolay Grozev, <a href=" https://nikgrozev.com/2015/07/01/reshaping-in-pandas-pivot-pivot-table-stack-and-unstack-explained-with-pictures/" target="_blank">RReshaping in Pandas - Pivot, Pivot-Table, Stack, and Unstack explained with Pictures</a> 
+*Attribution: Nikolay Grozev, <a href=" https://nikgrozev.com/2015/07/01/reshaping-in-pandas-pivot-pivot-table-stack-and-unstack-explained-with-pictures/" target="_blank">Reshaping in Pandas - Pivot, Pivot-Table, Stack, and Unstack explained with Pictures</a> 
 
 Notes: Script here
 <html>
@@ -258,7 +258,7 @@ When we use `.pivot_table()` we recommend checking if there are duplicate values
 cereal_problem.duplicated(subset=['name', 'nutrition'], keep=False)
 ```
 
-Without the `keep` argument, only index labeled `1` will be identified as a duplicate. 
+Without the `keep` argument, only index labelled `1` will be identified as a duplicate. 
 
 ```{python}
 cereal_problem.duplicated(subset=['name', 'nutrition'])
@@ -318,3 +318,4 @@ Notes: Script here
 <html>
 <audio controls >
   <source src="/placeholder_audio.mp3" />
+  </audio></html>

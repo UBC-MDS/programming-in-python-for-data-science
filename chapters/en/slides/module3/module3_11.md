@@ -294,7 +294,7 @@ going any further.
 </center>
 
 \*Attribution: Nikolay Grozev,
-<a href=" https://nikgrozev.com/2015/07/01/reshaping-in-pandas-pivot-pivot-table-stack-and-unstack-explained-with-pictures/" target="_blank">RReshaping
+<a href=" https://nikgrozev.com/2015/07/01/reshaping-in-pandas-pivot-pivot-table-stack-and-unstack-explained-with-pictures/" target="_blank">Reshaping
 in Pandas - Pivot, Pivot-Table, Stack, and Unstack explained with
 Pictures</a>
 
@@ -372,7 +372,7 @@ cereal_problem.duplicated(subset=['name', 'nutrition'], keep=False)
 dtype: bool
 ```
 
-Without the `keep` argument, only index labeled `1` will be identified
+Without the `keep` argument, only index labelled `1` will be identified
 as a duplicate.
 
 ``` python
