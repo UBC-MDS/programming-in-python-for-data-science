@@ -40,7 +40,8 @@ np.set_printoptions(linewidth=400)
 
 pd.set_option('display.max_columns', 50)
 pd.set_option('display.max_rows', 15)
-cereal = pd.read_csv('cereal.csv').loc[:,['mfr', 'type', 'calories', 'protein','fiber', 'fat',  'carbo',  'rating' ]]
+cereal = pd.read_csv('cereal.csv')
+cereal = cereal.loc[:,['name', 'mfr', 'type', 'calories', 'protein','fiber', 'fat',  'carbo',  'rating' ]].assign(hot=cereal['type'] == 'Hot').drop(columns='type')
 ```
 
 
@@ -59,7 +60,7 @@ Notes: Script here
 
 ## What is a Dataframe ... again
 
-Since the begining of this module,  we have explored basic Python Data types and structures. We've covered how they can be transformed into a dataframe but that didn't answer the lingering question ***"What is and makes up a Pandas dataframe?"***
+Since the beginning of this module,  we have explored basic Python Data types and structures. We've covered how they can be transformed into a dataframe but that didn't answer the lingering question ***"What is and makes up a Pandas dataframe?"***
 
 Let's greet our cereal data back with a warm welcome. 
 
@@ -107,6 +108,7 @@ There are two ways of doing so; with single brackets, and with double brackets. 
 ```{python}
 cereal[['mfr']]
 ```
+
 ```{python}
 type(cereal[['mfr']])
 ```
@@ -144,14 +146,14 @@ Notes: Script here
 
 ## Pandas Series
 
-A pandas Series is a one dimension array of values with an axis label. This is the base datatype that make up a pandas dataframe. In fact the <a href="https://pandas.pydata.org/pandas-docs/stable/getting_started/dsintro.html#dataframe" target="_blank"Pandas documentation"</a> explain it as "a dict of Series objects". 
+A pandas Series is a one dimension array of values with an axis label. This is the base data type that make up a pandas dataframe. In fact, the <a href="https://pandas.pydata.org/pandas-docs/stable/getting_started/dsintro.html#dataframe" target="_blank"Pandas documentation"</a> explain it as "a dict of Series objects". 
  
 let's look back at the series output again: 
 
 ```{python}
 cereal['mfr']
 ```
-We can see additional information at the bottom. The axis labeled `mfr`, the length equal to 77 and the `dtype`: object. 
+We can see additional information at the bottom. The axis labelled `mfr`, the length equal to 77 and the `dtype`: object. 
 
 
 Notes: Script here
@@ -164,10 +166,141 @@ Notes: Script here
 
 ## What is a dtype? 
 
-So far we know a dataframe is made up of a collection of series and a series contains values, a label as well has some additional information regarding a `dtype`. 
+So far we know a dataframe is made up of a collection of series and a series contains values, a label as well has some additional information regarding a **dtype**. 
 
-Just like how values have the data types ( `str`, `int`, `float`, etc.), Pandas columns have dtype. 
+Just like how values have the data types ( `str`, `int`, `float`, etc.), Columns in a Pandas dataframe have types called **dtypes**. 
 
+In this course we are going to concentrate on the following dtypes but there others: 
+
+<center><img src='/module4/branch2.png' width="100%"></center>
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+<center><img src='/module4/branch3num.png' width="80%"></center>
+
+Just like with Python data types, Pandas has numeric and non numeric datatypes. 
+
+#### Numeric dtypes
+
+- `float64` dtype is a column that contains only `float` type values in the cells of the dataframe, whereas, 
+- `int64` columns only contains values of type `int` in the cells. 
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+We can use the noun `.dtypes` to find the dtype of a column:
+
+```{python}
+cereal.head()
+```
+Let's see the `calories` column dtype:
+```{python}
+cereal['calories'].dtypes
+```
+
+What is the data type of one of the values in the the column? 
+```{python}
+all_bran_fiber =  cereal.loc[2, 'calories']
+type(all_bran_fiber)
+```
+
+We are going to ignore the `numpy` portion for now but we clearly see it says `int`. 
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+
+```{python}
+cereal.head()
+```
+
+Let's check out the `fiber` column dtype now:
+```{python}
+cereal['fiber'].dtypes
+```
+
+Ah yes float64. What about the data type of one of the values in the the column now? 
+```{python}
+all_bran_fiber =  cereal.loc[2, 'fiber']
+type(all_bran_fiber)
+```
+
+ of type `float`! (Again, let's not worry about the numpy portion of this)
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+
+<center><img src='/module4/full.png' width="100%"></center>
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+
+## Non-Numeric dtypes 
+
+<center><img src='/module4/full.png' width="80%"></center>
+
+These can be a bit more complicated but let's concentrate on the dtypes `object` and `bool`. We will be exploring `datetime64` in Module 7. 
+
+
+- `object`  is a dtype that contains `str` type values in the cells of the dataframe or that had a mixture of different types to begin with. This is the "default" dtype when pandas is not quite sure what is the cell type values are or when there is a mixture of numeric and non numeric value types. 
+
+- `bool` dtypes, just like it's dtype name, contains `bool` type values. 
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+```{python}
+cereal.head()
+```
+
+Let's take a look at the `name` column:
+
+```{python}
+cereal['name'].dtypes
+```
+
+Here, "O" stands for object. What about a value within the column series:
+
+```{python}
+type(cereal.loc[2, 'name'])
+```
+
+The "All-Bran" is a  `str` value type that resides in a column of dtype `object`.  
 
 
 
@@ -179,6 +312,27 @@ Notes: Script here
 
 ---
 
+
+```{python}
+cereal.head()
+```
+
+What about the `hot` column:
+
+```{python}
+cereal['hot'].dtypes
+```
+
+And the column value within the series:
+
+```{python}
+type(cereal.loc[2, 'hot'])
+```
+
+Also a `bool`. We can ignore the numpy like we did before, we will discuss this later. 
+
+
+
 Notes: Script here
 <html>
 <audio controls >
@@ -187,14 +341,12 @@ Notes: Script here
 
 ---
 
+An easy way to  check all dtypes of the columns in our dataframe is to use `.dtypes` on the dataframe object. 
 
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
-
----
+```{python}
+cereal.dtypes
+```
+Knowing what type values are, helps us understand how we can transform them and how they respond to different operations and operators. 
 
 Notes: Script here
 <html>
