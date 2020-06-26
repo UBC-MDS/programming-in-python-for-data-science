@@ -272,7 +272,7 @@ Well done.
 <choice id="2" >
 <opt text="<code>str</code>">
 
-The data structure in fits the first two statements but a string contain characters of all type `str`. 
+This data structure fits the first two statements but a string contain characters of all type `str`. 
 
 </opt>
 
@@ -554,33 +554,35 @@ Tasks:
 
 </exercise>
 
-<exercise id="15" title="Name That dtype">
+<exercise id="15" title="Name That type/dtype">
+
+
 
 **Question 1**         
- _"I don't care about my elements order."_     
- Who am I? 
+ _"What is the data type of a Pandas dataframe?"_     
+
 
 <choice id="1" >
+<opt text="<code>pd.DataFrame</code>" correct="true">
+
+Yes this is the data type!
+
+</opt>
+
+<opt text="Multiple series" >
+
+This is what makes up a dataframe but it's not the data type. 
+</opt>
+
+<opt text="<code>object</code>" >
+
+This is a dtype not a type. 
+
+</opt>
+
 <opt text="<code>str</code>">
 
-Which data structure does not have a particular order? 
-
-</opt>
-
-<opt text="<code>list</code>" >
-
-Which data structure does not have a particular order? 
-</opt>
-
-<opt text="<code>tuple</code>" >
-
-Which data structure does not have a particular order? 
-
-</opt>
-
-<opt text="<code>set</code>" correct="true">
-
-Well done.
+This is a type, but not the dataframe type. 
 
 </opt>
 
@@ -588,31 +590,31 @@ Well done.
 
 
 **Question 2**          
- _"I can't be changed, I don't accept new elements but I can contain multiple data types"_     
+ _"What is the data type of a column in a dataframe?"_     
  Who am I? 
  
 <choice id="2" >
+<opt text="<code>pd.DataFrame</code>">
+
+This is the whole dataframe type. 
+
+</opt>
+
+<opt text="<code>pd.Series</code>" correct="true">
+
+That's right! a column have a type of pd.Series. 
+
+</opt>
+
+<opt text="<code>object</code>">
+
+This is a dtype and not a data type. 
+
+</opt>
+
 <opt text="<code>str</code>">
 
-The data structure in fits the first two statements but a string contain characters of all type `str`. 
-
-</opt>
-
-<opt text="<code>list</code>" >
-
-This data structure can add elements using `.append()` 
-
-</opt>
-
-<opt text="<code>tuple</code>" correct="true">
-
-Yes,this can only have the value `None`. 
-
-</opt>
-
-<opt text="<code>set</code>">
-
-This data structure can add to it using `.add()`
+Although you are guessing a data type, this is the incorrect one. 
 
 </opt>
 
@@ -621,43 +623,43 @@ This data structure can add to it using `.add()`
 </exercise>
 
 
-<exercise id="16" title="Data Structure True and False">
+<exercise id="16" title="Dataframe and Series True and False">
 
 
 Are the following statements True or False?      
 
 
-_Tuples are immutable._
+_Dataframes are a made up of a tuple of Series._
 
 
 <choice id="1">
-<opt text="True" correct="true">
+<opt text="False">
 
-Yay! You got it!
+It is made up of Series but not a tuple data structure. 
 
 </opt>
 
-<opt text= "False" >
+<opt text= "False" correct="true">
 
-This is in fact the oposite! 
+A Dataframe is made up of a dictionary of Series
 
 </opt>
 
 </choice> 
 
 
-_Sets can only contain numerical data types._
+_Pandas will assign a dtype of `obj` when it's having difficulty recognizing the column dtype ._
 
 <choice id="1">
-<opt text="True">
+<opt text="True" correct="true">
 
-Sets can contain many different datatypes apart from numerical values. 
+When it's unclear what the dtype is, Pandas will assign it a dtype `object`. 
 
 </opt>
 
 <opt text= "False"  correct="true">
 
-Yay! You got it!
+You may want to review this section. 
 
 </opt>
 
@@ -666,58 +668,122 @@ Yay! You got it!
 </exercise>
 
 
-<exercise id="17" title="The Data Structure Basics">
+<exercise id="17" title="Dtypes">
 
 **Instructions:**    
 Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
 
 **When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
 
-Let's explore how to add to  a list, slice it and convert it into a tuple. 
-
+Let's explore the `dtypes` noun and see what our column dtype are. 
 
 Tasks:
 
-
-- Using the list provided, add a `pen`, a `scrap paper`, a `7.3` and a `True` element.
-- Find the length of the list after adding the element and save the value in an object named `drawer_length`.
-- Slice the list from the element 4 to `scrap paper`  and save this in an object named `cleaned_junk_drawer`.
-- Finally,  convert it into a set and name it `junk_set`.
+- Read in the data from the `data` folder named `canucks.csv` and name the dataframe `canucks`.
+- Use the `dtypes` attribute on the whole dataframe and save the output as `canuck_types` and answer the questions below.
 
 
 <codeblock id="04_17">
-- The verbs `.append()` and `len()` may be handy.
-- You can convert you list to a tuple with `tuple(). 
-- Have you sliced keeping in mind the end of the slice is excluded? 
+- Are you using `pd.read_csv()`?
+- Are you using the attribute `dtypes` on the whole `canucks` dataframe? 
 
 </codeblock>
+
+
+**Question 1**     
+What dtype is the `Salary` column?
+
+<choice id="1" >
+<opt text="<code>float64</code>" correct="true">
+
+Nice!
+
+</opt>
+
+<opt text="<code>int64</code>">
+
+Are you looking at the output from above? 
+
+</opt>
+
+<opt text="<code>object</code>">
+
+Are you looking at the output from above? 
+
+</opt>
+
+<opt text="<code>bool</code>" >
+
+Are you looking at the output from above? 
+
+</opt>
+
+</choice> 
+
+**Question 2**     
+What dtype is the `Position` column?
+
+<choice id="2" >
+<opt text="<code>float64</code>" >
+
+Are you looking at the output from above? 
+
+</opt>
+
+<opt text="<code>int64</code>">
+
+Are you looking at the output from above? 
+
+</opt>
+
+<opt text="<code>object</code>" correct="true">
+
+Nice!
+
+</opt>
+
+<opt text="<code>bool</code>" >
+
+Are you looking at the output from above? 
+
+</opt>
+
+</choice> 
+
+
+**Question 3**     
+What dtype is the `Weight` column?
+
+<choice id="3" >
+<opt text="<code>float64</code>" >
+
+Are you looking at the output from above? 
+
+</opt>
+
+<opt text="<code>int64</code>" correct="true">
+
+Nice!
+
+</opt>
+
+<opt text="<code>object</code>">
+
+Are you looking at the output from above? 
+
+</opt>
+
+<opt text="<code>bool</code>" >
+
+Are you looking at the output from above? 
+
+</opt>
+</choice> 
 
 
 </exercise>
 
 
-<exercise id="18" title="Making a Dataframe from Lists">
-
-**Instructions:**    
-Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
-
-**When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
-
-
-
-Tasks:
-
-
-
-
-<codeblock id="04_18">
-- Are you using `pd.DataFrame()`?
-- Are you using the arguments `data` and `columns`?
-
-</codeblock>
-
-
-</exercise>
 
 
 
