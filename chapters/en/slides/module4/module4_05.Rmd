@@ -43,18 +43,6 @@ pd.set_option('display.max_rows', 15)
 
 ```
 
-```{python include = FALSE}
-
-feb = ['february', 'winter', ]
-mar = ['march', 'spring', 31]
-apr = ['march', 'spring', ]
-
-names = [ 'month', 'season', '31st']
-
-weather = pd.DataFrame(data=[feb, mar, apr], 
-                       columns =names)
-                       
-```
 
 type: slides
 
@@ -86,7 +74,7 @@ We can change where to split the string as well.
 ```{python}
 sentence.split("e")
 ```
-This argument uses the character "e" to separate string are and discards of the separators. 
+This argument uses the character "e" to separate string are and discards the separator. 
 
 Why is it returned in square brackets though? 
 
@@ -185,7 +173,7 @@ my_list
 I can edit any entry in this list and replace it with a new value.
 
 ```{python}
-my_list[3] = "Ta Da!"
+my_list[2] = "Ta Da!"
 ```
 
 
@@ -296,7 +284,7 @@ item3 = ['bread', 'Bakery', 3.50]
 
 column_names = ['item', 'location', 'price']
 
-shopping_items = pd.DataFrame(data = [item1, item2, item3], columns=column_names)
+shopping_items = pd.DataFrame(data=[item1, item2, item3], columns=column_names)
 shopping_items
 ```
 
@@ -329,7 +317,6 @@ type(my_tuple)
 ```
 
 
-
 ```{python error=TRUE}
 my_tuple[2] = 'Many'
 ```
@@ -345,6 +332,51 @@ Notes: Script here
 
 ## Sets 
 
+Sets, not unlike lists and tuples is a data structure that contain elements. Sets differ such that:
+- they are unordered, and
+- The containing values are unique - meaning there are no entries that are repeated. 
+
+let's explore this a bit. 
+
+Sets are made with curly brackets : 
+```{python}
+my_set = {1.0, 2, 'Buckle my shoe' }
+my_set
+```
+
+
+What if I add more of the same entries 
+
+```{python}
+my_set = {1.0, 2, 'Buckle my shoe', 1.0, 2 }
+my_set
+```
+This is still the same as before 
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+What about the order? can I select a specific element?
+
+```{python error=TRUE}
+my_set[1]
+```
+Since there is no order to a set, we cannot select or slice from them.
+
+We can, however, add to them with  `.add()`. 
+
+```{python}
+my_set.add(3)
+my_set.add(4)
+my_set
+```
+
+You'll notice that unlike lists, the new entries are not added to the end. Remember this data structure has no order.  
 
 
 Notes: Script here
@@ -355,90 +387,16 @@ Notes: Script here
 
 ---
 
-## Sets 
+## All Together Now
 
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
+<br> 
 
----
-
-## Diagram 
-
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
-
----
-
-
-
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
-
----
-
-
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
-
----
-
-
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
-
----
-
-
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
-
----
-
-
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
-
----
-
-
-
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
-
----
-
-
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
-
----
+| Data Structure   | Ordered  |  Mutable  |  Add values  |  Symbol     |Can accept duplicates|
+|:-----------------|:--------:|:---------:|:------------:|:-----------:|:-------------------:|
+|    `str`         |    ✓     |   ☓       | ☓           | `''` or `""`|                 ✓   |
+| `list`           |    ✓     |  ✓        | `.append()` | `[]`        |                   ✓ |
+| `tuple`          |    ✓     |  ☓       | ☓            |  `()`       |                 ✓   |
+| `set`            |    ☓    | ☓         |  `.add()`    |   `{}`      |              ☓      |
 
 
 Notes: Script here

@@ -155,10 +155,11 @@ Running a coding exercise for the first time could take a bit of time for everyt
 
 _**Make sure you remove the hash (`#`) symbol in the coding portions of this question.  We have commented them so that the line won't execute and you can test your code after each step.**_
 
+How many times do the lyrics "Let it be" occur in the Beatles Hit song of the same title? 
 
 
 Tasks:
-- Use some of the string verbs you learn in lecture to count all the times "let it be" (all upper and lower case versions) is said in the Beatles hit song. 
+- Use some of the string verbs you learn in lecture to count all the times "let it be" (all upper and lower case versions) appears in the string `lyrics`. 
 - Save it in an object named `letitbe_count`
 
   
@@ -185,7 +186,7 @@ Running a coding exercise for the first time could take a bit of time for everyt
 
 _**Make sure you remove the hash (`#`) symbol in the coding portions of this question.  We have commented them so that the line won't execute and you can test your code after each step.**_
 
-
+How can we cast from a string to an integer value?
 
 Tasks:
 
@@ -234,47 +235,62 @@ Python won't let you cast directly from a value of type `str` to a value `int`.
 <exercise id="6" title="Name that Data Structure">
 
 **Question 1**         
-
+ _"I don't care about my elements order."_     
+ Who am I? 
 
 <choice id="1" >
-<opt text='True'>
+<opt text="<code>str</code>">
 
+Which data structure does not have a particular order? 
 
 </opt>
 
-<opt text= 'False' correct="true">
+<opt text="<code>list</code>" >
 
-Good job!  
+Which data structure does not have a particular order? 
+</opt>
+
+<opt text="<code>tuple</code>" >
+
+Which data structure does not have a particular order? 
+
+</opt>
+
+<opt text="<code>set</code>" correct="true">
+
+Well done.
 
 </opt>
 
 </choice> 
 
+
 **Question 2**          
-
-
+ _"I can't be changed, I don't accept new elements but I can contain multiple data types"_     
+ Who am I? 
+ 
 <choice id="2" >
-<opt text="">
+<opt text="<code>str</code>">
 
-You may want to look over this before moving forward.
-
-</opt>
-
-<opt text="Each column is a single variable">
-
-You may want to look over this before moving forward.
+The data structure in fits the first two statements but a string contain characters of all type `str`. 
 
 </opt>
 
-<opt text="Each value is a single cell" >
+<opt text="<code>list</code>" >
 
-You may want to look over this before moving forward.
+This data structure can add elements using `.append()` 
 
 </opt>
 
-<opt text="There are no <code>NaN</code> values in the dataset" correct="true">
+<opt text="<code>tuple</code>" correct="true">
 
-You are right. 
+Yes,this can only have the value `None`. 
+
+</opt>
+
+<opt text="<code>set</code>">
+
+This data structure can add to it using `.add()`
 
 </opt>
 
@@ -285,21 +301,41 @@ You are right.
 
 <exercise id="7" title="Data Structure True and False">
 
-Is the following statement true or false?      
+
+Are the following statements True or False?      
 
 
+_Tuples are immutable._
 
 
-<choice>
-<opt text="True">
+<choice id="1">
+<opt text="True" correct="true">
 
-Did you read this section? 
+Yay! You got it!
 
 </opt>
 
-<opt text= "False" correct="true">
+<opt text= "False" >
 
-Good job! Of course it depends on the statistical question!
+This is in fact the oposite! 
+
+</opt>
+
+</choice> 
+
+
+_Sets can only contain numerical data types._
+
+<choice id="1">
+<opt text="True">
+
+Sets can contain many different datatypes apart from numerical values. 
+
+</opt>
+
+<opt text= "False"  correct="true">
+
+Yay! You got it!
 
 </opt>
 
@@ -315,19 +351,22 @@ Running a coding exercise for the first time could take a bit of time for everyt
 
 **When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
 
-
-
-
-
+Let's explore how to add to  a list, slice it and convert it into a tuple. 
 
 
 Tasks:
 
 
+- Using the list provided, add a `pen`, a `scrap paper`, a `7.3` and a `True` element.
+- Find the length of the list after adding the element and save the value in an object named `drawer_length`.
+- Slice the list from the element 4 to `scrap paper`  and save this in an object named `cleaned_junk_drawer`.
+- Finally,  convert it into a set and name it `junk_set`.
 
 
 <codeblock id="04_10">
-
+- The verbs `.append()` and `len()` may be handy.
+- You can convert you list to a tuple with `tuple(). 
+- Have you sliced keeping in mind the end of the slice is excluded? 
 
 </codeblock>
 
@@ -343,18 +382,18 @@ Running a coding exercise for the first time could take a bit of time for everyt
 **When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
 
 
-
-
-
+Let's use lists and convert them into a pandas dataframe. 
 
 
 Tasks:
 
-
+- Use the lists given in the cell below toto make a dataframe.
+- Name the dataframe `family`.
 
 
 <codeblock id="04_09">
-
+- Are you using `pd.DataFrame()`?
+- Are you using the arguments `data` and `columns`?
 
 </codeblock>
 
@@ -364,7 +403,7 @@ Tasks:
 
 <exercise id="10" title="Python Data Structures: Dictionaries" type="slides">
 
-<slides source="module3/module3_08">
+<slides source="module4/module4_10">
 
 </slides>
 
@@ -375,17 +414,23 @@ Tasks:
 **Question 1**          
 
 
+Is the following statement True or False?      
+
+
+_Dictionaries and sets use the same type of brackets to create them._
+
 
 <choice id="1" >
-<opt text="True" >
+<opt text="True" correct="true" >
 
+That's right. They both use curly brackets.
 
 
 </opt>
 
-<opt text="False" correct="true">
+<opt text="False" >
 
-Great work!
+What kind of brackets do the both use? 
 
 </opt>
 
@@ -394,15 +439,28 @@ Great work!
        
 **Question 2**          
 
+Which verb transforms dictionariesinto dataframes? 
 
 <choice id="2" >
-<opt text="<code></code>">
+<opt text="<code>.from_dict()</code>">
 
-You may want to look over this before moving forward.
+You seem to be missing something at the begining. 
 
 </opt>
 
-<opt text="<code></code>" correct="true">
+<opt text="<code>pd.dataframe.from_dict()</code>">
+
+Careful with capitalizations. You are extremely close. 
+
+</opt>
+
+<opt text="<code>pd.DataFrame.from_dictionary()</code>">
+
+Maybe it's not quite this long. 
+
+</opt>
+
+<opt text="<code>pd.DataFrame.from_dict()</code>" correct="true">
 
 Nice work!
 
@@ -420,19 +478,27 @@ Running a coding exercise for the first time could take a bit of time for everyt
 
 **When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
 
-
-
-
-
+Recently Jeremy bought a new Ikea shoe rack.  The packaging included quite a few parts and he is finding it hard to keep track! 
 
 
 Tasks:
+Make a dictionary that includes the quantity of each part included in the Ikea set. 
 
+The shoe rack contained the following parts: 
 
+- 8 `Long Screw`
+- 8 `Flat Top Metric Screw`
+- 8 `Wood Dowel`
+- 2 `Short Screw`
+- 1 `Allen Key`
+- 1 `Connector Plate` 
 
+- Construct the dictionary so that the part names are the keys and the quantities of the the parts, are the values for the dictionary.
+- Name the dictionary `ikea_shoe_rack`.
 
 <codeblock id="04_12">
-
+- Are you naming your dictionary properly? 
+- Are all your parts spelt correctly?
 
 </codeblock>
 
@@ -449,8 +515,193 @@ Running a coding exercise for the first time could take a bit of time for everyt
 **When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
 
 
+With no surprise the shoe rack was not the only thing Jeremy bought. below is a table of all his purchases. 
+
+|    | item_name       | collection   |   price |
+|---:|:----------------|:-------------|--------:|
+|  0 | Bistro Set      | APPLARO      |  216.98 |
+|  1 | Reclining Chair | APPLARO      |   80.00 |
+|  2 | Shelf Unit      | HYLLIS       |   11.99 |
+|  3 | Seat Pad        | KUDDARNA     |   29.99 |
+|  4 | Shoe Rack       | TJUSIG       |   29.99 |
 
 
+
+
+Tasks:
+
+- Create the table above from a dictionary using `pd.DataFrame.from_dict()`.
+- Name your new dataframe ikea_df
+
+
+
+
+<codeblock id="04_13">
+- Are you using lists as the values in your dictionary? 
+- Are you making sure to use floats for price?
+- are all your items and collections spelts correctly?
+
+</codeblock>
+
+
+</exercise>
+
+<exercise id="14" title="Dataframes, Series and Column dtypes" type="slides">
+
+<slides source="module4/module4_14">
+
+</slides>
+
+</exercise>
+
+<exercise id="15" title="Name That dtype">
+
+**Question 1**         
+ _"I don't care about my elements order."_     
+ Who am I? 
+
+<choice id="1" >
+<opt text="<code>str</code>">
+
+Which data structure does not have a particular order? 
+
+</opt>
+
+<opt text="<code>list</code>" >
+
+Which data structure does not have a particular order? 
+</opt>
+
+<opt text="<code>tuple</code>" >
+
+Which data structure does not have a particular order? 
+
+</opt>
+
+<opt text="<code>set</code>" correct="true">
+
+Well done.
+
+</opt>
+
+</choice> 
+
+
+**Question 2**          
+ _"I can't be changed, I don't accept new elements but I can contain multiple data types"_     
+ Who am I? 
+ 
+<choice id="2" >
+<opt text="<code>str</code>">
+
+The data structure in fits the first two statements but a string contain characters of all type `str`. 
+
+</opt>
+
+<opt text="<code>list</code>" >
+
+This data structure can add elements using `.append()` 
+
+</opt>
+
+<opt text="<code>tuple</code>" correct="true">
+
+Yes,this can only have the value `None`. 
+
+</opt>
+
+<opt text="<code>set</code>">
+
+This data structure can add to it using `.add()`
+
+</opt>
+
+</choice> 
+
+</exercise>
+
+
+<exercise id="16" title="Data Structure True and False">
+
+
+Are the following statements True or False?      
+
+
+_Tuples are immutable._
+
+
+<choice id="1">
+<opt text="True" correct="true">
+
+Yay! You got it!
+
+</opt>
+
+<opt text= "False" >
+
+This is in fact the oposite! 
+
+</opt>
+
+</choice> 
+
+
+_Sets can only contain numerical data types._
+
+<choice id="1">
+<opt text="True">
+
+Sets can contain many different datatypes apart from numerical values. 
+
+</opt>
+
+<opt text= "False"  correct="true">
+
+Yay! You got it!
+
+</opt>
+
+</choice> 
+
+</exercise>
+
+
+<exercise id="17" title="The Data Structure Basics">
+
+**Instructions:**    
+Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
+
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
+
+Let's explore how to add to  a list, slice it and convert it into a tuple. 
+
+
+Tasks:
+
+
+- Using the list provided, add a `pen`, a `scrap paper`, a `7.3` and a `True` element.
+- Find the length of the list after adding the element and save the value in an object named `drawer_length`.
+- Slice the list from the element 4 to `scrap paper`  and save this in an object named `cleaned_junk_drawer`.
+- Finally,  convert it into a set and name it `junk_set`.
+
+
+<codeblock id="04_17">
+- The verbs `.append()` and `len()` may be handy.
+- You can convert you list to a tuple with `tuple(). 
+- Have you sliced keeping in mind the end of the slice is excluded? 
+
+</codeblock>
+
+
+</exercise>
+
+
+<exercise id="18" title="Making a Dataframe from Lists">
+
+**Instructions:**    
+Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
+
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
 
 
 
@@ -459,8 +710,9 @@ Tasks:
 
 
 
-<codeblock id="04_13">
-
+<codeblock id="04_18">
+- Are you using `pd.DataFrame()`?
+- Are you using the arguments `data` and `columns`?
 
 </codeblock>
 

@@ -1,0 +1,212 @@
+---
+params:
+  dynamictitle: "module4_14"
+title: "`r params$dynamictitle`"
+output: 
+  md_document:
+    variant: gfm
+---
+
+
+```{r setup, include=FALSE}
+## DO NOT FORGET TO CHANGE THIS ACCORDINGLY 
+library(rmarkdown)
+# MAke sure you are updating your title 
+knitr::opts_chunk$set(echo = TRUE,
+                      base.dir = ".", 
+                      base.url = "/",
+                      fig.path = paste("../../static/module4/", params$dynamictitle,"/", sep = ""))
+
+knitr_opts <- knitr_options( opts_knit = NULL,
+                             opts_chunk = NULL,
+                             knit_hooks = NULL,
+                             opts_hooks = NULL,
+                             opts_template = NULL)
+md_document_custom <- md_document(variant = "gfm")
+output_format(knitr = knitr_opts,
+              pandoc = NULL,
+              base_format = md_document_custom)
+library(reticulate)
+
+```
+
+
+```{python include=FALSE}
+import pandas as pd
+import numpy as np
+pd.set_option('display.width', 350)
+
+np.set_printoptions(linewidth=400)
+
+pd.set_option('display.max_columns', 50)
+pd.set_option('display.max_rows', 15)
+cereal = pd.read_csv('cereal.csv').loc[:,['mfr', 'type', 'calories', 'protein','fiber', 'fat',  'carbo',  'rating' ]]
+```
+
+
+type: slides
+
+
+# Dataframes, series and column dtypes
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+## What is a Dataframe ... again
+
+Since the begining of this module,  we have explored basic Python Data types and structures. We've covered how they can be transformed into a dataframe but that didn't answer the lingering question ***"What is and makes up a Pandas dataframe?"***
+
+Let's greet our cereal data back with a warm welcome. 
+
+```{python}
+cereal
+```
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+On first instinct is to see what `type()` returns. 
+
+```{python}
+type(cereal)
+```
+
+It appears that dataframes have their own data type called a `pandas.core.frame.DataFrame` or let's just call it a `pd.DataFrame` type for short. 
+
+Looking into this further the documentation states a dataframe as a: 
+
+_" Two-dimensional tabular data structure with columns and axis labels."_ 
+
+More directly, we can describe a dataframe as a collection of columns but that brings us to the new question:    
+    
+**"What is a dataframe column?"**
+
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+Let's think back to Module 1 when we were selecting a single column from a dataframe.  
+There are two ways of doing so; with single brackets, and with double brackets.  What is the difference? 
+
+```{python}
+cereal[['mfr']]
+```
+```{python}
+type(cereal[['mfr']])
+```
+
+That's no surprise, what about single brackets? 
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+
+```{python}
+cereal['mfr']
+```
+
+
+```{python}
+type(cereal['mfr'])
+```
+
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+## Pandas Series
+
+A pandas Series is a one dimension array of values with an axis label. This is the base datatype that make up a pandas dataframe. In fact the <a href="https://pandas.pydata.org/pandas-docs/stable/getting_started/dsintro.html#dataframe" target="_blank"Pandas documentation"</a> explain it as "a dict of Series objects". 
+ 
+let's look back at the series output again: 
+
+```{python}
+cereal['mfr']
+```
+We can see additional information at the bottom. The axis labeled `mfr`, the length equal to 77 and the `dtype`: object. 
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+## What is a dtype? 
+
+So far we know a dataframe is made up of a collection of series and a series contains values, a label as well has some additional information regarding a `dtype`. 
+
+Just like how values have the data types ( `str`, `int`, `float`, etc.), Pandas columns have dtype. 
+
+
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+# Let’s practice what we learned!
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />

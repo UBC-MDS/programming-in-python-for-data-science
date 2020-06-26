@@ -47,7 +47,7 @@ sentence.split("e")
 ```
 
 This argument uses the character “e” to separate string are and discards
-of the separators.
+the separator.
 
 Why is it returned in square brackets though?
 
@@ -205,7 +205,7 @@ my_list
 I can edit any entry in this list and replace it with a new value.
 
 ``` python
-my_list[3] = "Ta Da!"
+my_list[2] = "Ta Da!"
 ```
 
 ``` python
@@ -213,7 +213,7 @@ my_list
 ```
 
 ```out
-[1.2, 3, None, 'Ta Da!', 'One of the lost socks']
+[1.2, 3, 'Ta Da!', True, 'One of the lost socks']
 ```
 
 Notes: Script here
@@ -249,6 +249,20 @@ lists_of_lists
 [[1, 2], ['buckle', 'My', 'Sandal'], 3, 4]
 ```
 
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
 Strings can be sliced just like list…
 
 ``` python
@@ -279,6 +293,8 @@ Error in py_call_impl(callable, dots$args, dots$keywords): TypeError: 'str' obje
 Detailed traceback: 
   File "<string>", line 1, in <module>
 ```
+
+That means values of type `str`, are **immutable**.
 
 Notes: Script here
 
@@ -326,7 +342,7 @@ max(primes)
 13
 ```
 
-and the sum of the list with \`sum():
+and the sum of the list with `sum()`:
 
 ``` python
 sum(primes)
@@ -353,8 +369,8 @@ Notes: Script here
 ## Lists to Dataframes
 
 Up until this point we have been working with dataframes that have been
-read in and coverted from different types of files. We, however can make
-dataframes from scratch using lists.
+read in and converted from different types of files. We, however can
+make dataframes from scratch using lists.
 
 Let’s say I wanted a dataframe of things I needed to purchase from the
 store on my next grocery shopping trip.
@@ -366,7 +382,7 @@ item3 = ['bread', 'Bakery', 3.50]
 
 column_names = ['item', 'location', 'price']
 
-shopping_items = pd.DataFrame(data = [item1, item2, item3], columns=column_names)
+shopping_items = pd.DataFrame(data=[item1, item2, item3], columns=column_names)
 shopping_items
 ```
 
@@ -396,8 +412,8 @@ Notes: Script here
 
 ## Tuples
 
-Tuples are very similar to lists but with the 2 main differences we are
-going to discuss are the following:
+Tuples are a data structure very similar to lists but with the 2 main
+differences:
 
 1.  They can be contained in parenthesis, and
 2.  They are immutable
@@ -448,51 +464,36 @@ Notes: Script here
 
 ## Sets
 
-Notes: Script here
+Sets, not unlike lists and tuples is a data structure that contain
+elements. Sets differ such that: - they are unordered, and - The
+containing values are unique - meaning there are no entries that are
+repeated.
 
-<html>
+let’s explore this a bit.
 
-<audio controls >
+Sets are made with curly brackets :
 
-<source src="/placeholder_audio.mp3" />
+``` python
+my_set = {1.0, 2, 'Buckle my shoe' }
+my_set
+```
 
-</audio>
+```out
+{1.0, 2, 'Buckle my shoe'}
+```
 
-</html>
+What if I add more of the same entries
 
----
+``` python
+my_set = {1.0, 2, 'Buckle my shoe', 1.0, 2 }
+my_set
+```
 
-## Sets
+```out
+{1.0, 2, 'Buckle my shoe'}
+```
 
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
-
-## Diagram
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
+This is still the same as before
 
 Notes: Script here
 
@@ -508,47 +509,35 @@ Notes: Script here
 
 ---
 
-Notes: Script here
+What about the order? can I select a specific element?
 
-<html>
+``` python
+my_set[1]
+```
 
-<audio controls >
+```out
+Error in py_call_impl(callable, dots$args, dots$keywords): TypeError: 'set' object is not subscriptable
 
-<source src="/placeholder_audio.mp3" />
+Detailed traceback: 
+  File "<string>", line 1, in <module>
+```
 
-</audio>
+Since there is no order to a set, we cannot select or slice from them.
 
-</html>
+We can, however, add to them with `.add()`.
 
----
+``` python
+my_set.add(3)
+my_set.add(4)
+my_set
+```
 
-Notes: Script here
+```out
+{1.0, 2, 3, 4, 'Buckle my shoe'}
+```
 
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
+You’ll notice that unlike lists, the new entries are not added to the
+end. Remember this data structure has no order.
 
 Notes: Script here
 
@@ -564,33 +553,16 @@ Notes: Script here
 
 ---
 
-Notes: Script here
+## All Together Now
 
-<html>
+<br>
 
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
+| Data Structure | Ordered | Mutable | Add values  |    Symbol    | Can accept duplicates |
+| :------------- | :-----: | :-----: | :---------: | :----------: | :-------------------: |
+| `str`          |    ✓    |    ☓    |      ☓      | `''` or `""` |           ✓           |
+| `list`         |    ✓    |    ✓    | `.append()` |     `[]`     |           ✓           |
+| `tuple`        |    ✓    |    ☓    |      ☓      |     `()`     |           ✓           |
+| `set`          |    ☓    |    ☓    |  `.add()`   |     `{}`     |           ☓           |
 
 Notes: Script here
 

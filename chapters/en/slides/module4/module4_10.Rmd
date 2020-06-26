@@ -1,0 +1,348 @@
+---
+params:
+  dynamictitle: "module4_10"
+title: "`r params$dynamictitle`"
+output: 
+  md_document:
+    variant: gfm
+---
+
+
+```{r setup, include=FALSE}
+## DO NOT FORGET TO CHANGE THIS ACCORDINGLY 
+library(rmarkdown)
+# MAke sure you are updating your title 
+knitr::opts_chunk$set(echo = TRUE,
+                      base.dir = ".", 
+                      base.url = "/",
+                      fig.path = paste("../../static/module4/", params$dynamictitle,"/", sep = ""))
+
+knitr_opts <- knitr_options( opts_knit = NULL,
+                             opts_chunk = NULL,
+                             knit_hooks = NULL,
+                             opts_hooks = NULL,
+                             opts_template = NULL)
+md_document_custom <- md_document(variant = "gfm")
+output_format(knitr = knitr_opts,
+              pandoc = NULL,
+              base_format = md_document_custom)
+library(reticulate)
+
+```
+
+
+```{python include=FALSE}
+import pandas as pd
+import numpy as np
+pd.set_option('display.width', 350)
+
+np.set_printoptions(linewidth=400)
+
+pd.set_option('display.max_columns', 50)
+pd.set_option('display.max_rows', 15)
+
+```
+
+
+
+type: slides
+
+# Python data structures: Dictionaries
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+## Dictionaries
+ 
+Dictionaries are used in different languages to look up definitions of words. Python has a data structure by the same name that replicate this "look up" action. 
+
+A **dictionaries** is a a mapping between key-values pairs. 
+For example: 
+
+The word "Monster" has the definition "an imaginary creature that is typically large, ugly, and frightening".    
+Monster is the ***key** and the definition "an imaginary creature that is typically large, ugly, and frightening" is the **value**. 
+
+How does this look in terms of a data structure? 
+
+```{python}
+oxford = {'Monster': 'an imaginary creature that is typically large, ugly, and frightening'}
+oxford
+```
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+This can be carried across any type of key-value pairs,  with any data type: 
+
+```{python}
+house = {'bedrooms': 3, 'bathrooms': 2, 'city': 'Vancouver', 'price': 2499999, 'date_sold': (1,3,2015)}
+house
+```
+
+```{python}
+condo = {'bedrooms' : 2, 
+         'bathrooms': 1, 
+         'kitchens' : 1, 
+         'city'     : 'Burnaby', 
+         'price'    : 699999, 
+         'date_sold': (27,8,2011)
+        }
+condo
+```
+
+The keys (elements on the left of the colon) are unique, but the values (elements on the right of the colon) are not. 
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+```{python}
+house
+```
+
+We can access a **value** of a dictionary with the **key** in square brackets:
+
+```{python}
+house['price']
+```
+
+and since dictionaries are **mutable**, we can change them:
+```{python}
+house['price'] = 7
+house
+```
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+```{python}
+house
+```
+
+we can add to the dictionary in the same way as we edit them, but using a new **key** name:
+
+```{python}
+house['bed monster'] = True
+house
+```
+
+Keys are not limited to strings and can be many different data types including numerical values and tuples (but not dictionaries or lists). 
+Values can contain most datatypes and structure such as lists, tuples and even a dictionary:  
+
+```{python}
+house[9999] = ['age', 'old']
+house[('trees', 'flower', 'vegetables')] = {'Garden': 3}
+house
+```
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+We can acess all of the keys, values and key-value pairsin a dictionary  with the verbs `.keys()`, `.values()` and `.items()` respectively.
+
+```{python}
+house
+```
+
+Let's try it on our house dictionary above: 
+
+```{python}
+house.values()
+```
+
+```{python}
+house.keys()
+```
+
+
+```{python}
+house.items()
+```
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+## Dictionaries to Dataframes
+
+What about making dataframes from dictionaries? 
+
+We are lucky enough to have 2 ways of making data from a dictionary using the verb `pd.DataFrame.from_dict()`.      
+For example let's try making the following table. 
+
+
+|    | name   |   height |   diameter | flowering   |
+|---:|:-------|---------:|-----------:|:------------|
+|  0 | Cherry |        7 |         12 | True        |
+|  1 | Oak    |       20 |         89 | False       |
+|  2 | Willow |       12 |         30 | True        |
+|  3 | Fir    |       16 |         18 | False       |
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+
+|    | name   |   height |   diameter | flowering   |
+|---:|:-------|---------:|-----------:|:------------|
+|  0 | Cherry |        7 |         12 | True        |
+|  1 | Oak    |       20 |         89 | False       |
+|  2 | Willow |       12 |         30 | True        |
+|  3 | Fir    |       16 |         18 | False       |
+
+
+ We can use the each key in the dictionary to depict a column:
+
+```{python}
+data = { 'name': ['Cherry', 'Oak', 'Willow', 'Fir'], 
+         'height': [7, 20, 12, 16], 
+         'diameter': [12, 89, 30, 18], 
+         'flowering': [True, False, True, False]}
+         
+forest = pd.DataFrame.from_dict(data)
+forest
+```
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+
+|    | name   |   height |   diameter | flowering   |
+|---:|:-------|---------:|-----------:|:------------|
+|  0 | Cherry |        7 |         12 | True        |
+|  1 | Oak    |       20 |         89 | False       |
+|  2 | Willow |       12 |         30 | True        |
+|  3 | Fir    |       16 |         18 | False       |
+
+
+Or use each key in the dictionary to depict a row.  
+We we use the argument `orient` to explain the keys are the `index` and the argumen `columns` to label our columns:
+
+```{python}
+data = {0: ['Cherry', 7, 12, True],
+        1: ['Oak', 20, 89, False],
+        2: ['Willow', 12, 30, True],
+        3: ['Fir', 16, 18, False]}
+column_names = ['name', 'height', 'diameter', 'flowering']
+
+forest = pd.DataFrame.from_dict(data, orient='index', columns= column_names)
+forest
+```
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+Both of these code make the same dataframe. 
+
+```{python echo=TRUE}
+forest
+```
+
+Keys as column: 
+
+```{python}
+data = {'name': ['Cherry', 'Oak', 'Willow', 'Fir'], 
+        'height': [7, 20, 12, 16], 
+        'diameter': [12, 89, 30, 18], 
+        'flowering': [True, False, True, False]}
+         
+forest = pd.DataFrame.from_dict(data)
+```
+
+Keys as rows: 
+
+```{python}
+data = {0: ['Cherry', 7, 12, True],
+        1: ['Oak', 20, 89, False],
+        2: ['Willow', 12, 30, True],
+        3: ['Fir', 16, 18, False]}
+column_names = ['name', 'height', 'diameter', 'flowering']
+
+forest = pd.DataFrame.from_dict(data, orient='index', columns= column_names)
+```
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+
+## Let's add what we learned to our table
+<br>
+
+| Data Structure   | Ordered  |  Mutable  |  Add values  |  Symbol     |Can accept duplicates|
+|:-----------------|:--------:|:---------:|:------------:|:-----------:|:-------------------:|
+|    `str`         |    ✓     |   ☓       | ☓           | `''` or `""`|                 ✓   |
+| `list`           |    ✓     |  ✓        | `.append()` | `[]`        |                   ✓ |
+| `tuple`          |    ✓     |  ☓        | ☓           |  `()`       |                 ✓   |
+| `set`            |    ☓     | ☓         |  `.add()`   |   `{}`      |              ☓      |
+| `dictionary`     |    ☓     | ✓         |  ✓          |   `{:}`     |  keys: ☓ , values:  ✓  |
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+# Let’s practice what we learned!
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+  

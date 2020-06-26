@@ -41,7 +41,6 @@ np.set_printoptions(linewidth=400)
 pd.set_option('display.max_columns', 50)
 pd.set_option('display.max_rows', 15)
 
-df = pd.read_csv('cereal.csv', index_col=0)
 cereal = pd.read_csv('cereal.csv', index_col=0)
 ```
 
