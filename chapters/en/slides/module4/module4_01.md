@@ -20,8 +20,8 @@ Notes: Script here
 
 ## Values and Objects
 
-In the last few sections you may have had questions like *“Why are some
-values in quotations and why other are not?”*, *“What are these square
+In the last few sections, you may have had questions like *“Why are some
+values in quotations and why others are not?”*, *“What are these square
 brackets we keep using in our verb arguments?”* or *“Why can we take the
 mean of some columns and not others?”* . These are going to get answered
 in this module.
@@ -59,7 +59,7 @@ In these cases `pet` and `age` are **objects** and `Fido` and `6` are
 **values.**
 
 These objects can be named anything that begins with a letter and are
-not a “special python word” like **while**, **for**, **if**, **else**,
+not “special python words” like **while**, **for**, **if**, **else**,
 etc (we will talk about those in the next module).
 
 Notes: Script here
@@ -83,7 +83,7 @@ different things that get classified by Python as **Data Types**. There
 are:
 
   - Integers - `int`
-  - Floating point numbers - `float`
+  - Floating-point numbers - `float`
   - Strings - `str`
   - Booleans -`bool`
   - Lists - `list`
@@ -110,12 +110,12 @@ Notes: Script here
 You’ve likely noticed that we have not needed to put any quotation
 around number values. Python recognizes numbers as one of two possible
 types.  
-Either as an ***integer*** called an `int` type or a \***floating point
+Either as an ***integer*** called an `int` type or a \***floating-point
 number** called a `float`.
 
 ### **Int**
 
-An `int` value is a whole numbers that is either positive or negative.
+An `int` value is a whole number that is either positive or negative.
 
 We can use the verb `type()` to find out how Python classified the value
 that was stored in an object.
@@ -198,8 +198,8 @@ Notes: Script here
 2     march  spring   NaN
 ```
 
-Contrary to it’s acronym it is considered a numeric, specifically of
-type float\!
+Contrary to its acronym it is considered a numeric, specifically of type
+float\!
 
 ``` python
 nan_value = weather.loc[1,'31st']
@@ -240,7 +240,7 @@ Notes: Script here
 
 ## NoneType
 
-a `NoneType` is a quite different than `NaN`. `NaN` is used for missing
+a `NoneType` is quite different than `NaN`. `NaN` is used for missing
 numerical values and is classified as type `float` but a `None` value is
 an actual data type.
 
@@ -285,7 +285,7 @@ Notes: Script here
 The Boolean (`bool`) type has two values: **True** and **False**.
 
 We have seen this data type when we were filtering our dataframes with
-conditions. A Condition is evaluated and produce a column stating
+conditions. A condition is evaluated and produces a column stating
 whether the condition was met or not.
 
 ```out
@@ -307,8 +307,7 @@ Name: season, dtype: bool
 ```
 
 In filtering and many scenarios in programming, the evaluation of code
-can only be one of 2 options which is where this data type are
-particularly useful.
+can only be one of 2 options.
 
 ``` python
 type(False)
@@ -493,7 +492,7 @@ Notes: Script here
 name_of_bed_monster = 'Mike Wazowski'
 ```
 
-We can count the number of times a sub-string or character is present in
+We can count the number of times a substring or character is present in
 a string.
 
 ``` python
@@ -556,8 +555,8 @@ type(number_of_balloon_strings)
 <class 'str'>
 ```
 
-We can also convert from a float to a int and it will round down to the
-nearest full integer.
+We can also convert from a `float` to an `int` and it will round down to
+the nearest full integer.
 
 ``` python
 number_of_balloons = int(4.99)
@@ -780,7 +779,7 @@ Detailed traceback:
   File "<string>", line 1, in <module>
 ```
 
-In summary take care when casting values.
+In summary, take care when casting values.
 
 Notes: Script here
 

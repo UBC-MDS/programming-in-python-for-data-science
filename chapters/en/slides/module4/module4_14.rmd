@@ -146,7 +146,7 @@ Notes: Script here
 
 ## Pandas Series
 
-A pandas Series is a one dimension array of values with an axis label. This is the base data type that make up a pandas dataframe. In fact, the <a href="https://pandas.pydata.org/pandas-docs/stable/getting_started/dsintro.html#dataframe" target="_blank"Pandas documentation"</a> explain it as "a dict of Series objects". 
+A pandas Series is a one-dimensional array of values with an axis label. This is the base data type that makes up a pandas dataframe. In fact, the <a href="https://pandas.pydata.org/pandas-docs/stable/getting_started/dsintro.html#dataframe" target="_blank"Pandas documentation"</a> explain it as "a dict of Series objects". 
  
 let's look back at the series output again: 
 
@@ -166,7 +166,7 @@ Notes: Script here
 
 ## What is a dtype? 
 
-So far we know a dataframe is made up of a collection of series and a series contains values, a label as well has some additional information regarding a **dtype**. 
+So far we know a dataframe is made up of a collection of series and a series contains values, a label as well as some additional information regarding a **dtype**. 
 
 Just like how values have the data types ( `str`, `int`, `float`, etc.), Columns in a Pandas dataframe have types called **dtypes**. 
 
@@ -184,7 +184,7 @@ Notes: Script here
 
 <center><img src='/module4/branch3num.png' width="80%"></center>
 
-Just like with Python data types, Pandas has numeric and non numeric datatypes. 
+Just like with Python data types, Pandas has numeric and non-numeric data types. 
 
 #### Numeric dtypes
 
@@ -271,7 +271,7 @@ Notes: Script here
 These can be a bit more complicated but let's concentrate on the dtypes `object` and `bool`. We will be exploring `datetime64` in Module 7. 
 
 
-- `object`  is a dtype that contains `str` type values in the cells of the dataframe or that had a mixture of different types to begin with. This is the "default" dtype when pandas is not quite sure what is the cell type values are or when there is a mixture of numeric and non numeric value types. 
+- `object`  is a dtype that contains `str` type values in the cells of the dataframe or that had a mixture of different types to begin with. This is the "default" dtype when pandas is not quite sure what is the cell type values are or when there is a mixture of numeric and non-numeric value types. 
 
 - `bool` dtypes, just like it's dtype name, contains `bool` type values. 
 
@@ -329,7 +329,7 @@ And the column value within the series:
 type(cereal.loc[2, 'hot'])
 ```
 
-Also a `bool`. We can ignore the numpy like we did before, we will discuss this later. 
+Also a `bool`. We can ignore the numpy part as we did before, we will discuss this later. 
 
 
 
@@ -346,7 +346,7 @@ An easy way to  check all dtypes of the columns in our dataframe is to use `.dty
 ```{python}
 cereal.dtypes
 ```
-Knowing what type values are, helps us understand how we can transform them and how they respond to different operations and operators. 
+Knowing what dtype the values are, helps us understand how we can transform them and how they respond to different operations and operators. 
 
 Notes: Script here
 <html>

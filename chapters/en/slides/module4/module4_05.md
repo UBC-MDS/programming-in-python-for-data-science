@@ -20,10 +20,10 @@ Notes: Script here
 
 ## Sequences
 
-In the last section we discussed the `str` data type. We described it as
-*a sequence of characters*. In many cases, there is good reason to split
-up a long text strings into separate ones. luckily we have a convenient
-verb to do that `.split()`.
+In the last section, we discussed the `str` data type. We described it
+as *a sequence of characters*. In many cases, there is good reason to
+split up a long text string into separate ones. luckily we have a
+convenient verb to do that `.split()`.
 
 ``` python
 sentence = "I always lose at least one sock when I do laundry." 
@@ -46,7 +46,7 @@ sentence.split("e")
 ['I always los', ' at l', 'ast on', ' sock wh', 'n I do laundry.']
 ```
 
-This argument uses the character “e” to separate string are and discards
+This argument uses the character “e” to separate the string and discards
 the separator.
 
 Why is it returned in square brackets though?
@@ -69,8 +69,8 @@ Notes: Script here
 
 The output from the `.split()` verb is called a **list**. Similarly to
 how a string is a sequence of characters that depend on an order, a list
-is a sequence of elements with a particular order. lists can be identify
-by their square brackets.
+is a sequence of elements with a particular order. lists can be
+identified by their square brackets.
 
 ``` python
 words
@@ -167,10 +167,10 @@ lists_of_lists[1:3]
 [['buckle', 'My', 'Shoe'], 3]
 ```
 
-Note that slicing lists works similarly to slicing with `iloc[]`; the
-start is inclusive and the end is exclusive. So `lists_of_lists[1:3]`
-fetches elements 1 and 2, but not 3. In other words, it gets the 2nd and
-3rd elements in the list.
+Slicing lists is similar to slicing with `iloc[]`; the start is
+inclusive and the end is exclusive. So `lists_of_lists[1:3]` fetches
+elements 1 and 2, but not 3. In other words, it gets the 2nd and 3rd
+elements in the list.
 
 Notes: Script here
 
@@ -230,7 +230,7 @@ Notes: Script here
 
 ---
 
-We can also replace entries in a **nested** list (list within a list).
+We can also replace entries in a **nested** list (a list within a list).
 
 ``` python
 lists_of_lists
@@ -369,7 +369,7 @@ Notes: Script here
 ## Lists to Dataframes
 
 Up until this point we have been working with dataframes that have been
-read in and converted from different types of files. We, however can
+read in and converted from different types of files. We, however, can
 make dataframes from scratch using lists.
 
 Let’s say I wanted a dataframe of things I needed to purchase from the
@@ -464,8 +464,8 @@ Notes: Script here
 
 ## Sets
 
-Sets, not unlike lists and tuples is a data structure that contain
-elements. Sets differ such that: - they are unordered, and - The
+Sets, not unlike lists and tuples is a data structure that contains
+elements. Sets differ such that: - they are un-ordered, and - The
 containing values are unique - meaning there are no entries that are
 repeated.
 

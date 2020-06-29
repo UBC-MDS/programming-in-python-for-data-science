@@ -1,7 +1,7 @@
 ---
 title: 'Module 4: Python Without the "Eek" (Basic Python)'
 description:
-  'In this module you will learn about basic Python data types and  structures. You will explore what data types and structures are used to create Pandas Dataframe and how understanding column dtypes is important to data analysis.'
+  'In this module, you will learn about basic Python data types and structures. You will explore what data types and structures are used to create a Pandas dataframe and how understanding column dtypes is important to data analysis.'
 prev: /module3
 next: /module5
 type: chapter
@@ -126,7 +126,7 @@ You may want to look over this before moving forward.
 
 <opt text="<code>NoneType</code>" correct="true">
 
-Yes,this can only have the value `None`. 
+Yes, this can only have the value `None`. 
 
 </opt>
 
@@ -159,7 +159,7 @@ How many times do the lyrics "Let it be" occur in the Beatles Hit song of the sa
 
 
 Tasks:
-- Use some of the string verbs you learn in lecture to count all the times "let it be" (all upper and lower case versions) appears in the string `lyrics`. 
+- Use some of the string verbs you learn in the lecture to count all the times "let it be" (all upper and lower case versions) appears in the string `lyrics`. 
 - Save it in an object named `letitbe_count`
 
   
@@ -272,7 +272,7 @@ Well done.
 <choice id="2" >
 <opt text="<code>str</code>">
 
-This data structure fits the first two statements but a string contain characters of all type `str`. 
+This data structure fits the first two statements but a string contains characters of all type `str`. 
 
 </opt>
 
@@ -284,7 +284,7 @@ This data structure can add elements using `.append()`
 
 <opt text="<code>tuple</code>" correct="true">
 
-Yes,this can only have the value `None`. 
+Yes, this can only have the value `None`. 
 
 </opt>
 
@@ -317,7 +317,7 @@ Yay! You got it!
 
 <opt text= "False" >
 
-This is in fact the oposite! 
+This is, in fact, the opposite! 
 
 </opt>
 
@@ -351,7 +351,7 @@ Running a coding exercise for the first time could take a bit of time for everyt
 
 **When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
 
-Let's explore how to add to  a list, slice it and convert it into a tuple. 
+Let's explore how to add to a list, slice it and convert it into a tuple. 
 
 
 Tasks:
@@ -359,13 +359,13 @@ Tasks:
 
 - Using the list provided, add a `pen`, a `scrap paper`, a `7.3` and a `True` element.
 - Find the length of the list after adding the element and save the value in an object named `drawer_length`.
-- Slice the list from the element 4 to `scrap paper`  and save this in an object named `cleaned_junk_drawer`.
+- Slice the list from element 4 to `scrap paper`  and save this in an object named `cleaned_junk_drawer`.
 - Finally,  convert it into a set and name it `junk_set`.
 
 
 <codeblock id="04_10">
 - The verbs `.append()` and `len()` may be handy.
-- You can convert you list to a tuple with `tuple(). 
+- You can convert your list to a tuple with `tuple(). 
 - Have you sliced keeping in mind the end of the slice is excluded? 
 
 </codeblock>
@@ -387,7 +387,7 @@ Let's use lists and convert them into a pandas dataframe.
 
 Tasks:
 
-- Use the lists given in the cell below toto make a dataframe.
+- Use the lists given in the cell below to make a dataframe.
 - Name the dataframe `family`.
 
 
@@ -430,7 +430,7 @@ That's right. They both use curly brackets.
 
 <opt text="False" >
 
-What kind of brackets do the both use? 
+What kind of brackets do they both use? 
 
 </opt>
 
@@ -439,18 +439,18 @@ What kind of brackets do the both use?
        
 **Question 2**          
 
-Which verb transforms dictionariesinto dataframes? 
+Which verb transforms dictionaries into dataframes? 
 
 <choice id="2" >
 <opt text="<code>.from_dict()</code>">
 
-You seem to be missing something at the begining. 
+You seem to be missing something at the beginning. 
 
 </opt>
 
 <opt text="<code>pd.dataframe.from_dict()</code>">
 
-Careful with capitalizations. You are extremely close. 
+Careful with capitalization. You are extremely close. 
 
 </opt>
 
@@ -493,12 +493,12 @@ The shoe rack contained the following parts:
 - 1 `Allen Key`
 - 1 `Connector Plate` 
 
-- Construct the dictionary so that the part names are the keys and the quantities of the the parts, are the values for the dictionary.
+- Construct the dictionary so that the part names are the keys and the quantities of the parts, are the values for the dictionary.
 - Name the dictionary `ikea_shoe_rack`.
 
 <codeblock id="04_12">
 - Are you naming your dictionary properly? 
-- Are all your parts spelt correctly?
+- Are all your parts spelled correctly?
 
 </codeblock>
 
@@ -515,7 +515,7 @@ Running a coding exercise for the first time could take a bit of time for everyt
 **When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
 
 
-With no surprise the shoe rack was not the only thing Jeremy bought. below is a table of all his purchases. 
+The shoe rack was not the only thing Jeremy bought. below is a table of all his purchases. 
 
 |    | item_name       | collection   |   price |
 |---:|:----------------|:-------------|--------:|
@@ -538,8 +538,8 @@ Tasks:
 
 <codeblock id="04_13">
 - Are you using lists as the values in your dictionary? 
-- Are you making sure to use floats for price?
-- are all your items and collections spelts correctly?
+- Are you making sure to use floats for the price?
+- are all your items and collections spelled correctly?
 
 </codeblock>
 
@@ -565,7 +565,7 @@ Tasks:
 <choice id="1" >
 <opt text="<code>pd.DataFrame</code>" correct="true">
 
-Yes this is the data type!
+Yes, this is the data type!
 
 </opt>
 
@@ -576,7 +576,7 @@ This is what makes up a dataframe but it's not the data type.
 
 <opt text="<code>object</code>" >
 
-This is a dtype not a type. 
+This is a dtype, not a type. 
 
 </opt>
 
@@ -602,7 +602,7 @@ This is the whole dataframe type.
 
 <opt text="<code>pd.Series</code>" correct="true">
 
-That's right! a column have a type of pd.Series. 
+That's right! A column has a type of pd.Series. 
 
 </opt>
 
@@ -668,14 +668,14 @@ You may want to review this section.
 </exercise>
 
 
-<exercise id="17" title="Dtypes">
+<exercise id="17" title="Dtype Practice">
 
 **Instructions:**    
 Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
 
 **When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
 
-Let's explore the `dtypes` noun and see what our column dtype are. 
+Let's explore the `dtypes` noun and see what our column dtypes are. 
 
 Tasks:
 
@@ -778,17 +778,495 @@ Are you looking at the output from above?
 Are you looking at the output from above? 
 
 </opt>
+
 </choice> 
 
 
 </exercise>
 
 
+<exercise id="18" title="Operations with  Data Types" type="slides">
+
+<slides source="module4/module4_18">
+
+</slides>
+
+</exercise>
+
+<exercise id="19" title="Output or Error with Operations">
+
+Will the following operations result with an output or an error?
+
+**Question 1**          
+
+```python
+['One', 'Two', 3] + (4, 'five', 6)
+```
+
+<choice id="1" >
+
+<opt text="Output" >
+
+Take special care to the brackets being used. 
+
+
+</opt>
+
+<opt text="<code>Error</code>"  correct="true" >
+
+Both elements must be of the same data structure to add together. 
+
+</opt>
+
+</choice> 
+
+       
+**Question 2**          
+
+```python
+tuple(['One', 'Two', 3]) + (4, 'five', 6)
+```
+
+<choice id="2" >
+
+<opt text="Output" correct="true" >
+
+That's right. the output would be `('One', 'Two', 3, 4, 'five', 6)`. 
+
+</opt>
+
+<opt text="<code>Error</code>" >
+
+Are they both the same data structure?
+
+</opt>
+
+</choice> 
+
+
+**Question 3**          
+
+```python
+15.7 // 2
+```
+
+<choice id="3" >
+
+<opt text="Output" correct="true" >
+
+That's right. The output would be `7.0`.
+
+</opt>
+
+<opt text="<code>Error</code>" >
+
+can we use integer division with values of type `float`?
+
+</opt>
+
+</choice> 
+
+</exercise>
+
+
+<exercise id="20" title="True or False with Boolean Operators ">
+
+```python
+'Hotels' != 'Homes'
+```
+
+```out
+True
+```
+
+
+```python
+50< 5000
+```
+
+```out
+True 
+```
+
+Given the statement above, would the following result in a `True` of `False` value. 
+
+**Question 1**          
+
+```python
+'hotels' != 'homes' and 50< 5000
+```
+
+
+<choice id="1" >
+
+<opt text="True" correct="true" >
+
+Both statements are true so the output is True. 
+
+
+</opt>
+
+<opt text="False" >
+
+`and` checks if all statements are True`. 
+
+</opt>
+
+</choice> 
+
+       
+**Question 2**          
+
+```python
+not 'hotels' != 'homes' 
+```
+
+<choice id="2" >
+
+<opt text="True"  >
+
+The statement is True and `not` checks if the statement is False. 
+
+</opt>
+
+<opt text="False" correct="true">
+
+That's right. The statement is not false so the output is False. 
+
+</opt>
+
+</choice> 
+
+
+**Question 3**          
+
+```python
+not not 'hotels' != 'homes' 
+```
+
+<choice id="3" >
+
+<opt text="True" correct="true" >
+
+The right! 
+
+</opt>
+
+<opt text="False" >
+
+The statement `not 'hotels' != 'homes' ` is false so checking if that statement is False results in a True output. 
+
+</opt>
+
+</choice> 
+
+</exercise>
+
+
+<exercise id="21" title="More Practice with Data Types">
+
+**Instructions:**    
+Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
+
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
+
+
+Let's explore Python's operators. 
+
+Tasks:
+
+- Concatenate together `string1` and `numerical1`    
+- Save the result in an object named `together`
+- Use `condition1` and `condition2` to answer the multiple-choice question below. 
+
+<codeblock id="04_21">
+- Maybe use the verb `str()` to help you.
+
+</codeblock>
+
+
+What is the value of the following equations? 
+
+**Question 1**          
+
+```python
+3*(condition1 or condition2) + (condition1)
+```
+
+
+<choice id="1" >
+
+<opt text="0">
+
+The first set of brackets equals True. `3 * 1 + 0`.
+
+</opt>
+
+<opt text="3" >
+
+The first set of brackets equals True. `3 * 1 + 0`.
+
+</opt>
+
+<opt text="4"  correct="true" >
+
+Well done!
+
+</opt>
+
+
+<opt text="<code>Error</code>" >
+
+The first set of brackets equals True. `3 * 1 + 0`.
+
+</opt>
+
+</choice> 
+
+       
+**Question 2**          
+
+```python
+(not condition2) * (not condition1)
+```
+
+<choice id="2" >
+
+
+<opt text="0">
+
+Well done!
+
+</opt>
+
+<opt text="3" >
+
+The statement is True and `not` checks if the statement is False. Since the statement is not false the output is equal to 0. 
+
+</opt>
+
+<opt text="4" >
+
+The statement is True and `not` checks if the statement is False. Since the statement is not false the output is equal to 0. 
+
+</opt>
+
+
+<opt text="<code>Error</code>" >
+
+The statement is True and `not` checks if the statement is False. Since the statement is not false the output is equal to 0. 
+
+
+</choice> 
+
+
+</exercise>
+
+
+<exercise id="22" title="Operations with Columns" type="slides">
+
+<slides source="module4/module4_22">
+
+</slides>
+
+</exercise>
+
+<exercise id="23" title="What's That Output? With Column Operations">
 
 
 
-<exercise id="30" title="What Did We Just Learn?" type="slides, video">
-<slides source="module4/module4_30" start="0:165" end="3:01">>
+Here is my dataframe named `fruit_salad`:    
+
+|    | name         | colour   | location   | seed   | shape   | sweetness   |   water-content |   weight |
+|---:|:-------------|:---------|:-----------|:-------|:--------|:------------|----------------:|---------:|
+|  0 | apple        | red      | canada     | True   | round   | True        |              84 |      100 |
+|  1 | banana       | yellow   | mexico     | False  | long    | True        |              75 |      120 |
+|  2 | cantaloupe   | orange   | spain      | True   | round   | True        |              90 |     1360 |
+|  3 | dragon-fruit | megenta  | china      | True   | round   | False       |              96 |      600 |
+|  4 | elderberry   | purple   | austria    | False  | round   | True        |              80 |        5 |
+|  5 | fig          | purple   | turkey     | False  | oval    | False       |              78 |       40 |
+|  6 | guava        | green    | mexico     | True   | oval    | True        |              83 |      450 |
+|  7 | huckleberry  | blue     | canada     | True   | round   | True        |              73 |        5 |
+|  8 | kiwi         | brown    | china      | True   | round   | True        |              80 |       76 |
+|  9 | lemon        | yellow   | mexico     | False  | oval    | False       |              83 |       65 |
+
+**Question 1**          
+
+What would be the output of 
+
+```python
+df['seed'].sum()
+```
+<choice id="1" >
+<opt text="<code>0</code>" >
+
+Can we sum up a column of dtype `bool`? What values does it sum up? 
+
+
+</opt>
+
+<opt text="<code>1</code>" >
+
+Can we sum up a column of dtype `bool`? What values does it sum up? 
+
+</opt>
+
+<opt text="<code>6</code>" correct="true">
+
+Great!
+
+</opt>
+
+
+<opt text="<code>Error</code>" >
+
+Can we sum up a column of dtype `bool`? What values does it sum up? 
+
+</opt>
+
+</choice> 
+
+       
+**Question 2**          
+
+```python
+df.loc[:,['seed', 'sweetness']].sum(axis=1)
+```
+
+
+<choice id="2" >
+<opt text="A single value" >
+
+`axis=1` means we can sum up row-wise.
+
+
+</opt>
+
+<opt text="2 values, one for each column">
+
+`axis=1` means we can sum up row-wise.
+
+
+</opt>
+
+
+<opt text="A value for each row" correct="true" >
+
+Well done!
+
+
+</opt>
+
+<opt text="<code>Error</code>" >
+
+`axis=1` means we can sum up row-wise. We are calculating the number of `True` values total for `Seed` and `Sweetness`.
+
+</opt>
+
+
+</choice> 
+
+
+
+**Question 3**          
+
+```python
+df['shape'].mean()
+```
+
+
+<choice id="3" >
+<opt text="<code>round</code>" >
+
+`axis=1` means we can sum up row-wise.
+
+
+</opt>
+
+<opt text="<code>13.4</code>">
+
+`axis=1` means we can sum up row-wise.
+
+
+</opt>
+
+
+<opt text="All the values concatenated together">
+
+Well done!
+
+
+</opt>
+
+<opt text="<code>Error</code>" correct="true" >
+
+We cannot take the mean of a column of dtype `object`. 
+
+</opt>
+
+</choice> 
+
+</exercise>
+
+
+<exercise id="24" title="Practice Operations with Dataframe Columns">
+
+**Instructions:**    
+Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
+
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
+
+Let's find some summary statistics of the canucks dataframe.
+
+Tasks:
+
+- Read in the data from the data folder named `canucks.csv` and name the dataframe `canucks`.
+- Find the mean height of the players and save as an object named `mean_height`.
+- What is the largest salary being paid to any of the players? 
+- Save the solution in an object named `max_salary`.
+
+<codeblock id="04_24">
+
+- Are you using `.mean()` on the column `Height`?    
+- Are you using `.max()` on the column `Salary`?    
+
+</codeblock>
+
+
+   
+</exercise>
+
+
+
+<exercise id="25" title="Practice Operations with Dataframe columns">
+
+**Instructions:**    
+Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
+
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
+
+Let's split up a column of dtype `object`. 
+
+Tasks:
+
+- Split up the column `Birth Date` into 3 separate columns named `Birth_Day`, `Birth_Month` and `Birth_Year`. 
+- Name this new dataframe `birthdate_df`.
+- Save these as columns in the `canucks` dataframe as dtype `int`.
+
+
+<codeblock id="04_25">
+
+- Are you using `str.split('-', expand='True')`?    
+- Are you saving the columns from the `birthdate_df` back to the `canucks` dataframe?   
+
+</codeblock>
+
+
+</exercise>
+
+
+<exercise id="26" title="What Did We Just Learn?" type="slides, video">
+<slides source="module4/module4_26" start="0:165" end="3:01">>
 </slides>
 </exercise>
 
