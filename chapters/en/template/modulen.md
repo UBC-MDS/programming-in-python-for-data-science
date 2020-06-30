@@ -1,11 +1,11 @@
 ---
-title: 'Module 5: Loops and Functions'
+title: 'Module N: '
 description:
-  'In this module you will learn about how to write conditionals and learn the fundamentals regarding loops as loops.'
-prev: /module4
-next: /module6
-type: chapter
-id: 5
+  'In this module you will learn about how to write onditionals and learn the fundamentals regarding loops as loops. 
+#prev: /module
+#next: /module6
+#type: chapter
+#id: n
 ---
 
 <exercise id="0" title="Module Learning Outcomes" type="slides, video">
@@ -22,7 +22,7 @@ id: 5
 
 </exercise>
 
-<exercise id="2" title=" ">
+<exercise id="2" title="e">
 
 
 **Question 1**         
@@ -161,7 +161,7 @@ Tasks:
 
 </exercise>
 
-<exercise id="4" title="">
+<exercise id="4" title="Casting Data Types">
 
 
 **Instructions:**    
