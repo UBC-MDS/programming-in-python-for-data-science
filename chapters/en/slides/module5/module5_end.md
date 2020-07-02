@@ -2,7 +2,7 @@
 type: slides
 ---
 
-# What Did we Learn and What to Expect in Assignment 4
+# What Did we Learn and What to Expect in Assignment 5
 
 Notes: Script here
 <html>
@@ -15,13 +15,6 @@ Notes: Script here
 # Summary  
 
 By the end of the module, students are expected to:
-
-- Compare and contrast python's key data types.
-- Compare and contrast python's key data structures. 
-- Use python to determine the type and structure of an object.
-- Demonstrate how to create data structures and convert them to another.
-- Describe what python packages/libraries are, as well as explain when and why they are useful.
-- Identify which operations can we done to different data types and columns dtypes. 
 
 
 
@@ -61,7 +54,7 @@ Notes: Script here
 
 ---
 
-# On to Assignment 4!
+# On to Assignment 5!
 
 Notes: Insert audio here.
 

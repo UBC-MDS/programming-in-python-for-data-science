@@ -4,7 +4,7 @@ type: slides
 
 # Module Learning Outcomes
 
-Notes: In this module you will learn about the basics of Python. 
+Notes: In this module you will learn about Python Conditionals and the fundamentals of loops. 
 
 <html>
 <audio controls >
@@ -15,12 +15,7 @@ Notes: In this module you will learn about the basics of Python.
 
 # Module Learning Outcomes
 
-- Compare and contrast python's key data types.
-- Compare and contrast python's key data structures. 
-- Use python to determine the type and structure of an object.
-- Demonstrate how to create data structures and convert them to another.
-- Describe what python packages/libraries are, as well as explain when and why they are useful.
-- Identify which operations can we done to different data types and columns dtypes. 
+By the end of the module, students are expected to:
 
 Notes: Script here
 <html>

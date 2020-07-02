@@ -15,6 +15,8 @@ Notes: In this module you will learn about the basics of Python.
 
 # Module Learning Outcomes
 
+By the end of the module, students are expected to:
+
 - Compare and contrast python's key data types.
 - Compare and contrast python's key data structures. 
 - Use python to determine the type and structure of an object.

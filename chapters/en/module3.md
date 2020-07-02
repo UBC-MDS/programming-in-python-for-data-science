@@ -121,7 +121,7 @@ Good job!  You must have seen the duplicate rows of `Ivysaur`, `Charmeleon` and 
 
 </exercise>
 
-<exercise id="5" title="Wide and Long Dataframe" type="slides">
+<exercise id="5" title="Wide and Long Dataframes" type="slides">
 
 <slides source="module3/module3_05">
 
@@ -646,7 +646,7 @@ Tasks:
 
 <exercise id="21" title="Joining Dataframes using Merge" type="slides">
 
-<slides source="module3/module3_21>
+<slides source="module3/module3_21">
 
 </slides>
 

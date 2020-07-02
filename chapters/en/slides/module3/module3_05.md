@@ -107,7 +107,7 @@ Can you see the difference?
 
 <center>
 
-<img src='/module3/wide.png' width="30%">
+<img src='/module3/wide.png' width="35%">
 
 </center>
 
@@ -115,7 +115,7 @@ Can you see the difference?
 
 <center>
 
-<img src='/module3/long.png' width="30%">
+<img src='/module3/long.png' width="35%">
 
 </center>
 
@@ -133,7 +133,138 @@ Notes: Script here
 
 ---
 
-More slides here.
+As we discussed in the previous sections, tidy data is determined based
+on what we are trying to figure out, eg: what our statistical question
+is.
+
+There are cases where a long dataframe is considered tidy data and in
+other cases, a wide dataframe is tidy depending on what is being ask.
+
+Let’s explore some examples.
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+We have some data obtain from the resource available
+<a href="https://github.com/jvcasillas/untidydata#language_diversity" target="_blank">here</a>.
+This shows the language diversity within different countries as well as
+their population and area.
+
+<center>
+
+<img src='/module3/wide-long1.png' width="50%">
+
+</center>
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+<center>
+
+<img src='/module3/wide-long1.png' width="30%">
+
+</center>
+
+We are trying to answer the statistical question ***what factors are
+associated with language diversity (as measured by the number of
+languages spoken in a country)?***
+
+In this case, it makes more sense to have our data displayed in a wide
+format, so we can measure `area` and `population` as variables that may
+or may not affect language diversity.
+
+<center>
+
+<img src='/module3/wide-long2.png' width="50%">
+
+</center>
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+Let’s look at another example.
+
+Here is the UNICEF dataset on under-five child mortality which is
+available
+<a href="https://sejdemyr.github.io/data-vis/mortality-wealth-time/" target="_blank">here</a>
+It is based on data that can be found at www.childmortality.org. The
+under-five mortality rate is expressed as the number of under-five
+deaths per 1,000 live births.
+
+<br>
+
+<center>
+
+<img src='/module3/wide-long3.png' width="60%">
+
+</center>
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+<center>
+
+<img src='/module3/wide-long3.png' width="35%">
+
+</center>
+
+The statistical question that we’d like to answer with this data set is:
+***whether there a relationship between country and/or year on
+under-five child mortality?***
+
+We are intested in the variable `year` which makes a long dataframe
+(with a single column for the variable `year`) tidy and the most
+appropriate to use in our analysis.
+
+<center>
+
+<img src='/module3/wide-long4.png' width="30%">
+
+</center>
 
 Notes: Script here
 
