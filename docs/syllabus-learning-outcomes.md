@@ -136,12 +136,12 @@ By the end of the module, students are expected to:
 #### Topics
 
 - Functions example in plotting, add data to a dataframe?
-- DRY principle 
-- Keyword arguments 
+- Keyword arguments (default)
 - Docstrings 
 - Multiple return values 
 - Demonstrate how to import classes and functions for different python libraries
 - Lambda
+- Unit testing 
 
 #### Learning Outcomes 
 
@@ -177,7 +177,6 @@ By the end of the module, students are expected to:
 _Things to add here? Definitely my weakest module!_ 
 
 #### Topics 
-- Unit tests, corner cases
 - Importing your created functions from a different file
 - Style guides and coding style 
 - Python debugger (PDB) ( video in notebook instead with MC question) 
