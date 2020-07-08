@@ -48,8 +48,8 @@ Notes: Script here
 **Wide**
 
 We are used to seeing the cereal data in a wide format, where there is a
-column for each measurement. We’ve already experienced that not all wide
-dataframes are tidy
+column for each measured variable (e.g., calories, protein, sugar).
+We’ve already experienced that not all wide dataframes are tidy.
 
 <center>
 
@@ -83,7 +83,7 @@ tidy, neither are all long dataframes.
 
 <center>
 
-<img src='/module3/long.png' width="60%">
+<img src='/module3/long.png' width="45%">
 
 </center>
 
@@ -115,7 +115,7 @@ Can you see the difference?
 
 <center>
 
-<img src='/module3/long.png' width="35%">
+<img src='/module3/long.png' width="30%">
 
 </center>
 
@@ -163,7 +163,7 @@ their population and area.
 
 <center>
 
-<img src='/module3/wide-long1.png' width="50%">
+<img src='/module3/wide-long1.png' width="45%">
 
 </center>
 
@@ -191,13 +191,14 @@ We are trying to answer the statistical question ***what factors are
 associated with language diversity (as measured by the number of
 languages spoken in a country)?***
 
-In this case, it makes more sense to have our data displayed in a wide
-format, so we can measure `area` and `population` as variables that may
-or may not affect language diversity.
+In this case, it makes the most sense for our data to have the
+measurements `area` and `population` as variables that may or may not
+affect language diversity. This would be considered tidy data stored as
+a wide dataframe.
 
 <center>
 
-<img src='/module3/wide-long2.png' width="50%">
+<img src='/module3/wide-long2.png' width="40%">
 
 </center>
 
@@ -219,7 +220,7 @@ Let’s look at another example.
 
 Here is the UNICEF dataset on under-five child mortality which is
 available
-<a href="https://sejdemyr.github.io/data-vis/mortality-wealth-time/" target="_blank">here</a>
+<a href="https://sejdemyr.github.io/data-vis/mortality-wealth-time/" target="_blank">here</a>.
 It is based on data that can be found at www.childmortality.org. The
 under-five mortality rate is expressed as the number of under-five
 deaths per 1,000 live births.
@@ -256,13 +257,13 @@ The statistical question that we’d like to answer with this data set is:
 ***whether there a relationship between country and/or year on
 under-five child mortality?***
 
-We are intested in the variable `year` which makes a long dataframe
-(with a single column for the variable `year`) tidy and the most
-appropriate to use in our analysis.
+We are interested in the variable `year`. Having a single variable for
+year would be the most appropriate to use in our analysis and display
+tidy data. This would correspond to a long dataframe.
 
 <center>
 
-<img src='/module3/wide-long4.png' width="30%">
+<img src='/module3/wide-long4.png' width="20%">
 
 </center>
 

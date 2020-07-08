@@ -88,7 +88,7 @@ Notes: Script here
 
 **Wide**
 
-We are used to seeing the cereal data in a wide format, where there is a column for each measurement. We've already experienced that not all wide dataframes are tidy
+We are used to seeing the cereal data in a wide format, where there is a column for each measured variable (e.g., calories, protein, sugar). We've already experienced that not all wide dataframes are tidy.
 
 <center><img src='/module3/wide.png' width="70%"></center>
 
@@ -108,7 +108,7 @@ However the exact same information can be expressed in a structure called a **Lo
 
 A long dataframe would consist of the same information as contained in a wide dataframe, however in this case, for each data point, there is a row for each measurement. Similarly to how not all wide dataframes are tidy, neither are all long dataframes.
 
-<center><img src='/module3/long.png' width="60%"></center>
+<center><img src='/module3/long.png' width="45%"></center>
 
 
 Notes: Script here
@@ -127,7 +127,7 @@ Can you see the difference?
 
 
 **Long**
-<center><img src='/module3/long.png' width="35%"></center>
+<center><img src='/module3/long.png' width="30%"></center>
 
 
 
@@ -158,7 +158,7 @@ We have some data obtain from the resource available <a href="https://github.com
 
 
 
-<center><img src='/module3/wide-long1.png' width="50%"></center>
+<center><img src='/module3/wide-long1.png' width="45%"></center>
 
 
 
@@ -174,10 +174,10 @@ Notes: Script here
 
 We are trying to answer the statistical question ***what factors are associated with language diversity (as measured by the number of languages spoken in a country)?***
 
-In this case, it makes more sense to have our data displayed in a wide format, so we can measure `area` and `population` as variables that may or may not affect language diversity. 
+In this case, it makes the most sense for our data to have the measurements `area` and `population` as variables that may or may not affect language diversity. This would be considered tidy data stored as a wide dataframe. 
 
 
-<center><img src='/module3/wide-long2.png' width="50%"></center>
+<center><img src='/module3/wide-long2.png' width="40%"></center>
 
 
 Notes: Script here
@@ -190,7 +190,7 @@ Notes: Script here
 
 Let's look at another example. 
 
-Here is the UNICEF dataset on under-five child mortality  which is available <a href="https://sejdemyr.github.io/data-vis/mortality-wealth-time/" target="_blank">here</a>  It is based on data that can be found at www.childmortality.org. The under-five mortality rate is expressed as the number of under-five deaths per 1,000 live births. 
+Here is the UNICEF dataset on under-five child mortality  which is available <a href="https://sejdemyr.github.io/data-vis/mortality-wealth-time/" target="_blank">here</a>. It is based on data that can be found at www.childmortality.org. The under-five mortality rate is expressed as the number of under-five deaths per 1,000 live births. 
 
 <br>
 <center><img src='/module3/wide-long3.png' width="60%"></center>
@@ -208,9 +208,9 @@ Notes: Script here
 
 The statistical question that we'd like to answer with this data set is: ***whether there a relationship between country and/or year on under-five child mortality?***
 
-We are intested in the variable `year` which makes a long dataframe (with a single column for the variable `year`) tidy and the most appropriate to use in our analysis. 
+We are interested in the variable `year`. Having a single variable for year would be the most appropriate to use in our analysis and display tidy data.  This would  correspond to a long dataframe.
 
-<center><img src='/module3/wide-long4.png' width="30%"></center>
+<center><img src='/module3/wide-long4.png' width="20%"></center>
 
 
 Notes: Script here

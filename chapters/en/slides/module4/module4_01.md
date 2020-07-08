@@ -79,8 +79,8 @@ Notes: Script here
 ## Data Types
 
 Values, as we saw in our `Fido` and `6` examples, can be a variety of
-different things that get classified by Python as **Data Types**. There
-are:
+different things that get classified by Python as **Data Types**. Here
+are some data types built-in to the Python language:
 
   - Integers - `int`
   - Floating-point numbers - `float`
@@ -107,17 +107,18 @@ Notes: Script here
 
 ## Numerical Data Types
 
-You’ve likely noticed that we have not needed to put any quotation
+You’ve likely noticed that we have not needed to put any quotation marks
 around number values. Python recognizes numbers as one of two possible
 types.  
-Either as an ***integer*** called an `int` type or a \***floating-point
-number** called a `float`.
+Either as an ***integer*** called an `int` type or a ***floating-point
+number*** called a `float`.
 
 ### **Int**
 
-An `int` value is a whole number that is either positive or negative.
+An `int` value is a whole number that is either positive, negative, or
+zero.
 
-We can use the verb `type()` to find out how Python classified the value
+We can use the verb `type()` to find out how Python classifies the value
 that was stored in an object.
 
 ``` python
@@ -240,9 +241,9 @@ Notes: Script here
 
 ## NoneType
 
-a `NoneType` is quite different than `NaN`. `NaN` is used for missing
-numerical values and is classified as type `float` but a `None` value is
-an actual data type.
+`NoneType` is its own type, with only one possible value, `None`; on the
+other hand `NaN` is actually a special `float` value. Pandas dataframes
+tend to use `NaN` for missing values."
 
 Let’s say I need to save the name of the monster living under my bed in
 an object. Unfortunately, I have yet to introduce myself to him so I’m
@@ -285,7 +286,7 @@ Notes: Script here
 The Boolean (`bool`) type has two values: **True** and **False**.
 
 We have seen this data type when we were filtering our dataframes with
-conditions. A condition is evaluated and produces a column stating
+conditions. A condition is evaluated and produces a column indicating
 whether the condition was met or not.
 
 ```out
@@ -333,15 +334,15 @@ Notes: Script here
 
 ## Strings
 
-Text is stored as a data type called a string. We think of a string as a
-sequence of characters and write them enclosed in quotations. We’ve been
-mostly using single quotations for strings up until this point but you
-enclosed them with either:
+Text is stored as a data type called a string (`str`). We think of a
+string as a sequence of characters and can enclose in quotations. We’ve
+been mostly using single quotations for strings up until this point but
+you enclosed them with either:
 
-  - Single quotes, e.g., ‘Hello’
-  - Double quotes, e.g., “Goodbye”
-  - Triple single quotes, e.g., ’‘’Yesterday’’’
-  - Triple double quotes, e.g., ""“Tomorrow”""
+  - Single quotes, e.g., `'Hello'`
+  - Double quotes, e.g., `"Goodbye"`
+  - Triple single quotes, e.g., `'''Yesterday'''`
+  - Triple double quotes, e.g., `"""Tomorrow"""`
 
 <!-- end list -->
 
@@ -389,14 +390,6 @@ saying
 'Mike Wazowski said: "My name\'s Mike Wazowski!"'
 ```
 
-``` python
-type(name_of_bed_monster)
-```
-
-```out
-<class 'str'>
-```
-
 What about empty quotations? When we discussed `None` type and we didn’t
 yet know the monster’s name, why didn’t we just put empty quotations?
 
@@ -418,6 +411,9 @@ type(missing_bed_monster)
 ```out
 <class 'str'>
 ```
+
+An empty string is similar to `NaN` values in that it has a type but no
+data.
 
 Notes: Script here
 
@@ -529,11 +525,11 @@ Notes: Script here
 
 ## Casting
 
-Sometimes we need to explicitly cast a value from one type to another.
+Sometimes we need to explicitly cast an object from one type to another.
 We can do this for some types, but not all. We simply use their
 corresponding verbs such as `int()`, `float()`, `bool()` or `str()`.
 
-We can convert an `int` value 5 to a float
+We can convert an object of type `int` to a float:
 
 ``` python
 number_of_floating_balloons = float(5)
@@ -544,7 +540,7 @@ type(number_of_floating_balloons)
 <class 'float'>
 ```
 
-an int to a string
+An `int` to a `str`:
 
 ``` python
 number_of_balloon_strings = str(5)

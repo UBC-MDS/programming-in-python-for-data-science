@@ -119,7 +119,7 @@ house['price']
 2499999
 ```
 
-and since dictionaries are **mutable**, we can change them:
+And since dictionaries are **mutable**, we can change them:
 
 ``` python
 house['price'] = 7
@@ -152,7 +152,7 @@ house
 {'bedrooms': 3, 'bathrooms': 2, 'city': 'Vancouver', 'price': 7, 'date_sold': (1, 3, 2015)}
 ```
 
-we can add to the dictionary in the same way as we edit them, but using
+We can add to the dictionary in the same way as we edit them, but using
 a new **key** name:
 
 ``` python
@@ -419,8 +419,8 @@ Notes: Script here
 | `str`          |    ✓    |    ☓    |      ☓      | `''` or `""` |           ✓           |
 | `list`         |    ✓    |    ✓    | `.append()` |     `[]`     |           ✓           |
 | `tuple`        |    ✓    |    ☓    |      ☓      |     `()`     |           ✓           |
-| `set`          |    ☓    |    ☓    |  `.add()`   |     `{}`     |           ☓           |
-| `dictionary`   |    ☓    |    ✓    |      ✓      |    `{:}`     |  keys: ☓ , values: ✓  |
+| `set`          |    ☓    |    ✓    |  `.add()`   |     `{}`     |           ☓           |
+| `dictionary`   |    ✓    |    ✓    |      ✓      |    `{:}`     |  keys: ☓ , values: ✓  |
 
 Notes: Script here
 

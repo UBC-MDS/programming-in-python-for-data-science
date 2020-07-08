@@ -122,7 +122,7 @@ We can access a **value** of a dictionary with the **key** in square brackets:
 house['price']
 ```
 
-and since dictionaries are **mutable**, we can change them:
+And since dictionaries are **mutable**, we can change them:
 ```{python}
 house['price'] = 7
 house
@@ -141,7 +141,7 @@ Notes: Script here
 house
 ```
 
-we can add to the dictionary in the same way as we edit them, but using a new **key** name:
+We can add to the dictionary in the same way as we edit them, but using a new **key** name:
 
 ```{python}
 house['bed monster'] = True
@@ -322,12 +322,13 @@ Notes: Script here
 <br>
 
 | Data Structure   | Ordered  |  Mutable  |  Add values  |  Symbol     |Can accept duplicates|
-|:-----------------|:--------:|:---------:|:------------:|:-----------:|:-------------------:|
-|    `str`         |    ✓     |   ☓       | ☓           | `''` or `""`|                 ✓   |
-| `list`           |    ✓     |  ✓        | `.append()` | `[]`        |                   ✓ |
-| `tuple`          |    ✓     |  ☓        | ☓           |  `()`       |                 ✓   |
-| `set`            |    ☓     | ☓         |  `.add()`   |   `{}`      |              ☓      |
-| `dictionary`     |    ☓     | ✓         |  ✓          |   `{:}`     |  keys: ☓ , values:  ✓  |
+|:-----------------|:--------:|:----------:|:------------:|:-----------:|:-------------------:|
+|    `str`         |    ✓     |    ☓       | ☓           | `''` or `""`|                 ✓   |
+| `list`           |    ✓     |   ✓        | `.append()` | `[]`        |                   ✓ |
+| `tuple`          |    ✓     |   ☓        | ☓           |  `()`       |                 ✓   |
+| `set`            |    ☓     |   ✓        |  `.add()`   |   `{}`      |              ☓      |
+| `dictionary`     |    ✓     |   ✓        |  ✓          |   `{:}`     |  keys: ☓ , values:  ✓  |
+
 
 
 Notes: Script here

@@ -61,7 +61,7 @@ Notes: Script here
 
 In the last section, we discussed the `str` data type. 
 We described it as  _a sequence of characters_. In many cases, there is good reason to split up a long text string into separate ones. 
-luckily we have a convenient verb to do that `.split()`. 
+Luckily, we have a convenient verb to do that `.split()`. 
 
 ```{python}
 sentence = "I always lose at least one sock when I do laundry." 
@@ -89,7 +89,7 @@ Notes: Script here
 ## Lists 
 
 The output from the `.split()` verb is called a **list**. 
-Similarly to how a string is a sequence of characters that depend on an order, a list is a sequence of elements with a particular order. lists can be identified by their square brackets.
+Similarly to how a string is a sequence of characters that depend on an order, a list is a sequence of elements with a particular order. Lists can be identified by their square brackets.
 
 ```{python}
 words
@@ -125,6 +125,13 @@ lists_of_lists
 We can get the length of a list, with `len()` like we did for strings. 
 
 ```{python}
+my_list = [1.2, 3, None, True, 'One of the lost socks']
+len(my_list)
+```
+
+
+If your list contains lists, `len()` will return the number of elements in the outer list (not the total number of elements):
+```{python}
 len(lists_of_lists)
 ```
 
@@ -136,18 +143,22 @@ Notes: Script here
 
 ---
 
+```{python}
+my_list
+```
+
 Similarly to how we can slice dataframes by columns and rows, we can slice lists by elements
 
 ```{python}
-lists_of_lists[1]
+my_list[1]
 ```
 
 ```{python}
-lists_of_lists[1:3]
+my_list[1:3]
 ```
 
- Slicing lists is similar to slicing with `iloc[]`; the start is inclusive and the end is exclusive.
-So `lists_of_lists[1:3]` fetches elements 1 and 2, but not 3.
+Slicing lists is similar to slicing with `iloc[]`; the start is inclusive and the end is exclusive.
+So `my_list[1:3]` fetches elements 1 and 2, but not 3.
 In other words, it gets the 2nd and 3rd elements in the list.
 
 Notes: Script here
@@ -163,14 +174,14 @@ Notes: Script here
 
 A data structure is **mutable**  if it can be modified. 
 
-Lists are mutable and we can assign new values for its various entries.
+Lists are mutable and we can assign new values for its various entries:
 
 For example: 
 ```{python}
 my_list
 ```
 
-I can edit any entry in this list and replace it with a new value.
+I can edit any entry in this list and replace it with a new value:
 
 ```{python}
 my_list[2] = "Ta Da!"
@@ -210,7 +221,7 @@ Notes: Script here
 
 ---
 
-Strings can be sliced just like list...
+Strings can be sliced just like list:
 
 ```{python}
 sentence
@@ -221,13 +232,13 @@ sentence
 sentence[27:35]
 ```
 
- But we cannot replace characters. 
+But we cannot replace characters:
  
 ```{python error=TRUE}
 sentence[5] = "Z"
 ```
  
-That means values of type `str`, are **immutable**. 
+That means values of type `str` are **immutable**. 
 
 Notes: Script here
 <html>
@@ -239,7 +250,7 @@ Notes: Script here
 
 # List Verbs 
 
-Unlike strings once again, list have <a href="https://docs.python.org/3/tutorial/datastructures.html#more-on-lists" target="_blank">A variety of different methods</a> for interacting with its data. Here are just a few. 
+Unlike strings once again, lists have <a href="https://docs.python.org/3/tutorial/datastructures.html#more-on-lists" target="_blank">A variety of different methods</a> for interacting with their  data. Here are just a few. 
 
 ```{python}
 primes = [2,3,5,7,11]
@@ -258,7 +269,7 @@ We can find the maximum value in the list with `max()`:
 max(primes)
 ```
 
-and the sum of the list with `sum()`:
+And the sum of the list with `sum()`:
 ```{python}
 sum(primes)
 ```
@@ -273,8 +284,7 @@ Notes: Script here
 
 ## Lists to Dataframes 
 
-Up until this point we have been working with dataframes that have been read in and converted from different types of files. We, however, can make dataframes from scratch using lists. 
-
+Up until this point we have been working with dataframes that have been read in and converted from different types of files. We, however, can make dataframes from scratch using lists.    
 Let's say I wanted a dataframe of things I needed to purchase from the store on my next grocery shopping trip. 
 
 ```{python}
@@ -288,7 +298,11 @@ shopping_items = pd.DataFrame(data=[item1, item2, item3], columns=column_names)
 shopping_items
 ```
 
-We use a list for each row and a list for the column labels. We then use a list of all the rows to make up the data. 
+We use a list for each row and a list for the column labels. We then use a list of all the rows to make up the data.    
+Now the shopping items are no longer in a structure type `list`, but in a type `DataFrame`:
+```{python}
+type(shopping_items)
+```
 
 
 Notes: Script here
@@ -304,7 +318,7 @@ Notes: Script here
 
 Tuples are a data structure very similar to lists but with the 2 main differences: 
 
-1. They can be contained in parenthesis, and
+1. They are represented with parentheses, and
 2. They are immutable
 
 ```{python}
@@ -317,10 +331,28 @@ type(my_tuple)
 ```
 
 
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+```{python}
+my_tuple
+```
+
+Just to recap, immutable means that the elements withing the structure cannot be edited, or changed: 
+
 ```{python error=TRUE}
 my_tuple[2] = 'Many'
 ```
 
+We can cast objects from tuples into type `list`:
+```{python}
+my_list = list(my_tuple)
+type(my_list)
+```
 
 Notes: Script here
 <html>
@@ -332,26 +364,27 @@ Notes: Script here
 
 ## Sets 
 
-Sets, not unlike lists and tuples is a data structure that contains elements. Sets differ such that:
-- they are un-ordered, and
-- The containing values are unique - meaning there are no entries that are repeated. 
+Sets, not unlike lists and tuples, are a data structure that contains elements. Sets differ such that:      
 
-let's explore this a bit. 
+- They are un-ordered, and     
+- The containing values are unique - meaning there are no entries that are repeated.     
 
-Sets are made with curly brackets : 
+Let's explore this a bit. 
+
+Sets are made with curly brackets: 
 ```{python}
 my_set = {1.0, 2, 'Buckle my shoe' }
 my_set
 ```
 
 
-What if I add more of the same entries 
+What if I add more of the same entries:
 
 ```{python}
 my_set = {1.0, 2, 'Buckle my shoe', 1.0, 2 }
 my_set
 ```
-This is still the same as before 
+This is still the same as before.
 
 Notes: Script here
 <html>
@@ -366,9 +399,8 @@ What about the order? can I select a specific element?
 ```{python error=TRUE}
 my_set[1]
 ```
-Since there is no order to a set, we cannot select or slice from them.
-
-We can, however, add to them with  `.add()`. 
+Remember this data structure has no order, so Python displays them according to some internal sorting scheme.  
+We cannot select or slice from them, however, we can add to them with  `.add()`. 
 
 ```{python}
 my_set.add(3)
@@ -376,7 +408,7 @@ my_set.add(4)
 my_set
 ```
 
-You'll notice that unlike lists, the new entries are not added to the end. Remember this data structure has no order.  
+You'll notice that unlike lists, the new entries are not added to the end since this data structure has no order.  
 
 
 Notes: Script here
@@ -396,7 +428,7 @@ Notes: Script here
 |    `str`         |    ✓     |   ☓       | ☓           | `''` or `""`|                 ✓   |
 | `list`           |    ✓     |  ✓        | `.append()` | `[]`        |                   ✓ |
 | `tuple`          |    ✓     |  ☓       | ☓            |  `()`       |                 ✓   |
-| `set`            |    ☓    | ☓         |  `.add()`    |   `{}`      |              ☓      |
+| `set`            |    ☓    |   ✓       |  `.add()`    |   `{}`      |              ☓      |
 
 
 Notes: Script here

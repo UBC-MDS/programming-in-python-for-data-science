@@ -159,14 +159,14 @@ How many times do the lyrics "Let it be" occur in the Beatles Hit song of the sa
 
 
 Tasks:
-- Use some of the string verbs you learn in the lecture to count all the times "let it be" (all upper and lower case versions) appears in the string `lyrics`. 
-- Save it in an object named `letitbe_count`
+- Use some of the string verbs you learned in the lecture to count all the times "let it be" (all upper and lower case versions) appears in the string `lyrics`. 
+- Save it in an object named `letitbe_count`.
 
   
 
 <codeblock id="04_03">
 
-- Are you using `.lower()`?
+- Are you converting `lyrics` to lowercase using `.lower()`?
 - Are you using `.count()` with the argument `let it be`?
 
 </codeblock>
@@ -202,26 +202,6 @@ Tasks:
 
 </codeblock>
 
-**Question 1**     
-Can you directly cast from a value of type `str` to a value of type `int`?    
-Try it out in the cell above!
-
-<choice id="1" >
-<opt text="You can">
-
-Did you try it? 
-
-</opt>
-
-<opt text="You cannot"  correct="true">
-
-Python won't let you cast directly from a value of type `str` to a value `int`. 
-
-</opt>
-
-</choice> 
-
-
 </exercise>
 
 <exercise id="5" title="Python Data Structures: Lists, Tuples and Sets" type="slides">
@@ -239,6 +219,7 @@ Python won't let you cast directly from a value of type `str` to a value `int`.
  Who am I? 
 
 <choice id="1" >
+
 <opt text="<code>str</code>">
 
 Which data structure does not have a particular order? 
@@ -248,6 +229,7 @@ Which data structure does not have a particular order?
 <opt text="<code>list</code>" >
 
 Which data structure does not have a particular order? 
+
 </opt>
 
 <opt text="<code>tuple</code>" >
@@ -326,7 +308,7 @@ This is, in fact, the opposite!
 
 _Sets can only contain numerical data types._
 
-<choice id="1">
+<choice id="2">
 <opt text="True">
 
 Sets can contain many different datatypes apart from numerical values. 
@@ -351,6 +333,10 @@ Running a coding exercise for the first time could take a bit of time for everyt
 
 **When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
 
+
+_**Make sure you remove the hash (`#`) symbol in the coding portions of this question.  We have commented them so that the line won't execute and you can test your code after each step.**_
+
+
 Let's explore how to add to a list, slice it and convert it into a tuple. 
 
 
@@ -363,7 +349,7 @@ Tasks:
 - Finally,  convert it into a set and name it `junk_set`.
 
 
-<codeblock id="04_10">
+<codeblock id="04_08">
 - The verbs `.append()` and `len()` may be handy.
 - You can convert your list to a tuple with `tuple(). 
 - Have you sliced keeping in mind the end of the slice is excluded? 
