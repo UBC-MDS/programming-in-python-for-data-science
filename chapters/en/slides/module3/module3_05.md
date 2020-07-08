@@ -2,7 +2,7 @@
 type: slides
 ---
 
-# Statistical Questions and Tidy Data
+# Statistical questions and tidy data
 
 Notes: Script here
 
@@ -15,6 +15,31 @@ Notes: Script here
 </audio>
 
 </html>
+
+---
+
+In the last section we learned about tidy data and how it is determined
+based on what we are trying to figure out, eg: what our statistical
+question is.
+
+There are cases where a longer dataframe is considered tidy data and in
+other cases, a wider dataframe is tidy depending on what is being ask.
+
+Let’s explore some more examples.
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
 
 We have some data obtain from the resource available
 <a href="https://github.com/jvcasillas/untidydata#language_diversity" target="_blank">here</a>.
@@ -121,7 +146,7 @@ tidy data. This would correspond to a long dataframe.
 
 <center>
 
-<img src='/module3/wide-long4.png' width="20%">
+<img src='/module3/wide-long4.png' width="35%">
 
 </center>
 

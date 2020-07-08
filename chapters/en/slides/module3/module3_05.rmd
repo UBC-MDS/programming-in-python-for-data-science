@@ -59,7 +59,7 @@ cereal_long = sample.loc[[5, 0, 6, 1, 7, 2, 8, 3, 9, 4 ]].reset_index().drop(col
 
 type: slides
 
-# Statistical Questions and Tidy Data
+# Statistical questions and tidy data
 
 Notes: Script here
 <html>
@@ -68,6 +68,7 @@ Notes: Script here
 </audio></html>
 
 ---
+
 In the last section we learned about tidy data and how it is determined based on what we are trying to figure out, eg: what our statistical question is. 
 
 There are cases where a longer dataframe is considered tidy data and in other cases, a wider dataframe is tidy depending on what is being ask. 
@@ -137,7 +138,7 @@ The statistical question that we'd like to answer with this data set is: ***whet
 
 We are interested in the variable `year`. Having a single variable for year would be the most appropriate to use in this analysis and display tidy data.  This would  correspond to a long dataframe.
 
-<center><img src='/module3/wide-long4.png' width="20%"></center>
+<center><img src='/module3/wide-long4.png' width="35%"></center>
 
 
 Notes: Script here
