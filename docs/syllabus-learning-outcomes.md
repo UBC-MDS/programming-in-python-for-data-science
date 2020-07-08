@@ -119,29 +119,34 @@ By the end of the module, students are expected to:
 
 #### Topics 
 
+- Dry
 - Loops 
 - Loops to read in data 
+- Nested loops 
 - Conditions in loops 
+- Intro to functions 
 
 
 #### Learning Outcomes 
 
 By the end of the module, students are expected to:
-
-- Write for loops to repeatedly run code
+- Explain the DRY principle and how it can be useful.
 - Write conditional statements with if, elif and else to run different code, depending on the input.
+- Write for loops to repeatedly run code.
+- Describe the expected outcome of code with nested loops .
+- Define and use a named function that accepts parameters and returns values.
 
 ### Module 6:  Functions
 
 #### Topics
 
 - Functions example in plotting, add data to a dataframe?
-- DRY principle 
-- Keyword arguments 
+- Keyword arguments (default)
 - Docstrings 
 - Multiple return values 
 - Demonstrate how to import classes and functions for different python libraries
 - Lambda
+- Unit testing 
 
 #### Learning Outcomes 
 
@@ -177,7 +182,6 @@ By the end of the module, students are expected to:
 _Things to add here? Definitely my weakest module!_ 
 
 #### Topics 
-- Unit tests, corner cases
 - Importing your created functions from a different file
 - Style guides and coding style 
 - Python debugger (PDB) ( video in notebook instead with MC question) 
