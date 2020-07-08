@@ -20,8 +20,8 @@ Notes: Script here
 
 ## Pivot
 
-`.pivot()` can be used in situations to transform our long dataframes
-into wide ones.  
+`.pivot()` can be used in situations to transform long dataframes into
+wider ones.  
 Consider the dataframe below:
 
 <center>
@@ -93,7 +93,7 @@ cereal_long.head(2)
 1  Special K   K   protein      6
 ```
 
-We use `pivot()` in the following way to transform it into a wide
+We use `pivot()` in the following way to transform it into a wider
 dataframe.
 
 ``` python
@@ -377,3 +377,7 @@ Notes: Script here
 <audio controls >
 
 <source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>

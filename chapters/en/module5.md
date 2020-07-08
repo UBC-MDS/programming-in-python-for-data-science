@@ -422,6 +422,107 @@ Tasks:
 </exercise>
 
 
+<exercise id="11" title="Nested Loop Questions">
+
+**Question 1**      
+
+Every conditionial decision **MUST** have which of the following:
+
+<choice id="1" >
+<opt text="<code>if</code>" correct="true">
+
+Well done
+
+</opt>
+
+<opt text="<code>elif</code>">
+
+When we tell python to make a decision based on conditionals, an `elif` statement is optional. 
+
+</opt>
+
+<opt text="<code>else</code>">
+
+We can still write functioning code without an `else` condition. 
+
+</opt>
+
+
+</choice> 
+
+**Question 2**          
+
+Given the code below what is the value of the object `expensive`. 
+
+```python
+price = 150
+
+if price > 50:
+    expensive = 'moderately'
+elif price > 100:
+    expensive = 'valuable'
+else:
+    expensive = 'affordable'
+expensive
+```
+
+<choice id="2" >
+<opt text="<code>moderately</code>" correct="true">
+
+Well done. 
+
+</opt>
+
+<opt text="<code>valuable</code>">
+
+Proceeding to the body of this condition isn't possible since the first condition was met. 
+
+</opt>
+
+<opt text="<code>affordable</code>">
+
+Remember what happens when the first condition is met? It gets removed from the stream. 
+
+</opt>
+
+</choice> 
+
+</exercise>
+
+
+<exercise id="8" title= "Making a Nested Loop">
+
+**Instructions:**    
+Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
+
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
+
+_**Make sure you remove the hash (`#`) symbol in the coding portions of this question.  We have commented them so that the line won't execute and you can test your code after each step.**_
+
+Let's practice making decisions with conditional statements. 
+We are going to the gym and our exercise plan takes different amounts of reps. let's make conditional statements that depend on the name of the exercises.
+
+Tasks:
+- Start with an object named `exercise`. Give it a value of `burpees`.
+- Make `if`, `elif`, and `else` statements for the following conditions:
+    - if the exercise value is `lunges`, set an object value named `reps` to 20.
+    - if the exercise value is `squats`, set `reps` to 25
+    - if the exercise values is `burpees`, set `reps` to 15
+    - If the exercise value is anything else, set `reps` to 10.
+- Display the value of `reps`.
+
+
+
+<codeblock id="05_08">
+
+- Are you using double equal signs  (`==`) to make a conditional statement?
+- Are you using a single `if` statement and 2 `elif` statements? 
+
+</codeblock>
+
+</exercise>
+
+
 <exercise id="20" title="What Did We Just Learn?" type="slides, video">
 <slides source="module5/module5_end" start="0:165" end="3:01">>
 </slides>

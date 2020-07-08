@@ -26,9 +26,9 @@ and
 . We are going to spend this next section discussing `.melt()` which is
 simply the reverse transformation of `.pivot()`.
 
-Instead of converting a long dataframe to a wide one as we do in
-`.pivot()`, we do the opposite and convert a `wide` dataframe into a
-long one.
+Instead of converting a long dataframe to a wider one as we do in
+`.pivot()`, we do the opposite and convert a wide dataframe into a
+longer one.
 
 <center>
 

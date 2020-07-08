@@ -25,24 +25,26 @@ id: 3
 <exercise id="2" title="Tidy Data Questions">
 
 **Question 1**         
-Tidy data is defined differently for every dataset.
+
+The same data may be considered tidy for different shaped dataframes depending on the statistical questions .
 
 <choice id="1" >
 <opt text='True'>
 
-All datasets although informatively different, all have the same anatomy. 
+Good job! 
 
 </opt>
 
 <opt text= 'False' correct="true">
 
-Good job!  Although dataset can contain different information and data, they consist of the same semantics. 
+Tidy data depends quite often depends on the statistical question. 
 
 </opt>
 
 </choice> 
 
-**Question 2**          
+**Question 2**    
+
 Which of the following does **not** characterize a tidy dataset?
 
 <choice id="2" >
@@ -76,7 +78,8 @@ You are right.  It is possible to still have tidy data with missing values.
 
 <exercise id="3" title="Is it Tidy I ?">
 
-Would this dataframe be defined as tidy?
+
+Given the 3 tidy data criteria, would this dataframe be defined as tidy?
 
 <center> <img src='/module3/Q3.png'  alt="404 image"/></center>
 
@@ -100,7 +103,7 @@ Good job!  Did you notice that `special_attack_defense` had two values per cell 
 
 <exercise id="4" title="Is it Tidy II?">
 
-Would this dataframe be defined as tidy?
+Given the 3 tidy data criteria, would this dataframe be defined as tidy?
 
 <center> <img src='/module3/Q4.png'  alt="404 image"/></center>
 
@@ -121,7 +124,7 @@ Good job!  You must have seen the duplicate rows of `Ivysaur`, `Charmeleon` and 
 
 </exercise>
 
-<exercise id="5" title="Wide and Long Dataframes" type="slides">
+<exercise id="5" title="Statistical Questions and Tidy Data" type="slides">
 
 <slides source="module3/module3_05">
 
@@ -129,9 +132,11 @@ Good job!  You must have seen the duplicate rows of `Ivysaur`, `Charmeleon` and 
 
 </exercise>
 
-<exercise id="6" title="Wide vs Long Questions">
+<exercise id="6" title="Which dataframe is Tidy?">
 
-Which of the following is the **wide** dataframe? 
+Which of the following would be considered tidy data for the following statistical questions: 
+
+***What factors are associated with fruit with seeds?***
 
 
 **Dataframe A**
@@ -160,7 +165,7 @@ Good job!
 </exercise>
 
 
-<exercise id="7" title="Wide vs Long Questions">
+<exercise id="7" title="Tidy Data True or False">
 
 Is the following statement true or false?      
 
@@ -196,7 +201,7 @@ Good job! Of course it depends on the statistical question!
 <exercise id="9" title="Pivoting Questions">
 
 **Question 1**          
-We use `.pivot()` to convert a wide dataframe with multiple columns into a long dataframe with fewer columns.
+We use `.pivot()` to convert a wider dataframe with multiple columns into a longer dataframe with fewer columns.
 
 
 <choice id="1" >
@@ -251,7 +256,7 @@ Let's take a look at the new dataset named `lego`.
 
 
 
-Let's convert the dataframe `lego` into tidy data using `.pivot()`.  
+Let's convert the dataframe `lego` into a wider dataframe using `.pivot()`.  
 
 Tasks:
 
@@ -336,7 +341,7 @@ Running a coding exercise for the first time could take a bit of time for everyt
 
 _**Make sure you remove the hash (`#`) symbol in the coding portions of this question.  We have commented them so that the line won't execute and you can test your code after each step.**_
 
-Let's convert the dataframe `lego` into tidy data but this time preserve all the columns in the dataframe by using `.pivot_table()`.
+Let's convert the dataframe `lego` into wider data but this time preserve all the columns in the dataframe by using `.pivot_table()`.
 
 Tasks:
 
@@ -399,7 +404,7 @@ Are your sorting by `ascending=False`?
 <exercise id="15" title="Melting Questions">
 
 **Question 1**          
-We use `.melt()` to convert a wide dataframe with multiple columns into a long dataframe with fewer columns.
+We use `.melt()` to convert a wide dataframe with multiple columns into a longer dataframe with fewer columns.
 
 
 <choice id="1" >
@@ -487,26 +492,9 @@ Tasks:
 
 </codeblock>
 
-Have we made the data tidy by melting these 2 columns? 
-
-<choice id="1">
-<opt text='Yes' correct="true">
-
-The data now meets all 3 criteria. 
-
-</opt>
-
-<opt text='No'>
-
-Start by going through the tidy data criteria.  Does this data meet all three? 
-
-</opt>
-
-
 </choice> 
 
 </exercise>
-
 
 
 <exercise id="17" title="Concatenation" type="slides">
