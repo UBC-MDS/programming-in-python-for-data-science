@@ -18,7 +18,7 @@ By the end of the module, students are expected to:
 
 - Explain the DRY principle and how it can be useful.
 - Write conditional statements with `if`, `elif` and `else` to run different code, depending on the input.
-- Write for loops to repeatedly run code.
+- Write `for` loops to repeatedly run code.
 - Describe the expected outcome of code with nested loops .
 - Define and use a named function that accepts parameters and returns values.
 - Write docstrings using different styles for basic functions.
