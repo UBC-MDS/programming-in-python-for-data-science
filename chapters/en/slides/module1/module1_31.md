@@ -30,8 +30,8 @@ manufacturer_freq
 K    23
 G    22
 P     9
-Q     8
 R     8
+Q     8
 N     6
 A     1
 Name: mfr, dtype: int64
@@ -64,7 +64,7 @@ Notes: Script here.
 manufacturer_freq.plot.bar()
 ```
 
-<img src="../../../../static/module1/module1_31/unnamed-chunk-4-1.png" width="576" />
+<img src="/module1/module1_31/unnamed-chunk-4-1.png" width="576" />
 See how quick that was? The important things to notice here is that we
 want to `.plot` a `.bar()` graph.
 
@@ -94,7 +94,7 @@ x-axis is the `sugars` column and the y-axis is the `calories` column.
 df.plot.scatter(x='sugars', y='calories')
 ```
 
-<img src="../../../../static/module1/module1_31/unnamed-chunk-5-1.png" width="576" />
+<img src="/module1/module1_31/unnamed-chunk-5-1.png" width="576" />
 
 Notes: Script here.
 
@@ -121,7 +121,7 @@ and 1, with 1 being full intensity.
 df.plot.scatter(x='sugars', y='calories', alpha=0.3)
 ```
 
-<img src="../../../../static/module1/module1_31/unnamed-chunk-6-1.png" width="576" />
+<img src="/module1/module1_31/unnamed-chunk-6-1.png" width="576" />
 
 Notes: Script here.
 
@@ -149,7 +149,7 @@ df.plot.scatter(x='sugars',
                 color='purple')
 ```
 
-<img src="../../../../static/module1/module1_31/unnamed-chunk-7-1.png" width="60%" />
+<img src="/module1/module1_31/unnamed-chunk-7-1.png" width="60%" />
 
 Notes: Script here.
 
@@ -179,7 +179,24 @@ df.plot.scatter(x="sugars",
                 title="The relationship between sugar and calories in cereals")
 ```
 
-<img src="../../../../static/module1/module1_31/unnamed-chunk-8-1.png" width="60%" />
+<img src="/module1/module1_31/unnamed-chunk-8-1.png" width="60%" />
+
+---
+
+``` python
+import altair as alt
+import pandas as pd
+from altair_saver import save
+
+source = pd.read_csv('cereal.csv')
+
+chart1 = alt.Chart(source).mark_bar().encode(
+    x='mfr',
+    y='count()'
+)
+chart1
+```
+<img src="/module1/chart1.png" alt="A caption" width="20%" />
 
 ---
 

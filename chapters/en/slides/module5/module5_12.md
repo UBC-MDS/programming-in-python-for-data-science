@@ -18,8 +18,8 @@ Notes: Script here
 
 ---
 
-We’ve seen how loops can help us adhere to the DRY principle, but what
-can we do if we are already using a loop and there is still
+Hi elijah We’ve seen how loops can help us adhere to the DRY principle,
+but what can we do if we are already using a loop and there is still
 repetition?  
 For example: Let’s say we are trying to obtain all the red (♥️, ♦️)
 suited face cards from a deck of cards into a list.

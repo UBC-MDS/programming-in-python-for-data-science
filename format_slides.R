@@ -24,6 +24,8 @@ main <- function(input) {
   
   # replace global enviromnent with relative  
   text <- str_replace_all( text, "/Users/.+/static", "" )
+  text <- str_replace_all( text, "../../../../static", "" )
+  text <- str_replace_all( text, "\n\n    ## alt.Chart\\(..\\.\\)\n", "" )
 
   # replace \n-----\n with \n---\n to denote slide breaks
   text <- str_replace_all(string = text, 
