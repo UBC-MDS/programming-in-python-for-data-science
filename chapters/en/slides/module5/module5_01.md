@@ -20,8 +20,7 @@ Notes: Script here
 
 In the last Module, we explored using different data structures and
 types that Python offers. It’s at this point in the course where we
-learn how to ask Python to take different actions, depending on a
-condition, from these structures.
+learn how to ask Python to make a decision, depending on conditions.
 
 We did something similar when we filtered a dataframe using condition
 such as:
@@ -63,9 +62,9 @@ Notes: Script here
 
 Let’s start with an example of what the syntax looks like.
 
-Perhaps we want to introduce ourself in our code by using the object
+Perhaps we want to introduce ourselves in our code by using the object
 called `my_name`. Here we use a verb called `print()` that simply prints
-the object or string set as it’s argument:
+the object or string set as an argument:
 
 ``` python
 my_name = 'Hayley' 
@@ -75,15 +74,156 @@ if my_name.lower() == 'hayley':
 elif my_name.lower() == 'totoro':
   print('Interesting, I loved that movie!')
 else:
-  print('Nice to meet you!')
+  print("That's a great name.")
+  
+print('Nice to meet you!')
 ```
 
-```out
+``` out
 My name is Hayley too!
+Nice to meet you!
 ```
 
-We can see that since the object `my_name` is equal to `hayley`, so it
-makes sense that the output is `My name is Hayley too`.
+We can see that since the object `my_name` is equal to `hayley`, the
+output is `My name is Hayley too`. It then continues to run the code
+`'Nice to meet you!` which is outside any conditions.
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+<center>
+
+<img src='/module5/iftrue.png' width="100%">
+
+</center>
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+Now what happens if the object was equal to something else?
+
+``` python
+my_name = 'Totoro' 
+
+if my_name.lower() == 'hayley':
+   print('My name is Hayley too!')
+elif my_name.lower() == 'totoro':
+  print('Interesting, I loved that movie!')
+else:
+  print("That's a great name.")
+  
+print('Nice to meet you!')
+```
+
+``` out
+Interesting, I loved that movie!
+Nice to meet you!
+```
+
+The object `my_name` has a different value now, so the output
+corresponds to a different `print()` statement. This time it prints
+`Interesting, I loved that movie!` and the code `Nice to meet you!` that
+follows the conditions.
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+<center>
+
+<img src='/module5/eliftrue.png' width="100%">
+
+</center>
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+Now we try something that meets neither of those conditions:
+
+``` python
+my_name = 'Desmond' 
+
+if my_name.lower() == 'hayley':
+   print('My name is Hayley too!')
+elif my_name.lower() == 'totoro':
+  print('Interesting, I loved that movie!')
+else:
+  print("That's a great name.")
+  
+print('Nice to meet you!')
+```
+
+``` out
+That's a great name.
+Nice to meet you!
+```
+
+When `my_name` is `Desmond` the last possible output is returned and
+prints `That's a great name.`. It resumes and executes the code
+underneath as did each of the other values.
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+<center>
+
+<img src='/module5/elsetrue.png' width="100%">
+
+</center>
 
 Notes: Script here
 
@@ -109,11 +249,14 @@ if my_name.lower() == 'hayley':
 elif my_name.lower() == 'totoro':
   print('Interesting, I loved that movie!')
 else:
-  print('Nice to meet you!')
+  print("That's a great name.")
+  
+print('Nice to meet you!')
 ```
 
-```out
+``` out
 My name is Hayley too!
+Nice to meet you!
 ```
 
 Python conditional statements contains 2 important things:
@@ -182,30 +325,10 @@ Notes: Script here
     is true, the body of the statement (anything indented under it) will
     be executed. If the expression is false, the body of the statement
     is not executed and it continues to the next line of code outside
-    the body of the if condition.  
+    the body.  
   - The `else` expression will execute if the conditional expressions
     above it are false. Unlike `if` which can be executed many times,
     `else` can only occur once following an `if` condition.
-
-<center>
-
-<img src='/module5/ifelse.png' width="40%">
-
-</center>
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
 
 `else` statements are optional. If you don’t want to assign a default
 value, the code will still work without one.
@@ -215,10 +338,13 @@ my_name = 'Hayley'
 
 if my_name.lower() == 'hayley':
    print('My name is Hayley too!')
+
+print('Nice to meet you!')
 ```
 
-```out
+``` out
 My name is Hayley too!
+Nice to meet you!
 ```
 
 Notes: Script here
@@ -236,11 +362,49 @@ Notes: Script here
 ---
 
   - `elif` stands for ***else if***. It allows us to check multiple
-    conditions for true.
+    conditions if they are true.
+
   - When the `elif` expression evaluates to true, then the body of the
     statement is executed, just like an `if` statement.
+
+In the case we saw before, `my_name.lower() == 'totoro'` is the second
+condition which evaluates to “True”:
+
+``` python
+my_name = 'Totoro' 
+
+if my_name.lower() == 'hayley':
+   print('My name is Hayley too!')
+elif my_name.lower() == 'totoro':
+  print('Interesting, I loved that movie!')
+else:
+  print("That's a great name.")
+  
+print('Nice to meet you!')
+```
+
+``` out
+Interesting, I loved that movie!
+Nice to meet you!
+```
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
   - Unlike `else`, we can use as many `elif` statements in a decision
     process as we want.
+
   - `elif` statements **MUST** follow an `if` statement or an error will
     occur.
 
@@ -271,40 +435,6 @@ Notes: Script here
 
 ---
 
-Let’s look at the example in the diagram below:
-
-<center>
-
-<img src='/module5/condition1.png' width="40%">
-
-</center>
-
-We can look at each `if` and `elif` condition as a filter. For an object
-that is <b><font color="#ea92b9">pink</font></b> , the body of the `if`
-statement will execute and not see any further conditions down the
-funnel.  
-For a <b><font color="#a4cff4">blue</font></b> object, the item will
-have seen the `if` condition but because it did not result in a true
-value, it continued down the funnel. Since the `elif` condition results
-in a true statement, it will not proceed to the `else` condition’s
-body.  
-<b><font color="#53d3dc">Any other colour</font></b> will pass the 2
-conditions and proceed to the default `else` statement’s body.
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
-
 ## Order matters
 
 The order we chose for the statement for the `if` and `elif` statements
@@ -312,7 +442,7 @@ is important and can result in different outputs. Let’s explore this in
 the next example:
 
 ``` python
-item = 12 
+item = 13 
 
 if item > 10:
     magnitude = 'greater than 10'
@@ -328,9 +458,8 @@ magnitude
 'greater than 10'
 ```
 
-In this case, our `item` value is greater than 10 so our first
-condition, holds true. But let’s see what happens with an `item` value
-of 22.
+In this case, our `item` value is greater than 10 so our first condition
+holds true. But let’s see what happens with an `item` value of 25.
 
 Notes: Script here
 
@@ -347,7 +476,7 @@ Notes: Script here
 ---
 
 ``` python
-item = 22 
+item = 25 
 
 if item > 10:
     magnitude = 'greater than 10'
@@ -383,7 +512,7 @@ Notes: Script here
 
 <center>
 
-<img src='/module5/condition2.png' width="50%">
+<img src='/module5/order1.png' width="100%">
 
 </center>
 
@@ -404,7 +533,7 @@ Notes: Script here
 This can be fixed by rearranging the conditional statements:
 
 ``` python
-item = 22 
+item = 25 
 
 if item > 20:
     magnitude = 'greater than 20'
@@ -420,7 +549,8 @@ magnitude
 'greater than 20'
 ```
 
-Now a value of 22 give the correct output, but what about a value of 12?
+Now a value of 25 gives the desired output of `greater than 20`, but
+what about a value of 13?
 
 Notes: Script here
 
@@ -437,7 +567,7 @@ Notes: Script here
 ---
 
 ``` python
-item = 12 
+item = 13 
 
 if item > 20:
     magnitude = 'greater than 20'
@@ -453,7 +583,7 @@ magnitude
 'greater than 10'
 ```
 
-Since 12 doesn’t meet the first condition, it passes it, and moves onto
+Since 13 doesn’t meet the first condition, it passes it and moves onto
 the second condition which it does meet.
 
 Notes: Script here
@@ -472,7 +602,7 @@ Notes: Script here
 
 <center>
 
-<img src='/module5/condition3.png' width="50%">
+<img src='/module5/order2.png' width="100%">
 
 </center>
 
@@ -490,17 +620,37 @@ Notes: Script here
 
 ---
 
-## In line
+<center>
 
-In situation where we have only `if` and `else` statements, we have a
-nice ability to put it all in a single line of code. We have a given
-object, in this case we are using a list of words named `words`:
+<img src='/module5/order3.png' width="100%">
+
+</center>
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+## Inline
+
+In situations where we have only `if` and `else` statements, we have the
+ability to put it all in a single line of code. We have a given object;
+in this example we are using a list of words named `words`:
 
 ``` python
 words = ['the', 'list', 'of', 'words']
 ```
 
-The original conditional statements below checks if the list is longer
+The original conditional statements below check if the list is longer
 than 10 elements or not and gives it a `list_size` value.
 
 ``` python

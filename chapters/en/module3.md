@@ -132,7 +132,7 @@ Good job!  You must have seen the duplicate rows of `Ivysaur`, `Charmeleon` and 
 
 </exercise>
 
-<exercise id="6" title="Which dataframe is Tidy?">
+<exercise id="6" title="Which is Tidy?">
 
 Which of the following would be considered tidy data for the following statistical questions: 
 

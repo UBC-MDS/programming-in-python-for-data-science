@@ -149,7 +149,6 @@ Notes: Script here
 
 ---
 
-
 At this point you may be asking yourself the question _"Are there any verbs, that would easily transform data into longer or wider dataframes?"_
 
 If you are, then you are ahead of the game!  We will discuss this in the next section.

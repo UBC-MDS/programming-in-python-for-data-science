@@ -25,32 +25,25 @@ times. Let’s say we want to add the square of every number in a list to
 a new list.
 
 ``` python
-not_squared_list = [ 1, 2, 3, 4]
+numbers = [ 2, 3, 5]
 ```
 
 We would have to do something like the following:
 
 ``` python
-squared_list = []
+squared = list()
 
-squared_list.append(not_squared_list[0] ** 2)
-squared_list.append(not_squared_list[1] ** 2)
-squared_list.append(not_squared_list[2] ** 2)
-squared_list.append(not_squared_list[3] ** 2)
-
-squared_list
+squared.append(numbers[0] ** 2)
+squared.append(numbers[1] ** 2)
+squared.append(numbers[2] ** 2)
+squared
 ```
 
 ```out
-[1, 4, 9, 16]
+[4, 9, 25]
 ```
 
-This is problematic for numerous reasons including that it’s time
-consuming for long list.
-
-Just like how we try to reduce, reuse and recycle waste, Python can
-reuse and recycle code by repeating the interation in something called a
-loop.
+This is problematic for numerous reasons.
 
 Notes: Script here
 
@@ -66,27 +59,17 @@ Notes: Script here
 
 ---
 
-``` python
-not_squared_list = [ 1, 2, 3, 4]
-```
+Some of the reasons this exhibits bad coding practices are as followed:
 
-We can create the same `squared_list` by looping over the same action:
+  - **Difficult to scale**: It only works for a list with 4 elements. If
+    we want to do this for a list of a different length, we need to add
+    or remove code.
 
-``` python
-squared_list = []
+  - **Difficult to modify**: If we want to change its functionality, we
+    need to change 4 similar lines of code.
 
-for element in not_squared_list: 
-  squared_list.append(element ** 2)
-
-squared_list
-```
-
-```out
-[1, 4, 9, 16]
-```
-
-This only took 2 lines of code. Think how much code writing we would
-avoid if the list had a length of 100?\!
+  - **Clarity**: It is hard to understand what it does just by looking
+    at it.
 
 Notes: Script here
 
@@ -102,42 +85,19 @@ Notes: Script here
 
 ---
 
-Let’s take a closer look at the loop we just made:
+## Don’t Repeat Yourself (DRY Principle)
 
-``` python
-squared_list = []
+Just like how we try to reduce, reuse and recycle waste, coding likes to
+borrow a similar principle aimed at reducing repetitive code.
 
-for element in not_squared_list: 
-  squared_list.append(element ** 2)
+This motion is called the ***DRY principle*** otherwise known as the
+“Don’t Repeat Yourself” principle. This premise of this principle to
+avoid redundancy within code.
 
-squared_list
-```
-
-```out
-[1, 4, 9, 16]
-```
-
-We start our loop with `for` and we created a new variable named
-`element`. This refers to an item in the collection of items that we are
-iterating over. We could name this new variable anything so long as we
-reference the same name later on in the loop. For example the code below
-would also run:
-
-``` python
-squared_list = []
-
-for thingamajig in not_squared_list: 
-  squared_list.append(thingamajig ** 2)
-
-squared_list
-```
-
-```out
-[1, 4, 9, 16]
-```
-
-You see how we changed the variable name in the `.append()` verb as
-well?
+The method we discussed in the last slide is a violation of this
+principle (known as a ***Wet Solution***). There is a much more
+efficient method to obtain the same output that avoids typing out
+multiple iterations of similar code.
 
 Notes: Script here
 
@@ -153,22 +113,41 @@ Notes: Script here
 
 ---
 
+## Loops
+
+Our example before takes 4 lines of code to make `squared` and violates
+the DRY principle in the process:
+
 ``` python
-squared_list = []
+squared = list()
 
-for element in not_squared_list: 
-  squared_list.append(element ** 2)
-
-squared_list
+squared.append(numbers[0] ** 2)
+squared.append(numbers[1] ** 2)
+squared.append(numbers[2] ** 2)
+squared
 ```
 
 ```out
-[1, 4, 9, 16]
+[4, 9, 25]
 ```
 
-For loops has a similar structure to conditions in that the first line
-must end with a colon (`:`) and everything within the loop must have a 4
-space indentation to differentiate it from code outside the loop.
+Instead, we can create `squared` by using something called a **loop** to
+repeat the `.append()` action over the multiple elements:
+
+``` python
+squared = list()
+for number in numbers: 
+    squared.append(number ** 2)
+squared
+```
+
+```out
+[4, 9, 25]
+```
+
+This only took 3 lines of code but if the number of elements in the list
+increase, the code remains the same. Think how much code writing we
+would avoid if the list had a length of 1000?\!
 
 Notes: Script here
 
@@ -186,20 +165,34 @@ Notes: Script here
 
 ## For (Each) Loop
 
-This specific loop is call a ***For loop*** and can be iterated over any
-type of *collection/sequence*: list, tuple, range, string.  
-In the last case it was over the values in a list.
+This specific loop is called a ***For loop*** and can be iterated over
+any type of *collection/sequence*: list, tuple, range, string.  
+In this case, it’s over the values in a list.
 
 Block of code indented is executed for each value in the list (hence the
-name “for” loops, sometimes also called “for each” loops) The loop ends
-after the variable has taken all the values in the collection.
+name “for” loops, sometimes also called “for each” loops).  
+The loop ends after the variable has taken all the values in the
+collection.
 
-In the diagram below you can see more obviously where the looping occurs
-as the green arrows make a clear loop.
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+Let’s take a closer look at exactly what is happening in this loop:
 
 <center>
 
-<img src='/module5/loop1.png' width="50%">
+<img src='/module5/loop.gif' width="80%">
 
 </center>
 
@@ -217,34 +210,164 @@ Notes: Script here
 
 ---
 
-Here is another example:
+Before entering the loop, we make an empty list named `squared`:
+
+<center>
+
+<img src='/module5/iter0.png' width="80%">
+
+</center>
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+We first start with the first number in `numbers`. We calculate the
+square of `2` and append it to the empty list called `squared`.
+
+<center>
+
+<img src='/module5/iter1.png' width="80%">
+
+</center>
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+When we have finished all the code for the first element, we move to the
+second one valued at `3`:
+
+<center>
+
+<img src='/module5/iter2.png' width="80%">
+
+</center>
+
+This number gets squared and added to the existing lists `squared`.
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+We then move onto the last element valued at `5`. This is where the loop
+ends and outputs `squared`.
+
+<center>
+
+<img src='/module5/iter3.png' width="80%">
+
+</center>
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
 
 ``` python
-word = "Pandas"
-for letter in word:
-    print("Gimme a " + letter + "!")
+squared = list()
+numbers = [ 2, 3, 5]
+
+for number in numbers: 
+    squared.append(number ** 2)
+squared
 ```
 
 ```out
-Gimme a P!
-Gimme a a!
-Gimme a n!
-Gimme a d!
-Gimme a a!
-Gimme a s!
+[4, 9, 25]
 ```
 
+Our loop begins with the keyword `for` and we make a new variable named
+`number`. This refers to an element in the list `numbers`. We could name
+this new variable anything so long as we reference the same name later
+on in the loop.
+
 ``` python
-print("What's that spell?!! " + word + "!")
+squared = list()
+numbers = [ 2, 3, 5]
+
+for thingamajig in numbers: 
+    squared.append(thingamajig ** 2)
+
+squared
 ```
 
 ```out
-What's that spell?!! Pandas!
+[4, 9, 25]
 ```
 
-Here we took each character in the string, concatenated it with other
-strings (we learned we can do that in the last Module) and printed an
-output in a loop.
+You see how we changed the variable name in the construction of the loop
+as well as in the `.append()`?
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+``` python
+squared = list()
+
+for number in numbers: 
+    squared.append(number ** 2)
+
+squared
+```
+
+```out
+[4, 9, 25]
+```
+
+Loops have a similar structure to conditions in that the first line must
+end with a colon (`:`) and everything within the loop must have a
+4-space indentation to differentiate it from code outside the loop.
 
 Notes: Script here
 
@@ -262,87 +385,30 @@ Notes: Script here
 
 ## Looping in a dictionary
 
-We can loop over the keys or values of a dictionary using `.keys()` and
-`.values()` respectively:
+We can also loop over the key-value pairs of a dictionary using
+`.items()`. For example, a grocery store has the following cereal in
+stock. `.items()` returns a tuple with the dictionary key at index 0 and
+value at index 1. We can calculate the total stock quantity in an object
+named `stock_total` by summing up all the values:
 
 ``` python
-cereals = {'Special K': 110, 'Lucky Charms': 150, 'Cheerios': 100, 'Wheaties': 120}
+cereals = {'Special K': 4, 'Lucky Charms': 7, 'Cheerios': 2, 'Wheaties': 3}
+stock_total = 0
 
-for key in cereals.keys():
-  print(key)
+for val in cereals.items():
+    stock_total = stock_total + val[1]
+    print(stock_total)
 ```
 
 ```out
-Special K
-Lucky Charms
-Cheerios
-Wheaties
-```
-
-``` python
-cereals = {'Special K': 110, 'Lucky Charms': 150, 'Cheerios': 100, 'Wheaties': 120}
-calories = []
-
-for val in cereals.values():
-  calories.append(val)
-
-calories
-```
-
-```out
-[110, 150, 100, 120]
-```
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
-
-## range
-
-Instead of looping over items in a collection we can iterate over a
-sequence of numbers. `range()` is a verb that generates a sequence of
-integers up to some value.
-
-``` python
-for i in range(5):
-    print(i)
-```
-
-```out
-0
-1
-2
-3
 4
+11
+13
+16
 ```
 
-We can also specify a start value, an end value and a skip-by value with
-range:
-
-``` python
-
-for i in range(50,101,10):
-    print(i)
-```
-
-```out
-50
-60
-70
-80
-90
-100
-```
+Notice that we keep a running tally of the total stock at each iteration
+with `stock_total` until we arrive at the final count of 16.
 
 Notes: Script here
 
@@ -358,156 +424,39 @@ Notes: Script here
 
 ---
 
-The format is the starting integer first, the ending integer next and
-the skip by integer last. Remember that similarly to slicing with
-`.iloc[]` in pandas, the starting point of range is *inclusive* in the
-sequence and the ending number is *exclusive*.
+When we are updating an existing object in a loop such as:
 
 ``` python
-range(start,end,skip)
+stock_total = stock_total + val[1]
 ```
 
-The skip-by variable is optional though. In `range`, the default skip
-number is 1, so if we don’t include it, Python will assume increasing in
-increments of 1.
+Instead of writing the object name twice, we can shorten it to:
 
 ``` python
-for i in range(5,10):
-    print(i)
+stock_total += val[1]
+```
+
+This simply means that we are adding `val[1]` to the `stock_total`
+object.
+
+If we replace this code into the loop from before, it works in exactly
+the same way:
+
+``` python
+cereals = {'Special K': 4, 'Lucky Charms': 7, 'Cheerios': 2, 'Wheaties': 3}
+stock_total = 0
+
+for val in cereals.items():
+    stock_total += val[1]
+    print(stock_total)
 ```
 
 ```out
-5
-6
-7
-8
-9
+4
+11
+13
+16
 ```
-
-If we only include a single integer in the function, a sequence up to
-the given number (not including it) will be generated starting from `0`.
-
-``` python
-for i in range(4):
-    print(i)
-```
-
-```out
-0
-1
-2
-3
-```
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
-
-`range()` only works for integers. If we attempt a loop with type
-`float`, an error will occur:
-
-``` python
-for i in range(0.5,1.0,0.1):
-    print(i)
-```
-
-```out
-Error in py_call_impl(callable, dots$args, dots$keywords): TypeError: 'float' object cannot be interpreted as an integer
-
-Detailed traceback: 
-  File "<string>", line 1, in <module>
-```
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
-
-## Comprehensions
-
-We learned in the last Module that we can make and `if`/`else` condition
-in a single line of code and we can do something similar with basic
-loops. **Comprehensions** allow us to build
-lists/tuples/sets/dictionaries in one convenient, compact line of code.
-
-List comprehension can be done as so:
-
-``` python
-sentence = ['This', 'checks', 'the', 'number', 'of', 'letter', 'per', 'word']
-
-word_length = [len(word) for word in sentence]
-word_length
-```
-
-```out
-[4, 6, 3, 6, 2, 6, 3, 4]
-```
-
-to write the same thing without comprehension would look like this:
-
-``` python
-word_length = []
-
-for word in sentence:
-  word_length.append(len(word))
-
-word_length
-```
-
-```out
-[4, 6, 3, 6, 2, 6, 3, 4]
-```
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
-
-Dictionary comprehension can be done in a similar way but this time we
-wrap the line with curly brackets and specify what our keys and values
-are:
-
-``` python
-sentence = ['This', 'checks', 'the', 'number', 'of', 'letter', 'per', 'word']
-
-word_length = {word : len(word) for word in sentence}
-word_length
-```
-
-```out
-{'This': 4, 'checks': 6, 'the': 3, 'number': 6, 'of': 2, 'letter': 6, 'per': 3, 'word': 4}
-```
-
-Both methods of building lists and dictionaries work and it’s down to
-you to decide what works better for you.
 
 Notes: Script here
 

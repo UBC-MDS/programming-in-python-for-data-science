@@ -21,6 +21,7 @@ By the end of the module, students are expected to:
 - Write for loops to repeatedly run code.
 - Describe the expected outcome of code with nested loops .
 - Define and use a named function that accepts parameters and returns values.
+- Write docstrings using different styles for basic functions.
 
 Notes:
 <html>

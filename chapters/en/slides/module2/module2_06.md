@@ -70,17 +70,14 @@ For our `cereal.csv` let’s specify the `name` column as our index:
 
 ``` python
 df = pd.read_csv('cereal.csv', index_col="name")
-df.head()
+df.head(2)
 ```
 
 ```out
-                          mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
-name                                                                                                                                       
-100% Bran                   N  Cold        70        4    1     130   10.0    5.0       6     280        25      3     1.0  0.33  68.402973
-100% Natural Bran           Q  Cold       120        3    5      15    2.0    8.0       8     135         0      3     1.0  1.00  33.983679
-All-Bran                    K  Cold        70        4    1     260    9.0    7.0       5     320        25      3     1.0  0.33  59.425505
-All-Bran with Extra Fiber   K  Cold        50        4    0     140   14.0    8.0       0     330        25      3     1.0  0.50  93.704912
-Almond Delight              R  Cold       110        2    2     200    1.0   14.0       8       1        25      3     1.0  0.75  34.384843
+                  mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
+name                                                                                                                               
+100% Bran           N  Cold        70        4    1     130   10.0    5.0       6     280        25      3     1.0  0.33  68.402973
+100% Natural Bran   Q  Cold       120        3    5      15    2.0    8.0       8     135         0      3     1.0  1.00  33.983679
 ```
 
 The `index_col` argument also take in positions. the `name` column in
@@ -89,17 +86,14 @@ so:
 
 ``` python
 df = pd.read_csv('cereal.csv', index_col=0)
-df.head()
+df.head(2)
 ```
 
 ```out
-                          mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
-name                                                                                                                                       
-100% Bran                   N  Cold        70        4    1     130   10.0    5.0       6     280        25      3     1.0  0.33  68.402973
-100% Natural Bran           Q  Cold       120        3    5      15    2.0    8.0       8     135         0      3     1.0  1.00  33.983679
-All-Bran                    K  Cold        70        4    1     260    9.0    7.0       5     320        25      3     1.0  0.33  59.425505
-All-Bran with Extra Fiber   K  Cold        50        4    0     140   14.0    8.0       0     330        25      3     1.0  0.50  93.704912
-Almond Delight              R  Cold       110        2    2     200    1.0   14.0       8       1        25      3     1.0  0.75  34.384843
+                  mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
+name                                                                                                                               
+100% Bran           N  Cold        70        4    1     130   10.0    5.0       6     280        25      3     1.0  0.33  68.402973
+100% Natural Bran   Q  Cold       120        3    5      15    2.0    8.0       8     135         0      3     1.0  1.00  33.983679
 ```
 
 Notes: Script here.
