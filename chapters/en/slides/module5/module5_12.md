@@ -99,7 +99,7 @@ Let’s see exactly what is happening:
 
 <center>
 
-<img src='/module5/loop5.gif' width="70%">
+<img src='/module5/loop33.gif' width="70%">
 
 </center>
 

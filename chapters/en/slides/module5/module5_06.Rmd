@@ -175,22 +175,6 @@ Notes: Script here
 
 ---
 
-Let's take a closer look at exactly what is happening in this loop: 
-
-
-<center><img src='/module5/loop.gif' width="80%"></center>
-
-
-
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
-
----
-
-
 Before entering the loop, we make an empty list named `squared`: 
 <center><img src='/module5/iter0.png' width="80%"></center>
 
@@ -202,41 +186,7 @@ Notes: Script here
 
 ---
 
-We first start with the first number in `numbers`. We calculate the square of `2` and append it to the empty list called `squared`. 
-<center><img src='/module5/iter1.png' width="80%"></center>
 
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
-
----
-
-When we have finished all the code for the first element, we move to the second one valued at `3`:
-
-<center><img src='/module5/iter2.png' width="80%"></center>
-
-This number gets squared and added to the existing lists `squared`. 
-
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
-
----
-
-We then move onto the last element valued at `5`. This is where the loop ends and outputs `squared`.
-<center><img src='/module5/iter3.png' width="80%"></center>
-
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
-
----
 
 ```{python}
 squared = list()
@@ -288,6 +238,57 @@ Notes: Script here
 </audio></html>
 
 ---
+
+We first start with the first number in `numbers`. We calculate the square of `2` as `4` and append it to the empty list called `squared`. 
+<center><img src='/module5/iter1.png' width="80%"></center>
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+When we have finished all the code for the first element, we move to the second one valued at `3`. We calculate the square of `3` as `9` and append it to the existing list `squared`:
+
+<center><img src='/module5/iter2.png' width="80%"></center>
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+We then move onto the last element valued at `5`. Square the number `5` as `25` and append it to the existing list `squared`.  This is where the loop ends since there are no more values in the list `numbers` and so it executes the next line of code which is displaying object `squared`.
+<center><img src='/module5/iter3.png' width="80%"></center>
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+
+Here we can see exactly what steps are happening all together: 
+
+
+<center><img src='/module5/loop11.gif' width="80%"></center>
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
 
 ## Looping in a dictionary
 
