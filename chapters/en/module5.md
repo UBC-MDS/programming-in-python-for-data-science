@@ -476,11 +476,38 @@ Are you sure you used the right values in `range()`?
 
 </choice> 
 
+</exercise>
+
+
+<exercise id="12" title= "Applying Range with Dataframes">
+
+**Instructions:**    
+Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
+
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
+
+_**Make sure you remove the hash (`#`) symbol in the coding portions of this question.  We have commented them so that the line won't execute and you can test your code after each step.**_
+
+
+Let's read in multiple dataframes together and concatenate them vertically to one large dataframe using a loop and the `range()` function .
+
+Tasks:
+- Iterate over a range from 50 to 10, stepping down 4 integers at a time. 
+- Print the square of each number for each iteration.
+
+
+<codeblock id="05_12">
+
+- Are you using `range(50,10,-4)`? 
+- Are you starting your loop with `for` and using a `colon` for the first line?
+- Are you indenting each line of code in the loop?
+
+</codeblock>
 
 </exercise>
 
 
-<exercise id="12" title="Nested Loops" type="slides">
+<exercise id="13" title="Nested Loops" type="slides">
 
 <slides source="module5/module5_12">
 
@@ -489,7 +516,7 @@ Are you sure you used the right values in `range()`?
 </exercise>
 
 
-<exercise id="13" title="Nested Loop Questions">
+<exercise id="14" title="Nested Loop Questions">
 
 **Question 1**      
 
@@ -567,7 +594,7 @@ We know the outer loop iterates 5 times and the inner loop iterates 4 times (0,2
 </exercise>
 
 
-<exercise id="14" title= "Making a Nested Loop">
+<exercise id="15" title= "Making a Nested Loop">
 
 **Instructions:**    
 Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
@@ -611,7 +638,7 @@ Tasks:
 
 </exercise>
 
-<exercise id="15" title="Repeated Iterations with Conditions" type="slides">
+<exercise id="16" title="Repeated Iterations with Conditions" type="slides">
 
 <slides source="module5/module5_15">
 
@@ -620,7 +647,7 @@ Tasks:
 </exercise>
 
 
-<exercise id="16" title="Conditional Loop Questions">
+<exercise id="17" title="Conditional Loop Questions">
 
 **Question 1**      
 
@@ -701,7 +728,7 @@ Nice work!
 </exercise>
 
 
-<exercise id="17" title= "Practice Iterating Over a Collection">
+<exercise id="18" title= "Practice Iterating Over a Collection">
 
 **Instructions:**    
 Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
@@ -757,7 +784,7 @@ With repetitive code, there is generally always a manner to reduce redundant cod
 </exercise>
 
 
-<exercise id="18" title="Functions" type="slides">
+<exercise id="19" title="Functions" type="slides">
 
 <slides source="module5/module5_18">
 
@@ -766,7 +793,7 @@ With repetitive code, there is generally always a manner to reduce redundant cod
 </exercise>
 
 
-<exercise id="19" title="Function Questions">
+<exercise id="20" title="Function Questions">
 
 **Question 1**      
 
@@ -834,7 +861,7 @@ Are you seeing an error that we aren't?
 </exercise>
 
 
-<exercise id="20" title= "Making a Function from Existing Code">
+<exercise id="21" title= "Making a Function from Existing Code">
 
 **Instructions:**    
 Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
@@ -864,7 +891,7 @@ Tasks:
 
 
 
-<exercise id="21" title= "Making a Function">
+<exercise id="22" title= "Making a Function">
 
 **Instructions:**    
 Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
@@ -901,7 +928,7 @@ Tasks:
 
 
 
-<exercise id="22" title="Function Docstrings" type="slides">
+<exercise id="23" title="Function Docstrings" type="slides">
 
 <slides source="module5/module5_22">
 
@@ -910,7 +937,7 @@ Tasks:
 </exercise>
 
 
-<exercise id="23" title="Docstring Questions">
+<exercise id="24" title="Docstring Questions">
 
 **Question 1**      
 
@@ -994,7 +1021,7 @@ Great!
 
 
 
-<exercise id="24" title= "Writing a Docstring ">
+<exercise id="25" title= "Writing a Docstring ">
 
 **Instructions:**    
 Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
@@ -1023,7 +1050,7 @@ Tasks:
 
 </exercise>
 
-<exercise id="25" title="What Did We Just Learn?" type="slides, video">
+<exercise id="26" title="What Did We Just Learn?" type="slides, video">
 <slides source="module5/module5_end" start="0:165" end="3:01">>
 </slides>
 </exercise>
