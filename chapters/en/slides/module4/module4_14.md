@@ -77,14 +77,12 @@ It appears that dataframes have their own data type called a
 type for short.
 
 Looking into this further the documentation states a dataframe as a:
-
-*" Two-dimensional tabular data structure with columns and axis
-labels."*
+*“Two-dimensional tabular data structure with columns and axis
+labels.”*
 
 More directly, we can describe a dataframe as a collection of columns
-but that brings us to the new question:
-
-**“What is a dataframe column?”**
+but that brings us to the new question: **“What is a dataframe
+column?”**
 
 Notes: Script here
 
@@ -195,12 +193,11 @@ Notes: Script here
 
 A pandas Series is a one-dimensional array of values with an axis label.
 This is the base data type that makes up a pandas dataframe. In fact,
-the \<a
-href=“<https://pandas.pydata.org/pandas-docs/stable/getting_started/dsintro.html#dataframe>”
-target="\_blank“Pandas documentation”</a> explain it as “a dict of
-Series objects”.
+the
+<a href="https://pandas.pydata.org/pandas-docs/stable/getting_started/dsintro.html#dataframe" target="_blank">Pandas
+documentation“</a> explain it as”a dict of Series objects".
 
-let’s look back at the series output again:
+Let’s look back at the series output again:
 
 ``` python
 cereal['mfr']
@@ -221,7 +218,7 @@ cereal['mfr']
 Name: mfr, Length: 77, dtype: object
 ```
 
-We can see additional information at the bottom. The axis labelled
+We can see additional information at the bottom. The series labelled
 `mfr`, the length equal to 77 and the `dtype`: object.
 
 Notes: Script here
@@ -245,10 +242,9 @@ series contains values, a label as well as some additional information
 regarding a **dtype**.
 
 Just like how values have the data types ( `str`, `int`, `float`, etc.),
-Columns in a Pandas dataframe have types called **dtypes**.
+columns in a Pandas dataframe have types called **dtypes**.
 
-In this course we are going to concentrate on the following dtypes but
-there others:
+In this course we are going to concentrate on the following dtypes:
 
 <center>
 
@@ -402,26 +398,6 @@ this) Notes: Script here
 
 ---
 
-<center>
-
-<img src='/module4/full.png' width="100%">
-
-</center>
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
-
 ## Non-Numeric dtypes
 
 <center>
@@ -430,8 +406,9 @@ Notes: Script here
 
 </center>
 
-These can be a bit more complicated but let’s concentrate on the dtypes
-`object` and `bool`. We will be exploring `datetime64` in Module 7.
+Non-numeric types can be a bit more complicated but let’s concentrate on
+the dtypes `object` and `bool`. We will be exploring `datetime64` in
+Module 7.
 
   - `object` is a dtype that contains `str` type values in the cells of
     the dataframe or that had a mixture of different types to begin

@@ -532,7 +532,7 @@ Notes: Script here
 Sets, not unlike lists and tuples, are a data structure that contains
 elements. Sets differ such that:
 
-  - They are un-ordered, and  
+  - They do not perserve the inserted order, and  
   - The containing values are unique - meaning there are no entries that
     are repeated.
 
@@ -546,8 +546,11 @@ my_set
 ```
 
 ```out
-{1.0, 2, 'Buckle my shoe'}
+{'Buckle my shoe', 1.0, 2}
 ```
+
+You’ll notice that the order is not the same as we inputted then in.
+That’s because set’s do not preserve order.
 
 What if I add more of the same entries:
 
@@ -557,7 +560,7 @@ my_set
 ```
 
 ```out
-{1.0, 2, 'Buckle my shoe'}
+{'Buckle my shoe', 1.0, 2}
 ```
 
 This is still the same as before.
@@ -589,8 +592,8 @@ Detailed traceback:
   File "<string>", line 1, in <module>
 ```
 
-Remember this data structure has no order, so Python displays them
-according to some internal sorting scheme.  
+Remember this data structure does not perserve order, so Python displays
+them according to some internal sorting scheme.  
 We cannot select or slice from them, however, we can add to them with
 `.add()`.
 
@@ -605,7 +608,7 @@ my_set
 ```
 
 You’ll notice that unlike lists, the new entries are not added to the
-end since this data structure has no order.
+end.
 
 Notes: Script here
 
@@ -625,12 +628,12 @@ Notes: Script here
 
 <br>
 
-| Data Structure | Ordered | Mutable | Add values  |    Symbol    | Can accept duplicates |
-| :------------- | :-----: | :-----: | :---------: | :----------: | :-------------------: |
-| `str`          |    ✓    |    ☓    |      ☓      | `''` or `""` |           ✓           |
-| `list`         |    ✓    |    ✓    | `.append()` |     `[]`     |           ✓           |
-| `tuple`        |    ✓    |    ☓    |      ☓      |     `()`     |           ✓           |
-| `set`          |    ☓    |    ✓    |  `.add()`   |     `{}`     |           ☓           |
+| Data Structure | preserves order | Mutable |    Symbol    | Can contain duplicates |
+| :------------- | :-------------: | :-----: | :----------: | :--------------------: |
+| `str`          |        ✓        |    ☓    | `''` or `""` |           ✓            |
+| `list`         |        ✓        |    ✓    |     `[]`     |           ✓            |
+| `tuple`        |        ✓        |    ☓    |     `()`     |           ✓            |
+| `set`          |        ☓        |    ✓    |     `{}`     |           ☓            |
 
 Notes: Script here
 

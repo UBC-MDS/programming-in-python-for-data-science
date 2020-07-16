@@ -66,8 +66,6 @@ We have already been a witness to a few of Python's arithmetic operators, but th
 | `*` | multiplication |  
 | `/` | division |  
 | `**` | exponentiation |   
-| `//` | integer division |  
-| `%`  | modulo |  
 
 
 Notes: Script here
@@ -95,14 +93,16 @@ And the subtraction of 2 values of type `int` results with a type `int`:
 15 - 7
 ```
 
-integer division will give the result of division rounded down to the nearest whole number
+
+Exponents can be calculated with `**` with `int` values:
 ```{python}
-15//2
+2 ** 3
 ```
 
-The modulo operation will output with the remainder of the division. 
+And `float` datatypes:
+
 ```{python}
-15%2
+2.2 ** 5
 ```
 
 
@@ -128,15 +128,16 @@ True + True
 True * 4
 ```
 
+We see that `True` values as cast as a value of `1` and False as a value of `0` when they undergo operations: 
 ```{python}
 False * 2 + True
 ```
 
 ```{python}
-True % 4
+False + 4
 ```
 
-`True` values can undergo operations under the pretense that it acts as a value of `1` and False as a value of `0`. 
+
 
 Notes: Script here
 <html>

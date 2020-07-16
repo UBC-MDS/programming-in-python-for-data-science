@@ -496,7 +496,9 @@ Let’s try it with comprehension:
 [1, 4, 9, 16]
 ```
 
-This is his, preference though and not a set rule. Notes: Script here
+Designing effective functions will be discussed in the next section.
+
+Notes: Script here
 
 <html>
 

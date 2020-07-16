@@ -54,7 +54,7 @@ item = 25
 if item > 20:
     magnitude = 'greater than 20'
 elif item > 10:
-    magnitude = 'greater than 10'
+    magnitude = 'between 10 and 20'
 else:
     magnitude = '10 or less'
  
@@ -88,7 +88,7 @@ item = 13
 if item > 20:
     magnitude = 'greater than 20'
 elif item > 10:
-    magnitude = 'greater than 10'
+    magnitude = 'between 10 and 20'
 else:
     magnitude = '10 or less'
  
@@ -96,7 +96,7 @@ magnitude
 ```
 
 ```out
-'greater than 10'
+'between 10 and 20'
 ```
 
 Notes: Script here
@@ -123,7 +123,7 @@ for item in item_list:
     if item > 20:
         magnitude = 'greater than 20'
     elif item > 10:
-        magnitude = 'greater than 10'
+        magnitude = 'between 10 and 20'
     else:
         magnitude = '10 or less'
     magnitude
@@ -131,7 +131,7 @@ for item in item_list:
 
 ```out
 'greater than 20'
-'greater than 10'
+'between 10 and 20'
 ```
 
 This small change helped us adhere to the DRY principle and avoided
@@ -151,81 +151,39 @@ Notes: Script here
 
 ---
 
-Let’s have Python make some decisions using the keys in a dictionary.
-The dictionary below contains cereals and their respective calorie
-content.
-
-``` python
-cereals = {'Special K': 110, 'Lucky Charms': 150, 'Cheerios': 100, 'Wheaties': 120}
-```
-
-We want to determine if the cereals are low calorie. Any cereal with a
-value less than 120 is considered low calorie and anything above is not.
-
-``` python
-for val in cereals.items():
-    if val[1] < 120: 
-        low_cal = True
-    else: 
-        low_cal = False
-    low_cal
-```
-
-```out
-True
-False
-True
-False
-```
-
-See how little code it took to check each item in the dictionary?
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
-
 ## Break
 
 There are occasions that we may want to save on time by not iterating
-over an entire sequence. Perhaps we need to locate the word “diamond” in
-a list and return the index number (we can use `.index()` to return the
-index location of a specified value in a list).
+over an entire sequence. Perhaps we only need to find one number that is
+`10 or less` in a list.
 
 ``` python
-mine = [ 'rough', 'rocks', 'rough', 'sand', 'diamond', 'rough', 'dirt', 'stones']
+item_list = [25, 13, 21, 8, 17, 11, 4]
 
-for debris in mine: 
-    print(debris)
-    if debris == 'diamond':
-        print(mine.index(debris))
+for item in item_list:
+    if item > 20:
+        magnitude = 'greater than 20'
+    elif item > 10:
+        magnitude = 'between 10 and 20'
+    else:
+        magnitude = '10 or less'
+    magnitude
 ```
 
 ```out
-rough
-rocks
-rough
-sand
-diamond
-4
-rough
-dirt
-stones
+'greater than 20'
+'between 10 and 20'
+'greater than 20'
+'10 or less'
+'between 10 and 20'
+'between 10 and 20'
+'10 or less'
 ```
 
-We can see that even after we located the diamond in the rough (at index
-position 4), the loop continues until it reaches the last element. If we
-have a very large list, it’s inefficient to continue searching for
-something we have already found.
+We can see that even after we located a number that is 10 or less, the
+loop continues until it reaches the last element.If we have a very large
+list, it’s inefficient to continue searching for something we have
+already found.
 
 Notes: Script here
 
@@ -245,26 +203,29 @@ Instead, we can use something called a **break**. A `break` will stop
 the loop from continuing.
 
 ``` python
-mine = [ 'rough', 'rocks', 'rough', 'sand', 'diamond', 'rough', 'dirt', 'stones']
+item_list = [25, 13, 21, 8, 17, 11, 4]
 
-for debris in mine: 
-    print(debris)
-    if debris == 'diamond':
-        print(mine.index(debris))
+for item in item_list:
+    if item > 20:
+        magnitude = 'greater than 20'
+    elif item > 10:
+        magnitude = 'between 10 and 20'
+    else:
+        magnitude = '10 or less'
         break
+        
+    magnitude
 ```
 
 ```out
-rough
-rocks
-rough
-sand
-diamond
-4
+'greater than 20'
+'between 10 and 20'
+'greater than 20'
 ```
 
-Now we can see that as soon as we found the diamond location, all
-subsequent iterations came to a halt.
+Now we can see that as soon as we found a value that had was `10 or
+less`, all subsequent iterations came to a halt and Python exists the
+loop. Not even the last `magnitude` in the loop is returned.
 
 Notes: Script here
 

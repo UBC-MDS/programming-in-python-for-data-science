@@ -161,29 +161,30 @@ As an example, let’s count the number of letters in each element of a
 list. The list comprehension can be done as so:
 
 ``` python
-sentence = ['This', 'checks', 'the', 'number', 'of', 'letter', 'per', 'word']
+numbers = [ 2, 3, 5]
 
-word_length = [len(word) for word in sentence]
-word_length
+squared = [number ** 2 for number in numbers]
+squared
 ```
 
 ```out
-[4, 6, 3, 6, 2, 6, 3, 4]
+[4, 9, 25]
 ```
 
-to write the same thing without comprehension would look like this:
+We Saw in the last section that to obtain the same resulted required the
+following code:
 
 ``` python
-word_length = list()
+squared = list()
 
-for word in sentence:
-    word_length.append(len(word))
-
-word_length
+for number in numbers: 
+    squared.append(number ** 2)
+    
+squared
 ```
 
 ```out
-[4, 6, 3, 6, 2, 6, 3, 4]
+[4, 9, 25]
 ```
 
 Notes: Script here
@@ -202,17 +203,18 @@ Notes: Script here
 
 Dictionary comprehension can be done in a similar way but this time we
 wrap the line with curly brackets and specify what our keys and values
-are:
+are: In this case we assign the number as the key and the square of it
+as the value.
 
 ``` python
-sentence = ['This', 'checks', 'the', 'number', 'of', 'letter', 'per', 'word']
+numbers = [ 2, 3, 5]
 
-word_length = {word : len(word) for word in sentence}
+word_length = {number : number **2 for number in numbers}
 word_length
 ```
 
 ```out
-{'This': 4, 'checks': 6, 'the': 3, 'number': 6, 'of': 2, 'letter': 6, 'per': 3, 'word': 4}
+{2: 4, 3: 9, 5: 25}
 ```
 
 Both methods of building lists and dictionaries work and it’s down to

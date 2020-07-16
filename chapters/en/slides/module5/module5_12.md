@@ -18,8 +18,8 @@ Notes: Script here
 
 ---
 
-Hi elijah We’ve seen how loops can help us adhere to the DRY principle,
-but what can we do if we are already using a loop and there is still
+We’ve seen how loops can help us adhere to the DRY principle, but what
+can we do if we are already using a loop and there is still
 repetition?  
 For example: Let’s say we are trying to obtain all the red (♥️, ♦️)
 suited face cards from a deck of cards into a list.
@@ -95,11 +95,249 @@ Notes: Script here
 
 ---
 
-Let’s see exactly what is happening:
+We enter into the outer loop where the first element in suits is `♥️`:
 
 <center>
 
-<img src='/module5/loop33.gif' width="70%">
+<img src='/module5/nested1.png' width="70%">
+
+</center>
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+The next line indicates to enter a second loop, which iterate over the
+list `faces`. The first element in this list is `Jack`:
+
+<center>
+
+<img src='/module5/nested2.png' width="70%">
+
+</center>
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+The next line of code creates a string containing the suit (`♥️`) and
+the face (`Jack`) in the current iterations and append it to the list
+`cards`:
+
+<center>
+
+<img src='/module5/nested3.png' width="70%">
+
+</center>
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+Once we have appended this to `cards`, the inner loop moves onto the
+second element - `Queen` in the `faces` list.  
+Notice how we are still on the first element (`♥️`) in the `suit` list.
+
+<center>
+
+<img src='/module5/nested4.png' width="70%">
+
+</center>
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+. </audio>
+
+</html>
+
+---
+
+We create a string containing the suit (`♥️`) and the face (`Queen`) of
+this current iteration which is `Queen of ♥️` and add it to the list
+`cards`:
+
+<center>
+
+<img src='/module5/nested5.png' width="70%">
+
+</center>
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+Since we finish all the code in the inner loop’s second iteration we can
+move on the third element in `faces` which is `King`:
+
+<center>
+
+<img src='/module5/nested6.png' width="70%">
+
+</center>
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+The string `King of ♥️` is added to the `cards` list:
+
+<center>
+
+<img src='/module5/nested7.png' width="70%">
+
+</center>
+
+Now we have finished all the elements in the inner loop, where do we go
+now?
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+Only now, that all the elements in `faces` have been iterated over can
+we move on to the next iteration in the outer loop. This consists of
+iteration to the next element (`♦️`) in `suits`:
+
+<center>
+
+<img src='/module5/nested8.png' width="70%">
+
+</center>
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+We restart iterating over `faces` again in the inner loop, starting with
+`Jack`:
+
+<center>
+
+<img src='/module5/nested9.png' width="70%">
+
+</center>
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+We iterate over each element in `faces` appending the strings `'Jack of
+♦'`, `'Queen of ♦'`, `'King of ♦'` at each iteration until reaching
+the end of `faces`:
+
+<center>
+
+<img src='/module5/nested10.png' width="70%">
+
+</center>
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+Since we have reached the end of both lists `suits` and `faces`, all the
+iterations in the inner and outer loops have finished. We exit the loops
+and executes the next line of code which outputs `cards`.
+
+<center>
+
+<img src='/module5/nested11.png' width="70%">
 
 </center>
 
@@ -168,31 +406,13 @@ Notes: Script here
 
 ---
 
-Let’s try another example:
+Let’s see exactly what is happening again in the animation below:
 
-In this case, we are given a list containing lists as elements that we
-wish to “flatten” into a new list that contains all the individual
-elements.
+<center>
 
-``` python
-rhyme = [[1, 2, 'buckle my shoe'], [3, 4, 'slam the door'], [5, 6, 'pick up sticks']]
+<img src='/module5/loop33.gif' width="90%">
 
-all_words = list()
-for verse in rhyme: 
-    for word in verse: 
-      all_words.append(word)
-all_words 
-```
-
-```out
-[1, 2, 'buckle my shoe', 3, 4, 'slam the door', 5, 6, 'pick up sticks']
-```
-
-For each of the lists in `rhyme`, we go through a loop to append each
-element in `verse` to a new list object named `all_words`. This sounds
-like a mouthful so let’s clear this up.  
-We use a loop to iterate over each list in the `rhyme` object.  
-We use a second loop to iterate over each element in the `verse` list.
+</center>
 
 Notes: Script here
 

@@ -369,7 +369,8 @@ Let's try it with comprehension:
 [squares_a_number(number) for number in numbers]
 ```
 
-This is his, preference though and not a set rule. 
+Designing effective functions will be discussed in the next section. 
+
 Notes: Script here
 <html>
 <audio controls >

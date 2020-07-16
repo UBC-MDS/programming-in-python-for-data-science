@@ -358,7 +358,7 @@ Notes: Script here
 ## Order matters
 
 The order we chose for the statement for the `if` and `elif` statements is important and can result in different outputs.
-Let's explore this in the next example:
+Let's explore this in the next example using inequalities with numbers:
 
 ```{python}
 item = 13 
@@ -425,7 +425,7 @@ item = 25
 if item > 20:
     magnitude = 'greater than 20'
 elif item > 10:
-    magnitude = 'greater than 10'
+    magnitude = 'between 10 and 20'
 else:
     magnitude = '10 or less'
  
@@ -448,7 +448,7 @@ item = 13
 if item > 20:
     magnitude = 'greater than 20'
 elif item > 10:
-    magnitude = 'greater than 10'
+    magnitude = 'between 10 and 20'
 else:
     magnitude = '10 or less'
  
@@ -488,25 +488,27 @@ Notes: Script here
 ## Inline
 
 In situations where we have only `if` and `else` statements, we have the ability to put it all in a single line of code.
-We have a given object; in this example we are using a list of words named `words`: 
+Let's test this on our object `item`:
 ```{python}
-words = ['the', 'list', 'of', 'words']
+item = 13
 ```
 
-The original conditional statements below check if the list is longer than 10 elements or not and gives it a `list_size` value. 
+The original conditional statements below checks if the item is greater than 10 designating an object with the value `greater than 10` if it is and `10 or less` otherwise: 
 
 ```{python}
-if len(words) > 10:
-    list_size = "long list"
+
+if  item > 10:
+    magnitude = 'greater than 10'
 else:
-    list_size = "short list"
-list_size
+    magnitude = '10 or less'
+    
+magnitude
 ```
 
 The 4 lines used for the conditional statements can be compressed into a single one:
 
 ```{python}
-list_size = "long list" if len(words) > 10 else "short list"
+list_size = "greater than 10" if item > 10 else "10 or less"
 list_size
 ```
 

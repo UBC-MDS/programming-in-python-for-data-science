@@ -187,7 +187,7 @@ def squares_a_list(numerical_list):
         
     Returns
     -------
-    list
+    :list
         A new list containing the squared value of each of the elements from the input list 
         
     Examples
@@ -245,6 +245,35 @@ def function_name(param1,param2):
     --------
     >>> function_name(3,8,-5)
     2.0
+    """
+```
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+If multiple variables are returned, then the `Returns` section follows
+the same format as the `Parameter` section:
+
+``` python
+    """
+    Returns
+    -------
+    return_var1 : datatype
+         A description of the output, datatypes and behaviours.
+    return_var2 : datatype
+        A description of the output, datatypes and behaviours.
+        
     """
 ```
 

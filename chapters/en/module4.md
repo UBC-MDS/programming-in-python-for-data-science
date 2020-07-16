@@ -473,11 +473,9 @@ Make a dictionary that includes the quantity of each part included in the Ikea s
 The shoe rack contained the following parts: 
 
 - 8 `Long Screw`
-- 8 `Flat Top Metric Screw`
 - 8 `Wood Dowel`
 - 2 `Short Screw`
 - 1 `Allen Key`
-- 1 `Connector Plate` 
 
 - Construct the dictionary so that the part names are the keys and the quantities of the parts, are the values for the dictionary.
 - Name the dictionary `ikea_shoe_rack`.
@@ -506,10 +504,8 @@ The shoe rack was not the only thing Jeremy bought. below is a table of all his 
 |    | item_name       | collection   |   price |
 |---:|:----------------|:-------------|--------:|
 |  0 | Bistro Set      | APPLARO      |  216.98 |
-|  1 | Reclining Chair | APPLARO      |   80.00 |
-|  2 | Shelf Unit      | HYLLIS       |   11.99 |
-|  3 | Seat Pad        | KUDDARNA     |   29.99 |
-|  4 | Shoe Rack       | TJUSIG       |   29.99 |
+|  1 | Shelf Unit      | HYLLIS       |   11.99 |
+|  3 | Shoe Rack       | TJUSIG       |   29.99 |
 
 
 
@@ -545,11 +541,11 @@ Tasks:
 
 
 **Question 1**         
- _"What is the data type of a Pandas dataframe?"_     
+What is the data type of a Pandas dataframe?  
 
 
 <choice id="1" >
-<opt text="<code>pd.DataFrame</code>" correct="true">
+<opt text="<code>pandas.core.frame.DataFrame</code>" correct="true">
 
 Yes, this is the data type!
 
@@ -576,8 +572,7 @@ This is a type, but not the dataframe type.
 
 
 **Question 2**          
- _"What is the data type of a column in a dataframe?"_     
- Who am I? 
+What is the data type of a column in a dataframe?
  
 <choice id="2" >
 <opt text="<code>pd.DataFrame</code>">
@@ -619,7 +614,7 @@ _Dataframes are a made up of a tuple of Series._
 
 
 <choice id="1">
-<opt text="False">
+<opt text="True">
 
 It is made up of Series but not a tuple data structure. 
 
@@ -634,16 +629,16 @@ A Dataframe is made up of a dictionary of Series
 </choice> 
 
 
-_Pandas will assign a dtype of `obj` when it's having difficulty recognizing the column dtype ._
+_Pandas will assign a dtype of `obj` when it's having difficulty recognizing the column dtype._
 
-<choice id="1">
+<choice id="2">
 <opt text="True" correct="true">
 
 When it's unclear what the dtype is, Pandas will assign it a dtype `object`. 
 
 </opt>
 
-<opt text= "False"  correct="true">
+<opt text= "False">
 
 You may want to review this section. 
 
