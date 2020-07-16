@@ -28,7 +28,7 @@ suited face cards from a deck of cards into a list.
 suits = ["❤︎","♦"]
 faces = ['Jack', 'Queen', 'King']
 
-cards = [ ]
+cards = list()
 for suit in suits:
     cards.append(faces[0] + ' of ' + suit)
     cards.append(faces[1] + ' of ' + suit)
@@ -67,7 +67,7 @@ make a second loop within the first one.
 suits = ["❤︎","♦︎"]
 faces = ['Jack', 'Queen', 'King']
 
-cards = [ ]
+cards = list()
 for suit in suits:
     for face in faces: 
         cards.append(face + ' of ' + suit)
@@ -356,7 +356,7 @@ Notes: Script here
 ---
 
 ``` python
-cards = [ ]
+cards = list()
 for suit in suits:
     print(suit)
     for face in faces: 

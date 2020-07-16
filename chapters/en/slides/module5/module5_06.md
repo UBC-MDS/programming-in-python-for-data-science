@@ -387,76 +387,33 @@ Notes: Script here
 ## Looping in a dictionary
 
 We can also loop over the key-value pairs of a dictionary using
-`.items()`. For example, a grocery store has the following cereal in
-stock. `.items()` returns a tuple with the dictionary key at index 0 and
-value at index 1. We can calculate the total stock quantity in an object
-named `stock_total` by summing up all the values:
+`.items()`.
 
 ``` python
 cereals = {'Special K': 4, 'Lucky Charms': 7, 'Cheerios': 2, 'Wheaties': 3}
-stock_total = 0
-
-for val in cereals.items():
-    stock_total = stock_total + val[1]
-    print(stock_total)
+cereals.items()
 ```
 
 ```out
-4
-11
-13
-16
+dict_items([('Special K', 4), ('Lucky Charms', 7), ('Cheerios', 2), ('Wheaties', 3)])
 ```
 
-Notice that we keep a running tally of the total stock at each iteration
-with `stock_total` until we arrive at the final count of 16.
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
-
-When we are updating an existing object in a loop such as:
-
-``` python
-stock_total = stock_total + val[1]
-```
-
-Instead of writing the object name twice, we can shorten it to:
-
-``` python
-stock_total += val[1]
-```
-
-This simply means that we are adding `val[1]` to the `stock_total`
-object.
-
-If we replace this code into the loop from before, it works in exactly
-the same way:
+Since each key-value pair has 2 elements in it, we need 2 specify 2
+variables for each item in `cereal.items()` - One for the `key` in this
+case the cereal name, and one for the value - the cereal stock total.
 
 ``` python
 cereals = {'Special K': 4, 'Lucky Charms': 7, 'Cheerios': 2, 'Wheaties': 3}
-stock_total = 0
 
-for val in cereals.items():
-    stock_total += val[1]
-    print(stock_total)
+for cereal, stock in cereals.items():
+    print( cereal  + " has " + str(stock) + " available")
 ```
 
 ```out
-4
-11
-13
-16
+Special K has 4 available
+Lucky Charms has 7 available
+Cheerios has 2 available
+Wheaties has 3 available
 ```
 
 Notes: Script here

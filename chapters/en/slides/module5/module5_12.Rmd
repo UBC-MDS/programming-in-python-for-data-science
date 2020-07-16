@@ -188,7 +188,7 @@ The string `King of ♥️` is added to the `cards` list:
 
 <center><img src='/module5/nested7.png' width="70%"></center>
 
- Now we have finished all the elements in the inner loop, where do we go now? 
+Now we have finished all the elements in the inner loop, where do we go now? 
 
 Notes: Script here
 <html>

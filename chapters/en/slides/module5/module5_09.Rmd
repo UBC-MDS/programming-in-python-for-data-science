@@ -58,7 +58,7 @@ Notes: Script here
 ---
 
 
-## range 
+## Range 
 
 Instead of looping over items in a collection, we can iterate over a sequence of numbers.  `range()` is a verb that generates a sequence of integers up to some value.
 
