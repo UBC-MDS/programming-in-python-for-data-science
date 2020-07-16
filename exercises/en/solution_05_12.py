@@ -1,5 +1,18 @@
-# Iterate over a range from 50 to 10 steping down 4 integers at a time    
-# Print the square of each number for each iteration
+# Load in the packages
 
-for i in range(50,10,-4):
-    print(i ** 2)
+import pandas as pd
+
+# Starting with an empty dataframe
+
+full_dataframe = None
+
+# This code creates loop that reads in each dataframe and concatenates them together
+
+for number in range(1,5):
+    string = 'data/pmk' + str(number) + '.csv'
+    data = pd.read_csv(string)
+    full_dataframe = pd.concat([full_dataframe,data])
+
+# Display the final dataframe
+
+full_dataframe

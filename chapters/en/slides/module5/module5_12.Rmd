@@ -63,7 +63,7 @@ For example: Let's say we are trying to obtain all the red (♥️, ♦️) suit
 suits = ["❤︎","♦"]
 faces = ['Jack', 'Queen', 'King']
 
-cards = [ ]
+cards = list()
 for suit in suits:
     cards.append(faces[0] + ' of ' + suit)
     cards.append(faces[1] + ' of ' + suit)
@@ -88,7 +88,7 @@ Just like how we reduced the repetition by making a first loop we can make a sec
 suits = ["❤︎","♦︎"]
 faces = ['Jack', 'Queen', 'King']
 
-cards = [ ]
+cards = list()
 for suit in suits:
     for face in faces: 
         cards.append(face + ' of ' + suit)
@@ -249,7 +249,7 @@ Notes: Script here
 
 
 ```{python}
-cards = [ ]
+cards = list()
 for suit in suits:
     print(suit)
     for face in faces: 
