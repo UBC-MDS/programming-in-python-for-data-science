@@ -81,7 +81,11 @@ Notes: Script here
 ---
 
 Let’s explore some different versions of our cereal dataset and
-determine if they fit the *tidy* criteria.
+determine if they fit the *tidy* criteria given the statistical question
+below:
+
+***Are protein and calories content associated with different cereal
+manufacturers?***
 
 Here are a few rows from our unaltered cereal dataset. Does it fit all
 three criteria?
@@ -140,7 +144,7 @@ Notes: Script here
 </center>
 
 From the dataframe we can see that each of the variables `name`, `mfr`,
-`calories` and `sugar` have their own column. We can validate that
+`calories` and `protein` have their own column. We can validate that
 criterion \#2 is also met.
 
 Notes: Script here
@@ -182,8 +186,10 @@ Notes: Script here
 
 ---
 
-As expected, the cereal data we have been working with is *tidy data*.  
-Let’s look at an example where this is not the case:
+As expected, the cereal data we have been working with is *tidy data*
+for our statistical question.  
+Let’s look at a longer dataframe with the same information where this is
+not the case:
 
 <center>
 
@@ -240,8 +246,9 @@ Notes: Script here
 </center>
 
 It looks like we have a problem here. In this dataframe, two of our
-variables are contained in a single column. This is making the data
-untidy and potentially a problem to work with.  
+variables we are measuring for our statistical question are contained in
+a single column. This is making the data untidy and potentially a
+problem to work with.  
 For example, what if I wanted to know the average calorie content of the
 cereals?
 
@@ -297,27 +304,6 @@ cereal['calories'].mean()
 ```out
 106.88311688311688
 ```
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
-
-At this point you may be asking yourself the question *“Are there any
-verbs, that would easily convert the `nutrition` column into its
-separate variables?”*
-
-If you are, then you are ahead of the game\! We will discuss this in the
-next section.
 
 Notes: Script here
 

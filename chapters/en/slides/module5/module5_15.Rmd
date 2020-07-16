@@ -1,0 +1,210 @@
+---
+params:
+  dynamictitle: "module5_14"
+title: "`r params$dynamictitle`"
+output: 
+  md_document:
+    variant: gfm
+---
+
+
+```{r setup, include=FALSE}
+## DO NOT FORGET TO CHANGE THIS ACCORDINGLY 
+library(rmarkdown)
+# MAke sure you are updating your title 
+knitr::opts_chunk$set(echo = TRUE,
+                      base.dir = ".", 
+                      base.url = "/",
+                      fig.path = paste("../../static/module4/", params$dynamictitle,"/", sep = ""))
+
+knitr_opts <- knitr_options( opts_knit = NULL,
+                             opts_chunk = NULL,
+                             knit_hooks = NULL,
+                             opts_hooks = NULL,
+                             opts_template = NULL)
+md_document_custom <- md_document(variant = "gfm")
+output_format(knitr = knitr_opts,
+              pandoc = NULL,
+              base_format = md_document_custom)
+library(reticulate)
+
+```
+
+
+```{python include=FALSE}
+import pandas as pd
+import numpy as np
+pd.set_option('display.width', 350)
+
+np.set_printoptions(linewidth=400)
+
+pd.set_option('display.max_columns', 50)
+pd.set_option('display.max_rows', 15)
+cereal = pd.read_csv('cereal.csv')
+```
+
+
+
+type: slides
+
+
+# Repeated iterations with conditions
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+We know that we can have loops contained in another loop so it should be no surprise that we can combine loops with conditional arguments that we learned at the beginning of this module. 
+        
+Similarly to how we can have a loop nested in an existing loop, we can have conditional statements within a `for` loop. 
+
+
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+When we learned about conditional arguments, we checked the conditions on a single data type such as a `str`, `float`, `int` or `bool`.  Combining loops with conditions, give us the ability to check multiple elements in a sequence such as a `list` or `dict`.  
+
+For example: 
+
+When we learned about conditions we did the following: 
+
+```{python}
+item = 25 
+
+if item > 20:
+    magnitude = 'greater than 20'
+elif item > 10:
+    magnitude = 'between 10 and 20'
+else:
+    magnitude = '10 or less'
+ 
+magnitude
+```
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+Then we had to repeat the same conditional statements code to test an item = 13 (violating the DRY principle).
+
+```{python}
+item = 13 
+
+if item > 20:
+    magnitude = 'greater than 20'
+elif item > 10:
+    magnitude = 'between 10 and 20'
+else:
+    magnitude = '10 or less'
+ 
+magnitude
+```
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+Instead, we could accomplish this by putting the values 13, and 25 in a list and used a `for` loop containing the conditional statements. 
+
+```{python}
+item_list = [25, 13]
+
+for item in item_list:
+    if item > 20:
+        magnitude = 'greater than 20'
+    elif item > 10:
+        magnitude = 'between 10 and 20'
+    else:
+        magnitude = '10 or less'
+    magnitude
+```
+
+This small change helped us adhere to the DRY principle and avoided repeating redundant code.
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+## Break
+
+There are occasions that we may want to save on time by not iterating over an entire sequence.  Perhaps we only need to find one number that is `10 or less` in a list. 
+
+
+```{python}
+item_list = [25, 13, 21, 8, 17, 11, 4]
+
+for item in item_list:
+    if item > 20:
+        magnitude = 'greater than 20'
+    elif item > 10:
+        magnitude = 'between 10 and 20'
+    else:
+        magnitude = '10 or less'
+    magnitude
+```
+We can see that even after we located a number that is 10 or less, the loop continues until it reaches the last element.If we have a very large list, it's inefficient to continue searching for something we have already found. 
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+Instead, we can use something called a **break**.  A `break` will stop the loop from continuing. 
+
+```{python}
+item_list = [25, 13, 21, 8, 17, 11, 4]
+
+for item in item_list:
+    if item > 20:
+        magnitude = 'greater than 20'
+    elif item > 10:
+        magnitude = 'between 10 and 20'
+    else:
+        magnitude = '10 or less'
+        break
+        
+    magnitude
+```
+
+Now we can see that as soon as we found a value that had was  `10 or less`, all subsequent iterations came to a halt and Python exists the loop. Not even the last `magnitude` in the loop is returned. 
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+# Let’s practice what we learned!
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />

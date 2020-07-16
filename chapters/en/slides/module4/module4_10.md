@@ -21,25 +21,23 @@ Notes: Script here
 ## Dictionaries
 
 Dictionaries are used in different languages to look up definitions of
-words. Python has a data structure by the same name that replicate this
-“look up” action.
+words. Python has a data structure by the same name that replicates this
+“lookup” action.
 
-A **dictionaries** is a a mapping between key-values pairs. For example:
+A **dictionary** is a map between key-value pairs. For example:
 
-The word “Monster” has the definition “an imaginary creature that is
-typically large, ugly, and frightening”.  
-Monster is the \***key** and the definition “an imaginary creature that
-is typically large, ugly, and frightening” is the **value**.
+A house can have 3 bedrooms.  
+bedroom is the ***key*** and the number of bedrooms is the ***value***.
 
 How does this look in terms of a data structure?
 
 ``` python
-oxford = {'Monster': 'an imaginary creature that is typically large, ugly, and frightening'}
-oxford
+house = {'bedrooms': 3}
+house
 ```
 
 ```out
-{'Monster': 'an imaginary creature that is typically large, ugly, and frightening'}
+{'bedrooms': 3}
 ```
 
 Notes: Script here
@@ -83,8 +81,8 @@ condo
 {'bedrooms': 2, 'bathrooms': 1, 'kitchens': 1, 'city': 'Burnaby', 'price': 699999, 'date_sold': (27, 8, 2011)}
 ```
 
-The keys (elements on the left of the colon) are unique, but the values
-(elements on the right of the colon) are not.
+The keys (elements on the left of the colon) cannot contain duplicates,
+but the values (elements on the right of the colon) can.
 
 Notes: Script here
 
@@ -119,7 +117,7 @@ house['price']
 2499999
 ```
 
-and since dictionaries are **mutable**, we can change them:
+And since dictionaries are **mutable**, we can change them:
 
 ``` python
 house['price'] = 7
@@ -152,7 +150,7 @@ house
 {'bedrooms': 3, 'bathrooms': 2, 'city': 'Vancouver', 'price': 7, 'date_sold': (1, 3, 2015)}
 ```
 
-we can add to the dictionary in the same way as we edit them, but using
+We can add to the dictionary in the same way as we edit them, but using
 a new **key** name:
 
 ``` python
@@ -193,8 +191,8 @@ Notes: Script here
 
 ---
 
-We can acess all of the keys, values and key-value pairsin a dictionary
-with the verbs `.keys()`, `.values()` and `.items()` respectively.
+We can access all of the key-value pairs in a dictionary with the verb
+`.items()`.
 
 ``` python
 house
@@ -205,22 +203,6 @@ house
 ```
 
 Let’s try it on our house dictionary above:
-
-``` python
-house.values()
-```
-
-```out
-dict_values([3, 2, 'Vancouver', 7, (1, 3, 2015), True, ['age', 'old'], {'Garden': 3}])
-```
-
-``` python
-house.keys()
-```
-
-```out
-dict_keys(['bedrooms', 'bathrooms', 'city', 'price', 'date_sold', 'bed monster', 9999, ('trees', 'flower', 'vegetables')])
-```
 
 ``` python
 house.items()
@@ -250,7 +232,7 @@ What about making dataframes from dictionaries?
 
 We are lucky enough to have 2 ways of making data from a dictionary
 using the verb `pd.DataFrame.from_dict()`.  
-For example let’s try making the following table.
+For example, let’s try making the following table.
 
 |   | name   | height | diameter | flowering |
 | -: | :----- | -----: | -------: | :-------- |
@@ -322,8 +304,8 @@ Notes: Script here
 | 3 | Fir    |     16 |       18 | False     |
 
 Or use each key in the dictionary to depict a row.  
-We we use the argument `orient` to explain the keys are the `index` and
-the argumen `columns` to label our columns:
+We use the argument `orient` to explain the keys are the `index` and the
+argument `columns` to label our columns:
 
 ``` python
 data = {0: ['Cherry', 7, 12, True],
@@ -342,57 +324,6 @@ forest
 1     Oak      20        89      False
 2  Willow      12        30       True
 3     Fir      16        18      False
-```
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
-
-Both of these code make the same dataframe.
-
-``` python
-forest
-```
-
-```out
-     name  height  diameter  flowering
-0  Cherry       7        12       True
-1     Oak      20        89      False
-2  Willow      12        30       True
-3     Fir      16        18      False
-```
-
-Keys as column:
-
-``` python
-data = {'name': ['Cherry', 'Oak', 'Willow', 'Fir'], 
-        'height': [7, 20, 12, 16], 
-        'diameter': [12, 89, 30, 18], 
-        'flowering': [True, False, True, False]}
-         
-forest = pd.DataFrame.from_dict(data)
-```
-
-Keys as rows:
-
-``` python
-data = {0: ['Cherry', 7, 12, True],
-        1: ['Oak', 20, 89, False],
-        2: ['Willow', 12, 30, True],
-        3: ['Fir', 16, 18, False]}
-column_names = ['name', 'height', 'diameter', 'flowering']
-
-forest = pd.DataFrame.from_dict(data, orient='index', columns= column_names)
 ```
 
 Notes: Script here
@@ -413,13 +344,13 @@ Notes: Script here
 
 <br>
 
-| Data Structure | Ordered | Mutable | Add values  |    Symbol    | Can accept duplicates |
-| :------------- | :-----: | :-----: | :---------: | :----------: | :-------------------: |
-| `str`          |    ✓    |    ☓    |      ☓      | `''` or `""` |           ✓           |
-| `list`         |    ✓    |    ✓    | `.append()` |     `[]`     |           ✓           |
-| `tuple`        |    ✓    |    ☓    |      ☓      |     `()`     |           ✓           |
-| `set`          |    ☓    |    ☓    |  `.add()`   |     `{}`     |           ☓           |
-| `dictionary`   |    ☓    |    ✓    |      ✓      |    `{:}`     |  keys: ☓ , values: ✓  |
+| Data Structure | preserves order | Mutable |    Symbol    | Can contain duplicates |
+| :------------- | :-------------: | :-----: | :----------: | :--------------------: |
+| `str`          |        ✓        |    ☓    | `''` or `""` |           ✓            |
+| `list`         |        ✓        |    ✓    |     `[]`     |           ✓            |
+| `tuple`        |        ✓        |    ☓    |     `()`     |           ✓            |
+| `set`          |        ☓        |    ✓    |     `{}`     |           ☓            |
+| `dictionary`   |        ✓        |    ✓    |    `{:}`     |  keys: ☓ , values: ✓   |
 
 Notes: Script here
 

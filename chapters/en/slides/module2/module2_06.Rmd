@@ -94,14 +94,14 @@ For our `cereal.csv` let's specify the `name` column as our index:
 
 ```{python}
 df = pd.read_csv('cereal.csv', index_col="name")
-df.head()
+df.head(2)
 ```
 
 The `index_col` argument also take in positions. the `name` column in our data in in the 0th position so we can also specify the index like so:
 
 ```{python}
 df = pd.read_csv('cereal.csv', index_col=0)
-df.head()
+df.head(2)
 ```
 
 

@@ -32,8 +32,6 @@ Sys.setenv(RETICULATE_PYTHON = "/usr/local/bin/python3")
 library(reticulate)
 py_config()
 
-# pd.options.plotting.backend = 'plotly'
-
 ```
 
 
@@ -48,6 +46,9 @@ np.set_printoptions(linewidth=400)
 pd.set_option('display.max_columns', 15)
 
 df = pd.read_csv('cereal.csv')
+
+## Adjusted path 
+path = "../../../../static/module1/"
 ```
 
 ```{python include=FALSE}
@@ -166,6 +167,35 @@ df.plot.scatter(x="sugars",
                 title="The relationship between sugar and calories in cereals")
 ```
 
+---
+
+```{r include = FALSE}
+library(vegawidget) # Need to install this using: install.packages('vegawidget')
+library(reticulate)
+use_python('/usr/local/bin/python3')
+library(htmltools)
+```
+
+
+```{python  fig.width = 8, fig.height = 5,  out.width = '60%'}
+import altair as alt
+import pandas as pd
+from altair_saver import save
+
+source = pd.read_csv('cereal.csv')
+
+chart1 = alt.Chart(source).mark_bar().encode(
+    x='mfr',
+    y='count()'
+)
+chart1
+
+```
+```{python include =FALSE}
+chart1.save(path + 'chart1.png')
+```
+
+<img src="/module1/chart1.png" alt="A caption" width="20%" />
 
 ---
 

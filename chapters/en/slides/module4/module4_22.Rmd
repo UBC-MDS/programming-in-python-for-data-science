@@ -1,0 +1,346 @@
+---
+params:
+  dynamictitle: "module4_22"
+title: "`r params$dynamictitle`"
+output: 
+  md_document:
+    variant: gfm
+---
+
+
+```{r setup, include=FALSE}
+## DO NOT FORGET TO CHANGE THIS ACCORDINGLY 
+library(rmarkdown)
+# MAke sure you are updating your title 
+knitr::opts_chunk$set(echo = TRUE,
+                      base.dir = ".", 
+                      base.url = "/",
+                      fig.path = paste("../../static/module4/", params$dynamictitle,"/", sep = ""))
+
+knitr_opts <- knitr_options( opts_knit = NULL,
+                             opts_chunk = NULL,
+                             knit_hooks = NULL,
+                             opts_hooks = NULL,
+                             opts_template = NULL)
+md_document_custom <- md_document(variant = "gfm")
+output_format(knitr = knitr_opts,
+              pandoc = NULL,
+              base_format = md_document_custom)
+library(reticulate)
+
+```
+
+
+```{python include=FALSE}
+import pandas as pd
+import numpy as np
+pd.set_option('display.width', 350)
+
+np.set_printoptions(linewidth=400)
+
+pd.set_option('display.max_columns', 50)
+pd.set_option('display.max_rows', 8)
+cereal2 = pd.read_csv('cereal2.csv')
+cereal2 = cereal2.loc[:,['name', 'mfr_type', 'type', 'calories', 'protein','fiber', 'fat',  'carbo',  'rating' ]].assign(hot=cereal2['type'] == 'Hot').drop(columns='type')
+cereal = cereal2.assign(calories=cereal2['calories'].astype('str'))
+```
+
+
+type: slides
+
+
+# Operations with Columns
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+We've just learned what Python values work with certain operations but what about dataframes?    
+Let's take a look at our cereal dataframe once more: 
+
+```{python}
+cereal
+```
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+It's always a good idea to see what column types we have before operating on them, since they may not be of the type we expect. 
+
+
+```{python}
+cereal.dtypes
+```
+In this case, we discover that the `calories` column is of dtype `object` which isn't the `int64` category expected. 
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+Since it is not a numerical value, it will not show up in our summary statistics if we do `describe()`:
+
+```{python}
+cereal.describe()
+```
+If we attempt to sum the column. We get a concatenation of the column:
+
+```{python}
+cereal['calories'].sum()
+```
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+To go forward with any analysis, we are going to have to convert it to a numeric value. Luckily, there is an easy way to do it using verb `astype()`:
+
+```{python}
+cereal = cereal.assign(calories=cereal['calories'].astype('int'))
+cereal.head(3)
+```
+We simply assign the column back to the same name but as dtype `int`.
+
+
+```{python}
+cereal.dtypes
+```
+Great, it looks like we are back on track. 
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+```{python}
+cereal.head(3)
+```
+
+
+If we take the sum of the column now we get the actual sum:
+
+```{python}
+cereal['calories'].sum()
+```
+
+And the mean caloric value make much more sense now: 
+
+```{python}
+cereal['calories'].mean()
+```
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+## object columns
+
+What happens if we try to take summary statistics of some of the other columns?
+
+```{python error=TRUE}
+cereal['mfr_type'].mean()
+```
+Yikes! let's not take the mean of columns of dtype `object`. 
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+We can, however, still take the `.max()` and the `.min()` of `object` dtype columns and the most/least frequent value will be returned: 
+```{python}
+cereal['mfr_type'].max()
+```
+
+
+As we saw before, taking a `.sum()` of a column concatenates the values together:
+
+```{python}
+cereal['mfr_type'].sum()
+```
+
+What about the column of type `bool`? 
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+## Bool
+
+Since booleans adopt the values of 0 and 1 for True and False values respectively, we can take the sum of a column to obtain the total number of `True` values:
+
+```{python}
+cereal['hot'].sum()
+```
+
+The mean will give you the proportion of `True` values over the total number of rows. 
+```{python}
+cereal['hot'].mean()
+```
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+## Axis Operations 
+
+We are quite familiar with taking the mean and sum of entire columns but there are times where we want the mean or sum of the values in a row. 
+
+```{python}
+cereal.head(2)
+```
+
+Perhaps we wanted the total grams of `protein`,`fiber`,`fat` and `carbo` for each cereal?
+Remember when we discussed the argument `axis` in Module 3? We can use it in our operations as well. `axis=1` refers to the calculation being done across multiple columns whereas `axis=0` (which is the default for aggregation verbs) refers to the calculation across rows. 
+
+```{python}
+cereal.loc[:, 'protein': 'carbo'].sum(axis=1)
+```
+
+Although this produces the totals, we want it as an additional column in the dataframe. That means we will have to combine it with `.assign()`.
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+```{python}
+cereal.loc[:, 'protein': 'carbo'].sum(axis=1)
+```
+
+Although this produces the totals for each row, we want it as an additional column in the dataframe. We will have to combine it with the `.assign()` verb.
+
+```{python}
+cereal = cereal.assign(total_pffc=cereal.loc[:, 'protein': 'carbo'].sum(axis=1))
+cereal.head()
+```
+
+We can do the same syntax for calculating the mean over multiple columns too. 
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+## String Split 
+
+```{python}
+cereal
+```
+You may have noticed that one of our columns contains 2 variables. `mfr_type` is displaying both the manufacturer and the cereal type. To convert this into tidier data we will need to split up this column into 2 separate ones, but how?
+
+At the beginning of this Module, we were introduced to the verb `.split()` which split up a string into separate substrings. Pandas has a verb that similarly splits a column into separate ones. It's called `.str.split()`.
+Let's test it out.
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+```{python}
+cereal.head(2)
+```
+
+We need to isolate the column and make sure we are splitting on the correct separator. In this case, the column is `mfr_type` and the separator is `-`.   
+It's important that we set `expand=True` to indicate that we want to split the sub strings into separate columns.
+```{python}
+new = cereal['mfr_type'].str.split('-', expand=True)
+new 
+```
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+Great! We have 2 new columns. We will need to rename them and add them back to our original dataframe. 
+
+
+```{python}
+new = new.rename(columns = {0:'mfr', 1: 'type'})
+new
+```
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+We can then use assign to add the columns from the `new` dataframe into the original `cereal` one: 
+```{python}
+cereal = cereal.assign(mfr=new['mfr'],
+                       type=new['type'])
+cereal
+```
+
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+# Let’s practice what we learned!
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />

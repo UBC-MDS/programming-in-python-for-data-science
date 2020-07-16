@@ -1,6 +1,4 @@
----
 type: slides
----
 
 # Quick Viz with Pandas\!
 
@@ -16,7 +14,7 @@ Notes: Script here.
 
 </html>
 
----
+-----
 
 If we want to visualize things using different plots we can do that
 pretty quickly and with little code\! Take `manufacturer_freq` object we
@@ -26,16 +24,14 @@ made in the last slide deck.
 manufacturer_freq
 ```
 
-```out
-K    23
-G    22
-P     9
-Q     8
-R     8
-N     6
-A     1
-Name: mfr, dtype: int64
-```
+    ## K    23
+    ## G    22
+    ## P     9
+    ## R     8
+    ## Q     8
+    ## N     6
+    ## A     1
+    ## Name: mfr, dtype: int64
 
 This would be great to express as a bar chart. But how do we do it?
 
@@ -51,7 +47,7 @@ Notes: Script here.
 
 </html>
 
----
+-----
 
 1.  We take the dataframe we wish to plot, in this case `freq_mfr_df`.  
 2.  Next we add `.plot` since we want to plot it\!  
@@ -80,7 +76,7 @@ Notes: Script here.
 
 </html>
 
----
+-----
 
 What else can we plot from our original cereal dataframe named `df`?
 Maybe we want to see the relationship between `sugars` and `calories` in
@@ -108,7 +104,7 @@ Notes: Script here.
 
 </html>
 
----
+-----
 
 Something you may have noticed is that there are 77 cereals but there
 doesn’t seem to be 77 data points\! That’s because some of them are
@@ -135,7 +131,7 @@ Notes: Script here.
 
 </html>
 
----
+-----
 
 Look at that\! Now we can see there are multiple cereals that have 2.5g
 of sugar with 100 calories. What if we wanted to change the colour to
@@ -163,7 +159,7 @@ Notes: Script here.
 
 </html>
 
----
+-----
 
 Those data points look pretty small. To enlarge them, the argument `s`
 should do the trick. Also every good graph should have a title\! Let’s
@@ -181,7 +177,27 @@ df.plot.scatter(x="sugars",
 
 <img src="../../../../static/module1/module1_31/unnamed-chunk-8-1.png" width="60%" />
 
----
+-----
+
+``` python
+import altair as alt
+import pandas as pd
+from altair_saver import save
+
+source = pd.read_csv('cereal.csv')
+
+chart1 = alt.Chart(source).mark_bar().encode(
+    x='mfr',
+    y='count()'
+)
+chart1
+```
+
+    ## alt.Chart(...)
+
+<img src="/module1/chart1.png" alt="A caption" width="20%" />
+
+-----
 
 # Let’s apply what we learned\!
 

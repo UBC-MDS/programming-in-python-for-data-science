@@ -10,6 +10,7 @@ My column names in order are; `colour`, `location`, `seeds`, `shape`, `sweetness
 ```{python}
 import pandas as pd
 import numpy as np
+from tabulate import tabulate
 ```
 
 ```{python}
@@ -33,7 +34,7 @@ fruit = {'name': ['apple', 'banana', 'cantaloupe', 'dragon-fruit', 'elderberry',
          'shape': ['round', 'long', 'round', 'round', 'round', 'oval', 'oval', 'round', 'round', 'oval'], 
          'sweetness': [True, True, True, False, True, False, True, True, True, False],
          'water-content': [84, 75, 90, 96, 80, 78, 83, 73, 80, 83],
-         'weight': [100, 120, 1360, 600, 5, 40, 450, 5, 76, 65]}
+         'weight': [100, 120.0, 1360, 600, 5, 40, 450, 5, 76, 65]}
          
 
 df = pd.DataFrame(fruit, columns = list(fruit.keys()))
@@ -43,6 +44,18 @@ new.melt(id_vars='name',value_vars=['colour','seed','shape'], var_name ='observa
 ```{python}
 new.melt(id_vars='name',value_vars=['colour','seed','shape'], var_name ='observation', value_name='value')
 ```
+```{python}
+df
+```
+
+```{python}
+print(tabulate(df, tablefmt="pipe", headers="keys"))
+```
+
+```{python}
+df.loc[:,['seed', 'sweetness']].sum(axis=1)
+```
+
 
 
 

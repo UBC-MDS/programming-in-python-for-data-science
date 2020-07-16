@@ -77,14 +77,12 @@ It appears that dataframes have their own data type called a
 type for short.
 
 Looking into this further the documentation states a dataframe as a:
-
-*" Two-dimensional tabular data structure with columns and axis
-labels."*
+*“Two-dimensional tabular data structure with columns and axis
+labels.”*
 
 More directly, we can describe a dataframe as a collection of columns
-but that brings us to the new question:
-
-**“What is a dataframe column?”**
+but that brings us to the new question: **“What is a dataframe
+column?”**
 
 Notes: Script here
 
@@ -193,14 +191,13 @@ Notes: Script here
 
 ## Pandas Series
 
-A pandas Series is a one dimension array of values with an axis label.
-This is the base data type that make up a pandas dataframe. In fact, the
-\<a
-href=“<https://pandas.pydata.org/pandas-docs/stable/getting_started/dsintro.html#dataframe>”
-target="\_blank“Pandas documentation”</a> explain it as “a dict of
-Series objects”.
+A pandas Series is a one-dimensional array of values with an axis label.
+This is the base data type that makes up a pandas dataframe. In fact,
+the
+<a href="https://pandas.pydata.org/pandas-docs/stable/getting_started/dsintro.html#dataframe" target="_blank">Pandas
+documentation“</a> explain it as”a dict of Series objects".
 
-let’s look back at the series output again:
+Let’s look back at the series output again:
 
 ``` python
 cereal['mfr']
@@ -221,7 +218,7 @@ cereal['mfr']
 Name: mfr, Length: 77, dtype: object
 ```
 
-We can see additional information at the bottom. The axis labelled
+We can see additional information at the bottom. The series labelled
 `mfr`, the length equal to 77 and the `dtype`: object.
 
 Notes: Script here
@@ -241,14 +238,13 @@ Notes: Script here
 ## What is a dtype?
 
 So far we know a dataframe is made up of a collection of series and a
-series contains values, a label as well has some additional information
+series contains values, a label as well as some additional information
 regarding a **dtype**.
 
 Just like how values have the data types ( `str`, `int`, `float`, etc.),
-Columns in a Pandas dataframe have types called **dtypes**.
+columns in a Pandas dataframe have types called **dtypes**.
 
-In this course we are going to concentrate on the following dtypes but
-there others:
+In this course we are going to concentrate on the following dtypes:
 
 <center>
 
@@ -276,8 +272,8 @@ Notes: Script here
 
 </center>
 
-Just like with Python data types, Pandas has numeric and non numeric
-datatypes.
+Just like with Python data types, Pandas has numeric and non-numeric
+data types.
 
 #### Numeric dtypes
 
@@ -299,7 +295,7 @@ Notes: Script here
 
 ---
 
-we can use the noun `.dtypes` to find the dtype of a column:
+We can use the noun `.dtypes` to find the dtype of a column:
 
 ``` python
 cereal.head()
@@ -314,6 +310,8 @@ cereal.head()
 4             Almond Delight   R       110        2    1.0    2   14.0  34.384843  False
 ```
 
+Let’s see the `calories` column dtype:
+
 ``` python
 cereal['calories'].dtypes
 ```
@@ -322,19 +320,19 @@ cereal['calories'].dtypes
 dtype('int64')
 ```
 
-Let’s see what type is given for one of the cells in the the column?
+What is the data type of one of the values in the the column?
 
 ``` python
 all_bran_fiber =  cereal.loc[2, 'calories']
-```
-
-``` python
 type(all_bran_fiber)
 ```
 
 ```out
 <class 'numpy.int64'>
 ```
+
+We are going to ignore the `numpy` portion for now but we clearly see it
+says `int`.
 
 Notes: Script here
 
@@ -350,13 +348,43 @@ Notes: Script here
 
 ---
 
-<center>
+``` python
+cereal.head()
+```
 
-<img src='/module4/full.png' width="100%">
+```out
+                        name mfr  calories  protein  fiber  fat  carbo     rating    hot
+0                  100% Bran   N        70        4   10.0    1    5.0  68.402973  False
+1          100% Natural Bran   Q       120        3    2.0    5    8.0  33.983679  False
+2                   All-Bran   K        70        4    9.0    1    7.0  59.425505  False
+3  All-Bran with Extra Fiber   K        50        4   14.0    0    8.0  93.704912  False
+4             Almond Delight   R       110        2    1.0    2   14.0  34.384843  False
+```
 
-</center>
+Let’s check out the `fiber` column dtype now:
 
-Notes: Script here
+``` python
+cereal['fiber'].dtypes
+```
+
+```out
+dtype('float64')
+```
+
+Ah yes float64. What about the data type of one of the values in the the
+column now?
+
+``` python
+all_bran_fiber =  cereal.loc[2, 'fiber']
+type(all_bran_fiber)
+```
+
+```out
+<class 'numpy.float64'>
+```
+
+of type `float`\! (Again, let’s not worry about the numpy portion of
+this) Notes: Script here
 
 <html>
 
@@ -378,14 +406,15 @@ Notes: Script here
 
 </center>
 
-These can be a bit more complicated but let’s concentrate on the dtypes
-`object` and `bool`. We will be exploring `datetime64` in Module 7.
+Non-numeric types can be a bit more complicated but let’s concentrate on
+the dtypes `object` and `bool`. We will be exploring `datetime64` in
+Module 7.
 
   - `object` is a dtype that contains `str` type values in the cells of
     the dataframe or that had a mixture of different types to begin
     with. This is the “default” dtype when pandas is not quite sure what
     is the cell type values are or when there is a mixture of numeric
-    and non numeric value types.
+    and non-numeric value types.
 
   - `bool` dtypes, just like it’s dtype name, contains `bool` type
     values.
@@ -488,7 +517,7 @@ type(cereal.loc[2, 'hot'])
 <class 'numpy.bool_'>
 ```
 
-Also a `bool`. We can ignore the numpy like we did before, we will
+Also a `bool`. We can ignore the numpy part as we did before, we will
 discuss this later.
 
 Notes: Script here
@@ -525,8 +554,9 @@ hot            bool
 dtype: object
 ```
 
-Knowing what type values are, helps us understand how we can transform
-them and how they respond to different operations and operators.
+Knowing what dtype the values are, helps us understand how we can
+transform them and how they respond to different operations and
+operators.
 
 Notes: Script here
 
