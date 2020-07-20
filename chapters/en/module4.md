@@ -656,17 +656,15 @@ Running a coding exercise for the first time could take a bit of time for everyt
 
 **When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
 
-Let's explore the `dtypes` noun and see what our column dtypes are. 
+Let's explore `dtypes` with dataframes.. 
 
 Tasks:
 
-- Read in the data from the `data` folder named `canucks.csv` and name the dataframe `canucks`.
-- Use the `dtypes` attribute on the whole dataframe and save the output as `canuck_types` and answer the questions below.
+- Use the coding cell to write code that will help answer the multiple choice below. 
 
 
 <codeblock id="04_17">
-- Are you using `pd.read_csv()`?
-- Are you using the attribute `dtypes` on the whole `canucks` dataframe? 
+- Are you using the attribute `dtypes`?
 
 </codeblock>
 
@@ -702,30 +700,30 @@ Are you looking at the output from above?
 </choice> 
 
 **Question 2**     
-What dtype is the `Position` column?
+What type is the dataframe `canucks`?
 
 <choice id="2" >
 <opt text="<code>float64</code>" >
 
-Are you looking at the output from above? 
+Are you typing `type(canucks)` in the cell above? 
 
 </opt>
 
-<opt text="<code>int64</code>">
+<opt text="<code>bool</code>">
 
-Are you looking at the output from above? 
+Are you typing `type(canucks)` in the cell above? 
 
 </opt>
 
-<opt text="<code>object</code>" correct="true">
+<opt text="<code>pandas.core.frame.DataFrame</code>" correct="true">
 
 Nice!
 
 </opt>
 
-<opt text="<code>bool</code>" >
+<opt text="<code>pandas.core.series.Series</code>" >
 
-Are you looking at the output from above? 
+Are you typing `type(canucks)` in the cell above?  
 
 </opt>
 
@@ -762,6 +760,33 @@ Are you looking at the output from above?
 
 </choice> 
 
+**Question 4**     
+What data type is the `Weight` column in the dataframe `canucks`(Use single square brackets)?
+
+<choice id="4" >
+<opt text="<code>float64</code>" >
+
+Are you typing `type(canucks['Weight'])` in the cell above?
+
+</opt>
+
+<opt text="<code>bool</code>">
+
+Are you typing `type(canucks['Weight'])` in the cell above? 
+
+</opt>
+
+<opt text="<code>pandas.core.frame.DataFrame</code>" >
+
+Are you typing `type(canucks['Weight'])` in the cell above?
+
+</opt>
+
+<opt text="<code>pandas.core.series.Series</code>" correct="true">
+
+Great! 
+
+</choice> 
 
 </exercise>
 
@@ -786,14 +811,14 @@ Will the following operations result with an output or an error?
 
 <choice id="1" >
 
-<opt text="Output" >
+<opt text="Runs successfully" >
 
-Take special care to the brackets being used. 
+Take special care to the brackets being used. dictionary1 + dictionary2
 
 
 </opt>
 
-<opt text="<code>Error</code>"  correct="true" >
+<opt text="Error"  correct="true" >
 
 Both elements must be of the same data structure to add together. 
 
@@ -828,20 +853,68 @@ Are they both the same data structure?
 **Question 3**          
 
 ```python
-15.7 // 2
+dictionary1 = {1: 'one', 2: 'two'}
+dictionary2 = {3: 'three', 4: 'four'}
+
+dictionary1 + dictionary2
 ```
 
 <choice id="3" >
 
-<opt text="Output" correct="true" >
+<opt text="Output" >
 
-That's right. The output would be `7.0`.
+Dictionaries cannot be concatenated together. We would have to combine them adding the individual keys-value pairs separately. 
 
 </opt>
 
-<opt text="<code>Error</code>" >
+<opt text="<code>Error</code>" correct="true" >
 
-can we use integer division with values of type `float`?
+That's right!
+
+</opt>
+
+</choice> 
+
+
+**Question 4**          
+
+```python
+sum(['nine', 'ten', 'eleven', 'twelve'])
+```
+
+<choice id="4" >
+
+<opt text="Output"  >
+
+We cannot sum `str` elements in a list. 
+
+</opt>
+
+<opt text="<code>Error</code>"  correct="true">
+
+Right!
+
+</opt>
+
+</choice> 
+
+**Question 5**          
+
+```python
+'The monster under my bed' + [1, 2.0, 3, 4.5]
+```
+
+<choice id="2" >
+
+<opt text="Output">
+
+
+</opt>
+
+<opt text="<code>Error</code>"  correct="true" >
+
+That's right. We cannot concatenate together `lists` and `str` data types 
+
 
 </opt>
 
@@ -851,23 +924,6 @@ can we use integer division with values of type `float`?
 
 
 <exercise id="20" title="True or False with Boolean Operators ">
-
-```python
-'Hotels' != 'Homes'
-```
-
-```out
-True
-```
-
-
-```python
-50< 5000
-```
-
-```out
-True 
-```
 
 Given the statement above, would the following result in a `True` of `False` value. 
 
@@ -899,7 +955,7 @@ Both statements are true so the output is True.
 **Question 2**          
 
 ```python
-not 'hotels' != 'homes' 
+not ('hotels' != 'homes') 
 ```
 
 <choice id="2" >
@@ -922,7 +978,7 @@ That's right. The statement is not false so the output is False.
 **Question 3**          
 
 ```python
-not not 'hotels' != 'homes' 
+not not ('hotels' != 'homes')
 ```
 
 <choice id="3" >
@@ -1190,31 +1246,12 @@ We cannot take the mean of a column of dtype `object`.
 </exercise>
 
 
-<exercise id="24" title="Practice Operations with Dataframe Columns">
+<exercise id="24" title="Splitting a Column" type="slides">
 
-**Instructions:**    
-Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
+<slides source="module4/module4_24">
 
-**When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
+</slides>
 
-Let's find some summary statistics of the canucks dataframe.
-
-Tasks:
-
-- Read in the data from the data folder named `canucks.csv` and name the dataframe `canucks`.
-- Find the mean height of the players and save as an object named `mean_height`.
-- What is the largest salary being paid to any of the players? 
-- Save the solution in an object named `max_salary`.
-
-<codeblock id="04_24">
-
-- Are you using `.mean()` on the column `Height`?    
-- Are you using `.max()` on the column `Salary`?    
-
-</codeblock>
-
-
-   
 </exercise>
 
 

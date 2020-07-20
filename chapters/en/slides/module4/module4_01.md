@@ -675,8 +675,7 @@ Notes: Script here
 
 ---
 
-Doing the reverse cast by transforming strings into other data types,
-are a bit more problematic.  
+Casting strings into other data types, are a bit more problematic.  
 Sometimes it works correctly:
 
 ``` python
@@ -727,7 +726,18 @@ bool('0')
 True
 ```
 
-And in other cases, it may not work at all:
+When we cast a `str` to a `bool` it will result in `True`, unless it’s
+an empty `str`:
+
+``` python
+bool('')
+```
+
+```out
+False
+```
+
+Often, we may not be able to cast a string at all:
 
 ``` python
 float('five')

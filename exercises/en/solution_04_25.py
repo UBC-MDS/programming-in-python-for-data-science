@@ -19,6 +19,7 @@ canucks = canucks.assign(Birth_Day=birthdate_df['Birth_Day'].astype('int'),
                          Birth_Year=birthdate_df['Birth_Year'].astype('int')
                         )
 
+canucks
 
 
 

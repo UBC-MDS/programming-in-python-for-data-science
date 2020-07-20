@@ -5,9 +5,8 @@ import pandas as pd
 
 canucks = pd.read_csv('data/canucks.csv')
 
-# Use the dtypes attribute on the whole dataframe 
-# Save the output as canuck_types 
+canucks.dtypes
 
-canuck_types = canucks.dtypes
-
-canuck_types
+# type(canucks)
+# type(canucks['Country'])
+# type(canucks[['Country']])

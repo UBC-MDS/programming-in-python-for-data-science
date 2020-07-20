@@ -111,7 +111,7 @@ min     1.000000   0.000000   0.000000   1.000000  18.042851
 max     6.000000  14.000000   5.000000  23.000000  93.704912
 ```
 
-If we attempt to sum the column. We get a concatenation of the column:
+If we attempt to sum the column, we get a concatenation of the column:
 
 ``` python
 cereal['calories'].sum()
@@ -120,6 +120,8 @@ cereal['calories'].sum()
 ```out
 '70120705011011011013090901201101201101101101001101101101001101001001101101001201201101001101001101201201101101101401101001101001501501601001201409013012010050501001001201009011011080909011011090110140100110110100100110'
 ```
+
+We saw earlier that when we add strings, they concatenate together.
 
 Notes: Script here
 
@@ -261,31 +263,6 @@ Detailed traceback:
 
 Yikes\! let’s not take the mean of columns of dtype `object`.
 
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
-
-We can, however, still take the `.max()` and the `.min()` of `object`
-dtype columns and the most/least frequent value will be returned:
-
-``` python
-cereal['mfr_type'].max()
-```
-
-```out
-'R-Cold'
-```
-
 As we saw before, taking a `.sum()` of a column concatenates the values
 together:
 
@@ -327,8 +304,14 @@ cereal['hot'].sum()
 3
 ```
 
-The mean will give you the proportion of `True` values over the total
-number of rows.
+`.mean()` works by suming up all the values and divides them by the
+total number of rows.
+
+In the case where the column is of dtype `bool`, since `True` has a
+value of 1 and `False` has a value of 0, the mean is calculated as the
+total number of `True` values divided by the total number of `True` and
+`False` values. This gives the proportion of `True` values over the
+total number of rows.
 
 ``` python
 cereal['hot'].mean()
@@ -370,9 +353,9 @@ cereal.head(2)
 Perhaps we wanted the total grams of `protein`,`fiber`,`fat` and `carbo`
 for each cereal? Remember when we discussed the argument `axis` in
 Module 3? We can use it in our operations as well. `axis=1` refers to
-the calculation being done across multiple columns whereas `axis=0`
-(which is the default for aggregation verbs) refers to the calculation
-across rows.
+the calculation being done for a row, across multiple columns, whereas
+`axis=0` (which is the default for aggregation verbs) refers to the
+calculation for a column, across multiple rows.
 
 ``` python
 cereal.loc[:, 'protein': 'carbo'].sum(axis=1)
@@ -445,176 +428,6 @@ cereal.head()
 
 We can do the same syntax for calculating the mean over multiple columns
 too.
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
-
-## String Split
-
-``` python
-cereal
-```
-
-```out
-                         name mfr_type  calories  protein  fiber  fat  carbo     rating    hot  total_pffc
-0                   100% Bran   N-Cold        70        4   10.0    1    5.0  68.402973  False        20.0
-1           100% Natural Bran   Q-Cold       120        3    2.0    5    8.0  33.983679  False        18.0
-2                    All-Bran   K-Cold        70        4    9.0    1    7.0  59.425505  False        21.0
-3   All-Bran with Extra Fiber   K-Cold        50        4   14.0    0    8.0  93.704912  False        26.0
-..                        ...      ...       ...      ...    ...  ...    ...        ...    ...         ...
-73                       Trix   G-Cold       110        1    0.0    1   13.0  27.753301  False        15.0
-74                 Wheat Chex   R-Cold       100        3    3.0    1   17.0  49.787445  False        24.0
-75                   Wheaties   G-Cold       100        3    3.0    1   17.0  51.592193  False        24.0
-76        Wheaties Honey Gold   G-Cold       110        2    1.0    1   16.0  36.187559  False        20.0
-
-[77 rows x 10 columns]
-```
-
-You may have noticed that one of our columns contains 2 variables.
-`mfr_type` is displaying both the manufacturer and the cereal type. To
-convert this into tidier data we will need to split up this column into
-2 separate ones, but how?
-
-At the beginning of this Module, we were introduced to the verb
-`.split()` which split up a string into separate substrings. Pandas has
-a verb that similarly splits a column into separate ones. It’s called
-`.str.split()`. Let’s test it out.
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
-
-``` python
-cereal.head(2)
-```
-
-```out
-                name mfr_type  calories  protein  fiber  fat  carbo     rating    hot  total_pffc
-0          100% Bran   N-Cold        70        4   10.0    1    5.0  68.402973  False        20.0
-1  100% Natural Bran   Q-Cold       120        3    2.0    5    8.0  33.983679  False        18.0
-```
-
-We need to isolate the column and make sure we are splitting on the
-correct separator. In this case, the column is `mfr_type` and the
-separator is `-`.  
-It’s important that we set `expand=True` to indicate that we want to
-split the sub strings into separate columns.
-
-``` python
-new = cereal['mfr_type'].str.split('-', expand=True)
-new 
-```
-
-```out
-    0     1
-0   N  Cold
-1   Q  Cold
-2   K  Cold
-3   K  Cold
-.. ..   ...
-73  G  Cold
-74  R  Cold
-75  G  Cold
-76  G  Cold
-
-[77 rows x 2 columns]
-```
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
-
-Great\! We have 2 new columns. We will need to rename them and add them
-back to our original dataframe.
-
-``` python
-new = new.rename(columns = {0:'mfr', 1: 'type'})
-new
-```
-
-```out
-   mfr  type
-0    N  Cold
-1    Q  Cold
-2    K  Cold
-3    K  Cold
-..  ..   ...
-73   G  Cold
-74   R  Cold
-75   G  Cold
-76   G  Cold
-
-[77 rows x 2 columns]
-```
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
-
-We can then use assign to add the columns from the `new` dataframe into
-the original `cereal` one:
-
-``` python
-cereal = cereal.assign(mfr=new['mfr'],
-                       type=new['type'])
-cereal
-```
-
-```out
-                         name mfr_type  calories  protein  fiber  fat  carbo     rating    hot  total_pffc mfr  type
-0                   100% Bran   N-Cold        70        4   10.0    1    5.0  68.402973  False        20.0   N  Cold
-1           100% Natural Bran   Q-Cold       120        3    2.0    5    8.0  33.983679  False        18.0   Q  Cold
-2                    All-Bran   K-Cold        70        4    9.0    1    7.0  59.425505  False        21.0   K  Cold
-3   All-Bran with Extra Fiber   K-Cold        50        4   14.0    0    8.0  93.704912  False        26.0   K  Cold
-..                        ...      ...       ...      ...    ...  ...    ...        ...    ...         ...  ..   ...
-73                       Trix   G-Cold       110        1    0.0    1   13.0  27.753301  False        15.0   G  Cold
-74                 Wheat Chex   R-Cold       100        3    3.0    1   17.0  49.787445  False        24.0   R  Cold
-75                   Wheaties   G-Cold       100        3    3.0    1   17.0  51.592193  False        24.0   G  Cold
-76        Wheaties Honey Gold   G-Cold       110        2    1.0    1   16.0  36.187559  False        20.0   G  Cold
-
-[77 rows x 12 columns]
-```
 
 Notes: Script here
 
