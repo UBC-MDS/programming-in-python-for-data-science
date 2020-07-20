@@ -38,6 +38,8 @@ py_config()
 ```{python include=FALSE}
 import pandas as pd
 import numpy as np
+from altair_saver import save
+import altair as alt
 
 pd.set_option('display.width', 350)
 
@@ -58,7 +60,7 @@ manufacturer_freq = df["mfr"].value_counts()
 
 type: slides
 
-# Quick Viz with Pandas!
+# Quick Viz with Altair!
 
 
 Notes: Script here.
@@ -177,14 +179,11 @@ library(htmltools)
 ```
 
 
-```{python  fig.width = 8, fig.height = 5,  out.width = '60%'}
-import altair as alt
-import pandas as pd
-from altair_saver import save
+```{python  fig.width = 8, fig.height = 5,  out.width = '60%' results='hide'}
 
 source = pd.read_csv('cereal.csv')
 
-chart1 = alt.Chart(source).mark_bar().encode(
+chart1 = alt.Chart(source).mark_bar(color = 'red').encode(
     x='mfr',
     y='count()'
 )
@@ -195,7 +194,13 @@ chart1
 chart1.save(path + 'chart1.png')
 ```
 
-<img src="/module1/chart1.png" alt="A caption" width="20%" />
+<img src="/module1/chart1.png" alt="A caption" width="30%" />
+
+```{python}
+
+```
+
+
 
 ---
 

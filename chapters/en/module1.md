@@ -16,7 +16,7 @@ id: 1
 </exercise>
 
 
-<exercise id="1" title="Introduction to Dataframes " type="slides">
+<exercise id="1" title="Introduction to Dataframes" type="slides">
 
 <slides source="module1/module1_01">
 </slides>
@@ -912,7 +912,7 @@ _If you get a warning along with your output, that's fine. We will explain why t
 
 </exercise>
 
-<exercise id="31" title="Quick Viz with Pandas" type="slides">
+<exercise id="31" title="Quick Viz with Altair" type="slides">
 <slides source="module1/module1_31">
 </slides>
 </exercise>

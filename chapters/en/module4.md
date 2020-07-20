@@ -656,7 +656,37 @@ Running a coding exercise for the first time could take a bit of time for everyt
 
 **When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
 
-Let's explore `dtypes` with dataframes.. 
+Let's explore `dtypes` with dataframes. 
+
+**Question 1**     
+What dtype is the `Salary` column?
+
+<choice id="1" >
+<opt text="<code>float64</code>" correct="true">
+
+Nice!
+
+</opt>
+
+<opt text="<code>int64</code>">
+
+Are you looking at the output from above? 
+
+</opt>
+
+<opt text="<code>object</code>">
+
+Are you looking at the output from above? 
+
+</opt>
+
+<opt text="<code>bool</code>" >
+
+Are you looking at the output from above? 
+
+</opt>
+
+</choice> 
 
 Tasks:
 

@@ -1,6 +1,8 @@
+---
 type: slides
+---
 
-# Quick Viz with Pandas\!
+# Quick Viz with Altair\!
 
 Notes: Script here.
 
@@ -14,7 +16,7 @@ Notes: Script here.
 
 </html>
 
------
+---
 
 If we want to visualize things using different plots we can do that
 pretty quickly and with little code\! Take `manufacturer_freq` object we
@@ -24,14 +26,16 @@ made in the last slide deck.
 manufacturer_freq
 ```
 
-    ## K    23
-    ## G    22
-    ## P     9
-    ## R     8
-    ## Q     8
-    ## N     6
-    ## A     1
-    ## Name: mfr, dtype: int64
+```out
+K    23
+G    22
+P     9
+R     8
+Q     8
+N     6
+A     1
+Name: mfr, dtype: int64
+```
 
 This would be great to express as a bar chart. But how do we do it?
 
@@ -47,7 +51,7 @@ Notes: Script here.
 
 </html>
 
------
+---
 
 1.  We take the dataframe we wish to plot, in this case `freq_mfr_df`.  
 2.  Next we add `.plot` since we want to plot it\!  
@@ -60,7 +64,7 @@ Notes: Script here.
 manufacturer_freq.plot.bar()
 ```
 
-<img src="../../../../static/module1/module1_31/unnamed-chunk-4-1.png" width="576" />
+<img src="/module1/module1_31/unnamed-chunk-4-1.png" width="576" />
 See how quick that was? The important things to notice here is that we
 want to `.plot` a `.bar()` graph.
 
@@ -76,7 +80,7 @@ Notes: Script here.
 
 </html>
 
------
+---
 
 What else can we plot from our original cereal dataframe named `df`?
 Maybe we want to see the relationship between `sugars` and `calories` in
@@ -90,7 +94,7 @@ x-axis is the `sugars` column and the y-axis is the `calories` column.
 df.plot.scatter(x='sugars', y='calories')
 ```
 
-<img src="../../../../static/module1/module1_31/unnamed-chunk-5-1.png" width="576" />
+<img src="/module1/module1_31/unnamed-chunk-5-1.png" width="576" />
 
 Notes: Script here.
 
@@ -104,7 +108,7 @@ Notes: Script here.
 
 </html>
 
------
+---
 
 Something you may have noticed is that there are 77 cereals but there
 doesn’t seem to be 77 data points\! That’s because some of them are
@@ -117,7 +121,7 @@ and 1, with 1 being full intensity.
 df.plot.scatter(x='sugars', y='calories', alpha=0.3)
 ```
 
-<img src="../../../../static/module1/module1_31/unnamed-chunk-6-1.png" width="576" />
+<img src="/module1/module1_31/unnamed-chunk-6-1.png" width="576" />
 
 Notes: Script here.
 
@@ -131,7 +135,7 @@ Notes: Script here.
 
 </html>
 
------
+---
 
 Look at that\! Now we can see there are multiple cereals that have 2.5g
 of sugar with 100 calories. What if we wanted to change the colour to
@@ -145,7 +149,7 @@ df.plot.scatter(x='sugars',
                 color='purple')
 ```
 
-<img src="../../../../static/module1/module1_31/unnamed-chunk-7-1.png" width="60%" />
+<img src="/module1/module1_31/unnamed-chunk-7-1.png" width="60%" />
 
 Notes: Script here.
 
@@ -159,7 +163,7 @@ Notes: Script here.
 
 </html>
 
------
+---
 
 Those data points look pretty small. To enlarge them, the argument `s`
 should do the trick. Also every good graph should have a title\! Let’s
@@ -175,29 +179,23 @@ df.plot.scatter(x="sugars",
                 title="The relationship between sugar and calories in cereals")
 ```
 
-<img src="../../../../static/module1/module1_31/unnamed-chunk-8-1.png" width="60%" />
+<img src="/module1/module1_31/unnamed-chunk-8-1.png" width="60%" />
 
------
+---
 
 ``` python
-import altair as alt
-import pandas as pd
-from altair_saver import save
 
 source = pd.read_csv('cereal.csv')
 
-chart1 = alt.Chart(source).mark_bar().encode(
+chart1 = alt.Chart(source).mark_bar(color = 'red').encode(
     x='mfr',
     y='count()'
 )
 chart1
 ```
+<img src="/module1/chart1.png" alt="A caption" width="30%" />
 
-    ## alt.Chart(...)
-
-<img src="/module1/chart1.png" alt="A caption" width="20%" />
-
------
+---
 
 # Let’s apply what we learned\!
 
