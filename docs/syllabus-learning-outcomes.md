@@ -151,11 +151,14 @@ By the end of the module, students are expected to:
 #### Learning Outcomes 
 
 - Evaluate the readability, complexity and performance of a function
-- Explain what the DRY principle is
-- Define and use a named function that accepts parameters and returns values
 - Write Docstrings for functions following the NumPy/SciPy format
 - Write comments within a function to improve readability
-- Source and use functions stored as python code in another file, as well as those in
+- Write and design functions with default arguments
+- Explain the importance of scoping and environments in Python as they relate to functions
+- Formulate test cases to prove a function design specification
+- Use test-driven development principles to define a function that accepts parameters, returns values and passes all tests
+- Handle errors gracefully via exception handling
+- Source and use functions stored as Python code in another file, as well as those in Python packages/libraries
 
 ### Module 7: Handling other advanced(?) data formats and missing & erroneous values
 
