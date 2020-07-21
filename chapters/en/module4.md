@@ -656,123 +656,71 @@ Running a coding exercise for the first time could take a bit of time for everyt
 
 **When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
 
-Let's explore `dtypes` with dataframes. 
+Remember our `canucks` dataframe? Let's take a closer look at the labels of the columns.
 
-**Question 1**     
-What dtype is the `Salary` column?
-
-<choice id="1" >
-<opt text="<code>float64</code>" correct="true">
-
-Nice!
-
-</opt>
-
-<opt text="<code>int64</code>">
-
-Are you looking at the output from above? 
-
-</opt>
-
-<opt text="<code>object</code>">
-
-Are you looking at the output from above? 
-
-</opt>
-
-<opt text="<code>bool</code>" >
-
-Are you looking at the output from above? 
-
-</opt>
-
-</choice> 
-
-Tasks:
-
-- Use the coding cell to write code that will help answer the multiple choice below. 
+| Player   | No.   | Age   | Height   | Weight   | Country   | Position   | Experience   | Birth Date   | Salary   |
+|----------|-------|-------|----------|----------|-----------|------------|--------------|--------------|----------|
 
 
-<codeblock id="04_17">
-- Are you using the attribute `dtypes`?
 
-</codeblock>
+**Question 1 (a)**     
 
-
-**Question 1**     
-What dtype is the `Salary` column?
+What dtype is would be an appropriate guess for the `Salary` column?
 
 <choice id="1" >
 <opt text="<code>float64</code>" correct="true">
 
-Nice!
-
-</opt>
-
-<opt text="<code>int64</code>">
-
-Are you looking at the output from above? 
-
-</opt>
-
-<opt text="<code>object</code>">
-
-Are you looking at the output from above? 
-
-</opt>
-
-<opt text="<code>bool</code>" >
-
-Are you looking at the output from above? 
-
-</opt>
-
-</choice> 
-
-**Question 2**     
-What type is the dataframe `canucks`?
-
-<choice id="2" >
-<opt text="<code>float64</code>" >
-
-Are you typing `type(canucks)` in the cell above? 
-
-</opt>
-
-<opt text="<code>bool</code>">
-
-Are you typing `type(canucks)` in the cell above? 
-
-</opt>
-
-<opt text="<code>pandas.core.frame.DataFrame</code>" correct="true">
-
-Nice!
-
-</opt>
-
-<opt text="<code>pandas.core.series.Series</code>" >
-
-Are you typing `type(canucks)` in the cell above?  
-
-</opt>
-
-</choice> 
-
-
-**Question 3**     
-What dtype is the `Weight` column?
-
-<choice id="3" >
-<opt text="<code>float64</code>" >
-
-Are you looking at the output from above? 
+Nice! `float64` and `int64` are both appropriate dtype guesses for the `Salary` column.    
 
 </opt>
 
 <opt text="<code>int64</code>" correct="true">
 
+Nice! `float64` and `int64` are both appropriate dtype guesses for the `Salary` column.   
+
+</opt>
+
+<opt text="<code>str</code>">
+
+ This is not a dtype, this is one of Python's data types. 
+
+</opt>
+
+<opt text="<code>bool</code>" >
+
+`float64` and `int64` would be more appropriate dtype guesses for the `Salary` column. 
+
+</opt>
+
+</choice> 
+
+
+**Question 1 (b)**  
+
+Use the coding cell below to check the dtype for the `Salary` column. 
+
+
+<codeblock id="04_17">
+
+- Are you using the attribute `dtypes`?
+
+</codeblock>
+
+
+**Question 1 (c)**   
+
+What is the actual dtype of the `Salary` column?
+
+<choice id="1" >
+<opt text="<code>float64</code>" correct="true">
+
 Nice!
+
+</opt>
+
+<opt text="<code>int64</code>">
+
+This time is was not of dtype `int64`.
 
 </opt>
 
@@ -790,33 +738,85 @@ Are you looking at the output from above?
 
 </choice> 
 
-**Question 4**     
-What data type is the `Weight` column in the dataframe `canucks`(Use single square brackets)?
 
-<choice id="4" >
-<opt text="<code>float64</code>" >
+<br>
 
-Are you typing `type(canucks['Weight'])` in the cell above?
 
-</opt>
+**Question 2 (a)**  
 
-<opt text="<code>bool</code>">
+What dtype is would be an appropriate guess for the `Weight` column?
 
-Are you typing `type(canucks['Weight'])` in the cell above? 
+<choice id="1" >
+<opt text="<code>float64</code>" correct="true">
 
-</opt>
-
-<opt text="<code>pandas.core.frame.DataFrame</code>" >
-
-Are you typing `type(canucks['Weight'])` in the cell above?
+Nice! `float64` and `int64` are both appropriate dtype guesses for the `Weight` column.    
 
 </opt>
 
-<opt text="<code>pandas.core.series.Series</code>" correct="true">
+<opt text="<code>int64</code>" correct="true">
 
-Great! 
+Nice! `float64` and `int64` are both appropriate dtype guesses for the `Weight` column.   
+
+</opt>
+
+<opt text="<code>str</code>">
+
+ This is not a dtype, this is one of Python's data types. 
+
+</opt>
+
+<opt text="<code>bool</code>" >
+
+`float64` and `int64` would be more appropriate dtype guesses for the `Weight` column. 
+
+</opt>
 
 </choice> 
+
+
+**Question 2 (b)**  
+
+Use the coding cell below to check the dtype for the `Weight` column. 
+
+
+<codeblock id="04_17">
+
+- Are you using the attribute `dtypes`?
+
+</codeblock>
+
+
+**Question 1 (c)**     
+
+What is the actual dtype of the `Weight` column?
+
+<choice id="1" >
+<opt text="<code>float64</code>" >
+
+This time is was not of dtype `float64`.
+
+</opt>
+
+<opt text="<code>int64</code>" correct="true">
+
+ Nice! 
+
+</opt>
+
+<opt text="<code>object</code>">
+
+Are you looking at the output from above? 
+
+</opt>
+
+<opt text="<code>bool</code>" >
+
+Are you looking at the output from above? 
+
+</opt>
+
+</choice> 
+
 
 </exercise>
 
@@ -1030,7 +1030,7 @@ The statement `not 'hotels' != 'homes' ` is false so checking if that statement 
 </exercise>
 
 
-<exercise id="21" title="More Practice with Data Types">
+<exercise id="20" title="More Practice with Data Types">
 
 **Instructions:**    
 Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
@@ -1130,15 +1130,15 @@ The statement is True and `not` checks if the statement is False. Since the stat
 </exercise>
 
 
-<exercise id="22" title="Operations with Columns" type="slides">
+<exercise id="21" title="Operations with Columns" type="slides">
 
-<slides source="module4/module4_22">
+<slides source="module4/module4_21">
 
 </slides>
 
 </exercise>
 
-<exercise id="23" title="What's That Output? With Column Operations">
+<exercise id="22" title="What's That Output? With Column Operations">
 
 
 
@@ -1276,9 +1276,9 @@ We cannot take the mean of a column of dtype `object`.
 </exercise>
 
 
-<exercise id="24" title="Splitting a Column" type="slides">
+<exercise id="23" title="Splitting a Column" type="slides">
 
-<slides source="module4/module4_24">
+<slides source="module4/module4_23">
 
 </slides>
 
@@ -1286,7 +1286,7 @@ We cannot take the mean of a column of dtype `object`.
 
 
 
-<exercise id="25" title="Practice Operations with Dataframe columns">
+<exercise id="24" title="Practice Operations with Dataframe columns">
 
 **Instructions:**    
 Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
@@ -1302,7 +1302,7 @@ Tasks:
 - Save these as columns in the `canucks` dataframe as dtype `int`.
 
 
-<codeblock id="04_25">
+<codeblock id="04_24">
 
 - Are you using `str.split('-', expand='True')`?    
 - Are you saving the columns from the `birthdate_df` back to the `canucks` dataframe?   
@@ -1313,8 +1313,8 @@ Tasks:
 </exercise>
 
 
-<exercise id="26" title="What Did We Just Learn?" type="slides, video">
-<slides source="module4/module4_26" start="0:165" end="3:01">>
+<exercise id="25" title="What Did We Just Learn?" type="slides, video">
+<slides source="module4/module4_25" start="0:165" end="3:01">>
 </slides>
 </exercise>
 

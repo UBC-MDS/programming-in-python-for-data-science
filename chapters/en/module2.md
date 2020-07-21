@@ -907,7 +907,15 @@ Tasks:
 </exercise>
 
 
-<exercise id="29" title="Plotting a Groupby Object">
+<exercise id="29" title="Plotting with Altair" type="slides">
+
+<slides source="module2/module2_29">
+</slides>
+
+</exercise>
+
+
+<exercise id="30" title="Plotting a Groupby Object">
 
 **Instructions:**    
 Running a coding exercise for the first time, could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
@@ -927,7 +935,7 @@ Create a plot by chaining the following actions.
 - Name the object attack_plot 
 
 
-<codeblock id="02_29">
+<codeblock id="02_30">
 
 - Are you grouping by the column named `type`? 
 - Are you using `.loc[:, 'attack']`?
@@ -973,7 +981,7 @@ Take another look at the plot.
 </exercise>
 
 
-<exercise id="30" title="What Did We Just Learn?" type="slides,video">
-<slides source="module2/module2_30" start="0:165" end="3:01">>
+<exercise id="31" title="What Did We Just Learn?" type="slides,video">
+<slides source="module2/module2_31" start="0:165" end="3:01">>
 </slides>
 </exercise>

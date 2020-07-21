@@ -8,8 +8,8 @@ canucks = pd.read_csv('data/canucks.csv')
 birthdate_df = (canucks['Birth Date'].str.split('-', expand=True)
                                      .rename(columns={0:'Birth_Day',
                                                       1:'Birth_Month',
-                                                    2: 'Birth_Year'})
-             )
+                                                      2:'Birth_Year'})
+               )
 birthdate_df
 
 # Save these as columns in the canucks dataframe as dtype int

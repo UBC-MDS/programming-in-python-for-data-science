@@ -7,4 +7,4 @@ canucks = pd.read_csv('data/canucks.csv')
 
 canucks.dtypes
 
-canucks['Salary'].dtypes
+canucks['Weight'].dtypes
