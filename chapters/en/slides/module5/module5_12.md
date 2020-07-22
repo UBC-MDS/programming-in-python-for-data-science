@@ -262,7 +262,7 @@ Notes: Script here
 
 Only now, that all the elements in `faces` have been iterated over can
 we move on to the next iteration in the outer loop. This consists of
-iteration to the next element (`♦️`) in `suits`:
+iterating to the next element (`♦️`) in `suits`:
 
 <center>
 
@@ -362,25 +362,20 @@ for suit in suits:
     for face in faces: 
         print(face)
         cards.append(face + ' of ' + suit)
+cards
 ```
 
-```out
+``` out
+Show in New WindowClear OutputExpand/Collapse Output
 ❤︎
 Jack
 Queen
 King
-♦︎
+♦
 Jack
 Queen
 King
-```
-
-``` python
-cards
-```
-
-```out
-['Jack of ❤︎', 'Queen of ❤︎', 'King of ❤︎', 'Jack of ♦︎', 'Queen of ♦︎', 'King of ♦︎']
+['Jack of ❤︎', 'Queen of ❤︎', 'King of ❤︎', 'Jack of ♦', 'Queen of ♦', 'King of ♦']
 ```
 
 By looking at the output, we notice that all the heart(♥️) face cards

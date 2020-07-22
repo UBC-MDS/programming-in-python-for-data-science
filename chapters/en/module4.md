@@ -779,7 +779,7 @@ Nice! `float64` and `int64` are both appropriate dtype guesses for the `Weight` 
 Use the coding cell below to check the dtype for the `Weight` column. 
 
 
-<codeblock id="04_17">
+<codeblock id="04_17b">
 
 - Are you using the attribute `dtypes`?
 

@@ -56,6 +56,43 @@ We can still write functioning code without an `else` condition.
 Given the code below, what is the value of the object `expensive`? 
 
 ```python
+time = 150
+
+if time  < 120:
+    speed = 'Fast'
+elif time < 180:
+    speed = 'Average'
+else:
+    speed = 'Slow'
+speed
+```
+
+<choice id="2" >
+<opt text="<code>Fast</code>" >
+
+150 is not less than 120 so we would need to proceed to the next condition
+
+</opt>
+
+<opt text="<code>Average</code>" correct="true">
+
+Well done.  
+
+</opt>
+
+<opt text="<code>Slow</code>">
+
+150 is not greater than 180, so it would not enter the body of the `else` condition. 
+
+</opt>
+
+</choice>  
+
+**Question 3**          
+
+Given the code below, what is the value of the object `expensive`? 
+
+```python
 price = 150
 
 if price > 50:
@@ -67,7 +104,7 @@ else:
 expensive
 ```
 
-<choice id="2" >
+<choice id="3" >
 <opt text="<code>moderately</code>" correct="true">
 
 Well done. 
@@ -123,7 +160,7 @@ C)
 
 ```python
 if price > 50:
-  expensive = 'moderately'
+    expensive = 'moderately'
 expensive
 ```
 
@@ -163,7 +200,7 @@ Let's practice making decisions with conditional statements.
 We are going to the gym and our exercise plan takes different amounts of reps. let's make conditional statements that depend on the name of the exercises.
 
 Tasks:
-- Start with an object named `exercise`.  Give it a string value of `burpees`.
+
 - Make `if`, `elif`, and `else` statements for the following conditions:
     - if the exercise value is `lunges`, set an object value named `reps` to 20.
     - if the exercise value is `squats`, set `reps` to 25
@@ -389,12 +426,12 @@ Running a coding exercise for the first time could take a bit of time for everyt
 
 _**Make sure you remove the hash (`#`) symbol in the coding portions of this question.  We have commented them so that the line won't execute and you can test your code after each step.**_
 
-We've learned about iterating now it's time to apply this! 
-We have a list that contains all elements of type `float`.  We want to create a new list that contains the `int` values of the elements. 
+We've learned about iterating , now it's time to apply this! 
+We have a list that contains all elements of type `float`.  We want to create a new list that casts each element to type `int`. 
 
 Tasks:
 - Create a new empty list named `integer_list`.
-- Iterate over all the items in the list and append the `int` value of each element in `float_list`. 
+- Iterate over all the items in `float_list`. Cast the element to data type `int` and append it to `integer_list`. 
 - Display the value of `integer_list`.
 
 
@@ -410,7 +447,7 @@ Tasks:
 </exercise>
 
 
-<exercise id="9" title="Range and Comprehension" type="slides">
+<exercise id="9" title="Range and Comprehensions" type="slides">
 
 <slides source="module5/module5_09">
 
