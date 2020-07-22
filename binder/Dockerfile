@@ -24,3 +24,6 @@ RUN adduser --disabled-password \
     ${NB_USER}
 WORKDIR ${HOME}
 USER ${USER}
+
+# Copy over the data needed for the exercises
+COPY data/ data/
