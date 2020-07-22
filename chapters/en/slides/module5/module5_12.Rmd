@@ -63,7 +63,7 @@ For example: Let's say we are trying to obtain all the red (♥️, ♦️) suit
 suits = ["❤︎","♦"]
 faces = ['Jack', 'Queen', 'King']
 
-cards = [ ]
+cards = list()
 for suit in suits:
     cards.append(faces[0] + ' of ' + suit)
     cards.append(faces[1] + ' of ' + suit)
@@ -88,7 +88,7 @@ Just like how we reduced the repetition by making a first loop we can make a sec
 suits = ["❤︎","♦︎"]
 faces = ['Jack', 'Queen', 'King']
 
-cards = [ ]
+cards = list()
 for suit in suits:
     for face in faces: 
         cards.append(face + ' of ' + suit)
@@ -188,7 +188,7 @@ The string `King of ♥️` is added to the `cards` list:
 
 <center><img src='/module5/nested7.png' width="70%"></center>
 
- Now we have finished all the elements in the inner loop, where do we go now? 
+Now we have finished all the elements in the inner loop, where do we go now? 
 
 Notes: Script here
 <html>
@@ -198,7 +198,7 @@ Notes: Script here
 
 ---
 
-Only now, that all the elements in `faces` have been iterated over can we move on to the next iteration in the outer loop.  This consists of iteration to the next element (`♦️`)  in `suits`:
+Only now, that all the elements in `faces` have been iterated over can we move on to the next iteration in the outer loop.  This consists of iterating to the next element (`♦️`)  in `suits`:
 
 <center><img src='/module5/nested8.png' width="70%"></center>
 
@@ -248,14 +248,26 @@ Notes: Script here
 ---
 
 
-```{python}
-cards = [ ]
+```python
+cards = list()
 for suit in suits:
     print(suit)
     for face in faces: 
         print(face)
         cards.append(face + ' of ' + suit)
 cards
+```
+```out
+Show in New WindowClear OutputExpand/Collapse Output
+❤︎
+Jack
+Queen
+King
+♦
+Jack
+Queen
+King
+['Jack of ❤︎', 'Queen of ❤︎', 'King of ❤︎', 'Jack of ♦', 'Queen of ♦', 'King of ♦']
 ```
 By looking at the output, we notice that all the heart(♥️) face cards are added to the list first.  That means the first iteration of the outer loop waits for the inner loop to finish going through all the faces before starting the next suit iteration.  Python then re-iterates over the inner loop again for the second item (♦️) in the outer loop. 
 

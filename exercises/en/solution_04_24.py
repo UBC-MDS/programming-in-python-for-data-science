@@ -1,18 +1,25 @@
 import pandas as pd
 
-# Read in the data from the data folder named canucks.csv
-# Name the dataframe canucks
-
 canucks = pd.read_csv('data/canucks.csv')
 
-# Find the mean height of the players
-# Save it in an object named mean_height
+# Split up the column "Birth Date" into 3 separate columns named Birth_Day, Birth_Month and Birth_Year. 
+# Name this new dataframe birthdate_df
 
-mean_height = canucks['Height'].mean()
+birthdate_df = (canucks['Birth Date'].str.split('-', expand=True)
+                                     .rename(columns={0:'Birth_Day',
+                                                      1:'Birth_Month',
+                                                      2:'Birth_Year'})
+               )
+birthdate_df
 
-# What largest salary being paid to any of the players? 
-# Save it in an object named max_salary
+# Save these as columns in the canucks dataframe as dtype int
 
-max_salary = canucks['Salary'].max()
+canucks = canucks.assign(Birth_Day=birthdate_df['Birth_Day'].astype('int'),
+                         Birth_Month=birthdate_df['Birth_Month'],
+                         Birth_Year=birthdate_df['Birth_Year'].astype('int')
+                        )
+
+canucks
+
 
 

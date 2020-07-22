@@ -202,6 +202,105 @@ Notes: Script here
 
 ---
 
+
+## Syntax and Tallying
+
+There are often times where we want to keep a running tally or a counts of certain things for instance in our `item_list` list above, maybe we want add up only the items in our list are greater than 20? 
+
+```{python}
+item_list = [25, 13, 21, 8, 17, 11, 4]
+```
+
+We can start by creating an object named `number_over_20` with zero value and the loop. This time we have an additional line of code.    
+Under the `if` condition we add a line where we add the item value to the existing value in `number_over_20`:
+```{python}
+
+number_over_20 = 0
+
+for item in item_list:
+    if item > 20:
+        magnitude = 'greater than 20'
+        number_over_20 = number_over_20 + item
+    elif item > 10:
+        magnitude = 'between 10 and 20'
+    else:
+        magnitude = '10 or less'
+        
+number_over_20
+```
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+This new line only adds the item's value to `number_over_20` if it meets the condition:  `if item > 20`. 
+```{python}
+item_list = [25, 13, 21, 8, 17, 11, 4]
+number_over_20 = 0
+
+for item in item_list:
+    if item > 20:
+        magnitude = 'greater than 20'
+        number_over_20 = number_over_20 + item
+    elif item > 10:
+        magnitude = 'between 10 and 20'
+    else:
+        magnitude = '10 or less'
+        
+number_over_20
+```
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+When we are updating an existing object in a loop such as:
+
+```python
+number_over_20 = number_over_20 + item
+```
+
+Instead of writing the object name twice, we can shorten it to: 
+
+```python
+number_over_20 +=  item
+```
+This simply means that we are adding `item` to the `stock_total` object. 
+
+If we replace this code into the loop from before, it works in exactly the same way:
+
+```{python}
+item_list = [25, 13, 21, 8, 17, 11, 4]
+number_over_20 = 0
+
+for item in item_list:
+    if item > 20:
+        magnitude = 'greater than 20'
+        number_over_20 += item
+    elif item > 10:
+        magnitude = 'between 10 and 20'
+    else:
+        magnitude = '10 or less'
+        
+number_over_20
+```
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
 # Let’s practice what we learned!
 
 Notes: Script here

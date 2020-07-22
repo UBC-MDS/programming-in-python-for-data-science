@@ -4,3 +4,7 @@ import pandas as pd
 # Name the dataframe `canucks`
 
 canucks = pd.read_csv('data/canucks.csv')
+
+canucks.dtypes
+
+canucks['Weight'].dtypes

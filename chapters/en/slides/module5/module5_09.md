@@ -18,7 +18,7 @@ Notes: Script here
 
 ---
 
-## range
+## Range
 
 Instead of looping over items in a collection, we can iterate over a
 sequence of numbers. `range()` is a verb that generates a sequence of
@@ -209,7 +209,7 @@ as the value.
 ``` python
 numbers = [ 2, 3, 5]
 
-word_length = {number : number **2 for number in numbers}
+word_length = {number : number ** 2 for number in numbers}
 word_length
 ```
 

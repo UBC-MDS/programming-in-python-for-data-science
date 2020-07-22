@@ -179,7 +179,7 @@ We saw that we can operate on `float` and `int` values together but what about `
 ```{python error=TRUE}
 'The monster under my bed' + 1200
 ```
-That does not work, however, if we transform the numeric to a string, we can concatenate the two together: 
+That does not work, however, if we transform cast the numeric to a string, we can concatenate the two together: 
 
 ```{python}
 'The monster under my bed' + str(1200)
@@ -187,6 +187,13 @@ That does not work, however, if we transform the numeric to a string, we can con
 
 How about with other data structure like **lists**, **tuples** and **dictionaries**?
 
+What about multiplication? 
+
+```{python}
+'The monster under my bed' * 3
+```
+
+We can multiply strings and it concatenates the strings together! Since we multiplied by 3, the string is repeated 3 times. 
 
 Notes: Script here
 <html>
@@ -202,73 +209,9 @@ If we add lists, similarly to strings, the elements are combine to create a sing
 ```{python}
 list1 = [1, 2.0, 3, 4.5] + ['nine', 'ten', 'eleven', 'twelve']
 ```
-We can add, but other operators are not supportive. 
+We can add, but other operators are not supported. 
 ```{python error=TRUE}
 [1, 2.0, 3, 4.5] * [5, 6, 7, 8]
-```
-
-
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
-
----
-
-
-We can sum up the elements in a list if they are numeric:
-```{python error=TRUE}
-sum([1, 2.0, 3, 4.5])
-```
-
-But not `str` elements.     
-```{python error=TRUE}
-sum(['nine', 'ten', 'eleven', 'twelve'])
-```
-
-Can we add strings and lists? 
-
-```{python error=TRUE}
-'The monster under my bed' + [1, 2.0, 3, 4.5]
-```
-
-Unfortunately not. 
-
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
-
----
-
-## Tuples 
-
-Tuples act in a much similar way as lists:
-
-```{python}
-tuple1 =(1, 2, 3, 4)
-tuple2 = (5, 6, 7, 8)
-```
-
-We can only use the addition operator and the two tuples are combined end to end. 
-```{python}
-tuple1 + tuple2
-```
-
-
-## Dictionaries 
-
-Unfortunately dictionaries cannot be operated on like `lists` and `tuples`: 
-
-```{python}
-dictionary1 = {1: 'one', 2: 'two'}
-dictionary2 = {3: 'three', 4: 'four'}
-```
-
-```{python error=TRUE}
-dictionary1 + dictionary2
 ```
 
 
@@ -317,15 +260,15 @@ Let's start with 2 base statements:
 6 > 7
 ```
 
-We can combine them to explore `and` `or` and `not` operators. 
+We can combine them to explore `and`, `or` and `not` operators. 
 ```{python}
-(6 > 7) and ('dogs' != 'cats')
+(6 < 7) and ('dogs' == 'cats')
 ```
 Since both statements are not true, the "and" statement is False.
 
 
 ```{python}
-(6 > 7) or ('dogs' != 'cats')
+(6 < 7) or ('dogs' == 'cats')
 ```
 Since one statement is true the combine "or" statement is True. 
 
@@ -337,16 +280,16 @@ Notes: Script here
 
 ---
 
-We know that `(6 > 7) ` is False so a `not` operator gives us a True value because it confirms the fact the statement is False. 
+We know that `('dogs' == 'cats') ` is False so a `not` operator gives us a True value because it confirms the fact the statement is False. 
 ```{python}
-not (6 > 7) 
+not ('dogs' == 'cats')
 ```
 
-We know `('dogs' != 'cats')` is True:
+While we know `(6 < 7)` is True:
 ```{python}
-not  ('dogs' != 'cats')
+not  (6 < 7)
 ```
-Seeing if the statement is False will result in a False statement since ` ('dogs' != 'cats')` is True. 
+Seeing if the statement is False will result in a False statement since `(6 < 7)` is True. 
 
 
 Notes: Script here

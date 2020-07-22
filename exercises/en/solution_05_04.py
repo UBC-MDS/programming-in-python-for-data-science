@@ -1,4 +1,3 @@
-# Start with an object named exercise. Give it a value of burpees
 
 exercise = 'burpees'
 

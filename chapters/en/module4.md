@@ -656,23 +656,60 @@ Running a coding exercise for the first time could take a bit of time for everyt
 
 **When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
 
-Let's explore the `dtypes` noun and see what our column dtypes are. 
+Remember our `canucks` dataframe? Let's take a closer look at the labels of the columns.
 
-Tasks:
+| Player   | No.   | Age   | Height   | Weight   | Country   | Position   | Experience   | Birth Date   | Salary   |
+|----------|-------|-------|----------|----------|-----------|------------|--------------|--------------|----------|
 
-- Read in the data from the `data` folder named `canucks.csv` and name the dataframe `canucks`.
-- Use the `dtypes` attribute on the whole dataframe and save the output as `canuck_types` and answer the questions below.
+
+
+**Question 1 (a)**     
+
+What dtype is would be an appropriate guess for the `Salary` column?
+
+<choice id="1" >
+<opt text="<code>float64</code>" correct="true">
+
+Nice! `float64` and `int64` are both appropriate dtype guesses for the `Salary` column.    
+
+</opt>
+
+<opt text="<code>int64</code>" correct="true">
+
+Nice! `float64` and `int64` are both appropriate dtype guesses for the `Salary` column.   
+
+</opt>
+
+<opt text="<code>str</code>">
+
+ This is not a dtype, this is one of Python's data types. 
+
+</opt>
+
+<opt text="<code>bool</code>" >
+
+`float64` and `int64` would be more appropriate dtype guesses for the `Salary` column. 
+
+</opt>
+
+</choice> 
+
+
+**Question 1 (b)**  
+
+Use the coding cell below to check the dtype for the `Salary` column. 
 
 
 <codeblock id="04_17">
-- Are you using `pd.read_csv()`?
-- Are you using the attribute `dtypes` on the whole `canucks` dataframe? 
+
+- Are you using the attribute `dtypes`?
 
 </codeblock>
 
 
-**Question 1**     
-What dtype is the `Salary` column?
+**Question 1 (c)**   
+
+What is the actual dtype of the `Salary` column?
 
 <choice id="1" >
 <opt text="<code>float64</code>" correct="true">
@@ -683,7 +720,7 @@ Nice!
 
 <opt text="<code>int64</code>">
 
-Are you looking at the output from above? 
+This time is was not of dtype `int64`.
 
 </opt>
 
@@ -701,50 +738,68 @@ Are you looking at the output from above?
 
 </choice> 
 
-**Question 2**     
-What dtype is the `Position` column?
 
-<choice id="2" >
-<opt text="<code>float64</code>" >
+<br>
 
-Are you looking at the output from above? 
+
+**Question 2 (a)**  
+
+What dtype is would be an appropriate guess for the `Weight` column?
+
+<choice id="1" >
+<opt text="<code>float64</code>" correct="true">
+
+Nice! `float64` and `int64` are both appropriate dtype guesses for the `Weight` column.    
 
 </opt>
 
-<opt text="<code>int64</code>">
+<opt text="<code>int64</code>" correct="true">
 
-Are you looking at the output from above? 
+Nice! `float64` and `int64` are both appropriate dtype guesses for the `Weight` column.   
 
 </opt>
 
-<opt text="<code>object</code>" correct="true">
+<opt text="<code>str</code>">
 
-Nice!
+ This is not a dtype, this is one of Python's data types. 
 
 </opt>
 
 <opt text="<code>bool</code>" >
 
-Are you looking at the output from above? 
+`float64` and `int64` would be more appropriate dtype guesses for the `Weight` column. 
 
 </opt>
 
 </choice> 
 
 
-**Question 3**     
-What dtype is the `Weight` column?
+**Question 2 (b)**  
 
-<choice id="3" >
+Use the coding cell below to check the dtype for the `Weight` column. 
+
+
+<codeblock id="04_17b">
+
+- Are you using the attribute `dtypes`?
+
+</codeblock>
+
+
+**Question 1 (c)**     
+
+What is the actual dtype of the `Weight` column?
+
+<choice id="1" >
 <opt text="<code>float64</code>" >
 
-Are you looking at the output from above? 
+This time is was not of dtype `float64`.
 
 </opt>
 
 <opt text="<code>int64</code>" correct="true">
 
-Nice!
+ Nice! 
 
 </opt>
 
@@ -786,14 +841,14 @@ Will the following operations result with an output or an error?
 
 <choice id="1" >
 
-<opt text="Output" >
+<opt text="Runs successfully" >
 
-Take special care to the brackets being used. 
+Take special care to the brackets being used. dictionary1 + dictionary2
 
 
 </opt>
 
-<opt text="<code>Error</code>"  correct="true" >
+<opt text="Error"  correct="true" >
 
 Both elements must be of the same data structure to add together. 
 
@@ -828,20 +883,68 @@ Are they both the same data structure?
 **Question 3**          
 
 ```python
-15.7 // 2
+dictionary1 = {1: 'one', 2: 'two'}
+dictionary2 = {3: 'three', 4: 'four'}
+
+dictionary1 + dictionary2
 ```
 
 <choice id="3" >
 
-<opt text="Output" correct="true" >
+<opt text="Output" >
 
-That's right. The output would be `7.0`.
+Dictionaries cannot be concatenated together. We would have to combine them adding the individual keys-value pairs separately. 
 
 </opt>
 
-<opt text="<code>Error</code>" >
+<opt text="<code>Error</code>" correct="true" >
 
-can we use integer division with values of type `float`?
+That's right!
+
+</opt>
+
+</choice> 
+
+
+**Question 4**          
+
+```python
+sum(['nine', 'ten', 'eleven', 'twelve'])
+```
+
+<choice id="4" >
+
+<opt text="Output"  >
+
+We cannot sum `str` elements in a list. 
+
+</opt>
+
+<opt text="<code>Error</code>"  correct="true">
+
+Right!
+
+</opt>
+
+</choice> 
+
+**Question 5**          
+
+```python
+'The monster under my bed' + [1, 2.0, 3, 4.5]
+```
+
+<choice id="2" >
+
+<opt text="Output">
+
+
+</opt>
+
+<opt text="<code>Error</code>"  correct="true" >
+
+That's right. We cannot concatenate together `lists` and `str` data types 
+
 
 </opt>
 
@@ -851,23 +954,6 @@ can we use integer division with values of type `float`?
 
 
 <exercise id="20" title="True or False with Boolean Operators ">
-
-```python
-'Hotels' != 'Homes'
-```
-
-```out
-True
-```
-
-
-```python
-50< 5000
-```
-
-```out
-True 
-```
 
 Given the statement above, would the following result in a `True` of `False` value. 
 
@@ -899,7 +985,7 @@ Both statements are true so the output is True.
 **Question 2**          
 
 ```python
-not 'hotels' != 'homes' 
+not ('hotels' != 'homes') 
 ```
 
 <choice id="2" >
@@ -922,7 +1008,7 @@ That's right. The statement is not false so the output is False.
 **Question 3**          
 
 ```python
-not not 'hotels' != 'homes' 
+not not ('hotels' != 'homes')
 ```
 
 <choice id="3" >
@@ -944,7 +1030,7 @@ The statement `not 'hotels' != 'homes' ` is false so checking if that statement 
 </exercise>
 
 
-<exercise id="21" title="More Practice with Data Types">
+<exercise id="20" title="More Practice with Data Types">
 
 **Instructions:**    
 Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
@@ -1044,15 +1130,15 @@ The statement is True and `not` checks if the statement is False. Since the stat
 </exercise>
 
 
-<exercise id="22" title="Operations with Columns" type="slides">
+<exercise id="21" title="Operations with Columns" type="slides">
 
-<slides source="module4/module4_22">
+<slides source="module4/module4_21">
 
 </slides>
 
 </exercise>
 
-<exercise id="23" title="What's That Output? With Column Operations">
+<exercise id="22" title="What's That Output? With Column Operations">
 
 
 
@@ -1190,36 +1276,17 @@ We cannot take the mean of a column of dtype `object`.
 </exercise>
 
 
-<exercise id="24" title="Practice Operations with Dataframe Columns">
+<exercise id="23" title="Splitting a Column" type="slides">
 
-**Instructions:**    
-Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
+<slides source="module4/module4_23">
 
-**When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
+</slides>
 
-Let's find some summary statistics of the canucks dataframe.
-
-Tasks:
-
-- Read in the data from the data folder named `canucks.csv` and name the dataframe `canucks`.
-- Find the mean height of the players and save as an object named `mean_height`.
-- What is the largest salary being paid to any of the players? 
-- Save the solution in an object named `max_salary`.
-
-<codeblock id="04_24">
-
-- Are you using `.mean()` on the column `Height`?    
-- Are you using `.max()` on the column `Salary`?    
-
-</codeblock>
-
-
-   
 </exercise>
 
 
 
-<exercise id="25" title="Practice Operations with Dataframe columns">
+<exercise id="24" title="Practice Operations with Dataframe columns">
 
 **Instructions:**    
 Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
@@ -1235,7 +1302,7 @@ Tasks:
 - Save these as columns in the `canucks` dataframe as dtype `int`.
 
 
-<codeblock id="04_25">
+<codeblock id="04_24">
 
 - Are you using `str.split('-', expand='True')`?    
 - Are you saving the columns from the `birthdate_df` back to the `canucks` dataframe?   
@@ -1246,8 +1313,8 @@ Tasks:
 </exercise>
 
 
-<exercise id="26" title="What Did We Just Learn?" type="slides, video">
-<slides source="module4/module4_26" start="0:165" end="3:01">>
+<exercise id="25" title="What Did We Just Learn?" type="slides, video">
+<slides source="module4/module4_25" start="0:165" end="3:01">>
 </slides>
 </exercise>
 

@@ -28,7 +28,7 @@ suited face cards from a deck of cards into a list.
 suits = ["❤︎","♦"]
 faces = ['Jack', 'Queen', 'King']
 
-cards = [ ]
+cards = list()
 for suit in suits:
     cards.append(faces[0] + ' of ' + suit)
     cards.append(faces[1] + ' of ' + suit)
@@ -67,7 +67,7 @@ make a second loop within the first one.
 suits = ["❤︎","♦︎"]
 faces = ['Jack', 'Queen', 'King']
 
-cards = [ ]
+cards = list()
 for suit in suits:
     for face in faces: 
         cards.append(face + ' of ' + suit)
@@ -262,7 +262,7 @@ Notes: Script here
 
 Only now, that all the elements in `faces` have been iterated over can
 we move on to the next iteration in the outer loop. This consists of
-iteration to the next element (`♦️`) in `suits`:
+iterating to the next element (`♦️`) in `suits`:
 
 <center>
 
@@ -356,31 +356,26 @@ Notes: Script here
 ---
 
 ``` python
-cards = [ ]
+cards = list()
 for suit in suits:
     print(suit)
     for face in faces: 
         print(face)
         cards.append(face + ' of ' + suit)
+cards
 ```
 
-```out
+``` out
+Show in New WindowClear OutputExpand/Collapse Output
 ❤︎
 Jack
 Queen
 King
-♦︎
+♦
 Jack
 Queen
 King
-```
-
-``` python
-cards
-```
-
-```out
-['Jack of ❤︎', 'Queen of ❤︎', 'King of ❤︎', 'Jack of ♦︎', 'Queen of ♦︎', 'King of ♦︎']
+['Jack of ❤︎', 'Queen of ❤︎', 'King of ❤︎', 'Jack of ♦', 'Queen of ♦', 'King of ♦']
 ```
 
 By looking at the output, we notice that all the heart(♥️) face cards

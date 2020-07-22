@@ -25,7 +25,7 @@ times. Let’s say we want to add the square of every number in a list to
 a new list.
 
 ``` python
-numbers = [ 2, 3, 5]
+numbers = [2, 3, 5]
 ```
 
 We would have to do something like the following:
@@ -61,12 +61,12 @@ Notes: Script here
 
 Some of the reasons this exhibits bad coding practices are as followed:
 
-  - **Difficult to scale**: It only works for a list with 4 elements. If
+  - **Difficult to scale**: It only works for a list with 3 elements. If
     we want to do this for a list of a different length, we need to add
     or remove code.
 
   - **Difficult to modify**: If we want to change its functionality, we
-    need to change 4 similar lines of code.
+    need to change 3 similar lines of code.
 
   - **Clarity**: It is hard to understand what it does just by looking
     at it.
@@ -95,9 +95,9 @@ This motion is called the ***DRY principle*** otherwise known as the
 avoid redundancy within code.
 
 The method we discussed in the last slide is a violation of this
-principle (known as a ***Wet Solution***). There is a much more
-efficient method to obtain the same output that avoids typing out
-multiple iterations of similar code.
+principle (known as a ***WET Solution (“write every time”)***). There is
+a much more efficient method to obtain the same output that avoids
+typing out multiple iterations of similar code.
 
 Notes: Script here
 
@@ -115,8 +115,8 @@ Notes: Script here
 
 ## Loops
 
-Our example before takes 4 lines of code to make `squared` and violates
-the DRY principle in the process:
+Our example before takes 3 lines of code to add all the squared values
+to `squared` and violates the DRY principle in the process:
 
 ``` python
 squared = list()
@@ -131,8 +131,8 @@ squared
 [4, 9, 25]
 ```
 
-Instead, we can create `squared` by using something called a **loop** to
-repeat the `.append()` action over the multiple elements:
+Instead, we can add to the list `squared` by using something called a
+**loop** to repeat the `.append()` action over the multiple elements:
 
 ``` python
 squared = list()
@@ -145,7 +145,7 @@ squared
 [4, 9, 25]
 ```
 
-This only took 3 lines of code but if the number of elements in the list
+This only took 2 lines of code but if the number of elements in the list
 increase, the code remains the same. Think how much code writing we
 would avoid if the list had a length of 1000?\!
 
@@ -165,13 +165,25 @@ Notes: Script here
 
 ## For (Each) Loop
 
+``` python
+squared = list()
+for number in numbers: 
+    squared.append(number ** 2)
+squared
+```
+
+```out
+[4, 9, 25]
+```
+
 This specific loop is called a ***For loop*** and can be iterated over
-any type of *collection/sequence*: list, tuple, range, string.  
+any type of *collection/sequence*: list, tuple, and string.  
 In this case, it’s over the values in a list.
 
-Block of code indented is executed for each value in the list (hence the
-name “for” loops, sometimes also called “for each” loops).  
-The loop ends after the variable has taken all the values in the
+Every line of code that is indented,is executed for each value in the
+list (hence the name “for” loops, sometimes also called “for each”
+loops).  
+The loop ends after the variable has iterated over all the values in the
 collection.
 
 Notes: Script here
@@ -369,95 +381,6 @@ Here we can see exactly what steps are happening all together:
 <img src='/module5/loop11.gif' width="80%">
 
 </center>
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
-
-## Looping in a dictionary
-
-We can also loop over the key-value pairs of a dictionary using
-`.items()`. For example, a grocery store has the following cereal in
-stock. `.items()` returns a tuple with the dictionary key at index 0 and
-value at index 1. We can calculate the total stock quantity in an object
-named `stock_total` by summing up all the values:
-
-``` python
-cereals = {'Special K': 4, 'Lucky Charms': 7, 'Cheerios': 2, 'Wheaties': 3}
-stock_total = 0
-
-for val in cereals.items():
-    stock_total = stock_total + val[1]
-    print(stock_total)
-```
-
-```out
-4
-11
-13
-16
-```
-
-Notice that we keep a running tally of the total stock at each iteration
-with `stock_total` until we arrive at the final count of 16.
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
-
-When we are updating an existing object in a loop such as:
-
-``` python
-stock_total = stock_total + val[1]
-```
-
-Instead of writing the object name twice, we can shorten it to:
-
-``` python
-stock_total += val[1]
-```
-
-This simply means that we are adding `val[1]` to the `stock_total`
-object.
-
-If we replace this code into the loop from before, it works in exactly
-the same way:
-
-``` python
-cereals = {'Special K': 4, 'Lucky Charms': 7, 'Cheerios': 2, 'Wheaties': 3}
-stock_total = 0
-
-for val in cereals.items():
-    stock_total += val[1]
-    print(stock_total)
-```
-
-```out
-4
-11
-13
-16
-```
 
 Notes: Script here
 

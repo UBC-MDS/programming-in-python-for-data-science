@@ -1,16 +1,18 @@
 import pandas as pd
 
-# Read in the data from the data folder named canucks.csv
-# Name the dataframe canucks
+canucks = pd.read_csv('data/canucks.csv')
 
-____ = ____
+# Split up the column "Birth Date" into 3 separate columns named Birth_Day, Birth_Month and Birth_Year. 
+# Name this new dataframe birthdate_df
 
-# Find the mean height of the players
-# Save it in an object named mean_height
+____ = (____.____.____(____)
+                 .____(columns=____)
+             )
+# ____
 
-____ = ____
+# Save these as columns in the canucks dataframe as dtype int
 
-# What largest salary being paid to any of the players? 
-# Save it in an object named max_salary
+# canucks = ____.____(____)
 
-____ = ____
+
+# canucks

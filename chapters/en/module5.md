@@ -56,6 +56,43 @@ We can still write functioning code without an `else` condition.
 Given the code below, what is the value of the object `expensive`? 
 
 ```python
+time = 150
+
+if time  < 120:
+    speed = 'Fast'
+elif time < 180:
+    speed = 'Average'
+else:
+    speed = 'Slow'
+speed
+```
+
+<choice id="2" >
+<opt text="<code>Fast</code>" >
+
+150 is not less than 120 so we would need to proceed to the next condition
+
+</opt>
+
+<opt text="<code>Average</code>" correct="true">
+
+Well done.  
+
+</opt>
+
+<opt text="<code>Slow</code>">
+
+150 is not greater than 180, so it would not enter the body of the `else` condition. 
+
+</opt>
+
+</choice>  
+
+**Question 3**          
+
+Given the code below, what is the value of the object `expensive`? 
+
+```python
 price = 150
 
 if price > 50:
@@ -67,7 +104,7 @@ else:
 expensive
 ```
 
-<choice id="2" >
+<choice id="3" >
 <opt text="<code>moderately</code>" correct="true">
 
 Well done. 
@@ -123,7 +160,7 @@ C)
 
 ```python
 if price > 50:
-  expensive = 'moderately'
+    expensive = 'moderately'
 expensive
 ```
 
@@ -163,7 +200,7 @@ Let's practice making decisions with conditional statements.
 We are going to the gym and our exercise plan takes different amounts of reps. let's make conditional statements that depend on the name of the exercises.
 
 Tasks:
-- Start with an object named `exercise`.  Give it a string value of `burpees`.
+
 - Make `if`, `elif`, and `else` statements for the following conditions:
     - if the exercise value is `lunges`, set an object value named `reps` to 20.
     - if the exercise value is `squats`, set `reps` to 25
@@ -309,28 +346,69 @@ Great!
 
 **Question 2**          
 
-Which of the following is another syntax for the code below?
+Which of the following code result in an output? 
+
+
+A) 
 
 ```python
-supply = supply - 1  
+sentence = ['Once', 'upon', 'a', 'time']
+word_length = list()
+for name in sentence: 
+word_length.append(len(name))
+```
+
+
+B) 
+
+```python
+sentence = ['Once', 'upon', 'a', 'time']
+word_length = list()
+name in sentence: 
+  word_length.append(len(name))
+```
+
+
+C) 
+
+```python
+sentence = ['Once', 'upon', 'a', 'time']
+word_length = list()
+for name in sentence: 
+    word_length.append(len(name))
+```
+
+D) 
+
+```python
+sentence = ['Once', 'upon', 'a', 'time']
+word_length = list()
+for name in sentence
+    word_length.append(len(name))
 ```
 
 <choice id="2" >
-<opt text="<code>supply =- 1 </code>" >
+<opt text="A">
 
-Double-check the order of the operators.
-
-</opt>
-
-<opt text="<code>supply - 1  = supply </code>">
-
-The left side of the equal sign is reserved for object assignment!
+This code seems to be missing colons the loop body indentation
 
 </opt>
 
-<opt text="<code>supply -= 1</code>" correct="true">
+<opt text="B" >
 
-Great!
+This is missing the important keywork `for`!
+
+</opt>
+
+<opt text="C" correct="true">
+
+Great work. 
+
+</opt>
+
+<opt text="D">
+
+This is missing the colon in the first line of the loop. 
 
 </opt>
 
@@ -348,12 +426,12 @@ Running a coding exercise for the first time could take a bit of time for everyt
 
 _**Make sure you remove the hash (`#`) symbol in the coding portions of this question.  We have commented them so that the line won't execute and you can test your code after each step.**_
 
-We've learned about iterating now it's time to apply this! 
-We have a list that contains all elements of type `float`.  We want to create a new list that contains the `int` values of the elements. 
+We've learned about iterating , now it's time to apply this! 
+We have a list that contains all elements of type `float`.  We want to create a new list that casts each element to type `int`. 
 
 Tasks:
 - Create a new empty list named `integer_list`.
-- Iterate over all the items in the list and append the `int` value of each element in `float_list`. 
+- Iterate over all the items in `float_list`. Cast the element to data type `int` and append it to `integer_list`. 
 - Display the value of `integer_list`.
 
 
@@ -369,7 +447,7 @@ Tasks:
 </exercise>
 
 
-<exercise id="9" title="Range and Comprehension" type="slides">
+<exercise id="9" title="Range and Comprehensions" type="slides">
 
 <slides source="module5/module5_09">
 
@@ -378,7 +456,7 @@ Tasks:
 </exercise>
 
 
-<exercise id="10" title="Repeated Iterations Questions">
+<exercise id="10" title=" Range  Questions">
 
 
 What is the output of the following code?
@@ -489,17 +567,18 @@ Running a coding exercise for the first time could take a bit of time for everyt
 _**Make sure you remove the hash (`#`) symbol in the coding portions of this question.  We have commented them so that the line won't execute and you can test your code after each step.**_
 
 
-Let's read in multiple dataframes together and concatenate them vertically to one large dataframe using a loop and the `range()` function .
+Let's read in multiple dataframes together and concatenate them vertically to one large dataframe using a loop and the `range()` function.
 
 Tasks:
-- Iterate over a range from 50 to 10, stepping down 4 integers at a time. 
-- Print the square of each number for each iteration.
-
+- There are 4 dataframes named `pkm1.csv` to `pkm4.csv`. that we wish to load in and vertically concatenate together.
+- Fill in the blanks so the code reads in each dataframe according to their differing file name and concatenates them together. 
+- Display the final dataframe. 
 
 <codeblock id="05_12">
 
-- Are you using `range(50,10,-4)`? 
-- Are you starting your loop with `for` and using a `colon` for the first line?
+- Are you using `rpd.concat()`? 
+- Are you adding `.csv` to the `string` object?
+- Are you using `pd.read_csv()`?
 - Are you indenting each line of code in the loop?
 
 </codeblock>
@@ -649,7 +728,40 @@ Tasks:
 
 <exercise id="17" title="Conditional Loop Questions">
 
-**Question 1**      
+
+**Question 1**          
+
+Which of the following is another syntax for the code below?
+
+```python
+supply = supply - 1  
+```
+
+<choice id="1" >
+<opt text="<code>supply =- 1 </code>" >
+
+Double-check the order of the operators.
+
+</opt>
+
+<opt text="<code>supply - 1  = supply </code>">
+
+The left side of the equal sign is reserved for object assignment!
+
+</opt>
+
+<opt text="<code>supply -= 1</code>" correct="true">
+
+Great!
+
+</opt>
+
+</choice> 
+
+
+
+
+**Question 2**      
 
 Given the code below, what is the expected output? 
 
@@ -666,7 +778,7 @@ for stall in parking_lot:
 sum(parking_tickets)
 ```
 
-<choice id="1" >
+<choice id="2" >
 <opt text="<code>3</code>" correct="true">
 
 Well done!
@@ -687,7 +799,7 @@ this is the number of false values.
 
 </choice> 
 
-**Question 2**          
+**Question 3**          
 
 Given the code below, what is the expected output? 
 
@@ -704,7 +816,7 @@ sum(parking_tickets)
 
 ```
 
-<choice id="2" >
+<choice id="3" >
 <opt text="<code>3</code>" >
 
 Did you review what `break` means? 
@@ -737,7 +849,7 @@ Running a coding exercise for the first time could take a bit of time for everyt
 
 _**Make sure you remove the hash (`#`) symbol in the coding portions of this question.  We have commented them so that the line won't execute and you can test your code after each step.**_
 
-It's been a while since we talked about a dataframe so I think it's time they returned.  For the last few Modules, we have been playing with different dataframes.  In this question, we have stored them in a list named `dataframes`.  
+ For the last few Modules, we have been playing with different dataframes.  In this question, we have stored them in a list named `dataframes`.  
 
 Tasks:
 
@@ -763,13 +875,13 @@ Does the code above used to read in the dataframes adhere to the DRY principle?
 <choice id="1" >
 <opt text="Yes" >
 
-It seems that we are repetitively using `pd.read_csv()`. .
+It seems that we are repetitively using `pd.read_csv()`. Remember what we did in exercise 12?
 
 </opt>
 
 <opt text="No" correct="true">
 
-We can read in all our data with a loop (In fact, you will do this in the assignment)!
+We can read in all our data with a loop (In fact, you did this exercise 12!)
 
 </opt>
 
@@ -870,7 +982,7 @@ Running a coding exercise for the first time could take a bit of time for everyt
 
 _**Make sure you remove the hash (`#`) symbol in the coding portions of this question.  We have commented them so that the line won't execute and you can test your code after each step.**_
 
-Let's practice converting existing code into a function. 
+Let's practice converting existing code into a function so that it complies with the DRY principle. 
 
 
 Tasks:

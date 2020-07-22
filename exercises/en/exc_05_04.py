@@ -1,6 +1,5 @@
-# Start with an object named exercise. Give it a value of burpees
 
-____ = ____
+exercise = 'burpees'
 
 # Make if, elif, and else statements
 
