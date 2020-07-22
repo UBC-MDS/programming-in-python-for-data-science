@@ -599,26 +599,25 @@ Tasks:
 
 **Question 1**      
 
-Given the code below, how many times does the inner loop get executed in full? 
+Given the code below, how many times does the line `print('Hurray')` get executed? 
 
 ```python
-count = 0 
 for i in range(0, 49, 10):
+    print('Hurray')
     for j in range(0,8,2):
-        count += 1
-count
+        print("This is fun!")
 ```
 
 <choice id="1" >
 <opt text="48">
 
-Keep track of the step increment the values are increasing by. 
+Keep track of the step increment the values are increasing by in the outer loop. 
 
 </opt>
 
 <opt text="49">
 
-Keep track of the step increment the values are increasing by. 
+Keep track of the step increment the values are increasing by in the outer loop. 
 
 </opt>
 
@@ -631,7 +630,7 @@ Focus your attention on the outer loop and the number of times it executes the c
 
 <opt text="5" correct="true">
 
-Well done!  The outer loop calls the inner loop to start 5 times since the range is 0 to 49 going in increments of 10 (`i` takes on the values of 0,10,20,30,40)
+Well done!  The outer loop calls `print('Hurray')` 5 times.
 
 </opt>
 
@@ -640,7 +639,9 @@ Well done!  The outer loop calls the inner loop to start 5 times since the range
 
 **Question 2**          
 
-From the above code, what is the value of `count` after the code is finished running? 
+Given the code above, how many times does the line `print("This is fun!")` get executed?
+
+
 
 <choice id="2" >
 <opt text="48">
@@ -823,7 +824,7 @@ Did you review what `break` means?
 
 </opt>
 
-<opt text="<code>error</code>">
+<opt text="<code>Error</code>">
 
 Did you review what `break` means? 
 
@@ -849,7 +850,8 @@ Running a coding exercise for the first time could take a bit of time for everyt
 
 _**Make sure you remove the hash (`#`) symbol in the coding portions of this question.  We have commented them so that the line won't execute and you can test your code after each step.**_
 
- For the last few Modules, we have been playing with different dataframes.  In this question, we have stored them in a list named `dataframes`.  
+For the last few Modules, we have been playing with different dataframes.  In this question, we have stored them in a list named `dataframes`.  
+Let's count how many of these dataframes have more than 1000 rows.
 
 Tasks:
 
@@ -950,7 +952,7 @@ def add_stars(name):
 ```
 
 <choice id="2" >
-<opt text="Nothing" correct="true">
+<opt text="<code>None</code>" correct="true">
 
 Well done. 
 
@@ -962,7 +964,7 @@ Does it really return anything?
 
 </opt>
 
-<opt text="Error">
+<opt text="<code>Error</code>">
 
 Are you seeing an error that we aren't? 
 
@@ -989,7 +991,6 @@ Tasks:
 - Using the code provided, transform it into a function named `uppercase_count`
 - The function should take in one argument and return the number of uppercases in the string
 - Test it on the string `I hope you've Been Learning ALOT!`
-- Save the result as `string2`
 
 
 <codeblock id="05_20">
@@ -1039,130 +1040,7 @@ Tasks:
 </exercise>
 
 
-
-<exercise id="23" title="Function Docstrings" type="slides">
-
-<slides source="module5/module5_22">
-
-</slides>
-
-</exercise>
-
-
-<exercise id="24" title="Docstring Questions">
-
-**Question 1**      
-
-Which docstring style requires the explanation of ***Arguments***?
-
-<choice id="1" >
-<opt text="Single line">
-
-This only uses 1 line!  How can we fit all arguments on one line?
-
-</opt>
-
-<opt text="PEP-8" correct="true">
-
-Nice work!
-
-</opt>
-
-<opt text="SciPy" >
-
-This style elaborates with parameters, returns and examples. 
-
-</opt>
-
-</choice> 
-
-**Question 2**          
-
-How do you obtain the documentation for the function below?
-
-```python
-def add_stars(name):
-  """
-  This will return your input string between a pair of stars. 
-  Parameters
-    ----------
-    name: str
-        a sentence or word
-        
-    Returns
-    -------
-    str
-        The initial string beginning and ending with a pair of stars 
-        
-    Examples
-    --------
-    >>> add_stars('Good Job')
-    'Good Job'
-    """
-
-    name = '**' + name + '**'
-    return
-```
-
-<choice id="2" >
-<opt text="<code>documentation?</code>">
-
-The `documentation` for which function though?
-
-</opt>
-
-<opt text="<code>?docstring(add_stars)</code>">
-
-Maybe look back at the material again.
-
-</opt>
-
-<opt text="<code>add_stars()?</code>"  >
-
-You are so close! 
-
-</opt>
-
-<opt text="<code>add_stars?</code>" correct="true">
-
-Great! 
-
-</opt>
-
-</exercise>
-
-
-
-<exercise id="25" title= "Writing a Docstring ">
-
-**Instructions:**    
-Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
-
-**When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
-
-_**Make sure you remove the hash (`#`) symbol in the coding portions of this question.  We have commented them so that the line won't execute and you can test your code after each step.**_
-
-Remember the function we wrote that returns the BMI given a person's weight and height?  We must write a docstring for it now!
-(*Disclaimer: Much more than these two measurements are needed to determine if someone is healthy*)
-
-Tasks:
-- Write a Scipy style docstring for the function provided. 
-- Make sure to include a brief description, parameters, return, and example sections. 
-- View the documentation of the function.
-
-
-
-<codeblock id="05_24">
-
-- Are you using `'''` or `""""` to contain your docstring?
-- Are you including all the sections? 
-- Are you getting the documentation of the docstring using `bmi_calculator?`
-
-</codeblock>
-
-</exercise>
-
-<exercise id="26" title="What Did We Just Learn?" type="slides, video">
+<exercise id="23" title="What Did We Just Learn?" type="slides, video">
 <slides source="module5/module5_end" start="0:165" end="3:01">>
 </slides>
 </exercise>

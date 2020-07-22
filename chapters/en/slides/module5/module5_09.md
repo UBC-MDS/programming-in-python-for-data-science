@@ -20,9 +20,10 @@ Notes: Script here
 
 ## Range
 
-Instead of looping over items in a collection, we can iterate over a
-sequence of numbers. `range()` is a verb that generates a sequence of
-integers up to some value.
+Often, we just want to do something 5 times without looping over a
+collection. The most common way to do that is to use `range()`, which
+automatically generates a collection of the integers 0, 1, 2, 3, 4, or
+in general 0, 1, …, N-1 .
 
 ``` python
 for i in range(5):
@@ -150,12 +151,58 @@ Notes: Script here
 
 ---
 
+## Looping in a dictionary
+
+We can also loop over the key-value pairs of a dictionary using
+`.items()`.
+
+``` python
+cereals = {'Special K': 4, 'Lucky Charms': 7, 'Cheerios': 2, 'Wheaties': 3}
+cereals.items()
+```
+
+```out
+dict_items([('Special K', 4), ('Lucky Charms', 7), ('Cheerios', 2), ('Wheaties', 3)])
+```
+
+Since each key-value pair has 2 elements in it, we need 2 specify 2
+variables for each item in `cereal.items()` - One for the `key` in this
+case the cereal name, and one for the value - the cereal stock total.
+
+``` python
+cereals = {'Special K': 4, 'Lucky Charms': 7, 'Cheerios': 2, 'Wheaties': 3}
+
+for cereal, stock in cereals.items():
+    print( cereal  + " has " + str(stock) + " available")
+```
+
+```out
+Special K has 4 available
+Lucky Charms has 7 available
+Cheerios has 2 available
+Wheaties has 3 available
+```
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
 ## Comprehensions
 
 We learned in the last Module that we can make and `if`/`else` condition
 in a single line of code and we can do something similar with basic
-loops. **Comprehensions** allow us to build
-lists/tuples/sets/dictionaries in one convenient, compact line of code.
+loops. **Comprehensions** allow us to build lists/sets/dictionaries in
+one convenient, compact line of code.
 
 As an example, let’s count the number of letters in each element of a
 list. The list comprehension can be done as so:
@@ -171,7 +218,7 @@ squared
 [4, 9, 25]
 ```
 
-We Saw in the last section that to obtain the same resulted required the
+We saw in the last section that to obtain the same resulted required the
 following code:
 
 ``` python
@@ -201,7 +248,7 @@ Notes: Script here
 
 ---
 
-Dictionary comprehension can be done in a similar way but this time we
+Dictionary comprehensions can be done in a similar way but this time we
 wrap the line with curly brackets and specify what our keys and values
 are: In this case we assign the number as the key and the square of it
 as the value.

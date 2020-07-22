@@ -70,11 +70,11 @@ the object or string set as an argument:
 my_name = 'Hayley' 
 
 if my_name.lower() == 'hayley':
-   print('My name is Hayley too!')
+    print('My name is Hayley too!')
 elif my_name.lower() == 'totoro':
-  print('Interesting, I loved that movie!')
+    print('Interesting, I loved that movie!')
 else:
-  print("That's a great name.")
+    print("That's a great name.")
   
 print('Nice to meet you!')
 ```
@@ -128,11 +128,11 @@ Now what happens if the object was equal to something else?
 my_name = 'Totoro' 
 
 if my_name.lower() == 'hayley':
-   print('My name is Hayley too!')
+    print('My name is Hayley too!')
 elif my_name.lower() == 'totoro':
-  print('Interesting, I loved that movie!')
+    print('Interesting, I loved that movie!')
 else:
-  print("That's a great name.")
+    print("That's a great name.")
   
 print('Nice to meet you!')
 ```
@@ -187,11 +187,11 @@ Now we try something that meets neither of those conditions:
 my_name = 'Desmond' 
 
 if my_name.lower() == 'hayley':
-   print('My name is Hayley too!')
+    print('My name is Hayley too!')
 elif my_name.lower() == 'totoro':
-  print('Interesting, I loved that movie!')
+    print('Interesting, I loved that movie!')
 else:
-  print("That's a great name.")
+    print("That's a great name.")
   
 print('Nice to meet you!')
 ```
@@ -245,11 +245,11 @@ Notes: Script here
 my_name = 'Hayley' 
 
 if my_name.lower() == 'hayley':
-   print('My name is Hayley too!')
+    print('My name is Hayley too!')
 elif my_name.lower() == 'totoro':
-  print('Interesting, I loved that movie!')
+    print('Interesting, I loved that movie!')
 else:
-  print("That's a great name.")
+    print("That's a great name.")
   
 print('Nice to meet you!')
 ```
@@ -284,7 +284,7 @@ Notes: Script here
 my_name = 'Hayley' 
 
 if my_name.lower() == 'hayley':
-   print('My name is Hayley too!')
+    print('My name is Hayley too!')
 ```
 
 ```out
@@ -294,16 +294,16 @@ My name is Hayley too!
 The structure of a choice is as follows:
 
 ``` python
-Some conditional expression:
+if SOME_BOOLEAN:
     statement body 
 ```
 
 Each conditional expression must end with a colon `:` and any code
 directed at values that meet the expression, all must be indented with 4
-spaces.  
+spaces (or consistent indentation) .  
 In the example above,  
-`if my_name.lower() == 'hayley'` is the conditional expression and,  
-`print("My name is Hayley too!")` is the statement body.
+`if my_name.lower() == 'hayley'` is the boolean statement `print("My
+name is Hayley too!")` is the statement body.
 
 Notes: Script here
 
@@ -321,20 +321,19 @@ Notes: Script here
 
 #### Keywords
 
-  - An `if` expression is needed for any conditional. If the expression
-    is true, the body of the statement (anything indented under it) will
-    be executed. If the expression is false, the body of the statement
+  - An `if` is needed for any conditional. If the boolean value is
+    `True`, the body of the statement (anything indented under it) will
+    be executed. If the expression is `False`, the body of the statement
     is not executed and it continues to the next line of code outside
     the body.  
   - The `else` expression will execute if the conditional expressions
-    above it are false. Unlike `if` which can be executed many times,
-    `else` can only occur once following an `if` condition.
+    above it are false. `else` can only occur once following an `if`
+    condition.
 
-`else` statements are optional. If you don’t want to assign a default
-value, the code will still work without one.
+`else` statements are optional.
 
 ``` python
-my_name = 'Hayley' 
+my_name = 'Mia' 
 
 if my_name.lower() == 'hayley':
    print('My name is Hayley too!')
@@ -343,7 +342,6 @@ print('Nice to meet you!')
 ```
 
 ``` out
-My name is Hayley too!
 Nice to meet you!
 ```
 
@@ -374,11 +372,11 @@ condition which evaluates to “True”:
 my_name = 'Totoro' 
 
 if my_name.lower() == 'hayley':
-   print('My name is Hayley too!')
+    print('My name is Hayley too!')
 elif my_name.lower() == 'totoro':
-  print('Interesting, I loved that movie!')
+    print('Interesting, I loved that movie!')
 else:
-  print("That's a great name.")
+    print("That's a great name.")
   
 print('Nice to meet you!')
 ```
@@ -445,9 +443,9 @@ the next example using inequalities with numbers:
 item = 13 
 
 if item > 10:
-    magnitude = 'greater than 10'
+    magnitude = 'Between 10 and 20'
 elif item > 20:
-    magnitude = 'greater than 20'
+    magnitude = 'Greater than 20'
 else:
     magnitude = '10 or less'
  
@@ -455,7 +453,7 @@ magnitude
 ```
 
 ```out
-'greater than 10'
+'Between 10 and 20'
 ```
 
 In this case, our `item` value is greater than 10 so our first condition
@@ -479,9 +477,9 @@ Notes: Script here
 item = 25 
 
 if item > 10:
-    magnitude = 'greater than 10'
+    magnitude = 'Between 10 and 20'
 elif item > 20:
-    magnitude = 'greater than 20'
+    magnitude = 'Greater than 20'
 else:
     magnitude = '10 or less'
  
@@ -489,7 +487,7 @@ magnitude
 ```
 
 ```out
-'greater than 10'
+'Between 10 and 20'
 ```
 
 The item is taken out of the stream at the first `if` condition and so
@@ -536,9 +534,9 @@ This can be fixed by rearranging the conditional statements:
 item = 25 
 
 if item > 20:
-    magnitude = 'greater than 20'
+    magnitude = 'Greater than 20'
 elif item > 10:
-    magnitude = 'between 10 and 20'
+    magnitude = 'Between 10 and 20'
 else:
     magnitude = '10 or less'
  
@@ -546,7 +544,7 @@ magnitude
 ```
 
 ```out
-'greater than 20'
+'Greater than 20'
 ```
 
 Now a value of 25 gives the desired output of `greater than 20`, but
@@ -570,9 +568,9 @@ Notes: Script here
 item = 13 
 
 if item > 20:
-    magnitude = 'greater than 20'
+    magnitude = 'Greater than 20'
 elif item > 10:
-    magnitude = 'between 10 and 20'
+    magnitude = 'Between 10 and 20'
 else:
     magnitude = '10 or less'
  
@@ -580,7 +578,7 @@ magnitude
 ```
 
 ```out
-'between 10 and 20'
+'Between 10 and 20'
 ```
 
 Since 13 doesn’t meet the first condition, it passes it and moves onto
@@ -657,7 +655,7 @@ and `10 or less` otherwise:
 ``` python
 
 if  item > 10:
-    magnitude = 'greater than 10'
+    magnitude = 'Greater than 10'
 else:
     magnitude = '10 or less'
     
@@ -665,19 +663,19 @@ magnitude
 ```
 
 ```out
-'greater than 10'
+'Greater than 10'
 ```
 
 The 4 lines used for the conditional statements can be compressed into a
 single one:
 
 ``` python
-list_size = "greater than 10" if item > 10 else "10 or less"
+list_size = "Greater than 10" if item > 10 else "10 or less"
 list_size
 ```
 
 ```out
-'greater than 10'
+'Greater than 10'
 ```
 
 Both syntaxes are acceptable depending on your preference.
@@ -710,9 +708,9 @@ dictionary:
 exercises = ['burpees', 'lunges', 'squats', 'curls', 'deadlifts']
 
 if 'squats' in exercises:
-  sore = True
+    sore = True
 else:
-  sore = False
+    sore = False
   
 sore
 ```

@@ -20,7 +20,6 @@ def uppercase_count(string):
     return uppercase_num
 
 # Test it on the string "I hope you've Been Learning ALOT!" 
-# Save the result as string2
 
 string2 = uppercase_count("I hope you've Been Learning ALOT!")
 string2

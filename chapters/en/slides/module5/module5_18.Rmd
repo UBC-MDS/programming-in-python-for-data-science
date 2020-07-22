@@ -126,18 +126,18 @@ executive_numbers = [100, 121, 250, 103, 183, 222, 214]
 Now I will have to ***repeat*** the same code just so it applies to these lists too. 
 
 ```{python}
-squared2 = list()
+larger_numbers_squared = list()
 for number in larger_numbers: 
-    squared2.append(number ** 2)
-squared2
+    larger_numbers_squared.append(number ** 2)
+larger_numbers_squared
 ```
 
 
 ```{python}
-squared3 = list()
+even_larger_numbers_squared = list()
 for number in promoted_numbers: 
-    squared3.append(number ** 2)
-squared3
+    even_larger_numbers_squared.append(number ** 2)
+even_larger_numbers_squared
 ```
 
 
@@ -153,15 +153,15 @@ Notes: Script here
 And again for `executive_list`. 
 
 ```{python}
-squared4 = list()
+extra_larger_numbers_squared = list()
 for number in executive_numbers: 
-    squared4.append(number ** 2)
-squared4
+    extra_larger_numbers_squared.append(number ** 2)
+extra_larger_numbers_squared
 ```
 
 This seems to have violated the DRY principle now. 
 
-The question now is "Is there must be a better way?" and luckily there is!
+The question now is "Is there a better way?" and luckily there is!
 
 Notes: Script here
 <html>
@@ -171,7 +171,9 @@ Notes: Script here
 
 ---
 
-We can convert this into our very own function. 
+Just like how we used verbs like `pd.read_csv()` and `len()`, we have the ability to make our own verbs which we call functions.  
+
+We can convert the code in the last slide, into our very own function and use it like we use built in ones. 
 
 ```{python}
 def squares_a_list(numerical_list):
@@ -232,7 +234,7 @@ Notes: Script here
 <center><img src='/module5/function-rest.png' width="60%"></center>
 
 In the body a function, all the code is indented 4 spaces and further indented for loops and conditions.      
-The `return` statement is crucial to a function for returning a desired output.  Here, our function returns a new list.  If the function does not return anything then you won't get a value to assign to an object.
+The `return` statement is crucial to a function for returning a desired output.  Here, our function returns a new list.  If the function does not return anything then you won't get a value to assign to an object. It does all the work, but never sends the result back to the code that called it.
 
 ```{python}
 def not_a_great_function(numerical_list):
@@ -308,7 +310,7 @@ Notes: Script here
 
 ---
 
-You could get even more fancy, and put all the list of numbers into a list (so you have a list of lists).
+You could get even more fancy, and put all the lists of numbers into a list (so you have a list of lists).
 Then you could loop over the list and call the function each time:
 
 ```{python}
@@ -333,41 +335,14 @@ Notes: Script here
 
 ## Designing Good Functions
 
-There is some ambiguity for how and when to design a function.  For instance: 
+There is some ambiguity for how and when to design a function.  
+For instance:        
 - Should `squares_a_list()` be a function if I'm only ever using it once?  Twice?
 - Should the loop be inside the function, or outside?
-- Or should there be two functions, one that loops over the other?
 
 This comes down to personal opinion. 
 
 Some may say that the function `squares_a_list()` does a bit too much to keep things understandable. 
-
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
-
----
-
-Mike Gelbart, co-creator of this course may prefer something like this instead:
-
-```{python}
-def squares_a_number(digit):
-    return digit ** 2 
-
-squares_a_number(12)
-```
-
-We then can use a loop or comprehension to apply `squares_a_number` to every element of a list.
-
-```{python}
-numbers
-```
-Let's try it with comprehension: 
-```{python}
-[squares_a_number(number) for number in numbers]
-```
 
 Designing effective functions will be discussed in the next section. 
 
@@ -377,7 +352,7 @@ Notes: Script here
   <source src="/placeholder_audio.mp3" />
 </audio></html>
 
---- 
+---
 
 # Let’s practice what we learned!
 

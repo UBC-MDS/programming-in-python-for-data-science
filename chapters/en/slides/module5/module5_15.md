@@ -39,13 +39,6 @@ Notes: Script here
 
 ---
 
-When we learned about conditional arguments, we checked the conditions
-on a single data type such as a `str`, `float`, `int` or `bool`.
-Combining loops with conditions, give us the ability to check multiple
-elements in a sequence such as a `list` or `dict`.
-
-For example:
-
 When we learned about conditions we did the following:
 
 ``` python
@@ -65,6 +58,10 @@ magnitude
 'greater than 20'
 ```
 
+We checked the `item` object to see if it met the `if` condition, the
+`elif` condition and if it didn’t meet either of those then it would
+undergo the code in the `else` body.
+
 Notes: Script here
 
 <html>
@@ -79,8 +76,8 @@ Notes: Script here
 
 ---
 
-Then we had to repeat the same conditional statements code to test an
-item = 13 (violating the DRY principle).
+Then we had to repeat and rewrite the same conditional statements code
+to test an item = 13 (violating the DRY principle).
 
 ``` python
 item = 13 
@@ -126,12 +123,12 @@ for item in item_list:
         magnitude = 'between 10 and 20'
     else:
         magnitude = '10 or less'
-    magnitude
+    print(magnitude)
 ```
 
 ```out
-'greater than 20'
-'between 10 and 20'
+greater than 20
+between 10 and 20
 ```
 
 This small change helped us adhere to the DRY principle and avoided
@@ -167,22 +164,22 @@ for item in item_list:
         magnitude = 'between 10 and 20'
     else:
         magnitude = '10 or less'
-    magnitude
+    print(magnitude)
 ```
 
 ```out
-'greater than 20'
-'between 10 and 20'
-'greater than 20'
-'10 or less'
-'between 10 and 20'
-'between 10 and 20'
-'10 or less'
+greater than 20
+between 10 and 20
+greater than 20
+10 or less
+between 10 and 20
+between 10 and 20
+10 or less
 ```
 
 We can see that even after we located a number that is 10 or less, the
-loop continues until it reaches the last element.If we have a very large
-list, it’s inefficient to continue searching for something we have
+loop continues until it reaches the last element. If we have a very
+large list, it’s inefficient to continue searching for something we have
 already found.
 
 Notes: Script here
@@ -214,13 +211,13 @@ for item in item_list:
         magnitude = '10 or less'
         break
         
-    magnitude
+    print(magnitude)
 ```
 
 ```out
-'greater than 20'
-'between 10 and 20'
-'greater than 20'
+greater than 20
+between 10 and 20
+greater than 20
 ```
 
 Now we can see that as soon as we found a value that had was `10 or
