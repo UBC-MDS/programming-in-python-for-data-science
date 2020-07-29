@@ -143,9 +143,6 @@ By the end of the module, students are expected to:
 - Functions example in plotting, add data to a dataframe?
 - Keyword arguments (default)
 - Docstrings 
-- Multiple return values 
-- Demonstrate how to import classes and functions for different python libraries
-- Lambda
 - Unit testing 
 
 #### Learning Outcomes 
@@ -158,7 +155,6 @@ By the end of the module, students are expected to:
 - Formulate test cases to prove a function design specification
 - Use test-driven development principles to define a function that accepts parameters, returns values and passes all tests
 - Handle errors gracefully via exception handling
-- Source and use functions stored as Python code in another file, as well as those in Python packages/libraries
 
 ### Module 7: Handling other advanced(?) data formats and missing & erroneous values
 
