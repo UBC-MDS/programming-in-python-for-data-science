@@ -238,33 +238,23 @@ Notes: Script here
 
 ---
 
-## Syntax and Tallying
+## A styalizing side point
 
-There are often times where we want to keep a running tally or a counts
-of certain things for instance in our `item_list` list above, maybe we
-want add up only the items in our list are greater than 20?
+You’ve seen that we often add to an existing object when we use loops.
+For instance when we count the number of items that are over 20 in the
+list `item_list`. We keep the object name `number_over_20` and just add
+to it while iterating through the loop.
 
 ``` python
 item_list = [25, 13, 21, 8, 17, 11, 4]
 ```
 
-We can start by creating an object named `number_over_20` with zero
-value and the loop. This time we have an additional line of code.  
-Under the `if` condition we add a line where we add the item value to
-the existing value in `number_over_20`:
-
 ``` python
-
 number_over_20 = 0
 
 for item in item_list:
     if item > 20:
-        magnitude = 'greater than 20'
         number_over_20 = number_over_20 + item
-    elif item > 10:
-        magnitude = 'between 10 and 20'
-    else:
-        magnitude = '10 or less'
         
 number_over_20
 ```
@@ -273,70 +263,35 @@ number_over_20
 46
 ```
 
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
-
-This new line only adds the item’s value to `number_over_20` if it meets
-the condition: `if item > 20`.
-
-``` python
-item_list = [25, 13, 21, 8, 17, 11, 4]
-number_over_20 = 0
-
-for item in item_list:
-    if item > 20:
-        magnitude = 'greater than 20'
-        number_over_20 = number_over_20 + item
-    elif item > 10:
-        magnitude = 'between 10 and 20'
-    else:
-        magnitude = '10 or less'
-        
-number_over_20
-```
-
-```out
-46
-```
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
-
-When we are updating an existing object in a loop such as:
+Instead of writing this line:
 
 ``` python
 number_over_20 = number_over_20 + item
 ```
 
-Instead of writing the object name twice, we can shorten it to:
+We can avoid writing the object name twice and write a more styalized
+approach:
 
 ``` python
 number_over_20 +=  item
 ```
 
-This simply means that we are adding `item` to the `stock_total` object.
+This simply means that we are adding `item` to the `number_over_20`
+object.
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
 
 If we replace this code into the loop from before, it works in exactly
 the same way:
@@ -347,13 +302,8 @@ number_over_20 = 0
 
 for item in item_list:
     if item > 20:
-        magnitude = 'greater than 20'
         number_over_20 += item
-    elif item > 10:
-        magnitude = 'between 10 and 20'
-    else:
-        magnitude = '10 or less'
-        
+
 number_over_20
 ```
 

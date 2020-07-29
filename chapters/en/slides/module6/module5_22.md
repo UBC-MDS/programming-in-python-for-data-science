@@ -1,0 +1,350 @@
+---
+type: slides
+---
+
+# Function docstrings
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+Functions help avoid redundant code but sometimes it takes away some
+clarity. Using a function without knowing exactly what it does can make
+our code less readable. ***Docstrings*** are the solution to this.
+
+A ***docstring*** is documentation for the function that has been
+created. It is a literal string that comes directly after defining a
+function.
+
+In the last section we had our function `squares_a_list()`:
+
+``` python
+
+def squares_a_list(numerical_list):
+    """
+    Creates a new list containing the square values of the input list. 
+    """
+    new_squared_list = list()
+    
+    for number in numerical_list:
+        new_squared_list.append(number ** 2)
+    
+    return new_squared_list
+```
+
+Although our function name is quite descriptive, it could mean various
+things and how do we know what data type it takes in and returns?
+
+This is how docstrings can add some clarity.
+
+The rationale for a docstring is that we need to know how a function
+works and transforms our input so that someone else (or more likely our
+future selves) can understand our code later on.
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+## Docstring Structures
+
+There are different styles of docstrings one can implement but the most
+popular are:
+
+  - **Single-line**: If it’s short, then just a single line describing
+    the function will do (as above).
+
+  - **PEP-8 style**: Contains multi-line description and a list of
+    arguments; see
+    <a href="https://www.python.org/dev/peps/pep-0257/" target="_blank">here
+    for the full documentation on this style</a>.
+
+  - **SciPy style**: The most elaborate & informative; see
+    <a href="https://numpydoc.readthedocs.io/en/latest/format.html" target="_blank">here</a>
+    and
+    <a href="https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_numpy.html" target="_blank">here</a>
+    for further details.
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+## Single-line Docstring
+
+This is a minimal approach that we saw at the beginning of this section.
+It is brief and gives a simple description of what the function does.
+This is more acceptable for simple functions.
+
+``` python
+def squares_a_list(numerical_list):
+    """
+    Creates a new list containing the square values of the input list. 
+    """
+    new_squared_list = list()
+    
+    for number in numerical_list:
+        new_squared_list.append(number ** 2)
+    
+    return new_squared_list
+```
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+## PEP-8 style
+
+This a format that has been created to add some standardization to how
+docstrings are written. This format is particularly useful as
+`Arguments` makes the input argument data type/structure very clear so
+that we know exactly what to call when using the function.
+
+``` python
+def squares_a_list(numerical_list):
+    """
+    Creates a new list containing the square values of the input list. 
+    
+    Arguments:
+    numerical_list - (list) The list from which to calculate squared values 
+    
+    """
+    new_squared_list = list()
+    
+    for number in numerical_list:
+        new_squared_list.append(number ** 2)
+    
+    return new_squared_list
+```
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+## SciPy
+
+The SciPy format is the most defined documentation and includes 4 major
+parts, **a brief description of the function**, the **parameters**, what
+the function **returns** and even **examples**.
+
+``` python
+def squares_a_list(numerical_list):
+    """
+    Creates a new list containing the square values of the input list. 
+    
+    Parameters
+    ----------
+    numerical_list : list
+        The list from which to calculate squared values 
+        
+    Returns
+    -------
+    :list
+        A new list containing the squared value of each of the elements from the input list 
+        
+    Examples
+    --------
+    >>> squares_a_list([1, 2, 3, 4])
+    [1, 4, 9, 16]
+    """
+    new_squared_list = list()
+    for number in numerical_list:
+        new_squared_list.append(number ** 2)
+    return new_squared_list
+```
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+Below is the general form of the SciPy docstring (reproduced from the
+SciPy/NumPy docs):
+
+``` python
+
+def function_name(param1,param2):
+    """First line is a short description of the function.
+    
+    A paragraph describing in a bit more detail what the function
+    does and what algorithms it uses and common use cases.
+    
+    Parameters
+    ----------
+    param1 : datatype
+        A description of param1.
+    param2 : datatype
+        A longer description because maybe this requires
+        more explanation and we can use several lines.
+    
+    Returns
+    -------
+    datatype
+        A description of the output, datatypes and behaviours.
+        Describe special cases and anything the user needs to know 
+        to use the function.
+    
+    Examples
+    --------
+    >>> function_name(3,8,-5)
+    2.0
+    """
+```
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+If multiple variables are returned, then the `Returns` section follows
+the same format as the `Parameter` section:
+
+``` python
+    """
+    Returns
+    -------
+    return_var1 : datatype
+         A description of the output, datatypes and behaviours.
+    return_var2 : datatype
+        A description of the output, datatypes and behaviours.
+        
+    """
+```
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+## How to read a docstring
+
+In the very first assignment we learned how to get more help by using
+`?` on a verb. The same can be done on the function we have made\! Given
+our `squares_a_list()` function, we can get the documentation by doing
+the following:
+
+``` python
+squares_a_list?
+```
+
+``` out
+Signature: squares_a_list(numerical_list)
+Docstring:
+Creates a new list containing the square values of the input list. 
+
+Parameters
+----------
+numerical_list : list
+    The list from which to calculate squared values 
+    
+Returns
+-------
+list
+    A new list containing the squared value of each of the elements from the input list 
+    
+Examples
+--------
+>>> squares_a_list([1, 2, 3, 4])
+[1, 4, 9, 16]
+File:      ~/<ipython-input-1-9673041d9122>
+Type:      function
+```
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+# Let’s practice what we learned\!
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />

@@ -1046,7 +1046,7 @@ Tasks:
 - Save the result in an object named `together`
 - Use `condition1` and `condition2` to answer the multiple-choice question below. 
 
-<codeblock id="04_21">
+<codeblock id="04_20">
 - Maybe use the verb `str()` to help you.
 
 </codeblock>

@@ -1,14 +1,19 @@
-# Make a function that takes in the arguments height and weight and returns BMI
+
+string1 = "Have you Been enjoying yourself While learning about Python?"
+
+uppercase_num = 0
+for character in string1:
+    if character.isupper():
+        uppercase_num += 1
+
+uppercase_num
+        
+# Using the code above, transform it into a function named uppercase_count
+# that takes in one argument and returns the number of uppercases in the string
 
 ____
-____
 
+# Test it on the string "I hope you've Been Learning ALOT!" 
 
-# Use the function to calculate the BMI of a person with height 62 inches and a weight of 105 lbs    
-# Save this in an object name bmi_calc
-
-# ____ = ____
-
-# Display the BMI
-
-# ____ 
+string2 = uppercase_count("I hope you've Been Learning ALOT!")
+string2

@@ -124,6 +124,20 @@ promoted_numbers = [73, 84, 95]
 executive_numbers = [100, 121, 250, 103, 183, 222, 214]
 ```
 
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
 Now I will have to ***repeat*** the same code just so it applies to
 these lists too.
 
@@ -149,22 +163,6 @@ even_larger_numbers_squared
 [5329, 7056, 9025]
 ```
 
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
-
-And again for `executive_list`.
-
 ``` python
 extra_larger_numbers_squared = list()
 for number in executive_numbers: 
@@ -176,9 +174,8 @@ extra_larger_numbers_squared
 [10000, 14641, 62500, 10609, 33489, 49284, 45796]
 ```
 
-This seems to have violated the DRY principle now.
-
-The question now is “Is there a better way?” and luckily there is\!
+This definitely violates the DRY principle. The question now is “Is
+there a better way?” and luckily there is\!
 
 Notes: Script here
 
@@ -194,8 +191,8 @@ Notes: Script here
 
 ---
 
-Just like how we used verbs like `pd.read_csv()` and `len()`, we have
-the ability to make our own verbs which we call functions.
+Just like how we used functions like `pd.read_csv()` and `len()`, we
+have the ability to make our own.
 
 We can convert the code in the last slide, into our very own function
 and use it like we use built in ones.

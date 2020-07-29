@@ -24,18 +24,19 @@ straightforward. Let’s welcome back the `cereal.csv` data we have worked
 with in Module 1.
 
 ``` python
-df = pd.read_csv('cereal.csv', index_col=0)
+df = pd.read_csv('cereal.csv')
 df.head()
 ```
 
 ```out
-                          mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
-name                                                                                                                                       
-100% Bran                   N  Cold        70        4    1     130   10.0    5.0       6     280        25      3     1.0  0.33  68.402973
-100% Natural Bran           Q  Cold       120        3    5      15    2.0    8.0       8     135         0      3     1.0  1.00  33.983679
-All-Bran                    K  Cold        70        4    1     260    9.0    7.0       5     320        25      3     1.0  0.33  59.425505
-All-Bran with Extra Fiber   K  Cold        50        4    0     140   14.0    8.0       0     330        25      3     1.0  0.50  93.704912
-Almond Delight              R  Cold       110        2    2     200    1.0   14.0       8       1        25      3     1.0  0.75  34.384843
+                        name mfr  type  calories  protein  fat  sodium  ...  sugars  potass  vitamins  shelf  weight  cups     rating
+0                  100% Bran   N  Cold        70        4    1     130  ...       6     280        25      3     1.0  0.33  68.402973
+1          100% Natural Bran   Q  Cold       120        3    5      15  ...       8     135         0      3     1.0  1.00  33.983679
+2                   All-Bran   K  Cold        70        4    1     260  ...       5     320        25      3     1.0  0.33  59.425505
+3  All-Bran with Extra Fiber   K  Cold        50        4    0     140  ...       0     330        25      3     1.0  0.50  93.704912
+4             Almond Delight   R  Cold       110        2    2     200  ...       8       1        25      3     1.0  0.75  34.384843
+
+[5 rows x 16 columns]
 ```
 
 Attribution:  
@@ -67,13 +68,14 @@ df
 ```
 
 ```out
-                          mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
-name                                                                                                                                       
-100% Bran                   N  Cold        70        4    1     130   10.0    5.0       6     280        25      3     1.0  0.33  68.402973
-100% Natural Bran           Q  Cold       120        3    5      15    2.0    8.0       8     135         0      3     1.0  1.00  33.983679
-All-Bran                    K  Cold        70        4    1     260    9.0    7.0       5     320        25      3     1.0  0.33  59.425505
-All-Bran with Extra Fiber   K  Cold        50        4    0     140   14.0    8.0       0     330        25      3     1.0  0.50  93.704912
-Almond Delight              R  Cold       110        2    2     200    1.0   14.0       8       1        25      3     1.0  0.75  34.384843
+                        name mfr  type  calories  protein  fat  sodium  ...  sugars  potass  vitamins  shelf  weight  cups     rating
+0                  100% Bran   N  Cold        70        4    1     130  ...       6     280        25      3     1.0  0.33  68.402973
+1          100% Natural Bran   Q  Cold       120        3    5      15  ...       8     135         0      3     1.0  1.00  33.983679
+2                   All-Bran   K  Cold        70        4    1     260  ...       5     320        25      3     1.0  0.33  59.425505
+3  All-Bran with Extra Fiber   K  Cold        50        4    0     140  ...       0     330        25      3     1.0  0.50  93.704912
+4             Almond Delight   R  Cold       110        2    2     200  ...       8       1        25      3     1.0  0.75  34.384843
+
+[5 rows x 16 columns]
 ```
 
 Take this next scenario. Perhaps we recently read the cereal data’s
@@ -131,12 +133,11 @@ df['fat']
 ```
 
 ```out
-name
-100% Bran                    1
-100% Natural Bran            5
-All-Bran                     1
-All-Bran with Extra Fiber    0
-Almond Delight               2
+0    1
+1    5
+2    1
+3    0
+4    2
 Name: fat, dtype: int64
 ```
 
@@ -147,12 +148,11 @@ df['fat'] * 1000
 ```
 
 ```out
-name
-100% Bran                    1000
-100% Natural Bran            5000
-All-Bran                     1000
-All-Bran with Extra Fiber       0
-Almond Delight               2000
+0    1000
+1    5000
+2    1000
+3       0
+4    2000
 Name: fat, dtype: int64
 ```
 
@@ -184,12 +184,11 @@ df['rating']
 ```
 
 ```out
-name
-100% Bran                    68.402973
-100% Natural Bran            33.983679
-All-Bran                     59.425505
-All-Bran with Extra Fiber    93.704912
-Almond Delight               34.384843
+0    68.402973
+1    33.983679
+2    59.425505
+3    93.704912
+4    34.384843
 Name: rating, dtype: float64
 ```
 
@@ -200,12 +199,11 @@ df['rating'] / 10
 ```
 
 ```out
-name
-100% Bran                    6.840297
-100% Natural Bran            3.398368
-All-Bran                     5.942551
-All-Bran with Extra Fiber    9.370491
-Almond Delight               3.438484
+0    6.840297
+1    3.398368
+2    5.942551
+3    9.370491
+4    3.438484
 Name: rating, dtype: float64
 ```
 
@@ -267,12 +265,11 @@ df['sugars']/df['cups']
 ```
 
 ```out
-name
-100% Bran                    18.181818
-100% Natural Bran             8.000000
-All-Bran                     15.151515
-All-Bran with Extra Fiber     0.000000
-Almond Delight               10.666667
+0    18.181818
+1     8.000000
+2    15.151515
+3     0.000000
+4    10.666667
 dtype: float64
 ```
 
@@ -300,13 +297,12 @@ df[['sugars']]/df[['cups']]
 ```
 
 ```out
-                           cups  sugars
-name                                   
-100% Bran                   NaN     NaN
-100% Natural Bran           NaN     NaN
-All-Bran                    NaN     NaN
-All-Bran with Extra Fiber   NaN     NaN
-Almond Delight              NaN     NaN
+   cups  sugars
+0   NaN     NaN
+1   NaN     NaN
+2   NaN     NaN
+3   NaN     NaN
+4   NaN     NaN
 ```
 
 This doesn’t appear very useful.

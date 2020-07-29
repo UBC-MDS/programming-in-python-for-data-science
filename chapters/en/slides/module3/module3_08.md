@@ -291,7 +291,9 @@ Cheerios          110        6
 
 While pivoting we transformed the `name` column as our index.
 
-We can remove the `name` index by doing the following:
+We can transform the `name` index back into a regular colum by using the
+same `reset_index()` verb we learned when plotting grouped dataframes in
+module 2:
 
 ``` python
 cereal_wide_messy = cereal_wide.reset_index()

@@ -588,7 +588,7 @@ Tasks:
 
 <exercise id="13" title="Nested Loops" type="slides">
 
-<slides source="module5/module5_12">
+<slides source="module5/module5_13">
 
 </slides>
 
@@ -683,36 +683,22 @@ Running a coding exercise for the first time could take a bit of time for everyt
 
 _**Make sure you remove the hash (`#`) symbol in the coding portions of this question.  We have commented them so that the line won't execute and you can test your code after each step.**_
 
-Let's get nitty-gritty here. 
-Given a list, let's create a new dictionary that assigns the element names as the dictionary key and the number of characters in the element as the dictionary's values. 
+Let's count how many letters are contained in the dishes of a menu! 
+We have a list named `menu` that contains multiples lists. We want to calculate how many character are contain in the entire `menu`. 
 
-Given the list:
-
-```python
-synonyms = ['cash', 'capital', 'coin', 'dollars', 'money', 'funds']
-```
-
-The expected output is below:
-
-```out
-{'cash': 4, 'capital': 7, 'coin': 4, 'dollars': 7, 'money': 5, 'funds': 5, 'stacks': 6}
-```
 
 Tasks:
 
-- Make an empty dictionary named `wallet`.
-- Make a loop that iterates over each word of the list `synonyms`.
-- Make an object to count and tally up the number of characters in each word (*Hint: This should be contained in the body of the outer loop*)
-- Make an inner loop that adds 1 to the object for each letter it iterates through.
-- Outside the inner loop but inside the outer loop assign the word from the `synonyms` list as your dictionary key and the count values as the dictionary's values. 
-- Display the value of `wallet` outside both loops.
+- Make an object named `charater_count` and give it a value of 0.
+- Make an outer loop that iterates over each list of the `menu` list.
+- Make an inner loop that iterates over each element in the nested list and add the length of it to `charater_count`.
+
+- Display the value of `charater_count` outside both loops.
 
 
-<codeblock id="05_14">
-
-- Are you assigning an object like `count = 0` before entering the inner loop? 
-- Are you assigning the dictionary key-values with something like `wallet[word] = count`? 
-- Are you assigning the key-value pairs outside the inner loop but inside the outer one?
+<codeblock id="05_15">
+Are you using 4 indentations for each loop?
+Are you putting `character_count = character_count + len(dish)` in the inner loop?
 
 </codeblock>
 
@@ -720,7 +706,7 @@ Tasks:
 
 <exercise id="16" title="Repeated Iterations with Conditions" type="slides">
 
-<slides source="module5/module5_15">
+<slides source="module5/module5_16">
 
 </slides>
 
@@ -862,7 +848,7 @@ Tasks:
 - Display the value of `count`.
 
 
-<codeblock id="05_17">
+<codeblock id="05_18">
 
 - Did you use `if data.shape[0] >1000:` as you if statement? 
 - You don't necessarily need an else statement here. 
@@ -900,7 +886,7 @@ With repetitive code, there is generally always a manner to reduce redundant cod
 
 <exercise id="19" title="Functions" type="slides">
 
-<slides source="module5/module5_18">
+<slides source="module5/module5_19">
 
 </slides>
 
@@ -1014,7 +1000,9 @@ Running a coding exercise for the first time could take a bit of time for everyt
 _**Make sure you remove the hash (`#`) symbol in the coding portions of this question.  We have commented them so that the line won't execute and you can test your code after each step.**_
 
 Let's practice making a function that returns the BMI (Body Mass Index) given a person's weight and height.
-(*Disclaimer: Much more than these two measurements are needed to determine if someone is healthy*)
+ 
+(**Disclaimer: Much more than these two measurements are needed to determine if someone is healthy**)    
+
 
 Tasks:
 - Define a function and give it the name `BMI_calculator`.

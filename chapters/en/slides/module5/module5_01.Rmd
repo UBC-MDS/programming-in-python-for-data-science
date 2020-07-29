@@ -524,17 +524,24 @@ Notes: Script here
 
 ### Python Keyword "in"  
 
-Up to this point, we have been using equalities and inequalities for our conditions, but we are not restricted to this.  There are many different keywords we can use in conditional statements but one that you may use often is `in`. 
+We've already seen that conditions evaluate to a boolean. So far we've seen a lot of boolean evaluated from equalities and inequalities but that's not all. 
+
+There are many different keywords we can use in to obtain a boolean value but one that you may use often is `in`. 
 
 We can use `in` to check if a certain value is contained in a list or dictionary:
 ```{python}
 exercises = ['burpees', 'lunges', 'squats', 'curls', 'deadlifts']
 
+'squats' in exercises
+```
+
+And we can pair this with `if` to make a condition statement like we did before:
+
+```{python}
 if 'squats' in exercises:
     sore = True
 else:
     sore = False
-  
 sore
 ```
 

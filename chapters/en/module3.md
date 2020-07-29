@@ -29,13 +29,13 @@ id: 3
 The same data may be considered tidy for different shaped dataframes depending on the statistical questions .
 
 <choice id="1" >
-<opt text='True'>
+<opt text='True' correct="true">
 
 Good job! 
 
 </opt>
 
-<opt text= 'False' correct="true">
+<opt text= 'False' >
 
 Tidy data depends quite often depends on the statistical question. 
 

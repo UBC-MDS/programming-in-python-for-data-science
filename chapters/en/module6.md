@@ -1,48 +1,516 @@
 ---
-title: 'Module 6: A Slice of Numpy (Numpy Arrays)'
+title: 'Module 6: Functions Fundamentals and Best Practices'
 description:
-  'In this module you will learn about ...'
+  'In this module you will expand your knowledge on the concept of functions that were introduced in Module 5. This module covers how to develop good habits when writing functions like including docstrings, defensive programming, systematic program design and how to compose useful functions. '
 prev: /module5
 next: /module7
 type: chapter
 id: 6
 ---
 
-<exercise id="23" title="Function Docstrings" type="slides">
 
-<slides source="module5/module5_22">
+<exercise id="0" title="Module Learning Outcomes" type="slides, video">
+
+<slides source="module6/module6_00" start="0:165" end="3:01">
+</slides>
+
+</exercise> 
+
+<exercise id="1" title="Dry Revisited and Function Fundamentals" type="slides">
+
+<slides source="module6/module6_01">
+</slides>
+
+</exercise>
+
+<exercise id="2" title="Questions on Scoping">
+
+**Question 1**      
+
+Given the code below what is the output?
+
+```python
+
+toy = "ball"
+
+def playtime():
+    toy = "truck"
+    return toy 
+
+toy
+```
+
+<choice id="1" >
+<opt text="<code>ball</code>" correct="true">
+
+Well done!
+
+</opt>
+
+<opt text="<code>truck</code>">
+
+Since `toy` is being called in the global environment, the output of `toy` is the value of the global variable value of  `toy`.
+
+</opt>
+
+<opt text="<code>Error</code>">
+
+This will still run without an error!
+
+</opt>
+
+</choice> 
+
+**Question 2**          
+
+Given the code below, what is the output? 
+
+```python
+
+toy = "ball"
+
+def playtime():
+    toy = "truck"
+    return toy 
+
+playtime()
+```
+
+<choice id="2" >
+<opt text="<code>ball</code>" >
+
+`toy` is equal to `"truck"` in the local environment so it will return the local variable value of `toy`. 
+
+</opt>
+
+<opt text="<code>truck</code>"  correct="true">
+
+Nice job!
+
+</opt>
+
+<opt text="<code>Error</code>">
+
+This will still run without an error!
+
+</opt>
+
+</choice>  
+
+**Question 3**          
+
+Given the code below what is the output?
+
+```python
+def playtime():
+    toy = "truck"
+    return toy 
+
+toy
+```
+
+<choice id="3" >
+<opt text="<code>None</code>" >
+
+`toy` is a local variable, will it be recognized in a global enviroment?
+
+</opt>
+
+<opt text="<code>truck</code>">
+
+`toy` is a local variable, will it be recognized in a global enviroment?
+
+</opt>
+
+<opt text="<code>Error</code>" correct="true">
+
+Great! `toy` is a local variable, and will not be recognized in the global enviroment. 
+
+</choice> 
+
+</exercise>
+
+<exercise id="3" title="Side Effects">
+
+**Question 1**      
+
+***True or False***        
+Side effects make your code easier to debug.
+
+
+
+<choice id="1" >
+<opt text="True" correct="true">
+
+Ahh! Please go back and read over the slides. Side effects are generally avoided.
+
+</opt>
+
+<opt text="False">
+
+Well done. This is an important one to get right! 
+
+</opt>
+
+</choice> 
+
+**Question 2**          
+
+Which of the following functions produce a side effect? 
+
+A) 
+```python
+
+toy = "ball"
+
+def playtime():
+    toy = "truck"
+    print(toy) 
+
+playtime()
+```
+
+B) 
+
+```python
+
+toy = "ball"
+
+def playtime():
+    toy = "truck"
+    return toy 
+
+playtime()
+```
+
+<choice id="2" >
+<opt text="A"  correct="true">
+
+printing `toy` is considered a function side effect! 
+
+</opt>
+
+<opt text="B" >
+
+Nice job!
+
+</opt>
+
+<opt text="<code>Error</code>"  correct="true">
+
+This will still run without an error!
+
+</opt>
+
+</choice>  
+
+**Question 3**          
+
+Which variable type can be effected by function side effects? 
+
+<choice id="3" >
+<opt text="Global variables" correct="true">
+
+Perfect!
+
+</opt>
+
+<opt text="Local variables" >
+
+If a function modifies a variable in the local environment that is not considered a side effect. 
+
+</opt>
+
+<opt text="Both local and global variables">
+
+One of these variable types is not correct. 
+
+</choice> 
+
+</exercise>
+
+
+<exercise id="4" title= "Writing Functions Without Side Effects">
+
+**Instructions:**    
+Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
+
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
+
+_**Make sure you remove the hash (`#`) symbol in the coding portions of this question.  We have commented them so that the line won't execute and you can test your code after each step.**_
+
+The function `kg_to_lb()` is used to convert a list of element with kg units into a list of elements with lbs units. Unfortunate this function includes a side effect that edits one of the global variables. 
+
+
+Tasks:
+- Write a new function named `better_kg_to_lb` that no longer contains a side effect.
+- Test your new function on the `weight_kg` list and save the results in an object named `weight_lb_again`.
+
+
+
+<codeblock id="06_04">
+
+- Are putting `weight_lb` inside the function now? 
+- Are you returning `weight_lb`? 
+
+</codeblock>
+
+</exercise>
+
+<exercise id="5" title="Default Arguments" type="slides">
+
+<slides source="module6/module6_05">
+</slides>
+
+</exercise>
+
+<exercise id="6" title="Will it Output?">
+
+**Question 1**      
+
+Given the following function, which of the function calls will result in an error? 
+
+```{python}
+def name_initials(first_name, last_name, year_of_birth = None):
+    if year_of_birth is not None: 
+        initials = first_name[0].upper() + middle_name[0].upper() + str(year_of_birth)
+    else:
+        initials = first_name[0].upper() + last_name[0].upper()
+    return initials
+```
+
+
+<choice id="1" >
+<opt text="<code>name_initials('Cameron', 'Grant')</code>" >
+
+This one will run since `year_of_birth` is optional and will default to `None`. The output is `CG`. 
+
+</opt>
+
+<opt text="<code>name_initials(last_name = 'Grant', year_of_birth = 1987, first_name = 'Cameron')</code>">
+
+Since we are defining our our arguments with their names and values, this one will result with an output of `CG1987`.
+
+</opt>
+
+<opt text="<code>name_initials('Cameron', 1987, 'Grant')</code>"  correct="true">
+
+This will result in an error since the argument values are not in the defined order and they are not defined with the argument names. 
+
+</opt>
+
+<opt text="<code>name_initials('Cameron', 'Grant', 1987)</code>">
+
+This function calls the arguments in the same order they were defined in. The output is `CG1987`. 
+
+</opt>
+
+</choice> 
+
+</exercise>
+
+<exercise id="7" title="Default Arguments">
+
+**Question 1**    
+
+Given the function `employee_wage()`
+```python
+def employee_wage(employee_id, position, experience = 3):
+    if position == "doctor": 
+        wage = 150000
+    elif position == "teacher":
+        wage = 60000
+    elif position == "lawyer":
+        wage = 100000
+    elif position == "server":
+        wage = 50000
+    else: 
+        wage = 70000
+    return wage * (1 + (0.1 * experience)) 
+```
+What is the expected value of employee `765` who is a lawyer where we do not know the level of `experience` that she has? 
+
+
+<choice id="1" >
+<opt text="<code>100000</code>" >
+
+Are you taking a close look at the argument `experience` which has a default value?
+
+</opt>
+
+<opt text="<code>110000</code>">
+
+Take a closer look at the default value of the `experience` argument. 
+
+</opt>
+
+<opt text="<code>130000</code>"  correct="true">
+
+Nice Job!
+
+</opt>
+
+<opt text="<code>150000</code>" >
+
+Are you looking at the right position?
+
+</opt>
+
+</choice>  
+
+**Question 2**  
+
+
+If I make a function call using the following code, and I know that that parameter `spice_level` is an argument that has a default value, which other arguments **MUST** also have set default values? 
+
+```
+menu_item_id = 42
+menu_item_name = "Green Curry"
+spice_level = "Medium"
+meat = "Tofu"
+rice = True
+
+thai_food(menu_item_id, menu_item_name, spice_level, meat, rice)
+```
+
+<choice id="2" >
+
+<opt text="<code>menu_item_id</code> and <code>menu_item_name</code>" >
+
+These two arguments can be either required or default arguments.
+
+</opt>
+
+<opt text="<code>meat</code>">
+
+This is partially right but not entirely.
+
+</opt>
+
+<opt text="<code>rice</code>">
+
+This is partially right but not entirely.
+
+</opt>
+
+<opt text="<code>meat</code> and <code>rice</code>"  correct="true">
+
+Nice job! arguments that are required for the function must come *before* defining default arguments/ 
+
+</opt>
+
+</choice>  
+
+</exercise>
+
+
+<exercise id="8" title= "Default Argument Practice">
+
+**Instructions:**    
+Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
+
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
+
+_**Make sure you remove the hash (`#`) symbol in the coding portions of this question.  We have commented them so that the line won't execute and you can test your code after each step.**_
+
+The function `convert_ounces()` converts ounces into pounds. We want to make a more versatile function by defining in the function an argument that accepts default values for the conversion rate. Redefine the function `convert_ounces()` so that it takes an argument with a default conversion rate of 28.35. 
+
+
+Tasks:
+- Create a new function named `convert_mass` and given it an argument named  `conversion` which has a default value of 28.35.
+- Test your new function by converting 76 ounces to grams and save the results in an object named `oz_to_g`
+- Test your function using an original mass of 14(kg) and convert it to pounds (lbs) using the conversion rate 2.205.       
+- Save your function call to an object named kg_to_lbs
+
+
+
+
+<codeblock id="06_08">
+
+- Are putting `conversion=28.35` inside the function named `cover_mass`? 
+- Are you calling `convert_mass(76)` and saving it in an object named `oz_to_g`? 
+- Are you calling `convert_mass(14, 2.205)` and saving it in an object named `kg_to_lbs`? 
+
+</codeblock>
+
+</exercise>
+
+
+<exercise id="9" title="Function Docstrings" type="slides">
+
+<slides source="module6/module6_09">
 
 </slides>
 
 </exercise>
 
 
-<exercise id="24" title="Docstring Questions">
+
+
+<exercise id="10" title="Docstring Questions">
 
 **Question 1**      
 
-Which docstring style requires the explanation of ***Arguments***?
+What data type is returned from the following function? 
+
+
+```python
+def factor_of_10(number):
+    """
+    Takes a number and determines if it is a factor of 10 
+    Parameters
+    ----------
+    number : int
+        the value to check
+      
+    Returns
+    -------
+    bool
+        Returns True if numbers is a multiple of 10 and False otherwise
+      
+    Examples
+    --------
+    >>> factor_of_10(72)
+    False
+    """
+
+    if number % 10 == 0: 
+        factor = True
+    else:
+        factor = False
+        
+    return factor
+    
+
+```
 
 <choice id="1" >
-<opt text="Single line">
+<opt text="<code>str</code>">
 
-This only uses 1 line!  How can we fit all arguments on one line?
+Maybe look at the `Returns` heading in the docstring. 
 
 </opt>
 
-<opt text="PEP-8" correct="true">
+<opt text="<code>bool</code>" correct="true">
 
 Nice work!
 
 </opt>
 
-<opt text="SciPy" >
+<opt text="<code>float</code>" >
 
-This style elaborates with parameters, returns and examples. 
+Maybe look at the `Returns` heading in the docstring. 
+
+</opt>
+
+<opt text="<code>list</code>" >
+
+Maybe look at the `Returns` heading in the docstring.  
 
 </opt>
 
 </choice> 
+
 
 **Question 2**          
 
@@ -97,11 +565,164 @@ Great!
 
 </opt>
 
+</choice> 
+
 </exercise>
 
 
 
-<exercise id="25" title= "Writing a Docstring ">
+
+<exercise id="11" title="Which Docstring is Most Appropriate?">
+
+
+Given the function below, which docstring follows the NumPy format ? 
+
+```python
+
+def acronym_it(sentence):
+    words = sentence.split()
+    first_letters = [word[0].upper() for word in words]
+    acronym =  "".join(first_letters)
+    return acronym
+```
+
+
+
+A)
+```python
+"""
+A function that converts a string into an acronym of capital
+letters
+
+Parameters
+----------
+str : some_words
+   The string to obtain the first letters from
+    
+Returns
+-------
+str :
+    A string of the first letters of each word in an uppercase format
+
+Example
+-------
+>>> acronym_it("Let's make this an acronym")
+LMTAA
+"""
+
+````
+
+
+B)
+
+```python
+"""
+A function that converts a string into an acronym of capital
+letters
+
+Parameters
+----------
+str : some_words
+   The string to obtain the first letters from
+    
+Returns
+-------
+list :
+    A list of the first letters of each word from the input string
+
+Example
+-------
+>>> acronym_it("Let's make this an acronym")
+LMTAA
+"""
+
+````
+
+C) 
+
+
+```python
+"""
+A function that converts a string into an acronym of capital
+letters
+
+Parameters
+----------
+str : sentence
+   The string to obtain the first letters from
+    
+Returns
+-------
+str :
+    a string of just first letters in an uppercase format
+
+Example
+-------
+>>> acronym_it("Let's make this an acronym")
+LMTAA
+"""
+
+````
+
+
+D) 
+
+
+```python
+"""
+A function that converts a string into an acronym of capital
+letters
+
+Parameters
+----------
+str : sentence
+   The string to obtain the first letters from
+    
+Returns
+-------
+list :
+    A list of the first letters of each word from the input string
+
+Example
+-------
+>>> acronym_it("Let's make this an acronym")
+LMTAA
+"""
+
+````
+
+
+<choice id="1" >
+<opt text="A"  >
+
+Pay attention to the name of the input arguments.  
+
+</opt>
+
+<opt text="B" >
+
+Pay attention to the name of the input arguments and what the function is returning/ 
+
+</opt>
+
+<opt text="C"  correct="true">
+
+Nice job!
+
+</opt>
+
+<opt text="D">
+
+Look carefully at what is being returned and the example it provides
+
+</opt>
+
+</choice> 
+
+</exercise>
+
+
+<exercise id="12" title= "Writing a Docstring ">
 
 **Instructions:**    
 Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
@@ -110,17 +731,23 @@ Running a coding exercise for the first time could take a bit of time for everyt
 
 _**Make sure you remove the hash (`#`) symbol in the coding portions of this question.  We have commented them so that the line won't execute and you can test your code after each step.**_
 
-Remember the function we wrote that returns the BMI given a person's weight and height?  We must write a docstring for it now!
-(*Disclaimer: Much more than these two measurements are needed to determine if someone is healthy*)
+In module 5, we wrote a function that returns the BMI given a person's weight and height. Let's write a docstring for it now!    
+(**Disclaimer: Much more than these two measurements are needed to determine if someone is healthy**)    
+
+```python
+def bmi_calculator(height, weight):
+    return (weight / (height ** 2)) * 702
+
+```
 
 Tasks:
-- Write a Scipy style docstring for the function provided. 
+- Write a NumPy style docstring for the function provided. 
 - Make sure to include a brief description, parameters, return, and example sections. 
 - View the documentation of the function.
 
 
 
-<codeblock id="05_24">
+<codeblock id="06_12">
 
 - Are you using `'''` or `""""` to contain your docstring?
 - Are you including all the sections? 
@@ -128,4 +755,281 @@ Tasks:
 
 </codeblock>
 
+</exercise>
+
+
+<exercise id="13" title="Defensive Programming via Exceptions" type="slides">
+
+<slides source="module6/module6_13">
+
+</slides>
+
+</exercise>
+
+
+
+<exercise id="14" title="Exceptions">
+
+**Question 1**      
+
+Which of the following exceptions is most appropriate for when an operation or function receives an argument that has the right type but an inappropriate value?     
+
+*Hint: Did you look over the resource we provided you in the slides?*
+
+<choice id="1" >
+<opt text="<code>TypeError</code>">
+
+This is raised when an operation or function is applied to an object of inappropriate type.
+
+</opt>
+
+<opt text="<code>NameError</code>">
+
+This is raised when a local or global name is not found. 
+
+</opt>
+
+<opt text="<code>AttributeError</code>"  >
+
+This is raised when an attribute reference or assignment fails. 
+
+</opt>
+
+<opt text="<code>ValueError</code>" correct="true">
+
+Great! 
+
+</opt>
+
+</choice> 
+
+**Question 2**          
+
+Why would we want to raise an exception? 
+
+<choice id="2" >
+
+<opt text="To make the cause of the error much clearer to the caller of the function">
+
+This is correct, but did your read the other options? 
+
+</opt>
+
+<opt text="To force code to fail sooner rather than later">
+
+This is correct, but did your read the other options? 
+
+</opt>
+
+<opt text="To make your functions more usable"  >
+
+This is correct, but did your read the other options? 
+
+</opt>
+
+<opt text="All of the above" correct="true">
+
+Great! 
+
+</opt>
+
+</choice> 
+
+</exercise>
+
+
+<exercise id="15" title="Documenting Exceptions">
+
+
+Which docstring correctly includes the documentation for exceptions? 
+
+
+A) 
+
+```python
+def factor_of_10(number):
+    """
+    Takes a number and determines if it is a factor of 10 
+    Parameters
+    ----------
+    number : int
+        the value to check
+      
+    Returns
+    -------
+    bool
+        Returns True if numbers is a multiple of 10 and False otherwise
+        
+    Raises
+    ------
+    TypeError
+        If the input argument number is not of type int 
+      
+    Examples
+    --------
+    >>> factor_of_10(72)
+    False
+    """
+    if not isinstance(number, int): 
+        raise TypeError("the input value of number is not of type int")
+        
+    if number % 10 == 0: 
+        factor = True
+    else:
+        factor = False
+        
+    return factor
+```
+
+
+
+B) 
+
+```python
+def factor_of_10(number):
+    """
+    Takes a number and determines if it is a factor of 10 
+    Parameters
+    ----------
+    number : int
+        the value to check
+      
+    Returns
+    -------
+    bool
+        Returns True if numbers is a multiple of 10 and False otherwise
+      
+    Examples
+    --------
+    >>> factor_of_10(72)
+    False
+    
+    Raises
+    ------
+    TypeError
+        If the input argument number is not of type int 
+    """
+    if not isinstance(number, int): 
+        raise TypeError("the input value of number is not of type int")
+        
+    if number % 10 == 0: 
+        factor = True
+    else:
+        factor = False
+        
+    return factor
+```
+
+
+
+C) 
+
+```python
+def factor_of_10(number):
+    """
+    Takes a number and determines if it is a factor of 10 
+    Parameters
+    ----------
+    number : int
+        the value to check
+      
+    Returns
+    -------
+    bool
+        Returns True if numbers is a multiple of 10 and False otherwise
+        
+    Exceptions
+    ------
+    TypeError
+        If the input argument number is not of type int 
+      
+    Examples
+    --------
+    >>> factor_of_10(72)
+    False
+    """
+    if not isinstance(number, int): 
+        raise TypeError("the input value of number is not of type int")
+        
+    if number % 10 == 0: 
+        factor = True
+    else:
+        factor = False
+        
+    return factor
+```
+
+<choice id="1" >
+<opt text="A" correct="true" >
+
+That's right, `Raises` goes between the `Returns` and `Examples`.  
+
+</opt>
+
+<opt text="B" >
+
+`Raises` should be located after `Returns`
+
+</opt>
+
+<opt text="C"  >
+
+To document the what happens when and exception is raised, we use the title `Raises`.
+
+</opt>
+
+</choice> 
+
+</exercise>
+
+
+<exercise id="16" title= "Raising Exceptions">
+
+**Instructions:**    
+Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
+
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
+
+_**Make sure you remove the hash (`#`) symbol in the coding portions of this question.  We have commented them so that the line won't execute and you can test your code after each step.**_
+
+Let's build on the BMI function we made in module 5. This time we want to raise 2 exceptions.  
+(**Disclaimer: Much more than these two measurements are needed to determine if someone is healthy**)    
+
+```python
+def bmi_calculator(height, weight):
+    return (weight / (height ** 2)) * 702
+
+```
+
+Tasks:
+- Write an exception that  checks if `height` is of type `float` 
+- Write a second exception that raises an error if weight is 0 or less.
+- Test your function with the values given in variable `tall` and `mass` 
+- Save the results in an object named `person1` and display it.
+
+
+
+<codeblock id="06_16">
+
+- Are you using `TypeError` and `Exception` respectively for the exception messages?
+- Are you checking the `height` type with `if not isinstance(height, float):`
+- Are you checking if weight is greater than 0 with `if weight <= 0:`
+
+
+</codeblock>
+
+</exercise>
+
+
+<exercise id="17" title="Unit tests and Corner Cases" type="slides">
+
+<slides source="module6/module6_17">
+
+</slides>
+
+</exercise>
+
+<exercise id="26" title="What Did We Just Learn?" type="slides, video">
+<slides source="module6/module6_end" start="0:165" end="3:01">>
+</slides>
 </exercise>

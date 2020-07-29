@@ -16,11 +16,14 @@ Notes: Script here
 
 By the end of the module, students are expected to:
 
-- Explain the DRY principle and how it can be useful.
-- Write conditional statements with `if`, `elif` and `else` to run different code, depending on the input.
-- Write `for` loops to repeatedly run code.
-- Describe the expected outcome of code with nested loops.
-- Define and use a named function that accepts parameters and returns values.
+- Evaluate the readability, complexity and performance of a function
+- Write Docstrings for functions following the NumPy/SciPy format
+- Write comments within a function to improve readability
+- Write and design functions with default arguments
+- Explain the importance of scoping and environments in Python as they relate to functions
+- Formulate test cases to prove a function design specification
+- Use test-driven development principles to define a function that accepts parameters, returns values and passes all tests
+- Handle errors gracefully via exception handling
 
 Notes:
 <html>
@@ -58,7 +61,7 @@ Notes: Script here
 
 ---
 
-# On to Assignment 5!
+# On to Assignment 6!
 
 Notes: Insert audio here.
 
