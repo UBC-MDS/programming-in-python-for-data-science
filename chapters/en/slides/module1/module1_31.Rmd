@@ -231,8 +231,16 @@ chart5
 ```
 
 
+<<<<<<< HEAD
 ```{python include =FALSE}
 chart5.save(path + 'chart5.png')
+=======
+```{r include = FALSE}
+library(vegawidget) # Need to install this using: install.packages('vegawidget')
+library(reticulate)
+library(htmltools)
+
+>>>>>>> 30a2af7617fb9b7197f738c4284608ee868b5be3
 ```
 
 <img src="/module1/chart5.png" width="45%" />
@@ -244,7 +252,21 @@ Notes: Script here.
 </audio></html>
 
 
+<<<<<<< HEAD
 ---
+=======
+chart1 = alt.Chart(source).mark_bar(color = 'red').encode(
+    x='mfr',
+    y='count()'
+)
+chart1
+
+```
+
+```{python include =FALSE}
+chart1.save(path + 'chart1.png')
+```
+>>>>>>> 30a2af7617fb9b7197f738c4284608ee868b5be3
 
 Also every good graph should have a title! A title provides useful information as to what the plot is about. Let's take this opportunity to finish off our scatter plot graph and set the argument `title` to something as well. To set the `title`, we use the `title` argument to the `.properties(title=..)` function.
 

@@ -7,7 +7,7 @@ mom = ['Teresa', 57, "August"]
 dad = ['John', 61, "February"]
 brother = ['Desmond', 5, "July" ]
 
-c_names = [ 'name', 'age', 'birth_month']
+c_names = ['name', 'age', 'birth_month']
 
 family = pd.DataFrame(data=[mom, dad, brother], 
                        columns=c_names)
