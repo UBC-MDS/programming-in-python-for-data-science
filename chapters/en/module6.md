@@ -1029,7 +1029,493 @@ Tasks:
 
 </exercise>
 
-<exercise id="26" title="What Did We Just Learn?" type="slides, video">
+
+<exercise id="18" title="Assert Questions">
+
+**Question 1**      
+
+Which of statements is correct?     
+
+
+<choice id="1" >
+<opt text="<code>assert</code> statements cause our program to fail if the condition is <code>True</code>.">
+
+`Exceptions` are what causes an error if the conditional statement is `True`. 
+
+</opt>
+
+<opt text="<code>assert</code> statements cause our program to fail if the condition is <code>False</code>." correct="true">
+
+Nice work!
+
+</opt>
+
+</choice> 
+
+**Question 2** 
+
+```python
+def acronym_it(sentence):
+    words = sentence.split()
+    first_letters = [word[0].upper() for word in words]
+    acronym =  "".join(first_letters)
+    return acronym
+```
+
+Given the function above, what value for `???` would not result in an error? 
+
+```python 
+assert acronym_it("Hard work pays off") == ???
+```
+
+<choice id="2" >
+
+<opt text="<code>'HWPO'</code>" correct="true">
+
+Great!
+
+</opt>
+
+<opt text="<code>'Hwpo'</code>" >
+
+It might be helpful to read the function code line by line. 
+
+</opt>
+
+<opt text="<code>'H'</code>"  >
+
+It might be helpful to read the function code line by line. 
+
+</opt>
+
+<opt text="<code>str<code>" >
+
+It might be helpful to read the function code line by line. 
+
+</opt>
+
+</choice> 
+
+
+**Question 3** 
+
+```python
+def acronym_it(sentence):
+    words = sentence.split()
+    first_letters = [word[0].upper() for word in words]
+    acronym =  "".join(first_letters)
+    return acronym
+```
+
+Given the function above, which test **WOULD** fail?  
+
+```python 
+assert acronym_it("Hard work pays off") == ???
+```
+
+<choice id="3" >
+
+<opt text="<code>assert acronym_it('If at first you do not succeed, try try again') == 'IAFYDNSTTA'</code>" >
+
+Great!
+
+</opt>
+
+<opt text="<code>assert acronym_it('There are 30 bottles of beer on the wall!') == 'TA3BOBOTW'</code>" >
+
+It might be helpful to read the function code line by line. 
+
+</opt>
+
+<opt text="<code>assert acronym_it('Build me up, buttercup') == 'BMUB'</code>"  >
+
+It might be helpful to read the function code line by line. 
+
+</opt>
+
+<opt text="<code>assert acronym_it('10 times 5 is 50') == '10T5I50'<code>" correct="true">
+
+Good work! 
+
+</opt>
+
+</choice> 
+
+</exercise>
+
+
+<exercise id="19" title="Unit Tests andSystematic Approach to Program Design Questions ">
+
+
+**Question 1**
+
+When do we ideally like to write our unit tests for our functions. 
+
+
+
+<choice id="1" >
+<opt text="Before writing our function code" correct="true" >
+
+You got it!
+
+</opt>
+
+<opt text="After writing our function's code" >
+
+This is not ideal.
+
+</opt>
+
+<opt text="While writing our function's code"  >
+
+Although this happens sometimes, it's better to write your tests before your function's code.
+
+</opt>
+
+</choice> 
+
+
+**Question 2**
+
+
+When can we be confident in our code? 
+
+
+<choice id="2" >
+<opt text="When all our tests pass."  >
+
+You got it!
+
+</opt>
+
+<opt text="After writing edge cases and they also pass." >
+
+This is not ideal.
+
+</opt>
+
+<opt text="When our function does what we want without even writing test."  >
+
+Although this happens sometimes, it's better to write your tests before your function's code.
+
+</opt>
+
+<opt text="It's good to ere on the side of caution when it comes to being confident in our code (bad things can happen to good coders)."  correct="true">
+
+</choice> 
+
+**Question 3**
+
+
+The first step in a systematic approach to program design is: 
+
+
+<choice id="3" >
+<opt text="Write unit tests."  >
+
+But we don't know our input arguments or output type that we expecting yet?
+
+</opt>
+
+<opt text="Write a docstring." >
+
+This is the last step!
+
+</opt>
+
+<opt text="Write a function stub." correct="true" >
+
+Nailed it!
+
+</opt>
+
+<opt text="Write your peudo-code."  >
+
+This should come after writing tests and defining your function!
+
+</choice> 
+
+
+
+</exercise>
+
+
+<exercise id="20" title= "Writing Unit Tests">
+
+**Instructions:**    
+Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
+
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
+
+_**Make sure you remove the hash (`#`) symbol in the coding portions of this question.  We have commented them so that the line won't execute and you can test your code after each step.**_
+
+Givent our BMI function from the previous few questions, let's write some unit tests.
+(**Disclaimer: Much more than these two measurements are needed to determine if someone is healthy**)    
+
+
+Tasks:
+- Write 4 unit tests and check that at least 2 of them are testing edge cases. 
+
+
+<codeblock id="06_20">
+
+- Are you using `Assert` statements?
+- Are you checking that they equal a correct value?
+
+
+
+</codeblock>
+
+</exercise>
+
+<exercise id="21" title="Good Function Design" type="slides">
+
+<slides source="module6/module6_21">
+
+</slides>
+
+</exercise>
+
+
+<exercise id="22" title="Function Design Questions">
+
+**Question 1**      
+
+Which of statements is correct?     
+
+
+<choice id="1" >
+<opt text="<code>assert</code> statements cause our program to fail if the condition is <code>True</code>.">
+
+`Exceptions` are what causes an error if the conditional statement is `True`. 
+
+</opt>
+
+<opt text="<code>assert</code> statements cause our program to fail if the condition is <code>False</code>." correct="true">
+
+Nice work!
+
+</opt>
+
+</choice> 
+
+**Question 2** 
+
+```python
+def acronym_it(sentence):
+    words = sentence.split()
+    first_letters = [word[0].upper() for word in words]
+    acronym =  "".join(first_letters)
+    return acronym
+```
+
+Given the function above, what value for `???` would not result in an error? 
+
+```python 
+assert acronym_it("Hard work pays off") == ???
+```
+
+<choice id="2" >
+
+<opt text="<code>'HWPO'</code>" correct="true">
+
+Great!
+
+</opt>
+
+<opt text="<code>'Hwpo'</code>" >
+
+It might be helpful to read the function code line by line. 
+
+</opt>
+
+<opt text="<code>'H'</code>"  >
+
+It might be helpful to read the function code line by line. 
+
+</opt>
+
+<opt text="<code>str<code>" >
+
+It might be helpful to read the function code line by line. 
+
+</opt>
+
+</choice> 
+
+
+**Question 3** 
+
+```python
+def acronym_it(sentence):
+    words = sentence.split()
+    first_letters = [word[0].upper() for word in words]
+    acronym =  "".join(first_letters)
+    return acronym
+```
+
+Given the function above, which test **WOULD** fail?  
+
+```python 
+assert acronym_it("Hard work pays off") == ???
+```
+
+<choice id="3" >
+
+<opt text="<code>assert acronym_it('If at first you do not succeed, try try again') == 'IAFYDNSTTA'</code>" >
+
+Great!
+
+</opt>
+
+<opt text="<code>assert acronym_it('There are 30 bottles of beer on the wall!') == 'TA3BOBOTW'</code>" >
+
+It might be helpful to read the function code line by line. 
+
+</opt>
+
+<opt text="<code>assert acronym_it('Build me up, buttercup') == 'BMUB'</code>"  >
+
+It might be helpful to read the function code line by line. 
+
+</opt>
+
+<opt text="<code>assert acronym_it('10 times 5 is 50') == '10T5I50'<code>" correct="true">
+
+Good work! 
+
+</opt>
+
+</choice> 
+
+</exercise>
+
+
+<exercise id="23" title="Improve it!">
+
+
+**Question 1**
+
+When do we ideally like to write our unit tests for our functions. 
+
+
+
+<choice id="1" >
+<opt text="Before writing our function code" correct="true" >
+
+You got it!
+
+</opt>
+
+<opt text="After writing our function's code" >
+
+This is not ideal.
+
+</opt>
+
+<opt text="While writing our function's code"  >
+
+Although this happens sometimes, it's better to write your tests before your function's code.
+
+</opt>
+
+</choice> 
+
+
+**Question 2**
+
+
+When can we be confident in our code? 
+
+
+<choice id="2" >
+<opt text="When all our tests pass."  >
+
+You got it!
+
+</opt>
+
+<opt text="After writing edge cases and they also pass." >
+
+This is not ideal.
+
+</opt>
+
+<opt text="When our function does what we want without even writing test."  >
+
+Although this happens sometimes, it's better to write your tests before your function's code.
+
+</opt>
+
+<opt text="It's good to ere on the side of caution when it comes to being confident in our code (bad things can happen to good coders)."  correct="true">
+
+</choice> 
+
+**Question 3**
+
+
+The first step in a systematic approach to program design is: 
+
+
+<choice id="3" >
+<opt text="Write unit tests."  >
+
+But we don't know our input arguments or output type that we expecting yet?
+
+</opt>
+
+<opt text="Write a docstring." >
+
+This is the last step!
+
+</opt>
+
+<opt text="Write a function stub." correct="true" >
+
+Nailed it!
+
+</opt>
+
+<opt text="Write your peudo-code."  >
+
+This should come after writing tests and defining your function!
+
+</choice> 
+
+
+
+</exercise>
+
+
+<exercise id="24" title= "Writing Unit Tests">
+
+**Instructions:**    
+Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
+
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
+
+_**Make sure you remove the hash (`#`) symbol in the coding portions of this question.  We have commented them so that the line won't execute and you can test your code after each step.**_
+
+Givent our BMI function let's write some unit tests.
+(**Disclaimer: Much more than these two measurements are needed to determine if someone is healthy**)    
+
+
+Tasks:
+- Write 4 unit tests and check that at least 2 of them are testing edge cases. 
+
+
+<codeblock id="06_24">
+
+- Are you using `Assert` statements?
+- Are you checking that they equal a correct value?
+
+
+
+</codeblock>
+
+</exercise>
+
+<exercise id="25" title="What Did We Just Learn?" type="slides, video">
 <slides source="module6/module6_end" start="0:165" end="3:01">>
 </slides>
 </exercise>

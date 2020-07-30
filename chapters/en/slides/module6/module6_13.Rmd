@@ -105,7 +105,7 @@ Notes: Script here
 
 ## Exception
 
-Exceptions are keywords that disrupt the regular execution. So when we raise an exception we are forcing our own error with our own information to be executed if the condition is met. 
+Exceptions disrupt the regular execution. When we raise an exception we are forcing our own error with our own message if the condition is met. 
 
 If we wanted to raise an except to solve the problem on the last slide, we could do the following: 
 
@@ -143,14 +143,11 @@ Notes: Script here
 
 Let's take a closer look:
 
-```python
-if not isinstance(numerical_list, list):
-        raise Exception("Sorry, but you are not using a list for input like we asked.")
-```
+<center><img src='/module6/exception.png' width="100%"></center>
 
 The first line of code specifies our condition - what needs to occurs to execute the body of the condition. This code translates to *"If `numerical_list` is not of the instance type `int`..."*
 
-The second line does the complaining, we tell it to `raise` it's  an ***Exception*** with a message of the problem. 
+The second line does the complaining. We tell it to `raise` an ***Exception*** with a message of the problem. 
 
 Now we get an error message that is straight forward on why our code is failing:
 

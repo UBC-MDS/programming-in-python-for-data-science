@@ -30,7 +30,7 @@ output_format(knitr = knitr_opts,
 
 Sys.setenv(RETICULATE_PYTHON = "/usr/local/bin/python3")
 library(reticulate)
-py_config()
+
 
 ```
 
@@ -174,8 +174,8 @@ df.plot.scatter(x="sugars",
 ```{r include = FALSE}
 library(vegawidget) # Need to install this using: install.packages('vegawidget')
 library(reticulate)
-use_python('/usr/local/bin/python3')
 library(htmltools)
+
 ```
 
 
@@ -190,6 +190,7 @@ chart1 = alt.Chart(source).mark_bar(color = 'red').encode(
 chart1
 
 ```
+
 ```{python include =FALSE}
 chart1.save(path + 'chart1.png')
 ```

@@ -2,7 +2,7 @@
 type: slides
 ---
 
-# What Did we Learn and What to Expect in Assignment 5
+# What Did we Learn and What to Expect in Assignment 6
 
 Notes: Script here
 <html>

@@ -345,7 +345,7 @@ Tasks:
 
 - Using the list provided, add a `pen`, a `scrap paper`, a `7.3` and a `True` element.
 - Find the length of the list after adding the element and save the value in an object named `drawer_length`.
-- Slice the list from element 4 to `scrap paper`  and save this in an object named `cleaned_junk_drawer`.
+- Slice the list from `4` to `scrap paper`  and save this in an object named `cleaned_junk_drawer`.
 - Finally,  convert it into a set and name it `junk_set`.
 
 
@@ -960,7 +960,7 @@ Given the statement above, would the following result in a `True` of `False` val
 **Question 1**          
 
 ```python
-'hotels' != 'homes' and 50< 5000
+'hotels' != 'homes' and 50 < 5000
 ```
 
 
@@ -1026,106 +1026,6 @@ The statement `not 'hotels' != 'homes' ` is false so checking if that statement 
 </opt>
 
 </choice> 
-
-</exercise>
-
-
-<exercise id="20" title="More Practice with Data Types">
-
-**Instructions:**    
-Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
-
-**When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
-
-
-Let's explore Python's operators. 
-
-Tasks:
-
-- Concatenate together `string1` and `numerical1`    
-- Save the result in an object named `together`
-- Use `condition1` and `condition2` to answer the multiple-choice question below. 
-
-<codeblock id="04_20">
-- Maybe use the verb `str()` to help you.
-
-</codeblock>
-
-
-What is the value of the following equations? 
-
-**Question 1**          
-
-```python
-3*(condition1 or condition2) + (condition1)
-```
-
-
-<choice id="1" >
-
-<opt text="0">
-
-The first set of brackets equals True. `3 * 1 + 0`.
-
-</opt>
-
-<opt text="3" >
-
-The first set of brackets equals True. `3 * 1 + 0`.
-
-</opt>
-
-<opt text="4"  correct="true" >
-
-Well done!
-
-</opt>
-
-
-<opt text="<code>Error</code>" >
-
-The first set of brackets equals True. `3 * 1 + 0`.
-
-</opt>
-
-</choice> 
-
-       
-**Question 2**          
-
-```python
-(not condition2) * (not condition1)
-```
-
-<choice id="2" >
-
-
-<opt text="0">
-
-Well done!
-
-</opt>
-
-<opt text="3" >
-
-The statement is True and `not` checks if the statement is False. Since the statement is not false the output is equal to 0. 
-
-</opt>
-
-<opt text="4" >
-
-The statement is True and `not` checks if the statement is False. Since the statement is not false the output is equal to 0. 
-
-</opt>
-
-
-<opt text="<code>Error</code>" >
-
-The statement is True and `not` checks if the statement is False. Since the statement is not false the output is equal to 0. 
-
-
-</choice> 
-
 
 </exercise>
 
