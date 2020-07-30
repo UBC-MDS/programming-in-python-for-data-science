@@ -5,10 +5,10 @@ def test():
     # in the meta.json for details.
 
     # If an assertion fails, the message will be displayed
-    assert "junk_drawer" in __solution__, "Make sure you are naming your result 'junk_drawer'"
-    assert "drawer_length" in __solution__, "Make sure you are naming your result 'drawer_length'"
-    assert "cleaned_junk_drawer" in __solution__, "Make sure you are naming your result 'cleaned_junk_drawer'"
-    assert "junk_set" in __solution__, "Make sure you are naming your result 'junk_set'"
+    assert "junk_drawer" in __solution__, "Make sure you are naming your object 'junk_drawer'"
+    assert "drawer_length" in __solution__, "Make sure you are naming your object 'drawer_length'"
+    assert "cleaned_junk_drawer" in __solution__, "Make sure you are naming your object 'cleaned_junk_drawer'"
+    assert "junk_set" in __solution__, "Make sure you are naming your object 'junk_set'"
     assert len(
         set(junk_drawer).intersection({3, 4, 7.3, True, 'pen', 'scrap paper'})
     ) == 6, "Some items are missing from 'junk_drawer'. Did you add everything?"

@@ -5,8 +5,8 @@ def test():
     # in the meta.json for details.
 
     # If an assertion fails, the message will be displayed
-    assert "ikea_items" in __solution__, "Make sure you are naming your result 'ikea_items'."
-    assert "ikea_df" in __solution__, "Make sure you are naming your result 'ikea_df'."
+    assert "ikea_items" in __solution__, "Make sure you are naming your object 'ikea_items'."
+    assert "ikea_df" in __solution__, "Make sure you are naming your object 'ikea_df'."
     msg = "Your ikea_items dictionary contains the incorrect keys. Are you adding all the items? \
     \nExpected ['item_name', 'collection', 'price'], but got {0}".format(
         list(ikea_items.keys()))

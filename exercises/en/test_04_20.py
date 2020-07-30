@@ -5,7 +5,7 @@ def test():
     # in the meta.json for details.
 
     # If an assertion fails, the message will be displayed
-    assert "together" in __solution__, "Make sure you are naming your result 'together'."
+    assert "together" in __solution__, "Make sure you are naming your object 'together'."
     assert "str" in __solution__, "Make sure you are converting 'numerical1' to type string using the 'str' function."
     assert "+" in __solution__, "Make sure you are using the '+ operator to combine 'string1' and 'numerical1'."
     assert type(
