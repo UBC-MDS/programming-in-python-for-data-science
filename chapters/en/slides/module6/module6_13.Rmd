@@ -47,8 +47,7 @@ cereal = pd.read_csv('cereal.csv')
 type: slides
 
 
-# Defensive programming via exceptions
-
+# Defensive programming using exceptions
 
 
 Notes: Script here
@@ -59,14 +58,13 @@ Notes: Script here
 
 ---
 
-We all know that mistakes are a regular part of life In coding, since every line of code is at risk for potential errors, programmers now have a method that is structured around the assumption that errors and bugs will occur.        
+We all know that mistakes are a regular part of life. In coding, every line of code is at risk for potential errors, so naturally, programmers now have a method that is structured around the assumption that errors will occur.        
 
 ***Defensive programming*** is code written in such a way that if errors do occur, they are handled in a graceful, fast and informative way. 
 
 If something goes wrong, we don't want the code to crash - we want it to fail gracefully.
 
-To help with a softer landing, we use something called `Exceptions`.
-
+To help soften the landing, we use something called ***Exceptions***.
 
 
 Notes: Script here
@@ -88,11 +86,18 @@ def exponent_a_list(numerical_list, exponent=2):
     return new_exponent_list
 ```
 
-```{python error=TRUE}
+```{python eval=FALSE}
 numerical_string = "123"
 exponent_a_list(numerical_string)
 ```
-We get an error that explains a little bit of what's causing the issue but not directly. This is where raising an exception steps in to help.
+```out
+TypeError: unsupported operand type(s) for ** or pow(): 'str' and 'int'
+
+Detailed traceback: 
+  File "<string>", line 1, in <module>
+  File "<string>", line 4, in exponent_a_list
+```
+We get an error that explains a little bit of what's causing the issue but not directly. This is where raising an `Exception` steps in to help.
 
 
 Notes: Script here
@@ -103,17 +108,17 @@ Notes: Script here
 
 ---
 
-## Exception
+## Exceptions
 
-Exceptions disrupt the regular execution. When we raise an exception we are forcing our own error with our own message if the condition is met. 
+Exceptions disrupt the regular execution. When we raise an `Exception` we are forcing our own error with our own message if the condition results in a `True` value. 
 
-If we wanted to raise an except to solve the problem on the last slide, we could do the following: 
+If we wanted to raise an exception to solve the problem on the last slide, we could do the following: 
 
 ```{python}
 def exponent_a_list(numerical_list, exponent=2):
 
     if not isinstance(numerical_list, list):
-        raise Exception("Sorry, but you are not using a list for input like we asked.")
+        raise Exception("Sorry, but you are not using a list as an input like we asked.")
 
     new_exponent_list = list()
     for number in numerical_list:
@@ -147,7 +152,7 @@ Let's take a closer look:
 
 The first line of code specifies our condition - what needs to occurs to execute the body of the condition. This code translates to *"If `numerical_list` is not of the instance type `int`..."*
 
-The second line does the complaining. We tell it to `raise` an ***Exception*** with a message of the problem. 
+The second line does the complaining. We tell it to `raise` an `Exception` with a message of the problem. 
 
 Now we get an error message that is straight forward on why our code is failing:
 
@@ -155,8 +160,7 @@ Now we get an error message that is straight forward on why our code is failing:
 Exception: Sorry, but you are not using a list as an input like we asked.
 ```
 
-We can agree that this message was much easier to decipher than the original and the new message made the cause of the error much clearer to the user.
-This, made our function much more usable.
+We can agree that this message was much easier to decipher than the original. The new message made the cause of the error much clearer to the user making our function much more usable.
 
 Notes: Script here
 <html>
@@ -166,11 +170,11 @@ Notes: Script here
 
 ---
 
-## Why raise exceptions
+## Why raise Exceptions
 
 ```python
 if not isinstance(numerical_list, list):
-        raise Exception("Sorry, but you are not using a list for input like we asked.")
+        raise Exception("Sorry, but you are not using a list as an input like we asked.")
 ```
 
 Here we used a function called `isinstance()` which checks if the first argument is of the same data type as the second argument. 
@@ -186,7 +190,7 @@ Notes: Script here
 
 ---
 
-We can also check if the input arguments chosen by the user make sense with operations that will be conducting. For instance perhaps our function is strict on accepting values for `exponent` that are >0. We can raise and exception if the user attempts to use anything else:
+We can also check if the input arguments chosen by the user make sense with operations that will be conducting. For instance perhaps our function is strict on accepting values for `exponent` that are >0. We can raise an `Exception` if the user attempts to use anything else:
 
 ```{python}
 def exponent_a_list(numerical_list, exponent=2):
@@ -223,12 +227,12 @@ Notes: Script here
 
 Another good thing to check for our function is if all the elements in the list are of data type `int`.
 
-We can use comprehension that we learned in the last module to check that each element is of type `int`. If not all of them are, an exception will be raised:
+We can use comprehension that we learned in the last module to check that each element is of type `int`. If not all of them are, an `Exception` will be raised:
 
 ```{python}
 def exponent_a_list(numerical_list, exponent=2):
     
-    if not all(type(element) is int for element in numerical_list):
+    if not all(type(element) == int for element in numerical_list):
         raise Exception("The elements in numerical_list must all be of type int")
 
     new_exponent_list = list()
@@ -258,7 +262,7 @@ Notes: Script here
 
 ## Raises
 
-We discussed the conditional part of an exception, but now let's learn more about the possible different types of exceptions. 
+We discussed the conditional part of an exception, but now let's learn more about the possible different types of Exceptions. 
 
 ```python
 if exponent <0:
@@ -267,7 +271,7 @@ if exponent <0:
 
  `Exception` is just one of the <a href="https://docs.python.org/3/library/exceptions.html#Exception" target="_blank">  many different exception types possible.</a>
 
-The `Exception` in our previous examples is a more generic message which is defined by the person who writes code of the function. This isn't all incompassing as there are other exceptions that are likely better suited for the raises we made. 
+The exception in our previous examples is a more generic type which is defined by the person who writes code of the function. This isn't all-encompassing as other Exceptions are likely better suited for the raises we made. 
 
 
 
@@ -286,7 +290,7 @@ if not isinstance(numerical_list, list):
     raise Exception("Sorry, but you are not using a list for input like we asked.")
 ```
 
-Since this is a type error, a more suited exception raise would be `TypeError`.     
+Since this is a type error, a better raised exception over `Exception` would be `TypeError`.     
 Let's make our correction here:  
 
 ```{python}
@@ -321,7 +325,7 @@ Notes: Script here
 
 ---
 
-Let's make the same change for the assertion that checks that each element is of type `int` in the input list `numerical_list`. This also is a type error:
+Let's make the same change for the exception that checks that each element is of type `int` in the input list `numerical_list`. This also is a type error:
 
 ```{python}
 def exponent_a_list(numerical_list, exponent=2):
@@ -344,7 +348,7 @@ Notes: Script here
 
 ---
 
-The exception we wrote checking if `exponent` is greater than 0 is a good example of a user defined exception.  Using `Exception` is appropriate since Python is technically capable of doing this outside of our function:
+The `Exception` we wrote checking if `exponent` is greater than 0 is a good example of a user defined exception.  Using `Exception` is appropriate since Python is technically capable of doing this outside of our function:
 
 
 ```{python}
@@ -383,7 +387,7 @@ Notes: Script here
 
 We've learned that documenting your functions with docstrings is important so it should come to no surprise that it's a good idea to include details of any included exceptions in our function docstring. 
 
-Under the NumPy format, We explain our raised exception after the "***Returns***" section. We first specify the exception type and then an explanation of what causes the exception to be raised. 
+Under the NumPy format, we explain our raised exception after the "***Returns***" section. We first specify the exception type and then an explanation of what causes the exception to be raised. 
 
 For example: 
 
@@ -410,4 +414,4 @@ Notes: Script here
 Notes: Script here
 <html>
 <audio controls >
-  <source src="/placeholder_audio.mp3" />
+  <source src="/placeholder_audio.mp3" /> />  <source src="/placeholder_audio.mp3" />

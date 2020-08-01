@@ -17,5 +17,5 @@ def bmi_calculator(height, weight):
 tall = 193
 mass = 170.2
 
-____ = ____
-____
+# ____ = ____
+# ____

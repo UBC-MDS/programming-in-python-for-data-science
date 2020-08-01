@@ -1,0 +1,559 @@
+---
+type: slides
+---
+
+# Good function design choices
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+This has been quite a filled module\! We’ve learned how to make
+functions, how to handle errors gracefully, how to test our functions
+and write the necessary documentation to keep our code comprehensible.
+These skills will all contribute to writing effective code.
+
+One thing we have not discussed yet is the actual code within a
+function.
+
+What makes a function useful?
+
+Is a function more useful when it does more operations?
+
+Do adding parameters make your functions more or less functional?
+
+These are all questions we need to think about when writing functions.
+
+We are going to list some habits to adopt when writing and designing
+your functions.
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+## \#1 Avoid “Hard coding”
+
+**Hard coding** is the process of embedding values directly into your
+code without saving them in objects. When we hardcode values into our
+code, it decreases the readability, makes code problematic to maintain
+and makes being consistent becomes more difficult. In short, hard coding
+is a breeding ground for bugs.
+
+Remember our function `squares_a_list()`?
+
+``` python
+def squares_a_list(numerical_list):
+    new_squared_list = list()
+    
+    for number in numerical_list:
+        new_squared_list.append(number ** 2)
+    
+    return new_squared_list
+```
+
+In this function, we “hard-coded” in `2` when we calculated `number
+** 2`.
+
+We can easily improve this design by either assiging 2 to a variable in
+the function before doing this calculation or we can convert it into a
+parameter like we did when we made `exponent_a_list()`.
+
+``` python
+def exponent_a_list(numerical_list, exponent):
+    new_exponent_list = list()
+    
+    for number in numerical_list:
+        new_exponent_list.append(number ** exponent)
+    
+    return new_exponent_list
+```
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+## \#2 Think about your loop placement
+
+In both our `squares_a_list()` and `exponent_a_list()` we have a `for`
+loop within the function. This makes the function easy for users to put
+in a single list as an input argument and not have to rewrite the loop
+each time we use it. But is it really always better for us?
+
+What if we have the following list `[1, 2, 'Shoe', 3, 4]`?
+
+``` python
+list_with_string = [1, 2, 'Shoe', 3, 4]
+exponent_a_list(list_with_string, 2)
+```
+
+``` out
+TypeError: unsupported operand type(s) for ** or pow(): 'str' and 'int'
+
+Detailed traceback: 
+  File "<string>", line 1, in <module>
+  File "<string>", line 5, in exponent_a_list
+```
+
+Our function no longer works. We now can’t use our function and we have
+to write new code.
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+If we started with a function that only squared a single value, instead
+of a whole list, our function could be reused.
+
+``` python
+def exponent_a_value(number, exponent):
+    return number ** exponent
+```
+
+We could use this function for lists with numerical values by executing
+it in a loop:
+
+``` python
+list_of_numbers = [2, 4, 5]
+exponent_list = list()
+
+for element in list_of_numbers: 
+    exponent_list.append(exponent_a_value(element, 2))
+
+exponent_list
+```
+
+```out
+[4, 16, 25]
+```
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+If we add a condition in our loop, we can now use our new function with
+the list `[1, 2, 'Shoe', 3, 4]`:
+
+``` python
+list_with_string = [1, 2, 'Shoe', 3, 4]
+exponent_list = list()
+
+for element in list_with_string: 
+    if type(element) == int:
+        exponent_list.append(exponent_a_value(element, 2))
+    else:
+        exponent_list.append(element)
+
+exponent_list
+```
+
+```out
+[1, 4, 'Shoe', 9, 16]
+```
+
+Now we can get more use out of our function and comply with the DRY
+principle by recycling our code.
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+## \#3 Less is More
+
+Although it may seem useful when a function acts as a one-stop-shop that
+does everything you want in a single function, this also drastically
+limits your ability to reuse code that lies within it. Functions should
+serve for a single purpose.
+
+For example, let’s say we have a function that reads in a csv, finds the
+mean of each group in a column and plots a specified variable.
+
+``` python
+def load_filter_and_average(file, grouping_column, ploting_column):
+    df = pd.read_csv(file)
+    source = df.groupby(grouping_column).mean().reset_index()
+    chart = alt.Chart(source, width = 500, height = 300).mark_bar().encode(
+    x=alt.X(grouping_column),
+    y=alt.Y(ploting_column))
+    return chart
+```
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+``` python
+def load_filter_and_average(file, grouping_column, ploting_column):
+    df = pd.read_csv(file)
+
+    source = df.groupby(grouping_column).mean().reset_index()
+    
+    chart = alt.Chart(source, width = 500, height = 300).mark_bar().encode(
+    x=alt.X(grouping_column),
+    y=alt.Y(ploting_column))
+    return chart
+```
+
+``` python
+bad_idea = load_filter_and_average('cereal.csv', 'mfr', 'rating')
+bad_idea
+```
+<img src="/module6/chart_bad_idea.png"  width="50%" />
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+Although this may seem nice, what happens if we want to do other
+calculations with the dataframe? Or we want to obtain the mean values we
+calculated? This function only returns the plot and restricts us with
+what we can do given the output.
+
+In this case, you want to simplify the function. Having a function that
+only calculates the mean values of the groups in the specified column is
+much more usable. A preferred function would look something like this,
+where the input is a dataframe we have already read in, and the output
+is the dataframe of mean values for all the columns.
+
+``` python
+def grouped_means(df, grouping_column):
+    grouped_mean = df.groupby(grouping_column).mean().reset_index()
+    return grouped_mean
+```
+
+``` python
+cereal_mfr = grouped_means(cereal, 'mfr')
+cereal_mfr
+```
+
+```out
+  mfr    calories   protein       fat      sodium     fiber      carbo    sugars      potass   vitamins     shelf    weight      cups     rating
+0   A  100.000000  4.000000  1.000000    0.000000  0.000000  16.000000  3.000000   95.000000  25.000000  2.000000  1.000000  1.000000  54.850917
+1   G  111.363636  2.318182  1.363636  200.454545  1.272727  14.727273  7.954545   85.227273  35.227273  2.136364  1.049091  0.875000  34.485852
+2   K  108.695652  2.652174  0.608696  174.782609  2.739130  15.130435  7.565217  103.043478  34.782609  2.347826  1.077826  0.796087  44.038462
+3   N   86.666667  2.833333  0.166667   37.500000  4.000000  16.000000  1.833333  121.000000   8.333333  1.666667  0.971667  0.778333  67.968567
+4   P  108.888889  2.444444  0.888889  146.111111  2.777778  13.222222  8.777778  113.888889  25.000000  2.444444  1.064444  0.714444  41.705744
+5   Q   95.000000  2.625000  1.750000   92.500000  1.337500  10.250000  5.500000   74.375000  12.500000  2.375000  0.875000  0.823750  42.915990
+6   R  115.000000  2.500000  1.250000  198.125000  1.875000  17.625000  6.125000   89.500000  25.000000  2.000000  1.000000  0.871250  41.542997
+```
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+If we wanted, we could then make a second function that creates the
+desired plot part of the previous function.
+
+``` python
+def plot_mean(df, grouping_column, ploting_column):
+    chart = alt.Chart(df, width = 500, height = 300).mark_bar().encode(
+    x=alt.X(grouping_column),
+    y=alt.Y(ploting_column))
+    return chart
+```
+
+``` python
+plot1 = plot_mean(cereal_mfr, 'mfr', 'rating')
+plot1
+```
+<img src="/module6/plot_better.png"  width="50%" />
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+## 4\. Return a single object
+
+For the most part, we have only lightly touched on the fact that
+functions can return multiple objects and it’s with good reason.
+
+Although functions are *capable* of returning multiple objects, that
+doesn’t mean that it’s the best option. For instance, what if we
+converted our function `load_filter_and_average()` so that it returns a
+dataframe ***and*** a plot.
+
+``` python
+def load_filter_and_average(file, grouping_column, ploting_column):
+    df = pd.read_csv(file)
+    source = df.groupby(grouping_column).mean().reset_index()
+    chart = alt.Chart(source, width = 500, height = 300).mark_bar().encode(
+    x=alt.X(grouping_column),
+    y=alt.Y(ploting_column))
+    return chart, source
+```
+
+``` python
+another_bad_idea = load_filter_and_average('cereal.csv', 'mfr', 'rating')
+another_bad_idea
+```
+
+```out
+(alt.Chart(...),   mfr    calories   protein       fat      sodium     fiber      carbo    sugars      potass   vitamins     shelf    weight      cups     rating
+0   A  100.000000  4.000000  1.000000    0.000000  0.000000  16.000000  3.000000   95.000000  25.000000  2.000000  1.000000  1.000000  54.850917
+1   G  111.363636  2.318182  1.363636  200.454545  1.272727  14.727273  7.954545   85.227273  35.227273  2.136364  1.049091  0.875000  34.485852
+2   K  108.695652  2.652174  0.608696  174.782609  2.739130  15.130435  7.565217  103.043478  34.782609  2.347826  1.077826  0.796087  44.038462
+3   N   86.666667  2.833333  0.166667   37.500000  4.000000  16.000000  1.833333  121.000000   8.333333  1.666667  0.971667  0.778333  67.968567
+4   P  108.888889  2.444444  0.888889  146.111111  2.777778  13.222222  8.777778  113.888889  25.000000  2.444444  1.064444  0.714444  41.705744
+5   Q   95.000000  2.625000  1.750000   92.500000  1.337500  10.250000  5.500000   74.375000  12.500000  2.375000  0.875000  0.823750  42.915990
+6   R  115.000000  2.500000  1.250000  198.125000  1.875000  17.625000  6.125000   89.500000  25.000000  2.000000  1.000000  0.871250  41.542997)
+```
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+Since it returns a tuple we can obtain the plot by selecting the first
+element of it:
+
+``` python
+another_bad_idea[0]
+```
+<img src="/module6/plot_better.png"  width="50%" />
+
+This doesn’t make any sense when we read back our code and can be quite
+confusing when we have a simple option of separating the code into two
+functions and have them return a single object each.
+
+It’s best to think of programming functions in the same way as
+mathematical functions where most times, mathematical functions return a
+single value.
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+## 5\. Keep global variables in their global environment
+
+It’s generally bad form to include objects in a function that were
+created outside of it. Take our `grouped_means()` function:
+
+``` python
+def grouped_means(df, grouping_column):
+    grouped_mean = df.groupby(grouping_column).mean().reset_index()
+    return grouped_mean
+```
+
+what if instead of including `df` as an input argument we just used
+`cereal` that we loaded earlier?
+
+``` python
+cereal = pd.read_csv('cereal.csv')
+
+def bad_grouped_means(grouping_column):
+    grouped_mean = cereal.groupby(grouping_column).mean().reset_index()
+    return grouped_mean
+```
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+``` python
+bad_cereal_grouping = bad_grouped_means('mfr')
+cereal_mfr
+```
+
+```out
+  mfr    calories   protein       fat      sodium     fiber      carbo    sugars      potass   vitamins     shelf    weight      cups     rating
+0   A  100.000000  4.000000  1.000000    0.000000  0.000000  16.000000  3.000000   95.000000  25.000000  2.000000  1.000000  1.000000  54.850917
+1   G  111.363636  2.318182  1.363636  200.454545  1.272727  14.727273  7.954545   85.227273  35.227273  2.136364  1.049091  0.875000  34.485852
+2   K  108.695652  2.652174  0.608696  174.782609  2.739130  15.130435  7.565217  103.043478  34.782609  2.347826  1.077826  0.796087  44.038462
+3   N   86.666667  2.833333  0.166667   37.500000  4.000000  16.000000  1.833333  121.000000   8.333333  1.666667  0.971667  0.778333  67.968567
+4   P  108.888889  2.444444  0.888889  146.111111  2.777778  13.222222  8.777778  113.888889  25.000000  2.444444  1.064444  0.714444  41.705744
+5   Q   95.000000  2.625000  1.750000   92.500000  1.337500  10.250000  5.500000   74.375000  12.500000  2.375000  0.875000  0.823750  42.915990
+6   R  115.000000  2.500000  1.250000  198.125000  1.875000  17.625000  6.125000   89.500000  25.000000  2.000000  1.000000  0.871250  41.542997
+```
+
+Although it does work, we avoid this. Global variables have the
+opportunity and potential to be altered in the global environment and
+then your function will no longer work as expected.
+
+``` python
+cereal = "let's change it to a string" 
+bad_cereal_grouping = bad_grouped_means('mfr')
+cereal_mfr
+```
+
+``` out
+AttributeError: 'str' object has no attribute 'groupby'
+
+Detailed traceback: 
+  File "<string>", line 1, in <module>
+  File "<string>", line 2, in bad_grouped_means
+```
+
+This makes your function of little use to you now.
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+Of course, like in any case, these habits are suggestions and not strict
+rules. There will be times where adhering to one of these may not be
+possible or will hinder your code instead of enhancing it.
+
+The rule of thumb is to ask yourself how helpful is your function if you
+or someone else wishes to reuse it.
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+# Let’s practice what we learned\!
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />

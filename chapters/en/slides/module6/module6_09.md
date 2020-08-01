@@ -19,15 +19,14 @@ Notes: Script here
 ---
 
 Functions help avoid redundant code but sometimes it takes away some
-clarity. Using a function without knowing exactly what it does can make
-our code less readable. ***Docstrings*** are the solution to this.
+clarity. Figuring out what code does can be difficult even in the best
+cases. ***Docstrings*** provides a solution to this problem.
 
-A ***docstring*** is documentation for the function that has been
-created. It is a literal string that comes directly after defining a
-function.
+A ***docstring*** is the documentation for the function. It is a literal
+string that comes directly after defining it.
 
 Writing a docstring for your functions informs on what your code does so
-that collaborators (and you in 6 months time) are not struggling to
+that collaborators (and you in 6 months’ time) are not struggling to
 decipher and reuse your code.
 
 Notes: Script here
@@ -77,7 +76,7 @@ Notes: Script here
 
 ## Docstring Structures
 
-Currently many people in the Python community are writing docstrings in
+Currently, many people in the Python community are writing docstrings in
 different ways, the most common uses a formatting style called
 ***ReStructuredText.***
 
@@ -88,11 +87,11 @@ def squares_a_list(numerical_list):
  
     :param  numerical_list: a list of numerical values to operate on
     :type  numerical_list: list
-    :return: a list of the numberical values  
+    :return: a list of the numerical values  
     :rtype: list
 
     :example:
-    >>> func([1 ,2, 3], 3)
+    >>> squares_a_list([1 ,2, 3], 3)
     [1, 8, 27]
     """
 
@@ -105,7 +104,7 @@ def squares_a_list(numerical_list):
 ```
 
 It’s not an uncommon opinion that this isn’t exactly easy to read, and
-so new formats have began to come into fruition.
+so new formats have begun to come into fruition.
 
 Notes: Script here
 
@@ -198,7 +197,7 @@ SciPy/NumPy docs):
 
 ``` python
 def function_name(param1, param2):
-    """First line is a short description of the function.
+    """The first line is a short description of the function.
     
     A paragraph describing in a bit more detail what the function
     does and what algorithms it uses and common use cases.
@@ -415,3 +414,5 @@ Notes: Script here
 <audio controls >
 
 <source src="/placeholder_audio.mp3" />
+
+\<source

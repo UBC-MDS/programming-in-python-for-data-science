@@ -4,7 +4,7 @@ type: slides
 
 # Module Learning Outcomes
 
-Notes: In this module you will expand your knowledge on functions and the best practices when developing functions and code.. 
+Notes: In this module you will expand your knowledge on functions and the best practices when developing functions and code.
 
 <html>
 <audio controls >

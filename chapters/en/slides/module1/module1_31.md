@@ -187,13 +187,14 @@ df.plot.scatter(x="sugars",
 
 source = pd.read_csv('cereal.csv')
 
-chart1 = alt.Chart(source).mark_bar(color = 'red').encode(
+chart1 = alt.Chart(source, width = 500, height = 300).mark_bar(color = 'red').encode(
     x='mfr',
     y='count()'
 )
 chart1
 ```
-<img src="/module1/chart1.png" alt="A caption" width="30%" />
+
+<img src="/module1/chart1.png"  width="50%" />
 
 ---
 

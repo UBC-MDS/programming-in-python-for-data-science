@@ -1,7 +1,7 @@
 ---
 title: 'Module 6: Functions Fundamentals and Best Practices'
 description:
-  'In this module you will expand your knowledge on the concept of functions that were introduced in Module 5. This module covers how to develop good habits when writing functions like including docstrings, defensive programming, systematic program design and how to compose useful functions. '
+  'In this module, you will expand your knowledge on the concept of functions that were introduced in Module 5. This module covers how to develop good habits when writing functions like including docstrings, defensive programming, test-driven development and how to compose useful functions. '
 prev: /module5
 next: /module7
 type: chapter
@@ -27,7 +27,7 @@ id: 6
 
 **Question 1**      
 
-Given the code below what is the output?
+Given the code below, what is the output?
 
 ```python
 
@@ -112,19 +112,19 @@ toy
 <choice id="3" >
 <opt text="<code>None</code>" >
 
-`toy` is a local variable, will it be recognized in a global enviroment?
+`toy` is a local variable, will it be recognized in a global environment?
 
 </opt>
 
 <opt text="<code>truck</code>">
 
-`toy` is a local variable, will it be recognized in a global enviroment?
+`toy` is a local variable, will it be recognized in a global environment?
 
 </opt>
 
 <opt text="<code>Error</code>" correct="true">
 
-Great! `toy` is a local variable, and will not be recognized in the global enviroment. 
+Great! `toy` is a local variable, and will not be recognized in the global environment. 
 
 </choice> 
 
@@ -140,13 +140,13 @@ Side effects make your code easier to debug.
 
 
 <choice id="1" >
-<opt text="True" correct="true">
+<opt text="True" >
 
 Ahh! Please go back and read over the slides. Side effects are generally avoided.
 
 </opt>
 
-<opt text="False">
+<opt text="False" correct="true">
 
 Well done. This is an important one to get right! 
 
@@ -206,7 +206,7 @@ This will still run without an error!
 
 **Question 3**          
 
-Which variable type can be effected by function side effects? 
+Which variable type can be affected by function side effects? 
 
 <choice id="3" >
 <opt text="Global variables" correct="true">
@@ -233,13 +233,13 @@ One of these variable types is not correct.
 <exercise id="4" title= "Writing Functions Without Side Effects">
 
 **Instructions:**    
-Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
+Running a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes. 
 
 **When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
 
 _**Make sure you remove the hash (`#`) symbol in the coding portions of this question.  We have commented them so that the line won't execute and you can test your code after each step.**_
 
-The function `kg_to_lb()` is used to convert a list of element with kg units into a list of elements with lbs units. Unfortunate this function includes a side effect that edits one of the global variables. 
+The function `kg_to_lb()` is used to convert a list of elements with kg units into a list of elements with lbs units. Unfortunate this function includes a side effect that edits one of the global variables. 
 
 
 Tasks:
@@ -270,7 +270,7 @@ Tasks:
 
 Given the following function, which of the function calls will result in an error? 
 
-```{python}
+```python
 def name_initials(first_name, last_name, year_of_birth = None):
     if year_of_birth is not None: 
         initials = first_name[0].upper() + middle_name[0].upper() + str(year_of_birth)
@@ -289,7 +289,7 @@ This one will run since `year_of_birth` is optional and will default to `None`. 
 
 <opt text="<code>name_initials(last_name = 'Grant', year_of_birth = 1987, first_name = 'Cameron')</code>">
 
-Since we are defining our our arguments with their names and values, this one will result with an output of `CG1987`.
+Since we are defining our arguments with their names and values, this one will result in an output of `CG1987`.
 
 </opt>
 
@@ -313,7 +313,7 @@ This function calls the arguments in the same order they were defined in. The ou
 
 **Question 1**    
 
-Given the function `employee_wage()`
+Given the function below: 
 ```python
 def employee_wage(employee_id, position, experience = 3):
     if position == "doctor": 
@@ -328,7 +328,7 @@ def employee_wage(employee_id, position, experience = 3):
         wage = 70000
     return wage * (1 + (0.1 * experience)) 
 ```
-What is the expected value of employee `765` who is a lawyer where we do not know the level of `experience` that she has? 
+What is the approximate wage of employee `765` who is a lawyer? 
 
 
 <choice id="1" >
@@ -359,7 +359,6 @@ Are you looking at the right position?
 </choice>  
 
 **Question 2**  
-
 
 If I make a function call using the following code, and I know that that parameter `spice_level` is an argument that has a default value, which other arguments **MUST** also have set default values? 
 
@@ -413,7 +412,7 @@ Running a coding exercise for the first time could take a bit of time for everyt
 
 _**Make sure you remove the hash (`#`) symbol in the coding portions of this question.  We have commented them so that the line won't execute and you can test your code after each step.**_
 
-The function `convert_ounces()` converts ounces into pounds. We want to make a more versatile function by defining in the function an argument that accepts default values for the conversion rate. Redefine the function `convert_ounces()` so that it takes an argument with a default conversion rate of 28.35. 
+The function `convert_ounces()` converts ounces into pounds. We want to make a more versatile function by defining an argument in the function that accepts default values for the conversion rate. Redefine the function `convert_ounces()` so that it takes an argument with a default conversion rate of 28.35. 
 
 
 Tasks:
@@ -466,7 +465,7 @@ def factor_of_10(number):
     Returns
     -------
     bool
-        Returns True if numbers is a multiple of 10 and False otherwise
+        Returns True if numbers are a multiple of 10 and False otherwise
       
     Examples
     --------
@@ -575,7 +574,7 @@ Great!
 <exercise id="11" title="Which Docstring is Most Appropriate?">
 
 
-Given the function below, which docstring follows the NumPy format ? 
+Given the function below, which docstring follows the NumPy format? 
 
 ```python
 
@@ -596,7 +595,7 @@ letters
 
 Parameters
 ----------
-str : some_words
+str : sentence
    The string to obtain the first letters from
     
 Returns
@@ -607,7 +606,7 @@ str :
 Example
 -------
 >>> acronym_it("Let's make this an acronym")
-LMTAA
+"LMTAA"
 """
 
 ````
@@ -622,7 +621,7 @@ letters
 
 Parameters
 ----------
-str : some_words
+some_words : str
    The string to obtain the first letters from
     
 Returns
@@ -633,7 +632,7 @@ list :
 Example
 -------
 >>> acronym_it("Let's make this an acronym")
-LMTAA
+"LMTAA"
 """
 
 ````
@@ -648,7 +647,7 @@ letters
 
 Parameters
 ----------
-str : sentence
+sentence : str
    The string to obtain the first letters from
     
 Returns
@@ -659,7 +658,7 @@ str :
 Example
 -------
 >>> acronym_it("Let's make this an acronym")
-LMTAA
+"LMTAA"
 """
 
 ````
@@ -686,7 +685,7 @@ list :
 Example
 -------
 >>> acronym_it("Let's make this an acronym")
-LMTAA
+"LMTAA"
 """
 
 ````
@@ -722,7 +721,7 @@ Look carefully at what is being returned and the example it provides
 </exercise>
 
 
-<exercise id="12" title= "Writing a Docstring ">
+<exercise id="12" title= "Practice writing a Docstring">
 
 **Instructions:**    
 Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
@@ -758,7 +757,7 @@ Tasks:
 </exercise>
 
 
-<exercise id="13" title="Defensive Programming via Exceptions" type="slides">
+<exercise id="13" title="Defensive Programming using Exceptions" type="slides">
 
 <slides source="module6/module6_13">
 
@@ -811,19 +810,19 @@ Why would we want to raise an exception?
 
 <opt text="To make the cause of the error much clearer to the caller of the function">
 
-This is correct, but did your read the other options? 
+This is correct, but did you read the other options? 
 
 </opt>
 
 <opt text="To force code to fail sooner rather than later">
 
-This is correct, but did your read the other options? 
+This is correct, but did you read the other options? 
 
 </opt>
 
 <opt text="To make your functions more usable"  >
 
-This is correct, but did your read the other options? 
+This is correct, but did you read the other options? 
 
 </opt>
 
@@ -858,7 +857,7 @@ def factor_of_10(number):
     Returns
     -------
     bool
-        Returns True if numbers is a multiple of 10 and False otherwise
+        Returns True if number is a multiple of 10 and False otherwise
         
     Raises
     ------
@@ -897,7 +896,7 @@ def factor_of_10(number):
     Returns
     -------
     bool
-        Returns True if numbers is a multiple of 10 and False otherwise
+        Returns True if number is a multiple of 10 and False otherwise
       
     Examples
     --------
@@ -936,7 +935,7 @@ def factor_of_10(number):
     Returns
     -------
     bool
-        Returns True if numbers is a multiple of 10 and False otherwise
+        Returns True if number is a multiple of 10 and False otherwise
         
     Exceptions
     ------
@@ -974,7 +973,7 @@ That's right, `Raises` goes between the `Returns` and `Examples`.
 
 <opt text="C"  >
 
-To document the what happens when and exception is raised, we use the title `Raises`.
+To document what happens when an exception is raised, we use the title `Raises`.
 
 </opt>
 
@@ -1034,7 +1033,7 @@ Tasks:
 
 **Question 1**      
 
-Which of statements is correct?     
+Which of the statements is correct?     
 
 
 <choice id="1" >
@@ -1107,7 +1106,7 @@ def acronym_it(sentence):
     return acronym
 ```
 
-Given the function above, which test **WOULD** fail?  
+Given the function above, which test ***would*** fail?  
 
 ```python 
 assert acronym_it("Hard work pays off") == ???
@@ -1144,12 +1143,58 @@ Good work!
 </exercise>
 
 
-<exercise id="19" title="Unit Tests andSystematic Approach to Program Design Questions ">
+<exercise id="19" title="Writing good Tests">
+
+```python
+def multiply(input_list):
+    product = 1
+    for element in input_list: 
+        product = product * element  
+    return product 
+```
+
+Given the function above, which are considered good tests? 
+
+_Hint: There is more than 1 correct answer_
+
+
+<choice id="1" >
+
+<opt text="<code>assert multiply([2, 95, 83, 102]) == 1608540</code>" >
+
+Tests are supposed to be simple; this is more complicated than necessary.
+
+</opt>
+
+<opt text="<code>assert multiply([1, 2, 3, 2]) == 12</code>" correct="true">
+
+This is a good test! Well done. Did you find all the correct answers?
+
+</opt>
+
+<opt text="<code>assert multiply([0]) == 0</code>" correct="true" >
+
+This is a good edge-case example! Did you find any other good tests?
+
+</opt>
+
+<opt text="<code>assertmultiply([4, 33, 11, 22]) == 31944<code>" >
+
+Tests are supposed to be simple; this is more complicated than necessary.
+
+</opt>
+
+</choice> 
+
+</exercise>
+
+
+<exercise id="20" title="Unit Tests and Test-Driven Development Questions">
 
 
 **Question 1**
 
-When do we ideally like to write our unit tests for our functions. 
+When do we ideally like to write our unit tests for our functions? 
 
 
 
@@ -1213,7 +1258,7 @@ The first step in a systematic approach to program design is:
 <choice id="3" >
 <opt text="Write unit tests."  >
 
-But we don't know our input arguments or output type that we expecting yet?
+But we don't know our input arguments or the output type that we are expecting yet?
 
 </opt>
 
@@ -1229,7 +1274,7 @@ Nailed it!
 
 </opt>
 
-<opt text="Write your peudo-code."  >
+<opt text="Write your pseudo-code."  >
 
 This should come after writing tests and defining your function!
 
@@ -1240,7 +1285,7 @@ This should come after writing tests and defining your function!
 </exercise>
 
 
-<exercise id="20" title= "Writing Unit Tests">
+<exercise id="21" title= "Writing Tests">
 
 **Instructions:**    
 Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
@@ -1249,7 +1294,7 @@ Running a coding exercise for the first time could take a bit of time for everyt
 
 _**Make sure you remove the hash (`#`) symbol in the coding portions of this question.  We have commented them so that the line won't execute and you can test your code after each step.**_
 
-Givent our BMI function from the previous few questions, let's write some unit tests.
+Given our BMI function from the previous few questions, let's write some unit tests.
 (**Disclaimer: Much more than these two measurements are needed to determine if someone is healthy**)    
 
 
@@ -1257,7 +1302,7 @@ Tasks:
 - Write 4 unit tests and check that at least 2 of them are testing edge cases. 
 
 
-<codeblock id="06_20">
+<codeblock id="06_21">
 
 - Are you using `Assert` statements?
 - Are you checking that they equal a correct value?
@@ -1268,32 +1313,34 @@ Tasks:
 
 </exercise>
 
-<exercise id="21" title="Good Function Design" type="slides">
+<exercise id="22" title="Good Function Design Choices" type="slides">
 
-<slides source="module6/module6_21">
+<slides source="module6/module6_22">
 
 </slides>
 
 </exercise>
 
 
-<exercise id="22" title="Function Design Questions">
+<exercise id="23" title="Function Design Questions">
 
 **Question 1**      
 
-Which of statements is correct?     
+***True of False***      
+
+Under no circumstances should we ever hard code values in our functions. 
 
 
 <choice id="1" >
-<opt text="<code>assert</code> statements cause our program to fail if the condition is <code>True</code>.">
+<opt text="True">
 
-`Exceptions` are what causes an error if the conditional statement is `True`. 
+Although it's advised not to, the rules provided to you in this section are not enforced but suggested.
 
 </opt>
 
-<opt text="<code>assert</code> statements cause our program to fail if the condition is <code>False</code>." correct="true">
+<opt text="False" correct="true">
 
-Nice work!
+There will likely be times where we may have to. The rules provided to you in this section are not enforced but suggested. 
 
 </opt>
 
@@ -1301,121 +1348,68 @@ Nice work!
 
 **Question 2** 
 
-```python
-def acronym_it(sentence):
-    words = sentence.split()
-    first_letters = [word[0].upper() for word in words]
-    acronym =  "".join(first_letters)
-    return acronym
-```
+***True of False***      
 
-Given the function above, what value for `???` would not result in an error? 
+Loops should always be outside of your functions. 
 
-```python 
-assert acronym_it("Hard work pays off") == ???
-```
 
-<choice id="2" >
+<choice id="1" >
+<opt text="True">
 
-<opt text="<code>'HWPO'</code>" correct="true">
-
-Great!
+The suggestion is to keep your code simple, not to avoid loops in functions. 
 
 </opt>
 
-<opt text="<code>'Hwpo'</code>" >
+<opt text="False" correct="true">
 
-It might be helpful to read the function code line by line. 
-
-</opt>
-
-<opt text="<code>'H'</code>"  >
-
-It might be helpful to read the function code line by line. 
-
-</opt>
-
-<opt text="<code>str<code>" >
-
-It might be helpful to read the function code line by line. 
+There will be many cases where you absolutely will need to have a loop within your function.
 
 </opt>
 
 </choice> 
 
-
-**Question 3** 
-
-```python
-def acronym_it(sentence):
-    words = sentence.split()
-    first_letters = [word[0].upper() for word in words]
-    acronym =  "".join(first_letters)
-    return acronym
-```
-
-Given the function above, which test **WOULD** fail?  
-
-```python 
-assert acronym_it("Hard work pays off") == ???
-```
-
-<choice id="3" >
-
-<opt text="<code>assert acronym_it('If at first you do not succeed, try try again') == 'IAFYDNSTTA'</code>" >
-
-Great!
-
-</opt>
-
-<opt text="<code>assert acronym_it('There are 30 bottles of beer on the wall!') == 'TA3BOBOTW'</code>" >
-
-It might be helpful to read the function code line by line. 
-
-</opt>
-
-<opt text="<code>assert acronym_it('Build me up, buttercup') == 'BMUB'</code>"  >
-
-It might be helpful to read the function code line by line. 
-
-</opt>
-
-<opt text="<code>assert acronym_it('10 times 5 is 50') == '10T5I50'<code>" correct="true">
-
-Good work! 
-
-</opt>
-
-</choice> 
 
 </exercise>
 
 
-<exercise id="23" title="Improve it!">
+<exercise id="24" title="Improve it!">
 
 
 **Question 1**
 
-When do we ideally like to write our unit tests for our functions. 
+What's wrong with the function below? 
 
+```python
+def give_me_facts(myinfo):
+    max_val = max(myinfo)
+    min_val = min(myinfo)
+    range_val = max_val - min_val
+    return max_val, min_val, range_val
+```
 
 
 <choice id="1" >
-<opt text="Before writing our function code" correct="true" >
+<opt text="It is doing too many calculations" >
 
-You got it!
-
-</opt>
-
-<opt text="After writing our function's code" >
-
-This is not ideal.
+Calculations are fine if we need them and here it looks like we need them to calculate the range.
 
 </opt>
 
-<opt text="While writing our function's code"  >
+<opt text="It is using a global variable inside the function" >
 
-Although this happens sometimes, it's better to write your tests before your function's code.
+There are no global variables in the function.
+
+</opt>
+
+<opt text="It's returning too many object" correct="true">
+
+Perfect! This is too many!
+
+</opt>
+
+<opt text="It's hard coding values in the function"  >
+
+We are lucky that there are no hardcoded values in this function!
 
 </opt>
 
@@ -1424,70 +1418,48 @@ Although this happens sometimes, it's better to write your tests before your fun
 
 **Question 2**
 
+How can we improve this function?
 
-When can we be confident in our code? 
+```python
+
+def count_the_elements(mylist): 
+    number_of_occurances  = mylist.count(7)
+    return number_of_occurances
+```
 
 
 <choice id="2" >
-<opt text="When all our tests pass."  >
+<opt text="Avoid using a list as an input arguments" >
 
-You got it!
-
-</opt>
-
-<opt text="After writing edge cases and they also pass." >
-
-This is not ideal.
+Lists are completely fine to use as input arguments. 
 
 </opt>
 
-<opt text="When our function does what we want without even writing test."  >
+<opt text="Simplify the operations" >
 
-Although this happens sometimes, it's better to write your tests before your function's code.
+This function is only 3 lines! Do we need it simpler?
 
 </opt>
 
-<opt text="It's good to ere on the side of caution when it comes to being confident in our code (bad things can happen to good coders)."  correct="true">
+<opt text="Use fewer global variables" >
+
+Luckily no global variables are being used in this function.
+
+</opt>
+
+<opt text="Remove the hard-coded value"  >
+
+Perfect! Let's make the count variable (in this case the `7`) an input argument. 
+
+</opt>
 
 </choice> 
-
-**Question 3**
-
-
-The first step in a systematic approach to program design is: 
-
-
-<choice id="3" >
-<opt text="Write unit tests."  >
-
-But we don't know our input arguments or output type that we expecting yet?
-
-</opt>
-
-<opt text="Write a docstring." >
-
-This is the last step!
-
-</opt>
-
-<opt text="Write a function stub." correct="true" >
-
-Nailed it!
-
-</opt>
-
-<opt text="Write your peudo-code."  >
-
-This should come after writing tests and defining your function!
-
-</choice> 
-
 
 
 </exercise>
 
 
-<exercise id="24" title= "Writing Unit Tests">
+<exercise id="25" title= "Function Design">
 
 **Instructions:**    
 Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
@@ -1496,26 +1468,28 @@ Running a coding exercise for the first time could take a bit of time for everyt
 
 _**Make sure you remove the hash (`#`) symbol in the coding portions of this question.  We have commented them so that the line won't execute and you can test your code after each step.**_
 
-Givent our BMI function let's write some unit tests.
-(**Disclaimer: Much more than these two measurements are needed to determine if someone is healthy**)    
+Given the function below, improve it so that it follows good function design principles. 
 
 
 Tasks:
-- Write 4 unit tests and check that at least 2 of them are testing edge cases. 
+- Given the function above, improve it so that it follows good function design practices.
+- Name your new function `new_wage()`.
+- Test your new function on a person with a salary of $84000 and an expected raise of 12%.
+- Save this in an object named `person1_new_wage`.
 
 
-<codeblock id="06_24">
+<codeblock id="06_25">
 
-- Are you using `Assert` statements?
-- Are you checking that they equal a correct value?
-
+- Are you removing the hardcoded values in the function?
+- Are removing the return of 2 variables? 
+- Are you removing the loop from inside the function? 
 
 
 </codeblock>
 
 </exercise>
 
-<exercise id="25" title="What Did We Just Learn?" type="slides, video">
+<exercise id="26" title="What Did We Just Learn?" type="slides, video">
 <slides source="module6/module6_end" start="0:165" end="3:01">>
 </slides>
 </exercise>
