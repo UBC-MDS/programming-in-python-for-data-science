@@ -203,6 +203,12 @@ as different values for both inputs. Let’s make another test for
 assert exponent_a_list([1, 2, 3], 3) == [1, 8, 27], "incorrect output for exponent = 3"
 ```
 
+We can also test that our expected datatype is correct:
+
+``` python
+assert type(exponent_a_list([1,2,4], 2)) == list, "output type not a list"
+```
+
 Notes: Script here
 
 <html>
