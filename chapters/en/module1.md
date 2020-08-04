@@ -932,13 +932,13 @@ Tasks:
 - Load in the csv named `canucks.csv` as you did the earlier exercise and save it as `hockey_players`. 
 - Use alt.Chart() to create a chart object
 - Use the .mark_bar() to create a bar plot
-- Use the .encode() to specify the `Postion` column for plotting
+- Use the .encode() to specify the `Position` column for plotting
 - Assign a color as Teal and set opacity to 0.5   
 - Don't forget to add a title as "Canuck Player Positions"
 
 <codeblock id="01_32">
 
-- Are you sure you using `opacity` to set the opacity?
+- Are you sure you are using `opacity` to set the opacity?
 - Are you using the correct Dataframe?
 - Did you assign the correct values to `color` and `opacity`?
 - Are you using the `.properties(title=...)` to assign the title?

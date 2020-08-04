@@ -47,14 +47,14 @@ np.set_printoptions(linewidth=400)
 
 pd.set_option('display.max_columns', 15)
 
-df = pd.read_csv('cereal.csv')
+cereal = pd.read_csv('cereal.csv')
 
 ## Adjusted path 
 path = "../../../../static/module1/"
 ```
 
 ```{python include=FALSE}
-manufacturer_freq = df["mfr"].value_counts()
+manufacturer_freq = cereal["mfr"].value_counts()
 ```
 
 
@@ -71,14 +71,14 @@ Notes: Script here.
 
 ---
 
-If we want to visualize things using different plots we can do that pretty quickly and with little code! Take `cereal` object we analyzed in the last slide deck.
+If we want to visualize things using different plots we can do that pretty quickly and with little code! Take the `cereal` object we analyzed in the last slide deck.
 
 ```{python}
-df
+cereal
 ```
 
 
-Let say we are interested in the `manufacturer` column. This would be great to express as a bar chart. But how do we do it?
+Let say we are interested in the `manufacturer` column. It would be great to express the frequency of each expressed as a bar chart. But how do we do it?
 
 
 Notes: Script here.
@@ -89,10 +89,13 @@ Notes: Script here.
 
 ---
 
-To do this, we are going to use a very nifty package called `altair`. Altiar is a new data visualization tool that produces plots relatively easily. Like any other packages we have seen so far, `altair` needs to be imported before we can use it.
+To do this, we are going to use a very nifty package called `altair`. Altair is a new data visualization tool that produces plots relatively easily. Like any other packages we have seen so far, `altair` needs to be imported before we can use it.
 
 ```{python}
 import altair as alt
+```
+
+```{python, include=FALSE}
 from altair_saver import save
 ```
 
@@ -106,19 +109,17 @@ Notes: Script here.
 
 To make a `bar` plot using `altair`, we follow the steps below:
 
-1. We take the dataframe we wish to plot, in this case `df`.
-2. We create an `altair` plot object using `alt.chart()`.
-3. We can pass the dataframe we'd like to plot by using `alt.chart(df)`
-4. But what kind of plot do we want?! A bar chart in this case would work nicely so lets add `.mark_bar()` after that.
-5. Now that we have specified that we want a `bar` plot from our `df`, we need to specify what column. This is done using the `.encode(x='mfr', y='count()')`. The `count` here says that we would like to count up all the occurrences of the different manufacturers.
+1. We take the dataframe we wish to plot, in this case `cereal`.
+2. We create an `altair` plot object using `alt.chart(...)`.
+3. We can pass the dataframe we'd like to plot by using `alt.chart(cereal)`
+4. But what kind of plot do we want?! A bar chart in this case would work nicely so lets add `.mark_bar()` after that to get `alt.chart(cereal).mark_bar()`.
+5. Now that we have specified that we want a `bar` plot from our `df`, we need to specify what columns. This is done using the `.encode(x='mfr', y='count()')`. The `count` here says that we would like to count up all the occurrences of the different manufacturers.
 6. Putting it all together, we have ```alt.chart(df).mark_bar().encode(x='mfr', y='count()')```. Lets see how this looks on the next slide.
 
 ---
 
 ```{python}
-# Note that the setting the width and height is for consistency.
-
-chart1 = alt.Chart(df, width=500, height=300).mark_bar().encode(
+chart1 = alt.Chart(cereal).mark_bar().encode(
     x='mfr',
     y='count()'
 )
@@ -131,19 +132,52 @@ chart1
 chart1.save(path + 'chart1.png')
 ```
 
-<img src="/module1/chart1.png" alt="A caption" width="40%" />
+<img src="/module1/chart1.png" alt="A caption" width="20%" />
 
 See how quick that was?
 The important things to notice here is that we want create a `alt.chart()` object and then specify that we want a `.mark_bar()` graph and then specifying which column using `.encode()`. 
 
+Notes: Script here.
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
 ---
 
-What else can we plot from our original cereal dataframe named `df`? Maybe we want to see the relationship between `sugars` and `calories` in cereals?        
+Notice how the previous graph was a bit small and hard to see. Well we can fix that easily by telling `altair` what height and width the plot should have. This can be done by specifying the `height` and `width` argument in the `alt.Chart(width=.., height=..)` function. Lets set the the height and the width of the previous plot to `300` and `500` respectively.
+
+
+```{python}
+chart0 = alt.Chart(cereal, width=500, height=300).mark_bar().encode(
+    x='mfr',
+    y='count()'
+)
+chart1
+
+```
+
+
+```{python include =FALSE}
+chart0.save(path + 'chart0.png')
+```
+
+<img src="/module1/chart0.png" alt="A caption" width="40%" />
+
+Notes: Script here.
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+What else can we plot from our original cereal dataframe named `cereal`? Maybe we want to see the relationship between `sugars` and `calories` in cereals?        
 This would require a `scatter` plot which can be done by specifying `mark_circle` after creating the `alt.chart()` object.     
 In the `.encode()` function, we would need to specify the x and y axis which means we would need to specify the column names for each axis; In this case the x-axis is the `sugars` column and the y-axis is the `calories` column.    
 
 ```{python}
-chart2 = alt.Chart(df, width=500, height=300).mark_circle().encode(
+chart2 = alt.Chart(cereal, width=500, height=300).mark_circle().encode(
     x='sugars',
     y='calories'
 )
@@ -165,11 +199,11 @@ Notes: Script here.
 
 ---
 
-Something you may have noticed is that there are 77 cereals but there doesn't seem to be 77 data points! That's because some of them are lying on top of each other with the same sugar ar calorie values. It may be of use to set an opacity to the graph to differential those points. Opacity is set with the argument `opacity` in the `mark_circle(opacity=...)` function and accepts values between 0 and 1, with 1 being full intensity.
+Something you may have noticed is that there are 77 cereals but there doesn't seem to be 77 data points! That's because some of them are lying on top of each other with the same sugar and calorie values. It may be of use to set an opacity to the graph to differential those points. Opacity is set with the argument `opacity` in the `mark_circle(opacity=...)` function and accepts values between 0 and 1, with 1 being full intensity.
 
 ```{python}
 # lets set the opacity to 30%
-chart3 = alt.Chart(df, width=500, height=300).mark_circle(opacity=0.3).encode(
+chart3 = alt.Chart(cereal, width=500, height=300).mark_circle(opacity=0.3).encode(
     x='sugars',
     y='calories'
 )
@@ -192,11 +226,11 @@ Notes: Script here.
 ---
 
 Look at that! Now we can see there are multiple cereals that have 2.5g of sugar with 100 calories.
-So what if you don't fancy the color the default color `blue`? Well that is okay, we can change the color using the `color` argument in the `.mark_circle(color=...)` function. Lets change the color to `red`(I like red) while keeping the same opacity.
+So what if you don't fancy the color the default color `blue`? Well that is okay, we can change the color using the `color` argument in the `.mark_circle(color=...)` function. Lets change the color to `red`(I like red) and keep the same opacity.
 
 ```{python}
 # lets set the opacity to 30%
-chart4 = alt.Chart(df, width=500, height=300).mark_circle(color='red', opacity=0.3).encode(
+chart4 = alt.Chart(cereal, width=500, height=300).mark_circle(color='red', opacity=0.3).encode(
     x='sugars',
     y='calories'
 )
@@ -218,12 +252,12 @@ Notes: Script here.
 
 ---
 
-Maybe I have bad eyes, but those data points look pretty small. Good news though, we can make them bigger (bigger is better?) To enlarge them, the argument `size` in the `mark_circle(size=..)` should do the trick.
+Maybe I have bad eyes, but those data points look pretty small. Good news though, we can make them bigger to enlarge them, the argument `size` in the `mark_circle(size=..)` should do the trick.
 
 
 ```{python}
 # lets set the opacity to 30%
-chart5 = alt.Chart(df, width=500, height=300).mark_circle(color='red', size=12, opacity=0.3).encode(
+chart5 = alt.Chart(cereal, width=500, height=300).mark_circle(color='red', size=12, opacity=0.3).encode(
     x='sugars',
     y='calories'
 )
@@ -231,16 +265,9 @@ chart5
 ```
 
 
-<<<<<<< HEAD
 ```{python include =FALSE}
 chart5.save(path + 'chart5.png')
-=======
-```{r include = FALSE}
-library(vegawidget) # Need to install this using: install.packages('vegawidget')
-library(reticulate)
-library(htmltools)
 
->>>>>>> 30a2af7617fb9b7197f738c4284608ee868b5be3
 ```
 
 <img src="/module1/chart5.png" width="45%" />
@@ -251,28 +278,13 @@ Notes: Script here.
   <source src="/placeholder_audio.mp3" />
 </audio></html>
 
-
-<<<<<<< HEAD
 ---
-=======
-chart1 = alt.Chart(source).mark_bar(color = 'red').encode(
-    x='mfr',
-    y='count()'
-)
-chart1
-
-```
-
-```{python include =FALSE}
-chart1.save(path + 'chart1.png')
-```
->>>>>>> 30a2af7617fb9b7197f738c4284608ee868b5be3
 
 Also every good graph should have a title! A title provides useful information as to what the plot is about. Let's take this opportunity to finish off our scatter plot graph and set the argument `title` to something as well. To set the `title`, we use the `title` argument to the `.properties(title=..)` function.
 
 ```{python}
 # lets set the opacity to 30%
-chart6 = alt.Chart(df, width=500, height=300).mark_circle(color='red', size=12, opacity=0.3).encode(
+chart6 = alt.Chart(cereal, width=500, height=300).mark_circle(color='red', size=12, opacity=0.3).encode(
     x='sugars',
     y='calories'
 ).properties(title="Scatter plot sugars vs calories for different cereals")
