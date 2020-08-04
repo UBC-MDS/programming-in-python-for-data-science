@@ -100,7 +100,7 @@ slide, we could do the following:
 def exponent_a_list(numerical_list, exponent=2):
 
     if not isinstance(numerical_list, list):
-        raise Exception("Sorry, but you are not using a list as an input like we asked.")
+        raise Exception("You are not using a list for the numerical_list input.")
 
     new_exponent_list = list()
     for number in numerical_list:
@@ -114,7 +114,7 @@ exponent_a_list(numerical_string)
 ```
 
 ``` out
-Exception: Sorry, but you are not using a list as an input like we asked.
+Exception: You are not using a list for the numerical_list input.
 
 Detailed traceback: 
   File "<string>", line 1, in <module>
@@ -154,7 +154,7 @@ Now we get an error message that is straight forward on why our code is
 failing:
 
 ``` out
-Exception: Sorry, but you are not using a list as an input like we asked.
+Exception: You are not using a list for the numerical_list input.
 ```
 
 We can agree that this message was much easier to decipher than the
@@ -179,7 +179,7 @@ Notes: Script here
 
 ``` python
 if not isinstance(numerical_list, list):
-        raise Exception("Sorry, but you are not using a list as an input like we asked.")
+        raise Exception("You are not using a list for the numerical_list input.")
 ```
 
 Here we used a function called `isinstance()` which checks if the first
@@ -330,7 +330,7 @@ value for numerical\_list was the correct type:
 
 ``` python
 if not isinstance(numerical_list, list):
-   raise Exception("Sorry, but you are not using a list for input like we asked.")
+   raise Exception("You are not using a list for the numerical_list input.")
 ```
 
 Since this is a type error, a better raised exception over `Exception`
@@ -341,7 +341,7 @@ Let’s make our correction here:
 def exponent_a_list(numerical_list, exponent=2):
 
     if not isinstance(numerical_list, list):
-        raise TypeError("Sorry, but you are not using a list for input like we asked.")
+        raise TypeError("You are not using a list for the numerical_list input.")
 
     new_exponent_list = list()
     for number in numerical_list:
@@ -355,7 +355,7 @@ exponent_a_list(numerical_string)
 ```
 
 ``` out
-TypeError: Sorry, but you are not using a list for input like we asked.
+TypeError: You are not using a list for the numerical_list input.
 
 Detailed traceback: 
   File "<string>", line 1, in <module>

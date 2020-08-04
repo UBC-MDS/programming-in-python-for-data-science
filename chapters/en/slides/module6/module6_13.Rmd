@@ -118,7 +118,7 @@ If we wanted to raise an exception to solve the problem on the last slide, we co
 def exponent_a_list(numerical_list, exponent=2):
 
     if not isinstance(numerical_list, list):
-        raise Exception("Sorry, but you are not using a list as an input like we asked.")
+        raise Exception("You are not using a list for the numerical_list input.")
 
     new_exponent_list = list()
     for number in numerical_list:
@@ -131,7 +131,7 @@ numerical_string = "123"
 exponent_a_list(numerical_string)
 ```
 ```out
-Exception: Sorry, but you are not using a list as an input like we asked.
+Exception: You are not using a list for the numerical_list input.
 
 Detailed traceback: 
   File "<string>", line 1, in <module>
@@ -157,7 +157,7 @@ The second line does the complaining. We tell it to `raise` an `Exception` with 
 Now we get an error message that is straight forward on why our code is failing:
 
 ```out
-Exception: Sorry, but you are not using a list as an input like we asked.
+Exception: You are not using a list for the numerical_list input.
 ```
 
 We can agree that this message was much easier to decipher than the original. The new message made the cause of the error much clearer to the user making our function much more usable.
@@ -174,7 +174,7 @@ Notes: Script here
 
 ```python
 if not isinstance(numerical_list, list):
-        raise Exception("Sorry, but you are not using a list as an input like we asked.")
+        raise Exception("You are not using a list for the numerical_list input.")
 ```
 
 Here we used a function called `isinstance()` which checks if the first argument is of the same data type as the second argument. 
@@ -287,7 +287,7 @@ Let's take a look now at the exception we wrote that checks if the input value f
  
  ```python
 if not isinstance(numerical_list, list):
-    raise Exception("Sorry, but you are not using a list for input like we asked.")
+    raise Exception("You are not using a list for the numerical_list input.")
 ```
 
 Since this is a type error, a better raised exception over `Exception` would be `TypeError`.     
@@ -297,7 +297,7 @@ Let's make our correction here:
 def exponent_a_list(numerical_list, exponent=2):
 
     if not isinstance(numerical_list, list):
-        raise TypeError("Sorry, but you are not using a list for input like we asked.")
+        raise TypeError("You are not using a list for the numerical_list input.")
 
     new_exponent_list = list()
     for number in numerical_list:
@@ -310,7 +310,7 @@ numerical_string = "123"
 exponent_a_list(numerical_string)
 ```
 ```out
-TypeError: Sorry, but you are not using a list for input like we asked.
+TypeError: You are not using a list for the numerical_list input.
 
 Detailed traceback: 
   File "<string>", line 1, in <module>
