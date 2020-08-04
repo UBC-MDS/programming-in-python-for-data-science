@@ -368,6 +368,7 @@ has a small dimension to keep the calculations simple.
 data = { 'name': ['Cherry', 'Oak', 'Willow', 'Fir', 'Oak'], 
          'height': [15, 20, 10, 5, 10], 
          'diameter': [2, 5, 3, 10, 5], 
+         'age': [0, 0, 0, 0, 0], 
          'flowering': [True, False, True, False, False]}
          
 forest = pd.DataFrame.from_dict(data)
@@ -375,12 +376,12 @@ forest
 ```
 
 ```out
-     name  height  diameter  flowering
-0  Cherry      15         2       True
-1     Oak      20         5      False
-2  Willow      10         3       True
-3     Fir       5        10      False
-4     Oak      10         5      False
+     name  height  diameter  age  flowering
+0  Cherry      15         2    0       True
+1     Oak      20         5    0      False
+2  Willow      10         3    0       True
+3     Fir       5        10    0      False
+4     Oak      10         5    0      False
 ```
 
 The tests we write for the function `column_stats()` are now easy to
@@ -388,6 +389,7 @@ calculate:
 
 ``` python
 assert column_stats(forest, 'height') == {'max': 20, 'min': 5, 'mean': 12.0, 'range': 15}
+assert column_stats(forest, 'diameter') == {'max': 10, 'min': 2, 'mean': 5.0, 'range': 8}
 assert column_stats(forest, 'diameter') == {'max': 10, 'min': 2, 'mean': 5.0, 'range': 8}
 ```
 

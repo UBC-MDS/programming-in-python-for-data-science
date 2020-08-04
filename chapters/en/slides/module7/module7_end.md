@@ -2,7 +2,7 @@
 type: slides
 ---
 
-# What Did we Learn and What to Expect in Assignment 6
+# What Did we Learn and What to Expect in Assignment 7
 
 Notes: Script here
 <html>
@@ -16,15 +16,14 @@ Notes: Script here
 
 By the end of the module, students are expected to:
 
-- Evaluate the readability, complexity and performance of a function.
-- Write Docstrings for functions following the NumPy/SciPy format.
-- Write comments within a function to improve readability.
-- Write and design functions with default arguments.
-- Explain the importance of scoping and environments in Python as they relate to functions.
-- Formulate test cases to prove a function design specification.
-- Use `assert` statements to formulate a test case to prove a function design specification.
-- Use test-driven development principles to define a function that accepts parameters, returns values and passes all tests.
-- Handle errors gracefully via exception handling.
+- Describe what python libraries are, as well as explain when and why they are useful.
+- Identify where code can be improved concerning variable names, magic numbers, comments and whitespace.
+- Write code that is human readable and follows the black style guide.
+- Import files from other directories.
+- Use `pytest` to check a function's tests.
+- When running `pytest`, explain how pytest find the associated test functions.
+- Explain how the python debugger can help rectify your code.
+
 
 Notes:
 <html>
@@ -62,7 +61,7 @@ Notes: Script here
 
 ---
 
-# On to Assignment 6!
+# On to Assignment 7!
 
 Notes: Insert audio here.
 

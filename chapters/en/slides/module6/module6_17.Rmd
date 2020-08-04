@@ -307,6 +307,7 @@ We need to make my helper data so that we can easily calculate the max, min, ran
 data = { 'name': ['Cherry', 'Oak', 'Willow', 'Fir', 'Oak'], 
          'height': [15, 20, 10, 5, 10], 
          'diameter': [2, 5, 3, 10, 5], 
+         'age': [0, 0, 0, 0, 0], 
          'flowering': [True, False, True, False, False]}
          
 forest = pd.DataFrame.from_dict(data)
@@ -316,6 +317,7 @@ The tests we write for the function `column_stats()` are now easy to calculate:
 
 ```{python}
 assert column_stats(forest, 'height') == {'max': 20, 'min': 5, 'mean': 12.0, 'range': 15}
+assert column_stats(forest, 'diameter') == {'max': 10, 'min': 2, 'mean': 5.0, 'range': 8}
 assert column_stats(forest, 'diameter') == {'max': 10, 'min': 2, 'mean': 5.0, 'range': 8}
 ```
 
