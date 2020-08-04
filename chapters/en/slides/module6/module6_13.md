@@ -376,7 +376,7 @@ Notes: Script here
 
 ---
 
-Let’s make the same change for the exception that checks that each
+Let’s make the same changes for the exception that checks that each
 element is of type `int` in the input list `numerical_list`. This also
 is a type error:
 
