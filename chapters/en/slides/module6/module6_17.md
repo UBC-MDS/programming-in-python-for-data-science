@@ -281,7 +281,7 @@ address corner cases.
 
 ``` python
 assert exponent_a_list([], 3) == [], "incorrect output for empty list"
-assert exponent_a_list([0, 1, 3], 0) == [1, 1, 1], "incorrect output for empty list"
+assert exponent_a_list([0, 1, 3], 0) == [1, 1, 1], "incorrect output for exponent 0"
 assert exponent_a_list([1, 2], -2) == [1, 0.25], "incorrect output for a negative exponent"
 ```
 
