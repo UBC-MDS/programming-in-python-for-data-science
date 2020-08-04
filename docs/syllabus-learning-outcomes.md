@@ -158,14 +158,13 @@ By the end of the module, students are expected to:
 - Handle errors gracefully via exception handling.
 
 
-### Module 7: Vogue Code the Style Guide (Readable code and libraries)
+### Module 7: Importing Files and the Coding Style Guide
 
 #### Topics 
 - Importing your created functions from a different file
-- Python debugger (PDB) ( video in notebook instead with MC question) 
 - `pytest`
 - Style guides and coding style - black
-- Python debugger
+- Python debugger (PDB) (video in notebook instead with MC question) 
 
 #### Learning Outcomes 
 
