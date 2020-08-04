@@ -390,7 +390,7 @@ calculate:
 ``` python
 assert column_stats(forest, 'height') == {'max': 20, 'min': 5, 'mean': 12.0, 'range': 15}
 assert column_stats(forest, 'diameter') == {'max': 10, 'min': 2, 'mean': 5.0, 'range': 8}
-assert column_stats(forest, 'diameter') == {'max': 10, 'min': 2, 'mean': 5.0, 'range': 8}
+assert column_stats(forest, 'age') == {'max': 0, 'min': 0, 'mean': 0, 'range': 0}
 ```
 
 Notes: Script here
