@@ -266,7 +266,7 @@ We discussed the conditional part of an exception, but now let's learn more abou
 
 ```python
 if exponent <0:
-    raise Exception("This function must have values for exponent larger than 0")
+    raise Exception("This function must have a value for exponent larger than 0")
 ```
 
  `Exception` is just one of the <a href="https://docs.python.org/3/library/exceptions.html#Exception" target="_blank">  many different exception types possible.</a>

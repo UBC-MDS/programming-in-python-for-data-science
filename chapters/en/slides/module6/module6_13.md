@@ -299,7 +299,7 @@ more about the possible different types of Exceptions.
 
 ``` python
 if exponent <0:
-    raise Exception("This function must have values for exponent larger than 0")
+    raise Exception("This function must have a value for exponent larger than 0")
 ```
 
 `Exception` is just one of the
