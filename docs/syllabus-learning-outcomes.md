@@ -147,16 +147,39 @@ By the end of the module, students are expected to:
 
 #### Learning Outcomes 
 
-- Evaluate the readability, complexity and performance of a function
-- Write Docstrings for functions following the NumPy/SciPy format
-- Write comments within a function to improve readability
-- Write and design functions with default arguments
-- Explain the importance of scoping and environments in Python as they relate to functions
-- Formulate test cases to prove a function design specification
-- Use test-driven development principles to define a function that accepts parameters, returns values and passes all tests
-- Handle errors gracefully via exception handling
+- Evaluate the readability, complexity and performance of a function.
+- Write Docstrings for functions following the NumPy/SciPy format.
+- Write comments within a function to improve readability.
+- Write and design functions with default arguments.
+- Explain the importance of scoping and environments in Python as they relate to functions.
+- Formulate test cases to prove a function design specification.
+- Use `assert` statements to formulate a test case to prove a function design specification.
+- Use test-driven development principles to define a function that accepts parameters, returns values and passes all tests.
+- Handle errors gracefully via exception handling.
 
-### Module 7: Handling other advanced(?) data formats and missing & erroneous values
+
+### Module 7: Importing Files and the Coding Style Guide
+
+#### Topics 
+- Importing your created functions from a different file
+- `pytest`
+- Style guides and coding style - black
+- Python debugger (PDB) (video in notebook instead with MC question) 
+
+#### Learning Outcomes 
+
+By the end of the module, students are expected to:
+
+- Describe what python libraries are, as well as explain when and why they are useful.
+- Identify where code can be improved concerning variable names, magic numbers, comments and whitespace.
+- Write code that is human readable and follows the black style guide.
+- Import files from other directories.
+- Use `pytest` to check a function's tests.
+- When running `pytest`, explain how pytest find the associated test functions.
+- Explain how the python debugger can help rectify your code.
+
+
+### Module 8: Handling other advanced(?) data formats and missing & erroneous values
 
 #### Topics 
 
@@ -166,6 +189,7 @@ By the end of the module, students are expected to:
 - Identifying and handling missing/erroneous values 
 - Pandas profiling 
 
+
 #### Learning Outcomes 
 
 By the end of the module, students are expected to:
@@ -173,30 +197,7 @@ By the end of the module, students are expected to:
 - Manipulate non-standard date/time formats into standard Pandas datetime using `pd.to_datetime()`.
 - Find, replace and extract text from a dataframe using methods such as `df.replace()` with regular expressions.
 - Identify missing and erroneous values in a dataframe and manage them by removing (using `df.dropna()`) or replacing (`df.fillna()`).
-- extract information from the Pandas profiling package. 
-
-
-### Module 8: Vogue Code the Style Guide (Readable code and libraries)
-
-_Things to add here? Definitely my weakest module!_ 
-
-#### Topics 
-- Importing your created functions from a different file
-- Style guides and coding style 
-- Python debugger (PDB) ( video in notebook instead with MC question) 
-
-#### Learning Outcomes 
-
-By the end of the module, students are expected to:
-
-- Use `assert` statements to formulate a test case to prove a function design specification
-- Use test-driven development principles to define a function that accepts parameters, returns values and passes all tests
-- Handle errors gracefully via exception handling
-- Describe what python libraries are, as well as explain when and why they are useful
-- Identify where code can be improved concerning variable names, magic numbers, comments and whitespace
-- Write code that is human readable and follows the pep8 style guide.
-- Explain how the python debugger can help rectify your code.
-
+- Extract information from the Pandas profiling package. 
 
 
 ## APPENDIX: 
