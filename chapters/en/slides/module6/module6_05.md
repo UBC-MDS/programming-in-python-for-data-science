@@ -18,11 +18,11 @@ Notes: Script here
 
 ---
 
-When we were introduced to functions in Module 5, arguments are
-something we implemented into our functions without much discussion and
-it’s time now that we address them.
+When we were learned functions in Module 5, arguments are something we
+implemented into our functions without much discussion and it’s time now
+that we address them.
 
-Arguments play a paramont role when it comes to adhereing to the DRY
+Arguments play a paramount role when it comes to adhering to the DRY
 principle as well as adding flexibility to your code.
 
 Let’s bring back the function we made named `squares_a_list()`.
@@ -42,8 +42,8 @@ code and avoid repeating the same `for` loop for any additional list we
 wished to operate on.
 
 What happens now if we no longer wanted to square a number but calculate
-a specified exponential of each element, perhaps `$$n^3$$`, or `$$n^4$$`
-? Would we need a new function?
+a specified exponential of each element, perhaps n^3, or n^4? Would we
+need a new function?
 
 Notes: Script here
 
@@ -87,7 +87,7 @@ Notes: Script here
 
 ---
 
-A better solution which adheres to the DRY principle, is to tweak our
+A better solution that adheres to the DRY principle is to tweak our
 original function but add an additional argument.  
 Take a look at `exponent_a_list()` which now takes 2 arguments; the
 original `numerical_list`, and now a new argument named `exponent`.
@@ -111,8 +111,8 @@ exponent_a_list(numbers, 3)
 [8, 27, 125]
 ```
 
-This gives us a choice of the exponent. We could use the same function
-now for any exponent we want instead of making a new function for each.
+This gives us a choice of exponent. We could use the same function now
+for any exponent we want instead of making a new function for each.
 
 ``` python
 exponent_a_list(numbers, 5)
@@ -141,12 +141,12 @@ Notes: Script here
 
 ## Default Values for Arguments
 
-Python allows for optional arguments that take something call default
-valuea. A default argument value allows a function to have an argument
-however, if it is not specified when the function is called, a
-pre-selected option is adopted.  
-For example, in our `exponent_a_list()` function can use a default
-argument value for `exponent`.
+Python allows for optional arguments that can take a default value. An
+optional argument allows a function to have an input argument however if
+a value is not specified for this parameter when the function is called,
+a pre-selected option is adopted.  
+For example, in a new version of `exponent_a_list()`, the function uses
+a default argument value of `2` for `exponent`.
 
 ``` python
 def exponent_a_list(numerical_list, exponent=2):
@@ -159,7 +159,7 @@ def exponent_a_list(numerical_list, exponent=2):
 ```
 
 Now if we do not specify the exponent argument when we call our
-function, it defaults to an exponent of 2:
+function, it defaults to an exponent of `2`:
 
 ``` python
 numbers = [2, 3, 5]
@@ -196,15 +196,16 @@ Notes: Script here
 ---
 
 Functions can have any number of arguments and any number of optional
-arguments but when we must be cafeful with order arguments they are
+arguments but we must be careful with order in which arguments are
 defined and called.
 
 When we defined our arguments in a function, all arguments with default
 values need to be defined ***after*** required arguments. If any
 required arguments follow any arguments with default values, an error
 will occur.  
-Let’s take our original function and re-order it so the optional
-`exponent` argument is defined first. We will see Python throw an error:
+Let’s take our original function `exponent_a_list()` and re-order it so
+the optional `exponent` argument is defined first. We will see Python
+throw an error:
 
 ``` python
 def exponent_a_list(exponent=2, numerical_list):
@@ -236,9 +237,9 @@ Notes: Script here
 
 ## Argument Ordering
 
-Up to this point we have been calling functions with multiple arguments
+Up to this point, we have been calling functions with multiple arguments
 in a single way. When we call our function, we have been ordering the
-arguments in the order the function defined them in. So in
+arguments in the order the function defined them in. So, in
 `exponent_a_list()`, the argument `numerical_list` is defined first,
 followed by the argument `exponent`.
 
@@ -252,7 +253,7 @@ def exponent_a_list(numerical_list, exponent=2):
     return new_exponent_list
 ```
 
-Naturally we have been calling our function with the arguments in this
+Naturally, we have been calling our function with the arguments in this
 order as well:
 
 ``` python
@@ -278,21 +279,20 @@ Notes: Script here
 
 ---
 
-Let’s see what happened we we switch up the arguments ordering when we
-call `exponent_a_list()` and call the `exponent` value first followed by
-the `numerical_list`:
+Let’s see what happened when we switch up the ordering of the arguments
+when we call `exponent_a_list()` and call the `exponent` value first
+followed by the `numerical_list`:
 
 ``` python
-
 exponent_a_list(5,  [2, 3, 5])
 ```
 
-```out
-Error in py_call_impl(callable, dots$args, dots$keywords): TypeError: 'int' object is not iterable
+``` out
+NameError: name 'new_exponent_list' is not defined
 
 Detailed traceback: 
   File "<string>", line 1, in <module>
-  File "<string>", line 4, in exponent_a_list
+  File "<string>", line 2, in exponent_a_list
 ```
 
 Our function doesn’t recognize the input arguments and an error occurs.

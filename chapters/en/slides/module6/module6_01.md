@@ -120,11 +120,9 @@ Notes: Script here
 ## Scoping
 
 It’s important to know what exactly is going on inside and outside of a
-function?  
-In our function `squares_a_list()` we saw that we created a variable
-named `new_squared_list`.  
-We can print this variable and watch all the elements append to it are
-we loop through the input list:
+function. In our function `squares_a_list()` we saw that we created a
+variable named `new_squared_list`. We can print this variable and watch
+all the elements append to it are we loop through the input list:
 
 ``` python
 def squares_a_list(numerical_list):
@@ -153,8 +151,8 @@ function?
 new_squared_list
 ```
 
-```out
-Error in py_call_impl(callable, dots$args, dots$keywords): NameError: name 'new_squared_list' is not defined
+``` out
+NameError: name 'new_squared_list' is not defined
 
 Detailed traceback: 
   File "<string>", line 1, in <module>
@@ -180,8 +178,8 @@ Notes: Script here
 new_squared_list
 ```
 
-```out
-Error in py_call_impl(callable, dots$args, dots$keywords): NameError: name 'new_squared_list' is not defined
+``` out
+NameError: name 'new_squared_list' is not defined
 
 Detailed traceback: 
   File "<string>", line 1, in <module>
@@ -192,22 +190,22 @@ That’s not entirely true.
 
 In Python, `new_squared_list` is something we call a ***local
 variable***. Local variables are any objects that have been created
-within a function and only exist and acessible in the function that it
-was made it. Code within a function is described as a **local
+within a function and only exist and accessible in the function that it
+was made. Code within a function is described as a **local
 environment**.
 
 Since we called `new_squared_list` outside of the function’s body,
 Python fails to recognize it.
 
-Let’s compare that with the variable `numbers`.
+Let’s compare that with the variable `a_new_variable`.
 
 ``` python
-numbers = [2, 3, 5]
+a_new_variable = "Peek-a-boo"
 ```
 
-`Numbers` is created outside of a function in what we call our ***global
-environment*** and therefore Python recognizes it as a ***global
-variable***.
+`a_new_variable` is created outside of a function in what we call our
+***global environment*** and therefore Python recognizes it as a
+***global variable***.
 
 Notes: Script here
 
@@ -226,13 +224,13 @@ Notes: Script here
 Global variables differ from local variables as they are not only
 recognized outside of any function but also recognized inside
 functions.  
-Let’s take a look what happens when we add `numbers` into the
+Let’s take a look what happens when we add `a_new_variable` into the
 `squares_a_list` function:
 
 ``` python
 def squares_a_list(numerical_list):
 
-    print("print numbers:", numbers)
+    print(a_new_variable)
     
     new_squared_list = list()
     for number in numerical_list:
@@ -245,13 +243,16 @@ squares_a_list([12, 5, 7, 99999])
 ```
 
 ```out
-print numbers: [2, 3, 5]
+Peek-a-boo
 [144, 25, 49, 9999800001]
 ```
 
 The function recognizes the global variable\! It’s important to note,
-that although functions recognize global variable, it not good design to
-have functions reference object outside of it. Notes: Script here
+that although functions recognize global variables, it’s not a good to
+have functions reference objects outside of it. We will learn more on
+this later in the module.
+
+Notes: Script here
 
 <html>
 
@@ -273,16 +274,16 @@ I’m going to make an analogy comparing coffee stores to variables.
     travel across the world to Sydney, Australia, I would still be able
     to purchase a coffee from Starbucks there. Stackbucks Coffee is
     similar to a global variable as it is accessible and recognized in
-    both it’s local (Vancouver) and glabal environments.
+    both its local (Vancouver) and global environments.
   - **49th Parallel** is a ***local*** Vancouver coffee store. Most
-    people from Vancouver recognized it , however, purchasing a coffee
+    people from Vancouver recognized it, however, purchasing a coffee
     from 49th Parallel outside of Vancouver would be impossible as it is
     not accessible past the city of Vancouver.
 
 Just like Starbuck Coffee, global variables are recognized and
 accessible in both their global and local environments, whereas local
-variables like 49th Parallel are only recognized and accessible in the
-local environment it was created in.
+variables like the coffee store 49th Parallel are only recognized and
+accessible in the local environment it was created in.
 
 Notes: Script here
 
@@ -300,24 +301,26 @@ Notes: Script here
 
 ## When things get tricky
 
-Things can get a bit less clear when we have variables named the same
-way but they the object is defined inside and outside a function with
-the same name?
+Things can get unclear when we have variables that are named the same
+way but come from two different environments. what happens when 2
+different objects share the same name, where one was defined inside the
+function and the other in the global environment?
 
-For instance let’s say we defined a variable `numbers` in our global
-enviroment:
+For instance, let’s say we defined a variable `a_new_variable` in our
+global environment:
 
 ``` python
-numbers = [2, 3, 5]
+a_new_variable = "Peek-a-boo"
 ```
 
-And I made a `numbers` variable in a local environment by defining
-`numbers` with different values within our `squares_a_list` function :
+And I made a variable in a local environment with the same name
+`a_new_variable` but with different values within our `squares_a_list`
+function:
 
 ``` python
 def squares_a_list(numerical_list):
-    numbers = [10, 11, 12]
-    print("print numbers:", numbers)
+    a_new_variable = "Ta-Da!"
+    print( a_new_variable)
     
     new_squared_list = list()
     for number in numerical_list:
@@ -330,12 +333,12 @@ squares_a_list([1, 2])
 ```
 
 ```out
-print numbers: [10, 11, 12]
+Ta-Da!
 [1, 4]
 ```
 
-We can see that the locally created `numbers` variable was modified
-instead of the global object with the same name.
+We can see that the locally created `a_new_variable` variable was
+modified instead of the global object with the same name.
 
 Notes: Script here
 
@@ -351,27 +354,27 @@ Notes: Script here
 
 ---
 
-What about if we output `numbers` right after:
+What about if we output `a_new_variable` right after:
 
 ``` python
 squares_a_list([1, 2])
 ```
 
 ```out
-print numbers: [10, 11, 12]
+Ta-Da!
 [1, 4]
 ```
 
 ``` python
-numbers
+a_new_variable
 ```
 
 ```out
-[2, 3, 5]
+'Peek-a-boo'
 ```
 
-Our function prints the locally defined `numbers`, and the global
-environment prints the globally defined `numbers`.
+Our function prints the locally defined `a_new_variable`, and the global
+environment prints the globally defined `a_new_variable`.
 
 Notes: Script here
 
@@ -390,9 +393,8 @@ Notes: Script here
 ## Modifying global variables
 
 So global variables are accessible inside functions but what about
-modifying them?
-
-Let’s take a variable we will defined globally called `global_var`.
+modifying them? Let’s define a variable globally called `global_var` and
+attempt to modify it within the function by adding 5:
 
 ``` python
 global_var = 0
@@ -413,8 +415,8 @@ def squares_a_list(numerical_list):
 squares_a_list([1, 2])
 ```
 
-```out
-Error in py_call_impl(callable, dots$args, dots$keywords): UnboundLocalError: local variable 'global_var' referenced before assignment
+``` out
+UnboundLocalError: local variable 'global_var' referenced before assignment
 
 Detailed traceback: 
   File "<string>", line 1, in <module>
@@ -475,13 +477,9 @@ global_list
 [50, 51, 52, 99]
 ```
 
-Something different happened this time. Our list that we defined
+Something different happened this time. The list that we defined
 globally was able to be modified inside the function and have the
 changes reflected back in the global environment\! What is going on?
-
-Since we did not use the assignment operator, we were able to make a
-modification to the global variable. Modifying objects like this within
-a function without returning them is called a function **Side Effect**.
 
 Notes: Script here
 
@@ -545,8 +543,8 @@ Notes: Script here
 
 ## Function Side Effects
 
-Although this is new vocabulary , side effects have been present since
-the beginning of this course starting with `pd.to_csv()`.
+Although this appears to be new vocabulary, side effects have been
+present since the beginning of this course starting with `pd.to_csv()`.
 
 Remember our cereal dataframe, well we’ve edited it and now want to save
 it to our computer. We can use `pd.to_csv()` like this:
@@ -555,13 +553,13 @@ it to our computer. We can use `pd.to_csv()` like this:
 cereal.to_csv('cereal.csv')
 ```
 
-When we execute this code, we have nothing returned but we get a **side
-effect** of a new saved csv file on our computer.
+When we execute this code, nothing is returned but we get a **side
+effect** of a newly saved csv file on our computer.
 
-Printing anything in a function, is also considered a function side
-effect. Even though this operation doesn’t effect any of your global
-variables, it does bring actions from within the function to the global
-environment.
+Printing anything in a function is also considered a function side
+effect. Even though this operation doesn’t affect any of your global
+variables, it does bring information from within the function to the
+global environment.
 
 ``` python
 def squares_a_list(numerical_list):
@@ -600,25 +598,60 @@ Notes: Script here
 
 The same can be said anytime we modify a dataframe within a function
 without returning anything. Let’s say we have the following function
-that does conditional value replacement on a specified column. It takes
-as inputs:  
-\- The dataframe - the column we want to edit - the value that we wish
-to replace - the new value we wish use as replacement
+that does conditional value replacement on a specified column.  
+It takes as inputs:
+
+  - The dataframe  
+  - the column we want to edit  
+  - the value that we wish to replace  
+  - the new value we wish to use as a replacement
+
+And returns nothing.
 
 ``` python
 def value_change(data, column, old_value, new_value):
     data.loc[data[column] == old_value, column] = new_value
 ```
 
-Let’s hange all the values in our cereal dataset that have `type` as
-`cold` to `unheated` using this function:
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+Using a slice of our cereal dataset:
 
 ``` python
-value_change(cereal, 'type', 'Cold', 'unheated')
+cereal.head()
 ```
 
-We see our function has no return statement but look what happens when
-we look at the cereal dataset after calling the function on it?
+```out
+                        name mfr  type  calories
+0                  100% Bran   N  Cold        70
+1          100% Natural Bran   Q  Cold       120
+2                   All-Bran   K  Cold        70
+3  All-Bran with Extra Fiber   K  Cold        50
+4             Almond Delight   R  Cold       110
+```
+
+Let’s change all the values that have `type` as `cold` to `Unheated`
+using this function:
+
+``` python
+value_change(cereal, 'type', 'Cold', 'Unheated')
+```
+
+We can see that our function has no return statement but let’s look at
+what happens when we look at the cereal dataset after calling the
+function on it.
 
 Notes: Script here
 
@@ -639,12 +672,12 @@ cereal.head()
 ```
 
 ```out
-                        name mfr      type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
-0                  100% Bran   N  unheated        70        4    1     130   10.0    5.0       6     280        25      3     1.0  0.33  68.402973
-1          100% Natural Bran   Q  unheated       120        3    5      15    2.0    8.0       8     135         0      3     1.0  1.00  33.983679
-2                   All-Bran   K  unheated        70        4    1     260    9.0    7.0       5     320        25      3     1.0  0.33  59.425505
-3  All-Bran with Extra Fiber   K  unheated        50        4    0     140   14.0    8.0       0     330        25      3     1.0  0.50  93.704912
-4             Almond Delight   R  unheated       110        2    2     200    1.0   14.0       8       1        25      3     1.0  0.75  34.384843
+                        name mfr      type  calories
+0                  100% Bran   N  Unheated        70
+1          100% Natural Bran   Q  Unheated       120
+2                   All-Bran   K  Unheated        70
+3  All-Bran with Extra Fiber   K  Unheated        50
+4             Almond Delight   R  Unheated       110
 ```
 
 It looks like our `Cold` values were changed even without returning
@@ -669,12 +702,12 @@ Notes: Script here
 
 ## Good Habits
 
-Side effect seem like fun but they can be extremely problematic when
-trying to debug (fix) your code. It’s general protocol to write
+Side effects seem like fun but they can be extremely problematic when
+trying to debug (fix) your code. It’s a general protocol to write
 functions that avoid side effects. If objects need to be modified, best
-practice is to modify them in the enviroment they originated in.
+practice is to modify them in the environment they originated in.
 
-For example you wish to write a better version of the `value_change()`
+For example, you wish to write a better version of the `value_change()`
 function above, a more acceptable way would be to return a new dataframe
 that was produced and modified from a copy of the original dataframe in
 the local environment.
@@ -708,28 +741,28 @@ cereal.head()
 ```
 
 ```out
-                        name mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
-0                  100% Bran   N  Cold        70        4    1     130   10.0    5.0       6     280        25      3     1.0  0.33  68.402973
-1          100% Natural Bran   Q  Cold       120        3    5      15    2.0    8.0       8     135         0      3     1.0  1.00  33.983679
-2                   All-Bran   K  Cold        70        4    1     260    9.0    7.0       5     320        25      3     1.0  0.33  59.425505
-3  All-Bran with Extra Fiber   K  Cold        50        4    0     140   14.0    8.0       0     330        25      3     1.0  0.50  93.704912
-4             Almond Delight   R  Cold       110        2    2     200    1.0   14.0       8       1        25      3     1.0  0.75  34.384843
+                        name mfr  type  calories
+0                  100% Bran   N  Cold        70
+1          100% Natural Bran   Q  Cold       120
+2                   All-Bran   K  Cold        70
+3  All-Bran with Extra Fiber   K  Cold        50
+4             Almond Delight   R  Cold       110
 ```
 
-We can then call our function and see the produced new dataframe:
+We can then call our function and see the new dataframe:
 
 ``` python
-unheated_cereal = better_value_change(cereal,  'type', 'Cold', 'unheated')
+unheated_cereal = better_value_change(cereal, 'type', 'Cold', 'unheated')
 unheated_cereal.head()
 ```
 
 ```out
-                        name mfr      type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
-0                  100% Bran   N  unheated        70        4    1     130   10.0    5.0       6     280        25      3     1.0  0.33  68.402973
-1          100% Natural Bran   Q  unheated       120        3    5      15    2.0    8.0       8     135         0      3     1.0  1.00  33.983679
-2                   All-Bran   K  unheated        70        4    1     260    9.0    7.0       5     320        25      3     1.0  0.33  59.425505
-3  All-Bran with Extra Fiber   K  unheated        50        4    0     140   14.0    8.0       0     330        25      3     1.0  0.50  93.704912
-4             Almond Delight   R  unheated       110        2    2     200    1.0   14.0       8       1        25      3     1.0  0.75  34.384843
+                        name mfr      type  calories
+0                  100% Bran   N  unheated        70
+1          100% Natural Bran   Q  unheated       120
+2                   All-Bran   K  unheated        70
+3  All-Bran with Extra Fiber   K  unheated        50
+4             Almond Delight   R  unheated       110
 ```
 
 Notes: Script here
@@ -754,17 +787,17 @@ cereal.head()
 ```
 
 ```out
-                        name mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
-0                  100% Bran   N  Cold        70        4    1     130   10.0    5.0       6     280        25      3     1.0  0.33  68.402973
-1          100% Natural Bran   Q  Cold       120        3    5      15    2.0    8.0       8     135         0      3     1.0  1.00  33.983679
-2                   All-Bran   K  Cold        70        4    1     260    9.0    7.0       5     320        25      3     1.0  0.33  59.425505
-3  All-Bran with Extra Fiber   K  Cold        50        4    0     140   14.0    8.0       0     330        25      3     1.0  0.50  93.704912
-4             Almond Delight   R  Cold       110        2    2     200    1.0   14.0       8       1        25      3     1.0  0.75  34.384843
+                        name mfr  type  calories
+0                  100% Bran   N  Cold        70
+1          100% Natural Bran   Q  Cold       120
+2                   All-Bran   K  Cold        70
+3  All-Bran with Extra Fiber   K  Cold        50
+4             Almond Delight   R  Cold       110
 ```
 
 The new function lets `cereal` be kept unmodified in the global
-environment and the modified dataframe was created and modified in the
-local environment.
+environment and the modified dataframe was created and in the local
+environment.
 
 Notes: Script here
 

@@ -3,7 +3,7 @@ import altair as alt
 # Load in the csv named "canucks.csv" the same way you did earlier
 # Save it as hockey_players
 
-# hockey_players = pd.____('data/____', ____)
+hockey_players = pd.____('data/____', ____)
 
 # ____
 
@@ -13,9 +13,9 @@ import altair as alt
 # Assign a color as Teal and set opacity to 0.5
 # Don't forget to add a title as "Canuck Player Positions"
 
-# position_bar = alt.____(
+# position_bar = alt.Chart(
 #    ____, width=500, height=300).____(
-#        ____='____', ____=____).____(
+#        ____='____', ____=____).encode(
 #            x='____',
 #            y='____').properties(____='____')
 

@@ -4,7 +4,7 @@ type: slides
 
 # Module Learning Outcomes
 
-Notes: In this module you will learn about Python Conditionals and the fundamentals of loops. 
+Notes: In this module you will learn about Python conditionals and the fundamentals of loops. 
 
 <html>
 <audio controls >

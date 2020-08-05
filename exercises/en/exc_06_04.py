@@ -2,8 +2,9 @@ weight_kg = [90, 41, 65, 76, 54, 88]
 weight_lb = list()
 
 def kg_to_lb(weight_list):
+    conversion = 2.20462
     for kg in weight_kg:
-        weight_lb.append(kg * 2.20462)
+        weight_lb.append(kg * conversion)
     return 
 
 kg_to_lb(weight_kg)
