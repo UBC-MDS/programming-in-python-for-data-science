@@ -87,12 +87,12 @@ Notes: Script here.
 To make a `bar` plot using `altair`, we follow the steps below:
 
 1.  We take the dataframe we wish to plot, in this case `cereal`.
-2.  We create an `altair` plot object using `alt.chart(...)`.
+2.  We create an `altair` plot object using `alt.chart(...)...`.
 3.  We can pass the dataframe we’d like to plot by using
     `alt.chart(cereal)`
 4.  But what kind of plot do we want?\! A bar chart in this case would
     work nicely so lets add `.mark_bar()` after that to get
-    `alt.chart(cereal).mark_bar()`.
+    `alt.chart(cereal).mark_bar()...`.
 5.  Now that we have specified that we want a `bar` plot from our `df`,
     we need to specify what columns. This is done using the
     `.encode(x='mfr', y='count()')`. The `count` here says that we would
@@ -133,8 +133,8 @@ Notes: Script here.
 Notice how the previous graph was a bit small and hard to see. Well we
 can fix that easily by telling `altair` what height and width the plot
 should have. This can be done by specifying the `height` and `width`
-argument in the `alt.Chart(width=.., height=..)` function. Lets set the
-the height and the width of the previous plot to `300` and `500`
+argument in the `alt.Chart(width=..., height=...)...` function. Lets set
+the the height and the width of the previous plot to `300` and `500`
 respectively.
 
 ``` python
@@ -196,7 +196,7 @@ Notes: Script here.
 Something you may have noticed is that there are 77 cereals but there
 doesn’t seem to be 77 data points\! That’s because some of them are
 lying on top of each other with the same sugar and calorie values. It
-may be of use to set an opacity to the graph to differential those
+may be of use to set an opacity to the graph to differentiate those
 points. Opacity is set with the argument `opacity` in the
 `mark_circle(opacity=...)` function and accepts values between 0 and 1,
 with 1 being full intensity.
