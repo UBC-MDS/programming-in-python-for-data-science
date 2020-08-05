@@ -5,7 +5,7 @@ def test():
     # in the meta.json for details.
 
     # If an assertion fails, the message will be displayed
-    assert "letitbe_count" in __solution__, "Make sure you are naming your result 'letitbe_count"
+    assert "letitbe_count" in __solution__, "Make sure you are naming your object 'letitbe_count"
     assert "lyrics" in __solution__, "Make sure you are using the 'lyrics' object"
     assert ".lower" in __solution__, "Make sure you are converting to lowercase using the .lower() function."
     assert ".count" in __solution__, "Make sure you are counting the occurences of 'let it be' using the 'count()' function."

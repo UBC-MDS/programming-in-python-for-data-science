@@ -926,19 +926,22 @@ Running a coding exercise for the first time, could take a bit of time for every
 
 _**Make sure you remove the hash (`#`) symbol in the coding portions of this question. We have commented them so that the line won't execute and you can test your code after each step.**_ 
 
-You are going to load the frequency table from the questions that we exported as a `csv` in the last section and plot it!
+You are going to load the `canucks.csv` from the questions that we exported as a `csv` in the last section and create a `bar` plot of the `Positions` column.
 
 Tasks:
-- Load in the csv named `position_frequencies.csv` you made in the earlier exercise and save it as `position_freq`. 
-- Use `.plot.bar()` with `position_freq` and save the plot in an object named `position_bar`.
-- Assign a `color` as `Teal`, set opacity to 0.5.
-- Don't forget to add a title as "Canuck Player Positions".
+- Load in the csv named `canucks.csv` as you did the earlier exercise and save it as `hockey_players`. 
+- Use alt.Chart() to create a chart object
+- Use the .mark_bar() to create a bar plot
+- Use the .encode() to specify the `Position` column for plotting
+- Assign a color as Teal and set opacity to 0.5   
+- Don't forget to add a title as "Canuck Player Positions"
 
 <codeblock id="01_32">
 
-- Are you sure you using `alpha` as opacify?
+- Are you sure you are using `opacity` to set the opacity?
 - Are you using the correct Dataframe?
-- Did you assign the correct values to `color`, `title` and `alpha`?
+- Did you assign the correct values to `color` and `opacity`?
+- Are you using the `.properties(title=...)` to assign the title?
 - Are you spelling color in the American manner?
 
 </codeblock>
@@ -956,18 +959,17 @@ Ok, let's try our luck with a scatterplot. We want to explore the relationship b
 
 Tasks:
 - Plots x as `Age` and y as `Salary` using a scatterplot and save the plot in an object named `age_salary_scatter`.
+- Use the `mark_circle(...)` to specify a scatter plot. 
 - Set color to `Darkblue` and opacity to 0.4.
 - Don't forget to assign a title as "Canuck players Age vs. Salary".
 
-_After you successfully create this graph you may notice `1e6` on the top left of your graph. The letter `e` is the scientific notation meaning "10 to the power of". In this case, `1e6` means "to to the power of 6" which is 1,000,000. The `Salary` axis then is expressed with the unit of a million. _
-
 <codeblock id="01_33">
 
-- Are you using `.plot.scatter()`
-- Are you sure you using `alpha` as opacity?
+- Are you using `.mark_circle()`
+- Are you sure you using `opacity` to set the opacity?
 - Are you using the correct Dataframe?
 - Are you assigning variables x and y to the correct columns
-- Did you assign the correct values to color, title and alpha?
+- Did you assign the correct values to color, title and opacity?
 - Are you spelling color in the American manner?
 
 </codeblock>
