@@ -979,7 +979,7 @@ Tasks:
 - Test it on the string `I hope you've Been Learning ALOT!`
 
 
-<codeblock id="05_20">
+<codeblock id="05_21">
 
 - Are you defining your function with `def uppercase_count(string):`?
 - Are you returning the object `uppercase_num`?
@@ -1018,7 +1018,7 @@ Tasks:
 
 
 
-<codeblock id="05_21">
+<codeblock id="05_22">
 - Are you defining your function with `def bmi_calculator(height, weight):`
 - Are you returning `(weight/(height**2)) * 702`?
 - To use it, are you running `bmi_calculator(62, 105)`?
