@@ -6,14 +6,12 @@ def test():
 
     # If an assertion fails, the message will be displayed
 
-    assert "scatter" in __solution__ , "You don't seem to be plotting a scatterplot"
-    assert "'Age'" in __solution__, "You did not use the correct column"
-    assert age_salary_scatter.get_ylabel() == 'Salary', "You did not plot Salary on the correct axis"
-    assert age_salary_scatter.get_xlabel() == 'Age', "You did not plot Age on the correct axis"
-    assert "'Salary'" in __solution__ ,"You did not use the correct column"
-    assert '0.4' in __solution__ , "Your alpha value is not correct"
-    assert "'Darkblue'" in __solution__ , "Your colour assignment is not correct"
-    assert 'title' in __solution__ , "You have not specified a title"
-    assert "'Canuck players Age vs. Salary'" in __solution__ , "Your title is not correct"
+    assert "age_salary_scatter" in __solution__, "Make sure you are naming your object 'age_salary_scatter'"
+    assert age_salary_scatter.mark.type == 'circle', "Make sure you are specifying a scatte plot using the 'mark_circle()' function"
+    assert age_salary_scatter.encoding.x.shorthand == 'Age', "Make sure you are specifying the x-axis as `Age` in the '.encode()' function."
+    assert age_salary_scatter.encoding.y.shorthand == 'Salary', "Make sure you are specifying the y-axis as `Salary` in the '.encode()' function."
+    assert age_salary_scatter.mark.opacity == 0.4, "Make sure you are using the 'opacity' parameter and setting it to 0.4"
+    assert age_salary_scatter.mark.color == 'Darkblue', "Make sure you are using the 'color' parameter and setting it to 'Darkblue'"
+    assert age_salary_scatter.title ==  'Canuck players Age vs. Salary', "Make sure you are providing the correct title using the '.properties()' function"
     __msg__.good("Nice work, well done!")
 

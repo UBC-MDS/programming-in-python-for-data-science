@@ -5,8 +5,8 @@ def test():
     # in the meta.json for details.
 
     # If an assertion fails, the message will be displayed
-    assert "pi" in __solution__, "Make sure you are naming your result 'pi'"
-    assert "pi_slice" in __solution__, "Make sure you are naming your result 'pi_slice'"
+    assert "pi" in __solution__, "Make sure you are naming your object 'pi'"
+    assert "pi_slice" in __solution__, "Make sure you are naming your object 'pi_slice'"
     assert type(
         pi
     ) is float, "Make sure you are converting 'pi' to a float using the 'float()' function."

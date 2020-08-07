@@ -5,7 +5,7 @@ def test():
     # in the meta.json for details.
 
     # If an assertion fails, the message will be displayed
-    assert "family" in __solution__, "Make sure you are naming your result 'family'"
+    assert "family" in __solution__, "Make sure you are naming your object 'family'"
     assert "pd.DataFrame", "Make sure you are calling the 'pd.DataFrame()' in order to create the dataframe."
     assert family.shape[0] == 3 and family.shape[1] == 3, "The dimensions of your dataframe are incorrect. Are you specifying the correct data to the 'pd.DataFrame' function?"
     msg = "Your dataframe contains the incorrect columns. Are you specifying the correct column names? \
