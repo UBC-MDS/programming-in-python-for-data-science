@@ -87,7 +87,7 @@ Notes: Script here
 ## #1 Avoid "Hard coding"
 
 
-**Hard coding** is the process of embedding values directly into your code without saving them in objects. When we hardcode values into our code, it decreases the readability,  makes code problematic to maintain and makes being consistent becomes more difficult. In short, hard coding is a breeding ground for bugs. 
+**Hard coding** is the process of embedding values directly into your code without saving them in objects. When we hardcode values into our code, it decreases flexibility. Beging inflexible can cause you end up writing more functions and violating the DRY principle. This in turn can decreases the readability and makes code problematic to maintain. In short, hard coding is a breeding ground for bugs. 
 
 Remember our function `squares_a_list()`?
 
@@ -101,7 +101,7 @@ def squares_a_list(numerical_list):
     return new_squared_list
 ```
 
-In this function, we "hard-coded" in `2`   when we calculated  `number ** 2`.
+In this function, we "hard-coded" in `2` when we calculated  `number ** 2`. This is also called a <a href="https://en.wikipedia.org/wiki/Magic_number_(programming)" target="_blank">magic number</a> .
 
 We can easily improve this design by either assiging 2 to a variable in the function before doing this calculation or we can convert it into a parameter like we did when we made `exponent_a_list()`. 
 
@@ -115,6 +115,26 @@ def exponent_a_list(numerical_list, exponent):
     return new_exponent_list
 ```
 
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+```{python}
+def exponent_a_list(numerical_list, exponent):
+    new_exponent_list = list()
+    
+    for number in numerical_list:
+        new_exponent_list.append(number ** exponent)
+    
+    return new_exponent_list
+```
+
+This new function now gives us more flexibility with our code. If we now encounted a situation where we need to calculate each element to a different exponent like 4 or 0, we can do so without writing new code and potentially making a new error in doing so. We reduce our long term work load. 
 
 Notes: Script here
 <html>
@@ -317,7 +337,7 @@ plot1
 plot1.save(path + 'plot_better.png')
 ```
 
-<img src="/module6/plot_better.png"  width="50%" />
+<img src="/module6/plot_better.png"  width="80%" />
 
 Notes: Script here
 <html>
@@ -366,9 +386,9 @@ another_bad_idea[0]
 another_bad_idea[0].save(path + 'badidea1.png')
 ```
 
-<img src="/module6/plot_better.png"  width="50%" />
+<img src="/module6/plot_better.png"  width="80%" />
 
-This doesn't make any sense when we read back our code and can be quite confusing when we have a simple option of separating the code into two functions and have them return a single object each. 
+This can be quite confusing when we have a simple option of separating the code into two functions and can have each one return a single object. 
 
 It's best to think of programming functions in the same way as mathematical functions where most times, mathematical functions return a single value. 
 
@@ -401,6 +421,7 @@ def bad_grouped_means(grouping_column):
     return grouped_mean
 ```
  
+The number one problem with doing this, is now our function only works on the cereal data - it's not usable on other data.
 
 Notes: Script here
 <html>
@@ -410,12 +431,14 @@ Notes: Script here
 
 ---
 
+Ok let's say we still use it, then what happens? 
+
 ```{python}
 bad_cereal_grouping = bad_grouped_means('mfr')
-cereal_mfr
+bad_cereal_grouping.head(3)
 ```
 
-Although it does work, we avoid this. Global variables have the opportunity and potential to be altered in the global environment and then your function will no longer work as expected.
+Although it does work, global variables have the opportunity to be altered in the global environment. When we change the global variable outside the function, and try to use the function again, it will referred the new global variable and potentially no longer work.
 
 ```python
 cereal = "let's change it to a string" 
@@ -430,9 +453,6 @@ Detailed traceback:
   File "<string>", line 1, in <module>
   File "<string>", line 2, in bad_grouped_means
 ```
-
-This makes your function of little use to you now. 
- 
 
 Notes: Script here
 <html>

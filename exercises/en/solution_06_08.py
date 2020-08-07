@@ -1,25 +1,24 @@
-def convert_ounces(original_mass):
-    ounces_to_grams = 28.35
-    converted_mass = original_mass * ounces_to_grams
-    return converted_mass
+def earth_weight(mass):
+    g = 9.8
+    weight = mass * g
+    return weight
 
+# Create a new function named mass_to_weight() from earth_weight()     
+# Give it an additional argument named g which has a default value of 9.8
 
-# Create a new function named convert_mass from convert_ounces() 
-# and given it an argument named conversion which has a default value of 28.35.
+def mass_to_weight(mass, g=9.8):
+    weight = mass * g
+    return weight
 
-def convert_mass(original_mass, conversion=28.35):
-    converted_mass = original_mass * conversion
-    return converted_mass
+# Test your new function by converting the mass of 76 kg to weight on Earth     
+# Save the results in an object named earth_weight
 
+earth_weight = mass_to_weight(76)
+earth_weight
 
-# Test your function by converting 76 ounces to grams
-# Save the results in an object named oz_to_g
+# Test your function again but this time calculate the weight    
+# of the 76 kg object on the moon using a gravitational force of 1.62 m/s^2     
+# Save your function call to an object named moon_weight
 
-oz_to_g = convert_mass(76)
-
-# Test your function using an original mass of 14(kg) and convert it to pounds (lbs)
-# using the conversion rate 2.205.       
-# Save your function call to an object named kg_to_lbs
-
-kg_to_lbs = convert_mass(14, 2.205) 
-kg_to_lbs
+moon_weight = mass_to_weight(76, 1.62) 
+moon_weight

@@ -28,7 +28,7 @@ output_format(knitr = knitr_opts,
               pandoc = NULL,
               base_format = md_document_custom)
 
-Sys.setenv(RETICULATE_PYTHON = "/usr/local/bin/python3")
+
 library(reticulate)
 
 

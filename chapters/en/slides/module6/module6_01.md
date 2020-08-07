@@ -2,7 +2,7 @@
 type: slides
 ---
 
-# Dry revisited and function fundamentals
+# DRY revisited and function fundamentals
 
 Notes: Script here
 
@@ -71,7 +71,7 @@ Notes: Script here
 ---
 
 This gave us the ability to do the same operation for multiple lists
-without having to rewrite any code and just calling the function
+without having to rewrite any code and just calling the function:
 
 ``` python
 larger_numbers = [5, 44, 55, 23, 11]
@@ -122,7 +122,7 @@ Notes: Script here
 It’s important to know what exactly is going on inside and outside of a
 function. In our function `squares_a_list()` we saw that we created a
 variable named `new_squared_list`. We can print this variable and watch
-all the elements append to it are we loop through the input list:
+all the elements append to it as we loop through the input list:
 
 ``` python
 def squares_a_list(numerical_list):
@@ -190,7 +190,7 @@ That’s not entirely true.
 
 In Python, `new_squared_list` is something we call a ***local
 variable***. Local variables are any objects that have been created
-within a function and only exist and accessible in the function that it
+within a function and only exist and accessible in the function where it
 was made. Code within a function is described as a **local
 environment**.
 
@@ -247,10 +247,10 @@ Peek-a-boo
 [144, 25, 49, 9999800001]
 ```
 
-The function recognizes the global variable\! It’s important to note,
-that although functions recognize global variables, it’s not a good to
-have functions reference objects outside of it. We will learn more on
-this later in the module.
+The function recognizes the global variable\! It’s important to note
+that, although functions recognize global variables, it’s not good
+practice to have functions reference objects outside of it. We will
+learn more on this later in the module.
 
 Notes: Script here
 
@@ -275,12 +275,12 @@ I’m going to make an analogy comparing coffee stores to variables.
     to purchase a coffee from Starbucks there. Stackbucks Coffee is
     similar to a global variable as it is accessible and recognized in
     both its local (Vancouver) and global environments.
-  - **49th Parallel** is a ***local*** Vancouver coffee store. Most
-    people from Vancouver recognized it, however, purchasing a coffee
+  - **49th Parallel** is a ***local*** Vancouver coffee store. Many
+    people from Vancouver recognize it, however, purchasing a coffee
     from 49th Parallel outside of Vancouver would be impossible as it is
-    not accessible past the city of Vancouver.
+    not accessible past the City of Vancouver.
 
-Just like Starbuck Coffee, global variables are recognized and
+Just like Starbucks Coffee, global variables are recognized and
 accessible in both their global and local environments, whereas local
 variables like the coffee store 49th Parallel are only recognized and
 accessible in the local environment it was created in.
@@ -320,7 +320,7 @@ function:
 ``` python
 def squares_a_list(numerical_list):
     a_new_variable = "Ta-Da!"
-    print( a_new_variable)
+    print(a_new_variable)
     
     new_squared_list = list()
     for number in numerical_list:
@@ -338,7 +338,7 @@ Ta-Da!
 ```
 
 We can see that the locally created `a_new_variable` variable was
-modified instead of the global object with the same name.
+printed instead of the global object with the same name.
 
 Notes: Script here
 
@@ -393,57 +393,10 @@ Notes: Script here
 ## Modifying global variables
 
 So global variables are accessible inside functions but what about
-modifying them? Let’s define a variable globally called `global_var` and
-attempt to modify it within the function by adding 5:
+modifying them?
 
-``` python
-global_var = 0
-```
-
-``` python
-def squares_a_list(numerical_list):
-    global_var = global_var + 5
-    print("print global_var:", global_var)
-    
-    new_squared_list = list()
-    for number in numerical_list:
-        new_squared_list.append(number ** 2)
-    return new_squared_list
-```
-
-``` python
-squares_a_list([1, 2])
-```
-
-``` out
-UnboundLocalError: local variable 'global_var' referenced before assignment
-
-Detailed traceback: 
-  File "<string>", line 1, in <module>
-  File "<string>", line 2, in squares_a_list
-```
-
-The reason for this is, although we can access global variables within a
-local environment (a function) we can’t do any modification on them that
-requires the assignment operator.
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
-
-Let’s try something a little different. Let’s take a list that we define
-in our global environment called `global_list` and add `99` to the list
-in the local environment.
+Let’s take a list that we define in our global environment called
+`global_list` and add `99` to the list in the local environment.
 
 ``` python
 global_list = [50, 51, 52]
@@ -477,9 +430,9 @@ global_list
 [50, 51, 52, 99]
 ```
 
-Something different happened this time. The list that we defined
-globally was able to be modified inside the function and have the
-changes reflected back in the global environment\! What is going on?
+The list that we defined globally was able to be modified inside the
+function and have the changes reflected back in the global environment\!
+What is going on?
 
 Notes: Script here
 
@@ -523,9 +476,8 @@ global_list
 [50, 51, 52, 99, 99]
 ```
 
-Since we did not use the assignment operator, we were able to make a
-modification to the global variable. Modifying objects like this within
-a function without returning them is called a function **Side Effect**.
+Modifying objects like this within a function without returning them is
+called a function **side effect**.
 
 Notes: Script here
 
@@ -546,7 +498,7 @@ Notes: Script here
 Although this appears to be new vocabulary, side effects have been
 present since the beginning of this course starting with `pd.to_csv()`.
 
-Remember our cereal dataframe, well we’ve edited it and now want to save
+Remember our cereal dataframe? Well we’ve edited it and now want to save
 it to our computer. We can use `pd.to_csv()` like this:
 
 ``` python
@@ -642,16 +594,29 @@ cereal.head()
 4             Almond Delight   R  Cold       110
 ```
 
-Let’s change all the values that have `type` as `cold` to `Unheated`
-using this function:
+Let’s change all the values that have `type` as `Cold` to `Unheated`
+using the `value_change` function:
 
 ``` python
 value_change(cereal, 'type', 'Cold', 'Unheated')
 ```
 
-We can see that our function has no return statement but let’s look at
-what happens when we look at the cereal dataset after calling the
-function on it.
+We can see that our function has no `return` statement and thus the code
+above produces no output but let’s look at what happens when we look at
+the cereal dataset after calling the function on it.
+
+``` python
+cereal.head()
+```
+
+```out
+                        name mfr      type  calories
+0                  100% Bran   N  Unheated        70
+1          100% Natural Bran   Q  Unheated       120
+2                   All-Bran   K  Unheated        70
+3  All-Bran with Extra Fiber   K  Unheated        50
+4             Almond Delight   R  Unheated       110
+```
 
 Notes: Script here
 
@@ -710,7 +675,8 @@ practice is to modify them in the environment they originated in.
 For example, you wish to write a better version of the `value_change()`
 function above, a more acceptable way would be to return a new dataframe
 that was produced and modified from a copy of the original dataframe in
-the local environment.
+the local environment. We can make a copy of the original dataframe
+using `.copy()`:
 
 ``` python
 def better_value_change(data, column, old_value, new_value):

@@ -184,46 +184,50 @@ playtime()
 ```
 
 <choice id="2" >
-<opt text="A"  correct="true">
-
-printing `toy` is considered a function side effect! 
-
-</opt>
-
-<opt text="B" >
+<opt text="A"  >
 
 Nice job!
 
 </opt>
 
-<opt text="<code>Error</code>"  correct="true">
+<opt text="B" correct="true">
 
-This will still run without an error!
+printing `toy` is considered a function side effect! 
+
+</opt>
+
+<opt text="A and B"  >
+
+having a function `return` something is not considered necessarily a side effect. 
+
+</opt>
+
+
+<opt text="Neither A or B"  >
+
+printing `toy` is considered a function side effect! 
 
 </opt>
 
 </choice>  
 
-**Question 3**          
+**Question 3** 
 
-Which variable type can be affected by function side effects? 
+***True of False***      
+If a function modifies a variable in the function's local environment, that is considered a side effect.
 
 <choice id="3" >
-<opt text="Global variables" correct="true">
+<opt text="True">
 
-Perfect!
-
-</opt>
-
-<opt text="Local variables" >
-
-If a function modifies a variable in the local environment that is not considered a side effect. 
+This is not considered a side effect if a variable created within a function is modified within the same function. 
 
 </opt>
 
-<opt text="Both local and global variables">
+<opt text="False"  correct="true">
 
-One of these variable types is not correct. 
+ Perfect!
+
+</opt>
 
 </choice> 
 
@@ -394,7 +398,7 @@ This is partially right but not entirely.
 
 <opt text="<code>meat</code> and <code>rice</code>"  correct="true">
 
-Nice job! arguments that are required for the function must come *before* defining default arguments/ 
+Nice job! arguments that are required for the function must come *before* defining default arguments.
 
 </opt>
 
@@ -412,23 +416,27 @@ Running a coding exercise for the first time could take a bit of time for everyt
 
 _**Make sure you remove the hash (`#`) symbol in the coding portions of this question.  We have commented them so that the line won't execute and you can test your code after each step.**_
 
-The function `convert_ounces()` converts ounces into pounds. We want to make a more versatile function by defining an argument in the function that accepts default values for the conversion rate. Redefine the function `convert_ounces()` so that it takes an argument with a default conversion rate of 28.35. 
+**Weight** and **mass** are 2 very different measurements althought they do get used interchangeably in everyday conversations. 
+**Mass** is defined by  <a href="https://www.nasa.gov/pdf/591747main_MVW_Intro.pdf" target="_blank">NASA</a> as the amount of matter in an object, whereas, **weight** is defined as the vertical force exerted by a mass as a result of gravity (with units of Newtons). 
+The function `earth_weight()` converts an object's mass to weight by multiplying it by the gravitational force acting on it. On Earth, the gravitational force is measured as 9.8 m/s^2.  
+
+
+We want to make a more versatile function by having the ability to calculate the weight of any object on any particular planet and not just Earth. Redefine the function `earth_weight()` so that it takes an argument with a default gravitational force of 9.8. 
 
 
 Tasks:
-- Create a new function named `convert_mass` and given it an argument named  `conversion` which has a default value of 28.35.
-- Test your new function by converting 76 ounces to grams and save the results in an object named `oz_to_g`
-- Test your function using an original mass of 14(kg) and convert it to pounds (lbs) using the conversion rate 2.205.       
-- Save your function call to an object named kg_to_lbs
+- Create a new function named `mass_to_weight` and give it an additional argument named  `g` which has a default value of 9.8.
+- Test your new function by converting the mass of 76 kg to weight on Earth and save the results in an object named `earth_weight`.
+- Test your function again but this time calculate the weight of the 76 kg object on the moon using a gravitational force of 1.62 m/s^2 and save your function call to an object named `moon_weight`.
 
 
 
 
 <codeblock id="06_08">
 
-- Are putting `conversion=28.35` inside the function named `cover_mass`? 
-- Are you calling `convert_mass(76)` and saving it in an object named `oz_to_g`? 
-- Are you calling `convert_mass(14, 2.205)` and saving it in an object named `kg_to_lbs`? 
+- Are putting `g=9.8` inside the function named `mass_to_weight`? 
+- Are you calling `mass_to_weight(76)` and saving it in an object named `earth_weight`? 
+- Are you calling `mass_to_weight(76, 1.62)` and saving it in an object named `moon_weight`? 
 
 </codeblock>
 
@@ -593,17 +601,17 @@ A)
 A function that converts a string into an acronym of capital
 letters
 
-Parameters
-----------
+Input
+------
 str : sentence
    The string to obtain the first letters from
     
-Returns
+Output
 -------
-str :
+str
     A string of the first letters of each word in an uppercase format
-
-Example
+    
+Sample
 -------
 >>> acronym_it("Let's make this an acronym")
 "LMTAA"
@@ -619,14 +627,14 @@ B)
 A function that converts a string into an acronym of capital
 letters
 
-Parameters
-----------
+Input 
+------
 some_words : str
    The string to obtain the first letters from
     
-Returns
+Output 
 -------
-list :
+list 
     A list of the first letters of each word from the input string
 
 Example
@@ -652,7 +660,7 @@ sentence : str
     
 Returns
 -------
-str :
+str
     a string of just first letters in an uppercase format
 
 Example
@@ -672,16 +680,17 @@ D)
 A function that converts a string into an acronym of capital
 letters
 
+
+Returns
+-------
+list :
+    A list of the first letters of each word from the input string
+    
 Parameters
 ----------
 str : sentence
    The string to obtain the first letters from
     
-Returns
--------
-list :
-    A list of the first letters of each word from the input string
-
 Example
 -------
 >>> acronym_it("Let's make this an acronym")
@@ -694,13 +703,13 @@ Example
 <choice id="1" >
 <opt text="A"  >
 
-Pay attention to the name of the input arguments.  
+Are these the correct headings?.  
 
 </opt>
 
 <opt text="B" >
 
-Pay attention to the name of the input arguments and what the function is returning/ 
+Are the headings correct? Also pay attention to the name of the input arguments and what the function is returning. 
 
 </opt>
 
@@ -712,7 +721,7 @@ Nice job!
 
 <opt text="D">
 
-Look carefully at what is being returned and the example it provides
+Is the order of the description headings correct? 
 
 </opt>
 
@@ -721,7 +730,7 @@ Look carefully at what is being returned and the example it provides
 </exercise>
 
 
-<exercise id="12" title= "Practice writing a Docstring">
+<exercise id="12" title= "Practice Writing a Docstring">
 
 **Instructions:**    
 Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
@@ -804,7 +813,7 @@ Great!
 
 **Question 2**          
 
-Why would we want to raise an exception? 
+Why would we want to write code that raises an exception? 
 
 <choice id="2" >
 
@@ -881,47 +890,7 @@ def factor_of_10(number):
 ```
 
 
-
 B) 
-
-```python
-def factor_of_10(number):
-    """
-    Takes a number and determines if it is a factor of 10 
-    Parameters
-    ----------
-    number : int
-        the value to check
-      
-    Returns
-    -------
-    bool
-        Returns True if number is a multiple of 10 and False otherwise
-      
-    Examples
-    --------
-    >>> factor_of_10(72)
-    False
-    
-    Raises
-    ------
-    TypeError
-        If the input argument number is not of type int 
-    """
-    if not isinstance(number, int): 
-        raise TypeError("the input value of number is not of type int")
-        
-    if number % 10 == 0: 
-        factor = True
-    else:
-        factor = False
-        
-    return factor
-```
-
-
-
-C) 
 
 ```python
 def factor_of_10(number):
@@ -965,13 +934,7 @@ That's right, `Raises` goes between the `Returns` and `Examples`.
 
 </opt>
 
-<opt text="B" >
-
-`Raises` should be located after `Returns`
-
-</opt>
-
-<opt text="C"  >
+<opt text="B"  >
 
 To document what happens when an exception is raised, we use the title `Raises`.
 
@@ -992,7 +955,7 @@ Running a coding exercise for the first time could take a bit of time for everyt
 _**Make sure you remove the hash (`#`) symbol in the coding portions of this question.  We have commented them so that the line won't execute and you can test your code after each step.**_
 
 Let's build on the BMI function we made in module 5. This time we want to raise 2 exceptions.  
-(**Disclaimer: Much more than these two measurements are needed to determine if someone is healthy**)    
+ 
 
 ```python
 def bmi_calculator(height, weight):
@@ -1001,9 +964,9 @@ def bmi_calculator(height, weight):
 ```
 
 Tasks:
-- Write an exception that  checks if `height` is of type `float` 
+- Write an exception that checks if `height` is of type `float`.
 - Write a second exception that raises an error if weight is 0 or less.
-- Test your function with the values given in variable `tall` and `mass` 
+- Test your function with the values given in variable `tall` and `mass`.
 - Save the results in an object named `person1` and display it.
 
 
@@ -1011,8 +974,8 @@ Tasks:
 <codeblock id="06_16">
 
 - Are you using `TypeError` and `Exception` respectively for the exception messages?
-- Are you checking the `height` type with `if not isinstance(height, float):`
-- Are you checking if weight is greater than 0 with `if weight <= 0:`
+- Are you checking the `height` type with `if not isinstance(height, float):`?
+- Are you checking if weight is greater than 0 with `if weight <= 0:`?
 
 
 </codeblock>
@@ -1061,33 +1024,30 @@ def acronym_it(sentence):
     return acronym
 ```
 
-Given the function above, what value for `???` would not result in an error? 
+Given the function above, which would not result in an error? 
 
-```python 
-assert acronym_it("Hard work pays off") == ???
-```
 
 <choice id="2" >
 
-<opt text="<code>'HWPO'</code>" correct="true">
+<opt text="<code>assert acronym_it('Hard work pays off') == 'HWPO'</code>" correct="true">
 
 Great!
 
 </opt>
 
-<opt text="<code>'Hwpo'</code>" >
+<opt text="<code>assert acronym_it('Hard work pays off') == 'Hwpo'</code>" >
 
 It might be helpful to read the function code line by line. 
 
 </opt>
 
-<opt text="<code>'H'</code>"  >
+<opt text="<code>assert acronym_it('Hard work pays off') == 'H'</code>"  >
 
 It might be helpful to read the function code line by line. 
 
 </opt>
 
-<opt text="<code>str<code>" >
+<opt text="<code>assert acronym_it('Hard work pays off') == str<code>" >
 
 It might be helpful to read the function code line by line. 
 
@@ -1178,7 +1138,7 @@ This is a good edge-case example! Did you find any other good tests?
 
 </opt>
 
-<opt text="<code>assertmultiply([4, 33, 11, 22]) == 31944<code>" >
+<opt text="<code>assert multiply([4, 33, 11, 22]) == 31944<code>" >
 
 Tests are supposed to be simple; this is more complicated than necessary.
 
@@ -1245,7 +1205,7 @@ Although this happens sometimes, it's better to write your tests before your fun
 
 </opt>
 
-<opt text="It's good to ere on the side of caution when it comes to being confident in our code (bad things can happen to good coders)."  correct="true">
+<opt text="It's good to err on the side of caution when it comes to being confident in our code (bad things can happen to good coders)."  correct="true">
 
 </choice> 
 
@@ -1324,59 +1284,6 @@ Tasks:
 
 <exercise id="23" title="Function Design Questions">
 
-**Question 1**      
-
-***True of False***      
-
-Under no circumstances should we ever hard code values in our functions. 
-
-
-<choice id="1" >
-<opt text="True">
-
-Although it's advised not to, the rules provided to you in this section are not enforced but suggested.
-
-</opt>
-
-<opt text="False" correct="true">
-
-There will likely be times where we may have to. The rules provided to you in this section are not enforced but suggested. 
-
-</opt>
-
-</choice> 
-
-**Question 2** 
-
-***True of False***      
-
-Loops should always be outside of your functions. 
-
-
-<choice id="1" >
-<opt text="True">
-
-The suggestion is to keep your code simple, not to avoid loops in functions. 
-
-</opt>
-
-<opt text="False" correct="true">
-
-There will be many cases where you absolutely will need to have a loop within your function.
-
-</opt>
-
-</choice> 
-
-
-</exercise>
-
-
-<exercise id="24" title="Improve it!">
-
-
-**Question 1**
-
 What's wrong with the function below? 
 
 ```python
@@ -1401,7 +1308,7 @@ There are no global variables in the function.
 
 </opt>
 
-<opt text="It's returning too many object" correct="true">
+<opt text="It's returning too many objects" correct="true">
 
 Perfect! This is too many!
 
@@ -1416,19 +1323,22 @@ We are lucky that there are no hardcoded values in this function!
 </choice> 
 
 
-**Question 2**
+</exercise>
+
+
+<exercise id="24" title="Improve it!">
 
 How can we improve this function?
 
 ```python
 
-def count_the_elements(mylist): 
+def count_the_sevens(mylist): 
     number_of_occurances  = mylist.count(7)
     return number_of_occurances
 ```
 
 
-<choice id="2" >
+<choice id="1" >
 <opt text="Avoid using a list as an input arguments" >
 
 Lists are completely fine to use as input arguments. 
@@ -1447,7 +1357,7 @@ Luckily no global variables are being used in this function.
 
 </opt>
 
-<opt text="Remove the hard-coded value"  >
+<opt text="Remove the hard-coded value"  correct="true">
 
 Perfect! Let's make the count variable (in this case the `7`) an input argument. 
 
@@ -1472,8 +1382,8 @@ Given the function below, improve it so that it follows good function design pri
 
 
 Tasks:
-- Given the function above, improve it so that it follows good function design practices.
-- Name your new function `new_wage()`.
+- Given the function above, improve it using to the new function `new_wage()`. We have provided you with the function stub and the docstring to guide you.   
+- Make sure it follows good function design practices by not looping over a function, avoiding hard-coding and not returning multiple values.
 - Test your new function on a person with a salary of $84000 and an expected raise of 12%.
 - Save this in an object named `person1_new_wage`.
 
@@ -1483,7 +1393,7 @@ Tasks:
 - Are you removing the hardcoded values in the function?
 - Are removing the return of 2 variables? 
 - Are you removing the loop from inside the function? 
-
+- Are you multiplying the `salary` by `(1 + (0.01 * percent_raise)` ? 
 
 </codeblock>
 

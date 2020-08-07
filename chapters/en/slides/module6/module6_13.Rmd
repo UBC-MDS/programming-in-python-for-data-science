@@ -58,7 +58,7 @@ Notes: Script here
 
 ---
 
-We all know that mistakes are a regular part of life. In coding, every line of code is at risk for potential errors, so naturally, programmers now have a method that is structured around the assumption that errors will occur.        
+We all know that mistakes are a regular part of life. In coding, every line of code is at risk for potential errors, so naturally, we have a way of defending our functions against potential issues.        
 
 ***Defensive programming*** is code written in such a way that if errors do occur, they are handled in a graceful, fast and informative way. 
 
@@ -110,14 +110,14 @@ Notes: Script here
 
 ## Exceptions
 
-Exceptions disrupt the regular execution. When we raise an `Exception` we are forcing our own error with our own message if the condition results in a `True` value. 
+xceptions disrupt the regular execution of our code. When we raise an `Exception` we are forcing our own error with our own message. 
 
 If we wanted to raise an exception to solve the problem on the last slide, we could do the following: 
 
 ```{python}
 def exponent_a_list(numerical_list, exponent=2):
 
-    if not isinstance(numerical_list, list):
+    if type(numerical_list) is not list:
         raise Exception("You are not using a list for the numerical_list input.")
 
     new_exponent_list = list()
@@ -126,7 +126,8 @@ def exponent_a_list(numerical_list, exponent=2):
     return new_exponent_list
 ```
 
-```python
+
+```{python eval=FALSE}
 numerical_string = "123"
 exponent_a_list(numerical_string)
 ```
@@ -148,13 +149,13 @@ Notes: Script here
 
 Let's take a closer look:
 
-<center><img src='/module6/exception.png' width="100%"></center>
+<center><img src='/module6/exception2.png' width="100%"></center>
 
-The first line of code specifies our condition - what needs to occurs to execute the body of the condition. This code translates to *"If `numerical_list` is not of the instance type `int`..."*
+The first line of code specifies our condition - what needs to occurs to execute the body of the condition. This code translates to *"If `numerical_list` is not of the type `list`..."*
 
 The second line does the complaining. We tell it to `raise` an `Exception` with a message of the problem. 
 
-Now we get an error message that is straight forward on why our code is failing:
+Now we get an error message that is straightforward on why our code is failing:
 
 ```out
 Exception: You are not using a list for the numerical_list input.
@@ -173,12 +174,11 @@ Notes: Script here
 ## Why raise Exceptions
 
 ```python
-if not isinstance(numerical_list, list):
+if type(numerical_list) is not list:
         raise Exception("You are not using a list for the numerical_list input.")
 ```
 
-Here we used a function called `isinstance()` which checks if the first argument is of the same data type as the second argument. 
-
+Here we  checks if `numerical_list` is of the type we expect it to be, in this case a `list`. 
 Checking the datatype is a helpful exception since the user can quickly correct for a simple mistake.
 
 
@@ -190,50 +190,16 @@ Notes: Script here
 
 ---
 
-We can also check if the input arguments chosen by the user make sense with operations that will be conducting. For instance perhaps our function is strict on accepting values for `exponent` that are >0. We can raise an `Exception` if the user attempts to use anything else:
+Another good thing to check for our function is if all the elements in the list are not negative numbers.
+
+We can use comprehension that we learned in the last module to check that each element is greater or equal to 0. If not all of them are, an `Exception` will be raised:
 
 ```{python}
 def exponent_a_list(numerical_list, exponent=2):
     
-    if exponent <0:
-        raise Exception("This function must have values for exponent larger than 0")
-
-    new_exponent_list = list()
-    for number in numerical_list:
-        new_exponent_list.append(number ** exponent)
-    return new_exponent_list
-```
-
-
-```python
-numerical_list = [1, 2, 3]
-exponent_a_list(numerical_list, -2)
-```
-```out
-Exception: This function must have values for exponent larger than 0
-
-Detailed traceback: 
-  File "<string>", line 1, in <module>
-  File "<string>", line 4, in exponent_a_list
-
-```
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
-
----
-
-Another good thing to check for our function is if all the elements in the list are of data type `int`.
-
-We can use comprehension that we learned in the last module to check that each element is of type `int`. If not all of them are, an `Exception` will be raised:
-
-```{python}
-def exponent_a_list(numerical_list, exponent=2):
-    
-    if not all(type(element) == int for element in numerical_list):
-        raise Exception("The elements in numerical_list must all be of type int")
+    for element in numerical_list: 
+        if not element >= 0:
+            raise Exception("The elements in numerical_list must all be positive values")
 
     new_exponent_list = list()
     for number in numerical_list:
@@ -242,15 +208,15 @@ def exponent_a_list(numerical_list, exponent=2):
 ```
 
 ```python
-wrong_list = [1, 2, 3.4]
+wrong_list = [1, -2, 3.4]
 exponent_a_list(wrong_list, 2)
 ```
 ```out
-Exception: The elements in numerical_list must all be of type int
+Exception: The elements in numerical_list must all be positive values
 
 Detailed traceback: 
   File "<string>", line 1, in <module>
-  File "<string>", line 4, in exponent_a_list
+  File "<string>", line 5, in exponent_a_list
 ```
 Notes: Script here
 <html>
@@ -265,11 +231,14 @@ Notes: Script here
 We discussed the conditional part of an exception, but now let's learn more about the possible different types of Exceptions. 
 
 ```python
-if exponent <0:
-    raise Exception("This function must have a value for exponent larger than 0")
+if type(numerical_list) is not list:
+        raise Exception("You are not using a list for the numerical_list input.")
 ```
 
- `Exception` is just one of the <a href="https://docs.python.org/3/library/exceptions.html#Exception" target="_blank">  many different exception types possible.</a>
+The exception type called `Exception` is a generic, catch-all exception type. There are also a href="https://docs.python.org/3/library/exceptions.html#Exception" target="_blank">  many more </a>specific types of exceptions; for example, you may have encountered `ValueError` or a `TypeError` at some point.
+
+
+
 
 The exception in our previous examples is a more generic type which is defined by the person who writes code of the function. This isn't all-encompassing as other Exceptions are likely better suited for the raises we made. 
 
@@ -286,8 +255,8 @@ Notes: Script here
 Let's take a look now at the exception we wrote that checks if the input value for numerical_list was the correct type: 
  
  ```python
-if not isinstance(numerical_list, list):
-    raise Exception("You are not using a list for the numerical_list input.")
+if type(numerical_list) is not list:
+        raise Exception("You are not using a list for the numerical_list input.")
 ```
 
 Since this is a type error, a better raised exception over `Exception` would be `TypeError`.     
@@ -296,8 +265,8 @@ Let's make our correction here:
 ```{python}
 def exponent_a_list(numerical_list, exponent=2):
 
-    if not isinstance(numerical_list, list):
-        raise TypeError("You are not using a list for the numerical_list input.")
+    if type(numerical_list) is not list:
+        raise Exception("You are not using a list for the numerical_list input.")
 
     new_exponent_list = list()
     for number in numerical_list:
@@ -325,54 +294,8 @@ Notes: Script here
 
 ---
 
-Let's make the same changes for the exception that checks that each element is of type `int` in the input list `numerical_list`. This also is a type error:
 
-```{python}
-def exponent_a_list(numerical_list, exponent=2):
-    
-    if not all(type(element) is int for element in numerical_list):
-        raise TypeError("The elements in numerical_list must all be of type int")
-
-    new_exponent_list = list()
-    for number in numerical_list:
-        new_exponent_list.append(number ** exponent)
-    return new_exponent_list
-```
-
-
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
-
----
-
-The `Exception` we wrote checking if `exponent` is greater than 0 is a good example of a user defined exception.  Using `Exception` is appropriate since Python is technically capable of doing this outside of our function:
-
-
-```{python}
-def exponent_a_list(numerical_list, exponent=2):
-    new_exponent_list = list()
-    for number in numerical_list:
-        new_exponent_list.append(number ** exponent)
-    return new_exponent_list
-```
-
-```{python}
-exponent_a_list( [1, 2, 4], -2)
-```
-
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
-
----
-
-
-For the full list of exception types take a look at <a href="https://docs.python.org/3/library/exceptions.html#Exception" target="_blank">this resource</a>. 
+For the full list of exception types take a look at <a href="https://docs.python.org/3/library/exceptions.html" target="_blank">this resource</a>. 
 
 
 Notes: Script here

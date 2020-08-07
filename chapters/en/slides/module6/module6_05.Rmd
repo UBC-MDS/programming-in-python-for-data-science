@@ -57,7 +57,7 @@ Notes: Script here
 
 ---
 
-When we were learned functions in Module 5, arguments are something we implemented into our functions without much discussion and it's time now that we address them. 
+When we learned functions in Module 5, arguments are something we implemented into our functions without much discussion and it's time now that we address them. 
 
 Arguments play a paramount role when it comes to adhering to the DRY principle as well as adding flexibility to your code. 
 
@@ -148,8 +148,8 @@ Notes: Script here
 
 ## Default Values for Arguments 
 
-Python allows for optional arguments that can take a default value. An optional argument allows a function to have an input argument however if a value is not specified for this parameter when the function is called, a pre-selected option is adopted.            
-For example, in a new version of `exponent_a_list()`, the function uses a default argument value of `2` for `exponent`. 
+Python allows for default values in the event that an argument is not provided to the function.           
+For example, in a new version of `exponent_a_list()`, the function uses a default value of `2` for `exponent`. 
 
 ```{python}
 def exponent_a_list(numerical_list, exponent=2):
@@ -161,14 +161,31 @@ def exponent_a_list(numerical_list, exponent=2):
     return new_exponent_list
 ```
 
-Now if we do not specify the exponent argument when we call our function, it defaults to an exponent of `2`: 
+Since we do not specify the exponent argument when we call our function, it defaults to an exponent of `2`: 
 
 ```{python}
 numbers = [2, 3, 5]
 exponent_a_list(numbers)
 ```
 
-However, we still get the convenience of changing the argument to something else if we need to:
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+We also have the option of assigning this `exponent` argument something other than 2.  
+
+We canspecify a value for `exponent` using `exponent=5` if we need to:
+```{python}
+exponent_a_list(numbers, exponent=5)
+```
+Since exponent takes the second argument position omiting the `exponent=` part will result in the same output: 
+
 ```{python}
 exponent_a_list(numbers, 5)
 ```
@@ -226,10 +243,8 @@ def exponent_a_list(numerical_list, exponent=2):
 Naturally, we have been calling our function with the arguments in this order as well: 
 
 ```{python}
-numbers = [2, 3, 5]
-exponent_a_list(numbers, 5)
+exponent_a_list([2, 3, 5], 5)
 ```
-
 
 Notes: Script here
 <html>
@@ -239,28 +254,49 @@ Notes: Script here
 
 ---
 
-Let's see what happened when we switch up the ordering of the arguments when we call `exponent_a_list()` and call the `exponent` value first followed by the `numerical_list`:
+We showed earlier that we could also call the function by specifying `exponent=5`:
+```{python}
+exponent_a_list([2, 3, 5], exponent= 5)
+```
+
+Another way of calling this would be to also specify any of the argument names that do not have default values, in this case `numerical_list`:
+
+```{python}
+exponent_a_list(numerical_list=[2, 3, 5], exponent=5)
+```
+What happens if we switch up the order of the arguments and put `exponent=5` followed by `numerical_list=numbers`? 
+
+```{python}
+exponent_a_list(numerical_list=[2, 3, 5], exponent=5)
+```
+It still works! 
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+What about if we switch up the ordering of the arguments without specifying any of the argument names:
 
 ```{python eval=FALSE}
 exponent_a_list(5,  [2, 3, 5])
 ```
 ```out
-NameError: name 'new_exponent_list' is not defined
+TypeError: 'int' object is not iterable
 
 Detailed traceback: 
   File "<string>", line 1, in <module>
-  File "<string>", line 2, in exponent_a_list
+  File "<string>", line 4, in exponent_a_list
 ```
-Our function doesn't recognize the input arguments and an error occurs. 
 
-To get around this error, we can instead specify which arguments are which when we call the argument: 
+Our function doesn’t recognize the input arguments and an error occurs because the two arguments are being swapped - it thinks 5 is the list and [2, 3, 5] is the exponent. 
 
-```{python}
-exponent_a_list(exponent=5,  numerical_list=[2, 3, 5])
-```
-This order now executes without an error.      
+It's important to take care when ordering and calling a function.
 
-The rule of thumb to remember here is if you are going to call a function where the arguments are in a different order from how they were defined, you need to assign the argument name to the value when you call the function. 
+The rule of thumb to remember is if you are going to call a function where the arguments are in a different order from how they were defined, you need to assign the argument name to the value when you call the function. 
 
 Notes: Script here
 <html>

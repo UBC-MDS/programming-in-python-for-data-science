@@ -55,9 +55,10 @@ Notes: Script here
 
 **Hard coding** is the process of embedding values directly into your
 code without saving them in objects. When we hardcode values into our
-code, it decreases the readability, makes code problematic to maintain
-and makes being consistent becomes more difficult. In short, hard coding
-is a breeding ground for bugs.
+code, it decreases flexibility. Beging inflexible can cause you end up
+writing more functions and violating the DRY principle. This in turn can
+decreases the readability and makes code problematic to maintain. In
+short, hard coding is a breeding ground for bugs.
 
 Remember our function `squares_a_list()`?
 
@@ -72,7 +73,9 @@ def squares_a_list(numerical_list):
 ```
 
 In this function, we “hard-coded” in `2` when we calculated `number
-** 2`.
+** 2`. This is also called a
+<a href="https://en.wikipedia.org/wiki/Magic_number_(programming)" target="_blank">magic
+number</a> .
 
 We can easily improve this design by either assiging 2 to a variable in
 the function before doing this calculation or we can convert it into a
@@ -87,6 +90,36 @@ def exponent_a_list(numerical_list, exponent):
     
     return new_exponent_list
 ```
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+``` python
+def exponent_a_list(numerical_list, exponent):
+    new_exponent_list = list()
+    
+    for number in numerical_list:
+        new_exponent_list.append(number ** exponent)
+    
+    return new_exponent_list
+```
+
+This new function now gives us more flexibility with our code. If we now
+encounted a situation where we need to calculate each element to a
+different exponent like 4 or 0, we can do so without writing new code
+and potentially making a new error in doing so. We reduce our long term
+work load.
 
 Notes: Script here
 
@@ -345,7 +378,7 @@ def plot_mean(df, grouping_column, ploting_column):
 plot1 = plot_mean(cereal_mfr, 'mfr', 'rating')
 plot1
 ```
-<img src="/module6/plot_better.png"  width="50%" />
+<img src="/module6/plot_better.png"  width="80%" />
 
 Notes: Script here
 
@@ -417,11 +450,11 @@ element of it:
 ``` python
 another_bad_idea[0]
 ```
-<img src="/module6/plot_better.png"  width="50%" />
+<img src="/module6/plot_better.png"  width="80%" />
 
-This doesn’t make any sense when we read back our code and can be quite
-confusing when we have a simple option of separating the code into two
-functions and have them return a single object each.
+This can be quite confusing when we have a simple option of separating
+the code into two functions and can have each one return a single
+object.
 
 It’s best to think of programming functions in the same way as
 mathematical functions where most times, mathematical functions return a
@@ -463,6 +496,9 @@ def bad_grouped_means(grouping_column):
     return grouped_mean
 ```
 
+The number one problem with doing this, is now our function only works
+on the cereal data - it’s not usable on other data.
+
 Notes: Script here
 
 <html>
@@ -477,9 +513,11 @@ Notes: Script here
 
 ---
 
+Ok let’s say we still use it, then what happens?
+
 ``` python
 bad_cereal_grouping = bad_grouped_means('mfr')
-cereal_mfr
+bad_cereal_grouping.head(3)
 ```
 
 ```out
@@ -487,15 +525,12 @@ cereal_mfr
 0   A  100.000000  4.000000  1.000000    0.000000  0.000000  16.000000  3.000000   95.000000  25.000000  2.000000  1.000000  1.000000  54.850917
 1   G  111.363636  2.318182  1.363636  200.454545  1.272727  14.727273  7.954545   85.227273  35.227273  2.136364  1.049091  0.875000  34.485852
 2   K  108.695652  2.652174  0.608696  174.782609  2.739130  15.130435  7.565217  103.043478  34.782609  2.347826  1.077826  0.796087  44.038462
-3   N   86.666667  2.833333  0.166667   37.500000  4.000000  16.000000  1.833333  121.000000   8.333333  1.666667  0.971667  0.778333  67.968567
-4   P  108.888889  2.444444  0.888889  146.111111  2.777778  13.222222  8.777778  113.888889  25.000000  2.444444  1.064444  0.714444  41.705744
-5   Q   95.000000  2.625000  1.750000   92.500000  1.337500  10.250000  5.500000   74.375000  12.500000  2.375000  0.875000  0.823750  42.915990
-6   R  115.000000  2.500000  1.250000  198.125000  1.875000  17.625000  6.125000   89.500000  25.000000  2.000000  1.000000  0.871250  41.542997
 ```
 
-Although it does work, we avoid this. Global variables have the
-opportunity and potential to be altered in the global environment and
-then your function will no longer work as expected.
+Although it does work, global variables have the opportunity to be
+altered in the global environment. When we change the global variable
+outside the function, and try to use the function again, it will
+referred the new global variable and potentially no longer work.
 
 ``` python
 cereal = "let's change it to a string" 
@@ -510,8 +545,6 @@ Detailed traceback:
   File "<string>", line 1, in <module>
   File "<string>", line 2, in bad_grouped_means
 ```
-
-This makes your function of little use to you now.
 
 Notes: Script here
 

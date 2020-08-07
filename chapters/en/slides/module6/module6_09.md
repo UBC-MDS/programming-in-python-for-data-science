@@ -18,12 +18,12 @@ Notes: Script here
 
 ---
 
-Functions help avoid redundant code but sometimes it takes away some
-clarity. Figuring out what code does can be difficult even in the best
-cases. ***Docstrings*** provides a solution to this problem.
-
-A ***docstring*** is the documentation for the function. It is a literal
-string that comes directly after defining it.
+Functions can get very complicated, so it’s not always obvious what they
+do just from looking at the name, arguments, or code. Therefore, people
+like to explain what the function does. The standard format for doing
+this is called a **docstring**. A **docstring** is a literal string that
+comes directly after the function `def` and documents the function’s
+purpose and usage
 
 Writing a docstring for your functions informs on what your code does so
 that collaborators (and you in 6 months’ time) are not struggling to
@@ -56,7 +56,7 @@ def squares_a_list(numerical_list):
 ```
 
 Although our function name is quite descriptive, it could mean various
-things and how do we know what data type it takes in and returns?
+things. How do we know what data type it takes in and returns?
 
 Having documentation for it can be useful in answering these questions.
 
@@ -74,63 +74,17 @@ Notes: Script here
 
 ---
 
-## Docstring Structures
-
-Currently, many people in the Python community are writing docstrings in
-different ways, the most common uses a formatting style called
-***ReStructuredText.***
-
-``` python
-def squares_a_list(numerical_list):
-    """ Takes a list of numerical elements and returns a new list
-    containing the square of each element 
- 
-    :param  numerical_list: a list of numerical values to operate on
-    :type  numerical_list: list
-    :return: a list of the numerical values  
-    :rtype: list
-
-    :example:
-    >>> squares_a_list([1 ,2, 3], 3)
-    [1, 8, 27]
-    """
-
-    new_squared_list = list()
-    
-    for number in numerical_list:
-        new_squared_list.append(number ** 2)
-    
-    return new_squared_list
-```
-
-It’s not an uncommon opinion that this isn’t exactly easy to read, and
-so new formats have begun to come into fruition.
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
-
 ## NumPy Format
 
-The docstring style that is the most elaborate and informative is called
-**NumPy style**.  
+There are several styles of docstrings; the one we’ll use is called the
+**NumPy** style.  
 Writing documentation for `squares_a_list()` using the **NumPy style**
 takes the following format:
 
 ``` python
 def squares_a_list(numerical_list):
     """
-    Creates a new list containing the square values of the input list. 
+    Squared every element in a list.
     
     Parameters
     ----------
@@ -167,16 +121,27 @@ Notes: Script here
 
 ---
 
-## NumPy
+All docstrings, not just the Numpy formatted ones, are contained within
+3 sets of quotations`"""`. We discussed in module 4 that this was one of
+the ways to implement string values:
 
-The **NumPy style** docstring is easier to read and extract information
-from in comparison to the ***ReStructuredText*** format.
+``` python
+string1 = """ This is a string"""
+type(string1)
+```
+
+```out
+<class 'str'>
+```
+
+Adding this additional string to our function has no effect on our code
+and the sole purpose of the docstring is for human consumption.
 
 The NumPy format includes 4 sections:  
 \- **A brief description of the function**  
 \- Explaining the input **Parameters**  
 \- What the function **Returns**  
-\- **Examples**.
+\- **Examples**
 
 Notes: Script here
 
@@ -221,35 +186,6 @@ def function_name(param1, param2):
     --------
     >>> function_name(3, 8, -5)
     2.0
-    """
-```
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
-
-If multiple variables are returned, then the `Returns` section follows
-the same format as the `Parameter` section:
-
-``` python
-    """
-    Returns
-    -------
-    return_var1 : datatype
-         A description of the output, datatypes and behaviours.
-    return_var2 : datatype
-        A description of the output, datatypes and behaviours.
-        
     """
 ```
 
@@ -324,7 +260,8 @@ Notes: Script here
 ## How to read a docstring
 
 Ok great\! Now that we’ve written and explained our functions with a
-standardized format, where do we read it? How can we learn what it does,
+standardized format, we can read it in our file easily but what if our
+function is located in a different file? How can we learn what it does,
 when reading our code?
 
 We learned in the first assignment that we can learn more about built-in

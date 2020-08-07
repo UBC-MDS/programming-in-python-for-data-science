@@ -12,13 +12,13 @@ weight_lb
 
 # rewrite the code and function above so that it does not have any side effects 
 
-____ ____(____):
-    ____
-    ____
-    ____
-    ____
+# ____ ____(____):
+#     ____
+#     ____
+#     ____
+#     ____
 
 # Test your new function on weight_kg and name the new object weight_lb_again
 
-____ = ____
-____
+# ____ = ____
+# ____
