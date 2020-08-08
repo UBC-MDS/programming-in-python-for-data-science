@@ -3,7 +3,7 @@ weight_lb = list()
 
 def kg_to_lb(weight_list):
     conversion = 2.20462
-    for kg in weight_kg:
+    for kg in weight_list:
         weight_lb.append(kg * conversion)
     return 
 
@@ -13,9 +13,10 @@ weight_lb
 # rewrite the code and function above so that it does not have any side effects 
 
 def better_kg_to_lb(weight_list):
-    conversion = 2.20462
     weight_lb = list()
-    for kg in weight_kg:
+    conversion = 2.20462
+    
+    for kg in weight_list:
         weight_lb.append(kg * conversion)
     return weight_lb
 

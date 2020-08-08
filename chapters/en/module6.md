@@ -16,7 +16,7 @@ id: 6
 
 </exercise> 
 
-<exercise id="1" title="Dry Revisited and Function Fundamentals" type="slides">
+<exercise id="1" title="DRY Revisited and Function Fundamentals" type="slides">
 
 <slides source="module6/module6_01">
 </slides>
@@ -1014,7 +1014,12 @@ Nice work!
 
 </choice> 
 
-**Question 2** 
+</exercise>
+
+
+<exercise id="19" title="Unit Tests Questions">
+
+**Question 1** 
 
 ```python
 def acronym_it(sentence):
@@ -1024,10 +1029,10 @@ def acronym_it(sentence):
     return acronym
 ```
 
-Given the function above, which would not result in an error? 
+Given the function above, which would **not** result in an error? 
 
 
-<choice id="2" >
+<choice id="1" >
 
 <opt text="<code>assert acronym_it('Hard work pays off') == 'HWPO'</code>" correct="true">
 
@@ -1056,7 +1061,7 @@ It might be helpful to read the function code line by line.
 </choice> 
 
 
-**Question 3** 
+**Question 2** 
 
 ```python
 def acronym_it(sentence):
@@ -1066,13 +1071,13 @@ def acronym_it(sentence):
     return acronym
 ```
 
-Given the function above, which test ***would*** fail?  
+Given the function above, which test **would** fail?  
 
 ```python 
 assert acronym_it("Hard work pays off") == ???
 ```
 
-<choice id="3" >
+<choice id="2" >
 
 <opt text="<code>assert acronym_it('If at first you do not succeed, try try again') == 'IAFYDNSTTA'</code>" >
 
@@ -1095,52 +1100,6 @@ It might be helpful to read the function code line by line.
 <opt text="<code>assert acronym_it('10 times 5 is 50') == '10T5I50'<code>" correct="true">
 
 Good work! 
-
-</opt>
-
-</choice> 
-
-</exercise>
-
-
-<exercise id="19" title="Writing good Tests">
-
-```python
-def multiply(input_list):
-    product = 1
-    for element in input_list: 
-        product = product * element  
-    return product 
-```
-
-Given the function above, which are considered good tests? 
-
-_Hint: There is more than 1 correct answer_
-
-
-<choice id="1" >
-
-<opt text="<code>assert multiply([2, 95, 83, 102]) == 1608540</code>" >
-
-Tests are supposed to be simple; this is more complicated than necessary.
-
-</opt>
-
-<opt text="<code>assert multiply([1, 2, 3, 2]) == 12</code>" correct="true">
-
-This is a good test! Well done. Did you find all the correct answers?
-
-</opt>
-
-<opt text="<code>assert multiply([0]) == 0</code>" correct="true" >
-
-This is a good edge-case example! Did you find any other good tests?
-
-</opt>
-
-<opt text="<code>assert multiply([4, 33, 11, 22]) == 31944<code>" >
-
-Tests are supposed to be simple; this is more complicated than necessary.
 
 </opt>
 

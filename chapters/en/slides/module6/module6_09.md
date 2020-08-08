@@ -74,38 +74,81 @@ Notes: Script here
 
 ---
 
-## NumPy Format
+Here is the code for a function from the `pandas` package called
+`truncate()`. You can view the complete code
+<a href="https://github.com/pandas-dev/pandas/blob/v1.1.0/pandas/core/generic.py#L9258" target="_blank">here</a>.
 
-There are several styles of docstrings; the one we’ll use is called the
-**NumPy** style.  
-Writing documentation for `squares_a_list()` using the **NumPy style**
-takes the following format:
+<center>
 
-``` python
-def squares_a_list(numerical_list):
-    """
-    Squared every element in a list.
-    
-    Parameters
-    ----------
-    numerical_list : list
-        The list from which to calculate squared values 
-        
-    Returns
-    -------
-    list
-        A new list containing the squared value of each of the elements from the input list 
-        
-    Examples
-    --------
-    >>> squares_a_list([1, 2, 3, 4])
-    [1, 4, 9, 16]
-    """
-    new_squared_list = list()
-    for number in numerical_list:
-        new_squared_list.append(number ** 2)
-    return new_squared_list
-```
+<img src='/module6/truncate.png' width="52%">
+
+</center>
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+I think we can all agree that it would take a bit of time to figure out
+what the function is doing, the expected input variable types and what
+the function is returning.
+
+Luckily `pandas` provides detailed documentation to explain the
+function’s code.
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+<center>
+
+<img src='/module6/truncate_doc.png' width="38%">
+
+</center>
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+Ah. This documentation gives us a much clearer idea of what the function
+is doing and how to use it. We can see what it requires as input
+arguments and what it returns. It also explains the expectations of the
+function.
+
+Reading this instead of the code saved us some time and definitely
+potential confusion.
+
+There are several styles of docstrings; this one and the one we’ll be
+using is called the **NumPy** style.
 
 Notes: Script here
 
@@ -142,6 +185,51 @@ The NumPy format includes 4 sections:
 \- Explaining the input **Parameters**  
 \- What the function **Returns**  
 \- **Examples**
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+## NumPy Format
+
+Writing documentation for `squares_a_list()` using the **NumPy style**
+takes the following format:
+
+``` python
+def squares_a_list(numerical_list):
+    """
+    Squared every element in a list.
+    
+    Parameters
+    ----------
+    numerical_list : list
+        The list from which to calculate squared values 
+        
+    Returns
+    -------
+    list
+        A new list containing the squared value of each of the elements from the input list 
+        
+    Examples
+    --------
+    >>> squares_a_list([1, 2, 3, 4])
+    [1, 4, 9, 16]
+    """
+    new_squared_list = list()
+    for number in numerical_list:
+        new_squared_list.append(number ** 2)
+    return new_squared_list
+```
 
 Notes: Script here
 
@@ -257,6 +345,48 @@ Notes: Script here
 
 ---
 
+## Side Effects
+
+Ah, remember how we talked about side effects back at the beginning of
+this module? Although it’s highly advised against, there could be
+occasions where it’s unavoidable or required. In these cases, we must
+make it clear in the documentation. So how we we include side effects in
+our docstrings? It’s best to include your function side effects in the
+first sentence of the docstring:
+
+``` python
+def function_name(param1, param2):
+    """The first line is a short description of the function. 
+    
+    If your function include side effects explain it clearly here.
+    
+    
+    Parameters
+    ----------
+    param1 : datatype
+        A description of param1.
+    
+    .
+    .
+    .
+    etc.
+    """
+```
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
 ## How to read a docstring
 
 Ok great\! Now that we’ve written and explained our functions with a
@@ -264,7 +394,7 @@ standardized format, we can read it in our file easily but what if our
 function is located in a different file? How can we learn what it does,
 when reading our code?
 
-We learned in the first assignment that we can learn more about built-in
+We learned in the first assignment that we can read more about built-in
 functions using:
 
 ``` python

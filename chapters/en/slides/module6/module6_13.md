@@ -119,6 +119,10 @@ Detailed traceback:
   File "<string>", line 4, in squares_a_list
 ```
 
+(Note that in the interest of avoiding new syntaxis we are using a
+simple way of checking if an object is of a certain data type. For a
+more robust approach see
+<a href="https://docs.python.org/3/library/functions.html#isinstance" target="_blank">here</a>.))
 Notes: Script here
 
 <html>
@@ -146,7 +150,7 @@ execute the body of the condition. This code translates to *“If
 `numerical_list` is not of the type `list`…”*
 
 The second line does the complaining. We tell it to `raise` an
-`Exception` with a message of the problem.
+`Exception` (throw an error) with this message.
 
 Now we get an error message that is straightforward on why our code is
 failing:
