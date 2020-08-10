@@ -7,4 +7,4 @@ For a direct link to the course website, please click [here](https://mcl-dsci-01
 
 This was built using a [framework](https://github.com/ines/course-starter-python) made by [@ines](https://github.com/ines) as well as recent changes made to her [SpaCy course](https://github.com/ines/spacy-course). 
 
-We are attempting to have this launch in July 2020.
+We are attempting to have this launch in September 2020.
