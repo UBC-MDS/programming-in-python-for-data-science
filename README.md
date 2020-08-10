@@ -3,7 +3,7 @@
 
 # MCL-DSCI 511 Programming in Python for Data Science 
 
-For a direct link to the course website, please click [here](https://mcl-dsci-511-programming-in-python.netlify.app/en).
+For a direct link to the course website, please click [here](https://mcl-dsci-011-programming-in-python.netlify.app/en/).
 
 This was built using a [framework](https://github.com/ines/course-starter-python) made by [@ines](https://github.com/ines) as well as recent changes made to her [SpaCy course](https://github.com/ines/spacy-course). 
 
