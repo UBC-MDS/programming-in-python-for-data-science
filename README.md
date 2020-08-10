@@ -1,5 +1,5 @@
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/UBC-MDS/MCL-DSCI-011-programming-in-python/binder)
-[![Netlify Status](https://api.netlify.com/api/v1/badges/dab56220-f2ae-4008-a57f-0747c40b259d/deploy-status)](https://app.netlify.com/sites/mcl-dsci-511-programming-in-python/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/dab56220-f2ae-4008-a57f-0747c40b259d/deploy-status)](https://app.netlify.com/sites/mcl-dsci-011-programming-in-python/deploys)
 
 # MCL-DSCI 511 Programming in Python for Data Science 
 
