@@ -268,8 +268,9 @@ Tasks:
      
 
 <codeblock id="03_10">
-- Are you pivoting the correct column named `lego_info` with `values='value'`?
-- Are you resetting your index after you pivot?
+
+- Are you pivoting the correct column named `lego_info` with `values='value'`?     
+- Are you resetting your index after you pivot?     
 
 </codeblock>
 
@@ -351,6 +352,7 @@ Tasks:
 - Find the mean number of parts for each production year and save it in an object name `year_parts_mean`. (We've added a verb named `.round()` to round to the nearest whole number)
 
 <codeblock id="03_13">
+
 - Are you using the correct arguments such as `index`, `columns`, and `values`?
 - Are you pivoting the correct column named `lego_info` with `values='value'`?
 - Are you resetting your index again after you pivot?
@@ -587,6 +589,7 @@ Tasks:
 
 
 <codeblock id="03_19">
+
 - Are you using `pd.concat()`?
 - Are you concatenating in the correct order with `lego_top` first and `lego_bottom` second?
 - Are you putting your dataframes within square brackets? 
@@ -766,6 +769,7 @@ Tasks:
 
 
 <codeblock id="03_23">
+
 - Are you naming your new dataframe `lego_tower`? 
 - Are you using the arguments  `left_on='color_id'`, `right_on=id`,  `how='outer'` and `indicator=True`?
 
@@ -888,9 +892,11 @@ Tasks:
 This question is in two parts and we are going to walk you through how to tackle it. 
 
 <codeblock id="03_24a">
+
 - Are you naming your new dataframe `lego_stock`? 
 - Are you using the arguments  `left_on='set_num'`, `right_index=True` and `how='inner'`?
 - Are you grouping my using `groupby('set_num`)? 
+
 </codeblock>
 
 
@@ -916,6 +922,7 @@ Tasks:
 - Are you sorting in descending order of `quantity`?
 
 </codeblock>
+
 
 Now we can return to our initial problem of identifying how many Lego sets are in stock.
 

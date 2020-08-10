@@ -211,6 +211,7 @@ Tasks:
 
 
 <codeblock id="05_04">
+
 - Are you using double equal signs  (`==`) to make a conditional statement?
 - Are you using a single `if` statement and 2 `elif` statements? 
 
@@ -271,6 +272,7 @@ Tasks:
 - Display the result of `tea_amount`.
 
 <codeblock id="05_05">
+
 - To check the data type of `cups_of_tea`, you can use `type(cups_of_tea) == list`.
 - Are you using `sum()` to sum up the elements in a list? 
 
@@ -697,6 +699,7 @@ Tasks:
 
 
 <codeblock id="05_15">
+
 Are you using 4 indentations for each loop?
 Are you putting `character_count = character_count + len(dish)` in the inner loop?
 
@@ -1019,6 +1022,7 @@ Tasks:
 
 
 <codeblock id="05_22">
+
 - Are you defining your function with `def bmi_calculator(height, weight):`
 - Are you returning `(weight/(height**2)) * 702`?
 - To use it, are you running `bmi_calculator(62, 105)`?
