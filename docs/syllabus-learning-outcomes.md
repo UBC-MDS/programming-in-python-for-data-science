@@ -179,7 +179,7 @@ By the end of the module, students are expected to:
 - Explain how the python debugger can help rectify your code.
 
 
-### Module 8: Handling other advanced(?) data formats and missing & erroneous values
+### Module 8: Numpy, and Advanced Data Wrangling 
 
 #### Topics 
 
