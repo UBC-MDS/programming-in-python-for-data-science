@@ -195,10 +195,12 @@ By the end of the module, students are expected to:
 By the end of the module, students are expected to:
 
 - Manipulate non-standard date/time formats into standard Pandas datetime using `pd.to_datetime()`.
-- Find, replace and extract text from a dataframe using methods such as `df.replace()` with regular expressions.
-- Identify missing and erroneous values in a dataframe and manage them by removing (using `df.dropna()`) or replacing (`df.fillna()`).
+- Find, replace and extract text from a dataframe using verbs such as `.replace()`. 
+- Identify missing and erroneous values in a dataframe and manage them by removing them using `.dropna()` or replacing them using `.fillna()`.
+- Use NumPy to create ndarrays with `np.array()` and from functions such as `np.arrange()`, `np.linspace()` and `np.full()`
+- Describe resulting array shapes from operations 
+- Convert between a NumPy ndarray to a Pandas Dataframe.
 - Extract information from the Pandas profiling package. 
-
 
 ## APPENDIX: 
 
