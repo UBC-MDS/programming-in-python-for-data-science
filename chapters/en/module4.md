@@ -350,6 +350,7 @@ Tasks:
 
 
 <codeblock id="04_08">
+
 - The verbs `.append()` and `len()` may be handy.
 - You can convert your list to a tuple with `tuple(). 
 - Have you sliced keeping in mind the end of the slice is excluded? 
@@ -378,6 +379,7 @@ Tasks:
 
 
 <codeblock id="04_09">
+
 - Are you using `pd.DataFrame()`?
 - Are you using the arguments `data` and `columns`?
 
@@ -481,6 +483,7 @@ The shoe rack contained the following parts:
 - Name the dictionary `ikea_shoe_rack`.
 
 <codeblock id="04_12">
+
 - Are you naming your dictionary properly? 
 - Are all your parts spelled correctly?
 
@@ -519,6 +522,7 @@ Tasks:
 
 
 <codeblock id="04_13">
+
 - Are you using lists as the values in your dictionary? 
 - Are you making sure to use floats for the price?
 - are all your items and collections spelled correctly?

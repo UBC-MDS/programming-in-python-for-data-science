@@ -390,6 +390,49 @@ Notes: Script here
 
 ---
 
+What if `a_new_variable` was an argument?
+
+``` python
+def squares_a_list(numerical_list, a_new_variable):
+    print(a_new_variable)
+    
+    new_squared_list = list()
+    for number in numerical_list:
+        new_squared_list.append(number ** 2)
+    return new_squared_list
+```
+
+Given a global variable `a_new_variable = "Peek-a-boo"`, qhat value will
+the function print if we assign a value of `"BAM!"` to the input
+argument `a_new_variable`?
+
+``` python
+a_new_variable = "Peek-a-boo"
+squares_a_list([1,2], "BAM!")
+```
+
+```out
+BAM!
+[1, 4]
+```
+
+Here we can see that the function uses the input argument value instead
+of the global variable value.
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
 ## Modifying global variables
 
 So global variables are accessible inside functions but what about
@@ -686,6 +729,25 @@ def better_value_change(data, column, old_value, new_value):
     
 ```
 
+We can then call our new better function:
+
+``` python
+unheated_cereal = better_value_change(cereal, 'type', 'Cold', 'unheated')
+```
+
+And see that our original dataframe hasn’t been changed:
+
+``` python
+cereal.head(3)
+```
+
+```out
+                name mfr  type  calories
+0          100% Bran   N  Cold        70
+1  100% Natural Bran   Q  Cold       120
+2           All-Bran   K  Cold        70
+```
+
 Notes: Script here
 
 <html>
@@ -700,25 +762,10 @@ Notes: Script here
 
 ---
 
-Our original dataframe looks like so:
+Instead, the output from our function that we saved in `unheated_cereal`
+has the desired changes we want: :
 
 ``` python
-cereal.head()
-```
-
-```out
-                        name mfr  type  calories
-0                  100% Bran   N  Cold        70
-1          100% Natural Bran   Q  Cold       120
-2                   All-Bran   K  Cold        70
-3  All-Bran with Extra Fiber   K  Cold        50
-4             Almond Delight   R  Cold       110
-```
-
-We can then call our function and see the new dataframe:
-
-``` python
-unheated_cereal = better_value_change(cereal, 'type', 'Cold', 'unheated')
 unheated_cereal.head()
 ```
 
@@ -745,25 +792,14 @@ Notes: Script here
 
 ---
 
-If we look at our original dataframe, we can see that cereal has not
-been modified. No side effects here\!
+## Side Effect documentation
 
-``` python
-cereal.head()
-```
+Although side effects are not recommended, there are cases where either
+we must have a side-effects in our functions or there is no way to avoid
+it. In these cases, it is extremely important that we document it.
 
-```out
-                        name mfr  type  calories
-0                  100% Bran   N  Cold        70
-1          100% Natural Bran   Q  Cold       120
-2                   All-Bran   K  Cold        70
-3  All-Bran with Extra Fiber   K  Cold        50
-4             Almond Delight   R  Cold       110
-```
-
-The new function lets `cereal` be kept unmodified in the global
-environment and the modified dataframe was created and in the local
-environment.
+This leads to the next question of *How*? Good News - we answer this
+further on in this module\!
 
 Notes: Script here
 

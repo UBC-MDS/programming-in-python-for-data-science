@@ -84,7 +84,7 @@ Notes: Script here
 
 ---
 
-## #1 Avoid "Hard coding"
+## 1. Avoid "Hard coding"
 
 
 **Hard coding** is the process of embedding values directly into your code without saving them in objects. When we hardcode values into our code, it decreases flexibility. Beging inflexible can cause you end up writing more functions and violating the DRY principle. This in turn can decreases the readability and makes code problematic to maintain. In short, hard coding is a breeding ground for bugs. 
@@ -142,97 +142,10 @@ Notes: Script here
   <source src="/placeholder_audio.mp3" />
 </audio></html>
 
----
-
-## #2 Think about your loop placement
-
-In both our `squares_a_list()` and `exponent_a_list()`  we have a `for` loop within the function. This makes the function easy for users to put in a single list as an input argument and not have to rewrite the loop each time we use it. But is it really always better for us? 
-
-What if we have the following list `[1, 2, 'Shoe', 3, 4]`? 
-
-```{python eval=FALSE}
-list_with_string = [1, 2, 'Shoe', 3, 4]
-exponent_a_list(list_with_string, 2)
-```
-
-```out
-TypeError: unsupported operand type(s) for ** or pow(): 'str' and 'int'
-
-Detailed traceback: 
-  File "<string>", line 1, in <module>
-  File "<string>", line 5, in exponent_a_list
-  ```
-
-Our function no longer works. 
-We now can't use our function and we have to write new code. 
-
-
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
 
 ---
 
-
-If we started with a function that only squared a single value, instead of a whole list, our function could be reused. 
-
-```{python}
-def exponent_a_value(number, exponent):
-    return number ** exponent
-
-```
-
-We could use this function for lists with numerical values by executing it in a loop:
-
-```{python}
-list_of_numbers = [2, 4, 5]
-exponent_list = list()
-
-for element in list_of_numbers: 
-    exponent_list.append(exponent_a_value(element, 2))
-
-exponent_list
-```
-
-
-
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
-
----
-
-If we add a condition in our loop, we can now use our new function with the list `[1, 2, 'Shoe', 3, 4]`:
-
-```{python}
-list_with_string = [1, 2, 'Shoe', 3, 4]
-exponent_list = list()
-
-for element in list_with_string: 
-    if type(element) == int:
-        exponent_list.append(exponent_a_value(element, 2))
-    else:
-        exponent_list.append(element)
-
-exponent_list
-```
-
-
-Now we can get more use out of our function and comply with the DRY principle by recycling our code. 
-
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
-
----
-
-## #3 Less is More
+## 2. Less is More
 
 Although it may seem useful when a function acts as a one-stop-shop that does everything you want in a single function, this also drastically limits your ability to reuse code that lies within it. Functions should serve for a single purpose.
 
@@ -281,7 +194,7 @@ bad_idea
 bad_idea.save(path + 'chart_bad_idea.png')
 ```
 
-<img src="/module6/chart_bad_idea.png"  width="50%" />
+<img src="/module6/chart_bad_idea.png"  width="80%" />
 
 Notes: Script here
 <html>
@@ -291,7 +204,9 @@ Notes: Script here
 
 ---
 
-Although this may seem nice, what happens if we want to do other calculations with the dataframe? Or we want to obtain the mean values we calculated? This function only returns the plot and restricts us with what we can do given the output. 
+Although this may seem nice, it adds a lot of limitation. 
+Since the mean is only printed and not returned we have no way of accessing thar statistic to use further in our code (we would have to repeat ourselves and rewrite it).
+Additionally, what if we don't want the plot? Perhaps the plots is just something we wanted a single time and now we are commited to it for each time we use the function. 
 
 In this case, you want to simplify the function. Having a function that only calculates the mean values of the groups in the specified column is much more usable. 
 A preferred function would look something like this, where the input is a dataframe we have already read in, and the output is the dataframe of mean values for all the columns. 
@@ -347,7 +262,7 @@ Notes: Script here
 
 ---
 
-## 4. Return a single object 
+## 3. Return a single object 
 
 For the most part, we have only lightly touched on the fact that functions can return multiple objects and it's with good reason. 
 
@@ -400,7 +315,7 @@ Notes: Script here
 
 ---
 
-## 5. Keep global variables in their global environment
+## 4. Keep global variables in their global environment
 
 It's generally bad form to include objects in a function that were created outside of it. 
 Take our `grouped_means()` function:

@@ -17,7 +17,7 @@ Notes: Script here
 By the end of the module, students are expected to:
 
 - Evaluate the readability, complexity and performance of a function.
-- Write Docstrings for functions following the NumPy/SciPy format.
+- Write docstrings for functions following the NumPy/SciPy format.
 - Write comments within a function to improve readability.
 - Write and design functions with default arguments.
 - Explain the importance of scoping and environments in Python as they relate to functions.

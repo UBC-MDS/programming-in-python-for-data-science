@@ -88,7 +88,7 @@ Notes: Script here
 
 ## Exceptions
 
-xceptions disrupt the regular execution of our code. When we raise an
+Exceptions disrupt the regular execution of our code. When we raise an
 `Exception` we are forcing our own error with our own message.
 
 If we wanted to raise an exception to solve the problem on the last
@@ -119,6 +119,10 @@ Detailed traceback:
   File "<string>", line 4, in squares_a_list
 ```
 
+(Note that in the interest of avoiding new syntax we are using a simple
+way of checking if an object is of a certain data type. For a more
+robust approach see
+<a href="https://docs.python.org/3/library/functions.html#isinstance" target="_blank">here</a>.))
 Notes: Script here
 
 <html>
@@ -146,7 +150,7 @@ execute the body of the condition. This code translates to *“If
 `numerical_list` is not of the type `list`…”*
 
 The second line does the complaining. We tell it to `raise` an
-`Exception` with a message of the problem.
+`Exception` (throw an error) with this message.
 
 Now we get an error message that is straightforward on why our code is
 failing:

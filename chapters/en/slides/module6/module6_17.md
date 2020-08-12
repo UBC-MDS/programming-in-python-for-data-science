@@ -303,37 +303,18 @@ Just because all our tests pass, this does not mean our program is
 necessarily correct. It’s common that our tests can pass but our code
 contains errors.
 
+Let’s take a look at the function `bad_function()` below:
+
 ``` python
 def bad_function(numerical_list, exponent=2):
-    new_exponent_list = list()
-    for number in numerical_list:
-        if len(numerical_list) >2:
-            new_exponent_list.append(number ** exponent)
+    new_exponent_list = [numerical_list[0] ** exponent] # seed list with first element
+    for number in numerical_list[1:]:
+        new_exponent_list.append(number ** exponent)
     return new_exponent_list
 ```
 
-``` python
-assert bad_function([1, 2, 4, 7], 2) == [1, 4, 16, 49], "incorrect output for exponent = 2"
-assert bad_function([2, 1, 3], 3) == [8, 1, 27], "incorrect output for exponent = 3"
-```
-
-Here, it looks like our tests pass\! But let’s try another test:
-
-``` python
-assert bad_function([5, 10], 2) == [1, 4, 16, 49], "incorrect output for list size 2"
-```
-
-``` out
-AssertionError: incorrect output for list size 2
-
-Detailed traceback: 
-  File "<string>", line 1, in <module>
-```
-
-How do we deal with it?
-
-Write a lot of tests and don’t be overconfident, even after writing a
-lot of tests\!
+This function looks like it would work perfectly fine but what happen’s
+if we get an input argument for `numerical_list` that cannot be sliced?
 
 Notes: Script here
 
@@ -349,32 +330,19 @@ Notes: Script here
 
 ---
 
-## False Positives
-
-Just because all our tests pass, this does not mean our program is
-necessarily correct. It’s common that our tests can pass but our code
-contains errors.
-
-``` python
-def bad_function(numerical_list, exponent=2):
-    new_exponent_list = [numerical_list[0] ** exponent] # creates a new list with first element
-    for number in numerical_list[1:]:
-        new_exponent_list.append(number ** exponent)
-    return new_exponent_list
-```
-
-This function looks fine at first but it won’t be able to index anything
-if it gets an input argument of an empty list.
+Let’s write some unit tests using `assert` statements and see what
+happens:
 
 ``` python
 assert bad_function([1, 2, 4, 7], 2) == [1, 4, 16, 49], "incorrect output for exponent = 2"
 assert bad_function([2, 1, 3], 3) == [8, 1, 27], "incorrect output for exponent = 3"
 ```
 
-Here, it looks like our tests pass\! But let’s try another test:
+Here, it looks like our tests pass\! But what happens if we try our
+function with an empty list:
 
 ``` python
-assert bad_function([], 2) == [], "incorrect output for list size 2"
+bad_function([], 2)
 ```
 
 ``` out
@@ -385,8 +353,10 @@ Detailed traceback:
   File "<string>", line 2, in bad_function
 ```
 
-How do we deal with it? Write a lot of tests and don’t be overconfident,
-even after writing a lot of tests\!
+We get an unexpected error\! How do we avoid this?  
+Write a lot of tests and don’t be overconfident, even after writing a
+lot of tests\! Checking an empty list in our `bad_function()` function
+is an example of checking a **corner case**.
 
 Notes: Script here
 
@@ -404,24 +374,24 @@ Notes: Script here
 
 ## Corner Cases
 
-Other tests that are good to include are tests that check ***corner
-cases***. A corner case is an input that is reasonable but a bit unusual
-and may trip up our code.
+A corner case is an input that is reasonable but a bit unusual and may
+trip up our code.
 
-For example, taking the square of an empty list, or taking a 0 or
-negative value exponent. Often it is desirable to add test cases to
-address corner cases.
+For example, taking the square of an empty list which we just saw, or
+taking a 0 or negative value exponent. Often it is desirable to add test
+cases to address corner cases.
+
+Let’s check some other corner cases on `bad_function()`:
 
 ``` python
-assert exponent_a_list([], 3) == [], "incorrect output for empty list"
-assert exponent_a_list([0, 1, 3], 0) == [1, 1, 1], "incorrect output for exponent 0"
-assert exponent_a_list([1, 2], -2) == [1, 0.25], "incorrect output for a negative exponent"
+assert bad_function([0, 1, 3], 0) == [1, 1, 1], "incorrect output for exponent 0"
+assert bad_function([1, 2], -2) == [1, 0.25], "incorrect output for a negative exponent"
 ```
 
 These corner cases pass, but let’s try another one:
 
 ``` python
-assert exponent_a_list([0, 2, 4], -1) == [1, 0.5, 0.25], "incorrect output for a negative exponent"
+assert bad_function([0, 2, 4], -1) == [1, 0.5, 0.25], "incorrect output for a negative exponent"
 ```
 
 ``` out
@@ -429,7 +399,37 @@ ZeroDivisionError: 0.0 cannot be raised to a negative power
 
 Detailed traceback: 
   File "<string>", line 1, in <module>
-  File "<string>", line 5, in exponent_a_list
+  File "<string>", line 2, in bad_function
+```
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+In this example, instead of throwing an `assert` message, the code
+doesn’t get the opportunity to get that far and throws an error at the
+function level:
+
+``` python
+bad_function([0, 2, 4], -1)
+```
+
+``` out
+ZeroDivisionError: 0.0 cannot be raised to a negative power
+
+Detailed traceback: 
+  File "<string>", line 1, in <module>
+  File "<string>", line 2, in bad_function
 ```
 
 Since 0 to the power of -1 is equal to 1/0, we might want the function
@@ -437,6 +437,9 @@ to output infinity. In this case, we would need to correct the code in
 our function to handle this weird case or inform the user using
 `Exceptions` that our function cannot accept lists containing 0 if the
 exponent is negative.
+
+This is an example of why testing corner cases and making unit tests in
+general is so important when we write code.
 
 Notes: Script here
 
@@ -458,7 +461,7 @@ Often, we will be making functions that work on data.
 
 For example, perhaps we want to write a function called `column_stats`
 that returns some summary statistics in form of a dictionary. The
-function below is something we might have envisioned (Note: if we’re
+function below is something we might have envisioned (Note that if we’re
 using test-driven development then this function will just be an idea,
 not just completed code.)
 
@@ -561,7 +564,7 @@ Using our `exponent_a_list()` function as an example:
 
 ``` python
 def exponent_a_list(numerical_list, exponent=2):
-    return new_exponent_list
+    return list()
 ```
 
 Notes: Script here
@@ -588,7 +591,7 @@ element of the input list.
 
 ``` python
 def exponent_a_list(numerical_list, exponent=2):
-    return new_exponent_list
+    return list()
     
 assert type(exponent_a_list([1,2,4], 2)) == list, "output type not a list"
 assert exponent_a_list([1, 2, 4, 7], 2) == [1, 4, 16, 49], "incorrect output for exponent = 2"
@@ -623,17 +626,18 @@ Notes: Script here
 
 Pseudocode is an informal but high-level description of the code and
 operations that we wish to implement. In this step, we are essentially
-writing the steps that we anticipate needing to complete our function:
+writing the steps that we anticipate needing to complete our function as
+comments within the function:
 
 ``` python
 def exponent_a_list(numerical_list, exponent=2):
-    new_exponent_list = list()
-    
+
+    # create a new empty list
     # loop through all the elements in numerical_list
-    # For each element ** exponent
-    # append it to the new_exponent_list list 
+    # for each element calculate element ** exponent
+    # append it to the new list 
     
-    return new_exponent_list
+    return list()
     
 assert type(exponent_a_list([1,2,4], 2)) == list, "output type not a list"
 assert exponent_a_list([1, 2, 4, 7], 2) == [1, 4, 16, 49], "incorrect output for exponent = 2"

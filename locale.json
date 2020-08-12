@@ -35,7 +35,7 @@
             "next": "Next",
             "showHints": "Show hints",
             "hideHints": "Hide hints",
-            "loading": "Loading...",
+            "loading": " ",
             "connectingFailed": "Connecting failed. Please reload and try again.",
             "launchingDocker": "Launching Docker container on",
             "reconnectingDocker": "Reconnecting to Docker container on",
