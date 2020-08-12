@@ -28,11 +28,8 @@ output_format(knitr = knitr_opts,
               pandoc = NULL,
               base_format = md_document_custom)
 
-<<<<<<< HEAD
 
-=======
 # Sys.setenv(RETICULATE_PYTHON = "/usr/in/python3")
->>>>>>> c0f928d10952ab5b27d8638a5574929e8f9c623e
 library(reticulate)
 
 
@@ -157,7 +154,7 @@ chart0 = alt.Chart(cereal, width=500, height=300).mark_bar().encode(
     x='mfr',
     y='count()'
 )
-chart1
+chart0
 
 ```
 

@@ -930,7 +930,8 @@ Create a plot by chaining the following actions.
 - Use `.mean()` on the new groupby object.
 - Use `.loc[]` to select the `attack` column.
 - Sort the pokemon mean attack values in descending order using `.sort_values()`.
-- Plot the graph and give it an appropriate title. 
+- Use `reset_index(inplace=True)` to make `type` a column again.
+- Generate a bar plot and give it an appropriate title. 
 - Name the y-axis "Mean attack scores"
 - Name the object attack_plot 
 
@@ -940,6 +941,7 @@ Create a plot by chaining the following actions.
 - Are you grouping by the column named `type`? 
 - Are you using `.loc[:, 'attack']`?
 - While sorting, are you using the argument `ascending=False`?
+- Are you resetting the index?
 - Are you giving your plot a title??
 
 </codeblock>
