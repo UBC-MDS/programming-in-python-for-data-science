@@ -26,7 +26,21 @@ export default ({ lang = 'en' }) => {
                                 <h1 className={classes.subtitle}><center>DSCI 011 - Programming in Python for Data Science</center></h1>
                                     <div className={classes.introduction}>
                                         <p>
-                                        <center> Welcome to DSCI 011!  This course is part of UBC's Mid-Careers Learning program. In this course we hope to introduce you to basic programming in Python. You will leave this course with an overview of iteration and flow control as well as data types relevant to data exploration and analysis. You will learn about pre-existing libraries, numerical data types with Numpy and tabular data with Pandas. No course would be complete without knowing how to wrangle your data. With the help from Pandas, you will learn how to convert data from the form in which it is collected to the form needed for analysis. 
+                                        <center>
+                                        Welcome to DSCI 011!
+                                        This course is part of ABC's Mid-Careers Learning program
+                                        and will teach you how to conduct data analysis in Python.
+                                        During the course,
+                                        you will work with powerful Python packages made for data-science,
+                                        including Pandas for processing tabular data,
+                                        Altair for interactive data visualization and NumPy for working with numerical data types.
+                                        You will also learn about iteration, flow control,
+                                        and the data types relevant to data exploration and analysis.
+                                        You will leave this course capable of processing raw data
+                                        into a format suitable for analysis,
+                                        writing your own analysis functions,
+                                        and derive data-driven insights via the creation of interactive visualizations
+                                        and summary tables.
                                         </center>
                                         </p>
                                         <p>
