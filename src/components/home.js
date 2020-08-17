@@ -33,7 +33,7 @@ export default ({ lang = 'en' }) => {
                                         During the course,
                                         you will work with powerful Python packages made for data-science,
                                         including Pandas for wrangling tabular data,
-                                        Altair for interactive data visualization and NumPy for working with numerical data types,
+                                        Altair for interactive data visualization and NumPy for working with numerical data types.
                                         You will also learn about iteration, flow control,
                                         and the data types relevant to data exploration and analysis.
                                         You will leave this course capable of processing raw data
