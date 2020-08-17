@@ -30,7 +30,7 @@ export default ({ lang = 'en' }) => {
                                         Welcome to DSCI 011!
                                         This course is part of ABC's Mid-Careers Learning program
                                         and will teach you how to conduct data analysis in Python.
-                                        During the course,
+                                        During the course
                                         you will work with powerful Python packages made for data-science,
                                         including Pandas for processing tabular data,
                                         Altair for interactive data visualization and NumPy for working with numerical data types.
