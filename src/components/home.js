@@ -32,11 +32,9 @@ export default ({ lang = 'en' }) => {
                                         and will teach you how to conduct data analysis in Python.
                                         During the course,
                                         you will work with powerful Python packages made for data-science,
-                                        including Numpy for working with numerical data types,
-                                        Pandas for wrangling tabular data,
-                                        and Altair for interactive data visualization.
-                                        You will also learn about
-                                        iteration, flow control,
+                                        including Pandas for wrangling tabular data,
+                                        Altair for interactive data visualization and NumPy for working with numerical data types,
+                                        You will also learn about iteration, flow control,
                                         and the data types relevant to data exploration and analysis.
                                         You will leave this course capable of processing raw data
                                         into a format suitable for analysis,
