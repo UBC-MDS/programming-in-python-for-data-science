@@ -39,7 +39,7 @@ export default ({ lang = 'en' }) => {
                                         You will leave this course capable of processing raw data
                                         into a format suitable for analysis,
                                         writing your own analysis functions,
-                                        and derive data-driven insights via the creation of interactive visualizations
+                                        and deriving data-driven insights via the creation of interactive visualizations
                                         and summary tables.
                                         </center>
                                         </p>
