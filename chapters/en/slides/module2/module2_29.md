@@ -18,30 +18,31 @@ Notes: Script here
 
 ---
 
-Let’s learn some other useful abilities of `altair`. When specifying `x`
+Let’s learn some other useful abilities of `Altair`. When specifying `x`
 and `y` in the `encode(..)` function, altair allows us to specify what
 data type to expect. See the table below for a description of the data
 types available and how to specify them.
 
-| Data Type    | Shorthand Code | Description                       |
-| ------------ | -------------- | --------------------------------- |
-| Quantitative | `Q`            | a continuous real-valued quantity |
-| Ordinal      | `O`            | a discrete ordered quantity       |
-| Nominal      | `N`            | a discrete unordered quantity     |
-| Temporal     | `T`            | a time or date value              |
+| Data Type    | Shorthand Code | Description                   | Examples                               |
+| ------------ | -------------- | ----------------------------- | -------------------------------------- |
+| Quantitative | `Q`            | a continuous quantity         | 5, 5.0, 5.011                          |
+| Ordinal      | `O`            | a discrete ordered quantity   | “dislike”, “neutral”, “like”           |
+| Nominal      | `N`            | a discrete unordered quantity | eye color, postal code, university     |
+| Temporal     | `T`            | a time or date value          | date (August 13 2020), time (12:00 pm) |
 
 Ordinal values imply that there is some natural ordering to the values.
 For example, the ratings a movie receives is on an ordinal scale since a
 five star rating is better than a single star rating. In contrast, there
 is no such natural ordering for nominal values. An example of this would
-be strings.
+be someone’s eye color, their address or the university they attended.
 
 Altair is sometimes smart enough to tell which data type the input is.
-For example, `strings` are considered as `nominal`, anything `numeric`
-will be considered as `quantitative` and `time` values are considered as
-`temporal`. We will see examples of temporal data types in module 8.
-However, these defaults may not always be correct. In the next slide, we
-will see an example of specifying data types when plotting.
+For example, the `color` of someone’s eyes are considered as `nominal`,
+anything `numeric` will be considered as `quantitative` and `time` or
+`date` values are considered as `temporal`. We will see examples of
+temporal data types in module 8. However, these defaults may not always
+be correct. In the next slide, we will see an example of specifying data
+types when plotting.
 
 Notes: Script here
 
@@ -58,18 +59,18 @@ Notes: Script here
 ---
 
 Now let’s say we are interested in plotting the sugar content in cereals
-from each manufacturer. We do this using a `bar` plot which we are quite
-familiar with to do this, we will be using the `mfr` column and the
-`sugars` column from the `cereal` dataframe we have been using.
+from each manufacturer. We do this using a `bar` plot Which we are
+familiar with. We will be using the `mfr` column and the `sugars` column
+from the `cereal` dataframe we have been using.
 
 Here, `mfr` is a categorical column (remember this explanation from
 module 1?). This is because there is no specific order in which cereal
 type must come before another. For example, it is not the case that
 “Kelloggs” must come before “Quaker”. Because of this, the `mfr`
-column is categorized as a Nominal data type. The `sugars` column in
-contrast, is categorized as quantitative column. It is a quantitative
-column since it is a quantitative measurement that takes on any positive
-integer value.
+column is categorized as a **nominal** data type. The `sugars` column in
+contrast, is categorized as quantitative column. This is because the
+values in the column are all quantitative measurement that takes on any
+positive integer value.
 
 ``` python
 chart1 = alt.Chart(cereal, width=500, height=300).mark_bar().encode(
@@ -97,7 +98,7 @@ Notes: Script here
 So far when plotting with altair, we have been mapping our `x` and `y`
 in the `encode(x=..,y=..)` function. However, doing so gives us very
 little control on how exactly we would like to map our x and y values.
-In order to have more control, we can map our x and y values using the
+In order to have more control, we can map our x and y values using
 `x=alt.X(...)` and `y=alt.Y(...)` respectively. This gives us a lot more
 control over how values are mapped in the resulting plot. Let’s generate
 the plot on the previous slide using the method.
@@ -125,23 +126,34 @@ Notes: Script here
 
 ---
 
-Another interesting thing we can do with this new syntax is change the
-number of `bins` when generating a bar plot. Having control over the
-number of bins in a bar plot may help to make visualization easier which
-will make the plots easier to digest. If we wanted to change the number
-of bins, we can use the `bin=alt.Bin(maxbins=..)` in `alt.X()` to set a
-value for the number of bins. For example, we can generate a bar plot of
-the `calories` column in the cereal dataframe and set the number of bins
-to `50` by setting `bin=alt.Bin(maxbins=50)`.
+There is another type of plot we can make using Altair. Let’s say we
+were interested in visualizing a grouping of the number of `calories`
+into various ranges from the cereal dataset. A `histogram` would be an
+ideal plot for this type of task. A histogram is similar to a `bar`
+chart except that it groups quantitative data into `ranges`, and the
+height of each bar shows the frequency of each range. We demonstrate how
+to create a `histogram` using Altair in the next slide.
+
+---
+
+For example, we can generate a `histogram` plot of the `calories` column
+in the cereal dataframe. This will enable us to see the various values
+of calories and how many times they occur. To make a histogram, we use
+the `mark_bar()` function. In the `encode()` function, we specify the
+x-axis as calories. However, since we are creating a histogram, we
+specify the y-axis as `count:Q` to get the height of each calorie bar.
 
 ``` python
 chart3 = alt.Chart(cereal, width=500, height=300).mark_bar().encode(
-    x=alt.X('calories:Q', bin=alt.Bin(maxbins=50)), # set max number of bins to 50
-    y=alt.Y('count():Q')
-).properties(title="Bar plot of cereal calory content")
+    x=alt.X('calories:Q'), # set x-axis as calories 
+    y=alt.Y('count():Q') # set the y-axis as the occurrence count for each calorie value
+).properties(title="Histogram plot of cereal calorie content")
 chart3
 ```
-<img src="/module2/chart3.png" alt="A caption" width="40%" />
+<img src="/module2/chart3.png" alt="A caption" width="35%" />
+
+Notice that we have used `count()` to compute the frequency of each of
+the ranges of the calorie content in cereal dataframe.
 
 Notes: Script here
 
@@ -157,19 +169,87 @@ Notes: Script here
 
 ---
 
-The `x` and `y` labels from the bar plot on the previous slide are not
-very informative. Luckily, using the same syntax, we can set custom axis
-`titles` using the `title=""` argument. Let’s see how this works by
-providing more informative titles to the plot from the previous slide.
+Previously in module 1, when making bar plots, we used the `count()`
+argument extensively. This argument helps us count the occurrences of
+elements within the `x` variable. This is useful for creating both bar
+plots and histograms. The count argument can be used to create both a
+histogram and a bar plot since it is used to count the frequency of
+elements within the `x` variable.
+
+---
+
+Altair also gives us the ability to change the ranges of the bar widths
+or `bins` that the data is grouped into. This may be useful when viewing
+a dataset with lots of different values. Also, having control over the
+number of bins in a histogram may help to make visualization easier
+which will make the plots easier to digest. If we wanted to change the
+number of bins in the previous plot, we can use the
+`bin=alt.Bin(maxbins=..)` in `alt.X()` argument to set a value for the
+number of bins. Lets set the number of bins in the previous plot to `20`
+by setting `bin=alt.Bin(maxbins=20)`.
 
 ``` python
 chart4 = alt.Chart(cereal, width=500, height=300).mark_bar().encode(
-    x=alt.X('calories:Q', bin=alt.Bin(maxbins=50), title="Calory content"), # Change the axis title
-    y=alt.Y('count():Q', title="Count") # Change the axis title
-).properties(title="Bar plot of cereal calory content")
+    x=alt.X('calories:Q', bin=alt.Bin(maxbins=20)), # set max number of bins to 50
+    y=alt.Y('count():Q')
+).properties(title="Histogram of cereal calorie content with bins = 20")
 chart4
 ```
-<img src="/module2/chart4.png" alt="A caption" width="40%" />
+<img src="/module2/chart4.png" alt="A caption" width="35%" />
+
+Notice how the number of groups have changed and the histogram is much
+easier to digest compared to the previous one.
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+When plotting with Altair, the `x` and `y` axis are labeled with the
+default column names. However, this may not always be ideal since column
+names may not always be informative. The plot below is an example of
+this. Take the `mfr` column in our cereal dataframe as another example,
+if we did not know beforehand that this meant manufacturer, it would be
+hard to guess this from a plot. Luckily Altair allows us to set custom
+axis `titles` using the `title=""` argument.
+
+<img src="/module2/chart4.png" alt="A caption" width="35%" />
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+Let’s see how we can change the x and y axis titles using Altair. We
+will see how this works by providing more informative axis titles to the
+bar plot we made for the sugar content for each manufacturer previously.
+
+``` python
+chart5 = alt.Chart(cereal, width=500, height=300).mark_bar().encode(
+    x=alt.X('mfr:N', title="Cereal manufacturer"), # use alt.X() to map the x-axis
+    y=alt.Y('sugars:Q', title="Sugar content") # use alt.Y() to map the y-axis
+).properties(title="Bar plot of manufacturer sugar content")
+chart5
+```
+<img src="/module2/chart5.png" alt="A caption" width="40%" />
 
 Notes: Script here
 
@@ -236,7 +316,7 @@ with this, we use `reset_index()` which will convert `mfr` to a regular
 column again. See below:
 
 ``` python
-sugar_df.reset_index(inplace=True)
+sugar_df = sugar_df.reset_index()
 sugar_df
 ```
 
@@ -251,10 +331,10 @@ sugar_df
 6   R  6.125000
 ```
 
-Notice now that the `mfr` column has moved up and next to the `sugars`
-column. The index has also been replaced with integers. Now that our
-dataframe is in this form, we are able to proceed in plotting the mean
-sugar content for each manufacturer.
+We can see that `mfr` column has now moved right and next to the
+`sugars` column. The index has also been replaced with integers. Since
+our dataframe in in this form, we are able to proceed in plotting the
+mean sugar content for each manufacturer.
 
 Notes: Script here
 
@@ -270,27 +350,25 @@ Notes: Script here
 
 ---
 
-Now that we have our `sugar_df` in the correct format, we can proceed to
-plot the mean sugar content for each manufacturer.
+Now that we have our `sugar_df` in the correct format, we can proceed.
+Using Altair we can plot the `mfr` column which we’ve identified as a
+nominal value on the x axis and `sugars` which we agreed was a
+quantitative value on the y axis. (Also we can’t forget our title\!)
 
 ``` python
-chart5 = alt.Chart(cereal, width=500, height=300).mark_bar().encode(
+chart6 = alt.Chart(sugar_df, width=500, height=300).mark_bar().encode(
     x=alt.X('mfr:N', title="Manufacturer"),
     y=alt.Y('sugars:Q', title="Mean sugar content")
 ).properties(title="Bar plot of manufacturers mean sugar content")
-chart5
+chart6
 ```
-<img src="/module2/chart5.png" alt="A caption" width="40%" />
+<img src="/module2/chart6.png" alt="A caption" width="40%" />
 
 Notes: Script here
 
 <html>
 
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
+5 <audio controls > <source src="/placeholder_audio.mp3" /> </audio>
 
 </html>
 
@@ -303,7 +381,7 @@ previous slide.
     in the resulting dataframe.  
   - Next, we took the single column we are interested in using `.loc[]`.
   - Since grouping by made `mfr` the new index, we had to use
-    `reset_index(inplace=True)` to make `mfr` a column again.
+    `reset_index()` to make `mfr` a column again.
   - Our last action was to generate a bar plot using altair.
 
 Notes: Script here
@@ -315,6 +393,63 @@ Notes: Script here
 <source src="/placeholder_audio.mp3" />
 
 </audio>
+
+</html>
+
+---
+
+Sometimes sorting a dataframe by quantity helps us obtain observations
+quicker. For example, if we sorted the mean sugar content for the
+manufacturers before generating the previous plot, it would be easier to
+identify which manufacturer produces cereals with the highest mean
+calorie content. Altair allows us to sort a column while plotting it.
+Sorting can be done on either the x or y axis using the `sort=` in the
+`alt.x` or `alt.y` function.. The sort argument takes in either `x` or
+`y` to specify which axis to sort by. To specify `descinding` order, we
+use `-`, and nothing in order to specify ascending. See the example
+below.
+
+``` python
+chart7 = alt.Chart(sugar_df, width=500, height=300).mark_bar().encode(
+    x=alt.X('mfr:N', sort="y", title="Manufacturer"),  # use sort="y" to sort in ascending order
+    y=alt.Y('sugars:Q', title="Mean sugar content")
+).properties(title="Bar plot of manufacturers mean sugar content sorted in ascending order")
+chart7
+```
+<img src="/module2/chart7.png" alt="A caption" width="30%" />
+
+This plot shows us immediately that cereals from manufacturer `p` have
+the highest mean sugar content.
+
+Notes: Script here
+
+<html>
+
+5 <audio controls > <source src="/placeholder_audio.mp3" /> </audio>
+
+</html>
+
+---
+
+To generate a bar plot of mean calorie content sorted in `descending`
+order, we recycle the code from the previous slide. However, we add a
+`-` in the `sort=..` argument to specify that we would like to sort in
+descending order.
+
+``` python
+chart8 = alt.Chart(sugar_df, width=500, height=300).mark_bar().encode(
+    x=alt.X('mfr:N', sort="-y", title="Manufacturer"),  # use sort="-y" to sort in descending order
+    y=alt.Y('sugars:Q', title="Mean sugar content")
+).properties(title="Bar plot of manufacturers mean sugar content sorted in descending order")
+chart8
+```
+<img src="/module2/chart8.png" alt="A caption" width="40%" />
+
+Notes: Script here
+
+<html>
+
+5 <audio controls > <source src="/placeholder_audio.mp3" /> </audio>
 
 </html>
 
@@ -478,11 +613,9 @@ Notes: Script here
 
 <!-- --- -->
 
-Using `pandas` to plot groupby objects is very limited and is not
-possible for many other plot types such as scatter plots.  
-If you wish to learn more advanced visualization and Python plotting
-package **Altair**, come back soon and visit our in development course
-**DSCI-031 Exploratory Data Visualization**.
+If all this excites you and you wish to learn more advanced
+visualization using **Altair**, come back soon and visit our in
+development course **DSCI-031 Exploratory Data Visualization**.
 
 Notes: Script here
 

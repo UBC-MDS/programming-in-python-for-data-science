@@ -5,9 +5,7 @@ def test():
     # in the meta.json for details.
 
     # If an assertion fails, the message will be displayed
-    assert set(bs_column.values) == {'strong', 'weak'}, "Have you selected the 'base_score' column?"
-    assert set(score_freq) == set([573, 228]), "You count values are incorrect. Are you using the 'count' function?"
-    assert "plot.bar" in __solution__ , "Are you using the 'plot.bar' function?"
-    assert list(score_plot.get_ylim()) == [0.0, 601.65], "The y-axis labels are incorrect, are you using the 'count' function?"
-    assert str(list(score_plot.get_xticklabels())) == "[Text(0, 0, 'weak'), Text(0, 0, 'strong')]", "\nThe x-axis labels are incorrect. Are you using the 'count' function?"
+    assert score_plot.mark == 'bar', "Are you using the 'mark_bar()' function?"
+    assert score_plot.encoding.x.shorthand == 'base_score', "Make sure you are plotting 'base_score' on the x-axis."
+    assert score_plot.encoding.y.shorthand == 'count()', "Make sure you are using 'count()` to count the occurrences `base_score`."
     __msg__.good("Nice work, well done!")

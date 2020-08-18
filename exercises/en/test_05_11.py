@@ -5,7 +5,6 @@ def test():
     # in the meta.json for details.
 
     # If an assertion fails, the message will be displayed
-    assert "for i in range" in __solution__, "Make sure you are setting up the range of your loop properly"
     assert "50" in __solution__, "Make sure your loop is starting at '50'"
     assert "10" in __solution__, "Make sure your loop is  ending at '10'"
     assert "-4" in __solution__, "Make sure you are stepping down by '4' integers at each step"

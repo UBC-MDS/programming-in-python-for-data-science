@@ -11,7 +11,7 @@ full_dataframe = None
 _____ number _____ _____:
     string = 'data/pkm' + str(_____) + _____
     data = _____._____(string)
-    full_dataframe = _____._____([full_dataframe,data], axis = _____)
+    full_dataframe = _____._____([full_dataframe,data])
 
 # Display the final dataframe
 
