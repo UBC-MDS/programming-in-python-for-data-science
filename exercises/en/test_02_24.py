@@ -9,7 +9,8 @@ def test():
     assert "assign" in __solution__ , "Are you using the 'assign' function?"
     assert "capture_rate" in __solution__ , "Are you renaming 'capture_rt' to capture_rate?"
     assert "AD_total" in __solution__ , "Are you creating a new column 'AD_total' by adding 'defense' and 'attack'?"
-    assert "plot.scatter" in __solution__ , "Are you using 'plot.scatter' as your final chain command?"
-    assert list(pokemon_plot.get_ylim()) == [-9.6, 267.59999999999997], "\nThe y-axis labels are incorrect. Is 'capture_rate' on the y-axis?"
-    assert list(pokemon_plot.get_xlim()) == [-7.999999999999998, 387.99999999999994], "\n The x-axis labels are incorrect. Is 'AD_total' on the x-axis?"
+    assert pokemon_plot.mark == 'circle', "Are you using the 'mark_circle()' function?"
+    assert pokemon_plot.encoding.x.shorthand == 'AD_total', "Make sure you are plotting 'AD_total' on the x-axis."
+    assert pokemon_plot.encoding.y.shorthand == 'capture_rate', "Make sure you are plotting 'capture_rate' on the y-axis."
+    
     __msg__.good("Nice work, well done!")

@@ -1,21 +1,17 @@
 import pandas as pd
+import altair as alt
 
 pokemon = pd.read_csv('data/pokemon.csv')
 
-# Create a plot by chaining the following actions 
-# Make a groupby object on the column type and name it pokemon_type
-# Use .mean() on the new groupby object
-# Use .loc[] to select the attack column
-# Sort the pokemon mean attack values in descending order using .sort_values()
-# Finally plot the graph and give it an appropriate title
-# Name the y-axis "Mean attack scores"
-# Name the object attack_plot 
- 
-____ = (____.____()
-            .____()
-            .____[____]
-            .____(____)
-            .____.____(____)
-            .____.____(____)
-       )
+# ____ = pd.DataFrame(____.____('____').____().____[:, '____']
 
+# ____ = ____.____()
+
+# ____ = alt.Chart(____, width=500,
+#                        height=300).____().____(x=alt.X('____',sort='____',
+#        title='____'), y=alt.Y('____',
+#        title='____'
+ #       )).____(title='____')
+
+# attack_plot
+			

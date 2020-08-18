@@ -670,13 +670,13 @@ Using the new column `base_score` we made above, make a bar graph showing the fr
 
 Tasks:
 - Create an object using single brackets to obtain the column `base_score` and name it `bs_column`.
-- Find the frequency of each using `.value_counts()` and save this as object `score_freq`.
-- Plot the object `score_freq` using `.plot.bar()` and save this graph as `score_plot`.
+- Plot the object `bs_column` using `.mark_bar()` and save this graph as `score_plot`.
 
 
 <codeblock id="02_21b">
 
 - Are you using single square brackets or obtain the column `base_score`? 
+- Are you using `count()` to count the occurences of the base scores?
 - Are you saving the objects with the correct names?
 
 </codeblock>
@@ -756,14 +756,16 @@ Tasks:
 - Chain the following methods in the order specified.
 - First, rename the column `capture_rt` to `capture_rate`.
 - Then, create a new column named `AD_total` by adding the `attack` and `defense` columns from the pokemon dataset.
-- Finally use `.plot.scatter()` to plot `AD_total` on the x-axis and `capture_rate` on the y-axis.
-- Name the full chain `pokemon_plot`.
+- Save this in a dataframe object called `plot_df`.
+- Finally use `.mark_circle()` to plot `AD_total` on the x-axis and `capture_rate` on the y-axis.
+- Name this plot `pokemon_plot`.
 - Use a new line for each method.
 
 <codeblock id="02_24">
 
 - Are you sure you are saving your dataframe as the correct object names?
-- Are you using `pd.read_csv()` and `pd.read_excel()` in the correct locations?
+- Are you using the chaning commands in the correct order?
+- Are you using the `.mark_circle()` function?
 
 </codeblock>
 
@@ -929,11 +931,11 @@ Tasks:
 Create a plot by chaining the following actions.   
 - Make a groupby object on the column `type` and name it pokemon_type.
 - Use `.mean()` on the new groupby object.
-- Use `.loc[]` to select the `attack` column.
-- Sort the pokemon mean attack values in descending order using `.sort_values()`.
-- Plot the graph and give it an appropriate title. 
-- Name the y-axis "Mean attack scores"
-- Name the object attack_plot 
+- reset the index so it no longer has `type` as index column.
+- Use `reset_index()` to make `type` a column again.
+- Sort the pokemon mean attack values in descending order using `sort` argument.
+- Name the y-axis "Mean attack scores".
+- Name the object `attack_plot`.
 
 
 <codeblock id="02_30">
@@ -941,6 +943,7 @@ Create a plot by chaining the following actions.
 - Are you grouping by the column named `type`? 
 - Are you using `.loc[:, 'attack']`?
 - While sorting, are you using the argument `ascending=False`?
+- Are you resetting the index?
 - Are you giving your plot a title??
 
 </codeblock>
