@@ -1,0 +1,296 @@
+---
+params:
+  dynamictitle: "module8_11"
+title: "`r params$dynamictitle`"
+output: 
+  md_document:
+    variant: gfm
+---
+
+
+```{r setup, include=FALSE}
+## DO NOT FORGET TO CHANGE THIS ACCORDINGLY 
+library(rmarkdown)
+# MAke sure you are updating your title 
+knitr::opts_chunk$set(echo = TRUE,
+                      base.dir = ".", 
+                      base.url = "/",
+                      fig.path = paste("../../static/module8/", params$dynamictitle,"/", sep = ""))
+
+knitr_opts <- knitr_options( opts_knit = NULL,
+                             opts_chunk = NULL,
+                             knit_hooks = NULL,
+                             opts_hooks = NULL,
+                             opts_template = NULL)
+md_document_custom <- md_document(variant = "gfm")
+output_format(knitr = knitr_opts,
+              pandoc = NULL,
+              base_format = md_document_custom)
+library(reticulate)
+Sys.setenv(RETICULATE_PYTHON = "/usr/local/bin/python3")
+```
+
+
+```{python include=FALSE}
+import pandas as pd
+import numpy as np
+pd.set_option('display.width', 350)
+
+np.set_printoptions(linewidth=400)
+
+pd.set_option('display.max_columns', 50)
+pd.set_option('display.max_rows', 8)
+cereal = pd.read_csv('cereal.csv').loc[:,["name", "mfr", "calories", "fat", "fiber", "rating"]]
+bites = pd.read_csv('animal_bites2.csv', parse_dates =["bite_date"], infer_datetime_format=True).loc[list(range(0,100)), ['bite_date','species','gender', 'color']]
+```
+
+
+type: slides
+
+
+# Working with Null Values
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+In the real world of data analysis, it's uncommon that we have a perfect dataset ready to be used. In fact, in a majority of cases, cleaning and wrangling your data will be an ongoing and time consuming project. No matter how complete or well planned a database may seem, a data analyst will almost always encounter ***null*** values. 
+
+A null is the term used to represent a value missing from the data. ***Null*** is the human readable definition of a value that is not included in the dataframe. Python translates this to a `NaN` value. When we use Pandas you may see `NaN` which is actually a constant that comes from the NumPy library. 
+
+```{python}
+np.nan
+```
+
+In some cases, missing values are sometimes refered to as `NA` values because of how they are handled in other programming languages. This is reflected in some of the names of the functions we use to handle them.   
+
+Not that in this section we generally refer to them as both ***null*** and `NaN` values. 
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+## Info on missing values 
+
+A good rule of thumb when conducting an analysis, is to check early on how complete your dataset is. 
+`.info()` is similar to `.dtype()` but in addition to the dtype of each column, it includes the total number of Non-null values each column contains.
+
+Let's try it out on a subset of our `cereal` dataset:
+
+```{python}
+cereal.info()
+```
+Here we see the total number of rows at the top with `RangeIndex: 77 entries, 0 to 76`. 
+The `Non-Null Count` specifies the number of non-null values. In this case we have a complete dataframe with zero null values.
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+Let's take a look at a case where we are not so lucky. `bites` is a subset of a new dataset that contains information about animal bites occurring in Louisville, Kentucky from 1985 to 2017. 
+
+
+```{python}
+bites.info()
+```
+
+
+We can see that there are a total of 100 entries (rows). We see that the `color` column only contains 86 of 100 non null values. This would mean that 14 values are missing from that column. 
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+We can use `.isnull()` on a particular column to obtain a Boolean value indicating if the row is a null value:
+
+```{python}
+bites['color'].isnull()
+```
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+We can pair `.isnull()` with our filtering method and the verb `.any()` to obtain the rows that contain null values in the dataframe:
+
+```{python}
+bites[bites.isnull().any(axis=1)]
+```
+Here, we see the 14 rows of our dataframe that contain null values. 
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+Now that we have identified that our dataframe contains null values, what can we do about them? 
+
+There are many complex procedures in handling values that are missing from a dataset, but we will discuss 2 simple options:  
+
+- <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.dropna.html" target="_blank">`.dropna()`</a>
+- <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.fillna.html" target="_blank">`.fillna()`</a>
+
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+## Droping Null Values 
+
+The easiest and simplest way of handling nulls values are to remove those rows from the dataset. In a fashion similar to dropping columns, we can drop rows, if they contain a `NaN` value. 
+It's important that you take some necessary precautions and not drop a large portion of your dataset. 
+
+In our example above, if we were to remove the 14 rows we identified to contain `NaN` values, we do it in the following way: 
+
+```{python}
+bites_removed = bites.dropna()
+bites_removed
+```
+Notice that index=2 was removed. 
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+By default all the rows will be considered when dropping rows, however, if we only want to drop rows with `NaN` values in certain columns we can use the `subset` argument:
+
+```{python}
+bites.dropna(subset=['species'])
+```
+Here, we can see that no rows were dropped as there are no `NaN` values in the `species` column. 
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+## Replacing Null Values
+
+Alternately, if we have a small dataset and we don't want to rid outselves of any data, We may prefer to replace `NaN` with a particular value. 
+We can do so will `.fillna()`
+Perhaps we want to replace the values in `color` with the most frequent value (or if it was a numeric value, the mean):
+
+
+```{python}
+most_common_color = bites['color'].mode()[0]
+most_common_color
+```
+```{python}
+bites_mode_fill = bites.fillna(value=most_common_color)
+bites_mode_fill
+```
+We see the value in `color` for index 2 change to `BLK`.
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+We can also replace it with a new value altogether, perhaps in this case `UNKNOWN`: 
+
+```{python}
+bites_unknown_fill = bites.fillna(value='UNKNOWN')
+bites_unknown_fill
+```
+Here, index 2 now has a color value of `UNKNOWN`.
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+We could also fill using certain methods. 
+***"bfill"*** uses the next valid observation to fill the `NaN`. 
+
+```{python}
+bites.fillna(method='bfill')
+```
+Now index 2 adopts the value `BLA & BRO` from index 3. 
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+"ffill" propagates the last valid observation forward to next
+
+```{python}
+bites.fillna(method='ffill')
+```
+Now index 2 adopts the value `BRO & BLA` from index 1. 
+
+
+`bfill` and `ffill` are methods usually adopted when deeling with columns organized by date. This way, an observation can adopt a similar value to those are it. We will explore date columns in the next slide deck. 
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+
+---
+
+Remember these are only a few methods that can be use in simple situations. In some scenarios, more complex methods of handling missing values may need to be adopted for effective analysis. 
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+# Let’s practice what we learned!
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />

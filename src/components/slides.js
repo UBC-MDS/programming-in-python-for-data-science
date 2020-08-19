@@ -146,6 +146,7 @@ class SlideDeck extends React.Component {
             window.Reveal = Reveal
             window.marked = Marked
             import('reveal.js/plugin/markdown/markdown.js').then(({ RevealMarkdown }) => {
+                import('reveal.js/plugin/math/math.js').then(() => {
                 RevealMarkdown.init()
                 Reveal.initialize({
                     center: false,
@@ -157,7 +158,25 @@ class SlideDeck extends React.Component {
                     height: 600,
                     minScale: 0.75,
                     maxScale: 1,
+                    math: {
+                        mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js',
+                        config: 'TeX-AMS_HTML-full', // See http://docs.mathjax.org/en/latest/config-files.html
+                        // pass other options into `MathJax.Hub.Config()`
+                        tex2jax: {
+                            inlineMath: [['$', '$'], ["\(", "\)"]],
+                            displayMath: [['$$', '$$'], ["\[", "\]"]],
+                            balanceBraces: true,
+                            processEscapes: false,
+                            processRefs: true,
+                            processEnvironments: true,
+                            preview: 'TeX',
+                            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+                            ignoreClass: 'tex2jax_ignore',
+                            processClass: 'tex2jax_process'
+                        }
+                    }
                 })
+            })
             })
         })
         Promise.all(CODE_LANGS.map(lang => import(`prismjs/components/prism-${lang}`))).then(() =>
@@ -174,6 +193,7 @@ class SlideDeck extends React.Component {
         delete window.marked
         delete require.cache[require.resolve('reveal.js')]
         delete require.cache[require.resolve('reveal.js/plugin/markdown/markdown.js')]
+        delete require.cache[require.resolve('reveal.js/plugin/math/math.js')]
     }
 
     render() {

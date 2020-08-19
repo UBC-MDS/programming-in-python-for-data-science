@@ -25,7 +25,13 @@ main <- function(input) {
   # replace global enviromnent with relative  
   text <- str_replace_all( text, "/Users/.+/static", "" )
   text <- str_replace_all( text, "../../../../static", "" )
+  
+  # replace Altair json output
   text <- str_replace_all( text, "\n\n    ## alt.Chart\\(..\\.\\)\n", "" )
+  
+  # replace latex formatting
+  #text <- str_replace( text, "\\(", "$" )
+  #text <- str_replace( text, "\\)", "$" )
 
   # replace \n-----\n with \n---\n to denote slide breaks
   text <- str_replace_all(string = text, 

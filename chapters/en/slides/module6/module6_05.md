@@ -42,8 +42,8 @@ code and avoid repeating the same `for` loop for any additional list we
 wished to operate on.
 
 What happens now if we no longer wanted to square a number but calculate
-a specified exponential of each element, perhaps n^3, or n^4? Would we
-need a new function?
+a specified exponential of each element, perhaps \(n^3\), or \(n^4\) ?
+Would we need a new function?
 
 Notes: Script here
 
@@ -185,7 +185,7 @@ Notes: Script here
 We also have the option of assigning this `exponent` argument something
 other than 2.
 
-We canspecify a value for `exponent` using `exponent=5` if we need to:
+We can specify a value for `exponent` using `exponent=5` if we need to:
 
 ``` python
 exponent_a_list(numbers, exponent=5)

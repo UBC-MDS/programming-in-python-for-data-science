@@ -8,9 +8,9 @@ type: chapter
 id: 9
 ---
 
-<exercise id="0" title="Congratulations on finishing the course content" type="slides, video">
+<exercise id="0" title="Congratulations!" type="slides, video">
 
-<slides source="module6/module6_00" start="0:165" end="3:01">
+<slides source="module9/module9_00" start="0:165" end="3:01">
 </slides>
 
 </exercise> 

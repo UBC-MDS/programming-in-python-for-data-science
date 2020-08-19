@@ -104,13 +104,13 @@ To make a `bar` plot using `altair`, we follow the steps below:
 ---
 
 ``` python
-chart1 = alt.Chart(cereal).mark_bar().encode(
+chart0 = alt.Chart(cereal).mark_bar().encode(
     x='mfr',
     y='count()'
 )
-chart1
+chart0
 ```
-<img src="/module1/chart1.png" alt="A caption" width="20%" />
+<img src="/module1/chart0.png" alt="A caption" width="20%" />
 
 See how quick that was? The important things to notice here is that we
 want create a `alt.chart()` object and then specify that we want a
@@ -138,13 +138,13 @@ the the height and the width of the previous plot to `300` and `500`
 respectively.
 
 ``` python
-chart0 = alt.Chart(cereal, width=500, height=300).mark_bar().encode(
+chart1 = alt.Chart(cereal, width=500, height=300).mark_bar().encode(
     x='mfr',
     y='count()'
 )
 chart1
 ```
-<img src="/module1/chart0.png" alt="A caption" width="40%" />
+<img src="/module1/chart1.png" alt="A caption" width="40%" />
 
 Notes: Script here.
 

@@ -1,0 +1,426 @@
+---
+params:
+  dynamictitle: "module8_16"
+title: "`r params$dynamictitle`"
+output: 
+  md_document:
+    variant: gfm
+---
+
+
+```{r setup, include=FALSE}
+## DO NOT FORGET TO CHANGE THIS ACCORDINGLY 
+library(rmarkdown)
+# MAke sure you are updating your title 
+knitr::opts_chunk$set(echo = TRUE,
+                      base.dir = ".", 
+                      base.url = "/",
+                      fig.path = paste("../../static/module8/", params$dynamictitle,"/", sep = ""))
+
+knitr_opts <- knitr_options( opts_knit = NULL,
+                             opts_chunk = NULL,
+                             knit_hooks = NULL,
+                             opts_hooks = NULL,
+                             opts_template = NULL)
+md_document_custom <- md_document(variant = "gfm")
+output_format(knitr = knitr_opts,
+              pandoc = NULL,
+              base_format = md_document_custom)
+library(reticulate)
+Sys.setenv(RETICULATE_PYTHON = "/usr/local/bin/python3")
+
+```
+
+
+```{python include=FALSE}
+import pandas as pd
+import numpy as np
+from sklearn.utils import shuffle
+pd.set_option('display.width', 350)
+
+np.set_printoptions(linewidth=400)
+
+pd.set_option('display.max_columns', 50)
+pd.set_option('display.max_rows', 15)
+cereal = pd.read_csv('cereal.csv')
+bites = pd.read_csv('animal_bites2.csv').loc[list(range(0,100)), ['bite_date','species','gender', 'color']]
+
+bites = shuffle(bites)
+```
+
+
+type: slides
+
+
+# Working with Dates and Time
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+It wasn't too long ago in Module 4 where we briefly mention another column dtype called `datetime64`. 
+
+<center><img src='/module4/full.png' width="100%"></center>
+
+
+Dates and times can we a bit tricky and require a specific data type so that analysis can be done correctly. 
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+Parse data yourself can be difficult and time consuming. 
+Let's make a quick attempt at converting the `bite_date` column which is currently of dtype `object` into separate numeric columns so we can sort them in a temporal manner. 
+
+```{python}
+bites.head()
+```
+First we would need to split them up and rename the columns:
+
+```{python}
+dates = (bites['bite_date'].str.split('-', expand=True)
+                           .rename(columns = {0:'Year',
+                                              1:'Month',
+                                              2:'Day'}))
+dates.head()
+```
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+Currently the values in `dates` are of type `str` so we would not be able to sort them in a temporal manner:
+
+```{python}
+dates.iloc[0,0]
+type(dates.iloc[0,0])
+```
+
+We need to convert all the values to integers and add them to the previous dataframe `bites`. 
+
+```{python}
+bites_dates = (bites.assign(Year = dates['Year'].astype(int),
+                            Month = dates['Month'].astype(int),
+                            Day = dates['Day'].astype(int)))
+bites_dates.head()
+```
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+And now, can we sort them:
+
+```{python}
+bites_dates.sort_values(['Year', 'Month', 'Day']).head()
+```
+
+
+After doing all this, there are still a lot of limitations. 
+
+Luckily, Pandas has some built in functions we can use that will make our lives much easier. 
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+## Pandas parse_dates
+
+Remember How Pandas is built using the `NumPy` library? Well in a similar way, Pandas datetime verbs are build from the built-in Python <a href="https://docs.python.org/3/library/datetime.html" target="_blank">`Datetime` library</a>. 
+
+We can parse our data at the same time as we read in our dataframe using the argument `parse_date`. 
+Let's do it by reading in our `animal_bites2.csv` file:
+
+```{python}
+bites = pd.read_csv('animalbites.csv', parse_dates = ['bite_date'])
+bites.head()
+```
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+```{python echo=FALSE}
+bites.head()
+```
+
+
+It looks like the same dataframe but now if we check the dtype of `bite_date`, you'll see it adopts a `datetime64` dtype. 
+
+```{python }
+bites.dtypes
+```
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+Maybe our date is split between multiple columns and we want a single datetime column.
+Take `bites_split.csv` for example: 
+
+```{python}
+pd.read_csv('bites_split.csv').head()
+```
+We can convert this to a single column by using a dictionary within the `parse_dates` column. The dictionary key, indicates the column name and the dictionary value is a list containing multiple columns to use as the new date column :
+
+```{python}
+pd.read_csv('bites_split.csv', parse_dates={'bite_date': ['bite_year', 'bite_month', 'bite_day']}).head()
+```
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+What if we need to convert the column after reading in our data? That's not a problem! We have `pd.to_datetime()` to convert columns of an already existing dataframe. 
+
+Let's use our original `bites` dataframe where `bite_date` is still of dtype `object`.
+```{python}
+bites = pd.read_csv('animalbites.csv')
+bites.head()
+```
+```{python}
+bites.dtypes
+```
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+If we want to convert `bite_date` to a datetime dtype, we can do so pairing `pd.to_datetime()` with `assign()`
+
+```{python}
+new_bites = bites.assign(bite_date = pd.to_datetime(bites['bite_date']))
+new_bites.head()
+```
+
+```{python}
+new_bites.dtypes
+```
+Ok but what if I don't want the full datetime value and I want a column with only a portion of it, like the month, or year? 
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+
+
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+we can a new column to our dataframe in a similar as we did before but instead this time we obtain a function to select only a portion of the datetime value. There are a <a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html#time-date-components" target="_blank">number of different functions</a> that selects a specific part datatime value: 
+
+- `.dt.day_name()` for the day of the week 
+
+```{python}
+new_bites.assign(weekday = new_bites['bite_date'].dt.day_name()).head()
+```
+- `dt.month` for the month 
+
+```{python}
+new_bites.assign(month = new_bites['bite_date'].dt.month).head()
+```
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+There is some inconsistency of when to use `()` in our datetime actions but here are some of the most common: 
+
+- `dt.month`
+- `dt.month_name()`
+- `dt.day`
+- `dt.day_name()`
+- `dt.hour`
+- `dt.minute`
+
+Using the `.dt` can only be used on a pandas Series. We can extract the day, month, year hour, or minute from a single datetime value, using similar nouns without the `dt.`.
+
+First let's see how that's possible. 
+
+If I select the first example in row 1, you'll notice that it outputs something called a `Timestamp`. 
+
+```{python}
+timestamp_ex = new_bites.loc[1,'bite_date']
+timestamp_ex
+```
+This is a pandas datatype. 
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+```{python}
+timestamp_ex
+```
+Timestamps shows a complete time snapshot. Timestamps must be complete with both dates and time and if none was provided, Python will fill in the unknown with default values, in this case `00:00:00`. 
+
+To obtain the  month_name, day, or hour from the Timestamp, we can use the same nouns in the previous slide without `.ts.`:
+
+```{python}
+timestamp_ex.month_name()
+```
+```{python}
+timestamp_ex.day
+```
+
+```{python}
+timestamp_ex.hour
+```
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+In our analysis it might be important to know how frequent events occur and the time between them. `.diff()` is a useful function for that. 
+
+```{python}
+bite_intervals = new_bites['bite_date'].sort_values().diff()
+bite_intervals
+```
+This outputs a pandas Series with the time that occurs between rows. 
+
+You'll now notice a new dtype at the bottom of our new pandas Series  <a href="https://docs.python.org/2/library/datetime.html" target="_blank">`timedelta64`</a>. 
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+## timedelta
+
+Unlike a `Timestamp` that represents a snapshot in time, `timedelta` represents a duration of time. 
+
+This means that it is a measurement of time that can be extracted from the object as a particular unit of time. 
+Here we can obtain the number of days between 2 bite cases. 
+
+```{python}
+bite_intervals[1]
+```
+```{python}
+bite_intervals[1].days
+```
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+We can find the maximum amount of time between cases:
+
+```{python}
+bite_intervals.max()
+```
+and the minimum time between cases:
+
+```{python}
+bite_intervals.min()
+```
+And do simple operation with them:
+
+```{python}
+interval_range = bite_intervals.max() - bite_intervals.min()
+interval_range
+```
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+We could even obtain the total days of the operation:
+
+```{python}
+interval_range.days
+```
+and convert it into years 
+
+```{python}
+interval_range.days/365.25
+```
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+# Let’s practice what we learned!
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
