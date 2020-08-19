@@ -101,6 +101,11 @@ To make a `bar` plot using `altair`, we follow the steps below:
     `alt.chart(df).mark_bar().encode(x='mfr', y='count()')`. Lets see
     how this looks on the next slide.
 
+Note that `y=count()` is used here to count the occurrences or the
+number of rows in the cereal dataframe that contains a specific
+manufacturer. In general, we use count if we are interested in counting
+the frequency of each of elements within the `x` variable.
+
 ---
 
 ``` python
@@ -142,7 +147,7 @@ chart1 = alt.Chart(cereal, width=500, height=300).mark_bar().encode(
     x='mfr',
     y='count()'
 )
-chart1
+chart0
 ```
 <img src="/module1/chart1.png" alt="A caption" width="40%" />
 

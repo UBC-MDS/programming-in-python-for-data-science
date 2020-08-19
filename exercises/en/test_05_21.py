@@ -5,7 +5,7 @@ def test():
     # in the meta.json for details.
 
     # If an assertion fails, the message will be displayed
-    assert score_plot.mark == 'bar', "Are you using the 'mark_bar()' function?"
-    assert score_plot.encoding.x.shorthand == 'base_score', "Make sure you are plotting 'base_score' on the x-axis."
-    assert score_plot.encoding.y.shorthand == 'count()', "Make sure you are using 'count()` to count the occurrences `base_score`."
+    assert "def" in __solution__, "Make sure you are defining a function"
+    assert "uppercase_count" in __solution__, "Make sure you are naming your function 'uppercase_count'"
+    assert string2 == 7, "Your function output is incorrect. Are you converting properly?"
     __msg__.good("Nice work, well done!")

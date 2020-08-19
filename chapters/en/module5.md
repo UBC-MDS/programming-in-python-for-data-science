@@ -1003,9 +1003,6 @@ Running a coding exercise for the first time could take a bit of time for everyt
 _**Make sure you remove the hash (`#`) symbol in the coding portions of this question.  We have commented them so that the line won't execute and you can test your code after each step.**_
 
 Let's practice making a function that returns the BMI (Body Mass Index) given a person's weight and height.
- 
-(**Disclaimer: Much more than these two measurements are needed to determine if someone is healthy**)    
-
 
 Tasks:
 - Define a function and give it the name `BMI_calculator`.
