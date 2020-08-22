@@ -106,6 +106,18 @@ number of rows in the cereal dataframe that contains a specific
 manufacturer. In general, we use count if we are interested in counting
 the frequency of each of elements within the `x` variable.
 
+Notes: Script here.
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
 ---
 
 ``` python
@@ -147,9 +159,9 @@ chart1 = alt.Chart(cereal, width=500, height=300).mark_bar().encode(
     x='mfr',
     y='count()'
 )
-chart0
+chart1
 ```
-<img src="/module1/chart1.png" alt="A caption" width="40%" />
+<img src="/module1/chart1.png" alt="A caption" width="50%" />
 
 Notes: Script here.
 
@@ -182,7 +194,7 @@ chart2 = alt.Chart(cereal, width=500, height=300).mark_circle().encode(
 )
 chart2
 ```
-<img src="/module1/chart2.png" alt="A caption" width="45%" />
+<img src="/module1/chart2.png" alt="A caption" width="50%" />
 
 Notes: Script here.
 
@@ -214,7 +226,7 @@ chart3 = alt.Chart(cereal, width=500, height=300).mark_circle(opacity=0.3).encod
 )
 chart3
 ```
-<img src="/module1/chart3.png" width="45%" />
+<img src="/module1/chart3.png" width="50%" />
 
 Notes: Script here.
 
@@ -244,7 +256,7 @@ chart4 = alt.Chart(cereal, width=500, height=300).mark_circle(color='red', opaci
 )
 chart4
 ```
-<img src="/module1/chart4.png" width="45%" />
+<img src="/module1/chart4.png" width="50%" />
 
 Notes: Script here.
 
@@ -262,7 +274,7 @@ Notes: Script here.
 
 Maybe I have bad eyes, but those data points look pretty small. Good
 news though, we can make them bigger to enlarge them, the argument
-`size` in the `mark_circle(size=..)` should do the trick.
+`size` in the `mark_circle(size=...)` should do the trick.
 
 ``` python
 # lets set the opacity to 30%
@@ -272,7 +284,7 @@ chart5 = alt.Chart(cereal, width=500, height=300).mark_circle(color='red', size=
 )
 chart5
 ```
-<img src="/module1/chart5.png" width="45%" />
+<img src="/module1/chart5.png" width="50%" />
 
 Notes: Script here.
 
@@ -302,7 +314,7 @@ chart6 = alt.Chart(cereal, width=500, height=300).mark_circle(color='red', size=
 ).properties(title="Scatter plot sugars vs calories for different cereals")
 chart6
 ```
-<img src="/module1/chart6.png" width="45%" />
+<img src="/module1/chart6.png" width="50%" />
 
 Notes: Script here.
 

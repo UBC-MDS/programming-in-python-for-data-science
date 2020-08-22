@@ -121,6 +121,12 @@ To make a `bar` plot using `altair`, we follow the steps below:
 
 Note that `y=count()` is used here to count the occurrences or the number of rows in the cereal dataframe that contains a specific manufacturer. In general, we use count if we are interested in counting the frequency of each of elements within the `x` variable.
 
+Notes: Script here.
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
 ---
 
 ```{python}
@@ -158,7 +164,7 @@ chart1 = alt.Chart(cereal, width=500, height=300).mark_bar().encode(
     x='mfr',
     y='count()'
 )
-chart0
+chart1
 
 ```
 
@@ -167,7 +173,7 @@ chart0
 chart1.save(path + 'chart1.png')
 ```
 
-<img src="/module1/chart1.png" alt="A caption" width="40%" />
+<img src="/module1/chart1.png" alt="A caption" width="50%" />
 
 Notes: Script here.
 <html>
@@ -194,7 +200,7 @@ chart2
 chart2.save(path + 'chart2.png')
 ```
 
-<img src="/module1/chart2.png" alt="A caption" width="45%" />
+<img src="/module1/chart2.png" alt="A caption" width="50%" />
 
 Notes: Script here.
 <html>
@@ -220,7 +226,7 @@ chart3
 chart3.save(path + 'chart3.png')
 ```
 
-<img src="/module1/chart3.png" width="45%" />
+<img src="/module1/chart3.png" width="50%" />
 
 Notes: Script here.
 <html>
@@ -247,7 +253,7 @@ chart4
 chart4.save(path + 'chart4.png')
 ```
 
-<img src="/module1/chart4.png" width="45%" />
+<img src="/module1/chart4.png" width="50%" />
 
 Notes: Script here.
 <html>
@@ -257,7 +263,7 @@ Notes: Script here.
 
 ---
 
-Maybe I have bad eyes, but those data points look pretty small. Good news though, we can make them bigger to enlarge them, the argument `size` in the `mark_circle(size=..)` should do the trick.
+Maybe I have bad eyes, but those data points look pretty small. Good news though, we can make them bigger to enlarge them, the argument `size` in the `mark_circle(size=...)` should do the trick.
 
 
 ```{python}
@@ -275,7 +281,7 @@ chart5.save(path + 'chart5.png')
 
 ```
 
-<img src="/module1/chart5.png" width="45%" />
+<img src="/module1/chart5.png" width="50%" />
 
 Notes: Script here.
 <html>
@@ -301,7 +307,7 @@ chart6
 chart6.save(path + 'chart6.png')
 ```
 
-<img src="/module1/chart6.png" width="45%" />
+<img src="/module1/chart6.png" width="50%" />
 
 Notes: Script here.
 <html>

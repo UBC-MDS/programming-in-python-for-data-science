@@ -1,7 +1,7 @@
 ---
-title: 'Module 8: A Slice of NumPy, and Advanced Data Wrangling'
+title: 'Module 8: A Slice of NumPy and Advanced Data Wrangling'
 description:
-  'In this module you will learn about NumPy arrays and more advanced wrangling techniques such as handling columns with dates and strings and identifying null values.'
+  'In this module, you will learn about NumPy arrays and more advanced wrangling techniques such as handling columns with dates and strings and identifying null values.'
 prev: /module7
 next: /module9
 type: chapter
@@ -25,7 +25,7 @@ id: 8
 </exercise>
 
 
-<exercise id="2" title="Numpy Questions">
+<exercise id="2" title="NumPy Questions">
 
 **Question 1**      
 
@@ -40,19 +40,11 @@ Nice!
 
 </opt>
 
-<opt text="Pandas is built using Numpy">
+<opt text="Pandas is built using NumPy">
 
-Numpy arrays are the building blocks of Pandas dataframes
-
-</opt>
-
-
-<opt text="from numpy import numpy">
-
-Are you sure you read the slides properly?
+NumPy arrays are the building blocks of Pandas dataframes
 
 </opt>
-
 
 </choice> 
 
@@ -70,7 +62,7 @@ This is very much true and a very helpful feature.
 
 <opt text="NumPy contains constants and mathematical functions">
 
-This is another big perk of NumPy as it contains multiple other functions and constants 
+This is another benefit of NumPy as it contains multiple other functions and constants 
 
 </opt>
 
@@ -80,9 +72,9 @@ NumPy arrays must have elements with a homogenous data type.
 
 </opt>
 
-<opt text="<code>array</code> is a data type">
+<opt text="<code>np.array</code> is a data type">
 
-We saw that `array` is it's own datatype in the slides.  
+We saw that `array` is a data type in the slides.  
 
 </opt>
 
@@ -90,26 +82,27 @@ We saw that `array` is it's own datatype in the slides.
 
 </exercise>
 
-<exercise id="3" title="More Numpy">
+<exercise id="3" title="More NumPy">
 
 Which of the following is not an existing NumPy function? 
 
+*Hint: Trying looking at the <a href="https://numpy.org/doc/stable/reference/routines.math.html" target="_blank">NumPy documentation</a>*
 
 <choice id="1" >
 <opt text="<code>np.degrees()</code>"  >
-Are you looking at the href="https://numpy.org/doc/stable/reference/routines.math.html" target="_blank">NumPy documentation</a>?
+Are you looking at the <a href="https://numpy.org/doc/stable/reference/routines.math.html" target="_blank">NumPy documentation</a>?
 
 </opt>
 
 <opt text="<code>np.cross()</code>" >
-Are you looking at the href="https://numpy.org/doc/stable/reference/routines.math.html" target="_blank">NumPy documentation</a>?
+Are you looking at the <a href="https://numpy.org/doc/stable/reference/routines.math.html" target="_blank">NumPy documentation</a>?
 
 </opt>
 
 
 <opt text="<code>np.interp()</code>">
 
-Are you looking at the href="https://numpy.org/doc/stable/reference/routines.math.html" target="_blank">NumPy documentation</a>?
+Are you looking at the <a href="https://numpy.org/doc/stable/reference/routines.math.html" target="_blank">NumPy documentation</a>?
 
 </opt>
 
@@ -125,7 +118,7 @@ Great!
 </exercise>
 
 
-<exercise id="4" title= "Numpy Practice">
+<exercise id="4" title= "NumPy Practice">
 
 **Instructions:**    
 Running a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes. 
@@ -137,7 +130,7 @@ _**Make sure you remove the hash (`#`) symbol in the coding portions of this que
 Let's explore how Python compares lists and arrays. 
 
 Tasks:
-- Create 2 lists containing any the same number of elements and save each as  objects named  `a_list` and `b_list`.
+- Create 2 lists containing any the same number of elements and save each as objects named  `a_list` and `b_list`.
 - Using Boolean operators, what is outputted when you test to see if they are equal? 
 
 
@@ -151,9 +144,9 @@ Tasks:
 
 
 <choice id="1" >
-<opt text="A single Boolean (Either True or False)"  correct="true" >
+<opt text="A single Boolean (Either <code> True</code> or <code>False</code>)"  correct="true" >
 
-The lists are not the same is what is being checked here. 
+This is checking if the lists are equal. 
 
 </opt>
 
@@ -176,22 +169,22 @@ Tasks:
 
 <codeblock id="08_04b">
 
-- Are you using `np.array()` with parentheses to make your arrays? ?
+- Are you using `np.array()` with parentheses to make your arrays?
 - Are you using `==` to check if the lists are equal?
 
 </codeblock>
 
 
-<choice id="1" >
-<opt text="A single Boolean (Either True or False)"  correct="true" >
+<choice id="2" >
+<opt text="A single Boolean (Either <code> True</code> or <code>False</code>)"   >
 
 Use the cell above to help yourself out. 
 
 </opt>
 
-<opt text="An array containing a Boolean value for each element" >
+<opt text="An array containing a Boolean value for each element" correct="true">
 
-Numpy performs the operation element-wise and compares the element that share the same index location. 
+NumPy performs the operation element-wise and compares the elements that share the same index location. 
 
 </opt>
 
@@ -203,7 +196,7 @@ The results might be somewhat interesting! This is another differentiation betwe
 </exercise>
 
 
-<exercise id="5" title="Numpy Arrays" type="slides">
+<exercise id="5" title="NumPy Arrays" type="slides">
 
 <slides source="module8/module8_05">
 </slides>
@@ -225,7 +218,7 @@ array([ 0,  5, 10, 15, 20])
 
 <choice id="1" >
 <opt text="<code>np.linspace(0, 20, 5)</code>"  >
-The array above contain elements with data type `int`  where `np.linspace()` outputs an array with `float` elements. 
+The array above contains elements with data type `int`  where `np.linspace()` outputs an array with `float` elements. 
 
 </opt>
 
@@ -269,7 +262,7 @@ Nice work!
 
 <opt text="<code>array([[1., 1., 1., 1.], [1., 1., 1., 1.], [1., 1., 1., 1.]])</code>" >
 
-Remember that the number of rows preceeds the number of columns. 
+Remember that the number of rows precedes the number of columns. 
 
 </opt>
 
@@ -323,7 +316,7 @@ Are you counting the number of columns correctly?
 
 <opt text="<code>(8, 2)</code>">
 
-Remember the number of rows preceeds the number of columns. 
+Remember the number of rows precedes the number of columns. 
 
 </opt>
 
@@ -357,14 +350,14 @@ Given the above array, which code would result in the given output below?
 30
 ```
 
-<choice id="3" >
+<choice id="2" >
 <opt text="<code>.size</code>" correct="true">
 
 
 </opt>
 
 <opt text="<code>.ndim</code>" >
-This give the dimension of the array, which would be 3 not 30. 
+This gives the dimension of the array, which would be 3, not 30. 
 
 </opt>
 
@@ -387,7 +380,7 @@ Since these are attributes, there is no need for the parentheses.
 
 **Question 3**  
 
-Give an array with shape = (2,3,4,2), What is it's `.ndim`? 
+Give an array with `shape = (2,3,4,2)`, What is it's `.ndim`? 
 
 <choice id="3" >
 <opt text="2"  >
@@ -422,7 +415,7 @@ What is the length of the tuple?
 
 <exercise id="8" title="More Arrays Questions">
 
-Below is an array saved in an object named `hurray`:
+Use the following array named `hurray` to answer the next set of questions.
 ```python
 array([[ 0,  1,  2],
        [ 3,  4,  5],
@@ -543,7 +536,7 @@ Remember the first index value is included and the last value is excluded.
 
 <opt text="<code>hurray[1:, 3:5]</code>">
 
-Remember the number of rows preceeds the number of columns. 
+Remember the number of rows precedes the number of columns. 
 
 </opt>
 
@@ -568,10 +561,10 @@ Running a coding exercise for the first time could take a bit of time for everyt
 
 _**Make sure you remove the hash (`#`) symbol in the coding portions of this question.  We have commented them so that the line won't execute and you can test your code after each step.**_
 
-Let's make an array and find it's size and dimension. 
+Let's make an array and find its size and dimension. 
 
 Tasks:
-- Create an array named `arr1` that contains only elements with values 1 with a shape of (3,5).
+- Create an array named `arr1` that contains only elements with values 1 and a shape of (3,5).
 - Save the dimension and size of `arr1` in objects named `arr1_dim` and `arr1_size` respectively. 
 
 
@@ -602,7 +595,7 @@ Let's make a new array and transform it by slicing and transposing.
 Tasks:
 - Create an array named `arr2` using `np.linspace()` with 6 equally spaced values from 1 to 16 and a shape of (2,3).
 - Transpose the array and name it `arr2t`.
-- Finally slice it so it only includes the values 7 and 16. Save this as an object named `sliced_arr2t`.
+- Finally, slice it so it only includes the values 7 and 16. Save this as an object named `sliced_arr2t`.
 
 
 
@@ -659,13 +652,13 @@ Which of the columns contains null values?
 <choice id="1" >
 <opt text="<code>name</code>"  >
 
-This column has all of it's 10 rows with non-null values. 
+This column has all of its 10 rows with non-null values. 
 
 </opt>
 
 <opt text="<code>location</code>" >
 
-This column has all of it's 10 rows with non-null values. 
+This column has all of its 10 rows with non-null values. 
 
 </opt>
 
@@ -685,7 +678,7 @@ Of the 10 rows (entries) only 8 have non-null values meaning this column contain
 
 <opt text="<code>weight</code>">
 
-This column has all of it's 10 rows with non-null values. 
+This column has all of its 10 rows with non-null values. 
 
 </opt>
 
@@ -710,7 +703,7 @@ Given the dataframe name `forest`, what code would you use to remove only the ro
 <choice id="2" >
 <opt text="<code>forest.drop(columns=['age'])</code>"  >
 
-This is actually just dropping the entire `age` column!
+This is just dropping the entire `age` column!
 
 </opt>
 
@@ -858,7 +851,7 @@ Tasks:
 - Create a new column in the dataframe name `Wealth` where all the values equal `"comfortable"`. 
 - Name the new dataframe `canucks_comf`.
 - Do conditional value replacement, where if the value in the `Salary` column is null, we replace `"comfortable"` with `"unknown"`.
-- Display the new `canucks_comf` dataframe
+- Display the new `canucks_comf` dataframe.
 
 <codeblock id="08_14">
 
@@ -881,7 +874,7 @@ Running a coding exercise for the first time could take a bit of time for everyt
 
 _**Make sure you remove the hash (`#`) symbol in the coding portions of this question.  We have commented them so that the line won't execute and you can test your code after each step.**_
 
-Let's replace the Values missing in the `canucks` dataframe with the salary mean
+Let's replace the values missing in the `canucks` dataframe with the salary mean.
 
 Tasks:
 - Replace the `NaN` values in the dataframe with the mean salary value. 
@@ -906,7 +899,7 @@ Tasks:
 </exercise>
 
 
-<exercise id="17" title="DateTime Questions">
+<exercise id="17" title="Datetime Questions">
 
 **Question 1**      
 
@@ -914,7 +907,7 @@ Which of the following dtypes measures an interval of time?
 
 
 <choice id="1" >
-<opt text="Timstamp"  >
+<opt text="Timestamp"  >
 
 This is a snapshot in time. 
 
@@ -938,7 +931,7 @@ Are you sure you read the slides properly?
 
 **Question 2**          
 
-What code would you use to create a column with the name of the mounth from from a datetime column?
+What code would you use to create a column with the name of the month from a datetime column?
 
 
 <choice id="2" >
@@ -950,7 +943,7 @@ This will produce a numerical value, not the month name.
 
 <opt text="<code>.month</code>">
 
-This will produce a numerical value for a single Timstamp instad of a column. 
+This will produce a numerical value for a single Timestamp instead of a column. 
 
 </opt>
 
@@ -962,7 +955,7 @@ You got it!
 
 <opt text="<code>ts.month_name</code>">
 
-So close, but in this case we need parentheses. 
+So close, but in this case, we need parentheses. 
 
 </opt>
 
@@ -1024,19 +1017,19 @@ Use the output of the following code chunk to help answer the next question.
 </codeblock>
 
 
-Let's read in data and parse a datetime column as well as calculate the hockey team's older and youngest player. 
+Let's read in data and parse a datetime column as well as calculate the hockey team's oldest and youngest player. 
 
 Tasks:
-- Read in the `canucks.csv` file  from the data folder and parse the `Birth Date` column. Save this as an object named `canucks`.
-- Find the oldest player (going by their date of birth) and save the Timstamp as `oldest`. 
-- Find the youngest player (going by their date of birth) and save the Timstamp as `youngest`.
-- Find the age difference between the two players in number of years to 2 decimal places. Save this an an object name `age_range`. 
+- Read in the `canucks.csv` file from the data folder and parse the `Birth Date` column. Save this as an object named `canucks`.
+- Find the oldest player (going by their date of birth) and save the Timestamp as `oldest`. 
+- Find the youngest player (going by their date of birth) and save the Timestamp as `youngest`.
+- Find the age difference between the two players in years to 2 decimal places. Save this as an object name `age_range`. 
 - Display `age_range`.
 
 
 <codeblock id="08_18">
 
-- Are you using the argument `parse_dates` while reading in the data??
+- Are you using the argument `parse_dates` while reading in the data?
 - The oldest player has the `min()` date of birth.
 - The youngest player has the `max()` date of birth.
 - Are you subtracting the min value from the max value?
@@ -1046,11 +1039,373 @@ Tasks:
 
 </exercise>
 
+<exercise id="19" title="Introduction to Working with Strings" type="slides">
+
+<slides source="module8/module8_19">
+</slides>
 
 </exercise>
 
 
-<exercise id="26" title="What Did We Just Learn?" type="slides, video">
+<exercise id="20" title="String Questions">
+
+**Question 1**      
+
+What must we add to our string functions when processing columns of dtype `object`? 
+
+
+<choice id="1" >
+<opt text="<code>.ts</code>"  >
+
+We use this for functions that work with time stamps
+
+</opt>
+
+<opt text="<code>.str</code>" correct="true">
+
+Great work!
+
+</opt>
+
+
+<opt text="<code>.st</code>">
+
+this is not quite right
+
+</opt>
+
+
+</choice> 
+
+**Question 2**          
+
+Which function will remove leading or trailing characters from a string? 
+
+
+<choice id="2" >
+<opt text="<code>.split()</code>" >
+
+This will produce a numerical value, not the month name. 
+
+</opt>
+
+<opt text="<code>.strip()</code>" correct="true">
+
+Nice!
+
+</opt>
+
+<opt text="<code>.string()</code>">
+
+Maybe read over the notes a bit. 
+
+</opt>
+
+<opt text="<code>.rstrip()</code>">
+
+This function removes the trailing character specified in the argument.  
+
+</opt>
+
+</choice>  
+
+</exercise>
+
+<exercise id="21" title="Identify the String Code">  
+
+
+```out
+           name   colour location   seed  shape  sweetness  water_content  weight
+0         apple      red   canada   True  round       True             84     100
+1        banana   yellow   mexico  False   long       True             75     120
+2    cantaloupe   orange    spain   True  round       True             90    1360
+3  dragon-fruit  magenta    china   True  round      False             96     600
+4    elderberry   purple  austria  False  round       True             80       5
+5           fig   purple   turkey  False   oval      False             78      40
+6         guava    green   mexico   True   oval       True             83     450
+7   huckleberry     blue   canada   True  round       True             73       5
+8          kiwi    brown    china   True  round       True             80      76
+9         lemon   yellow   mexico  False   oval      False             83      65
+
+```
+
+
+Given the dataframe above named `fruit_salad`,  which code would produce the following output?     
+*Hint: Look at the `location` column*
+
+
+<center><img src='/module8/output.png' width="80%"></center>
+
+<br>
+
+<choice id="1" >
+<opt text="<code>fruit_salad.assign(location=fruit_salad['location'].str.capitalize())</code>" correct="true">
+
+Way to go!
+
+</opt>
+
+<opt text="<code>fruit_salad.assign(location=fruit_salad['location'].capitalize())</code>">
+
+This would result in an error. 
+
+</opt>
+
+<opt text="<code>fruit_salad.assign(location=fruit_salad['shape'].str.upper())</code>" >
+
+The `shape` column doesn't look uppercase to me. 
+
+</opt>
+
+<opt text="<code>fruit_salad.assign(location=fruit_salad['shape'].upper()</code>">
+
+This may be a good time to look over the slides again
+
+
+</opt>
+
+</choice> 
+
+</exercise>
+
+
+
+<exercise id="22" title= "Practice Handling Strings">
+
+**Instructions:**    
+Running a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes. 
+
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
+
+_**Make sure you remove the hash (`#`) symbol in the coding portions of this question.  We have commented them so that the line won't execute and you can test your code after each step.**_
+
+
+Use the output of the following code chunk to help answer the next question.
+
+<codeblock id="hockey_players">
+
+</codeblock>
+
+
+Let's transform some of the columns in your canucks dataset. Let's also see how many of the players have multiple `T` in their name. 
+
+Tasks:
+- Convert the `Position` and `Country` columns into uppercase and save this in a dataframe named `canucks_upper`.
+- Create a new column in the `canucks_upper` dataframe named `number_ts` where you count the total number of times the letter T (lowercase or uppercase) appears in their name.
+- Save this dataframe named as `canucks_upper_ts`.
+- How many players have more than 1 letter T in their name? 
+
+
+<codeblock id="08_22">
+
+- Are you using `.assign` and `.upper()`?
+- You will have to convert the lower to `.lower()` first and then `.count('t')`
+- The number of players with `number_ts` greater than two can be calculated by filtering on that column and getting the `.shape` of the dataframe.
+
+</codeblock>
+
+
+How many players have the letter "T" in their name more than once?
+
+<choice id="1" >
+
+<opt text="3"   >
+
+There are more than that! Are you using `.shape[0]`? 
+
+</opt>
+
+<opt text="5" >
+
+This is not right. Maybe check that you are counting both upper and lower cases of "T".
+
+</opt>
+
+<opt text="6" correct="True">
+
+Great!
+
+</opt>
+
+<opt text="7" >
+
+Are you filtering the dataset correctly?
+
+</opt>
+
+</choice> 
+
+</exercise>
+
+
+<exercise id="23" title="More Advanced String Processing" type="slides">
+
+<slides source="module8/module8_23">
+</slides>
+
+</exercise>
+
+
+<exercise id="24" title="Advanced String Questions">
+
+**Question 1**      
+
+Which of the following would you use to replace string patterns with another string within a dataframe column?
+
+<choice id="1" >
+<opt text="<code>.replace()</code>" >
+
+Way to go!
+
+</opt>
+
+<opt text="<code>str.replace()</code>" correct="true">
+
+This would result in an error. 
+
+</opt>
+
+<opt text="<code>.contains()</code>" >
+
+The `shape` column doesn't look uppercase to me. 
+
+</opt>
+
+<opt text="<code>.str.contains()</code>">
+
+This may be a good time to look over the slides again
+
+
+</opt>
+
+</choice> 
+
+**Question 2**          
+
+Is the following statement True or False?
+
+*The `.contains()` verb will output a new dataframe that matches any values in a specific column and replaces it with your desired value.* 
+
+
+<choice id="2" >
+
+<opt text="True" >
+
+`.contains()` actually will output a Boolean Series based on whether a given pattern is contained within a string of a Series.
+
+</opt>
+
+<opt text="False" correct="true">
+
+Great! You knew that it outputs a Boolean Series! The value replacement is using `.loc[]`. 
+
+</opt>
+
+</choice>  
+
+</exercise>
+
+
+<exercise id="25" title="Strings">
+
+
+```out
+           name   colour location   seed  shape  sweetness  water_content  weight
+0         apple      red   canada   True  round       True             84     100
+1        banana   yellow   mexico  False   long       True             75     120
+2    cantaloupe   orange    spain   True  round       True             90    1360
+3  dragon-fruit  magenta    china   True  round      False             96     600
+4    elderberry   purple  austria  False  round       True             80       5
+5           fig   purple   turkey  False   oval      False             78      40
+6         guava    green   mexico   True   oval       True             83     450
+7   huckleberry     blue   canada   True  round       True             73       5
+8          kiwi    brown    china   True  round       True             80      76
+9         lemon   yellow   mexico  False   oval      False             83      65
+
+```
+
+
+Given the dataframe above named `fruit_salad`,  which code would produce the following dataframe with the new column `berry`?  
+
+
+
+<center><img src='/module8/output25.png' width="80%"></center>
+
+<br>
+
+<choice id="1" >
+<opt text="<code>fruit_salad.assign(name = fruit_salad['name'].contains('berry'))</code>">
+
+This doesn't contain the necessary `str.` and it appears to edit the `name` column.
+
+
+</opt>
+
+<opt text="<code>fruit_salad.assign(name = fruit_salad['name'].str.contains('berry').replace(True))</code>">
+
+Not the correct way of making a new column. 
+
+</opt>
+
+<opt text="<code>fruit_salad.assign(berry = fruit_salad['name'].str.replace('berry', True))</code>" >
+
+This is not the correct syntax for this output. 
+
+</opt>
+
+<opt text="<code>fruit_salad.assign(berry = fruit_salad['name'].str.contains('berry'))</code>"  correct="true">
+
+Nice work. 
+
+
+</opt>
+
+</choice> 
+
+</exercise>
+
+
+<exercise id="26" title= "Processing Strings in a Dataframe">
+
+**Instructions:**    
+Running a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes. 
+
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
+
+_**Make sure you remove the hash (`#`) symbol in the coding portions of this question.  We have commented them so that the line won't execute and you can test your code after each step.**_
+
+
+Use the `lego` dataframe to help answer the next question.
+
+<codeblock id="lego_sets">
+
+</codeblock>
+
+
+Let's practice using the verbs we learned from the lesson to process a string column in our Lego dataset. 
+
+Tasks:
+- Convert the `name` column in the `lego` dataset to lowercase and save it in an object named `lego`.
+- Filter the dataset to find all the Lego sets that contain `"weetabix"`.
+- Save this as an object named `lego_weetabix`.
+- Replace the word` "Weetabix`" in the `name` column of the `lego_wetabix` dataframe with the string `"cereal-brand"`.
+- Save this in an object called `lego_cereal`.
+- If the row contains the word `"promotional"`, change the entire value to `"cereal-brand freebie"`.
+- Display `lego_cereal`
+
+
+<codeblock id="08_26">
+
+- Are you using `.assign()` and `.lower()` to convert the name column to lowercase?
+- Are you using `str.contains('weetabix')` to filter all the rows? 
+- You should be using `assign()` with `str.replace('weetabix', 'cereal-brand')` to replace "weetabix".
+- You should be using  `.loc[]` and `str.contains('promotional')` (and a single `=`) to assign new row values. 
+
+</codeblock>
+
+</exercise>
+
+<exercise id="27" title="What Did We Just Learn?" type="slides, video">
 <slides source="module8/module8_end" start="0:165" end="3:01">>
 </slides>
 </exercise>

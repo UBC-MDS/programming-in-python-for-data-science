@@ -19,16 +19,14 @@ Notes: Script here
 ---
 
 In the real world of data analysis, it’s uncommon that we have a perfect
-dataset ready to be used. In fact, in a majority of cases, cleaning and
-wrangling your data will be an ongoing and time consuming project. No
-matter how complete or well planned a database may seem, a data analyst
-will almost always encounter ***null*** values.
+dataset ready to be used. In fact, in most cases, cleaning and wrangling
+data will be an ongoing and time-consuming project. No matter how
+complete or well planned a database may seem, a data analyst will almost
+always encounter ***null*** values.
 
-A null is the term used to represent a value missing from the data.
-***Null*** is the human readable definition of a value that is not
-included in the dataframe. Python translates this to a `NaN` value. When
-we use Pandas you may see `NaN` which is actually a constant that comes
-from the NumPy library.
+A “null” is the human-readable term of a value that is missing from the
+dataframe. Python translates this to a `NaN` which is a constant that
+comes from the NumPy library.
 
 ``` python
 np.nan
@@ -38,12 +36,12 @@ np.nan
 nan
 ```
 
-In some cases, missing values are sometimes refered to as `NA` values
+In some cases, missing values are sometimes referred to as `NA` values
 because of how they are handled in other programming languages. This is
 reflected in some of the names of the functions we use to handle them.
 
-Not that in this section we generally refer to them as both ***null***
-and `NaN` values.
+In this course, we generally refer to them as both ***null*** and `NaN`
+values.
 
 Notes: Script here
 
@@ -61,10 +59,10 @@ Notes: Script here
 
 ## Info on missing values
 
-A good rule of thumb when conducting an analysis, is to check early on
-how complete your dataset is. `.info$$` is similar to `.dtype()` but in
+A good rule of thumb when conducting an analysis is to check early on
+how complete the dataset is. `.info()` is similar to `.dtypes` but in
 addition to the dtype of each column, it includes the total number of
-Non-null values each column contains.
+non-null values contained in each column.
 
 Let’s try it out on a subset of our `cereal` dataset:
 
@@ -89,8 +87,9 @@ memory usage: 3.7+ KB
 ```
 
 Here we see the total number of rows at the top with `RangeIndex: 77
-entries, 0 to 76`. The `Non-Null Count` specifies the number of non-null
-values. In this case we have a complete dataframe with zero null values.
+entries, 0 to 76`. The `Nnon-Null Count` column specifies the number of
+non-null values. In this case, we have a complete dataframe with zero
+null values for each column.
 
 Notes: Script here
 
@@ -106,31 +105,34 @@ Notes: Script here
 
 ---
 
-Let’s take a look at a case where we are not so lucky. `bites` is a
-subset of a new dataset that contains information about animal bites
-occurring in Louisville, Kentucky from 1985 to 2017.
+Let’s take a look at a case where we are not so lucky. `cycling` is a
+subset of a dataset that contains the bicycling trips
+<a href="https://www.tomasbeuzen.com/" target="_blank">Tomas Beuzen</a>,
+a UBC postdoc took to campus and back during the fall 2019 semester.
 
 ``` python
-bites.info()
+cycling.info()
 ```
 
 ```out
 <class 'pandas.core.frame.DataFrame'>
-Int64Index: 100 entries, 0 to 99
-Data columns (total 4 columns):
- #   Column     Non-Null Count  Dtype         
----  ------     --------------  -----         
- 0   bite_date  100 non-null    datetime64[ns]
- 1   species    100 non-null    object        
- 2   gender     100 non-null    object        
- 3   color      86 non-null     object        
-dtypes: datetime64[ns](1), object(3)
-memory usage: 3.9+ KB
+RangeIndex: 33 entries, 0 to 32
+Data columns (total 6 columns):
+ #   Column    Non-Null Count  Dtype         
+---  ------    --------------  -----         
+ 0   Date      33 non-null     datetime64[ns]
+ 1   Name      33 non-null     object        
+ 2   Type      33 non-null     object        
+ 3   Time      33 non-null     int64         
+ 4   Distance  30 non-null     float64       
+ 5   Comments  33 non-null     object        
+dtypes: datetime64[ns](1), float64(1), int64(1), object(3)
+memory usage: 1.7+ KB
 ```
 
-We can see that there are a total of 100 entries (rows). We see that the
-`color` column only contains 86 of 100 non null values. This would mean
-that 14 values are missing from that column.
+We can see that there is a total of 33 entries (rows). We see that the
+`Distance` column only contains 30 non-null values out of a possible 33.
+This would mean that 3 values are missing from this column.
 
 Notes: Script here
 
@@ -146,11 +148,11 @@ Notes: Script here
 
 ---
 
-We can use `.isnull()` on a particular column to obtain a Boolean value
-indicating if the row is a null value:
+We can use `.isnull()` on a particular column to obtain a Boolean series
+indicating if each row is a null value:
 
 ``` python
-bites['color'].isnull()
+cycling['Distance'].isnull()
 ```
 
 ```out
@@ -159,11 +161,11 @@ bites['color'].isnull()
 2      True
 3     False
       ...  
-96    False
-97    False
-98    False
-99    False
-Name: color, Length: 100, dtype: bool
+29    False
+30    False
+31    False
+32    False
+Name: Distance, Length: 33, dtype: bool
 ```
 
 Notes: Script here
@@ -181,28 +183,21 @@ Notes: Script here
 ---
 
 We can pair `.isnull()` with our filtering method and the verb `.any()`
-to obtain the rows that contain null values in the dataframe:
+to obtain the rows that contain null values in *any* of the columns of
+the dataframe:
 
 ``` python
-bites[bites.isnull().any(axis=1)]
+cycling[cycling.isnull().any(axis=1)]
 ```
 
 ```out
-    bite_date species   gender color
-2  1987-05-07     DOG  UNKNOWN   NaN
-5  1989-11-24     DOG  UNKNOWN   NaN
-16 1991-11-07     DOG  UNKNOWN   NaN
-20 1992-03-18     CAT  UNKNOWN   NaN
-..        ...     ...      ...   ...
-39 1994-07-21     DOG  UNKNOWN   NaN
-56 2010-01-02     DOG  UNKNOWN   NaN
-57 2010-01-02     CAT   FEMALE   NaN
-72 2010-01-09     CAT  UNKNOWN   NaN
-
-[14 rows x 4 columns]
+                  Date            Name  Type  Time  Distance                               Comments
+2  2019-09-11 00:23:50  Afternoon Ride  Ride  1863       NaN              Wet road but nice weather
+22 2019-10-01 00:15:07  Afternoon Ride  Ride  1732       NaN                   Legs feeling strong!
+24 2019-10-02 00:13:09  Afternoon Ride  Ride  1756       NaN  A little tired today but good weather
 ```
 
-Here, we see the 14 rows of our dataframe that contain null values.
+Here, we see the 3 rows of our dataframe that contain null values.
 
 Notes: Script here
 
@@ -241,38 +236,38 @@ Notes: Script here
 
 ---
 
-## Droping Null Values
+## Dropping Null Values
 
-The easiest and simplest way of handling nulls values are to remove
-those rows from the dataset. In a fashion similar to dropping columns,
-we can drop rows, if they contain a `NaN` value. It’s important that you
-take some necessary precautions and not drop a large portion of your
-dataset.
+The easiest and simplest way of handling nulls values is to remove those
+rows from the dataset. In a fashion similar to dropping columns, we can
+drop rows, if they contain a `NaN` value. It’s important that we take
+some necessary precautions and not drop a large portion of the data.
 
-In our example above, if we were to remove the 14 rows we identified to
+In our example above, if we were to remove the 3 rows we identified to
 contain `NaN` values, we do it in the following way:
 
 ``` python
-bites_removed = bites.dropna()
-bites_removed
+trips_removed = cycling.dropna()
+trips_removed
 ```
 
 ```out
-    bite_date species   gender       color
-0  1985-05-05     DOG   FEMALE  LIG. BROWN
-1  1986-02-12     DOG  UNKNOWN   BRO & BLA
-3  1988-10-02     DOG     MALE   BLA & BRO
-4  1989-08-29     DOG   FEMALE     BLK-WHT
-..        ...     ...      ...         ...
-96 2010-01-25     DOG   FEMALE    FAWN-WHT
-97 2010-01-25     DOG   FEMALE     BRN-WHT
-98 2010-01-26     DOG     MALE   BROWN-BLK
-99 2010-01-27     DOG     MALE       BLACK
+                  Date            Name  Type  Time  Distance                                   Comments
+0  2019-09-10 00:13:04  Afternoon Ride  Ride  2084     12.62                                       Rain
+1  2019-09-10 13:52:18    Morning Ride  Ride  2531     13.03                                       rain
+3  2019-09-11 14:06:19    Morning Ride  Ride  2192     12.84               Stopped for photo of sunrise
+4  2019-09-12 00:28:05  Afternoon Ride  Ride  1891     12.48               Tired by the end of the week
+..                 ...             ...   ...   ...       ...                                        ...
+29 2019-10-09 13:55:40    Morning Ride  Ride  2149     12.70              Really cold! But feeling good
+30 2019-10-10 00:10:31  Afternoon Ride  Ride  1841     12.59        Feeling good after a holiday break!
+31 2019-10-10 13:47:14    Morning Ride  Ride  2463     12.79               Stopped for photo of sunrise
+32 2019-10-11 00:16:57  Afternoon Ride  Ride  1843     11.79  Bike feeling tight, needs an oil and pump
 
-[86 rows x 4 columns]
+[30 rows x 6 columns]
 ```
 
-Notice that index=2 was removed.
+Notice that index 2 was removed and we only have 30 rows in our
+dataframe now.
 
 Notes: Script here
 
@@ -288,31 +283,66 @@ Notes: Script here
 
 ---
 
-By default all the rows will be considered when dropping rows, however,
-if we only want to drop rows with `NaN` values in certain columns we can
-use the `subset` argument:
+By default, all the rows with `NaN` values in any column will be
+considered when dropping rows, however, if we only want to drop rows
+with `NaN` values in certain columns, we can use the `subset` argument:
 
 ``` python
-bites.dropna(subset=['species'])
+cycling.dropna(subset=['Type'])
 ```
 
 ```out
-    bite_date species   gender       color
-0  1985-05-05     DOG   FEMALE  LIG. BROWN
-1  1986-02-12     DOG  UNKNOWN   BRO & BLA
-2  1987-05-07     DOG  UNKNOWN         NaN
-3  1988-10-02     DOG     MALE   BLA & BRO
-..        ...     ...      ...         ...
-96 2010-01-25     DOG   FEMALE    FAWN-WHT
-97 2010-01-25     DOG   FEMALE     BRN-WHT
-98 2010-01-26     DOG     MALE   BROWN-BLK
-99 2010-01-27     DOG     MALE       BLACK
+                  Date            Name  Type  Time  Distance                                   Comments
+0  2019-09-10 00:13:04  Afternoon Ride  Ride  2084     12.62                                       Rain
+1  2019-09-10 13:52:18    Morning Ride  Ride  2531     13.03                                       rain
+2  2019-09-11 00:23:50  Afternoon Ride  Ride  1863       NaN                  Wet road but nice weather
+3  2019-09-11 14:06:19    Morning Ride  Ride  2192     12.84               Stopped for photo of sunrise
+..                 ...             ...   ...   ...       ...                                        ...
+29 2019-10-09 13:55:40    Morning Ride  Ride  2149     12.70              Really cold! But feeling good
+30 2019-10-10 00:10:31  Afternoon Ride  Ride  1841     12.59        Feeling good after a holiday break!
+31 2019-10-10 13:47:14    Morning Ride  Ride  2463     12.79               Stopped for photo of sunrise
+32 2019-10-11 00:16:57  Afternoon Ride  Ride  1843     11.79  Bike feeling tight, needs an oil and pump
 
-[100 rows x 4 columns]
+[33 rows x 6 columns]
 ```
 
 Here, we can see that no rows were dropped as there are no `NaN` values
-in the `species` column.
+in the `Type` column.
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+But, the rows do get dropped when we subset on the `Distance` column.
+
+``` python
+cycling.dropna(subset=['Distance'])
+```
+
+```out
+                  Date            Name  Type  Time  Distance                                   Comments
+0  2019-09-10 00:13:04  Afternoon Ride  Ride  2084     12.62                                       Rain
+1  2019-09-10 13:52:18    Morning Ride  Ride  2531     13.03                                       rain
+3  2019-09-11 14:06:19    Morning Ride  Ride  2192     12.84               Stopped for photo of sunrise
+4  2019-09-12 00:28:05  Afternoon Ride  Ride  1891     12.48               Tired by the end of the week
+..                 ...             ...   ...   ...       ...                                        ...
+29 2019-10-09 13:55:40    Morning Ride  Ride  2149     12.70              Really cold! But feeling good
+30 2019-10-10 00:10:31  Afternoon Ride  Ride  1841     12.59        Feeling good after a holiday break!
+31 2019-10-10 13:47:14    Morning Ride  Ride  2463     12.79               Stopped for photo of sunrise
+32 2019-10-11 00:16:57  Afternoon Ride  Ride  1843     11.79  Bike feeling tight, needs an oil and pump
+
+[30 rows x 6 columns]
+```
 
 Notes: Script here
 
@@ -331,41 +361,39 @@ Notes: Script here
 ## Replacing Null Values
 
 Alternately, if we have a small dataset and we don’t want to rid
-outselves of any data, We may prefer to replace `NaN` with a particular
+ourselves of any data, we may prefer to replace `NaN` with a particular
 value. We can do so will `.fillna()` Perhaps we want to replace the
-values in `color` with the most frequent value (or if it was a numeric
-value, the mean):
+values in `Distance` with the mean:
 
 ``` python
-most_common_color = bites['color'].mode()[0]
-most_common_color
+cycling['Distance'].mean().round(2)
 ```
 
 ```out
-'BLK'
+12.67
 ```
 
 ``` python
-bites_mode_fill = bites.fillna(value=most_common_color)
-bites_mode_fill
+cycling_mean_fill = cycling.fillna(value=cycling['Distance'].mean().round(2))
+cycling_mean_fill
 ```
 
 ```out
-    bite_date species   gender       color
-0  1985-05-05     DOG   FEMALE  LIG. BROWN
-1  1986-02-12     DOG  UNKNOWN   BRO & BLA
-2  1987-05-07     DOG  UNKNOWN         BLK
-3  1988-10-02     DOG     MALE   BLA & BRO
-..        ...     ...      ...         ...
-96 2010-01-25     DOG   FEMALE    FAWN-WHT
-97 2010-01-25     DOG   FEMALE     BRN-WHT
-98 2010-01-26     DOG     MALE   BROWN-BLK
-99 2010-01-27     DOG     MALE       BLACK
+                  Date            Name  Type  Time  Distance                                   Comments
+0  2019-09-10 00:13:04  Afternoon Ride  Ride  2084     12.62                                       Rain
+1  2019-09-10 13:52:18    Morning Ride  Ride  2531     13.03                                       rain
+2  2019-09-11 00:23:50  Afternoon Ride  Ride  1863     12.67                  Wet road but nice weather
+3  2019-09-11 14:06:19    Morning Ride  Ride  2192     12.84               Stopped for photo of sunrise
+..                 ...             ...   ...   ...       ...                                        ...
+29 2019-10-09 13:55:40    Morning Ride  Ride  2149     12.70              Really cold! But feeling good
+30 2019-10-10 00:10:31  Afternoon Ride  Ride  1841     12.59        Feeling good after a holiday break!
+31 2019-10-10 13:47:14    Morning Ride  Ride  2463     12.79               Stopped for photo of sunrise
+32 2019-10-11 00:16:57  Afternoon Ride  Ride  1843     11.79  Bike feeling tight, needs an oil and pump
 
-[100 rows x 4 columns]
+[33 rows x 6 columns]
 ```
 
-We see the value in `color` for index 2 change to `BLK`.
+We see the value in `Distance` for index 2 change to `12.67`.
 
 Notes: Script here
 
@@ -382,29 +410,29 @@ Notes: Script here
 ---
 
 We can also replace it with a new value altogether, perhaps in this case
-`UNKNOWN`:
+he didn’t cycle and 0 distance is an appropriate value:
 
 ``` python
-bites_unknown_fill = bites.fillna(value='UNKNOWN')
-bites_unknown_fill
+cycling_zero_fill = cycling.fillna(value=0)
+cycling_zero_fill
 ```
 
 ```out
-    bite_date species   gender       color
-0  1985-05-05     DOG   FEMALE  LIG. BROWN
-1  1986-02-12     DOG  UNKNOWN   BRO & BLA
-2  1987-05-07     DOG  UNKNOWN     UNKNOWN
-3  1988-10-02     DOG     MALE   BLA & BRO
-..        ...     ...      ...         ...
-96 2010-01-25     DOG   FEMALE    FAWN-WHT
-97 2010-01-25     DOG   FEMALE     BRN-WHT
-98 2010-01-26     DOG     MALE   BROWN-BLK
-99 2010-01-27     DOG     MALE       BLACK
+                  Date            Name  Type  Time  Distance                                   Comments
+0  2019-09-10 00:13:04  Afternoon Ride  Ride  2084     12.62                                       Rain
+1  2019-09-10 13:52:18    Morning Ride  Ride  2531     13.03                                       rain
+2  2019-09-11 00:23:50  Afternoon Ride  Ride  1863      0.00                  Wet road but nice weather
+3  2019-09-11 14:06:19    Morning Ride  Ride  2192     12.84               Stopped for photo of sunrise
+..                 ...             ...   ...   ...       ...                                        ...
+29 2019-10-09 13:55:40    Morning Ride  Ride  2149     12.70              Really cold! But feeling good
+30 2019-10-10 00:10:31  Afternoon Ride  Ride  1841     12.59        Feeling good after a holiday break!
+31 2019-10-10 13:47:14    Morning Ride  Ride  2463     12.79               Stopped for photo of sunrise
+32 2019-10-11 00:16:57  Afternoon Ride  Ride  1843     11.79  Bike feeling tight, needs an oil and pump
 
-[100 rows x 4 columns]
+[33 rows x 6 columns]
 ```
 
-Here, index 2 now has a color value of `UNKNOWN`. Notes: Script here
+Here, index 2 now has a `Distance` of `0.00`. Notes: Script here
 
 <html>
 
@@ -418,29 +446,30 @@ Here, index 2 now has a color value of `UNKNOWN`. Notes: Script here
 
 ---
 
-We could also fill using certain methods. ***“bfill”*** uses the next
-valid observation to fill the `NaN`.
+We could also fill using certain methods.
+
+***“bfill”*** uses the next valid observation to fill the `NaN`:
 
 ``` python
-bites.fillna(method='bfill')
+cycling.fillna(method='bfill')
 ```
 
 ```out
-    bite_date species   gender       color
-0  1985-05-05     DOG   FEMALE  LIG. BROWN
-1  1986-02-12     DOG  UNKNOWN   BRO & BLA
-2  1987-05-07     DOG  UNKNOWN   BLA & BRO
-3  1988-10-02     DOG     MALE   BLA & BRO
-..        ...     ...      ...         ...
-96 2010-01-25     DOG   FEMALE    FAWN-WHT
-97 2010-01-25     DOG   FEMALE     BRN-WHT
-98 2010-01-26     DOG     MALE   BROWN-BLK
-99 2010-01-27     DOG     MALE       BLACK
+                  Date            Name  Type  Time  Distance                                   Comments
+0  2019-09-10 00:13:04  Afternoon Ride  Ride  2084     12.62                                       Rain
+1  2019-09-10 13:52:18    Morning Ride  Ride  2531     13.03                                       rain
+2  2019-09-11 00:23:50  Afternoon Ride  Ride  1863     12.84                  Wet road but nice weather
+3  2019-09-11 14:06:19    Morning Ride  Ride  2192     12.84               Stopped for photo of sunrise
+..                 ...             ...   ...   ...       ...                                        ...
+29 2019-10-09 13:55:40    Morning Ride  Ride  2149     12.70              Really cold! But feeling good
+30 2019-10-10 00:10:31  Afternoon Ride  Ride  1841     12.59        Feeling good after a holiday break!
+31 2019-10-10 13:47:14    Morning Ride  Ride  2463     12.79               Stopped for photo of sunrise
+32 2019-10-11 00:16:57  Afternoon Ride  Ride  1843     11.79  Bike feeling tight, needs an oil and pump
 
-[100 rows x 4 columns]
+[33 rows x 6 columns]
 ```
 
-Now index 2 adopts the value `BLA & BRO` from index 3.
+Index 2 adopts the value `12.84` from index 3.
 
 Notes: Script here
 
@@ -456,32 +485,32 @@ Notes: Script here
 
 ---
 
-“ffill” propagates the last valid observation forward to next
+***“ffill”*** propagates the last valid observation forward to next:
 
 ``` python
-bites.fillna(method='ffill')
+cycling.fillna(method='ffill')
 ```
 
 ```out
-    bite_date species   gender       color
-0  1985-05-05     DOG   FEMALE  LIG. BROWN
-1  1986-02-12     DOG  UNKNOWN   BRO & BLA
-2  1987-05-07     DOG  UNKNOWN   BRO & BLA
-3  1988-10-02     DOG     MALE   BLA & BRO
-..        ...     ...      ...         ...
-96 2010-01-25     DOG   FEMALE    FAWN-WHT
-97 2010-01-25     DOG   FEMALE     BRN-WHT
-98 2010-01-26     DOG     MALE   BROWN-BLK
-99 2010-01-27     DOG     MALE       BLACK
+                  Date            Name  Type  Time  Distance                                   Comments
+0  2019-09-10 00:13:04  Afternoon Ride  Ride  2084     12.62                                       Rain
+1  2019-09-10 13:52:18    Morning Ride  Ride  2531     13.03                                       rain
+2  2019-09-11 00:23:50  Afternoon Ride  Ride  1863     13.03                  Wet road but nice weather
+3  2019-09-11 14:06:19    Morning Ride  Ride  2192     12.84               Stopped for photo of sunrise
+..                 ...             ...   ...   ...       ...                                        ...
+29 2019-10-09 13:55:40    Morning Ride  Ride  2149     12.70              Really cold! But feeling good
+30 2019-10-10 00:10:31  Afternoon Ride  Ride  1841     12.59        Feeling good after a holiday break!
+31 2019-10-10 13:47:14    Morning Ride  Ride  2463     12.79               Stopped for photo of sunrise
+32 2019-10-11 00:16:57  Afternoon Ride  Ride  1843     11.79  Bike feeling tight, needs an oil and pump
 
-[100 rows x 4 columns]
+[33 rows x 6 columns]
 ```
 
-Now index 2 adopts the value `BRO & BLA` from index 1.
+We see thar index 2 adopts the value `13.03` from index 1.
 
-`bfill` and `ffill` are methods usually adopted when deeling with
+`bfill` and `ffill` are methods usually adopted when dealing with
 columns organized by date. This way, an observation can adopt a similar
-value to those are it. We will explore date columns in the next slide
+value to those near it. We will explore data columns in the next slide
 deck.
 
 Notes: Script here
@@ -498,7 +527,7 @@ Notes: Script here
 
 ---
 
-Remember these are only a few methods that can be use in simple
+Remember these are only a few methods that can be used in simple
 situations. In some scenarios, more complex methods of handling missing
 values may need to be adopted for effective analysis.
 

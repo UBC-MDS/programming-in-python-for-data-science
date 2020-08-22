@@ -77,7 +77,7 @@ Notes: Script here.
 
 And the columns are the variables.
 
-<center> <img src='/module1/df_var.png' width="70%" alt="404 image" /></center>
+<center> <img src='/module1/df_var.png' width="65%" alt="404 image" /></center>
 
 
 When working with information, it must be stored in a manner that is organized, readable and accessible.    
@@ -93,7 +93,7 @@ Notes: Script here.
 
 ## What is a CSV file?
 
-The first kind of data we will learn how to load into Python (as a data frame) is the spreadsheet-like comma-separated values format (.csv for short). These files have names ending in .csv, and can be opened open and saved from common spreadsheet programs like Microsoft Excel and Google Sheets.
+The first kind of data we will learn how to load into Python (as a dataframe) is the spreadsheet-like comma-separated values format (.csv for short). These files have names ending in .csv, and can be opened open and saved from common spreadsheet programs like Microsoft Excel and Google Sheets.
 
 For example, we will be importing the .csv file you saw in the first slide named "candybars.csv". If we were to open this data in a plain text editor, we would see each row on its own line, and each entry in the table separated by a comma:
 

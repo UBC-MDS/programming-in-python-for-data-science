@@ -2,7 +2,7 @@
 type: slides
 ---
 
-# Numpy Arrays
+# NumPy Arrays
 
 Notes: Script here
 
@@ -20,7 +20,7 @@ Notes: Script here
 
 ## Creating Arrays
 
-We saw in the last set of slides that you can create arrays using
+We saw in the last set of slides that we can create arrays using
 `np.array()`:
 
 ``` python
@@ -32,7 +32,7 @@ my_array
 array([1, 2, 3, 4])
 ```
 
-We can also make them from lists instead of tuples too
+We can also make them from lists instead of tuples too:
 
 ``` python
 my_array = np.array([1, 2, 3, 4])
@@ -43,7 +43,7 @@ my_array
 array([1, 2, 3, 4])
 ```
 
-You can also have multi-dimensional arrays which are indicated by double
+We can also have multi-dimensional arrays which are indicated by double
 square brackets `[[ ]]`:
 
 ``` python
@@ -72,7 +72,7 @@ Notes: Script here
 
 ---
 
-There are also several built in NumPy functions that create different
+There are also several built-in NumPy functions that create different
 arrays with patterns and requirements:
 
 `np.zeros()` will create an array containing `0` for each element and
@@ -97,7 +97,7 @@ np.ones(4)
 array([1., 1., 1., 1.])
 ```
 
-`np.arange()` similarly to `range()` can take 1,2 or 3 input arguments
+`np.arange()` similarly to `range()` can take 1, 2 or 3 input arguments
 and will produce an array in a similar way that `range()` produces a
 sequence.
 
@@ -110,11 +110,11 @@ array([0, 1, 2, 3, 4])
 ```
 
 ``` python
-np.arange(0, 11, 2) 
+np.arange(0, 10, 2) 
 ```
 
 ```out
-array([ 0,  2,  4,  6,  8, 10])
+array([0, 2, 4, 6, 8])
 ```
 
 Notes: Script here
@@ -131,10 +131,10 @@ Notes: Script here
 
 ---
 
-`np.linspace()` will produce a an array containing the number of
-elements specified by the 3rd argument’s value, containing values
-between the first 2 arguments values. Example: 20, equally spaced values
-from 1 to 5:
+`np.linspace()` will produce an array containing the number of elements
+specified by the 3rd argument’s value, containing values between the
+first 2 arguments values. Example: 20, equally spaced values from 1 to
+5:
 
 ``` python
 np.linspace(1,5,20)
@@ -144,8 +144,9 @@ np.linspace(1,5,20)
 array([1.        , 1.21052632, 1.42105263, 1.63157895, 1.84210526, 2.05263158, 2.26315789, 2.47368421, 2.68421053, 2.89473684, 3.10526316, 3.31578947, 3.52631579, 3.73684211, 3.94736842, 4.15789474, 4.36842105, 4.57894737, 4.78947368, 5.        ])
 ```
 
-(The elements in `linspace()` arrays are defaulted to type `float`) You
-can also produce an array with random values using `np.random.rand()`.
+The elements in `np.linspace()` arrays are defaulted to type `float`.  
+We can also produce an array with random values using
+`np.random.rand()`.  
 Example: Random numbers uniformly distributed from 0 to 1
 
 ``` python
@@ -153,21 +154,20 @@ np.random.rand(5)
 ```
 
 ```out
-array([0.89478898, 0.56136808, 0.60214054, 0.25833046, 0.67099808])
+array([0.97677871, 0.72129283, 0.73853755, 0.19682806, 0.57534867])
 ```
 
-You can also specify the number of dimensions for it:
+We can also specify the number of dimensions for it:
 
 ``` python
-np.random.rand(5, 2) 
+np.random.rand(4, 2) 
 ```
 
 ```out
-array([[0.17590755, 0.82541459],
-       [0.20742858, 0.64375962],
-       [0.84064484, 0.37897094],
-       [0.1303757 , 0.70521557],
-       [0.24550963, 0.8353623 ]])
+array([[0.77503175, 0.65381718],
+       [0.10945072, 0.75250849],
+       [0.32366273, 0.45019435],
+       [0.52063676, 0.93510855]])
 ```
 
 Notes: Script here
@@ -188,8 +188,8 @@ Notes: Script here
 
 As we saw in Exercise 4, that arrays operate in an elementwise manner.
 
-When we do a number of operations, the operation is done to each element
-in the array.
+When we do many operations, the operation is done to each element in the
+array.
 
 ``` python
 array1 = np.ones(4)
@@ -247,15 +247,15 @@ Notes: Script here
 
 </center>
 
-As you just saw above, arrays can be of any dimension, shape and size.
+As we just saw above, arrays can be of any dimension, shape and size.
 
-In fact, there are three main array nouns you need to know to understand
+In fact, there are three main array nouns we need to know to understand
 the characteristics of an array:
 
   - `.ndim`: the number of dimensions of an array
 
   - `.shape`: the number of elements in each dimension (like calling
-    len() on each dimension)
+    `len()` on each dimension)
 
   - `.size`: the total number of elements in an array (i.e., the product
     of `.shape`)
@@ -284,8 +284,8 @@ array1
 array([1., 1., 1., 1.])
 ```
 
-We can use `.ndim` to check the number of dimensions and just as
-suspected it is 1d:
+We can use `.ndim` to check the number of dimensions and just as we
+suspected it is 1:
 
 ``` python
 array1.ndim
@@ -295,7 +295,7 @@ array1.ndim
 1
 ```
 
-we use `.shape` to find the number of elements in each dimension
+We use `.shape` to find the number of elements in each dimension:
 
 ``` python
 array1.shape
@@ -306,7 +306,7 @@ array1.shape
 ```
 
 This returns a tuple with only 1 value which represents the 1 dimension.
-Finally `.size` will return the ***total*** number of values in the
+Finally, `.size` will return the ***total*** number of values in the
 array.
 
 ``` python
@@ -344,10 +344,10 @@ array([[1., 1.],
        [1., 1.]])
 ```
 
-The number of square brackets in an array depict how many dimensions an
+The number of square brackets in an array depicts how many dimensions an
 array consists of.
 
-We can confirms the number of dimensions with `ndim`:
+We can confirm the number of dimensions with `ndim`:
 
 ``` python
 array_2d.ndim
@@ -382,7 +382,15 @@ Notes: Script here
 
 ---
 
-And the size is the product of the values:
+``` python
+array_2d.shape
+```
+
+```out
+(3, 2)
+```
+
+And the size is the product of the values in `.shape`:
 
 ``` python
 array_2d.size
@@ -392,7 +400,7 @@ array_2d.size
 6
 ```
 
-If you have the `.shape()` of the array, you can get both the `.ndim` of
+If we have the `.shape()` of the array, we can get both the `.ndim` of
 the array:
 
 ``` python
@@ -429,7 +437,7 @@ Notes: Script here
 
 ## Indexing and Slicing
 
-1D Arrays are sliced in the same manner that lists are
+1D arrays are sliced in the same manner that lists are.
 
 ``` python
 arr = np.arange(10)
@@ -448,17 +456,17 @@ arr[7]
 7
 ```
 
-(the first value is included and the last value is excluded )
+The first value is included and the last value is excluded:
 
 ``` python
-arr[2:4]
+arr[2:6]
 ```
 
 ```out
-array([2, 3])
+array([2, 3, 4, 5])
 ```
 
-To obtain elements from right to left, you uses negative integers.
+To obtain elements from right to left, we use negative integers:
 
 ``` python
 arr[-1]
@@ -482,7 +490,7 @@ Notes: Script here
 
 ---
 
-Slicing 2D Arrays can be compared to slicing pandas dataframes (without
+Slicing 2D arrays can be compared to slicing pandas dataframes (without
 the `.iloc[]`).
 
 ``` python
@@ -496,11 +504,11 @@ array([[ 0,  1,  2,  3],
        [ 8,  9, 10, 11]])
 ```
 
-In the code above `.reshape` simply reshapes the orginal 1D array to a
+In the code above, `.reshape` simply reshapes the original 1D array to a
 2D array with a 3 x 4 shape.
 
-Let’s say I want to select `6`. It’s located at column 2 and row 1
-(remember we index including 0) .
+Let’s say we want to select `6`. It’s located in row 1 and column 2
+(remember that the index includes 0).
 
 ``` python
 arr2[1, 2]
@@ -510,7 +518,7 @@ arr2[1, 2]
 6
 ```
 
-You could also do the same thing using this notation but, it’s not
+We could also do the same thing using this notation but, it’s not
 recommended.
 
 ``` python
@@ -541,8 +549,8 @@ array([[ 0,  1,  2,  3],
        [ 8,  9, 10, 11]])
 ```
 
-If you want the a complete row of the array, you can specify with a
-single number:
+If we want a complete row of the array, we can specify with a single
+number:
 
 ``` python
 arr2[2]
@@ -552,8 +560,8 @@ arr2[2]
 array([ 8,  9, 10, 11])
 ```
 
-and if you only want a single column we can use the same sintax we did
-we `.iloc[]`
+And if we only want a single column we can use the same syntax we used
+with `.iloc[]`:
 
 ``` python
 arr2[:,2]
@@ -563,8 +571,9 @@ arr2[:,2]
 array([ 2,  6, 10])
 ```
 
-We can obtain specific slices by using a colon `:`. If I wanted only the
-first 2 rows and the last 3 columns, I could do the following:
+We can obtain specific slices by using a colon as well. If we only
+wanted the first 2 rows and the last 3 columns, we could do the
+following:
 
 ``` python
 arr2[:2,1:]
@@ -589,8 +598,8 @@ Notes: Script here
 
 ---
 
-I can take the
-<a href=" https://en.wikipedia.org/wiki/Transpose" target="_blank">***transpose***e</a>
+We can take the
+<a href=" https://en.wikipedia.org/wiki/Transpose" target="_blank">***transpose***</a>
 of the array by using `.T`:
 
 ``` python
@@ -604,7 +613,7 @@ array([[ 0,  4,  8],
        [ 3,  7, 11]])
 ```
 
-This converts the columns to rows and vice versa.
+This converts the columns to rows and the columns to rows.
 
 We can replace values in an array with the assignment operator:
 
@@ -636,7 +645,7 @@ Notes: Script here
 
 ## Boolean Indexing
 
-Let’s take a 1D array that is comprised of 10 decimal elements.
+Let’s take a 1D array that consists of 10 decimal elements.
 
 ``` python
 decimal_array = np.random.rand(10)
@@ -644,21 +653,22 @@ decimal_array
 ```
 
 ```out
-array([0.4203689 , 0.63996031, 0.93110235, 0.73760918, 0.49974945, 0.96043981, 0.49469715, 0.18781931, 0.39408011, 0.70138933])
+array([0.96676786, 0.59233035, 0.85265099, 0.49111948, 0.36634197, 0.61002155, 0.7001396 , 0.28430043, 0.11799399, 0.30684585])
 ```
 
-Remember when we do any operations, it occurs in an element-wise manners
+Remember that when we do most operations, it occurs in an element-wise
+manner:
 
 ``` python
 decimal_array + 1
 ```
 
 ```out
-array([1.4203689 , 1.63996031, 1.93110235, 1.73760918, 1.49974945, 1.96043981, 1.49469715, 1.18781931, 1.39408011, 1.70138933])
+array([1.96676786, 1.59233035, 1.85265099, 1.49111948, 1.36634197, 1.61002155, 1.7001396 , 1.28430043, 1.11799399, 1.30684585])
 ```
 
 Let’s assign a threshold and find all the elements in `decimal_array`
-greater than 0.5. We can name this new array that is make of boolean
+greater than 0.5. We can name this new array that is made of Boolean
 values `threshold`:
 
 ``` python
@@ -667,7 +677,7 @@ threshold
 ```
 
 ```out
-array([False,  True,  True,  True, False,  True, False, False, False,  True])
+array([ True,  True,  True, False, False,  True,  True, False, False, False])
 ```
 
 Notes: Script here
@@ -693,19 +703,19 @@ decimal_array
 ```
 
 ```out
-array([0.4203689 , 0.5       , 0.5       , 0.5       , 0.49974945, 0.5       , 0.49469715, 0.18781931, 0.39408011, 0.5       ])
+array([0.5       , 0.5       , 0.5       , 0.49111948, 0.36634197, 0.5       , 0.5       , 0.28430043, 0.11799399, 0.30684585])
 ```
 
-We could also shorten the hold process and avoided making `threshold`
-using the following code:
+We could also shorten the whole process and avoided making `threshold`
+by using the following code:
 
 ``` python
-new_decimal_array = np.random.rand(10)
+new_decimal_array = np.random.rand(4)
 new_decimal_array
 ```
 
 ```out
-array([0.49716989, 0.89013842, 0.57852688, 0.0453159 , 0.96030398, 0.86227615, 0.37216441, 0.23334746, 0.23291625, 0.29199952])
+array([0.94830193, 0.51407743, 0.98474613, 0.85593942])
 ```
 
 ``` python
@@ -714,7 +724,7 @@ new_decimal_array
 ```
 
 ```out
-array([0.49716989, 0.5       , 0.5       , 0.0453159 , 0.5       , 0.5       , 0.37216441, 0.23334746, 0.23291625, 0.29199952])
+array([0.5, 0.5, 0.5, 0.5])
 ```
 
 Notes: Script here

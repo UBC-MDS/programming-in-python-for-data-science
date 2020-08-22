@@ -18,10 +18,10 @@ Notes: Script here
 
 ---
 
-Although we have not formally introduced to you NumPy, The name may
-sound familiar to you since we’ve been subtly hinting at it’s existence
-for a little while now. In the last Module we’ve had you import this
-library for practice.
+Although we have not formally introduced you to NumPy, The name may
+sound familiar since we’ve been subtly hinting at its existence for a
+little while now. In the last Module, we’ve had you import this library
+for practice.
 
 ``` python
 import numpy as np
@@ -48,11 +48,11 @@ Notes: Script here
 The name NumPy is derived from **“Numerical Python extensions”**.
 
 NumPy is a Python library used primarily for numerical computing. It is
-especially useful as it provides a multidimensional array object,called
+especially useful as it provides a multidimensional array object, called
 an ***array***.
 
 In addition, NumPy also offers numerous other mathematical functions
-used in domain of linear algebra, fourier transform, and matrices.
+used in the domain of linear algebra and Calculus.
 
 Notes: Script here
 
@@ -90,7 +90,7 @@ my_array
 array([1, 2, 3, 4, 5])
 ```
 
-And arrays are considered their own datatype:
+And arrays are considered their own data type:
 
 ``` python
 type(my_array)
@@ -114,9 +114,9 @@ Notes: Script here
 
 ---
 
-However, you’ll start to see that although lists and arrays appear quite
+However, we’ll start to see that although lists and arrays appear quite
 similar, they have some key differences. A list can contain multiple
-datatypes:
+data types:
 
 ``` python
 my_list = [1,"hi"]
@@ -181,7 +181,7 @@ Notes: Script here
 
   - Lists are often used with a similar purpose of arrays, but they are
     slow to process.
-  - Because of this, NumPy is use to create many other structures.
+  - Because of this, NumPy is used to create many other structures.
   - In fact, let’s refresh ourselves on certain values in a dataframe:
 
 <!-- end list -->
@@ -199,7 +199,7 @@ cereal.head()
 4             Almond Delight   R  Cold       110        2    2     200    1.0   14.0       8       1        25      3     1.0  0.75  34.384843
 ```
 
-Remember when we wanted to obtain the datatype specific value in a
+Remember when we obtained the data type of a specific value in a
 dataframe?
 
 ``` python
@@ -210,9 +210,9 @@ type(cereal.loc[3,'calories'])
 <class 'numpy.int64'>
 ```
 
-We obtained this `<class 'numpy.int64'>` which we originally told you to
-ignore. It’s outputting a `numpy.int64` data type because pandas
-dataframes are all built from NumPy arrays\!
+We obtained this `<class 'numpy.int64'>` which we originally ignored.
+It’s outputting a `numpy.int64` data type because pandas dataframes
+are all built from NumPy arrays\!
 
 Notes: Script here
 
@@ -287,7 +287,7 @@ np.prod([2, 3, 1])
 6
 ```
 
-`np.diff()` calculates the difference between element (left element
+And `np.diff()` calculates the difference between element (left element
 subtracted from the right element):
 
 ``` python
@@ -298,7 +298,7 @@ np.diff([7.0, 3.5, 4.0])
 array([-3.5,  0.5])
 ```
 
-Other function such as `np.log()` or trigonometric ones are also
+Other functions such as `np.log()` or trigonometric ones are also
 available too:
 
 ``` python

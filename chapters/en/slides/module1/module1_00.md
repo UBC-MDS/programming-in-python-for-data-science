@@ -15,16 +15,17 @@ Notes: In this module you will be introduced to dataframes, the Python Pandas pa
 # Module Learning Outcomes
 
 By the end of the module, students are expected to:
+
 - Describe the components of a Dataframe.
 - Read a standard `.csv` file using Pandas `pd.read_csv()`.
-- Import Pandas.
+- Load the `pandas` library into Python.
 - Demonstrate indexing and slicing with `.loc[]` and `.iloc[]`.
 - Demonstrate Selecting columns of a dataframe using `df[]` notation.
-- Obtain values from a dataframe using `.loc[]`
+- Obtain values from a dataframe using `.loc[]`.
 - Sort a dataframe using `.sort_values()`.
 - Create simple summary statistics using `.describe()`.
-- construct simple visualizations using pandas.
-- create a `.csv` file from a dataframe using `.to_csv()`.
+- Construct simple visualizations using Altair.
+- Create a `.csv` file from a dataframe using `.to_csv()`.
 
 Notes: 
 <html>

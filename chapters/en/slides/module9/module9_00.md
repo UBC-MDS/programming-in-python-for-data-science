@@ -2,7 +2,7 @@
 type: slides
 ---
 
-# What Did we Learn and What to Expect in Assignment 7
+# Congratulations on completing Programming in Python for Data Science!
 
 Notes: Script here
 <html>
@@ -12,17 +12,9 @@ Notes: Script here
 
 ---
 
-# Summary  
+# You did it!
 
-Students are now expected to be able to:
-
-- Describe what Python libraries are, as well as explain when and why they are useful.
-- Identify where code can be improved concerning variable names, magic numbers, comments and whitespace.
-- Write code that is human readable and follows the black style guide.
-- Import files from other directories.
-- Use `pytest` to check a function's tests.
-- When running `pytest`, explain how pytest finds the associated test functions.
-- Explain how the Python debugger can help rectify your code.
+We covered a lot of ground but you managed to finished all 8 Modules. It's important to celebrate this success. 
 
 
 Notes:
@@ -33,9 +25,19 @@ Notes:
 
 ---
 
-# Assignment Instructions
+# Special Thanks 
 
-The assignment will concentrate on the learning objectives as well as building knowledge on existing concepts. 
+Not only did you put in a lot of work by completing this course, but many people helped in making this course possible. 
+
+Special thanks must be attributed to the following individuals and organizations:
+
+- Ines Montani
+- Elijah Willie 
+- Tim Head
+- Joel Ostblom
+- Tom Beuzen 
+- The Master of Data Science Program at UBC
+- Our friends and family for supporting us and cheering us on!
 
 Notes: Script here
 <html>
@@ -61,7 +63,7 @@ Notes: Script here
 
 ---
 
-# On to Assignment 7!
+# Good luck on applying your new skills!
 
 Notes: Insert audio here.
 

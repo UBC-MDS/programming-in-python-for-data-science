@@ -270,8 +270,6 @@ Tasks:
 
 <exercise id="6" title="Will it Output?">
 
-**Question 1**      
-
 Given the following function, which of the function calls will result in an error? 
 
 ```python

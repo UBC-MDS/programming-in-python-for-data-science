@@ -14,7 +14,7 @@ Notes: Script here
 
 # Summary  
 
-By the end of the module, students are expected to:
+Students are now expected to be able to:
 
 - Evaluate the readability, complexity and performance of a function.
 - Write docstrings for functions following the NumPy/SciPy format.

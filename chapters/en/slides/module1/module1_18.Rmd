@@ -85,6 +85,14 @@ Selecting the column `type` would be as simple as:
 df[['type']]
 ```
 
+
+Notes: Script here.
+<html>
+<audio controls >
+<source src="/placeholder_audio.mp3" />
+</audio></html>
+
+
 ---
 
 # Let’s apply what we learned!
