@@ -1,6 +1,6 @@
 import pandas as pd
 
-# The database
+# The data
 
 hockey_players = pd.read_csv('data/canucks.csv')
 hockey_players

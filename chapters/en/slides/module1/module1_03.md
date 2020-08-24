@@ -2,7 +2,7 @@
 type: slides
 ---
 
-# What is a Pandas?
+# What is Pandas?
 
 Notes: Script here.
 
@@ -106,20 +106,20 @@ df
 ```
 
 ```out
-                 name  weight  chocolate  peanuts  caramel  nougat  cookie_wafer_rice  coconut  white_chocolate  multi available_canada_america
-0        Coffee Crisp      50          1        0        0       0                  1        0                0      0                   Canada
-1        Butterfinger     184          1        1        1       0                  0        0                0      0                  America
-2                Skor      39          1        0        1       0                  0        0                0      0                     Both
-3            Smarties      45          1        0        0       0                  0        0                0      1                   Canada
-4                Twix      58          1        0        1       0                  1        0                0      1                     Both
-..                ...     ...        ...      ...      ...     ...                ...      ...              ...    ...                      ...
-20             Take 5      43          1        1        1       0                  1        0                0      0                  America
-21   Whatchamacallits      45          1        1        0       0                  1        0                0      0                  America
-22         Almond Joy      46          1        0        0       0                  0        1                0      0                  America
-23           Oh Henry      51          1        1        1       0                  0        0                0      0                     Both
-24  Cookies and Cream      43          0        0        0       0                  1        0                1      0                     Both
+                 name  weight  chocolate  peanuts  caramel available_canada_america
+0        Coffee Crisp      50          1        0        0                   Canada
+1        Butterfinger     184          1        1        1                  America
+2                Skor      39          1        0        1                     Both
+3            Smarties      45          1        0        0                   Canada
+4                Twix      58          1        0        1                     Both
+..                ...     ...        ...      ...      ...                      ...
+20             Take 5      43          1        1        1                  America
+21   Whatchamacallits      45          1        1        0                  America
+22         Almond Joy      46          1        0        0                  America
+23           Oh Henry      51          1        1        1                     Both
+24  Cookies and Cream      43          0        0        0                     Both
 
-[25 rows x 11 columns]
+[25 rows x 6 columns]
 ```
 
 Notes: Script here.
@@ -137,14 +137,14 @@ Notes: Script here.
 ---
 
 From this dataframe, we can see that there are 25 different candy bars
-and 11 columns. We can obtain the names of the columns using this code:
+and 6 columns. We can obtain the names of the columns using this code:
 
 ``` python
 df.columns
 ```
 
 ```out
-Index(['name', 'weight', 'chocolate', 'peanuts', 'caramel', 'nougat', 'cookie_wafer_rice', 'coconut', 'white_chocolate', 'multi', 'available_canada_america'], dtype='object')
+Index(['name', 'weight', 'chocolate', 'peanuts', 'caramel', 'available_canada_america'], dtype='object')
 ```
 
 Or if you wanted to see the dimensions of the whole dataframe you could
@@ -155,7 +155,7 @@ df.shape
 ```
 
 ```out
-(25, 11)
+(25, 6)
 ```
 
 Breaking up this code it just means “From our dataframe that we saved as
@@ -184,9 +184,9 @@ df.head(2)
 ```
 
 ```out
-           name  weight  chocolate  peanuts  caramel  nougat  cookie_wafer_rice  coconut  white_chocolate  multi available_canada_america
-0  Coffee Crisp      50          1        0        0       0                  1        0                0      0                   Canada
-1  Butterfinger     184          1        1        1       0                  0        0                0      0                  America
+           name  weight  chocolate  peanuts  caramel available_canada_america
+0  Coffee Crisp      50          1        0        0                   Canada
+1  Butterfinger     184          1        1        1                  America
 ```
 
 The above code specifies only 2 rows to display. We can specify any
@@ -198,12 +198,12 @@ df.head()
 ```
 
 ```out
-           name  weight  chocolate  peanuts  caramel  nougat  cookie_wafer_rice  coconut  white_chocolate  multi available_canada_america
-0  Coffee Crisp      50          1        0        0       0                  1        0                0      0                   Canada
-1  Butterfinger     184          1        1        1       0                  0        0                0      0                  America
-2          Skor      39          1        0        1       0                  0        0                0      0                     Both
-3      Smarties      45          1        0        0       0                  0        0                0      1                   Canada
-4          Twix      58          1        0        1       0                  1        0                0      1                     Both
+           name  weight  chocolate  peanuts  caramel available_canada_america
+0  Coffee Crisp      50          1        0        0                   Canada
+1  Butterfinger     184          1        1        1                  America
+2          Skor      39          1        0        1                     Both
+3      Smarties      45          1        0        0                   Canada
+4          Twix      58          1        0        1                     Both
 ```
 
 Notes: Script here.

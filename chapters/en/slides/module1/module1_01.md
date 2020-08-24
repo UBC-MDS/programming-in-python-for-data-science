@@ -68,7 +68,7 @@ And the columns are the variables.
 
 <center>
 
-<img src='/module1/df_var.png' width="70%" alt="404 image" />
+<img src='/module1/df_var.png' width="65%" alt="404 image" />
 
 </center>
 
@@ -91,10 +91,10 @@ Notes: Script here.
 
 ## What is a CSV file?
 
-The first kind of data we will learn how to load into Python (as a data
-frame) is the spreadsheet-like comma-separated values format (.csv for
-short). These files have names ending in .csv, and can be opened open
-and saved from common spreadsheet programs like Microsoft Excel and
+The first kind of data we will learn how to load into Python (as a
+dataframe) is the spreadsheet-like comma-separated values format (.csv
+for short). These files have names ending in .csv, and can be opened
+open and saved from common spreadsheet programs like Microsoft Excel and
 Google Sheets.
 
 For example, we will be importing the .csv file you saw in the first

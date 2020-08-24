@@ -47,7 +47,7 @@
     },
     "scripts": {
         "build": "gatsby build",
-        "dev": "gatsby develop",
+        "dev": "gatsby develop -p 8080",
         "lint": "eslint **",
         "clear": "rm -rf .cache",
         "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\"",

@@ -14,15 +14,15 @@ Notes: Script here
 
 # Summary  
 
-By the end of the module, students are expected to:
+Students are now expected to be able to:
 
-- Describe what python libraries are, as well as explain when and why they are useful.
+- Describe what Python libraries are, as well as explain when and why they are useful.
 - Identify where code can be improved concerning variable names, magic numbers, comments and whitespace.
 - Write code that is human readable and follows the black style guide.
 - Import files from other directories.
 - Use `pytest` to check a function's tests.
-- When running `pytest`, explain how pytest find the associated test functions.
-- Explain how the python debugger can help rectify your code.
+- When running `pytest`, explain how pytest finds the associated test functions.
+- Explain how the Python debugger can help rectify your code.
 
 
 Notes:

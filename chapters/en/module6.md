@@ -254,7 +254,7 @@ Tasks:
 
 <codeblock id="06_04">
 
-- Are putting `weight_lb` inside the function now? 
+- Are you putting `weight_lb` inside the function now? 
 - Are you returning `weight_lb`? 
 
 </codeblock>
@@ -269,8 +269,6 @@ Tasks:
 </exercise>
 
 <exercise id="6" title="Will it Output?">
-
-**Question 1**      
 
 Given the following function, which of the function calls will result in an error? 
 
@@ -434,7 +432,7 @@ Tasks:
 
 <codeblock id="06_08">
 
-- Are putting `g=9.8` inside the function named `mass_to_weight`? 
+- Are you putting `g=9.8` inside the function named `mass_to_weight`? 
 - Are you calling `mass_to_weight(76)` and saving it in an object named `earth_weight`? 
 - Are you calling `mass_to_weight(76, 1.62)` and saving it in an object named `moon_weight`? 
 

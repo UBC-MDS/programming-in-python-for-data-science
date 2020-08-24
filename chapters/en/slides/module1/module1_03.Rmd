@@ -113,7 +113,7 @@ Notes: Script here.
 
 ---
 
-From this dataframe, we can see that there are 25 different candy bars and 11 columns.
+From this dataframe, we can see that there are 25 different candy bars and 6 columns.
 We can obtain the names of the columns using this code:
 
 ```{python}

@@ -135,7 +135,7 @@ Running a coding exercise for the first time could take a bit of time for everyt
 
 _**Make sure you remove the hash (`#`) symbol in the coding portions of this question.  We have commented them so that the line won't execute and you can test your code after each step.**_
 
-Ok, so we've seen this `numpy` package, let's actually load in one of the functions and use it! If you are wondering what this package does, don't worry, you'll learn more of this in the next module. `numpy` has a function calle `power()`
+Ok, so we've seen this `numpy` package, let's actually load in one of the functions and use it! If you are wondering what this package does, don't worry, you'll learn more of this in the next module. `numpy` has a function called `power()`
 
 Tasks:
 - Import the `power()` function from the `numpy` package. 
@@ -146,9 +146,14 @@ Tasks:
 
 <codeblock id="07_04">
 
-- Are putting `weight_lb` inside the function now? 
-- Are you returning `weight_lb`? 
+- Are you using `power(7, 5)`? 
+- Are you importing using `from`?
 
 </codeblock>
 
+</exercise>
+
+<exercise id="26" title="What Did We Just Learn?" type="slides, video">
+<slides source="module7/module7_end" start="0:165" end="3:01">>
+</slides>
 </exercise>
