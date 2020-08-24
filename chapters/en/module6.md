@@ -967,7 +967,6 @@ Tasks:
 - Write an exception that checks if `height` is of type `float`.
 - Write a second exception that raises an error if weight is 0 or less.
 - Test your function with the values given in variable `tall` and `mass`.
-- Save the results in an object named `person1` and display it.
 
 
 

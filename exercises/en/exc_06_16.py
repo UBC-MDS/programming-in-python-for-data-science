@@ -12,10 +12,6 @@ def bmi_calculator(height, weight):
 
 
 # Test your function with the values below 
-# Save the results in an object named person1
 
 tall = 193
 mass = 170.2
-
-# ____ = ____
-# ____
