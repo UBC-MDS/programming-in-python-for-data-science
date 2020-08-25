@@ -1,5 +1,5 @@
 def wage_increase(group):
-    """
+    '''
     Calculates a new wage given a 10% increase for each element in a list and return 
     a list of containing the new salaries and a list of the raise increases
     
@@ -18,7 +18,7 @@ def wage_increase(group):
     Examples
     --------
     >>> wage_increase([20000, 76000, 110000, 88000])
-    """
+    '''
     new_salary = list()
     raise_increase = list()
     
@@ -32,7 +32,7 @@ def wage_increase(group):
 # Name your new function new_wage()
 
 def new_wage(salary, percent_raise):
-    """
+    '''
     Calculates a new wage given a percentage
     
     Parameters
@@ -51,7 +51,7 @@ def new_wage(salary, percent_raise):
     --------
     >>> new_wage(30000, 30)
     39000.0
-    """
+    '''
 
     return salary * (1 + (0.01 * percent_raise))
 
