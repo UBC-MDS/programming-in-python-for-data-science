@@ -9,7 +9,7 @@ def test():
 
     assert "bmi_calculator" in __solution__, "Make sure you are naming your function 'bmi_calculator'"
     str_fun = inspect.getsource(bmi_calculator)
-    assert str_fun.count('raise') == 2, "Make sure your are raising exceptions for all two conditions"
+    assert str_fun.count('raise') == 2, "Make sure your are raising 2 exceptions, one for each condition"
     assert 'TypeError' in str_fun, "Make sure you are raising a 'TypeError' for an incorrect data type"
     assert 'Exception' in str_fun, "Make sure you are raising a 'Exception' for an incorrect data value"
     __msg__.good("Nice work, well done!")
