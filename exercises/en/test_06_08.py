@@ -13,4 +13,5 @@ def test():
     assert arg[0][1] == 'g', "Make sure you are including the parameter 'g' as a function argument"
     assert '9.8' in str(arg), "Make sure you are setting the default value for 'g' to 9.8"
     assert mass_to_weight(100, 7.5) == 750.0, "Your function's output is incorrect. Are you converting correctly?"
+    assert round(mass_to_weight(93)) == 911, "Your function's output is incorrect. Are you converting correctly?"
     __msg__.good("Nice work, well done!")

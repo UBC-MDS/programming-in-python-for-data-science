@@ -9,9 +9,9 @@ def test():
 
     assert "bmi_calculator" in __solution__, "Make sure you are naming your function 'bmi_calculator'"
     str_fun = inspect.getsource(bmi_calculator)
-    assert "parameters" in str_fun.lower(), "Make sure your docstring includes a 'Parameter' section"
-    assert "height" in str_fun.lower(), "Make sure you are describing the 'data' paratemter in the docstring"
-    assert "weight" in str_fun.lower(), "Make sure you are describing the 'grouping_col' paratemter in the docstring"
-    assert "returns" in str_fun.lower(), "Make sure your docstring includes a 'Returns' section"
-    assert "examples" in str_fun.lower(), "Make sure your docstring includes an 'Examples' section"
+    assert "Parameters" in str_fun, "Make sure your docstring includes a 'Parameter' section"
+    assert "height" in str_fun.lower(), "Make sure you are describing the 'height' argument in the docstring"
+    assert "weight" in str_fun.lower(), "Make sure you are describing the 'weight' argument in the docstring"
+    assert "Returns" in str_fun, "Make sure your docstring includes a 'Returns' section"
+    assert "Examples" in str_fun, "Make sure your docstring includes an 'Examples' section"
     __msg__.good("Nice work, well done!")
