@@ -8,7 +8,7 @@ type: chapter
 id: 0
 ---
 
-<exercise id="1" title="DSCI-011 Programming in Python for Data Science" type="slides,video">
+<exercise id="1" title="Programming in Python for Data Science" type="slides,video">
 
 <slides source="module0/module0_00" start="0:165" end="3:01">
 </slides>
@@ -17,7 +17,7 @@ id: 0
 
 <exercise id="2" title="Are you ready?">
 
-Are you ready to start the course **DSCI-011 Programming in Python for Data Science**?
+Are you ready to start the course **Programming in Python for Data Science**?
 
 
 <choice>
@@ -27,7 +27,7 @@ We love the enthusiasm! Alright let's move on to Module 1.
 
 </opt>
 
-<opt text="I have a python background but have not had very much wrangling experience 🤔" correct="true">
+<opt text="I have a Python background but have not had very much wrangling experience. 🤔" correct="true">
 
 We recommend taking this course so that you are familiar with `Pandas` and have the fundamentals master for our more advanced Data Science courses. Please continue on to Module 1. 
 

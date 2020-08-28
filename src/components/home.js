@@ -23,11 +23,11 @@ export default ({ lang = 'en' }) => {
                     <Layout isHome lang={lang}>
                         <Logo className={classes.logo} />
                         <section>
-                                <h1 className={classes.subtitle}><center>DSCI 011 - Programming in Python for Data Science</center></h1>
+                                <h1 className={classes.subtitle}><center>Programming in Python for Data Science</center></h1>
                                     <div className={classes.introduction}>
                                         <p>
                                         <center>
-                                        Welcome to DSCI 011!
+                                        Welcome to Programming in Python for Data Science !
                                         This course is part of ABC’s Mid-Careers Learning program and will teach you how to conduct data analysis in Python.
                                         During the course,
                                         you will work with powerful Python packages made for data-science,

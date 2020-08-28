@@ -87,7 +87,7 @@ memory usage: 3.7+ KB
 ```
 
 Here we see the total number of rows at the top with `RangeIndex: 77
-entries, 0 to 76`. The `Nnon-Null Count` column specifies the number of
+entries, 0 to 76`. The `Non-Null Count` column specifies the number of
 non-null values. In this case, we have a complete dataframe with zero
 null values for each column.
 
@@ -108,7 +108,43 @@ Notes: Script here
 Let’s take a look at a case where we are not so lucky. `cycling` is a
 subset of a dataset that contains the bicycling trips
 <a href="https://www.tomasbeuzen.com/" target="_blank">Tomas Beuzen</a>,
-a UBC postdoc took to campus and back during the fall 2019 semester.
+a UBC postdoc rode his bike to campus and back during the fall 2019
+semester.
+
+``` python
+cycling
+```
+
+```out
+                  Date            Name  Type  Time  Distance                                   Comments
+0  2019-09-09 07:13:00    Morning Ride  Ride  2084     12.62                                       Rain
+1  2019-09-09 20:52:00  Afternoon Ride  Ride  2531     13.03                                       rain
+2  2019-09-10 07:23:00    Morning Ride  Ride  1863     12.52                  Wet road but nice weather
+3  2019-09-10 21:06:00  Afternoon Ride  Ride  2192     12.84               Stopped for photo of sunrise
+..                 ...             ...   ...   ...       ...                                        ...
+29 2019-10-08 20:55:00  Afternoon Ride  Ride  2149     12.70              Really cold! But feeling good
+30 2019-10-09 07:10:00    Morning Ride  Ride  1841     12.59        Feeling good after a holiday break!
+31 2019-10-09 20:47:00  Afternoon Ride  Ride  2463     12.79               Stopped for photo of sunrise
+32 2019-10-10 07:16:00    Morning Ride  Ride  1843     11.79  Bike feeling tight, needs an oil and pump
+
+[33 rows x 6 columns]
+```
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+Using `.info()` with this new data we get the following:
 
 ``` python
 cycling.info()
@@ -124,7 +160,7 @@ Data columns (total 6 columns):
  1   Name      33 non-null     object        
  2   Type      33 non-null     object        
  3   Time      33 non-null     int64         
- 4   Distance  30 non-null     float64       
+ 4   Distance  31 non-null     float64       
  5   Comments  33 non-null     object        
 dtypes: datetime64[ns](1), float64(1), int64(1), object(3)
 memory usage: 1.7+ KB
@@ -158,7 +194,7 @@ cycling['Distance'].isnull()
 ```out
 0     False
 1     False
-2      True
+2     False
 3     False
       ...  
 29    False
@@ -191,10 +227,9 @@ cycling[cycling.isnull().any(axis=1)]
 ```
 
 ```out
-                  Date            Name  Type  Time  Distance                               Comments
-2  2019-09-11 00:23:50  Afternoon Ride  Ride  1863       NaN              Wet road but nice weather
-22 2019-10-01 00:15:07  Afternoon Ride  Ride  1732       NaN                   Legs feeling strong!
-24 2019-10-02 00:13:09  Afternoon Ride  Ride  1756       NaN  A little tired today but good weather
+                  Date          Name  Type  Time  Distance                               Comments
+22 2019-09-30 07:15:00  Morning Ride  Ride  1732       NaN                   Legs feeling strong!
+24 2019-10-01 07:13:00  Morning Ride  Ride  1756       NaN  A little tired today but good weather
 ```
 
 Here, we see the 3 rows of our dataframe that contain null values.
@@ -253,17 +288,17 @@ trips_removed
 
 ```out
                   Date            Name  Type  Time  Distance                                   Comments
-0  2019-09-10 00:13:04  Afternoon Ride  Ride  2084     12.62                                       Rain
-1  2019-09-10 13:52:18    Morning Ride  Ride  2531     13.03                                       rain
-3  2019-09-11 14:06:19    Morning Ride  Ride  2192     12.84               Stopped for photo of sunrise
-4  2019-09-12 00:28:05  Afternoon Ride  Ride  1891     12.48               Tired by the end of the week
+0  2019-09-09 07:13:00    Morning Ride  Ride  2084     12.62                                       Rain
+1  2019-09-09 20:52:00  Afternoon Ride  Ride  2531     13.03                                       rain
+2  2019-09-10 07:23:00    Morning Ride  Ride  1863     12.52                  Wet road but nice weather
+3  2019-09-10 21:06:00  Afternoon Ride  Ride  2192     12.84               Stopped for photo of sunrise
 ..                 ...             ...   ...   ...       ...                                        ...
-29 2019-10-09 13:55:40    Morning Ride  Ride  2149     12.70              Really cold! But feeling good
-30 2019-10-10 00:10:31  Afternoon Ride  Ride  1841     12.59        Feeling good after a holiday break!
-31 2019-10-10 13:47:14    Morning Ride  Ride  2463     12.79               Stopped for photo of sunrise
-32 2019-10-11 00:16:57  Afternoon Ride  Ride  1843     11.79  Bike feeling tight, needs an oil and pump
+29 2019-10-08 20:55:00  Afternoon Ride  Ride  2149     12.70              Really cold! But feeling good
+30 2019-10-09 07:10:00    Morning Ride  Ride  1841     12.59        Feeling good after a holiday break!
+31 2019-10-09 20:47:00  Afternoon Ride  Ride  2463     12.79               Stopped for photo of sunrise
+32 2019-10-10 07:16:00    Morning Ride  Ride  1843     11.79  Bike feeling tight, needs an oil and pump
 
-[30 rows x 6 columns]
+[31 rows x 6 columns]
 ```
 
 Notice that index 2 was removed and we only have 30 rows in our
@@ -293,15 +328,15 @@ cycling.dropna(subset=['Type'])
 
 ```out
                   Date            Name  Type  Time  Distance                                   Comments
-0  2019-09-10 00:13:04  Afternoon Ride  Ride  2084     12.62                                       Rain
-1  2019-09-10 13:52:18    Morning Ride  Ride  2531     13.03                                       rain
-2  2019-09-11 00:23:50  Afternoon Ride  Ride  1863       NaN                  Wet road but nice weather
-3  2019-09-11 14:06:19    Morning Ride  Ride  2192     12.84               Stopped for photo of sunrise
+0  2019-09-09 07:13:00    Morning Ride  Ride  2084     12.62                                       Rain
+1  2019-09-09 20:52:00  Afternoon Ride  Ride  2531     13.03                                       rain
+2  2019-09-10 07:23:00    Morning Ride  Ride  1863     12.52                  Wet road but nice weather
+3  2019-09-10 21:06:00  Afternoon Ride  Ride  2192     12.84               Stopped for photo of sunrise
 ..                 ...             ...   ...   ...       ...                                        ...
-29 2019-10-09 13:55:40    Morning Ride  Ride  2149     12.70              Really cold! But feeling good
-30 2019-10-10 00:10:31  Afternoon Ride  Ride  1841     12.59        Feeling good after a holiday break!
-31 2019-10-10 13:47:14    Morning Ride  Ride  2463     12.79               Stopped for photo of sunrise
-32 2019-10-11 00:16:57  Afternoon Ride  Ride  1843     11.79  Bike feeling tight, needs an oil and pump
+29 2019-10-08 20:55:00  Afternoon Ride  Ride  2149     12.70              Really cold! But feeling good
+30 2019-10-09 07:10:00    Morning Ride  Ride  1841     12.59        Feeling good after a holiday break!
+31 2019-10-09 20:47:00  Afternoon Ride  Ride  2463     12.79               Stopped for photo of sunrise
+32 2019-10-10 07:16:00    Morning Ride  Ride  1843     11.79  Bike feeling tight, needs an oil and pump
 
 [33 rows x 6 columns]
 ```
@@ -331,17 +366,17 @@ cycling.dropna(subset=['Distance'])
 
 ```out
                   Date            Name  Type  Time  Distance                                   Comments
-0  2019-09-10 00:13:04  Afternoon Ride  Ride  2084     12.62                                       Rain
-1  2019-09-10 13:52:18    Morning Ride  Ride  2531     13.03                                       rain
-3  2019-09-11 14:06:19    Morning Ride  Ride  2192     12.84               Stopped for photo of sunrise
-4  2019-09-12 00:28:05  Afternoon Ride  Ride  1891     12.48               Tired by the end of the week
+0  2019-09-09 07:13:00    Morning Ride  Ride  2084     12.62                                       Rain
+1  2019-09-09 20:52:00  Afternoon Ride  Ride  2531     13.03                                       rain
+2  2019-09-10 07:23:00    Morning Ride  Ride  1863     12.52                  Wet road but nice weather
+3  2019-09-10 21:06:00  Afternoon Ride  Ride  2192     12.84               Stopped for photo of sunrise
 ..                 ...             ...   ...   ...       ...                                        ...
-29 2019-10-09 13:55:40    Morning Ride  Ride  2149     12.70              Really cold! But feeling good
-30 2019-10-10 00:10:31  Afternoon Ride  Ride  1841     12.59        Feeling good after a holiday break!
-31 2019-10-10 13:47:14    Morning Ride  Ride  2463     12.79               Stopped for photo of sunrise
-32 2019-10-11 00:16:57  Afternoon Ride  Ride  1843     11.79  Bike feeling tight, needs an oil and pump
+29 2019-10-08 20:55:00  Afternoon Ride  Ride  2149     12.70              Really cold! But feeling good
+30 2019-10-09 07:10:00    Morning Ride  Ride  1841     12.59        Feeling good after a holiday break!
+31 2019-10-09 20:47:00  Afternoon Ride  Ride  2463     12.79               Stopped for photo of sunrise
+32 2019-10-10 07:16:00    Morning Ride  Ride  1843     11.79  Bike feeling tight, needs an oil and pump
 
-[30 rows x 6 columns]
+[31 rows x 6 columns]
 ```
 
 Notes: Script here
@@ -362,8 +397,50 @@ Notes: Script here
 
 Alternately, if we have a small dataset and we don’t want to rid
 ourselves of any data, we may prefer to replace `NaN` with a particular
-value. We can do so will `.fillna()` Perhaps we want to replace the
-values in `Distance` with the mean:
+value. We can do so will `.fillna()`.
+
+Perhaps it’s missing from the data because he didn’t cycle that
+particular day. Replacing the `NaN` value with 0 in this case would make
+sense:
+
+``` python
+cycling_zero_fill = cycling.fillna(value=0)
+cycling_zero_fill
+```
+
+```out
+                  Date            Name  Type  Time  Distance                                   Comments
+0  2019-09-09 07:13:00    Morning Ride  Ride  2084     12.62                                       Rain
+1  2019-09-09 20:52:00  Afternoon Ride  Ride  2531     13.03                                       rain
+2  2019-09-10 07:23:00    Morning Ride  Ride  1863     12.52                  Wet road but nice weather
+3  2019-09-10 21:06:00  Afternoon Ride  Ride  2192     12.84               Stopped for photo of sunrise
+..                 ...             ...   ...   ...       ...                                        ...
+29 2019-10-08 20:55:00  Afternoon Ride  Ride  2149     12.70              Really cold! But feeling good
+30 2019-10-09 07:10:00    Morning Ride  Ride  1841     12.59        Feeling good after a holiday break!
+31 2019-10-09 20:47:00  Afternoon Ride  Ride  2463     12.79               Stopped for photo of sunrise
+32 2019-10-10 07:16:00    Morning Ride  Ride  1843     11.79  Bike feeling tight, needs an oil and pump
+
+[33 rows x 6 columns]
+```
+
+Now index 2 now has a `Distance` of `0.00`.
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+Maybe a better decision would be to replace the values in `Distance`
+with the mean:
 
 ``` python
 cycling['Distance'].mean().round(2)
@@ -380,15 +457,15 @@ cycling_mean_fill
 
 ```out
                   Date            Name  Type  Time  Distance                                   Comments
-0  2019-09-10 00:13:04  Afternoon Ride  Ride  2084     12.62                                       Rain
-1  2019-09-10 13:52:18    Morning Ride  Ride  2531     13.03                                       rain
-2  2019-09-11 00:23:50  Afternoon Ride  Ride  1863     12.67                  Wet road but nice weather
-3  2019-09-11 14:06:19    Morning Ride  Ride  2192     12.84               Stopped for photo of sunrise
+0  2019-09-09 07:13:00    Morning Ride  Ride  2084     12.62                                       Rain
+1  2019-09-09 20:52:00  Afternoon Ride  Ride  2531     13.03                                       rain
+2  2019-09-10 07:23:00    Morning Ride  Ride  1863     12.52                  Wet road but nice weather
+3  2019-09-10 21:06:00  Afternoon Ride  Ride  2192     12.84               Stopped for photo of sunrise
 ..                 ...             ...   ...   ...       ...                                        ...
-29 2019-10-09 13:55:40    Morning Ride  Ride  2149     12.70              Really cold! But feeling good
-30 2019-10-10 00:10:31  Afternoon Ride  Ride  1841     12.59        Feeling good after a holiday break!
-31 2019-10-10 13:47:14    Morning Ride  Ride  2463     12.79               Stopped for photo of sunrise
-32 2019-10-11 00:16:57  Afternoon Ride  Ride  1843     11.79  Bike feeling tight, needs an oil and pump
+29 2019-10-08 20:55:00  Afternoon Ride  Ride  2149     12.70              Really cold! But feeling good
+30 2019-10-09 07:10:00    Morning Ride  Ride  1841     12.59        Feeling good after a holiday break!
+31 2019-10-09 20:47:00  Afternoon Ride  Ride  2463     12.79               Stopped for photo of sunrise
+32 2019-10-10 07:16:00    Morning Ride  Ride  1843     11.79  Bike feeling tight, needs an oil and pump
 
 [33 rows x 6 columns]
 ```
@@ -396,43 +473,6 @@ cycling_mean_fill
 We see the value in `Distance` for index 2 change to `12.67`.
 
 Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
-
-We can also replace it with a new value altogether, perhaps in this case
-he didn’t cycle and 0 distance is an appropriate value:
-
-``` python
-cycling_zero_fill = cycling.fillna(value=0)
-cycling_zero_fill
-```
-
-```out
-                  Date            Name  Type  Time  Distance                                   Comments
-0  2019-09-10 00:13:04  Afternoon Ride  Ride  2084     12.62                                       Rain
-1  2019-09-10 13:52:18    Morning Ride  Ride  2531     13.03                                       rain
-2  2019-09-11 00:23:50  Afternoon Ride  Ride  1863      0.00                  Wet road but nice weather
-3  2019-09-11 14:06:19    Morning Ride  Ride  2192     12.84               Stopped for photo of sunrise
-..                 ...             ...   ...   ...       ...                                        ...
-29 2019-10-09 13:55:40    Morning Ride  Ride  2149     12.70              Really cold! But feeling good
-30 2019-10-10 00:10:31  Afternoon Ride  Ride  1841     12.59        Feeling good after a holiday break!
-31 2019-10-10 13:47:14    Morning Ride  Ride  2463     12.79               Stopped for photo of sunrise
-32 2019-10-11 00:16:57  Afternoon Ride  Ride  1843     11.79  Bike feeling tight, needs an oil and pump
-
-[33 rows x 6 columns]
-```
-
-Here, index 2 now has a `Distance` of `0.00`. Notes: Script here
 
 <html>
 
@@ -456,15 +496,15 @@ cycling.fillna(method='bfill')
 
 ```out
                   Date            Name  Type  Time  Distance                                   Comments
-0  2019-09-10 00:13:04  Afternoon Ride  Ride  2084     12.62                                       Rain
-1  2019-09-10 13:52:18    Morning Ride  Ride  2531     13.03                                       rain
-2  2019-09-11 00:23:50  Afternoon Ride  Ride  1863     12.84                  Wet road but nice weather
-3  2019-09-11 14:06:19    Morning Ride  Ride  2192     12.84               Stopped for photo of sunrise
+0  2019-09-09 07:13:00    Morning Ride  Ride  2084     12.62                                       Rain
+1  2019-09-09 20:52:00  Afternoon Ride  Ride  2531     13.03                                       rain
+2  2019-09-10 07:23:00    Morning Ride  Ride  1863     12.52                  Wet road but nice weather
+3  2019-09-10 21:06:00  Afternoon Ride  Ride  2192     12.84               Stopped for photo of sunrise
 ..                 ...             ...   ...   ...       ...                                        ...
-29 2019-10-09 13:55:40    Morning Ride  Ride  2149     12.70              Really cold! But feeling good
-30 2019-10-10 00:10:31  Afternoon Ride  Ride  1841     12.59        Feeling good after a holiday break!
-31 2019-10-10 13:47:14    Morning Ride  Ride  2463     12.79               Stopped for photo of sunrise
-32 2019-10-11 00:16:57  Afternoon Ride  Ride  1843     11.79  Bike feeling tight, needs an oil and pump
+29 2019-10-08 20:55:00  Afternoon Ride  Ride  2149     12.70              Really cold! But feeling good
+30 2019-10-09 07:10:00    Morning Ride  Ride  1841     12.59        Feeling good after a holiday break!
+31 2019-10-09 20:47:00  Afternoon Ride  Ride  2463     12.79               Stopped for photo of sunrise
+32 2019-10-10 07:16:00    Morning Ride  Ride  1843     11.79  Bike feeling tight, needs an oil and pump
 
 [33 rows x 6 columns]
 ```
@@ -493,15 +533,15 @@ cycling.fillna(method='ffill')
 
 ```out
                   Date            Name  Type  Time  Distance                                   Comments
-0  2019-09-10 00:13:04  Afternoon Ride  Ride  2084     12.62                                       Rain
-1  2019-09-10 13:52:18    Morning Ride  Ride  2531     13.03                                       rain
-2  2019-09-11 00:23:50  Afternoon Ride  Ride  1863     13.03                  Wet road but nice weather
-3  2019-09-11 14:06:19    Morning Ride  Ride  2192     12.84               Stopped for photo of sunrise
+0  2019-09-09 07:13:00    Morning Ride  Ride  2084     12.62                                       Rain
+1  2019-09-09 20:52:00  Afternoon Ride  Ride  2531     13.03                                       rain
+2  2019-09-10 07:23:00    Morning Ride  Ride  1863     12.52                  Wet road but nice weather
+3  2019-09-10 21:06:00  Afternoon Ride  Ride  2192     12.84               Stopped for photo of sunrise
 ..                 ...             ...   ...   ...       ...                                        ...
-29 2019-10-09 13:55:40    Morning Ride  Ride  2149     12.70              Really cold! But feeling good
-30 2019-10-10 00:10:31  Afternoon Ride  Ride  1841     12.59        Feeling good after a holiday break!
-31 2019-10-10 13:47:14    Morning Ride  Ride  2463     12.79               Stopped for photo of sunrise
-32 2019-10-11 00:16:57  Afternoon Ride  Ride  1843     11.79  Bike feeling tight, needs an oil and pump
+29 2019-10-08 20:55:00  Afternoon Ride  Ride  2149     12.70              Really cold! But feeling good
+30 2019-10-09 07:10:00    Morning Ride  Ride  1841     12.59        Feeling good after a holiday break!
+31 2019-10-09 20:47:00  Afternoon Ride  Ride  2463     12.79               Stopped for photo of sunrise
+32 2019-10-10 07:16:00    Morning Ride  Ride  1843     11.79  Bike feeling tight, needs an oil and pump
 
 [33 rows x 6 columns]
 ```
@@ -510,7 +550,7 @@ We see thar index 2 adopts the value `13.03` from index 1.
 
 `bfill` and `ffill` are methods usually adopted when dealing with
 columns organized by date. This way, an observation can adopt a similar
-value to those near it. We will explore data columns in the next slide
+value to those near it. We will explore date columns in the next slide
 deck.
 
 Notes: Script here

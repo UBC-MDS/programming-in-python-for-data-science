@@ -2,20 +2,12 @@ import pandas as pd
 
 canucks = pd.read_csv('data/canucks.csv')
 
-# Identify any columns with null values with .info()
-# Save this dataframe as canucks_info
+# Replace the null values in the dataframe with the mean salary value
+# Save this as a new dataframe named canucks_altered
 
-canucks_info = canucks.info()
-canucks_info
+canucks_altered = canucks.fillna(value=canucks['Salary'].mean())
 
-# Create a new column in the dataframe name Wealth where all the values equal "comfortable"
-# Name the new dataframe `canucks_comf`
 
-canucks_comf = canucks.assign(Wealth = "comfortable")
-canucks_comf
+# Display the canucks_altered dataframe
 
-# Do conditional replacement, where if the value in the salary column is null,
-# we replace "comfortable" with "unknown" 
-
-canucks_comf.loc[canucks_comf['Salary'].isnull(), "Wealth"] = "unknown"
-canucks_comf
+canucks_altered

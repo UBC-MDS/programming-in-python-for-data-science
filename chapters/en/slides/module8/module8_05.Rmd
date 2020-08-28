@@ -46,7 +46,7 @@ cereal = pd.read_csv('cereal.csv')
 
 type: slides
 
-# NumPy Arrays 
+# Multi-dimensional Arrays 
 
 Notes: Script here
 <html>
@@ -56,21 +56,15 @@ Notes: Script here
 
 ---
 
-## Creating Arrays
+## Creating 2D Arrays
 
-We saw in the last set of slides that we can create arrays using `np.array()`:
+We saw in the last set of slides that we can create 1D arrays using a number of different functions such as `np.array()`:
 ```{python}
 my_array = np.array((1, 2, 3, 4))
 my_array
 ```
-We can also make them from lists instead of tuples too:
 
-```{python}
-my_array = np.array([1, 2, 3, 4])
-my_array
-```
-
-We can also have multi-dimensional arrays which are indicated by double square brackets `[[ ]]`:
+We can also use the same functions to make multi-dimensional arrays which are indicated by double square brackets `[[ ]]`:
 
 ```{python}
 list_2d = [[1, 2], [3, 4], [5, 6]]
@@ -86,78 +80,19 @@ Notes: Script here
 
 ---
 
-There are also several built-in NumPy functions that create different arrays with patterns and requirements: 
-
-`np.zeros()` will create an array containing `0` for each element and the input argument specifies the size:
+Some of the functions that we use to create arrays have the ability for us to specify them with multi-dimensions:
 ```{python}
-np.zeros(10)
-```
-Similarly, `np.ones()` does the same thing except with an array of elements with `1` values:
-
-```{python}
-np.ones(4)
-```
-`np.arange()` similarly to `range()` can take 1, 2 or 3 input arguments and will produce an array in a similar way that `range()` produces a sequence. 
-
-```{python}
-np.arange(5)
-```
-```{python}
-np.arange(0, 10, 2) 
+np.zeros((3,4))
 ```
 
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
-
----
-
-`np.linspace()` will produce an array containing the number of elements specified by the 3rd argument's value, containing values between the first 2 arguments values. 
-Example: 20, equally spaced values from 1 to 5:
-```{python}
-np.linspace(1,5,20)
-```
-The elements in `np.linspace()` arrays are defaulted to type `float`.    
-We can also produce an array with random values using `np.random.rand()`.          
-Example: Random numbers uniformly distributed from 0 to 1
-```{python}
-np.random.rand(5) 
-```
-We can also specify the number of dimensions for it: 
 ```{python}
 np.random.rand(4, 2) 
 ```
 
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
-
----
-
-## Elementwise operations 
-
-As we saw in Exercise 4, that arrays operate in an elementwise manner. 
-
-When we do many operations, the operation is done to each element in the array. 
+and if not, can use the verb `.reshape()` to tranform a 1D array into a multi-dimension array: 
 
 ```{python}
-array1 = np.ones(4)
-array1
-```
-```{python}
-array2 = array1 + 1
-array2
-```
-
-```{python}
-array1 - array2
-```
-```{python}
-array1 * array2
+np.arange(0,12).reshape(3,4)
 ```
 
 Notes: Script here
@@ -170,11 +105,11 @@ Notes: Script here
 
 ## Array Shapes 
 
+We saw how to make multi-dimensional arrays but dimension is quite different than what the shape of an array is?  
+
 <center><img src='/module8/arrays2.png' width="80%"></center>
 
-As we just saw above, arrays can be of any dimension, shape and size.
-
-In fact, there are three main array nouns we need to know to understand the characteristics of an array:
+here are three main array nouns we need to know to understand the characteristics of an array:
 
 - `.ndim`: the number of dimensions of an array
 
@@ -193,6 +128,7 @@ Notes: Script here
 `array1` is an example of a 1d array:
 
 ```{python}
+array1 = np.ones(4)
 array1
 ```
 We can use `.ndim` to check the number of dimensions and just as we suspected it is 1: 
@@ -272,33 +208,8 @@ Notes: Script here
 
 ---
 
-## Indexing and Slicing
+## Indexing and Slicing 2D arrays 
 
-1D arrays are sliced in the same manner that lists are.
-```{python}
-arr = np.arange(10)
-arr
-```
-
-```{python}
-arr[7]
-```
-The first value is included and the last value is excluded:
-```{python}
-arr[2:6]
-```
-To obtain elements from right to left, we use negative integers:
-```{python}
-arr[-1]
-```
-
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
-
----
 
 Slicing 2D arrays can be compared to slicing pandas dataframes (without the `.iloc[]`). 
 
@@ -306,14 +217,13 @@ Slicing 2D arrays can be compared to slicing pandas dataframes (without the `.il
 arr2 = np.arange(0,12).reshape(3,4)
 arr2
 ```
-In the code above, `.reshape` simply reshapes the original 1D array to a 2D array with a 3 x 4 shape. 
 
 Let's say we want to select `6`. It's located in row 1 and column 2 (remember that the index includes 0). 
 
 ```{python}
 arr2[1, 2]
 ```
-We could also do the same thing using this notation but, it's not recommended. 
+We could also do the same thing using this notation, but it's not recommended. 
 
 ```{python}
 arr2[1][2]
@@ -366,58 +276,6 @@ We can replace values in an array with the assignment operator:
 
 arr2[1,1] = 77777
 arr2
-```
-
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
-
----
-
-## Boolean Indexing 
-
-Let's take a 1D array that consists of 10 decimal elements. 
-```{python}
-decimal_array = np.random.rand(10)
-decimal_array
-```
-Remember that when we do most operations, it occurs in an element-wise manner:
-```{python}
-decimal_array + 1
-```
-Let's assign a threshold and find all the elements in `decimal_array`  greater than 0.5. We can name this new array that is made of Boolean values `threshold`:
-
-```{python}
-threshold = decimal_array > 0.5
-threshold
-
-```
-
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
-
----
-
-We now can replace all those values that have a `True` Boolean,  a new value, in this case let's assign them a value of 0.5:
-
-```{python}
-decimal_array[threshold] = 0.5 
-decimal_array
-```
-
-We could also shorten the whole process and avoided making `threshold` by using the following code:
-```{python}
-new_decimal_array = np.random.rand(4)
-new_decimal_array
-```
-```{python}
-new_decimal_array[new_decimal_array>0.5] = 0.5
-new_decimal_array
 ```
 
 Notes: Script here

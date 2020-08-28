@@ -89,7 +89,7 @@ Let's try it out on a subset of our `cereal` dataset:
 cereal.info()
 ```
 Here we see the total number of rows at the top with `RangeIndex: 77 entries, 0 to 76`. 
-The `Nnon-Null Count` column specifies the number of non-null values. In this case, we have a complete dataframe with zero null values for each column.
+The `Non-Null Count` column specifies the number of non-null values. In this case, we have a complete dataframe with zero null values for each column.
 
 
 Notes: Script here
@@ -100,8 +100,20 @@ Notes: Script here
 
 ---
 
-Let's take a look at a case where we are not so lucky. `cycling` is a subset of a dataset that contains the bicycling trips <a href="https://www.tomasbeuzen.com/" target="_blank">Tomas Beuzen</a>, a UBC postdoc took to campus and back during the fall 2019 semester. 
+Let's take a look at a case where we are not so lucky. `cycling` is a subset of a dataset that contains the bicycling trips <a href="https://www.tomasbeuzen.com/" target="_blank">Tomas Beuzen</a>, a UBC postdoc rode his bike to campus and back during the fall 2019 semester. 
 
+```{python}
+cycling
+```
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+Using `.info()` with this new data we get the following:
 
 ```{python}
 cycling.info()
@@ -220,8 +232,26 @@ Notes: Script here
 
 ## Replacing Null Values
 
-Alternately, if we have a small dataset and we don't want to rid ourselves of any data, we may prefer to replace `NaN` with a particular value. We can do so will `.fillna()`
-Perhaps we want to replace the values in `Distance` with the mean:
+Alternately, if we have a small dataset and we don't want to rid ourselves of any data, we may prefer to replace `NaN` with a particular value. We can do so will `.fillna()`.
+
+Perhaps it's missing from the data because he didn't cycle that particular day. Replacing the `NaN` value with 0 in this case would make sense: 
+
+```{python}
+cycling_zero_fill = cycling.fillna(value=0)
+cycling_zero_fill
+```
+Now index 2 now has a `Distance` of `0.00`.
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+Maybe a better decision would be to replace the values in `Distance` with the mean:
 
 ```{python}
 cycling['Distance'].mean().round(2)
@@ -233,21 +263,6 @@ cycling_mean_fill
 ```
 We see the value in `Distance` for index 2 change to `12.67`.
 
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
-
----
-
-We can also replace it with a new value altogether, perhaps in this case he didn't cycle and 0 distance is an appropriate value: 
-
-```{python}
-cycling_zero_fill = cycling.fillna(value=0)
-cycling_zero_fill
-```
-Here, index 2 now has a `Distance` of `0.00`.
 Notes: Script here
 <html>
 <audio controls >
@@ -281,7 +296,7 @@ cycling.fillna(method='ffill')
 We see thar index 2 adopts the value `13.03` from index 1. 
 
 
-`bfill` and `ffill` are methods usually adopted when dealing with columns organized by date. This way, an observation can adopt a similar value to those near it. We will explore data columns in the next slide deck. 
+`bfill` and `ffill` are methods usually adopted when dealing with columns organized by date. This way, an observation can adopt a similar value to those near it. We will explore date columns in the next slide deck. 
 
 Notes: Script here
 <html>

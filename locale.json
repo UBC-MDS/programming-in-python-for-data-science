@@ -3,7 +3,7 @@
         "langName": "English",
         "title": "DSCI 011 - Programming in Python for Data Science",
         "slogan": "Part of UBC's Mid-Career Learning program",
-        "description": "Basic programming in Python. Overview of iteration and flow control and data types relevant to data exploration and analysis. When and how to exploit pre-existing libraries. Numerical data types with Numpy and tabular data with Pandas.",
+        "description": "Learn the fundamentals of programming in Python, including how to clean, filter, arrange, aggregate and transform data. You will learn the foundations of programming in Python while writing human-readable code that sets a foundation of best practices and coding style. You will gain the skills to clean, filter, manipulate (wrangle) and summarize data using Python libraries for more effective data analysis. An overview of data structures, iteration, flow control and program design relevant to data exploration and analysis will be addressed along with fundamental programming concepts such as loops, conditionals and data structures that create a solid foundation in data science programming.",
         "bio": "The University of British Columbia (UBC) is a comprehensive research-intensive university, consistently ranked among the 40 best universities in the world. The MDS Mid Career Learners program was launched in September 2020 and is offered by  the MDS program who are a collaboration between the UBC Department of Computer Science and Department of Statistics. ",
         "video": "/5fPGBCfcwpA",
         "footerLinks": [

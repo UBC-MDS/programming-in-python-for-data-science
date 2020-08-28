@@ -5,53 +5,9 @@
 <style type="text/css">
 	.st0{fill:none;}
 	.st1{fill:#0BB5D4;}
-	.st2{font-family:'Arial-Black';}
-	.st3{font-size:72.9965px;}
+	.st2{font-family:'Avenir-Medium';}
+	.st3{font-size:102px;}
 </style>
-<rect x="-4" y="30" class="st0" width="783.6" height="274"/>
-<text transform="matrix(0.8299 -1.448619e-02 1.745324e-02 0.9998 241.8278 93.6731)" class="st1 st2 st3">D</text>
-<text transform="matrix(0.8299 -1.448619e-02 1.745324e-02 0.9998 288.98 93.6501)" class="st1 st2 st3">S</text>
-<text transform="matrix(0.8299 -1.448619e-02 1.745324e-02 0.9998 332.7296 93.6868)" class="st1 st2 st3">C</text>
-<text transform="matrix(0.8299 -1.448619e-02 1.745324e-02 0.9998 379.7953 93.465)" class="st1 st2 st3">I</text>
-<text transform="matrix(0.8299 -1.448619e-02 1.745324e-02 0.9998 403.3715 93.4535)" class="st1 st2 st3"> </text>
-<text transform="matrix(0.8299 -1.448619e-02 1.745324e-02 0.9998 423.6296 93.6005)" class="st1 st2 st3">0</text>
-<text transform="matrix(0.8299 -1.448619e-02 1.745324e-02 0.9998 464.058 93.5946)" class="st1 st2 st3">1</text>
-<text transform="matrix(0.8299 -1.448619e-02 1.745324e-02 0.9998 504.4034 93.5902)" class="st1 st2 st3">1</text>
-<text transform="matrix(0.8299 -1.448619e-02 1.745324e-02 0.9998 7.9281 176.6638)" class="st1 st2 st3">P</text>
-<text transform="matrix(0.8299 -1.448619e-02 1.745324e-02 0.9998 51.6741 176.5004)" class="st1 st2 st3">r</text>
-<text transform="matrix(0.8299 -1.448619e-02 1.745324e-02 0.9998 78.5735 176.6311)" class="st1 st2 st3">o</text>
-<text transform="matrix(0.8299 -1.448619e-02 1.745324e-02 0.9998 119.0019 176.6252)" class="st1 st2 st3">g</text>
-<text transform="matrix(0.8299 -1.448619e-02 1.745324e-02 0.9998 159.4281 176.5198)" class="st1 st2 st3">r</text>
-<text transform="matrix(0.8299 -1.448619e-02 1.745324e-02 0.9998 186.3276 176.6505)" class="st1 st2 st3">a</text>
-<text transform="matrix(0.8299 -1.448619e-02 1.745324e-02 0.9998 226.6748 176.7462)" class="st1 st2 st3">m</text>
-<text transform="matrix(0.8299 -1.448619e-02 1.745324e-02 0.9998 287.2765 176.7886)" class="st1 st2 st3">m</text>
-<text transform="matrix(0.8299 -1.448619e-02 1.745324e-02 0.9998 347.8713 176.4308)" class="st1 st2 st3">i</text>
-<text transform="matrix(0.8299 -1.448619e-02 1.745324e-02 0.9998 368.0469 176.5787)" class="st1 st2 st3">n</text>
-<text transform="matrix(0.8299 -1.448619e-02 1.745324e-02 0.9998 408.4753 176.5734)" class="st1 st2 st3">g</text>
-<text transform="matrix(0.8299 -1.448619e-02 1.745324e-02 0.9998 448.902 176.4679)" class="st1 st2 st3"> </text>
-<text transform="matrix(0.8299 -1.448619e-02 1.745324e-02 0.9998 469.0736 176.4157)" class="st1 st2 st3">i</text>
-<text transform="matrix(0.8299 -1.448619e-02 1.745324e-02 0.9998 489.2487 176.5636)" class="st1 st2 st3">n</text>
-<text transform="matrix(0.8299 -1.448619e-02 1.745324e-02 0.9998 529.6754 176.4582)" class="st1 st2 st3"> </text>
-<text transform="matrix(0.8299 -1.448619e-02 1.745324e-02 0.9998 549.851 176.6061)" class="st1 st2 st3">P</text>
-<text transform="matrix(0.8299 -1.448619e-02 1.745324e-02 0.9998 593.5987 176.5423)" class="st1 st2 st3">y</text>
-<text transform="matrix(0.8299 -1.448619e-02 1.745324e-02 0.9998 630.6226 176.4963)" class="st1 st2 st3">t</text>
-<text transform="matrix(0.8299 -1.448619e-02 1.745324e-02 0.9998 657.522 176.627)" class="st1 st2 st3">h</text>
-<text transform="matrix(0.8299 -1.448619e-02 1.745324e-02 0.9998 697.9504 176.6211)" class="st1 st2 st3">o</text>
-<text transform="matrix(0.8299 -1.448619e-02 1.745324e-02 0.9998 738.2953 176.6172)" class="st1 st2 st3">n</text>
-<text transform="matrix(0.8299 -1.448619e-02 1.745324e-02 0.9998 117.2711 272.4654)" class="st1 st2 st3">f</text>
-<text transform="matrix(0.8299 -1.448619e-02 1.745324e-02 0.9998 140.8507 272.6545)" class="st1 st2 st3">o</text>
-<text transform="matrix(0.8299 -1.448619e-02 1.745324e-02 0.9998 181.2757 272.449)" class="st1 st2 st3">r</text>
-<text transform="matrix(0.8299 -1.448619e-02 1.745324e-02 0.9998 208.1729 272.4796)" class="st1 st2 st3"> </text>
-<text transform="matrix(0.8299 -1.448619e-02 1.745324e-02 0.9998 228.3484 272.6275)" class="st1 st2 st3">D</text>
-<text transform="matrix(0.8299 -1.448619e-02 1.745324e-02 0.9998 275.5007 272.6044)" class="st1 st2 st3">a</text>
-<text transform="matrix(0.8299 -1.448619e-02 1.745324e-02 0.9998 315.9274 272.4985)" class="st1 st2 st3">t</text>
-<text transform="matrix(0.8299 -1.448619e-02 1.745324e-02 0.9998 342.8264 272.6287)" class="st1 st2 st3">a</text>
-<text transform="matrix(0.8299 -1.448619e-02 1.745324e-02 0.9998 383.1683 272.4247)" class="st1 st2 st3"> </text>
-<text transform="matrix(0.8299 -1.448619e-02 1.745324e-02 0.9998 403.4286 272.6717)" class="st1 st2 st3">S</text>
-<text transform="matrix(0.8299 -1.448619e-02 1.745324e-02 0.9998 447.1764 272.6084)" class="st1 st2 st3">c</text>
-<text transform="matrix(0.8299 -1.448619e-02 1.745324e-02 0.9998 487.6013 272.4029)" class="st1 st2 st3">i</text>
-<text transform="matrix(0.8299 -1.448619e-02 1.745324e-02 0.9998 507.7781 272.6504)" class="st1 st2 st3">e</text>
-<text transform="matrix(0.8299 -1.448619e-02 1.745324e-02 0.9998 548.1236 272.6465)" class="st1 st2 st3">n</text>
-<text transform="matrix(0.8299 -1.448619e-02 1.745324e-02 0.9998 588.552 272.6401)" class="st1 st2 st3">c</text>
-<text transform="matrix(0.8299 -1.448619e-02 1.745324e-02 0.9998 628.9804 272.6348)" class="st1 st2 st3">e</text>
+<rect x="12" y="11.8" class="st0" width="762" height="326.2"/>
+<text transform="matrix(1 0 0 1 67.1138 88.896)"><tspan x="0" y="0" class="st1 st2 st3">Programing in </tspan><tspan x="83.9" y="122.4" class="st1 st2 st3">Python for</tspan><tspan x="13.1" y="244.8" class="st1 st2 st3"> Data Science</tspan></text>
 </svg>

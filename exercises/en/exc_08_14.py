@@ -6,9 +6,9 @@ canucks = pd.read_csv('data/canucks.csv')
 # Save this dataframe as canucks_info
 
 ____ = ____
-# ____
+____
 
-# Create a new column in the dataframe name Wealth where all the values equal "comfortable"
+# Create a new column in the dataframe named Wealth where all the values equal "comfortable"
 # Name the new dataframe `canucks_comf`
 
 # ____ = ____

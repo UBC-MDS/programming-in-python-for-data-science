@@ -53,29 +53,27 @@ type: slides
 
 Notes: Script here
 <html>
-<audio controls >
+<audio controls>
   <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
 
-Although we have already introduced you to strings to a certain degree, processing and working with this data type, is an area that will require a substantial amount of learning. 
+Although we have already introduced you to strings to a certain degree, processing and working with this data type is an area that will require a substantial amount of learning. 
 
-In this course, we will only scratch the tip of the iceberg when it comes to strings. That being said, we do hope to provide you with an adequate foundation in string processing. 
-
-We saw back in Module 4 that string data is represented in a pandas dataframe using the dtype `object`. This is the default dtype given to columns that have a mix of different data types or if pandas cannot identify the column as any other dtype. 
+In this course, we will only scratch the surface when it comes to strings. That being said, we do hope to provide you with an adequate foundation in string processing. 
 
 Notes: Script here
 <html>
 <audio controls >
-  <source src="/placeholder_audio.mp3" />
+  <source src="/module0/511_module0.mp3" />
 </audio></html>
 
 ---
 
 ## Recap 
 
-Let's first remind ourselves of some of the functions we've already learned such as:
+Let's first remind ourselves of some of the methods we've already learned such as:
 
 - `.upper()`
 - `.lower()` 
@@ -130,7 +128,10 @@ Notes: Script here
 
 ## Processing String Columns 
 
+
 The only problem is that when we work with data, we will be applying these transformations, not to a single string, but to a whole column of them. 
+
+We saw back in Module 4 that string data is represented in a pandas dataframe using the dtype `object`. This is the default dtype given to columns that have a mix of different data types or if pandas cannot identify the column as any other dtype. 
 
 Remember when we discussed datetimes columns and we applied time functions to a whole column by adding `.dt` before the function? 
 
@@ -144,13 +145,13 @@ cycling.head()
 
 Notes: Script here
 <html>
-<audio controls >
+<audio controls  >
   <source src="/placeholder_audio.mp3" />
 </audio></html>
 
 ---
 
-Perhaps we wanted the entire `Comments` column in uppercase. We can use `.assign()` and `.upper` paired with `.str` to transform the column.
+Perhaps we wanted the entire `Comments` column in upper case. We can use `.assign()` and `.upper` paired with `.str` to transform the column.
 
 ```{python}
 upper_cycle = cycling.assign(Comments = cycling['Comments'].str.upper())
@@ -187,17 +188,17 @@ Notes: Script here
 
 ---
 
-Another operation that we've lightly touched on is combining strings from 2 columns to create a new one:
+Another operation that we've lightly touched on is contatenation of  strings. For instance when we add 2 strings together: 
 
 ```{python}
-combined_cycle = cycling.assign(Description = cycling['Name'] + cycling['Type'])
-combined_cycle.head()
+"My favourite colour" + "is Blue"
 ```
-or multiple it to repeat a string
+
+This can be implemented in dataframes too by concatenating 2 columns to create a new one:
 
 ```{python}
-cycle_tripled = cycling.assign(triple_type = cycling['Type'] * 3)
-cycle_tripled.head()
+combined_cycle = cycling.assign(Distance_str = cycling['Distance'].astype('str') + ' km')
+combined_cycle.head()
 ```
 
 Notes: Script here
@@ -208,13 +209,13 @@ Notes: Script here
 
 ---
 
-Two new function we haven't discussed but is quite similar to `.upper()` and `.lower()` is`.capitalize()` which capitalizes the first word of the string:
+A new function we haven't discussed but is quite similar to `.upper()` and `.lower()` is`.capitalize()` which capitalizes the first word of the string:
 
 ```{python}
 cap_cycle = cycling.assign(Comments = cycling['Comments'].str.capitalize())
 cap_cycle.head()
 ```
-And `.title()` that capitalizes every word in a string:
+Another is `.title()`, which capitalizes the first letter of every word in a string:
 
 ```{python}
 cap_cycle = cycling.assign(Comments = cycling['Comments'].str.title())
@@ -230,7 +231,7 @@ Notes: Script here
 
 ---
 
-One function that might not seem that pertinent but is extremely useful is <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.str.strip.html" target="_blank">`.strip()` </a> :
+One function that might not seem that pertinent but is extremely useful is <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.str.strip.html" target="_blank">`.strip()` </a>.
 
 `strip()` removes characters starting or ending a string, with the default being spaces. 
 
@@ -261,12 +262,61 @@ Notes: Script here
 
 ---
 
-We can apply this to a dataframe column by simple adding `.str`.
-In this example let's strip the sides of the `Type` column of the letter "R".
+This can be especially frustrating when we are trying to filter dataframes.
+
+Let's try to filter our data to find rows where the value for the `Comments` column is "Rain". 
+```{python}
+cycling.head()
+```
+We can see that index 0 should be filtered out but we get the following:
 
 ```{python}
-stripped_cycling = cycling.assign(Type = cycling['Type'].str.strip("R"))
-stripped_cycling
+cycling[cycling['Comments'] == 'Rain']
+```
+
+No rows are outputted. That's because there is a blank space following "Rain". 
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+
+Let's now strip our column using `.strip()` and assigning the changes to the `Comments` column of a dataframe named `stripped_cycling`. Since we are using `.strip()` with a dataframe column we have to add `.str`.
+
+```{python}
+stripped_cycling = cycling.assign(Comments = cycling['Comments'].str.strip())
+stripped_cycling.head()
+```
+And what happens now when we filter on rain on our new `stripped_cycling` dataframe:
+
+```{python}
+stripped_cycling[stripped_cycling['Comments'] == 'Rain']
+```
+Ahh that's much better! 
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+We are not limited to stripping the values of white space. We can also strip any other character. Let's try punctuation!
+
+```{python}
+stripped_cycling.tail(5)
+```
+We can see that index 30 has a value of `Feeling good after a holiday break!` in the `Comments` column. 
+After using `str.strip('!')` we can see that it's no loger has the  exclamation mark! 
+
+```{python}
+stripped_cycling['Comments'].str.strip("!").tail()
 ```
 
 Notes: Script here

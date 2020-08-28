@@ -1,22 +1,29 @@
 import pandas as pd
 
-import pandas as pd
+lego = pd.read_csv('data/lego-sets.csv')
 
-canucks = pd.read_csv('data/canucks.csv', parse_dates = ['Birth Date'])
+# Convert the name column in the lego dataset to lowercase and save it in an object named lego 
 
-# Convert the Position and Country columns into uppercase 
-# Save this in a dataframe named canucks_upper
+# ____ = ____
+# ____
+
+# Filter the dataset to find all the lego sets that contain "weetabix"
+# Save this as a object named lego_weetabix
+
+# ____ = ____
+# ____
+
+# Replace the word "Weetabix" in the name column of the lego_wetabix dataframe
+# with the string "cereal-brand"
+# Save this in an object called lego_cereal
+
+# ____ = ____
+# ____
+
+# If the row contains the word "promotional", change the entire value to "cereal-brand freebie"
 
 # ____ = ____
 
-# Create a new column in the canucks_upper dataframe named `number_ts` 
-# where you count the total number of times the letter T (lowercase or uppercase) appears in their name
-# Save this  dataframe named as canucks_upper_ts
+# Display lego_cereal
 
-# ____ = ____
-
-
-# How many players have more than 1 letter T in their name? 
-
-# ____ = ____
-
+# ____

@@ -8,7 +8,7 @@ Notes: Script here
 
 <html>
 
-<audio controls >
+<audio controls>
 
 <source src="/placeholder_audio.mp3" />
 
@@ -19,17 +19,12 @@ Notes: Script here
 ---
 
 Although we have already introduced you to strings to a certain degree,
-processing and working with this data type, is an area that will require
+processing and working with this data type is an area that will require
 a substantial amount of learning.
 
-In this course, we will only scratch the tip of the iceberg when it
-comes to strings. That being said, we do hope to provide you with an
-adequate foundation in string processing.
-
-We saw back in Module 4 that string data is represented in a pandas
-dataframe using the dtype `object`. This is the default dtype given to
-columns that have a mix of different data types or if pandas cannot
-identify the column as any other dtype.
+In this course, we will only scratch the surface when it comes to
+strings. That being said, we do hope to provide you with an adequate
+foundation in string processing.
 
 Notes: Script here
 
@@ -37,7 +32,7 @@ Notes: Script here
 
 <audio controls >
 
-<source src="/placeholder_audio.mp3" />
+<source src="/module0/511_module0.mp3" />
 
 </audio>
 
@@ -47,7 +42,7 @@ Notes: Script here
 
 ## Recap
 
-Let’s first remind ourselves of some of the functions we’ve already
+Let’s first remind ourselves of some of the methods we’ve already
 learned such as:
 
   - `.upper()`
@@ -143,6 +138,11 @@ The only problem is that when we work with data, we will be applying
 these transformations, not to a single string, but to a whole column of
 them.
 
+We saw back in Module 4 that string data is represented in a pandas
+dataframe using the dtype `object`. This is the default dtype given to
+columns that have a mix of different data types or if pandas cannot
+identify the column as any other dtype.
+
 Remember when we discussed datetimes columns and we applied time
 functions to a whole column by adding `.dt` before the function?
 
@@ -156,19 +156,19 @@ cycling.head()
 ```
 
 ```out
-               Date            Name  Type  Time  Distance                      Comments
-0   2019-09-10 0:13  Afternoon Ride  Ride  2084     12.62                          Rain
-1  2019-09-10 13:52    Morning Ride  Ride  2531     13.03                          rain
-2   2019-09-11 0:23  Afternoon Ride  Ride  1863     12.52     Wet road but nice weather
-3  2019-09-11 14:06    Morning Ride  Ride  2192     12.84  Stopped for photo of sunrise
-4   2019-09-12 0:28  Afternoon Ride  Ride  1891     12.48  Tired by the end of the week
+                Date            Name  Type  Time  Distance                      Comments
+0  Sep-10-2019 17:13  Afternoon Ride  Ride  2084     12.62                         Rain 
+1  Sep-11-2019 06:52    Morning Ride  Ride  2531     13.03                          rain
+2  Sep-11-2019 17:23  Afternoon Ride  Ride  1863     12.52     Wet road but nice weather
+3  Sep-12-2019 07:06    Morning Ride  Ride  2192     12.84  Stopped for photo of sunrise
+4  Sep-12-2019 17:28  Afternoon Ride  Ride  1891     12.48  Tired by the end of the week
 ```
 
 Notes: Script here
 
 <html>
 
-<audio controls >
+<audio controls  >
 
 <source src="/placeholder_audio.mp3" />
 
@@ -178,7 +178,7 @@ Notes: Script here
 
 ---
 
-Perhaps we wanted the entire `Comments` column in uppercase. We can use
+Perhaps we wanted the entire `Comments` column in upper case. We can use
 `.assign()` and `.upper` paired with `.str` to transform the column.
 
 ``` python
@@ -187,12 +187,12 @@ upper_cycle.head()
 ```
 
 ```out
-               Date            Name  Type  Time  Distance                      Comments
-0   2019-09-10 0:13  Afternoon Ride  Ride  2084     12.62                          RAIN
-1  2019-09-10 13:52    Morning Ride  Ride  2531     13.03                          RAIN
-2   2019-09-11 0:23  Afternoon Ride  Ride  1863     12.52     WET ROAD BUT NICE WEATHER
-3  2019-09-11 14:06    Morning Ride  Ride  2192     12.84  STOPPED FOR PHOTO OF SUNRISE
-4   2019-09-12 0:28  Afternoon Ride  Ride  1891     12.48  TIRED BY THE END OF THE WEEK
+                Date            Name  Type  Time  Distance                      Comments
+0  Sep-10-2019 17:13  Afternoon Ride  Ride  2084     12.62                         RAIN 
+1  Sep-11-2019 06:52    Morning Ride  Ride  2531     13.03                          RAIN
+2  Sep-11-2019 17:23  Afternoon Ride  Ride  1863     12.52     WET ROAD BUT NICE WEATHER
+3  Sep-12-2019 07:06    Morning Ride  Ride  2192     12.84  STOPPED FOR PHOTO OF SUNRISE
+4  Sep-12-2019 17:28  Afternoon Ride  Ride  1891     12.48  TIRED BY THE END OF THE WEEK
 ```
 
 Not too shabby\!
@@ -206,12 +206,12 @@ rain_cycle.head()
 ```
 
 ```out
-               Date            Name  Type  Time  Distance                      Comments  Rain
-0   2019-09-10 0:13  Afternoon Ride  Ride  2084     12.62                          RAIN     1
-1  2019-09-10 13:52    Morning Ride  Ride  2531     13.03                          RAIN     1
-2   2019-09-11 0:23  Afternoon Ride  Ride  1863     12.52     WET ROAD BUT NICE WEATHER     0
-3  2019-09-11 14:06    Morning Ride  Ride  2192     12.84  STOPPED FOR PHOTO OF SUNRISE     0
-4   2019-09-12 0:28  Afternoon Ride  Ride  1891     12.48  TIRED BY THE END OF THE WEEK     0
+                Date            Name  Type  Time  Distance                      Comments  Rain
+0  Sep-10-2019 17:13  Afternoon Ride  Ride  2084     12.62                         RAIN      1
+1  Sep-11-2019 06:52    Morning Ride  Ride  2531     13.03                          RAIN     1
+2  Sep-11-2019 17:23  Afternoon Ride  Ride  1863     12.52     WET ROAD BUT NICE WEATHER     0
+3  Sep-12-2019 07:06    Morning Ride  Ride  2192     12.84  STOPPED FOR PHOTO OF SUNRISE     0
+4  Sep-12-2019 17:28  Afternoon Ride  Ride  1891     12.48  TIRED BY THE END OF THE WEEK     0
 ```
 
 Notes: Script here
@@ -266,37 +266,32 @@ Notes: Script here
 
 ---
 
-Another operation that we’ve lightly touched on is combining strings
-from 2 columns to create a new one:
+Another operation that we’ve lightly touched on is contatenation of
+strings. For instance when we add 2 strings together:
 
 ``` python
-combined_cycle = cycling.assign(Description = cycling['Name'] + cycling['Type'])
+"My favourite colour" + "is Blue"
+```
+
+```out
+'My favourite colouris Blue'
+```
+
+This can be implemented in dataframes too by concatenating 2 columns to
+create a new one:
+
+``` python
+combined_cycle = cycling.assign(Distance_str = cycling['Distance'].astype('str') + ' km')
 combined_cycle.head()
 ```
 
 ```out
-               Date            Name  Type  Time  Distance                      Comments         Description
-0   2019-09-10 0:13  Afternoon Ride  Ride  2084     12.62                          Rain  Afternoon RideRide
-1  2019-09-10 13:52    Morning Ride  Ride  2531     13.03                          rain    Morning RideRide
-2   2019-09-11 0:23  Afternoon Ride  Ride  1863     12.52     Wet road but nice weather  Afternoon RideRide
-3  2019-09-11 14:06    Morning Ride  Ride  2192     12.84  Stopped for photo of sunrise    Morning RideRide
-4   2019-09-12 0:28  Afternoon Ride  Ride  1891     12.48  Tired by the end of the week  Afternoon RideRide
-```
-
-or multiple it to repeat a string
-
-``` python
-cycle_tripled = cycling.assign(triple_type = cycling['Type'] * 3)
-cycle_tripled.head()
-```
-
-```out
-               Date            Name  Type  Time  Distance                      Comments   triple_type
-0   2019-09-10 0:13  Afternoon Ride  Ride  2084     12.62                          Rain  RideRideRide
-1  2019-09-10 13:52    Morning Ride  Ride  2531     13.03                          rain  RideRideRide
-2   2019-09-11 0:23  Afternoon Ride  Ride  1863     12.52     Wet road but nice weather  RideRideRide
-3  2019-09-11 14:06    Morning Ride  Ride  2192     12.84  Stopped for photo of sunrise  RideRideRide
-4   2019-09-12 0:28  Afternoon Ride  Ride  1891     12.48  Tired by the end of the week  RideRideRide
+                Date            Name  Type  Time  Distance                      Comments Distance_str
+0  Sep-10-2019 17:13  Afternoon Ride  Ride  2084     12.62                         Rain      12.62 km
+1  Sep-11-2019 06:52    Morning Ride  Ride  2531     13.03                          rain     13.03 km
+2  Sep-11-2019 17:23  Afternoon Ride  Ride  1863     12.52     Wet road but nice weather     12.52 km
+3  Sep-12-2019 07:06    Morning Ride  Ride  2192     12.84  Stopped for photo of sunrise     12.84 km
+4  Sep-12-2019 17:28  Afternoon Ride  Ride  1891     12.48  Tired by the end of the week     12.48 km
 ```
 
 Notes: Script here
@@ -313,7 +308,7 @@ Notes: Script here
 
 ---
 
-Two new function we haven’t discussed but is quite similar to `.upper()`
+A new function we haven’t discussed but is quite similar to `.upper()`
 and `.lower()` is`.capitalize()` which capitalizes the first word of the
 string:
 
@@ -323,15 +318,16 @@ cap_cycle.head()
 ```
 
 ```out
-               Date            Name  Type  Time  Distance                      Comments
-0   2019-09-10 0:13  Afternoon Ride  Ride  2084     12.62                          Rain
-1  2019-09-10 13:52    Morning Ride  Ride  2531     13.03                          Rain
-2   2019-09-11 0:23  Afternoon Ride  Ride  1863     12.52     Wet road but nice weather
-3  2019-09-11 14:06    Morning Ride  Ride  2192     12.84  Stopped for photo of sunrise
-4   2019-09-12 0:28  Afternoon Ride  Ride  1891     12.48  Tired by the end of the week
+                Date            Name  Type  Time  Distance                      Comments
+0  Sep-10-2019 17:13  Afternoon Ride  Ride  2084     12.62                         Rain 
+1  Sep-11-2019 06:52    Morning Ride  Ride  2531     13.03                          Rain
+2  Sep-11-2019 17:23  Afternoon Ride  Ride  1863     12.52     Wet road but nice weather
+3  Sep-12-2019 07:06    Morning Ride  Ride  2192     12.84  Stopped for photo of sunrise
+4  Sep-12-2019 17:28  Afternoon Ride  Ride  1891     12.48  Tired by the end of the week
 ```
 
-And `.title()` that capitalizes every word in a string:
+Another is `.title()`, which capitalizes the first letter of every word
+in a string:
 
 ``` python
 cap_cycle = cycling.assign(Comments = cycling['Comments'].str.title())
@@ -339,12 +335,12 @@ cap_cycle.head()
 ```
 
 ```out
-               Date            Name  Type  Time  Distance                      Comments
-0   2019-09-10 0:13  Afternoon Ride  Ride  2084     12.62                          Rain
-1  2019-09-10 13:52    Morning Ride  Ride  2531     13.03                          Rain
-2   2019-09-11 0:23  Afternoon Ride  Ride  1863     12.52     Wet Road But Nice Weather
-3  2019-09-11 14:06    Morning Ride  Ride  2192     12.84  Stopped For Photo Of Sunrise
-4   2019-09-12 0:28  Afternoon Ride  Ride  1891     12.48  Tired By The End Of The Week
+                Date            Name  Type  Time  Distance                      Comments
+0  Sep-10-2019 17:13  Afternoon Ride  Ride  2084     12.62                         Rain 
+1  Sep-11-2019 06:52    Morning Ride  Ride  2531     13.03                          Rain
+2  Sep-11-2019 17:23  Afternoon Ride  Ride  1863     12.52     Wet Road But Nice Weather
+3  Sep-12-2019 07:06    Morning Ride  Ride  2192     12.84  Stopped For Photo Of Sunrise
+4  Sep-12-2019 17:28  Afternoon Ride  Ride  1891     12.48  Tired By The End Of The Week
 ```
 
 Notes: Script here
@@ -364,7 +360,7 @@ Notes: Script here
 One function that might not seem that pertinent but is extremely useful
 is
 <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.str.strip.html" target="_blank">`.strip()`
-</a> :
+</a>.
 
 `strip()` removes characters starting or ending a string, with the
 default being spaces.
@@ -419,29 +415,131 @@ Notes: Script here
 
 ---
 
-We can apply this to a dataframe column by simple adding `.str`. In this
-example let’s strip the sides of the `Type` column of the letter “R”.
+This can be especially frustrating when we are trying to filter
+dataframes.
+
+Let’s try to filter our data to find rows where the value for the
+`Comments` column is “Rain”.
 
 ``` python
-stripped_cycling = cycling.assign(Type = cycling['Type'].str.strip("R"))
-stripped_cycling
+cycling.head()
 ```
 
 ```out
-                Date            Name Type  Time  Distance                                   Comments
-0    2019-09-10 0:13  Afternoon Ride  ide  2084     12.62                                       Rain
-1   2019-09-10 13:52    Morning Ride  ide  2531     13.03                                       rain
-2    2019-09-11 0:23  Afternoon Ride  ide  1863     12.52                  Wet road but nice weather
-3   2019-09-11 14:06    Morning Ride  ide  2192     12.84               Stopped for photo of sunrise
-4    2019-09-12 0:28  Afternoon Ride  ide  1891     12.48               Tired by the end of the week
-..               ...             ...  ...   ...       ...                                        ...
-28   2019-10-04 1:08  Afternoon Ride  ide  1870     12.63           Very tired, riding into the wind
-29  2019-10-09 13:55    Morning Ride  ide  2149     12.70              Really cold! But feeling good
-30   2019-10-10 0:10  Afternoon Ride  ide  1841     12.59        Feeling good after a holiday break!
-31  2019-10-10 13:47    Morning Ride  ide  2463     12.79               Stopped for photo of sunrise
-32   2019-10-11 0:16  Afternoon Ride  ide  1843     11.79  Bike feeling tight, needs an oil and pump
+                Date            Name  Type  Time  Distance                      Comments
+0  Sep-10-2019 17:13  Afternoon Ride  Ride  2084     12.62                         Rain 
+1  Sep-11-2019 06:52    Morning Ride  Ride  2531     13.03                          rain
+2  Sep-11-2019 17:23  Afternoon Ride  Ride  1863     12.52     Wet road but nice weather
+3  Sep-12-2019 07:06    Morning Ride  Ride  2192     12.84  Stopped for photo of sunrise
+4  Sep-12-2019 17:28  Afternoon Ride  Ride  1891     12.48  Tired by the end of the week
+```
 
-[33 rows x 6 columns]
+We can see that index 0 should be filtered out but we get the following:
+
+``` python
+cycling[cycling['Comments'] == 'Rain']
+```
+
+```out
+Empty DataFrame
+Columns: [Date, Name, Type, Time, Distance, Comments]
+Index: []
+```
+
+No rows are outputted. That’s because there is a blank space following
+“Rain”.
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+Let’s now strip our column using `.strip()` and assigning the changes to
+the `Comments` column of a dataframe named `stripped_cycling`. Since we
+are using `.strip()` with a dataframe column we have to add `.str`.
+
+``` python
+stripped_cycling = cycling.assign(Comments = cycling['Comments'].str.strip())
+stripped_cycling.head()
+```
+
+```out
+                Date            Name  Type  Time  Distance                      Comments
+0  Sep-10-2019 17:13  Afternoon Ride  Ride  2084     12.62                          Rain
+1  Sep-11-2019 06:52    Morning Ride  Ride  2531     13.03                          rain
+2  Sep-11-2019 17:23  Afternoon Ride  Ride  1863     12.52     Wet road but nice weather
+3  Sep-12-2019 07:06    Morning Ride  Ride  2192     12.84  Stopped for photo of sunrise
+4  Sep-12-2019 17:28  Afternoon Ride  Ride  1891     12.48  Tired by the end of the week
+```
+
+And what happens now when we filter on rain on our new
+`stripped_cycling` dataframe:
+
+``` python
+stripped_cycling[stripped_cycling['Comments'] == 'Rain']
+```
+
+```out
+                Date            Name  Type  Time  Distance Comments
+0  Sep-10-2019 17:13  Afternoon Ride  Ride  2084     12.62     Rain
+```
+
+Ahh that’s much better\!
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+We are not limited to stripping the values of white space. We can also
+strip any other character. Let’s try punctuation\!
+
+``` python
+stripped_cycling.tail(5)
+```
+
+```out
+                 Date            Name  Type  Time  Distance                                   Comments
+28  Oct-04-2019 18:08  Afternoon Ride  Ride  1870     12.63           Very tired, riding into the wind
+29  Oct-10-2019 07:55    Morning Ride  Ride  2149     12.70              Really cold! But feeling good
+30  Oct-10-2019 18:10  Afternoon Ride  Ride  1841     12.59        Feeling good after a holiday break!
+31  Oct-11-2019 07:47    Morning Ride  Ride  2463     12.79               Stopped for photo of sunrise
+32  Oct-11-2019 18:16  Afternoon Ride  Ride  1843     11.79  Bike feeling tight, needs an oil and pump
+```
+
+We can see that index 30 has a value of `Feeling good after a holiday
+break!` in the `Comments` column. After using `str.strip('!')` we can
+see that it’s no loger has the exclamation mark\!
+
+``` python
+stripped_cycling['Comments'].str.strip("!").tail()
+```
+
+```out
+28             Very tired, riding into the wind
+29                Really cold! But feeling good
+30           Feeling good after a holiday break
+31                 Stopped for photo of sunrise
+32    Bike feeling tight, needs an oil and pump
+Name: Comments, dtype: object
 ```
 
 Notes: Script here

@@ -17,7 +17,7 @@ id: 8
 
 </exercise> 
 
-<exercise id="1" title="Introduction to NumPy" type="slides">
+<exercise id="1" title="NumPy and 1D Arrays" type="slides">
 
 <slides source="module8/module8_01">
 </slides>
@@ -25,7 +25,7 @@ id: 8
 </exercise>
 
 
-<exercise id="2" title="NumPy Questions">
+<exercise id="2" title="NumPy and Array Questions">
 
 **Question 1**      
 
@@ -34,13 +34,13 @@ Which of the following statements is correct?
 
 
 <choice id="1" >
-<opt text="NumPy is built using pandas"  correct="true">
+<opt text="Pandas is built using NumPy"  correct="true">
 
 Nice!
 
 </opt>
 
-<opt text="Pandas is built using NumPy">
+<opt text="NumPy is built using pandas">
 
 NumPy arrays are the building blocks of Pandas dataframes
 
@@ -72,7 +72,7 @@ NumPy arrays must have elements with a homogenous data type.
 
 </opt>
 
-<opt text="<code>np.array</code> is a data type">
+<opt text="<code>numpy.ndarray</code> is a data type">
 
 We saw that `array` is a data type in the slides.  
 
@@ -80,13 +80,49 @@ We saw that `array` is a data type in the slides.
 
 </choice>  
 
+
+**Question 3**      
+
+
+Which verbs would I use to make the following array? 
+
+```python
+array([ 0, 5, 10, 15, 20, 25, 30])
+```
+
+
+<choice id="3" >
+<opt text="<code>np.linspace(0, 30, 5)</code>"  >
+This would only produce 5 values (all equally spaced from 0 to 30)
+
+</opt>
+
+<opt text="<code>np.zeros(7)</code>" >
+This gives an array with only `0` elements. 
+
+</opt>
+
+
+<opt text="<code>np.ones(7)</code>">
+
+This gives an array with only `1` elements. 
+
+</opt>
+
+
+<opt text="<code>np.arange(0, 35, 5)</code>" correct="true" >
+
+Great!
+
+</opt>
+
+</choice> 
+
 </exercise>
 
 <exercise id="3" title="More NumPy">
 
-Which of the following is not an existing NumPy function? 
-
-*Hint: Trying looking at the <a href="https://numpy.org/doc/stable/reference/routines.math.html" target="_blank">NumPy documentation</a>*
+Look at the <a href="https://numpy.org/doc/stable/reference/routines.math.html" target="_blank">NumPy documentation</a> and identify  which of the following is **not** an existing NumPy function? 
 
 <choice id="1" >
 <opt text="<code>np.degrees()</code>"  >
@@ -130,7 +166,7 @@ _**Make sure you remove the hash (`#`) symbol in the coding portions of this que
 Let's explore how Python compares lists and arrays. 
 
 Tasks:
-- Create 2 lists containing any the same number of elements and save each as objects named  `a_list` and `b_list`.
+- Create 2 lists of the same length and save each as objects named  `a_list` and `b_list`.
 - Using Boolean operators, what is outputted when you test to see if they are equal? 
 
 
@@ -150,7 +186,7 @@ This is checking if the lists are equal.
 
 </opt>
 
-<opt text="A list containing a Boolean value for each element" >
+<opt text="A list containing a Boolean value for each pair of elements" >
 
 Use the cell above to help yourself out. 
 
@@ -162,7 +198,7 @@ Use the cell above to help yourself out.
 Now let's do the same exercises using arrays.
 
 Tasks:
-- Create 2 arrays containing the same number of elements and save each as objects named  `a_array` and `b_array`. 
+- - Create 2 lists of the same length and save each as objects named `a_array` and `b_array`. 
 - Using Boolean operators, what is outputted when you test to see if they are equal? 
 
 
@@ -182,7 +218,7 @@ Use the cell above to help yourself out.
 
 </opt>
 
-<opt text="An array containing a Boolean value for each element" correct="true">
+<opt text="An array containing a Boolean value for each pair of elements" correct="true">
 
 NumPy performs the operation element-wise and compares the elements that share the same index location. 
 
@@ -191,12 +227,12 @@ NumPy performs the operation element-wise and compares the elements that share t
 </choice> 
 
 
-The results might be somewhat interesting! This is another differentiation between lists and arrays. Arrays do a lot of their operations element-wise. 
+This is an example of how useful arrays can be when doing numerical computation! To compare each element in a list would take more code and time for the same result. 
 
 </exercise>
 
 
-<exercise id="5" title="NumPy Arrays" type="slides">
+<exercise id="5" title="Multi-dimensional Arrays" type="slides">
 
 <slides source="module8/module8_05">
 </slides>
@@ -206,45 +242,8 @@ The results might be somewhat interesting! This is another differentiation betwe
 
 <exercise id="6" title="Make that Array">
 
-**Question 1**      
 
-
-Which verbs would I use to make the following array? 
-
-```python
-array([ 0,  5, 10, 15, 20])
-```
-
-
-<choice id="1" >
-<opt text="<code>np.linspace(0, 20, 5)</code>"  >
-The array above contains elements with data type `int`  where `np.linspace()` outputs an array with `float` elements. 
-
-</opt>
-
-<opt text="<code>np.zeros(5)</code>" >
-This gives an array with only `0` elements. 
-
-</opt>
-
-
-<opt text="<code>np.ones(5)</code>">
-
-This gives an array with only `1` elements. 
-
-</opt>
-
-
-<opt text="<code>np.arange(0, 25, 5)</code>" correct="true" >
-
-Great!
-
-</opt>
-
-</choice> 
-
-
-**Question 2**  
+**Question 1**  
 
 Given this code, what array would be outputted? 
 
@@ -253,28 +252,28 @@ np.ones((4, 3))
 ```
 
 
-<choice id="2" >
-<opt text="<code>array([[1., 1., 1.], [1., 1., 1.], [1., 1., 1.], [1., 1., 1.]])</code>"  correct="true">
+<choice id="1" >
+<opt text="<code>array([[1., 1., 1.], <br>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;  [1., 1., 1.], <br>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; [1., 1., 1.], <br>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; [1., 1., 1.]])</code>"  correct="true">
 
 Nice work!
 
 </opt>
 
-<opt text="<code>array([[1., 1., 1., 1.], [1., 1., 1., 1.], [1., 1., 1., 1.]])</code>" >
+<opt text="<code>array([[1., 1., 1., 1.],<br>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; [1., 1., 1., 1.],<br>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; [1., 1., 1., 1.]])</code>" >
 
 Remember that the number of rows precedes the number of columns. 
 
 </opt>
 
 
-<opt text="<code>array([[1., 1.], [1., 1.], [1., 1.]])</code>">
+<opt text="<code>array([[1., 1.],<br>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; [1., 1.],<br>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; [1., 1.]])</code>">
 
 When we make arrays, it's not like slicing where we exclude the last value. 
 
 </opt>
 
 
-<opt text="<code>array([[1., 1., 1.], [1., 1., 1.]])</code>"  >
+<opt text="<code>array([[1., 1., 1.],<br>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; [1., 1., 1.]])</code>"  >
 
 When we make arrays, it's not like slicing where we exclude the last value. 
 
@@ -303,7 +302,7 @@ array([[ 0,  1,  2,  3,  4,  5,  6,  7],
 <choice id="1" >
 <opt text="<code>(7, 2)</code>"  >
 
-It may be a good idea to read over the slides. 
+Are you getting your columns and rows mixed up?
 
 </opt>
 
@@ -380,7 +379,7 @@ Since these are attributes, there is no need for the parentheses.
 
 **Question 3**  
 
-Give an array with `shape = (2,3,4,2)`, What is it's `.ndim`? 
+Give an array with `shape` of `(2,3,4,2)`, What is it's `.ndim`? 
 
 <choice id="3" >
 <opt text="2"  >
@@ -425,50 +424,7 @@ array([[ 0,  1,  2],
        [15, 16, 17]])
 ```
 
-
-**Question 1**      
-
-
-Which code would I use to obtain the following output? 
-
-```python
-array([[ 0,  3,  6,  9, 12, 15],
-       [ 1,  4,  7, 10, 13, 16],
-       [ 2,  5,  8, 11, 14, 17]])
-```
-
-<choice id="1" >
-<opt text="<code>hurray.t</code>"  >
-
-Uppercase and lowercase characters are not considered equal in Python.
-
-</opt>
-
-<opt text="<code>hurray.T</code>" correct="true">
-
-Nice work!
-
-</opt>
-
-
-<opt text="<code>np.T(hurray)</code>">
-
-`np.T` is not a valid function.
-
-</opt>
-
-
-<opt text="<code>hurray.T()</code>"  >
-
-Transposing does not require any parentheses. 
-
-</opt>
-
-</choice> 
-
-
-
-**Question 2**  
+**Question 1**  
 
 
 Which code would I use to obtain the following output? 
@@ -510,7 +466,7 @@ Remember the last index is excluded.
 
 
 
-**Question 3**          
+**Question 2**          
 
 Which code would result in the following output? 
 
@@ -523,7 +479,7 @@ array([[10, 11],
 <choice id="3" >
 <opt text="<code>hurray[3:4, 1:]</code>"  >
 
-It may be a good idea to read over the slides. 
+Remember that the last element is excluded from the selection. 
 
 </opt>
 
@@ -544,6 +500,47 @@ Remember the number of rows precedes the number of columns.
 <opt text="<code>hurray[3:5, 1:]</code>"  correct="true">
 
 Great!
+
+</opt>
+
+</choice> 
+
+
+**Question 3**      
+
+
+Which code would I use to obtain the following output? 
+
+```python
+array([[ 0,  3,  6,  9, 12, 15],
+       [ 1,  4,  7, 10, 13, 16],
+       [ 2,  5,  8, 11, 14, 17]])
+```
+
+<choice id="3" >
+<opt text="<code>hurray.t</code>"  >
+
+Uppercase and lowercase characters are not considered equal in Python.
+
+</opt>
+
+<opt text="<code>hurray.T</code>" correct="true">
+
+Nice work!
+
+</opt>
+
+
+<opt text="<code>np.T(hurray)</code>">
+
+`np.T` is not a valid function.
+
+</opt>
+
+
+<opt text="<code>hurray.T()</code>"  >
+
+Transposing does not require any parentheses. 
 
 </opt>
 
@@ -593,7 +590,7 @@ _**Make sure you remove the hash (`#`) symbol in the coding portions of this que
 Let's make a new array and transform it by slicing and transposing.
 
 Tasks:
-- Create an array named `arr2` using `np.linspace()` with 6 equally spaced values from 1 to 16 and a shape of (2,3).
+- Create an array named `arr2` using `np.linspace()` with 6 equally spaced values from 1 to 16 and a shape of (2,3).  (you'll need `.reshape()` for this!)
 - Transpose the array and name it `arr2t`.
 - Finally, slice it so it only includes the values 7 and 16. Save this as an object named `sliced_arr2t`.
 
@@ -644,7 +641,7 @@ memory usage: 628.0+ bytes
 
 
 
-Which of the columns contains null values?
+Which of the columns contain null values?
 *Hint: There could be more than one.*
 
 
@@ -697,7 +694,7 @@ This column has all of its 10 rows with non-null values.
 4     Oak    10.0         5   6.0       NaN
 ```
 
-Given the dataframe name `forest`, what code would you use to remove only the rows missing from the `age` column?  
+Given the dataframe named `forest`, what code would you use to remove only the rows missing from the `age` column?  
 
 
 <choice id="2" >
@@ -835,37 +832,7 @@ Perfect!
 </exercise>
 
 
-<exercise id="14" title= "Practice Identifying Null Values">
-
-**Instructions:**    
-Running a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes. 
-
-**When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
-
-_**Make sure you remove the hash (`#`) symbol in the coding portions of this question.  We have commented them so that the line won't execute and you can test your code after each step.**_
-
-Let's practice using `.isnull()` in our data processing using the `canucks` dataset from earlier in this course.
-
-Tasks:
-- Identify any columns with null values in the `canucks` dataframe with `.info()` and save this as `canucks_info`.
-- Create a new column in the dataframe name `Wealth` where all the values equal `"comfortable"`. 
-- Name the new dataframe `canucks_comf`.
-- Do conditional value replacement, where if the value in the `Salary` column is null, we replace `"comfortable"` with `"unknown"`.
-- Display the new `canucks_comf` dataframe.
-
-<codeblock id="08_14">
-
-- Are you using `canucks.info()`?
-- Are you creating `canucks_comf` with `canucks.assign(Wealth = "comfortable")`?
-- Are you using `.loc[]` to replace the values in the `Wealth` column?
-- Are you using `canucks_comf['Salary'].isnull()` as your condition in `.loc[]`?
-
-</codeblock>
-
-</exercise>
-
-
-<exercise id="15" title= "Practice Filling Null Values">
+<exercise id="14" title= "Practice Filling Null Values">
 
 **Instructions:**    
 Running a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes. 
@@ -881,10 +848,40 @@ Tasks:
 - Save this as a new dataframe named `canucks_altered`.
 - Display the `canucks_altered` dataframe.
 
-<codeblock id="08_15">
+<codeblock id="08_14">
 
 - Are you using `.fillna()`?
 - Are you using the argument `value=canucks['Salary].mean()`?
+
+</codeblock>
+
+</exercise>
+
+
+<exercise id="15" title= "Practice Identifying Null Values">
+
+**Instructions:**    
+Running a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes. 
+
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
+
+_**Make sure you remove the hash (`#`) symbol in the coding portions of this question.  We have commented them so that the line won't execute and you can test your code after each step.**_
+
+Let's practice using `.isnull()` in our data processing using the `canucks` dataset from earlier in this course.
+
+Tasks:
+- Identify any columns with null values in the `canucks` dataframe with `.info()` and save this as `canucks_info`.
+- Create a new column in the dataframe named `Wealth` where all the values equal `"comfortable"`. 
+- Name the new dataframe `canucks_comf`.
+- Do conditional value replacement, where if the value in the `Salary` column is null, we replace `"comfortable"` with `"unknown"`.
+- Display the new `canucks_comf` dataframe.
+
+<codeblock id="08_15">
+
+- Are you using `canucks.info()`?
+- Are you creating `canucks_comf` with `canucks.assign(Wealth = "comfortable")`?
+- Are you using `.loc[]` to replace the values in the `Wealth` column?
+- Are you using `canucks_comf['Salary'].isnull()` as your condition in `.loc[]`?
 
 </codeblock>
 
@@ -922,7 +919,7 @@ Great work!
 
 <opt text="datetime">
 
-Are you sure you read the slides properly?
+This is a dtype not a measurement
 
 </opt>
 
@@ -977,7 +974,7 @@ Way to go!
 
 <opt text="<code>.difference()</code>">
 
-Not quite. You may want to look over the slides before going forward. 
+Not quite. 
 
 </opt>
 
@@ -1097,7 +1094,7 @@ Nice!
 
 <opt text="<code>.string()</code>">
 
-Maybe read over the notes a bit. 
+This isn't a possible method.
 
 </opt>
 
@@ -1159,7 +1156,7 @@ The `shape` column doesn't look uppercase to me.
 
 <opt text="<code>fruit_salad.assign(location=fruit_salad['shape'].upper()</code>">
 
-This may be a good time to look over the slides again
+You seem to be missing an important part of you code. 
 
 
 </opt>
@@ -1187,13 +1184,13 @@ Use the output of the following code chunk to help answer the next question.
 </codeblock>
 
 
-Let's transform some of the columns in your canucks dataset. Let's also see how many of the players have multiple `T` in their name. 
+Let's transform some of the columns in your canucks dataset. Let's also see how many of the players have multiple `T`'s in their name. 
 
 Tasks:
 - Convert the `Position` and `Country` columns into uppercase and save this in a dataframe named `canucks_upper`.
 - Create a new column in the `canucks_upper` dataframe named `number_ts` where you count the total number of times the letter T (lowercase or uppercase) appears in their name.
 - Save this dataframe named as `canucks_upper_ts`.
-- How many players have more than 1 letter T in their name? 
+- How many players have multiple T's in their name? 
 
 
 <codeblock id="08_22">
@@ -1267,13 +1264,13 @@ This would result in an error.
 
 <opt text="<code>.contains()</code>" >
 
-The `shape` column doesn't look uppercase to me. 
+This checks if a substring is contained in a larger string.
 
 </opt>
 
 <opt text="<code>.str.contains()</code>">
 
-This may be a good time to look over the slides again
+Unfortunately this is not the right verb in this case. 
 
 
 </opt>
@@ -1327,11 +1324,20 @@ Great! You knew that it outputs a Boolean Series! The value replacement is using
 
 Given the dataframe above named `fruit_salad`,  which code would produce the following dataframe with the new column `berry`?  
 
+```out
+           name   colour location   seed  shape  sweetness  water_content  weight   berry
+0         apple      red   canada   True  round       True             84     100   False
+1        banana   yellow   mexico  False   long       True             75     120   False
+2    cantaloupe   orange    spain   True  round       True             90    1360   False 
+3  dragon-fruit  magenta    china   True  round      False             96     600   False
+4    elderberry   purple  austria  False  round       True             80       5    True
+5           fig   purple   turkey  False   oval      False             78      40   False
+6         guava    green   mexico   True   oval       True             83     450   False 
+7   huckleberry     blue   canada   True  round       True             73       5    True
+8          kiwi    brown    china   True  round       True             80      76   False
+9         lemon   yellow   mexico  False   oval      False             83      65   False
 
-
-<center><img src='/module8/output25.png' width="80%"></center>
-
-<br>
+```
 
 <choice id="1" >
 <opt text="<code>fruit_salad.assign(name = fruit_salad['name'].contains('berry'))</code>">

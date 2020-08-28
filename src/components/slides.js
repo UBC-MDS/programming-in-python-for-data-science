@@ -158,6 +158,7 @@ class SlideDeck extends React.Component {
                     height: 600,
                     minScale: 0.75,
                     maxScale: 1,
+                    autoPlayMedia: null,
                     math: {
                         mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js',
                         config: 'TeX-AMS_HTML-full', // See http://docs.mathjax.org/en/latest/config-files.html

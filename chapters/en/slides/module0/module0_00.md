@@ -4,7 +4,7 @@ type: slides
 
 # Welcome 
 
-Notes: Welcome to DSCI 011 Programming in Python for Data Science  
+Notes: Welcome to Programming in Python for Data Science  
 <html>
 <audio controls >
   <source src="/placeholder_audio.mp3" />
