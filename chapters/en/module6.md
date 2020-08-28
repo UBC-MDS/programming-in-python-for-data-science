@@ -738,7 +738,7 @@ Running a coding exercise for the first time could take a bit of time for everyt
 _**Make sure you remove the hash (`#`) symbol in the coding portions of this question.  We have commented them so that the line won't execute and you can test your code after each step.**_
 
 In module 5, we wrote a function that returns the BMI given a person's weight and height. Let's write a docstring for it now!    
-(**Disclaimer: Much more than these two measurements are needed to determine if someone is healthy**)    
+   
 
 ```python
 def bmi_calculator(height, weight):
@@ -748,6 +748,7 @@ def bmi_calculator(height, weight):
 
 Tasks:
 - Write a NumPy style docstring for the function provided. 
+- For this question, we want you to write your docstring between 3 single quotations `'''` instead of the normal double quotations `"""`. This will allow us to test the solution provided.
 - Make sure to include a brief description, parameters, return, and example sections. 
 - View the documentation of the function.
 
@@ -755,7 +756,7 @@ Tasks:
 
 <codeblock id="06_12">
 
-- Are you using `'''` or `""""` to contain your docstring?
+- Are you using `'''` to contain your docstring?
 - Are you including all the sections? 
 - Are you getting the documentation of the docstring using `bmi_calculator?`
 
@@ -965,7 +966,6 @@ Tasks:
 - Write an exception that checks if `height` is of type `float`.
 - Write a second exception that raises an error if weight is 0 or less.
 - Test your function with the values given in variable `tall` and `mass`.
-- Save the results in an object named `person1` and display it.
 
 
 
