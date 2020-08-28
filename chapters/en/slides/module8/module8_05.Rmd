@@ -109,7 +109,7 @@ We saw how to make multi-dimensional arrays but dimension is quite different tha
 
 <center><img src='/module8/arrays2.png' width="80%"></center>
 
-here are three main array nouns we need to know to understand the characteristics of an array:
+Here are three main array nouns we need to know to understand the characteristics of an array:
 
 - `.ndim`: the number of dimensions of an array
 
@@ -140,7 +140,22 @@ We use `.shape` to find the number of elements in each dimension:
 ```{python}
 array1.shape
 ```
-This returns a tuple with only 1 value which represents the 1 dimension. 
+This returns a tuple with only 1 value which represents the 1 dimension.    
+
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+```{python}
+array1
+```
+
 Finally, `.size` will return the ***total*** number of values in the array. 
 
 ```{python}

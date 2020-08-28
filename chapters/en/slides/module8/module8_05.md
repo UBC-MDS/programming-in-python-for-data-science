@@ -79,10 +79,10 @@ np.random.rand(4, 2)
 ```
 
 ```out
-array([[0.44178539, 0.53025423],
-       [0.06305543, 0.95343231],
-       [0.81202769, 0.07093157],
-       [0.98354928, 0.26847232]])
+array([[0.72795459, 0.71332027],
+       [0.71412885, 0.3527986 ],
+       [0.86300271, 0.0277591 ],
+       [0.95013694, 0.17820125]])
 ```
 
 and if not, can use the verb `.reshape()` to tranform a 1D array into a
@@ -123,7 +123,7 @@ different than what the shape of an array is?
 
 </center>
 
-here are three main array nouns we need to know to understand the
+Here are three main array nouns we need to know to understand the
 characteristics of an array:
 
   - `.ndim`: the number of dimensions of an array
@@ -181,6 +181,29 @@ array1.shape
 ```
 
 This returns a tuple with only 1 value which represents the 1 dimension.
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+``` python
+array1
+```
+
+```out
+array([1., 1., 1., 1.])
+```
+
 Finally, `.size` will return the ***total*** number of values in the
 array.
 
