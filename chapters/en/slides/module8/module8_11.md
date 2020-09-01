@@ -25,8 +25,9 @@ complete or well planned a database may seem, a data analyst will almost
 always encounter ***null*** values.
 
 A “null” is the human-readable term of a value that is missing from the
-dataframe. Python translates this to a `NaN` which is a constant that
-comes from the NumPy library.
+dataframe. Remember in Module 4 we discussed `NaN` being of type
+`float`? Python translates null values in numerical columns to `NaN`.
+Well, `NaN` is a constant that comes from the NumPy library.
 
 ``` python
 np.nan

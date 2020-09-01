@@ -44,21 +44,109 @@ Notes: Script here
 
 ---
 
-Parsing dates yourself can be difficult and time-consuming. To
-demonstrate this, let’s make an attempt at parsing the `Date` column in
-our `cycling` dataframe which currently has an `object`dtype.
+Let’s take our cycling dataset as an example:
 
 ``` python
 cycling.head()
 ```
 
 ```out
-               Date            Name  Type  Time  Distance                      Comments
-0   2019-09-09 7:13    Morning Ride  Ride  2084     12.62                          Rain
-1  2019-09-09 20:52  Afternoon Ride  Ride  2531     13.03                          rain
-2   2019-09-10 7:23    Morning Ride  Ride  1863     12.52     Wet road but nice weather
-3  2019-09-10 21:06  Afternoon Ride  Ride  2192     12.84  Stopped for photo of sunrise
-4   2019-09-11 7:28    Morning Ride  Ride  1891     12.48  Tired by the end of the week
+                Date            Name  Type  Time  Distance                       Comments
+0  Sep-10-2019 17:13  Afternoon Ride  Ride  2084     12.62                          Rain 
+1  Sep-11-2019 06:52    Morning Ride  Ride  2531     13.03                           rain
+2  Sep-11-2019 17:23  Afternoon Ride  Ride  1863     12.52      Wet road but nice whether
+3  Sep-12-2019 07:06    Morning Ride  Ride  2192     12.84   Stopped for photo of sunrise
+4  Sep-12-2019 17:28  Afternoon Ride  Ride  1891     12.48  Tired by the end of the week.
+```
+
+Our date column in our cycling dataframe currently has a dtype value of
+`object`:
+
+``` python
+cycling.dtypes
+```
+
+```out
+Date         object
+Name         object
+Type         object
+Time          int64
+Distance    float64
+Comments     object
+dtype: object
+```
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+When we try to sort these values, it doesn’t recognized the day or month
+values and will sort them in ascending order according to the day.
+
+``` python
+cycling.sort_values('Date').head(12)
+```
+
+```out
+                 Date            Name  Type  Time  Distance                                   Comments
+21  Oct-01-2019 06:53    Morning Ride  Ride  2118     12.71                  Rested after the weekend!
+22  Oct-01-2019 17:15  Afternoon Ride  Ride  1732       NaN                       Legs feeling strong!
+23  Oct-02-2019 06:45    Morning Ride  Ride  2222     12.82             Beautiful morning! Feeling fit
+24  Oct-02-2019 17:13  Afternoon Ride  Ride  1756       NaN      A little tired today but good weather
+25  Oct-03-2019 06:46    Morning Ride  Ride  2134     13.06           Bit tired today but good weather
+26  Oct-03-2019 17:45  Afternoon Ride  Ride  1724     12.52                               Feeling good
+27  Oct-04-2019 06:47    Morning Ride  Ride  2182     12.68                                   Wet road
+28  Oct-04-2019 18:08  Afternoon Ride  Ride  1870     12.63           Very tired, riding into the wind
+29  Oct-10-2019 07:55    Morning Ride  Ride  2149     12.70              Really cold! But feeling good
+30  Oct-10-2019 18:10  Afternoon Ride  Ride  1841     12.59        Feeling good after a holiday break!
+31  Oct-11-2019 07:47    Morning Ride  Ride  2463     12.79               Stopped for photo of sunrise
+32  Oct-11-2019 18:16  Afternoon Ride  Ride  1843     11.79  Bike feeling tight, needs an oil and pump
+```
+
+We can see that this sorted starts with October 1st 2019 followed by
+September 9th 2019 and then September 10th 2019. Python is purly sorting
+the rows by month and not taking the day into consideration.
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
+We can try Parsing dates ourselves but that can be difficult and
+time-consuming. To demonstrate this, let’s make an attempt at parsing
+the `Date` column in our `cycling` dataframe which currently has an
+`object`dtype.
+
+``` python
+cycling.head()
+```
+
+```out
+                Date            Name  Type  Time  Distance                       Comments
+0  Sep-10-2019 17:13  Afternoon Ride  Ride  2084     12.62                          Rain 
+1  Sep-11-2019 06:52    Morning Ride  Ride  2531     13.03                           rain
+2  Sep-11-2019 17:23  Afternoon Ride  Ride  1863     12.52      Wet road but nice whether
+3  Sep-12-2019 07:06    Morning Ride  Ride  2192     12.84   Stopped for photo of sunrise
+4  Sep-12-2019 17:28  Afternoon Ride  Ride  1891     12.48  Tired by the end of the week.
 ```
 
 First we would need to split the column separating the date and the time
@@ -72,12 +160,12 @@ dates.head()
 ```
 
 ```out
-         Date   Time
-0  2019-09-09   7:13
-1  2019-09-09  20:52
-2  2019-09-10   7:23
-3  2019-09-10  21:06
-4  2019-09-11   7:28
+          Date   Time
+0  Sep-10-2019  17:13
+1  Sep-11-2019  06:52
+2  Sep-11-2019  17:23
+3  Sep-12-2019  07:06
+4  Sep-12-2019  17:28
 ```
 
 Notes: Script here
@@ -98,19 +186,19 @@ Once again, we need to split the date column and separate it into
 columns for the year, month and day:
 
 ``` python
-dates = (dates['Date'].str.split('-', expand=True).rename(columns = {0:'Year',
-                                                                     1:'Month',
-                                                                     2:'Day'}))
+dates = (dates['Date'].str.split('-', expand=True).rename(columns = {0:'Month',
+                                                                     1:'Day',
+                                                                     2:'Year'}))
 dates.head()
 ```
 
 ```out
-   Year Month Day
-0  2019    09  09
-1  2019    09  09
-2  2019    09  10
-3  2019    09  10
-4  2019    09  11
+  Month Day  Year
+0   Sep  10  2019
+1   Sep  11  2019
+2   Sep  11  2019
+3   Sep  12  2019
+4   Sep  12  2019
 ```
 
 Notes: Script here
@@ -131,15 +219,15 @@ Currently the values in `dates` are of type `str` so we would not be
 able to sort them in a temporal manner:
 
 ``` python
-dates.iloc[0,0]
+dates.iloc[0,1]
 ```
 
 ```out
-'2019'
+'10'
 ```
 
 ``` python
-type(dates.iloc[0,0])
+type(dates.iloc[0,1])
 ```
 
 ```out
@@ -165,16 +253,17 @@ We must convert the columns to integers values and add them to the
 
 ``` python
 cycling_dates = (cycling.assign(Year = dates['Year'].astype(int),
-                                Month = dates['Month'].astype(int),
-                                Day = dates['Day'].astype(int)))
+                                Month =  dates['Month'],
+                                Day = dates['Day'].astype(int))
+                                )
 cycling_dates.head(3)
 ```
 
 ```out
-               Date            Name  Type  Time  Distance                   Comments  Year  Month  Day
-0   2019-09-09 7:13    Morning Ride  Ride  2084     12.62                       Rain  2019      9    9
-1  2019-09-09 20:52  Afternoon Ride  Ride  2531     13.03                       rain  2019      9    9
-2   2019-09-10 7:23    Morning Ride  Ride  1863     12.52  Wet road but nice weather  2019      9   10
+                Date            Name  Type  Time  Distance                   Comments  Year Month  Day
+0  Sep-10-2019 17:13  Afternoon Ride  Ride  2084     12.62                      Rain   2019   Sep   10
+1  Sep-11-2019 06:52    Morning Ride  Ride  2531     13.03                       rain  2019   Sep   11
+2  Sep-11-2019 17:23  Afternoon Ride  Ride  1863     12.52  Wet road but nice whether  2019   Sep   11
 ```
 
 We are then going to select and reorder the columns in the dataframe so
@@ -187,10 +276,10 @@ cycling_dates.head(3)
 ```
 
 ```out
-   Year  Month  Day            Name  Type  Time  Distance                   Comments
-0  2019      9    9    Morning Ride  Ride  2084     12.62                       Rain
-1  2019      9    9  Afternoon Ride  Ride  2531     13.03                       rain
-2  2019      9   10    Morning Ride  Ride  1863     12.52  Wet road but nice weather
+   Year Month  Day            Name  Type  Time  Distance                   Comments
+0  2019   Sep   10  Afternoon Ride  Ride  2084     12.62                      Rain 
+1  2019   Sep   11    Morning Ride  Ride  2531     13.03                       rain
+2  2019   Sep   11  Afternoon Ride  Ride  1863     12.52  Wet road but nice whether
 ```
 
 Notes: Script here
@@ -207,31 +296,42 @@ Notes: Script here
 
 ---
 
-And now, can we sort them:
+Now we try to sort them but how do we sort the `month` column?
 
 ``` python
-cycling_dates.sort_values(['Year', 'Month', 'Day']).head()
+cycling_dates.sort_values(['Year', 'Month', 'Day'])
 ```
 
 ```out
-   Year  Month  Day            Name  Type  Time  Distance                      Comments
-0  2019      9    9    Morning Ride  Ride  2084     12.62                          Rain
-1  2019      9    9  Afternoon Ride  Ride  2531     13.03                          rain
-2  2019      9   10    Morning Ride  Ride  1863     12.52     Wet road but nice weather
-3  2019      9   10  Afternoon Ride  Ride  2192     12.84  Stopped for photo of sunrise
-4  2019      9   11    Morning Ride  Ride  1891     12.48  Tired by the end of the week
+    Year Month  Day            Name  Type  Time  Distance                               Comments
+21  2019   Oct    1    Morning Ride  Ride  2118     12.71              Rested after the weekend!
+22  2019   Oct    1  Afternoon Ride  Ride  1732       NaN                   Legs feeling strong!
+23  2019   Oct    2    Morning Ride  Ride  2222     12.82         Beautiful morning! Feeling fit
+24  2019   Oct    2  Afternoon Ride  Ride  1756       NaN  A little tired today but good weather
+25  2019   Oct    3    Morning Ride  Ride  2134     13.06       Bit tired today but good weather
+..   ...   ...  ...             ...   ...   ...       ...                                    ...
+16  2019   Sep   25  Afternoon Ride  Ride  1775     12.10                   Feeling really tired
+17  2019   Sep   26    Morning Ride  Ride  2124     12.65           Stopped for photo of sunrise
+18  2019   Sep   26  Afternoon Ride  Ride  1860     12.52                                raining
+19  2019   Sep   27    Morning Ride  Ride  2350     12.91        Detour around trucks at Jericho
+20  2019   Sep   27  Afternoon Ride  Ride  1712     12.47           Tired by the end of the week
+
+[33 rows x 8 columns]
 ```
 
-After doing all this, there are still a lot of limitations, We didn’t
-even separate the time yet and calculating the time between dates now
-can be extremely difficult. (The differing number of days in months is a
-contributing factor.)
+It now incorrectly sorts the rows by listing the October rows before
+September. Now we can understand that we really don’t want to do it this
+way, right? There are a lot of limitations, and we haven’t yet separate
+the time. Calculating the time between dates now can also be extremely
+difficult. (The differing number of days in months is a contributing
+factor.)
 
-Now we can understand that we really don’t want to do it this way,
-right?
-
-Thankfully we don’t have to either. Pandas has some built-in functions
+Thankfully we don’t have do this. Pandas has some built-in functions
 that will make our lives much easier.
+
+By the end of this slide deck, we will be able answer the question of
+*what was Tom’s longest time between rides*. This is a question that
+without pandas would have taken hours, instead of minutes.
 
 Notes: Script here
 
@@ -265,10 +365,10 @@ cycling.head(3)
 ```
 
 ```out
-               Date            Name  Type  Time  Distance                   Comments
-0   2019-09-09 7:13    Morning Ride  Ride  2084     12.62                       Rain
-1  2019-09-09 20:52  Afternoon Ride  Ride  2531     13.03                       rain
-2   2019-09-10 7:23    Morning Ride  Ride  1863     12.52  Wet road but nice weather
+                Date            Name  Type  Time  Distance                   Comments
+0  Sep-10-2019 17:13  Afternoon Ride  Ride  2084     12.62                      Rain 
+1  Sep-11-2019 06:52    Morning Ride  Ride  2531     13.03                       rain
+2  Sep-11-2019 17:23  Afternoon Ride  Ride  1863     12.52  Wet road but nice whether
 ```
 
 ``` python
@@ -308,12 +408,12 @@ cycling_dates.head()
 ```
 
 ```out
-                 Date            Name  Type  Time  Distance                      Comments
-0 2019-09-09 07:13:00    Morning Ride  Ride  2084     12.62                          Rain
-1 2019-09-09 20:52:00  Afternoon Ride  Ride  2531     13.03                          rain
-2 2019-09-10 07:23:00    Morning Ride  Ride  1863     12.52     Wet road but nice weather
-3 2019-09-10 21:06:00  Afternoon Ride  Ride  2192     12.84  Stopped for photo of sunrise
-4 2019-09-11 07:28:00    Morning Ride  Ride  1891     12.48  Tired by the end of the week
+                 Date            Name  Type  Time  Distance                       Comments
+0 2019-09-10 17:13:00  Afternoon Ride  Ride  2084     12.62                          Rain 
+1 2019-09-11 06:52:00    Morning Ride  Ride  2531     13.03                           rain
+2 2019-09-11 17:23:00  Afternoon Ride  Ride  1863     12.52      Wet road but nice whether
+3 2019-09-12 07:06:00    Morning Ride  Ride  2192     12.84   Stopped for photo of sunrise
+4 2019-09-12 17:28:00  Afternoon Ride  Ride  1891     12.48  Tired by the end of the week.
 ```
 
 ``` python
@@ -345,23 +445,28 @@ Notes: Script here
 ---
 
 Now that we have a datetime column which expresses when Tom began his
-journey, we can the earliest tom left on one of his Morning Rides:
+journey, we can sort our dataframe correctly now:
 
 ``` python
-cycling_dates[cycling_dates['Name'] == 'Morning Ride'].min()
+cycling_dates.sort_values('Date')
 ```
 
 ```out
-Date                          2019-09-09 07:13:00
-Name                                 Morning Ride
-Type                                         Ride
-Time                                         1712
-Distance                                    11.79
-Comments    A little tired today but good weather
-dtype: object
-```
+                  Date            Name  Type  Time  Distance                                   Comments
+0  2019-09-10 17:13:00  Afternoon Ride  Ride  2084     12.62                                      Rain 
+1  2019-09-11 06:52:00    Morning Ride  Ride  2531     13.03                                       rain
+2  2019-09-11 17:23:00  Afternoon Ride  Ride  1863     12.52                  Wet road but nice whether
+3  2019-09-12 07:06:00    Morning Ride  Ride  2192     12.84               Stopped for photo of sunrise
+4  2019-09-12 17:28:00  Afternoon Ride  Ride  1891     12.48              Tired by the end of the week.
+..                 ...             ...   ...   ...       ...                                        ...
+28 2019-10-04 18:08:00  Afternoon Ride  Ride  1870     12.63           Very tired, riding into the wind
+29 2019-10-10 07:55:00    Morning Ride  Ride  2149     12.70              Really cold! But feeling good
+30 2019-10-10 18:10:00  Afternoon Ride  Ride  1841     12.59        Feeling good after a holiday break!
+31 2019-10-11 07:47:00    Morning Ride  Ride  2463     12.79               Stopped for photo of sunrise
+32 2019-10-11 18:16:00  Afternoon Ride  Ride  1843     11.79  Bike feeling tight, needs an oil and pump
 
-We could als find the time
+[33 rows x 6 columns]
+```
 
 Notes: Script here
 
@@ -384,12 +489,12 @@ pd.read_csv('cycling_data_split_time.csv').head()
 ```
 
 ```out
-   Year  Month  Day      Clock            Name  Type  Time  Distance                      Comments
-0  2019      9   10   00:13:04  Afternoon Ride  Ride  2084     12.62                          Rain
-1  2019      9   10   13:52:18    Morning Ride  Ride  2531     13.03                          rain
-2  2019      9   11   00:23:50  Afternoon Ride  Ride  1863     12.52     Wet road but nice weather
-3  2019      9   11   14:06:19    Morning Ride  Ride  2192     12.84  Stopped for photo of sunrise
-4  2019      9   12   00:28:05  Afternoon Ride  Ride  1891     12.48  Tired by the end of the week
+   Year Month  Day      Clock            Name  Type  Time  Distance                      Comments
+0  2019   Sep   10   17:13:04  Afternoon Ride  Ride  2084     12.62                          Rain
+1  2019   Sep   11   06:52:18    Morning Ride  Ride  2531     13.03                          rain
+2  2019   Sep   11   17:23:50  Afternoon Ride  Ride  1863     12.52     Wet road but nice weather
+3  2019   Sep   12   07:06:19    Morning Ride  Ride  2192     12.84  Stopped for photo of sunrise
+4  2019   Sep   12   17:28:05  Afternoon Ride  Ride  1891     12.48  Tired by the end of the week
 ```
 
 We can combine the `Year`, `Month` and `Day` columns to a single
@@ -405,11 +510,11 @@ value is a list with the multiple date columns to combine:
 
 ```out
                  Date            Name  Type  Time  Distance                      Comments
-0 2019-09-10 00:13:04  Afternoon Ride  Ride  2084     12.62                          Rain
-1 2019-09-10 13:52:18    Morning Ride  Ride  2531     13.03                          rain
-2 2019-09-11 00:23:50  Afternoon Ride  Ride  1863     12.52     Wet road but nice weather
-3 2019-09-11 14:06:19    Morning Ride  Ride  2192     12.84  Stopped for photo of sunrise
-4 2019-09-12 00:28:05  Afternoon Ride  Ride  1891     12.48  Tired by the end of the week
+0 2019-09-10 17:13:04  Afternoon Ride  Ride  2084     12.62                          Rain
+1 2019-09-11 06:52:18    Morning Ride  Ride  2531     13.03                          rain
+2 2019-09-11 17:23:50  Afternoon Ride  Ride  1863     12.52     Wet road but nice weather
+3 2019-09-12 07:06:19    Morning Ride  Ride  2192     12.84  Stopped for photo of sunrise
+4 2019-09-12 17:28:05  Afternoon Ride  Ride  1891     12.48  Tired by the end of the week
 ```
 
 Notes: Script here
@@ -439,12 +544,12 @@ cycling.head()
 ```
 
 ```out
-               Date            Name  Type  Time  Distance                      Comments
-0   2019-09-09 7:13    Morning Ride  Ride  2084     12.62                          Rain
-1  2019-09-09 20:52  Afternoon Ride  Ride  2531     13.03                          rain
-2   2019-09-10 7:23    Morning Ride  Ride  1863     12.52     Wet road but nice weather
-3  2019-09-10 21:06  Afternoon Ride  Ride  2192     12.84  Stopped for photo of sunrise
-4   2019-09-11 7:28    Morning Ride  Ride  1891     12.48  Tired by the end of the week
+                Date            Name  Type  Time  Distance                       Comments
+0  Sep-10-2019 17:13  Afternoon Ride  Ride  2084     12.62                          Rain 
+1  Sep-11-2019 06:52    Morning Ride  Ride  2531     13.03                           rain
+2  Sep-11-2019 17:23  Afternoon Ride  Ride  1863     12.52      Wet road but nice whether
+3  Sep-12-2019 07:06    Morning Ride  Ride  2192     12.84   Stopped for photo of sunrise
+4  Sep-12-2019 17:28  Afternoon Ride  Ride  1891     12.48  Tired by the end of the week.
 ```
 
 ``` python
@@ -484,12 +589,12 @@ new_cycling.head()
 ```
 
 ```out
-                 Date            Name  Type  Time  Distance                      Comments
-0 2019-09-09 07:13:00    Morning Ride  Ride  2084     12.62                          Rain
-1 2019-09-09 20:52:00  Afternoon Ride  Ride  2531     13.03                          rain
-2 2019-09-10 07:23:00    Morning Ride  Ride  1863     12.52     Wet road but nice weather
-3 2019-09-10 21:06:00  Afternoon Ride  Ride  2192     12.84  Stopped for photo of sunrise
-4 2019-09-11 07:28:00    Morning Ride  Ride  1891     12.48  Tired by the end of the week
+                 Date            Name  Type  Time  Distance                       Comments
+0 2019-09-10 17:13:00  Afternoon Ride  Ride  2084     12.62                          Rain 
+1 2019-09-11 06:52:00    Morning Ride  Ride  2531     13.03                           rain
+2 2019-09-11 17:23:00  Afternoon Ride  Ride  1863     12.52      Wet road but nice whether
+3 2019-09-12 07:06:00    Morning Ride  Ride  2192     12.84   Stopped for photo of sunrise
+4 2019-09-12 17:28:00  Afternoon Ride  Ride  1891     12.48  Tired by the end of the week.
 ```
 
 ``` python
@@ -538,11 +643,11 @@ new_cycling['Date'].dt.day_name().head()
 ```
 
 ```out
-0       Monday
-1       Monday
-2      Tuesday
-3      Tuesday
-4    Wednesday
+0      Tuesday
+1    Wednesday
+2    Wednesday
+3     Thursday
+4     Thursday
 Name: Date, dtype: object
 ```
 
@@ -554,12 +659,12 @@ new_cycling.assign(weekday = new_cycling['Date'].dt.day_name()).head()
 ```
 
 ```out
-                 Date            Name  Type  Time  Distance                      Comments    weekday
-0 2019-09-09 07:13:00    Morning Ride  Ride  2084     12.62                          Rain     Monday
-1 2019-09-09 20:52:00  Afternoon Ride  Ride  2531     13.03                          rain     Monday
-2 2019-09-10 07:23:00    Morning Ride  Ride  1863     12.52     Wet road but nice weather    Tuesday
-3 2019-09-10 21:06:00  Afternoon Ride  Ride  2192     12.84  Stopped for photo of sunrise    Tuesday
-4 2019-09-11 07:28:00    Morning Ride  Ride  1891     12.48  Tired by the end of the week  Wednesday
+                 Date            Name  Type  Time  Distance                       Comments    weekday
+0 2019-09-10 17:13:00  Afternoon Ride  Ride  2084     12.62                          Rain     Tuesday
+1 2019-09-11 06:52:00    Morning Ride  Ride  2531     13.03                           rain  Wednesday
+2 2019-09-11 17:23:00  Afternoon Ride  Ride  1863     12.52      Wet road but nice whether  Wednesday
+3 2019-09-12 07:06:00    Morning Ride  Ride  2192     12.84   Stopped for photo of sunrise   Thursday
+4 2019-09-12 17:28:00  Afternoon Ride  Ride  1891     12.48  Tired by the end of the week.   Thursday
 ```
 
 Notes: Script here
@@ -585,11 +690,11 @@ new_cycling['Date'].dt.day.head()
 ```
 
 ```out
-0     9
-1     9
-2    10
-3    10
-4    11
+0    10
+1    11
+2    11
+3    12
+4    12
 Name: Date, dtype: int64
 ```
 
@@ -600,12 +705,12 @@ new_cycling.assign(day = new_cycling['Date'].dt.day).head()
 ```
 
 ```out
-                 Date            Name  Type  Time  Distance                      Comments  day
-0 2019-09-09 07:13:00    Morning Ride  Ride  2084     12.62                          Rain    9
-1 2019-09-09 20:52:00  Afternoon Ride  Ride  2531     13.03                          rain    9
-2 2019-09-10 07:23:00    Morning Ride  Ride  1863     12.52     Wet road but nice weather   10
-3 2019-09-10 21:06:00  Afternoon Ride  Ride  2192     12.84  Stopped for photo of sunrise   10
-4 2019-09-11 07:28:00    Morning Ride  Ride  1891     12.48  Tired by the end of the week   11
+                 Date            Name  Type  Time  Distance                       Comments  day
+0 2019-09-10 17:13:00  Afternoon Ride  Ride  2084     12.62                          Rain    10
+1 2019-09-11 06:52:00    Morning Ride  Ride  2531     13.03                           rain   11
+2 2019-09-11 17:23:00  Afternoon Ride  Ride  1863     12.52      Wet road but nice whether   11
+3 2019-09-12 07:06:00    Morning Ride  Ride  2192     12.84   Stopped for photo of sunrise   12
+4 2019-09-12 17:28:00  Afternoon Ride  Ride  1891     12.48  Tired by the end of the week.   12
 ```
 
 Notes: Script here
@@ -640,7 +745,7 @@ attributes and methods section of the Timestamp documentation</a>.
 
 Using the `.dt` portion of these can only be used on a pandas Series. We
 can extract the day, month, year hour, or minute from a single datetime
-value, using the same nouns but omiiting the `dt.`.
+value, using the same nouns but omitting the `dt.`.
 
 Let’s see how that’s possible.
 
@@ -663,12 +768,12 @@ new_cycling.head()
 ```
 
 ```out
-                 Date            Name  Type  Time  Distance                      Comments
-0 2019-09-09 07:13:00    Morning Ride  Ride  2084     12.62                          Rain
-1 2019-09-09 20:52:00  Afternoon Ride  Ride  2531     13.03                          rain
-2 2019-09-10 07:23:00    Morning Ride  Ride  1863     12.52     Wet road but nice weather
-3 2019-09-10 21:06:00  Afternoon Ride  Ride  2192     12.84  Stopped for photo of sunrise
-4 2019-09-11 07:28:00    Morning Ride  Ride  1891     12.48  Tired by the end of the week
+                 Date            Name  Type  Time  Distance                       Comments
+0 2019-09-10 17:13:00  Afternoon Ride  Ride  2084     12.62                          Rain 
+1 2019-09-11 06:52:00    Morning Ride  Ride  2531     13.03                           rain
+2 2019-09-11 17:23:00  Afternoon Ride  Ride  1863     12.52      Wet road but nice whether
+3 2019-09-12 07:06:00    Morning Ride  Ride  2192     12.84   Stopped for photo of sunrise
+4 2019-09-12 17:28:00  Afternoon Ride  Ride  1891     12.48  Tired by the end of the week.
 ```
 
 If I select the first example in row 1 of our `new_cycling` dataset,
@@ -680,7 +785,7 @@ timestamp_ex
 ```
 
 ```out
-Timestamp('2019-09-09 20:52:00')
+Timestamp('2019-09-11 06:52:00')
 ```
 
 This is a pandas data type.
@@ -704,7 +809,7 @@ timestamp_ex
 ```
 
 ```out
-Timestamp('2019-09-09 20:52:00')
+Timestamp('2019-09-11 06:52:00')
 ```
 
 Timestamps show a snapshot of when an event has occurred. Timestamps are
@@ -712,8 +817,8 @@ complete with both dates and times. If that’s not complete, Python will
 fill in any unknowns with default values (often with `00:00:00` for
 time, if only the date was provided).
 
-To obtain the month\_name, day, or hour from the Timestamp, we can use
-the same nouns in the previous slide without `.ts.`:
+To obtain the month name, day, or hour from the Timestamp, we can use
+the same nouns in the previous slide without `.dt.`:
 
 ``` python
 timestamp_ex.month_name()
@@ -728,7 +833,7 @@ timestamp_ex.day
 ```
 
 ```out
-9
+11
 ```
 
 ``` python
@@ -736,7 +841,7 @@ timestamp_ex.hour
 ```
 
 ```out
-20
+6
 ```
 
 Notes: Script here
@@ -770,14 +875,16 @@ cycling_intervals
 4    0 days 10:22:00
            ...      
 28   0 days 11:21:00
-29   5 days 12:47:00
+29   5 days 13:47:00
 30   0 days 10:15:00
 31   0 days 13:37:00
 32   0 days 10:29:00
 Name: Date, Length: 33, dtype: timedelta64[ns]
 ```
 
-This outputs a pandas Series with the time that occurs between rows.
+This outputs a pandas Series with the time that occurs between rows. As
+you can see there was a 10 hour and 31minute gap between Tom’s second
+and third bike rides. Wow - that’s a long work day\!"
 
 Here, you’ll now notice a new dtype at the bottom of our new pandas
 Series named
@@ -857,7 +964,7 @@ cycling_intervals.max()
 ```
 
 ```out
-Timedelta('5 days 12:47:00')
+Timedelta('5 days 13:47:00')
 ```
 
 As well as the minimum:
@@ -878,7 +985,7 @@ interval_range
 ```
 
 ```out
-Timedelta('5 days 02:32:00')
+Timedelta('5 days 03:32:00')
 ```
 
 Notes: Script here

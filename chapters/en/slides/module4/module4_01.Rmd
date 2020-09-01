@@ -186,7 +186,7 @@ weather
 Contrary to its acronym it is considered a numeric, specifically of type float!
 
 ```{python}
-nan_value = weather.loc[1,'31st']
+nan_value = weather.loc[2,'31st']
 nan_value
 ```
 

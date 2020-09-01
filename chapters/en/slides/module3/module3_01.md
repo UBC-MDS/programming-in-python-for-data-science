@@ -4,25 +4,7 @@ type: slides
 
 # Tidy data
 
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
 ---
-
-When we first hear “tidy data”, you likely think of clean, organized,
-and orderly data. The same applies here, however, the concept of ***tidy
-data*** stems from
-<a href="https://vita.had.co.nz/papers/tidy-data.pdf" target="_blank">a
-paper </a> written by renowned data scientist Hadley Wickham in 2014.
 
 ### What is the concept of tidy data?
 
@@ -39,24 +21,16 @@ Tidy data satisfies the following three criteria:
 
 </center>
 
+*Image Source: [R for Data Science](https://r4ds.had.co.nz/) by Garrett
+Grolemund & Hadley Wickham*
+
 What a variable and an observation is may depend on your immediate goal.
 
-  - Image Source: [R for Data Science](https://r4ds.had.co.nz/) by
-    Garrett Grolemund & Hadley Wickham\*
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
+Notes: When we first hear “tidy data”, you likely think of clean,
+organized, and orderly data. The same applies here, however, the concept
+of ***tidy data*** stems from
+<a href="https://vita.had.co.nz/papers/tidy-data.pdf" target="_blank">a
+paper </a> written by renowned data scientist Hadley Wickham in 2014.
 
 We tidy our data in such a way so that we can create a standard across
 multiple analysis tools. It changes the focus from figuring out the
@@ -66,29 +40,10 @@ analysis question being asked.
 This approach allows us to standardize input arguments of certain
 analysis verbs like `.describe()` and other predictive methods.
 
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
 ---
-
-Let’s explore some different versions of our cereal dataset and
-determine if they fit the *tidy* criteria given the statistical question
-below:
 
 ***Are protein and calories content associated with different cereal
 manufacturers?***
-
-Here are a few rows from our unaltered cereal dataset. Does it fit all
-three criteria?
 
 <center>
 
@@ -96,17 +51,16 @@ three criteria?
 
 </center>
 
-Notes: Script here
+Notes: Let’s explore some different versions of our cereal dataset and
+determine if they fit the *tidy* criteria given the statistical question
+below:
 
-<html>
+***Are protein and calories content associated with different cereal
+manufacturers?***
 
-<audio controls >
+Here are a few rows from our unaltered cereal dataset.
 
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+Does it fit all three criteria?
 
 ---
 
@@ -118,20 +72,8 @@ Notes: Script here
 
 </center>
 
-From the dataframe we can see that each cereal has its own row.
+Notes: From the dataframe we can see that each cereal has its own row.
 Criterion \#1 is met\!
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
 
 ---
 
@@ -147,19 +89,7 @@ From the dataframe we can see that each of the variables `name`, `mfr`,
 `calories` and `protein` have their own column. We can validate that
 criterion \#2 is also met.
 
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
+## Notes: From the dataframe we can see that each of the variables `name`, `mfr`, `calories` and `protein` have their own column. We can validate that criterion \#2 is also met.
 
 ## Criterion \#3: Each value is a single cell
 
@@ -169,27 +99,10 @@ Notes: Script here
 
 </center>
 
-The variable value for each cereal has it’s own cell, confirming that
-criterion \#3 is met\!
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+Notes: The variable value for each cereal has it’s own cell, confirming
+that criterion \#3 is met\!
 
 ---
-
-As expected, the cereal data we have been working with is *tidy data*
-for our statistical question.  
-Let’s look at a longer dataframe with the same information where this is
-not the case:
 
 <center>
 
@@ -197,17 +110,10 @@ not the case:
 
 <center>
 
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+Notes: As expected, the cereal data we have been working with is *tidy
+data* for our statistical question.  
+Let’s look at a longer dataframe with the same information where this is
+not the case:
 
 ---
 
@@ -219,21 +125,9 @@ Notes: Script here
 
 </center>
 
-From the dataframe we can see that each observation has its own row.
-There are 2 rows per cereal but each row is unique. We can confirm that
-criterion 1 is met.
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+Notes: From the dataframe we can see that each observation has its own
+row. There are 2 rows per cereal but each row is unique.  
+We can confirm that criterion 1 is met.
 
 ---
 
@@ -245,47 +139,35 @@ Notes: Script here
 
 </center>
 
-It looks like we have a problem here. In this dataframe, two of our
-variables we are measuring for our statistical question are contained in
-a single column. This is making the data untidy and potentially a
-problem to work with.  
+Notes: It looks like we have a problem here. In this dataframe, two of
+our variables we are measuring for our statistical question are
+contained in a single column. This is making the data untidy and
+potentially a problem to work with.  
 For example, what if I wanted to know the average calorie content of the
 cereals?
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
 
 ---
 
 ``` python
-cereal2.head(10)
+cereal2
 ```
 
 ```out
-                        name mfr nutrition  value
-0                  100% Bran   N   protein      4
-1          100% Natural Bran   Q   protein      3
-2                   All-Bran   K   protein      4
-3  All-Bran with Extra Fiber   K   protein      4
-4             Almond Delight   R   protein      2
-5    Apple Cinnamon Cheerios   G   protein      2
-6                Apple Jacks   K   protein      2
-7                    Basic 4   G   protein      3
-8                  Bran Chex   R   protein      2
-9                Bran Flakes   P   protein      3
-```
+                          name mfr nutrition  value
+0                    100% Bran   N   protein      4
+1            100% Natural Bran   Q   protein      3
+2                     All-Bran   K   protein      4
+3    All-Bran with Extra Fiber   K   protein      4
+4               Almond Delight   R   protein      2
+..                         ...  ..       ...    ...
+149                    Triples   G  calories    110
+150                       Trix   G  calories    110
+151                 Wheat Chex   R  calories    100
+152                   Wheaties   G  calories    100
+153        Wheaties Honey Gold   G  calories    110
 
-We could either groupby nutrition value or filter on ’calories\` first
-before getting our results:
+[154 rows x 4 columns]
+```
 
 ``` python
 cereal2[cereal2['nutrition'] == 'calories']['value'].mean()
@@ -295,7 +177,7 @@ cereal2[cereal2['nutrition'] == 'calories']['value'].mean()
 106.88311688311688
 ```
 
-Where as if we had tidy data we could have simply done:
+If we had tidy data we could have simply done:
 
 ``` python
 cereal['calories'].mean()
@@ -305,17 +187,11 @@ cereal['calories'].mean()
 106.88311688311688
 ```
 
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+Notes: The dataframe `cereal2` shows our untidy data from the previous
+slide. We could either groupby nutrition value or filter on `calories`
+first before getting our results to calculate the mean but if we had
+tidy data we could have calculated the mean directly from the `calories`
+column.
 
 ---
 

@@ -12,7 +12,7 @@ id: 8
 
 <exercise id="0" title="Module Learning Outcomes" type="slides, video">
 
-<slides source="module8/module8_00" start="0:165" end="3:01">
+<slides source="module8/module8_00" shot='1' start="1:16" end="3:01">
 </slides>
 
 </exercise> 

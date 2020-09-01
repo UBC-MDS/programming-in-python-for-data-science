@@ -156,12 +156,12 @@ cycling.head()
 ```
 
 ```out
-                Date            Name  Type  Time  Distance                      Comments
-0  Sep-10-2019 17:13  Afternoon Ride  Ride  2084     12.62                         Rain 
-1  Sep-11-2019 06:52    Morning Ride  Ride  2531     13.03                          rain
-2  Sep-11-2019 17:23  Afternoon Ride  Ride  1863     12.52     Wet road but nice weather
-3  Sep-12-2019 07:06    Morning Ride  Ride  2192     12.84  Stopped for photo of sunrise
-4  Sep-12-2019 17:28  Afternoon Ride  Ride  1891     12.48  Tired by the end of the week
+                Date            Name  Type  Time  Distance                       Comments
+0  Sep-10-2019 17:13  Afternoon Ride  Ride  2084     12.62                          Rain 
+1  Sep-11-2019 06:52    Morning Ride  Ride  2531     13.03                           rain
+2  Sep-11-2019 17:23  Afternoon Ride  Ride  1863     12.52      Wet road but nice whether
+3  Sep-12-2019 07:06    Morning Ride  Ride  2192     12.84   Stopped for photo of sunrise
+4  Sep-12-2019 17:28  Afternoon Ride  Ride  1891     12.48  Tired by the end of the week.
 ```
 
 Notes: Script here
@@ -187,12 +187,12 @@ upper_cycle.head()
 ```
 
 ```out
-                Date            Name  Type  Time  Distance                      Comments
-0  Sep-10-2019 17:13  Afternoon Ride  Ride  2084     12.62                         RAIN 
-1  Sep-11-2019 06:52    Morning Ride  Ride  2531     13.03                          RAIN
-2  Sep-11-2019 17:23  Afternoon Ride  Ride  1863     12.52     WET ROAD BUT NICE WEATHER
-3  Sep-12-2019 07:06    Morning Ride  Ride  2192     12.84  STOPPED FOR PHOTO OF SUNRISE
-4  Sep-12-2019 17:28  Afternoon Ride  Ride  1891     12.48  TIRED BY THE END OF THE WEEK
+                Date            Name  Type  Time  Distance                       Comments
+0  Sep-10-2019 17:13  Afternoon Ride  Ride  2084     12.62                          RAIN 
+1  Sep-11-2019 06:52    Morning Ride  Ride  2531     13.03                           RAIN
+2  Sep-11-2019 17:23  Afternoon Ride  Ride  1863     12.52      WET ROAD BUT NICE WHETHER
+3  Sep-12-2019 07:06    Morning Ride  Ride  2192     12.84   STOPPED FOR PHOTO OF SUNRISE
+4  Sep-12-2019 17:28  Afternoon Ride  Ride  1891     12.48  TIRED BY THE END OF THE WEEK.
 ```
 
 Not too shabby\!
@@ -206,12 +206,12 @@ rain_cycle.head()
 ```
 
 ```out
-                Date            Name  Type  Time  Distance                      Comments  Rain
-0  Sep-10-2019 17:13  Afternoon Ride  Ride  2084     12.62                         RAIN      1
-1  Sep-11-2019 06:52    Morning Ride  Ride  2531     13.03                          RAIN     1
-2  Sep-11-2019 17:23  Afternoon Ride  Ride  1863     12.52     WET ROAD BUT NICE WEATHER     0
-3  Sep-12-2019 07:06    Morning Ride  Ride  2192     12.84  STOPPED FOR PHOTO OF SUNRISE     0
-4  Sep-12-2019 17:28  Afternoon Ride  Ride  1891     12.48  TIRED BY THE END OF THE WEEK     0
+                Date            Name  Type  Time  Distance                       Comments  Rain
+0  Sep-10-2019 17:13  Afternoon Ride  Ride  2084     12.62                          RAIN      1
+1  Sep-11-2019 06:52    Morning Ride  Ride  2531     13.03                           RAIN     1
+2  Sep-11-2019 17:23  Afternoon Ride  Ride  1863     12.52      WET ROAD BUT NICE WHETHER     0
+3  Sep-12-2019 07:06    Morning Ride  Ride  2192     12.84   STOPPED FOR PHOTO OF SUNRISE     0
+4  Sep-12-2019 17:28  Afternoon Ride  Ride  1891     12.48  TIRED BY THE END OF THE WEEK.     0
 ```
 
 Notes: Script here
@@ -236,18 +236,18 @@ upper_cycle['Comments'].str.split(expand=True)
 ```
 
 ```out
-          0        1       2        3        4       5     6     7
-0      RAIN     None    None     None     None    None  None  None
-1      RAIN     None    None     None     None    None  None  None
-2       WET     ROAD     BUT     NICE  WEATHER    None  None  None
-3   STOPPED      FOR   PHOTO       OF  SUNRISE    None  None  None
-4     TIRED       BY     THE      END       OF     THE  WEEK  None
-..      ...      ...     ...      ...      ...     ...   ...   ...
-28     VERY   TIRED,  RIDING     INTO      THE    WIND  None  None
-29   REALLY    COLD!     BUT  FEELING     GOOD    None  None  None
-30  FEELING     GOOD   AFTER        A  HOLIDAY  BREAK!  None  None
-31  STOPPED      FOR   PHOTO       OF  SUNRISE    None  None  None
-32     BIKE  FEELING  TIGHT,    NEEDS       AN     OIL   AND  PUMP
+          0        1       2        3        4       5      6     7
+0      RAIN     None    None     None     None    None   None  None
+1      RAIN     None    None     None     None    None   None  None
+2       WET     ROAD     BUT     NICE  WHETHER    None   None  None
+3   STOPPED      FOR   PHOTO       OF  SUNRISE    None   None  None
+4     TIRED       BY     THE      END       OF     THE  WEEK.  None
+..      ...      ...     ...      ...      ...     ...    ...   ...
+28     VERY   TIRED,  RIDING     INTO      THE    WIND   None  None
+29   REALLY    COLD!     BUT  FEELING     GOOD    None   None  None
+30  FEELING     GOOD   AFTER        A  HOLIDAY  BREAK!   None  None
+31  STOPPED      FOR   PHOTO       OF  SUNRISE    None   None  None
+32     BIKE  FEELING  TIGHT,    NEEDS       AN     OIL    AND  PUMP
 
 [33 rows x 8 columns]
 ```
@@ -286,12 +286,12 @@ combined_cycle.head()
 ```
 
 ```out
-                Date            Name  Type  Time  Distance                      Comments Distance_str
-0  Sep-10-2019 17:13  Afternoon Ride  Ride  2084     12.62                         Rain      12.62 km
-1  Sep-11-2019 06:52    Morning Ride  Ride  2531     13.03                          rain     13.03 km
-2  Sep-11-2019 17:23  Afternoon Ride  Ride  1863     12.52     Wet road but nice weather     12.52 km
-3  Sep-12-2019 07:06    Morning Ride  Ride  2192     12.84  Stopped for photo of sunrise     12.84 km
-4  Sep-12-2019 17:28  Afternoon Ride  Ride  1891     12.48  Tired by the end of the week     12.48 km
+                Date            Name  Type  Time  Distance                       Comments Distance_str
+0  Sep-10-2019 17:13  Afternoon Ride  Ride  2084     12.62                          Rain      12.62 km
+1  Sep-11-2019 06:52    Morning Ride  Ride  2531     13.03                           rain     13.03 km
+2  Sep-11-2019 17:23  Afternoon Ride  Ride  1863     12.52      Wet road but nice whether     12.52 km
+3  Sep-12-2019 07:06    Morning Ride  Ride  2192     12.84   Stopped for photo of sunrise     12.84 km
+4  Sep-12-2019 17:28  Afternoon Ride  Ride  1891     12.48  Tired by the end of the week.     12.48 km
 ```
 
 Notes: Script here
@@ -318,12 +318,12 @@ cap_cycle.head()
 ```
 
 ```out
-                Date            Name  Type  Time  Distance                      Comments
-0  Sep-10-2019 17:13  Afternoon Ride  Ride  2084     12.62                         Rain 
-1  Sep-11-2019 06:52    Morning Ride  Ride  2531     13.03                          Rain
-2  Sep-11-2019 17:23  Afternoon Ride  Ride  1863     12.52     Wet road but nice weather
-3  Sep-12-2019 07:06    Morning Ride  Ride  2192     12.84  Stopped for photo of sunrise
-4  Sep-12-2019 17:28  Afternoon Ride  Ride  1891     12.48  Tired by the end of the week
+                Date            Name  Type  Time  Distance                       Comments
+0  Sep-10-2019 17:13  Afternoon Ride  Ride  2084     12.62                          Rain 
+1  Sep-11-2019 06:52    Morning Ride  Ride  2531     13.03                           Rain
+2  Sep-11-2019 17:23  Afternoon Ride  Ride  1863     12.52      Wet road but nice whether
+3  Sep-12-2019 07:06    Morning Ride  Ride  2192     12.84   Stopped for photo of sunrise
+4  Sep-12-2019 17:28  Afternoon Ride  Ride  1891     12.48  Tired by the end of the week.
 ```
 
 Another is `.title()`, which capitalizes the first letter of every word
@@ -335,12 +335,12 @@ cap_cycle.head()
 ```
 
 ```out
-                Date            Name  Type  Time  Distance                      Comments
-0  Sep-10-2019 17:13  Afternoon Ride  Ride  2084     12.62                         Rain 
-1  Sep-11-2019 06:52    Morning Ride  Ride  2531     13.03                          Rain
-2  Sep-11-2019 17:23  Afternoon Ride  Ride  1863     12.52     Wet Road But Nice Weather
-3  Sep-12-2019 07:06    Morning Ride  Ride  2192     12.84  Stopped For Photo Of Sunrise
-4  Sep-12-2019 17:28  Afternoon Ride  Ride  1891     12.48  Tired By The End Of The Week
+                Date            Name  Type  Time  Distance                       Comments
+0  Sep-10-2019 17:13  Afternoon Ride  Ride  2084     12.62                          Rain 
+1  Sep-11-2019 06:52    Morning Ride  Ride  2531     13.03                           Rain
+2  Sep-11-2019 17:23  Afternoon Ride  Ride  1863     12.52      Wet Road But Nice Whether
+3  Sep-12-2019 07:06    Morning Ride  Ride  2192     12.84   Stopped For Photo Of Sunrise
+4  Sep-12-2019 17:28  Afternoon Ride  Ride  1891     12.48  Tired By The End Of The Week.
 ```
 
 Notes: Script here
@@ -426,12 +426,12 @@ cycling.head()
 ```
 
 ```out
-                Date            Name  Type  Time  Distance                      Comments
-0  Sep-10-2019 17:13  Afternoon Ride  Ride  2084     12.62                         Rain 
-1  Sep-11-2019 06:52    Morning Ride  Ride  2531     13.03                          rain
-2  Sep-11-2019 17:23  Afternoon Ride  Ride  1863     12.52     Wet road but nice weather
-3  Sep-12-2019 07:06    Morning Ride  Ride  2192     12.84  Stopped for photo of sunrise
-4  Sep-12-2019 17:28  Afternoon Ride  Ride  1891     12.48  Tired by the end of the week
+                Date            Name  Type  Time  Distance                       Comments
+0  Sep-10-2019 17:13  Afternoon Ride  Ride  2084     12.62                          Rain 
+1  Sep-11-2019 06:52    Morning Ride  Ride  2531     13.03                           rain
+2  Sep-11-2019 17:23  Afternoon Ride  Ride  1863     12.52      Wet road but nice whether
+3  Sep-12-2019 07:06    Morning Ride  Ride  2192     12.84   Stopped for photo of sunrise
+4  Sep-12-2019 17:28  Afternoon Ride  Ride  1891     12.48  Tired by the end of the week.
 ```
 
 We can see that index 0 should be filtered out but we get the following:
@@ -473,12 +473,12 @@ stripped_cycling.head()
 ```
 
 ```out
-                Date            Name  Type  Time  Distance                      Comments
-0  Sep-10-2019 17:13  Afternoon Ride  Ride  2084     12.62                          Rain
-1  Sep-11-2019 06:52    Morning Ride  Ride  2531     13.03                          rain
-2  Sep-11-2019 17:23  Afternoon Ride  Ride  1863     12.52     Wet road but nice weather
-3  Sep-12-2019 07:06    Morning Ride  Ride  2192     12.84  Stopped for photo of sunrise
-4  Sep-12-2019 17:28  Afternoon Ride  Ride  1891     12.48  Tired by the end of the week
+                Date            Name  Type  Time  Distance                       Comments
+0  Sep-10-2019 17:13  Afternoon Ride  Ride  2084     12.62                           Rain
+1  Sep-11-2019 06:52    Morning Ride  Ride  2531     13.03                           rain
+2  Sep-11-2019 17:23  Afternoon Ride  Ride  1863     12.52      Wet road but nice whether
+3  Sep-12-2019 07:06    Morning Ride  Ride  2192     12.84   Stopped for photo of sunrise
+4  Sep-12-2019 17:28  Afternoon Ride  Ride  1891     12.48  Tired by the end of the week.
 ```
 
 And what happens now when we filter on rain on our new

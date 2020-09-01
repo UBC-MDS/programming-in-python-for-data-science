@@ -107,16 +107,16 @@ Notes: Script here
 ---
 
 ```{python echo=FALSE}
-cycling_lower.loc[6:9]
+cycling_lower.head()
 ```
-Let's replace the word `raining` with just `rain` in the entire dataset.     
+You'll notice in the third row, the word "whether" should have been spelled "weather". Let's replace this word in the entire dataset with the correct spelling of "weather".     
 In `replace()`, the first argument is the word we are identifying, and the second is the one that we are replacing it with.
 
 ```{python}
-cycling_rain = cycling_lower.assign(Comments = cycling_lower['Comments'].str.replace('raining', 'rain'))
-cycling_rain.head(9)
+cycling_rain = cycling_lower.assign(Comments = cycling_lower['Comments'].str.replace('whether', 'weather'))
+cycling_rain.head()
 ```
-We can see that the word "raining" has become `rain` in row 7 and 8! 
+We can see that the word `whether` has now been replaced with the more appropriate spelling of `weather`.
 
 Notes: Script here
 <html>

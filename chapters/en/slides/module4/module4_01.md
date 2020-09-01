@@ -203,12 +203,12 @@ Contrary to its acronym it is considered a numeric, specifically of type
 float\!
 
 ``` python
-nan_value = weather.loc[1,'31st']
+nan_value = weather.loc[2,'31st']
 nan_value
 ```
 
 ```out
-31.0
+nan
 ```
 
 ``` python
@@ -726,7 +726,7 @@ bool('0')
 True
 ```
 
-When we cast a `str` to a `bool` it will result in `True`, unless it’s
+When we cast a `str` to a `bool`, it will result in `True`, unless it’s
 an empty `str`:
 
 ``` python
