@@ -58,6 +58,40 @@ Notes: Script here
 
 ---
 
+Lets see an example where `Altair` fails to determine the correct data
+type. For this example, we have modified the `calories` column in the
+`cereal` dataframe. We will now generate a scatter plot of
+`manufacturer` and `calories` from this modified cereal dataset.
+
+``` python
+
+chart0 = alt.Chart(cereal_mod, width=500, height=300).mark_circle().encode(
+    x='mfr', 
+    y='calories'
+).properties(title="Scatter plot of manufacturer calorie content")
+chart0
+```
+<img src="/module2/chart0.png" alt="A caption" width="40%" />
+
+  - Notice how \(150\) come before \(100\) on the `y-axis`? It seems we
+    have a problem here.
+  - Even Altair can’t always get it right, which is why it’s so
+    important we specify the data type when plotting.
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
+
+---
+
 Now let’s say we are interested in plotting the sugar content in cereals
 from each manufacturer. We do this using a `bar` plot Which we are
 familiar with. We will be using the `mfr` column and the `sugars` column
