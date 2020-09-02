@@ -1,7 +1,7 @@
 Date,Name,Type,Time,Distance,Comments
 2019-09-09 7:13,Morning Ride,Ride,2084,12.62,Rain
 2019-09-09 20:52,Afternoon Ride,Ride,2531,13.03,rain
-2019-09-10 7:23,Morning Ride,Ride,1863,12.52,Wet road but nice weather
+2019-09-10 7:23,Morning Ride,Ride,1863,,Wet road but nice weather
 2019-09-10 21:06,Afternoon Ride,Ride,2192,12.84,Stopped for photo of sunrise
 2019-09-11 7:28,Morning Ride,Ride,1891,12.48,Tired by the end of the week
 2019-09-15 20:57,Afternoon Ride,Ride,2272,12.45,Rested after the weekend!
@@ -21,9 +21,9 @@ Date,Name,Type,Time,Distance,Comments
 2019-09-25 20:42,Afternoon Ride,Ride,2350,12.91,Detour around trucks at Jericho
 2019-09-26 8:00,Morning Ride,Ride,1712,12.47,Tired by the end of the week
 2019-09-29 20:53,Afternoon Ride,Ride,2118,12.71,Rested after the weekend!
-2019-09-30 7:15,Morning Ride,Ride,1732,NaN,Legs feeling strong!
+2019-09-30 7:15,Morning Ride,Ride,1732,,Legs feeling strong!
 2019-09-30 20:45,Afternoon Ride,Ride,2222,12.82,Beautiful morning! Feeling fit
-2019-10-01 7:13,Morning Ride,Ride,1756,NaN,A little tired today but good weather
+2019-10-01 7:13,Morning Ride,Ride,1756,,A little tired today but good weather
 2019-10-01 20:46,Afternoon Ride,Ride,2134,13.06,Bit tired today but good weather
 2019-10-02 7:45,Morning Ride,Ride,1724,12.52,Feeling good
 2019-10-02 20:47,Afternoon Ride,Ride,2182,12.68,Wet road

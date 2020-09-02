@@ -1391,13 +1391,13 @@ Use the `lego` dataframe to help answer the next question.
 Let's practice using the verbs we learned from the lesson to process a string column in our Lego dataset. 
 
 Tasks:
-- Convert the `name` column in the `lego` dataset to lowercase and save it in an object named `lego`.
-- Filter the dataset to find all the Lego sets that contain `"weetabix"`.
+- Convert the `name` column in the `lego` dataset to lowercase and overwrite the dataframe by saving it as an object named `lego`.
+- Filter the dataset to find all the Lego sets that contain `"weetabix"` in the `name` column.
 - Save this as an object named `lego_weetabix`.
-- Replace the word` "Weetabix`" in the `name` column of the `lego_wetabix` dataframe with the string `"cereal-brand"`.
+- Replace the word` "weetabix`" in the `name` column of the `lego_wetabix` dataframe with the string `"cereal-brand"`.
 - Save this in an object called `lego_cereal`.
-- If the row contains the word `"promotional"`, change the entire value to `"cereal-brand freebie"`.
-- Display `lego_cereal`
+- If the row contains the word `"promotional"` in the `name` column, change the entire value to `"cereal-brand freebie"`.
+- Display `lego_cereal`.
 
 
 <codeblock id="08_26">

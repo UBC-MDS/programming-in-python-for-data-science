@@ -66,10 +66,6 @@ cycling.head(10)
 9  Sep-18-2019 17:15  Afternoon Ride  Ride  2101     12.48                Pumped up tires
 ```
 
-In the first 10 rows of this dataset, there are multiple ways that
-“rain” appears in the `Comments` column. Let’s attempt to add some
-consistency to this.
-
 Notes: Script here
 
 <html>
@@ -133,8 +129,8 @@ Notes: Script here
 You’ll notice in the third row, the word “whether” should have been
 spelled “weather”. Let’s replace this word in the entire dataset with
 the correct spelling of “weather”.  
-In `replace()`, the first argument is the word we are identifying, and
-the second is the one that we are replacing it with.
+With `replace()`, the first argument is the word we are identifying, and
+the second is what we are replacing the first argument with.
 
 ``` python
 cycling_rain = cycling_lower.assign(Comments = cycling_lower['Comments'].str.replace('whether', 'weather'))

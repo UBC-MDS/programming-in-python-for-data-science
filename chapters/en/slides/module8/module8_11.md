@@ -120,7 +120,7 @@ cycling
                   Date            Name  Type  Time  Distance                                   Comments
 0  2019-09-09 07:13:00    Morning Ride  Ride  2084     12.62                                       Rain
 1  2019-09-09 20:52:00  Afternoon Ride  Ride  2531     13.03                                       rain
-2  2019-09-10 07:23:00    Morning Ride  Ride  1863     12.52                  Wet road but nice weather
+2  2019-09-10 07:23:00    Morning Ride  Ride  1863       NaN                  Wet road but nice weather
 3  2019-09-10 21:06:00  Afternoon Ride  Ride  2192     12.84               Stopped for photo of sunrise
 ..                 ...             ...   ...   ...       ...                                        ...
 29 2019-10-08 20:55:00  Afternoon Ride  Ride  2149     12.70              Really cold! But feeling good
@@ -161,7 +161,7 @@ Data columns (total 6 columns):
  1   Name      33 non-null     object        
  2   Type      33 non-null     object        
  3   Time      33 non-null     int64         
- 4   Distance  31 non-null     float64       
+ 4   Distance  30 non-null     float64       
  5   Comments  33 non-null     object        
 dtypes: datetime64[ns](1), float64(1), int64(1), object(3)
 memory usage: 1.7+ KB
@@ -195,7 +195,7 @@ cycling['Distance'].isnull()
 ```out
 0     False
 1     False
-2     False
+2      True
 3     False
       ...  
 29    False
@@ -219,9 +219,24 @@ Notes: Script here
 
 ---
 
-We can pair `.isnull()` with our filtering method and the verb `.any()`
-to obtain the rows that contain null values in *any* of the columns of
-the dataframe:
+We can pair `.isnull()` with our filtering method to obtain the rows
+that contain null values in the `Distance` column of the dataframe:
+
+``` python
+cycling[cycling['Distance'].isnull()]
+```
+
+```out
+                  Date          Name  Type  Time  Distance                               Comments
+2  2019-09-10 07:23:00  Morning Ride  Ride  1863       NaN              Wet road but nice weather
+22 2019-09-30 07:15:00  Morning Ride  Ride  1732       NaN                   Legs feeling strong!
+24 2019-10-01 07:13:00  Morning Ride  Ride  1756       NaN  A little tired today but good weather
+```
+
+Here, we see the 3 rows of our dataframe that contain null values.
+
+If we wanted to filter all the rows that contain null values and not
+just in the `Distance` column, we can use the verb `.any()`
 
 ``` python
 cycling[cycling.isnull().any(axis=1)]
@@ -229,11 +244,13 @@ cycling[cycling.isnull().any(axis=1)]
 
 ```out
                   Date          Name  Type  Time  Distance                               Comments
+2  2019-09-10 07:23:00  Morning Ride  Ride  1863       NaN              Wet road but nice weather
 22 2019-09-30 07:15:00  Morning Ride  Ride  1732       NaN                   Legs feeling strong!
 24 2019-10-01 07:13:00  Morning Ride  Ride  1756       NaN  A little tired today but good weather
 ```
 
-Here, we see the 3 rows of our dataframe that contain null values.
+We only have `NaN` values in the Distance column so the same 3 rows are
+outputted as before.
 
 Notes: Script here
 
@@ -291,15 +308,15 @@ trips_removed
                   Date            Name  Type  Time  Distance                                   Comments
 0  2019-09-09 07:13:00    Morning Ride  Ride  2084     12.62                                       Rain
 1  2019-09-09 20:52:00  Afternoon Ride  Ride  2531     13.03                                       rain
-2  2019-09-10 07:23:00    Morning Ride  Ride  1863     12.52                  Wet road but nice weather
 3  2019-09-10 21:06:00  Afternoon Ride  Ride  2192     12.84               Stopped for photo of sunrise
+4  2019-09-11 07:28:00    Morning Ride  Ride  1891     12.48               Tired by the end of the week
 ..                 ...             ...   ...   ...       ...                                        ...
 29 2019-10-08 20:55:00  Afternoon Ride  Ride  2149     12.70              Really cold! But feeling good
 30 2019-10-09 07:10:00    Morning Ride  Ride  1841     12.59        Feeling good after a holiday break!
 31 2019-10-09 20:47:00  Afternoon Ride  Ride  2463     12.79               Stopped for photo of sunrise
 32 2019-10-10 07:16:00    Morning Ride  Ride  1843     11.79  Bike feeling tight, needs an oil and pump
 
-[31 rows x 6 columns]
+[30 rows x 6 columns]
 ```
 
 Notice that index 2 was removed and we only have 30 rows in our
@@ -320,7 +337,7 @@ Notes: Script here
 ---
 
 By default, all the rows with `NaN` values in any column will be
-considered when dropping rows, however, if we only want to drop rows
+considered when dropping rows; however, if we only want to drop rows
 with `NaN` values in certain columns, we can use the `subset` argument:
 
 ``` python
@@ -331,7 +348,7 @@ cycling.dropna(subset=['Type'])
                   Date            Name  Type  Time  Distance                                   Comments
 0  2019-09-09 07:13:00    Morning Ride  Ride  2084     12.62                                       Rain
 1  2019-09-09 20:52:00  Afternoon Ride  Ride  2531     13.03                                       rain
-2  2019-09-10 07:23:00    Morning Ride  Ride  1863     12.52                  Wet road but nice weather
+2  2019-09-10 07:23:00    Morning Ride  Ride  1863       NaN                  Wet road but nice weather
 3  2019-09-10 21:06:00  Afternoon Ride  Ride  2192     12.84               Stopped for photo of sunrise
 ..                 ...             ...   ...   ...       ...                                        ...
 29 2019-10-08 20:55:00  Afternoon Ride  Ride  2149     12.70              Really cold! But feeling good
@@ -369,16 +386,21 @@ cycling.dropna(subset=['Distance'])
                   Date            Name  Type  Time  Distance                                   Comments
 0  2019-09-09 07:13:00    Morning Ride  Ride  2084     12.62                                       Rain
 1  2019-09-09 20:52:00  Afternoon Ride  Ride  2531     13.03                                       rain
-2  2019-09-10 07:23:00    Morning Ride  Ride  1863     12.52                  Wet road but nice weather
 3  2019-09-10 21:06:00  Afternoon Ride  Ride  2192     12.84               Stopped for photo of sunrise
+4  2019-09-11 07:28:00    Morning Ride  Ride  1891     12.48               Tired by the end of the week
 ..                 ...             ...   ...   ...       ...                                        ...
 29 2019-10-08 20:55:00  Afternoon Ride  Ride  2149     12.70              Really cold! But feeling good
 30 2019-10-09 07:10:00    Morning Ride  Ride  1841     12.59        Feeling good after a holiday break!
 31 2019-10-09 20:47:00  Afternoon Ride  Ride  2463     12.79               Stopped for photo of sunrise
 32 2019-10-10 07:16:00    Morning Ride  Ride  1843     11.79  Bike feeling tight, needs an oil and pump
 
-[31 rows x 6 columns]
+[30 rows x 6 columns]
 ```
+
+Alternatively if you have a column missing a large portion of data, the
+best option maybe to drop that column instead of the rows with missing
+values. This will keep more of your data instead of dropping and losing
+most of your data.
 
 Notes: Script here
 
@@ -398,7 +420,7 @@ Notes: Script here
 
 Alternately, if we have a small dataset and we don’t want to rid
 ourselves of any data, we may prefer to replace `NaN` with a particular
-value. We can do so will `.fillna()`.
+value. We can do so with `.fillna()`.
 
 Perhaps it’s missing from the data because he didn’t cycle that
 particular day. Replacing the `NaN` value with 0 in this case would make
@@ -413,7 +435,7 @@ cycling_zero_fill
                   Date            Name  Type  Time  Distance                                   Comments
 0  2019-09-09 07:13:00    Morning Ride  Ride  2084     12.62                                       Rain
 1  2019-09-09 20:52:00  Afternoon Ride  Ride  2531     13.03                                       rain
-2  2019-09-10 07:23:00    Morning Ride  Ride  1863     12.52                  Wet road but nice weather
+2  2019-09-10 07:23:00    Morning Ride  Ride  1863      0.00                  Wet road but nice weather
 3  2019-09-10 21:06:00  Afternoon Ride  Ride  2192     12.84               Stopped for photo of sunrise
 ..                 ...             ...   ...   ...       ...                                        ...
 29 2019-10-08 20:55:00  Afternoon Ride  Ride  2149     12.70              Really cold! But feeling good
@@ -460,7 +482,7 @@ cycling_mean_fill
                   Date            Name  Type  Time  Distance                                   Comments
 0  2019-09-09 07:13:00    Morning Ride  Ride  2084     12.62                                       Rain
 1  2019-09-09 20:52:00  Afternoon Ride  Ride  2531     13.03                                       rain
-2  2019-09-10 07:23:00    Morning Ride  Ride  1863     12.52                  Wet road but nice weather
+2  2019-09-10 07:23:00    Morning Ride  Ride  1863     12.67                  Wet road but nice weather
 3  2019-09-10 21:06:00  Afternoon Ride  Ride  2192     12.84               Stopped for photo of sunrise
 ..                 ...             ...   ...   ...       ...                                        ...
 29 2019-10-08 20:55:00  Afternoon Ride  Ride  2149     12.70              Really cold! But feeling good
@@ -499,7 +521,7 @@ cycling.fillna(method='bfill')
                   Date            Name  Type  Time  Distance                                   Comments
 0  2019-09-09 07:13:00    Morning Ride  Ride  2084     12.62                                       Rain
 1  2019-09-09 20:52:00  Afternoon Ride  Ride  2531     13.03                                       rain
-2  2019-09-10 07:23:00    Morning Ride  Ride  1863     12.52                  Wet road but nice weather
+2  2019-09-10 07:23:00    Morning Ride  Ride  1863     12.84                  Wet road but nice weather
 3  2019-09-10 21:06:00  Afternoon Ride  Ride  2192     12.84               Stopped for photo of sunrise
 ..                 ...             ...   ...   ...       ...                                        ...
 29 2019-10-08 20:55:00  Afternoon Ride  Ride  2149     12.70              Really cold! But feeling good
@@ -536,7 +558,7 @@ cycling.fillna(method='ffill')
                   Date            Name  Type  Time  Distance                                   Comments
 0  2019-09-09 07:13:00    Morning Ride  Ride  2084     12.62                                       Rain
 1  2019-09-09 20:52:00  Afternoon Ride  Ride  2531     13.03                                       rain
-2  2019-09-10 07:23:00    Morning Ride  Ride  1863     12.52                  Wet road but nice weather
+2  2019-09-10 07:23:00    Morning Ride  Ride  1863     13.03                  Wet road but nice weather
 3  2019-09-10 21:06:00  Afternoon Ride  Ride  2192     12.84               Stopped for photo of sunrise
 ..                 ...             ...   ...   ...       ...                                        ...
 29 2019-10-08 20:55:00  Afternoon Ride  Ride  2149     12.70              Really cold! But feeling good

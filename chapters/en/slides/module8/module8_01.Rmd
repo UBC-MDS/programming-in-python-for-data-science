@@ -59,7 +59,7 @@ Notes: Script here
 
 ---
 
-Although we have not formally introduced you to NumPy, the name may sound familiar since we've been subtly hinting at it's existence for a little while now. In the last Module, we've had you import this library for practice. 
+Although we have not formally introduced you to NumPy, the name may sound familiar since we've been subtly hinting at its existence for a little while now. In the last Module, we've had you import this library for practice. 
 
 ```{python}
 import numpy as np
@@ -244,6 +244,61 @@ Notes: Script here
 
 ---
 
+This is much more convenient than using list. 
+
+```{python}
+list_1 = [ 1, 1, 1, 1]
+```
+
+We can't simply add 1 to list:
+
+```{python eval=FALSE}
+list_1 + 1
+```
+
+```out
+TypeError: can only concatenate list (not "int") to list
+
+Detailed traceback: 
+  File "<string>", line 1, in <module>
+```
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
+If we wanted the same operations done with lists we would have to use a loop or list comprehension: 
+```{python}
+list_1 = [ 1, 1, 1, 1]
+
+list_2 =  [elem + 1 for elem in list_1]
+list_2
+```
+
+```{python}
+list_3 = []
+
+for index in range(len(list_1)):
+  list_3.append(list_1[index] + list_2[index])
+  
+list_3
+```
+
+
+
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
 ## Slicing and Indexing 1D Arrays 
 
 When it comes to slicing, 1D arrays are sliced in the same manner that lists are.
@@ -374,7 +429,7 @@ Notes: Script here
 
 --- 
 
-## NumPy Functions
+## NumPy Constants and Functions 
 
 NumPy also offers an assortment of handy mathematical constants and functions. 
 
@@ -398,6 +453,8 @@ Notes: Script here
 </audio></html>
 
 --- 
+
+## NumPy Functions 
 
 `np.prod()` calculates the product of values in an array:
 ```{python}

@@ -144,13 +144,19 @@ Notes: Script here
 
 ---
 
-We can pair `.isnull()` with our filtering method and the verb `.any()` to obtain the rows that contain null values in *any* of the columns of the dataframe:
+We can pair `.isnull()` with our filtering method  to obtain the rows that contain null values in the `Distance` column of the dataframe:
 
 ```{python}
-cycling[cycling.isnull().any(axis=1)]
+cycling[cycling['Distance'].isnull()]
 ```
 Here, we see the 3 rows of our dataframe that contain null values. 
 
+If we wanted to filter all the rows that contain null values and not just in the `Distance` column, we can use the verb `.any()` 
+```{python}
+cycling[cycling.isnull().any(axis=1)]
+```
+
+We only have `NaN` values in the Distance column so the same 3 rows are outputted as before.  
 
 Notes: Script here
 <html>
@@ -198,7 +204,7 @@ Notes: Script here
 
 ---
 
-By default, all the rows with `NaN` values in any column will be considered when dropping rows, however, if we only want to drop rows with `NaN` values in certain columns, we can use the `subset` argument:
+By default, all the rows with `NaN` values in any column will be considered when dropping rows; however, if we only want to drop rows with `NaN` values in certain columns, we can use the `subset` argument:
 
 ```{python}
 cycling.dropna(subset=['Type'])
@@ -220,7 +226,7 @@ But, the rows do get dropped when we subset on the `Distance` column.
 cycling.dropna(subset=['Distance'])
 ```
 
-
+Alternatively if you have a column missing a large portion of data, the best option maybe to drop that column instead of the rows with missing values. This will keep more of your data instead of dropping and losing most of your data. 
 
 Notes: Script here
 <html>
@@ -232,7 +238,7 @@ Notes: Script here
 
 ## Replacing Null Values
 
-Alternately, if we have a small dataset and we don't want to rid ourselves of any data, we may prefer to replace `NaN` with a particular value. We can do so will `.fillna()`.
+Alternately, if we have a small dataset and we don't want to rid ourselves of any data, we may prefer to replace `NaN` with a particular value. We can do so with `.fillna()`.
 
 Perhaps it's missing from the data because he didn't cycle that particular day. Replacing the `NaN` value with 0 in this case would make sense: 
 

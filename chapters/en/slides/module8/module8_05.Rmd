@@ -64,13 +64,14 @@ my_array = np.array((1, 2, 3, 4))
 my_array
 ```
 
-We can also use the same functions to make multi-dimensional arrays which are indicated by double square brackets `[[ ]]`:
+We can also use the same functions to make multi-dimensional arrays which are indicated by the multiple sets of square brackets `[[ ]]`:
 
 ```{python}
 list_2d = [[1, 2], [3, 4], [5, 6]]
 array_2d = np.array(list_2d)
 array_2d
 ```
+In our 1D arrays our arrays only have a single set of square brackets whereas in multi-dimensional arrays we count multiple sets. 
 
 Notes: Script here
 <html>
@@ -80,16 +81,18 @@ Notes: Script here
 
 ---
 
-Some of the functions that we use to create arrays have the ability for us to specify them with multi-dimensions:
+Some of the functions that we use to create arrays have the ability for us to specify them with multi-dimensions.
+`np.zeros()` is an function that accepts a tuple with the shape of our desired array. In this case, an array with 3 rows and 4 columns: 
 ```{python}
 np.zeros((3,4))
 ```
 
+In contract with `np.zeros()`, `np.random.rand()` accepts multiple numeric values that correspond to the arrays shape. So in the example below, an array with 4 rows and 2 columns. 
 ```{python}
 np.random.rand(4, 2) 
 ```
 
-and if not, can use the verb `.reshape()` to tranform a 1D array into a multi-dimension array: 
+We can also use the verb `.reshape()` to tranform a 1D array into a multi-dimension array: 
 
 ```{python}
 np.arange(0,12).reshape(3,4)
@@ -105,7 +108,7 @@ Notes: Script here
 
 ## Array Shapes 
 
-We saw how to make multi-dimensional arrays but dimension is quite different than what the shape of an array is?  
+We saw how to make multi-dimensional arrays but dimension is quite different than what the shape of an array is.
 
 <center><img src='/module8/arrays2.png' width="80%"></center>
 
@@ -204,7 +207,7 @@ And the size is the product of the values in `.shape`:
 array_2d.size
 ```
 
-If we have the `.shape()` of the array, we can get both the `.ndim` of the array:
+If we have the `.shape` of the array, we can get both the `.ndim` of the array:
 
 ```{python}
 len(array_2d.shape)
@@ -278,6 +281,10 @@ Notes: Script here
 </audio></html>
 
 ---
+
+```{python echo=FALSE}
+arr2
+```
 
 We can take the <a href=" https://en.wikipedia.org/wiki/Transpose" target="_blank">***transpose***</a> of the array by using `.T`:
 ```{python}

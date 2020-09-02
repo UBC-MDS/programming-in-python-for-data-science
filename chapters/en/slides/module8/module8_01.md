@@ -19,7 +19,7 @@ Notes: Script here
 ---
 
 Although we have not formally introduced you to NumPy, the name may
-sound familiar since we’ve been subtly hinting at it’s existence for a
+sound familiar since we’ve been subtly hinting at its existence for a
 little while now. In the last Module, we’ve had you import this library
 for practice.
 
@@ -262,7 +262,7 @@ np.random.rand(5)
 ```
 
 ```out
-array([0.18421334, 0.88444349, 0.11919878, 0.00945575, 0.44093004])
+array([0.22372345, 0.15132826, 0.30426053, 0.15904163, 0.69786739])
 ```
 
 Notes: Script here
@@ -334,46 +334,23 @@ Notes: Script here
 
 ---
 
-## Slicing and Indexing 1D Arrays
-
-When it comes to slicing, 1D arrays are sliced in the same manner that
-lists are.
+This is much more convenient than using list.
 
 ``` python
-arr = np.arange(10)
-arr
+list_1 = [ 1, 1, 1, 1]
 ```
 
-```out
-array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
-```
+We can’t simply add 1 to list:
 
 ``` python
-arr[7]
+list_1 + 1
 ```
 
-```out
-7
-```
+``` out
+TypeError: can only concatenate list (not "int") to list
 
-The first value is included and the last value is excluded:
-
-``` python
-arr[2:6]
-```
-
-```out
-array([2, 3, 4, 5])
-```
-
-To obtain elements from right to left, we use negative integers:
-
-``` python
-arr[-1]
-```
-
-```out
-9
+Detailed traceback: 
+  File "<string>", line 1, in <module>
 ```
 
 Notes: Script here
@@ -389,6 +366,45 @@ Notes: Script here
 </html>
 
 ---
+
+If we wanted the same operations done with lists we would have to use a
+loop or list comprehension:
+
+``` python
+list_1 = [ 1, 1, 1, 1]
+
+list_2 =  [elem + 1 for elem in list_1]
+list_2
+```
+
+```out
+[2, 2, 2, 2]
+```
+
+``` python
+list_3 = []
+
+for index in range(len(list_1)):
+  list_3.append(list_1[index] + list_2[index])
+  
+list_3
+```
+
+```out
+[3, 3, 3, 3]
+```
+
+Notes: Script here
+
+<html>
+
+<audio controls >
+
+<source src="/placeholder_audio.mp3" />
+
+</audio>
+
+</html>
 
 ## Boolean Indexing
 
@@ -593,7 +609,7 @@ Notes: Script here
 
 ---
 
-## NumPy Functions
+## NumPy Constants and Functions
 
 NumPy also offers an assortment of handy mathematical constants and
 functions.
@@ -641,6 +657,8 @@ Notes: Script here
 </html>
 
 ---
+
+## NumPy Functions
 
 `np.prod()` calculates the product of values in an array:
 

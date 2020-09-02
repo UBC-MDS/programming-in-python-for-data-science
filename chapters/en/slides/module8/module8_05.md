@@ -33,7 +33,7 @@ array([1, 2, 3, 4])
 ```
 
 We can also use the same functions to make multi-dimensional arrays
-which are indicated by double square brackets `[[ ]]`:
+which are indicated by the multiple sets of square brackets `[[ ]]`:
 
 ``` python
 list_2d = [[1, 2], [3, 4], [5, 6]]
@@ -46,6 +46,9 @@ array([[1, 2],
        [3, 4],
        [5, 6]])
 ```
+
+In our 1D arrays our arrays only have a single set of square brackets
+whereas in multi-dimensional arrays we count multiple sets.
 
 Notes: Script here
 
@@ -62,7 +65,9 @@ Notes: Script here
 ---
 
 Some of the functions that we use to create arrays have the ability for
-us to specify them with multi-dimensions:
+us to specify them with multi-dimensions. `np.zeros()` is an function
+that accepts a tuple with the shape of our desired array. In this case,
+an array with 3 rows and 4 columns:
 
 ``` python
 np.zeros((3,4))
@@ -74,18 +79,22 @@ array([[0., 0., 0., 0.],
        [0., 0., 0., 0.]])
 ```
 
+In contract with `np.zeros()`, `np.random.rand()` accepts multiple
+numeric values that correspond to the arrays shape. So in the example
+below, an array with 4 rows and 2 columns.
+
 ``` python
 np.random.rand(4, 2) 
 ```
 
 ```out
-array([[0.52392315, 0.53307401],
-       [0.92010116, 0.04534463],
-       [0.39500666, 0.98398876],
-       [0.29453085, 0.53184425]])
+array([[0.17635848, 0.02952597],
+       [0.11193804, 0.34486957],
+       [0.71794244, 0.0961665 ],
+       [0.50173848, 0.93063494]])
 ```
 
-and if not, can use the verb `.reshape()` to tranform a 1D array into a
+We can also use the verb `.reshape()` to tranform a 1D array into a
 multi-dimension array:
 
 ``` python
@@ -115,7 +124,7 @@ Notes: Script here
 ## Array Shapes
 
 We saw how to make multi-dimensional arrays but dimension is quite
-different than what the shape of an array is?
+different than what the shape of an array is.
 
 <center>
 
@@ -298,8 +307,8 @@ array_2d.size
 6
 ```
 
-If we have the `.shape()` of the array, we can get both the `.ndim` of
-the array:
+If we have the `.shape` of the array, we can get both the `.ndim` of the
+array:
 
 ``` python
 len(array_2d.shape)
@@ -439,6 +448,12 @@ Notes: Script here
 </html>
 
 ---
+
+```out
+array([[ 0,  1,  2,  3],
+       [ 4,  5,  6,  7],
+       [ 8,  9, 10, 11]])
+```
 
 We can take the
 <a href=" https://en.wikipedia.org/wiki/Transpose" target="_blank">***transpose***</a>
