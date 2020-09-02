@@ -86,6 +86,42 @@ Notes: Script here
 
 ---
 
+Lets see an example where `Altair` fails to determine the correct data type. For this example, we have modified the `calories` column in the `cereal` dataframe. We will now generate a scatter plot of `manufacturer` and `calories` from this modified cereal dataset.
+
+```{python include =FALSE}
+# convert the calories column to a string
+cereal_mod = cereal
+cereal_mod['calories'] = cereal_mod['calories'].astype(str)
+```
+
+```{python}
+
+chart0 = alt.Chart(cereal_mod, width=500, height=300).mark_circle().encode(
+    x='mfr', 
+    y='calories'
+).properties(title="Scatter plot of manufacturer calorie content")
+chart0
+
+```
+
+
+```{python include =FALSE}
+chart0.save(path + 'chart0.png')
+```
+
+<img src="/module2/chart0.png" alt="A caption" width="40%" />
+
+- Notice how $150$ come before $100$ on the `y-axis`? It seems we have a problem here. 
+- Even Altair can’t always get it right, which is why it’s so important we specify the data type when plotting. 
+
+Notes: Script here
+<html>
+<audio controls >
+  <source src="/placeholder_audio.mp3" />
+</audio></html>
+
+---
+
 Now let's say we are interested in plotting the sugar content in cereals from each manufacturer. We do this using a `bar` plot Which we are familiar with. We will be using the `mfr` column and the `sugars` column from the `cereal` dataframe we have been using. 
 
 Here, `mfr` is a categorical column (remember this explanation from module 1?). This is because there is no specific order in which cereal type must come before another. For example, it is not the case that "Kelloggs" must come before “Quaker”. Because of this, the `mfr` column is categorized as a **nominal** data type. The `sugars` column in contrast, is categorized as quantitative column. This is because the values in the column are all quantitative measurement that takes on any positive integer value.
