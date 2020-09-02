@@ -4,27 +4,9 @@ type: slides
 
 # Reshaping with Melt
 
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+Notes: <br>
 
 ---
-
-In the last section we discussed how `pandas` provides 2 functions for
-reshaping data;
-<a href="https://pandas.pydata.org/docs/reference/api/pandas.melt.html" target="_blank">`.melt()`</a>
-and
-<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.pivot.html" target="_blank">`.pivot()`</a>
-. We are going to spend this next section discussing `.melt()` which is
-simply the reverse transformation of `.pivot()`.
 
 Instead of converting a long dataframe to a wider one as we do in
 `.pivot()`, we do the opposite and convert a wide dataframe into a
@@ -36,22 +18,17 @@ longer one.
 
 </center>
 
-Notes: Script here
+Notes: In the last section we discussed how `pandas` provides 2
+functions for reshaping data;
+<a href="https://pandas.pydata.org/docs/reference/api/pandas.melt.html" target="_blank">`.melt()`</a>
+and
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.pivot.html" target="_blank">`.pivot()`</a>
+.
 
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+We are going to spend this next section discussing `.melt()` which is
+simply the reverse transformation of `.pivot()`.
 
 ---
-
-Let’s take a look at a subset of our the cereal data we’ve been working
-with.
 
 ``` python
 cereal
@@ -66,22 +43,16 @@ cereal
 4     Wheaties   G       100        3
 ```
 
+Notes:
+
+Let’s take a look at a subset of our the cereal data we’ve been working
+with.
+
 We can see there are 5 rows and 2 numerical columns; `calories` and
 `protein`.  
 Perhaps we would prefer if this was transformed into a long dataframe.
+
 How would we do it?
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
 
 ---
 
@@ -93,26 +64,11 @@ Notes: Script here
 
 </center>
 
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+Notes: We can use melt\!
 
 ---
 
 ## Melt
-
-Let’s attempt to melt the `calories` and `protein` columns into a single
-one named `nutrition` with the values expressed in a column named
-`value`. Exactly like we started with when we used `.pivot()` in the
-last section.
 
 ``` python
 melted_cereal  = (cereal.melt(id_vars=['name', 'mfr'] , 
@@ -137,24 +93,17 @@ melted_cereal
 9     Wheaties   G   protein      3
 ```
 
+Notes:
+
+Let’s attempt to melt the `calories` and `protein` columns into a single
+one named `nutrition` with the values expressed in a column named
+`value`. Exactly like we started with when we used `.pivot()` in the
+last section.
+
 It’s not quite in the same order, but we can agree that its what we
 want.
 
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
 ---
-
-Let’s try to understand what happened.
 
 <center>
 
@@ -170,8 +119,12 @@ melted_cereal  = (cereal.melt(id_vars=['name', 'mfr'],
                 )
 ```
 
-  - The identifing column and the columns we wanted to keep are
-    specified in the `id_vars` argument
+Notes:
+
+Let’s try to understand what happened.
+
+  - The identifying column and the columns we wanted to keep, are
+    specified in the `id_vars` argument.
   - the columns `calories` and `protein` are called in `value_vars` and
     melted down into a single column named `nutrition`.
   - We named the new column using the argument `var_name`.
@@ -181,26 +134,8 @@ melted_cereal  = (cereal.melt(id_vars=['name', 'mfr'],
 Although this verb takes 4 arguments and pivot only takes 3, we do not
 need to reset our index after melting.
 
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
 ---
 
 # Let’s practice what we learned\!
 
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
+Notes: <br>

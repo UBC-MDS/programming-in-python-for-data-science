@@ -4,6 +4,8 @@ type: slides
 
 # Tidy data
 
+Notes: <br>
+
 ---
 
 ### What is the concept of tidy data?
@@ -85,11 +87,11 @@ Criterion \#1 is met\!
 
 </center>
 
-From the dataframe we can see that each of the variables `name`, `mfr`,
-`calories` and `protein` have their own column. We can validate that
-criterion \#2 is also met.
+Notes: From the dataframe we can see that each of the variables `name`,
+`mfr`, `calories` and `protein` have their own column. We can validate
+that criterion \#2 is also met.
 
-## Notes: From the dataframe we can see that each of the variables `name`, `mfr`, `calories` and `protein` have their own column. We can validate that criterion \#2 is also met.
+---
 
 ## Criterion \#3: Each value is a single cell
 
@@ -153,20 +155,18 @@ cereal2
 ```
 
 ```out
-                          name mfr nutrition  value
-0                    100% Bran   N   protein      4
-1            100% Natural Bran   Q   protein      3
-2                     All-Bran   K   protein      4
-3    All-Bran with Extra Fiber   K   protein      4
-4               Almond Delight   R   protein      2
-..                         ...  ..       ...    ...
-149                    Triples   G  calories    110
-150                       Trix   G  calories    110
-151                 Wheat Chex   R  calories    100
-152                   Wheaties   G  calories    100
-153        Wheaties Honey Gold   G  calories    110
+            name mfr nutrition  value
+6    Apple Jacks   K   protein      2
+9    Bran Flakes   P   protein      3
+11      Cheerios   G   protein      6
+37    Honey-comb   P   protein      1
+..           ...  ..       ...    ...
+114   Honey-comb   P  calories    110
+135  Raisin Bran   K  calories    120
+144    Special K   K  calories    110
+152     Wheaties   G  calories    100
 
-[154 rows x 4 columns]
+[14 rows x 4 columns]
 ```
 
 ``` python
@@ -174,7 +174,7 @@ cereal2[cereal2['nutrition'] == 'calories']['value'].mean()
 ```
 
 ```out
-106.88311688311688
+107.14285714285714
 ```
 
 If we had tidy data we could have simply done:
@@ -197,14 +197,4 @@ column.
 
 # Let’s practice what we know about tidy data first\!
 
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+Notes: <br>
