@@ -14,3 +14,18 @@
 - Take up a large amount of head room in your face recording.
 - Use a plain background.
 - Set up the face recording as far to the right as right as possible.
+
+## Hayley standard for slides 
+
+Dimensions = 1980 * 1020 
+Broswer = Chrome, with Zoom at 80% taking up the whole screen 
+
+
+
+33% zoom on face filming 
+Located at 670 * 320 with dimensions 230 * 230
+
+
+Audio Effect -> Noise Removal
+
+Template stored in this file. 
