@@ -17,10 +17,15 @@
 
 ## Hayley standard for slides 
 
+Using my 13" Macbook Pro laptop. 
 Dimensions = 1980 * 1020 
+Facetime HD camera = 1280 * 720
 Broswer = Chrome, with Zoom at 80% taking up the whole screen 
 
-
+Display
+Resolution: Default for deplay
+Full brightness and 
+True tone turned on 
 
 33% zoom on face filming 
 Located at 670 * 320 with dimensions 230 * 230
