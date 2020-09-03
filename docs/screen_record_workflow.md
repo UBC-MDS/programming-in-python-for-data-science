@@ -27,10 +27,17 @@ Resolution: Default for deplay
 Full brightness and 
 True tone turned on 
 
-33% zoom on face filming 
-Located at 670 * 320 with dimensions 230 * 230
+33% zoom on face filming     
+     
+**Location**    
+X: 670    
+Y: 320        
+     
+**Size**      
+Width:230   
+Height:230       
+    
+     
+Audio Effect -> Noise Removal       
 
-
-Audio Effect -> Noise Removal
-
-Template stored in this file. 
+Template stored in this file.        
