@@ -33,7 +33,7 @@ Let’s explore some more examples.
 
 <center>
 
-<img src='/module3/wide-long1.png' width="40%">
+<img src='/module3/wide-long1.png' width="35%">
 
 </center>
 
@@ -44,7 +44,7 @@ the number of languages spoken in a country)?”***
 
 <center>
 
-<img src='/module3/wide-long2.png' width="50%">
+<img src='/module3/wide-long2.png' width="35%">
 
 </center>
 
@@ -81,7 +81,7 @@ deaths per 1,000 live births.
 
 <center>
 
-<img src='/module3/wide-long3.png' width="38%">
+<img src='/module3/wide-long3.png' width="35%">
 
 </center>
 
@@ -91,7 +91,7 @@ child mortality?”***
 
 <center>
 
-<img src='/module3/wide-long4.png' width="38%">
+<img src='/module3/wide-long4.png' width="35%">
 
 </center>
 

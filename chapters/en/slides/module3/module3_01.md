@@ -115,7 +115,7 @@ that criterion \#3 is met\!
 Notes: As expected, the cereal data we have been working with is *tidy
 data* for our statistical question.  
 Let’s look at a longer dataframe with the same information where this is
-not the case:
+not the case.
 
 ---
 
@@ -155,16 +155,16 @@ cereal2
 ```
 
 ```out
-            name mfr nutrition  value
-6    Apple Jacks   K   protein      2
-9    Bran Flakes   P   protein      3
-11      Cheerios   G   protein      6
-37    Honey-comb   P   protein      1
-..           ...  ..       ...    ...
-114   Honey-comb   P  calories    110
-135  Raisin Bran   K  calories    120
-144    Special K   K  calories    110
-152     Wheaties   G  calories    100
+           name mfr nutrition  value
+0   Apple Jacks   K   protein      2
+1   Bran Flakes   P   protein      3
+2      Cheerios   G   protein      6
+3    Honey-comb   P   protein      1
+..          ...  ..       ...    ...
+10   Honey-comb   P  calories    110
+11  Raisin Bran   K  calories    120
+12    Special K   K  calories    110
+13     Wheaties   G  calories    100
 
 [14 rows x 4 columns]
 ```
@@ -184,7 +184,7 @@ cereal['calories'].mean()
 ```
 
 ```out
-106.88311688311688
+107.14285714285714
 ```
 
 Notes: The dataframe `cereal2` shows our untidy data from the previous

@@ -41,10 +41,13 @@ np.set_printoptions(linewidth=400)
 pd.set_option('display.max_columns', 50)
 pd.set_option('display.max_rows', 8)
 
-df = pd.read_csv('cereal.csv', index_col=0)
-cereal = pd.read_csv('cereal.csv', index_col=0)
+cereal = pd.read_csv('cereal.csv')
+cereal = cereal[cereal['name'].isin(['Special K', 'Apple Jacks', 'Raisin Bran', 'Cheerios', 'Wheaties', 'Bran Flakes', 'Honey-comb'])]
 ```
 
+```{python}
+
+```
 
 type: slides
 
@@ -123,7 +126,7 @@ Notes: The variable value for each cereal has it's own cell, confirming that cri
 <center><img src="/module3/tidy2-table.png" width="500" /><center>
 
 Notes: As expected, the cereal data we have been working with is _tidy data_ for our statistical question.      
-Let's look at a longer dataframe with the same information where this is not the case:
+Let's look at a longer dataframe with the same information where this is not the case.
 
 ---
 
@@ -155,7 +158,6 @@ cereal2 = (cereal.reset_index()
                      value_name="value")
                .sort_index()
                      )
-cereal2 = cereal2[cereal2['name'].isin(['Special K', 'Apple Jacks', 'Raisin Bran', 'Cheerios', 'Wheaties', 'Bran Flakes', 'Honey-comb'])]
 ```
 
 

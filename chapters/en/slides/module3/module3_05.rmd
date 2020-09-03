@@ -81,14 +81,14 @@ Let's explore some more examples.
 
 ---
 
-<center><img src='/module3/wide-long1.png' width="40%"></center>
+<center><img src='/module3/wide-long1.png' width="35%"></center>
 
 We are trying to answer the statistical question:    
 
 ***"What factors are associated with language diversity (as measured by the number of languages spoken in a country)?"***
 
 
-<center><img src='/module3/wide-long2.png' width="50%"></center>
+<center><img src='/module3/wide-long2.png' width="35%"></center>
 
 
 Notes: We are trying to answer the statistical question:    
@@ -109,13 +109,13 @@ Here is the UNICEF dataset on under-five child mortality  which is available <a 
 
 ---
 
-<center><img src='/module3/wide-long3.png' width="38%"></center>
+<center><img src='/module3/wide-long3.png' width="35%"></center>
 
 The statistical question that we'd like to answer with this data set is: 
 ***"Is there a relationship between country and/or year of under-five child mortality?"***
 
 
-<center><img src='/module3/wide-long4.png' width="38%"></center>
+<center><img src='/module3/wide-long4.png' width="35%"></center>
 
 
 Notes: The statistical question that we'd like to answer with this data set is:    

@@ -102,6 +102,11 @@ Notes: We use `pivot()` in the following way to transform it into a wider datafr
 ---
 
 ```{python}
+cereal_long.head(3)
+```
+
+
+```{python}
 cereal_wide = cereal_long.pivot(index='name', columns='nutrition', values='value')
 cereal_wide
 ```
@@ -132,13 +137,20 @@ Notes: Can you see the difference?
 
 ---
 
-
+<br>
+<br>
+<br>
+<br>
 <center><img src='/module3/piv_cereal3.png' width="100%"></center>
 
 
 Notes: The following diagram explains what is happening in the transformation. 
 
 ---
+
+<br>
+<br>
+<br>
 
 <center><img src='/module3/piv_cereal3.png' width="100%"></center>
 

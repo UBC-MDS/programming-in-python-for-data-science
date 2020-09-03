@@ -85,6 +85,17 @@ wider dataframe.
 ---
 
 ``` python
+cereal_long.head(3)
+```
+
+```out
+          name mfr nutrition  value
+0    Special K   K  calories    110
+1    Special K   K   protein      6
+2  Apple Jacks   K  calories    110
+```
+
+``` python
 cereal_wide = cereal_long.pivot(index='name', columns='nutrition', values='value')
 cereal_wide
 ```
@@ -149,6 +160,8 @@ Notes: Can you see the difference?
 
 ---
 
+<br> <br> <br> <br>
+
 <center>
 
 <img src='/module3/piv_cereal3.png' width="100%">
@@ -159,6 +172,8 @@ Notes: The following diagram explains what is happening in the
 transformation.
 
 ---
+
+<br> <br> <br>
 
 <center>
 
