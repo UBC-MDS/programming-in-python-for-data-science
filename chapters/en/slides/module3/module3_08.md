@@ -234,13 +234,13 @@ nutrition         name  calories  protein
 Notes:
 
 Let’s take a brief detour and discuss resetting the index. Here is our
-dataset `cereal_wide`.
+dataframe `cereal_wide`.
 
 While pivoting we transformed the `name` column as our index.
 
-We can transform the `name` index back into a regular colum by using the
-same `reset_index()` verb we learned when plotting grouped dataframes in
-module 2:
+We can transform the `name` index back into a regular column by using
+the same `reset_index()` verb we learned when plotting grouped
+dataframes in module 2:
 
 ---
 
