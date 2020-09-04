@@ -81,7 +81,7 @@ Of course, there are many other file types but we will focus on these for this c
 <a href="https://raw.githubusercontent.com/UBC-MDS/MCL-DSCI-011-programming-in-python/master/data/candybars.csv" target="_blank">https://raw.githubusercontent.com/UBC-MDS/MCL-DSCI-011-programming-in-python/master/data/candybars.csv</a>.
 
 
-<center> <img src='/module2/url-samp.png'  alt="404 image"  width="60%" height="60%" align="middle"/></center>
+<center> <img src='/module2/url-samp.png'  alt="404 image"  width="50%"  align="middle"/></center>
 
 
 ```{python}
@@ -109,13 +109,18 @@ It uses the same `pd.read_csv()` function we saw when reading in csv files local
 
 ```{python}
 candybars = pd.read_csv('candybars-text.txt')
-candybars
+candybars.head()
 ```
 
 
+```{python}
+candybars = pd.read_csv('candybars-text.txt', delimiter='\t')
+candybars.head()
+```
+
 Notes: 
 
-Reading in `txt` files can be a little less standard. Sometimes the character separating column values are not always commas like we saw above. There are many different options and when we read in the data, we need to specify how the data should be recognized.     
+Reading in `txt` files can be a little less standard. Sometimes the character separating column values are not always commas like we saw before There are many different options and when we read in the data, we need to specify how the data should be recognized.     
 Let's load in the `candybars-text.txt` file. This is the same as the `candybars.csv` data but saved as a `txt` file. Look what happens when we load it in using the same syntax we are used to.
 
 
@@ -124,19 +129,10 @@ This is called the **delimiter**.
 
 In this specific case, a  `\t` delimiter is a "tab". 
 
----
-
-```{python}
-candybars = pd.read_csv('candybars-text.txt', delimiter='\t')
-candybars
-```
-
-
-Notes: 
-
  We need to tell `pd.read_csv()` to separate each value on our delimiter `\t`.
 
-That's much better.    
+That's much better.  
+
 The delimiter won't always be `\t` for `txt` files. The most common delimiters are `;`, `,`, `\t`, and sometimes even just spaces. 
 
 ---
@@ -151,17 +147,18 @@ candybars
 Notes: 
 
 Excel files need special attention because they give the user the capability of additional formatting including saving multiple dataframes on different "sheets" within a single file. If this is the case, we need to specify which sheet we want.
+
 Since this is a new type of animal, we also need a new verb. Enter `read_excel()`.
 
 Our candybars dataframe is now saved as an excel spreadsheet named `foods.xlsx` on a sheet named `chocolate`.    
+
 Here is how we would read it in.
 
 ---
 
 ## Reading in Data from a Different File
 
-
-<center> <img src='/module2/datafile.png'  alt="404 image"  width="80%" align="middle"/></center>
+<center> <img src='/module2/datafile.png'  alt="404 image"  width="70%" align="middle"/></center>
 
 This translates to the syntax `data/canucks.csv`.
 
@@ -178,9 +175,15 @@ This translates to the syntax `data/canucks.csv`.
 
 ---
 
-_Example:_ 
 
-data/module1/question3/candybars.csv  
+_*Example:*_ 
+
+`data/module3/question2/candybars.csv`
+
+<br>
+<br>
+
+<center> <img src='/module2/more_files.png'  alt="404 image"  width="80%" align="middle"/></center>
 
 Notes: 
 This syntax is not restricted to a single subdirectory and could even have multiple folders between the current location and the final file name.

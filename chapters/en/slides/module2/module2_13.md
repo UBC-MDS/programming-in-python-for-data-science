@@ -4,28 +4,15 @@ type: slides
 
 # Column arithmetic and creation
 
-Notes: Script here
+Notes:
 
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+<br>
 
 ---
 
-Doing some sort of transformation on the columns of a dataframe will
-most likely come up in your analysis somewhere and it’s not always
-straightforward. Let’s welcome back the `cereal.csv` data we have worked
-with in Module 1.
-
 ``` python
-df = pd.read_csv('cereal.csv')
-df.head()
+cereal = pd.read_csv('cereal.csv')
+cereal.head()
 ```
 
 ```out
@@ -39,32 +26,25 @@ df.head()
 [5 rows x 16 columns]
 ```
 
-Attribution:  
+**Attribution:**  
 *“[80 Cereals](https://www.kaggle.com/crawford/80-cereals/)” (c) by
 [Chris Crawford](https://www.linkedin.com/in/crawforc3/) is licensed
 under [Creative Commons Attribution-ShareAlike 3.0
 Unported](http://creativecommons.org/licenses/by-sa/3.0/)*
 
-Notes: Script here
+Notes:
 
-<html>
+Doing some sort of transformation on the columns of a dataframe will
+most likely come up in your analysis somewhere and it’s not always
+straightforward.
 
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+Let’s welcome back the `cereal.csv` data we have been working with.
 
 ---
 
-To make things especially clear, for the next few scenarios let’s only
-use the first 5 rows of the dataset.
-
 ``` python
-df = df.iloc[:5]
-df
+cereal= cereal.iloc[:5]
+cereal
 ```
 
 ```out
@@ -78,28 +58,12 @@ df
 [5 rows x 16 columns]
 ```
 
-Take this next scenario. Perhaps we recently read the cereal data’s
-documentation explaining that the `fat` column is being expressed as
-grams and we are interested in miligrams.  
-How can we rectify this?
+Notes:
 
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+To make things especially clear, for the next few scenarios let’s only
+use the first 5 rows of the dataset.
 
 ---
-
-We need to multiply each of the row’s fat value by 1000.
-
-<br>
 
 <center>
 
@@ -107,29 +71,20 @@ We need to multiply each of the row’s fat value by 1000.
 
 </center>
 
-Notes: Script here
+Notes:
 
-<html>
+Take this next scenario. Perhaps we recently read the cereal data’s
+documentation explaining that the `fat` column is being expressed as
+grams and we are interested in milligrams.
 
-<audio controls >
+How can we rectify this?
 
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+We need to multiply each of the row’s fat value by 1000.
 
 ---
 
-Here is where some magic happens. Python doesn’t require us to make a
-whole column filled with 1000s to get the result we want. It would
-simply multiply 1000 to each column. (In Python we use `*` for
-multiplication.)
-
-So our original fat column in the cereal dataframe:
-
 ``` python
-df['fat']
+cereal['fat']
 ```
 
 ```out
@@ -144,7 +99,7 @@ Name: fat, dtype: int64
 Is transformed to this:
 
 ``` python
-df['fat'] * 1000
+cereal['fat'] * 1000
 ```
 
 ```out
@@ -156,31 +111,24 @@ df['fat'] * 1000
 Name: fat, dtype: int64
 ```
 
-See how each row has changed in value? When we do any type of operations
-on columns, we use single square brackets.
+Notes:
 
-Notes: Script here
+Here is where some magic happens. Python doesn’t require us to make a
+whole column filled with 1000s to get the result we want. It would
+simply multiply 1000 to each column. (In Python we use `*` for
+multiplication.)
 
-<html>
+So our original fat column in the cereal dataframe is transformed\!
 
-<audio controls >
+See how each row has changed in value?
 
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+Note that when we do any type of operations on columns, we use single
+square brackets.
 
 ---
 
-We can do the same thing with any operation too.  
-Let’s divide the rating of each cereal by 10 so it lies on a 10 point
-scale.
-
-The ratings column
-
 ``` python
-df['rating'] 
+cereal['rating'] 
 ```
 
 ```out
@@ -192,10 +140,8 @@ df['rating']
 Name: rating, dtype: float64
 ```
 
-Gets transformed to this:
-
 ``` python
-df['rating'] / 10
+cereal['rating'] / 10
 ```
 
 ```out
@@ -207,21 +153,16 @@ df['rating'] / 10
 Name: rating, dtype: float64
 ```
 
-Notes: Script here
+Notes:
 
-<html>
+We can do the same thing with any operation too.  
+Let’s divide the rating of each cereal by 10 so it lies on a 10 point
+scale.
 
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+The ratings column gets transformed to single digits instead of double
+digits now.
 
 ---
-
-Every row’s value is changed by the operation.
 
 <center>
 
@@ -229,39 +170,20 @@ Every row’s value is changed by the operation.
 
 </center>
 
-Notes: Script here
+Notes:
 
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+Every row’s value is changed by the operation.
 
 ---
 
-We are not limited to simply taking a column and transforming it by a
-single number. We can do operations involving multiple columns as well.
-Perhaps we wanted to know the amount of sugar (`sugar`) per cup of
-cereal (`cups`).  
-The expected result would look something like this:
-
 <center>
 
-<img src='/module2/sugarcups.png'  width="450" alt="404 image" />
+<img src='/module2/sugarcups.png'  width="60%" alt="404 image" />
 
 </center>
 
-Remember with any column operation we use only single square brackets on
-our columns.  
-To get our desired output of sugar content per cup our code looks like
-this:
-
 ``` python
-df['sugars']/df['cups']
+cereal['sugars'] / cereal['cups']
 ```
 
 ```out
@@ -273,27 +195,27 @@ df['sugars']/df['cups']
 dtype: float64
 ```
 
+Notes:
+
+We are not limited to simply taking a column and transforming it by a
+single number. We can do operations involving multiple columns as well.
+Perhaps we wanted to know the amount of sugar (`sugar`) per cup of
+cereal (`cups`).
+
+The expected result would look something like this diagram.
+
+Remember with any column operation we use only single square brackets on
+our columns.
+
+To get our desired output of sugar content per cup our code looks like
+this.
+
 Each sugar row value is divided by its respective cups value.
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
 
 ---
 
-Just to stress the point of why we use single square brackets for our
-operations, here is what happens when we use double square brackets:
-
 ``` python
-df[['sugars']]/df[['cups']]
+cereal[['sugars']] / cereal[['cups']]
 ```
 
 ```out
@@ -305,31 +227,18 @@ df[['sugars']]/df[['cups']]
 4   NaN     NaN
 ```
 
+Notes:
+
+Just to stress the point of why we use single square brackets for our
+operations, here is what happens when we use double square brackets.
+
 This doesn’t appear very useful.
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
 
 ---
 
-Up until now, all of these operations have been done without being added
-to our cereal dataframe. Let’s explore how we can add new columns to a
-less detailed version of our cereal dataframe. Remember the argument
-`use_cols`? We are going to use it bring in only a selection of columns
-so it’s easier to follow the examples.
-
 ``` python
-df = pd.read_csv('cereal.csv', usecols=['name', 'mfr','type', 'fat', 'sugars', 'weight', 'cups','rating'])
-df
+cereal = pd.read_csv('cereal.csv', usecols=['name', 'mfr','type', 'fat', 'sugars', 'weight', 'cups','rating'])
+cereal
 ```
 
 ```out
@@ -347,34 +256,24 @@ df
 [77 rows x 8 columns]
 ```
 
-Notes: Script here
+Notes:
 
-<html>
+Up until now, all of these operations have been done without being added
+to our cereal dataframe.
 
-<audio controls >
+Let’s explore how we can add new columns to a less detailed version of
+our cereal dataframe.
 
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+Remember the argument `use_cols`? We are going to use only a selection
+of columns so it’s easier to follow the examples.
 
 ---
 
 ## Column Creation
 
-In the next scenario, we have decided that a column in the dataframe
-that shows the weight of each cereal in grams instead of ounces is
-needed.
-
-We are going to save the conversion factor of grams to ounces in an
-object named `oz_to_g` to add some clarity and flexibility to our code.
-
-Let’s start with just the operation for this desired result:
-
 ``` python
 oz_to_g = 28.3495
-df['weight']*oz_to_g
+cereal['weight'] * oz_to_g
 ```
 
 ```out
@@ -390,29 +289,9 @@ df['weight']*oz_to_g
 Name: weight, Length: 77, dtype: float64
 ```
 
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
-
-Next, we combine our operation with the implementation of adding it as a
-new column to the dataframe. The verb `.assign()` allows us to specify a
-column name to our operation using just an equal sign `=`.
-
-We are going to name our new column `weight_g`.
-
 ``` python
-df = df.assign(weight_g=df['weight']*oz_to_g)
-df.head()
+cereal = cereal.assign(weight_g=cereal['weight'] * oz_to_g)
+cereal.head()
 ```
 
 ```out
@@ -424,30 +303,30 @@ df.head()
 4             Almond Delight   R  Cold    2       8     1.0  0.75  34.384843   28.3495
 ```
 
+Notes:
+
+In the next scenario, we have decided that our `weight` column should
+shows the weight of each cereal in grams instead of ounces.
+
+We are going to save the conversion factor of grams to ounces in an
+object named `oz_to_g` to add some clarity and flexibility to our code.
+
+Let’s start with just the operation for this.
+
+Next, we combine our operation with the implementation of adding it as a
+new column to the dataframe. The verb `.assign()` allows us to specify a
+column name to our operation using just an equal sign `=`.
+
+We are going to name our new column `weight_g`.
+
 Just like we did earlier in the module, we need to save the dataframe to
 an object when making changes involving columns. This will permanently
-save the column `weight_g` to the dataframe `df`.
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+save the column `weight_g` to the dataframe `cereal`.
 
 ---
 
-Let’s try another example. This time we want to save our sugar content
-per cereal cup as a column in our existing dataframe. We established the
-operation for this is:
-
 ``` python
-df['sugars']/df['cups']
+cereal['sugars'] / cereal['cups']
 ```
 
 ```out
@@ -463,25 +342,9 @@ df['sugars']/df['cups']
 Length: 77, dtype: float64
 ```
 
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
-
-Now we combine it with `assign()` naming the column `sugar_per_cup`.
-
 ``` python
-df = df.assign(sugar_per_cup=df['sugars']/df['cups'])
-df.head()
+cereal = cereal.assign(sugar_per_cup=cereal['sugars'] / cereal['cups'])
+cereal.head()
 ```
 
 ```out
@@ -493,32 +356,20 @@ df.head()
 4             Almond Delight   R  Cold    2       8     1.0  0.75  34.384843   28.3495      10.666667
 ```
 
-Give it a shot in the exercises now on your own.
+Notes:
 
-Notes: Script here
+Let’s try another example.
 
-<html>
+This time we want to save our sugar content per cereal cup as a column
+in our existing dataframe.
 
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+We established the operation for this first and then combine it with
+`assign()` naming the column `sugar_per_cup`.
 
 ---
 
 # Let’s apply what we learned\!
 
-Notes: Script here
+Notes:
 
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+<br>

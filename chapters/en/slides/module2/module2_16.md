@@ -4,33 +4,13 @@ type: slides
 
 # Filtering
 
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+Notes: <br>
 
 ---
 
-Filtering is probably one of the most frequent data manipulations you
-will do in data analysis. Filtering is often used when we are either
-trying to rid the dataframe of unwanted rows or analyze rows with a
-particular column value.
-
-Think of it as a sieve keeping only the rows matching conditions you
-have set.
-
-Let’s try to filter the `cereal.csv` dataset.
-
 ``` python
-df = pd.read_csv('cereal.csv')
-df.head()
+cereal = pd.read_csv('cereal.csv')
+cereal.head()
 ```
 
 ```out
@@ -42,28 +22,25 @@ df.head()
 4             Almond Delight   R  Cold       110        2    2     200    1.0   14.0       8       1        25      3     1.0  0.75  34.384843
 ```
 
-Notes: Script here
+Notes:
 
-<html>
+Filtering is probably one of the most frequent data manipulations you
+will do in data analysis.
 
-<audio controls >
+Filtering is often used when we are either trying to rid the dataframe
+of unwanted rows or analyze rows with a particular column value.
 
-<source src="/placeholder_audio.mp3" />
+Think of it as a sieve keeping only the rows matching conditions you
+have set.
 
-</audio>
-
-</html>
+Let’s try to filter the `cereal.csv` dataset.
 
 ---
 
 ## Conditions
 
-Suppose you are trying to find the information for cereals with a
-protein content greater than 4g per serving. Our first instinct would be
-something along the line of
-
 ``` python
-df['protein'] > 4
+cereal['protein'] > 4
 ```
 
 ```out
@@ -81,34 +58,31 @@ df['protein'] > 4
 Name: protein, Length: 77, dtype: bool
 ```
 
-This can be translated as "From the `protein` column in the dataframe
-`df`, which have values greater than 4?
+Notes:
 
-The output shows all the index labels and a column with True or False
-values depending on if the row meets the condition. Cereals with `True`
-have a protein content greater than 4 and `False` if they do not.
+Suppose you are trying to find the information for cereals with a
+protein content greater than 4g per serving.
 
-But we want a dataframe will all the information that only contains the
-rows with protein above 4. How can that be achieved?
+Our first instinct would be to write code that looks somewhat like this.
 
-Notes: Script here
+This can be translated as
 
-<html>
+*“From the `protein` column in the dataframe `cereal`, which have values
+greater than 4?”*
 
-<audio controls >
+The output shows all the index labels and a column with `True` or
+`False` values depending on if the row meets the condition. Cereals with
+`True` have a protein content greater than 4 and `False` if they do not.
 
-<source src="/placeholder_audio.mp3" />
+But we want a dataframe with all the information that only contains the
+rows with protein above 4.
 
-</audio>
-
-</html>
+How can that be achieved?
 
 ---
 
-We wrap in within our dataframe similarly to how we slice.
-
 ``` python
-df[df['protein'] > 4]
+cereal[cereal['protein'] > 4]
 ```
 
 ```out
@@ -118,35 +92,26 @@ df[df['protein'] > 4]
 67       Special K   K  Cold       110        6    0     230    1.0   16.0       3      55        25      1     1.0  1.00  53.131324
 ```
 
+Notes:
+
+We wrap in within our dataframe similarly to how we slice.
+
 Normally we use `df['column name':'column name']` to select certain rows
 by location, but now we are selecting based on if a condition results in
-“True” columns.
+a `True` value.
 
-The code can be translated to \> Only select the rows from the dataframe
-`df` that from the `protein` column in the dataframe `df`, have values
-greater than 4"
+The code can be translated to:
 
-We can see from the output that only the rows meeting the condition as
+*Only select the rows from the dataframe `cereal` that from the
+`protein` column in the dataframe `cereal`, have values greater than 4.*
+
+We can see from the output that only the rows meeting the condition are
 displayed.
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
 
 ---
 
-We can do this with equalities as well:
-
 ``` python
-df[df['protein'] == 4]
+cereal[cereal['protein'] == 4]
 ```
 
 ```out
@@ -161,33 +126,24 @@ df[df['protein'] == 4]
 56                 Quaker Oat Squares   Q  Cold       100        4    1     135    2.0   14.0       6     110        25      3     1.0  0.50  49.511874
 ```
 
-Now we get all the cereals with a protein content of 4g per serving. The
-key point to remember here is that we use **2** equal signs.
+Notes:
+
+We can do this with equalities as well.
+
+Now we get all the cereals with a protein content of 4g per serving.
+
+The key point to remember here is that we use **2** equal signs.
 
 In Python, a single `=` is used as an assignment operator. We are
-setting objects equal to something. Double equal signs, `==`, is used
-for comparison. We check if certain values are equivalent to one
-another.
+setting objects equal to something.
 
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+Double equal signs, `==`, is used for comparison. We check if certain
+values are equivalent to one another.
 
 ---
 
-We can filter categorical columns too. In this example, I only want
-cereals from the manufacturer “Q” (For Quaker):
-
 ``` python
-df[df['mfr'] == 'Q']
+cereal[cereal['mfr'] == 'Q']
 ```
 
 ```out
@@ -202,31 +158,19 @@ df[df['mfr'] == 'Q']
 57      Quaker Oatmeal   Q   Hot       100        5    2       0    2.7    1.0       1     110         0      1     1.0  0.67  50.828392
 ```
 
+Notes:
+
+We can filter categorical columns too. In this example, I only want
+cereals from the manufacturer “Q” (For Quaker):
+
 Here we are using the double equal signs we saw in the last slide.
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
 
 ---
 
 ## Multiple Condition Filtering - “and”
 
-We now know how to filter on one condition but how do we filter if we
-have many? Perhaps we only want cereals with protein content between 4
-to 5 grams? The cereals that meet protein contents greater or equal to 4
-are the following:
-
 ``` python
-df[df['protein'] >= 4]
+cereal[cereal['protein'] >= 4]
 ```
 
 ```out
@@ -244,25 +188,20 @@ df[df['protein'] >= 4]
 67                          Special K   K  Cold       110        6    0     230    1.0   16.0       3      55        25      1     1.0  1.00  53.131324
 ```
 
-Notes: Script here
+Notes:
 
-<html>
+We now know how to filter on one condition but how do we filter if we
+have many?
 
-<audio controls >
+Perhaps we only want cereals with protein content between 4 to 5 grams?
 
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+To find the cereals that meet protein contents greater or equal to 4, we
+use the following code.
 
 ---
 
-And the cereals that meet the condition of protein content below or
-equal to 5 grams are the following:
-
 ``` python
-df[df['protein'] <= 5]
+cereal[cereal['protein'] <= 5]
 ```
 
 ```out
@@ -282,24 +221,23 @@ df[df['protein'] <= 5]
 [75 rows x 16 columns]
 ```
 
-Notes: Script here
+Notes:
 
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+And the cereals that meet the condition of protein content below or
+equal would be obtained as so.
 
 ---
 
-We add the 2 conditions together in code that looks like this:
+``` python
+cereal[cereal['protein'] >= 4]
+```
 
 ``` python
-df[(df['protein'] >= 4) & (df['protein'] <= 5)]
+cereal[cereal['protein'] <= 5]
+```
+
+``` python
+cereal[(cereal['protein'] >= 4) & (cereal['protein'] <= 5)]
 ```
 
 ```out
@@ -315,51 +253,36 @@ df[(df['protein'] >= 4) & (df['protein'] <= 5)]
 57                     Quaker Oatmeal   Q   Hot       100        5    2       0    2.7    1.0       1     110         0      1     1.0  0.67  50.828392
 ```
 
-Code Explained:  
-We need to use the special symbol `&` indicating “and”. This means that
-both conditions must hold to be returned in the new dataframe. Each
-condition is wrapped with parentheses to distinguish the conditions from
-one another.
+Notes:
 
-Notes: Script here
+We can add the 2 conditions together to obtain cereals that meet both
+condition using `&`.
 
-<html>
+Code Explained:
 
-<audio controls >
+The special symbol `&` indicates “and”. This means that both conditions
+must hold to be returned in the new dataframe.
 
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+Each condition is wrapped with parentheses to distinguish the conditions
+from one another.
 
 ---
+
+<center>
+
+<img src='/module2/condition_and.png'  width = "80%" alt="404 image" />
+
+</center>
+
+Notes:
 
 That means that only rows present in **both** dataframes will be
 selected.
 
-<img src='/module2/condition_and.png'  alt="404 image" />
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
 ---
 
-Next, we will look at a case where we filter on 2 different columns.
-Let’s say we only want cereals from the Quaker manufacturer, with a
-protein content greater than 4.
-
 ``` python
-df[(df['mfr'] == 'Q') & (df['protein'] > 4)]
+cereal[(cereal['mfr'] == 'Q') & (cereal['protein'] > 4)]
 ```
 
 ```out
@@ -367,31 +290,22 @@ df[(df['mfr'] == 'Q') & (df['protein'] > 4)]
 57  Quaker Oatmeal   Q  Hot       100        5    2       0    2.7    1.0       1     110         0      1     1.0  0.67  50.828392
 ```
 
+Notes:
+
+Next, we will look at a case where we filter on 2 different columns.
+
+Let’s say we only want cereals from the Quaker manufacturer, with a
+protein content greater than 4.
+
 The same coding syntax can be applied to two different column
 conditions.
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
 
 ---
 
 ## Multiple Condition Filtering - “or”
 
-Suppose that we are interested in cereals that either are made from the
-Quaker manufacturer **OR** a protein content above 4.  
-We only need one of these conditions to hold to return a row.
-
 ``` python
-df[(df['mfr'] == 'Q') | (df['protein'] > 4)]
+cereal[(cereal['mfr'] == 'Q') | (cereal['protein'] > 4)]
 ```
 
 ```out
@@ -408,51 +322,37 @@ df[(df['mfr'] == 'Q') | (df['protein'] > 4)]
 67           Special K   K  Cold       110        6    0     230    1.0   16.0       3      55        25      1     1.0  1.00  53.131324
 ```
 
+Notes:
+
+Suppose that we are interested in cereals that either are made from the
+Quaker manufacturer **OR** a protein content above 4.
+
+We only need one of these conditions to hold to return a row.
+
 Instead of using the `&` symbol, we use `|` which is called the “pipe
 operator”. This means “or” in the Python programming language.
 
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
 ---
 
+<center>
+
+<img src='/module2/condition_or.png' width = "80%" alt="404 image" />
+
+<center>
+
+Notes:
+
 This time, filtering using “or” resulted in 10 cereals that met either
-of the conditions. When we filtered using “and”, only 1 cereal met both
-conditions.
+of the conditions.
 
-<img src='/module2/condition_or.png'  alt="404 image" />
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+When we filtered using “and”, only 1 cereal met both conditions.
 
 ---
 
 ## Tilde
 
-We saw that all our filtering are expressed with an underlying column
-with `True` or `False` values indicating if the rows meet the
-conditions:
-
 ``` python
-df['protein'] > 4
+cereal['protein'] > 4
 ```
 
 ```out
@@ -470,45 +370,22 @@ df['protein'] > 4
 Name: protein, Length: 77, dtype: bool
 ```
 
+Notes:
+
+We saw that when we filter the conditions are expressed with an
+underlying column with `True` or `False` values indicating if the
+condition has been met in each row of the dataframe.
+
 But what if I wanted the rows that were the complement of this?
 
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
-
-Of course we could do `df['protein'] <= 4` in this situation, but
+Of course we could do `cereal['protein'] <= 4` in this situation, but
 sometimes the inverse equation is not so straightforward. This is where
 *Tilde* (`~`) can be helpful.
 
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
 ---
 
-*Tilde* (`~`) gives us the ability to return the complement of the code
-following it.
-
 ``` python
-(df['protein'] > 4).head()
+(cereal['protein'] > 4).head()
 ```
 
 ```out
@@ -524,7 +401,7 @@ Tilda converts all the `True` values to `False` and all the `False`
 values, to `True.`
 
 ``` python
-(~(df['protein'] > 4)).head()
+(~(cereal['protein'] > 4)).head()
 ```
 
 ```out
@@ -536,25 +413,15 @@ values, to `True.`
 Name: protein, dtype: bool
 ```
 
-Notes: Script here
+Notes:
 
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+*Tilde* (`~`) gives us the ability to return the complement of the code
+following it.
 
 ---
 
-We can obtain the complete dataframe by putting the entire condition
-within our square brackets like we did before:
-
 ``` python
-df[~(df['protein'] > 4)]
+cereal[~(cereal['protein'] > 4)]
 ```
 
 ```out
@@ -574,34 +441,17 @@ df[~(df['protein'] > 4)]
 [74 rows x 16 columns]
 ```
 
+Notes:
+
+We can obtain the complete dataframe by putting the entire condition
+within our square brackets like we did before.
+
 This gives us more versatility when filtering, especially when we want
 the inverse of more complicated conditions and verbs (you’ll see this in
 Module 3).
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
 
 ---
 
 # Let’s apply what we learned\!
 
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+Notes: <br>
