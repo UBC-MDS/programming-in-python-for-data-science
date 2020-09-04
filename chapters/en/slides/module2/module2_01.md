@@ -42,7 +42,7 @@ for this course.
 
 <center>
 
-<img src='/module2/url-samp.png'  alt="404 image"  width="60%" height="60%" align="middle"/>
+<img src='/module2/url-samp.png'  alt="404 image"  width="50%"  align="middle"/>
 
 </center>
 
@@ -86,31 +86,37 @@ files locally.
 
 ``` python
 candybars = pd.read_csv('candybars-text.txt')
-candybars
+candybars.head()
 ```
 
 ```out
-   name\tweight\tchocolate\tpeanuts\tcaramel\tnougat\tcookie_wafer_rice\tcoconut\twhite_chocolate\tmulti\tavailable_canada_america
-0    Coffee Crisp\t50\t1\t0\t0\t0\t1\t0\t0\t0\tCanada                                                                             
-1   Butterfinger\t184\t1\t1\t1\t0\t0\t0\t0\t0\tAme...                                                                             
-2              Skor\t39\t1\t0\t1\t0\t0\t0\t0\t0\tBoth                                                                             
-3        Smarties\t45\t1\t0\t0\t0\t0\t0\t0\t1\tCanada                                                                             
-4              Twix\t58\t1\t0\t1\t0\t1\t0\t0\t1\tBoth                                                                             
-..                                                ...                                                                             
-20        Take 5\t43\t1\t1\t1\t0\t1\t0\t0\t0\tAmerica                                                                             
-21  Whatchamacallits\t45\t1\t1\t0\t0\t1\t0\t0\t0\t...                                                                             
-22    Almond Joy\t46\t1\t0\t0\t0\t0\t1\t0\t0\tAmerica                                                                             
-23         Oh Henry\t51\t1\t1\t1\t0\t0\t0\t0\t0\tBoth                                                                             
-24  Cookies and Cream\t43\t0\t0\t0\t0\t1\t0\t1\t0\...                                                                             
+  name\tweight\tchocolate\tpeanuts\tcaramel\tnougat\tcookie_wafer_rice\tcoconut\twhite_chocolate\tmulti\tavailable_canada_america
+0   Coffee Crisp\t50\t1\t0\t0\t0\t1\t0\t0\t0\tCanada                                                                             
+1  Butterfinger\t184\t1\t1\t1\t0\t0\t0\t0\t0\tAme...                                                                             
+2             Skor\t39\t1\t0\t1\t0\t0\t0\t0\t0\tBoth                                                                             
+3       Smarties\t45\t1\t0\t0\t0\t0\t0\t0\t1\tCanada                                                                             
+4             Twix\t58\t1\t0\t1\t0\t1\t0\t0\t1\tBoth
+```
 
-[25 rows x 1 columns]
+``` python
+candybars = pd.read_csv('candybars-text.txt', delimiter='\t')
+candybars.head()
+```
+
+```out
+           name  weight  chocolate  peanuts  caramel  nougat  cookie_wafer_rice  coconut  white_chocolate  multi available_canada_america
+0  Coffee Crisp      50          1        0        0       0                  1        0                0      0                   Canada
+1  Butterfinger     184          1        1        1       0                  0        0                0      0                  America
+2          Skor      39          1        0        1       0                  0        0                0      0                     Both
+3      Smarties      45          1        0        0       0                  0        0                0      1                   Canada
+4          Twix      58          1        0        1       0                  1        0                0      1                     Both
 ```
 
 Notes:
 
 Reading in `txt` files can be a little less standard. Sometimes the
 character separating column values are not always commas like we saw
-above. There are many different options and when we read in the data, we
+before There are many different options and when we read in the data, we
 need to specify how the data should be recognized.  
 Let’s load in the `candybars-text.txt` file. This is the same as the
 `candybars.csv` data but saved as a `txt` file. Look what happens when
@@ -122,36 +128,11 @@ This is called the **delimiter**.
 
 In this specific case, a `\t` delimiter is a “tab”.
 
----
-
-``` python
-candybars = pd.read_csv('candybars-text.txt', delimiter='\t')
-candybars
-```
-
-```out
-                 name  weight  chocolate  peanuts  caramel  nougat  cookie_wafer_rice  coconut  white_chocolate  multi available_canada_america
-0        Coffee Crisp      50          1        0        0       0                  1        0                0      0                   Canada
-1        Butterfinger     184          1        1        1       0                  0        0                0      0                  America
-2                Skor      39          1        0        1       0                  0        0                0      0                     Both
-3            Smarties      45          1        0        0       0                  0        0                0      1                   Canada
-4                Twix      58          1        0        1       0                  1        0                0      1                     Both
-..                ...     ...        ...      ...      ...     ...                ...      ...              ...    ...                      ...
-20             Take 5      43          1        1        1       0                  1        0                0      0                  America
-21   Whatchamacallits      45          1        1        0       0                  1        0                0      0                  America
-22         Almond Joy      46          1        0        0       0                  0        1                0      0                  America
-23           Oh Henry      51          1        1        1       0                  0        0                0      0                     Both
-24  Cookies and Cream      43          0        0        0       0                  1        0                1      0                     Both
-
-[25 rows x 11 columns]
-```
-
-Notes:
-
 We need to tell `pd.read_csv()` to separate each value on our delimiter
 `\t`.
 
-That’s much better.  
+That’s much better.
+
 The delimiter won’t always be `\t` for `txt` files. The most common
 delimiters are `;`, `,`, `\t`, and sometimes even just spaces.
 
@@ -186,11 +167,14 @@ Notes:
 Excel files need special attention because they give the user the
 capability of additional formatting including saving multiple dataframes
 on different “sheets” within a single file. If this is the case, we need
-to specify which sheet we want. Since this is a new type of animal, we
-also need a new verb. Enter `read_excel()`.
+to specify which sheet we want.
+
+Since this is a new type of animal, we also need a new verb. Enter
+`read_excel()`.
 
 Our candybars dataframe is now saved as an excel spreadsheet named
-`foods.xlsx` on a sheet named `chocolate`.  
+`foods.xlsx` on a sheet named `chocolate`.
+
 Here is how we would read it in.
 
 ---
@@ -199,7 +183,7 @@ Here is how we would read it in.
 
 <center>
 
-<img src='/module2/datafile.png'  alt="404 image"  width="80%" align="middle"/>
+<img src='/module2/datafile.png'  alt="404 image"  width="70%" align="middle"/>
 
 </center>
 
@@ -218,9 +202,17 @@ This translates to the syntax `data/canucks.csv`.
 
 ---
 
-*Example:*
+*_Example:_*
 
-data/module1/question3/candybars.csv
+`data/module3/question2/candybars.csv`
+
+<br> <br>
+
+<center>
+
+<img src='/module2/more_files.png'  alt="404 image"  width="80%" align="middle"/>
+
+</center>
 
 Notes: This syntax is not restricted to a single subdirectory and could
 even have multiple folders between the current location and the final

@@ -4,29 +4,16 @@ type: slides
 
 # Grouping and aggregating
 
-Notes: Script here
+Notes:
 
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+<br>
 
 ---
 
-Often, we are interested in examining specific groups in our data.
-Perhaps the question we want to answer from the cereal dataset is:  
 *_Which manufacturer has the highest mean sugar content?_*
 
-We found in Module 1 using `.value_counts()` that there are 7 different
-manufacturers; “K”, “G”, “P”, “R”, “Q”, “N” and “A”.
-
 ``` python
-df['mfr'].value_counts()
+cereal['mfr'].value_counts()
 ```
 
 ```out
@@ -40,28 +27,23 @@ A     1
 Name: mfr, dtype: int64
 ```
 
-Notes: Script here
+Notes:
 
-<html>
+Often, we are interested in examining specific groups in our data.
 
-<audio controls >
+Perhaps the question we want to answer from the cereal dataset is:
 
-<source src="/placeholder_audio.mp3" />
+*_Which manufacturer has the highest mean sugar content?_*
 
-</audio>
-
-</html>
+We found in Module 1 using `.value_counts()` that there are 7 different
+manufacturers; “K”, “G”, “P”, “R”, “Q”, “N” and “A”.
 
 ---
 
-To find the mean sugar content of each manufacturer, we could filter on
-each manufacturer and calculate the mean sugar content using `.mean()`.
-We can chain to make this process a little faster too.
-
-Let’s start with K:
+Let’s start with “K”:
 
 ``` python
-df[df['mfr'] == 'K'].mean()[['sugars']]
+cereal[cereal['mfr'] == 'K'].mean()[['sugars']]
 ```
 
 ```out
@@ -72,7 +54,7 @@ dtype: float64
 Next “G”:
 
 ``` python
-df[df['mfr'] == 'G'].mean()[['sugars']]
+cereal[cereal['mfr'] == 'G'].mean()[['sugars']]
 ```
 
 ```out
@@ -80,61 +62,49 @@ sugars    7.954545
 dtype: float64
 ```
 
+Notes:
+
+To find the mean sugar content of each manufacturer, we could filter on
+each manufacturer and calculate the mean sugar content using `.mean()`.
+We can chain to make this process a little faster too.
+
+Let’s start with “K” and then next “G”.
+
 We could do this for the remaining 5 manufacturers. However, it’s
 obvious that it’s time-consuming and a lot of work to do this
-repeatedly. Imagine how tedious this would be if we had 100 different
-manufacturers?
+repeatedly.
 
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+Imagine how tedious this would be if we had 100 different manufacturers?
 
 ---
 
 # Using groupby
 
-Pandas has a solution for this. It’s not uncommon to be interested in
-examining specific groups in our data hence there is a verb that is
-helpful in grouping like-rows together. `df.groupby()` allows us to
-group our data based on a specified column.
-
-Let’s group our candybars dataframe on the `mfr` column and save it as
-object `mfr_group`.
-
 ``` python
-mfr_group = df.groupby(by='mfr')
+mfr_group = cereal.groupby(by='mfr')
 mfr_group
 ```
 
 ```out
-<pandas.core.groupby.generic.DataFrameGroupBy object at 0x120560a58>
+<pandas.core.groupby.generic.DataFrameGroupBy object at 0x1210de690>
 ```
 
-This returns a `DataFrame GroupBy` object. What exactly is this?
+Notes:
 
-Notes: Script here
+Pandas has a solution for this.
 
-<html>
+It’s not uncommon to be interested in examining specific groups in our
+data hence there is a verb that is helpful in grouping like-rows
+together.
 
-<audio controls >
+`.groupby()` allows us to group our data based on a specified column.
 
-<source src="/placeholder_audio.mp3" />
+Let’s group our cereal dataframe on the `mfr` column and save it as
+object `mfr_group`.
 
-</audio>
-
-</html>
+This returns a `DataFrame GroupBy` object.
 
 ---
-
-For example if we only had 2 manufacturers, this would be the output:
 
 <center>
 
@@ -142,22 +112,14 @@ For example if we only had 2 manufacturers, this would be the output:
 
 </center>
 
-Notes: Script here
+Notes:
 
-<html>
+For example if we only had 2 manufacturers, the output would be the look
+like this.
 
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+What exactly is a groubpy object though?
 
 ---
-
-A `DataFrame GroupBy` object contains information about the groups of
-the dataframe. We can access it with the `.groups` attribute (noun).
 
 ``` python
 mfr_group.groups
@@ -167,27 +129,18 @@ mfr_group.groups
 {'A': Int64Index([43], dtype='int64'), 'G': Int64Index([5, 7, 11, 12, 13, 14, 18, 22, 31, 36, 40, 42, 47, 51, 59, 69, 70, 71, 72, 73, 75, 76], dtype='int64'), 'K': Int64Index([2, 3, 6, 16, 17, 19, 21, 24, 25, 26, 28, 38, 39, 46, 48, 49, 50, 53, 58, 60, 62, 66, 67], dtype='int64'), 'N': Int64Index([0, 20, 63, 64, 65, 68], dtype='int64'), 'P': Int64Index([9, 27, 29, 30, 32, 33, 34, 37, 52], dtype='int64'), 'Q': Int64Index([1, 10, 35, 41, 54, 55, 56, 57], dtype='int64'), 'R': Int64Index([4, 8, 15, 23, 44, 45, 61, 74], dtype='int64')}
 ```
 
+Notes:
+
+A `DataFrame GroupBy` object contains information about the groups of
+the dataframe.
+
+We can access it with the `.groups` attribute (noun).
+
 Reading carefully, we can see there are 7 groups: `A`, `G`, `K`, `N`,
 `P`, `Q` and `R`, and it lists the index labels (cereal names) in each
 group.
 
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
 ---
-
-We can obtain all the row index names of a group by specifying the group
-name in square brackets after the `groups` method. Take the group `K` as
-an example.
 
 ``` python
 mfr_group.groups['K']
@@ -197,22 +150,14 @@ mfr_group.groups['K']
 Int64Index([2, 3, 6, 16, 17, 19, 21, 24, 25, 26, 28, 38, 39, 46, 48, 49, 50, 53, 58, 60, 62, 66, 67], dtype='int64')
 ```
 
-Notes: Script here
+Notes:
 
-<html>
+We can obtain all the row index names of a group by specifying the group
+name in square brackets after the `groups` method.
 
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+Take the group `K` as an example.
 
 ---
-
-We can get the full dataframe of the group `K` alone using the method
-`get_group()`.
 
 ``` python
 mfr_group.get_group('K')
@@ -220,39 +165,28 @@ mfr_group.get_group('K')
 
 ```out
                          name mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
-2                    All-Bran   K  Cold        70        4    1     260    9.0    7.0       5     320        25      3    1.00  0.33  59.425505
-3   All-Bran with Extra Fiber   K  Cold        50        4    0     140   14.0    8.0       0     330        25      3    1.00  0.50  93.704912
-6                 Apple Jacks   K  Cold       110        2    0     125    1.0   11.0      14      30        25      2    1.00  1.00  33.174094
-16                Corn Flakes   K  Cold       100        2    0     290    1.0   21.0       2      35        25      1    1.00  1.00  45.863324
-17                  Corn Pops   K  Cold       110        1    0      90    1.0   13.0      12      20        25      2    1.00  1.00  35.782791
+2                    All-Bran   K  Cold        70        4    1     260    9.0    7.0       5     320        25      3     1.0  0.33  59.425505
+3   All-Bran with Extra Fiber   K  Cold        50        4    0     140   14.0    8.0       0     330        25      3     1.0  0.50  93.704912
+6                 Apple Jacks   K  Cold       110        2    0     125    1.0   11.0      14      30        25      2     1.0  1.00  33.174094
+16                Corn Flakes   K  Cold       100        2    0     290    1.0   21.0       2      35        25      1     1.0  1.00  45.863324
 ..                        ...  ..   ...       ...      ...  ...     ...    ...    ...     ...     ...       ...    ...     ...   ...        ...
-58                Raisin Bran   K  Cold       120        3    1     210    5.0   14.0      12     240        25      2    1.33  0.75  39.259197
-60             Raisin Squares   K  Cold        90        2    0       0    2.0   15.0       6     110        25      3    1.00  0.50  55.333142
-62              Rice Krispies   K  Cold       110        2    0     290    0.0   22.0       3      35        25      1    1.00  1.00  40.560159
-66                     Smacks   K  Cold       110        2    1      70    1.0    9.0      15      40        25      2    1.00  0.75  31.230054
-67                  Special K   K  Cold       110        6    0     230    1.0   16.0       3      55        25      1    1.00  1.00  53.131324
+60             Raisin Squares   K  Cold        90        2    0       0    2.0   15.0       6     110        25      3     1.0  0.50  55.333142
+62              Rice Krispies   K  Cold       110        2    0     290    0.0   22.0       3      35        25      1     1.0  1.00  40.560159
+66                     Smacks   K  Cold       110        2    1      70    1.0    9.0      15      40        25      2     1.0  0.75  31.230054
+67                  Special K   K  Cold       110        6    0     230    1.0   16.0       3      55        25      1     1.0  1.00  53.131324
 
 [23 rows x 16 columns]
 ```
 
-Notes: Script here
+Notes:
 
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+We can get the full dataframe of the group `K` alone using the method
+`.get_group()`.
 
 ---
 
-Similarly to how we made frequency tables using `.value_counts()`:
-
 ``` python
-df['mfr'].value_counts()
+cereal['mfr'].value_counts()
 ```
 
 ```out
@@ -265,8 +199,6 @@ N     6
 A     1
 Name: mfr, dtype: int64
 ```
-
-We can now use `.size()` to obtain the amount of rows in each group:
 
 ``` python
 mfr_group.size()
@@ -284,27 +216,14 @@ R     8
 dtype: int64
 ```
 
-Notes: Script here
+Notes:
 
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+Similarly to how we made frequency tables using `.value_counts()`, we
+can now use `.size()` to obtain the amount of rows in each group:
 
 ---
 
 ## Summary Statistics with Groups
-
-What now? Grouping doesn’t answer our initial question of ***Which
-manufacturer has the highest mean sugar content?***  
-Where do we go from here?  
-We need to calculate the mean sugar content in each manufacturing
-group\!
 
 ``` python
 mfr_group.mean()
@@ -322,116 +241,85 @@ Q     95.000000  2.625000  1.750000   92.500000  1.337500  10.250000  5.500000  
 R    115.000000  2.500000  1.250000  198.125000  1.875000  17.625000  6.125000   89.500000  25.000000  2.000000  1.000000  0.871250  41.542997
 ```
 
-This answers the initial question and confirms that manufacturer “P” has
-the highest mean sugar content across cereals. See how convenient this
-was to do in comparison to our initial method? Not only does this give
-us the result quicker, but it also gives us the mean of each column of
-the dataframe. Think of how many filtering and mean calculations would
-have to be done if we were to do this using our initial method.  
+Notes:
+
+What now?
+
+Grouping doesn’t answer our initial question of ***Which manufacturer
+has the highest mean sugar content?***
+
+Where do we go from here?
+
+We need to calculate the mean sugar content in each manufacturing
+group\!
+
+using `.mean()` on our groupby object answers the initial question and
+confirms that manufacturer “P” has the highest mean sugar content across
+cereals.
+
+See how convenient this was to do in comparison to our initial method?
+Not only does this give us the result quicker, but it also gives us the
+mean of each column of the dataframe.
+
+Think of how many filtering and mean calculations would have to be done
+if we were to do this using our initial method.
+
 Of course, using groups is not limited to finding only the mean. We can
 do the same thing for other statistics too like `.min()` and `.max()`.
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
 
 ---
 
 ## Aggregating dataframes
 
+``` python
+cereal.agg('mean')
+```
+
+```out
+calories    106.883117
+protein       2.545455
+fat           1.012987
+sodium      159.675325
+               ...    
+shelf         2.207792
+weight        1.029610
+cups          0.821039
+rating       42.665705
+Length: 13, dtype: float64
+```
+
+``` python
+cereal.mean()
+```
+
+```out
+calories    106.883117
+protein       2.545455
+fat           1.012987
+sodium      159.675325
+               ...    
+shelf         2.207792
+weight        1.029610
+cups          0.821039
+rating       42.665705
+Length: 13, dtype: float64
+```
+
+Notes:
+
 In situations where we want to collect multiple statistics together, we
 can aggregate them in one step using a verb called `.agg()`.
 
 `.agg()` can be used on its own using a single measurement, without
-groupby:
+groupby.
 
-``` python
-df.agg('mean')
-```
-
-```out
-calories    106.883117
-protein       2.545455
-fat           1.012987
-sodium      159.675325
-fiber         2.151948
-carbo        14.623377
-sugars        6.948052
-potass       96.129870
-vitamins     28.246753
-shelf         2.207792
-weight        1.029610
-cups          0.821039
-rating       42.665705
-dtype: float64
-```
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+Using `.agg()` with only a `mean` input is essentially the same thing as
+calling the statistic `mean()` on the dataframe.
 
 ---
 
-This is essentially the same thing as calling the statistic `mean()` on
-the dataframe.
-
 ``` python
-df.mean()
-```
-
-```out
-calories    106.883117
-protein       2.545455
-fat           1.012987
-sodium      159.675325
-fiber         2.151948
-carbo        14.623377
-sugars        6.948052
-potass       96.129870
-vitamins     28.246753
-shelf         2.207792
-weight        1.029610
-cups          0.821039
-rating       42.665705
-dtype: float64
-```
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
-
-`.agg()` gets a chance to really shine when we want several specific
-measures. Let’s say we want the `max`, `min` and `median`. We specify
-them in square brackets within our `.agg()` method.
-
-``` python
-df.agg(['max', 'min', 'median'])
+cereal.agg(['max', 'min', 'median'])
 ```
 
 ```out
@@ -441,27 +329,20 @@ min               100% Bran    A  Cold      50.0      1.0  0.0     0.0    0.0   
 median                  NaN  NaN   NaN     110.0      3.0  1.0   180.0    2.0   14.0     7.0    90.0      25.0    2.0     1.0  0.75  40.400208
 ```
 
+Notes:
+
+`.agg()` gets a chance to really shine when we want several specific
+measures.
+
+Let’s say we want the `max`, `min` and `median`. We specify them in
+square brackets within our `.agg()` method.
+
 It produces a convenient dataframe giving the value for each statistic,
 for each column.
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
 
 ---
 
 ## Aggregating groupby objects
-
-`.agg()` is particularly useful with groupby objects. Let’s try it on
-our manufacturer `groupby` object named `mfr_group`.
 
 ``` python
 mfr_group.agg(['max', 'min', 'median'])
@@ -480,44 +361,31 @@ Q        120   50    100       5   1    2.5   5   0      2    220    0   75.0   
 R        150   90    110       4   1    2.0   3   0      1    280   95  200.0   4.0  0.0    2.0  23.0  14.0  16.50     11   2    5.5    170   1   97.5       25  25   25.0     3   1    2.0   1.00  1.00    1.0  1.13  0.67  0.875  49.787445  34.139765  41.721976
 ```
 
+Notes:
+
+`.agg()` is particularly useful with groupby objects.
+
+Let’s try it on our manufacturer `groupby` object named `mfr_group`.
+
 This gives a value for each group and for each statistic we specified.
+
 For example:
 
-Look at the ‘150’ in the bottom row on the far left. The interpretation
-is that, for cases where the manufacturer is ‘R’, the max number of
-calories is 150. In a similar manner if the manufacturer is ‘P’ the
-minumum amount of sodium, is 45.
+Look at the ‘150’ in the bottom row on the far left under `calories`.
+The interpretation is that, for cases where the manufacturer is ‘R’, the
+max number of calories is 150.
 
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+In a similar manner if the manufacturer is ‘P’ the minumum amount of
+sodium, is 45.
 
 ---
 
 ## Extra Fancy Aggregation
 
-You might have noticed that when we used `.agg()`, we calculated the
-same 3 statistics for every column in the dataframe but we can calculate
-different statistics for different columns.  
-Let’s say we are concerned about the `max` and `min` calorie values, the
-total `sum` of the ratings and the `mean` and `median` sugar content for
-each manufacturing group.  
-We wrapped everything in curly brackets and we use a colon to separate
-the column name from the statistics values. We need to put the
-statistics within square brackets.
-
 ``` python
 mfr_group.agg({"calories":['max', 'min'],
-                 "rating":['sum'],  
-                 "sugars":['mean', 'median']})
+               "rating":['sum'],  
+               "sugars":['mean', 'median']})
 ```
 
 ```out
@@ -533,32 +401,24 @@ Q        120   50   343.327919  5.500000    6.0
 R        150   90   332.343977  6.125000    5.5
 ```
 
+Notes:
+
+You might have noticed that when we used `.agg()`, we calculated the
+same 3 statistics for every column in the dataframe but we can calculate
+different statistics for different columns.
+
+Let’s say we are concerned about the `max` and `min` calorie values, the
+total `sum` of the ratings and the `mean` and `median` sugar content for
+each manufacturing group.
+
+We wrapped everything in curly brackets and we use a colon to separate
+the column name from the statistics values. We need to put the
+statistics within square brackets.
+
 Now this is a bit easier to read.
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
 
 ---
 
 # Let’s apply what we learned\!
 
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+Notes: <br>

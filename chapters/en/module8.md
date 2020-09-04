@@ -1128,7 +1128,7 @@ This function removes the trailing character specified in the argument.
 
 
 Given the dataframe above named `fruit_salad`,  which code would produce the following output?     
-*Hint: Look at the `location` column*
+*Hint: Look at the `location` column.*
 
 
 <center><img src='/module8/output.png' width="80%"></center>
@@ -1324,20 +1324,9 @@ Great! You knew that it outputs a Boolean Series! The value replacement is using
 
 Given the dataframe above named `fruit_salad`,  which code would produce the following dataframe with the new column `berry`?  
 
-```out
-           name   colour location   seed  shape  sweetness  water_content  weight   berry
-0         apple      red   canada   True  round       True             84     100   False
-1        banana   yellow   mexico  False   long       True             75     120   False
-2    cantaloupe   orange    spain   True  round       True             90    1360   False 
-3  dragon-fruit  magenta    china   True  round      False             96     600   False
-4    elderberry   purple  austria  False  round       True             80       5    True
-5           fig   purple   turkey  False   oval      False             78      40   False
-6         guava    green   mexico   True   oval       True             83     450   False 
-7   huckleberry     blue   canada   True  round       True             73       5    True
-8          kiwi    brown    china   True  round       True             80      76   False
-9         lemon   yellow   mexico  False   oval      False             83      65   False
 
-```
+<center><img src='/module8/output25.png' width="80%"></center> 
+
 
 <choice id="1" >
 <opt text="<code>fruit_salad.assign(name = fruit_salad['name'].contains('berry'))</code>">

@@ -39,9 +39,9 @@ pd.set_option('display.width', 350)
 np.set_printoptions(linewidth=400)
 
 pd.set_option('display.max_columns', 50)
-pd.set_option('display.max_rows', 15)
+pd.set_option('display.max_rows', 8)
 
-df = pd.read_csv('cereal.csv')
+cereal = pd.read_csv('cereal.csv')
 ```
 
 
@@ -50,270 +50,271 @@ type: slides
 # Grouping and aggregating
 
 
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
+Notes: 
+
+<br>
 
 ---
 
-Often, we are interested in examining specific groups in our data.  Perhaps the question we want to answer from the cereal dataset is:       
+_*Which manufacturer has the highest mean sugar content?*_
+
+```{python}
+cereal['mfr'].value_counts()
+```
+
+
+Notes: 
+
+Often, we are interested in examining specific groups in our data.  
+
+Perhaps the question we want to answer from the cereal dataset is:     
+
 _*Which manufacturer has the highest mean sugar content?*_
 
 We found in Module 1 using `.value_counts()` that there are 7 different manufacturers; "K", "G", "P", "R", "Q", "N" and "A".
 
-```{python}
-df['mfr'].value_counts()
-```
-
-
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
-
 ---
 
-To find the mean sugar content of each manufacturer, we could filter on each manufacturer and calculate the mean sugar content using `.mean()`.  We can chain to make this process a little faster too.
 
-Let's start with K:
+
+Let's start with "K":
+
 ```{python}
-df[df['mfr'] == 'K'].mean()[['sugars']]
+cereal[cereal['mfr'] == 'K'].mean()[['sugars']]
 ```
 
 Next "G":
 
 ```{python}
-df[df['mfr'] == 'G'].mean()[['sugars']]
+cereal[cereal['mfr'] == 'G'].mean()[['sugars']]
 ```
 
-We could do this for the remaining 5 manufacturers. However, it's obvious that it's time-consuming and a lot of work to do this repeatedly.  Imagine how tedious this would be if we had 100 different manufacturers?
 
 
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
+
+Notes: 
+
+To find the mean sugar content of each manufacturer, we could filter on each manufacturer and calculate the mean sugar content using `.mean()`.  We can chain to make this process a little faster too.
+
+Let's start with "K" and then next "G". 
+
+We could do this for the remaining 5 manufacturers. However, it's obvious that it's time-consuming and a lot of work to do this repeatedly.  
+
+Imagine how tedious this would be if we had 100 different manufacturers?
 
 ---
 
 # Using groupby
 
-Pandas has a solution for this.  It's not uncommon to be interested in examining specific groups in our data hence there is a verb that is helpful in grouping like-rows together.  `df.groupby()` allows us to group our data based on a  specified column.
-
-Let's group our candybars dataframe on the `mfr` column and save it as object `mfr_group`.
 
 ```{python}
-mfr_group = df.groupby(by='mfr')
+mfr_group = cereal.groupby(by='mfr')
 mfr_group
 ```
 
-This returns a `DataFrame GroupBy` object.  What exactly is this?
 
 
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
+
+Notes: 
+
+Pandas has a solution for this.  
+
+It's not uncommon to be interested in examining specific groups in our data hence there is a verb that is helpful in grouping like-rows together.  
+
+`.groupby()` allows us to group our data based on a specified column.
+
+Let's group our cereal dataframe on the `mfr` column and save it as object `mfr_group`.
+
+This returns a `DataFrame GroupBy` object.  
 
 ---
 
-For example if we only had 2 manufacturers, this would be the output:
+
 
 <center><img src='/module2/groupby.png'  alt="404 image" width = "70%" align="middle"/></center>
 
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
+Notes: 
+
+For example if we only had 2 manufacturers, the output would be the look like this.
+
+What exactly is a groubpy object though?
 
 ---
-
-A `DataFrame GroupBy` object contains information about the groups of the dataframe.  We can access it with the `.groups` attribute (noun).
 
 ```{python}
 mfr_group.groups
 ```
 
-Reading carefully, we can see there are 7 groups: `A`, `G`, `K`,  `N`, `P`, `Q` and  `R`, and it lists the index labels (cereal names) in each group.
 
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
+
+Notes: 
+
+A `DataFrame GroupBy` object contains information about the groups of the dataframe. 
+
+We can access it with the `.groups` attribute (noun).
+
+Reading carefully, we can see there are 7 groups: `A`, `G`, `K`,  `N`, `P`, `Q` and  `R`, and it lists the index labels (cereal names) in each group.
 
 ---
 
-We can obtain all the row index names of a group by specifying the group name in square brackets after the `groups` method.  Take the group `K` as an example.
+
 ```{python}
 mfr_group.groups['K']
 ```
 
 
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
+Notes: 
+
+We can obtain all the row index names of a group by specifying the group name in square brackets after the `groups` method.  
+
+Take the group `K` as an example.
 
 ---
 
-We can get the full dataframe of the group `K` alone using the method `get_group()`.
+
 
 ```{python}
 mfr_group.get_group('K')
 ```
 
 
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
+Notes: 
+
+We can get the full dataframe of the group `K` alone using the method `.get_group()`.
 
 ---
 
-Similarly to how we made frequency tables using `.value_counts()`:
+
 
 ```{python}
-df['mfr'].value_counts()
+cereal['mfr'].value_counts()
 ```
 
-We can now use `.size()` to obtain the amount of rows in each group: 
+
 ```{python}
 mfr_group.size()
 ```
 
 
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
+Notes: 
+
+Similarly to how we made frequency tables using `.value_counts()`, we can now use `.size()` to obtain the amount of rows in each group: 
 
 ---
 
 ## Summary Statistics with Groups
 
-What now?  Grouping doesn't answer our initial question of ***Which manufacturer has the highest mean sugar content?***     
-Where do we go from here?      
-We need to calculate the mean sugar content in each manufacturing group!
+
 ```{python}
 mfr_group.mean()
 ```
-This answers the initial question and confirms that manufacturer "P" has the highest mean sugar content across cereals.  See how convenient this was to do in comparison to our initial method?  Not only does this give us the result quicker, but it also gives us the mean of each column of the dataframe.  Think of how many filtering and mean calculations would have to be done if we were to do this using our initial method.      
+
+
+
+Notes: 
+
+What now?  
+
+Grouping doesn't answer our initial question of ***Which manufacturer has the highest mean sugar content?***    
+
+Where do we go from here?      
+
+We need to calculate the mean sugar content in each manufacturing group!
+
+using `.mean()` on our groupby object answers the initial question and confirms that manufacturer "P" has the highest mean sugar content across cereals.  
+
+See how convenient this was to do in comparison to our initial method?  Not only does this give us the result quicker, but it also gives us the mean of each column of the dataframe. 
+
+Think of how many filtering and mean calculations would have to be done if we were to do this using our initial method.      
+
 Of course, using groups is not limited to finding only the mean. We can do the same thing for other statistics too like `.min()` and `.max()`.
-
-
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
 
 ---
 
 ## Aggregating dataframes
 
+```{python}
+cereal.agg('mean')
+```
+
+```{python}
+cereal.mean()
+```
+
+Notes: 
+
 In situations where we want to collect multiple statistics together, we can aggregate them in one step using a verb called `.agg()`.
 
-`.agg()` can be used on its own using a single measurement, without groupby:
+`.agg()` can be used on its own using a single measurement, without groupby.
 
-```{python}
-df.agg('mean')
-```
-
-
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
+Using `.agg()` with only a `mean` input is essentially the same thing as calling the statistic `mean()` on the dataframe.
 
 ---
 
-This is essentially the same thing as calling the statistic `mean()` on the dataframe.
-
 ```{python}
-df.mean()
+cereal.agg(['max', 'min', 'median'])
 ```
 
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
 
----
+Notes: 
 
-`.agg()` gets a chance to really shine when we want several specific measures.  Let's say we want the `max`, `min` and `median`.  We specify them in square brackets within our `.agg()` method.
+`.agg()` gets a chance to really shine when we want several specific measures.  
 
-```{python}
-df.agg(['max', 'min', 'median'])
-```
-It produces a convenient 
-dataframe giving the value for each statistic, for each column.
+Let's say we want the `max`, `min` and `median`.  We specify them in square brackets within our `.agg()` method.
 
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
+It produces a convenient dataframe giving the value for each statistic, for each column.
 
 ---
 
 ## Aggregating groupby objects
 
-`.agg()` is particularly useful with groupby objects.  Let's try it on our manufacturer  `groupby` object named `mfr_group`.
+
 
 ```{python}
 mfr_group.agg(['max', 'min', 'median'])
 ```
 
+
+
+
+Notes: 
+
+`.agg()` is particularly useful with groupby objects.  
+
+Let's try it on our manufacturer `groupby` object named `mfr_group`.
+
 This gives a value for each group and for each statistic we specified.
+
 For example: 
 
-Look at the '150' in the bottom row on the far left. The interpretation is that, for cases where the manufacturer is 'R', the max number of calories is 150. In a similar manner if the manufacturer is 'P' the minumum amount of sodium, is 45. 
+Look at the '150' in the bottom row on the far left under `calories`. 
+The interpretation is that, for cases where the manufacturer is 'R', the max number of calories is 150. 
 
-
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
+In a similar manner if the manufacturer is 'P' the minumum amount of sodium, is 45. 
 
 ---
 
 ## Extra Fancy Aggregation
 
-You might have noticed that when we used `.agg()`,  we calculated the same 3 statistics for every column in the dataframe but we can calculate different statistics for different columns.    
-Let's say we are concerned about the `max` and `min` calorie values, the total `sum` of the ratings and the `mean` and `median` sugar content for each manufacturing group.     
-We wrapped everything in curly brackets and we use a colon to separate the column name from the statistics values. We need to put the statistics within square brackets. 
+
 ```{python}
 mfr_group.agg({"calories":['max', 'min'],
-                 "rating":['sum'],  
-                 "sugars":['mean', 'median']})
+               "rating":['sum'],  
+               "sugars":['mean', 'median']})
 ```
-Now this is a bit easier to read. 
 
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
+Notes: 
+
+You might have noticed that when we used `.agg()`,  we calculated the same 3 statistics for every column in the dataframe but we can calculate different statistics for different columns. 
+
+Let's say we are concerned about the `max` and `min` calorie values, the total `sum` of the ratings and the `mean` and `median` sugar content for each manufacturing group.     
+
+We wrapped everything in curly brackets and we use a colon to separate the column name from the statistics values. We need to put the statistics within square brackets. 
+
+Now this is a bit easier to read. 
 
 ---
 
 # Let’s apply what we learned!
 
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
+Notes: <br>

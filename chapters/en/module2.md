@@ -413,7 +413,7 @@ You may want to look over this before moving forward.  Are we using the correct 
 
 </opt>
 
-<opt text='A dataframe containing 2 new columns with `NaN` values' correct="true">
+<opt text='A dataframe containing 2 new columns with <code>NaN</code> values' correct="true">
 
 Good job!
 
