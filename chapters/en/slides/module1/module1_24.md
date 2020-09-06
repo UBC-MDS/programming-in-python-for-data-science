@@ -4,31 +4,16 @@ type: slides
 
 # Sorting dataframes
 
-Notes: Script here.
+Notes:
 
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+<br>
 
 ---
 
 ## Sorting
 
-When we load in our data, it is generally ordered in the same way it is
-stored. We can easily sort the rows of a dataframe based on its column
-values. The verb for that? `.sort_values()`.
-
-As an example, if we wanted to order the cereals based on rating, we
-could do the following:
-
 ``` python
-df.sort_values(by='rating')
+cereal.sort_values(by='rating')
 ```
 
 ```out
@@ -48,28 +33,25 @@ df.sort_values(by='rating')
 [77 rows x 7 columns]
 ```
 
+Notes:
+
+When we load in our data, it is generally ordered in the same way it is
+stored.
+
+We can easily sort the rows of a dataframe based on the values within a
+column.
+
+The verb for that? `.sort_values()`.
+
+For example, if we wanted to order the cereals based on rating, we could
+do so using the argument `by` within the `.sort_values()` verb.
+
 This allows us to see the cereals with lower ratings on the top.
-
-Notes: Script here.
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
 
 ---
 
-What if we wanted the cereals with a higher rating on the top? Then we
-would order them in `descending` order by setting the parameter
-`ascending=False`:
-
 ``` python
-sorted_ratings = df.sort_values(by='rating', ascending=False)
+sorted_ratings = cereal.sort_values(by='rating', ascending=False)
 sorted_ratings
 ```
 
@@ -90,33 +72,20 @@ sorted_ratings
 [77 rows x 7 columns]
 ```
 
+Notes:
+
+What if we wanted the cereals with higher ratings at the top?
+
+Then we would order them in `descending` order by setting the argument
+`ascending=False`.
+
 Perfect, now we have the highest rated cereals at the top of the
 dataframe.
-
-Notes: Script here.
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
 
 ---
 
 # Let’s apply what we learned\!
 
-Notes: Script here
+Notes:
 
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+<br>

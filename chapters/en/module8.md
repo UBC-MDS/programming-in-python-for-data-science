@@ -590,9 +590,9 @@ _**Make sure you remove the hash (`#`) symbol in the coding portions of this que
 Let's make a new array and transform it by slicing and transposing.
 
 Tasks:
-- Create an array named `arr2` using `np.linspace()` with 6 equally spaced values from 1 to 16 and a shape of (2,3).  (you'll need `.reshape()` for this!)
+- Create an array named `arr2` using `np.linspace()` with 6 equally spaced values from 1 to 16 and a shape of (2,3) (You'll need `.reshape()` for this!).
 - Transpose the array and name it `arr2t`.
-- Finally, slice it so it only includes the values 7 and 16. Save this as an object named `sliced_arr2t`.
+- Finally, slice the new object `arr2t` so it only includes the values 7 and 16. Save this as an object named `sliced_arr2t`.
 
 
 
@@ -1018,8 +1018,8 @@ Let's read in data and parse a datetime column as well as calculate the hockey t
 
 Tasks:
 - Read in the `canucks.csv` file from the data folder and parse the `Birth Date` column. Save this as an object named `canucks`.
-- Find the oldest player (going by their date of birth) and save the Timestamp as `oldest`. 
-- Find the youngest player (going by their date of birth) and save the Timestamp as `youngest`.
+- Find the oldest player's date of birth and save the Timestamp as `oldest`. 
+- Find the youngest player's date of birth and save the Timestamp as `youngest`.
 - Find the age difference between the two players in years to 2 decimal places. Save this as an object name `age_range`. 
 - Display `age_range`.
 

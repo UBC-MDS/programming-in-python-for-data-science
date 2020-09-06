@@ -4,23 +4,15 @@ type: slides
 
 # Selecting using .loc\[\]
 
-Notes: Script here.
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+Notes: <br>
 
 ---
 
 ## Unordered Indexing
 
-We have our trusty `cereal.csv` data once again.
+``` python
+cereal
+```
 
 ```out
                          name mfr  type  calories  protein  fat  sodium  ...  sugars  potass  vitamins  shelf  weight  cups     rating
@@ -39,32 +31,17 @@ We have our trusty `cereal.csv` data once again.
 [77 rows x 16 columns]
 ```
 
-What would we do if we want to select columns and rows that don’t fall
-consecutively or if we want to rearrange them?
+Notes:
 
-Notes: Script here.
+Here we have our trusty `cereal` dataframe.
 
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+What would we do if we wanted to select columns and rows that don’t fall
+consecutively or if we wanted to rearrange them?
 
 ---
 
-Let’s say we wanted only the rows labeled `Clusters` (13), `Trix` (73)
-and `Wheaties` (75) and the columns `name`, `type`, `sugars` and
-`rating`. How would we obtain them now?
-
-We need to specify each column and row label that we want between square
-brackets `[]`, separated with commas:
-
 ``` python
-df.loc[[13,73,75], ['name', 'type', 'sugars', 'rating']]
+cereal.loc[[13,73,75], ['name', 'type', 'sugars', 'rating']]
 ```
 
 ```out
@@ -74,30 +51,8 @@ df.loc[[13,73,75], ['name', 'type', 'sugars', 'rating']]
 75  Wheaties  Cold       3  51.592193
 ```
 
-We can also reorder the entries to change the column and row order.
-
-Notes: Script here.
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
-
-What if we wanted the rows to be in the order `Wheaties`, `Trix` and
-`Clusters` and columns in the order `name`, `type`, `rating` and
-`sugars` How would we obtain that?  
-It’s as simple as rearranging the order you target your rows and
-columns:
-
 ``` python
-df.loc[[75, 73, 13], ['name', 'type', 'rating', 'sugars']]
+cereal.loc[[75, 73, 13], ['name', 'type', 'rating', 'sugars']]
 ```
 
 ```out
@@ -107,30 +62,37 @@ df.loc[[75, 73, 13], ['name', 'type', 'rating', 'sugars']]
 13  Clusters  Cold  40.400208       7
 ```
 
-Notes: Script here.
+Notes:
 
-<html>
+Let’s say we want only the rows labelled:
 
-<audio controls >
+  - `Clusters` (13)
+  - `Trix` (73), and
+  - `Wheaties` (75)
 
-<source src="/placeholder_audio.mp3" />
+And the columns:
 
-</audio>
+  - `name`
+  - `type`
+  - `sugars`, and
+  - `rating`
 
-</html>
+How would we obtain them now?
+
+We need to specify each column and row label that we want between square
+brackets `[]`, separated with commas.
+
+What if we wanted the rows to be in the order `Wheaties` (75), `Trix`
+(73) and `Clusters` (13) and columns in the order `name`, `type`,
+`rating` and `sugars`.
+
+How would we obtain that?
+
+We would just have to rearranging the order you target your rows and
+columns.
 
 ---
 
 # Let’s apply what we learned\!
 
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+Notes: <br>

@@ -8,8 +8,9 @@ canucks = pd.read_csv('data/canucks.csv')
 canucks_info = canucks.info()
 canucks_info
 
-# Create a new column in the dataframe named Wealth where all the values equal "comfortable"
-# Name the new dataframe `canucks_comf`
+# Create a new column in the dataframe named Wealth
+# where all the values equal "comfortable"
+# Name the new dataframe canucks_comf
 
 canucks_comf = canucks.assign(Wealth = "comfortable")
 canucks_comf

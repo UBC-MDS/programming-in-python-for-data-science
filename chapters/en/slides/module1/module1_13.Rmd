@@ -31,84 +31,76 @@ pd.set_option('display.width', 400)
 np.set_printoptions(linewidth=400)
 
 pd.set_option('display.max_columns', 15)
-df = pd.read_csv('cereal.csv')
+pd.set_option('display.max_rows', 16)
+cereal = pd.read_csv('cereal.csv')
 ```
 
 type: slides
 
 # Selecting using .loc[]
 
-Notes: Script here.
-<html>
-<audio controls >
-<source src="/placeholder_audio.mp3" />
-</audio></html>
+Notes: <br>
 
 ---
 
 ## Unordered Indexing
 
-We have our trusty `cereal.csv` data once again.
 
-
-```{python echo = FALSE}
-df
+```{python}
+cereal
 ```
 
 
-What would we do if we want to select columns and rows that don't fall consecutively or if we want to rearrange them?
+Notes: 
 
+Here we have our trusty `cereal` dataframe.
 
-Notes: Script here.
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
+What would we do if we wanted to select columns and rows that don't fall consecutively or if we wanted to rearrange them?
 
 ---
 
-Let's say we wanted only the rows labeled `Clusters` (13), `Trix` (73) and `Wheaties` (75) and the columns `name`, `type`, `sugars` and `rating`.
+
+
+
+```{python}
+cereal.loc[[13,73,75], ['name', 'type', 'sugars', 'rating']]
+```
+
+
+```{python}
+cereal.loc[[75, 73, 13], ['name', 'type', 'rating', 'sugars']]
+```
+
+Notes: 
+
+Let's say we want only the rows labelled:
+
+- `Clusters` (13)
+- `Trix` (73), and
+- `Wheaties` (75) 
+
+And the columns:
+
+- `name`
+- `type`
+- `sugars`, and 
+- `rating`
+
 How would we obtain them now?
 
-We need to specify each column and row label that we want between square brackets `[]`, separated with commas:
+We need to specify each column and row label that we want between square brackets `[]`, separated with commas.
 
 
-```{python}
-df.loc[[13,73,75], ['name', 'type', 'sugars', 'rating']]
-```
+What if we wanted the rows to be in the order `Wheaties` (75), `Trix` (73) and `Clusters` (13) and columns in the order `name`, `type`, `rating` and `sugars`.
 
-
-We can also reorder the entries to change the column and row order.
-
-Notes: Script here.
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
-
----
-
-What if we wanted the rows to be in the order `Wheaties`, `Trix` and `Clusters` and columns in the order `name`, `type`, `rating` and `sugars`
 How would we obtain that?    
-It's as simple as rearranging the order you target your rows and columns:
 
-```{python}
-df.loc[[75, 73, 13], ['name', 'type', 'rating', 'sugars']]
-```
+We would just have to rearranging the order you target your rows and columns.
 
-
-Notes: Script here.
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
 
 ---
 
 # Let’s apply what we learned!
 
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
+Notes:
+<br>

@@ -11,7 +11,7 @@ arr2
 arr2t = arr2.T
 arr2t
 
-# Finally slice it so it only includes the values 10, 13 and 16. 
+# Finally slice the new object `arr2t` so it only includes the values 10, 13 and 16
 # Save this as an object named sliced_arr2t
 
 sliced_arr2t = arr2t[:,1]

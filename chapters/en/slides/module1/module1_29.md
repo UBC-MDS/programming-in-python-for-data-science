@@ -4,30 +4,16 @@ type: slides
 
 # Frequency Tables and Writing CSVs
 
-Notes: Script here.
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+Notes: <br>
 
 ---
 
 ## What is Frequency?
 
-Before we explain what a frequency table is, you must know what
-frequency means first.
-
-*_Frequency_* is simply put, the number of times a value occurs within
-the data. For example, let’s say we have a sample of our candybars data.
+*_Frequency_*: The number of times a value occurs within the data.
 
 ``` python
-df_mini
+cereal_mini
 ```
 
 ```out
@@ -41,37 +27,7 @@ df_mini
 6               3 Musketeers      54                  America
 ```
 
-The frequency of the value `Both` in the `available_canada_america`
-column is 3.
-
-A frequency table is a manner of displaying all the possible values of a
-column in our data and the number of occurrences (frequencies) each
-value occurs. These are particularly useful when we want to visualize
-our data.
-
-Notes: Script here.
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
-
 ## What is a Frequency Table?
-
-*_A frequency Table_* is a manner of displaying all the possible values
-of a column in our data and the number of occurrences (frequencies) each
-value occurs. These are particularly useful when we want to visualize
-our data.
-
-For our sample data, a frequency table for the
-`available_canada_america` column would look like this:
 
 ```out
 Both       3
@@ -80,29 +36,31 @@ Canada     2
 Name: available_canada_america, dtype: int64
 ```
 
-Notes: Script here.
+Notes:
 
-<html>
+Before we explain what a frequency table is, you must know what
+frequency means first.
 
-<audio controls >
+*_Frequency_* is simply put, the number of times a value occurs within
+the data. For example, let’s say we have a sample of our candybars data.
+For example, let’s say we have a sample of our candybars data.
 
-<source src="/placeholder_audio.mp3" />
+If we count the number of times the value `Both` appears in the
+`available_canada_america` column, we get 3 times. This is the frequency
+of the value `both`.
 
-</audio>
+A frequency table is a manner of displaying all the possible values of a
+column in our data and the number of occurrences (frequencies) of each
+value.
 
-</html>
+For our sample data, a frequency table for the
+`available_canada_america` column would look like this:
 
 ---
 
-If we want to get a frequency table of a categorical column, there are a
-few steps that need to be followed. Up until now, we discussed getting a
-single column from a dataframe using double brackets - `df[['column
-name']]`. For frequency tables, however, we only use single brackets to
-obtain the column values.
-
 ``` python
-manufacturer_column = df['mfr']
-manufacturer_column
+mfr_column = cereal['mfr']
+mfr_column
 ```
 
 ```out
@@ -110,9 +68,7 @@ manufacturer_column
 1     Q
 2     K
 3     K
-4     R
      ..
-72    G
 73    G
 74    R
 75    G
@@ -120,95 +76,107 @@ manufacturer_column
 Name: mfr, Length: 77, dtype: object
 ```
 
-Notes: Script here.
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
-
-We saved the object in a variable called `manufacturer_column` in the
-same way we have saved objects before.  
-Next we can use `.value_counts()` referencing that the column we saved
-as `manufacturer_column`.
-
 ``` python
-manufacturer_freq = manufacturer_column.value_counts()
-manufacturer_freq
+mfr_freq = mfr_column.value_counts()
+mfr_freq
 ```
 
 ```out
 K    23
 G    22
 P     9
-R     8
 Q     8
+R     8
 N     6
 A     1
 Name: mfr, dtype: int64
 ```
 
-We can then see the frequency of each categorical value. If we used
-double square brackets with `pd.value_counts()` we would get an error
-along the lines of `AttributeError: 'DataFrame' object has no attribute
-'value_counts'`. Take care with using the correct number of square
-brackets.
+Notes:
 
-Notes: Script here.
+If we want to get a frequency table of a categorical column, there are a
+few steps that need to be followed.
 
-<html>
+Up until now, we discussed getting a single column from a dataframe
+using double brackets - `df[['column name']]`.
 
-<audio controls >
+For frequency tables, however, we only use single brackets to obtain the
+column values.
 
-<source src="/placeholder_audio.mp3" />
+We saved the object in a variable called `manufacturer_column` in the
+same way we have saved objects before.
 
-</audio>
+Next we can use `.value_counts()` referencing that the column we saved
+as `manufacturer_column`.
 
-</html>
+This let’s us see the frequency of each categorical value.
 
 ---
 
-Sometimes it’s useful to save a new dataframe as a `csv` file for future
-use or to use in another application. We can save dataframes using the
-method `.to_csv()`. Simply put our desired `csv` file name in quotations
-within the parentheses. We include the argument `index=False` so we
-don’t export our index column which is just numbering our rows.
-
 ``` python
-manufacturer_freq.to_csv('manufacturer_frequency.csv', index=False)
+mfr_col_wrong = cereal[['mfr']]
+mfr_col_wrong
 ```
 
-Notes: Script here.
+```out
+   mfr
+0    N
+1    Q
+2    K
+3    K
+..  ..
+73   G
+74   R
+75   G
+76   G
 
-<html>
+[77 rows x 1 columns]
+```
 
-<audio controls >
+``` python
+mfr_col_wrong.value_counts()
+```
 
-<source src="/placeholder_audio.mp3" />
+``` out
+AttributeError: 'DataFrame' object has no attribute 'value_counts'
 
-</audio>
+Detailed traceback: 
+  File "<string>", line 1, in <module>
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/generic.py", line 5274, in __getattr__
+    return object.__getattribute__(self, name)
+```
 
-</html>
+Notes:
+
+If we used double square brackets with `pd.value_counts()` we would get
+an error that looks like this so it’s important to take care with using
+the correct number of square brackets.
+
+---
+
+## Saving a dataframe
+
+``` python
+mfr_freq.to_csv('mfr_frequency.csv', index=False)
+```
+
+Notes:
+
+Sometimes it’s useful to save a new dataframe as a `csv` file for future
+use or to use in another application.
+
+We can save dataframes using the method `.to_csv()`.
+
+Simply put our desired `csv` file name in quotations within the
+parentheses.
+
+We include the argument `index=False` so we don’t export our index
+column which is just a column of numbers.
 
 ---
 
 # Let’s apply what we learned\!
 
-Notes: Script here
+Notes:
 
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+<br>

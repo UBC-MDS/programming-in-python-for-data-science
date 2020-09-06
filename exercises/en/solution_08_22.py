@@ -9,10 +9,11 @@ canucks_upper = canucks.assign(Position = canucks['Position'].str.upper(),
                                Country = canucks['Country'].str.upper())
 
 # Create a new column in the canucks_upper dataframe named number_ts
-# where you count the total number of times the letter T (lowercase or uppercase) appears in their name
+# where you count the total number of times the letter T
+# (lowercase or uppercase) appears in their name
 # Save this  dataframe named as canucks_upper_ts
 
-canucks_upper_ts = canucks_upper.assign(number_ts = canucks_upper['Player'].str.lower().str.count('t'))
+canucks_upper_ts = canucks_upper.assign(number_ts=canucks_upper['Player'].str.lower().str.count('t'))
 
 # How many players have more than 1 letter T in their name? 
 

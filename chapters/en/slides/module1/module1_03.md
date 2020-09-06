@@ -4,17 +4,9 @@ type: slides
 
 # What is Pandas?
 
-Notes: Script here.
+Notes:
 
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+<br>
 
 ---
 
@@ -24,85 +16,38 @@ Notes: Script here.
 
 </center>
 
-Notes: Script here.
+Notes:
 
-<html>
+Pandas is an add on library to Python.
 
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+It let’s us do more things with our code, specifically with dataframes.
 
 ---
 
-## Importing Pandas
-
-To analyze dataframes and load these `csv` files, we need to make sure
-that we import something called `pandas`.
-
-Before we start writing any valuable code, we import it with the
-following code:
+## Importing pandas
 
 ``` python
 import pandas as pd
 ```
 
-Notes: Script here.
+Notes:
 
-<html>
+To analyze dataframes and load these `csv` files, we need to make sure
+that we bring in this `pandas` library.
 
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+Before we start writing any valuable code, we import it with the
+following code.
 
 ---
 
 ## Reading in Data
 
-Next we can bring in our data named `candybars` which is stored as a
-`.csv`:
-
 ``` python
-df = pd.read_csv('candybars.csv')
+candy = pd.read_csv('candybars.csv')
 ```
 
-let’s break this up:
-
-`pd`: this is the short form for pandas, which we are using to
-manipulate our dataframes.  
-`read_csv()`: The tool that does the job and, in this case, it is
-reading in the `csv` file named `candybars.csv`.  
-`df`: The dataframe is now saved as an object called `df`.
-
-In these slides you can differentiate between what we typed in (our
-code) in light gray and the output of it, which will be coloured with a
-dark grey background.
-
-Notes: Script here.
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
-
-The dataframe is stored in an object named `df` and looks like this:
-
 ``` python
-df
+candy
 ```
 
 ```out
@@ -122,65 +67,65 @@ df
 [25 rows x 6 columns]
 ```
 
-Notes: Script here.
+Notes:
 
-<html>
+Next we can bring in our data named `candybars` which is stored as a
+`.csv` file.
 
-<audio controls >
+let’s break this up:
 
-<source src="/placeholder_audio.mp3" />
+  - `pd` is the short form for pandas, which we are using to manipulate
+    our dataframes.  
+  - `read_csv()` is the tool that does the job and, in this case, it is
+    reading in the `csv` file named `candybars.csv`.  
+  - `candy` is The dataframe is now saved as an object called `candy`.
 
-</audio>
+The dataframe is stored in an object named `candy` and we can inspect in
+by “calling” the object name.
 
-</html>
+In these slides we can differentiate between the code that we typed in
+with a light grey background and it’s output which is coloured with a
+dark grey background.
+
+From this dataframe, we can see that there are 25 different candy bars
+and 6 columns.
 
 ---
 
-From this dataframe, we can see that there are 25 different candy bars
-and 6 columns. We can obtain the names of the columns using this code:
-
 ``` python
-df.columns
+candy.columns
 ```
 
 ```out
 Index(['name', 'weight', 'chocolate', 'peanuts', 'caramel', 'available_canada_america'], dtype='object')
 ```
 
-Or if you wanted to see the dimensions of the whole dataframe you could
+Or if we wanted to see the dimensions of the whole dataframe we could
 code the following:
 
 ``` python
-df.shape
+candy.shape
 ```
 
 ```out
 (25, 6)
 ```
 
-Breaking up this code it just means “From our dataframe that we saved as
-`df` tell me the `columns`/`shape`”.
+Notes:
 
-Notes: Script here.
+We can obtain the names of the columns using `.columns`, and if we
+wanted to see the dimensions of the whole dataframe we could use
+`.shape` after the dataframe name.
 
-<html>
+Breaking up the code, we interpret this as:
 
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+*“From our dataframe that we saved as `candy` tell me the
+`columns`/`shape`”*
 
 ---
 
-What if we don’t want to output the whole table when displaying a
-dataframe? We can specify how many rows of the dataset to show with
-`.head()`. This will output the first few rows of the dataframe:
-
 ``` python
-df.head(2)
+candy.head(2)
 ```
 
 ```out
@@ -189,12 +134,8 @@ df.head(2)
 1  Butterfinger     184          1        1        1                  America
 ```
 
-The above code specifies only 2 rows to display. We can specify any
-number of rows within the parentheses or we can leave it empty which
-will default to the first 5 rows.
-
 ``` python
-df.head()
+candy.head()
 ```
 
 ```out
@@ -206,28 +147,21 @@ df.head()
 4          Twix      58          1        0        1                     Both
 ```
 
-Notes: Script here.
+Notes:
 
-<html>
+What if we don’t want to output the whole table when displaying a
+dataframe?
 
-<audio controls >
+We can specify how many rows of the dataset to show with `.head()`.
 
-<source src="/placeholder_audio.mp3" />
+`.head(2)` will output the first 2 rows of the dataframe.
 
-</audio>
-
-</html>
+We can specify any number of rows within the parentheses or we can leave
+it empty which will default to the first 5 rows.
 
 ---
 
 ## Functions/Methods and Attributes
-
-Something you may have noticed is that when we use `pd.read_csv()` we
-put our instructions within the parentheses, whereas, when we use
-`.shape` or `.head()` the object comes before our desired command. In
-Python, we use **functions**, **methods** and **attributes**. These are
-special words in Python that takes in instructions (we call these
-arguments) and do something.
 
 <center>
 
@@ -235,99 +169,71 @@ arguments) and do something.
 
 </center>
 
-Attributes can be distinguished from methods and functions as they do
-not have parentheses.  
-They can be thought of as nouns or adjectives that describe an object.
+### Attributes
 
-Take `df.shape` as an example.  
-In this case, our dataframe `df` is our object and `.shape` is the
+Take `candy.shape` as an example.
+
+In this case, our dataframe `candy` is our object and `.shape` is the
 attribute describing it.
 
-Notes: Script here.
+### Functions
 
-<html>
+In the example of `pd.read_csv()`, this function does the action of
+reading in our data.
 
-<audio controls >
+Notes:
 
-<source src="/placeholder_audio.mp3" />
+Something you may have noticed is that when we use `pd.read_csv()` we
+put our instructions within the parentheses, whereas, when we use
+`.shape` or `.head()` the object comes before our desired command.
 
-</audio>
+In Python, we use **functions**, **methods** and **attributes**. These
+are special words in Python that takes in instructions (we call these
+arguments) and do something.
 
-</html>
+Attributes can be distinguished from methods and functions as they do
+not have parentheses.
 
----
-
-<br>
-
-<br>
+They can be thought of as nouns or adjectives that describe an object.
 
 Functions and methods have parentheses.  
-They can be thought of as verbs that complete an action.  
-In the example of `pd.read_csv()`, this function does the action of
-reading in your data.
+They can be thought of as verbs that complete an action.
 
 This is going to be discussed in more detail later in the course but
 now, simply be aware of the way we write different instructions.
-
-Notes: Script here.
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
 
 ---
 
 ## Comments
 
+``` python
+# This line does not execute anything. 
+```
+
+We can also use it beside code.
+
+``` python
+candy.shape  # This will output the shape of the dataframe
+```
+
+Notes:
+
 While we write code, it’s often useful to annotate it or include
-information that you do not want to excuted. The easiest way to do this
-is with a hash (`#`) symbol. This creates a single line comment and
-prevents anything written after it from being executed.
+information that we do not want to executed.
 
-``` python
-# This line does not excute anything. 
-```
+The easiest way to do this is with a hash (`#`) symbol. This creates a
+single line comment and prevents anything written after it from being
+executed.
 
-You can also use it beside code.
+We use comments frequently in the exercises.
 
-``` python
-df.shape  # This will output the shape of the dataframe
-```
-
-You’ll notice we use comments frequently in the exercises. It’s good
-practice to use them to explain your code so if you or someone else
-wants to read it at a later date, it’s easier to understand.
-
-Notes: Script here.
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+It’s good practice to use them to explain our code so if we or someone
+else wants to read it at a later date, it’s easier to understand.
 
 ---
 
 # Let’s apply what we learned\!
 
-Notes: Script here.
+Notes:
 
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+<br>
