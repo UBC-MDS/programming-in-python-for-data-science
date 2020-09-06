@@ -40,4 +40,4 @@ Height:230
      
 Audio Effect -> Noise Removal       
 
-Template stored in this file.        
+Template stored in [this file](screen_rec_temp.camtemplate.zip).
