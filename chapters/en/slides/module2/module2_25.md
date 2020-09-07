@@ -71,7 +71,7 @@ We can chain to make this process a little faster too.
 Let’s start with “K” and then next “G”.
 
 We could do this for the remaining 5 manufacturers. However, it’s
-obvious that it’s time-consuming and a lot of work to do this
+obvious that this is time-consuming and a lot of work to do this
 repeatedly.
 
 Imagine how tedious this would be if we had 100 different manufacturers?
@@ -86,7 +86,7 @@ mfr_group
 ```
 
 ```out
-<pandas.core.groupby.generic.DataFrameGroupBy object at 0x1210de690>
+<pandas.core.groupby.generic.DataFrameGroupBy object at 0x110e5d520>
 ```
 
 Notes:
@@ -94,7 +94,7 @@ Notes:
 Pandas has a solution for this.
 
 It’s not uncommon to be interested in examining specific groups in our
-data hence there is a verb that is helpful in grouping like-rows
+data. Hence there is a verb that is helpful in grouping like-rows
 together.
 
 `.groupby()` allows us to group our data based on a specified column.
@@ -114,8 +114,8 @@ This returns a `DataFrame GroupBy` object.
 
 Notes:
 
-For example if we only had 2 manufacturers, the output would be the look
-like this.
+For example if we only had two manufacturers, the output would look like
+this.
 
 What exactly is a groubpy object though?
 
@@ -126,7 +126,7 @@ mfr_group.groups
 ```
 
 ```out
-{'A': Int64Index([43], dtype='int64'), 'G': Int64Index([5, 7, 11, 12, 13, 14, 18, 22, 31, 36, 40, 42, 47, 51, 59, 69, 70, 71, 72, 73, 75, 76], dtype='int64'), 'K': Int64Index([2, 3, 6, 16, 17, 19, 21, 24, 25, 26, 28, 38, 39, 46, 48, 49, 50, 53, 58, 60, 62, 66, 67], dtype='int64'), 'N': Int64Index([0, 20, 63, 64, 65, 68], dtype='int64'), 'P': Int64Index([9, 27, 29, 30, 32, 33, 34, 37, 52], dtype='int64'), 'Q': Int64Index([1, 10, 35, 41, 54, 55, 56, 57], dtype='int64'), 'R': Int64Index([4, 8, 15, 23, 44, 45, 61, 74], dtype='int64')}
+{'A': [43], 'G': [5, 7, 11, 12, 13, 14, 18, 22, 31, 36, 40, 42, 47, 51, 59, 69, 70, 71, 72, 73, 75, 76], 'K': [2, 3, 6, 16, 17, 19, 21, 24, 25, 26, 28, 38, 39, 46, 48, 49, 50, 53, 58, 60, 62, 66, 67], 'N': [0, 20, 63, 64, 65, 68], 'P': [9, 27, 29, 30, 32, 33, 34, 37, 52], 'Q': [1, 10, 35, 41, 54, 55, 56, 57], 'R': [4, 8, 15, 23, 44, 45, 61, 74]}
 ```
 
 Notes:
@@ -219,7 +219,7 @@ dtype: int64
 Notes:
 
 Similarly to how we made frequency tables using `.value_counts()`, we
-can now use `.size()` to obtain the amount of rows in each group:
+can now use `.size()` to obtain the number of rows in each group:
 
 ---
 
@@ -251,9 +251,9 @@ has the highest mean sugar content?***
 Where do we go from here?
 
 We need to calculate the mean sugar content in each manufacturing
-group\!
+group\! With a groupby object, this is super simple, as shown here.
 
-using `.mean()` on our groupby object answers the initial question and
+Using `.mean()` on our groupby object answers the initial question and
 confirms that manufacturer “P” has the highest mean sugar content across
 cereals.
 
@@ -262,10 +262,11 @@ Not only does this give us the result quicker, but it also gives us the
 mean of each column of the dataframe.
 
 Think of how many filtering and mean calculations would have to be done
-if we were to do this using our initial method.
+if we were to do this using our initial approach
 
 Of course, using groups is not limited to finding only the mean. We can
-do the same thing for other statistics too like `.min()` and `.max()`.
+do the same thing for other statistics too like `.min()` and `.max()`,
+or many other operations.
 
 ---
 
@@ -337,8 +338,8 @@ measures.
 Let’s say we want the `max`, `min` and `median`. We specify them in
 square brackets within our `.agg()` method.
 
-It produces a convenient dataframe giving the value for each statistic,
-for each column.
+This produces a convenient dataframe giving the value for each
+statistic, for each column.
 
 ---
 
@@ -367,7 +368,8 @@ Notes:
 
 Let’s try it on our manufacturer `groupby` object named `mfr_group`.
 
-This gives a value for each group and for each statistic we specified.
+This gives us a value for each group and for each statistic we
+specified.
 
 For example:
 
@@ -376,7 +378,7 @@ The interpretation is that, for cases where the manufacturer is ‘R’, the
 max number of calories is 150.
 
 In a similar manner if the manufacturer is ‘P’ the minumum amount of
-sodium, is 45.
+sodium is 45.
 
 ---
 
@@ -404,18 +406,18 @@ R        150   90   332.343977  6.125000    5.5
 Notes:
 
 You might have noticed that when we used `.agg()`, we calculated the
-same 3 statistics for every column in the dataframe but we can calculate
-different statistics for different columns.
+same 3 statistics for every column in the dataframe. But we can also
+calculate different statistics for different columns.
 
 Let’s say we are concerned about the `max` and `min` calorie values, the
 total `sum` of the ratings and the `mean` and `median` sugar content for
 each manufacturing group.
 
-We wrapped everything in curly brackets and we use a colon to separate
-the column name from the statistics values. We need to put the
-statistics within square brackets.
+We can achieve this by wrapping everything in curly brackets and using a
+colon to separate the column name from the statistics values. We need to
+put the statistics within square brackets.
 
-Now this is a bit easier to read.
+The code is complicated, but the result is a bit easier to read.
 
 ---
 

@@ -8,7 +8,7 @@ output:
 ---
 
 
-```{r setup, include=FALSE}
+```{r setup}
 ## DO NOT FORGET TO CHANGE THIS ACCORDINGLY 
 library(rmarkdown)
 # MAke sure you are updating your title 
@@ -27,11 +27,11 @@ output_format(knitr = knitr_opts,
               pandoc = NULL,
               base_format = md_document_custom)
 library(reticulate)
-
+Sys.setenv(RETICULATE_PYTHON = "/usr/local/bin/python3")
 ```
 
 
-```{python include=FALSE}
+```{python}
 import pandas as pd
 import numpy as np
 pd.set_option('display.width', 350)

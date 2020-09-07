@@ -79,7 +79,7 @@ grams and we are interested in milligrams.
 
 How can we rectify this?
 
-We need to multiply each of the row’s fat value by 1000.
+We need to multiply each of the row’s fat values by 1000.
 
 ---
 
@@ -114,13 +114,13 @@ Name: fat, dtype: int64
 Notes:
 
 Here is where some magic happens. Python doesn’t require us to make a
-whole column filled with 1000s to get the result we want. It would
-simply multiply 1000 to each column. (In Python we use `*` for
+whole column filled with 1000s to get the result we want. It simply
+multiplies each value by 1000. (In Python we use `*` for
 multiplication.)
 
 So our original fat column in the cereal dataframe is transformed\!
 
-See how each row has changed in value?
+See how each value has changed?
 
 Note that when we do any type of operations on columns, we use single
 square brackets.
@@ -155,9 +155,8 @@ Name: rating, dtype: float64
 
 Notes:
 
-We can do the same thing with any operation too.  
-Let’s divide the rating of each cereal by 10 so it lies on a 10 point
-scale.
+We can do the same thing with most operations. Let’s divide the rating
+of each cereal by 10 so that it lies on a 10 point scale.
 
 The ratings column gets transformed to single digits instead of double
 digits now.
@@ -204,13 +203,13 @@ cereal (`cups`).
 
 The expected result would look something like this diagram.
 
-Remember with any column operation we use only single square brackets on
-our columns.
+Remember that with any column operation we use only single square
+brackets on our columns.
 
 To get our desired output of sugar content per cup our code looks like
 this.
 
-Each sugar row value is divided by its respective cups value.
+Each sugar row value is divided by its corresponding cups value.
 
 ---
 
@@ -264,8 +263,8 @@ to our cereal dataframe.
 Let’s explore how we can add new columns to a less detailed version of
 our cereal dataframe.
 
-Remember the argument `use_cols`? We are going to use only a selection
-of columns so it’s easier to follow the examples.
+We’ll be working with a smaller dataframe containing only a few columns
+columns so that it’s easier to follow the examples.
 
 ---
 
@@ -306,18 +305,18 @@ cereal.head()
 Notes:
 
 In the next scenario, we have decided that our `weight` column should
-shows the weight of each cereal in grams instead of ounces.
+show the weight of each cereal in grams instead of ounces.
 
 We are going to save the conversion factor of grams to ounces in an
-object named `oz_to_g` to add some clarity and flexibility to our code.
+object named `oz_to_g`.
 
 Let’s start with just the operation for this.
 
 Next, we combine our operation with the implementation of adding it as a
 new column to the dataframe. The verb `.assign()` allows us to specify a
-column name to our operation using just an equal sign `=`.
+column name to our result using an equal sign `=`.
 
-We are going to name our new column `weight_g`.
+We are going to name our new column `weight_g` (for grams).
 
 Just like we did earlier in the module, we need to save the dataframe to
 an object when making changes involving columns. This will permanently
@@ -363,8 +362,9 @@ Let’s try another example.
 This time we want to save our sugar content per cereal cup as a column
 in our existing dataframe.
 
-We established the operation for this first and then combine it with
-`assign()` naming the column `sugar_per_cup`.
+At the top you can see the operation by itself, just for teaching
+purposes. Then, below, we combine our calculation with `assign()`,
+naming the column `sugar_per_cup`.
 
 ---
 

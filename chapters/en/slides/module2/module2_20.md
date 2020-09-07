@@ -36,11 +36,11 @@ Let’s bring in a smaller version of our cereal dataset.
 
 In the dataframe, the manufacturer value “Q” isn’t that informative and
 it might be easier to understand our data if we change all these values
-to something more complete like “Quaker”.
+to something more clear like “Quaker”.
 
 This leads us to our task:
 
-***Replace the `Q` manufacturer values, with a new value of `Quaker`***
+***Replace the `Q` manufacturer values with a new value of `Quaker`***
 
 ---
 
@@ -74,8 +74,8 @@ rest of our dataframe?
 Remember that we only want to replace the values in our existing
 dataframe and not create a new one.
 
-When we use the `.assign()` verb, it creates a new dataframe with only
-the rows that meet the condition `cereal['mfr'] == 'Q'` .
+When we use the `.assign()` verb like this, it creates a new dataframe
+with only the rows that meet the condition `cereal['mfr'] == 'Q'` .
 
 This is problematic since we still want the original dataframe and the
 rows with `mfr` values not equal `Q`.
@@ -126,11 +126,11 @@ rows of the dataframe, it can filter on conditions too.
 
 We are used to seeing code involving `.loc[]` like this.
 
-But we get introduced to a new side of it when we use it to filter as
-well.
+But we’ll now get introduced to a new side of it when we use it to
+filter as well.
 
-We can use the same syntax (`cereal['mfr'] == 'Q'`) we normally would
-when filtering, however this time, we wrap the whole thing within
+We can use the same syntax, `cereal['mfr'] == 'Q'`, we normally would
+when filtering. However, this time we wrap the whole thing within
 `.loc[]`.
 
 ---
@@ -160,15 +160,14 @@ Notes:
 Some people may be asking, “Why don’t we do all our filtering like this
 then?” Well, the answer is, you can, but we prefer not to.
 
-Filtering without `.loc[]` is a bit more readable and more efficient
-when doing analysis.
+Filtering without `.loc[]` is a bit more readable.
 
 Let’s concentrate back on our task of only replacing `mfr` values equal
 to `Q` to `Quaker`.
 
 How can `.loc[]` help us with this?
 
-Unlike with filtering, `.loc[]` accepts more arguments within it.
+Unlike our earlier approach, `.loc[]` accepts more arguments within it.
 
 We have the ability to specify not only the target rows matching a
 specific condition but our column of interest as well.
@@ -238,8 +237,8 @@ Notes:
 
 Remember what the condition `cereal['mfr'] == 'Q'` returns?
 
-It produces a dataframe containing all the rows with True/False values
-depending on if the row meets the condition.
+It produces an object containing all the rows with True/False values
+depending on whether or not the row meets the condition.
 
 ---
 
@@ -248,8 +247,7 @@ depending on if the row meets the condition.
 Notes:
 
 Essentially our code is finding the rows with `True` values and
-replacing the values in the `mfr` column (like we specified) the new
-value of `Quaker`.
+replacing the values in the `mfr` colum with the new value of `Quaker`.
 
 ---
 
@@ -282,14 +280,12 @@ Notes:
 
 You can split up how this code works into 3 steps:
 
-1.  We use `.loc[]` to find the rows specifying certain conditions.
+1.  We use `.loc[]` to find the rows meeting certain conditions.
 
-2.  We next indicate which column we wish to replace with the new
-    values.
+2.  We next indicate which column we wish to access.
 
 3.  Once we have obtained our desired rows and the column which we are
-    editing, we assign a value to the row meeting the condition (a
-    “True” value):
+    editing, we assign a value.
 
 ---
 
@@ -322,7 +318,7 @@ Let’s give it a try.
 
 Unfortunately, we are not able to replace values in this manner and it
 results in an error since filtering this way does not allow us to
-specify columns like this.
+specify a column.
 
 ---
 
@@ -342,9 +338,10 @@ This syntax using `.loc[]` also works for inequality conditions.
 
 If we are replacing numerical values with characters or words (or vice
 versa) we need to assign our desired values to a **new column** and not
-the existing one.
+the existing one, because the column type will be different.
 
-Perhaps we want just 2 categories for protein levels - “high” and “low”.
+Perhaps we want just two categories for protein levels - “high” and
+“low”.
 
 Any cereal above 3 grams of protein will be considered a “high” protein
 level and anything less, as a “low” protein level.
@@ -384,7 +381,7 @@ cereal
 
 Notes:
 
-Let’s take a look at the dataframe now
+Let’s take a look at the dataframe now.
 
 ---
 
@@ -431,13 +428,8 @@ from ounces into grams and making a new column named `weight_g`.
 This code edits the existing dataframe `cereal` instead of creating a
 new one.
 
-We prefer `.assign()` where possible since it provides more flexibility.
-
-It gives us an opportunity to name the new dataframe something different
-and keep our original dataframe untransformed.
-
-This prevents the need to re-read in our data to get our original
-dataframe back (which could take a long time if the dataset is large).
+We prefer to use `.assign()` where possible as it can help avoid
+unexpected errors and performance issues.
 
 ---
 

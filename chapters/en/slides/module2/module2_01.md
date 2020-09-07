@@ -1,3 +1,105 @@
+``` r
+## DO NOT FORGET TO CHANGE THIS ACCORDINGLY 
+library(rmarkdown)
+# MAke sure you are updating your title 
+knitr::opts_chunk$set(echo = TRUE,
+                      base.dir = ".", 
+                      base.url = "/",
+                      fig.path = paste("../static/module2/", params$dynamictitle,"/", sep = ""))
+
+knitr_opts <- knitr_options( opts_knit = NULL,
+                             opts_chunk = NULL,
+                             knit_hooks = NULL,
+                             opts_hooks = NULL,
+                             opts_template = NULL)
+md_document_custom <- md_document(variant = "gfm")
+output_format(knitr = knitr_opts,
+              pandoc = NULL,
+              base_format = md_document_custom)
+```
+
+```out
+$knitr
+$knitr$opts_knit
+NULL
+
+$knitr$opts_chunk
+NULL
+
+$knitr$knit_hooks
+NULL
+
+$knitr$opts_hooks
+NULL
+
+$knitr$opts_template
+NULL
+
+
+$pandoc
+$pandoc$to
+[1] "gfm"
+
+$pandoc$from
+[1] "markdown+autolink_bare_uris+tex_math_single_backslash"
+
+$pandoc$args
+[1] "--standalone"
+
+$pandoc$keep_tex
+[1] FALSE
+
+$pandoc$latex_engine
+[1] "pdflatex"
+
+$pandoc$ext
+[1] ".md"
+
+
+$keep_md
+[1] FALSE
+
+$clean_supporting
+[1] TRUE
+
+$df_print
+[1] "default"
+
+$pre_knit
+NULL
+
+$post_knit
+NULL
+
+$pre_processor
+NULL
+
+$intermediates_generator
+NULL
+
+$post_processor
+NULL
+
+$on_exit
+function () 
+{
+    if (is.function(base)) 
+        base()
+    if (is.function(overlay)) 
+        overlay()
+}
+<bytecode: 0x7ff82b836b30>
+<environment: 0x7ff82b8365f0>
+
+attr(,"class")
+[1] "rmarkdown_output_format"
+```
+
+``` r
+library(reticulate)
+Sys.setenv(RETICULATE_PYTHON = "/usr/local/bin/python3")
+```
+
 ---
 type: slides
 ---
@@ -123,7 +225,7 @@ Let’s load in the `candybars-text.txt` file. This is the same as the
 we load it in using the same syntax we are used to.
 
 This is not ideal. What you should notice is instead of each column
-value being separated by a column, it is now separated by `\t`.  
+value being separated by a comma, it is now separated by `\t`.  
 This is called the **delimiter**.
 
 In this specific case, a `\t` delimiter is a “tab”.
@@ -238,8 +340,8 @@ path to the required file.
 
 It may be a good idea to look in the
 <a href="https://github.com/UBC-MDS/MCL-DSCI-511-programming-in-python/tree/master/data" target="_blank">data
-folder</a> data folder to see exactly where the data you are loading in
-the exercises is coming from.
+folder</a> to see exactly where the data you are loading in the
+exercises is coming from.
 
 ---
 

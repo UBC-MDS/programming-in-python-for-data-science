@@ -1,3 +1,118 @@
+``` r
+## DO NOT FORGET TO CHANGE THIS ACCORDINGLY 
+library(rmarkdown)
+# MAke sure you are updating your title 
+knitr::opts_chunk$set(echo = TRUE,
+                      base.dir = ".", 
+                      base.url = "/",
+                      fig.path = paste("../static/module2/", params$dynamictitle,"/", sep = ""))
+
+knitr_opts <- knitr_options( opts_knit = NULL,
+                             opts_chunk = NULL,
+                             knit_hooks = NULL,
+                             opts_hooks = NULL,
+                             opts_template = NULL)
+md_document_custom <- md_document(variant = "gfm")
+output_format(knitr = knitr_opts,
+              pandoc = NULL,
+              base_format = md_document_custom)
+```
+
+```out
+$knitr
+$knitr$opts_knit
+NULL
+
+$knitr$opts_chunk
+NULL
+
+$knitr$knit_hooks
+NULL
+
+$knitr$opts_hooks
+NULL
+
+$knitr$opts_template
+NULL
+
+
+$pandoc
+$pandoc$to
+[1] "gfm"
+
+$pandoc$from
+[1] "markdown+autolink_bare_uris+tex_math_single_backslash"
+
+$pandoc$args
+[1] "--standalone"
+
+$pandoc$keep_tex
+[1] FALSE
+
+$pandoc$latex_engine
+[1] "pdflatex"
+
+$pandoc$ext
+[1] ".md"
+
+
+$keep_md
+[1] FALSE
+
+$clean_supporting
+[1] TRUE
+
+$df_print
+[1] "default"
+
+$pre_knit
+NULL
+
+$post_knit
+NULL
+
+$pre_processor
+NULL
+
+$intermediates_generator
+NULL
+
+$post_processor
+NULL
+
+$on_exit
+function () 
+{
+    if (is.function(base)) 
+        base()
+    if (is.function(overlay)) 
+        overlay()
+}
+<bytecode: 0x7faf9d568790>
+<environment: 0x7faf9d568250>
+
+attr(,"class")
+[1] "rmarkdown_output_format"
+```
+
+``` r
+library(reticulate)
+Sys.setenv(RETICULATE_PYTHON = "/usr/local/bin/python3")
+```
+
+``` python
+import pandas as pd
+import numpy as np
+pd.set_option('display.width', 350)
+
+np.set_printoptions(linewidth=400)
+
+pd.set_option('display.max_columns', 15)
+pd.set_option('display.max_rows', 20)
+
+df = pd.read_csv('cereal.csv', index_col=0)
+```
+
 ---
 type: slides
 ---
@@ -33,7 +148,8 @@ organized how we want it.
 how to separate each value in the data.
 
 This is only the tip of the iceberg. There are many others that are
-helpful when reading in our data.
+helpful when reading in our data, such as `index_col`, `header`,
+`nrows`, and `usecols`.
 
 ---
 
@@ -71,17 +187,16 @@ Almond Delight              R  Cold       110        2    2     200    1.0   14.
 
 Notes: `index_col` is an argument that indicates which column will be
 acting as the index label. In most of the cases we have encountered, we
-did not use this argument. For the majority of the data we have seen,
-each dataframe’s index was just a column of with a unique number for
-each row.
+did not use this argument and instead relied on the pandas default,
+which is to use ascending integers for the index.
 
-We can, however, specify a column to be the index. It’s in our best
-interest that the column we choose have unique values.  
+We can, however, specify a column in the data to become the index. It’s
+in our best interest that the column we choose have unique values.  
 For our `cereal.csv` let’s specify the `name` column as our index.
 
-The `index_col` argument also take in positions. the `name` column in
-our data in in the 0th position so we can also specify the index like we
-show here.
+The `index_col` argument also take in positions. The `name` column in
+our data is in the 0th position so we can also specify the index like we
+show here with `index_col=0`.
 
 ---
 
@@ -97,13 +212,13 @@ lines of text explaining important points about the file. We do not want
 to include this in our dataframe and therefore we need to specify
 exactly when our dataframe begins. This is where `header` comes in.
 
-Take a look at the
+Take a look at
 <a href="https://github.com/UBC-MDS/MCL-DSCI-511-programming-in-python/blob/master/slides/candybars-h.csv" target="_blank">`candybars-h.csv`
-file </a> as an example.
+</a> as an example.
 
 If we look at the data with a regular text editor, the data doesn’t
 start until the 3rd line which would be the equivalent of position 2
-(since we begin at index 0).
+(since we begin counting from 0).
 
 ---
 
@@ -131,10 +246,11 @@ candybars
 
 Notes:
 
-If we load this data without any arguments, we get this as the output.
+If we load this dataset without any arguments, we get this as the
+output.
 
-We see that there are no clear column names and things are in quite a
-disarray.
+We see that there are no clear column names and things are quite a
+mess\!
 
 ---
 
@@ -162,8 +278,8 @@ candybars
 
 Notes:
 
-We use `header=2` to indicate where our dataframe begins (2 being the
-index position or the row that contains the column labels).
+We use `header=2` to indicate that the data actually begins at position
+2.
 
 That’s looking much better.
 
@@ -189,14 +305,13 @@ candybars
 
 Notes:
 
-`nrows` is an argument that is useful when you only want to load in a
-slice of the dataframe.
+`nrows` is an argument that is useful when you only want to load in part
+of the dataframe.
 
 Perhaps the file you have is large and you only want a sample of it.
-`nrows` will limit the number of rows from the file to read in.
+`nrows` will limit the number of rows that you read in.
 
-Take our regular `candybar.csv` file, where we only want 7 of the rows
-of data.
+This code loads in only the first 7 rows of our candybar dataset.
 
 ---
 
@@ -232,8 +347,8 @@ relevant to our analysis are the columns `name`, `weight` and
 `available_canada_america`. We can forgo the other columns when reading
 the data in.
 
-In a similar way to selecting columns using `.iloc[]`, we put the
-desired column index positions in square brackets for the argument.
+In a similar way to selecting columns using `.iloc[]`, we specify the
+desired column indices in square brackets.
 
 ---
 

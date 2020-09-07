@@ -75,14 +75,10 @@ would be a good idea to change it to something shorter like
 
 Here is how we can accomplish that.
 
-This code uses something we’ve never seen before - {} curly brackets.
-These have a special meaning but for now, you only need to concentrate
-your attention on the fact that the argument `columns` needs to have the
-format:
-
-`columns={'old column name':'new column name'}`
-
----
+This code uses something we’ve never seen before - {} curly braces, also
+called curly brackets. These have a special meaning but for now, you
+only need to concentrate your attention on the fact that the argument
+`columns` needs to have the format shown on the slide. —
 
 ``` python
 candy = candy.rename(columns={'available_canada_america':'availability',
@@ -101,8 +97,8 @@ candy.head()
 
 Notes:
 
-You can also rename multiple columns at once by simple adding a comma
-between the new and old column pairs within the curly brackets.
+You can also rename multiple columns at once by adding a comma between
+the new and old column pairs within the curly brackets.
 
 It’s important that we always save the dataframe to an object when
 making column changes or the changes will not be saved in our dataframe.
@@ -135,7 +131,7 @@ Notes:
 `.drop()` is the verb we use to delete columns in a dataframe.
 
 Let’s delete the column `coconut` by specifying it in the `columns`
-argument.
+argument of the `drop` verb.
 
 ---
 
@@ -176,10 +172,10 @@ Notes:
 
 If you look again at the code we just wrote you’ll notice we didn’t save
 over the dataframe object, so the dataframe `candy` still will contain
-`coconut`.
+the `coconut` column.
 
-Let’s overwrite this and remove multiple columns at the same time. Let’s
-drop `nougat` and `coconut` together.
+Let’s overwrite the dataframe and remove multiple columns at the same
+time. Let’s drop `nougat` and `coconut` together.
 
 We put the columns we want to drop in square brackets and this time we
 will remember to overwrite over the `candy` object.
