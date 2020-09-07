@@ -8,7 +8,7 @@ output:
 ---
 
 
-```{r setup}
+```{r setup, include=FALSE}
 ## DO NOT FORGET TO CHANGE THIS ACCORDINGLY 
 library(rmarkdown)
 # MAke sure you are updating your title 
@@ -31,7 +31,7 @@ Sys.setenv(RETICULATE_PYTHON = "/usr/local/bin/python3")
 ```
 
 
-```{python}
+```{python include=FALSE}
 import pandas as pd
 import numpy as np
 pd.set_option('display.width', 350)

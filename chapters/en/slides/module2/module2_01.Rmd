@@ -8,7 +8,7 @@ output:
 ---
 
 
-```{r setup}
+```{r setup, include=FALSE}
 ## DO NOT FORGET TO CHANGE THIS ACCORDINGLY 
 library(rmarkdown)
 # MAke sure you are updating your title 
