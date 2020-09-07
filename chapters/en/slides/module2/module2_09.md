@@ -78,7 +78,9 @@ Here is how we can accomplish that.
 This code uses something we’ve never seen before - {} curly braces, also
 called curly brackets. These have a special meaning but for now, you
 only need to concentrate your attention on the fact that the argument
-`columns` needs to have the format shown on the slide. —
+`columns` needs to have the format shown on the slide.
+
+---
 
 ``` python
 candy = candy.rename(columns={'available_canada_america':'availability',
