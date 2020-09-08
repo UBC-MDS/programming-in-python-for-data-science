@@ -13,4 +13,6 @@ def test():
     assert set(canucks_upper['Country']) == {'CANADA', 'FRANCE', 'SWEDAN', 'UNITED STATES'}, "Make sure you are converting the 'Country' column to upper case."
     assert "number_ts" in list(canucks_upper_ts.columns), "The 'number_ts' column does not exist. Please add it to the 'canucks_upper_ts' dataframe."
     assert sum(canucks_upper_ts['number_ts']) == 21, "The values in the 'number_ts' column are incorrect. Are you creating it properly?"
+    assert "str.lower()" in __solution__, "You may find the 'str.lower()' function helpful for this question."
+    assert "str.upper()" in __solution__, "You may find the 'str.upper()' function helpful for this question."
     __msg__.good("Nice work, well done!")

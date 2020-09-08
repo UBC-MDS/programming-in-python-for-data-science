@@ -13,4 +13,5 @@ def test():
     assert "Wealth" in list(canucks_comf.columns), "Make sure you are creating a new column 'Wealth' in the canucks dataframe."
     assert "comfortable" in set(canucks_comf['Wealth']), "Make sure you are setting the values in the 'Wealth' column to 'comfortable'."
     assert "unknown" in set(canucks_comf['Wealth']), "Make sure you are setting the null values in the 'Wealth' column to 'unknown'."
+    assert sum(canucks_comf['Wealth'] == "unknown") == 2, "The amount of 'unknown' values is incorrect. Make ure you are replacing all the null values to 'unknown'."
     __msg__.good("Nice work, well done!")
