@@ -4,27 +4,14 @@ type: slides
 
 # Slicing only columns using .loc\[\]
 
-Notes: Script here.
+Notes:
 
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+<br>
 
 ---
 
-What happens now if we wanted all the rows of the dataframe but only the
-columns `calories` to `fiber`?
-
-We would simply use `:` to indicate from “end” to “end” for rows:
-
 ``` python
-df.loc[:, 'calories':'fiber']
+cereal.loc[:, 'calories':'fiber']
 ```
 
 ```out
@@ -44,64 +31,61 @@ df.loc[:, 'calories':'fiber']
 [77 rows x 5 columns]
 ```
 
-Notes: Script here.
+Notes:
 
-<html>
+What happens now if we wanted all the rows of the dataframe but only the
+columns `calories` to `fiber`?
 
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+We would simply use `:` to indicate from “end” to “end” for our rows
+rows:
 
 ---
 
 ## So Far
 
-`loc` is used to slice columns and rows by **label** and within an
-interval. We always specify **row** indexing first, then **columns**.
+  - `.loc[]` is used to slice columns and rows by **label** and within
+    an interval.
+
+  - We always specify **row** indexing first, then **columns**.
+
+<!-- end list -->
 
 ``` python
-df.loc['row name start':'row name end', 'column name start':'column name end']
+cereal.loc['row name start':'row name end', 'column name start':'column name end']
 ```
 
-  - If we aren’t slicing any columns, we can simply say `df.loc[ 'row
-    name start': 'row name end']` since columns specification follow
-    rows.
+  - If we aren’t slicing any columns, but we are slicing rows we can
+    shorten that to
+
+<!-- end list -->
+
+``` python
+df.loc[ 'row name start':'row name end']
+```
+
   - However, the reverse is not true. If we want all the rows with only
     specific columns, we specify rows first and therefore we would need
-    to make it clear with `df.loc[ : , 'column name start' : 'column
-    name end']`.
-  - We can read `:` as **“to”**
-  - If the indices are labeled with numbers, we do not need “quotations”
-    when calling them.
+    to make it clear with
 
-Notes: Script here.
+<!-- end list -->
 
-<html>
+``` python
+df.loc[:, 'column name start':'column name end']
+```
 
-<audio controls >
+  - We can read `:` as **“to”**.
 
-<source src="/placeholder_audio.mp3" />
+  - If the indices are labelled with numbers, we do not need
+    “quotations” when calling them.
 
-</audio>
+Notes:
 
-</html>
+<br>
 
 ---
 
 # Let’s apply what we learned\!
 
-Notes: Script here.
+Notes:
 
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+<br>

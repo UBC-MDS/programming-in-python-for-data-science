@@ -123,7 +123,7 @@ Let’s load in the `candybars-text.txt` file. This is the same as the
 we load it in using the same syntax we are used to.
 
 This is not ideal. What you should notice is instead of each column
-value being separated by a column, it is now separated by `\t`.  
+value being separated by a comma, it is now separated by `\t`.  
 This is called the **delimiter**.
 
 In this specific case, a `\t` delimiter is a “tab”.
@@ -238,8 +238,8 @@ path to the required file.
 
 It may be a good idea to look in the
 <a href="https://github.com/UBC-MDS/MCL-DSCI-511-programming-in-python/tree/master/data" target="_blank">data
-folder</a> data folder to see exactly where the data you are loading in
-the exercises is coming from.
+folder</a> to see exactly where the data you are loading in the
+exercises is coming from.
 
 ---
 

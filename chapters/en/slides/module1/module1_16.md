@@ -2,59 +2,49 @@
 type: slides
 ---
 
-# Obtaining Dataframe Values
+# Obtaining dataframe values
 
-Notes: Script here.
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+Notes: <br>
 
 ---
 
-Now we know how to get a subset of an existing dataframe but what if we
-just want to get a single value from it? For example, what if I wanted
-to save the calorie content of `Shredded Wheat` without typing in the
-number?
+``` python
+cereal.loc[[63]]
+```
 
 ```out
               name mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
 63  Shredded Wheat   N  Cold        80        2    0       0    3.0   16.0       0      95         0      1    0.83   1.0  68.235885
 ```
 
-We specify the row we are targeting (63), followed by the column:
-
 ``` python
-df.loc[63, 'calories']
+cereal.loc[63, 'calories']
 ```
 
 ```out
 80
 ```
 
-This displays the value.
+Notes:
 
-Notes: Script here.
+At this point of the module, we now know how to get a subset of an
+existing dataframe but what if we just want to get a single value from
+it?
 
-<html>
+For example, what if I wanted to save the calorie content of `Shredded
+Wheat` by extracting it from the dataframe and not manually typing in
+the number?
 
-<audio controls >
+We specify the row we are targeting (63), followed by the column.
 
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+This displays the the value contained in the cell, which in this case,
+is 80.
 
 ---
 
-What about if we wanted the rating of `Smacks`?
+``` python
+cereal.loc[[66]]
+```
 
 ```out
       name mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
@@ -62,7 +52,7 @@ What about if we wanted the rating of `Smacks`?
 ```
 
 ``` python
-df.loc[66, 'rating']
+cereal.loc[66, 'rating']
 ```
 
 ```out
@@ -72,30 +62,16 @@ df.loc[66, 'rating']
 You will be using this often so let’s make sure we practice this one
 right away\!
 
-Notes: Script here.
+Notes:
 
-<html>
+What about if we wanted the rating of `Smacks` which is located at index
+66?
 
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+Then we use `.loc[]`, specify the row and the column location separated
+by a comma.
 
 ---
 
 # Let’s apply what we learned\!
 
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+Notes: <br>

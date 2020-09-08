@@ -49,47 +49,48 @@ type: slides
 
 # Python data structures: Lists, Tuples and Sets 
 
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
+Notes: 
+
+<br>
 
 ---
 
 ## Sequences 
 
-In the last section, we discussed the `str` data type. 
-We described it as  _a sequence of characters_. In many cases, there is good reason to split up a long text string into separate ones. 
-Luckily, we have a convenient verb to do that `.split()`. 
+
 
 ```{python}
 sentence = "I always lose at least one sock when I do laundry." 
 words = sentence.split()
 words
 ```
-This verb then splits up the string into separate words.     
-We can change where to split the string as well. 
+
 
 ```{python}
 sentence.split("e")
 ```
+
+
+Notes: 
+
+In the last section, we discussed the `str` data type. 
+
+We described it as  _a sequence of characters_. In many cases, there is good reason to split up a long text string into separate ones. 
+Luckily, we have a convenient verb to do that `.split()`. 
+
+This verb then splits up the string into separate words.
+
+We can change where to split the string as well. 
+
 This argument uses the character "e" to separate the string and discards the separator. 
 
 Why is it returned in square brackets though? 
-
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
 
 ---
 
 ## Lists 
 
-The output from the `.split()` verb is called a **list**. 
-Similarly to how a string is a sequence of characters that depend on an order, a list is a sequence of elements with a particular order. Lists can be identified by their square brackets.
+
 
 ```{python}
 words
@@ -99,7 +100,6 @@ words
 type(words)
 ```
 
-The elements in a list can be a combination of any of the data types.
 
 ```{python}
 my_list = [1.2, 3, None, True, 'One of the lost socks']
@@ -107,22 +107,25 @@ my_list
 ```
 
 
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
+Notes:
+
+The output from the `.split()` verb is called a **list**. 
+
+Similarly to how a string is a sequence of characters that depend on an order, a list is a sequence of elements with a particular order.
+
+Lists can be identified by their square brackets.
+
+The elements in a list can be a combination of any of the data types.
 
 ---
 
-They can even have elements that are lists 
 
 ```{python}
 lists_of_lists = [[1,2], ['buckle', 'My', 'Shoe'], 3, 4]
 lists_of_lists
 ```
 
-We can get the length of a list, with `len()` like we did for strings. 
+
 
 ```{python}
 my_list = [1.2, 3, None, True, 'One of the lost socks']
@@ -130,16 +133,17 @@ len(my_list)
 ```
 
 
-If your list contains lists, `len()` will return the number of elements in the outer list (not the total number of elements):
 ```{python}
 len(lists_of_lists)
 ```
 
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
+Notes: 
+
+They can even have elements that are lists.
+
+We can get the length of a list, with `len()` like we did for strings. 
+
+If your list contains lists, `len()` will return the number of elements in the outer list (not the total number of elements).
 
 ---
 
@@ -147,41 +151,38 @@ Notes: Script here
 my_list
 ```
 
-Similarly to how we can slice dataframes by columns and rows, we can slice lists by elements
 
 ```{python}
 my_list[1]
 ```
 
+
 ```{python}
 my_list[1:3]
 ```
 
-Slicing lists is similar to slicing with `iloc[]`; the start is inclusive and the end is exclusive.
-So `my_list[1:3]` fetches elements 1 and 2, but not 3.
-In other words, it gets the 2nd and 3rd elements in the list.
 
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
+
+Notes: 
+
+
+Similarly to how we can slice dataframes by columns and rows, we can slice lists by elements.
+
+Slicing lists is similar to slicing with `iloc[]`; the start is inclusive and the end is exclusive.
+
+So `my_list[1:3]` fetches elements 1 and 2, but not 3.
+
+In other words, it gets the 2nd and 3rd elements in the list.
 
 ---
 
 ## Mutable vs Immutable 
 
 
-A data structure is **mutable**  if it can be modified. 
-
-Lists are mutable and we can assign new values for its various entries:
-
-For example: 
 ```{python}
 my_list
 ```
 
-I can edit any entry in this list and replace it with a new value:
 
 ```{python}
 my_list[2] = "Ta Da!"
@@ -192,16 +193,15 @@ my_list[2] = "Ta Da!"
 my_list
 ```
 
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
+Notes: 
+
+A data structure is **mutable**  if it can be modified. 
+
+Lists are mutable and we can assign new values for its various entries.
+
+For example, we can edit any entry in this list and replace it with a new value. 
 
 ---
-
-We can also replace entries in a **nested** list (a list within a list). 
-
 
 ```{python}
 lists_of_lists
@@ -213,15 +213,12 @@ lists_of_lists[1][2] = "Sandal"
 lists_of_lists
 ```
 
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
+Notes: 
+
+We can also replace entries in a **nested** list (a list within a list). 
 
 ---
 
-Strings can be sliced just like list:
 
 ```{python}
 sentence
@@ -232,94 +229,105 @@ sentence
 sentence[27:35]
 ```
 
-But we cannot replace characters:
- 
-```{python error=TRUE}
+
+```python
 sentence[5] = "Z"
 ```
- 
-That means values of type `str` are **immutable**. 
 
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
+```out
+TypeError: 'str' object does not support item assignment
+
+Detailed traceback: 
+  File "<string>", line 1, in <module>
+```
+
+Notes: 
+
+Strings can be sliced just like list.
+
+But we cannot replace characters. 
+
+That means values of type `str` are **immutable**. 
 
 ---
 
 # List Verbs 
 
-Unlike strings once again, lists have <a href="https://docs.python.org/3/tutorial/datastructures.html#more-on-lists" target="_blank">A variety of different methods</a> for interacting with their  data. Here are just a few. 
 
 ```{python}
 primes = [2,3,5,7,11]
 ```
 
-We can add to the end of a list with `append()`:
 
 ```{python}
 primes.append(13)
 primes
 ```
 
-We can find the maximum value in the list with `max()`:
 
 ```{python}
 max(primes)
 ```
 
-And the sum of the list with `sum()`:
+
 ```{python}
 sum(primes)
 ```
 
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
+Notes: 
+
+Unlike strings once again, lists have <a href="https://docs.python.org/3/tutorial/datastructures.html#more-on-lists" target="_blank">A variety of different methods</a> for interacting with their  data. Here are just a few. 
+
+We can add to the end of a list with `append()`.
+
+We can find the maximum value in the list with `max()`.
+
+And the sum of the list with `sum()`.
 
 ---
 
 ## Lists to Dataframes 
 
-Up until this point we have been working with dataframes that have been read in and converted from different types of files. We, however, can make dataframes from scratch using lists.    
-Let's say I wanted a dataframe of things I needed to purchase from the store on my next grocery shopping trip. 
+| | item     |   location | price |
+|-|----------|------------|-------|
+|0| toothpaste| London Drugs| 3.99 |
+|1| apples | Produce Store  | 4.00 |
+|2| bread |     Bakery  | 3.50 |
+
 
 ```{python}
 item1 = ['toothpaste', 'London Drugs', 3.99]
 item2 = ['apples', 'Produce Store', 4.00]
 item3 = ['bread', 'Bakery', 3.50]
-
 column_names = ['item', 'location', 'price']
 
 shopping_items = pd.DataFrame(data=[item1, item2, item3], columns=column_names)
 shopping_items
 ```
 
-We use a list for each row and a list for the column labels. We then use a list of all the rows to make up the data.    
-Now the shopping items are no longer in a structure type `list`, but in a type `DataFrame`:
+
 ```{python}
 type(shopping_items)
 ```
 
 
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
+Notes: 
 
+Up until this point we have been working with dataframes that have been read in and converted from different types of files.
+
+We, however, can make dataframes from scratch using lists.    
+
+Let's say we wanted a dataframe of things we needed to purchase from the store on our next grocery shopping trip. 
+
+We use a list for each row and a list for the column labels. We then use another list of all the rows to make up the data.    
+
+Now the shopping items are no longer in a structure type `list`, but in a type `DataFrame`.
 
 ---
 
 ## Tuples 
 
-Tuples are a data structure very similar to lists but with the 2 main differences: 
 
-1. They are represented with parentheses, and
-2. They are immutable
 
 ```{python}
 my_tuple = ('I', 'lose', None,  'socks', 'when', 1, 'do', 'laundry.', False)
@@ -331,38 +339,61 @@ type(my_tuple)
 ```
 
 
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
+Notes: 
+
+Tuples are a data structure very similar to lists but with the 2 main differences: 
+
+1. They are represented with parentheses, and
+2. They are immutable
 
 ---
+
 ```{python}
 my_tuple
 ```
 
-Just to recap, immutable means that the elements withing the structure cannot be edited, or changed: 
-
-```{python error=TRUE}
+```python
 my_tuple[2] = 'Many'
 ```
 
-We can cast objects from tuples into type `list`:
+```out
+TypeError: 'tuple' object does not support item assignment
+
+Detailed traceback: 
+  File "<string>", line 1, in <module>
+```
+
+
 ```{python}
 my_list = list(my_tuple)
 type(my_list)
 ```
 
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
+Notes: 
+
+Just to recap, immutable means that the elements withing the structure cannot be edited, or changed.
+
+We can cast objects from tuples into type `list` by using the verb `list()`.
 
 ---
 
 ## Sets 
+
+
+```{python}
+my_set = {2, 1.0, 'Buckle my shoe'}
+my_set
+```
+
+
+
+```{python}
+my_set = {2, 1.0, 'Buckle my shoe', 1.0, 2}
+my_set
+```
+
+
+Notes: 
 
 Sets, not unlike lists and tuples, are a data structure that contains elements. Sets differ such that:      
 
@@ -371,37 +402,29 @@ Sets, not unlike lists and tuples, are a data structure that contains elements. 
 
 Let's explore this a bit. 
 
-Sets are made with curly brackets: 
-```{python}
-my_set = {1.0, 2, 'Buckle my shoe' }
-my_set
-```
+Sets are made with curly brackets.
 
 You'll notice that the order is not the same as we inputted then in. That's because set's do not preserve order.
 
-What if I add more of the same entries:
-
-```{python}
-my_set = {1.0, 2, 'Buckle my shoe', 1.0, 2 }
-my_set
-```
-This is still the same as before.
-
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
+If we have repeats of any entries, they only occur once in the set.
 
 ---
 
-What about the order? can I select a specific element?
+```{python}
+my_set
+```
 
-```{python error=TRUE}
+
+```python
 my_set[1]
 ```
-Remember this data structure does not perserve order, so Python displays them according to some internal sorting scheme.  
-We cannot select or slice from them, however, we can add to them with  `.add()`. 
+
+```out
+TypeError: 'set' object is not subscriptable
+
+Detailed traceback: 
+  File "<string>", line 1, in <module>
+```
 
 ```{python}
 my_set.add(3)
@@ -409,14 +432,18 @@ my_set.add(4)
 my_set
 ```
 
-You'll notice that unlike lists, the new entries are not added to the end.  
 
 
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
+
+Notes: 
+
+What about the order? can we select a specific element?
+
+Remember this data structure does not perserve order, so Python displays them according to some internal sorting scheme.  
+
+We cannot select or slice from them, however, we can add to them with  `.add()`. 
+
+You'll notice that unlike lists, the new entries are not added to the end of the structure.  
 
 ---
 
@@ -433,17 +460,12 @@ Notes: Script here
 
 
 
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
+Notes: 
+
+We have condensed the data structures characteristics into 1 convenient table for you. 
 
 ---
 
 # Let’s practice what we learned!
 
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
+Notes: <br>

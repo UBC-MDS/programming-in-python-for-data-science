@@ -29,165 +29,154 @@ pd.set_option('display.width', 400)
 
 np.set_printoptions(linewidth=400)
 
-pd.set_option('display.max_columns', 15)
+pd.set_option('display.max_columns', 25)
+pd.set_option('display.max_rows', 16)
 ```
 
 type: slides
 
 # Slicing with Pandas using .loc[]
 
-Notes: Script here.
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
+Notes: 
 
----
-
-Congratulations on writing your first code! This is great! We have read in our data and know the dimensions. What now? Let's go over how we would **index**, **slice** and  **select** certain columns or rows of our data.
-
-
-Notes: Script here.
-<html>
-<audio controls >
-<source src="/placeholder_audio.mp3" />
-</audio></html>
+<br>
 
 ---
 
 ## Cereal Data
 
-Let's import pandas and bring in a dataset named `cereal.csv`.
 
-Attribution:     
-_“[80 Cereals](https://www.kaggle.com/crawford/80-cereals/)” (c) by [Chris Crawford](https://www.linkedin.com/in/crawforc3/) is licensed under [Creative Commons Attribution-ShareAlike 3.0 Unported](http://creativecommons.org/licenses/by-sa/3.0/)_
+
+
 
 ```{python }
 import pandas as pd
   
-df = pd.read_csv('cereal.csv')
-df.head()
+cereal = pd.read_csv('cereal.csv')
+cereal.head()
 ```
 
+Attribution:     
+*“[80 Cereals](https://www.kaggle.com/crawford/80-cereals/)” (c) by [Chris Crawford](https://www.linkedin.com/in/crawforc3/) is licensed under [Creative Commons Attribution-ShareAlike 3.0 Unported](http://creativecommons.org/licenses/by-sa/3.0/)*
   
-Notes: Script here.
-<html>
-<audio controls >
-<source src="/placeholder_audio.mp3" />
-</audio></html>
-    
----
+Notes:
 
-## The Index
-    
+Congratulations on writing your first code! 
+
+We have read in our data and know the dimensions. What now? 
+
+Let's go over how we would **index**, **slice** and  **select** certain columns or rows of our data.
+
+Let's start by importing pandas and loading in a dataset named `cereal.csv` and saving it as `cereal`.
+
 We can see all the columns and the first 5 rows of the dataframe.
+
 Let's say we only want certain rows of the whole dataframe or certain columns.
 
 We talked about how `.head()` will generate the first few rows (5 as default) of a dataframe but what if we wanted rows 5-10?
 
-The first column of this dataframe is called the `index`. Each row has a label (the index) as well as a position. In this case, the index label of an observation is the same as it's position. This doesn't always have to be the case. We can assign columns as the index, but we will discuss this in the next section. 
+The first column of this dataframe is called the `index`. 
 
-Notes: Script here.
-<html>
-<audio controls >
-<source src="/placeholder_audio.mp3" />
-</audio></html>
+Each row has a label (the index) as well as a position. In this case, the index label of an observation is the same as it's position. 
 
+This doesn't always have to be the case. We can assign columns as the index, but we will discuss this in the next section. 
+    
 ---
 
-Here are the first 10 rows of the dataframe: 
-
 ```{python}
-df.head(10)
+cereal.head(15)
 ```
+
+  
+Notes: 
+
+Here are the first 15 rows of the dataframe. 
 
 Let's talk about observation 4 named `Almond Delight`.  Its index label is `4` as well as it's index position.    
-If you just went and counted those again and started screaming "5! It's the fifth position", that's ok. In the Python language, we start counting at position 0 (then 1, 2, 3, and 4 for Almond Delight).
-  
-Notes: Script here.
-<html>
-<audio controls >
-<source src="/placeholder_audio.mp3" />
-</audio></html>
+
+If you just went and counted those again and started screaming "5! It's the fifth position", that's OK. In the Python language, we start counting at position 0 (then 1, 2, 3, and 4 for Almond Delight).
 
 ---
 
-So now let's say we want the 5 rows past `Almond Delight`. That means we want rows `Apple Cinnamon Cheerios` to `Cap'n'Crunch`.    
-The following code cuts the dataframe from  "Apple Cinnamon Cheerios" to "Cap'n'Crunch" keeping all the columns:
+```{python echo=FALSE}
+cereal.head(12)
+```
+
 
 ```{python}
-df.loc[5:10]
+cereal.loc[5:10]
 ```
 
-```python
-df.loc[5:10]
-```
-
-This essentially means to  _"Obtain the values in the dataframe located from `5` to `10`."_       
+     
       
-Notes: Script here.
-<html>
-<audio controls >
-<source src="/placeholder_audio.mp3"/>
-</audio></html>
+Notes: 
+
+Now let's say we want all 5 rows past `Almond Delight`. That means we want rows `Apple Cinnamon Cheerios` to `Cap'n'Crunch`.    
+
+We use `.loc` with square brackets to cuts the dataframe from "Apple Cinnamon Cheerios" to "Cap'n'Crunch" keeping the columns and everything between.
+
+This code can be interpreted as _"Obtain the rows in the dataframe located from `5` to `10`."_  
 
 ---
 
-What if we only wanted certain columns now?
+```{python echo=FALSE}
+cereal.loc[5:10]
+```
 
-Perhaps we were only interested in the `calories` to `fiber` columns of the "Apple Cinnamon Cheerios" to "Cap'n'Crunch" rows?
-We put our desired rows first, then columns and separate them with a comma.  
 
 
 ```{python}
-df.loc[5:10, 'calories':'fiber']
+cereal.loc[5:10, 'calories':'fiber']
 ```
 
-`loc` is used to slice columns and rows by **label** and within an interval.
+
 
 The general format to slice both rows and columns together looks like this:
 
 ```python
-`df.loc['row name start':'row name end', 'column name start':'column name end']`
+`cereal.loc['row name start':'row name end', 'column name start':'column name end']`
 ```
 
 
-Notes: Script here.
-<html>
-<audio controls >
-<source src="/placeholder_audio.mp3" />
-</audio></html>
+Notes: 
+
+What if we only wanted certain columns now?
+
+Perhaps we were only interested in the `calories` to `fiber` columns of the "Apple Cinnamon Cheerios" to "Cap'n'Crunch" rows?
+
+We put in the interval of our desired rows first, and then columns and separate them with a comma.  
+
+`loc` is used to slice columns and rows by **label** and within an interval.
 
 ---
 
-There is a handy shortcut for slices where you want the begining of a dataframe to a specified row or column label or a specified row or column label to the end of a dataframe. 
 
-For example if we want all the rows up to "Apple Jacks" which has a label equal to 6, we could omit the first label in the code all together: 
 
 ```{python}
-df.loc[:6]
-```
-
-We can do something similar for the end of a dataframe. Let's say now we want the first 6 rows and only the columns from 'sugars' onwards. we would omit the ending label this time:
-
-```{python}
-df.loc[:6, 'sugars':]
+cereal.loc[:6]
 ```
 
 
-Notes: Script here.
-<html>
-<audio controls >
-<source src="/placeholder_audio.mp3" />
-</audio></html>
+
+```{python}
+cereal.loc[:6, 'sugars':]
+```
+
+
+Notes:
+
+There is a handy shortcut for slices that include the beginning of a dataframe to a specified row or column label or a specified row or column label to the end of a dataframe. 
+
+For example if we want all the rows up to "Apple Jacks" which has a label equal to 6, we could omit the first label in the code all together. 
+
+Or we can do something similar for the end of a dataframe. Let's say now we want the first 6 rows and only the columns from `sugars` onward. 
+
+We would omit the ending label this time after the `:` (colon) . 
 
 ---
 
 # Let’s try it out!
     
-Notes: Script here
-<html>
-<audio controls >
-<source src="/placeholder_audio.mp3" />
-</audio></html>
-    
+Notes: 
+
+<br>

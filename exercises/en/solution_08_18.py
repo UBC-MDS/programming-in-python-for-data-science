@@ -7,12 +7,12 @@ DAYS_PER_YEAR = 365.25
 
 canucks = pd.read_csv('data/canucks.csv', parse_dates = ['Birth Date'])
 
-# Find the oldest player (going by their date of birth)
+# Find the oldest player's date of birth 
 # Save the Timstamp as oldest
 
 oldest = canucks['Birth Date'].min()
 
-# Find the youngest player (going by their date of birth)
+# Find the youngest player's date of birth 
 # Save the Timstamp as yongest
 
 youngest = canucks['Birth Date'].max()

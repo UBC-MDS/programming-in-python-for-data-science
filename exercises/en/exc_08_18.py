@@ -7,12 +7,12 @@ DAYS_PER_YEAR = 365.25
 
 # ____ = ____
 
-# Find the oldest player (going by their date of birth)
+# Find the oldest player's date of birth 
 # Save the Timstamp as oldest
 
 # ____ = ____
 
-# Find the youngest player (going by their date of birth)
+# Find the youngest player's age date of birth 
 # Save the Timstamp as yongest
 
 # ____ = ____

@@ -27,7 +27,7 @@ output_format(knitr = knitr_opts,
               pandoc = NULL,
               base_format = md_document_custom)
 library(reticulate)
-
+Sys.setenv(RETICULATE_PYTHON = "/usr/local/bin/python3")
 ```
 
 
@@ -124,7 +124,7 @@ Reading in `txt` files can be a little less standard. Sometimes the character se
 Let's load in the `candybars-text.txt` file. This is the same as the `candybars.csv` data but saved as a `txt` file. Look what happens when we load it in using the same syntax we are used to.
 
 
-This is not ideal. What you should notice is instead of each column value being separated by a column, it is now separated by `\t`.   
+This is not ideal. What you should notice is instead of each column value being separated by a comma, it is now separated by `\t`.   
 This is called the **delimiter**.
 
 In this specific case, a  `\t` delimiter is a "tab". 
@@ -200,7 +200,7 @@ You can see the whole course structure and it's subdirectories <a href="https://
 
 In this course, we save all our data in a folder called `data` so when asked to read in data, take care in future exercises to add the full path to the required file.  
 
-It may be a good idea to look in the  <a href="https://github.com/UBC-MDS/MCL-DSCI-511-programming-in-python/tree/master/data" target="_blank">data folder</a> data folder to see exactly where the data you are loading in the exercises is coming from. 
+It may be a good idea to look in the  <a href="https://github.com/UBC-MDS/MCL-DSCI-511-programming-in-python/tree/master/data" target="_blank">data folder</a> to see exactly where the data you are loading in the exercises is coming from. 
 
 ---
 

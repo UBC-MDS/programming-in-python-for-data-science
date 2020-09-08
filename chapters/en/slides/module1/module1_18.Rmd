@@ -31,7 +31,7 @@ pd.set_option('display.width', 400)
 np.set_printoptions(linewidth=400)
 
 pd.set_option('display.max_columns', 15)
-df = pd.read_csv('cereal.csv')
+cereal = pd.read_csv('cereal.csv')
 ```
 
 
@@ -39,66 +39,55 @@ type: slides
 
 # Selecting using .loc[]
 
-Notes: Script here.
-<html>
-<audio controls >
-<source src="/placeholder_audio.mp3" />
-</audio></html>
+Notes:  <br>
 
 ---
 
 
 # Selecting a Single Column
 
-Something extremely useful is getting a single column from a dataframe.
-We can use `.loc[]` which would look something like this:
 
-```
+```python
 df.loc[:, ['column name']]
 ```
+<br>
 
-Iff we wanted the column `type` from our cereal dataframe we would do the following:
 ```{python}
-df.loc[:, ['type']]
+cereal.loc[:, ['type']]
 ```
 
+Notes: 
 
+Something we do often in data analysis is obtaining a single column from a dataframe.
+We can use `.loc[]` which would look something like this:
 
-Notes: Script here.
-<html>
-<audio controls >
-<source src="/placeholder_audio.mp3" />
-</audio></html>
+`cereak.loc[:, ['column name']]` 
+
+So if we wanted the column `type` from our cereal dataframe we could use the syntax here. 
+
+This seems a bit long winded and since we do this type of thing often pandas has provided a quicker syntax to use to do the same thing. 
 
 ---
-
-But there is a better way of doing this.
-We can omit `loc` altogether and use double square brackets:
 
 ``` Python
 df[['column name']]
 ```
 
-Selecting the column `type` would be as simple as:
+<br>
+
 
 ```{python}
-df[['type']]
+cereal[['type']]
 ```
 
+Notes:
 
-Notes: Script here.
-<html>
-<audio controls >
-<source src="/placeholder_audio.mp3" />
-</audio></html>
+Selecting a single column can be done without using `loc[]` and instead we can just specify the dataframe name, followed by double square brackets containing the column of interest.
 
+That makes selecting the column `type` from the `cereal` dataframe, look like this.
 
 ---
 
 # Let’s apply what we learned!
 
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
+Notes: <br>

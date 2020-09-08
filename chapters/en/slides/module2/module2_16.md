@@ -28,10 +28,8 @@ Filtering is probably one of the most frequent data manipulations you
 will do in data analysis.
 
 Filtering is often used when we are either trying to rid the dataframe
-of unwanted rows or analyze rows with a particular column value.
-
-Think of it as a sieve keeping only the rows matching conditions you
-have set.
+of unwanted rows or trying to analyze rows with a particular column
+value.
 
 Let’s try to filter the `cereal.csv` dataset.
 
@@ -77,7 +75,7 @@ The output shows all the index labels and a column with `True` or
 But we want a dataframe with all the information that only contains the
 rows with protein above 4.
 
-How can that be achieved?
+How can this be achieved?
 
 ---
 
@@ -94,19 +92,20 @@ cereal[cereal['protein'] > 4]
 
 Notes:
 
-We wrap in within our dataframe similarly to how we slice.
+To achieve this, we index into our `cereal` dataframe using this column
+of True/False values. The result is a smaller dataframe that only
+contains the rows corresponding to the `True` values.
 
-Normally we use `df['column name':'column name']` to select certain rows
-by location, but now we are selecting based on if a condition results in
-a `True` value.
+This code can be translated to:
 
-The code can be translated to:
-
-*Only select the rows from the dataframe `cereal` that from the
-`protein` column in the dataframe `cereal`, have values greater than 4.*
+*Select the rows from the `cereal` dataframe that, according to the
+`cereal` dataframe, have a `protein` values greater than 4.*
 
 We can see from the output that only the rows meeting the condition are
 displayed.
+
+By the way, it is a common pattern that we’re using the same dataframe
+twice, namely `cereal`, but it’s not strictly required by the language.
 
 ---
 
@@ -130,15 +129,21 @@ Notes:
 
 We can do this with equalities as well.
 
-Now we get all the cereals with a protein content of 4g per serving.
+Now we get all the cereals with a protein content of exactly 4g per
+serving.
 
-The key point to remember here is that we use **2** equal signs.
+The key point to remember here is that we use **two** equal signs.
 
 In Python, a single `=` is used as an assignment operator. We are
-setting objects equal to something.
+setting something to equal something else.
 
-Double equal signs, `==`, is used for comparison. We check if certain
-values are equivalent to one another.
+The double equal sign operator is used for comparison. We check if
+certain values are equivalent to one another.
+
+By the way, these conventions were set a long time ago when people made
+the early programming languages. In hindsight, maybe something like `=?`
+would have been more clear, but the double equal sign for comparison is
+now a standard.
 
 ---
 
@@ -163,7 +168,8 @@ Notes:
 We can filter categorical columns too. In this example, I only want
 cereals from the manufacturer “Q” (For Quaker):
 
-Here we are using the double equal signs we saw in the last slide.
+Here we are using the double equal sign operator that we saw in the last
+slide.
 
 ---
 
@@ -196,7 +202,7 @@ have many?
 Perhaps we only want cereals with protein content between 4 to 5 grams?
 
 To find the cereals that meet protein contents greater or equal to 4, we
-use the following code.
+use the code shown here.
 
 ---
 
@@ -224,7 +230,7 @@ cereal[cereal['protein'] <= 5]
 Notes:
 
 And the cereals that meet the condition of protein content below or
-equal would be obtained as so.
+equal to 5 would be obtained as shown here.
 
 ---
 
@@ -255,16 +261,14 @@ cereal[(cereal['protein'] >= 4) & (cereal['protein'] <= 5)]
 
 Notes:
 
-We can add the 2 conditions together to obtain cereals that meet both
-condition using `&`.
+We can combine the two conditions using the `&` operator. This allows us
+to obtain cereals that meet both conditions.
 
-Code Explained:
+The `&` indicates “and”. This means that both conditions must hold for a
+row to be included in the new dataframe.
 
-The special symbol `&` indicates “and”. This means that both conditions
-must hold to be returned in the new dataframe.
-
-Each condition is wrapped with parentheses to distinguish the conditions
-from one another.
+Each condition is wrapped with parentheses to keep them clearly
+separated.
 
 ---
 
@@ -292,7 +296,7 @@ cereal[(cereal['mfr'] == 'Q') & (cereal['protein'] > 4)]
 
 Notes:
 
-Next, we will look at a case where we filter on 2 different columns.
+Next, we will look at a case where we filter on two different columns.
 
 Let’s say we only want cereals from the Quaker manufacturer, with a
 protein content greater than 4.
@@ -327,10 +331,12 @@ Notes:
 Suppose that we are interested in cereals that either are made from the
 Quaker manufacturer **OR** a protein content above 4.
 
-We only need one of these conditions to hold to return a row.
+For a row to be included in the output, we only require one or the other
+condition to hold.
 
 Instead of using the `&` symbol, we use `|` which is called the “pipe
-operator”. This means “or” in the Python programming language.
+operator”. This means “or” in the Python programming language (and many
+other languages).
 
 ---
 
@@ -376,11 +382,13 @@ We saw that when we filter the conditions are expressed with an
 underlying column with `True` or `False` values indicating if the
 condition has been met in each row of the dataframe.
 
-But what if I wanted the rows that were the complement of this?
+But what if I wanted the rows that were the complement (or opposite) of
+this?
 
-Of course we could do `cereal['protein'] <= 4` in this situation, but
-sometimes the inverse equation is not so straightforward. This is where
-*Tilde* (`~`) can be helpful.
+The opposite of `cereal['protein'] > 4` is `cereal['protein'] <= 4`, so
+that one isn’t too tricky. But sometimes taking the opposite is not so
+straightforward. This is where the `~` (“tilde”) operator can be
+helpful.
 
 ---
 
@@ -397,7 +405,7 @@ sometimes the inverse equation is not so straightforward. This is where
 Name: protein, dtype: bool
 ```
 
-Tilda converts all the `True` values to `False` and all the `False`
+Tilde converts all the `True` values to `False` and all the `False`
 values, to `True.`
 
 ``` python

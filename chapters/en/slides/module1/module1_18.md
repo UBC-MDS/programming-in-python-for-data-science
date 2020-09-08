@@ -4,109 +4,92 @@ type: slides
 
 # Selecting using .loc\[\]
 
-Notes: Script here.
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+Notes: <br>
 
 ---
 
 # Selecting a Single Column
 
-Something extremely useful is getting a single column from a dataframe.
-We can use `.loc[]` which would look something like this:
+``` python
+df.loc[:, ['column name']]
+```
 
-    df.loc[:, ['column name']]
-
-Iff we wanted the column `type` from our cereal dataframe we would do
-the following:
+<br>
 
 ``` python
-df.loc[:, ['type']]
+cereal.loc[:, ['type']]
 ```
 
 ```out
-                           type
-name                           
-100% Bran                  Cold
-100% Natural Bran          Cold
-All-Bran                   Cold
-All-Bran with Extra Fiber  Cold
-Almond Delight             Cold
-...                         ...
-Triples                    Cold
-Trix                       Cold
-Wheat Chex                 Cold
-Wheaties                   Cold
-Wheaties Honey Gold        Cold
+    type
+0   Cold
+1   Cold
+2   Cold
+3   Cold
+4   Cold
+..   ...
+72  Cold
+73  Cold
+74  Cold
+75  Cold
+76  Cold
 
 [77 rows x 1 columns]
 ```
 
-Notes: Script here.
+Notes:
 
-<html>
+Something we do often in data analysis is obtaining a single column from
+a dataframe. We can use `.loc[]` which would look something like this:
 
-<audio controls >
+`cereak.loc[:, ['column name']]`
 
-<source src="/placeholder_audio.mp3" />
+So if we wanted the column `type` from our cereal dataframe we could use
+the syntax here.
 
-</audio>
-
-</html>
+This seems a bit long winded and since we do this type of thing often
+pandas has provided a quicker syntax to use to do the same thing.
 
 ---
-
-But there is a better way of doing this. We can omit `loc` altogether
-and use double square brackets:
 
 ``` python
 df[['column name']]
 ```
 
-Selecting the column `type` would be as simple as:
+<br>
 
 ``` python
-df[['type']]
+cereal[['type']]
 ```
 
 ```out
-                           type
-name                           
-100% Bran                  Cold
-100% Natural Bran          Cold
-All-Bran                   Cold
-All-Bran with Extra Fiber  Cold
-Almond Delight             Cold
-...                         ...
-Triples                    Cold
-Trix                       Cold
-Wheat Chex                 Cold
-Wheaties                   Cold
-Wheaties Honey Gold        Cold
+    type
+0   Cold
+1   Cold
+2   Cold
+3   Cold
+4   Cold
+..   ...
+72  Cold
+73  Cold
+74  Cold
+75  Cold
+76  Cold
 
 [77 rows x 1 columns]
 ```
+
+Notes:
+
+Selecting a single column can be done without using `loc[]` and instead
+we can just specify the dataframe name, followed by double square
+brackets containing the column of interest.
+
+That makes selecting the column `type` from the `cereal` dataframe, look
+like this.
 
 ---
 
 # Let’s apply what we learned\!
 
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+Notes: <br>

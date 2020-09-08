@@ -4,47 +4,15 @@ type: slides
 
 # Summary Statistics
 
-Notes: Script here.
+Notes:
 
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
-
-Now we’ve learned about how to get our dataframe how we want it, let’s
-try and make some fun of it\!
-
-We have our data, now what?
-
-We usually like to learn from it. We want to find out about maybe some
-summary statistics about the features of the data.
-
-Let’s load in our cereal dataset again.
-
-Notes: Script here.
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+<br>
 
 ---
 
 ``` python
-df = pd.read_csv('cereal.csv')
-df.head(15)
+cereal = pd.read_csv('cereal.csv')
+cereal.head(15)
 ```
 
 ```out
@@ -68,54 +36,56 @@ df.head(15)
 [15 rows x 16 columns]
 ```
 
-Notes: Script here.
+Notes:
 
-<html>
+Now we’ve learned about how to get our dataframe how we want it, let’s
+try have some fun with it\!
 
-<audio controls >
+We have our data, now what?
 
-<source src="/placeholder_audio.mp3" />
+We usually like to learn from it. We want to find out about maybe some
+summary statistics about the features of the data.
 
-</audio>
-
-</html>
+Let’s load in our cereal dataset again.
 
 ---
 
 ## Numerical and Categorical Columns
 
+### Categorical data
+
+Consists of qualitative observations such as characteristics - things
+generally containing names or words.
+
+**Examples**
+
+  - Colours
+  - Names
+
+<br>
+
+### Numerical data
+
+These data are usually expressed with numbers.
+
+**Examples**
+
+  - Measurements
+  - Quantities
+
+Notes:
+
 Before we go further, let’s quickly discuss the 2 different types of
 data.
 
-  - Categorical data: consists of qualitative observations such as
-    characteristics - things generally containing names or words.
-  - Numerical data: are usually expressed with numbers.
-
-This means that in our dataframe our columns can be classified as either
-of these.
-
-Notes: Script here.
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+Our columns in our dataframe are considered one of the two of these.
 
 ---
 
 ## Pandas describe()
 
-Pandas has a lot up its sleeve but one of the most useful methods is
-called `.describe()` and it does exactly that. it *describes* our data.
-Let’s try it out.
-
 ``` python
-df.describe()
+cereal.describe()
 ```
 
 ```out
@@ -129,22 +99,21 @@ min     50.000000   1.000000   0.000000    0.000000   0.000000   1.000000   0.00
 75%    110.000000   3.000000   2.000000  210.000000   3.000000  17.000000  11.000000  120.000000   25.000000   3.000000   1.000000   1.000000  50.828392
 max    160.000000   6.000000   5.000000  320.000000  14.000000  23.000000  15.000000  330.000000  100.000000   3.000000   1.500000   1.500000  93.704912
 ```
+
+Notes:
+
+Pandas has a lot up its sleeve but one of the most useful methods is
+called `.describe()` and it does exactly that. it *describes* our data.
+
+Let’s try it out.
 
 By default `df.describe()` only shows numerical columns.
 
-Notes: Script here.
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
 ---
+
+``` python
+cereal.describe()
+```
 
 ```out
          calories    protein        fat      sodium      fiber      carbo     sugars      potass    vitamins      shelf     weight       cups     rating
@@ -157,8 +126,6 @@ min     50.000000   1.000000   0.000000    0.000000   0.000000   1.000000   0.00
 75%    110.000000   3.000000   2.000000  210.000000   3.000000  17.000000  11.000000  120.000000   25.000000   3.000000   1.000000   1.000000  50.828392
 max    160.000000   6.000000   5.000000  320.000000  14.000000  23.000000  15.000000  330.000000  100.000000   3.000000   1.500000   1.500000  93.704912
 ```
-
-This table will tell us about:
 
   - `count`: The number of non-NA/null observations.
   - `mean`: The mean of column
@@ -167,106 +134,64 @@ This table will tell us about:
   - `max`: The max value for a column
   - By default the 25, 50 and 75 percentile of the observations
 
-Notes: Script here.
+Notes:
 
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+This table will tell us about different summary statics including the
+following.
 
 ---
-
-We can make changes to either limit how much is shown or extend it with
-the additional argument `include = "all"` in the `describe` brackets.
-This expands the dataframe to contain both categorical and numerical
-columns now.
 
 ``` python
-df.describe(include='all')
+cereal.describe(include='all')
 ```
 
 ```out
-             name  mfr  type    calories    protein        fat      sodium  ...     sugars      potass    vitamins      shelf     weight       cups     rating
-count          77   77    77   77.000000  77.000000  77.000000   77.000000  ...  77.000000   77.000000   77.000000  77.000000  77.000000  77.000000  77.000000
-unique         77    7     2         NaN        NaN        NaN         NaN  ...        NaN         NaN         NaN        NaN        NaN        NaN        NaN
-top     Bran Chex    K  Cold         NaN        NaN        NaN         NaN  ...        NaN         NaN         NaN        NaN        NaN        NaN        NaN
-freq            1   23    74         NaN        NaN        NaN         NaN  ...        NaN         NaN         NaN        NaN        NaN        NaN        NaN
-mean          NaN  NaN   NaN  106.883117   2.545455   1.012987  159.675325  ...   6.948052   96.129870   28.246753   2.207792   1.029610   0.821039  42.665705
-std           NaN  NaN   NaN   19.484119   1.094790   1.006473   83.832295  ...   4.403635   71.215823   22.342523   0.832524   0.150477   0.232716  14.047289
-min           NaN  NaN   NaN   50.000000   1.000000   0.000000    0.000000  ...   0.000000    1.000000    0.000000   1.000000   0.500000   0.250000  18.042851
-25%           NaN  NaN   NaN  100.000000   2.000000   0.000000  130.000000  ...   3.000000   40.000000   25.000000   1.000000   1.000000   0.670000  33.174094
-50%           NaN  NaN   NaN  110.000000   3.000000   1.000000  180.000000  ...   7.000000   90.000000   25.000000   2.000000   1.000000   0.750000  40.400208
-75%           NaN  NaN   NaN  110.000000   3.000000   2.000000  210.000000  ...  11.000000  120.000000   25.000000   3.000000   1.000000   1.000000  50.828392
-max           NaN  NaN   NaN  160.000000   6.000000   5.000000  320.000000  ...  15.000000  330.000000  100.000000   3.000000   1.500000   1.500000  93.704912
+               name  mfr  type    calories    protein        fat      sodium  ...     sugars      potass    vitamins      shelf     weight       cups     rating
+count            77   77    77   77.000000  77.000000  77.000000   77.000000  ...  77.000000   77.000000   77.000000  77.000000  77.000000  77.000000  77.000000
+unique           77    7     2         NaN        NaN        NaN         NaN  ...        NaN         NaN         NaN        NaN        NaN        NaN        NaN
+top     Puffed Rice    K  Cold         NaN        NaN        NaN         NaN  ...        NaN         NaN         NaN        NaN        NaN        NaN        NaN
+freq              1   23    74         NaN        NaN        NaN         NaN  ...        NaN         NaN         NaN        NaN        NaN        NaN        NaN
+mean            NaN  NaN   NaN  106.883117   2.545455   1.012987  159.675325  ...   6.948052   96.129870   28.246753   2.207792   1.029610   0.821039  42.665705
+std             NaN  NaN   NaN   19.484119   1.094790   1.006473   83.832295  ...   4.403635   71.215823   22.342523   0.832524   0.150477   0.232716  14.047289
+min             NaN  NaN   NaN   50.000000   1.000000   0.000000    0.000000  ...   0.000000    1.000000    0.000000   1.000000   0.500000   0.250000  18.042851
+25%             NaN  NaN   NaN  100.000000   2.000000   0.000000  130.000000  ...   3.000000   40.000000   25.000000   1.000000   1.000000   0.670000  33.174094
+50%             NaN  NaN   NaN  110.000000   3.000000   1.000000  180.000000  ...   7.000000   90.000000   25.000000   2.000000   1.000000   0.750000  40.400208
+75%             NaN  NaN   NaN  110.000000   3.000000   2.000000  210.000000  ...  11.000000  120.000000   25.000000   3.000000   1.000000   1.000000  50.828392
+max             NaN  NaN   NaN  160.000000   6.000000   5.000000  320.000000  ...  15.000000  330.000000  100.000000   3.000000   1.500000   1.500000  93.704912
 
 [11 rows x 16 columns]
 ```
 
-Notes: Script here.
+  - `unique`: how many observations are unique
+  - `top`: which observation value is most occurring
+  - `freq`: what is the frequency of the most occurring observation
 
-<html>
+Notes:
 
-<audio controls >
+We can make changes to either limit how much is shown or include more
+statistic in the dataframe with the additional argument `include =
+"all"` in the `describe` brackets.
 
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
-
-```out
-             name  mfr  type    calories    protein        fat      sodium  ...     sugars      potass    vitamins      shelf     weight       cups     rating
-count          77   77    77   77.000000  77.000000  77.000000   77.000000  ...  77.000000   77.000000   77.000000  77.000000  77.000000  77.000000  77.000000
-unique         77    7     2         NaN        NaN        NaN         NaN  ...        NaN         NaN         NaN        NaN        NaN        NaN        NaN
-top     Bran Chex    K  Cold         NaN        NaN        NaN         NaN  ...        NaN         NaN         NaN        NaN        NaN        NaN        NaN
-freq            1   23    74         NaN        NaN        NaN         NaN  ...        NaN         NaN         NaN        NaN        NaN        NaN        NaN
-mean          NaN  NaN   NaN  106.883117   2.545455   1.012987  159.675325  ...   6.948052   96.129870   28.246753   2.207792   1.029610   0.821039  42.665705
-std           NaN  NaN   NaN   19.484119   1.094790   1.006473   83.832295  ...   4.403635   71.215823   22.342523   0.832524   0.150477   0.232716  14.047289
-min           NaN  NaN   NaN   50.000000   1.000000   0.000000    0.000000  ...   0.000000    1.000000    0.000000   1.000000   0.500000   0.250000  18.042851
-25%           NaN  NaN   NaN  100.000000   2.000000   0.000000  130.000000  ...   3.000000   40.000000   25.000000   1.000000   1.000000   0.670000  33.174094
-50%           NaN  NaN   NaN  110.000000   3.000000   1.000000  180.000000  ...   7.000000   90.000000   25.000000   2.000000   1.000000   0.750000  40.400208
-75%           NaN  NaN   NaN  110.000000   3.000000   2.000000  210.000000  ...  11.000000  120.000000   25.000000   3.000000   1.000000   1.000000  50.828392
-max           NaN  NaN   NaN  160.000000   6.000000   5.000000  320.000000  ...  15.000000  330.000000  100.000000   3.000000   1.500000   1.500000  93.704912
-
-[11 rows x 16 columns]
-```
+This expands the dataframe to contain both categorical and numerical
+columns now.
 
 Adding `include='all'` within the brackets adds some additional
 statistics about categorical columns.
 
-  - `unique`: how many observations are unique
-  - `top`: which observation value is most occuring
-  - `freq`: what is the frequency of the most occuring observation
-
-Notes: Script here.
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
 ---
 
-We can also get single statistics of each column using: either
-`.mean()`,`.std()`, `.count()`, `.median()`, `.sum()`.
+``` python
+ratings = cereal[['protein']]
+ratings.mean()
+```
 
-First segregate the column we want to explore further, then add the
-method. As an example, what the sum of the cereal ratings?
+```out
+protein    2.545455
+dtype: float64
+```
 
 ``` python
-ratings = df[['rating']]
+ratings = cereal[['rating']]
 ratings.sum()
 ```
 
@@ -278,7 +203,7 @@ dtype: float64
 What about median calories of the cereals.
 
 ``` python
-calories = df[['calories']]
+calories = cereal[['calories']]
 calories.median()
 ```
 
@@ -287,24 +212,24 @@ calories    110.0
 dtype: float64
 ```
 
-Notes: Script here.
+Notes:
 
-<html>
+We can also get single statistics of each column using: either
+`.mean()`,`.std()`, `.count()`, `.median()`, `.sum()`.
 
-<audio controls >
+First segregate the column we want to explore further, then add the
+verb. As an example, what the sum of the cereal ratings?
 
-<source src="/placeholder_audio.mp3" />
+what the mean protein content of the cereals?
 
-</audio>
+Or the sum of the cereal ratings?
 
-</html>
+What about median calories of the cereals?
 
 ---
 
-We can also use this on the entire dataframe.
-
 ``` python
-df.mean()
+cereal.mean()
 ```
 
 ```out
@@ -324,34 +249,19 @@ rating       42.665705
 dtype: float64
 ```
 
+Notes:
+
+We can also use these summary statistic verbs on the entire dataframe.
+This now shows the mean value of each column in the dataframe.
+
 You’ll notice that only the numerical variables are calculated which
 makes sense since we would not be able to calculate the mean of
 categorical data.
-
-Notes: Script here.
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
 
 ---
 
 # Let’s apply what we learned\!
 
-Notes: Script here
+Notes:
 
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+<br>

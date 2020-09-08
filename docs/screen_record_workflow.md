@@ -9,6 +9,12 @@
     - Save it as a .mp4 file by going to Share > Local File > Options. Make sure to change the Dimensions to 3840 X 2160 4K. Use a Frame Rate of 30 frames/sec.
 - These can then be put into a dropbox and send to him for editing. 
 
+## Mike's notes
+
+- When you start the recording, there's a menu under the screen capture part. Use that and select 1980x1020.
+- Keep in mind you can move that green box.
+- For me, I need to make my chrome window smaller so that it looks right at 80% zoom.
+
 ## Other Recommendations 
 - Use a microphone for the cleanest audio.
 - Take up a large amount of head room in your face recording.
@@ -40,4 +46,4 @@ Height:230
      
 Audio Effect -> Noise Removal       
 
-Template stored in this file.        
+Template stored in [this file](screen_rec_temp.camtemplate.zip).

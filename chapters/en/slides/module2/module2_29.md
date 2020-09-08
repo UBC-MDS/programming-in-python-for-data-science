@@ -25,14 +25,14 @@ Notes:
 Let’s build on the Altair skills we learned in the previous module.
 
 At this point we are familiar with writing basic plotting code similar
-to the plot here.
+to what is shown here.
 
 However it’s important that we start specifying what kind of variable
-type we use for our `x` and `y` values in the `encode(..)` verb.
+type we use for our `x` and `y` values with the `encode(..)` verb.
 
 Before, Altair would guess what type of data it was plotting. Usually
 it’s pretty smart and guesses correctly like we saw in our previous
-plots. but unfortunately not always.
+plots. But unfortunately this is not always the case.
 
 ---
 
@@ -58,8 +58,9 @@ dataframe.
 We will now generate a scatter plot of `mfr` and `calories` from this
 modified cereal dataset.
 
-Notice how 150 come before 100 on the y-axis? It seems we have a problem
-here.
+Notice how 150 comes before 100 on the y-axis? It seems we have a
+problem here, which is due to Altair failing to recognize that
+`calories` is a numerical type.
 
 Even Altair can’t always get it right every time, which is why it’s so
 important we specify the data type when plotting.
@@ -79,7 +80,7 @@ chart2
 Notes:
 
 We can help Altair by giving it a clear instructions on what type of
-columns our X and Y values are.
+columns our x and y values are.
 
 In this case we are going to specify `N` for the *nominal* column `mfr`
 and `Q` for the *quantitative* column `calories`.
@@ -97,8 +98,8 @@ That’s better\!
 
 Notes:
 
-Altair recognizes the following column types and it’s best practices
-that we specify this when we plot graphs going forward.
+Altair recognizes the following column types and it’s best practice that
+we specify this when we plot going forward.
 
 Ordinal values imply that there is some natural ordering to the values.
 
@@ -109,7 +110,7 @@ In contrast, there is no such natural ordering for nominal values. An
 example of this would be someone’s eye colour, their address or the
 university they attended.
 
-Anything `numeric` is considered a `quantitative` variable and `time` or
+Anything numeric is considered a `quantitative` variable and `time` or
 `date` values are considered as `temporal`.
 
 ---
@@ -132,8 +133,8 @@ Maybe we are interested in plotting the rating of cereals vs the amount
 of sugar they contain from `cereal` dataframe.
 
 We do this using a scatter plot which uses `.mark_circle()`. We can
-assign `sugars` as the the `x` variable and `ratings` as the `y` column
-from the `cereal` dataframe we have been using.
+assign `sugars` as the the `x` variable and `ratings` as the `y`
+variable from the `cereal` dataframe we have been using.
 
 Here, `sugars` and `rating` are both quantitative columns so we specify
 `Q` as variable types in our plot.
@@ -157,13 +158,13 @@ Notes:
 So far when plotting with Altair, we have been mapping our `x` and `y`
 in the `encode(x=..,y=..)` verb.
 
-However, doing so gives us very little control on how exactly we would
+However, doing so gives us very little control over how exactly we would
 like to map our x and y values.
 
 In order to have more control, we can map our x and y values using
 `x=alt.X(...)` and `y=alt.Y(...)` respectively.
 
-This gives us a lot more option over the customization of our plot.
+This gives us a lot more control over the customization of our plot.
 You’ll see this coming up.
 
 ---
@@ -181,17 +182,18 @@ chart5
 
 Notes:
 
-Another type of plot we can make using Altair is called a **Histogram**.
+Another type of plot we can make using Altair is called a **histogram**.
 
 A histogram would be an ideal plot if we were interested in seeing how
-many cereals in our dataframe have calories withing certain range. A
-histogram is similar to a `bar` chart except that it groups quantitative
-data into \***ranges**, and the height of each bar shows the frequency
-of each range.
+many cereals in our dataframe have calories within a certain range. A
+histogram is a `bar` chart where the height of each bar shows the
+frequency of something occurring. When applied to quantitative data, it
+groups the values into \***ranges**, and the height of each bar shows
+the frequency of each range.
 
 We can generate a histogram plot of the `calories` values in the cereal
-dataframe. This will enable us to see the various values of calories and
-how many times they occur.
+dataframe, which is quantitative. This will enable us to see the various
+values of calories and how many times they occur.
 
 To make a histogram, we use `mark_bar()`.
 
@@ -293,14 +295,14 @@ our cereal data:
 A nice way of answering this would be to plot the results using a bar
 chart\!
 
-before doing this, we need a few more tricks under our belt.
+Before doing this, we need a few more tricks.
 
-We can start using the mean statistics we calculated from
+We can start using the mean statistics we calculated from the
 `groupby(by='mfr')` object from the last section.
 
 Here we seem to have lost our index column of numbers we usually have
 and it appears that `mfr` has now moved to the left of the dataframe
-with it’s label `mfr` lower than the other column labels.
+with its label `mfr` lower than the other column labels.
 
 This is because when you apply `groupby()` to a column, the grouping
 column becomes the new dataframe index.
@@ -367,7 +369,7 @@ Now that we have our `mfr_mean` in the correct format, we can proceed.
 
 Using Altair we can plot the `mfr` column on the x axis which we’ve
 identified to contain nominal values and `sugars` which we agreed was a
-quantitative value on the y axis. (Also we can’t forget our title\!)
+quantitative value on the y axis. (Also, let’s not forget our title\!)
 
 ---
 
@@ -384,7 +386,7 @@ previous slide.
 
 First, we created a groupby object and calculated the mean for each
 column in the resulting dataframe.  
-Second, Since `.groupby()` made `mfr` the new index, we had to use
+Second, since `.groupby()` made `mfr` the new index, we had to use
 `reset_index()` to make `mfr` a regular column again. And finally, we
 generated a bar plot using Altair.
 
@@ -403,8 +405,8 @@ chart9
 
 Notes:
 
-Sometimes sorting a dataframe by quantity helps us obtain observations
-quicker.
+Sometimes sorting a dataframe by quantity helps us obtain insights more
+easily.
 
 For example, if we sorted the mean sugar content for the manufacturers
 before generating the previous plot, it would be easier to identify
