@@ -152,7 +152,7 @@ chart2.save(path + 'chart2.png')
 
 Notes: 
 
-We can help Altair by giving it a clear instructions on what type of columns our x and y values are. 
+We can help Altair by giving it clear instructions on what type of columns our x and y values are. 
 
 In this case we are going to specify `N` for the *nominal* column `mfr` and `Q` for the *quantitative* column `calories`. 
 
@@ -475,17 +475,17 @@ Notes:
 
 Sometimes sorting a dataframe by quantity helps us obtain insights more easily.
 
-For example, if we sorted the mean sugar content for the manufacturers before generating the previous plot, it would be easier to identify which manufacturer produces cereals with the highest mean calorie content. 
+For example, if we sorted the mean sugar content for the manufacturers before generating the previous plot, it would be easier to identify which manufacturer produces cereals with the highest mean sugar content. 
 
 Altair allows us to sort a column while plotting. 
 
-Sorting can be done on either the x or y axis using the `sort=` in the `alt.x`  or `alt.y` verb.
+Sorting can be done on either the x or y axis using the `sort=` in the `alt.X`  or `alt.Y` verb.
 
 The sort argument takes in either `x` or `y` to specify which axis to sort by.
 
 Here we are sorting in ascending order of which manufacturers have the largest mean sugar content. 
 
-This plot shows us immediately that cereals from manufacturer `p` have the highest mean sugar content.
+This plot shows us immediately that cereals from manufacturer `P` have the highest mean sugar content.
 
 ---
 
@@ -523,11 +523,9 @@ If you enjoyed this part of the module and you wish to learn more advanced visua
 </font>
 <center>
 
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
+Notes:
+
+<br>
 
 ---
 

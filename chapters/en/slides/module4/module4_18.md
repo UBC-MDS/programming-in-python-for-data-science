@@ -4,22 +4,11 @@ type: slides
 
 # Python operations
 
-Notes: Script here
+Notes:
 
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+<br>
 
 ---
-
-We have already been a witness to a few of Python’s arithmetic
-operators, but there are a few on this list that you have to to see:
 
 | Operator |  Description   |
 | :------: | :------------: |
@@ -29,28 +18,14 @@ operators, but there are a few on this list that you have to to see:
 |   `/`    |    division    |
 |   `**`   | exponentiation |
 
-Notes: Script here
+Notes:
 
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+We have already been a witness to a few of Python’s arithmetic
+operators, but there are a few on this list that you have yet to see.
 
 ---
 
-Let’s apply these to the Python types we have learned and observe the
-results.
-
 ## Numeric Operations
-
-These operators act as expected on numeric types:
-
-And `int` plus a `float` results in a `float`:
 
 ``` python
 6 + 5.7
@@ -60,8 +35,6 @@ And `int` plus a `float` results in a `float`:
 11.7
 ```
 
-And the subtraction of 2 values of type `int` results with a type `int`:
-
 ``` python
 15 - 7
 ```
@@ -70,7 +43,13 @@ And the subtraction of 2 values of type `int` results with a type `int`:
 8
 ```
 
-Exponents can be calculated with `**` with `int` values:
+``` python
+4.5 * 4
+```
+
+```out
+18.0
+```
 
 ``` python
 2 ** 3
@@ -80,8 +59,6 @@ Exponents can be calculated with `**` with `int` values:
 8
 ```
 
-And `float` datatypes:
-
 ``` python
 2.2 ** 5
 ```
@@ -90,25 +67,26 @@ And `float` datatypes:
 51.53632000000002
 ```
 
-Notes: Script here
+Notes:
 
-<html>
+Let’s apply these to the Python types we have learned and observe the
+results.
 
-<audio controls >
+These operators act as expected on numeric types.
 
-<source src="/placeholder_audio.mp3" />
+An `int` plus a `float` results in a `float`.
 
-</audio>
+And the subtraction of 2 values of type `int` results with a type `int`.
 
-</html>
+Multiplication with a `float` and an `int` will result in a `float` as
+well.
+
+Exponents can be calculated with `**` and applied with `int` as well as
+`float` data types.
 
 ---
 
 ## Bool
-
-These operations work as expected with numeric values but let’s put on
-concentration on what happens with the other data types and structures.
-What happens when we try to add up `bool` values?
 
 ``` python
 True + True 
@@ -126,9 +104,6 @@ True * 4
 4
 ```
 
-We see that `True` values as cast as a value of `1` and False as a value
-of `0` when they undergo operations:
-
 ``` python
 False * 2 + True
 ```
@@ -145,25 +120,20 @@ False + 4
 4
 ```
 
-Notes: Script here
+Notes:
 
-<html>
+We saw that addition, subtraction, multiplication and exponential
+operations work as expected with numeric values but let’s put our
+concentration on what happens with the other data types and structures.
 
-<audio controls >
+What happens when we try to add up `bool` values?
 
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+We see that `True` values are cast as a value of `1` and `False` values
+are cast as `0` when they undergo operations.
 
 ---
 
 ## Str
-
-Strings react rather interestingly with the addition operator.  
-For instance, when we add strings we add the sequence from one end to
-the other:
 
 ``` python
 'The monster under my bed' + ' is named Mike' 
@@ -173,14 +143,12 @@ the other:
 'The monster under my bed is named Mike'
 ```
 
-But we cannot multiply, divide or subtract them.
-
 ``` python
 'The monster under my bed' - ' is named Mike' 
 ```
 
-```out
-Error in py_call_impl(callable, dots$args, dots$keywords): TypeError: unsupported operand type(s) for -: 'str' and 'str'
+``` out
+TypeError: unsupported operand type(s) for -: 'str' and 'str'
 
 Detailed traceback: 
   File "<string>", line 1, in <module>
@@ -190,43 +158,34 @@ Detailed traceback:
 'The monster under my bed' / ' is named Mike' 
 ```
 
-```out
-Error in py_call_impl(callable, dots$args, dots$keywords): TypeError: unsupported operand type(s) for /: 'str' and 'str'
+``` out
+TypeError: unsupported operand type(s) for -: 'str' and 'str'
 
 Detailed traceback: 
   File "<string>", line 1, in <module>
 ```
 
-Notes: Script here
+Notes:
 
-<html>
+Strings react rather interestingly with the addition operator.
 
-<audio controls >
+For instance, when we add strings we add the sequence from one end to
+the other.
 
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+And we cannot multiply, divide or subtract them.
 
 ---
-
-We saw that we can operate on `float` and `int` values together but what
-about `str` and numeric values?
 
 ``` python
 'The monster under my bed' + 1200
 ```
 
-```out
-Error in py_call_impl(callable, dots$args, dots$keywords): TypeError: can only concatenate str (not "int") to str
+``` out
+TypeError: can only concatenate str (not "int") to str
 
 Detailed traceback: 
   File "<string>", line 1, in <module>
 ```
-
-That does not work, however, if we transform cast the numeric to a
-string, we can concatenate the two together:
 
 ``` python
 'The monster under my bed' + str(1200)
@@ -235,11 +194,6 @@ string, we can concatenate the two together:
 ```out
 'The monster under my bed1200'
 ```
-
-How about with other data structure like **lists**, **tuples** and
-**dictionaries**?
-
-What about multiplication?
 
 ``` python
 'The monster under my bed' * 3
@@ -252,30 +206,44 @@ What about multiplication?
 We can multiply strings and it concatenates the strings together\! Since
 we multiplied by 3, the string is repeated 3 times.
 
-Notes: Script here
+Notes:
 
-<html>
+We saw that we can operate on `float` and `int` values together but what
+about `str` and numeric values?
 
-<audio controls >
+That does not work, however, if we cast the number `1200` to a string,
+we can concatenate the two together.
 
-<source src="/placeholder_audio.mp3" />
+What about multiplication?
 
-</audio>
+This will repeat the string by the number you are multiplying.
 
-</html>
+In this case, the string `'The monster under my bed'` is repeated 3
+times.
 
 ---
 
 ## List
 
-If we add lists, similarly to strings, the elements are combine to
-create a single list containing the elements of both lists.
-
 ``` python
 list1 = [1, 2.0, 3, 4.5] + ['nine', 'ten', 'eleven', 'twelve']
+list1
 ```
 
-We can add, but other operators are not supported.
+```out
+[1, 2.0, 3, 4.5, 'nine', 'ten', 'eleven', 'twelve']
+```
+
+``` python
+[1, 2.0, 3, 4.5] - [3, 5, 2, 1]
+```
+
+``` out
+TypeError: unsupported operand type(s) for -: 'list' and 'list'
+
+Detailed traceback: 
+  File "<string>", line 1, in <module>
+```
 
 ``` python
 [1, 2.0, 3, 4.5] * [5, 6, 7, 8]
@@ -288,24 +256,19 @@ Detailed traceback:
   File "<string>", line 1, in <module>
 ```
 
-Notes: Script here
+Notes:
 
-<html>
+How about with other data structure like **lists**, **tuples** and
+**dictionaries**?
 
-<audio controls >
+If we add lists, similarly to strings, the lists concatenate together to
+create a single list containing the elements of both lists.
 
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+Other operators are not supported when working with lists.
 
 ---
 
 ## Boolean Operators
-
-When we’ve filtered our data we’ve seen different boolean operators
-however we have yet to see all that is available.
 
 | Operator  | Description                      |
 | :-------: | :------------------------------- |
@@ -320,41 +283,30 @@ however we have yet to see all that is available.
 | `x or y`  | is at least one of x and y true? |
 |  `not x`  | is x false?                      |
 
-Let’s explores these a bit more.
+Notes:
 
-Notes: Script here
+When we’ve filtered our data we’ve seen different Boolean operators
+however we have yet to see all that is available.
 
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+Let’s explores them.
 
 ---
 
-Let’s start with 2 base statements:
-
 ``` python
-'dogs' != 'cats'
-```
-
-```out
-True
-```
-
-``` python
-6 > 7
+'dogs' == 'cats'
 ```
 
 ```out
 False
 ```
 
-We can combine them to explore `and`, `or` and `not` operators.
+``` python
+6 < 7
+```
+
+```out
+True
+```
 
 ``` python
 (6 < 7) and ('dogs' == 'cats')
@@ -363,8 +315,6 @@ We can combine them to explore `and`, `or` and `not` operators.
 ```out
 False
 ```
-
-Since both statements are not true, the “and” statement is False.
 
 ``` python
 (6 < 7) or ('dogs' == 'cats')
@@ -376,22 +326,25 @@ True
 
 Since one statement is true the combine “or” statement is True.
 
-Notes: Script here
+Notes:
 
-<html>
+Let’s start with 2 base statements;
 
-<audio controls >
+  - dogs and cats are not equal results in a `False` statement and,
+  - 6 being less than 7 produces a `True` statement.
 
-<source src="/placeholder_audio.mp3" />
+We can combine them to explore `and`, `or` and `not` operators.
 
-</audio>
+We can check if both statements are `True` using the keyword `and`.
 
-</html>
+In this case since both statements are not `True`, so combining them
+with `and` will output `False`.
+
+However, the keyword `or` checks if at least one of the statements is
+`True` and since `6 < 7` is a `True` statement, the output of the `or`
+statment is `True`.
 
 ---
-
-We know that `('dogs' == 'cats')` is False so a `not` operator gives us
-a True value because it confirms the fact the statement is False.
 
 ``` python
 not ('dogs' == 'cats')
@@ -401,8 +354,6 @@ not ('dogs' == 'cats')
 True
 ```
 
-While we know `(6 < 7)` is True:
-
 ``` python
 not  (6 < 7)
 ```
@@ -411,47 +362,26 @@ not  (6 < 7)
 False
 ```
 
-Seeing if the statement is False will result in a False statement since
+Seeing if the statement is False will result in a `False` output since
 `(6 < 7)` is True.
 
-Notes: Script here
+Notes:
 
-<html>
+We know that `('dogs' == 'cats')` is `False`, so a `not` operator gives
+us a `True` value because it confirms the fact the statement is `False.`
 
-<audio controls >
+While we know `(6 < 7)` is `True` the statement `not (6 < 7)` produces a
+`False` value since `not` is checking for `False` statements.
 
-<source src="/placeholder_audio.mp3" />
+How can we translate all this to dataframes now?
 
-</audio>
-
-</html>
-
----
-
-How can we translate this to dataframes? Have you ever wondered why we
-can do summary statistics on some columns and not others? We are going
-to explore this in the next section.
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+Have you ever wondered why we can do summary statistics on some columns
+and not others? We are going to explore this in the next section.
 
 ---
 
 # Let’s practice what we learned\!
 
-Notes: Script here
+Notes:
 
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
+<br>

@@ -79,7 +79,7 @@ chart2
 
 Notes:
 
-We can help Altair by giving it a clear instructions on what type of
+We can help Altair by giving it clear instructions on what type of
 columns our x and y values are.
 
 In this case we are going to specify `N` for the *nominal* column `mfr`
@@ -410,13 +410,12 @@ easily.
 
 For example, if we sorted the mean sugar content for the manufacturers
 before generating the previous plot, it would be easier to identify
-which manufacturer produces cereals with the highest mean calorie
-content.
+which manufacturer produces cereals with the highest mean sugar content.
 
 Altair allows us to sort a column while plotting.
 
 Sorting can be done on either the x or y axis using the `sort=` in the
-`alt.x` or `alt.y` verb.
+`alt.X` or `alt.Y` verb.
 
 The sort argument takes in either `x` or `y` to specify which axis to
 sort by.
@@ -424,7 +423,7 @@ sort by.
 Here we are sorting in ascending order of which manufacturers have the
 largest mean sugar content.
 
-This plot shows us immediately that cereals from manufacturer `p` have
+This plot shows us immediately that cereals from manufacturer `P` have
 the highest mean sugar content.
 
 ---
@@ -459,17 +458,9 @@ visit our in development course <br> **Exploratory Data Visualization**
 
 <center>
 
-Notes: Script here
+Notes:
 
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+<br>
 
 ---
 
