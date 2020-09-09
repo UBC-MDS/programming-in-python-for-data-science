@@ -4,26 +4,11 @@ type: slides
 
 # Making choices with conditionals
 
-Notes: Script here
+Notes:
 
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+<br>
 
 ---
-
-In the last Module, we explored using different data structures and
-types that Python offers. It’s at this point in the course where we
-learn how to ask Python to make a decision, depending on conditions.
-
-We did something similar when we filtered a dataframe using condition
-such as:
 
 ``` python
 cereal[cereal['mfr'] == 'K']
@@ -46,25 +31,17 @@ cereal[cereal['mfr'] == 'K']
 [23 rows x 16 columns]
 ```
 
-Notes: Script here
+Notes:
 
-<html>
+In the last Module, we explored the different data types and structures
+that Python offers.
 
-<audio controls >
+It’s at this point in the course where we learn how to ask Python to
+make a decision, depending on conditions.
 
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+We did something similar when we filtered a dataframe using condition.
 
 ---
-
-Let’s start with an example of what the syntax looks like.
-
-Perhaps we want to introduce ourselves in our code by using the object
-called `my_name`. Here we use a verb called `print()` that simply prints
-the object or string set as an argument:
 
 ``` python
 my_name = 'Hayley' 
@@ -84,21 +61,21 @@ My name is Hayley too!
 Nice to meet you!
 ```
 
+Notes:
+
+Let’s start with an example of what the syntax looks like.
+
+Perhaps we want to introduce ourselves in our code by using the object
+called `my_name`.
+
+We’ve assigned `'Hayley'` to the object `my_name` in this example.
+
+We use a verb called `print()` that simply prints the object or string
+set as an argument.
+
 We can see that since the object `my_name` is equal to `hayley`, the
-output is `My name is Hayley too`. It then continues to run the code
-`'Nice to meet you!` which is outside any conditions.
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+output is `My name is Hayley too`, followed by regular unconditioned
+code `Nice to meet you!`.
 
 ---
 
@@ -108,21 +85,16 @@ Notes: Script here
 
 </center>
 
-Notes: Script here
+Notes:
 
-<html>
+Python looks at the first condition `if my_name.lower() == 'hayley'` and
+since it evaluates to `True`, it prints the code under the statement
+which is `'My name is Hayley too!'`
 
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+Python passes the other `print()` statements from the `elif` and `else`
+conditions and continues to run the rugular code `'Nice to meet you!`.
 
 ---
-
-Now what happens if the object was equal to something else?
 
 ``` python
 my_name = 'Totoro' 
@@ -142,22 +114,16 @@ Interesting, I loved that movie!
 Nice to meet you!
 ```
 
-The object `my_name` has a different value now, so the output
-corresponds to a different `print()` statement. This time it prints
-`Interesting, I loved that movie!` and the code `Nice to meet you!` that
-follows the conditions.
+Notes:
 
-Notes: Script here
+Now what happens if the object is equal to something else?
 
-<html>
+This time, The object `my_name` has a value now of `Totoro`.
 
-<audio controls >
+We see the output is `Interesting, I loved that movie! Nice to meet
+you!`
 
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+What is happening here?
 
 ---
 
@@ -167,21 +133,19 @@ Notes: Script here
 
 </center>
 
-Notes: Script here
+Notes:
 
-<html>
+Python ignores the code under the first condition `if my_name.lower() ==
+'hayley'` since it evaluates to `False`.
 
-<audio controls >
+Instead, Python continues to the next condition `elif my_name.lower() ==
+'totoro'`which is `True` and executes the code under it which prints
+`'Interesting, I loved that movie!'`.
 
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+Python then skips over the next lines of code and goes straight to
+printing `'Nice to meet you!'`.
 
 ---
-
-Now we try something that meets neither of those conditions:
 
 ``` python
 my_name = 'Desmond' 
@@ -201,21 +165,16 @@ That's a great name.
 Nice to meet you!
 ```
 
-When `my_name` is `Desmond` the last possible output is returned and
-prints `That's a great name.`. It resumes and executes the code
-underneath as did each of the other values.
+Notes:
 
-Notes: Script here
+Now we try something that meets neither the first or second conditions.
 
-<html>
+When `my_name` is equal to `Desmond`, the first 2 conditions both
+evaluate to `False` and the last condition executesand prints `That's a
+great name.`.
 
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+It executes the regular code `print('Nice to meet you!')` just like
+before.
 
 ---
 
@@ -225,17 +184,10 @@ Notes: Script here
 
 </center>
 
-Notes: Script here
+Notes:
 
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+Here we see that neither the first or second conditions are met however,
+the print statement is executed.
 
 ---
 
@@ -259,22 +211,12 @@ My name is Hayley too!
 Nice to meet you!
 ```
 
+Notes:
+
 Python conditional statements contains 2 important things:
 
   - A strict structure.
   - The keyword `if` and optional keywords `else` and `elif`.
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
 
 ---
 
@@ -298,75 +240,66 @@ if SOME_BOOLEAN:
     statement body 
 ```
 
-Each conditional expression must end with a colon `:` and any code
-directed at values that meet the expression, all must be indented with 4
-spaces (or consistent indentation) .  
-In the example above,  
-`if my_name.lower() == 'hayley'` is the boolean statement `print("My
-name is Hayley too!")` is the statement body.
+Notes:
 
-Notes: Script here
+The structure of a choice is as follows:
 
-<html>
+``` python
+if SOME_BOOLEAN:
+    statement body 
+```
 
-<audio controls >
+Each conditional expression must end with a colon `:` and code to be
+execute if the condition is met must all must be indented with 4 spaces
+(or consistent indentation) in the **statement body**.
 
-<source src="/placeholder_audio.mp3" />
+In the example above:
 
-</audio>
+`if my_name.lower() == 'hayley'` is the Boolean statement and
 
-</html>
+`print("My name is Hayley too!")` is the statement body.
 
 ---
 
-#### Keywords
-
-  - An `if` is needed for any conditional. If the boolean value is
-    `True`, the body of the statement (anything indented under it) will
-    be executed. If the expression is `False`, the body of the statement
-    is not executed and it continues to the next line of code outside
-    the body.  
-  - The `else` expression will execute if the conditional expressions
-    above it are false. `else` can only occur once following an `if`
-    condition.
-
-`else` statements are optional.
+## Keywords - if, else
 
 ``` python
 my_name = 'Mia' 
 
 if my_name.lower() == 'hayley':
-   print('My name is Hayley too!')
-
+    print('My name is Hayley too!')
+elif my_name.lower() == 'totoro':
+    print('Interesting, I loved that movie!')
+else:
+    print("That's a great name.")
+  
 print('Nice to meet you!')
 ```
 
 ``` out
+That's a great name.
 Nice to meet you!
 ```
 
-Notes: Script here
+Notes:
 
-<html>
+An `if` keyword is needed for any conditional.
 
-<audio controls >
+If the Boolean value is `True`, the body of the statement (which is
+anything indented under it) will be executed.
 
-<source src="/placeholder_audio.mp3" />
+If the expression is `False`, the body of the statement is not executed
+and it continues to the next line of non-indended code outside the body.
 
-</audio>
+The `else` expression will execute if the conditional expressions above
+it are `False`
 
-</html>
+The keyword `else` can only occur once following an `if` condition and
+are optional to the code.
 
 ---
 
-  - `elif` stands for ***else if***. It allows us to check multiple
-    conditions if they are true.
-
-  - When the `elif` expression evaluates to true, then the body of the
-    statement is executed, just like an `if` statement.
-
-In the case we saw before, `my_name.lower() == 'totoro'` is the second
-condition which evaluates to “True”:
+## Keywords - elif
 
 ``` python
 my_name = 'Totoro' 
@@ -386,27 +319,29 @@ Interesting, I loved that movie!
 Nice to meet you!
 ```
 
-Notes: Script here
+Notes:
 
-<html>
+`elif` stands for ***else if***. It allows us to check if different
+conditions evaluate to `True`.
 
-<audio controls >
+When the `elif` expression evaluates to `True`, then the body of the
+statement is executed, just like an `if` statement.
 
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+In the case we saw before when `my_name = 'Totoro'`, the `elif`
+condition `my_name.lower() == 'totoro'` evaluates to `True`.
 
 ---
 
-  - Unlike `else`, we can use as many `elif` statements in a decision
-    process as we want.
-
-  - `elif` statements **MUST** follow an `if` statement or an error will
-    occur.
-
-<!-- end list -->
+``` python
+if my_name.lower() == 'hayley':
+    print('My name is Hayley too!')
+elif my_name.lower() == 'totoro':
+    print('Interesting, I loved that movie!')
+elif  my_name.lower() == 'Desmond':
+    print("That's a great name.")
+  
+print('Nice to meet you!')
+```
 
 ``` python
 my_name = 'Hayley' 
@@ -419,25 +354,17 @@ elif my_name.lower() == 'totoro':
 Error: invalid syntax (<string>, line 2)
 ```
 
-Notes: Script here
+Notes:
 
-<html>
+Unlike `else` statements, `elif` statements can be used multiple times
+in a decision process.
 
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+But `elif` statements **MUST** always follow an `if` statement or an
+error will occur like we see here.
 
 ---
 
 ## Order matters
-
-The order we chose for the statement for the `if` and `elif` statements
-is important and can result in different outputs. Let’s explore this in
-the next example using inequalities with numbers:
 
 ``` python
 item = 13 
@@ -456,20 +383,16 @@ magnitude
 'Between 10 and 20'
 ```
 
-In this case, our `item` value is greater than 10 so our first condition
-holds true. But let’s see what happens with an `item` value of 25.
+Notes:
 
-Notes: Script here
+The order we chose for the statement for the `if` and `elif` statements
+is important and can result in different outputs.
 
-<html>
+Let’s explore this in the next example using inequalities with numbers.
 
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+In this case, our `item` object which equals 13 here, is greater than 10
+so our first condition holds true and so magnitude is assigned a value
+of `'Between 10 and 20'`
 
 ---
 
@@ -490,45 +413,28 @@ magnitude
 'Between 10 and 20'
 ```
 
-The item is taken out of the stream at the first `if` condition and so
-it doesn’t get a chance to see the `elif` statement even though it would
-result in a true value.
+Notes:
 
-Notes: Script here
+Let’s see what happens with an `item` value equal to 25.
 
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+`magnitude` is still assigned a value of `'Between 10 and 20'` but our
+item is greater than 20\!
 
 ---
 
 <center>
 
-<img src='/module5/order1.png' width="100%">
+<img src='/module5/order1.png' width="70%">
 
 </center>
 
-Notes: Script here
+Notes:
 
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+`item` is taken out of the stream at the first `if` condition, so it
+doesn’t get a chance to see the `elif` statement even though it would
+result in a `True` value.
 
 ---
-
-This can be fixed by rearranging the conditional statements:
 
 ``` python
 item = 25 
@@ -547,20 +453,30 @@ magnitude
 'Greater than 20'
 ```
 
-Now a value of 25 gives the desired output of `greater than 20`, but
-what about a value of 13?
+Notes:
 
-Notes: Script here
+This can be fixed by rearranging the conditional statements.
 
-<html>
+Instead, we put `item > 20` as the first condition followed by the
+condition `item > 10`.
 
-<audio controls >
+Now a value of 25 gives the desired output of `greater than 20`.
 
-<source src="/placeholder_audio.mp3" />
+---
 
-</audio>
+<center>
 
-</html>
+<img src='/module5/order2.png' width="70%">
+
+</center>
+
+Notes:
+
+Here we can see that the first condition is `True` and executes the code
+in the statement body - This statement body assigns the object
+`magnitude` a value of `'Greater than 20'`.
+
+Python then passes the other conditions and executes `magnitude`.
 
 ---
 
@@ -581,76 +497,37 @@ magnitude
 'Between 10 and 20'
 ```
 
-Since 13 doesn’t meet the first condition, it passes it and moves onto
-the second condition which it does meet.
+Notes:
 
-Notes: Script here
+But what about if `item` was equal to 13?
 
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+In this case, `magnitude` results in a value of `'Between 10 and 20'`
+which is what we expect.
 
 ---
 
 <center>
 
-<img src='/module5/order2.png' width="100%">
+<img src='/module5/order3.png' width="70%">
 
 </center>
 
-Notes: Script here
+Notes:
 
-<html>
+Since 13 doesn’t meet the first condition `item > 20`, Python passes it
+and moves onto the second condition `item > 10` which assigns
+`magnitude` the value `Between 10 and 20`.
 
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
-
-<center>
-
-<img src='/module5/order3.png' width="100%">
-
-</center>
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+It skips the `else` statement since one of the statements above was
+already evaluated to `True`.
 
 ---
 
 ## Inline
 
-In situations where we have only `if` and `else` statements, we have the
-ability to put it all in a single line of code. Let’s test this on our
-object `item`:
-
 ``` python
 item = 13
 ```
-
-The original conditional statements below checks if the item is greater
-than 10 designating an object with the value `greater than 10` if it is
-and `10 or less` otherwise:
 
 ``` python
 
@@ -666,9 +543,6 @@ magnitude
 'Greater than 10'
 ```
 
-The 4 lines used for the conditional statements can be compressed into a
-single one:
-
 ``` python
 list_size = "Greater than 10" if item > 10 else "10 or less"
 list_size
@@ -678,33 +552,28 @@ list_size
 'Greater than 10'
 ```
 
+Notes:
+
+In situations where we have only `if` and `else` statements, we have the
+ability to put it all in a single line of code.
+
+Let’s test this on our object `item`.
+
+The original conditional statements below checks if the item is greater
+than 10 and assigns a value of `greater than 10` if it’s `True` and a
+value of `10 or less` otherwise.
+
+The 4 lines used for the conditional statements can be compressed into a
+single one.
+
 Both syntaxes are acceptable depending on your preference.
 
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+This type of syntaxes is only possible for decisions that involve only
+`if` and `else` conditions.
 
 ---
 
 ### Python Keyword “in”
-
-We’ve already seen that conditions evaluate to a boolean. So far we’ve
-seen a lot of boolean evaluated from equalities and inequalities but
-that’s not all.
-
-There are many different keywords we can use in to obtain a boolean
-value but one that you may use often is `in`.
-
-We can use `in` to check if a certain value is contained in a list or
-dictionary:
 
 ``` python
 exercises = ['burpees', 'lunges', 'squats', 'curls', 'deadlifts']
@@ -716,41 +585,44 @@ exercises = ['burpees', 'lunges', 'squats', 'curls', 'deadlifts']
 True
 ```
 
-And we can pair this with `if` to make a condition statement like we did
-before:
-
 ``` python
 if 'squats' in exercises:
-    sore = True
+    sore = "Extreme"
 else:
-    sore = False
+    sore = "Not sore"
 sore
 ```
 
 ```out
-True
+'Extreme'
 ```
 
-Notes: Script here
+Notes:
 
-<html>
+We’ve already seen that conditions evaluate to a Boolean.
 
-<audio controls >
+So far we’ve seen a lot of Boolean evaluated from equalities and
+inequalities but that’s not all.
 
-<source src="/placeholder_audio.mp3" />
+There are many different keywords we can use in to obtain a Boolean
+value but one that you may use often is the keyword `in`.
 
-</audio>
+We can use the keyword `in` to check if a certain value is contained in
+a list or dictionary.
 
-</html>
+We can pair this with with condition statement like we did before to
+have Python makes decisions/ .
+
+In this example we are checking if `squats` is contained in our list
+`exercises`.
+
+We can see that `squats` exists ar position 2 in the list and therefore
+the objext `sore` is assigned a value of `Extreme`.
 
 ---
 
-# Let’s practice what we learned\!
+# Let’s apply what we learned\!
 
-Notes: Script here
+Notes:
 
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
+<br>

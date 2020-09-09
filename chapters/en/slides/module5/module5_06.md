@@ -4,31 +4,17 @@ type: slides
 
 # Repeating iterations (loops)
 
-Notes: Script here
+Notes:
 
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+<br>
 
 ---
 
 ## Repeating Code
 
-There are times where we may want to repeat the same action multiple
-times. Let’s say we want to add the square of every number in a list to
-a new list.
-
 ``` python
 numbers = [2, 3, 5]
 ```
-
-We would have to do something like the following:
 
 ``` python
 squared = list()
@@ -43,80 +29,60 @@ squared
 [4, 9, 25]
 ```
 
-This is problematic for numerous reasons.
+Notes:
 
-Notes: Script here
+There are times while coding where we may want to repeat the same action
+multiple times.
 
-<html>
+Let’s say we want to add the square of every number in a list to a new
+list.
 
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+We could write code that looked something like this but it’s problematic
+for numerous reasons.
 
 ---
 
-Some of the reasons this exhibits bad coding practices are as followed:
+``` python
+squared = list()
 
-  - **Difficult to scale**: It only works for a list with 3 elements. If
-    we want to do this for a list of a different length, we need to add
-    or remove code.
+squared.append(numbers[0] ** 2)
+squared.append(numbers[1] ** 2)
+squared.append(numbers[2] ** 2)
+squared
+```
 
-  - **Difficult to modify**: If we want to change its functionality, we
-    need to change 3 similar lines of code.
+```out
+[4, 9, 25]
+```
+
+This kind of coding exhibits bad programming practices such as :
+
+  - **Difficult to scale**
+
+  - **Difficult to modify**
+
+  - **Clarity**
+
+Notes:
+
+This kind of coding exhibits bad programming practices such as :
+
+  - **Difficult to scale**: This only works for a list with 3 elements.
+    If we want to do this for a list of a different length, we would
+    need to add or remove code.
+
+  - **Difficult to modify**: If we want to change this code’s
+    functionality, we need to change 3 very similar lines of code.
 
   - **Clarity**: It is hard to understand what it does just by looking
     at it.
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
 
 ---
 
 ## Don’t Repeat Yourself (DRY Principle)
 
-Just like how we try to reduce, reuse and recycle waste, coding likes to
-borrow a similar principle aimed at reducing repetitive code.
-
-This motion is called the ***DRY principle*** otherwise known as the
-“Don’t Repeat Yourself” principle. This premise of this principle to
-avoid redundancy within code.
-
-The method we discussed in the last slide is a violation of this
-principle (known as a ***WET Solution (“write every time”)***). There is
-a much more efficient method to obtain the same output that avoids
-typing out multiple iterations of similar code.
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
-
-## Loops
-
-Our example before takes 3 lines of code to add all the squared values
-to `squared` and violates the DRY principle in the process:
+The **DRY** in the ***DRY principle*** stands for “Don’t Repeat
+Yourself”. It is the principle of avoiding redundancy within code.
 
 ``` python
 squared = list()
@@ -131,8 +97,44 @@ squared
 [4, 9, 25]
 ```
 
-Instead, we can add to the list `squared` by using something called a
-**loop** to repeat the `.append()` action over the multiple elements:
+Notes:
+
+Just like how we try to reduce, reuse and recycle waste, coding likes to
+borrow a similar principle aimed at reducing repetitive code.
+
+This motion is called the ***DRY principle*** otherwise known as the
+“Don’t Repeat Yourself” principle.
+
+The premise of this principle to avoid redundancy within code.
+
+The code we discussed here is a violation of this principle (known as a
+***WET Solution (“write every time”)***).
+
+There is a much more efficient method to obtain the same output that
+avoids typing out multiple iterations of similar code.
+
+---
+
+## Loops
+
+``` python
+numbers = [2, 3, 5]
+```
+
+``` python
+squared = list()
+
+squared.append(numbers[0] ** 2)
+squared.append(numbers[1] ** 2)
+squared.append(numbers[2] ** 2)
+squared
+```
+
+```out
+[4, 9, 25]
+```
+
+<br>
 
 ``` python
 squared = list()
@@ -145,21 +147,19 @@ squared
 [4, 9, 25]
 ```
 
+Notes:
+
+Our example before takes 3 lines of code to add all the squared values
+to `squared` and violates the DRY principle in the process.
+
+Instead, we can add to the list named `squared` by using something
+called a **loop** to repeat the `.append()` action over the multiple
+elements.
+
 This only took 2 lines of code but if the number of elements in the list
-increase, the code remains the same. Think how much code writing we
-would avoid if the list had a length of 1000?\!
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+`numbers` increased, the code would remains the same. Think how much
+code writing we would avoid if the list `numbers` had a length of
+1000?\!
 
 ---
 
@@ -176,31 +176,25 @@ squared
 [4, 9, 25]
 ```
 
-This specific loop is called a ***For loop*** and can be iterated over
-any type of *collection/sequence*: list, tuple, and string.  
-In this case, it’s over the values in a list.
+Notes:
 
-Every line of code that is indented,is executed for each value in the
+This specific type of loop is called a ***For loop*** and can be
+iterated over any type of *collection/sequence* (these are lists,
+tuples, and strings).
+
+In this example, it’s over the values in a list.
+
+Every line of code that is indented, is executed for each value in the
 list (hence the name “for” loops, sometimes also called “for each”
-loops).  
+loops).
+
+Here we only have one line that is indented and repetitively executed
+for each element.
+
 The loop ends after the variable has iterated over all the values in the
-collection.
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+collection/sequence.
 
 ---
-
-Before entering the loop, we make an empty list named `squared`:
 
 <center>
 
@@ -208,17 +202,9 @@ Before entering the loop, we make an empty list named `squared`:
 
 </center>
 
-Notes: Script here
+Notes:
 
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+Before entering the loop, we make an empty list named `squared`.
 
 ---
 
@@ -234,11 +220,6 @@ squared
 ```out
 [4, 9, 25]
 ```
-
-Our loop begins with the keyword `for` and we make a new variable named
-`number`. This refers to an element in the list `numbers`. We could name
-this new variable anything so long as we reference the same name later
-on in the loop.
 
 ``` python
 squared = list()
@@ -254,20 +235,19 @@ squared
 [4, 9, 25]
 ```
 
-You see how we changed the variable name in the construction of the loop
-as well as in the `.append()`?
+Notes:
 
-Notes: Script here
+Our loop begins with the keyword `for` and we make a new variable named
+`number`.
 
-<html>
+This refers to an element in the list `numbers`.
 
-<audio controls >
+We could name this new variable anything so long as we reference the
+same name later on in the loop.
 
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+Here we can change `number` to the name `thingamajig` so long as we
+change the object name in both the construction of the loop as well as
+in `.append()`?
 
 ---
 
@@ -284,26 +264,13 @@ squared
 [4, 9, 25]
 ```
 
+Notes:
+
 Loops have a similar structure to conditions in that the first line must
 end with a colon (`:`) and everything within the loop must have a
 4-space indentation to differentiate it from code outside the loop.
 
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
 ---
-
-We first start with the first number in `numbers`. We calculate the
-square of `2` as `4` and append it to the empty list called `squared`.
 
 <center>
 
@@ -311,23 +278,14 @@ square of `2` as `4` and append it to the empty list called `squared`.
 
 </center>
 
-Notes: Script here
+Notes:
 
-<html>
+We first start with the first number in the list `numbers` which is `2`.
 
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+We then calculate the square of `2` as `4` and append it to the empty
+list called `squared`.
 
 ---
-
-When we have finished all the code for the first element, we move to the
-second one valued at `3`. We calculate the square of `3` as `9` and
-append it to the existing list `squared`:
 
 <center>
 
@@ -335,24 +293,15 @@ append it to the existing list `squared`:
 
 </center>
 
-Notes: Script here
+Notes:
 
-<html>
+When we have finished all the code for the first element, we move to the
+second element in `numbers` which has a value of `3`.
 
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+We calculate the square of `3` as `9` and append it to the existing list
+`squared`.
 
 ---
-
-We then move onto the last element valued at `5`. Square the number `5`
-as `25` and append it to the existing list `squared`. This is where the
-loop ends since there are no more values in the list `numbers` and so it
-executes the next line of code which is displaying object `squared`.
 
 <center>
 
@@ -360,21 +309,18 @@ executes the next line of code which is displaying object `squared`.
 
 </center>
 
-Notes: Script here
+Notes:
 
-<html>
+We then move onto the last element which has a value of `5`.
 
-<audio controls >
+We square the number `5` which results in `25` and append it to the
+existing list `squared`.
 
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+This is where the loop ends since there are no more values in the list
+`numbers` and so it executes the next line of code which is displaying
+object `squared`.
 
 ---
-
-Here we can see exactly what steps are happening all together:
 
 <center>
 
@@ -382,26 +328,19 @@ Here we can see exactly what steps are happening all together:
 
 </center>
 
-Notes: Script here
+Notes:
 
-<html>
+Here we can see exactly what steps are happening all together.
 
-<audio controls >
+The first element, 2, gets squared and added to the new list `squared`.
 
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+Then element 3, followed by the last element 5 where the loop stops and
+displays the new list `squared`.
 
 ---
 
-# Let’s practice what we learned\!
+# Let’s apply what we learned\!
 
-Notes: Script here
+Notes:
 
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
+<br>

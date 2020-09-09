@@ -4,25 +4,9 @@ type: slides
 
 # Nested loops
 
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+Notes: <br>
 
 ---
-
-We’ve seen how loops can help us adhere to the DRY principle, but what
-can we do if we are already using a loop and there is still
-repetition?  
-For example: Let’s say we are trying to obtain all the red (♥️, ♦️)
-suited face cards from a deck of cards into a list.
 
 ``` python
 suits = ["❤︎","♦"]
@@ -40,28 +24,22 @@ cards
 ['Jack of ❤︎', 'Queen of ❤︎', 'King of ❤︎', 'Jack of ♦', 'Queen of ♦', 'King of ♦']
 ```
 
+Notes:
+
+We’ve seen how loops can help us adhere to the DRY principle, but what
+can we do if we are already using a loop and there is still repetition
+in our code?
+
+For example: Let’s say we are trying to obtain all the red (♥️, ♦️)
+suited face cards from a deck of cards into a list.
+
 We are currently using a loop but we keep repeating the same `faces[#] +
 ' of ' + suit` line.
 
 In these types of situations, we can reduce redundancy by… you guessed
 it, adding another loop\!
 
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
 ---
-
-Just like how we reduced the repetition by making a first loop we can
-make a second loop within the first one.
 
 ``` python
 suits = ["❤︎","♦︎"]
@@ -78,24 +56,15 @@ cards
 ['Jack of ❤︎', 'Queen of ❤︎', 'King of ❤︎', 'Jack of ♦︎', 'Queen of ♦︎', 'King of ♦︎']
 ```
 
+Notes:
+
+Just like how we reduced the repetition by making a first loop we can
+make a second loop within the first one.
+
 This is called a **nested loop** since we have a loop *nested* in an
 existing one.
 
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
 ---
-
-We enter into the outer loop where the first element in suits is `♥️`:
 
 <center>
 
@@ -103,22 +72,11 @@ We enter into the outer loop where the first element in suits is `♥️`:
 
 </center>
 
-Notes: Script here
+Notes:
 
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+We enter into the outer loop where the first element in suits is `♥️`.
 
 ---
-
-The next line indicates to enter a second loop, which iterate over the
-list `faces`. The first element in this list is `Jack`:
 
 <center>
 
@@ -126,23 +84,14 @@ list `faces`. The first element in this list is `Jack`:
 
 </center>
 
-Notes: Script here
+Notes:
 
-<html>
+The next line constructs the second loop, which iterate over the list
+`faces`.
 
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+The first element in this list is `Jack`.
 
 ---
-
-The next line of code creates a string containing the suit (`♥️`) and
-the face (`Jack`) in the current iterations and append it to the list
-`cards`:
 
 <center>
 
@@ -150,23 +99,13 @@ the face (`Jack`) in the current iterations and append it to the list
 
 </center>
 
-Notes: Script here
+Notes:
 
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+The following indented line of code creates a string containing the suit
+(`♥️`) and the face (`Jack`) in the current iterations and append it to
+the list `cards`.
 
 ---
-
-Once we have appended this to `cards`, the inner loop moves onto the
-second element - `Queen` in the `faces` list.  
-Notice how we are still on the first element (`♥️`) in the `suit` list.
 
 <center>
 
@@ -174,23 +113,14 @@ Notice how we are still on the first element (`♥️`) in the `suit` list.
 
 </center>
 
-Notes: Script here
+Notes:
 
-<html>
+Once we have appended this to `cards`, the inner loop moves onto the
+second element in the `faces` list which has the value `Queen`.
 
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-. </audio>
-
-</html>
+Notice how we are still on the first element (`♥️`) in the `suit` list.
 
 ---
-
-We create a string containing the suit (`♥️`) and the face (`Queen`) of
-this current iteration which is `Queen of ♥️` and add it to the list
-`cards`:
 
 <center>
 
@@ -198,22 +128,13 @@ this current iteration which is `Queen of ♥️` and add it to the list
 
 </center>
 
-Notes: Script here
+Notes:
 
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+We create a string containing the suit (`♥️`) and the face (`Queen`) of
+this current iteration which is `Queen of ♥️` and add it to the list
+`cards`.
 
 ---
-
-Since we finish all the code in the inner loop’s second iteration we can
-move on the third element in `faces` which is `King`:
 
 <center>
 
@@ -221,21 +142,12 @@ move on the third element in `faces` which is `King`:
 
 </center>
 
-Notes: Script here
+Notes:
 
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+Since we finish all the code in the inner loop’s second iteration we can
+move on the third element in list `faces` which is `King`:
 
 ---
-
-The string `King of ♥️` is added to the `cards` list:
 
 <center>
 
@@ -243,26 +155,14 @@ The string `King of ♥️` is added to the `cards` list:
 
 </center>
 
-Now we have finished all the elements in the inner loop, where do we go
-now?
+Notes:
 
-Notes: Script here
+The string `King of ♥️` is added to the `cards` list.
 
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+It’s at this point that we have finished all the elements in the inner
+loop, where do we go now?
 
 ---
-
-Only now, that all the elements in `faces` have been iterated over can
-we move on to the next iteration in the outer loop. This consists of
-iterating to the next element (`♦️`) in `suits`:
 
 <center>
 
@@ -270,22 +170,15 @@ iterating to the next element (`♦️`) in `suits`:
 
 </center>
 
-Notes: Script here
+Notes:
 
-<html>
+Now, that all the elements in `faces` have been iterated over can we
+move on to the next iteration in the outer loop.
 
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+This involves of iterating to the next element (`♦️`) in the list
+`suits`.
 
 ---
-
-We restart iterating over `faces` again in the inner loop, starting with
-`Jack`:
 
 <center>
 
@@ -293,23 +186,12 @@ We restart iterating over `faces` again in the inner loop, starting with
 
 </center>
 
-Notes: Script here
+Notes:
 
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+We now restart iterating over `faces` again in the inner loop, starting
+with `Jack`.
 
 ---
-
-We iterate over each element in `faces` appending the strings `'Jack of
-♦'`, `'Queen of ♦'`, `'King of ♦'` at each iteration until reaching
-the end of `faces`:
 
 <center>
 
@@ -317,23 +199,13 @@ the end of `faces`:
 
 </center>
 
-Notes: Script here
+Notes:
 
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+We iterate over each element in `faces` again appending the strings
+`'Jack of ♦'`, `'Queen of ♦'`, `'King of ♦'` at each iteration until
+reaching the end of the list `faces`.
 
 ---
-
-Since we have reached the end of both lists `suits` and `faces`, all the
-iterations in the inner and outer loops have finished. We exit the loops
-and executes the next line of code which outputs `cards`.
 
 <center>
 
@@ -341,17 +213,13 @@ and executes the next line of code which outputs `cards`.
 
 </center>
 
-Notes: Script here
+Notes:
 
-<html>
+Since we have reached the end of both the lists `suits` and `faces`, all
+the iterations in the inner and outer loops have finished.
 
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+We exit the loops and executes the next line of code which displays the
+list `cards`.
 
 ---
 
@@ -366,7 +234,6 @@ cards
 ```
 
 ``` out
-Show in New WindowClear OutputExpand/Collapse Output
 ❤︎
 Jack
 Queen
@@ -378,30 +245,22 @@ King
 ['Jack of ❤︎', 'Queen of ❤︎', 'King of ❤︎', 'Jack of ♦', 'Queen of ♦', 'King of ♦']
 ```
 
+Notes:
+
 By looking at the output, we notice that all the heart(♥️) face cards
-are added to the list first. That means the first iteration of the outer
-loop waits for the inner loop to finish going through all the faces
-before starting the next suit iteration. Python then re-iterates over
-the inner loop again for the second item (♦️) in the outer loop.
+are added to the list first.
+
+That means the first iteration of the outer loop waits for the inner
+loop to finish going through all the face elements before starting the
+next element in `suit`.
+
+Python then re-iterates over the inner loop again for the second element
+(♦️) in the outer loop.
 
 The outer loop cannot move onto its next iteration until the inner loop
 has reached the last item in its collection.
 
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
 ---
-
-Let’s see exactly what is happening again in the animation below:
 
 <center>
 
@@ -409,26 +268,12 @@ Let’s see exactly what is happening again in the animation below:
 
 </center>
 
-Notes: Script here
+Notes:
 
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+Let’s see exactly what is happening again in the animation below.
 
 ---
 
-# Let’s practice what we learned\!
+# Let’s apply what we learned\!
 
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
+Notes: <br>

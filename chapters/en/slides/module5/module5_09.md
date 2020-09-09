@@ -2,28 +2,15 @@
 type: slides
 ---
 
-# Range and comprehensions
+# Range, dictionaries and comprehensions
 
-Notes: Script here
+Notes:
 
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+<br>
 
 ---
 
 ## Range
-
-Often, we just want to do something 5 times without looping over a
-collection. The most common way to do that is to use `range()`, which
-automatically generates a collection of the integers 0, 1, 2, 3, 4, or
-in general 0, 1, …, N-1 .
 
 ``` python
 for i in range(5):
@@ -37,9 +24,6 @@ for i in range(5):
 3
 4
 ```
-
-We can also specify a *start value*, an *end value* and a *skip-by
-value* with range:
 
 ``` python
 for i in range(50, 101, 10):
@@ -55,32 +39,23 @@ for i in range(50, 101, 10):
 100
 ```
 
-Notes: Script here
+Notes:
 
-<html>
+Often, we just want to do something 5 times without looping over a
+collection.
 
-<audio controls >
+The most common way to do that is to use `range()`, which automatically
+generates a collection of the integers in some sort of sequence
+generally 0, to N-1 .
 
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+We can also specify a *start value*, an *end value* and a *skip-by
+value* with range.
 
 ---
-
-The format is the starting integer first, the ending integer next and
-the skip by integer last. Similarly to slicing with `.iloc[]` in pandas,
-the starting point of `range()` is *inclusive* in the sequence and the
-ending number is *exclusive*.
 
 ``` python
 range(start, end, skip)
 ```
-
-The skip-by variable is optional. In `range()`, the default skip number
-is 1, so if we don’t include it, Python will assume to increase in
-increments of 1.
 
 ``` python
 for i in range(7,10):
@@ -92,9 +67,6 @@ for i in range(7,10):
 8
 9
 ```
-
-If we only include a single integer in the function, a sequence up to
-the given number (not including it) will be generated starting from `0`.
 
 ``` python
 for i in range(4):
@@ -108,53 +80,42 @@ for i in range(4):
 3
 ```
 
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
-
-`range()` only works for integers. If we attempt a loop with type
-`float`, an error will occur:
-
 ``` python
 for i in range(0.5,1.0,0.1):
     print(i)
 ```
 
-```out
-Error in py_call_impl(callable, dots$args, dots$keywords): TypeError: 'float' object cannot be interpreted as an integer
+``` out
+TypeError: 'float' object cannot be interpreted as an integer
 
 Detailed traceback: 
   File "<string>", line 1, in <module>
 ```
 
-Notes: Script here
+Notes:
 
-<html>
+The range function specifies the starting integer first, the ending
+integer next and the skip by integer last.
 
-<audio controls >
+Similarly to slicing with `.iloc[]` in pandas, the starting point of
+`range()` is *included* in the sequence and the ending number is
+*excluded*.
 
-<source src="/placeholder_audio.mp3" />
+The skip-by variable is optional.
 
-</audio>
+In `range()`, the default skip number is 1, so if we don’t include it,
+Python will assume to increase in increments of 1.
 
-</html>
+If we only include a single integer in the function, a sequence up to
+the given number (but not including it) will be generated starting from
+`0`.
+
+`range()` only works for integers. If we attempt a loop with type
+`float`, an error will occur:
 
 ---
 
 ## Looping in a dictionary
-
-We can also loop over the key-value pairs of a dictionary using
-`.items()`.
 
 ``` python
 cereals = {'Special K': 4, 'Lucky Charms': 7, 'Cheerios': 2, 'Wheaties': 3}
@@ -164,10 +125,6 @@ cereals.items()
 ```out
 dict_items([('Special K', 4), ('Lucky Charms', 7), ('Cheerios', 2), ('Wheaties', 3)])
 ```
-
-Since each key-value pair has 2 elements in it, we need 2 specify 2
-variables for each item in `cereal.items()` - One for the `key` in this
-case the cereal name, and one for the value - the cereal stock total.
 
 ``` python
 cereals = {'Special K': 4, 'Lucky Charms': 7, 'Cheerios': 2, 'Wheaties': 3}
@@ -183,43 +140,31 @@ Cheerios has 2 available
 Wheaties has 3 available
 ```
 
-Notes: Script here
+Notes:
 
-<html>
+We can also loop over the key-value pairs of a dictionary using
+`.items()`.
 
-<audio controls >
+We saw this verb back in module 4 when we learned about dictionaries.
 
-<source src="/placeholder_audio.mp3" />
+Since each key-value pair has 2 elements in it, we need to specify a
+variable for each item in the tuple:
 
-</audio>
+  - One for the dictionary **key**
+  - One for the dictionary **values**
 
-</html>
+Here we assign an object named `cereal` for the items in the first
+position of the tuple which are the dictionary keys , and an object
+named `stock` for the second index in tuple which are the dictionary
+values.
 
 ---
 
 ## Comprehensions
 
-We learned in the last Module that we can make and `if`/`else` condition
-in a single line of code and we can do something similar with basic
-loops. **Comprehensions** allow us to build lists/sets/dictionaries in
-one convenient, compact line of code.
-
-As an example, let’s count the number of letters in each element of a
-list. The list comprehension can be done as so:
-
 ``` python
-numbers = [ 2, 3, 5]
-
-squared = [number ** 2 for number in numbers]
-squared
+numbers = [2, 3, 5]
 ```
-
-```out
-[4, 9, 25]
-```
-
-We saw in the last section that to obtain the same resulted required the
-following code:
 
 ``` python
 squared = list()
@@ -234,27 +179,34 @@ squared
 [4, 9, 25]
 ```
 
-Notes: Script here
+``` python
+squared = [number ** 2 for number in numbers]
+squared
+```
 
-<html>
+```out
+[4, 9, 25]
+```
 
-<audio controls >
+Notes:
 
-<source src="/placeholder_audio.mp3" />
+We learned in the last Module that we can create `if` and `else`
+conditions in a single line of code and we can do something similar with
+basic loops.
 
-</audio>
+**Comprehensions** allow us to build lists/sets/dictionaries in one
+convenient, compact line of code.
 
-</html>
+In the last set of slides, we made a loop that calculates the square of
+each element from a list and adds them to a new list name `squared`.
+
+This can be done using comprehension so now it executes using the single
+line of code.
 
 ---
 
-Dictionary comprehensions can be done in a similar way but this time we
-wrap the line with curly brackets and specify what our keys and values
-are: In this case we assign the number as the key and the square of it
-as the value.
-
 ``` python
-numbers = [ 2, 3, 5]
+numbers = [2, 3, 5]
 
 word_length = {number : number ** 2 for number in numbers}
 word_length
@@ -264,29 +216,22 @@ word_length
 {2: 4, 3: 9, 5: 25}
 ```
 
+Notes:
+
+Dictionary comprehensions can be done in a similar way but this time we
+wrap the line with curly brackets and specify what our keys and values
+are.
+
+In this case we name the element in the list `number`.
+
+We assign `number` as the dictionary key and the square of `number` as
+the dictionary value.
+
 Both methods of building lists and dictionaries work and it’s down to
 you to decide what works better for you.
 
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
 ---
 
-# Let’s practice what we learned\!
+# Let’s apply what we learned\!
 
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
+Notes: <br>

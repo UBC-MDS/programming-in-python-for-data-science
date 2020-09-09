@@ -4,27 +4,9 @@ type: slides
 
 # Introduction to Functions
 
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+Notes: <br>
 
 ---
-
-Functions may feel like we are introducing something new but we have
-been using them for the last 4 and a half modules.
-
-Back in Module 1, we compared functions and methods to verbs as they
-both complete actions.
-
-`pd.read_csv()` is a function which reads in a dataframe:
 
 ``` python
 cereal = pd.read_csv('cereal.csv')
@@ -40,8 +22,6 @@ cereal.head()
 4             Almond Delight   R  Cold       110        2    2     200    1.0   14.0       8       1        25      3     1.0  0.75  34.384843
 ```
 
-And `sum()` is a function that adds all the values in a list:
-
 ``` python
 addition = sum([1, 2, 3, 4, 5])
 addition
@@ -51,26 +31,21 @@ addition
 15
 ```
 
-Notes: Script here
+Notes:
 
-<html>
+Functions may feel like we are introducing something new but we have
+been using them for the last 4 and a half modules.
 
-<audio controls >
+Back in Module 1, we compared functions and methods to verbs as they
+both complete actions.
 
-<source src="/placeholder_audio.mp3" />
+`pd.read_csv()` is a function which reads in a dataframe.
 
-</audio>
-
-</html>
+And `sum()` is a function that adds all the values in a list.
 
 ---
 
 ## Functions and the DRY principle
-
-In the last section, we discussed how loops helped avoid redundant
-code.  
-We converted this code that creates a new list containing the square of
-the elements:
 
 ``` python
 numbers = [ 2, 3, 5]
@@ -86,8 +61,6 @@ squared
 [4, 9, 25]
 ```
 
-into this:
-
 ``` python
 squared = list()
 for number in numbers: 
@@ -99,24 +72,19 @@ squared
 [4, 9, 25]
 ```
 
-This has helped us with some repetition, but what happens if we want to
-do the same process to multiple lists all named differently?
+Notes:
 
-Notes: Script here
+In the last section, we discussed how loops helped avoid redundant code.
 
-<html>
+We wrote which created a new list containing the square of the elements
+into code that was written with much less repeated code.
 
-<audio controls >
+This helped our coding style somewhat but now we have a new problem.
 
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+What happens if we want to do the same process to multiple lists all
+named differently?
 
 ---
-
-Perhaps I have 3 other lists that I want to do the same operations on?
 
 ``` python
 larger_numbers = [5, 44, 55, 23, 11]
@@ -124,22 +92,11 @@ promoted_numbers = [73, 84, 95]
 executive_numbers = [100, 121, 250, 103, 183, 222, 214]
 ```
 
-Notes: Script here
+Notes:
 
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+Perhaps I have 3 other lists that I want to do the same operations on?
 
 ---
-
-Now I will have to ***repeat*** the same code just so it applies to
-these lists too.
 
 ``` python
 larger_numbers_squared = list()
@@ -174,28 +131,22 @@ extra_larger_numbers_squared
 [10000, 14641, 62500, 10609, 33489, 49284, 45796]
 ```
 
-This definitely violates the DRY principle. The question now is “Is
-there a better way?” and luckily there is\!
+Notes:
 
-Notes: Script here
+Now I will have to ***repeat*** the same code just so it applies to
+these lists too.
 
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+This definitely violates the DRY principle. The question now is ***“Is
+there a better way?”*** and luckily there is\!
 
 ---
 
-Just like how we used functions like `pd.read_csv()` and `len()`, we
-have the ability to make our own.
-
-We can convert the code in the last slide, into our very own function
-and use it like we use built in ones.
+``` python
+squared = list()
+for number in numbers: 
+    squared.append(number ** 2)
+squared
+```
 
 ``` python
 def squares_a_list(numerical_list):
@@ -216,17 +167,16 @@ squares_a_list(numbers)
 [4, 9, 25]
 ```
 
-Notes: Script here
+Notes:
 
-<html>
+We have the ability to make our own function and use them just like how
+we use functions like `pd.read_csv()` and `len()`.
 
-<audio controls >
+We can convert the code in the last slide, into our very own function
+and use it like we use Python built-in ones.
 
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+We can call our new function using the same syntax as a Python built-in
+function too.
 
 ---
 
@@ -242,7 +192,7 @@ def squares_a_list(numerical_list):
     return new_squared_list
 ```
 
-Let’s take a look at the structure:
+Let’s take a look at the how we define a function:
 
 <center>
 
@@ -250,30 +200,34 @@ Let’s take a look at the structure:
 
 </center>
 
-  - `def`: This is a python keyword that tells Python that anything
-    indented after this belongs to a function.
-  - **Function name**: Like any object, we need to give our function a
-    name. In our case, we have named our function `squares_a_list`. We
-    cannot name it any existing function names.
-  - **Parameters/Arguments**: Python calls these parameters however, we
-    have been calling these arguments. This is what the function needs
-    as an input in order for it to do any actions. We can have multiple
-    parameters as well. In our function, we have a single parameter
-    named `numerical_list`.
-  - **Colon**: Just like loops and conditionals, a function required its
-    first defining line to end with a colon.
+Notes:
 
-Notes: Script here
+Let’s take a look at the how we define a function:
 
-<html>
+  - `def` is a python keyword that tells Python that anything indented
+    after this belongs to a function.
 
-<audio controls >
+  - Next we give it a **Function name**. Like any object, we need to
+    name it.
+    
+      - In this case, we have named our function `squares_a_list`.  
+      - We cannot name it any existing function names.
 
-<source src="/placeholder_audio.mp3" />
+  - Following our function name we specify any **Parameters/Arguments**
+    that the function requires.
+    
+      - Python calls these “**parameters**” however, we have been
+        calling these “**arguments**”.  
+      - This is what the function needs as an input in order for us to
+        perform some actions on an existing object.  
+      - We can have multiple parameters or no parameters at all.
+      - In our function, we have a single parameter named
+        `numerical_list`.
 
-</audio>
-
-</html>
+  - Lastly, we end the line with a **Colon**
+    
+      - Just like loops and conditionals, a function required its first
+        defining line to end with a colon.
 
 ---
 
@@ -282,14 +236,6 @@ Notes: Script here
 <img src='/module5/function-rest.png' width="60%">
 
 </center>
-
-In the body a function, all the code is indented 4 spaces and further
-indented for loops and conditions.  
-The `return` statement is crucial to a function for returning a desired
-output. Here, our function returns a new list. If the function does not
-return anything then you won’t get a value to assign to an object. It
-does all the work, but never sends the result back to the code that
-called it.
 
 ``` python
 def not_a_great_function(numerical_list):
@@ -303,19 +249,23 @@ def not_a_great_function(numerical_list):
 not_a_great_function([1, 2, 3])
 ```
 
-(See no value is returned\!)
+Notes:
 
-Notes: Script here
+In the body of a function, all the code is indented 4 spaces and further
+indented for loops and conditions.
 
-<html>
+The `return` statement is crucial to a function for returning a desired
+output.
 
-<audio controls >
+In our previous function, a new list was returned.
 
-<source src="/placeholder_audio.mp3" />
+If the function does not return anything then you won’t get a value to
+assign to an object.
 
-</audio>
+It does all the work, but never sends the result back to the code that
+called it.
 
-</html>
+(See no value is returned when we call it\!)
 
 ---
 
@@ -329,8 +279,17 @@ def squares_a_list(numerical_list):
     return new_squared_list
 ```
 
-We can now call this function as we did with other verbs and use each of
-our lists of interest as the input argument:
+Notes:
+
+We can now call this function and specify each of our lists of interest
+as the input argument:
+
+  - `numbers`
+  - `larger_numbers`
+  - `promoted_numbers`
+  - `executive_numbers`
+
+---
 
 ``` python
 numbers = [ 1, 2, 3, 4]
@@ -340,23 +299,6 @@ squares_a_list(numbers)
 ```out
 [1, 4, 9, 16]
 ```
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
-
-We can reuse this function on all our other lists as well, while still
-meeting our DRY principle:
 
 ``` python
 larger_numbers = [5, 44, 55, 23, 11]
@@ -385,23 +327,12 @@ squares_a_list(executive_numbers)
 [10000, 14641, 62500, 10609, 33489, 49284, 45796]
 ```
 
-Notes: Script here
+Notes:
 
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+This function now is recycled on all of our lists and meets the DRY
+principle.
 
 ---
-
-You could get even more fancy, and put all the lists of numbers into a
-list (so you have a list of lists). Then you could loop over the list
-and call the function each time:
 
 ``` python
 numbers = [ 1, 2, 3, 4]
@@ -422,54 +353,58 @@ for list_of_numbers in [numbers, larger_numbers, promoted_numbers, executive_num
 [10000, 14641, 62500, 10609, 33489, 49284, 45796]
 ```
 
-Notes: Script here
+Notes:
 
-<html>
+We could get even more fancy, and put all the lists into one large list
+(so now you have a list of lists).
 
-<audio controls >
+Then you could loop over the list and call the function each time.
 
-<source src="/placeholder_audio.mp3" />
+This example leads us to our next point.
 
-</audio>
-
-</html>
+Just because we ***could*** do this, doesn’t necessarily mean we
+***should***.
 
 ---
 
 ## Designing Good Functions
 
+There is some ambiguity for how and when to design a function.
+
+  - Should `squares_a_list()` be a function if I’m only ever using it
+    once?
+  - Should the loop be inside the function, or outside?
+
+<!-- end list -->
+
+``` python
+def squares_a_list(numerical_list):
+    new_squared_list = list()
+    
+    for number in numerical_list:
+        new_squared_list.append(number ** 2)
+    
+    return new_squared_list
+```
+
+Notes:
+
 There is some ambiguity for how and when to design a function.  
-For instance:  
-\- Should `squares_a_list()` be a function if I’m only ever using it
-once? Twice? - Should the loop be inside the function, or outside?
+For instance:
+
+  - Should `squares_a_list()` be a function if I’m only ever using it
+    once? What about Twice?
+  - Should the loop be inside the function, or outside?
 
 This comes down to personal opinion.
 
 Some may say that the function `squares_a_list()` does a bit too much to
 keep things understandable.
 
-Designing effective functions will be discussed in the next section.
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+Designing effective functions will be discussed in Module 6.
 
 ---
 
-# Let’s practice what we learned\!
+# Let’s apply what we learned\!
 
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
+Notes: <br>

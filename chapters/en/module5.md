@@ -449,7 +449,7 @@ Tasks:
 </exercise>
 
 
-<exercise id="9" title="Range and Comprehensions" type="slides">
+<exercise id="9" title="Range, Dictionaries and Comprehensions" type="slides">
 
 <slides source="module5/module5_09">
 

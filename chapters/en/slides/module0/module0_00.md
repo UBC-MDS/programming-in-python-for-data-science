@@ -38,7 +38,7 @@ Notes:
  
 ---
 
-# Let's Learn Python for Data Science  
+# Let's Learn Programming in Python for Data Science  
 
 Notes: This course is designed to give you a solid foundation of coding in Python. No prior python knowledge is needed for this course. 
 
