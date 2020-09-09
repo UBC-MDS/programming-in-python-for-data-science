@@ -298,6 +298,6 @@ If your dataframes don't have the same row values, your data will be displayed i
 ---
 
 
-# Let’s practice what we learned!
+# Let’s apply what we learned!
 
 Notes:  <br>

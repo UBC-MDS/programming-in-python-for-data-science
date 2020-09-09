@@ -32,7 +32,7 @@ sentence.split("e")
 
 Notes:
 
-In the last section, we discussed the `str` data type.
+In the last section, we discussed the string (`str`) data type.
 
 We described it as *a sequence of characters*. In many cases, there is
 good reason to split up a long text string into separate ones. Luckily,
@@ -80,12 +80,13 @@ Notes:
 
 The output from the `.split()` verb is called a **list**.
 
-Similarly to how a string is a sequence of characters that depend on an
-order, a list is a sequence of elements with a particular order.
+Similarly to how a string is a sequence of characters in order, a list
+is a sequence of elements with a particular order.
 
 Lists can be identified by their square brackets.
 
-The elements in a list can be a combination of any of the data types.
+The elements in a list can be any objects, and they don’t all need to
+have the same type.
 
 ---
 
@@ -117,12 +118,12 @@ len(lists_of_lists)
 
 Notes:
 
-They can even have elements that are lists.
+Lists can even have more lists as elements.
 
-We can get the length of a list, with `len()` like we did for strings.
+We can get the length of a list with `len()` like we did for strings.
 
-If your list contains lists, `len()` will return the number of elements
-in the outer list (not the total number of elements).
+Note that if your list contains lists, `len()` will return the number of
+elements in the outer list (not the total number of elements).
 
 ---
 
@@ -188,9 +189,12 @@ my_list
 
 Notes:
 
-A data structure is **mutable** if it can be modified.
+Next, we’ll talk about mutable and immutable data types.
 
-Lists are mutable and we can assign new values for its various entries.
+An object is **mutable** if it can be modified.
+
+Lists are mutable and we can assign new values for their various
+entries.
 
 For example, we can edit any entry in this list and replace it with a
 new value.
@@ -217,6 +221,9 @@ lists_of_lists
 Notes:
 
 We can also replace entries in a **nested** list (a list within a list).
+Here, we’re first taking element 1 of list\_of\_lists, which gets us the
+inner list. We’re then setting element 2 of that inner list to the value
+“Sandal”.
 
 ---
 
@@ -249,9 +256,9 @@ Detailed traceback:
 
 Notes:
 
-Strings can be sliced just like list.
+Strings can be sliced just like lists.
 
-But we cannot replace characters.
+But we cannot replace characters - if we try, we get an error.
 
 That means values of type `str` are **immutable**.
 
@@ -290,12 +297,14 @@ sum(primes)
 
 Notes:
 
-Unlike strings once again, lists have
-<a href="https://docs.python.org/3/tutorial/datastructures.html#more-on-lists" target="_blank">A
+Lists have
+<a href="https://docs.python.org/3/tutorial/datastructures.html#more-on-lists" target="_blank">a
 variety of different methods</a> for interacting with their data. Here
 are just a few.
 
-We can add to the end of a list with `append()`.
+We can add to the end of a list with `append()`. Notice how we didn’t
+need to write `prime =` and overwrite the prime object, because `append`
+modified `primes` directly.
 
 We can find the maximum value in the list with `max()`.
 
@@ -341,13 +350,13 @@ Notes:
 Up until this point we have been working with dataframes that have been
 read in and converted from different types of files.
 
-We, however, can make dataframes from scratch using lists.
+However, we can also make dataframes from scratch using lists.
 
 Let’s say we wanted a dataframe of things we needed to purchase from the
-store on our next grocery shopping trip.
+store on our next grocery shopping trip, as shown in the table here.
 
-We use a list for each row and a list for the column labels. We then use
-another list of all the rows to make up the data.
+We can use a list for each row and a list for the column labels. We then
+use another list of all the rows to make up the data.
 
 Now the shopping items are no longer in a structure type `list`, but in
 a type `DataFrame`.
@@ -375,10 +384,11 @@ type(my_tuple)
 
 Notes:
 
-Tuples are a data structure very similar to lists but with the 2 main
+Tuples are a data structure very similar to lists but with two main
 differences:
 
-1.  They are represented with parentheses, and
+1.  They are represented with parentheses instead of square brackets,
+    and
 2.  They are immutable
 
 ---
@@ -414,10 +424,10 @@ type(my_list)
 Notes:
 
 Just to recap, immutable means that the elements withing the structure
-cannot be edited, or changed.
+cannot be changed.
 
-We can cast objects from tuples into type `list` by using the verb
-`list()`.
+We can still cast objects from type `tuple` into type `list` by using
+the verb `list()`.
 
 ---
 
@@ -429,7 +439,7 @@ my_set
 ```
 
 ```out
-{1.0, 2, 'Buckle my shoe'}
+{'Buckle my shoe', 1.0, 2}
 ```
 
 ``` python
@@ -438,26 +448,29 @@ my_set
 ```
 
 ```out
-{1.0, 2, 'Buckle my shoe'}
+{'Buckle my shoe', 1.0, 2}
 ```
 
 Notes:
 
 Sets, not unlike lists and tuples, are a data structure that contains
-elements. Sets differ such that:
+elements. Sets differ from lists and tuples in that:
 
-  - They do not perserve the inserted order, and  
-  - The containing values are unique - meaning there are no entries that
-    are repeated.
+  - They are unordered, meaning there is no element 0 and element 1,
+    and  
+  - The values contained are unique - meaning there are no duplicate
+    entries.
 
 Let’s explore this a bit.
 
-Sets are made with curly brackets
+Sets are made with curly brackets.
 
-You’ll notice that the order is not the same as we inputted then in.
-That’s because set’s do not preserve order.
+You’ll notice that the printed order is not the same as we inputted then
+in. That’s because sets do not preserve order.
 
-If we have repeats of any entries, they only occur once in the set.
+If we have repeats of any entries, they only occur once in the set. This
+is useful if you want to keep track of a set of things, like who visited
+a store, and you’re not interested in repeat entries.
 
 ---
 
@@ -466,7 +479,7 @@ my_set
 ```
 
 ```out
-{1.0, 2, 'Buckle my shoe'}
+{'Buckle my shoe', 1.0, 2}
 ```
 
 ``` python
@@ -492,13 +505,13 @@ my_set
 
 Notes:
 
-What about the order? can we select a specific element?
+Can we select a specific element?
 
-Remember this data structure does not perserve order, so Python displays
+Remember this data structure does not preserve order, so Python displays
 them according to some internal sorting scheme.
 
-We cannot select or slice from them, however, we can add to them with
-`.add()`.
+We cannot select or slice from them. However, we can add to them with
+`.add()` (meaning that sets are mutable\!).
 
 You’ll notice that unlike lists, the new entries are not added to the
 end of the structure.
@@ -518,11 +531,11 @@ end of the structure.
 
 Notes:
 
-We have condensed the data structures characteristics into 1 convenient
+We have condensed the data structures characteristics into a convenient
 table for you.
 
 ---
 
-# Let’s practice what we learned\!
+# Let’s apply what we learned\!
 
 Notes: <br>

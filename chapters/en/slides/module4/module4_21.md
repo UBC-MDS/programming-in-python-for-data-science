@@ -79,10 +79,12 @@ It’s always a good idea to see what column types we have before
 operating on them, since they may not be of the type we expect.
 
 In this case, we discover that the `calories` column is of dtype
-`object` which isn’t the `int64` category we expected.
+`object` which isn’t the `int64` category we expected. This can happen
+sometimes when reading in data - pandas doesn’t always correctly guess
+what the type of a column should be.
 
-Since it is not a numerical value, it will not show up in our summary
-statistics if we do `.describe()`:
+Since `calories` is not a numerical type, it will not show up in our
+summary statistics if we call `.describe()`:
 
 ---
 
@@ -115,14 +117,15 @@ Name: calories, Length: 77, dtype: int64
 
 Notes:
 
-If we attempt to sum the column, we get a concatenation of the column.
+If we attempt to sum the column, we get a concatenation of the column
+because the values are being treated as strings.
 
 We saw earlier that when we add strings, they concatenate together.
 
-To go forward with any analysis, we are going to have to convert it to a
-numeric value.
+To go forward with any analysis, we are going to have to convert this
+column to a numeric type.
 
-Luckily, there is an easy way to do it using verb `.astype()`.
+Luckily, there is an easy way to do it using the verb `.astype()`.
 
 ---
 
@@ -149,9 +152,9 @@ dtype: object
 
 Notes:
 
-We can now use the `.assign()` function to add the casted column back to
-the `cereal` dataframe under the same name `calories` but now as dtype
-`int`.
+We can now use the verb `.assign()` to add the casted column back to the
+`cereal` dataframe. By using the same name `calories` we overwrite the
+previous column, but now as dtype `int`.
 
 Great, it looks like we are back on track.
 
@@ -233,20 +236,16 @@ Notes:
 
 What about the column of type `bool`?
 
-Since Booleans adopt the values of 0 and 1 for `True` and `False` values
+Since Booleans are cast to 0 and 1 for `True` and `False` values
 respectively, we can take the sum of a column to obtain the total number
 of `True` values.
 
 `.mean()` works by suming up all the values and divides them by the
-total number of rows.
-
-In the case where the column is of dtype `bool`, since `True` has a
-value of 1 and `False` has a value of 0, the mean is calculated as the
-total number of `True` values divided by the total number of `True` and
-`False` values.
-
-This gives the proportion of `True` values over the total number of
-rows.
+total number of rows. In the case where the column is of dtype `bool`,
+since `True` has a value of 1 and `False` has a value of 0, the mean is
+calculated as the total number of `True` values divided by the total
+number of `True` and `False` values. In other words, this gives you the
+fraction of cases that are `True`.
 
 ---
 
@@ -295,9 +294,9 @@ Remember when we discussed the argument `axis` in Module 3?
 
 We can use it in our operations as well.
 
-`axis=1` refers to the calculation being done for a row, across multiple
-columns, whereas `axis=0` (which is the default for aggregation verbs)
-refers to the calculation for a column, across multiple rows.
+`axis=1` refers to the calculation being done for each row, across
+multiple columns, whereas `axis=0` (which is the default for aggregation
+verbs) refers to the calculation for each column, across multiple rows.
 
 ---
 
@@ -336,8 +335,8 @@ cereal.head()
 
 Notes:
 
-Although this produces the totals, we want it as an additional column in
-the dataframe.
+Although this produces the totals, we may want the result as an
+additional column in the dataframe.
 
 That means we will have to combine it with `.assign()`.
 
@@ -347,7 +346,7 @@ This syntax works for calculating the mean over multiple columns too.
 
 ---
 
-# Let’s practice what we learned\!
+# Let’s apple what we learned\!
 
 Notes:
 

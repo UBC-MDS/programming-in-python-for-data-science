@@ -344,10 +344,10 @@ candy.merge(candy2m, left_on='name', right_on='chocolate_bar', how='right')
 
 ```out
            name  weight  chocolate  peanuts  id_number  calories  fat  sugar chocolate_bar
-0  Coffee Crisp    50.0        1.0      0.0      12482       260   13   25.0  Coffee Crisp
-1  Butterfinger   184.0        1.0      1.0      45623       798   30   72.0  Butterfinger
-2           NaN     NaN        NaN      NaN      34534       262    8   40.0  3 Musketeers
-3           NaN     NaN        NaN      NaN      32686       220   12   25.0          Aero
+0  Butterfinger   184.0        1.0      1.0      45623       798   30   72.0  Butterfinger
+1           NaN     NaN        NaN      NaN      34534       262    8   40.0  3 Musketeers
+2           NaN     NaN        NaN      NaN      32686       220   12   25.0          Aero
+3  Coffee Crisp    50.0        1.0      0.0      12482       260   13   25.0  Coffee Crisp
 4           NaN     NaN        NaN      NaN      85254       244   16   41.2  Kinder Bueno
 ```
 
@@ -396,6 +396,6 @@ dataframes.
 
 ---
 
-# Let’s practice what we learned\!
+# Let’s apply what we learned\!
 
 Notes: <br>

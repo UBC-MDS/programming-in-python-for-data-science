@@ -39,14 +39,14 @@ Notes:
 
 In the last few sections, you may have had questions like:
 
-***“Why are some values in quotations and why others are not?”***,
+***“Why are some values in quotation marks while others are not?”***,
 
 ***“What are these square brackets we keep using in our verb
 arguments?”*** or
 
 ***“Why can we take the mean of some columns and not others?”*** .
 
-These are going to get answered in this module.
+We’ll be answering these questions in this module.
 
 Python needs to categorize things to make sense of them.
 
@@ -162,17 +162,17 @@ type(nan_value)
 
 Notes:
 
-Something you may have noticed in our Pandas dataframes are values such
-a `NaN`.
+Something you may have noticed in our Pandas dataframes are `NaN`
+values.
 
-This stands for **Not A Number** and it is a special value to represent
-missing data.
+This stands for **Not A Number** and it is a special value used to
+represent missing data in pandas.
 
 Contrary to its acronym it is considered a numeric value, specifically
 of type `float`\!
 
 Ignore the `numpy` and `64` for now and concentrate on the `float`
-classification for now. We will be discussing this a bit more later on.
+classification for now. We will be discussing NumPy more in Module 8.
 
 Unlike other values, `NaN` cannot be converted to any other type other
 than a `float.`
@@ -206,13 +206,21 @@ missing this information.
 We’ve seen this data type in our assignments when we replace the `None`
 provided, with our solution. Since we still need to have the object
 created for the structure of our assignments, we simply use `None` to
-indicate the object exists but is void of information.
+indicate the object exists but is devoid of information.
 
 ---
 
 ## Booleans
 
 The Boolean (`bool`) type has two values: **True** and **False**.
+
+``` python
+type(False)
+```
+
+```out
+<class 'bool'>
+```
 
 ``` python
 weather
@@ -236,24 +244,18 @@ weather['season'] == 'winter'
 Name: season, dtype: bool
 ```
 
-``` python
-type(False)
-```
-
-```out
-<class 'bool'>
-```
-
 Notes:
+
+The Boolean type has two values: **True** and **False**. As you can see
+at the top, the value `False` is of type `bool` for Boolean.
 
 We have seen this data type when we were filtering our dataframes with
 conditions.
 
-A condition is evaluated and produces a column indicating whether the
-condition was met or not.
+In pandas, a condition is evaluated and produces a column indicating
+whether the condition was met or not for each row.
 
-In filtering and many scenarios in programming, the evaluation of code
-can only be one of 2 options.
+This column is a Boolean type.
 
 ---
 
@@ -301,7 +303,8 @@ We think of a string as a sequence of characters enclosed in some form
 of quotations.
 
 We’ve been mostly using single quotations for strings up until this
-point but you enclosed them with different types of quotation.
+point but you can enclose them with different types of quotation marks,
+as shown here.
 
 ---
 
@@ -333,16 +336,14 @@ type(missing_bed_monster)
 
 Notes:
 
-If the string contains a quotation or apostrophe, we can use double
-quotes or triple quotes to define the string.
+If the string contains quotation marks or apostrophes, we can use double
+quotes or triple single quotes, or triple double quotes to define the
+string.
 
 What about empty quotations? When we discussed `None` type and we didn’t
-yet know the monster’s name, why didn’t we just put empty quotations?
-
-That’s because the object is still recognized as a string.
-
-An empty string is similar to `NaN` values in that it has a type but no
-data.
+yet know the monster’s name, we could have also set it to an empty
+string, as shown here. The benefit of this approach is that we’re
+already setting the type of the object to string, rather than NoneType.
 
 ---
 
@@ -393,7 +394,9 @@ name_of_bed_monster.lower()
 'mike wazowski'
 ```
 
-Notes: T here are
+Notes:
+
+There are
 <a href="https://docs.python.org/3/library/stdtypes.html#string-methods" target="_blank">A
 variety of different methods</a> to transform strings or extract
 information from them. Here are a few of them.
@@ -477,12 +480,13 @@ number_of_balloons
 
 Notes:
 
-Sometimes we need to explicitly cast an object from one type to another.
+Sometimes we need to explicitly transform an object from one type to
+another, which is called ***casting***.
 
 We can do this for some types, but not all.
 
-We simply use their corresponding verbs such as `int()`, `float()`,
-`bool()` or `str()`.
+To cast an object to a new type, we use verbs corresponding to the
+desired type, such as `int()`, `float()`, `bool()` or `str()`.
 
 ---
 
@@ -526,7 +530,7 @@ Values of `0` or `0.0` are converted to `False` and all other numeric
 are converted to `True`.
 
 We can convert Boolean values to `int` and `float` values where `False`
-is 0/0.0 respectively and `True` is 1/1.0.
+is 0 or 0.0 respectively and `True` is 1 or 1.0.
 
 ---
 
@@ -556,11 +560,11 @@ str(3.2)
 
 Notes:
 
-As suspected the same applies to strings: Most data types can be
+As suspected, the same applies to strings: Most data types can be
 converted to strings easily.
 
 We don’t even need to use `type()` here as we can see both values now
-have quotations surrounding the value.
+have quotations surrounding the value, meaning they are strings.
 
 ---
 
@@ -596,12 +600,15 @@ bool('0')
 True
 ```
 
-Notes: Casting strings into other data types, are a bit more
-problematic.
+Notes:
+
+Casting strings into other data types is a bit more problematic.
 
 Sometimes it works correctly.
 
-Other times it does not give us what we expected:
+Other times it does not give us what we expected, as we can see here -
+the string False is converted to the Boolean True. Be careful when
+casting types\!
 
 ---
 
@@ -634,8 +641,8 @@ Detailed traceback:
 
 Notes:
 
-When we cast a `str` to a `bool`, it will result in `True`, unless it’s
-an empty `str`.
+In fact, only the empty string gets casted to False; every other string
+is considered True when turned into a Boolean.
 
 Often, we may not be able to cast a string at all.
 

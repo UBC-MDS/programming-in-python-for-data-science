@@ -298,6 +298,6 @@ We use the argument `axis=0` which refers to the rows in the dataframe and `inde
 
 ---
 
-# Let’s practice what we learned!
+# Let’s apply what we learned!
 
 Notes: <br>

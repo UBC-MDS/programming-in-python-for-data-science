@@ -106,11 +106,11 @@ Notes:
 Let’s think back to Module 1 when we were selecting a single column from
 a dataframe.
 
-There are two ways of doing so; with single brackets, and with double
-brackets.
+There are two ways of doing so; with single square brackets, and with
+double square brackets.
 
-Double bracket don’t surprise us and produce an object of type
-`pd.DataFrame`.
+When indexing with double square brackets we get back another object of
+type `pd.DataFrame`.
 
 What about single brackets?
 
@@ -175,12 +175,13 @@ Name: mfr, Length: 77, dtype: object
 Notes:
 
 A pandas Series is a one-dimensional array of values with an axis label.
+Sort of like a list with a name attached to it.
 
 This is the base data type that makes up a pandas dataframe.
 
 In fact, the
 <a href="https://pandas.pydata.org/pandas-docs/stable/getting_started/dsintro.html#dataframe" target="_blank">Pandas
-documentation“</a> explain it as”a dict of Series objects".
+documentation“</a> explains a dataframe as”a dict of Series objects".
 
 Let’s look back at the series output again.
 
@@ -209,7 +210,7 @@ So far we know a dataframe is made up of a collection of series and a
 series contains values, a label as well as some additional information
 regarding a **dtype**.
 
-Just like how values have the data types ( `str`, `int`, `float`, etc.),
+Just like how objects have data types ( `str`, `int`, `float`, etc.),
 columns in a Pandas dataframe have types called **dtypes**.
 
 In this course we are going to concentrate on the following dtypes.
@@ -236,7 +237,7 @@ Let’s look at the numeric ones first.
 
   - `float64` dtype is a column that contains only `float` type values
     in the cells of the dataframe, whereas,
-  - `int64` columns only contains values of type `int` in the cells.
+  - `int64` columns only contains integers.
 
 ---
 
@@ -348,8 +349,7 @@ the dtypes `object` and `bool`. We will be exploring `datetime64` and
     is the cell type values are or when there is a mixture of numeric
     and non-numeric value types.
 
-  - `bool` dtypes, just like it’s dtype name, contains `bool` type
-    values.
+  - `bool` dtypes, just like its dtype name, contains Boolean values.
 
 ---
 
@@ -456,8 +456,8 @@ dtype: object
 
 Notes:
 
-An easy way tocheck all dtypes of the columns in our dataframe is to use
-`.dtypes` on the dataframe object.
+An easy way to check all dtypes of the columns in our dataframe is to
+use `.dtypes` on the dataframe object.
 
 Knowing what dtype the values are, helps us understand how we can
 transform them and how they respond to different operations and
@@ -465,7 +465,7 @@ operators.
 
 ---
 
-# Let’s practice what we learned\!
+# Let’s apply what we learned\!
 
 Notes:
 

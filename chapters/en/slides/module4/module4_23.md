@@ -35,13 +35,13 @@ Notes:
 
 Here is a new cereal dataframe.
 
-You’ll notice that our column `mfr_type` contains 2 variables.
+You’ll notice that our column `mfr_type` contains two variables.
 
 It is displaying both the manufacturer (N, Q, etc.) of the cereal and
 the cereal type (Cold, Hot).
 
 To convert this into tidier data we will need to split up this column
-into 2 separate ones, but how?
+into two separate columns, but how?
 
 ---
 
@@ -88,15 +88,15 @@ It’s called `.str.split()`.
 
 Let’s test it out.
 
-First, we need to isolate the column and make sure we are splitting on
-the correct separator.
+First, we need to grab the column and make sure we are splitting on the
+correct separator.
 
 In this case, the column is `mfr_type` and the separator is `-`.
 
 It’s important that we set `expand=True` to indicate that we want to
 split the sub strings into separate columns.
 
-Great\! We have 2 new columns.
+As you can see from the result, we now have two new columns.
 
 ---
 
@@ -207,7 +207,7 @@ columns.
 
 ---
 
-# Let’s practice what we learned\!
+# Let’s apply what we learned\!
 
 Notes:
 
