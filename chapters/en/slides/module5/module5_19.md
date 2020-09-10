@@ -76,10 +76,11 @@ Notes:
 
 In the last section, we discussed how loops helped avoid redundant code.
 
-We wrote which created a new list containing the square of the elements
-into code that was written with much less repeated code.
+We wrote code which created a new list containing the square of the
+elements.
 
-This helped our coding style somewhat but now we have a new problem.
+Using a loop for this, helped our coding style somewhat but now we have
+a new problem.
 
 What happens if we want to do the same process to multiple lists all
 named differently?

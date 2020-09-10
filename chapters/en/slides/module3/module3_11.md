@@ -10,9 +10,7 @@ Notes: <br>
 
 ## Pivot Table
 
-We discussed that one of the effects of using `.pivot()` on our
-`cereal_long` dataframe was that the new dataframe was missing the
-column `mfr`.
+<br> <br>
 
 <center>
 
@@ -27,13 +25,15 @@ We discussed that one of the effects of using `.pivot()` on our
 column `mfr`.
 
 That’s because `.pivot()` discards any columns that are not being
-directly affected by the pivot. Only the column that is specified as the
-index and the columns that need to be transformed are present in the new
-dataframe.
+directly affected by the pivot. Only the column that is specified in the
+index argument and the columns that need to be transformed are present
+in the new dataframe.
 
 That’s where `pivot_table` steps in\!
 
 ---
+
+<br> <br>
 
 <center>
 
@@ -76,12 +76,28 @@ cereal_wider = cereal_long.pivot_table(index=['name', 'mfr'], columns='nutrition
 cereal_wider
 ```
 
+```out
+nutrition        calories  protein
+name        mfr                   
+Apple Jacks K         110        2
+Cheerios    G         110        6
+Raisin Bran K         120        3
+Special K   K         110        6
+Wheaties    G         100        3
+```
+
 Notes:
 
 Here is our long dataframe.
 
 We include any columns that we wish to keep under the `index` argument
 contained in square brackets.
+
+We can see here, that our transformed dataframe now has the `mfr` column
+as well as the new `calories` and `protein` column.
+
+We still don’t have our index of containing integers though so we will
+have to do something about that.
 
 ---
 
@@ -121,7 +137,7 @@ with a column of numbers for our index, we use `.reset_index()` and
 
 ---
 
-<br>
+<br> <br>
 
 <center>
 
@@ -136,9 +152,11 @@ but now we’ve kept the `mfr` column.
 
 ## Why use pivot at all then?
 
+<br> <br>
+
 <center>
 
-<img src='/module3/problem_table.png' width="100%">
+<img src='/module3/problem_table.png' width="80%">
 
 </center>
 
@@ -197,6 +215,8 @@ arguments as before.
 `.pivot()` throws an error message.
 
 ---
+
+<br> <br>
 
 <center>
 
@@ -262,9 +282,6 @@ cereal_problem.duplicated(subset=['name', 'nutrition'], keep=False)
 dtype: bool
 ```
 
-Without the `keep` argument, only index labelled `1` will be identified
-as a duplicate.
-
 ``` python
 cereal_problem.duplicated(subset=['name', 'nutrition'])
 ```
@@ -284,10 +301,17 @@ When we use `.pivot_table()` we recommend checking if there are
 duplicate values in columns we use in the `index` and `columns`
 arguments before we proceed.
 
-We can do this with the `.duplicated()` verb by putting the columns from
-the `index` and `columns` arguments in a `subset` argument. We set the
-argument `keep` to `False` to make sure all the rows are identified and
-not just the repeated ones.
+We can do this with the `.duplicated()` verb. We put the columns we
+specified in the `index` and `columns` arguments in a `subset` argument
+in this case the columns `name` and `nutrition`. We set the argument
+`keep` to `False` to make sure all the rows are identified and not just
+the repeated ones.
+
+Here we can see now that index 0 and 1 are both duplicates by the `True`
+values.
+
+Without the `keep` argument, only index labelled `1` will be identified
+as a duplicate.
 
 ---
 
@@ -317,9 +341,10 @@ cereal_problem[duplicate_info]
 
 Notes:
 
-We see that the 1st and 2nd rows are duplicates by the `True` values. We
-obtain the rows from the original dataframe by filtering on the
-duplicate information.
+We can obtain the duplicated rows by filtering on them from the original
+dataframe `cereal_problem`.
+
+How we see our 2 rows with calorie values of 100 and 130.
 
 ---
 
@@ -355,10 +380,13 @@ Once we have decided which row we want to keep, we can use `.drop()`
 that we learned in the previous Module to remove it from our original
 dataframe.
 
+For this example, we are going to drop the row at index 1 which has a
+calorie value of 130.
+
 We use the argument `axis=0` which refers to the rows in the dataframe
-and `index` which specifies the row index that we want to drop. In this
-case we are going to drop the row with calories equal to 130, which is
-index `1`.
+and `index` which specifies the row index that we want to drop.
+
+This just means we are *“droping a row with index 1”*.
 
 ---
 

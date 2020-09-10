@@ -8,17 +8,15 @@ Notes: <br>
 
 ---
 
-Instead of converting a long dataframe to a wider one as we do in
-`.pivot()`, we do the opposite and convert a wide dataframe into a
-longer one.
-
 <center>
 
 <img src='/module3/melt_piv.png' width="80%">
 
 </center>
 
-Notes: In the last section we discussed how `pandas` provides 2
+Notes:
+
+In the previous slide decks we discussed how `pandas` provides 2
 functions for reshaping data;
 <a href="https://pandas.pydata.org/docs/reference/api/pandas.melt.html" target="_blank">`.melt()`</a>
 and
@@ -27,6 +25,10 @@ and
 
 We are going to spend this next section discussing `.melt()` which is
 simply the reverse transformation of `.pivot()`.
+
+Instead of converting a long dataframe to a wider one as we do in
+`.pivot()`, we do the opposite and convert a wide dataframe into a
+longer one.
 
 ---
 
@@ -97,11 +99,13 @@ Notes:
 
 Let’s attempt to melt the `calories` and `protein` columns into a single
 one named `nutrition` with the values expressed in a column named
-`value`. Exactly like we started with when we used `.pivot()` in the
-last section.
+`value`.
 
-It’s not quite in the same order, but we can agree that its what we
-want.
+This is the dataframe exactly like we started with when we used
+`.pivot()` in the last section.
+
+After melting we can see that the rows are not quite in the same order
+as before, but we can agree that its what we want.
 
 ---
 
@@ -125,9 +129,12 @@ Let’s try to understand what happened.
 
   - The identifying column and the columns we wanted to keep, are
     specified in the `id_vars` argument.
+
   - the columns `calories` and `protein` are called in `value_vars` and
     melted down into a single column named `nutrition`.
+
   - We named the new column using the argument `var_name`.
+
   - The calorie and protein measurements are housed in the new column
     named `value` that we name using the `value_name` argument.
 

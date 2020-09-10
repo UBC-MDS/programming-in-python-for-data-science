@@ -161,7 +161,7 @@ We create a string containing the suit (`♥️`) and the face (`Queen`) of this
 
 Notes: 
 
-Since we finish all the code in the inner loop's second iteration we can move on the third element in list `faces` which is `King`:
+Since we finish all the code in the inner loop's second iteration we can move on the third element in list `faces` which is `King`.
 
 ---
 

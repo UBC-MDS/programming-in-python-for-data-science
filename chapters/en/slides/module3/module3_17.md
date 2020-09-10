@@ -2,7 +2,7 @@
 type: slides
 ---
 
-# Concatenating dataframes
+# Concatenation
 
 Notes: <br>
 
@@ -10,19 +10,27 @@ Notes: <br>
 
 There are 2 different verbs we will use for joining dataframes together:
 
-  - <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.concat.html" target="_blank">`.concat()`</a>;
+  - <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.concat.html" target="_blank">`pd.concat()`</a>
+
+  - <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.merge.html" target="_blank">`.merge()`</a>
+
+Notes: Up until this moment, we have been working with a single
+dataframe.
+
+Many organizations split their data into multiple tables and join them
+together depending on what columns they need for their analysis.
+
+There are 2 different verbs we will use for joining dataframes together:
+
+  - <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.concat.html" target="_blank">`pd.concat()`</a>;
     A forceful way of joining dataframes across rows or columns. A
     useful analogy is the gluing or taping of 2 pieces of paper together
     so the shapes match up.
+
   - <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.merge.html" target="_blank">`.merge()`</a>
     A more precision based approach for combining data on common columns
     or indices. This can be compared to stitching fabric together so
     that the pattern/print lines up.
-
-Notes: Up until this moment, we have been working with a single
-dataframe. Many organizations split their data into multiple tables and
-join them together depending on what columns they need for their
-analysis.
 
 ---
 
@@ -37,9 +45,13 @@ analysis.
 Notes:
 
 Concatenation works extremely well when you have similar dataframes
-which both share identical column or row index labels.  
-`.concat()` can glue the 2 dataframes together either horizontally or
+which both share identical column or row index labels.
+
+`pd.concat()` can glue the 2 dataframes together either horizontally or
 vertically.
+
+In this animation you can see that the peices are joined in the order
+that was presented and the pattern does not necessarily match up.
 
 ---
 

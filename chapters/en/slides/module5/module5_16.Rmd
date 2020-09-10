@@ -133,9 +133,6 @@ This small change helped us adhere to the DRY principle and avoided repeating re
 
 ## Break
 
-
-
-
 ```{python}
 item_list = [25, 13, 21, 8, 17, 11, 4]
 
@@ -152,7 +149,7 @@ for item in item_list:
 
 Notes: 
 
-There are occasions where we may want to save on time by not iterating over an entire sequence.  
+There are occasions where we may want to stop iterating over an entire sequence once a condition is met.  
 
 Perhaps we only need to find one number that is `10 or less` in a list. 
 

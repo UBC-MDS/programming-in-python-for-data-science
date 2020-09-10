@@ -126,8 +126,8 @@ between 10 and 20
 
 Notes:
 
-There are occasions where we may want to save on time by not iterating
-over an entire sequence.
+There are occasions where we may want to stop iterating over an entire
+sequence once a condition is met.
 
 Perhaps we only need to find one number that is `10 or less` in a list.
 

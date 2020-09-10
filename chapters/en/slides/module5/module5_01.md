@@ -2,7 +2,7 @@
 type: slides
 ---
 
-# Making choices with conditionals
+# Making choices with conditional statements
 
 Notes:
 
@@ -39,7 +39,8 @@ that Python offers.
 It’s at this point in the course where we learn how to ask Python to
 make a decision, depending on conditions.
 
-We did something similar when we filtered a dataframe using condition.
+We did something similar when we filtered a dataframe using conditions
+like finding all the rows with a specific column value.
 
 ---
 
@@ -74,8 +75,8 @@ We use a verb called `print()` that simply prints the object or string
 set as an argument.
 
 We can see that since the object `my_name` is equal to `hayley`, the
-output is `My name is Hayley too`, followed by regular unconditioned
-code `Nice to meet you!`.
+output is `My name is Hayley too`, followed by the regular non
+conditional code `Nice to meet you!`.
 
 ---
 
@@ -92,7 +93,7 @@ since it evaluates to `True`, it prints the code under the statement
 which is `'My name is Hayley too!'`
 
 Python passes the other `print()` statements from the `elif` and `else`
-conditions and continues to run the rugular code `'Nice to meet you!`.
+conditions and continues to run the regular code `'Nice to meet you!`.
 
 ---
 
@@ -118,7 +119,7 @@ Notes:
 
 Now what happens if the object is equal to something else?
 
-This time, The object `my_name` has a value now of `Totoro`.
+This time, the object `my_name` has a value now of `Totoro`.
 
 We see the output is `Interesting, I loved that movie! Nice to meet
 you!`
@@ -139,8 +140,8 @@ Python ignores the code under the first condition `if my_name.lower() ==
 'hayley'` since it evaluates to `False`.
 
 Instead, Python continues to the next condition `elif my_name.lower() ==
-'totoro'`which is `True` and executes the code under it which prints
-`'Interesting, I loved that movie!'`.
+'totoro'`which is `True`. It then executes the code under it which
+prints `'Interesting, I loved that movie!'`.
 
 Python then skips over the next lines of code and goes straight to
 printing `'Nice to meet you!'`.
@@ -170,7 +171,7 @@ Notes:
 Now we try something that meets neither the first or second conditions.
 
 When `my_name` is equal to `Desmond`, the first 2 conditions both
-evaluate to `False` and the last condition executesand prints `That's a
+evaluate to `False` and the last condition executes and prints `That's a
 great name.`.
 
 It executes the regular code `print('Nice to meet you!')` just like
@@ -186,8 +187,9 @@ before.
 
 Notes:
 
-Here we see that neither the first or second conditions are met however,
-the print statement is executed.
+Here we see that neither the first or second conditions are met so the
+`else` condition is executed before printing the regular non conditioned
+code.
 
 ---
 
@@ -544,8 +546,8 @@ magnitude
 ```
 
 ``` python
-list_size = "Greater than 10" if item > 10 else "10 or less"
-list_size
+magnitude = "Greater than 10" if item > 10 else "10 or less"
+magnitude
 ```
 
 ```out
@@ -568,7 +570,7 @@ single one.
 
 Both syntaxes are acceptable depending on your preference.
 
-This type of syntaxes is only possible for decisions that involve only
+This type of syntax is only possible for decisions that involve only
 `if` and `else` conditions.
 
 ---
