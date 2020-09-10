@@ -48,11 +48,9 @@ type: slides
 
 # More Advanced String Processing
 
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
+Notes: 
+
+<br>
 
 ---
 
@@ -215,9 +213,8 @@ Notes: Script here
 
 ---
 
-# Let’s practice what we learned!
+# Let’s apply what we learned!
 
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
+Notes: 
+
+<br>

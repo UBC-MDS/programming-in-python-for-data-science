@@ -2,26 +2,15 @@
 type: slides
 ---
 
-# Multi-dimensional Arrays
+# Multi-dimensional arrays
 
-Notes: Script here
+Notes:
 
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+<br>
 
 ---
 
 ## Creating 2D Arrays
-
-We saw in the last set of slides that we can create 1D arrays using a
-number of different functions such as `np.array()`:
 
 ``` python
 my_array = np.array((1, 2, 3, 4))
@@ -31,9 +20,6 @@ my_array
 ```out
 array([1, 2, 3, 4])
 ```
-
-We can also use the same functions to make multi-dimensional arrays
-which are indicated by the multiple sets of square brackets `[[ ]]`:
 
 ``` python
 list_2d = [[1, 2], [3, 4], [5, 6]]
@@ -47,27 +33,18 @@ array([[1, 2],
        [5, 6]])
 ```
 
-In our 1D arrays our arrays only have a single set of square brackets
+Notes:
+
+We saw in the last set of slides that we can create 1D arrays using a
+number of different functions such as `np.array()`.
+
+We can also use the same functions to make multi-dimensional arrays
+which are indicated by the multiple sets of square brackets `[[ ]]`.
+
+In our 1D arrays, our arrays only have a single set of square brackets
 whereas in multi-dimensional arrays we count multiple sets.
 
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
 ---
-
-Some of the functions that we use to create arrays have the ability for
-us to specify them with multi-dimensions. `np.zeros()` is an function
-that accepts a tuple with the shape of our desired array. In this case,
-an array with 3 rows and 4 columns:
 
 ``` python
 np.zeros((3,4))
@@ -79,23 +56,16 @@ array([[0., 0., 0., 0.],
        [0., 0., 0., 0.]])
 ```
 
-In contract with `np.zeros()`, `np.random.rand()` accepts multiple
-numeric values that correspond to the arrays shape. So in the example
-below, an array with 4 rows and 2 columns.
-
 ``` python
 np.random.rand(4, 2) 
 ```
 
 ```out
-array([[0.92541364, 0.77530621],
-       [0.35958473, 0.00160487],
-       [0.79787287, 0.56597663],
-       [0.68049311, 0.47256624]])
+array([[0.12184308, 0.39989954],
+       [0.84359779, 0.92901664],
+       [0.77012836, 0.14674105],
+       [0.75233526, 0.44412372]])
 ```
-
-We can also use the verb `.reshape()` to tranform a 1D array into a
-multi-dimension array:
 
 ``` python
 np.arange(0,12).reshape(3,4)
@@ -107,30 +77,42 @@ array([[ 0,  1,  2,  3],
        [ 8,  9, 10, 11]])
 ```
 
-Notes: Script here
+Notes:
 
-<html>
+Some of the functions that we use to create arrays have the ability for
+us to specify them with multi-dimensions.
 
-<audio controls >
+`np.zeros()` is an function that accepts a tuple with the shape of our
+desired array.
 
-<source src="/placeholder_audio.mp3" />
+In this case, an array with 3 rows and 4 columns.
 
-</audio>
+In contract with `np.zeros()`, `np.random.rand()` accepts multiple
+numeric values that correspond to the arrays shape.
 
-</html>
+So in the example, an array with 4 rows and 2 columns.
+
+We can also use the verb `.reshape()` to tranform a 1D array into a
+multi-dimension array.
 
 ---
 
 ## Array Shapes
 
-We saw how to make multi-dimensional arrays but dimension is quite
-different than what the shape of an array is.
-
 <center>
 
-<img src='/module8/arrays2.png' width="80%">
+<img src='/module8/arrays2.png' width="75%">
 
 </center>
+
+  - `.ndim`
+  - `.shape`
+  - `.size`
+
+Notes:
+
+We saw how to make multi-dimensional arrays but dimension is quite
+different than what the shape of an array is.
 
 Here are three main array nouns we need to know to understand the
 characteristics of an array:
@@ -143,21 +125,7 @@ characteristics of an array:
   - `.size`: the total number of elements in an array (i.e., the product
     of `.shape`)
 
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
 ---
-
-`array1` is an example of a 1d array:
 
 ``` python
 array1 = np.ones(4)
@@ -168,9 +136,6 @@ array1
 array([1., 1., 1., 1.])
 ```
 
-We can use `.ndim` to check the number of dimensions and just as we
-suspected it is 1:
-
 ``` python
 array1.ndim
 ```
@@ -178,8 +143,6 @@ array1.ndim
 ```out
 1
 ```
-
-We use `.shape` to find the number of elements in each dimension:
 
 ``` python
 array1.shape
@@ -189,33 +152,6 @@ array1.shape
 (4,)
 ```
 
-This returns a tuple with only 1 value which represents the 1 dimension.
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
-
-``` python
-array1
-```
-
-```out
-array([1., 1., 1., 1.])
-```
-
-Finally, `.size` will return the ***total*** number of values in the
-array.
-
 ``` python
 array1.size
 ```
@@ -224,21 +160,22 @@ array1.size
 4
 ```
 
-Notes: Script here
+Notes:
 
-<html>
+`array1` is an example of a 1d array.
 
-<audio controls >
+We can use `.ndim` to check the number of dimensions and just as we
+suspected it is 1.
 
-<source src="/placeholder_audio.mp3" />
+We use `.shape` to find the number of elements in each dimension.
 
-</audio>
+This returns a tuple with only 1 value which represents the 1 dimension.
+This value gives the number of elements in the dimension.
 
-</html>
+Finally, `.size` will return the ***total*** number of values in the
+array.
 
 ---
-
-Let’s try this again with a 2d array.
 
 ``` python
 array_2d = np.ones((3, 2))
@@ -251,11 +188,6 @@ array([[1., 1.],
        [1., 1.]])
 ```
 
-The number of square brackets in an array depicts how many dimensions an
-array consists of.
-
-We can confirm the number of dimensions with `ndim`:
-
 ``` python
 array_2d.ndim
 ```
@@ -264,9 +196,6 @@ array_2d.ndim
 2
 ```
 
-The shape of the array now consists of two elements, one for each
-dimension:
-
 ``` python
 array_2d.shape
 ```
@@ -274,30 +203,6 @@ array_2d.shape
 ```out
 (3, 2)
 ```
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
-
-``` python
-array_2d.shape
-```
-
-```out
-(3, 2)
-```
-
-And the size is the product of the values in `.shape`:
 
 ``` python
 array_2d.size
@@ -307,8 +212,28 @@ array_2d.size
 6
 ```
 
-If we have the `.shape` of the array, we can get both the `.ndim` of the
-array:
+Notes:
+
+Let’s try this again with a 2d array.
+
+We can confirm the number of dimensions with `ndim`.
+
+Here we have a 2 dimensional array as expected.
+
+The shape of the array now consists of two elements, one for each
+dimension.
+
+The size is the product of the values in `.shape`.
+
+---
+
+``` python
+array_2d.shape
+```
+
+```out
+(3, 2)
+```
 
 ``` python
 len(array_2d.shape)
@@ -318,8 +243,6 @@ len(array_2d.shape)
 2
 ```
 
-as well as the size:
-
 ``` python
 np.prod(array_2d.shape)
 ```
@@ -328,24 +251,16 @@ np.prod(array_2d.shape)
 6
 ```
 
-Notes: Script here
+Notes:
 
-<html>
+If we have the `.shape` of the array, we can get both the `.ndim` of the
+array with `len()`,
 
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+as well as the size by taking the product of the elements.
 
 ---
 
 ## Indexing and Slicing 2D arrays
-
-Slicing 2D arrays can be compared to slicing pandas dataframes (without
-the `.iloc[]`).
 
 ``` python
 arr2 = np.arange(0,12).reshape(3,4)
@@ -358,9 +273,6 @@ array([[ 0,  1,  2,  3],
        [ 8,  9, 10, 11]])
 ```
 
-Let’s say we want to select `6`. It’s located in row 1 and column 2
-(remember that the index includes 0).
-
 ``` python
 arr2[1, 2]
 ```
@@ -368,9 +280,6 @@ arr2[1, 2]
 ```out
 6
 ```
-
-We could also do the same thing using this notation, but it’s not
-recommended.
 
 ``` python
 arr2[1][2]
@@ -380,17 +289,16 @@ arr2[1][2]
 6
 ```
 
-Notes: Script here
+Notes:
 
-<html>
+Slicing 2D arrays can be compared to slicing pandas dataframes (without
+the `.iloc[]`).
 
-<audio controls >
+Let’s say we want to select `6`. It’s located in row 1 and column 2
+(remember that the index includes 0).
 
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+We could also do the same thing by putting the row and column index in
+separate square brackets but it’s not recommended.
 
 ---
 
@@ -400,9 +308,6 @@ array([[ 0,  1,  2,  3],
        [ 8,  9, 10, 11]])
 ```
 
-If we want a complete row of the array, we can specify with a single
-number:
-
 ``` python
 arr2[2]
 ```
@@ -411,9 +316,6 @@ arr2[2]
 array([ 8,  9, 10, 11])
 ```
 
-And if we only want a single column we can use the same syntax we used
-with `.iloc[]`:
-
 ``` python
 arr2[:,2]
 ```
@@ -421,10 +323,6 @@ arr2[:,2]
 ```out
 array([ 2,  6, 10])
 ```
-
-We can obtain specific slices by using a colon as well. If we only
-wanted the first 2 rows and the last 3 columns, we could do the
-following:
 
 ``` python
 arr2[:2,1:]
@@ -435,17 +333,23 @@ array([[1, 2, 3],
        [5, 6, 7]])
 ```
 
-Notes: Script here
+Notes:
 
-<html>
+If we want a complete row of the array, we can specify with a single
+number.
 
-<audio controls >
+Here, we select the last row at index 2 that has the elements 8, 9, 10,
+and 11.
 
-<source src="/placeholder_audio.mp3" />
+If we only want a single column, we can use the same syntax we used with
+`.iloc[]`.
 
-</audio>
+This code selects the column at index 2, with the values 2, 6, and 10.
 
-</html>
+We can obtain specific slices by using a colon as well.
+
+If we only wanted the first 2 rows and the last 3 columns, we could do
+the following.
 
 ---
 
@@ -454,10 +358,6 @@ array([[ 0,  1,  2,  3],
        [ 4,  5,  6,  7],
        [ 8,  9, 10, 11]])
 ```
-
-We can take the
-<a href=" https://en.wikipedia.org/wiki/Transpose" target="_blank">***transpose***</a>
-of the array by using `.T`:
 
 ``` python
 arr2.T
@@ -469,10 +369,6 @@ array([[ 0,  4,  8],
        [ 2,  6, 10],
        [ 3,  7, 11]])
 ```
-
-This converts the columns to rows and the columns to rows.
-
-We can replace values in an array with the assignment operator:
 
 ``` python
 
@@ -486,26 +382,24 @@ array([[    0,     1,     2,     3],
        [    8,     9,    10,    11]])
 ```
 
-Notes: Script here
+Notes:
 
-<html>
+If we want to
+<a href=" https://en.wikipedia.org/wiki/Transpose" target="_blank">***transpose***</a>
+our array we can use the verb, `.T`.
 
-<audio controls >
+This converts the columns to rows and the columns to rows.
 
-<source src="/placeholder_audio.mp3" />
+We can replace values in an array by specifying the element we wish to
+replace in square brackets on the left side of the assignment operator
+and our new desired value on the right of it.
 
-</audio>
-
-</html>
+Here we can see that that value 5, was replaced with 77,777.
 
 ---
 
-# Let’s practice what we learned\!
+# Let’s apply what we learned\!
 
-Notes: Script here
+Notes:
 
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
+<br>

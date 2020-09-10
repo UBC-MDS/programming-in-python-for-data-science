@@ -28,7 +28,7 @@ export default ({ lang = 'en' }) => {
                                         <p>
                                         <center>
                                         Welcome to Programming in Python for Data Science !
-                                        This course is part of ABC’s Mid-Careers Learning program and will teach you how to conduct data analysis in Python.
+                                        This course is part of the Key Capabilities for Data Science program and will teach you how to conduct data analysis in Python.
                                         During the course,
                                         you will work with powerful Python packages made for data-science,
                                         including Pandas for processing tabular data,

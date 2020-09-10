@@ -6,11 +6,6 @@ type: slides
 
 Notes: In this module you will learn about Python conditionals and the fundamentals of loops. 
 
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
-
 ---
 
 # Module Learning Outcomes
@@ -23,18 +18,14 @@ By the end of the module, students are expected to:
 - Describe the expected outcome of code with nested loops.
 - Define and use a function that accepts parameters and returns values.
 
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
+Notes: 
+
+<br>
 
 ---
 
 # Let's Start!
 
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
+Notes:
+
+<br>

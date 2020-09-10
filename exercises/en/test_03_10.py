@@ -9,5 +9,6 @@ def test():
     assert ".pivot" in __solution__, "Make sure you are using the pivot function."
     assert "reset_index" in __solution__, "Are you resetting the index using .reset_index()?"
     assert "set_num" in __solution__, "Are you setting the index to 'set_num'?"
+    assert list(tidied_lego.column) == ['set_num', 'num_parts', 'theme_id'], "Are you naming all your new columns properly?"
     assert set_parts_mean[0] == 162.0, "The mean value is incorrect. Are you using the .mean() function?"
     __msg__.good("Nice work, well done!")

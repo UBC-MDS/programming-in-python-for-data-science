@@ -4,12 +4,9 @@ type: slides
 
 # Module Learning Outcomes
 
-Notes: In this module, you will learn how to import different types of files, perform more advanced table manipulations (modifying and creating new columns) as well as method chaining conventions (style, including multi-line).
+Notes: 
+In this module, you will learn how to import different types of files, perform more advanced table manipulations (modifying and creating new columns) as well as method chaining conventions (style, including multi-line).
 
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
 
 ---
 
@@ -27,17 +24,13 @@ By the end of the module, students are expected to:
 
 
 Notes:
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html> 
+
+<br>
 
 ---
 
 # Let's Start!
 
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
+Notes:
+
+<br>

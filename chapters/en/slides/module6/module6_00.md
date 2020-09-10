@@ -6,10 +6,6 @@ type: slides
 
 Notes: In this module you will expand your knowledge on functions and the best practices when developing functions and code.
 
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
 
 ---
 
@@ -27,18 +23,14 @@ By the end of the module, students are expected to:
 - Use test-driven development principles to define a function that accepts parameters, returns values and passes all tests.
 - Handle errors gracefully via exception handling.
 
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
+Notes:
+
+<br>
 
 ---
 
 # Let's Start!
 
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
+Notes:
+
+<br>

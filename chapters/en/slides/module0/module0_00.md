@@ -4,11 +4,8 @@ type: slides
 
 # Welcome 
 
-Notes: Welcome to Programming in Python for Data Science  
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
+Notes: 
+Welcome to Programming in Python for Data Science.
 
 ---
 
@@ -31,18 +28,14 @@ Notes: Welcome to Programming in Python for Data Science
 
 
 Notes:
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
+
+<br>
  
 ---
 
 # Let's Learn Programming in Python for Data Science  
 
-Notes: This course is designed to give you a solid foundation of coding in Python. No prior python knowledge is needed for this course. 
+Notes: This course is designed to give you a solid foundation of coding in Python. 
 
-<html>
-<audio controls >
-  <source src="/module0/511_Module0.mp3" />
-</audio></html>
+No prior python knowledge is needed for this course. 
+

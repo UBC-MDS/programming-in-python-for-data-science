@@ -51,33 +51,41 @@ type: slides
 
 # NumPy and 1D Arrays
 
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
+Notes: 
+
+<br>
 
 ---
 
-Although we have not formally introduced you to NumPy, the name may sound familiar since we've been subtly hinting at its existence for a little while now. In the last Module, we've had you import this library for practice. 
 
 ```{python}
 import numpy as np
 ```
 
 
+
+Notes: 
+
+Although we have not formally introduced you to NumPy, the name may sound familiar since we've been subtly hinting at its existence for a little while now. 
+
+In the last Module, we've had you import this library for practice. 
+
 So what is NumPy? 
-
-
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
 
 ---
 
 ## What is NumPy?
+
+**NumPy** -> **"Numerical Python extensions"**.
+
+
+NumPy offers: 
+
+- Arrays
+- Mathematical Constants
+- Mathematical Functions
+
+Notes: 
 
 The name NumPy is derived from **"Numerical Python extensions"**.
 
@@ -85,17 +93,11 @@ NumPy is a Python library used primarily for computing involving numbers. It is 
 
 In addition, NumPy also offers numerous other mathematical functions used in the domain of Linear Algebra and Calculus.
 
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
-
 ---
 
 ## So What is an Array? 
 
-A NumPy array is somewhat like a list:
+
 
 ```{python}
 my_list = [1, 2, 3, 4, 5]
@@ -107,59 +109,59 @@ my_array = np.array((1, 2, 3, 4, 5))
 my_array
 ```
 
-And arrays are considered their own data type:
-
 ```{python}
 type(my_array)
 ```
 
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
+Notes:
+
+A NumPy array is somewhat like a list.
+
+They are considered their own data type.
+
+We can see this by using `type` on an array. 
+
 
 ---
 
-However, we'll start to see that although lists and arrays appear quite similar, they have some key differences. 
-A list can contain multiple data types: 
+
 
 ```{python}
 my_list = [1,"hi"]
 ```
 
-An array cannot: 
+
 ```{python}
 my_array = np.array((1, "hi"))
 my_array
 ```
-In this case, `1` was converted to `'1'` which is now a string. 
 
 
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
+
+Notes: 
+
+Soon, we'll start to see that although lists and arrays appear quite similar, they have some key differences. 
+
+A list can contain multiple data types, while an array cannot.
+
+In this case, `1` was converted to a `'1'` in quotations which signifies that it is now a string. 
 
 ---
 
 ## Creating 1D Arrays 
 
-We can make them from lists as well as tuples:
+
 
 ```{python}
 my_array = np.array([1, 2, 3, 4])
 my_array
 ```
 
-There are also several built-in NumPy functions that create different arrays with patterns and requirements.
 
-`np.zeros()` will create an array containing `0` for each element and the input argument specifies the size:
 ```{python}
 np.zeros(10)
 ```
-Similarly, `np.ones()` does the same thing except with an array of elements with `1` values:
+
 
 ```{python}
 np.ones(4)
@@ -167,58 +169,65 @@ np.ones(4)
 
 
 
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
+Notes:
+
+We can make arrays from lists as well as tuples.
+
+There are also several built-in NumPy functions that create different arrays with patterns and requirements.
+
+`np.zeros()` will create an array containing `0` for each element and the input argument specifies the size.
+
+Here we specified 10 so our array has 10 elements.
+
+Similarly, `np.ones()` does the same thing except with an array of elements with `1` values. 
+
+Now we've specified 4 as the input and so this array has 4 elements. 
 
 ---
-
-
-`np.arange()` similarly to `range()` can take 1, 2 or 3 input arguments and will produce an array in a similar way that `range()` produces a sequence. 
 
 ```{python}
 np.arange(5)
 ```
 
-If there are 3 input arguments, the first 2 are where the interval values start and stop respectively and the third argument gives the step sizr between values: 
+
 ```{python}
 np.arange(0, 10, 2) 
 ```
 
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
+Notes: 
+
+`np.arange()` similarly to `range()` can take 1, 2 or 3 input arguments and will produce an array in a similar way that `range()` produces a sequence. 
+
+If there are 3 input arguments, the first 2 are where the interval values start and stop respectively and the third argument gives the step size between values.
 
 ---
 
-`np.linspace()` will produce an array containing the number of elements specified by the 3rd argument's value, containing values between the first 2 arguments values. 
-Example: 20, equally spaced values from 1 to 5:
 ```{python}
-np.linspace(1,5,20)
+np.linspace(1,5,10)
 ```
-The elements in `np.linspace()` arrays are defaulted to type `float`.    
-We can also produce an array with random values using `np.random.rand()`.          
-Example: Random numbers uniformly distributed from 0 to 1
+
 ```{python}
 np.random.rand(5) 
 ```
 
 
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
+Notes: 
+
+
+`np.linspace()` will produce an array containing the number of elements specified by the 3rd argument's value, containing values between the first 2 arguments values. 
+
+For example: this code will produce 10, equally spaced values from 1 to 5.
+
+Notice the elements in `np.linspace()` arrays are defaulted to type `float`.    
+
+We can also produce an array with random values using `np.random.rand()`.    
+
+Here, we have random numbers uniformly distributed from 0 to 1.
 
 ---
 
 ## Elementwise operations 
 
-We discussed that array and lists are similar but not quite the same. Arrays are design for convenience mathematically so  arrays operate in an elementwise manner. When we do operations, the operation is done to each element in the array. 
 
 ```{python}
 array1 = np.ones(4)
@@ -236,21 +245,29 @@ array1 + array2
 array1 * array2
 ```
 
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
+Notes: 
+
+Let's talk about how operations are calculated with arrays.
+
+We discussed that array and lists are similar but not quite the same.
+
+Arrays are design for convenience mathematically so arrays operate in an element-wise manner.
+
+When we do operations, the operation is done to each element in the array. 
+
+If we add to our array, 1 is added to each element in the array. 
+
+If we add two arrays together, the element at identical index positions are added. 
+
+Similarly, if we multiply 2 arrays together, the index at each position are multiplied together. 
 
 ---
-
-This is much more convenient than using list. 
 
 ```{python}
 list_1 = [ 1, 1, 1, 1]
 ```
 
-We can't simply add 1 to list:
+
 
 ```{python eval=FALSE}
 list_1 + 1
@@ -264,15 +281,16 @@ Detailed traceback:
 ```
 
 
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
+Notes: 
+
+This is much more convenient than using list. 
+
+We can't simply add 1 to a list. Instead we get an error
+
 
 ---
 
-If we wanted the same operations done with lists we would have to use a loop or list comprehension: 
+
 ```{python}
 list_1 = [ 1, 1, 1, 1]
 
@@ -292,16 +310,15 @@ list_3
 
 
 
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
+Notes: 
+
+If we wanted the same operations done with lists we would have to use a loop or list comprehension to obtain the same results.
 
 ---
+
 ## Slicing and Indexing 1D Arrays 
 
-When it comes to slicing, 1D arrays are sliced in the same manner that lists are.
+
 ```{python}
 arr = np.arange(10)
 arr
@@ -310,66 +327,67 @@ arr
 ```{python}
 arr[7]
 ```
-The first value is included and the last value is excluded:
+
 ```{python}
 arr[2:6]
 ```
-To obtain elements from right to left, we use negative integers:
+
 ```{python}
 arr[-1]
 ```
 
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
+Notes: 
+
+When it comes to slicing, 1D arrays are sliced in the same manner that lists are.
+
+We can obtain an individual location by putting the index position in square brackets. 
+
+And just like slicing dataframes with `.iloc[]`, when we want and interval of values, the first value in the bracket is included and the last value is excluded.
+
+To obtain elements from right to left, we use negative integers.
+
 
 ---
 
 ## Boolean Indexing 
 
-Let's take a 1D array that consists of 10 elements. 
+
 ```{python}
 grade_array = np.array([98,87,103, 92,67, 107, 78, 104, 85, 105])
 grade_array
 ```
-Remember that when we do most operations, it occurs in an element-wise manner:
-```{python}
-grade_array + 1000
-```
-
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
-
----
-
-Perhaps we are grading exams that contain bonus marks. The max possible allowed mark on the exam is 100% so we must cap the grades so any mark greater than 100 is set to 100. First we check which values are greater than 100. This produces an array containing Boolean  values which we name `threshold`:
 
 ```{python}
 threshold = np.array([98,87,103, 92,67, 107, 78, 104, 85, 105]) > 100
 threshold
 ```
-The first and second elements are False since bother 98 and 87 and not larger than 100. However, the 3rd element is  true since 103 is larger than 100. 
 
-We now can replace all those values that have a `True` Boolean, with a new value, in this case let's assign them a value of 100, the maximum possible allowed grade:
 
 ```{python}
 grade_array[threshold] = 100
 grade_array
 ```
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
+Notes: 
+
+Let's now explore Boolean indexing. 
+
+Let's take a 1D array that consists of 10 elements. 
+
+Remember that when we do most operations, it occurs in an element-wise manner. 
+
+Perhaps we are grading exams that contain bonus marks. 
+
+The max possible allowed mark on the exam is 100% so we must cap the grades so any mark greater than 100 is set to 100. First we check which values are greater than 100. 
+
+This produces an array containing Boolean values which we store in the object `threshold`.
+
+The first and second elements are `False` since both 98 and 87 and not larger than 100. However, the 3rd element is `True` since 103 is larger than 100. 
+
+We now can replace all those values that have a `True` Boolean, with a new value, in this case let's assign them a value of 100, the maximum possible allowed grade.
 
 ---
 
-We could also shorten the whole process and avoided making `threshold` by using the following code:
+
 ```{python}
 new_grade_array = np.array([98,87,103, 92,67, 107, 78, 104, 85, 105])
 new_grade_array
@@ -379,59 +397,56 @@ new_grade_array
 new_grade_array[new_grade_array > 100] = 100
 new_grade_array
 ```
-You'll notice that we use similar filtering square bracket notation that we did using pandas! 
 
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
+
+Notes: 
+
+We could also shorten the whole process and avoid making `threshold` by using the following code.
+
+You'll notice that we use similar filtering square bracket notation that we did using pandas! 
 
 ---
 
 ## Why NumPy?
 
-- Lists are often used with a similar purpose of arrays, but they are slow to process.
-
-- Because of this, NumPy is used to create many other structures. 
-- In fact, let's refresh ourselves on certain values in a dataframe:
 
 
 ```{python}
 cereal.head()
 ```
-Remember when we obtained the data type of a specific value in a dataframe? 
+
 ```{python}
 type(cereal.loc[3,'calories'])
 ```
-We obtained this `<class 'numpy.int64'>` which we originally ignored. What's going on here? 
 
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
-
---- 
-
-We can actually convert an entire pandas column into an array pretty easily using `np.to_numpy()`: 
 ```{python}
 cereal['calories'].to_numpy()
 ```
-This is because a pandas dataframe is built off of a multidimensional (2D specifically) array! We will explain more about multi-dimensional arrays in the next set of slides.  
 
+Notes:
 
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
+So why NumPy?
+
+Lists are often used with a similar purpose of arrays, but they are slow to process.
+
+Because of this, NumPy is used to create many other structures. 
+
+In fact, let's refresh ourselves on certain values in a dataframe.
+
+Remember when we obtained the data type of a specific value in a dataframe? 
+
+We obtained this `<class 'numpy.int64'>` which we originally ignored. 
+
+This is because a pandas dataframe is built off of a multidimensional (2D specifically) array! 
+
+We will explain more about multi-dimensional arrays in the next set of slides.  
+
+We can actually convert an entire pandas column into an array pretty easily using `np.to_numpy()`.
 
 --- 
 
 ## NumPy Constants and Functions 
 
-NumPy also offers an assortment of handy mathematical constants and functions. 
 
 <img src='/module8/pi.gif'  alt="404 image"/>
 ```{python}
@@ -446,44 +461,41 @@ np.inf
 np.e
 ```
 
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
+Notes: 
+
+NumPy also offers an assortment of handy mathematical constants and functions. 
 
 --- 
 
 ## NumPy Functions 
 
-`np.prod()` calculates the product of values in an array:
+
 ```{python}
 np.prod([2, 3, 1])
 ```
 
-And `np.diff()` calculates the difference between element (left element subtracted from the right element):
+
 ```{python}
 np.diff([2, 5, 20])
 ```
 
-Other functions such as `np.log()` or trigonometric ones are also available too: 
 
 ```{python}
 np.log10(100)
 ```
-The full list of mathematical functions are available at the <a href="https://numpy.org/doc/stable/reference/routines.math.html" target="_blank">NumPy website</a>.
 
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
+The full list of mathematical functions are available at this <a href="https://numpy.org/doc/stable/reference/routines.math.html" target="_blank">NumPy website</a>.
+
+Notes: 
+
+NumPy's functions include but are not limited to:
+
+- `np.prod()` which calculates the product of values in an array
+- `np.diff()` which calculates the difference between element (left element subtracted from the right element)
+- And other functions such as `np.log()` or trigonometric ones like `np.sin()`
 
 ---
 
-# Let’s practice what we learned!
+# Let’s apply what we learned!
 
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
+Notes: <br>

@@ -6,11 +6,6 @@ type: slides
 
 Notes: In this module you will learn how to import files from other directories and how to write code that is styled for optimal readability.
 
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
-
 ---
 
 # Module Learning Outcomes
@@ -26,18 +21,14 @@ By the end of the module, students are expected to:
 - Explain how the Python debugger can help rectify your code.
 
 
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
+Notes: 
+
+<br>
 
 ---
 
 # Let's Start!
 
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
+Notes: 
+
+<br>

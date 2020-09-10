@@ -5,10 +5,7 @@ type: slides
 # Module Learning Outcomes
 
 Notes: In this module you will be introduced to dataframes, the Python Pandas package and learn how to manipute data.
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
+
 
 ---
 
@@ -28,17 +25,13 @@ By the end of the module, students are expected to:
 - Create a `.csv` file from a dataframe using `.to_csv()`.
 
 Notes: 
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
+
+<br>
 
 ---
 
 # Let's Start!
 
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
+Notes:
+
+<br>

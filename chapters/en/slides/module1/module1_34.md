@@ -4,11 +4,9 @@ type: slides
 
 # What did we learn and what to expect in assignment 1
 
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
+Notes: 
+
+<br>
 
 ---
 
@@ -30,10 +28,8 @@ Students are now expected to be able to:
 
 
 Notes:
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
+
+<br>
 
 
 ---
@@ -46,11 +42,9 @@ The assignment will concentrate not only on the learning objectives above but al
 - Understanding cells
 - Creating Markdown cells and coding cells
 
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
+Notes: 
+
+<br>
 
 ---
 
@@ -62,20 +56,15 @@ The cereal dataset:
 under [Creative Commons Attribution-ShareAlike 3.0 Unported](http://creativecommons.org/licenses/by-sa/3.0/)
 
 
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
+Notes: 
+
+<br>
 
 ---
 
 
 # On to Assignment 1!
 
-Notes: Insert audio here.
+Notes: 
 
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
+<br>

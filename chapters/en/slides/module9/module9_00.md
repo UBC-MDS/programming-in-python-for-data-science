@@ -4,11 +4,9 @@ type: slides
 
 # Congratulations on completing Programming in Python for Data Science!
 
-Notes: Script here
-<html>
-<audio controls  style="width: 100%;">
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
+Notes: 
+
+<br>
 
 ---
 
@@ -18,10 +16,8 @@ We covered a lot of ground but you managed to finished all 8 Modules. It's impor
 
 
 Notes:
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
+
+<br>
 
 ---
 
@@ -31,19 +27,17 @@ Not only did you put in a lot of work by completing this course, but many people
 
 Special thanks must be attributed to the following individuals and organizations:
 
-- Ines Montani
 - Elijah Willie 
+- Ines Montani
 - Tim Head
 - Joel Ostblom
 - Tom Beuzen 
 - The Master of Data Science Program at UBC
 - Our friends and family for supporting us and cheering us on!
 
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
+Notes:
+
+<br>
 
 ---
 
@@ -55,22 +49,17 @@ The cereal dataset:
 under [Creative Commons Attribution-ShareAlike 3.0 Unported](http://creativecommons.org/licenses/by-sa/3.0/)
 
 
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
+Notes: 
+
+<br>
 
 ---
 
 # Good luck on applying your new skills!
 
-Notes: Insert audio here.
+Notes: 
 
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
+<br>
 
 
 

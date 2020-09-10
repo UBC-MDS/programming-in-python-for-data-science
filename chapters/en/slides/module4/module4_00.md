@@ -6,10 +6,6 @@ type: slides
 
 Notes: In this module you will learn about the basics of Python. 
 
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
 
 ---
 
@@ -24,18 +20,12 @@ By the end of the module, students are expected to:
 - Identify which operations can be applied to different data types and columns dtypes. 
 
 
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
+Notes: <br>
 
 ---
 
 # Let's Start!
 
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
+Notes: 
+
+<br>

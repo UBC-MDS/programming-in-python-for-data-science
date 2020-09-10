@@ -4,19 +4,29 @@ type: slides
 
 # Working with Null Values
 
-Notes: Script here
+Notes:
 
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+<br>
 
 ---
+
+**Null**: The human-readable term of a value that is missing from the
+dataframe.
+
+``` python
+np.nan
+```
+
+```out
+nan
+```
+
+Missing values are sometimes referred to as `NA` values.
+
+In this course, we generally refer to them as both ***null*** and `NaN`
+values.
+
+Notes:
 
 In the real world of data analysis, it’s uncommon that we have a perfect
 dataset ready to be used. In fact, in most cases, cleaning and wrangling
@@ -29,43 +39,18 @@ dataframe. Remember in Module 4 we discussed `NaN` being of type
 `float`? Python translates null values in numerical columns to `NaN`.
 Well, `NaN` is a constant that comes from the NumPy library.
 
-``` python
-np.nan
-```
-
-```out
-nan
-```
-
 In some cases, missing values are sometimes referred to as `NA` values
-because of how they are handled in other programming languages. This is
-reflected in some of the names of the functions we use to handle them.
+because of how they are handled in other programming languages.
+
+This is reflected in some of the names of the functions we use to handle
+them.
 
 In this course, we generally refer to them as both ***null*** and `NaN`
 values.
 
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
 ---
 
 ## Info on missing values
-
-A good rule of thumb when conducting an analysis is to check early on
-how complete the dataset is. `.info()` is similar to `.dtypes` but in
-addition to the dtype of each column, it includes the total number of
-non-null values contained in each column.
-
-Let’s try it out on a subset of our `cereal` dataset:
 
 ``` python
 cereal.info()
@@ -87,30 +72,26 @@ dtypes: float64(2), int64(2), object(2)
 memory usage: 3.7+ KB
 ```
 
+Notes:
+
+A good rule of thumb when conducting an analysis is to check early on
+how complete the dataset is.
+
+`.info()` is similar to `.dtypes` but in addition to the dtype of each
+column, it includes the total number of non-null values contained in
+each column.
+
+Let’s try it out on a subset of our `cereal` dataset.
+
 Here we see the total number of rows at the top with `RangeIndex: 77
-entries, 0 to 76`. The `Non-Null Count` column specifies the number of
-non-null values. In this case, we have a complete dataframe with zero
-null values for each column.
+entries, 0 to 76`.
 
-Notes: Script here
+The `Non-Null Count` column specifies the number of non-null values.
 
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+In this case, we have a complete dataframe with zero null values for
+each column.
 
 ---
-
-Let’s take a look at a case where we are not so lucky. `cycling` is a
-subset of a dataset that contains the bicycling trips
-<a href="https://www.tomasbeuzen.com/" target="_blank">Tomas Beuzen</a>,
-a UBC postdoc rode his bike to campus and back during the fall 2019
-semester.
 
 ``` python
 cycling
@@ -131,21 +112,15 @@ cycling
 [33 rows x 6 columns]
 ```
 
-Notes: Script here
+Notes:
 
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+Let’s take a look at a case where we are not so lucky. `cycling` is a
+subset of a dataset that contains the bicycling trips
+<a href="https://www.tomasbeuzen.com/" target="_blank">Tomas Beuzen</a>,
+a UBC postdoc rode his bike to campus and back during the fall 2019
+semester.
 
 ---
-
-Using `.info()` with this new data we get the following:
 
 ``` python
 cycling.info()
@@ -167,26 +142,18 @@ dtypes: datetime64[ns](1), float64(1), int64(1), object(3)
 memory usage: 1.7+ KB
 ```
 
-We can see that there is a total of 33 entries (rows). We see that the
-`Distance` column only contains 30 non-null values out of a possible 33.
+Notes:
+
+Using `.info()` with this new data, we get the following.
+
+We can see that there is a total of 33 entries (rows).
+
+We see that the `Distance` column only contains 30 non-null values out
+of a possible 33.
+
 This would mean that 3 values are missing from this column.
 
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
 ---
-
-We can use `.isnull()` on a particular column to obtain a Boolean series
-indicating if each row is a null value:
 
 ``` python
 cycling['Distance'].isnull()
@@ -205,22 +172,12 @@ cycling['Distance'].isnull()
 Name: Distance, Length: 33, dtype: bool
 ```
 
-Notes: Script here
+Notes:
 
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+We can use `.isnull()` on a particular column to obtain a Boolean series
+indicating if each row is a null value.
 
 ---
-
-We can pair `.isnull()` with our filtering method to obtain the rows
-that contain null values in the `Distance` column of the dataframe:
 
 ``` python
 cycling[cycling['Distance'].isnull()]
@@ -233,11 +190,6 @@ cycling[cycling['Distance'].isnull()]
 24 2019-10-01 07:13:00  Morning Ride  Ride  1756       NaN  A little tired today but good weather
 ```
 
-Here, we see the 3 rows of our dataframe that contain null values.
-
-If we wanted to filter all the rows that contain null values and not
-just in the `Distance` column, we can use the verb `.any()`
-
 ``` python
 cycling[cycling.isnull().any(axis=1)]
 ```
@@ -249,55 +201,36 @@ cycling[cycling.isnull().any(axis=1)]
 24 2019-10-01 07:13:00  Morning Ride  Ride  1756       NaN  A little tired today but good weather
 ```
 
-We only have `NaN` values in the Distance column so the same 3 rows are
-outputted as before.
+Notes:
 
-Notes: Script here
+We can pair `.isnull()` with our filtering method to obtain the rows
+that contain null values in the `Distance` column of the dataframe.
 
-<html>
+Here, we see the 3 rows of our dataframe that contain null values.
 
-<audio controls >
+If we wanted to filter all the rows that contain null values and not
+just in the `Distance` column, we can use the verb `.any()` on the full
+dataframe.
 
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+We only have `NaN` values in the `Distance` column so the same 3 rows
+are outputted as before.
 
 ---
 
-Now that we have identified that our dataframe contains null values,
-what can we do about them?
-
-There are many complex procedures in handling values that are missing
-from a dataset, but we will discuss 2 simple options:
+We will be discussing the following 2 simple ways of working with
+missing values:
 
   - <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.dropna.html" target="_blank">`.dropna()`</a>
   - <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.fillna.html" target="_blank">`.fillna()`</a>
 
-Notes: Script here
+Notes:
 
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+Now that we have identified that our dataframe contains null values,
+what can we do about them?
 
 ---
 
 ## Dropping Null Values
-
-The easiest and simplest way of handling nulls values is to remove those
-rows from the dataset. In a fashion similar to dropping columns, we can
-drop rows, if they contain a `NaN` value. It’s important that we take
-some necessary precautions and not drop a large portion of the data.
-
-In our example above, if we were to remove the 3 rows we identified to
-contain `NaN` values, we do it in the following way:
 
 ``` python
 trips_removed = cycling.dropna()
@@ -319,26 +252,24 @@ trips_removed
 [30 rows x 6 columns]
 ```
 
+Notes:
+
+The easiest and simplest way of handling nulls values is to remove those
+rows from the dataset.
+
+In a fashion similar to dropping columns, we can drop rows, if they
+contain a `NaN` value.
+
+It’s important that we take some necessary precautions and not drop a
+large portion of the data.
+
+In our example above, if we were to remove the 3 rows we identified to
+contain `NaN` values, we do it in the following way.
+
 Notice that index 2 was removed and we only have 30 rows in our
 dataframe now.
 
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
 ---
-
-By default, all the rows with `NaN` values in any column will be
-considered when dropping rows; however, if we only want to drop rows
-with `NaN` values in certain columns, we can use the `subset` argument:
 
 ``` python
 cycling.dropna(subset=['Type'])
@@ -359,24 +290,17 @@ cycling.dropna(subset=['Type'])
 [33 rows x 6 columns]
 ```
 
-Here, we can see that no rows were dropped as there are no `NaN` values
-in the `Type` column.
+Notes:
 
-Notes: Script here
+By default, all the rows with `NaN` values in any column will be
+considered when dropping rows; however, if we only want to drop rows
+with `NaN` values in certain columns, we can use the `subset` argument.
 
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+Since in this code we subsetting the column `Type` which has no `NaN`
+values, no rows were dropped from the dataframe and we still have 33
+rows.
 
 ---
-
-But, the rows do get dropped when we subset on the `Distance` column.
 
 ``` python
 cycling.dropna(subset=['Distance'])
@@ -397,34 +321,20 @@ cycling.dropna(subset=['Distance'])
 [30 rows x 6 columns]
 ```
 
+Notes:
+
+The rows do get dropped when we subset on the `Distance` column.
+
 Alternatively if you have a column missing a large portion of data, the
 best option maybe to drop that column instead of the rows with missing
-values. This will keep more of your data instead of dropping and losing
-most of your data.
+values.
 
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+This will keep more of your data instead of dropping and losing most of
+your data.
 
 ---
 
 ## Replacing Null Values
-
-Alternately, if we have a small dataset and we don’t want to rid
-ourselves of any data, we may prefer to replace `NaN` with a particular
-value. We can do so with `.fillna()`.
-
-Perhaps it’s missing from the data because he didn’t cycle that
-particular day. Replacing the `NaN` value with 0 in this case would make
-sense:
 
 ``` python
 cycling_zero_fill = cycling.fillna(value=0)
@@ -446,24 +356,21 @@ cycling_zero_fill
 [33 rows x 6 columns]
 ```
 
+Notes:
+
+Alternately, if we have a small dataset and we don’t want to rid
+ourselves of any data, we may prefer to replace `NaN` with a particular
+value.
+
+We can do so with `.fillna()`.
+
+Perhaps it’s missing from the data because he didn’t cycle that
+particular day. Replacing the `NaN` value with 0 in this case would make
+sense.
+
 Now index 2 now has a `Distance` of `0.00`.
 
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
 ---
-
-Maybe a better decision would be to replace the values in `Distance`
-with the mean:
 
 ``` python
 cycling['Distance'].mean().round(2)
@@ -493,25 +400,17 @@ cycling_mean_fill
 [33 rows x 6 columns]
 ```
 
-We see the value in `Distance` for index 2 change to `12.67`.
+Notes:
 
-Notes: Script here
+Maybe a better decision would be to replace the values in `Distance`
+with the mean to avoid outliers.
 
-<html>
+First we can calculate the mean rounded to 2 decimal places as 12.67,
+and include that in the `value` argument in the `.fillna()` verb.
 
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+We can now see the value in `Distance` for index 2 change to `12.67`.
 
 ---
-
-We could also fill using certain methods.
-
-***“bfill”*** uses the next valid observation to fill the `NaN`:
 
 ``` python
 cycling.fillna(method='bfill')
@@ -532,23 +431,15 @@ cycling.fillna(method='bfill')
 [33 rows x 6 columns]
 ```
 
-Index 2 adopts the value `12.84` from index 3.
+Notes:
 
-Notes: Script here
+We could also fill using certain methods.
 
-<html>
+***“bfill”*** uses the next valid row observation to fill the `NaN`:
 
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+Index 2 adopts the distance value of `12.84` from index 3.
 
 ---
-
-***“ffill”*** propagates the last valid observation forward to next:
 
 ``` python
 cycling.fillna(method='ffill')
@@ -569,51 +460,30 @@ cycling.fillna(method='ffill')
 [33 rows x 6 columns]
 ```
 
-We see thar index 2 adopts the value `13.03` from index 1.
+Notes:
+
+The `method` argument value ***“ffill”*** propagates the last valid
+observation forward to next.
+
+Here, we see that index 2 adopts the value `13.03` from index 1.
 
 `bfill` and `ffill` are methods usually adopted when dealing with
-columns organized by date. This way, an observation can adopt a similar
-value to those near it. We will explore date columns in the next slide
-deck.
+columns organized by date.
 
-Notes: Script here
+This way, an observation can adopt a similar value to those near it.
 
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
+We will explore date columns in the next slide deck.
 
 Remember these are only a few methods that can be used in simple
-situations. In some scenarios, more complex methods of handling missing
-values may need to be adopted for effective analysis.
+situations.
 
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+In some scenarios, more complex methods of handling missing values may
+need to be used for effective analysis.
 
 ---
 
-# Let’s practice what we learned\!
+# Let’s apply what we learned\!
 
-Notes: Script here
+Notes:
 
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
+<br>

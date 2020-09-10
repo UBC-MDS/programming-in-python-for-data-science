@@ -51,17 +51,12 @@ type: slides
 
 # Introduction to Working with Strings
 
-Notes: Script here
-<html>
-<audio controls>
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
+Notes: 
+
+<br>
 
 ---
 
-Although we have already introduced you to strings to a certain degree, processing and working with this data type is an area that will require a substantial amount of learning. 
-
-In this course, we will only scratch the surface when it comes to strings. That being said, we do hope to provide you with an adequate foundation in string processing. 
 
 Notes: Script here
 <html>
@@ -81,24 +76,40 @@ Let's first remind ourselves of some of the methods we've already learned such a
 - `.count()`
 - `.split()` 
 
-When we work with just a general string, we can just use the function on the end of the object name. 
-For example, if our string object name was `instrument`:
 
 ```{python}
 instrument = 'Violin'
 instrument
 ```
 
-We could convert to all uppercase characters with: 
+
 ```{python}
 instrument.upper()
 ```
 
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
+Notes: 
+
+Although we have already introduced you to strings to a certain degree, processing and working with this data type is an area that will require a substantial amount of learning. 
+
+In this course, we will only scratch the surface when it comes to strings. 
+
+That being said, we do hope to provide you with an adequate foundation in string processing. 
+
+
+Let's first remind ourselves of some of the methods we've already learned such as:
+
+- `.upper()`
+- `.lower()` 
+- `.uppercase()`
+- `.count()`
+- `.split()` 
+
+When we work with just a general string, we can just use the function on the end of the object name. 
+
+For example, if our string object name was `instrument`.
+
+We could convert to all uppercase characters with `instrument.upper()`
+
 
 ---
 
@@ -327,9 +338,8 @@ Notes: Script here
 
 ---
 
-# Let’s practice what we learned!
+# Let’s apply what we learned!
 
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
+Notes:
+
+<br>

@@ -4,11 +4,9 @@ type: slides
 
 # What Did we Learn and What to Expect in Assignment 4
 
-Notes: Script here
-<html>
-<audio controls  style="width: 100%;">
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
+Notes: 
+
+<br>
 
 ---
 
@@ -25,22 +23,8 @@ Students are now expected to be able to:
 
 
 Notes:
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
-
----
-
-# Assignment Instructions
 
 The assignment will concentrate on the learning objectives as well as building knowledge on existing concepts. 
-
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
 
 ---
 
@@ -52,22 +36,17 @@ The cereal dataset:
 under [Creative Commons Attribution-ShareAlike 3.0 Unported](http://creativecommons.org/licenses/by-sa/3.0/)
 
 
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
+Notes:
+
+<br>
 
 ---
 
 # On to Assignment 4!
 
-Notes: Insert audio here.
+Notes:
 
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
+<br>
 
 
 
