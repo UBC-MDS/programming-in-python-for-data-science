@@ -50,7 +50,7 @@ which both share identical column or row index labels.
 `pd.concat()` can glue the 2 dataframes together either horizontally or
 vertically.
 
-In this animation you can see that the peices are joined in the order
+In this animation you can see that the pieces are joined in the order
 that was presented and the pattern does not necessarily match up.
 
 ---
@@ -211,7 +211,7 @@ assigning the column position with either a `True` or `False` value.
 
 Since we need to instead keep all `False` columns and not the `True`
 values, we can easily use the *Tilde* operator to convert all the
-`False` values to `True` and vice versa.
+`False` values to `True` and vice-versa.
 
 ---
 

@@ -291,7 +291,7 @@ If the Boolean value is `True`, the body of the statement (which is
 anything indented under it) will be executed.
 
 If the expression is `False`, the body of the statement is not executed
-and it continues to the next line of non-indended code outside the body.
+and it continues to the next line of non-indented code outside the body.
 
 The `else` expression will execute if the conditional expressions above
 it are `False`
@@ -568,7 +568,7 @@ value of `10 or less` otherwise.
 The 4 lines used for the conditional statements can be compressed into a
 single one.
 
-Both syntaxes are acceptable depending on your preference.
+Both syntax are acceptable depending on your preference.
 
 This type of syntax is only possible for decisions that involve only
 `if` and `else` conditions.
@@ -618,8 +618,8 @@ have Python makes decisions/ .
 In this example we are checking if `squats` is contained in our list
 `exercises`.
 
-We can see that `squats` exists ar position 2 in the list and therefore
-the objext `sore` is assigned a value of `Extreme`.
+We can see that `squats` exists at position 2 in the list and therefore
+the object `sore` is assigned a value of `Extreme`.
 
 ---
 

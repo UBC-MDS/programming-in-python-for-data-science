@@ -219,7 +219,7 @@ we merge.
 If our identifying columns are named the same in both dataframes,
 `.merge()` only keeps one of them.
 
-Ok so what happened? We now only have 2 rows\! We seemed to have lost
+Ok, so what happened? We now only have 2 rows\! We seemed to have lost
 all the rows that are not in both columns.
 
 This is because `.merge()` uses a default joining method called `inner`
