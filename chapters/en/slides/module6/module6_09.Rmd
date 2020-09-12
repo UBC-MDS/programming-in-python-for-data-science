@@ -79,7 +79,7 @@ The standard format for doing this is called a **docstring**.
 
 A **docstring** is a literal string that comes directly after the function `def` and documents the function's purpose and usage
 
-Writing a docstring for your functions informs on what your code does so that collaborators (and you in 6 months’ time) are not struggling to decipher and reuse your code.
+Writing a docstring documents what your code does so that collaborators (and you in 6 months' time!) are not struggling to decipher and reuse your code.
 
 In the last section we had our function `squares_a_list()`.
 
@@ -188,7 +188,7 @@ Notes:
 
 Writing documentation for `squares_a_list()` using the **NumPy style** takes the following format.
 
-We can identify the breif description of the function at the top, the parameters that it takes in and what object type they should be, as well as what to expect as an output. 
+We can identify the brief description of the function at the top, the parameters that it takes in and what object type they should be, as well as what to expect as an output. 
 
 Here we can even see examples of how to run it and what is returned.
 
@@ -269,7 +269,7 @@ def exponent_a_list(numerical_list, exponent=2):
 
 Notes: 
 
-If our function contains default arguments, we need to communicate this in our docstring. 
+If our function contains optional arguments, we need to communicate this in our docstring. 
 
 Using `exponent_a_list()`, a function from the previous section as an example, we include an *optional* note in the parameter definition and an explanation of the default value in the **parameter** description.  
 
@@ -302,9 +302,10 @@ Notes:
 
 Ah, remember how we talked about side effects back at the beginning of this module?
 
-Although it's highly advised against, there could be occasions where it's unavoidable or required.
+Although we recommend avoiding side effects in your functions, there may be occasions where they're unavoidable or required.
 
-In these cases, we must make it clear in the documentation. 
+In these cases, we must make it clear in the documentation so that the user of the function knows that their objects are going to be modified. 
+(As an analogy: If someone wants you to babysit their cat, you would probably tell them first if you were going to paint it red while you had it!)
 
 So how we we include side effects in our docstrings? 
 
@@ -380,7 +381,7 @@ The same thing can be done to get the documentation of functions that we have de
 
 Getting the documentation for our function `squares_a_list()` is as easy as `?squares_a_list`.
 
-This returns the Numpy docstring that we created. 
+This returns the docstring that we created. 
 
 ---
 
