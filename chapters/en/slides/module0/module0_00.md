@@ -33,7 +33,7 @@ Notes:
  
 ---
 
-# Let's Learn Programming in Python for Data Science  
+# Let's learn Programming in Python for Data Science  
 
 Notes: This course is designed to give you a solid foundation of coding in Python. 
 

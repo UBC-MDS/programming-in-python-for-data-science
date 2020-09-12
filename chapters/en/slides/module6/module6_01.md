@@ -4,29 +4,11 @@ type: slides
 
 # DRY revisited and function fundamentals
 
-Notes: Script here
+Notes:
 
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+<br>
 
 ---
-
-In the last module, we were introduced to the DRY principle and how
-creating functions helps comply with it. Let’s do a little bit of a
-recap.
-
-**DRY** stands for Don’t Repeat Yourself. We can avoid writing
-repetitive code by creating a function that takes in arguments, performs
-some operations and returns the results. In the last module, we
-converted our code that creates a list of squared elements from an
-existing list of numbers, into a function:
 
 ``` python
 numbers = [2, 3, 5]
@@ -56,22 +38,22 @@ squares_a_list(numbers)
 [4, 9, 25]
 ```
 
-Notes: Script here
+Notes:
 
-<html>
+In the last module, we were introduced to the DRY principle and how
+creating functions helps comply with it.
 
-<audio controls >
+Let’s do a little bit of a recap.
 
-<source src="/placeholder_audio.mp3" />
+**DRY** stands for Don’t Repeat Yourself.
 
-</audio>
+We can avoid writing repetitive code by creating a function that takes
+in arguments, performs some operations and returns the results.
 
-</html>
+The example in Module 5, converted code that creates a list of squared
+elements from an existing list of numbers, into a function.
 
 ---
-
-This gave us the ability to do the same operation for multiple lists
-without having to rewrite any code and just calling the function:
 
 ``` python
 larger_numbers = [5, 44, 55, 23, 11]
@@ -103,26 +85,14 @@ squares_a_list(executive_numbers)
 [10000, 14641, 62500, 10609, 33489, 49284, 45796]
 ```
 
-Notes: Script here
+Notes:
 
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+This function gave us the ability to do the same operation for multiple
+lists without having to rewrite any code and just calling the function.
 
 ---
 
 ## Scoping
-
-It’s important to know what exactly is going on inside and outside of a
-function. In our function `squares_a_list()` we saw that we created a
-variable named `new_squared_list`. We can print this variable and watch
-all the elements append to it as we loop through the input list:
 
 ``` python
 def squares_a_list(numerical_list):
@@ -144,88 +114,59 @@ squares_a_list(numbers)
 [4, 9, 25]
 ```
 
+``` python
+new_squared_list
+```
+
+``` out
+NameError: name 'new_squared_list' is not defined
+
+Detailed traceback: 
+  File "<string>", line 1, in <module>
+```
+
+``` python
+a_new_variable = "Peek-a-boo"
+```
+
+Notes:
+
+It’s important to know what exactly is going on inside and outside of a
+function.
+
+In our function `squares_a_list()` we saw that we created a variable
+named `new_squared_list`.
+
+We can print this variable and watch all the elements append to it as we
+loop through the input list.
+
 But what happens if we try and print this variable outside of the
 function?
 
-``` python
-new_squared_list
-```
+Yikes\! Where did `new_squared_list` go?
 
-``` out
-NameError: name 'new_squared_list' is not defined
-
-Detailed traceback: 
-  File "<string>", line 1, in <module>
-```
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
-
-## Global and Local Variables
-
-``` python
-new_squared_list
-```
-
-``` out
-NameError: name 'new_squared_list' is not defined
-
-Detailed traceback: 
-  File "<string>", line 1, in <module>
-```
-
-Yikes\! Where did `new_squared_list` go? It doesn’t seem to exist\!
-That’s not entirely true.
+It doesn’t seem to exist\! That’s not entirely true.
 
 In Python, `new_squared_list` is something we call a ***local
-variable***. Local variables are any objects that have been created
-within a function and only exist and accessible in the function where it
-was made. Code within a function is described as a **local
-environment**.
+variable***.
+
+Local variables are any objects that have been created within a function
+and only exist and accessible in the function where they are made.
+
+Code within a function is described as a **local environment**.
 
 Since we called `new_squared_list` outside of the function’s body,
 Python fails to recognize it.
 
 Let’s compare that with the variable `a_new_variable`.
 
-``` python
-a_new_variable = "Peek-a-boo"
-```
-
 `a_new_variable` is created outside of a function in what we call our
 ***global environment*** and therefore Python recognizes it as a
 ***global variable***.
 
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
 ---
 
-Global variables differ from local variables as they are not only
-recognized outside of any function but also recognized inside
-functions.  
-Let’s take a look what happens when we add `a_new_variable` into the
-`squares_a_list` function:
+## Global and Local Variables
 
 ``` python
 def squares_a_list(numerical_list):
@@ -247,75 +188,69 @@ Peek-a-boo
 [144, 25, 49, 9999800001]
 ```
 
-The function recognizes the global variable\! It’s important to note
-that, although functions recognize global variables, it’s not good
-practice to have functions reference objects outside of it. We will
-learn more on this later in the module.
+Notes:
 
-Notes: Script here
+Global variables differ from local variables as they are not only
+recognized outside of any function but also recognized inside functions.
 
-<html>
+Let’s take a look what happens when we add `a_new_variable` which is a
+global variable and call it in the `squares_a_list` function.
 
-<audio controls >
+The function recognizes the global variable\!
 
-<source src="/placeholder_audio.mp3" />
+It’s important to note that, although functions recognize global
+variables, it’s not good practice to have functions reference objects
+outside of it.
 
-</audio>
-
-</html>
+We will learn more on this later in the module.
 
 ---
 
+<br> <br> <br>
+
+<center>
+
+<img src='/module6/starbucks.png' width="100%" alt="404 image">
+
+</center>
+
+[Attribution - Starbucks](https://unsplash.com/photos/42ui88Qrxhw)
+
+[Attribution - 49th and
+Parallel](https://unsplash.com/photos/42ui88Qrxhw)
+
+Notes:
+
 I’m going to make an analogy comparing coffee stores to variables.
 
-  - **Starbucks Coffee** is a ***globally*** recognized brand across the
-    world and is available in 70 different countries. I can purchase a
-    coffee from Starbucks in Vancouver (my local city) and if I were to
-    travel across the world to Sydney, Australia, I would still be able
-    to purchase a coffee from Starbucks there. Stackbucks Coffee is
-    similar to a global variable as it is accessible and recognized in
-    both its local (Vancouver) and global environments.
-  - **49th Parallel** is a ***local*** Vancouver coffee store. Many
-    people from Vancouver recognize it, however, purchasing a coffee
-    from 49th Parallel outside of Vancouver would be impossible as it is
-    not accessible past the City of Vancouver.
+**Starbucks Coffee** is a ***globally*** recognized brand across the
+world and is available in 70 different countries.
+
+I can purchase a coffee from Starbucks in Vancouver (my local city) and
+if I were to travel across the world to Sydney, Australia, I would still
+be able to purchase a coffee from Starbucks there.
+
+Starbucks Coffee is similar to a global variable as it is accessible and
+recognized in both its local (Vancouver) and global environments.
+
+**49th Parallel** is a ***local*** Vancouver coffee store.
+
+Many people from Vancouver recognize it, however, purchasing a coffee
+from 49th Parallel outside of Vancouver would be impossible as it is not
+accessible past the City of Vancouver.
 
 Just like Starbucks Coffee, global variables are recognized and
 accessible in both their global and local environments, whereas local
 variables like the coffee store 49th Parallel are only recognized and
 accessible in the local environment it was created in.
 
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
 ---
 
 ## When things get tricky
 
-Things can get unclear when we have variables that are named the same
-way but come from two different environments. what happens when 2
-different objects share the same name, where one was defined inside the
-function and the other in the global environment?
-
-For instance, let’s say we defined a variable `a_new_variable` in our
-global environment:
-
 ``` python
 a_new_variable = "Peek-a-boo"
 ```
-
-And I made a variable in a local environment with the same name
-`a_new_variable` but with different values within our `squares_a_list`
-function:
 
 ``` python
 def squares_a_list(numerical_list):
@@ -337,60 +272,39 @@ Ta-Da!
 [1, 4]
 ```
 
-We can see that the locally created `a_new_variable` variable was
-printed instead of the global object with the same name.
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
-
-What about if we output `a_new_variable` right after:
-
 ``` python
 squares_a_list([1, 2])
-```
-
-```out
-Ta-Da!
-[1, 4]
-```
-
-``` python
 a_new_variable
 ```
 
-```out
+``` out
+Ta-Da!
+[1, 4]
 'Peek-a-boo'
 ```
+
+Notes:
+
+Things can get unclear when we have variables that are named the same
+way but come from two different environments.
+
+What happens when 2 different objects share the same name, where one was
+defined inside the function and the other in the global environment?
+
+For instance, let’s say we defined a variable `a_new_variable` in our
+global environment, and we’ve made a variable in a local environment
+with the same name `a_new_variable` but with different values within our
+`squares_a_list` function.
+
+We can see that the locally created `a_new_variable` variable was
+printed instead of the global object with the same name.
+
+What about if we output `a_new_variable` right after.
 
 Our function prints the locally defined `a_new_variable`, and the global
 environment prints the globally defined `a_new_variable`.
 
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
 ---
-
-What if `a_new_variable` was an argument?
 
 ``` python
 def squares_a_list(numerical_list, a_new_variable):
@@ -402,10 +316,6 @@ def squares_a_list(numerical_list, a_new_variable):
     return new_squared_list
 ```
 
-Given a global variable `a_new_variable = "Peek-a-boo"`, qhat value will
-the function print if we assign a value of `"BAM!"` to the input
-argument `a_new_variable`?
-
 ``` python
 a_new_variable = "Peek-a-boo"
 squares_a_list([1,2], "BAM!")
@@ -416,30 +326,20 @@ BAM!
 [1, 4]
 ```
 
+Notes:
+
+What if `a_new_variable` was an argument?
+
+Given a global variable `a_new_variable = "Peek-a-boo"`, what value will
+the function print if we assign a value of `"BAM!"` to the input
+argument `a_new_variable`?
+
 Here we can see that the function uses the input argument value instead
 of the global variable value.
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
 
 ---
 
 ## Modifying global variables
-
-So global variables are accessible inside functions but what about
-modifying them?
-
-Let’s take a list that we define in our global environment called
-`global_list` and add `99` to the list in the local environment.
 
 ``` python
 global_list = [50, 51, 52]
@@ -473,88 +373,29 @@ global_list
 [50, 51, 52, 99]
 ```
 
+Notes:
+
+So global variables are accessible inside functions but what about
+modifying them?
+
+Let’s take a list that we define in our global environment called
+`global_list` and add `99` to the list in the local environment.
+
 The list that we defined globally was able to be modified inside the
 function and have the changes reflected back in the global environment\!
+
 What is going on?
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
-
-``` python
-def squares_a_list(numerical_list):
-    global_list.append(99)
-    print("print global_list:", global_list)
-    
-    new_squared_list = list()
-    for number in numerical_list:
-        new_squared_list.append(number ** 2)
-    return new_squared_list
-```
-
-``` python
-squares_a_list([1, 2])
-```
-
-```out
-print global_list: [50, 51, 52, 99, 99]
-[1, 4]
-```
-
-``` python
-global_list
-```
-
-```out
-[50, 51, 52, 99, 99]
-```
 
 Modifying objects like this within a function without returning them is
 called a function **side effect**.
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
 
 ---
 
 ## Function Side Effects
 
-Although this appears to be new vocabulary, side effects have been
-present since the beginning of this course starting with `pd.to_csv()`.
-
-Remember our cereal dataframe? Well we’ve edited it and now want to save
-it to our computer. We can use `pd.to_csv()` like this:
-
 ``` python
 cereal.to_csv('cereal.csv')
 ```
-
-When we execute this code, nothing is returned but we get a **side
-effect** of a newly saved csv file on our computer.
-
-Printing anything in a function is also considered a function side
-effect. Even though this operation doesn’t affect any of your global
-variables, it does bring information from within the function to the
-global environment.
 
 ``` python
 def squares_a_list(numerical_list):
@@ -577,52 +418,33 @@ squares_a_list(numbers)
 [4, 9, 25]
 ```
 
-Notes: Script here
+Notes:
 
-<html>
+Although this appears to be new vocabulary, side effects have been
+present since the beginning of this course starting with `pd.to_csv()`.
 
-<audio controls >
+Remember our cereal dataframe?
 
-<source src="/placeholder_audio.mp3" />
+Well we’ve edited it and now want to save it to our computer.
 
-</audio>
+We can use `pd.to_csv()` like this:
 
-</html>
+When we execute this code, nothing is returned but we get a **side
+effect** of a newly saved csv file on our computer.
+
+Printing anything in a function is also considered a function side
+effect.
+
+Even though this operation doesn’t affect any of your global variables,
+it does bring information from within the function to the global
+environment.
 
 ---
-
-The same can be said anytime we modify a dataframe within a function
-without returning anything. Let’s say we have the following function
-that does conditional value replacement on a specified column.  
-It takes as inputs:
-
-  - The dataframe  
-  - the column we want to edit  
-  - the value that we wish to replace  
-  - the new value we wish to use as a replacement
-
-And returns nothing.
 
 ``` python
 def value_change(data, column, old_value, new_value):
     data.loc[data[column] == old_value, column] = new_value
 ```
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
-
-Using a slice of our cereal dataset:
 
 ``` python
 cereal.head()
@@ -637,89 +459,75 @@ cereal.head()
 4             Almond Delight   R  Cold       110
 ```
 
-Let’s change all the values that have `type` as `Cold` to `Unheated`
-using the `value_change` function:
-
 ``` python
 value_change(cereal, 'type', 'Cold', 'Unheated')
 ```
+
+Notes:
+
+The same can be said anytime we modify a dataframe within a function
+without returning anything.
+
+Let’s say we have the following function that does conditional value
+replacement on a specified column.
+
+It takes as inputs:
+
+  - The dataframe  
+  - the column we want to edit  
+  - the value that we wish to replace  
+  - the new value we wish to use as a replacement
+
+And returns nothing.
+
+Using a slice of our cereal dataset.
+
+Let’s change all the values that have `type` as `Cold` to `Unheated`
+using the `value_change` function.
 
 We can see that our function has no `return` statement and thus the code
 above produces no output but let’s look at what happens when we look at
 the cereal dataset after calling the function on it.
 
-``` python
-cereal.head()
-```
-
-```out
-                        name mfr      type  calories
-0                  100% Bran   N  Unheated        70
-1          100% Natural Bran   Q  Unheated       120
-2                   All-Bran   K  Unheated        70
-3  All-Bran with Extra Fiber   K  Unheated        50
-4             Almond Delight   R  Unheated       110
-```
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
 ---
 
 ``` python
-cereal.head()
+cereal
 ```
 
 ```out
-                        name mfr      type  calories
-0                  100% Bran   N  Unheated        70
-1          100% Natural Bran   Q  Unheated       120
-2                   All-Bran   K  Unheated        70
-3  All-Bran with Extra Fiber   K  Unheated        50
-4             Almond Delight   R  Unheated       110
+                         name mfr      type  calories
+0                   100% Bran   N  Unheated        70
+1           100% Natural Bran   Q  Unheated       120
+2                    All-Bran   K  Unheated        70
+3   All-Bran with Extra Fiber   K  Unheated        50
+4              Almond Delight   R  Unheated       110
+..                        ...  ..       ...       ...
+72                    Triples   G  Unheated       110
+73                       Trix   G  Unheated       110
+74                 Wheat Chex   R  Unheated       100
+75                   Wheaties   G  Unheated       100
+76        Wheaties Honey Gold   G  Unheated       110
+
+[77 rows x 4 columns]
 ```
 
+Notes:
+
 It looks like our `Cold` values were changed even without returning
-anything in our function\! This would be another example of a function
-side effect. Variables are modified by the function outside the
-environment the object originated from. The dataframe was created in the
-global environment, but modified in the function’s local environment.
+anything in our function\!
 
-Notes: Script here
+This would be another example of a function side effect.
 
-<html>
+Variables are modified by the function outside the environment the
+object originated from.
 
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+The dataframe was created in the global environment, but modified in the
+function’s local environment.
 
 ---
 
 ## Good Habits
-
-Side effects seem like fun but they can be extremely problematic when
-trying to debug (fix) your code. It’s a general protocol to write
-functions that avoid side effects. If objects need to be modified, best
-practice is to modify them in the environment they originated in.
-
-For example, you wish to write a better version of the `value_change()`
-function above, a more acceptable way would be to return a new dataframe
-that was produced and modified from a copy of the original dataframe in
-the local environment. We can make a copy of the original dataframe
-using `.copy()`:
 
 ``` python
 def better_value_change(data, column, old_value, new_value):
@@ -729,41 +537,46 @@ def better_value_change(data, column, old_value, new_value):
     
 ```
 
-We can then call our new better function:
-
 ``` python
 unheated_cereal = better_value_change(cereal, 'type', 'Cold', 'unheated')
 ```
 
-And see that our original dataframe hasn’t been changed:
-
 ``` python
-cereal.head(3)
+cereal.head()
 ```
 
 ```out
-                name mfr  type  calories
-0          100% Bran   N  Cold        70
-1  100% Natural Bran   Q  Cold       120
-2           All-Bran   K  Cold        70
+                        name mfr  type  calories
+0                  100% Bran   N  Cold        70
+1          100% Natural Bran   Q  Cold       120
+2                   All-Bran   K  Cold        70
+3  All-Bran with Extra Fiber   K  Cold        50
+4             Almond Delight   R  Cold       110
 ```
 
-Notes: Script here
+Notes:
 
-<html>
+Side effects seem like fun but they can be extremely problematic when
+trying to debug (fix) your code.
 
-<audio controls >
+It’s a general protocol to write functions that avoid side effects.
 
-<source src="/placeholder_audio.mp3" />
+If objects need to be modified, best practice is to modify them in the
+environment they originated in.
 
-</audio>
+For example, you wish to write a better version of the `value_change()`
+function above, a more acceptable way would be to return a new dataframe
+that was produced and modified from a copy of the original dataframe in
+the local environment.
 
-</html>
+We can make a copy of the original dataframe using `.copy()`.
+
+We can then call our new better function `better_value_change` with our
+input arguments.
+
+This time our original original dataframe hasn’t been changed.
 
 ---
-
-Instead, the output from our function that we saved in `unheated_cereal`
-has the desired changes we want: :
 
 ``` python
 unheated_cereal.head()
@@ -778,49 +591,30 @@ unheated_cereal.head()
 4             Almond Delight   R  unheated       110
 ```
 
-Notes: Script here
+Notes:
 
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+Instead, the output from our function that we saved in the object
+`unheated_cereal` has the desired changes.
 
 ---
 
-## Side Effect documentation
+## Side Effect Documentation
+
+  - If your functions have side-effects, they should be documented.
+
+Notes:
 
 Although side effects are not recommended, there are cases where either
 we must have a side-effects in our functions or there is no way to avoid
 it. In these cases, it is extremely important that we document it.
 
-This leads to the next question of *How*? Good News - we answer this
+This leads to the next question of *How*? Good news - we answer this
 further on in this module\!
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
 
 ---
 
-# Let’s practice what we learned\!
+# Let’s apply what we learned\!
 
-Notes: Script here
+Notes:
 
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
+<br>

@@ -4,46 +4,9 @@ type: slides
 
 # Function docstrings
 
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+Notes: <br>
 
 ---
-
-Functions can get very complicated, so it’s not always obvious what they
-do just from looking at the name, arguments, or code. Therefore, people
-like to explain what the function does. The standard format for doing
-this is called a **docstring**. A **docstring** is a literal string that
-comes directly after the function `def` and documents the function’s
-purpose and usage
-
-Writing a docstring for your functions informs on what your code does so
-that collaborators (and you in 6 months’ time) are not struggling to
-decipher and reuse your code.
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
-
-In the last section we had our function `squares_a_list()`:
 
 ``` python
 def squares_a_list(numerical_list):
@@ -55,48 +18,46 @@ def squares_a_list(numerical_list):
     return new_squared_list
 ```
 
+Notes:
+
+Functions can get very complicated, so it’s not always obvious what they
+do just from looking at the name, arguments, or code.
+
+Therefore, people like to explain what the function does.
+
+The standard format for doing this is called a **docstring**.
+
+A **docstring** is a literal string that comes directly after the
+function `def` and documents the function’s purpose and usage
+
+Writing a docstring for your functions informs on what your code does so
+that collaborators (and you in 6 months’ time) are not struggling to
+decipher and reuse your code.
+
+In the last section we had our function `squares_a_list()`.
+
 Although our function name is quite descriptive, it could mean various
-things. How do we know what data type it takes in and returns?
+things.
+
+How do we know what data type it takes in and returns?
 
 Having documentation for it can be useful in answering these questions.
 
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
 ---
-
-Here is the code for a function from the `pandas` package called
-`truncate()`. You can view the complete code
-<a href="https://github.com/pandas-dev/pandas/blob/v1.1.0/pandas/core/generic.py#L9258" target="_blank">here</a>.
 
 <center>
 
-<img src='/module6/truncate.png' width="52%">
+<img src='/module6/truncate.png' width="48%">
 
 </center>
 
-Notes: Script here
+Notes:
 
-<html>
+Here is the code for a function from the `pandas` package called
+`truncate()`.
 
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
+You can view the complete code
+<a href="https://github.com/pandas-dev/pandas/blob/v1.1.0/pandas/core/generic.py#L9258" target="_blank">here</a>.
 
 I think we can all agree that it would take a bit of time to figure out
 what the function is doing, the expected input variable types and what
@@ -105,44 +66,22 @@ the function is returning.
 Luckily `pandas` provides detailed documentation to explain the
 function’s code.
 
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
 ---
 
 <center>
 
-<img src='/module6/truncate_doc.png' width="38%">
+<img src='/module6/truncate_doc.png' width="34%">
 
 </center>
 
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
+Notes:
 
 Ah. This documentation gives us a much clearer idea of what the function
-is doing and how to use it. We can see what it requires as input
-arguments and what it returns. It also explains the expectations of the
-function.
+is doing and how to use it.
+
+We can see what it requires as input arguments and what it returns.
+
+It also explains the expectations of the function.
 
 Reading this instead of the code saved us some time and definitely
 potential confusion.
@@ -150,23 +89,7 @@ potential confusion.
 There are several styles of docstrings; this one and the one we’ll be
 using is called the **NumPy** style.
 
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
 ---
-
-All docstrings, not just the Numpy formatted ones, are contained within
-3 sets of quotations`"""`. We discussed in module 4 that this was one of
-the ways to implement string values:
 
 ``` python
 string1 = """ This is a string"""
@@ -177,33 +100,30 @@ type(string1)
 <class 'str'>
 ```
 
-Adding this additional string to our function has no effect on our code
-and the sole purpose of the docstring is for human consumption.
-
-The NumPy format includes 4 sections:  
+The NumPy format includes 4 main sections:  
 \- **A brief description of the function**  
 \- Explaining the input **Parameters**  
 \- What the function **Returns**  
 \- **Examples**
 
-Notes: Script here
+Notes:
 
-<html>
+All docstrings, not just the Numpy formatted ones, are contained within
+3 sets of quotations`"""`. We discussed in module 4 that this was one of
+the ways to implement string values.
 
-<audio controls >
+Adding this additional string to our function has no effect on our code
+and the sole purpose of the docstring is for human consumption.
 
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+The NumPy format includes 4 main sections:  
+\- **A brief description of the function**  
+\- Explaining the input **Parameters**  
+\- What the function **Returns**  
+\- **Examples**
 
 ---
 
 ## NumPy Format
-
-Writing documentation for `squares_a_list()` using the **NumPy style**
-takes the following format:
 
 ``` python
 def squares_a_list(numerical_list):
@@ -231,22 +151,18 @@ def squares_a_list(numerical_list):
     return new_squared_list
 ```
 
-Notes: Script here
+Notes:
 
-<html>
+Writing documentation for `squares_a_list()` using the **NumPy style**
+takes the following format.
 
-<audio controls >
+We can identify the breif description of the function at the top, the
+parameters that it takes in and what object type they should be, as well
+as what to expect as an output.
 
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+Here we can even see examples of how to run it and what is returned.
 
 ---
-
-Below is the general form of the NumPy docstring (reproduced from the
-SciPy/NumPy docs):
 
 ``` python
 def function_name(param1, param2):
@@ -277,27 +193,14 @@ def function_name(param1, param2):
     """
 ```
 
-Notes: Script here
+Notes:
 
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+Functions using the NumPy docstring style follow this general form
+(reproduced from the SciPy/NumPy docs).
 
 ---
 
 ## Default Arguments
-
-If our function contains default arguments, we need to communicate this
-in our docstring. Using `exponent_a_list()`, a function from the
-previous section as an example, we include an *optional* note in the
-parameter definition and an explanation of the default value in the
-**parameter** description.
 
 ``` python
 def exponent_a_list(numerical_list, exponent=2):
@@ -331,28 +234,18 @@ def exponent_a_list(numerical_list, exponent=2):
     return new_exponent_list
 ```
 
-Notes: Script here
+Notes:
 
-<html>
+If our function contains default arguments, we need to communicate this
+in our docstring.
 
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+Using `exponent_a_list()`, a function from the previous section as an
+example, we include an *optional* note in the parameter definition and
+an explanation of the default value in the **parameter** description.
 
 ---
 
 ## Side Effects
-
-Ah, remember how we talked about side effects back at the beginning of
-this module? Although it’s highly advised against, there could be
-occasions where it’s unavoidable or required. In these cases, we must
-make it clear in the documentation. So how we we include side effects in
-our docstrings? It’s best to include your function side effects in the
-first sentence of the docstring:
 
 ``` python
 def function_name(param1, param2):
@@ -373,29 +266,24 @@ def function_name(param1, param2):
     """
 ```
 
-Notes: Script here
+Notes:
 
-<html>
+Ah, remember how we talked about side effects back at the beginning of
+this module?
 
-<audio controls >
+Although it’s highly advised against, there could be occasions where
+it’s unavoidable or required.
 
-<source src="/placeholder_audio.mp3" />
+In these cases, we must make it clear in the documentation.
 
-</audio>
+So how we we include side effects in our docstrings?
 
-</html>
+It’s best to include your function side effects in the first sentence of
+the docstring.
 
 ---
 
 ## How to read a docstring
-
-Ok great\! Now that we’ve written and explained our functions with a
-standardized format, we can read it in our file easily but what if our
-function is located in a different file? How can we learn what it does,
-when reading our code?
-
-We learned in the first assignment that we can read more about built-in
-functions using:
 
 ``` python
 ?function_name
@@ -413,23 +301,20 @@ Docstring: Return the number of items in a container.
 Type:      builtin_function_or_method
 ```
 
-Notes: Script here
+Notes:
 
-<html>
+Ok great\! Now that we’ve written and explained our functions with a
+standardized format, we can read it in our file easily but what if our
+function is located in a different file?
 
-<audio controls >
+How can we learn what it does, when reading our code?
 
-<source src="/placeholder_audio.mp3" />
+We learned in the first assignment that we can read more about built-in
+functions using the question mark before the function name.
 
-</audio>
-
-</html>
+This returns the docstring of the function.
 
 ---
-
-The same thing can be done to get the documentation of functions that we
-have defined. Getting the documentation for our function
-`squares_a_list()` is as easy as:
 
 ``` python
 ?squares_a_list
@@ -458,28 +343,20 @@ File:      ~/<ipython-input-1-7e6e50ac7556>
 Type:      function
 ```
 
-Notes: Script here
+Notes:
 
-<html>
+The same thing can be done to get the documentation of functions that we
+have defined.
 
-<audio controls >
+Getting the documentation for our function `squares_a_list()` is as easy
+as `?squares_a_list`.
 
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+This returns the Numpy docstring that we created.
 
 ---
 
-# Let’s practice what we learned\!
+# Let’s apply what we learned\!
 
-Notes: Script here
+Notes:
 
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-\<source
+<br>

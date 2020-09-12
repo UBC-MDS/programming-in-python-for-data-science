@@ -2,45 +2,54 @@
 type: slides
 ---
 
-# Introduction to Working with Strings
+# Introduction to working with strings
 
-Notes: Script here
+Notes:
 
-<html>
-
-<audio controls>
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+<br>
 
 ---
+
+## Recap
+
+Let’s first remind ourselves of some of the methods we’ve already
+learned such as:
+
+  - `.upper()`
+  - `.lower()`
+  - `.count()`
+  - `.split()`
+
+<!-- end list -->
+
+``` python
+instrument = 'Violin'
+instrument
+```
+
+```out
+'Violin'
+```
+
+``` python
+instrument.upper()
+```
+
+```out
+'VIOLIN'
+```
+
+Notes:
 
 Although we have already introduced you to strings to a certain degree,
 processing and working with this data type is an area that will require
 a substantial amount of learning.
 
 In this course, we will only scratch the surface when it comes to
-strings. That being said, we do hope to provide you with an adequate
-foundation in string processing.
+strings.
 
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/module0/511_module0.mp3" />
-
-</audio>
-
-</html>
-
----
-
-## Recap
+That being said, we do hope to provide you with an adequate foundation
+in string processing.
 
 Let’s first remind ourselves of some of the methods we’ve already
 learned such as:
@@ -52,43 +61,13 @@ learned such as:
   - `.split()`
 
 When we work with just a general string, we can just use the function on
-the end of the object name. For example, if our string object name was
-`instrument`:
+the end of the object name.
 
-``` python
-instrument = 'Violin'
-instrument
-```
+For example, if our string object name was `instrument`.
 
-```out
-'Violin'
-```
-
-We could convert to all uppercase characters with:
-
-``` python
-instrument.upper()
-```
-
-```out
-'VIOLIN'
-```
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+We could convert to all uppercase characters with `instrument.upper()`
 
 ---
-
-Convert the string to lowercase:
 
 ``` python
 instrument.lower()
@@ -98,8 +77,6 @@ instrument.lower()
 'violin'
 ```
 
-Count the number of occurrences of the letter “i”:
-
 ``` python
 instrument.count('i')
 ```
@@ -107,8 +84,6 @@ instrument.count('i')
 ```out
 2
 ```
-
-And split a string on a specified character (in this case “i”):
 
 ``` python
 instrument.split('i')
@@ -118,68 +93,57 @@ instrument.split('i')
 ['V', 'ol', 'n']
 ```
 
-Notes: Script here
+Notes:
 
-<html>
+Or convert the string to lowercase with `instrument.lower()`.
 
-<audio controls >
+We could count the number of occurrences of the letter “i” using
+`instrument.count('i')`
 
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+And split a string on a specified character (for example, in this case
+“i”) using the code `instrument.split('i')`
 
 ---
 
 ## Processing String Columns
+
+``` python
+cycling
+```
+
+```out
+                 Date            Name  Type  Time  Distance                                   Comments
+0   Sep-10-2019 17:13  Afternoon Ride  Ride  2084     12.62                                      Rain 
+1   Sep-11-2019 06:52    Morning Ride  Ride  2531     13.03                                       rain
+2   Sep-11-2019 17:23  Afternoon Ride  Ride  1863     12.52                  Wet road but nice whether
+3   Sep-12-2019 07:06    Morning Ride  Ride  2192     12.84               Stopped for photo of sunrise
+4   Sep-12-2019 17:28  Afternoon Ride  Ride  1891     12.48              Tired by the end of the week.
+..                ...             ...   ...   ...       ...                                        ...
+28  Oct-04-2019 18:08  Afternoon Ride  Ride  1870     12.63           Very tired, riding into the wind
+29  Oct-10-2019 07:55    Morning Ride  Ride  2149     12.70              Really cold! But feeling good
+30  Oct-10-2019 18:10  Afternoon Ride  Ride  1841     12.59        Feeling good after a holiday break!
+31  Oct-11-2019 07:47    Morning Ride  Ride  2463     12.79               Stopped for photo of sunrise
+32  Oct-11-2019 18:16  Afternoon Ride  Ride  1843     11.79  Bike feeling tight, needs an oil and pump
+
+[33 rows x 6 columns]
+```
+
+Notes:
 
 The only problem is that when we work with data, we will be applying
 these transformations, not to a single string, but to a whole column of
 them.
 
 We saw back in Module 4 that string data is represented in a pandas
-dataframe using the dtype `object`. This is the default dtype given to
-columns that have a mix of different data types or if pandas cannot
-identify the column as any other dtype.
+dataframe using the dtype `object`.
 
-Remember when we discussed datetimes columns and we applied time
-functions to a whole column by adding `.dt` before the function?
+This is the default dtype given to columns that have a mix of different
+data types or if pandas cannot identify the column as any other dtype.
 
-We can use that same syntax style when applying string transformations
-to entire columns but this time using `.str`.
-
-Let’s bring back our `cycling` dataframe to demonstrate:
-
-``` python
-cycling.head()
-```
-
-```out
-                Date            Name  Type  Time  Distance                       Comments
-0  Sep-10-2019 17:13  Afternoon Ride  Ride  2084     12.62                          Rain 
-1  Sep-11-2019 06:52    Morning Ride  Ride  2531     13.03                           rain
-2  Sep-11-2019 17:23  Afternoon Ride  Ride  1863     12.52      Wet road but nice whether
-3  Sep-12-2019 07:06    Morning Ride  Ride  2192     12.84   Stopped for photo of sunrise
-4  Sep-12-2019 17:28  Afternoon Ride  Ride  1891     12.48  Tired by the end of the week.
-```
-
-Notes: Script here
-
-<html>
-
-<audio controls  >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+Let’s bring back our `cycling` dataframe to demonstrate how to work with
+columns of this dtype.
 
 ---
-
-Perhaps we wanted the entire `Comments` column in upper case. We can use
-`.assign()` and `.upper` paired with `.str` to transform the column.
 
 ``` python
 upper_cycle = cycling.assign(Comments = cycling['Comments'].str.upper())
@@ -195,11 +159,6 @@ upper_cycle.head()
 4  Sep-12-2019 17:28  Afternoon Ride  Ride  1891     12.48  TIRED BY THE END OF THE WEEK.
 ```
 
-Not too shabby\!
-
-How about a new column that contains the number of times “RAIN” is
-counted in `upper_cycle`:
-
 ``` python
 rain_cycle = upper_cycle.assign(Rain = upper_cycle['Comments'].str.count('RAIN'))
 rain_cycle.head()
@@ -214,22 +173,28 @@ rain_cycle.head()
 4  Sep-12-2019 17:28  Afternoon Ride  Ride  1891     12.48  TIRED BY THE END OF THE WEEK.     0
 ```
 
-Notes: Script here
+Notes:
 
-<html>
+Remember when we discussed datetimes columns and we applied time
+functions to a whole column by adding `.dt` before the function?
 
-<audio controls >
+We can use that same syntax style when applying string transformations
+to entire columns but this time using `.str`.
 
-<source src="/placeholder_audio.mp3" />
+Perhaps we wanted the entire `Comments` column from our `cycling`
+dataframe in uppercase.
 
-</audio>
+We can use `.assign()` and `.upper` paired with `.str` to transform the
+column.
 
-</html>
+Not too shabby\!
+
+How about we add a new column that contains the number of times “RAIN”
+is counted in `upper_cycle`.
+
+Again we use `.str.count('RAIN')`
 
 ---
-
-We’ve also seen this syntax when we used `str.split()` in Module 4 when
-we learned about splitting our columns:
 
 ``` python
 upper_cycle['Comments'].str.split(expand=True)
@@ -252,22 +217,15 @@ upper_cycle['Comments'].str.split(expand=True)
 [33 rows x 8 columns]
 ```
 
-Notes: Script here
+Notes:
 
-<html>
+We’ve also seen this syntax when we used `str.split()` in Module 4 when
+we learned about splitting our columns.
 
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+Here we split up every word in the `Comments` column and created a new
+column for each.
 
 ---
-
-Another operation that we’ve lightly touched on is contatenation of
-strings. For instance when we add 2 strings together:
 
 ``` python
 "My favourite colour" + "is Blue"
@@ -276,9 +234,6 @@ strings. For instance when we add 2 strings together:
 ```out
 'My favourite colouris Blue'
 ```
-
-This can be implemented in dataframes too by concatenating 2 columns to
-create a new one:
 
 ``` python
 combined_cycle = cycling.assign(Distance_str = cycling['Distance'].astype('str') + ' km')
@@ -294,82 +249,66 @@ combined_cycle.head()
 4  Sep-12-2019 17:28  Afternoon Ride  Ride  1891     12.48  Tired by the end of the week.     12.48 km
 ```
 
-Notes: Script here
+Notes:
 
-<html>
+Another operation that we’ve lightly touched on is concatenation of
+strings. For instance when we add 2 strings together:
 
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+This can be implemented in dataframes too by concatenating a column with
+`str` values with another `str` and create a column:
 
 ---
+
+``` python
+upper_cycle.head(3)
+```
+
+```out
+                Date            Name  Type  Time  Distance                   Comments
+0  Sep-10-2019 17:13  Afternoon Ride  Ride  2084     12.62                      RAIN 
+1  Sep-11-2019 06:52    Morning Ride  Ride  2531     13.03                       RAIN
+2  Sep-11-2019 17:23  Afternoon Ride  Ride  1863     12.52  WET ROAD BUT NICE WHETHER
+```
+
+``` python
+cap_cycle = upper_cycle.assign(Comments = upper_cycle['Comments'].str.capitalize())
+cap_cycle.head(3)
+```
+
+```out
+                Date            Name  Type  Time  Distance                   Comments
+0  Sep-10-2019 17:13  Afternoon Ride  Ride  2084     12.62                      Rain 
+1  Sep-11-2019 06:52    Morning Ride  Ride  2531     13.03                       Rain
+2  Sep-11-2019 17:23  Afternoon Ride  Ride  1863     12.52  Wet road but nice whether
+```
+
+``` python
+cap_cycle = upper_cycle.assign(Comments = upper_cycle['Comments'].str.title())
+cap_cycle.head(3)
+```
+
+```out
+                Date            Name  Type  Time  Distance                   Comments
+0  Sep-10-2019 17:13  Afternoon Ride  Ride  2084     12.62                      Rain 
+1  Sep-11-2019 06:52    Morning Ride  Ride  2531     13.03                       Rain
+2  Sep-11-2019 17:23  Afternoon Ride  Ride  1863     12.52  Wet Road But Nice Whether
+```
+
+Notes:
 
 A new function we haven’t discussed but is quite similar to `.upper()`
 and `.lower()` is`.capitalize()` which capitalizes the first word of the
-string:
-
-``` python
-cap_cycle = cycling.assign(Comments = cycling['Comments'].str.capitalize())
-cap_cycle.head()
-```
-
-```out
-                Date            Name  Type  Time  Distance                       Comments
-0  Sep-10-2019 17:13  Afternoon Ride  Ride  2084     12.62                          Rain 
-1  Sep-11-2019 06:52    Morning Ride  Ride  2531     13.03                           Rain
-2  Sep-11-2019 17:23  Afternoon Ride  Ride  1863     12.52      Wet road but nice whether
-3  Sep-12-2019 07:06    Morning Ride  Ride  2192     12.84   Stopped for photo of sunrise
-4  Sep-12-2019 17:28  Afternoon Ride  Ride  1891     12.48  Tired by the end of the week.
-```
+string.
 
 Another is `.title()`, which capitalizes the first letter of every word
-in a string:
-
-``` python
-cap_cycle = cycling.assign(Comments = cycling['Comments'].str.title())
-cap_cycle.head()
-```
-
-```out
-                Date            Name  Type  Time  Distance                       Comments
-0  Sep-10-2019 17:13  Afternoon Ride  Ride  2084     12.62                          Rain 
-1  Sep-11-2019 06:52    Morning Ride  Ride  2531     13.03                           Rain
-2  Sep-11-2019 17:23  Afternoon Ride  Ride  1863     12.52      Wet Road But Nice Whether
-3  Sep-12-2019 07:06    Morning Ride  Ride  2192     12.84   Stopped For Photo Of Sunrise
-4  Sep-12-2019 17:28  Afternoon Ride  Ride  1891     12.48  Tired By The End Of The Week.
-```
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+in a string.
 
 ---
 
-One function that might not seem that pertinent but is extremely useful
-is
+## Strip
+
 <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.str.strip.html" target="_blank">`.strip()`
 </a>.
-
-`strip()` removes characters starting or ending a string, with the
-default being spaces.
-
-For Example:
-
-To us, reading “Sunshine” and " Sunshine " are the same thing, but to
-Python, they are quite different because of the blank space surrounding
-it.
 
 ``` python
 "Sunshine" == " Sunshine "
@@ -378,10 +317,6 @@ it.
 ```out
 False
 ```
-
-The blank space on either side of a string often needs to be removed
-depending on the analysis. We can remove them in the example above using
-`strip()`:
 
 ``` python
 string1 = " Sunshine " 
@@ -401,25 +336,28 @@ new_string1
 True
 ```
 
-Notes: Script here
+Notes:
 
-<html>
+One function that might not seem that pertinent but is extremely useful
+is
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.str.strip.html" target="_blank">`.strip()`
+</a>.
 
-<audio controls >
+`strip()` removes characters starting or ending a string, with the
+default being spaces.
 
-<source src="/placeholder_audio.mp3" />
+For Example:
 
-</audio>
+To us, reading “Sunshine” and " Sunshine " are the same thing, but to
+Python, they are quite different because of the blank space surrounding
+it.
 
-</html>
+The blank space on either side of a string often needs to be removed
+depending on the analysis.
+
+We can remove them in the example above using `strip()`.
 
 ---
-
-This can be especially frustrating when we are trying to filter
-dataframes.
-
-Let’s try to filter our data to find rows where the value for the
-`Comments` column is “Rain”.
 
 ``` python
 cycling.head()
@@ -434,8 +372,6 @@ cycling.head()
 4  Sep-12-2019 17:28  Afternoon Ride  Ride  1891     12.48  Tired by the end of the week.
 ```
 
-We can see that index 0 should be filtered out but we get the following:
-
 ``` python
 cycling[cycling['Comments'] == 'Rain']
 ```
@@ -446,26 +382,21 @@ Columns: [Date, Name, Type, Time, Distance, Comments]
 Index: []
 ```
 
+Notes:
+
+This can be especially frustrating when we are trying to filter
+dataframes.
+
+Let’s try to filter our data to find rows where the value for the
+`Comments` column is “Rain”.
+
+We can see that index 0 should be filtered out but pandas does not
+recognize it with the trailing blank space.
+
 No rows are outputted. That’s because there is a blank space following
 “Rain”.
 
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
 ---
-
-Let’s now strip our column using `.strip()` and assigning the changes to
-the `Comments` column of a dataframe named `stripped_cycling`. Since we
-are using `.strip()` with a dataframe column we have to add `.str`.
 
 ``` python
 stripped_cycling = cycling.assign(Comments = cycling['Comments'].str.strip())
@@ -481,9 +412,6 @@ stripped_cycling.head()
 4  Sep-12-2019 17:28  Afternoon Ride  Ride  1891     12.48  Tired by the end of the week.
 ```
 
-And what happens now when we filter on rain on our new
-`stripped_cycling` dataframe:
-
 ``` python
 stripped_cycling[stripped_cycling['Comments'] == 'Rain']
 ```
@@ -493,24 +421,20 @@ stripped_cycling[stripped_cycling['Comments'] == 'Rain']
 0  Sep-10-2019 17:13  Afternoon Ride  Ride  2084     12.62     Rain
 ```
 
+Notes:
+
+Let’s now strip our column using `.strip()` and assigning the changes to
+the `Comments` column of a dataframe named `stripped_cycling`.
+
+Since we are using `.strip()` with a dataframe column we have to add
+`.str`.
+
+This time, when we filter on `Rain` on our new `stripped_cycling`
+dataframe, pandas filters out the row\!
+
 Ahh that’s much better\!
 
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
 ---
-
-We are not limited to stripping the values of white space. We can also
-strip any other character. Let’s try punctuation\!
 
 ``` python
 stripped_cycling.tail(5)
@@ -525,10 +449,6 @@ stripped_cycling.tail(5)
 32  Oct-11-2019 18:16  Afternoon Ride  Ride  1843     11.79  Bike feeling tight, needs an oil and pump
 ```
 
-We can see that index 30 has a value of `Feeling good after a holiday
-break!` in the `Comments` column. After using `str.strip('!')` we can
-see that it’s no loger has the exclamation mark\!
-
 ``` python
 stripped_cycling['Comments'].str.strip("!").tail()
 ```
@@ -542,26 +462,21 @@ stripped_cycling['Comments'].str.strip("!").tail()
 Name: Comments, dtype: object
 ```
 
-Notes: Script here
+Notes:
 
-<html>
+We are not limited to stripping the values of white space. We can also
+strip any other character. Let’s try punctuation\!
 
-<audio controls >
+We can see that index 30 has a value of `Feeling good after a holiday
+break!` in the `Comments` column.
 
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+After using `str.strip('!')` we can see that it’s no longer has the
+exclamation mark\!
 
 ---
 
-# Let’s practice what we learned\!
+# Let’s apply what we learned\!
 
-Notes: Script here
+Notes:
 
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
+<br>

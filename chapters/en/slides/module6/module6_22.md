@@ -4,63 +4,52 @@ type: slides
 
 # Good function design choices
 
-Notes: Script here
+Notes:
 
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+<br>
 
 ---
 
-This has been quite a filled module\! We’ve learned how to make
-functions, how to handle errors gracefully, how to test our functions
-and write the necessary documentation to keep our code comprehensible.
+## How to write good functions
+
+**What makes a function useful?**
+
+**Is a function more useful when it does more operations?**
+
+**Do adding parameters make your functions more or less functional?**
+
+These are all questions we need to think about when writing functions.
+
+Notes:
+
+This has been quite a filled module\!
+
+We’ve learned how to make functions, how to handle errors gracefully,
+how to test our functions and write the necessary documentation to keep
+our code comprehensible.
+
 These skills will all contribute to writing effective code.
 
 One thing we have not discussed yet is the actual code within a
 function.
 
-What makes a function useful?
+**What makes a function useful?**
 
-Is a function more useful when it does more operations?
+**Is a function more useful when it does more operations?**
 
-Do adding parameters make your functions more or less functional?
+**Do adding parameters make your functions more or less functional?**
 
 These are all questions we need to think about when writing functions.
 
 We are going to list some habits to adopt when writing and designing
 your functions.
 
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
 ---
 
 ## 1\. Avoid “Hard coding”
 
 **Hard coding** is the process of embedding values directly into your
-code without saving them in objects. When we hardcode values into our
-code, it decreases flexibility. Beging inflexible can cause you end up
-writing more functions and violating the DRY principle. This in turn can
-decreases the readability and makes code problematic to maintain. In
-short, hard coding is a breeding ground for bugs.
-
-Remember our function `squares_a_list()`?
+code without saving them in objects.
 
 ``` python
 def squares_a_list(numerical_list):
@@ -72,109 +61,56 @@ def squares_a_list(numerical_list):
     return new_squared_list
 ```
 
+``` python
+def exponent_a_list(numerical_list, exponent):
+    new_exponent_list = list()
+    
+    for number in numerical_list:
+        new_exponent_list.append(number ** exponent)
+    
+    return new_exponent_list
+```
+
+Notes:
+
+**Hard coding** is the process of embedding values directly into your
+code without saving them in objects.
+
+When we hardcode values into our code, it decreases flexibility.
+
+Being inflexible can cause you end up writing more functions and
+violating the DRY principle.
+
+This in turn can decreases the readability and makes code problematic to
+maintain. In short, hard coding is a breeding ground for bugs.
+
+Remember our function `squares_a_list()`?
+
 In this function, we “hard-coded” in `2` when we calculated `number
 ** 2`. This is also called a
 <a href="https://en.wikipedia.org/wiki/Magic_number_(programming)" target="_blank">magic
 number</a> .
 
-We can easily improve this design by either assiging 2 to a variable in
+We can easily improve this design by either assigning 2 to a variable in
 the function before doing this calculation or we can convert it into a
 parameter like we did when we made `exponent_a_list()`.
 
-``` python
-def exponent_a_list(numerical_list, exponent):
-    new_exponent_list = list()
-    
-    for number in numerical_list:
-        new_exponent_list.append(number ** exponent)
-    
-    return new_exponent_list
-```
+This new function now gives us more flexibility with our code.
 
-Notes: Script here
+If we now encounter a situation where we need to calculate each element
+to a different exponent like 4 or 0, we can do so without writing new
+code and potentially making a new error in doing so.
 
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
-
-``` python
-def exponent_a_list(numerical_list, exponent):
-    new_exponent_list = list()
-    
-    for number in numerical_list:
-        new_exponent_list.append(number ** exponent)
-    
-    return new_exponent_list
-```
-
-This new function now gives us more flexibility with our code. If we now
-encounted a situation where we need to calculate each element to a
-different exponent like 4 or 0, we can do so without writing new code
-and potentially making a new error in doing so. We reduce our long term
-work load.
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+We reduce our long term work load.
 
 ---
 
 ## 2\. Less is More
 
-Although it may seem useful when a function acts as a one-stop-shop that
-does everything you want in a single function, this also drastically
-limits your ability to reuse code that lies within it. Functions should
-serve for a single purpose.
-
-For example, let’s say we have a function that reads in a csv, finds the
-mean of each group in a column and plots a specified variable.
-
 ``` python
 def load_filter_and_average(file, grouping_column, ploting_column):
     df = pd.read_csv(file)
     source = df.groupby(grouping_column).mean().reset_index()
-    chart = alt.Chart(source, width = 500, height = 300).mark_bar().encode(
-    x=alt.X(grouping_column),
-    y=alt.Y(ploting_column))
-    return chart
-```
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
-
-``` python
-def load_filter_and_average(file, grouping_column, ploting_column):
-    df = pd.read_csv(file)
-
-    source = df.groupby(grouping_column).mean().reset_index()
-    
     chart = alt.Chart(source, width = 500, height = 300).mark_bar().encode(
     x=alt.X(grouping_column),
     y=alt.Y(ploting_column))
@@ -185,34 +121,30 @@ def load_filter_and_average(file, grouping_column, ploting_column):
 bad_idea = load_filter_and_average('cereal.csv', 'mfr', 'rating')
 bad_idea
 ```
-<img src="/module6/chart_bad_idea.png"  width="80%" />
+<img src="/module6/chart_bad_idea.png"  width="45%" />
 
-Notes: Script here
+Notes:
 
-<html>
+Although it may seem useful when a function acts as a one-stop-shop that
+does everything you want in a single function, this also drastically
+limits your ability to reuse code that lies within it.
 
-<audio controls >
+Functions should serve for a single purpose.
 
-<source src="/placeholder_audio.mp3" />
+For example, let’s say we have a function that reads in a csv, finds the
+mean of each group in a column and plots a specified variable.
 
-</audio>
+Although this may seem nice, it adds a lot of limitation.
 
-</html>
+Since the means are only printed and not returned we have no way of
+accessing the statistics to use further in our code (we would have to
+repeat ourselves and rewrite it).
+
+Additionally, what if we don’t want the plot? Perhaps the plots is just
+something we wanted a single time and now we are commited to it for each
+time we use the function.
 
 ---
-
-Although this may seem nice, it adds a lot of limitation. Since the mean
-is only printed and not returned we have no way of accessing thar
-statistic to use further in our code (we would have to repeat ourselves
-and rewrite it). Additionally, what if we don’t want the plot? Perhaps
-the plots is just something we wanted a single time and now we are
-commited to it for each time we use the function.
-
-In this case, you want to simplify the function. Having a function that
-only calculates the mean values of the groups in the specified column is
-much more usable. A preferred function would look something like this,
-where the input is a dataframe we have already read in, and the output
-is the dataframe of mean values for all the columns.
 
 ``` python
 def grouped_means(df, grouping_column):
@@ -236,22 +168,18 @@ cereal_mfr
 6   R  115.000000  2.500000  1.250000  198.125000  1.875000  17.625000  6.125000   89.500000  25.000000  2.000000  1.000000  0.871250  41.542997
 ```
 
-Notes: Script here
+Notes:
 
-<html>
+In this case, you want to simplify the function.
 
-<audio controls >
+Having a function that only calculates the mean values of the groups in
+the specified column is much more usable.
 
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+A preferred function would look something like this, where the input is
+a dataframe we have already read in, and the output is the dataframe of
+mean values for all the columns.
 
 ---
-
-If we wanted, we could then make a second function that creates the
-desired plot part of the previous function.
 
 ``` python
 def plot_mean(df, grouping_column, ploting_column):
@@ -265,31 +193,16 @@ def plot_mean(df, grouping_column, ploting_column):
 plot1 = plot_mean(cereal_mfr, 'mfr', 'rating')
 plot1
 ```
-<img src="/module6/plot_better.png"  width="80%" />
+<img src="/module6/plot_better.png"  width="55%" />
 
-Notes: Script here
+Notes:
 
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+If we wanted, we could then make a second function that creates the
+desired plot part of the previous function.
 
 ---
 
 ## 3\. Return a single object
-
-For the most part, we have only lightly touched on the fact that
-functions can return multiple objects and it’s with good reason.
-
-Although functions are *capable* of returning multiple objects, that
-doesn’t mean that it’s the best option. For instance, what if we
-converted our function `load_filter_and_average()` so that it returns a
-dataframe ***and*** a plot.
 
 ``` python
 def load_filter_and_average(file, grouping_column, ploting_column):
@@ -317,27 +230,29 @@ another_bad_idea
 6   R  115.000000  2.500000  1.250000  198.125000  1.875000  17.625000  6.125000   89.500000  25.000000  2.000000  1.000000  0.871250  41.542997)
 ```
 
-Notes: Script here
+Notes:
 
-<html>
+For the most part, we have only lightly touched on the fact that
+functions can return multiple objects and it’s with good reason.
 
-<audio controls >
+Although functions are *capable* of returning multiple objects, that
+doesn’t mean that it’s the best option.
 
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+For instance, what if we converted our function
+`load_filter_and_average()` so that it returns a dataframe ***and*** a
+plot.
 
 ---
-
-Since it returns a tuple we can obtain the plot by selecting the first
-element of it:
 
 ``` python
 another_bad_idea[0]
 ```
-<img src="/module6/plot_better.png"  width="80%" />
+<img src="/module6/plot_better.png"  width="60%" />
+
+Notes:
+
+Since it returns a tuple we can obtain the plot by selecting the first
+element of it.
 
 This can be quite confusing when we have a simple option of separating
 the code into two functions and can have each one return a single
@@ -347,33 +262,15 @@ It’s best to think of programming functions in the same way as
 mathematical functions where most times, mathematical functions return a
 single value.
 
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
 ---
 
 ## 4\. Keep global variables in their global environment
-
-It’s generally bad form to include objects in a function that were
-created outside of it. Take our `grouped_means()` function:
 
 ``` python
 def grouped_means(df, grouping_column):
     grouped_mean = df.groupby(grouping_column).mean().reset_index()
     return grouped_mean
 ```
-
-what if instead of including `df` as an input argument we just used
-`cereal` that we loaded earlier?
 
 ``` python
 cereal = pd.read_csv('cereal.csv')
@@ -383,24 +280,20 @@ def bad_grouped_means(grouping_column):
     return grouped_mean
 ```
 
+Notes:
+
+It’s generally bad form to include objects in a function that were
+created outside of it.
+
+Take our `grouped_means()` function.
+
+What if instead of including `df` as an input argument we just used
+`cereal` that we loaded earlier?
+
 The number one problem with doing this, is now our function only works
 on the cereal data - it’s not usable on other data.
 
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
 ---
-
-Ok let’s say we still use it, then what happens?
 
 ``` python
 bad_cereal_grouping = bad_grouped_means('mfr')
@@ -413,11 +306,6 @@ bad_cereal_grouping.head(3)
 1   G  111.363636  2.318182  1.363636  200.454545  1.272727  14.727273  7.954545   85.227273  35.227273  2.136364  1.049091  0.875000  34.485852
 2   K  108.695652  2.652174  0.608696  174.782609  2.739130  15.130435  7.565217  103.043478  34.782609  2.347826  1.077826  0.796087  44.038462
 ```
-
-Although it does work, global variables have the opportunity to be
-altered in the global environment. When we change the global variable
-outside the function, and try to use the function again, it will
-referred the new global variable and potentially no longer work.
 
 ``` python
 cereal = "let's change it to a string" 
@@ -433,47 +321,30 @@ Detailed traceback:
   File "<string>", line 2, in bad_grouped_means
 ```
 
-Notes: Script here
+Notes:
 
-<html>
+Ok let’s say we still use it, then what happens?
 
-<audio controls >
+Although it does work, global variables have the opportunity to be
+altered in the global environment.
 
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
+When we change the global variable outside the function, and try to use
+the function again, it will referred the new global variable and
+potentially no longer work.
 
 Of course, like in any case, these habits are suggestions and not strict
-rules. There will be times where adhering to one of these may not be
-possible or will hinder your code instead of enhancing it.
+rules.
+
+There will be times where adhering to one of these may not be possible
+or will hinder your code instead of enhancing it.
 
 The rule of thumb is to ask yourself how helpful is your function if you
 or someone else wishes to reuse it.
 
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
 ---
 
-# Let’s practice what we learned\!
+# Let’s apply what we learned\!
 
-Notes: Script here
+Notes:
 
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
+<br>

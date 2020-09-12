@@ -81,7 +81,7 @@ Similarly to how we can have a loop nested in an existing loop, we can have cond
 
 When we learned about conditions we had the following code.
 
-We checked the object  `item` with a value of 25 to see if it met the `if` condition, the `elif` condition and if it didn't meet either of those then it would undergo the code in the `else` statement body. 
+We checked the object `item` with a value of 25 to see if it met the `if` condition, the `elif` condition and if it didn't meet either of those then it would undergo the code in the `else` statement body. 
 
 ---
 
@@ -102,7 +102,7 @@ magnitude
 
 Notes: 
 
-Then we had to repeat and rewrite the same conditional statements code to check  `item` with a new value of 13 which violated the DRY principle since we repeated and copied the code again.
+Then we had to repeat and rewrite the same conditional statements code to check `item` with a new value of 13 which violated the DRY principle since we repeated and copied the code again.
 
 ---
 

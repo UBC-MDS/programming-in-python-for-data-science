@@ -4,61 +4,44 @@ type: slides
 
 # Unit tests, corner cases
 
-Notes: Script here
+Notes:
 
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+<br>
 
 ---
+
+***How can we be so sure that the code we wrote is doing what we want it
+to?***
+
+***Does our code work 100% of the time?***
+
+<center>
+
+<img src='/module6/question.png' width="25%" alt="404 image">
+
+</center>
+
+These questions can be answered by using something called **units
+tests**.
+
+Notes:
 
 In the last section, we learned about raising exceptions which in a lot
 of cases helps the function user identify if they are using it
 correctly.
 
-But how can we be so sure that the code we wrote is doing what we want
-it to?
-
-Does our code work 100% of the time?
-
 These questions can be answered by using something called **units
-tests**. We’ll be implementing unit tests in Python using `assert`
-statements." `assert` statements are just one way of implementing this.
+tests**.
+
+We’ll be implementing unit tests in Python using `assert` statements."
+`assert` statements are just one way of implementing this.
+
 Let’s first discuss how to write the syntax of an assert statement and
 then how they can be applied to the bigger concept which is unit tests.
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
 
 ---
 
 ## Assert Statements
-
-`assert` statements can be used as sanity checks for our program. We
-implement them as a “debugging” tactic to make sure our code runs as we
-expect it to.
-
-When Python reaches an `assert` statement, it evaluates the condition to
-a boolean value. If the statement is `True`, Python will continue to
-run. However, if the boolean is `False`, the code stops running and an
-error message is printed.
-
-Let’s take a look at one:
 
 ``` python
 assert 1 == 2 , "1 is not equal to 2."
@@ -71,52 +54,33 @@ Detailed traceback:
   File "<string>", line 1, in <module>
 ```
 
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
-
 <center>
 
 <img src='/module6/assert2.png' width="75%">
 
 </center>
 
-``` out
-AssertionError: 1 is not equal to 2.
+Notes:
 
-Detailed traceback: 
-  File "<string>", line 1, in <module>
-```
+`assert` statements can be used as sanity checks for our program.
+
+We implement them as a “debugging” tactic to make sure our code runs as
+we expect it to.
+
+When Python reaches an `assert` statement, it evaluates the condition to
+a Boolean value.
+
+If the statement is `True`, Python will continue to run. However, if the
+Boolean is `False`, the code stops running and an error message is
+printed.
+
+Let’s take a look at one.
 
 Here we have the keyword `assert` that checks if `1==2`. Since the
 Boolean is `False`, the message beside the condition `"1 is not equal
 to 2."` is outputted.
 
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
 ---
-
-Let’s take a look at an example where the Boolean is `True`:
 
 ``` python
 assert 1 == 1 , "1 is not equal to 1."
@@ -127,12 +91,6 @@ print('Will this line execute?')
 Will this line execute?
 ```
 
-Since the `assert` statement results in a `True` values, Python
-continues to run and the next line of code is executed.
-
-Unlike what we saw before where the error is thrown and the next line of
-code does not get an opportunity to be executed:
-
 ``` python
 assert 1 == 2 , "1 is not equal to 2."
 print('Will this line execute?')
@@ -145,24 +103,17 @@ Detailed traceback:
   File "<string>", line 1, in <module>
 ```
 
-Notes: Script here
+Notes:
 
-<html>
+Let’s take a look at an example where the Boolean is `True`.
 
-<audio controls >
+Since the `assert` statement results in a `True` values, Python
+continues to run and the next line of code is executed.
 
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+When an assert is thrown due to a Boolean evaluating to `False`, the
+next line of code does not get an opportunity to be executed.
 
 ---
-
-It’s important to know that not all `assert` statements need to have a
-message. We can re-write the statement from before without one. This
-time you’ll notice that the error doesn’t contain the particular message
-beside `AssertionError` like we had before.
 
 ``` python
 assert 1 == 2 
@@ -175,63 +126,50 @@ Detailed traceback:
   File "<string>", line 1, in <module>
 ```
 
-Notes: Script here
+Notes:
 
-<html>
+It’s important to know that not all `assert` statements need to have a
+message.
 
-<audio controls >
+We can re-write the statement from before without one.
 
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+This time you’ll notice that the error doesn’t contain the particular
+message beside `AssertionError` like we had before.
 
 ---
 
 ## Why?
 
+<center>
+
+<img src='/module6/why.png' width="100%">
+
+</center>
+
+Notes:
+
 Where do assert statements come in handy?
 
 Up to this point, we have been creating functions and only after we have
-written them, we’ve tested if they work. Instead, programmers often use
-a different approach: writing tests using `assert` statements before the
-actual function. This is called Test-Driven Development (TDD).
+written them, we’ve tested if they work.
+
+Instead, programmers often use a different approach: writing tests using
+`assert` statements before the actual function. This is called
+Test-Driven Development (TDD).
 
 This may seem a little counter-intuitive, but we’re creating the
 expectations of our function before the actual function code.
 
 Often we have an idea of what our function should be able to do, and
-what the function operation output is expected. If we write our tests
-before the function it helps understand exactly what code we need to
-write and it avoids encountering large time-consuming bugs down the
-line.
+what the function operation output is expected.
 
-<center>
-
-<img src='/module6/why.png' width="75%">
-
-</center>
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+If we write our tests before the function it helps understand exactly
+what code we need to write and it avoids encountering large
+time-consuming bugs down the line.
 
 ---
 
 ## What to test?
-
-So, what kind of tests do we want? We want to keep these tests simple -
-things that we know are true or could be easily calculated by hand.  
-For example, let’s look at our `exponent_a_list()` function:
 
 ``` python
 def exponent_a_list(numerical_list, exponent=2):
@@ -243,67 +181,49 @@ def exponent_a_list(numerical_list, exponent=2):
     return new_exponent_list
 ```
 
-Easy cases for this function would be lists containing numbers that we
-can easily square, or cube.
-
-For example, we expect the square output of `[1, 2, 4, 7]` to be
-`[1, 4, 16, 49]`.  
-The test for this would look like this:
-
 ``` python
 assert exponent_a_list([1, 2, 4, 7], 2) == [1, 4, 16, 49], "incorrect output for exponent = 2"
 ```
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
-
-It is recommended to do multiple tests. Let’s write another `assert` for
-a differently sized list as well as different values for both inputs.
-Let’s make another test for `exponent` = `3`. Again, we use numbers that
-we know the cube of.
 
 ``` python
 assert exponent_a_list([1, 2, 3], 3) == [1, 8, 27], "incorrect output for exponent = 3"
 ```
 
-We can also test that our expected datatype is correct:
-
 ``` python
 assert type(exponent_a_list([1,2,4], 2)) == list, "output type not a list"
 ```
 
-Notes: Script here
+Notes:
 
-<html>
+So, what kind of tests do we want?
 
-<audio controls >
+We want to keep these tests simple - things that we know are true or
+could be easily calculated by hand.
 
-<source src="/placeholder_audio.mp3" />
+For example, let’s look at our `exponent_a_list()` function.
 
-</audio>
+Easy cases for this function would be lists containing numbers that we
+can easily square, or cube.
 
-</html>
+For example, we expect the square output of `[1, 2, 4, 7]` to be
+`[1, 4, 16, 49]`.
+
+The test for this would look like this.
+
+It is recommended to do multiple tests.
+
+Let’s write another `assert` for a differently sized list as well as
+different values for both input arguments `numerical_list` and
+`exponent`.
+
+Let’s make another test for `exponent` = `3`. Again, we use numbers that
+we know the cube of.
+
+We can also test that our expected return object’s data type is correct.
 
 ---
 
 ## False Positives
-
-Just because all our tests pass, this does not mean our program is
-necessarily correct. It’s common that our tests can pass but our code
-contains errors.
-
-Let’s take a look at the function `bad_function()` below:
 
 ``` python
 def bad_function(numerical_list, exponent=2):
@@ -313,33 +233,12 @@ def bad_function(numerical_list, exponent=2):
     return new_exponent_list
 ```
 
-This function looks like it would work perfectly fine but what happen’s
-if we get an input argument for `numerical_list` that cannot be sliced?
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
-
-Let’s write some unit tests using `assert` statements and see what
-happens:
-
 ``` python
 assert bad_function([1, 2, 4, 7], 2) == [1, 4, 16, 49], "incorrect output for exponent = 2"
 assert bad_function([2, 1, 3], 3) == [8, 1, 27], "incorrect output for exponent = 3"
 ```
 
-Here, it looks like our tests pass\! But what happens if we try our
-function with an empty list:
+<br> <br>
 
 ``` python
 bad_function([], 2)
@@ -353,42 +252,41 @@ Detailed traceback:
   File "<string>", line 2, in bad_function
 ```
 
-We get an unexpected error\! How do we avoid this?  
+Notes:
+
+Just because all our tests pass, this does not mean our program is
+necessarily correct.
+
+It’s common that our tests can pass but our code contains errors.
+
+Let’s take a look at the function `bad_function()`.
+
+This function looks like it would work perfectly fine but what happen’s
+if we get an input argument for `numerical_list` that cannot be sliced?
+
+Let’s write some unit tests using `assert` statements and see what
+happens.
+
+Here, it looks like our tests pass at first.
+
+But what happens if we try our function with an empty list?
+
+We get an unexpected error\! How do we avoid this?
+
 Write a lot of tests and don’t be overconfident, even after writing a
-lot of tests\! Checking an empty list in our `bad_function()` function
-is an example of checking a **corner case**.
+lot of tests\!
 
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+Checking an empty list in our `bad_function()` function is an example of
+checking a **corner case**.
 
 ---
 
 ## Corner Cases
 
-A corner case is an input that is reasonable but a bit unusual and may
-trip up our code.
-
-For example, taking the square of an empty list which we just saw, or
-taking a 0 or negative value exponent. Often it is desirable to add test
-cases to address corner cases.
-
-Let’s check some other corner cases on `bad_function()`:
-
 ``` python
 assert bad_function([0, 1, 3], 0) == [1, 1, 1], "incorrect output for exponent 0"
 assert bad_function([1, 2], -2) == [1, 0.25], "incorrect output for a negative exponent"
 ```
-
-These corner cases pass, but let’s try another one:
 
 ``` python
 assert bad_function([0, 2, 4], -1) == [1, 0.5, 0.25], "incorrect output for a negative exponent"
@@ -402,24 +300,6 @@ Detailed traceback:
   File "<string>", line 2, in bad_function
 ```
 
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
----
-
-In this example, instead of throwing an `assert` message, the code
-doesn’t get the opportunity to get that far and throws an error at the
-function level:
-
 ``` python
 bad_function([0, 2, 4], -1)
 ```
@@ -432,38 +312,43 @@ Detailed traceback:
   File "<string>", line 2, in bad_function
 ```
 
+Notes:
+
+A corner case is an input that is reasonable but a bit unusual and may
+trip up our code.
+
+For example, taking the square of an empty list which we just saw, or
+taking a 0 or negative value exponent.
+
+Often it is desirable to add tests to address corner cases.
+
+Let’s check some other corner cases on `bad_function()`.
+
+Here we check a corner case of a 0 value for the `exponent` argument as
+well as a negative integer.
+
+These corner cases pass, but let’s try another one.
+
+Here we see that 0 cannot be raised to a negative integer, so our
+function isn’t perfect\!
+
+In this example, instead of throwing an `assert` message, the code
+doesn’t get the opportunity to get that far and throws an error at the
+function level.
+
 Since 0 to the power of -1 is equal to 1/0, we might want the function
-to output infinity. In this case, we would need to correct the code in
-our function to handle this weird case or inform the user using
-`Exceptions` that our function cannot accept lists containing 0 if the
-exponent is negative.
+to output infinity.
+
+In this case, we would need to correct the code in our function to
+handle this weird case or inform the user using `Exceptions` that our
+function cannot accept lists containing 0 if the exponent is negative.
 
 This is an example of why testing corner cases and making unit tests in
 general is so important when we write code.
 
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
-
 ---
 
 # Testing Functions that Work with Data
-
-Often, we will be making functions that work on data.
-
-For example, perhaps we want to write a function called `column_stats`
-that returns some summary statistics in form of a dictionary. The
-function below is something we might have envisioned (Note that if we’re
-using test-driven development then this function will just be an idea,
-not just completed code.)
 
 ``` python
 def column_stats(df, column):
@@ -474,34 +359,28 @@ def column_stats(df, column):
    return stats_dict
 ```
 
-In these situations, w need to invent some sort of data so that we can
+Notes:
+
+Often, we will be making functions that work on data.
+
+For example, perhaps we want to write a function called `column_stats`
+that returns some summary statistics in form of a dictionary.
+
+The function below is something we might have envisioned. (Note that if
+we’re using test-driven development, this function will just be an idea,
+not completed code.)
+
+In these situations, we need to invent some sort of data so that we can
 easily calculate the max, min, range, and mean and write unit tests to
 check that our function does the correct operations.
 
 The data can be made from scratch using functions such as
 `pd.DataFrame()` or `pd.DataFrame.from_dict()` which we learned about in
-module 4. You can also upload a very small slice of an existing
-dataframe.
+module 4.
 
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+You can also upload a very small slice of an existing dataframe.
 
 ---
-
-The values we chose in our columns need to be simple enough to calculate
-the expected output of our function. Just like how we used made tests
-using calculations we knew to be true, we do the same using a simple
-dataset we call **helper data**. The dataframe must have a small
-dimension to keep the calculations simple.
 
 ``` python
 data = {'name': ['Cherry', 'Oak', 'Willow', 'Fir', 'Oak'], 
@@ -523,30 +402,44 @@ forest
 4     Oak      10         5    0      False
 ```
 
-The tests we write for the function `column_stats()` are now easy to
-calculate:
-
 ``` python
 assert column_stats(forest, 'height') == {'max': 20, 'min': 5, 'mean': 12.0, 'range': 15}
 assert column_stats(forest, 'diameter') == {'max': 10, 'min': 2, 'mean': 5.0, 'range': 8}
 assert column_stats(forest, 'age') == {'max': 0, 'min': 0, 'mean': 0, 'range': 0}
 ```
 
-Notes: Script here
+Notes:
 
-<html>
+The values we chose in our columns need to be simple enough to calculate
+the expected output of our function.
 
-<audio controls >
+Just like how we used made tests using calculations we know to be true,
+we do the same using a simple dataset we call **helper data**.
 
-<source src="/placeholder_audio.mp3" />
+The dataframe must have a small dimension to keep the calculations
+simple.
 
-</audio>
+The tests we write for the function `column_stats()` are now easy to
+calculate since the values we are using are few and simple.
 
-</html>
+We wrote tests that check different columns in our `forest` dataframe.
 
 ---
 
 ## Systematic Approach
+
+We use a **systematic approach** to design our function using a general
+set of steps to follow when writing programs.
+
+***1. Write the function stub: a function that does nothing but accepts
+all input parameters and return the correct datatype.***
+
+``` python
+def exponent_a_list(numerical_list, exponent=2):
+    return list()
+```
+
+Notes:
 
 We use a **systematic approach** to design our function using a general
 set of steps to follow when writing programs.
@@ -556,78 +449,52 @@ The approach we recommend includes 5 steps:
 ***1. Write the function stub: a function that does nothing but accepts
 all input parameters and return the correct datatype.***
 
-This means we are writing the skeleton of a function. We include the
-line that defines the function with the input arguments and the return
-statement returning the object with the desired data type.
+This means we are writing the skeleton of a function.
 
-Using our `exponent_a_list()` function as an example:
+We include the line that defines the function with the input arguments
+and the return statement returning the object with the desired data
+type.
 
-``` python
-def exponent_a_list(numerical_list, exponent=2):
-    return list()
-```
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+Using our `exponent_a_list()` function as an example, we include the
+function’s initialization line and the return statement.
 
 ---
 
 ***2. Write tests to satisfy the design specifications.***
 
-This is where our `assert` statements come in. We write tests that we
-want our function to pass. In our `exponent_a_list()` example we expect
-that our function will take in a list and an optional argument named
-`exponent` and then returns a list with the exponential value of each
-element of the input list.
-
 ``` python
 def exponent_a_list(numerical_list, exponent=2):
     return list()
-    
+   
 assert type(exponent_a_list([1,2,4], 2)) == list, "output type not a list"
 assert exponent_a_list([1, 2, 4, 7], 2) == [1, 4, 16, 49], "incorrect output for exponent = 2"
 assert exponent_a_list([1, 2, 3], 3) == [1, 8, 27], "incorrect output for exponent = 3"
 ```
 
 ``` out
-NameError: name 'new_exponent_list' is not defined
+AssertionError: incorrect output for exponent = 2
 
 Detailed traceback: 
   File "<string>", line 1, in <module>
-  File "<string>", line 2, in exponent_a_list
 ```
 
+Notes:
+
+***2. Write tests to satisfy the design specifications.***
+
+This is where our `assert` statements come in.
+
+We write tests that we want our function to pass.
+
+In our `exponent_a_list()` example we expect that our function will take
+in a list and an optional argument named `exponent` and then returns a
+list with the exponential value of each element of the input list.
+
 Here we can see our code fails since we have not function code yet\!
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
 
 ---
 
 ***3. Outline the program with pseudo-code.***
-
-Pseudocode is an informal but high-level description of the code and
-operations that we wish to implement. In this step, we are essentially
-writing the steps that we anticipate needing to complete our function as
-comments within the function:
 
 ``` python
 def exponent_a_list(numerical_list, exponent=2):
@@ -645,31 +512,32 @@ assert exponent_a_list([1, 2, 3], 3) == [1, 8, 27], "incorrect output for expone
 ```
 
 ``` out
-AssertionError: exponent_a_list, does not result in expected output when exponent = 2
+AssertionError: incorrect output for exponent = 2
 
 Detailed traceback: 
   File "<string>", line 1, in <module>
 ```
 
-Notes: Script here
+Notes:
 
-<html>
+***3. Outline the program with pseudo-code.***
 
-<audio controls >
+Pseudo-code is an informal but high-level description of the code and
+operations that we wish to implement.
 
-<source src="/placeholder_audio.mp3" />
+In this step, we are essentially writing the steps that we anticipate
+needing to complete our function as comments within the function.
 
-</audio>
+So for our function out pseudo-code includes:
 
-</html>
+    # create a new empty list
+    # loop through all the elements in numerical_list
+    # for each element calculate element ** exponent
+    # append it to the new list 
 
 ---
 
 ***4. Write code and test frequently.***
-
-Here is where we construct a function. As you work on the code, more and
-more tests of the tests that you wrote will pass until finally all your
-`assert` statements no longer produce any messages.
 
 ``` python
 def exponent_a_list(numerical_list, exponent=2):
@@ -685,22 +553,19 @@ assert exponent_a_list([1, 2, 4, 7], 2) == [1, 4, 16, 49], "incorrect output for
 assert exponent_a_list([1, 2, 3], 3) == [1, 8, 27], "incorrect output for exponent = 3"
 ```
 
-Notes: Script here
+Notes:
 
-<html>
+***4. Write code and test frequently.***
 
-<audio controls >
+Here is where we fill in our function.
 
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+As you work on the code, more and more tests of the tests that you wrote
+will pass until finally all your `assert` statements no longer produce
+any messages.
 
 ---
 
-***5. Write documentation.***  
-Finally, finish our function with a docstring.
+***5. Write documentation.***
 
 ``` python
 def exponent_a_list(numerical_list, exponent=2):
@@ -730,26 +595,16 @@ def exponent_a_list(numerical_list, exponent=2):
     return new_exponent_list
 ```
 
-Notes: Script here
+Notes:
 
-<html>
+***5. Write documentation.***
 
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+Finally, we finish writing our function with a docstring.
 
 ---
 
-# Let’s practice what we learned\!
+# Let’s apply what we learned\!
 
-Notes: Script here
+Notes:
 
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
+<br>

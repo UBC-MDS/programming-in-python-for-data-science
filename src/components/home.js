@@ -24,11 +24,12 @@ export default ({ lang = 'en' }) => {
                         <Logo className={classes.logo} />
                         <section>
                                 <h1 className={classes.subtitle}><center>Programming in Python for Data Science</center></h1>
-                                    <div className={classes.introduction}>
+                            <div className={classes.introduction}>
+                                
                                         <p>
                                         <center>
                                         Welcome to Programming in Python for Data Science !
-                                        This course is part of the Key Capabilities for Data Science program and will teach you how to conduct data analysis in Python.
+                                        This course is part of the  <u><strong><a href="https://extendedlearning.ubc.ca/programs/key-capabilities-data-science" target="_blank" >Key Capabilities for Data Science program</a></strong></u> and will teach you how to conduct data analysis in Python.
                                         During the course,
                                         you will work with powerful Python packages made for data-science,
                                         including Pandas for processing tabular data,

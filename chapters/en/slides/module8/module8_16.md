@@ -795,8 +795,6 @@ cycling_intervals.min()
 Timedelta('0 days 10:15:00')
 ```
 
-We can also do simple operation with them:
-
 ``` python
 interval_range = cycling_intervals.max() - cycling_intervals.min()
 interval_range
@@ -816,7 +814,7 @@ For example, we can calculate the maximum amount of time between rides.
 
 As well as the minimum.
 
-We can then use these to do further calculations like finding the range.
+We can also do simple operation with them like finding the range.
 
 ---
 
