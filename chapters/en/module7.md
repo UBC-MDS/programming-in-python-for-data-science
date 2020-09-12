@@ -1,7 +1,7 @@
 ---
 title: "Module 7: Importing Files and the Coding Style Guide"
 description:
-   'In this module you will learn about how to import files and libraries from other directories and stylize your code for optimal readability'
+   'In this module you will learn about how to import files and libraries from other directories and stylize your code for optimal readability.'
 prev: /module6
 next: /module8
 type: chapter

@@ -11,14 +11,14 @@ id: 6
 
 <exercise id="0" title="Module Learning Outcomes" type="slides, video">
 
-<slides source="module6/module6_00" start="0:165" end="3:01">
+<slides source="module6/module6_00" shot = "0" start="0:165" end="3:01">
 </slides>
 
 </exercise> 
 
-<exercise id="1" title="DRY Revisited and Function Fundamentals" type="slides">
+<exercise id="1" title="DRY Revisited and Function Fundamentals" type="slides, video">
 
-<slides source="module6/module6_01">
+<slides source="module6/module6_01" shot = "1" start="0:165" end="3:01">
 </slides>
 
 </exercise>
@@ -261,9 +261,9 @@ Tasks:
 
 </exercise>
 
-<exercise id="5" title="Default Arguments" type="slides">
+<exercise id="5" title="Default Arguments" type="slides, video">
 
-<slides source="module6/module6_05">
+<slides source="module6/module6_05" shot = "1" start="0:165" end="3:01">
 </slides>
 
 </exercise>
@@ -441,9 +441,9 @@ Tasks:
 </exercise>
 
 
-<exercise id="9" title="Function Docstrings" type="slides">
+<exercise id="9" title="Function Docstrings" type="slides, video">
 
-<slides source="module6/module6_09">
+<slides source="module6/module6_09" shot = "1" start="0:165" end="3:01">
 
 </slides>
 
@@ -765,9 +765,9 @@ Tasks:
 </exercise>
 
 
-<exercise id="13" title="Defensive Programming using Exceptions" type="slides">
+<exercise id="13" title="Defensive Programming using Exceptions" type="slides, video">
 
-<slides source="module6/module6_13">
+<slides source="module6/module6_13" shot = "1" start="0:165" end="3:01">
 
 </slides>
 
@@ -981,9 +981,9 @@ Tasks:
 </exercise>
 
 
-<exercise id="17" title="Unit tests and Corner Cases" type="slides">
+<exercise id="17" title="Unit tests and Corner Cases" type="slides, video">
 
-<slides source="module6/module6_17">
+<slides source="module6/module6_17" shot = "1" start="0:165" end="3:01">
 
 </slides>
 
@@ -1230,9 +1230,9 @@ Tasks:
 
 </exercise>
 
-<exercise id="22" title="Good Function Design Choices" type="slides">
+<exercise id="22" title="Good Function Design Choices" type="slides, video">
 
-<slides source="module6/module6_22">
+<slides source="module6/module6_22" shot = "1" start="0:165" end="3:01">
 
 </slides>
 
@@ -1357,6 +1357,6 @@ Tasks:
 </exercise>
 
 <exercise id="26" title="What Did We Just Learn?" type="slides, video">
-<slides source="module6/module6_end" start="0:165" end="3:01">>
+<slides source="module6/module6_end" shot = "0" start="0:165" end="3:01">>
 </slides>
 </exercise>

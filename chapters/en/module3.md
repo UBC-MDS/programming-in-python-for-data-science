@@ -1,23 +1,23 @@
 ---
 title: 'Module 3: Tidy Data and Joining Dataframes'
 description:
-  'In this Module, you will learn about tidy data and how to transform your dataset into a tidy format. It will also focus on how to combine and stack multiple dataframes.'
+  'In this Module, you will learn about tidy data and how to transform your dataset into a tidy format. It will also focus on how to concatenate and join multiple dataframes.'
 prev: /module2
 next: /module4
 type: chapter
 id: 3
 ---
 
-<exercise id="0" title="Module Learning Outcomes" type="slides, video">
+<exercise id="0" title="Module Learning Outcomes" type="slides,video">
 
-<slides source="module3/module3_00" start="0:165" end="3:01">
+<slides source="module3/module3_00" shot="0" start="0:165" end="3:01">
 </slides>
 
 </exercise> 
 
-<exercise id="1" title="What is Tidy Data?" type="slides">
+<exercise id="1" title="What is Tidy Data?" type="slides,video">
 
-<slides source="module3/module3_01">
+<slides source="module3/module3_01" shot="1" start="0:165" end="3:01">
 </slides>
 
 </exercise>
@@ -124,9 +124,9 @@ Good job!  You must have seen the duplicate rows of `Ivysaur`, `Charmeleon` and 
 
 </exercise>
 
-<exercise id="5" title="Statistical Questions and Tidy Data" type="slides">
+<exercise id="5" title="Statistical Questions and Tidy Data" type="slides,video">
 
-<slides source="module3/module3_05">
+<slides source="module3/module3_05" shot="1" start="0:165" end="3:01">
 
 </slides>
 
@@ -190,9 +190,9 @@ Good job! Of course it depends on the statistical question!
 </exercise>
 
 
-<exercise id="8" title="Reshaping with Pivot" type="slides">
+<exercise id="8" title="Reshaping with Pivot" type="slides,video">
 
-<slides source="module3/module3_08">
+<slides source="module3/module3_08" shot="1" start="0:165" end="3:01">
 
 </slides>
 
@@ -278,9 +278,9 @@ Tasks:
 </exercise>
 
 
-<exercise id="11" title="Reshaping with Pivot Table" type="slides">
+<exercise id="11" title="Reshaping with Pivot Table" type="slides,video">
 
-<slides source="module3/module3_11">
+<slides source="module3/module3_11" shot="1" start="0:165" end="3:01">
 
 </slides>
 
@@ -394,9 +394,9 @@ Are your sorting by `ascending=False`?
 
 
 
-<exercise id="14" title="Reshaping with Melt" type="slides">
+<exercise id="14" title="Reshaping with Melt" type="slides,video">
 
-<slides source="module3/module3_14">
+<slides source="module3/module3_14" shot="1" start="0:165" end="3:01">
 
 </slides>
 
@@ -499,9 +499,9 @@ Tasks:
 </exercise>
 
 
-<exercise id="17" title="Concatenation" type="slides">
+<exercise id="17" title="Concatenation" type="slides,video">
 
-<slides source="module3/module3_17">
+<slides source="module3/module3_17" shot="1" start="0:165" end="3:01">
 
 </slides>
 
@@ -635,9 +635,9 @@ Tasks:
 
 </exercise>
 
-<exercise id="21" title="Joining Dataframes using Merge" type="slides">
+<exercise id="21" title="Joining Dataframes using Merge" type="slides,video">
 
-<slides source="module3/module3_21">
+<slides source="module3/module3_21" shot="1" start="0:165" end="3:01">
 
 </slides>
 
@@ -989,7 +989,7 @@ Did you look at the wrong dataframe?
 </exercise>
 
 
-<exercise id="25" title="What Did We Just Learn?" type="slides, video">
-<slides source="module3/module3_25" start="0:165" end="3:01">>
+<exercise id="25" title="What Did We Just Learn?" type="slides,video">
+<slides source="module3/module3_25" shot ="0" start="0:165" end="3:01">>
 </slides>
 </exercise>

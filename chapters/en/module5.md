@@ -1,7 +1,7 @@
 ---
 title: 'Module 5: Making Choices and Repeating Iterations'
 description:
-  'In this module, you will learn how to write conditionals and learn the fundamentals of how to create code that efficiently repeats the same operations following the DRY principle.'
+  'In this module, you will learn how to write conditionals statements and learn the fundamentals of how to create code that efficiently repeats the same operations by following the DRY principle.'
 prev: /module4
 next: /module6
 type: chapter
@@ -10,14 +10,14 @@ id: 5
 
 <exercise id="0" title="Module Learning Outcomes" type="slides, video">
 
-<slides source="module5/module5_00" start="0:165" end="3:01">
+<slides source="module5/module5_00" shot = "0" start="0:165" end="3:01">
 </slides>
 
 </exercise> 
 
-<exercise id="1" title="Making Choices with Conditional Statements" type="slides">
+<exercise id="1" title="Making Choices with Conditional Statements" type="slides, video">
 
-<slides source="module5/module5_01">
+<slides source="module5/module5_01" shot = "1" start="0:165" end="3:01">
 </slides>
 
 </exercise>
@@ -309,9 +309,9 @@ The code you made above should not result in an error message.
 
 </exercise>
 
-<exercise id="6" title="Repeated Iterations (Loops)" type="slides">
+<exercise id="6" title="Repeated Iterations (Loops)" type="slides, video">
 
-<slides source="module5/module5_06">
+<slides source="module5/module5_06" shot = "1" start="0:165" end="3:01">
 
 </slides>
 
@@ -449,9 +449,9 @@ Tasks:
 </exercise>
 
 
-<exercise id="9" title="Range, Dictionaries and Comprehensions" type="slides">
+<exercise id="9" title="Range, Dictionaries and Comprehensions" type="slides, video">
 
-<slides source="module5/module5_09">
+<slides source="module5/module5_09" shot = "1" start="0:165" end="3:01">
 
 </slides>
 
@@ -588,9 +588,9 @@ Tasks:
 </exercise>
 
 
-<exercise id="13" title="Nested Loops" type="slides">
+<exercise id="13" title="Nested Loops" type="slides, video">
 
-<slides source="module5/module5_13">
+<slides source="module5/module5_13" shot = "1" start="0:165" end="3:01">
 
 </slides>
 
@@ -707,9 +707,9 @@ Are you putting `character_count = character_count + len(dish)` in the inner loo
 
 </exercise>
 
-<exercise id="16" title="Repeated Iterations with Conditions" type="slides">
+<exercise id="16" title="Repeated Iterations with Conditions" type="slides, video">
 
-<slides source="module5/module5_16">
+<slides source="module5/module5_16" shot = "1" start="0:165" end="3:01">
 
 </slides>
 
@@ -887,9 +887,9 @@ With repetitive code, there is generally always a manner to reduce redundant cod
 </exercise>
 
 
-<exercise id="19" title="Functions" type="slides">
+<exercise id="19" title="Functions" type="slides, video">
 
-<slides source="module5/module5_19">
+<slides source="module5/module5_19" shot = "1" start="0:165" end="3:01">
 
 </slides>
 
@@ -1030,6 +1030,6 @@ Tasks:
 
 
 <exercise id="23" title="What Did We Just Learn?" type="slides, video">
-<slides source="module5/module5_end" start="0:165" end="3:01">>
+<slides source="module5/module5_end" shot = "0" start="0:165" end="3:01">>
 </slides>
 </exercise>

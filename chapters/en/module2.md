@@ -11,14 +11,14 @@ id: 2
 
 <exercise id="0" title="Module Learning Outcomes" type="slides,video">
 
-<slides source="module2/module2_00" start="0:165" end="3:01">
+<slides source="module2/module2_00"  shot="0" start="0:165" end="3:01">
 </slides>
 
 </exercise>
 
-<exercise id="1" title="Reading in Different File Types" type="slides">
+<exercise id="1" title="Reading in Different File Types" type="slides,video">
 
-<slides source="module2/module2_01">
+<slides source="module2/module2_01" shot="1" start="0:165" end="3:01">
 </slides>
 
 </exercise>
@@ -155,9 +155,9 @@ Tasks:
 
 </exercise>
 
-<exercise id="6" title="Arguments for Reading Data" type="slides">
+<exercise id="6" title="Arguments for Reading Data" type="slides,video">
 
-<slides source="module2/module2_06">
+<slides source="module2/module2_06" shot="1" start="0:165" end="3:01">
 </slides>
 
 </exercise>
@@ -248,9 +248,9 @@ Tasks:
 </exercise>
 
 
-<exercise id="9" title="Column Renaming and Dropping" type="slides">
+<exercise id="9" title="Column Renaming and Dropping" type="slides,video">
 
-<slides source="module2/module2_09">
+<slides source="module2/module2_09" shot="1" start="0:165" end="3:01">
 </slides>
 
 </exercise>
@@ -385,9 +385,9 @@ Tasks:
 </exercise>
 
 
-<exercise id="13" title="Column Arithmetic and Creation" type="slides">
+<exercise id="13" title="Column Arithmetic and Creation" type="slides,video">
 
-<slides source="module2/module2_13">
+<slides source="module2/module2_13" shot="1" start="0:165" end="3:01">
 </slides>
 
 </exercise>
@@ -475,9 +475,9 @@ Tasks:
 </exercise>
 
 
-<exercise id="16" title="Data Filtering" type="slides">
+<exercise id="16" title="Data Filtering" type="slides,video">
 
-<slides source="module2/module2_16">
+<slides source="module2/module2_16" shot="1" start="0:165" end="3:01">
 </slides>
 
 </exercise>
@@ -634,9 +634,9 @@ You can use `mighty_pokemon['type'].value_counts()` to find out.
 </exercise>
 
 
-<exercise id="20" title="Conditional Value Replacement and Assignment" type="slides">
+<exercise id="20" title="Conditional Value Replacement and Assignment" type="slides,video">
 
-<slides source="module2/module2_20">
+<slides source="module2/module2_20" shot="1" start="0:165" end="3:01">
 
 </slides>
 
@@ -684,9 +684,9 @@ Tasks:
 </exercise>
 
 
-<exercise id="22" title="Chaining Notation" type="slides">
+<exercise id="22" title="Chaining Notation" type="slides,video">
 
-<slides source="module2/module2_22">
+<slides source="module2/module2_22" shot="1" start="0:165" end="3:01">
 
 </slides>
 
@@ -771,9 +771,9 @@ Tasks:
 
 </exercise>
 
-<exercise id="25" title="Grouping and Aggregating" type="slides">
+<exercise id="25" title="Grouping and Aggregating" type="slides,video">
 
-<slides source="module2/module2_25">
+<slides source="module2/module2_25" shot="1" start="0:165" end="3:01">
 </slides>
 
 </exercise>
@@ -910,9 +910,9 @@ Tasks:
 </exercise>
 
 
-<exercise id="29" title="Plotting with Altair" type="slides">
+<exercise id="29" title="Plotting with Altair" type="slides,video">
 
-<slides source="module2/module2_29">
+<slides source="module2/module2_29" shot="1" start="0:165" end="3:01">
 </slides>
 
 </exercise>
@@ -986,6 +986,6 @@ Take another look at the plot.
 
 
 <exercise id="31" title="What Did We Just Learn?" type="slides,video">
-<slides source="module2/module2_31" start="0:165" end="3:01">>
+<slides source="module2/module2_31" shot= "0" start="0:165" end="3:01">>
 </slides>
 </exercise>

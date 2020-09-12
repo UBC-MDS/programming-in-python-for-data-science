@@ -17,9 +17,9 @@ id: 8
 
 </exercise> 
 
-<exercise id="1" title="NumPy and 1D Arrays" type="slides">
+<exercise id="1" title="NumPy and 1D Arrays" type="slides,video">
 
-<slides source="module8/module8_01">
+<slides source="module8/module8_01" shot = "1" start="0:165" end="3:01">
 </slides>
 
 </exercise>
@@ -232,9 +232,9 @@ This is an example of how useful arrays can be when doing numerical computation!
 </exercise>
 
 
-<exercise id="5" title="Multi-dimensional Arrays" type="slides">
+<exercise id="5" title="Multi-dimensional Arrays" type="slides,video">
 
-<slides source="module8/module8_05">
+<slides source="module8/module8_05" shot = "1" start="0:165" end="3:01">
 </slides>
 
 </exercise>
@@ -607,9 +607,9 @@ Tasks:
 </exercise>
 
 
-<exercise id="11" title="Working with Null Values" type="slides">
+<exercise id="11" title="Working with Null Values" type="slides,video">
 
-<slides source="module8/module8_11">
+<slides source="module8/module8_11" shot = "1" start="0:165" end="3:01">
 </slides>
 
 </exercise>
@@ -888,9 +888,9 @@ Tasks:
 </exercise>
 
 
-<exercise id="16" title="Working with Dates and Time" type="slides">
+<exercise id="16" title="Working with Dates and Time" type="slides,video">
 
-<slides source="module8/module8_16">
+<slides source="module8/module8_16" shot = "1" start="0:165" end="3:01">
 </slides>
 
 </exercise>
@@ -1036,9 +1036,9 @@ Tasks:
 
 </exercise>
 
-<exercise id="19" title="Introduction to Working with Strings" type="slides">
+<exercise id="19" title="Introduction to Working with Strings" type="slides,video">
 
-<slides source="module8/module8_19">
+<slides source="module8/module8_19" shot = "1" start="0:165" end="3:01">
 </slides>
 
 </exercise>
@@ -1235,9 +1235,9 @@ Are you filtering the dataset correctly?
 </exercise>
 
 
-<exercise id="23" title="More Advanced String Processing" type="slides">
+<exercise id="23" title="More Advanced String Processing" type="slides,video">
 
-<slides source="module8/module8_23">
+<slides source="module8/module8_23" shot = "1" start="0:165" end="3:01">
 </slides>
 
 </exercise>
@@ -1401,6 +1401,6 @@ Tasks:
 </exercise>
 
 <exercise id="27" title="What Did We Just Learn?" type="slides, video">
-<slides source="module8/module8_end" start="0:165" end="3:01">>
+<slides source="module8/module8_end" shot="0" start="0:165" end="3:01">>
 </slides>
 </exercise>

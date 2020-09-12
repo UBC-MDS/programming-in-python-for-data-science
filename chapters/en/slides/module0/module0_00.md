@@ -23,7 +23,6 @@ Welcome to Programming in Python for Data Science.
     7.3 Creating new variables and modifying pre-existing ones
     7.4 Rearranging the observations or variables by sorting.
 1. Manage and manipulate data with dates and times, missing values and categorical variables as well as renaming dataframe columns.
-1. Use the split-apply-combine approach to iterate over and summarize data by groups.
 1. Produce human-readable code that incorporates best practices of programming and coding style.
 
 

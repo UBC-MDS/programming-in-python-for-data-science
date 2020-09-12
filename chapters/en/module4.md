@@ -10,14 +10,14 @@ id: 4
 
 <exercise id="0" title="Module Learning Outcomes" type="slides, video">
 
-<slides source="module4/module4_00" start="0:165" end="3:01">
+<slides source="module4/module4_00" shot = "0" start="0:165" end="3:01">
 </slides>
 
 </exercise> 
 
-<exercise id="1" title="Python Data Types" type="slides">
+<exercise id="1" title="Python Data Types" type="slides, video">
 
-<slides source="module4/module4_01">
+<slides source="module4/module4_01" shot = "1" start="0:165" end="3:01">
 </slides>
 
 </exercise>
@@ -204,9 +204,9 @@ Tasks:
 
 </exercise>
 
-<exercise id="5" title="Python Data Structures: Lists, Tuples and Sets" type="slides">
+<exercise id="5" title="Python Data Structures: Lists, Tuples and Sets" type="slides, video">
 
-<slides source="module4/module4_05">
+<slides source="module4/module4_05" shot = "1" start="0:165" end="3:01">
 
 </slides>
 
@@ -389,9 +389,9 @@ Tasks:
 </exercise>
 
 
-<exercise id="10" title="Python Data Structures: Dictionaries" type="slides">
+<exercise id="10" title="Python Data Structures: Dictionaries" type="slides, video">
 
-<slides source="module4/module4_10">
+<slides source="module4/module4_10" shot = "1" start="0:165" end="3:01">
 
 </slides>
 
@@ -532,9 +532,9 @@ Tasks:
 
 </exercise>
 
-<exercise id="14" title="Dataframes, Series and Column dtypes" type="slides">
+<exercise id="14" title="Dataframes, Series and Column dtypes" type="slides, video">
 
-<slides source="module4/module4_14">
+<slides source="module4/module4_14" shot = "1" start="0:165" end="3:01">
 
 </slides>
 
@@ -825,9 +825,9 @@ Are you looking at the output from above?
 </exercise>
 
 
-<exercise id="18" title="Operations with  Data Types" type="slides">
+<exercise id="18" title="Operations with  Data Types" type="slides, video">
 
-<slides source="module4/module4_18">
+<slides source="module4/module4_18" shot = "1" start="0:165" end="3:01">
 
 </slides>
 
@@ -1034,9 +1034,9 @@ The statement `not 'hotels' != 'homes' ` is false so checking if that statement 
 </exercise>
 
 
-<exercise id="21" title="Operations with Columns" type="slides">
+<exercise id="21" title="Operations with Columns" type="slides, video">
 
-<slides source="module4/module4_21">
+<slides source="module4/module4_21" shot = "1" start="0:165" end="3:01">
 
 </slides>
 
@@ -1180,9 +1180,9 @@ We cannot take the mean of a column of dtype `object`.
 </exercise>
 
 
-<exercise id="23" title="Splitting a Column" type="slides">
+<exercise id="23" title="Splitting a Column" type="slides, video">
 
-<slides source="module4/module4_23">
+<slides source="module4/module4_23" shot = "1" start="0:165" end="3:01">
 
 </slides>
 
@@ -1218,7 +1218,7 @@ Tasks:
 
 
 <exercise id="25" title="What Did We Just Learn?" type="slides, video">
-<slides source="module4/module4_25" start="0:165" end="3:01">>
+<slides source="module4/module4_25" shot="0" start="0:165" end="3:01">>
 </slides>
 </exercise>
 

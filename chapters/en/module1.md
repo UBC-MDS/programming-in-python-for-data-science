@@ -1,7 +1,7 @@
 ---
 title: 'Module 1: Python & Pandas - An Unexpected Friendship'
 description:
-  'In this module, you will be introduced to dataframes and the Pandas Python package.'
+  'In this module, you will be introduced to dataframes, the Python package Pandas, simple manipulations and Visualizations.'
 prev: module0
 next: /module2
 type: chapter
@@ -10,15 +10,15 @@ id: 1
 
 <exercise id="0" title="Module Learning Outcomes" type="slides,video">
 
-<slides source="module1/module1_00" start="0:165" end="3:01">
+<slides source="module1/module1_00" shot="0" start="0:165" end="3:01">
 </slides>
 
 </exercise>
 
 
-<exercise id="1" title="Introduction to Dataframes" type="slides">
+<exercise id="1" title="Introduction to Dataframes" type="slides,video">
 
-<slides source="module1/module1_01">
+<slides source="module1/module1_01" shot="2" start="0:165" end="3:01">
 </slides>
 
 </exercise>
@@ -77,9 +77,9 @@ Great! You have been paying attention.
 </exercise>
 
 
-<exercise id="3" title="Introduction to Pandas" type="slides">
+<exercise id="3" title="Introduction to Pandas" type="slides,video">
 
-<slides source="module1/module1_03">
+<slides source="module1/module1_03" shot="2" start="0:165" end="3:01">
 </slides>
 
 </exercise>
@@ -202,9 +202,9 @@ Tasks:
 
 </exercise>
 
-<exercise id="7" title="Slicing Rows Using df.loc[]" type="slides">
+<exercise id="7" title="Slicing Rows Using df.loc[]" type="slides,video">
 
-<slides source="module1/module1_07">
+<slides source="module1/module1_07" shot="2" start="0:165" end="3:01">
 </slides>
 
 </exercise>
@@ -357,8 +357,8 @@ Tasks:
 
 </exercise>
 
-<exercise id="11" title=" Slicing Columns Using .loc[]" type="slides">
-<slides source="module1/module1_11">
+<exercise id="11" title=" Slicing Columns Using .loc[]" type="slides,video">
+<slides source="module1/module1_11" shot="2" start="0:165" end="3:01">
 </slides>
 </exercise>
 
@@ -415,8 +415,8 @@ Good job! This has both `.loc[]` and includes the columns we wish to slice here.
 
 
 
-<exercise id="13" title="Selecting Using df.loc[]" type="slides">
-<slides source="module1/module1_13">
+<exercise id="13" title="Selecting Using df.loc[]" type="slides,video">
+<slides source="module1/module1_13" shot="2" start="0:165" end="3:01">
 </slides>
 </exercise>
 
@@ -505,8 +505,8 @@ Tasks:
 </exercise>
 
 
-<exercise id="16" title="Selecting Values from a Dataframe" type="slides">
-<slides source="module1/module1_16">
+<exercise id="16" title="Selecting Values from a Dataframe" type="slides,video">
+<slides source="module1/module1_16" shot="2" start="0:165" end="3:01">
 </slides>
 </exercise>
 
@@ -546,8 +546,8 @@ Tasks:
 </exercise>
 
 
-<exercise id="18" title="Selecting Single Columns" type="slides">
-<slides source="module1/module1_18">
+<exercise id="18" title="Selecting Single Columns" type="slides,video">
+<slides source="module1/module1_18" shot="2" start="0:165" end="3:01">
 </slides>
 </exercise>
 
@@ -576,8 +576,8 @@ Tasks:
 
 </exercise>
 
-<exercise id="20" title="Slicing and Selecting Using df.iloc[]" type="slides">
-<slides source="module1/module1_20">
+<exercise id="20" title="Slicing and Selecting Using df.iloc[]" type="slides,video">
+<slides source="module1/module1_20" shot="2" start="0:165" end="3:01">
 </slides>
 </exercise>
 
@@ -723,8 +723,8 @@ Tasks:
 
 </exercise>
 
-<exercise id="24" title="Sorting Dataframes" type="slides">
-<slides source="module1/module1_24">
+<exercise id="24" title="Sorting Dataframes" type="slides,video">
+<slides source="module1/module1_24" shot="2" start="0:165" end="3:01">
 </slides>
 </exercise>
 
@@ -751,8 +751,8 @@ Tasks:
 
 </exercise>
 
-<exercise id="26" title="Summary Statistics" type="slides">
-<slides source="module1/module1_26">
+<exercise id="26" title="Summary Statistics" type="slides,video">
+<slides source="module1/module1_26" shot="2" start="0:165" end="3:01">
 </slides>
 </exercise>
 
@@ -876,8 +876,8 @@ Tasks:
 </exercise>
 
 
-<exercise id="29" title="Frequency Tables and Writing CSVs" type="slides">
-<slides source="module1/module1_29">
+<exercise id="29" title="Frequency Tables and Writing CSVs" type="slides,video">
+<slides source="module1/module1_29" shot="2" start="0:165" end="3:01">
 </slides>
 </exercise>
 
@@ -912,8 +912,8 @@ _If you get a warning along with your output, that's fine. We will explain why t
 
 </exercise>
 
-<exercise id="31" title="Quick Viz with Altair" type="slides">
-<slides source="module1/module1_31">
+<exercise id="31" title="Quick Viz with Altair" type="slides,video">
+<slides source="module1/module1_31" shot="2" start="0:165" end="3:01">
 </slides>
 </exercise>
 
@@ -977,6 +977,6 @@ Tasks:
 </exercise>
 
 <exercise id="34" title="What Did We Just Learn?" type="slides,video">
-<slides source="module1/module1_34" start="0:165" end="3:01">
+<slides source="module1/module1_34" shot= "0" start="0:165" end="3:01">
 </slides>
 </exercise>

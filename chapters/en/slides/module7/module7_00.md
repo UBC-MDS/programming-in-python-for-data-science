@@ -16,8 +16,8 @@ By the end of the module, students are expected to:
 - Identify where code can be improved concerning variable names, magic numbers, comments and whitespace.
 - Write code that is human readable and follows the black style guide.
 - Import files from other directories.
-- Use `pytest` to check a function's tests.
-- When running `pytest`, explain how pytest finds the associated test functions.
+- Use [`pytest`](https://docs.pytest.org/en/stable/) to check a function's tests.
+- When running [`pytest`](https://docs.pytest.org/en/stable/), explain how pytest finds the associated test functions.
 - Explain how the Python debugger can help rectify your code.
 
 
