@@ -69,7 +69,7 @@ We have supplied informative videos on how to do this in assignment 1 and refere
 
 ## Schedule
 
-*Assignments are due on Sunday at 6pm. Office hours will be held twice a week to support ans answer questions regarding the concepts learned in lecture.* 
+*Assignments are due on Sunday at 6pm. Office hours will be held twice a week to support and answer questions regarding the concepts learned in lecture.* 
 
 | Module | Title |Description  |
 |--------|-------|-------------|
