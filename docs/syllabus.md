@@ -71,17 +71,25 @@ We have supplied informative videos on how to do this in assignment 1 and refere
 
 *Lectures are held on Thursdays. Tutorials are held on Tuesdays and build on the concepts learned in lecture.* 
 
-| Topic | Description | 
-|-------|-------------|
-| Module 1: Python & Pandas - An Unexpected Friendship | An Introduction to dataframes, the Python package Pandas, simple manipulations and Visualizations.| 
-| Module 2: Not So Scary Wrangling (Table Manipulation and Chaining) | Importing different types of files, performing more advanced table manipulations (modifying and creating new columns) as well as method chaining conventions (style, including multi-line). | 
-| Module 3: Tidy Data and Joining Dataframes | Tidy data and how to transform your dataset into a tidy format.This module will also focus on how to concatenate and join multiple dataframes.|
-| Module 4: Python Without the "Eek" (Basic Python)| Basic Python data types and structures. You will explore what data types and structures are used to create a Pandas dataframe and how understanding column dtypes is important to data analysis. |
-| Module 5: Making Choices and Repeating Iterations | Conditionals Statements and the fundamentals on creating code that efficiently repeats the same operations by adhering the DRY principle. |
-| Module 6: Functions Fundamentals and Best Practices | Developing good habits when writing functions like including docstrings, defensive programming, test-driven development and how to compose useful functions. | 
-| Module 7: Importing Files and the Coding Style Guide |  Importing files and libraries from other directories and stylize your code for optimal readability.|
-| Module 8: A Slice of NumPy and Advanced Data Wrangling | NumPy arrays and more advanced wrangling techniques such as handling columns with dates and strings and identifying null values.| 
+| Module | Title |Description  | Learning Outcomes | 
+|--------|-------|-------------|-------------------|
+| Module 1| Python & Pandas - An Unexpected Friendship | An Introduction to dataframes, the Python package Pandas, simple manipulations and Visualizations.|1. Describe the components of a Dataframe.<br>2. Read a standard `.csv` file using Pandas `pd.read_csv()`.<br>3. Load the `pandas` library into Python.<br>4. Demonstrate indexing and slicing with `.loc[]` and `.iloc[]`.<br>5. Demonstrate Selecting columns of a dataframe using `df[]` notation.<br>6. Obtain values from a dataframe using `.loc[]`.<br>7. Sort a dataframe using `.sort_values()`.<br>8. Create simple summary statistics using `.describe()`.<br>9. Construct simple visualizations using Altair.<br>Create a `.csv` file from a dataframe using `.to_csv()`.<br>
+ |
+| Module 2| Not So Scary Wrangling (Table Manipulation and Chaining) | Importing different types of files, performing more advanced table manipulations (modifying and creating new columns) as well as method chaining conventions (style, including multi-line). | |
+| Module 3| Tidy Data and Joining Dataframes | Tidy data and how to transform your dataset into a tidy format.This module will also focus on how to concatenate and join multiple dataframes.||
+| Module 4| Python Without the "Eek" (Basic Python)| Basic Python data types and structures. You will explore what data types and structures are used to create a Pandas dataframe and how understanding column dtypes is important to data analysis. ||
+| Module 5| Making Choices and Repeating Iterations | Conditionals Statements and the fundamentals on creating code that efficiently repeats the same operations by adhering the DRY principle. ||
+| Module 6| Functions Fundamentals and Best Practices | Developing good habits when writing functions like including docstrings, defensive programming, test-driven development and how to compose useful functions. | |
+| Module 7| Importing Files and the Coding Style Guide |  Importing files and libraries from other directories and stylize your code for optimal readability.||
+| Module 8| A Slice of NumPy and Advanced Data Wrangling | NumPy arrays and more advanced wrangling techniques such as handling columns with dates and strings and identifying null values.| |
 
+| Week | Modules to Complete |Submissions Due|
+|------|--------|---------------|
+| Week 1 | Module 1: Python & Pandas - An Unexpected Friendship<br> Module 2: Not So Scary Wrangling (Table Manipulation and Chaining)| assignment_01<br>assignment_02<br>|
+| Week 2 | Module 3: Tidy Data and Joining Dataframes<br>Module 4: Python Without the "Eek" (Basic Python)| assignment_03<br>assignment_04|
+| Week 3 |Module 5: Making Choices and Repeating Iterations<br>Module 6: Functions Fundamentals and Best Practices| assignment_05<br>assignment_06<br>quiz_01| 
+| Week 4 | Module 7: Importing Files and the Coding Style Guide<br>Module 8: A Slice of NumPy and Advanced Data Wrangling Week| assignment_07<br>assignment_08|
+| Week 5 | NA | quiz_02<br>final_project| 
 
 ## Policies
 
