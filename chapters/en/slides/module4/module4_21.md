@@ -346,7 +346,7 @@ This syntax works for calculating the mean over multiple columns too.
 
 ---
 
-# Let’s apple what we learned\!
+# Let’s apply what we learned\!
 
 Notes:
 

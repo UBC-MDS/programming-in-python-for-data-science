@@ -292,7 +292,7 @@ argument `columns` to label our columns.
 | `list`         |        ✓        |    ✓    |     `[]`     |           ✓            |
 | `tuple`        |        ✓        |    ☓    |     `()`     |           ✓            |
 | `set`          |        ☓        |    ✓    |     `{}`     |           ☓            |
-| `dictionary`   |        ✓        |    ✓    |    `{:}`     |  keys: ☓ , values: ✓   |
+| `dict`         |        ✓        |    ✓    |    `{:}`     |  keys: ☓ , values: ✓   |
 
 Notes:
 

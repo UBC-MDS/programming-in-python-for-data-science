@@ -26,18 +26,25 @@ tests**.
 
 Notes:
 
-In the last section, we learned about raising exceptions which in a lot
+In the last section, we learned about raising exceptions, which in a lot
 of cases helps the function user identify if they are using it
 correctly.
+
+But there are still some questions remaining:
+
+***How can we be so sure that the code we wrote is doing what we want it
+to?***
+
+***Does our code work 100% of the time?***
 
 These questions can be answered by using something called **units
 tests**.
 
 We’ll be implementing unit tests in Python using `assert` statements."
-`assert` statements are just one way of implementing this.
+`assert` statements are just one way of implementing unit tests.
 
-Let’s first discuss how to write the syntax of an assert statement and
-then how they can be applied to the bigger concept which is unit tests.
+Let’s first discuss the syntax of an `assert` statement and then how
+they can be applied to the bigger concept which is unit tests.
 
 ---
 
@@ -76,9 +83,9 @@ printed.
 
 Let’s take a look at one.
 
-Here we have the keyword `assert` that checks if `1==2`. Since the
-Boolean is `False`, the message beside the condition `"1 is not equal
-to 2."` is outputted.
+Here we have the keyword `assert` that checks if `1==2`. Since this is
+`False`, an error is throws and the message beside the condition `"1 is
+not equal to 2."` is outputted.
 
 ---
 
@@ -107,7 +114,7 @@ Notes:
 
 Let’s take a look at an example where the Boolean is `True`.
 
-Since the `assert` statement results in a `True` values, Python
+Here, since the `assert` statement results in a `True` values, Python
 continues to run and the next line of code is executed.
 
 When an assert is thrown due to a Boolean evaluating to `False`, the
@@ -128,8 +135,7 @@ Detailed traceback:
 
 Notes:
 
-It’s important to know that not all `assert` statements need to have a
-message.
+Not all `assert` statements need to have a message.
 
 We can re-write the statement from before without one.
 
@@ -153,19 +159,21 @@ Where do assert statements come in handy?
 Up to this point, we have been creating functions and only after we have
 written them, we’ve tested if they work.
 
-Instead, programmers often use a different approach: writing tests using
-`assert` statements before the actual function. This is called
-Test-Driven Development (TDD).
+Some programmers use a different approach: writing tests *before* the
+actual function. This is called Test-Driven Development.
 
 This may seem a little counter-intuitive, but we’re creating the
 expectations of our function before the actual function code.
 
 Often we have an idea of what our function should be able to do, and
-what the function operation output is expected.
+what output is expected.
 
 If we write our tests before the function it helps understand exactly
 what code we need to write and it avoids encountering large
 time-consuming bugs down the line.
+
+Once we have a serious of tests for the function, we can put them into
+`assert` statements as an easy way of checking that all the tests pass.
 
 ---
 
@@ -208,18 +216,18 @@ can easily square, or cube.
 For example, we expect the square output of `[1, 2, 4, 7]` to be
 `[1, 4, 16, 49]`.
 
-The test for this would look like this.
+The test for this would look like the one shown here.
 
-It is recommended to do multiple tests.
+It is recommended to write multiple tests.
 
-Let’s write another `assert` for a differently sized list as well as
+Let’s write another test for a differently sized list as well as
 different values for both input arguments `numerical_list` and
 `exponent`.
 
 Let’s make another test for `exponent` = `3`. Again, we use numbers that
 we know the cube of.
 
-We can also test that our expected return object’s data type is correct.
+We can also test that the type of the returned object is correct.
 
 ---
 
@@ -259,9 +267,11 @@ necessarily correct.
 
 It’s common that our tests can pass but our code contains errors.
 
-Let’s take a look at the function `bad_function()`.
+Let’s take a look at the function `bad_function()`. It’s very similar to
+`exponent_a_list` except that it separately computes the first entry
+before doing the rest in the loop.
 
-This function looks like it would work perfectly fine but what happen’s
+This function looks like it would work perfectly fine but what happens
 if we get an input argument for `numerical_list` that cannot be sliced?
 
 Let’s write some unit tests using `assert` statements and see what
@@ -318,7 +328,7 @@ A corner case is an input that is reasonable but a bit unusual and may
 trip up our code.
 
 For example, taking the square of an empty list which we just saw, or
-taking a 0 or negative value exponent.
+taking the square root of -1.
 
 Often it is desirable to add tests to address corner cases.
 
@@ -329,18 +339,14 @@ well as a negative integer.
 
 These corner cases pass, but let’s try another one.
 
-Here we see that 0 cannot be raised to a negative integer, so our
-function isn’t perfect\!
-
-In this example, instead of throwing an `assert` message, the code
-doesn’t get the opportunity to get that far and throws an error at the
-function level.
+Here we see that 0 cannot be raised to a negative integer, so there are
+still ways to break our function\!
 
 Since 0 to the power of -1 is equal to 1/0, we might want the function
 to output infinity.
 
 In this case, we would need to correct the code in our function to
-handle this weird case or inform the user using `Exceptions` that our
+handle this special case or inform the user using `Exceptions` that our
 function cannot accept lists containing 0 if the exponent is negative.
 
 This is an example of why testing corner cases and making unit tests in
@@ -366,7 +372,7 @@ Often, we will be making functions that work on data.
 For example, perhaps we want to write a function called `column_stats`
 that returns some summary statistics in form of a dictionary.
 
-The function below is something we might have envisioned. (Note that if
+The function here is something we might have envisioned. (Note that if
 we’re using test-driven development, this function will just be an idea,
 not completed code.)
 
@@ -410,10 +416,10 @@ assert column_stats(forest, 'age') == {'max': 0, 'min': 0, 'mean': 0, 'range': 0
 
 Notes:
 
-The values we chose in our columns need to be simple enough to calculate
-the expected output of our function.
+The values we chose in our columns should be simple enough to easily
+calculate the expected output of our function.
 
-Just like how we used made tests using calculations we know to be true,
+Just like how we made unit tests using calculations we know to be true,
 we do the same using a simple dataset we call **helper data**.
 
 The dataframe must have a small dimension to keep the calculations
@@ -452,11 +458,11 @@ all input parameters and return the correct datatype.***
 This means we are writing the skeleton of a function.
 
 We include the line that defines the function with the input arguments
-and the return statement returning the object with the desired data
+and the `return` statement returning the object with the desired data
 type.
 
 Using our `exponent_a_list()` function as an example, we include the
-function’s initialization line and the return statement.
+function’s first line and the return statement.
 
 ---
 
@@ -490,7 +496,7 @@ In our `exponent_a_list()` example we expect that our function will take
 in a list and an optional argument named `exponent` and then returns a
 list with the exponential value of each element of the input list.
 
-Here we can see our code fails since we have not function code yet\!
+Here we can see our code fails since we have no function code yet\!
 
 ---
 
@@ -528,7 +534,7 @@ operations that we wish to implement.
 In this step, we are essentially writing the steps that we anticipate
 needing to complete our function as comments within the function.
 
-So for our function out pseudo-code includes:
+So for our function pseudo-code includes:
 
     # create a new empty list
     # loop through all the elements in numerical_list
@@ -561,7 +567,7 @@ Here is where we fill in our function.
 
 As you work on the code, more and more tests of the tests that you wrote
 will pass until finally all your `assert` statements no longer produce
-any messages.
+any error messages.
 
 ---
 

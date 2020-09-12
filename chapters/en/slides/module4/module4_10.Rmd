@@ -277,7 +277,7 @@ We use the argument `orient` to explain the keys are the `index` and the argumen
 | `list`           |            ✓     |   ✓        | `[]`        |                   ✓ |
 | `tuple`          |            ✓     |   ☓        |  `()`       |                 ✓   |
 | `set`            |            ☓     |   ✓        |   `{}`      |              ☓      |
-| `dictionary`     |            ✓     |   ✓        |   `{:}`     |  keys: ☓ , values:  ✓  |
+| `dict`     |            ✓     |   ✓        |   `{:}`     |  keys: ☓ , values:  ✓  |
 
 
 

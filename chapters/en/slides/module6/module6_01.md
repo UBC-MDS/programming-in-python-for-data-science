@@ -50,7 +50,7 @@ Let’s do a little bit of a recap.
 We can avoid writing repetitive code by creating a function that takes
 in arguments, performs some operations and returns the results.
 
-The example in Module 5, converted code that creates a list of squared
+The example in Module 5 converted code that creates a list of squared
 elements from an existing list of numbers, into a function.
 
 ---
@@ -137,8 +137,8 @@ function.
 In our function `squares_a_list()` we saw that we created a variable
 named `new_squared_list`.
 
-We can print this variable and watch all the elements append to it as we
-loop through the input list.
+We can print this variable and watch all the elements be appended to it
+as we loop through the input list.
 
 But what happens if we try and print this variable outside of the
 function?
@@ -151,7 +151,7 @@ In Python, `new_squared_list` is something we call a ***local
 variable***.
 
 Local variables are any objects that have been created within a function
-and only exist and accessible in the function where they are made.
+and only exist inside the function where they are made.
 
 Code within a function is described as a **local environment**.
 
@@ -193,8 +193,8 @@ Notes:
 Global variables differ from local variables as they are not only
 recognized outside of any function but also recognized inside functions.
 
-Let’s take a look what happens when we add `a_new_variable` which is a
-global variable and call it in the `squares_a_list` function.
+Let’s take a look what happens when we add `a_new_variable`, which is a
+global variabl,e and refer to it in the `squares_a_list` function.
 
 The function recognizes the global variable\!
 
@@ -202,7 +202,7 @@ It’s important to note that, although functions recognize global
 variables, it’s not good practice to have functions reference objects
 outside of it.
 
-We will learn more on this later in the module.
+We will learn more about this later in the module.
 
 ---
 
@@ -375,7 +375,7 @@ global_list
 
 Notes:
 
-So global variables are accessible inside functions but what about
+So global variables are accessible inside functions - but what about
 modifying them?
 
 Let’s take a list that we define in our global environment called
@@ -436,8 +436,7 @@ Printing anything in a function is also considered a function side
 effect.
 
 Even though this operation doesn’t affect any of your global variables,
-it does bring information from within the function to the global
-environment.
+it does bring information from within the function to the outside world.
 
 ---
 
@@ -480,10 +479,8 @@ It takes as inputs:
 
 And returns nothing.
 
-Using a slice of our cereal dataset.
-
-Let’s change all the values that have `type` as `Cold` to `Unheated`
-using the `value_change` function.
+Using a slice of our cereal dataset, let’s change all the values that
+have `type` as `Cold` to `Unheated` using the `value_change` function.
 
 We can see that our function has no `return` statement and thus the code
 above produces no output but let’s look at what happens when we look at
@@ -559,7 +556,7 @@ Notes:
 Side effects seem like fun but they can be extremely problematic when
 trying to debug (fix) your code.
 
-It’s a general protocol to write functions that avoid side effects.
+When writing functions, it’s usually a good idea to avoid side effects.
 
 If objects need to be modified, best practice is to modify them in the
 environment they originated in.
@@ -608,8 +605,8 @@ Although side effects are not recommended, there are cases where either
 we must have a side-effects in our functions or there is no way to avoid
 it. In these cases, it is extremely important that we document it.
 
-This leads to the next question of *How*? Good news - we answer this
-further on in this module\!
+This leads to the next question of *How*? Good news - the answer is
+coming later on in this module\!
 
 ---
 

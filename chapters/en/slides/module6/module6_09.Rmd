@@ -15,7 +15,7 @@ library(rmarkdown)
 knitr::opts_chunk$set(echo = TRUE,
                       base.dir = ".", 
                       base.url = "/",
-                      fig.path = paste("../../static/module5/", params$dynamictitle,"/", sep = ""))
+                      fig.path = paste("../../static/module6/", params$dynamictitle,"/", sep = ""))
 
 knitr_opts <- knitr_options( opts_knit = NULL,
                              opts_chunk = NULL,
