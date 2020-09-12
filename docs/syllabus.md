@@ -1,4 +1,4 @@
-# DSCI 100: Introduction to Data Science
+# Programming in Python for Data Science
 
 ## Time and Place
 Online
