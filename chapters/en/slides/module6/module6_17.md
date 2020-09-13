@@ -299,7 +299,7 @@ assert bad_function([1, 2], -2) == [1, 0.25], "incorrect output for a negative e
 ```
 
 ``` python
-assert bad_function([0, 2, 4], -1) == [1, 0.5, 0.25], "incorrect output for a negative exponent"
+assert bad_function([0, 2, 4], -1) == [0, 0.5, 0.25], "incorrect output for a negative exponent"
 ```
 
 ``` out

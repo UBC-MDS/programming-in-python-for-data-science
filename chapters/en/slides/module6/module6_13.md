@@ -162,7 +162,7 @@ making our function more usable.
 
 ``` python
 if type(numerical_list) is not list:
-        raise Exception("You are not using a list for the numerical_list input.")
+    raise Exception("You are not using a list for the numerical_list input.")
 ```
 
 Notes:
@@ -179,8 +179,8 @@ correct for a simple mistake.
 def exponent_a_list(numerical_list, exponent=2):
     
     for element in numerical_list: 
-        if not element >= 0:
-            raise Exception("The elements in numerical_list must all be positive values")
+       if element < 0:
+           raise Exception("The elements in numerical_list must all be positive values")
 
     new_exponent_list = list()
     for number in numerical_list:
@@ -222,7 +222,7 @@ Any of them aren’t, our `Exception` will be raised.
 
 ``` python
 if type(numerical_list) is not list:
-        raise Exception("You are not using a list for the numerical_list input.")
+    raise Exception("You are not using a list for the numerical_list input.")
 ```
 
 <a href="https://docs.python.org/3/library/exceptions.html#Exception" target="_blank">
@@ -247,7 +247,7 @@ option for the raises we made.
 
 ``` python
 if type(numerical_list) is not list:
-       raise Exception("You are not using a list for the numerical_list input.")
+   raise Exception("You are not using a list for the numerical_list input.")
 ```
 
 ``` python

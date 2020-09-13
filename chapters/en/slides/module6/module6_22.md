@@ -317,7 +317,6 @@ bad_cereal_grouping.head(3)
 ``` python
 cereal = "let's change it to a string" 
 bad_cereal_grouping = bad_grouped_means('mfr')
-cereal_mfr
 ```
 
 ``` out
