@@ -46,7 +46,7 @@ code and avoid repeating the same `for` loop for any additional list we
 wished to operate on.
 
 What happens now if we no longer wanted to square a number but calculate
-a specified exponential of each element, perhaps \(n^3\), or \(n^4\) ?
+a specified exponential of each element, perhaps $n^3$, or $n^4$ ?
 
 Would we need a new function?
 
