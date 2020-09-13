@@ -125,10 +125,6 @@ Detailed traceback:
   File "<string>", line 1, in <module>
 ```
 
-``` python
-a_new_variable = "Peek-a-boo"
-```
-
 Notes:
 
 It’s important to know what exactly is going on inside and outside of a
@@ -157,6 +153,23 @@ Code within a function is described as a **local environment**.
 
 Since we called `new_squared_list` outside of the function’s body,
 Python fails to recognize it.
+
+---
+
+``` python
+def squares_a_list(numerical_list):
+    new_squared_list = list()
+    for number in numerical_list:
+        new_squared_list.append(number ** 2)
+        print(new_squared_list)
+    return new_squared_list
+```
+
+``` python
+a_new_variable = "Peek-a-boo"
+```
+
+Notes:
 
 Let’s compare that with the variable `a_new_variable`.
 
@@ -272,17 +285,6 @@ Ta-Da!
 [1, 4]
 ```
 
-``` python
-squares_a_list([1, 2])
-a_new_variable
-```
-
-``` out
-Ta-Da!
-[1, 4]
-'Peek-a-boo'
-```
-
 Notes:
 
 Things can get unclear when we have variables that are named the same
@@ -298,6 +300,32 @@ with the same name `a_new_variable` but with different values within our
 
 We can see that the locally created `a_new_variable` variable was
 printed instead of the global object with the same name.
+
+---
+
+``` python
+def squares_a_list(numerical_list):
+    a_new_variable = "Ta-Da!"
+    print(a_new_variable)
+    
+    new_squared_list = list()
+    for number in numerical_list:
+        new_squared_list.append(number ** 2)
+    return new_squared_list
+```
+
+``` python
+squares_a_list([1, 2])
+a_new_variable
+```
+
+``` out
+Ta-Da!
+[1, 4]
+'Peek-a-boo'
+```
+
+Notes:
 
 What about if we output `a_new_variable` right after.
 

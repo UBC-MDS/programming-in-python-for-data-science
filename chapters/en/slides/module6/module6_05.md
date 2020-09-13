@@ -254,6 +254,21 @@ exponent_a_list(exponent=5, numerical_list=[2, 3, 5])
 [32, 243, 3125]
 ```
 
+Notes:
+
+We showed earlier that we could also call the function by specifying
+`exponent=5`.
+
+Another way of calling this would be to also specify any of the argument
+names that do not have default values, in this case `numerical_list`.
+
+What happens if we switch up the order of the arguments and put
+`exponent=5` followed by `numerical_list=numbers`?
+
+It still works\!
+
+---
+
 ``` python
 exponent_a_list(5,  [2, 3, 5])
 ```
@@ -267,17 +282,6 @@ Detailed traceback:
 ```
 
 Notes:
-
-We showed earlier that we could also call the function by specifying
-`exponent=5`.
-
-Another way of calling this would be to also specify any of the argument
-names that do not have default values, in this case `numerical_list`.
-
-What happens if we switch up the order of the arguments and put
-`exponent=5` followed by `numerical_list=numbers`?
-
-It still works\!
 
 What about if we switch up the ordering of the arguments without
 specifying any of the argument names.

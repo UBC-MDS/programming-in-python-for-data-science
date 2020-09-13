@@ -143,9 +143,6 @@ Detailed traceback:
   File "<string>", line 1, in <module>
 ```
 
-```{python}
-a_new_variable = "Peek-a-boo"
-```
 
 Notes:
 
@@ -169,9 +166,27 @@ Code within a function is described as a **local environment**.
 
 Since we called `new_squared_list` outside of the function's body, Python fails to recognize it. 
 
+---
+
+```{python}
+def squares_a_list(numerical_list):
+    new_squared_list = list()
+    for number in numerical_list:
+        new_squared_list.append(number ** 2)
+        print(new_squared_list)
+    return new_squared_list
+```
+
+```{python}
+a_new_variable = "Peek-a-boo"
+a_new_variable
+```
+
+Notes: 
+
 Let's compare that with the variable `a_new_variable`. 
 
-`a_new_variable`  is created outside of a function in what we call our ***global environment*** and therefore Python recognizes it as a ***global variable***.
+`a_new_variable` is created outside of a function in what we call our ***global environment*** and therefore Python recognizes it as a ***global variable***.
 
 ---
 
@@ -261,15 +276,7 @@ def squares_a_list(numerical_list):
 squares_a_list([1, 2])
 ```
 
-```python
-squares_a_list([1, 2])
-a_new_variable
-```
-```out
-Ta-Da!
-[1, 4]
-'Peek-a-boo'
-```
+
 
 Notes:
 
@@ -280,6 +287,34 @@ What happens when 2 different objects share the same name, where one was defined
 For instance, let's say we defined a variable `a_new_variable` in our global environment, and we've made a variable in a local environment with the same name `a_new_variable` but with different values within our `squares_a_list` function.
 
 We can see that the locally created `a_new_variable` variable was printed instead of the global object with the same name. 
+
+
+
+---
+
+```{python}
+def squares_a_list(numerical_list):
+    a_new_variable = "Ta-Da!"
+    print(a_new_variable)
+    
+    new_squared_list = list()
+    for number in numerical_list:
+        new_squared_list.append(number ** 2)
+    return new_squared_list
+```
+
+
+```python
+squares_a_list([1, 2])
+a_new_variable
+```
+```out
+Ta-Da!
+[1, 4]
+'Peek-a-boo'
+```
+
+Notes: 
 
 What about if we output `a_new_variable` right after.
 
