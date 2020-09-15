@@ -442,7 +442,7 @@ cereal.head()
 
   - `.drop()`
   - `.assign()`
-  - `.sort_values`
+  - `.sort_values()`
   - `.rename()`
 
 Notes:
