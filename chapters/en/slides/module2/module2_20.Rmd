@@ -288,7 +288,7 @@ Unfortunately, we are not able to replace values in this manner and it results i
 
 ---
 
-# Replacing with inequalities. 
+# Replacing with inequalities
 
 
 ```{python}

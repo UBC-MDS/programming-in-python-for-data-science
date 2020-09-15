@@ -4,37 +4,15 @@ type: slides
 
 # Importing Python Libraries
 
-Notes: Script here
+Notes:
 
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
+<br>
 
 ---
-
-All the way back in Module 1, we learned how to import the `pandas`
-package for dataframe wrangling and `altair` to visualize our data with
-plots.
-
-We imported these packages because basic Python does not have all the
-built-in tools that we need to accomplish what we what hence, we import
-other tools into our environment.
-
-To import a package we can do the following:
 
 ``` python
 import pandas
 ```
-
-This now lets us use functions that reside in the `pandas` package such
-as `read_csv()`. We need to specify the package name (`pandas`) and then
-the function (`read_csv()`):
 
 ``` python
 pandas.read_csv('cereal.csv').head()
@@ -49,32 +27,33 @@ pandas.read_csv('cereal.csv').head()
 4             Almond Delight   R  Cold       110        2    2     200    1.0   14.0       8       1        25      3     1.0  0.75  34.384843
 ```
 
-Notes: Script here
+Notes:
 
-<html>
+All the way back in Module 1, we learned how to import the `pandas`
+package for dataframe wrangling and `altair` to visualize our data with
+plots.
 
-<audio controls >
+We imported these packages because basic Python does not have all the
+built-in tools that we need to accomplish what we what therefore, we
+import other tools into our environment.
 
-<source src="/placeholder_audio.mp3" />
+To import a package we saw that can use the keyword `import` followed by
+the desired package name.
 
-</audio>
+In this case, we are importing `pandas`
 
-</html>
+This now lets us use verbs that reside in the `pandas` package such as
+`read_csv()`.
+
+We need to specify the package name (`pandas`) and then the verb
+(`read_csv()`):
 
 ---
-
-For efficiency, for the majority of this course we have been importing
-our packages by assigning them a shorter condensed name. For example, in
-the assignments and practice exercises, we have been importing `pandas`
-and `altair` with names such as `pd` and `alt`:
 
 ``` python
 import pandas as pd 
 import altair as alt
 ```
-
-now when we call functions from either of these packages we only type
-the short form we assigned to the package name, in this case `pd`:
 
 ``` python
 pd.read_csv('cereal.csv').head()
@@ -89,23 +68,22 @@ pd.read_csv('cereal.csv').head()
 4             Almond Delight   R  Cold       110        2    2     200    1.0   14.0       8       1        25      3     1.0  0.75  34.384843
 ```
 
-Notes: Script here
+Notes:
 
-<html>
+For efficiency, in the majority of this course we have been importing
+our packages by assigning them a shorter condensed name or alias.
 
-<audio controls >
+For example, in the assignments and practice exercises, we have been
+importing `pandas` and `altair` with names such as `pd` and `alt`
+respectively.
 
-<source src="/placeholder_audio.mp3" />
+Now when we call functions from either of these packages we only type
+the short form alias we assigned to the package name.
 
-</audio>
-
-</html>
+Now instead of writing `pandas.read_csv('cereal.csv')` we can shorten it
+to `pd.read_csv('cereal.csv')`.
 
 ---
-
-We can also import a single function from a package using the keyword
-`from`. If we only wanted the `read_csv()` function from the `pandas`
-package, we could do the following:
 
 ``` python
 from pandas import read_csv
@@ -127,47 +105,33 @@ read_csv('cereal.csv').head()
 This mostly helps if we only have a single function we wish to use
 instead of importing the entire package.
 
-Notes: Script here
+Notes:
 
-<html>
+We can also import a single function from a package using the keyword
+`from`.
 
-<audio controls >
+If we only wanted the `read_csv()` function from the `pandas` package,
+we could first specify the package the function belongs to, followed by
+the function name:
 
-<source src="/placeholder_audio.mp3" />
+Here it’s `from pandas import read_csv`.
 
-</audio>
-
-</html>
-
----
+Now when we call `read_csv()`, we don’t need to specify the package name
+or alias before it.
 
 This is all fun and dandy but how do we import functions we’ve made that
-are located in another file? We want to reuse code to adhere to the DRY
-principle, what is our next step?
+are located in another file?
 
-This question will be answered in the screencast and notes of the next
+If we want to reuse code to adhere to the DRY principle, what is our
+next step?
+
+This question will be answered in the screencast and slides of the next
 section.
-
-Notes: Script here
-
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
-
-</audio>
-
-</html>
 
 ---
 
-# Let’s practice what we learned\!
+# Let’s apply what we learned\!
 
-Notes: Script here
+Notes:
 
-<html>
-
-<audio controls >
-
-<source src="/placeholder_audio.mp3" />
+<br>

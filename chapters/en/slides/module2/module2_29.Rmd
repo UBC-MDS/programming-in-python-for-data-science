@@ -103,9 +103,9 @@ cereal_modified['calories'] = cereal_modified['calories'].astype(str)
 ```{python}
 
 chart1 = alt.Chart(cereal_modified, width=500, height=300).mark_circle().encode(
-    x='mfr', 
-    y='calories'
-).properties(title="Scatter plot of manufacturer calorie content")
+                   x='mfr', 
+                   y='calories'
+         ).properties(title="Scatter plot of manufacturer calorie content")
 
 chart1
 
@@ -137,9 +137,9 @@ Even Altair can’t always get it right every time, which is why it’s so impor
 
 ```{python}
 chart2 = alt.Chart(cereal_modified, width=500, height=300).mark_circle().encode(
-    x='mfr:N', 
-    y='calories:Q'
-).properties(title="Scatter plot of manufacturer calorie content")
+                   x='mfr:N', 
+                   y='calories:Q'
+                  ).properties(title="Scatter plot of manufacturer calorie content")
 
 chart2
 ```
@@ -192,9 +192,9 @@ Anything numeric is  considered a `quantitative` variable and `time` or `date` v
 
 ```{python}
 chart3 = alt.Chart(cereal, width=500, height=300).mark_circle().encode(
-    x='sugars:Q',  # set the sugars column as quantitative
-    y='rating:Q'   # set the rating column as quantitative
-).properties(title="Scatter plot of cereal rating vs sugar content")
+                   x='sugars:Q',  # set the sugars column as quantitative
+                   y='rating:Q'   # set the rating column as quantitative
+         ).properties(title="Scatter plot of cereal rating vs sugar content")
 
 chart3
 ```
@@ -223,9 +223,9 @@ Here, `sugars` and `rating` are both quantitative columns so we specify `Q` as v
 
 ```{python}
 chart4 = alt.Chart(cereal, width=500, height=300).mark_circle().encode(
-    x=alt.X('sugars:Q'), # use alt.X() to map the x-axis
-    y=alt.Y('rating:Q')  # use alt.Y() to map the y-axis
-).properties(title="Scatter plot of cereal rating vs sugar content")
+                   x=alt.X('sugars:Q'), # use alt.X() to map the x-axis
+                   y=alt.Y('rating:Q')  # use alt.Y() to map the y-axis
+         ).properties(title="Scatter plot of cereal rating vs sugar content")
 
 chart4
 
@@ -255,9 +255,9 @@ This gives us a lot more control over the customization of our plot. You'll see 
 
 ```{python}
 chart5 = alt.Chart(cereal, width=500, height=300).mark_bar().encode(
-    x=alt.X('calories:Q', bin=True), # set x-axis as calories 
-    y=alt.Y('count():Q')             # set the y-axis as the occurrence count for each calorie value
-).properties(title="Histogram plot of cereal calorie content")
+                   x=alt.X('calories:Q', bin=True), # set x-axis as calories 
+                   y=alt.Y('count():Q')             # set the y-axis as the occurrence count for each calorie value
+         ).properties(title="Histogram plot of cereal calorie content")
 chart5
 
 ```
@@ -291,9 +291,9 @@ This is the same `count()` argument we use in Module 1 when we made bar charts.
 
 ```{python}
 chart6 = alt.Chart(cereal, width=500, height=300).mark_bar().encode(
-    x=alt.X('calories:Q', bin=alt.Bin(maxbins=20)), # set max number of bins to 20
-    y=alt.Y('count():Q')
-).properties(title="Histogram of cereal calorie content with bins = 20")
+                   x=alt.X('calories:Q', bin=alt.Bin(maxbins=20)), # set max number of bins to 20
+                   y=alt.Y('count():Q')
+         ).properties(title="Histogram of cereal calorie content with bins = 20")
 chart6
 
 ```
@@ -342,9 +342,9 @@ Luckily Altair allows us to customize our axis labels.
 
 ```{python}
 chart7 = alt.Chart(cereal, width=500, height=300).mark_bar().encode(
-    x=alt.X('calories:Q', bin=alt.Bin(maxbins=20), title="Calorie Content"), # use alt.X() to label the x-axis
-    y=alt.Y('count():Q', title="Number of Cereals")                          # use alt.Y() to label the y-axis
-).properties(title="Histogram plot of cereal calorie content")
+                   x=alt.X('calories:Q', bin=alt.Bin(maxbins=20), title="Calorie Content"), # use alt.X() to label the x-axis
+                   y=alt.Y('count():Q', title="Number of Cereals")                          # use alt.Y() to label the y-axis
+        ).properties(title="Histogram plot of cereal calorie content")
 chart7
 ```
 
@@ -412,9 +412,9 @@ We can see that `mfr` column has now moved right and our index column of integer
 
 ```{python}
 chart8 = alt.Chart(mfr_mean, width=500, height=300).mark_bar().encode(
-    x=alt.X('mfr:N', title="Manufacturer"),
-    y=alt.Y('sugars:Q', title="Mean sugar content")
-).properties(title="Bar plot of manufacturers mean sugar content")
+                   x=alt.X('mfr:N', title="Manufacturer"),
+                   y=alt.Y('sugars:Q', title="Mean sugar content")
+         ).properties(title="Bar plot of manufacturers mean sugar content")
 chart8
 
 ```
@@ -456,9 +456,9 @@ And finally, we generated a bar plot using Altair.
 
 ```{python}
 chart9 = alt.Chart(mfr_mean, width=500, height=300).mark_bar().encode(
-    x=alt.X('mfr:N', sort="y", title="Manufacturer"),  # use sort="y" to sort in ascending order
-    y=alt.Y('sugars:Q', title="Mean sugar content")
-).properties(title="Bar plot of manufacturers mean sugar content sorted in ascending order")
+                   x=alt.X('mfr:N', sort="y", title="Manufacturer"),  # use sort="y" to sort in ascending order
+                   y=alt.Y('sugars:Q', title="Mean sugar content")
+        ).properties(title="Bar plot of manufacturers mean sugar content in ascending order")
 chart9
 ```
 

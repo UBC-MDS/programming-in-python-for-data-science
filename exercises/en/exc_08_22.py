@@ -8,7 +8,8 @@ canucks = pd.read_csv('data/canucks.csv', parse_dates = ['Birth Date'])
 # ____ = ____
 
 # Create a new column in the canucks_upper dataframe named number_ts
-# where you count the total number of times the letter T (lowercase or uppercase) appears in their name
+# where you count the total number of times the letter T
+# (lowercase or uppercase) appears in their name
 # Save this  dataframe named as canucks_upper_ts
 
 # ____ = ____

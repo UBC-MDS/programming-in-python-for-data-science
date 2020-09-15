@@ -272,7 +272,7 @@ def exponent_a_list(numerical_list, exponent=2):
     Raises
     ------
     TypeError
-      If the input argument numerical_list is not of type list
+        If the input argument numerical_list is not of type list
         
     Examples
     --------

@@ -11,14 +11,14 @@ id: 7
 
 <exercise id="0" title="Module Learning Outcomes" type="slides, video">
 
-<slides source="module7/module7_00" start="0:165" end="3:01">
+<slides source="module7/module7_00" shot = "0" start="0:165" end="3:01">
 </slides>
 
 </exercise> 
 
-<exercise id="1" title="Importing Python Libraries" type="slides">
+<exercise id="1" title="Importing Python Libraries" type="slides, video">
 
-<slides source="module7/module7_01">
+<slides source="module7/module7_01" shot = "2" start="0:165" end="3:01">
 </slides>
 
 </exercise>
@@ -153,7 +153,517 @@ Tasks:
 
 </exercise>
 
-<exercise id="26" title="What Did We Just Learn?" type="slides, video">
-<slides source="module7/module7_end" start="0:165" end="3:01">>
+<exercise id="5" title="Working with Other Files" type="slides, video">
+
+<slides source="module7/module7_05" shot = "2" start="0:165" end="3:01">
+</slides>
+
+</exercise>
+
+
+<exercise id="6" title="Importing Your Own Functions Questions">
+
+**Question 1**      
+
+
+How would you import a package name `numpy`? 
+
+
+<choice id="1" >
+<opt text="<code>import numpy </code>"  correct="true">
+
+This is the basic way to import a Python package.
+
+</opt>
+
+<opt text="<code>as np import numpy </code>">
+
+Unfortunately this would not import `numpy`.
+
+</opt>
+
+
+<opt text="<code>from numpy import numpy</code>">
+
+Are you sure you read the slides properly?
+
+</opt>
+
+
+</choice> 
+
+**Question 2**          
+
+How would you import `numpy` if you wanted to refer to it as `np`? 
+
+
+<choice id="2" >
+<opt text="<code>as np import numpy </code>">
+
+This would actually result in an error! 
+
+</opt>
+
+<opt text="<code>Import numpy As np</code>">
+
+Be careful with capitals in this case, when you use capitalization, neither `Import` or `As` are Python keywords. 
+
+</opt>
+
+<opt text="<code>import numpy as np </code>"  correct="true">
+
+Nice work!
+
+</opt>
+
+<opt text="<code>As np Import numpy </code>">
+
+This is neither the correct way to import, and it uses capitalization on keywords which is incorrect. 
+
+</opt>
+
+</choice>  
+
+</exercise>
+
+<exercise id="7" title="More Importing Your Own Functions Questions">
+
+How would you import just the square root function `sqrt` from the `numpy` package? 
+
+
+<choice id="1" >
+<opt text="<code>import sqrt from numpy</code>"  >
+
+Maybe try reording this?
+
+</opt>
+
+<opt text="<code>from numpy import sqrt</code>"  correct="true">
+
+Great!
+
+</opt>
+
+
+<opt text="<code>from sqrt import numpy</code>">
+
+We are importing only the `sqrt` function from the `numpy` package.
+
+</opt>
+
+
+<opt text="<code>import numpy from sqrt</code>"  >
+
+`sqrt` is a single function that we want to import from `numpy`.
+
+</opt>
+
+</choice> 
+
+</exercise>
+
+<exercise id="8" title="Testing Your Own Functions with Pytest" type="slides, video">
+
+<slides source="module7/module7_08" shot = "2" start="0:165" end="3:01">
+</slides>
+
+</exercise>
+
+
+<exercise id="9" title="Using Pytest Questions ">
+
+**Question 1**      
+
+
+How would you import a package name `numpy`? 
+
+
+<choice id="1" >
+<opt text="<code>import numpy </code>"  correct="true">
+
+This is the basic way to import a Python package.
+
+</opt>
+
+<opt text="<code>as np import numpy </code>">
+
+Unfortunately this would not import `numpy`.
+
+</opt>
+
+
+<opt text="<code>from numpy import numpy</code>">
+
+Are you sure you read the slides properly?
+
+</opt>
+
+
+</choice> 
+
+**Question 2**          
+
+How would you import `numpy` if you wanted to refer to it as `np`? 
+
+
+<choice id="2" >
+<opt text="<code>as np import numpy </code>">
+
+This would actually result in an error! 
+
+</opt>
+
+<opt text="<code>Import numpy As np</code>">
+
+Be careful with capitals in this case, when you use capitalization, neither `Import` or `As` are Python keywords. 
+
+</opt>
+
+<opt text="<code>import numpy as np </code>"  correct="true">
+
+Nice work!
+
+</opt>
+
+<opt text="<code>As np Import numpy </code>">
+
+This is neither the correct way to import, and it uses capitalization on keywords which is incorrect. 
+
+</opt>
+
+</choice>  
+
+</exercise>
+
+<exercise id="10" title="More Questions on Using Pytest">
+
+How would you import just the square root function `sqrt` from the `numpy` package? 
+
+
+<choice id="1" >
+<opt text="<code>import sqrt from numpy</code>"  >
+
+Maybe try reording this?
+
+</opt>
+
+<opt text="<code>from numpy import sqrt</code>"  correct="true">
+
+Great!
+
+</opt>
+
+
+<opt text="<code>from sqrt import numpy</code>">
+
+We are importing only the `sqrt` function from the `numpy` package.
+
+</opt>
+
+
+<opt text="<code>import numpy from sqrt</code>"  >
+
+`sqrt` is a single function that we want to import from `numpy`.
+
+</opt>
+
+</choice> 
+
+</exercise>
+
+<exercise id="11" title="Automatic Style Formatters" type="slides, video">
+
+<slides source="module7/module7_11" shot = "2" start="0:165" end="3:01">
+</slides>
+
+</exercise>
+
+
+<exercise id="12" title="Using Flake8">
+
+**Question 1**      
+
+
+How would you import a package name `numpy`? 
+
+
+<choice id="1" >
+<opt text="<code>import numpy </code>"  correct="true">
+
+This is the basic way to import a Python package.
+
+</opt>
+
+<opt text="<code>as np import numpy </code>">
+
+Unfortunately this would not import `numpy`.
+
+</opt>
+
+
+<opt text="<code>from numpy import numpy</code>">
+
+Are you sure you read the slides properly?
+
+</opt>
+
+
+</choice> 
+
+**Question 2**          
+
+How would you import `numpy` if you wanted to refer to it as `np`? 
+
+
+<choice id="2" >
+<opt text="<code>as np import numpy </code>">
+
+This would actually result in an error! 
+
+</opt>
+
+<opt text="<code>Import numpy As np</code>">
+
+Be careful with capitals in this case, when you use capitalization, neither `Import` or `As` are Python keywords. 
+
+</opt>
+
+<opt text="<code>import numpy as np </code>"  correct="true">
+
+Nice work!
+
+</opt>
+
+<opt text="<code>As np Import numpy </code>">
+
+This is neither the correct way to import, and it uses capitalization on keywords which is incorrect. 
+
+</opt>
+
+</choice>  
+
+</exercise>
+
+<exercise id="13" title="Using Black">
+
+How would you import just the square root function `sqrt` from the `numpy` package? 
+
+
+<choice id="1" >
+<opt text="<code>import sqrt from numpy</code>"  >
+
+Maybe try reording this?
+
+</opt>
+
+<opt text="<code>from numpy import sqrt</code>"  correct="true">
+
+Great!
+
+</opt>
+
+
+<opt text="<code>from sqrt import numpy</code>">
+
+We are importing only the `sqrt` function from the `numpy` package.
+
+</opt>
+
+
+<opt text="<code>import numpy from sqrt</code>"  >
+
+`sqrt` is a single function that we want to import from `numpy`.
+
+</opt>
+
+</choice> 
+
+</exercise>
+
+<exercise id="14" title="How to Style Your Code Better" type="slides, video">
+
+<slides source="module7/module7_14" shot = "2" start="0:165" end="3:01">
+</slides>
+
+</exercise>
+
+
+<exercise id="15" title="Choosing Good Variable Names">
+
+**Question 1**      
+
+
+How would you import a package name `numpy`? 
+
+
+<choice id="1" >
+<opt text="<code>import numpy </code>"  correct="true">
+
+This is the basic way to import a Python package.
+
+</opt>
+
+<opt text="<code>as np import numpy </code>">
+
+Unfortunately this would not import `numpy`.
+
+</opt>
+
+
+<opt text="<code>from numpy import numpy</code>">
+
+Are you sure you read the slides properly?
+
+</opt>
+
+
+</choice> 
+
+**Question 2**          
+
+How would you import `numpy` if you wanted to refer to it as `np`? 
+
+
+<choice id="2" >
+<opt text="<code>as np import numpy </code>">
+
+This would actually result in an error! 
+
+</opt>
+
+<opt text="<code>Import numpy As np</code>">
+
+Be careful with capitals in this case, when you use capitalization, neither `Import` or `As` are Python keywords. 
+
+</opt>
+
+<opt text="<code>import numpy as np </code>"  correct="true">
+
+Nice work!
+
+</opt>
+
+<opt text="<code>As np Import numpy </code>">
+
+This is neither the correct way to import, and it uses capitalization on keywords which is incorrect. 
+
+</opt>
+
+</choice>  
+
+</exercise>
+
+<exercise id="16" title="Writing Informative Comments">
+
+How would you import just the square root function `sqrt` from the `numpy` package? 
+
+
+<choice id="1" >
+<opt text="<code>import sqrt from numpy</code>"  >
+
+Maybe try reording this?
+
+</opt>
+
+<opt text="<code>from numpy import sqrt</code>"  correct="true">
+
+Great!
+
+</opt>
+
+
+<opt text="<code>from sqrt import numpy</code>">
+
+We are importing only the `sqrt` function from the `numpy` package.
+
+</opt>
+
+
+<opt text="<code>import numpy from sqrt</code>"  >
+
+`sqrt` is a single function that we want to import from `numpy`.
+
+</opt>
+
+</choice> 
+
+</exercise>
+
+<exercise id="17" title="Python Debugger" type="slides, video">
+
+<slides source="module7/module7_17" shot = "2" start="0:165" end="3:01">
+</slides>
+
+</exercise>
+
+
+<exercise id="18" title="Using the Python Debugger">
+
+**Question 1**      
+
+
+How would you import a package name `numpy`? 
+
+
+<choice id="1" >
+<opt text="<code>import numpy </code>"  correct="true">
+
+This is the basic way to import a Python package.
+
+</opt>
+
+<opt text="<code>as np import numpy </code>">
+
+Unfortunately this would not import `numpy`.
+
+</opt>
+
+
+<opt text="<code>from numpy import numpy</code>">
+
+Are you sure you read the slides properly?
+
+</opt>
+
+
+</choice> 
+
+**Question 2**          
+
+How would you import `numpy` if you wanted to refer to it as `np`? 
+
+
+<choice id="2" >
+<opt text="<code>as np import numpy </code>">
+
+This would actually result in an error! 
+
+</opt>
+
+<opt text="<code>Import numpy As np</code>">
+
+Be careful with capitals in this case, when you use capitalization, neither `Import` or `As` are Python keywords. 
+
+</opt>
+
+<opt text="<code>import numpy as np </code>"  correct="true">
+
+Nice work!
+
+</opt>
+
+<opt text="<code>As np Import numpy </code>">
+
+This is neither the correct way to import, and it uses capitalization on keywords which is incorrect. 
+
+</opt>
+
+</choice>  
+
+</exercise>
+
+
+<exercise id="19" title="What Did We Just Learn?" type="slides, video">
+<slides source="module7/module7_end" shot="0" start="0:165" end="3:01">>
 </slides>
 </exercise>
