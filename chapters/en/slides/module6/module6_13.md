@@ -175,49 +175,6 @@ correct for a simple mistake.
 
 ---
 
-``` python
-def exponent_a_list(numerical_list, exponent=2):
-    
-    for element in numerical_list: 
-       if element < 0:
-           raise Exception("The elements in numerical_list must all be positive values")
-
-    new_exponent_list = list()
-    for number in numerical_list:
-        new_exponent_list.append(number ** exponent)
-    return new_exponent_list
-```
-
-``` python
-wrong_list = [1, -2, 3.4]
-exponent_a_list(wrong_list, 2)
-```
-
-``` out
-Exception: The elements in numerical_list must all be positive values
-
-Detailed traceback: 
-  File "<string>", line 1, in <module>
-  File "<string>", line 5, in exponent_a_list
-```
-
-Notes:
-
-Another good thing to check for if all the elements in the list are not
-negative numbers.
-
-We can use a `for` loop to check that each element is greater or equal
-to 0.
-
-This would avoid issues like taking the square root of negative one, if
-the list contained negative values and the exponent was one half.
-However, this might be too strict of a limitation in a real function
-because we might still want to do things like -5 squared.
-
-Any of them aren’t, our `Exception` will be raised.
-
----
-
 ## Exception types
 
 ``` python

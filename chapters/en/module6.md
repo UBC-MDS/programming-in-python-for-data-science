@@ -1212,8 +1212,6 @@ Running a coding exercise for the first time could take a bit of time for everyt
 _**Make sure you remove the hash (`#`) symbol in the coding portions of this question.  We have commented them so that the line won't execute and you can test your code after each step.**_
 
 Given our BMI function from the previous few questions, let's write some unit tests.
-(**Disclaimer: Much more than these two measurements are needed to determine if someone is healthy**)    
-
 
 Tasks:
 - Write 4 unit tests and check that at least 2 of them are testing edge cases. 

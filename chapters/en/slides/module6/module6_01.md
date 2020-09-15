@@ -167,6 +167,11 @@ def squares_a_list(numerical_list):
 
 ``` python
 a_new_variable = "Peek-a-boo"
+a_new_variable
+```
+
+```out
+'Peek-a-boo'
 ```
 
 Notes:
@@ -207,7 +212,7 @@ Global variables differ from local variables as they are not only
 recognized outside of any function but also recognized inside functions.
 
 Let’s take a look what happens when we add `a_new_variable`, which is a
-global variabl,e and refer to it in the `squares_a_list` function.
+global variable,e and refer to it in the `squares_a_list` function.
 
 The function recognizes the global variable\!
 
@@ -422,28 +427,141 @@ called a function **side effect**.
 ## Function Side Effects
 
 ``` python
+cereal = pd.read_csv('cereal.csv')
+cereal.head()
+```
+
+```out
+                        name mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
+0                  100% Bran   N  Cold        70        4    1     130   10.0    5.0       6     280        25      3     1.0  0.33  68.402973
+1          100% Natural Bran   Q  Cold       120        3    5      15    2.0    8.0       8     135         0      3     1.0  1.00  33.983679
+2                   All-Bran   K  Cold        70        4    1     260    9.0    7.0       5     320        25      3     1.0  0.33  59.425505
+3  All-Bran with Extra Fiber   K  Cold        50        4    0     140   14.0    8.0       0     330        25      3     1.0  0.50  93.704912
+4             Almond Delight   R  Cold       110        2    2     200    1.0   14.0       8       1        25      3     1.0  0.75  34.384843
+```
+
+  - `.drop()`
+  - `.assign()`
+  - `.sort_values`
+  - `.rename()`
+
+Notes:
+
+For this next concept, we are going to bring back our trusty cereal
+dataframe.
+
+Since the beginning of this course, we have been using verbs such as;
+
+  - `.drop()`
+  - `.assign()`
+  - `.sort_values()`
+  - `.rename()`
+
+where we modify a dataframe and save the modification as a new dataframe
+object.
+
+---
+
+``` python
+cereal_dropped = cereal.drop(columns = ['sugars','potass','vitamins', 'shelf', 'weight', 'cups'])
+cereal_dropped.head(2)
+```
+
+```out
+                name mfr  type  calories  protein  fat  sodium  fiber  carbo     rating
+0          100% Bran   N  Cold        70        4    1     130   10.0    5.0  68.402973
+1  100% Natural Bran   Q  Cold       120        3    5      15    2.0    8.0  33.983679
+```
+
+``` python
+cereal.head(2)
+```
+
+```out
+                name mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
+0          100% Bran   N  Cold        70        4    1     130   10.0    5.0       6     280        25      3     1.0  0.33  68.402973
+1  100% Natural Bran   Q  Cold       120        3    5      15    2.0    8.0       8     135         0      3     1.0  1.00  33.983679
+```
+
+``` python
+cereal.drop(columns = ['sugars','potass','vitamins', 'shelf', 'weight', 'cups'], inplace=True)
+```
+
+``` python
+cereal.head(2)
+```
+
+```out
+                name mfr  type  calories  protein  fat  sodium  fiber  carbo     rating
+0          100% Bran   N  Cold        70        4    1     130   10.0    5.0  68.402973
+1  100% Natural Bran   Q  Cold       120        3    5      15    2.0    8.0  33.983679
+```
+
+Notes:
+
+For example, when we have been dropping columns from a dataframe, we
+have been saving the changes with the assignment operator to a new
+object.
+
+In this example, we drop columns from `sugars` to `cups` and assign this
+modified dataframe with the dropped columns to the object named
+`cereal_dropped`.
+
+If we look at the original `cereal` dataframe, we can see it was
+unaffected by this transformation.
+
+Many of the verbs that we use for our transformations such as the ones
+we mentioned on the previous slide have an argument called `inplace`.
+
+The `inplace` argument accepts a Boolean value where the dataframe
+object is modified directly without the need to save the changes to an
+object with the assignment operation. That means we can skip the part of
+making a new object with the `=` sign.
+
+Let’s try and drop the same columns as before but now using
+`inplace=True`.
+
+This time, nothing is returned when we execute this code however, if we
+look at the `cereal` dataframe now, we can see that it’s been altered
+and the columns have been dropped.
+
+This transformation of the dataframe object is a **side effect** of the
+function.
+
+A side effect is when a function produces changes to global variables
+outside the environment it was created, this means a function has an
+observable effect besides the returning value.
+
+It’s important to include that although `inplace` exists, there is a
+reason we haven’t taught it and it’s because we don’t recommend using
+it. Overriding the object by saving it with the same object name is the
+preferred coding technique.
+
+---
+
+``` python
 cereal.to_csv('cereal.csv')
 ```
 
 ``` python
-def squares_a_list(numerical_list):
-    new_squared_list = list()
-    for number in numerical_list:
-        new_squared_list.append(number ** 2)
-        print(new_squared_list)
-    return new_squared_list
-```
-
-``` python
-numbers = [2, 3, 5]
-squares_a_list(numbers)
+regular_list = [7, 8, 2020]
+regular_list
 ```
 
 ```out
-[4]
-[4, 9]
-[4, 9, 25]
-[4, 9, 25]
+[7, 8, 2020]
+```
+
+``` python
+regular_list.append(3)
+```
+
+``` python
+regular_list
+```
+
+```out
+[7, 8, 2020, 3]
 ```
 
 Notes:
@@ -451,135 +569,23 @@ Notes:
 Although this appears to be new vocabulary, side effects have been
 present since the beginning of this course starting with `pd.to_csv()`.
 
-Remember our cereal dataframe?
+`pd.to_csv()` is a function that we saw in module 1, that didn’t return
+anything after we executed it but still produced a **side effect** of a
+newly saved csv file on our computer.
 
-Well we’ve edited it and now want to save it to our computer.
+Another example that we’ve seen when working with lists is the verb
+`.append()`.
 
-We can use `pd.to_csv()` like this:
+When we execute the code `.append(3)`, on our object `regular_list`,
+nothing is returned from the function and we have not used to assignment
+operator to save any transformation to the list, however, when we
+inspect `regular_list`, we can see that it has been modified and
+included the new element `3`.
 
-When we execute this code, nothing is returned but we get a **side
-effect** of a newly saved csv file on our computer.
+This would be another example of a function with a side effect.
 
-Printing anything in a function is also considered a function side
-effect.
-
-Even though this operation doesn’t affect any of your global variables,
-it does bring information from within the function to the outside world.
-
----
-
-``` python
-def value_change(data, column, old_value, new_value):
-    data.loc[data[column] == old_value, column] = new_value
-```
-
-``` python
-cereal.head()
-```
-
-```out
-                        name mfr  type  calories
-0                  100% Bran   N  Cold        70
-1          100% Natural Bran   Q  Cold       120
-2                   All-Bran   K  Cold        70
-3  All-Bran with Extra Fiber   K  Cold        50
-4             Almond Delight   R  Cold       110
-```
-
-``` python
-value_change(cereal, 'type', 'Cold', 'Unheated')
-```
-
-Notes:
-
-The same can be said anytime we modify a dataframe within a function
-without returning anything.
-
-Let’s say we have the following function that does conditional value
-replacement on a specified column.
-
-It takes as inputs:
-
-  - The dataframe  
-  - the column we want to edit  
-  - the value that we wish to replace  
-  - the new value we wish to use as a replacement
-
-And returns nothing.
-
-Using a slice of our cereal dataset, let’s change all the values that
-have `type` as `Cold` to `Unheated` using the `value_change` function.
-
-We can see that our function has no `return` statement and thus the code
-above produces no output but let’s look at what happens when we look at
-the cereal dataset after calling the function on it.
-
----
-
-``` python
-cereal
-```
-
-```out
-                         name mfr      type  calories
-0                   100% Bran   N  Unheated        70
-1           100% Natural Bran   Q  Unheated       120
-2                    All-Bran   K  Unheated        70
-3   All-Bran with Extra Fiber   K  Unheated        50
-4              Almond Delight   R  Unheated       110
-..                        ...  ..       ...       ...
-72                    Triples   G  Unheated       110
-73                       Trix   G  Unheated       110
-74                 Wheat Chex   R  Unheated       100
-75                   Wheaties   G  Unheated       100
-76        Wheaties Honey Gold   G  Unheated       110
-
-[77 rows x 4 columns]
-```
-
-Notes:
-
-It looks like our `Cold` values were changed even without returning
-anything in our function\!
-
-This would be another example of a function side effect.
-
-Variables are modified by the function outside the environment the
-object originated from.
-
-The dataframe was created in the global environment, but modified in the
-function’s local environment.
-
----
-
-## Good Habits
-
-``` python
-def better_value_change(data, column, old_value, new_value):
-    new_dataframe2 = data.copy()
-    new_dataframe2.loc[new_dataframe2[column] == old_value, column] = new_value
-    return new_dataframe2
-    
-```
-
-``` python
-unheated_cereal = better_value_change(cereal, 'type', 'Cold', 'unheated')
-```
-
-``` python
-cereal.head()
-```
-
-```out
-                        name mfr  type  calories
-0                  100% Bran   N  Cold        70
-1          100% Natural Bran   Q  Cold       120
-2                   All-Bran   K  Cold        70
-3  All-Bran with Extra Fiber   K  Cold        50
-4             Almond Delight   R  Cold       110
-```
-
-Notes:
+The list was created in the global environment, but modified in
+`.append()`’s local environment.
 
 Side effects seem like fun but they can be extremely problematic when
 trying to debug (fix) your code.
@@ -588,38 +594,6 @@ When writing functions, it’s usually a good idea to avoid side effects.
 
 If objects need to be modified, best practice is to modify them in the
 environment they originated in.
-
-For example, you wish to write a better version of the `value_change()`
-function above, a more acceptable way would be to return a new dataframe
-that was produced and modified from a copy of the original dataframe in
-the local environment.
-
-We can make a copy of the original dataframe using `.copy()`.
-
-We can then call our new better function `better_value_change` with our
-input arguments.
-
-This time our original original dataframe hasn’t been changed.
-
----
-
-``` python
-unheated_cereal.head()
-```
-
-```out
-                        name mfr      type  calories
-0                  100% Bran   N  unheated        70
-1          100% Natural Bran   Q  unheated       120
-2                   All-Bran   K  unheated        70
-3  All-Bran with Extra Fiber   K  unheated        50
-4             Almond Delight   R  unheated       110
-```
-
-Notes:
-
-Instead, the output from our function that we saved in the object
-`unheated_cereal` has the desired changes.
 
 ---
 

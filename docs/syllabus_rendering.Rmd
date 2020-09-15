@@ -20,7 +20,7 @@ You will leave this course capable of processing raw data into a format suitable
 - None
 
 ## Content
-We are using an interactive platform that contains have a series of slide decks accompanied with multiple choice questions and interactive coding exercises to apply what you learned during the module: [https://prog-learn.mds.ubc.ca/](https://prog-learn.mds.ubc.ca/)
+We are using an interactive platform that contains a series of slide decks accompanied with multiple choice questions and interactive coding exercises to apply what you learned during the module: [https://prog-learn.mds.ubc.ca/](https://prog-learn.mds.ubc.ca/)
 
 ## Course Software Platforms
 Students will learn to write code and perform their analysis using the [Python Programming Language](https://www.python.org/doc/essays/blurb/). Assignments as well as the final project analysis will be done using [Jupyter Notebooks](http://jupyter.org/).
@@ -55,10 +55,9 @@ By the end of the course, students will be able to:
 
 ## Course Structure
 
-There are 8 modules in total for this course. Each module will be accompanied by an autograded assignment due to be submitted. 
-The student will be responsible to complete the material in 2 modules per week. In week 3, and 5 students will need to take an online 45 minute open book quiz testing, material from Modules 1-4 and 5-8 respectively. 
-This quiz can be taken at any point during the week. At the end of the 8 modules student will have an individual project to complete where they are required to used the skills they learned in the course and produce an
-analysis regarding an assigned dataset.
+There are 8 modules in total for this course. Each module will be accompanied by an autograded assignment to be submitted. 
+The students will be responsible to complete the material of 2 modules per week. In weeks 3 and 5, students will need to take an online 45 minute open book quiz testing, material from Modules 1-4 and 5-8 respectively. 
+This quiz can be taken at any point during the week. At the end of the 8th module, students will have an individual project to complete where they are required to use the skills they learned in the course and produce an analysis regarding an assigned dataset.
 
 
 ## Assignments
@@ -97,7 +96,7 @@ We have supplied informative videos on how to do this in assignment 1 and refere
 | Week 1 | Module 1: Python & Pandas - An Unexpected Friendship<br> Module 2: Not So Scary Wrangling (Table Manipulation and Chaining)| assignment_01, assignment_02|
 | Week 2 | Module 3: Tidy Data and Joining Dataframes<br>Module 4: Python Without the "Eek" (Basic Python)| assignment_03, assignment_04|
 | Week 3 |Module 5: Making Choices and Repeating Iterations<br>Module 6: Functions Fundamentals and Best Practices| assignment_05, assignment_06, quiz_01| 
-| Week 4 | Module 7: Importing Files and the Coding Style Guide<br>Module 8: A Slice of NumPy and Advanced Data Wrangling Week| assignment_07, assignment_08|
+| Week 4 | Module 7: Importing Files and the Coding Style Guide<br>Module 8: A Slice of NumPy and Advanced Data Wrangling| assignment_07, assignment_08|
 | Week 5 | NA | quiz_02, final_project| 
 
 ## Policies

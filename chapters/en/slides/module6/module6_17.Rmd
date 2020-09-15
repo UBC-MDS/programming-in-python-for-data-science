@@ -296,61 +296,7 @@ Write a lot of tests and don't be overconfident, even after writing a lot of tes
 
 Checking an empty list in our `bad_function()` function is an example of checking a **corner case**.
 
----
-
-## Corner Cases 
-
-```{python}
-assert bad_function([0, 1, 3], 0) == [1, 1, 1], "incorrect output for exponent 0"
-assert bad_function([1, 2], -2) == [1, 0.25], "incorrect output for a negative exponent"
-```
-
-
-```{python eval=FALSE}
-assert bad_function([0, 2, 4], -1) == [0, 0.5, 0.25], "incorrect output for a negative exponent"
-```
-
-```out
-ZeroDivisionError: 0.0 cannot be raised to a negative power
-
-Detailed traceback: 
-  File "<string>", line 1, in <module>
-  File "<string>", line 2, in bad_function
-```
-
-```{python eval=FALSE}
-bad_function([0, 2, 4], -1)
-```
-```out
-ZeroDivisionError: 0.0 cannot be raised to a negative power
-
-Detailed traceback: 
-  File "<string>", line 1, in <module>
-  File "<string>", line 2, in bad_function
-```
-
-Notes: 
-
 A corner case is an input that is reasonable but a bit unusual and may trip up our code.
-
-For example, taking the square of an empty list which we just saw, or taking the square root of -1.
-
-Often it is desirable to add tests to address corner cases.
-
-Let's check some other corner cases on `bad_function()`.
-
-Here we check a corner case of a 0 value for the `exponent` argument as well as a negative integer.
-
-These corner cases pass, but let's try another one.
-
-Here we see that 0 cannot be raised to a negative integer, so there are still ways to break our function!
-
-Since 0 to the power of -1 is equal to 1/0, we might want the function to output infinity.
-
-In this case, we would need to correct the code in our function to handle this special case or inform the user using `Exceptions` that our function cannot accept lists containing 0 if the exponent is negative. 
-
-This is an example of why testing corner cases and making unit tests in general is so important when we write code. 
-
 
 ---
 
