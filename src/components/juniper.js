@@ -16,7 +16,7 @@ class Juniper extends React.Component {
     static defaultProps = {
         children: '',
         branch: 'master',
-        url: 'http://35.203.106.253',
+        url: 'https://binder.rudaux.com/',
         serverSettings: {},
         kernelType: 'python3',
         lang: 'python',
