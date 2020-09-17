@@ -825,9 +825,9 @@ Are you looking at the output from above?
 </exercise>
 
 
-<exercise id="18" title="Operations with  Data Types" type="slides, video">
+<exercise id="18" title="Python Operations" type="slides, video">
 
-<slides source="module4/module4_18" shot = "1" start="107:11" end="113:56">
+<slides source="module4/module4_18" shot = "1" start="108:10" end="113:57">
 
 </slides>
 
@@ -1182,7 +1182,7 @@ We cannot take the mean of a column of dtype `object`.
 
 <exercise id="23" title="Splitting a Column" type="slides, video">
 
-<slides source="module4/module4_23" shot = "1" start="120:47" end="123:25">
+<slides source="module4/module4_23" shot = "1" start="120:47" end="123:26">
 
 </slides>
 

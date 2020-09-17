@@ -363,9 +363,6 @@ not  (6 < 7)
 False
 ```
 
-Seeing if the statement is False will result in a `False` output since
-`(6 < 7)` is True.
-
 Notes:
 
 We know that `('dogs' == 'cats')` is `False`, so a `not` operator gives
@@ -378,6 +375,9 @@ How can we translate all this to dataframes now?
 
 Have you ever wondered why we can do summary statistics on some columns
 and not others? We are going to explore this in the next section.
+
+Seeing if the statement is False will result in a `False` output since
+`(6 < 7)` is True.
 
 ---
 

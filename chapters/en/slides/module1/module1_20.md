@@ -177,7 +177,7 @@ to make sure we get all the columns *BEFORE* the upper bound.
 ---
 
 Let’s say we want the rows `All-Bran` to `Apple Cinnamon Cheerios` and
-`protein` to `fat`.
+`name` to `fat`.
 
 #### Rows
 
@@ -186,7 +186,7 @@ Let’s say we want the rows `All-Bran` to `Apple Cinnamon Cheerios` and
 
 #### Columns
 
-**Lower Bound**: `protein` is located at position 4.  
+**Lower Bound**: `name` is located at position 0.  
 **Upper Bound**:`fat` is located at position 5.
 
 ``` python
@@ -209,7 +209,7 @@ Let’s say we want the rows `All-Bran` to `Apple Cinnamon Cheerios` and
 For rows, the lower bound `All-Bran` is located at position 2 and the
 upper bound `Apple Cinnamon Cheerios` is located at position 5.
 
-Now the column’s lower Bound `protein` is located at position 4 and the
+Now the column’s lower bound `name` is located at position 0 and the
 upper bound `fat` is located at position 5.
 
 The same would apply if we only wanted certain rows with certain

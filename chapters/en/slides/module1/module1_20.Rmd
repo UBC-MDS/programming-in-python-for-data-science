@@ -143,7 +143,7 @@ Since we want to include the 5th column we need to use the 6th position to make 
 
 ---
 
- Let’s say we want the rows `All-Bran` to `Apple Cinnamon Cheerios` and `protein` to `fat`.  
+ Let’s say we want the rows `All-Bran` to `Apple Cinnamon Cheerios` and `name` to `fat`.  
  
 #### Rows
 
@@ -153,7 +153,7 @@ Since we want to include the 5th column we need to use the 6th position to make 
 
 #### Columns 
 
-**Lower Bound**: `protein` is located at position 4.     
+**Lower Bound**: `name` is located at position 0.     
 **Upper Bound**:`fat` is located at position 5.
 
 ```{python}
@@ -169,7 +169,7 @@ Notes:
 For rows, the lower bound `All-Bran` is located at position 2 and the upper bound `Apple Cinnamon Cheerios` is located at position 5.  
 
 
-Now the column's lower Bound  `protein` is located at position 4 and the upper bound `fat` is located at position 5.
+Now the column's lower bound  `name` is located at position 0 and the upper bound `fat` is located at position 5.
 
 The same would apply if we only wanted certain rows with certain columns.
 

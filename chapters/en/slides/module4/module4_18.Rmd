@@ -343,7 +343,7 @@ not ('dogs' == 'cats')
 ```{python}
 not  (6 < 7)
 ```
-Seeing if the statement is False will result in a `False` output since `(6 < 7)` is True. 
+
 
 
 Notes: 
@@ -355,6 +355,8 @@ While we know `(6 < 7)` is `True` the statement  `not  (6 < 7)` produces a `Fals
 How can we translate all this to dataframes now?
 
 Have you ever wondered why we can do summary statistics on some columns and not others? We are going to explore this in the next section. 
+
+Seeing if the statement is False will result in a `False` output since `(6 < 7)` is True. 
 
 ---
 
