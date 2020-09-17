@@ -190,8 +190,6 @@ type(new)
 <class 'pandas.core.series.Series'>
 ```
 
-This not ideal for splitting up values in a column.
-
 Notes:
 
 You may be wondering **What happens if we use `expand=False` instead of
@@ -204,6 +202,8 @@ column values as the Series values.
 
 This makes it a little harder to add to the dataframe as separate
 columns.
+
+This not ideal for splitting up values in a column.
 
 ---
 
