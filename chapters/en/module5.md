@@ -17,7 +17,7 @@ id: 5
 
 <exercise id="1" title="Making Choices with Conditional Statements" type="slides, video">
 
-<slides source="module5/module5_01" shot = "1" start="0:165" end="3:01">
+<slides source="module5/module5_01" shot = "2" start="0:06" end="10:195">
 </slides>
 
 </exercise>
@@ -311,7 +311,7 @@ The code you made above should not result in an error message.
 
 <exercise id="6" title="Repeated Iterations (Loops)" type="slides, video">
 
-<slides source="module5/module5_06" shot = "1" start="0:165" end="3:01">
+<slides source="module5/module5_06" shot = "2" start="10:26" end="15:37">
 
 </slides>
 
@@ -451,7 +451,7 @@ Tasks:
 
 <exercise id="9" title="Range, Dictionaries and Comprehensions" type="slides, video">
 
-<slides source="module5/module5_09" shot = "1" start="0:165" end="3:01">
+<slides source="module5/module5_09" shot = "2" start="15:43" end="3:01">
 
 </slides>
 
@@ -590,7 +590,7 @@ Tasks:
 
 <exercise id="13" title="Nested Loops" type="slides, video">
 
-<slides source="module5/module5_13" shot = "1" start="0:165" end="3:01">
+<slides source="module5/module5_13" shot = "2" start="0:165" end="3:01">
 
 </slides>
 
@@ -709,7 +709,7 @@ Are you putting `character_count = character_count + len(dish)` in the inner loo
 
 <exercise id="16" title="Repeated Iterations with Conditions" type="slides, video">
 
-<slides source="module5/module5_16" shot = "1" start="0:165" end="3:01">
+<slides source="module5/module5_16" shot = "2" start="0:165" end="3:01">
 
 </slides>
 
@@ -889,7 +889,7 @@ With repetitive code, there is generally always a manner to reduce redundant cod
 
 <exercise id="19" title="Functions" type="slides, video">
 
-<slides source="module5/module5_19" shot = "1" start="0:165" end="3:01">
+<slides source="module5/module5_19" shot = "2" start="0:165" end="3:01">
 
 </slides>
 

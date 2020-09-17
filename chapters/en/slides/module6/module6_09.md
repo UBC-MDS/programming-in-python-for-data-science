@@ -92,7 +92,7 @@ using is called the **NumPy** style.
 ---
 
 ``` python
-string1 = """ This is a string"""
+string1 = """This is a string"""
 type(string1)
 ```
 

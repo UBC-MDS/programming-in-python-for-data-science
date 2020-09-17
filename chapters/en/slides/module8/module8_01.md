@@ -199,7 +199,7 @@ np.random.rand(5)
 ```
 
 ```out
-array([0.54748426, 0.73309258, 0.14118398, 0.1948259 , 0.77793582])
+array([0.98044394, 0.17412137, 0.69554788, 0.01848946, 0.40600867])
 ```
 
 Notes:
@@ -387,7 +387,7 @@ To obtain elements from right to left, we use negative integers.
 ## Boolean Indexing
 
 ``` python
-grade_array = np.array([98,87,103, 92,67, 107, 78, 104, 85, 105])
+grade_array = np.array([98, 87, 103, 92, 67, 107, 78, 104, 85, 105])
 grade_array
 ```
 
@@ -396,7 +396,7 @@ array([ 98,  87, 103,  92,  67, 107,  78, 104,  85, 105])
 ```
 
 ``` python
-threshold = np.array([98,87,103, 92,67, 107, 78, 104, 85, 105]) > 100
+threshold = np.array([98, 87, 103, 92, 67, 107, 78, 104, 85, 105]) > 100
 threshold
 ```
 

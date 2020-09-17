@@ -18,7 +18,7 @@ id: 2
 
 <exercise id="1" title="Reading in Different File Types" type="slides,video">
 
-<slides source="module2/module2_01" shot="1" start="0:165" end="3:01">
+<slides source="module2/module2_01" shot="1" start="0:001" end="4:30">
 </slides>
 
 </exercise>
@@ -157,7 +157,7 @@ Tasks:
 
 <exercise id="6" title="Arguments for Reading Data" type="slides,video">
 
-<slides source="module2/module2_06" shot="1" start="0:165" end="3:01">
+<slides source="module2/module2_06" shot="1" start="4:315" end="7:51">
 </slides>
 
 </exercise>
@@ -250,7 +250,7 @@ Tasks:
 
 <exercise id="9" title="Column Renaming and Dropping" type="slides,video">
 
-<slides source="module2/module2_09" shot="1" start="0:165" end="3:01">
+<slides source="module2/module2_09" shot="1" start="7:53" end="9:495">
 </slides>
 
 </exercise>
@@ -387,7 +387,7 @@ Tasks:
 
 <exercise id="13" title="Column Arithmetic and Creation" type="slides,video">
 
-<slides source="module2/module2_13" shot="1" start="0:165" end="3:01">
+<slides source="module2/module2_13" shot="1" start="9:51" end="14:05">
 </slides>
 
 </exercise>
@@ -477,7 +477,7 @@ Tasks:
 
 <exercise id="16" title="Data Filtering" type="slides,video">
 
-<slides source="module2/module2_16" shot="1" start="0:165" end="3:01">
+<slides source="module2/module2_16" shot="1" start="14:07" end="20:215">
 </slides>
 
 </exercise>
@@ -634,9 +634,9 @@ You can use `mighty_pokemon['type'].value_counts()` to find out.
 </exercise>
 
 
-<exercise id="20" title="Conditional Value Replacement and Assignment" type="slides,video">
+<exercise id="20" title="Conditional Value Replacement" type="slides,video">
 
-<slides source="module2/module2_20" shot="1" start="0:165" end="3:01">
+<slides source="module2/module2_20" shot="1" start="20:24" end="26:30">
 
 </slides>
 
@@ -686,7 +686,7 @@ Tasks:
 
 <exercise id="22" title="Chaining Notation" type="slides,video">
 
-<slides source="module2/module2_22" shot="1" start="0:165" end="3:01">
+<slides source="module2/module2_22" shot="1" start="26:317" end="29:08">
 
 </slides>
 
@@ -773,7 +773,7 @@ Tasks:
 
 <exercise id="25" title="Grouping and Aggregating" type="slides,video">
 
-<slides source="module2/module2_25" shot="1" start="0:165" end="3:01">
+<slides source="module2/module2_25" shot="1" start="29:095" end="35:04">
 </slides>
 
 </exercise>
@@ -912,7 +912,7 @@ Tasks:
 
 <exercise id="29" title="Plotting with Altair" type="slides,video">
 
-<slides source="module2/module2_29" shot="1" start="0:165" end="3:01">
+<slides source="module2/module2_29" shot="1" start="35:06" end="43:54">
 </slides>
 
 </exercise>

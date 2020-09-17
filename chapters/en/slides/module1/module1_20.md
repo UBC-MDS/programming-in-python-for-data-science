@@ -203,6 +203,15 @@ cereal.iloc[2:6, 0:6]
 
 Notes:
 
+Let’s say we want the rows `All-Bran` to `Apple Cinnamon Cheerios` and
+`protein` to `fat`.
+
+For rows, the lower bound `All-Bran` is located at position 2 and the
+upper bound `Apple Cinnamon Cheerios` is located at position 5.
+
+Now the column’s lower Bound `protein` is located at position 4 and the
+upper bound `fat` is located at position 5.
+
 The same would apply if we only wanted certain rows with certain
 columns.
 
@@ -277,10 +286,6 @@ cereal.iloc[74:77]
 [3 rows x 16 columns]
 ```
 
-We can specify a negative number which indicates that we are counting
-from the other end of the data. Since we are collecting data to the end
-of the dataframe, we do not need to include the ending row index number.
-
 ``` python
 cereal.iloc[-3:]
 ```
@@ -307,7 +312,9 @@ the number of rows in the dataframe would be to specify you are counting
 your rows from the bottom with a negative in front of the number of rows
 you want.
 
-This now takes the first 3 rows of the **bottom** of the dataframe.
+This example takes the first 3 rows of the **bottom** of the dataframe.
+since we are collecting data to the end of the dataframe, we do not need
+to include the ending row index number.
 
 ---
 
@@ -436,6 +443,11 @@ cereal.iloc[[4, 7, 6], [0, 3, 5, 2]]
 ```
 
 Notes:
+
+`Almond Delight` takes row position 4, `Basic 4` takes row position 7
+and `Apple Jacks` is located at position 6. The desired columns `name`,
+`calories`, `fat`, and `type` take column index positions 0,5,3, and 2
+respectively.
 
 Now let’s put those position into square backing within `df.iloc[]`.
 

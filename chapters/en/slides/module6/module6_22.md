@@ -46,7 +46,7 @@ your functions.
 
 ---
 
-## 1\. Avoid “Hard coding”
+## 1\. Avoid “hard coding”
 
 **Hard coding** is the process of embedding values directly into your
 code without saving them in objects.
@@ -120,8 +120,9 @@ def load_filter_and_average(file, grouping_column, ploting_column):
     df = pd.read_csv(file)
     source = df.groupby(grouping_column).mean().reset_index()
     chart = alt.Chart(source, width = 500, height = 300).mark_bar().encode(
-    x=alt.X(grouping_column),
-    y=alt.Y(ploting_column))
+                      x=alt.X(grouping_column),
+                      y=alt.Y(ploting_column)
+            )
     return chart
 ```
 
@@ -129,7 +130,7 @@ def load_filter_and_average(file, grouping_column, ploting_column):
 bad_idea = load_filter_and_average('cereal.csv', 'mfr', 'rating')
 bad_idea
 ```
-<img src="/module6/chart_bad_idea.png"  width="45%" />
+<img src="/module6/chart_bad_idea.png"  width="40%" />
 
 Notes:
 
@@ -192,8 +193,9 @@ mean values for all the columns.
 ``` python
 def plot_mean(df, grouping_column, ploting_column):
     chart = alt.Chart(df, width = 500, height = 300).mark_bar().encode(
-    x=alt.X(grouping_column),
-    y=alt.Y(ploting_column))
+                      x=alt.X(grouping_column),
+                      y=alt.Y(ploting_column)
+            )
     return chart
 ```
 
@@ -201,7 +203,7 @@ def plot_mean(df, grouping_column, ploting_column):
 plot1 = plot_mean(cereal_mfr, 'mfr', 'rating')
 plot1
 ```
-<img src="/module6/plot_better.png"  width="55%" />
+<img src="/module6/plot_better.png"  width="50%" />
 
 Notes:
 
@@ -217,8 +219,9 @@ def load_filter_and_average(file, grouping_column, ploting_column):
     df = pd.read_csv(file)
     source = df.groupby(grouping_column).mean().reset_index()
     chart = alt.Chart(source, width = 500, height = 300).mark_bar().encode(
-    x=alt.X(grouping_column),
-    y=alt.Y(ploting_column))
+                      x=alt.X(grouping_column),
+                      y=alt.Y(ploting_column)
+            )
     return chart, source
 ```
 
@@ -255,7 +258,7 @@ plot.
 ``` python
 another_bad_idea[0]
 ```
-<img src="/module6/plot_better.png"  width="60%" />
+<img src="/module6/plot_better.png"  width="55%" />
 
 Notes:
 

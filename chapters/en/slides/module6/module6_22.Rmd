@@ -92,7 +92,7 @@ We are going to list some habits to adopt when writing and designing your functi
 
 ---
 
-## 1. Avoid "Hard coding"
+## 1. Avoid "hard coding"
 
 
 **Hard coding** is the process of embedding values directly into your code without saving them in objects. 
@@ -157,8 +157,9 @@ def load_filter_and_average(file, grouping_column, ploting_column):
     df = pd.read_csv(file)
     source = df.groupby(grouping_column).mean().reset_index()
     chart = alt.Chart(source, width = 500, height = 300).mark_bar().encode(
-    x=alt.X(grouping_column),
-    y=alt.Y(ploting_column))
+                      x=alt.X(grouping_column),
+                      y=alt.Y(ploting_column)
+            )
     return chart
 
 ```
@@ -173,7 +174,7 @@ bad_idea
 bad_idea.save(path + 'chart_bad_idea.png')
 ```
 
-<img src="/module6/chart_bad_idea.png"  width="45%" />
+<img src="/module6/chart_bad_idea.png"  width="40%" />
 
 Notes:
 
@@ -217,8 +218,9 @@ A preferred function would look something like this, where the input is a datafr
 ```{python}
 def plot_mean(df, grouping_column, ploting_column):
     chart = alt.Chart(df, width = 500, height = 300).mark_bar().encode(
-    x=alt.X(grouping_column),
-    y=alt.Y(ploting_column))
+                      x=alt.X(grouping_column),
+                      y=alt.Y(ploting_column)
+            )
     return chart
 
 ```
@@ -231,7 +233,7 @@ plot1
 plot1.save(path + 'plot_better.png')
 ```
 
-<img src="/module6/plot_better.png"  width="55%" />
+<img src="/module6/plot_better.png"  width="50%" />
 
 Notes: 
 
@@ -247,8 +249,9 @@ def load_filter_and_average(file, grouping_column, ploting_column):
     df = pd.read_csv(file)
     source = df.groupby(grouping_column).mean().reset_index()
     chart = alt.Chart(source, width = 500, height = 300).mark_bar().encode(
-    x=alt.X(grouping_column),
-    y=alt.Y(ploting_column))
+                      x=alt.X(grouping_column),
+                      y=alt.Y(ploting_column)
+            )
     return chart, source
 ```
 
@@ -277,7 +280,7 @@ another_bad_idea[0]
 another_bad_idea[0].save(path + 'badidea1.png')
 ```
 
-<img src="/module6/plot_better.png"  width="60%" />
+<img src="/module6/plot_better.png"  width="55%" />
 
 Notes: 
 

@@ -18,7 +18,7 @@ id: 1
 
 <exercise id="1" title="Introduction to Dataframes" type="slides,video">
 
-<slides source="module1/module1_01" shot="2" start="0:165" end="3:01">
+<slides source="module1/module1_01" shot="3" start="0:165" end="3:01">
 </slides>
 
 </exercise>
@@ -79,7 +79,7 @@ Great! You have been paying attention.
 
 <exercise id="3" title="Introduction to Pandas" type="slides,video">
 
-<slides source="module1/module1_03" shot="2" start="0:165" end="3:01">
+<slides source="module1/module1_03" shot="3" start="0:165" end="3:01">
 </slides>
 
 </exercise>
@@ -204,7 +204,7 @@ Tasks:
 
 <exercise id="7" title="Slicing Rows Using df.loc[]" type="slides,video">
 
-<slides source="module1/module1_07" shot="2" start="0:165" end="3:01">
+<slides source="module1/module1_07" shot="3" start="0:165" end="3:01">
 </slides>
 
 </exercise>
@@ -358,7 +358,7 @@ Tasks:
 </exercise>
 
 <exercise id="11" title=" Slicing Columns Using .loc[]" type="slides,video">
-<slides source="module1/module1_11" shot="2" start="0:165" end="3:01">
+<slides source="module1/module1_11" shot="3" start="0:165" end="3:01">
 </slides>
 </exercise>
 
@@ -416,7 +416,7 @@ Good job! This has both `.loc[]` and includes the columns we wish to slice here.
 
 
 <exercise id="13" title="Selecting Using df.loc[]" type="slides,video">
-<slides source="module1/module1_13" shot="2" start="0:165" end="3:01">
+<slides source="module1/module1_13" shot="3" start="0:165" end="3:01">
 </slides>
 </exercise>
 
@@ -506,7 +506,7 @@ Tasks:
 
 
 <exercise id="16" title="Selecting Values from a Dataframe" type="slides,video">
-<slides source="module1/module1_16" shot="2" start="0:165" end="3:01">
+<slides source="module1/module1_16" shot="3" start="0:165" end="3:01">
 </slides>
 </exercise>
 
@@ -547,7 +547,7 @@ Tasks:
 
 
 <exercise id="18" title="Selecting Single Columns" type="slides,video">
-<slides source="module1/module1_18" shot="2" start="0:165" end="3:01">
+<slides source="module1/module1_18" shot="3" start="0:165" end="3:01">
 </slides>
 </exercise>
 
@@ -577,7 +577,7 @@ Tasks:
 </exercise>
 
 <exercise id="20" title="Slicing and Selecting Using df.iloc[]" type="slides,video">
-<slides source="module1/module1_20" shot="2" start="0:165" end="3:01">
+<slides source="module1/module1_20" shot="3" start="0:165" end="3:01">
 </slides>
 </exercise>
 
@@ -724,7 +724,7 @@ Tasks:
 </exercise>
 
 <exercise id="24" title="Sorting Dataframes" type="slides,video">
-<slides source="module1/module1_24" shot="2" start="0:165" end="3:01">
+<slides source="module1/module1_24" shot="3" start="0:165" end="3:01">
 </slides>
 </exercise>
 
@@ -752,7 +752,7 @@ Tasks:
 </exercise>
 
 <exercise id="26" title="Summary Statistics" type="slides,video">
-<slides source="module1/module1_26" shot="2" start="0:165" end="3:01">
+<slides source="module1/module1_26" shot="3" start="0:165" end="3:01">
 </slides>
 </exercise>
 
@@ -877,7 +877,7 @@ Tasks:
 
 
 <exercise id="29" title="Frequency Tables and Writing CSVs" type="slides,video">
-<slides source="module1/module1_29" shot="2" start="0:165" end="3:01">
+<slides source="module1/module1_29" shot="3" start="0:165" end="3:01">
 </slides>
 </exercise>
 
@@ -913,7 +913,7 @@ _If you get a warning along with your output, that's fine. We will explain why t
 </exercise>
 
 <exercise id="31" title="Quick Viz with Altair" type="slides,video">
-<slides source="module1/module1_31" shot="2" start="0:165" end="3:01">
+<slides source="module1/module1_31" shot="3" start="0:165" end="3:01">
 </slides>
 </exercise>
 

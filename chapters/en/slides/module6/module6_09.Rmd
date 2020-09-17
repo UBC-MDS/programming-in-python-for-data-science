@@ -129,7 +129,7 @@ There are several styles of docstrings; this one and the one we'll be using is c
 
 
 ```{python}
-string1 = """ This is a string"""
+string1 = """This is a string"""
 type(string1)
 ```
 

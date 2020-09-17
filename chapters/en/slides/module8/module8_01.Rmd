@@ -353,12 +353,12 @@ To obtain elements from right to left, we use negative integers.
 
 
 ```{python}
-grade_array = np.array([98,87,103, 92,67, 107, 78, 104, 85, 105])
+grade_array = np.array([98, 87, 103, 92, 67, 107, 78, 104, 85, 105])
 grade_array
 ```
 
 ```{python}
-threshold = np.array([98,87,103, 92,67, 107, 78, 104, 85, 105]) > 100
+threshold = np.array([98, 87, 103, 92, 67, 107, 78, 104, 85, 105]) > 100
 threshold
 ```
 

@@ -188,6 +188,13 @@ separate them with a comma.
 `loc` is used to slice columns and rows by **label** and within an
 interval.
 
+The general format to slice both rows and columns together looks like
+this:
+
+``` python
+`cereal.loc['row name start':'row name end', 'column name start':'column name end']`
+```
+
 ---
 
 ``` python

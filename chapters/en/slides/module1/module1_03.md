@@ -100,9 +100,6 @@ candy.columns
 Index(['name', 'weight', 'chocolate', 'peanuts', 'caramel', 'available_canada_america'], dtype='object')
 ```
 
-Or if we wanted to see the dimensions of the whole dataframe we could
-code the following:
-
 ``` python
 candy.shape
 ```
@@ -119,8 +116,9 @@ wanted to see the dimensions of the whole dataframe we could use
 
 Breaking up the code, we interpret this as:
 
-*“From our dataframe that we saved as `candy` tell me the
-`columns`/`shape`”*
+*“From our dataframe that we saved as `candy` tell me the `shape`”* or
+*“From our dataframe that we saved as `candy` tell me the `column`
+names”*
 
 ---
 
@@ -196,8 +194,16 @@ not have parentheses.
 
 They can be thought of as nouns or adjectives that describe an object.
 
+Take `candy.shape` as an example.
+
+In this case, our dataframe `candy` is our object and `.shape` is the
+attribute describing it.
+
 Functions and methods have parentheses.  
 They can be thought of as verbs that complete an action.
+
+In the example of `pd.read_csv()`, this function does the action of
+reading in our data.
 
 This is going to be discussed in more detail later in the course but
 now, simply be aware of the way we write different instructions.
@@ -209,8 +215,6 @@ now, simply be aware of the way we write different instructions.
 ``` python
 # This line does not execute anything. 
 ```
-
-We can also use it beside code.
 
 ``` python
 candy.shape  # This will output the shape of the dataframe
@@ -224,6 +228,8 @@ information that we do not want to executed.
 The easiest way to do this is with a hash (`#`) symbol. This creates a
 single line comment and prevents anything written after it from being
 executed.
+
+We can also use it beside code.
 
 We use comments frequently in the exercises.
 

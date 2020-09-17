@@ -203,9 +203,6 @@ Detailed traceback:
 'The monster under my bedThe monster under my bedThe monster under my bed'
 ```
 
-We can multiply strings and it concatenates the strings together\! Since
-we multiplied by 3, the string is repeated 3 times.
-
 Notes:
 
 We saw that we can operate on `float` and `int` values together but what
@@ -220,6 +217,9 @@ This will repeat the string by the number you are multiplying.
 
 In this case, the string `'The monster under my bed'` is repeated 3
 times.
+
+We can multiply strings and it concatenates the strings together\! Since
+we multiplied by 3, the string is repeated 3 times.
 
 ---
 
@@ -325,8 +325,6 @@ False
 True
 ```
 
-Since one statement is true the combine “or” statement is True.
-
 Notes:
 
 Let’s start with 2 base statements;
@@ -344,6 +342,8 @@ In this case since both statements are not `True`, combining them with
 On the other hand, the `or` operator checks if at least one of the
 statements is `True` and since `6 < 7` is a `True` statement, the `or`
 statment evaluates to `True`.
+
+Since one statement is true the combine “or” statement is True.
 
 ---
 

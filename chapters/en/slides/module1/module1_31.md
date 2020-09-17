@@ -123,45 +123,25 @@ Notes:
 
 To make a `bar` plot using `altair`, we follow the steps below:
 
-1.  We create an `altair` plot object using
+1.  We create an `altair` plot object using `alt.chart()`
 
-<!-- end list -->
-
-``` python
-alt.chart(...)...
-```
-
-2.  We can pass the dataframe we’d like to plot, in this case it’s
-    `cereal`:
-
-<!-- end list -->
-
-``` python
-alt.chart(cereal)
-```
+2.  We can pass the dataframe we’d like to plot but putting it in the
+    brackets, in our case it’s `cereal`.
 
 3.  But what kind of plot do we want?\! As we said before, a bar chart
-    in this case would work nicely so lets add the verb `.mark_bar()` to
-    our code.
-
-<!-- end list -->
-
-``` python
-alt.chart(cereal).mark_bar()...
-```
+    in this case would work nicely so let’s add the verb `.mark_bar()`
+    to our code.
 
 4.  Next we need to specify what columns we are interested in
     visualizing. This is done using the `.encode(x='mfr', y='count()')`.
-    `count()` is used here to count the occurrences or the number of
-    rows in the cereal dataframe that contains a specific manufacturer.
+
+`count()` is used here to count the occurrences or the number of rows in
+the cereal dataframe that contains a specific manufacturer.
 
 In general, we use `count()` if we are interested in counting the
-frequency of each of elements within the `x` variable. This gives us all
-the code necessary for our desired plot:
+frequency of each of elements in the `x` variable.
 
-``` python
-alt.chart(df).mark_bar().encode(x='mfr', y='count()')
-```
+This gives us all the code necessary for our desired plot now.
 
 For this example we are saving our plot as an object named `chart0`.
 
@@ -188,7 +168,7 @@ We can fix that easily by telling `altair` what height and width the
 plot should have.
 
 This can be done by specifying the `height` and `width` argument in the
-`alt.Chart(width=..., height=...)...` function.
+`alt.Chart()` function with arguments named `height` and `width`.
 
 Let’s set the the height and the width of the previous plot to `300` and
 `500` respectively.
@@ -243,9 +223,9 @@ sugar and calorie values.
 It may be of use to set an opacity to the graph to differentiate those
 points.
 
-Opacity is set with the argument `opacity` in the
-`mark_circle(opacity=...)` function and accepts values between 0 and 1,
-with 1 being full intensity.
+Opacity is set with the argument `opacity` in the `mark_circle()`
+function and accepts values between 0 and 1, with 1 being full
+intensity.
 
 Look at that\! Now we can see there are multiple cereals that have 3.5g
 of sugar with 110 calories.
@@ -266,8 +246,8 @@ Notes:
 
 What if you don’t fancy the default plot colour `blue`?
 
-Well that is okay, we can change the colour using the `color` argument
-in the `.mark_circle(color=...)` function.
+Well that’s okay, we can change the colour using the `color` argument in
+`.mark_circle()`.
 
 Let’s change the colour to `red` (I like red) and keep the same opacity.
 
@@ -287,8 +267,8 @@ Notes:
 
 Maybe I have bad eyes, but those data points look pretty small.
 
-Good news though, we can make them bigger to enlarge them, the argument
-`size` in the `mark_circle(size=...)` should do the trick.
+Good news though, we can make them bigger. The argument `size` in the
+`mark_circle(size=...)` should do the trick.
 
 ---
 
@@ -311,8 +291,8 @@ A title provides useful information as to what the plot is about.
 Let’s take this opportunity to finish off our scatter plot graph and set
 the argument `title` to something as well.
 
-To set the `title`, we use the `title` argument to the
-`.properties(title=..)` function.
+To set the `title`, we use the `title` argument to the `.properties()`
+function.
 
 ---
 

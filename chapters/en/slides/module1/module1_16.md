@@ -59,9 +59,6 @@ cereal.loc[66, 'rating']
 31.230054
 ```
 
-You will be using this often so let’s make sure we practice this one
-right away\!
-
 Notes:
 
 What about if we wanted the rating of `Smacks` which is located at index
@@ -69,6 +66,9 @@ What about if we wanted the rating of `Smacks` which is located at index
 
 Then we use `.loc[]`, specify the row and the column location separated
 by a comma.
+
+You will be using this often so let’s make sure we practice this one
+right away\!
 
 ---
 

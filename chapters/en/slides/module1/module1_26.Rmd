@@ -91,6 +91,11 @@ Notes:
 
 Before we go further, let's quickly discuss the 2 different types of data.  
 
+Categorical data consists of qualitative observations such as characteristics - things generally containing names or words. Examples would be colours or names of things.
+
+Numerical data are usually expressed with numbers such as measurements or quantities.
+
+
 Our columns in our dataframe are considered one of the two of these.
 
 ---
@@ -129,6 +134,13 @@ Notes:
 
 This table will tell us about different summary statics including the following. 
 
+- `count`: The number of non-NA/null observations.
+- `mean`: The mean of the column 
+- `std` : The standard deviation of a column
+- `min`: The min value for a column
+- `max`: The max value for a column 
+- By default the 25, 50 and 75 percentile of the observations are also included. 
+
 ---
 
 ```{python}
@@ -145,7 +157,11 @@ We can make changes to either limit how much is shown or include more statistic 
 
 This expands the dataframe to contain both categorical and numerical columns now. 
 
-Adding `include='all'` within the brackets adds some additional statistics about categorical columns.
+Adding `include='all'` within the brackets adds some additional statistics about categorical columns including:
+
+- `unique`: which indicates the number of unique observations
+- `top`: which tells up the observation value that is most occurring
+- `freq`: which informs us of the  frequency of the most occurring observation
 
 ---
 
@@ -160,14 +176,11 @@ ratings = cereal[['rating']]
 ratings.sum()
 ```
 
-What about median calories of the cereals. 
-
 
 ```{python}
 calories = cereal[['calories']]
 calories.median()
 ```
-
 
 Notes: 
 
@@ -175,13 +188,14 @@ We can also get single statistics of each column using:
 either `.mean()`,`.std()`, `.count()`, `.median()`, `.sum()`. 
 
 First segregate the column we want to explore further, then add the verb. 
-As an example, what the sum of the cereal ratings?
 
-what the mean protein content of the cereals?
+As an example,
 
-Or the sum of the cereal ratings?
+what is the mean protein content of the cereals?
 
-What about median calories of the cereals? 
+Or what is the sum of the cereal ratings?
+
+What about the median calories of the cereals? 
 
 ---
 

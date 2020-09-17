@@ -78,6 +78,13 @@ Notes:
 Before we go further, let’s quickly discuss the 2 different types of
 data.
 
+Categorical data consists of qualitative observations such as
+characteristics - things generally containing names or words. Examples
+would be colours or names of things.
+
+Numerical data are usually expressed with numbers such as measurements
+or quantities.
+
 Our columns in our dataframe are considered one of the two of these.
 
 ---
@@ -139,6 +146,14 @@ Notes:
 This table will tell us about different summary statics including the
 following.
 
+  - `count`: The number of non-NA/null observations.
+  - `mean`: The mean of the column
+  - `std` : The standard deviation of a column
+  - `min`: The min value for a column
+  - `max`: The max value for a column
+  - By default the 25, 50 and 75 percentile of the observations are also
+    included.
+
 ---
 
 ``` python
@@ -146,18 +161,18 @@ cereal.describe(include='all')
 ```
 
 ```out
-               name  mfr  type    calories    protein        fat      sodium  ...     sugars      potass    vitamins      shelf     weight       cups     rating
-count            77   77    77   77.000000  77.000000  77.000000   77.000000  ...  77.000000   77.000000   77.000000  77.000000  77.000000  77.000000  77.000000
-unique           77    7     2         NaN        NaN        NaN         NaN  ...        NaN         NaN         NaN        NaN        NaN        NaN        NaN
-top     Puffed Rice    K  Cold         NaN        NaN        NaN         NaN  ...        NaN         NaN         NaN        NaN        NaN        NaN        NaN
-freq              1   23    74         NaN        NaN        NaN         NaN  ...        NaN         NaN         NaN        NaN        NaN        NaN        NaN
-mean            NaN  NaN   NaN  106.883117   2.545455   1.012987  159.675325  ...   6.948052   96.129870   28.246753   2.207792   1.029610   0.821039  42.665705
-std             NaN  NaN   NaN   19.484119   1.094790   1.006473   83.832295  ...   4.403635   71.215823   22.342523   0.832524   0.150477   0.232716  14.047289
-min             NaN  NaN   NaN   50.000000   1.000000   0.000000    0.000000  ...   0.000000    1.000000    0.000000   1.000000   0.500000   0.250000  18.042851
-25%             NaN  NaN   NaN  100.000000   2.000000   0.000000  130.000000  ...   3.000000   40.000000   25.000000   1.000000   1.000000   0.670000  33.174094
-50%             NaN  NaN   NaN  110.000000   3.000000   1.000000  180.000000  ...   7.000000   90.000000   25.000000   2.000000   1.000000   0.750000  40.400208
-75%             NaN  NaN   NaN  110.000000   3.000000   2.000000  210.000000  ...  11.000000  120.000000   25.000000   3.000000   1.000000   1.000000  50.828392
-max             NaN  NaN   NaN  160.000000   6.000000   5.000000  320.000000  ...  15.000000  330.000000  100.000000   3.000000   1.500000   1.500000  93.704912
+                       name  mfr  type    calories    protein        fat      sodium  ...     sugars      potass    vitamins      shelf     weight       cups     rating
+count                    77   77    77   77.000000  77.000000  77.000000   77.000000  ...  77.000000   77.000000   77.000000  77.000000  77.000000  77.000000  77.000000
+unique                   77    7     2         NaN        NaN        NaN         NaN  ...        NaN         NaN         NaN        NaN        NaN        NaN        NaN
+top     Wheaties Honey Gold    K  Cold         NaN        NaN        NaN         NaN  ...        NaN         NaN         NaN        NaN        NaN        NaN        NaN
+freq                      1   23    74         NaN        NaN        NaN         NaN  ...        NaN         NaN         NaN        NaN        NaN        NaN        NaN
+mean                    NaN  NaN   NaN  106.883117   2.545455   1.012987  159.675325  ...   6.948052   96.129870   28.246753   2.207792   1.029610   0.821039  42.665705
+std                     NaN  NaN   NaN   19.484119   1.094790   1.006473   83.832295  ...   4.403635   71.215823   22.342523   0.832524   0.150477   0.232716  14.047289
+min                     NaN  NaN   NaN   50.000000   1.000000   0.000000    0.000000  ...   0.000000    1.000000    0.000000   1.000000   0.500000   0.250000  18.042851
+25%                     NaN  NaN   NaN  100.000000   2.000000   0.000000  130.000000  ...   3.000000   40.000000   25.000000   1.000000   1.000000   0.670000  33.174094
+50%                     NaN  NaN   NaN  110.000000   3.000000   1.000000  180.000000  ...   7.000000   90.000000   25.000000   2.000000   1.000000   0.750000  40.400208
+75%                     NaN  NaN   NaN  110.000000   3.000000   2.000000  210.000000  ...  11.000000  120.000000   25.000000   3.000000   1.000000   1.000000  50.828392
+max                     NaN  NaN   NaN  160.000000   6.000000   5.000000  320.000000  ...  15.000000  330.000000  100.000000   3.000000   1.500000   1.500000  93.704912
 
 [11 rows x 16 columns]
 ```
@@ -176,7 +191,12 @@ This expands the dataframe to contain both categorical and numerical
 columns now.
 
 Adding `include='all'` within the brackets adds some additional
-statistics about categorical columns.
+statistics about categorical columns including:
+
+  - `unique`: which indicates the number of unique observations
+  - `top`: which tells up the observation value that is most occurring
+  - `freq`: which informs us of the frequency of the most occurring
+    observation
 
 ---
 
@@ -200,8 +220,6 @@ rating    3285.259284
 dtype: float64
 ```
 
-What about median calories of the cereals.
-
 ``` python
 calories = cereal[['calories']]
 calories.median()
@@ -218,13 +236,15 @@ We can also get single statistics of each column using: either
 `.mean()`,`.std()`, `.count()`, `.median()`, `.sum()`.
 
 First segregate the column we want to explore further, then add the
-verb. As an example, what the sum of the cereal ratings?
+verb.
 
-what the mean protein content of the cereals?
+As an example,
 
-Or the sum of the cereal ratings?
+what is the mean protein content of the cereals?
 
-What about median calories of the cereals?
+Or what is the sum of the cereal ratings?
+
+What about the median calories of the cereals?
 
 ---
 

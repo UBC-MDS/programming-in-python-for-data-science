@@ -42,7 +42,7 @@ Notes:
 Something we do often in data analysis is obtaining a single column from
 a dataframe. We can use `.loc[]` which would look something like this:
 
-`cereak.loc[:, ['column name']]`
+`dataframe.loc[:, ['column name']]`
 
 So if we wanted the column `type` from our cereal dataframe we could use
 the syntax here.
@@ -81,7 +81,7 @@ cereal[['type']]
 
 Notes:
 
-Selecting a single column can be done without using `loc[]` and instead
+Selecting a single column can be done without using `.loc[]` and instead
 we can just specify the dataframe name, followed by double square
 brackets containing the column of interest.
 

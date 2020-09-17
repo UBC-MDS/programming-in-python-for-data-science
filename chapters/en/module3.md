@@ -10,14 +10,14 @@ id: 3
 
 <exercise id="0" title="Module Learning Outcomes" type="slides,video">
 
-<slides source="module3/module3_00" shot="0" start="0:165" end="3:01">
+<slides source="module3/module3_00" shot="0" start="0:165" end="3:02">
 </slides>
 
 </exercise> 
 
 <exercise id="1" title="What is Tidy Data?" type="slides,video">
 
-<slides source="module3/module3_01" shot="1" start="0:165" end="3:01">
+<slides source="module3/module3_01" shot="1" start="43:56" end="47:32">
 </slides>
 
 </exercise>
@@ -126,7 +126,7 @@ Good job!  You must have seen the duplicate rows of `Ivysaur`, `Charmeleon` and 
 
 <exercise id="5" title="Statistical Questions and Tidy Data" type="slides,video">
 
-<slides source="module3/module3_05" shot="1" start="0:165" end="3:01">
+<slides source="module3/module3_05" shot="1" start="47:348" end="49:49">
 
 </slides>
 
@@ -192,7 +192,7 @@ Good job! Of course it depends on the statistical question!
 
 <exercise id="8" title="Reshaping with Pivot" type="slides,video">
 
-<slides source="module3/module3_08" shot="1" start="0:165" end="3:01">
+<slides source="module3/module3_08" shot="1" start="49:50" end="55:47">
 
 </slides>
 
@@ -280,7 +280,7 @@ Tasks:
 
 <exercise id="11" title="Reshaping with Pivot Table" type="slides,video">
 
-<slides source="module3/module3_11" shot="1" start="0:165" end="3:01">
+<slides source="module3/module3_11" shot="1" start="55:49" end="61:37">
 
 </slides>
 
@@ -396,7 +396,7 @@ Are your sorting by `ascending=False`?
 
 <exercise id="14" title="Reshaping with Melt" type="slides,video">
 
-<slides source="module3/module3_14" shot="1" start="0:165" end="3:01">
+<slides source="module3/module3_14" shot="1" start="61:39" end="63:50">
 
 </slides>
 
@@ -501,7 +501,7 @@ Tasks:
 
 <exercise id="17" title="Concatenation" type="slides,video">
 
-<slides source="module3/module3_17" shot="1" start="0:165" end="3:01">
+<slides source="module3/module3_17" shot="1" start="63:5310" end="70:32">
 
 </slides>
 
@@ -637,7 +637,7 @@ Tasks:
 
 <exercise id="21" title="Joining Dataframes using Merge" type="slides,video">
 
-<slides source="module3/module3_21" shot="1" start="0:165" end="3:01">
+<slides source="module3/module3_21" shot="1" start="70:3401" end="78:13">
 
 </slides>
 

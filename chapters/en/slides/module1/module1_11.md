@@ -80,7 +80,23 @@ df.loc[:, 'column name start':'column name end']
 
 Notes:
 
-<br>
+  - `.loc[]` is used to slice columns and rows by **label** and within
+    an interval.
+
+  - We always specify **row** indexing first, then **columns**.
+
+  - If we aren’t slicing any columns, but we are slicing rows we only
+    need to specify the row labels.
+
+  - However, the reverse is not true. If we want all the rows with only
+    specific columns, we specify rows first and therefore we would need
+    to make it clear with a colon first that we are slicing all the rows
+    followed by the column labels.
+
+  - We can read `:` as **“to”**.
+
+  - And finally, if the indices are labelled with numbers, we do not
+    need “quotations” when calling them.
 
 ---
 

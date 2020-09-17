@@ -17,7 +17,7 @@ id: 4
 
 <exercise id="1" title="Python Data Types" type="slides, video">
 
-<slides source="module4/module4_01" shot = "1" start="0:165" end="3:01">
+<slides source="module4/module4_01" shot = "1" start="78:16" end="86:35">
 </slides>
 
 </exercise>
@@ -206,7 +206,7 @@ Tasks:
 
 <exercise id="5" title="Python Data Structures: Lists, Tuples and Sets" type="slides, video">
 
-<slides source="module4/module4_05" shot = "1" start="0:165" end="3:01">
+<slides source="module4/module4_05" shot = "1" start="86:39" end="95:47">
 
 </slides>
 
@@ -391,7 +391,7 @@ Tasks:
 
 <exercise id="10" title="Python Data Structures: Dictionaries" type="slides, video">
 
-<slides source="module4/module4_10" shot = "1" start="0:165" end="3:01">
+<slides source="module4/module4_10" shot = "1" start="95:50" end="3:01">
 
 </slides>
 
