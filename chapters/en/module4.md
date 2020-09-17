@@ -391,7 +391,7 @@ Tasks:
 
 <exercise id="10" title="Python Data Structures: Dictionaries" type="slides, video">
 
-<slides source="module4/module4_10" shot = "1" start="95:50" end="3:01">
+<slides source="module4/module4_10" shot = "1" start="95:50" end="101:17">
 
 </slides>
 
@@ -534,7 +534,7 @@ Tasks:
 
 <exercise id="14" title="Dataframes, Series and Column dtypes" type="slides, video">
 
-<slides source="module4/module4_14" shot = "1" start="0:165" end="3:01">
+<slides source="module4/module4_14" shot = "1" start="101:21" end="108:06">
 
 </slides>
 
@@ -827,7 +827,7 @@ Are you looking at the output from above?
 
 <exercise id="18" title="Operations with  Data Types" type="slides, video">
 
-<slides source="module4/module4_18" shot = "1" start="0:165" end="3:01">
+<slides source="module4/module4_18" shot = "1" start="107:11" end="113:56">
 
 </slides>
 
@@ -1036,7 +1036,7 @@ The statement `not 'hotels' != 'homes' ` is false so checking if that statement 
 
 <exercise id="21" title="Operations with Columns" type="slides, video">
 
-<slides source="module4/module4_21" shot = "1" start="0:165" end="3:01">
+<slides source="module4/module4_21" shot = "1" start="114:01" end="120:43">
 
 </slides>
 
@@ -1182,7 +1182,7 @@ We cannot take the mean of a column of dtype `object`.
 
 <exercise id="23" title="Splitting a Column" type="slides, video">
 
-<slides source="module4/module4_23" shot = "1" start="0:165" end="3:01">
+<slides source="module4/module4_23" shot = "1" start="120:47" end="123:25">
 
 </slides>
 

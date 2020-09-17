@@ -80,7 +80,7 @@ const Video = ({ id, start = 0, end = 0 }) => {
     const { lang } = useContext(ChapterContext)
     const { uiText } = useContext(LocaleContext)
     const [duration, setDuration] = useState(0)
-    const url = `https://www.youtube.com/embed/${id}?start=${start}&end=${end}&version=3&color=white&hl=${lang}&modestbranding=1&rel=0`
+    const url = `https://www.youtube.com/embed/${id}?start=${start}&end=${end}&version=3&color=white&hl=${lang}&modestbranding=1&rel=0?vq=hd1080`
     const options = {
         duration: end,
         tooltips: { seek: false },

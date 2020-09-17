@@ -152,7 +152,7 @@ new
 type(new)
 ```
 
-This not ideal for splitting up values in a column.  
+
 
 Notes:
 
@@ -163,6 +163,8 @@ Well, let's take a look!
 Our output is now a Pandas Series data type with a list containing both column values as the Series values.
 
 This makes it a little harder to add to the dataframe as separate columns. 
+
+This not ideal for splitting up values in a column.  
 
 ---
 

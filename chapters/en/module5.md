@@ -451,7 +451,7 @@ Tasks:
 
 <exercise id="9" title="Range, Dictionaries and Comprehensions" type="slides, video">
 
-<slides source="module5/module5_09" shot = "2" start="15:43" end="3:01">
+<slides source="module5/module5_09" shot = "2" start="15:43" end="19:11">
 
 </slides>
 
@@ -590,7 +590,7 @@ Tasks:
 
 <exercise id="13" title="Nested Loops" type="slides, video">
 
-<slides source="module5/module5_13" shot = "2" start="0:165" end="3:01">
+<slides source="module5/module5_13" shot = "2" start="19:17" end="24:01">
 
 </slides>
 
@@ -709,7 +709,7 @@ Are you putting `character_count = character_count + len(dish)` in the inner loo
 
 <exercise id="16" title="Repeated Iterations with Conditions" type="slides, video">
 
-<slides source="module5/module5_16" shot = "2" start="0:165" end="3:01">
+<slides source="module5/module5_16" shot = "2" start="24:085" end="27:472">
 
 </slides>
 
@@ -889,7 +889,7 @@ With repetitive code, there is generally always a manner to reduce redundant cod
 
 <exercise id="19" title="Functions" type="slides, video">
 
-<slides source="module5/module5_19" shot = "2" start="0:165" end="3:01">
+<slides source="module5/module5_19" shot = "2" start="27:54" end="33:20">
 
 </slides>
 

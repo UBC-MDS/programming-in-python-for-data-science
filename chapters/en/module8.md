@@ -19,7 +19,7 @@ id: 8
 
 <exercise id="1" title="NumPy and 1D Arrays" type="slides,video">
 
-<slides source="module8/module8_01" shot = "2" start="0:165" end="3:01">
+<slides source="module8/module8_01" shot = "2" start="87:22" end="97:03">
 </slides>
 
 </exercise>
@@ -234,7 +234,7 @@ This is an example of how useful arrays can be when doing numerical computation!
 
 <exercise id="5" title="Multi-dimensional Arrays" type="slides,video">
 
-<slides source="module8/module8_05" shot = "2" start="0:165" end="3:01">
+<slides source="module8/module8_05" shot = "2" start="97:09" end="103:27">
 </slides>
 
 </exercise>
@@ -609,7 +609,7 @@ Tasks:
 
 <exercise id="11" title="Working with Null Values" type="slides,video">
 
-<slides source="module8/module8_11" shot = "2" start="0:165" end="3:01">
+<slides source="module8/module8_11" shot = "2" start="103:33" end="111:21">
 </slides>
 
 </exercise>
@@ -890,7 +890,7 @@ Tasks:
 
 <exercise id="16" title="Working with Dates and Time" type="slides,video">
 
-<slides source="module8/module8_16" shot = "2" start="0:165" end="3:01">
+<slides source="module8/module8_16" shot = "2" start="111:27" end="122:13">
 </slides>
 
 </exercise>
@@ -1038,7 +1038,7 @@ Tasks:
 
 <exercise id="19" title="Introduction to Working with Strings" type="slides,video">
 
-<slides source="module8/module8_19" shot = "2" start="0:165" end="3:01">
+<slides source="module8/module8_19" shot = "2" start="122:21" end="128:35">
 </slides>
 
 </exercise>
@@ -1237,7 +1237,7 @@ Are you filtering the dataset correctly?
 
 <exercise id="23" title="More Advanced String Processing" type="slides,video">
 
-<slides source="module8/module8_23" shot = "2" start="0:165" end="3:01">
+<slides source="module8/module8_23" shot = "2" start="128:41" end="132:48">
 </slides>
 
 </exercise>
