@@ -11,7 +11,7 @@ id: 7
 
 <exercise id="0" title="Module Learning Outcomes" type="slides, video">
 
-<slides source="module7/module7_00" shot = "11" start="0:001" end="3:01">
+<slides source="module7/module7_00" shot = "11" start="0:001" end="0:48">
 </slides>
 
 </exercise> 
@@ -664,6 +664,6 @@ This is not the correct way to import, and it uses capitalization on keywords wh
 
 
 <exercise id="19" title="What Did We Just Learn?" type="slides, video">
-<slides source="module7/module7_end" shot="11" start="0:165" end="3:01">>
+<slides source="module7/module7_end" shot="11" start="0:49" end="1:32">>
 </slides>
 </exercise>

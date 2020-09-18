@@ -10,7 +10,7 @@ id: 4
 
 <exercise id="0" title="Module Learning Outcomes" type="slides, video">
 
-<slides source="module4/module4_00" shot = "8" start="0:001" end="3:01">
+<slides source="module4/module4_00" shot = "8" start="0:001" end="0:35">
 </slides>
 
 </exercise> 
@@ -1218,7 +1218,7 @@ Tasks:
 
 
 <exercise id="25" title="What Did We Just Learn?" type="slides, video">
-<slides source="module4/module4_25" shot="8" start="0:165" end="3:01">>
+<slides source="module4/module4_25" shot="8" start="0:36" end="1:15">>
 </slides>
 </exercise>
 
