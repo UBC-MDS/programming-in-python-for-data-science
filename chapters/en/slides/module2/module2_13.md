@@ -73,9 +73,11 @@ use the first 5 rows of the dataset.
 
 Notes:
 
-Take this next scenario. Perhaps we recently read the cereal data’s
-documentation explaining that the `fat` column is being expressed as
-grams and we are interested in milligrams.
+Take this next scenario.
+
+Perhaps we recently read the cereal data’s documentation explaining that
+the `fat` column is being expressed as grams and we are interested in
+milligrams.
 
 How can we rectify this?
 
@@ -113,9 +115,12 @@ Name: fat, dtype: int64
 
 Notes:
 
-Here is where some magic happens. Python doesn’t require us to make a
-whole column filled with 1000s to get the result we want. It simply
-multiplies each value by 1000. (In Python we use `*` for
+Here is where some magic happens.
+
+Python doesn’t require us to make a whole column filled with 1000s to
+get the result we want.
+
+It simply multiplies each value by 1000. (In Python we use `*` for
 multiplication.)
 
 So our original fat column in the cereal dataframe is transformed\!
@@ -197,9 +202,9 @@ dtype: float64
 Notes:
 
 We are not limited to simply taking a column and transforming it by a
-single number. We can do operations involving multiple columns as well.
-Perhaps we wanted to know the amount of sugar (`sugar`) per cup of
-cereal (`cups`).
+single number, say by multiplying or dividing. We can do operations
+involving multiple columns as well. Perhaps we wanted to know the amount
+of sugar (`sugar`) per cup of cereal (`cups`).
 
 The expected result would look something like this diagram.
 

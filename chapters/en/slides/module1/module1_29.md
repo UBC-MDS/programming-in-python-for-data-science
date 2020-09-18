@@ -31,8 +31,8 @@ cereal_mini
 
 ```out
 Both       3
-America    2
 Canada     2
+America    2
 Name: available_canada_america, dtype: int64
 ```
 
@@ -85,8 +85,8 @@ mfr_freq
 K    23
 G    22
 P     9
-Q     8
 R     8
+Q     8
 N     6
 A     1
 Name: mfr, dtype: int64
@@ -167,11 +167,9 @@ use or to use in another application.
 
 We can save dataframes using the method `.to_csv()`.
 
-Simply put our desired `csv` file name in quotations within the
-parentheses.
-
-We include the argument `index=False` so we don’t export our index
-column which is just a column of numbers.
+We put our desired `csv` file name in quotations within the parentheses
+and follow it with the argument `index=False` so we don’t export our
+index column which is just a column of numbers.
 
 ---
 

@@ -68,7 +68,7 @@ Let's load in our cereal dataset again.
 
 ### Categorical data
 
-Consists of qualitative observations such as characteristics - things generally containing names or words. 
+Consists of qualitative observations such as characteristics - things generally containing words. 
 
 **Examples**      
 
@@ -132,7 +132,9 @@ cereal.describe()
 
 Notes:
 
-This table will tell us about different summary statics including the following. 
+Let's talk a little bit about the output of `.describe()`.
+
+On the left-hand side we see a new column. This column contains the names of the different summary statistics that `.describes()` gives us back for our dataset. Let's talk about them: 
 
 - `count`: The number of non-NA/null observations.
 - `mean`: The mean of the column 
@@ -153,15 +155,15 @@ cereal.describe(include='all')
 
 Notes: 
 
-We can make changes to either limit how much is shown or include more statistic in the dataframe with the additional argument `include = "all"` in the `describe` brackets.
+We can make changes to either limit how much is shown or include more statistics in the dataframe with the additional argument `include="all"` in the `describe` brackets.
 
-This expands the dataframe to contain both categorical and numerical columns now. 
+This expands the output so we get summary statistics for both categorical and numerical columns now. 
 
 Adding `include='all'` within the brackets adds some additional statistics about categorical columns including:
 
 - `unique`: which indicates the number of unique observations
 - `top`: which tells up the observation value that is most occurring
-- `freq`: which informs us of the  frequency of the most occurring observation
+- `freq`: which informs us of the frequency of the most occurring observation
 
 ---
 

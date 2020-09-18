@@ -18,7 +18,7 @@ id: 7
 
 <exercise id="1" title="Importing Python Libraries" type="slides, video">
 
-<slides source="module7/module7_01" shot="3" start="0:165" end="3:01">
+<slides source="module7/module7_01" shot="4" start="0:165" end="3:01">
 </slides>
 
 </exercise>
@@ -81,7 +81,7 @@ Nice work!
 
 <opt text="<code>As np Import numpy </code>">
 
-This is neither the correct way to import, and it uses capitalization on keywords which is incorrect. 
+This is not the correct way to import, and it uses capitalization on keywords which is incorrect. 
 
 </opt>
 
@@ -155,7 +155,7 @@ Tasks:
 
 <exercise id="5" title="Working with Other Files" type="slides, video">
 
-<slides source="module7/module7_05" shot="3" start="0:165" end="3:01">
+<slides source="module7/module7_05" shot="4" start="0:165" end="3:01">
 </slides>
 
 </exercise>
@@ -264,7 +264,7 @@ We are importing only the `sqrt` function from the `numpy` package.
 
 <exercise id="8" title="Testing Your Own Functions with Pytest" type="slides, video">
 
-<slides source="module7/module7_08" shot="3" start="0:165" end="3:01">
+<slides source="module7/module7_08" shot="4" start="0:165" end="3:01">
 </slides>
 
 </exercise>
@@ -373,7 +373,7 @@ We are importing only the `sqrt` function from the `numpy` package.
 
 <exercise id="11" title="Automatic Style Formatters" type="slides, video">
 
-<slides source="module7/module7_11" shot="3" start="0:165" end="3:01">
+<slides source="module7/module7_11" shot="4" start="0:165" end="3:01">
 </slides>
 
 </exercise>
@@ -480,9 +480,9 @@ We are importing only the `sqrt` function from the `numpy` package.
 
 </exercise>
 
-<exercise id="14" title="How to Style Your Code Better" type="slides, video">
+<exercise id="14" title="Formatting That Can't Be Fixed Automatically" type="slides, video">
 
-<slides source="module7/module7_14" shot="3" start="0:165" end="3:01">
+<slides source="module7/module7_14" shot="4" start="0:165" end="3:01">
 </slides>
 
 </exercise>
@@ -591,7 +591,7 @@ We are importing only the `sqrt` function from the `numpy` package.
 
 <exercise id="17" title="Python Debugger" type="slides, video">
 
-<slides source="module7/module7_17" shot="3" start="0:165" end="3:01">
+<slides source="module7/module7_17" shot="4" start="0:165" end="3:01">
 </slides>
 
 </exercise>
@@ -654,7 +654,7 @@ Nice work!
 
 <opt text="<code>As np Import numpy </code>">
 
-This is neither the correct way to import, and it uses capitalization on keywords which is incorrect. 
+This is not the correct way to import, and it uses capitalization on keywords which is incorrect. 
 
 </opt>
 

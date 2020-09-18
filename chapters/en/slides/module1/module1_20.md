@@ -39,8 +39,8 @@ and row ***labels*** using `.loc[]`.
 Slicing can also be done by the location position of each row with
 `.iloc[]`.
 
-`.iloc[]` is very similar, however, the “i” in `iloc` refers to the
-index ***integer*** position.
+`.iloc[]` is very similar to `loc[]`, however, the “i” in `iloc` refers
+to the index ***integer*** position.
 
 We are going to return to our cereal dataset and take a look at the
 first 10 rows.

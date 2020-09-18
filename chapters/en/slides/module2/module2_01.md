@@ -20,16 +20,15 @@ including:
 Notes:
 
 In the last module, we learned how to read in a `csv` file but loading
-in data is not restricted to this file type.
-
-  - A URL: If the data is stored publicly on a webpage, pandas can read
-    it directly in from the page address.
-  - A `txt` file: We saw what a plain text file looked like in the last
-    module and it is generally a simple manner of storing data.  
-  - An `xlsx` file: This is a Microsoft Excel spreadsheet. This is
-    different than a regular `csv` file as an Excel file can contain
-    many different sheets and can be formatted uniquely and specifically
-    for an individual’s needs.
+in data is not restricted to this file type.  
+there are several types such as: - A URL: If the data is stored publicly
+on a webpage, pandas can read it directly in from the page address. - A
+`txt` file: We saw what a plain text file looked like in the last module
+and it is generally a simple manner of storing data.  
+\- An `xlsx` file: This is a Microsoft Excel spreadsheet. This is
+different than a regular `csv` file as an Excel file can contain many
+different sheets and can be formatted uniquely and specifically for an
+individual’s needs.
 
 Of course, there are many other file types but we will focus on these
 for this course.
@@ -69,7 +68,7 @@ be
 <a href="https://github.com/UBC-MDS/MCL-DSCI-011-programming-in-python" target="_blank">viewed
 online</a>.
 
-The `candybar.csv` file that we used in the last module is stored at
+The `candybar.csv` file that we used in the last module, is stored at
 this URL.
 
 You can see that it looks like a plain text file with each line being a

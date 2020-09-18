@@ -18,7 +18,7 @@ Notes:
 
 Notes:
 
-Pandas is an add on library to Python.
+Pandas is an add-on library to Python.
 
 It let’s us do more things with our code, specifically with dataframes.
 
@@ -33,10 +33,10 @@ import pandas as pd
 Notes:
 
 To analyze dataframes and load these `csv` files, we need to make sure
-that we bring in this `pandas` library.
+that we bring in the `pandas` library into Python.
 
-Before we start writing any valuable code, we import it with the
-following code.
+Before we start writing any valuable code for loading data and doing
+data analysis we need to import it with the following code.
 
 ---
 
@@ -75,7 +75,7 @@ Next we can bring in our data named `candybars` which is stored as a
 let’s break this up:
 
   - `pd` is the short form for pandas, which we are using to manipulate
-    our dataframes.  
+    our dataframe.  
   - `read_csv()` is the tool that does the job and, in this case, it is
     reading in the `csv` file named `candybars.csv`.  
   - `candy` is The dataframe is now saved as an object called `candy`.
@@ -84,8 +84,8 @@ The dataframe is stored in an object named `candy` and we can inspect in
 by “calling” the object name.
 
 In these slides we can differentiate between the code that we typed in
-with a light grey background and it’s output which is coloured with a
-dark grey background.
+with a light grey background and it’s output which has a dark grey
+background.
 
 From this dataframe, we can see that there are 25 different candy bars
 and 6 columns.
@@ -110,15 +110,14 @@ candy.shape
 
 Notes:
 
-We can obtain the names of the columns using `.columns`, and if we
-wanted to see the dimensions of the whole dataframe we could use
+We can obtain the names of the columns using `.columns` syntax, and if
+we wanted to see the dimensions of the whole dataframe we could use
 `.shape` after the dataframe name.
 
 Breaking up the code, we interpret this as:
 
-*“From our dataframe that we saved as `candy` tell me the `shape`”* or
-*“From our dataframe that we saved as `candy` tell me the `column`
-names”*
+*“From our dataframe that we saved as `candy`, tell me the `shape`”* or
+*“From our dataframe that we saved as `candy`, tell me the `columns`”*
 
 ---
 
@@ -147,10 +146,14 @@ candy.head()
 
 Notes:
 
-What if we don’t want to output the whole table when displaying a
+What if we don’t want to output the whole table when displaying it as
 dataframe?
 
-We can specify how many rows of the dataset to show with `.head()`.
+This can be really useful when we have dataframes that have hundreds or
+thousands of rows long.
+
+We can specify how many rows of the dataset to show with `.head()`
+syntax.
 
 `.head(2)` will output the first 2 rows of the dataframe.
 
@@ -183,7 +186,8 @@ Notes:
 
 Something you may have noticed is that when we use `pd.read_csv()` we
 put our instructions within the parentheses, whereas, when we use
-`.shape` or `.head()` the object comes before our desired command.
+`.shape` or `.head()` the object that we are operating on comes before
+our desired command.
 
 In Python, we use **functions**, **methods** and **attributes**. These
 are special words in Python that takes in instructions (we call these
@@ -206,7 +210,7 @@ In the example of `pd.read_csv()`, this function does the action of
 reading in our data.
 
 This is going to be discussed in more detail later in the course but
-now, simply be aware of the way we write different instructions.
+now, simply be aware of the way we write the different instructions.
 
 ---
 
@@ -223,7 +227,7 @@ candy.shape  # This will output the shape of the dataframe
 Notes:
 
 While we write code, it’s often useful to annotate it or include
-information that we do not want to executed.
+information for humans that we do not want to executed.
 
 The easiest way to do this is with a hash (`#`) symbol. This creates a
 single line comment and prevents anything written after it from being

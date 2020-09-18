@@ -1,0 +1,161 @@
+---
+params:
+  dynamictitle: "module7_14"
+title: "`r params$dynamictitle`"
+output: 
+  md_document:
+    variant: gfm
+---
+
+
+```{r setup, include=FALSE}
+## DO NOT FORGET TO CHANGE THIS ACCORDINGLY 
+library(rmarkdown)
+# MAke sure you are updating your title 
+knitr::opts_chunk$set(echo = TRUE,
+                      base.dir = ".", 
+                      base.url = "/",
+                      fig.path = paste("../../static/module4/", params$dynamictitle,"/", sep = ""))
+
+knitr_opts <- knitr_options( opts_knit = NULL,
+                             opts_chunk = NULL,
+                             knit_hooks = NULL,
+                             opts_hooks = NULL,
+                             opts_template = NULL)
+md_document_custom <- md_document(variant = "gfm")
+output_format(knitr = knitr_opts,
+              pandoc = NULL,
+              base_format = md_document_custom)
+library(reticulate)
+
+```
+
+
+```{python include=FALSE}
+import pandas as pd
+import numpy as np
+pd.set_option('display.width', 350)
+
+np.set_printoptions(linewidth=400)
+
+pd.set_option('display.max_columns', 50)
+pd.set_option('display.max_rows', 15)
+cereal = pd.read_csv('cereal.csv')
+```
+
+
+type: slides
+
+
+# Non-automatic style formatting 
+
+Notes: <br>
+
+---
+
+## Comments
+
+Guidelines according to PEP8 and <a href="https://www.python.org/dev/peps/pep-0008/#comments" target="_blank">python.org</a>: 
+
+- Comments should start with a # followed by a single space
+- They should be complete sentences. The first word should be capitalized, unless it is an identifier that begins with a lower case letter.
+- Comments should be clear and easily understandable to other speakers of the language you are writing in.
+- For block comments, each line of a block comment should start with a # followed by a single space and should be indented to the same level as the code it precedes.
+
+
+Notes: <br>
+
+We've learned about some helpful tools that can help format and standardize our code such as white space, and indentations but what about the things that a formatter can't automatically change? 
+
+let's start with how we write comments.
+
+Comments are important for understanding your code.
+
+While docstrings cover what a function does, your comments will help document how your code achieves its goal.
+
+<a href="https://www.python.org/dev/peps/pep-0008/#comments" target="_blank">python.org</a> has some strong opinions about how comments should be written and the first thing they mention is that our comments should reflect what the code is doing. 
+
+It sounds easy enough, but when working on projects that are constantly changing, it's easy to change the code but forget to change the comments which do not effect the output of the code. 
+
+In cases like this it's better that our code has no comments than comments that contradict our code. 
+
+Guidelines according to PEP8 and <a href="https://www.python.org/dev/peps/pep-0008/#comments" target="_blank">python.org</a>: 
+
+- Comments should start with a # followed by a single space
+- They should be complete sentences. The first word should be capitalized, unless it is an identifier that begins with a lower case letter.
+- Comments should be clear and easily understandable to other speakers of the language you are writing in.
+- For block comments, each line of a block comment should start with a # followed by a single space and should be indented to the same level as the code it precedes.
+
+---
+
+
+**BAD comment**
+```{python}
+# adding 6.99 
+cost = cost + 6.99 
+```
+
+**Better comment**
+```{python}
+# Accounting for shipping charges
+cost = cost + 6.99 
+```
+
+**BAD comment**
+```{python}
+x = 0
+
+# This code iterates over the numbers 1 to 5 each time adding the number to the variable x to get a sum of the numbers from 1, 2, 3, 4, and 5. 
+
+for i in range(1:5):
+    x = x + 1
+```
+
+**Better comment**
+```{python}
+x = 0
+
+# Sum up the values 1 to 5 
+for i in range(1:5):
+    x = x + 1
+```
+
+
+Notes: 
+
+
+Here is an example of a bad comment where we say "adding 6.99" which doesn't really tell us why. A  more reasonable comment would be to  correct the capitalize the comment and explain that we are adding 6.99 to the variable `cost` to account for shipping charges. 
+
+Code that is concise is prefered over long winded explanations. In this case there is no need to write a comment this long when something short like " Sum up the values 1 to 5" does the job. 
+
+---
+
+def compute_hour_hand_position(hrs, mins, secs):
+  theta = hrs % 12
+  theta /= 12
+  theta += (mins / 60) + (secs / 60*60)
+  theta *= math.pi * 2
+  return (math.cos(theta), math.sin(theta))
+
+Notes: 
+
+---
+
+
+Notes: 
+
+---
+
+
+Notes: 
+
+---
+
+
+Notes: 
+
+---
+
+# Let’s practice what we learned!
+
+Notes: <br>

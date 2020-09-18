@@ -2,7 +2,7 @@
 type: slides
 ---
 
-# Slicing only columns using .loc\[\]
+# Slicing columns using .loc\[\]
 
 Notes:
 
@@ -36,8 +36,7 @@ Notes:
 What happens now if we wanted all the rows of the dataframe but only the
 columns `calories` to `fiber`?
 
-We would simply use `:` to indicate from “end” to “end” for our rows
-rows:
+We can use `:` to indicate from “end” to “end” for our rows rows:
 
 ---
 
@@ -64,8 +63,8 @@ df.loc[ 'row name start':'row name end']
 ```
 
   - However, the reverse is not true. If we want all the rows with only
-    specific columns, we specify rows first and therefore we would need
-    to make it clear with
+    specific columns, we specify we want all the row first with just a
+    colon `:` followed by interval of the columns:
 
 <!-- end list -->
 

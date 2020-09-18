@@ -30,23 +30,23 @@ pandas.read_csv('cereal.csv').head()
 Notes:
 
 All the way back in Module 1, we learned how to import the `pandas`
-package for dataframe wrangling and `altair` to visualize our data with
+library for dataframe wrangling and `altair` to visualize our data with
 plots.
 
-We imported these packages because basic Python does not have all the
-built-in tools that we need to accomplish what we what therefore, we
+We imported these libraries because basic Python does not have all the
+built-in tools that we need to accomplish what we want therefore, we
 import other tools into our environment.
 
-To import a package we saw that can use the keyword `import` followed by
+To import a library we saw that can use the keyword `import` followed by
 the desired package name.
 
-In this case, we are importing `pandas`
+In this case, we are importing `pandas`.
 
-This now lets us use verbs that reside in the `pandas` package such as
+This now lets us use verbs that reside in the `pandas` library such as
 `read_csv()`.
 
-We need to specify the package name (`pandas`) and then the verb
-(`read_csv()`):
+We need to specify the library name -`pandas` and then the verb -
+`read_csv()`.
 
 ---
 
@@ -71,17 +71,17 @@ pd.read_csv('cereal.csv').head()
 Notes:
 
 For efficiency, in the majority of this course we have been importing
-our packages by assigning them a shorter condensed name or alias.
+our libraries by assigning them a shorter condensed name or alias.
 
 For example, in the assignments and practice exercises, we have been
 importing `pandas` and `altair` with names such as `pd` and `alt`
 respectively.
 
-Now when we call functions from either of these packages we only type
-the short form alias we assigned to the package name.
+Now when we call functions from either of these libraries we only type
+the short form alias we assigned to the library name.
 
-Now instead of writing `pandas.read_csv('cereal.csv')` we can shorten it
-to `pd.read_csv('cereal.csv')`.
+Now instead of writing `pandas.read_csv('cereal.csv')`, we can shorten
+it to `pd.read_csv('cereal.csv')`.
 
 ---
 
@@ -102,31 +102,30 @@ read_csv('cereal.csv').head()
 4             Almond Delight   R  Cold       110        2    2     200    1.0   14.0       8       1        25      3     1.0  0.75  34.384843
 ```
 
-This mostly helps if we only have a single function we wish to use
-instead of importing the entire package.
-
 Notes:
 
-We can also import a single function from a package using the keyword
+We can also import a single function from a library using the keyword
 `from`.
 
-If we only wanted the `read_csv()` function from the `pandas` package,
-we could first specify the package the function belongs to, followed by
-the function name:
+If we only want the `read_csv()` function from the `pandas` package, we
+could first specify the library the function belongs to, followed by the
+function name:
 
 Here it’s `from pandas import read_csv`.
 
 Now when we call `read_csv()`, we don’t need to specify the package name
 or alias before it.
 
-This is all fun and dandy but how do we import functions we’ve made that
-are located in another file?
+This mostly helps if we have only a single function we wish to use,
+instead of importing the entire library.
+
+This works for Python libraries but how do we import functions we’ve
+made that are located in another file?
 
 If we want to reuse code to adhere to the DRY principle, what is our
 next step?
 
-This question will be answered in the screencast and slides of the next
-section.
+This question will be answered in the next section of this module.
 
 ---
 

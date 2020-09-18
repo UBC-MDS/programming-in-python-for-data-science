@@ -55,7 +55,7 @@ Let’s load in our cereal dataset again.
 ### Categorical data
 
 Consists of qualitative observations such as characteristics - things
-generally containing names or words.
+generally containing words.
 
 **Examples**
 
@@ -143,8 +143,11 @@ max    160.000000   6.000000   5.000000  320.000000  14.000000  23.000000  15.00
 
 Notes:
 
-This table will tell us about different summary statics including the
-following.
+Let’s talk a little bit about the output of `.describe()`.
+
+On the left-hand side we see a new column. This column contains the
+names of the different summary statistics that `.describes()` gives us
+back for our dataset. Let’s talk about them:
 
   - `count`: The number of non-NA/null observations.
   - `mean`: The mean of the column
@@ -161,18 +164,18 @@ cereal.describe(include='all')
 ```
 
 ```out
-                       name  mfr  type    calories    protein        fat      sodium  ...     sugars      potass    vitamins      shelf     weight       cups     rating
-count                    77   77    77   77.000000  77.000000  77.000000   77.000000  ...  77.000000   77.000000   77.000000  77.000000  77.000000  77.000000  77.000000
-unique                   77    7     2         NaN        NaN        NaN         NaN  ...        NaN         NaN         NaN        NaN        NaN        NaN        NaN
-top     Wheaties Honey Gold    K  Cold         NaN        NaN        NaN         NaN  ...        NaN         NaN         NaN        NaN        NaN        NaN        NaN
-freq                      1   23    74         NaN        NaN        NaN         NaN  ...        NaN         NaN         NaN        NaN        NaN        NaN        NaN
-mean                    NaN  NaN   NaN  106.883117   2.545455   1.012987  159.675325  ...   6.948052   96.129870   28.246753   2.207792   1.029610   0.821039  42.665705
-std                     NaN  NaN   NaN   19.484119   1.094790   1.006473   83.832295  ...   4.403635   71.215823   22.342523   0.832524   0.150477   0.232716  14.047289
-min                     NaN  NaN   NaN   50.000000   1.000000   0.000000    0.000000  ...   0.000000    1.000000    0.000000   1.000000   0.500000   0.250000  18.042851
-25%                     NaN  NaN   NaN  100.000000   2.000000   0.000000  130.000000  ...   3.000000   40.000000   25.000000   1.000000   1.000000   0.670000  33.174094
-50%                     NaN  NaN   NaN  110.000000   3.000000   1.000000  180.000000  ...   7.000000   90.000000   25.000000   2.000000   1.000000   0.750000  40.400208
-75%                     NaN  NaN   NaN  110.000000   3.000000   2.000000  210.000000  ...  11.000000  120.000000   25.000000   3.000000   1.000000   1.000000  50.828392
-max                     NaN  NaN   NaN  160.000000   6.000000   5.000000  320.000000  ...  15.000000  330.000000  100.000000   3.000000   1.500000   1.500000  93.704912
+              name  mfr  type    calories    protein        fat      sodium  ...     sugars      potass    vitamins      shelf     weight       cups     rating
+count           77   77    77   77.000000  77.000000  77.000000   77.000000  ...  77.000000   77.000000   77.000000  77.000000  77.000000  77.000000  77.000000
+unique          77    7     2         NaN        NaN        NaN         NaN  ...        NaN         NaN         NaN        NaN        NaN        NaN        NaN
+top     Grape-Nuts    K  Cold         NaN        NaN        NaN         NaN  ...        NaN         NaN         NaN        NaN        NaN        NaN        NaN
+freq             1   23    74         NaN        NaN        NaN         NaN  ...        NaN         NaN         NaN        NaN        NaN        NaN        NaN
+mean           NaN  NaN   NaN  106.883117   2.545455   1.012987  159.675325  ...   6.948052   96.129870   28.246753   2.207792   1.029610   0.821039  42.665705
+std            NaN  NaN   NaN   19.484119   1.094790   1.006473   83.832295  ...   4.403635   71.215823   22.342523   0.832524   0.150477   0.232716  14.047289
+min            NaN  NaN   NaN   50.000000   1.000000   0.000000    0.000000  ...   0.000000    1.000000    0.000000   1.000000   0.500000   0.250000  18.042851
+25%            NaN  NaN   NaN  100.000000   2.000000   0.000000  130.000000  ...   3.000000   40.000000   25.000000   1.000000   1.000000   0.670000  33.174094
+50%            NaN  NaN   NaN  110.000000   3.000000   1.000000  180.000000  ...   7.000000   90.000000   25.000000   2.000000   1.000000   0.750000  40.400208
+75%            NaN  NaN   NaN  110.000000   3.000000   2.000000  210.000000  ...  11.000000  120.000000   25.000000   3.000000   1.000000   1.000000  50.828392
+max            NaN  NaN   NaN  160.000000   6.000000   5.000000  320.000000  ...  15.000000  330.000000  100.000000   3.000000   1.500000   1.500000  93.704912
 
 [11 rows x 16 columns]
 ```
@@ -184,11 +187,11 @@ max                     NaN  NaN   NaN  160.000000   6.000000   5.000000  320.00
 Notes:
 
 We can make changes to either limit how much is shown or include more
-statistic in the dataframe with the additional argument `include =
-"all"` in the `describe` brackets.
+statistics in the dataframe with the additional argument `include="all"`
+in the `describe` brackets.
 
-This expands the dataframe to contain both categorical and numerical
-columns now.
+This expands the output so we get summary statistics for both
+categorical and numerical columns now.
 
 Adding `include='all'` within the brackets adds some additional
 statistics about categorical columns including:

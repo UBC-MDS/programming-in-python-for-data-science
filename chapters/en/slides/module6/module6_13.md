@@ -105,7 +105,7 @@ Exception: You are not using a list for the numerical_list input.
 
 Detailed traceback: 
   File "<string>", line 1, in <module>
-  File "<string>", line 4, in squares_a_list
+  File "<string>", line 4, in exponent_a_list
 ```
 
 (Note that in the interest of avoiding new syntax we are using a simple
@@ -276,7 +276,7 @@ def exponent_a_list(numerical_list, exponent=2):
         
     Examples
     --------
-    >>> squares_a_list([1, 2, 3, 4])
+    >>> exponent_a_list([1, 2, 3, 4])
     [1, 4, 9, 16]
     """
 ```

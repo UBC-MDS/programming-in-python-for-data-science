@@ -182,7 +182,8 @@ time. Let’s drop `nougat` and `coconut` together.
 We put the columns we want to drop in square brackets and this time we
 will remember to overwrite over the `candy` object.
 
-Now when we call `candy.head()` it reflects the dropped columns.
+Now when we call `candy.head()` it reflects the dropped columns. They’re
+no longer there.
 
 ---
 

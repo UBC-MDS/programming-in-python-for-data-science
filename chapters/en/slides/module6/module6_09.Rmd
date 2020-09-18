@@ -254,7 +254,7 @@ def exponent_a_list(numerical_list, exponent=2):
         
     Examples
     --------
-    >>> squares_a_list([1, 2, 3, 4])
+    >>> exponent_a_list([1, 2, 3, 4])
     [1, 4, 9, 16]
     """
 

@@ -47,67 +47,40 @@ cereal = pd.read_csv('cereal.csv')
 type: slides
 
 
-# Pandas Dataframes and dtypes
+# 
 
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
+Notes: <br>
 
 ---
 
 
 
 
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
+Notes: 
 
 ---
 
 
 
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
+Notes: 
 
 ---
 
 
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
+Notes: 
 
 ---
 
 
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
+Notes: 
 
 ---
 
 
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
-</audio></html>
+Notes: 
 
 ---
 
 # Let’s practice what we learned!
 
-Notes: Script here
-<html>
-<audio controls >
-  <source src="/placeholder_audio.mp3" />
+Notes: <br>

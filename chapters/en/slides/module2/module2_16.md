@@ -105,7 +105,7 @@ We can see from the output that only the rows meeting the condition are
 displayed.
 
 By the way, it is a common pattern that we’re using the same dataframe
-twice, namely `cereal`, but it’s not strictly required by the language.
+twice, namely `cereal`, but it’s not strictly required by pandas.
 
 ---
 
@@ -165,7 +165,7 @@ cereal[cereal['mfr'] == 'Q']
 
 Notes:
 
-We can filter categorical columns too. In this example, I only want
+We can filter categorical columns too. In this example, we only want
 cereals from the manufacturer “Q” (For Quaker):
 
 Here we are using the double equal sign operator that we saw in the last
@@ -453,6 +453,9 @@ Notes:
 
 We can obtain the complete dataframe by putting the entire condition
 within our square brackets like we did before.
+
+What we have here, is taking the rows where the protein content is not
+greater than four.
 
 This gives us more versatility when filtering, especially when we want
 the inverse of more complicated conditions and verbs (you’ll see this in

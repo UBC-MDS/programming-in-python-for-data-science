@@ -35,10 +35,12 @@ For example, what if I wanted to save the calorie content of `Shredded
 Wheat` by extracting it from the dataframe and not manually typing in
 the number?
 
-We specify the row we are targeting (63), followed by the column.
+To do this we use again our `.loc` notation and we specify the row we
+are targeting which is 63, followed by the column, here `calories`. This
+goes in the square brackets.
 
-This displays the the value contained in the cell, which in this case,
-is 80.
+When we do this, it displays the the value contained in the cell, which
+in this case, is 80.
 
 ---
 
@@ -61,14 +63,14 @@ cereal.loc[66, 'rating']
 
 Notes:
 
-What about if we wanted the rating of `Smacks` which is located at index
+What about if we want the rating of `Smacks` which is located at index
 66?
 
-Then we use `.loc[]`, specify the row and the column location separated
+Again we use `.loc[]`, specify the row and the column location separated
 by a comma.
 
-You will be using this often so let’s make sure we practice this one
-right away\!
+So here we write `cereal.loc` and the inside the brackets we write `[66,
+'rating']`.
 
 ---
 

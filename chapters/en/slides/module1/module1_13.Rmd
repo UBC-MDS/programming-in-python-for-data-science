@@ -86,9 +86,9 @@ And the columns:
 - `sugars`, and 
 - `rating`
 
-How would we obtain them now?
+How would we obtain them?
 
-We need to specify each column and row label that we want between square brackets `[]`, separated with commas.
+We need to specify each column and row label that we want between square brackets `[]`, that follow `.loc[]` and we separated the items that we list in the square brackets with commas.
 
 
 What if we wanted the rows to be in the order `Wheaties` (75), `Trix` (73) and `Clusters` (13) and columns in the order `name`, `type`, `rating` and `sugars`.

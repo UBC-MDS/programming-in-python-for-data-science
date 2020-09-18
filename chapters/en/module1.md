@@ -415,7 +415,7 @@ Good job! This has both `.loc[]` and includes the columns we wish to slice here.
 
 
 
-<exercise id="13" title="Selecting Using df.loc[]" type="slides,video">
+<exercise id="13" title="Selecting Using .loc[]" type="slides,video">
 <slides source="module1/module1_13" shot="3" start="0:165" end="3:01">
 </slides>
 </exercise>
@@ -505,7 +505,7 @@ Tasks:
 </exercise>
 
 
-<exercise id="16" title="Selecting Values from a Dataframe" type="slides,video">
+<exercise id="16" title="Obtaining Dataframe Values" type="slides,video">
 <slides source="module1/module1_16" shot="3" start="0:165" end="3:01">
 </slides>
 </exercise>
@@ -546,7 +546,7 @@ Tasks:
 </exercise>
 
 
-<exercise id="18" title="Selecting Single Columns" type="slides,video">
+<exercise id="18" title="Selecting a Single Column" type="slides,video">
 <slides source="module1/module1_18" shot="3" start="0:165" end="3:01">
 </slides>
 </exercise>

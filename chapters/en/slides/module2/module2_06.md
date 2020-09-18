@@ -163,10 +163,8 @@ candybars
 
 Notes:
 
-We use `header=2` to indicate that the data actually begins at position
-2.
-
-That’s looking much better.
+If We use `header=2` to indicate that the data actually begins at
+position 2, then things look much better.
 
 ---
 
@@ -190,8 +188,8 @@ candybars
 
 Notes:
 
-`nrows` is an argument that is useful when you only want to load in part
-of the dataframe.
+`nrows` is an argument in `pd.read_csv()` that is useful when you only
+want to load in part of the dataframe.
 
 Perhaps the file you have is large and you only want a sample of it.
 `nrows` will limit the number of rows that you read in.
@@ -262,7 +260,7 @@ candybars
 Notes:
 
 The `usecols` argument accepts either index positions or labels so we
-could also use the column names in square brackets.
+could also use the column names in square brackets as shown here.
 
 ---
 

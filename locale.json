@@ -5,7 +5,7 @@
         "slogan": "Part of UBC's Mid-Career Learning program",
         "description": "Learn the fundamentals of programming in Python, including how to clean, filter, arrange, aggregate and transform data. You will learn the foundations of programming in Python while writing human-readable code that sets a foundation of best practices and coding style. You will gain the skills to clean, filter, manipulate (wrangle) and summarize data using Python libraries for more effective data analysis. An overview of data structures, iteration, flow control and program design relevant to data exploration and analysis will be addressed along with fundamental programming concepts such as loops, conditionals and data structures that create a solid foundation in data science programming.",
         "bio": "The University of British Columbia (UBC) is a comprehensive research-intensive university, consistently ranked among the 40 best universities in the world. The Key Capabilities in Data Science program was launched in September 2020 and is developed and taught by many of the same instructors as the UBC Master of Data Science program. For more information on the complete program and to register, click on the Website link below.",
-        "video": ["/5fPGBCfcwpA", "/k2O9O8P-Kf0", "/0o_iRXsCiyw", "/ebeNeQFUMa0"],
+        "video": ["/5fPGBCfcwpA", "/WCWi1R2CQsY", "/EOkD8Vuowq8", "/ebeNeQFUMa0", "/ebeNeQFUMa0"],
         "footerLinks": [
             { "text": "Website",
                 "url": "https://extendedlearning.ubc.ca/programs/key-capabilities-data-science" 

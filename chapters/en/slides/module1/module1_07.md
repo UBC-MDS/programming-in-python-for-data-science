@@ -2,7 +2,7 @@
 type: slides
 ---
 
-# Slicing with Pandas using .loc\[\]
+# Slicing Rows using .loc\[\]
 
 Notes:
 
@@ -38,29 +38,30 @@ Notes:
 
 Congratulations on writing your first code\!
 
-We have read in our data and know the dimensions. What now?
+We have read in our data and we know the dimensions. Well now what now?
 
 Let’s go over how we would **index**, **slice** and **select** certain
 columns or rows of our data.
 
 Let’s start by importing pandas and loading in a dataset named
-`cereal.csv` and saving it as `cereal`.
+`cereal.csv` and we’ll save it as `cereal`.
 
-We can see all the columns and the first 5 rows of the dataframe.
+We can see all the columns and the first 5 rows of the dataframe using
+`.head()`
 
 Let’s say we only want certain rows of the whole dataframe or certain
 columns.
 
-We talked about how `.head()` will generate the first few rows (5 as
-default) of a dataframe but what if we wanted rows 5-10?
+We talked about how `.head()` will generate the first few rows of a
+dataframe (5 as default) but what if we wanted rows 5-10?
 
 The first column of this dataframe is called the `index`.
 
 Each row has a label (the index) as well as a position. In this case,
 the index label of an observation is the same as it’s position.
 
-This doesn’t always have to be the case. We can assign columns as the
-index, but we will discuss this in the next section.
+This doesn’t always have to be the case. We can assign another columns
+as the index, but we will discuss this in the next module.
 
 ---
 
@@ -135,7 +136,7 @@ Notes:
 Now let’s say we want all 5 rows past `Almond Delight`. That means we
 want rows `Apple Cinnamon Cheerios` to `Cap'n'Crunch`.
 
-We use `.loc` with square brackets to cuts the dataframe from “Apple
+We use `.loc[]` with square brackets to cuts the dataframe from “Apple
 Cinnamon Cheerios” to “Cap’n’Crunch” keeping the columns and everything
 between.
 
@@ -182,17 +183,17 @@ What if we only wanted certain columns now?
 Perhaps we were only interested in the `calories` to `fiber` columns of
 the “Apple Cinnamon Cheerios” to “Cap’n’Crunch” rows?
 
-We put in the interval of our desired rows first, and then columns and
-separate them with a comma.
+We put in desired rows first, and then the interval of the columns we
+are interested in and separate them with a comma.
 
-`loc` is used to slice columns and rows by **label** and within an
+`.loc[]` is used to slice columns and rows by **label** and within an
 interval.
 
 The general format to slice both rows and columns together looks like
 this:
 
 ``` python
-`cereal.loc['row name start':'row name end', 'column name start':'column name end']`
+`df.loc['row name start':'row name end', 'column name start':'column name end']`
 ```
 
 ---
@@ -238,7 +239,8 @@ label equal to 6, we could omit the first label in the code all
 together.
 
 Or we can do something similar for the end of a dataframe. Let’s say now
-we want the first 6 rows and only the columns from `sugars` onward.
+we want all the rows up to `Apple Jacks` and only the columns from
+`sugars` onward.
 
 We would omit the ending label this time after the `:` (colon) .
 

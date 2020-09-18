@@ -104,11 +104,11 @@ from altair_saver import save
 
 Notes: 
 
-To do this, we are going to use a very nifty package called  Altair. 
+To do this, we are going to use a very nifty library called Altair. 
 
 Altair is a data visualization tool that produces plots relatively easily. 
 
-Like any other packages we have seen so far, Altair needs to be imported before we can use it.
+Like any other library we have seen so far, Altair needs to be imported before we can use it.
 
 ---
 
@@ -261,7 +261,6 @@ In this case, the x-axis is the `sugars` column and the y-axis is the `calories`
 
 
 ```{python}
-# Let's set the opacity to 30%
 chart3 = alt.Chart(cereal, width=500, height=300).mark_circle(opacity=0.3).encode(
     x='sugars',
     y='calories'
@@ -291,7 +290,6 @@ Look at that! Now we can see there are multiple cereals that have 3.5g of sugar 
 ---
 
 ```{python}
-# lets set the opacity to 30%
 chart4 = alt.Chart(cereal, width=500, height=300).mark_circle(color='red', opacity=0.3).encode(
     x='sugars',
     y='calories'
@@ -317,7 +315,6 @@ Let's change the colour to `red` (I like red) and keep the same opacity.
 ---
 
 ```{python}
-# lets set the opacity to 30%
 chart5 = alt.Chart(cereal, width=500, height=300).mark_circle(color='red', size=80, opacity=0.3).encode(
     x='sugars',
     y='calories'
@@ -342,7 +339,6 @@ Good news though, we can make them bigger. The argument `size` in the `mark_circ
 ---
 
 ```{python}
-# lets set the opacity to 30%
 chart6 = alt.Chart(cereal, width=500, height=300).mark_circle(color='red', size=80, opacity=0.3).encode(
     x='sugars',
     y='calories'

@@ -37,12 +37,6 @@ cereal = pd.read_csv('cereal.csv')
 
 type: slides
 
-# Selecting using .loc[]
-
-Notes:  <br>
-
----
-
 
 # Selecting a Single Column
 
@@ -58,12 +52,14 @@ cereal.loc[:, ['type']]
 
 Notes: 
 
-Something we do often in data analysis is obtaining a single column from a dataframe.
-We can use `.loc[]` which would look something like this:
+Something we often do in data analysis is obtaining a single column from a dataframe.
+We can again use `.loc[]` to do this which would look something like this:
 
 `dataframe.loc[:, ['column name']]` 
 
-So if we wanted the column `type` from our cereal dataframe we could use the syntax here. 
+So if we wanted the column named `type` from our cereal dataframe we could use the syntax: 
+
+`cereal.loc[:, ['type']]` 
 
 This seems a bit long winded and since we do this type of thing often pandas has provided a quicker syntax to use to do the same thing. 
 
@@ -82,9 +78,13 @@ cereal[['type']]
 
 Notes:
 
-Selecting a single column can be done without using `.loc[]` and instead we can just specify the dataframe name, followed by double square brackets containing the column of interest.
+Instead we can selecting a single column can be done without using `.loc[]` and we can just specify the dataframe name, followed by double square brackets containing the column of interest.
 
-That makes selecting the column `type` from the `cereal` dataframe, look like this.
+That makes the syntax for selecting the column `type` from the `cereal` dataframe: 
+
+```python
+cereal[['type']]
+```
 
 ---
 

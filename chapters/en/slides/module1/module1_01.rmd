@@ -55,7 +55,8 @@ Often, the first thing we need to do in data analysis is to load in data.
 
 In this case, we will be using the programming language _Python_.
 
-When we bring spreadsheet-like data, generally shaped like a rectangle (think Microsoft Excel tables), into Python, it is represented as what we call a dataframe object. It is very similar to a spreadsheet. 
+When we bring spreadsheet-like data, into Python, it is generally shaped like a rectangle (think of Microsoft Excel tables for example) it is represented as what we call a dataframe object. 
+It is very similar to a spreadsheet. 
 
 ---
 
@@ -66,6 +67,8 @@ When we bring spreadsheet-like data, generally shaped like a rectangle (think Mi
 Notes: 
 
 The rows in a dataframe are the collected observations.
+
+So here for example, one observation is this row that contains the name of the candy "Smarties", the weight which is 45 grams and where it's available, in the country Canada. 
 
 ---
 
@@ -79,10 +82,11 @@ The rows in a dataframe are the collected observations.
 
 Notes: 
 
-And the columns are the variables.
+In the dataframe the columns are variables.
 
-When working with information, it must be stored in a manner that is organized, readable and accessible.  
+When we work with information, it must be stored in a manner that is organized, readable and accessible.  
 
+An example of a variable, is where the candy is available; either in Canada, America or both countries can be the values.
 ---
 
 ## What is a CSV file?
@@ -93,13 +97,13 @@ When working with information, it must be stored in a manner that is organized, 
 
 Notes: 
 
-The first kind of data we will learn how to load into Python (as a dataframe) is the spreadsheet-like comma-separated values format (.csv for short). 
+The first kind of data we will learn how to load into Python as a dataframe is the spreadsheet-like comma-separated values format (.csv for short). 
 
-These files have names ending in .csv, and can be opened open and saved from common spreadsheet programs like Microsoft Excel and Google Sheets.
+These files have names ending in .csv, and can be opened open and saved from common spreadsheetlike programs like Microsoft Excel and Google Sheets.
 
 For example, we will be importing the .csv file you saw in the first slide named "candybars.csv". 
 
-If we were to open this data in a plain text editor, we would see each row on its own line, and each entry in the table separated by a comma:
+If we were to open this data in a plain text editor, we would be able to see each row on its own line, and each entry in the table separated by a comma.
 
 ---
 
