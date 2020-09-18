@@ -10,7 +10,7 @@ id: 0
 
 <exercise id="1" title="Programming in Python for Data Science" type="slides,video">
 
-<slides source="module0/module0_00" shot="0" start="0:002" end="3:39">
+<slides source="module0/module0_00" shot="0" start="0:006" end="3:39">
 </slides>
 
 </exercise>
