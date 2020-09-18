@@ -11,7 +11,7 @@ id: 2
 
 <exercise id="0" title="Module Learning Outcomes" type="slides,video">
 
-<slides source="module2/module2_00"  shot="0" start="0:165" end="3:01">
+<slides source="module2/module2_00"  shot="6" start="0:165" end="3:01">
 </slides>
 
 </exercise>
@@ -986,6 +986,6 @@ Take another look at the plot.
 
 
 <exercise id="31" title="What Did We Just Learn?" type="slides,video">
-<slides source="module2/module2_31" shot= "0" start="0:165" end="3:01">>
+<slides source="module2/module2_31" shot= "6" start="0:165" end="3:01">>
 </slides>
 </exercise>

@@ -10,7 +10,7 @@ id: 3
 
 <exercise id="0" title="Module Learning Outcomes" type="slides,video">
 
-<slides source="module3/module3_00" shot="0" start="0:165" end="3:02">
+<slides source="module3/module3_00" shot="7" start="0:165" end="3:02">
 </slides>
 
 </exercise> 
@@ -990,6 +990,6 @@ Did you look at the wrong dataframe?
 
 
 <exercise id="25" title="What Did We Just Learn?" type="slides,video">
-<slides source="module3/module3_25" shot ="0" start="0:165" end="3:01">>
+<slides source="module3/module3_25" shot ="7" start="0:165" end="3:01">>
 </slides>
 </exercise>
