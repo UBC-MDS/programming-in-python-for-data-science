@@ -55,7 +55,10 @@ In the dataframe the columns are variables.
 When we work with information, it must be stored in a manner that is
 organized, readable and accessible.
 
-## An example of a variable, is where the candy is available; either in Canada, America or both countries can be the values.
+An example of a variable, is where the candy is available; either in
+Canada, America or both countries can be the values.
+
+---
 
 ## What is a CSV file?
 
