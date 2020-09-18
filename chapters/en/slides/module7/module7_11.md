@@ -8,11 +8,11 @@ Notes: <br>
 
 ---
 
-<br> <br>
+<br>
 
 <center>
 
-<img src='/module7/comp_hum.png'  width = "100%" alt="404 image" />
+<img src='/module7/comp_hum.png'  width = "90%" alt="404 image" />
 
 </center>
 
@@ -54,9 +54,11 @@ PEP8 is a style guide that recommends formatting such as:
 
 ### flake8
 
+<br>
+
 <center>
 
-<img src='/module7/flake8.png'  width = "100%" alt="404 image" />
+<img src='/module7/flake8.png'  width = "45%" alt="404 image" />
 
 </center>
 
@@ -80,6 +82,8 @@ Think of it as a grammar check but for your code.
 
 `flake8` will tell us how and where our code is formatted poorly but it
 won’t make any changes to it. That is up to us.
+
+We will show you shortly, how to use `flake8` in your Jupyter notebooks.
 
 ---
 

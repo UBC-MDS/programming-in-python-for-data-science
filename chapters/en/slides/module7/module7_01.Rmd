@@ -64,7 +64,7 @@ import pandas
 
 
 ```{python}
-pandas.read_csv('cereal.csv').head()
+pandas.read_csv('cereal.csv')
 ```
 
 
@@ -72,7 +72,7 @@ Notes:
 
 All the way back in Module 1, we learned how to import the `pandas` library for dataframe wrangling and `altair` to visualize our data with plots. 
 
-We imported these libraries because basic Python does not have all the built-in tools that we need to accomplish what we want therefore, we import other tools into our environment. 
+We imported these libraries because basic Python does not have all the built-in tools that we need to accomplish what we want, therefore, we import other tools into our environment. 
 
 To import a library we saw that can use the keyword `import` followed by the desired package name.
 
@@ -92,7 +92,7 @@ import altair as alt
 
 
 ```{python}
-pd.read_csv('cereal.csv').head()
+pd.read_csv('cereal.csv')
 ```
 
 
@@ -114,7 +114,7 @@ from pandas import read_csv
 ```
 
 ```{python}
-read_csv('cereal.csv').head()
+read_csv('cereal.csv')
 ```
 
 
