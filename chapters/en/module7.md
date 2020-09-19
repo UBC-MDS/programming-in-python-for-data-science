@@ -29,7 +29,7 @@ id: 7
 **Question 1**      
 
 
-How would you import a package name `numpy`? 
+How would you import a package named `numpy`? 
 
 
 <choice id="1" >
@@ -69,7 +69,7 @@ This would actually result in an error!
 
 <opt text="<code>Import numpy As np</code>">
 
-Be careful with capitals in this case, when you use capitalization, neither `Import` nor `As` are Python keywords. 
+Be careful with capitals. In this case, when you use capitalization, neither `Import` nor `As` are Python keywords. 
 
 </opt>
 
@@ -91,7 +91,7 @@ This is not the correct way to import, and it uses capitalization on keywords wh
 
 <exercise id="3" title="Importing a Package Function">
 
-How would you import just the square root function `sqrt` from the `numpy` package? 
+How would you import the square root function `sqrt` from the `numpy` package? 
 
 
 <choice id="1" >
@@ -139,7 +139,7 @@ Ok, so we've seen this `numpy` package, let's actually load in one of the functi
 
 Tasks:
 - Import the `power()` function from the `numpy` package. 
-- Use the `power()` function to find  7 to the power of 5 - You may want to use `?power` to see what arguments the function requires.
+- Use the `power()` function to find  7 to the power of 5 - you may want to use `?power` to see what arguments the function requires.
 - Display your results.
 
 
@@ -165,7 +165,7 @@ Tasks:
 
 **Question 1**      
 
-What is the ending of the file name where you save your function? 
+Where do you save your files so you can import them into new Jupyter notebooks? 
 
 
 <choice id="1" >
@@ -199,7 +199,7 @@ Is the following statement True or False?
 
 
 <choice id="2" >
-<opt text="True" correct="true">>
+<opt text="True" correct="true">
 
 That's right! This makes things easy for us.
 
@@ -219,7 +219,7 @@ Note quite, Python uses a similar importing style for libraries and saved script
 
 <exercise id="7" title="More Importing Your Own Functions Questions">
 
-If I have a file name `baking.py` containing functions like `cake()` and `scones()` and I want to import it into a Jupyter notebook using the alias `bake`, which of the following would be required? 
+If I have a file named `baking.py` containing functions like `cake()` and `scones()` and I want to import it into a Jupyter notebook using the alias `bake`, which of the following would be required? 
 
 
 <choice id="1" >
@@ -245,7 +245,7 @@ This is right!
 
 <opt text="<code>import bake as scone</code>"  >
 
-Almost but the alias we want to call baking is `bake` not `scone`.
+The alias we want to call `baking` is `bake`, not `scone`.
 
 </opt>
 
@@ -310,7 +310,7 @@ This would defy the DRY principle if wanted to test our function in multiple dif
 
 <opt text="In the same file as the function you are testing">
 
-Not for `pytest`!
+Not if we want to use `pytest`!
 
 </opt>
 
@@ -338,7 +338,7 @@ I have a function named `travel_location()` stored in a file named `travelling.p
 <choice id="1" >
 <opt text="<code>!pytest travel_location</code>"  >
 
-You do not need to use your function name
+You do not need to use your function name.
 
 </opt>
 
@@ -379,14 +379,14 @@ _**Make sure you remove the hash (`#`) symbol in the coding portions of this que
 Remember the BMI function and unit tests we made back in the last module? Well, let's do the first step in testing it with `pytest` by converting them into an appropriate function. 
 
 Tasks:
-- Take these unit tests we wrote and compile them together in a function to check the function `bmi_calculator`.
+- Take these unit tests we wrote and compile them together in a function to test the function `bmi_calculator()`.
 - Don't forget to give it a name compliant with `pytest`'s needs. 
 
 
 <codeblock id="07_11">
 
 - Are you naming it something starting with `test`? 
-- Are you remembering these do not need to return anything?
+- Are you remembering these functions do not need to return anything?
 - These functions do not take any arguments.
 
 </codeblock>
@@ -412,7 +412,7 @@ Which of the following tools will modify your code?
 <choice id="1" >
 <opt text="<code>PEP8</code>"  >
 
-This is a style guide, and not a library to modify your code. 
+This is a style guide, not a library to modify your code. 
 
 </opt>
 
@@ -480,10 +480,10 @@ Running a coding exercise for the first time could take a bit of time for everyt
 
 _**Make sure you remove the hash (`#`) symbol in the coding portions of this question.  We have commented them so that the line won't execute and you can test your code after each step.**_
 
-Let's take the function named `cleanup()` which drops duplicate rows and columns. Rewrite the function code (not the docstring, that's OK) so that it's written with necessary spaces and indentations 
+Let's take the function named `cleanup()` which drops duplicate rows and columns. Rewrite the function code (not the docstring) so that it's written with necessary spaces and indentations.
 
 Tasks:
-- Amend the function `cleanup()` so that it adopts an approach that has spaces where necessary and blank space is removed. Make sure that you have indentations and line spaces where necessary.
+- Amend the function `cleanup()` so that it adopts an approach that has spaces where necessary and blank space is removed. Make sure that you have indentations and empty lines where necessary.
 
 
 <codeblock id="07_14">
@@ -521,7 +521,7 @@ dessert = candy.merge(chocolate,  how='inner').dropna()
 
 
 <choice id="1" >
-<opt text="<code># Combine dataframes and dropping NaN values/code>"  correct="true">
+<opt text="<code># Combine dataframes and drops NaN values</code>"  correct="true">
 
 Great!
 
@@ -534,7 +534,7 @@ This could be a bit more useful, what about the `.dropna()`?
 </opt>
 
 
-<opt text="<code># Combine the candy and chocolate dataframes and only keeping rows that both dataframes have in common and then removing any rows with missing values</code>">
+<opt text="<code># Combines the candy and chocolate dataframes and only keeps rows that both dataframes have in common, then removes any rows with missing values</code>">
 
 This is a bit excessive. 
 
@@ -650,14 +650,14 @@ This is exactly why the Python debugger is useful!
 
 </opt>
 
-<opt text="It tells us where our code could be more efficient.">
+<opt text="It tells us where our code could be more efficient">
 
 The Python debugger can't improve code that works. 
 
 </opt>
 
 
-<opt text="It removes any of the code that is not following the DRY principle.">
+<opt text="It removes any of the code that is not following the DRY principle">
 
 The Python debugger helps with *debugging* and not with adhering to the DRY principle. 
 

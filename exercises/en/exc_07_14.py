@@ -2,9 +2,8 @@ import pandas as pd
 
 def cleanup(data, columns):
     """
-    This removed any duplicate column names or any duplicate
-    rows in the dataframe. Duplicate rows are decided based on the columns
-    argument
+    This removes any duplicate column names or any duplicate
+    rows in the dataframe.
 
     Parameters
     ----------
@@ -27,10 +26,10 @@ def cleanup(data, columns):
     wholegrain     2
     """
 
-    # Drop duplicate columns
+    # Drops duplicate columns
             data=data.          loc[      :, ~data.columns.duplicated()  ]  
     
-    # Drop duplicate rows
+    # Drops duplicate rows
     data = data[  ~  data. duplicated(subset =columns  , keep=False )
     ]
 
