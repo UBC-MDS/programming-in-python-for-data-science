@@ -270,25 +270,25 @@ When you make a function from a unit test, what naming guideline does your funct
 
 
 <choice id="1" >
-<opt text=" the function must end with <code>test</code>"  
+<opt text="The function must end with <code>test</code>">
 
 It should not end with `test`, but the word "test" should be included in the name. 
 
 </opt>
 
-<opt text="the function must begin with <code>test</code>" correct="true">>
+<opt text="The function must begin with <code>test</code>" correct="true">
 
 Great! 
 
 </opt>
 
-<opt text="the function must end with <code>pytest</code>">
+<opt text="The function must end with <code>pytest</code>">
 
 `pytest` does not need to be used in the function name. 
 
 </opt>
 
-<opt text="the function must begin with <code>pytest</code>">
+<opt text="The function must begin with <code>pytest</code>">
 
 `pytest` does not need to be used in the function name. 
 
@@ -302,25 +302,25 @@ Great!
 Where are your unit test functions saved?
 
 <choice id="2" >
-<opt text=In the sane Jupyter notebook">
+<opt text="In the sane Jupyter notebook">
 
 This would defy the DRY principle if wanted to test our function in multiple different notebooks. 
 
 </opt>
 
-<opt text=" In the same file as the function you are testing">
+<opt text="In the same file as the function you are testing">
 
 Not for `pytest`!
 
 </opt>
 
-<opt text=" In a seperate <code>.py</code> file"  correct="true">
+<opt text="In a seperate <code>.py</code> file"  correct="true">
 
 Great!
 
 </opt>
 
-<opt text=" in a seperate Jupyter notebook">
+<opt text="In a seperate Jupyter notebook">
 
 `pytest` would not be able to check the tests in a separate Jupyter notebook. 
 
@@ -356,7 +356,7 @@ You need to specify a file!
 </opt>
 
 
-<opt text="<code>!pytest test_travelling</code>" correct="true"" >
+<opt text="<code>!pytest test_travelling</code>" correct="true" >
 
 Nice!
 
@@ -480,18 +480,18 @@ Running a coding exercise for the first time could take a bit of time for everyt
 
 _**Make sure you remove the hash (`#`) symbol in the coding portions of this question.  We have commented them so that the line won't execute and you can test your code after each step.**_
 
-Remember the BMI 
+Let's take the function named `cleanup()` which drops duplicate rows and columns. Rewrite the function code (not the docstring, that's OK) so that it's written with necessary spaces and indentations 
 
 Tasks:
-- Take these unit tests we wrote and compile them together in a function to check the function `bmi_calculator`.
-- Don't forget to give it a name compliant with `pytest`'s needs. 
+- Amend the function `cleanup()` so that it adopts an approach that has spaces where necessary and blank space is removed. Make sure that you have indentations and line spaces where necessary.
 
 
 <codeblock id="07_14">
 
-- Are you naming it something starting with `test`? 
-- Are you remembering these do not need to return anything?
-- These functions do not take any arguments.
+- Are you adding spaces between operators? 
+- Are you removing spaces where appropriate?
+- Did you fix the indentation error?
+- How about removing the blank lines before the return statement?
 
 </codeblock>
 
