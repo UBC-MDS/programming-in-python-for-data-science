@@ -182,7 +182,7 @@ Nice!
 </opt>
 
 
-<opt text="<code>.ipynb/code>">
+<opt text="<code>.ipynb</code>">
 
 This is a Jupyter notebook file, not a file to import a function from. 
 
@@ -302,7 +302,7 @@ Great!
 Where are your unit test functions saved?
 
 <choice id="2" >
-<opt text="In the sane Jupyter notebook">
+<opt text="In the same Jupyter notebook">
 
 This would defy the DRY principle if wanted to test our function in multiple different notebooks. 
 
