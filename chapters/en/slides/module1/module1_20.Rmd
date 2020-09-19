@@ -67,7 +67,7 @@ Slicing can also be done by the location position of each row with `.iloc[]`.
 
 We are going to return to our cereal dataset and take a look at the first 10 rows.
 
-Let's say we want the rows `All-Bran` to `Apple Cinnamon Cheerios` but we want to slice based on their position.  
+Let's say we want the rows `All-Bran` to `Apple Cinnamon Cheerios` but we want to slice based on their position instead of their label.  
 
 Using Python's counting method of starting at zero, we conclude `All-Bran` to be at position to 2.
 
@@ -129,7 +129,7 @@ Notes:
 The same concept can be applied to the columns of the dataframe. 
 
 Let's say we want all the rows but we only want the columns starting at `name` and ending (and including) at column `fat`.     
-Using the logic we learned in the last set of slides, we would use the following code:
+Using the logic we learned in the last set of slides, we would use the following code. 
 
 
 We would need to specify all rows using ` : ` as we did when we used `.loc[]`. 
@@ -137,8 +137,6 @@ We would need to specify all rows using ` : ` as we did when we used `.loc[]`.
 The column `name` is at index position 0 (we do not include the index label as a column) and `fat` is at index position 5. 
 
 Since we want to include the 5th column we need to use the 6th position to make sure we get all the columns _BEFORE_ the upper bound.
-
-
 
 
 ---

@@ -36,7 +36,7 @@ cereal_dataframe.head() # Displaying the first 5 rows of the cereal_dataframe
 **Good Comments:** Example of a useful comment
 
 ``` python
-# Obtaining the cereal with calories between 130 and 150
+# Obtaining the cereals with calories between 130 and 150
 cereal_dataframe[(cereal_dataframe['calories'] >130) & (cereal_dataframe['calories'] <150)]
 ```
 
@@ -76,21 +76,21 @@ understanding what the code does.
 Guidelines according to PEP8 and
 <a href="https://www.python.org/dev/peps/pep-0008/#comments" target="_blank">python.org</a>:
 
-  - Comments should start with a \# followed by a single space
+  - Comments should start with a `#` followed by a single space
   - They should be complete sentences. The first word should be
     capitalized unless it is an identifier that begins with a lower case
     letter.
   - Comments should be clear and easily understandable to other speakers
     of the language you are writing in.
   - For block comments, each line of a block comment should start with a
-    \# followed by a single space and should be indented to the same
+    `#` followed by a single space and should be indented to the same
     level as the code it precedes.
 
 Notes:
 
 Here are some basic guidelines according to PEP8 and
 <a href="https://www.python.org/dev/peps/pep-0008/#comments" target="_blank">python.org</a>
-that are recommended when writing comment:
+that are recommended when writing comments:
 
   - Comments should start with `#` followed by a single space.
   - They should be complete sentences.
@@ -99,15 +99,15 @@ that are recommended when writing comment:
   - They should be clear and easily understandable to other speakers of
     the language you are writing in.
   - If you are using block comments, each line of a block comment should
-    start with a \# followed by a single space and should be indented to
-    the same level as the code it precedes.
+    start with a `#` followed by a single space and should be indented
+    to the same level as the code it precedes.
 
 ---
 
 **BAD comment**
 
 ``` python
-      # adding 6.99 
+# adding 6.99 
 cost = cost + 6.99 
 ```
 
@@ -117,8 +117,6 @@ cost = cost + 6.99
 # Accounting for shipping charges
 cost = cost + 6.99 
 ```
-
-<br>
 
 **BAD comment**
 
@@ -247,8 +245,12 @@ Notes:
 
 Something you should not name your variables are Python keywords.
 
-This will create a multitude of problems for you, is bad coding practice
-and will eventually break your code.
+This will create a multitude of problems for you.
+
+For example, If you did name a variable with the specific keyword, the
+next time that you attempt to use that keyword for its intended
+functionality, an error will be thrown because it will try to use your
+variable instead\!
 
 ---
 

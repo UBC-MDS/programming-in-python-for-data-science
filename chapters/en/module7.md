@@ -1,7 +1,7 @@
 ---
 title: "Module 7: Importing Files and the Coding Style Guide"
 description:
-   'In this module you will learn about how to import files and libraries from other directories and stylize your code for optimal readability.'
+   'In this module, you will learn about how to import files and libraries from other directories and stylize your code for optimal readability.'
 prev: /module6
 next: /module8
 type: chapter
@@ -41,7 +41,7 @@ This is the basic way to import a Python package.
 
 <opt text="<code>as np import numpy </code>">
 
-Unfortunately this would not import `numpy`.
+Unfortunately, this would not import `numpy`.
 
 </opt>
 
@@ -69,7 +69,7 @@ This would actually result in an error!
 
 <opt text="<code>Import numpy As np</code>">
 
-Be careful with capitals in this case, when you use capitalization, neither `Import` or `As` are Python keywords. 
+Be careful with capitals in this case, when you use capitalization, neither `Import` nor `As` are Python keywords. 
 
 </opt>
 
@@ -97,7 +97,7 @@ How would you import just the square root function `sqrt` from the `numpy` packa
 <choice id="1" >
 <opt text="<code>import sqrt from numpy</code>"  >
 
-Maybe try reording this?
+Maybe try ordering this differently?
 
 </opt>
 
@@ -135,7 +135,7 @@ Running a coding exercise for the first time could take a bit of time for everyt
 
 _**Make sure you remove the hash (`#`) symbol in the coding portions of this question.  We have commented them so that the line won't execute and you can test your code after each step.**_
 
-Ok, so we've seen this `numpy` package, let's actually load in one of the functions and use it! If you are wondering what this package does, don't worry, you'll learn more of this in the next module. `numpy` has a function called `power()`
+Ok, so we've seen this `numpy` package, let's actually load in one of the functions and use it! If you are wondering what this package does, don't worry, you'll learn more of this in the next module. `numpy` has a function called `power()`.
 
 Tasks:
 - Import the `power()` function from the `numpy` package. 
@@ -165,27 +165,26 @@ Tasks:
 
 **Question 1**      
 
-
-How would you import a package name `numpy`? 
+What is the ending of the file name where you save your function? 
 
 
 <choice id="1" >
-<opt text="<code>import numpy </code>"  correct="true">
+<opt text="<code>.python</code>">
 
-This is the basic way to import a Python package.
-
-</opt>
-
-<opt text="<code>as np import numpy </code>">
-
-Unfortunately this would not import `numpy`.
+Not quite but you are on the right track. 
 
 </opt>
 
+<opt text="<code>.py</code>" correct="true">
 
-<opt text="<code>from numpy import numpy</code>">
+Nice! 
 
-Are you sure you read the slides properly?
+</opt>
+
+
+<opt text="<code>.ipynb/code>">
+
+This is a Jupyter notebook file, not a file to import a function from. 
 
 </opt>
 
@@ -194,33 +193,25 @@ Are you sure you read the slides properly?
 
 **Question 2**          
 
-How would you import `numpy` if you wanted to refer to it as `np`? 
+Is the following statement True or False? 
+
+*You can import files containing functions in a similar way to how you import Python libraries*
 
 
 <choice id="2" >
-<opt text="<code>as np import numpy </code>">
+<opt text="True" correct="true">>
 
-This would actually result in an error! 
-
-</opt>
-
-<opt text="<code>Import numpy As np</code>">
-
-Be careful with capitals in this case, when you use capitalization, neither `Import` or `As` are Python keywords. 
+That's right! This makes things easy for us.
 
 </opt>
 
-<opt text="<code>import numpy as np </code>"  correct="true">
+<opt text="False">
 
-Nice work!
-
-</opt>
-
-<opt text="<code>As np Import numpy </code>">
-
-This is neither the correct way to import, and it uses capitalization on keywords which is incorrect. 
+Note quite, Python uses a similar importing style for libraries and saved scripts. 
 
 </opt>
+
+
 
 </choice>  
 
@@ -228,33 +219,33 @@ This is neither the correct way to import, and it uses capitalization on keyword
 
 <exercise id="7" title="More Importing Your Own Functions Questions">
 
-How would you import just the square root function `sqrt` from the `numpy` package? 
+If I have a file name `baking.py` containing functions like `cake()` and `scones()` and I want to import it into a Jupyter notebook using the alias `bake`, which of the following would be required? 
 
 
 <choice id="1" >
-<opt text="<code>import sqrt from numpy</code>"  >
+<opt text="<code>import cake from baking</code>"  >
 
-Maybe try reording this?
-
-</opt>
-
-<opt text="<code>from numpy import sqrt</code>"  correct="true">
-
-Great!
+`cake` is the function name, not the library. 
 
 </opt>
 
+<opt text="<code>from baking import bake</code>" >
 
-<opt text="<code>from sqrt import numpy</code>">
-
-We are importing only the `sqrt` function from the `numpy` package.
+this isn't quite right. `bake` is an alias, not a package. 
 
 </opt>
 
 
-<opt text="<code>import numpy from sqrt</code>"  >
+<opt text="<code>import baking as bake</code>"  correct="true">
 
-`sqrt` is a single function that we want to import from `numpy`.
+This is right!
+
+</opt>
+
+
+<opt text="<code>import bake as scone</code>"  >
+
+Almost but the alias we want to call baking is `bake` not `scone`.
 
 </opt>
 
@@ -270,31 +261,36 @@ We are importing only the `sqrt` function from the `numpy` package.
 </exercise>
 
 
-<exercise id="9" title="Using Pytest Questions ">
+<exercise id="9" title="Using Pytest Questions">
 
 **Question 1**      
 
 
-How would you import a package name `numpy`? 
+When you make a function from a unit test, what naming guideline does your function have to follow for `pytest` to work? 
 
 
 <choice id="1" >
-<opt text="<code>import numpy </code>"  correct="true">
+<opt text=" the function must end with <code>test</code>"  
 
-This is the basic way to import a Python package.
-
-</opt>
-
-<opt text="<code>as np import numpy </code>">
-
-Unfortunately this would not import `numpy`.
+It should not end with `test`, but the word "test" should be included in the name. 
 
 </opt>
 
+<opt text="the function must begin with <code>test</code>" correct="true">>
 
-<opt text="<code>from numpy import numpy</code>">
+Great! 
 
-Are you sure you read the slides properly?
+</opt>
+
+<opt text="the function must end with <code>pytest</code>">
+
+`pytest` does not need to be used in the function name. 
+
+</opt>
+
+<opt text="the function must begin with <code>pytest</code>">
+
+`pytest` does not need to be used in the function name. 
 
 </opt>
 
@@ -303,31 +299,30 @@ Are you sure you read the slides properly?
 
 **Question 2**          
 
-How would you import `numpy` if you wanted to refer to it as `np`? 
-
+Where are your unit test functions saved?
 
 <choice id="2" >
-<opt text="<code>as np import numpy </code>">
+<opt text=In the sane Jupyter notebook">
 
-This would actually result in an error! 
-
-</opt>
-
-<opt text="<code>Import numpy As np</code>">
-
-Be careful with capitals in this case, when you use capitalization, neither `Import` or `As` are Python keywords. 
+This would defy the DRY principle if wanted to test our function in multiple different notebooks. 
 
 </opt>
 
-<opt text="<code>import numpy as np </code>"  correct="true">
+<opt text=" In the same file as the function you are testing">
 
-Nice work!
+Not for `pytest`!
 
 </opt>
 
-<opt text="<code>As np Import numpy </code>">
+<opt text=" In a seperate <code>.py</code> file"  correct="true">
 
-This is neither the correct way to import, and it uses capitalization on keywords which is incorrect. 
+Great!
+
+</opt>
+
+<opt text=" in a seperate Jupyter notebook">
+
+`pytest` would not be able to check the tests in a separate Jupyter notebook. 
 
 </opt>
 
@@ -337,33 +332,33 @@ This is neither the correct way to import, and it uses capitalization on keyword
 
 <exercise id="10" title="More Questions on Using Pytest">
 
-How would you import just the square root function `sqrt` from the `numpy` package? 
+I have a function named `travel_location()` stored in a file named `travelling.py` and unit tests that checked this function stored in a file named `test_travelling.py`, how would I check my function using `pytest` in a Jupyter notebook?
 
 
 <choice id="1" >
-<opt text="<code>import sqrt from numpy</code>"  >
+<opt text="<code>!pytest travel_location</code>"  >
 
-Maybe try reording this?
-
-</opt>
-
-<opt text="<code>from numpy import sqrt</code>"  correct="true">
-
-Great!
+You do not need to use your function name
 
 </opt>
 
+<opt text="<code>!pytest travelling</code>" >
 
-<opt text="<code>from sqrt import numpy</code>">
-
-We are importing only the `sqrt` function from the `numpy` package.
+The unit tests are not stored in the `travelling.py` script.
 
 </opt>
 
 
-<opt text="<code>import numpy from sqrt</code>"  >
+<opt text="<code>!pytest tests</code>">
 
-`sqrt` is a single function that we want to import from `numpy`.
+You need to specify a file!
+
+</opt>
+
+
+<opt text="<code>!pytest test_travelling</code>" correct="true"" >
+
+Nice!
 
 </opt>
 
@@ -371,39 +366,71 @@ We are importing only the `sqrt` function from the `numpy` package.
 
 </exercise>
 
-<exercise id="11" title="Automatic Style Formatters" type="slides, video">
 
-<slides source="module7/module7_11" shot="4" start="0:165" end="3:01">
+<exercise id="11" title= "Making test function">
+
+**Instructions:**    
+Running a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes. 
+
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
+
+_**Make sure you remove the hash (`#`) symbol in the coding portions of this question.  We have commented them so that the line won't execute and you can test your code after each step.**_
+
+Remember the BMI function and unit tests we made back in the last module? Well, let's do the first step in testing it with `pytest` by converting them into an appropriate function. 
+
+Tasks:
+- Take these unit tests we wrote and compile them together in a function to check the function `bmi_calculator`.
+- Don't forget to give it a name compliant with `pytest`'s needs. 
+
+
+<codeblock id="07_11">
+
+- Are you naming it something starting with `test`? 
+- Are you remembering these do not need to return anything?
+- These functions do not take any arguments.
+
+</codeblock>
+
+</exercise>
+
+
+<exercise id="12" title="Automatic Style Formatters" type="slides, video">
+
+<slides source="module7/module7_12" shot="4" start="0:165" end="3:01">
 </slides>
 
 </exercise>
 
 
-<exercise id="12" title="Using Flake8">
+<exercise id="13" title="Using Flake8 and Black">
 
 **Question 1**      
 
-
-How would you import a package name `numpy`? 
+Which of the following tools will modify your code? 
 
 
 <choice id="1" >
-<opt text="<code>import numpy </code>"  correct="true">
+<opt text="<code>PEP8</code>"  >
 
-This is the basic way to import a Python package.
-
-</opt>
-
-<opt text="<code>as np import numpy </code>">
-
-Unfortunately this would not import `numpy`.
+This is a style guide, and not a library to modify your code. 
 
 </opt>
 
+<opt text="<code>flake8</code>">
 
-<opt text="<code>from numpy import numpy</code>">
+This tool will suggest changes but will not change your code. 
 
-Are you sure you read the slides properly?
+</opt>
+
+<opt text="<code>blue</code>" >
+
+This is not a style guide nor is it a formatter, in fact, we are not sure what this is either!
+
+</opt>
+
+<opt text="<code>black</code>" correct="true">
+
+Great work. 
 
 </opt>
 
@@ -412,31 +439,31 @@ Are you sure you read the slides properly?
 
 **Question 2**          
 
-How would you import `numpy` if you wanted to refer to it as `np`? 
+Which of the following formatting would Black **NOT** fix?
 
 
 <choice id="2" >
-<opt text="<code>as np import numpy </code>">
+<opt text="Trailing white space">
 
-This would actually result in an error! 
-
-</opt>
-
-<opt text="<code>Import numpy As np</code>">
-
-Be careful with capitals in this case, when you use capitalization, neither `Import` or `As` are Python keywords. 
+Black will remove unnecessary white space!
 
 </opt>
 
-<opt text="<code>import numpy as np </code>"  correct="true">
+<opt text="Adding white space where necessary">
+
+Black will add white space where appropriate.
+
+</opt>
+
+<opt text="Fixing grammar in comments"  correct="true">
 
 Nice work!
 
 </opt>
 
-<opt text="<code>As np Import numpy </code>">
+<opt text="Indentations">
 
-This is neither the correct way to import, and it uses capitalization on keywords which is incorrect. 
+Black fixes indentations thankfully!
 
 </opt>
 
@@ -444,75 +471,119 @@ This is neither the correct way to import, and it uses capitalization on keyword
 
 </exercise>
 
-<exercise id="13" title="Using Black">
+<exercise id="14" title="Using Black">
 
-How would you import just the square root function `sqrt` from the `numpy` package? 
+**Instructions:**    
+Running a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes. 
 
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
 
-<choice id="1" >
-<opt text="<code>import sqrt from numpy</code>"  >
+_**Make sure you remove the hash (`#`) symbol in the coding portions of this question.  We have commented them so that the line won't execute and you can test your code after each step.**_
 
-Maybe try reording this?
+Remember the BMI 
 
-</opt>
-
-<opt text="<code>from numpy import sqrt</code>"  correct="true">
-
-Great!
-
-</opt>
+Tasks:
+- Take these unit tests we wrote and compile them together in a function to check the function `bmi_calculator`.
+- Don't forget to give it a name compliant with `pytest`'s needs. 
 
 
-<opt text="<code>from sqrt import numpy</code>">
+<codeblock id="07_14">
 
-We are importing only the `sqrt` function from the `numpy` package.
+- Are you naming it something starting with `test`? 
+- Are you remembering these do not need to return anything?
+- These functions do not take any arguments.
 
-</opt>
-
-
-<opt text="<code>import numpy from sqrt</code>"  >
-
-`sqrt` is a single function that we want to import from `numpy`.
-
-</opt>
-
-</choice> 
+</codeblock>
 
 </exercise>
 
-<exercise id="14" title="Formatting That Can't Be Fixed Automatically" type="slides, video">
 
-<slides source="module7/module7_14" shot="4" start="0:165" end="3:01">
+<exercise id="15" title="Formatting That Can't Be Fixed Automatically" type="slides, video">
+
+<slides source="module7/module7_15" shot="4" start="0:165" end="3:01">
 </slides>
 
 </exercise>
 
 
-<exercise id="15" title="Choosing Good Variable Names">
+<exercise id="16" title="Writing Useful Comments">
+
+Given the code here: 
+
+
+```python
+candy = pd.read_csv('candybars.csv')
+chocolate = pd.read_csv('chocolate_types.csv')
+
+
+dessert = candy.merge(chocolate,  how='inner').dropna()
+```
+
+
+<choice id="1" >
+<opt text="<code># Combine dataframes and dropping NaN values/code>"  correct="true">
+
+Great!
+
+</opt>
+
+<opt text="<code># Merge dataframes</code>"  >
+
+This could be a bit more useful, what about the `.dropna()`?
+
+</opt>
+
+
+<opt text="<code># Combine the candy and chocolate dataframes and only keeping rows that both dataframes have in common and then removing any rows with missing values</code>">
+
+This is a bit excessive. 
+
+</opt>
+
+
+<opt text="No comment is needed here"  >
+
+A comment here could be useful since we are chaining verbs here. 
+
+</opt>
+
+</choice> 
+
+
+</exercise>
+
+<exercise id="17" title="Choosing Good Variable Names">
+
 
 **Question 1**      
 
 
-How would you import a package name `numpy`? 
+Which of the following is an acceptable variable name?
 
 
 <choice id="1" >
-<opt text="<code>import numpy </code>"  correct="true">
+<opt text="<code>bool</code>"  >
 
-This is the basic way to import a Python package.
-
-</opt>
-
-<opt text="<code>as np import numpy </code>">
-
-Unfortunately this would not import `numpy`.
+This is a Python keyword and is not an acceptable object name. 
 
 </opt>
 
+<opt text="<code>AppleTrees</code>" >
 
-<opt text="<code>from numpy import numpy</code>">
+It's not good styling to have capitalizations in your variable names. 
 
-Are you sure you read the slides properly?
+</opt>
+
+
+<opt text="<code>Hotel_Df</code>">
+
+It's not good styling to have capitalizations in your variable names. 
+
+</opt>
+
+<opt text="<code>paper_sales</code>" correct="true">
+
+Nice!
 
 </opt>
 
@@ -521,107 +592,74 @@ Are you sure you read the slides properly?
 
 **Question 2**          
 
-How would you import `numpy` if you wanted to refer to it as `np`? 
+I have a dataframe that contains different flowers, their seasonality, and where they are found in the world. 
+
+Which of the following is the most suitable name for this dataframe? 
 
 
 <choice id="2" >
-<opt text="<code>as np import numpy </code>">
+<opt text="<code>flowers_seasonality_location</code>">
 
-This would actually result in an error! 
-
-</opt>
-
-<opt text="<code>Import numpy As np</code>">
-
-Be careful with capitals in this case, when you use capitalization, neither `Import` or `As` are Python keywords. 
+We find this a bit long-winded. Is it necessary to add the columns to the object name?
 
 </opt>
 
-<opt text="<code>import numpy as np </code>"  correct="true">
+<opt text="<code>FLOWERS</code>">
+
+Please don't use all capitals for your object names. 
+
+</opt>
+
+<opt text="<code>flowers_df</code>"  correct="true">
 
 Nice work!
 
 </opt>
 
-<opt text="<code>As np Import numpy </code>">
+<opt text="<code>flw</code>">
 
-This is neither the correct way to import, and it uses capitalization on keywords which is incorrect. 
+I think we should try and make this a more readable object name. 
 
 </opt>
 
 </choice>  
 
-</exercise>
-
-<exercise id="16" title="Writing Informative Comments">
-
-How would you import just the square root function `sqrt` from the `numpy` package? 
-
-
-<choice id="1" >
-<opt text="<code>import sqrt from numpy</code>"  >
-
-Maybe try reording this?
-
-</opt>
-
-<opt text="<code>from numpy import sqrt</code>"  correct="true">
-
-Great!
-
-</opt>
-
-
-<opt text="<code>from sqrt import numpy</code>">
-
-We are importing only the `sqrt` function from the `numpy` package.
-
-</opt>
-
-
-<opt text="<code>import numpy from sqrt</code>"  >
-
-`sqrt` is a single function that we want to import from `numpy`.
-
-</opt>
-
-</choice> 
 
 </exercise>
 
-<exercise id="17" title="Python Debugger" type="slides, video">
+<exercise id="18" title="The Python Debugger" type="slides, video">
 
-<slides source="module7/module7_17" shot="4" start="0:165" end="3:01">
+<slides source="module7/module7_18" shot="4" start="0:165" end="3:01">
 </slides>
 
 </exercise>
 
 
-<exercise id="18" title="Using the Python Debugger">
+<exercise id="19" title="Using the Python Debugger">
 
 **Question 1**      
 
 
-How would you import a package name `numpy`? 
+How is the Python debugger helpful?
 
 
 <choice id="1" >
-<opt text="<code>import numpy </code>"  correct="true">
+<opt text="It can help explain where your code is failing"  correct="true">
 
-This is the basic way to import a Python package.
-
-</opt>
-
-<opt text="<code>as np import numpy </code>">
-
-Unfortunately this would not import `numpy`.
+This is exactly why the Python debugger is useful!
 
 </opt>
 
+<opt text="It tells us where our code could be more efficient.">
 
-<opt text="<code>from numpy import numpy</code>">
+The Python debugger can't improve code that works. 
 
-Are you sure you read the slides properly?
+</opt>
+
+
+<opt text="It removes any of the code that is not following the DRY principle.">
+
+The Python debugger helps with *debugging* and not with adhering to the DRY principle. 
 
 </opt>
 
@@ -630,31 +668,32 @@ Are you sure you read the slides properly?
 
 **Question 2**          
 
-How would you import `numpy` if you wanted to refer to it as `np`? 
+Which of the following can we use from the Python Debugger to examine our code and inspect our variables?
+
 
 
 <choice id="2" >
-<opt text="<code>as np import numpy </code>">
+<opt text="<code>break()</code>">
 
-This would actually result in an error! 
-
-</opt>
-
-<opt text="<code>Import numpy As np</code>">
-
-Be careful with capitals in this case, when you use capitalization, neither `Import` or `As` are Python keywords. 
+Almost but not quite. 
 
 </opt>
 
-<opt text="<code>import numpy as np </code>"  correct="true">
+<opt text="<code>tracepoint()</code>">
 
-Nice work!
+This is not the function but the ending sure sounds familiar...
 
 </opt>
 
-<opt text="<code>As np Import numpy </code>">
+<opt text="<code>traceback()</code>">
 
-This is not the correct way to import, and it uses capitalization on keywords which is incorrect. 
+This does seem plausible, doesn't it? Unfortunately, this isn't correct. 
+
+</opt>
+
+<opt text="<code>breakpoint()</code>" correct="true">
+
+You got it!
 
 </opt>
 
@@ -663,7 +702,7 @@ This is not the correct way to import, and it uses capitalization on keywords wh
 </exercise>
 
 
-<exercise id="19" title="What Did We Just Learn?" type="slides, video">
+<exercise id="20" title="What Did We Just Learn?" type="slides, video">
 <slides source="module7/module7_end" shot="11" start="0:49" end="1:32">>
 </slides>
 </exercise>

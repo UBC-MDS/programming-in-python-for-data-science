@@ -47,37 +47,9 @@ cereal = pd.read_csv('cereal.csv')
 type: slides
 
 
-# The Python Debugger
+# Working with Other Files
 
 Notes: <br>
-
----
-
-
-
-
-Notes: 
-
----
-
-
-
-Notes: 
-
----
-
-
-Notes: 
-
----
-
-
-Notes: 
-
----
-
-
-Notes: 
 
 ---
 

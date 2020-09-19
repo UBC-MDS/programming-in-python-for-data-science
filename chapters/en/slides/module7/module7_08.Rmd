@@ -47,37 +47,10 @@ cereal = pd.read_csv('cereal.csv')
 type: slides
 
 
-# The Python Debugger
+# Testing Your Own Functions with Pytest
 
 Notes: <br>
 
----
-
-
-
-
-Notes: 
-
----
-
-
-
-Notes: 
-
----
-
-
-Notes: 
-
----
-
-
-Notes: 
-
----
-
-
-Notes: 
 
 ---
 

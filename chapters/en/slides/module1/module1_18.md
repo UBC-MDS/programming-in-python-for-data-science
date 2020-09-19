@@ -4,6 +4,8 @@ type: slides
 
 # Selecting a Single Column
 
+---
+
 ``` python
 df.loc[:, ['column name']]
 ```
