@@ -139,7 +139,7 @@ Ok, so we've seen this `numpy` package, let's actually load in one of the functi
 
 Tasks:
 - Import the `power()` function from the `numpy` package. 
-- Use the `power()` function to find  7 to the power of 5 - you may want to use `?power` to see what arguments the function requires.
+- Use the `power()` function to find  7 to the power of 5 and save it in an object named `power7_5` - you may want to use `?power` to see what arguments the function requires.
 - Display your results.
 
 
@@ -332,7 +332,8 @@ Great!
 
 <exercise id="10" title="More Questions on Using Pytest">
 
-I have a function named `travel_location()` stored in a file named `travelling.py` and unit tests that checked this function stored in a file named `test_travelling.py`, how would I check my function using `pytest` in a Jupyter notebook?
+I have a function named `travel_location()` stored in a file named `travelling.py` and unit tests that checks this function stored in a file named `test_travelling.py`.    
+How would I check my function using `pytest` in a Jupyter notebook?
 
 
 <choice id="1" >
@@ -367,7 +368,7 @@ Nice!
 </exercise>
 
 
-<exercise id="11" title= "Making test function">
+<exercise id="11" title= "Making a test function">
 
 **Instructions:**    
 Running a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes. 
@@ -376,10 +377,10 @@ Running a coding exercise for the first time could take a bit of time for everyt
 
 _**Make sure you remove the hash (`#`) symbol in the coding portions of this question.  We have commented them so that the line won't execute and you can test your code after each step.**_
 
-Remember the BMI function and unit tests we made back in the last module? Well, let's do the first step in testing it with `pytest` by converting them into an appropriate function. 
+Let's do the first step in testing the function `find_force()` with `pytest` by converting the tests provided for into an appropriate function. 
 
 Tasks:
-- Take these unit tests we wrote and compile them together in a function to test the function `bmi_calculator()`.
+- Take these unit tests we wrote and compile them together in a function to test the function `find_force()`.
 - Don't forget to give it a name compliant with `pytest`'s needs. 
 
 
@@ -471,7 +472,7 @@ Black fixes indentations thankfully!
 
 </exercise>
 
-<exercise id="14" title="Using Black">
+<exercise id="14" title="Formatting your Code">
 
 **Instructions:**    
 Running a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes. 
@@ -516,9 +517,11 @@ candy = pd.read_csv('candybars.csv')
 chocolate = pd.read_csv('chocolate_types.csv')
 
 
-dessert = candy.merge(chocolate,  how='inner').dropna()
+dessert = candy.merge(chocolate, how='inner').dropna()
 ```
 
+Which of following comments are suitable?    
+*Hint: there could be more than 1*
 
 <choice id="1" >
 <opt text="<code># Combine dataframes and drops NaN values</code>"  correct="true">
@@ -541,9 +544,9 @@ This is a bit excessive.
 </opt>
 
 
-<opt text="No comment is needed here"  >
+<opt text="No comment is needed here"  correct="true">
 
-A comment here could be useful since we are chaining verbs here. 
+Since the code is somewhat explanatory, a comment isn't completely mandatory. 
 
 </opt>
 

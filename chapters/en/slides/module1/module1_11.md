@@ -2,7 +2,7 @@
 type: slides
 ---
 
-# Slicing columns using .loc\[\]
+# Slicing only columns using .loc\[\]
 
 Notes:
 

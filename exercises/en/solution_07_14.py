@@ -1,4 +1,5 @@
 import pandas as pd
+
 def cleanup(data, columns):
     """
     This removes any duplicate column names or any duplicate

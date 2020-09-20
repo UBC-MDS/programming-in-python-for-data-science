@@ -193,7 +193,7 @@ The general format to slice both rows and columns together looks like
 this:
 
 ``` python
-`df.loc['row name start':'row name end', 'column name start':'column name end']`
+df.loc['row name start':'row name end', 'column name start':'column name end']
 ```
 
 ---

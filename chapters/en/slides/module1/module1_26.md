@@ -167,7 +167,7 @@ cereal.describe(include='all')
               name  mfr  type    calories    protein        fat      sodium  ...     sugars      potass    vitamins      shelf     weight       cups     rating
 count           77   77    77   77.000000  77.000000  77.000000   77.000000  ...  77.000000   77.000000   77.000000  77.000000  77.000000  77.000000  77.000000
 unique          77    7     2         NaN        NaN        NaN         NaN  ...        NaN         NaN         NaN        NaN        NaN        NaN        NaN
-top     Grape-Nuts    K  Cold         NaN        NaN        NaN         NaN  ...        NaN         NaN         NaN        NaN        NaN        NaN        NaN
+top     Wheat Chex    K  Cold         NaN        NaN        NaN         NaN  ...        NaN         NaN         NaN        NaN        NaN        NaN        NaN
 freq             1   23    74         NaN        NaN        NaN         NaN  ...        NaN         NaN         NaN        NaN        NaN        NaN        NaN
 mean           NaN  NaN   NaN  106.883117   2.545455   1.012987  159.675325  ...   6.948052   96.129870   28.246753   2.207792   1.029610   0.821039  42.665705
 std            NaN  NaN   NaN   19.484119   1.094790   1.006473   83.832295  ...   4.403635   71.215823   22.342523   0.832524   0.150477   0.232716  14.047289
@@ -204,17 +204,16 @@ statistics about categorical columns including:
 ---
 
 ``` python
-ratings = cereal[['protein']]
+ratings = cereal[['rating']]
 ratings.mean()
 ```
 
 ```out
-protein    2.545455
+rating    42.665705
 dtype: float64
 ```
 
 ``` python
-ratings = cereal[['rating']]
 ratings.sum()
 ```
 
@@ -224,12 +223,11 @@ dtype: float64
 ```
 
 ``` python
-calories = cereal[['calories']]
-calories.median()
+ratings.median()
 ```
 
 ```out
-calories    110.0
+rating    40.400208
 dtype: float64
 ```
 
@@ -241,13 +239,8 @@ We can also get single statistics of each column using: either
 First segregate the column we want to explore further, then add the
 verb.
 
-As an example,
-
-what is the mean protein content of the cereals?
-
-Or what is the sum of the cereal ratings?
-
-What about the median calories of the cereals?
+Here are some examples where we first calculate the mean of the ratings,
+the sum of the ratings and the median of the ratings.
 
 ---
 

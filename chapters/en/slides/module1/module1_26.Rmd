@@ -168,20 +168,18 @@ Adding `include='all'` within the brackets adds some additional statistics about
 ---
 
 ```{python}
-ratings = cereal[['protein']]
+ratings = cereal[['rating']]
 ratings.mean()
 ```
 
 
 ```{python}
-ratings = cereal[['rating']]
 ratings.sum()
 ```
 
 
 ```{python}
-calories = cereal[['calories']]
-calories.median()
+ratings.median()
 ```
 
 Notes: 
@@ -191,13 +189,7 @@ either `.mean()`,`.std()`, `.count()`, `.median()`, `.sum()`.
 
 First segregate the column we want to explore further, then add the verb. 
 
-As an example,
-
-what is the mean protein content of the cereals?
-
-Or what is the sum of the cereal ratings?
-
-What about the median calories of the cereals? 
+Here are some examples where we first calculate the mean of the ratings, the sum of the ratings and the median of the ratings. 
 
 ---
 

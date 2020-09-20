@@ -46,7 +46,7 @@ We are going to return to our cereal dataset and take a look at the
 first 10 rows.
 
 Let’s say we want the rows `All-Bran` to `Apple Cinnamon Cheerios` but
-we want to slice based on their position.
+we want to slice based on their position instead of their label.
 
 Using Python’s counting method of starting at zero, we conclude
 `All-Bran` to be at position to 2.
@@ -163,7 +163,7 @@ The same concept can be applied to the columns of the dataframe.
 Let’s say we want all the rows but we only want the columns starting at
 `name` and ending (and including) at column `fat`.  
 Using the logic we learned in the last set of slides, we would use the
-following code:
+following code.
 
 We would need to specify all rows using `:` as we did when we used
 `.loc[]`.
@@ -204,7 +204,7 @@ cereal.iloc[2:6, 0:6]
 Notes:
 
 Let’s say we want the rows `All-Bran` to `Apple Cinnamon Cheerios` and
-`protein` to `fat`.
+`name` to `fat`.
 
 For rows, the lower bound `All-Bran` is located at position 2 and the
 upper bound `Apple Cinnamon Cheerios` is located at position 5.

@@ -162,7 +162,7 @@ cereal.iloc[2:6, 0:6]
 Notes: 
 
 
- Let’s say we want the rows `All-Bran` to `Apple Cinnamon Cheerios` and `protein` to `fat`.  
+ Let’s say we want the rows `All-Bran` to `Apple Cinnamon Cheerios` and `name` to `fat`.  
  
 For rows, the lower bound `All-Bran` is located at position 2 and the upper bound `Apple Cinnamon Cheerios` is located at position 5.  
 
