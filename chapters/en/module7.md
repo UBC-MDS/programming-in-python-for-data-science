@@ -333,31 +333,31 @@ Great!
 <exercise id="10" title="More Questions on Using Pytest">
 
 I have a function named `travel_location()` stored in a file named `travelling.py` and unit tests that checks this function stored in a file named `test_travelling.py`.    
-How would I check my function using `pytest` in a Jupyter notebook?
+How would I check my function using `pytest`?
 
 
 <choice id="1" >
-<opt text="<code>!pytest travel_location</code>"  >
+<opt text="<code>pytest travel_location</code>"  >
 
 You do not need to use your function name.
 
 </opt>
 
-<opt text="<code>!pytest travelling</code>" >
+<opt text="<code>pytest travelling</code>" >
 
 The unit tests are not stored in the `travelling.py` script.
 
 </opt>
 
 
-<opt text="<code>!pytest tests</code>">
+<opt text="<code>pytest tests</code>">
 
 You need to specify a file!
 
 </opt>
 
 
-<opt text="<code>!pytest test_travelling</code>" correct="true" >
+<opt text="<code>pytest test_travelling</code>" correct="true" >
 
 Nice!
 
