@@ -28,7 +28,7 @@ Let’s remind ourselves how it works.
 
 <center>
 
-<img src='/module7//m7_2.png'  width = "90%" alt="404 image" />
+<img src='/module7/m7_2.png'  width = "90%" alt="404 image" />
 
 </center>
 
@@ -45,7 +45,7 @@ the values `2`, `3` and `4` and get the output.
 
 <center>
 
-<img src='/module7//m7_3.png'  width = "90%" alt="404 image" />
+<img src='/module7/m7_3.png'  width = "90%" alt="404 image" />
 
 </center>
 
@@ -57,7 +57,7 @@ Let’s say we want to create a new jupyter notebook.
 
 <center>
 
-<img src='/module7//m7_4.png'  width = "90%" alt="404 image" />
+<img src='/module7/m7_4.png'  width = "90%" alt="404 image" />
 
 </center>
 
@@ -69,7 +69,7 @@ We then named it `more-exp-calc.ipynb`.
 
 <center>
 
-<img src='/module7//m7_5.png'  width = "90%" alt="404 image" />
+<img src='/module7/m7_5.png'  width = "90%" alt="404 image" />
 
 </center>
 
@@ -90,7 +90,7 @@ this function.
 
 <center>
 
-<img src='/module7//m7_6.png'  width = "90%" alt="404 image" />
+<img src='/module7/m7_6.png'  width = "90%" alt="404 image" />
 
 </center>
 
@@ -105,7 +105,7 @@ similarly to how we imported packages like pandas or Altair.
 
 <center>
 
-<img src='/module7//m7_8.png'  width = "90%" alt="404 image" />
+<img src='/module7/m7_8.png'  width = "90%" alt="404 image" />
 
 </center>
 
@@ -118,7 +118,7 @@ an ending of `.txt`, we’re going to end it with `.py`.
 
 <center>
 
-<img src='/module7//m7_9.png'  width = "90%" alt="404 image" />
+<img src='/module7/m7_9.png'  width = "90%" alt="404 image" />
 
 </center>
 
@@ -163,7 +163,7 @@ have multiple functions that could live in this file.
 
 <center>
 
-<img src='/module7//m7_11.png'  width = "90%" alt="404 image" />
+<img src='/module7/m7_11.png'  width = "90%" alt="404 image" />
 
 </center>
 
@@ -178,7 +178,7 @@ This time instead of an error we get the expected results.
 
 <center>
 
-<img src='/module7//m7_14.png'  width = "90%" alt="404 image" />
+<img src='/module7/m7_14.png'  width = "90%" alt="404 image" />
 
 </center>
 
@@ -192,6 +192,6 @@ the way we just did in the other notebook `more-exp-calc.ipynb`.
 
 ---
 
-# Let’s practice what we learned\!
+# Let’s apply what we learned\!
 
 Notes: <br>

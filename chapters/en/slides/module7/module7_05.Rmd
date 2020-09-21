@@ -184,6 +184,6 @@ This now gives us the ability to run all of the cells in this notebook the way w
 
 ---
 
-# Let’s practice what we learned!
+# Let’s apply what we learned!
 
 Notes: <br>

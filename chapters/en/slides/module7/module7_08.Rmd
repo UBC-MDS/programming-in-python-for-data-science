@@ -197,6 +197,6 @@ At this point we would go back to either our function or test and try and fix th
 
 ---
 
-# Let’s practice what we learned!
+# Let’s apply what we learned!
 
 Notes: <br>

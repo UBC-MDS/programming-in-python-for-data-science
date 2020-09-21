@@ -321,6 +321,6 @@ trying to convey.
 
 ---
 
-# Let’s practice what we learned\!
+# Let’s apply what we learned\!
 
 Notes: <br>
