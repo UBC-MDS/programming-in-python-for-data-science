@@ -1,7 +1,7 @@
 import pandas as pd
 
 def cleanup(data, columns):
-    """
+    '''
     This removes any duplicate column names or any duplicate
     rows in the dataframe.
 
@@ -24,7 +24,7 @@ def cleanup(data, columns):
 	white	       4
     rye	           6
     wholegrain     2
-    """
+    '''
 
     # Drops duplicate columns
             data=data.          loc[      :, ~data.columns.duplicated()  ]  
