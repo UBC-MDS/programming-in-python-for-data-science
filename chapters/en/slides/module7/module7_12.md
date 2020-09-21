@@ -120,10 +120,11 @@ def exponent_a_list(numerical_list, exponent=2):
 
 Notes:
 
-Unlike PEP8 which is a style guide and flake8 which just tells you where
-your code needs changes, `black` is a tool that will format your code.
+Unlike PEP8 which is a style guide and `flake8` which just tells you
+where your code needs changes, `black` is a tool that will format your
+code.
 
-Black will mostly follow the PEP8 style guide but with a few
+`black` will mostly follow the PEP8 style guide but with a few
 differences.
 
 When you use `black` with your code, you are wiping it of bad formatting
@@ -152,8 +153,8 @@ def exponent_a_list(numerical_list, exponent=2):
 Notes:
 
 It’s important to know that `flake8` and our formatter `black` are using
-slightly different rules. Even after black is run on our code, flake8
-still may point out issues and complain that it isn’t stylized
+slightly different rules. Even after `black` is run on our code,
+`flake8` still may point out issues and complain that it isn’t stylized
 correctly.
 
 We’re not going to worry about that for now. It can be fixed by
