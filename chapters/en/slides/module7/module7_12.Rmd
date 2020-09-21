@@ -177,9 +177,9 @@ def exponent_a_list(numerical_list, exponent=2):
 Notes: 
 
 It's important to know that `flake8` and our formatter `black` are using slightly different rules. 
-Even after black is run on our code, flake8 may still point out issues and complain that it isn't stylized correctly. 
+Even after black is run on our code, flake8 still may point out issues and complain that it isn't stylized correctly. 
 
-We’re not going to worry about that for now. It can be fixed by customizing flake8 but that’s outside the scope of this course.
+We’re not going to worry about that for now. It can be fixed by customizing `flake8` but that’s outside the scope of this course.
 
 Now let's see how we can use both of these in a Jupyter notebook.
 
