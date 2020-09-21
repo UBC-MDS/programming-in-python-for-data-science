@@ -50,7 +50,7 @@ By the end of the course, students will be able to:
 
 | Position | Name  | Email | Office Hours | Office Location |
 |----------|-------|-------|--------------|-----------------|
-| Course Facilitator | [TBD]() | TBD | TBD| Zoom |
+| Course Facilitator | Socorro Dominguez  | sedv8808@gmail.com | TBD| Zoom |
 
 
 ## Course Structure
@@ -71,7 +71,7 @@ We have supplied informative videos on how to do this in assignment 1 and refere
 | Deliverable | Percent Grade |
 |-------------|---------------|
 | Assignments | 48 |
-| 2 Quizzes | 30( 15% each) |
+| 2 Quizzes | 30(15% each) |
 | Final project | 22 |
 
 ## Schedule
@@ -101,19 +101,21 @@ We have supplied informative videos on how to do this in assignment 1 and refere
 
 ## Policies
 
-### Late Assignments / Quiz Absence
-Students who miss a quiz should make arrangements with the course facilitator as soon as possible. Failing to do so may result in a grade of zero. 
+### Late Assignments 
+Students should submit all assignments by the due date. If for any reason a student is unable to do so, they can submit the assignments before the course end date. This is the final allowed submission date and is non-negotiable.
+
+### Late Quizzes
+We allow 1 week to complete each quiz. if you've submitted a quiz late or did not submit a quiz at all, please contact the course facilitator and we will try to make accommodations.
+
 
 ### Autograder Policy
 Many of the questions in assignments are graded automatically by software. The grading computer has exactly the same hardware setup as the server that students work on. 
-No assignment, when completed, should take longer than 5 minutes to run on the server. 
-Furthermore, students are responsible for making sure their assignments are *reproducible*, and run from beginning to end on the autograding computer. 
+Students should make sure their assignments are *reproducible*, and run from beginning to end on the autograding computer. 
 In particular, **please ensure that any data that needs to be downloaded is done so by the assignment notebook with the correct filename to the correct folder.
 
 
 ### Re-grading
-If you have concerns about the way your work was graded, please contact the course facilitator within one week of having the grade returned to you. After this one-week window, we may deny your request for re-evaluation. 
-Also, please keep in mind that your grade may go up or down as a result of re-grading.
+If you have concerns about the way your work was graded, please contact the course facilitator. 
 
 ### Device/Browser
 Students are responsible for using a device and browser compatible with all functionality of Canvas. 
