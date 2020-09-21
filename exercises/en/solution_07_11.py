@@ -14,4 +14,6 @@ def test_find_force():
     assert find_force(50, 3) == 150, "Input arguments giving incorrect output"
     assert find_force(100, -2) == -200, "Input arguments giving incorrect output"
     assert find_force(5, 20) == 100, "Input arguments giving incorrect output"
+    
+    return
   
