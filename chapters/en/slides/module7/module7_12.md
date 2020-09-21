@@ -99,8 +99,8 @@ def exponent_a_list(numerical_list   ,   exponent   =      2):
                 )
 
     new_exponent_list   = list()
-    for   number in              numerical_list:
-                new_exponent_list.append(                  number **  exponent  )
+    for   number_in_new_exponent_list in              numerical_list:
+                new_exponent_list.append(                  number_in_new_exponent_list **  exponent  )
     return new_exponent_list
 ```
 
@@ -113,8 +113,8 @@ def exponent_a_list(numerical_list, exponent=2):
         raise Exception("You are not using a list for the numerical_list input.")
 
     new_exponent_list = list()
-    for number in numerical_list:
-        new_exponent_list.append(number ** exponent)
+    for number_in_new_exponent_list in numerical_list:
+        new_exponent_list.append(number_in_new_exponent_list ** exponent)
     return new_exponent_list
 ```
 
@@ -129,11 +129,37 @@ differences.
 When you use `black` with your code, you are wiping it of bad formatting
 like trailing whitespace and poor indentation.
 
-Let’s see how we can use both of these in a Jupyter notebook.
-
 ---
 
+**After `black`**
+
+``` python
+def exponent_a_list(numerical_list, exponent=2):
+
+    if type(numerical_list) is not list:
+        raise Exception("You are not using a list for the numerical_list input.")
+
+    new_exponent_list = list()
+    for number_in_new_exponent_list in numerical_list:
+        new_exponent_list.append(number_in_new_exponent_list ** exponent)
+    return new_exponent_list
+```
+
+<br> <br> **Checking with `flake8` again**
+
+<img src='/module7/flake8again.png'  width = "45%" alt="404 image" />
+
 Notes:
+
+It’s important to know that `flake8` and our formatter `black` are using
+slightly different rules. Even after black is run on our code, flake8
+may still point out issues and complain that it isn’t stylized
+correctly.
+
+We’re not going to worry about that for now. It can be fixed by
+customizing flake8 but that’s outside the scope of this course.
+
+Now let’s see how we can use both of these in a Jupyter notebook.
 
 ---
 

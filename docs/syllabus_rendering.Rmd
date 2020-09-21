@@ -111,7 +111,7 @@ We allow 1 week to complete each quiz. if you've submitted a quiz late or did no
 ### Autograder Policy
 Many of the questions in assignments are graded automatically by software. The grading computer has exactly the same hardware setup as the server that students work on. 
 Students should make sure their assignments are *reproducible*, and run from beginning to end on the autograding computer. 
-In particular, **please ensure that any data that needs to be downloaded is done so by the assignment notebook with the correct filename to the correct folder.
+In particular, **please ensure that any data that needs to be downloaded is done so by the assignment notebook with the correct filename to the correct folder**.
 
 
 ### Re-grading

@@ -368,7 +368,7 @@ Nice!
 </exercise>
 
 
-<exercise id="11" title= "Making a test function">
+<exercise id="11" title= "Making a Test Function">
 
 **Instructions:**    
 Running a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes. 
@@ -403,7 +403,7 @@ Tasks:
 </exercise>
 
 
-<exercise id="13" title="Using Flake8 and Black">
+<exercise id="13" title="Flake8 and Black">
 
 **Question 1**      
 
