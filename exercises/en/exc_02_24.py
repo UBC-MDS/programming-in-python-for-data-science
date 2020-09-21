@@ -14,9 +14,9 @@ pokemon = pd.read_csv('data/pokemon.csv')
 
 # Use .mark_circle() to plot AD_total on the x-axis  and capture_rt on the y-axis
 # Name the plot pokemon_plot
-# pokemon_plot = alt.Chart(____, width=500, height=300)
-#                   .____()
-#                   .____(x='____',
-#                         y='____')
+
+# pokemon_plot = alt.Chart(____, width=500, height=300).____().____(
+#         x='____',
+#         y='____')
 
 #pokemon_plot
