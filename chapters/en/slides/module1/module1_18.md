@@ -37,11 +37,11 @@ Notes:
 
 Something we often do in data analysis is obtaining a single column from
 a dataframe. We can again use `.loc[]` to do this which would look
-something like this:
+something like this in general:
 
 `dataframe.loc[:, ['column name']]`
 
-So if we wanted the column named `type` from our cereal dataframe we
+So if we here want the column named `type` from our cereal dataframe we
 could use the syntax:
 
 `cereal.loc[:, ['type']]`
@@ -85,12 +85,10 @@ Instead, selecting a single column can be done without using `.loc[]`
 and we can just specify the dataframe name, followed by double square
 brackets containing the column of interest.
 
-That makes the syntax for selecting the column `type` from the `cereal`
-dataframe:
+`cereal[['type']]`
 
-``` python
-cereal[['type']]
-```
+This makes the syntax for selecting the column `type` from the `cereal`
+dataframe very easy.
 
 ---
 

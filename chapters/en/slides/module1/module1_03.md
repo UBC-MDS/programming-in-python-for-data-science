@@ -116,8 +116,8 @@ we wanted to see the dimensions of the whole dataframe we could use
 
 Breaking up the code, we interpret this as:
 
-*“From our dataframe that we saved as `candy`, tell me the `shape`”* or
-*“From our dataframe that we saved as `candy`, tell me the `columns`”*
+*“From our dataframe that we saved as `candy`, tell me the `columns`
+and`shape`”*
 
 ---
 
@@ -190,7 +190,7 @@ put our instructions within the parentheses, whereas, when we use
 our desired command.
 
 In Python, we use **functions**, **methods** and **attributes**. These
-are special words in Python that takes in instructions (we call these
+are special words in Python that take instructions (we call these
 arguments) and do something.
 
 Attributes can be distinguished from methods and functions as they do
@@ -231,11 +231,10 @@ information for humans that we do not want to executed.
 
 The easiest way to do this is with a hash (`#`) symbol. This creates a
 single line comment and prevents anything written after it from being
-executed.
+executed by Python.
 
-We can also use it beside code.
-
-We use comments frequently in the exercises.
+We use comments frequently in the exercises to help you understand what
+to do and what our intentions are.
 
 It’s good practice to use them to explain our code so if we or someone
 else wants to read it at a later date, it’s easier to understand.

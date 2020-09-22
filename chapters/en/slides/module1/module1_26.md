@@ -38,13 +38,14 @@ cereal.head(15)
 
 Notes:
 
-Now we’ve learned about how to get our dataframe how we want it, let’s
-try have some fun with it\!
+Now we’ve learned about how to get the data in to the shape and size
+that we desire, now we ca have some fun with it\!
 
-We have our data, now what?
+We usually like to learn from it. One place we can start is summary
+statistics, so we can calculate interesting values for each of the
+variables or columns in our dataframe.
 
-We usually like to learn from it. We want to find out about some summary
-statistics about the data.
+Let’s start by doing this for the cereal dataset again.
 
 First let’s load in our cereal dataset again.
 
@@ -112,7 +113,7 @@ Notes:
 Pandas has a lot up its sleeve but one of the most useful methods is
 called `.describe()` and it does exactly that. it *describes* our data.
 
-Let’s try it out.
+Let’s try it out on our cereal dataset.
 
 By default `df.describe()` only shows numerical columns.
 
@@ -147,7 +148,7 @@ Let’s talk a little bit about the output of `.describe()`.
 
 On the left-hand side we see a new column. This column contains the
 names of the different summary statistics that `.describes()` gives us
-back for our dataset. Let’s talk about them:
+back for our dataset. Let’s talk about them each individually:
 
   - `count`: The number of non-NA/null observations.
   - `mean`: The mean of the column
@@ -164,18 +165,18 @@ cereal.describe(include='all')
 ```
 
 ```out
-                         name  mfr  type    calories    protein        fat      sodium  ...     sugars      potass    vitamins      shelf     weight       cups     rating
-count                      77   77    77   77.000000  77.000000  77.000000   77.000000  ...  77.000000   77.000000   77.000000  77.000000  77.000000  77.000000  77.000000
-unique                     77    7     2         NaN        NaN        NaN         NaN  ...        NaN         NaN         NaN        NaN        NaN        NaN        NaN
-top     Cinnamon Toast Crunch    K  Cold         NaN        NaN        NaN         NaN  ...        NaN         NaN         NaN        NaN        NaN        NaN        NaN
-freq                        1   23    74         NaN        NaN        NaN         NaN  ...        NaN         NaN         NaN        NaN        NaN        NaN        NaN
-mean                      NaN  NaN   NaN  106.883117   2.545455   1.012987  159.675325  ...   6.948052   96.129870   28.246753   2.207792   1.029610   0.821039  42.665705
-std                       NaN  NaN   NaN   19.484119   1.094790   1.006473   83.832295  ...   4.403635   71.215823   22.342523   0.832524   0.150477   0.232716  14.047289
-min                       NaN  NaN   NaN   50.000000   1.000000   0.000000    0.000000  ...   0.000000    1.000000    0.000000   1.000000   0.500000   0.250000  18.042851
-25%                       NaN  NaN   NaN  100.000000   2.000000   0.000000  130.000000  ...   3.000000   40.000000   25.000000   1.000000   1.000000   0.670000  33.174094
-50%                       NaN  NaN   NaN  110.000000   3.000000   1.000000  180.000000  ...   7.000000   90.000000   25.000000   2.000000   1.000000   0.750000  40.400208
-75%                       NaN  NaN   NaN  110.000000   3.000000   2.000000  210.000000  ...  11.000000  120.000000   25.000000   3.000000   1.000000   1.000000  50.828392
-max                       NaN  NaN   NaN  160.000000   6.000000   5.000000  320.000000  ...  15.000000  330.000000  100.000000   3.000000   1.500000   1.500000  93.704912
+               name  mfr  type    calories    protein        fat      sodium  ...     sugars      potass    vitamins      shelf     weight       cups     rating
+count            77   77    77   77.000000  77.000000  77.000000   77.000000  ...  77.000000   77.000000   77.000000  77.000000  77.000000  77.000000  77.000000
+unique           77    7     2         NaN        NaN        NaN         NaN  ...        NaN         NaN         NaN        NaN        NaN        NaN        NaN
+top     Corn Flakes    K  Cold         NaN        NaN        NaN         NaN  ...        NaN         NaN         NaN        NaN        NaN        NaN        NaN
+freq              1   23    74         NaN        NaN        NaN         NaN  ...        NaN         NaN         NaN        NaN        NaN        NaN        NaN
+mean            NaN  NaN   NaN  106.883117   2.545455   1.012987  159.675325  ...   6.948052   96.129870   28.246753   2.207792   1.029610   0.821039  42.665705
+std             NaN  NaN   NaN   19.484119   1.094790   1.006473   83.832295  ...   4.403635   71.215823   22.342523   0.832524   0.150477   0.232716  14.047289
+min             NaN  NaN   NaN   50.000000   1.000000   0.000000    0.000000  ...   0.000000    1.000000    0.000000   1.000000   0.500000   0.250000  18.042851
+25%             NaN  NaN   NaN  100.000000   2.000000   0.000000  130.000000  ...   3.000000   40.000000   25.000000   1.000000   1.000000   0.670000  33.174094
+50%             NaN  NaN   NaN  110.000000   3.000000   1.000000  180.000000  ...   7.000000   90.000000   25.000000   2.000000   1.000000   0.750000  40.400208
+75%             NaN  NaN   NaN  110.000000   3.000000   2.000000  210.000000  ...  11.000000  120.000000   25.000000   3.000000   1.000000   1.000000  50.828392
+max             NaN  NaN   NaN  160.000000   6.000000   5.000000  320.000000  ...  15.000000  330.000000  100.000000   3.000000   1.500000   1.500000  93.704912
 
 [11 rows x 16 columns]
 ```
@@ -187,8 +188,8 @@ max                       NaN  NaN   NaN  160.000000   6.000000   5.000000  320.
 Notes:
 
 We can make changes to either limit how much is shown or include more
-statistics in the dataframe with the additional argument `include="all"`
-in the `describe` brackets.
+using describe. One useful argument is `include` and a value we can give
+to that is `all`.
 
 This expands the output so we get summary statistics for both
 categorical and numerical columns now.
@@ -233,14 +234,15 @@ dtype: float64
 
 Notes:
 
-We can also get single statistics of each column using: either
+We can also get single statistics of each column using functions like:
 `.mean()`,`.std()`, `.count()`, `.median()`, `.sum()`.
 
-First segregate the column we want to explore further, then add the
-verb.
+To do this, we first have to grab the column that we are interested in
+exploring, and then we add the verb.
 
-Here are some examples where we first calculate the mean of the ratings,
-the sum of the ratings and the median of the ratings.
+Here are some examples of things that we can calculate. First we
+calculate the mean of the ratings, then we calculate sum of the ratings,
+and finally the median of the ratings.
 
 ---
 

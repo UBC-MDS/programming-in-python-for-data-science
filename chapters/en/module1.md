@@ -382,7 +382,7 @@ Using my dataframe object named `fruit_salad`, let's answer some slicing questio
 
 
 **Question**    
-If you wanted all the rows and only columns `seeds`, `shape`, `sweetness` and  `water-content` what would your code look like using index labels?
+If you wanted all the rows and only columns `seeds`, `shape`, `sweetness` and  `water-content`, what would your code look like using index labels?
 
 <choice id="1" >
 <opt text='<code>fruit_salad.loc[:, "seed":"weight"]</code>'>
@@ -601,7 +601,7 @@ Here is our `fruit_salad` data again:
 
 
 **Question 1**
-If I wanted the rows `elderberry`  to `kiwi` and only columns `seeds`, `shape`, `sweetness` and  `water-content` what would my code look like if I was using index positions?
+If I wanted the rows `elderberry`  to `kiwi` and only columns `seeds`, `shape`, `sweetness` and  `water-content`, what would my code look like if I was using index positions?
 
 <choice id="1" >
 <opt text='<code>fruit_salad.iloc[4:9, 3:]</code>' correct="true">

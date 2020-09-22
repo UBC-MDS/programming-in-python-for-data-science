@@ -27,12 +27,13 @@ cereal.loc[63, 'calories']
 
 Notes:
 
-At this point of the module, we know how to get a subset of an existing
-dataframe but what if we just want to get a single value from it?
+At this point of the module, we now know how to get a subset of an
+existing dataframe, but what if we just want to get a single value from
+it?
 
-For example, what if I wanted to save the calorie content of `Shredded
-Wheat` by extracting it from the dataframe and not manually typing in
-the number?
+For example, what if we wanted to save the calorie content of `Shredded
+Wheat` by extracting it from the dataframe manually instead of typing
+the number in Python?
 
 To do this we use again our `.loc` notation and we specify the row we
 are targeting which is 63, followed by the column, here `calories`. This
@@ -65,8 +66,8 @@ Notes:
 What about if we want the rating of `Smacks` which is located at index
 66?
 
-Again we use `.loc[]`, specify the row and the column location separated
-by a comma.
+Again we use `.loc[]` notation, and we specify the row and the column
+location separated by a comma.
 
 So here we write `cereal.loc` and the inside the brackets we write `[66,
 'rating']`.
