@@ -22,9 +22,10 @@ Notes:
 Notes:
 
 Up until now, when we perform multiple actions on an object, we have
-been saving the results with the `=` operator after each line. Chaining
-allows us to do multiple actions in a single line of code without the
-need to save each action in an intermediate object.
+been saving the results with the `=` operator after each line.
+
+Chaining allows us to do multiple actions in a single line of code
+without the need to save each action in an intermediate object.
 
 You can imagine that we are linking verbs together with a chain.
 
@@ -39,8 +40,8 @@ manufacturer_column.value_counts()
 K    23
 G    22
 P     9
-R     8
 Q     8
+R     8
 N     6
 A     1
 Name: mfr, dtype: int64
@@ -54,8 +55,8 @@ cereal['mfr'].value_counts()
 K    23
 G    22
 P     9
-R     8
 Q     8
+R     8
 N     6
 A     1
 Name: mfr, dtype: int64
@@ -176,8 +177,8 @@ Notes:
 Although we have seen how chaining has advantages, it’s a coding style
 that is adopted by the person writing the code.
 
-Someone else (or more often, future you\!) must be able to understand
-what is being accomplished.
+Someone else (or more often, future you) must be able to understand what
+is being accomplished.
 
 This is why comments (`#`) are so important. If a lot is going on in
 your code, it’s a good habit to explain it whether it’s with chaining,

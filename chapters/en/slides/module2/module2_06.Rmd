@@ -74,7 +74,9 @@ When we load in our data we use different arguments to make sure it's organized 
 
 `delimiter` is an argument we have already discussed that instructs on how to separate each value in the data. 
 
-This is only the tip of the iceberg.  There are many others that are helpful when reading in our data, such as `index_col`, `header`, `nrows`, and `usecols`. 
+This is only the tip of the iceberg.  
+
+There are many others that are helpful when reading in our data, such as `index_col`, `header`, `nrows`, and `usecols`. 
 
 ---
 
@@ -94,12 +96,19 @@ df.head()
 
 
 Notes: 
-`index_col` is an argument that indicates which column will be acting as the index label. In most of the cases we have encountered, we did not use this argument and instead relied on the pandas default, which is to use ascending integers for the index.   
+`index_col` is an argument that indicates which column will be acting as the index label. 
 
-We can, however, specify a column in the data to become the index. It's in our best interest that the column we choose have unique values.   
+In most of the cases we have encountered, we did not use this argument and instead relied on the pandas default, which is to use ascending integers for the index.   
+
+We can, however, specify a column in the data to become the index.
+
+It's in our best interest that the column we choose have unique values.   
+
 For our `cereal.csv` let's specify the `name` column as our index. 
 
-The `index_col` argument also take in positions. The `name` column in our data is in the 0th position so we can also specify the index like we show here with `index_col=0`. 
+The `index_col` argument also take in positions. 
+
+The `name` column in our data is in the 0th position so we can also specify the index like we show here with `index_col=0`. 
 
 
 ---
@@ -111,7 +120,13 @@ The `index_col` argument also take in positions. The `name` column in our data i
 
 Notes:
 
-We have been lucky up until now that all the data we have loaded in has been particularly straightforward.  Sometimes with data, there are a few lines of text explaining important points about the file.  We do not want to include this in our dataframe and therefore we need to specify exactly when our dataframe begins.  This is where `header` comes in. 
+We have been lucky up until now that all the data we have loaded in has been particularly straightforward. 
+
+Sometimes with data, there are a few lines of text explaining important points about the file. 
+
+We do not want to include this in our dataframe and therefore we need to specify exactly when our dataframe begins.  
+
+This is where `header` comes in. 
   
 Take a look at <a href="https://github.com/UBC-MDS/MCL-DSCI-511-programming-in-python/blob/master/slides/candybars-h.csv" target="_blank">`candybars-h.csv` </a> as an example.
 
@@ -144,7 +159,7 @@ candybars
 
 Notes: 
 
-If We use `header=2` to indicate that the data actually begins at position 2, then things look much better.
+If we use `header=2` to indicate that the data actually begins at position 2, then things start to look much better.
 
 ---
 
@@ -160,7 +175,9 @@ Notes:
 
 `nrows` is an argument in `pd.read_csv()` that is useful when you only want to load in part of the dataframe. 
 
-Perhaps the file you have is large and you only want a sample of it.  `nrows` will limit the number of rows that you read in.
+Perhaps the file you have is large and you only want a sample of it.  
+
+`nrows` will limit the number of rows that you read in.
 
 This code loads in only the first 7 rows of our candybar dataset.
 
@@ -176,7 +193,11 @@ candybars
 
 Notes: 
 
-Similarly to how `nrows` specifies how many rows to read in, `usecols` selects which columns to load from the data.  Perhaps the only columns relevant to our analysis are the columns `name`, `weight` and `available_canada_america`.  We can forgo the other columns when reading the data in. 
+Similarly to how `nrows` specifies how many rows to read in, `usecols` selects which columns to load from the data.  
+
+Perhaps the only columns relevant to our analysis are the columns `name`, `weight` and `available_canada_america`. 
+
+We can forgo the other columns when reading the data in. 
 
 In a similar way to selecting columns using `.iloc[]`, we specify the desired column indices in square brackets.
 

@@ -202,9 +202,10 @@ dtype: float64
 Notes:
 
 We are not limited to simply taking a column and transforming it by a
-single number, say by multiplying or dividing. We can do operations
-involving multiple columns as well. Perhaps we wanted to know the amount
-of sugar (`sugar`) per cup of cereal (`cups`).
+single number, say by multiplying or dividing.
+
+We can do operations involving multiple columns as well. Perhaps we
+wanted to know the amount of sugar (`sugar`) per cup of cereal (`cups`).
 
 The expected result would look something like this diagram.
 

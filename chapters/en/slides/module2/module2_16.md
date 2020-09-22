@@ -168,8 +168,8 @@ Notes:
 We can filter categorical columns too. In this example, we only want
 cereals from the manufacturer “Q” (For Quaker):
 
-Here we are using the double equal sign operator that we saw in the last
-slide.
+Here, we are using the double equal sign operator that we saw in the
+last slide.
 
 ---
 
@@ -262,7 +262,7 @@ cereal[(cereal['protein'] >= 4) & (cereal['protein'] <= 5)]
 Notes:
 
 We can combine the two conditions using the `&` operator. This allows us
-to obtain cereals that meet both conditions.
+to obtain cereals that meet **both** conditions.
 
 The `&` indicates “and”. This means that both conditions must hold for a
 row to be included in the new dataframe.
@@ -280,8 +280,7 @@ separated.
 
 Notes:
 
-That means that only rows present in **both** dataframes will be
-selected.
+Only rows present in **both** dataframes will be selected.
 
 ---
 
@@ -348,8 +347,8 @@ other languages).
 
 Notes:
 
-This time, filtering using “or” resulted in 10 cereals that met either
-of the conditions.
+When we filter using “or” this time, it resulted in 10 cereals that met
+either of the conditions.
 
 When we filtered using “and”, only 1 cereal met both conditions.
 

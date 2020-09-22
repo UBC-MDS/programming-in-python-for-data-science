@@ -84,11 +84,11 @@ Notes:
 
 Let's build on the Altair skills we learned in the previous module. 
 
-At this point we are familiar with writing basic plotting code similar to what is shown here.
+At this point, we are familiar with writing basic plotting code similar to what is shown here.
 
-However it's important that we start specifying what kind of variable type we use for our `x` and `y` values with the `encode(..)` verb.
+However, it's important that we start specifying what kind of variable type we use for our `x` and `y` values with the `encode(..)` verb.
 
-Before, Altair would guess what type of data it was plotting.  Usually it's pretty smart and guesses correctly like we saw in our previous plots. But unfortunately this is not always the case. 
+Before, Altair would guess what type of data it was plotting.  Usually it's pretty smart and guesses correctly like we saw in our previous plots, but unfortunately this is not always the case. 
 
 ---
 
@@ -177,12 +177,12 @@ Altair recognizes the following column types and it's best practice that we spec
 
 Ordinal values imply that there is some natural ordering to the values. 
 
-For example, the ratings a movie receives is on an ordinal scale since a five star rating is better than a single star rating. 
+For example, the ratings of a a movie could be on an ordinal scale since a five star rating is better than a single star rating. 
 
 In contrast, there is no such natural ordering for nominal values. 
-An example of this would be someone's eye colour, their address or the university they attended.
+An example of this would be someone's eye colour, their country location or the university they attended.
 
-Anything numeric is  considered a `quantitative` variable and `time` or `date` values are considered as `temporal`.
+Anything numeric is considered a `quantitative` variable and `time` or `date` values are considered as `temporal`.
 
 
 ---
@@ -247,7 +247,9 @@ However, doing so gives us very little control over how exactly we would like to
 
 In order to have more control, we can map our x and y values using `x=alt.X(...)` and `y=alt.Y(...)` respectively. 
 
-This gives us a lot more control over the customization of our plot. You'll see this coming up. 
+This gives us a lot more control over the customization of our plot. 
+
+You'll see this coming up. 
 
 ---
 
@@ -274,7 +276,7 @@ Notes:
 
 Another type of plot we can make using Altair is called a **histogram**. 
 
-A histogram would be an ideal plot if we were interested in seeing how many cereals in our dataframe have calories within a certain range. A histogram is a `bar` chart where the height of each bar shows the frequency of something occurring. When applied to quantitative data, it groups the values into ***ranges**, and the height of each bar shows the frequency of each range. 
+A histogram would be an ideal plot if we were interested in seeing how many cereals in our dataframe have calories within a certain range. A histogram is a `bar` chart where the height of each bar shows the frequency of something occurring. When applied to quantitative data, it groups the values into **ranges**, and the height of each bar shows the frequency of each range. 
 
 We can generate a histogram plot of the `calories` values in the cereal dataframe, which is quantitative. This will enable us to see the various values of calories and how many times they occur. 
 
@@ -312,13 +314,13 @@ Notes:
 
 We have the ability to change the number of bars (bins) in our histogram by using the `bin` argument and the `alt.Bin()` verb.  
 
-Within `alt.Bin()` we can specify `maxbins` which is the maximum allowed number of bins in our plot. 
+Within `alt.Bin()`, we can specify `maxbins` which is the maximum allowed number of bins in our plot. 
 
 This may be useful when viewing a dataset with lots of different values. 
 
 Having control over the number of bins in a histogram can help to make visualization easier to extract insights from. 
 
-Here, we set the number of bins in the plot to `20` by setting `bin=alt.Bin(maxbins=20)` inside `alt.X()`.
+Here, we set the number of max bins in the plot to `20` by setting `bin=alt.Bin(maxbins=20)` inside `alt.X()`.
 
 ---
 
@@ -381,11 +383,11 @@ Before doing this, we need a few more tricks.
 
 We can start using the mean statistics we calculated from the `groupby(by='mfr')` object from the last section. 
 
-Here we seem to have lost our index column of numbers we usually have and it appears that `mfr` has now moved to the left of the dataframe with its label `mfr` lower than the other column labels.
+Here, we seem to have lost our index column of numbers that we usually have.  It also appears that `mfr` has now moved to the left of the dataframe with its label `mfr` lower than the other column labels.
 
 This is because when you apply `groupby()` to a column, the grouping column becomes the new dataframe index. 
 
-Although this is a useful feature in many cases, Altair cannot access the column names of index columns. 
+Although this is a useful feature in many cases, Altair cannot access the index column. 
 
 ---
 
@@ -485,7 +487,7 @@ The sort argument takes in either `x` or `y` to specify which axis to sort by.
 
 Here we are sorting in ascending order of which manufacturers have the largest mean sugar content. 
 
-This plot shows us immediately that cereals from manufacturer `P` have the highest mean sugar content.
+This plot shows us immediately that manufacturer `P` has the highest mean cereal sugar content.
 
 ---
 
@@ -531,7 +533,7 @@ Notes:
 
 # Let’s apply what we learned!
 
-Notes: <br<
+Notes: <br>
 
 <!-- We've added a title before, so there is nothing new there but adding x and y-axis labels is a little different. We can increase the label font sizes using the argument `fontsize`. In this case, we reference our initial plot and use the verb `.set_ylabel()` and `.set_xlabel()` with the desired axis label as an argument and `fontsize` to assign a desired label size.  -->
 <!-- To avoid unnecessary information that will be returned otherwise, whatever our last verb being used with our plot (named `sugar_plot) has to be reassigned back to the object. If we did this any other way, we would not have the ability to do more transformations on our plot, or we would get additional information with the plot output.  -->

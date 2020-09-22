@@ -40,12 +40,13 @@ to something more clear like “Quaker”.
 
 This leads us to our task:
 
-***Replace the `Q` manufacturer values with a new value of `Quaker`***
+***Replace the `Q` manufacturer values with a new value of `Quaker`.***
 
 ---
 
 ``` python
-cereal[cereal['mfr'] == 'Q'].assign(mfr = 'Quaker')
+q_cereal = cereal[cereal['mfr'] == 'Q']
+q_cereal.assign(mfr = 'Quaker')
 ```
 
 ```out
@@ -66,9 +67,9 @@ Our first instinct may be to first filter those rows using the technique
 we learned in our last section.
 
 From our new filtered selection, perhaps we could assign values of
-“Quaker” to column `mfr` using similar code this.
+“Quaker” to column `mfr` using similar code to this.
 
-The output looks like it did what we wanted but what happened to the
+The output looks like it did what we wanted, but what happened to the
 rest of our dataframe?
 
 Remember that we only want to replace the values in our existing
@@ -126,7 +127,7 @@ rows of the dataframe, it can filter on conditions too.
 
 We are used to seeing code involving `.loc[]` like this.
 
-But we’ll now get introduced to a new side of it when we use it to
+But now we’ll get introduced to a new side of it when we use it to
 filter as well.
 
 We can use the same syntax, `cereal['mfr'] == 'Q'`, we normally would
@@ -322,7 +323,7 @@ specify a column.
 
 ---
 
-# Replacing with inequalities.
+# Replacing with inequalities
 
 ``` python
 cereal.loc[cereal['protein'] >= 3, 'protein_level']  = 'high' 

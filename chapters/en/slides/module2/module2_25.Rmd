@@ -71,7 +71,7 @@ Perhaps the question we want to answer from the cereal dataset is:
 
 _*Which manufacturer has the highest mean sugar content?*_
 
-We found in Module 1 using `.value_counts()` that there are 7 different manufacturers; "K", "G", "P", "R", "Q", "N" and "A".
+We found in Module 1 using `.value_counts()` that there are 7 different manufacturers; K, G, P, R, Q, N and A.
 
 ---
 
@@ -209,6 +209,9 @@ Similarly to how we made frequency tables using `.value_counts()`, we can now us
 mfr_group.mean()
 ```
 
+```{python}
+mfr_group.max()
+```
 
 
 Notes: 
@@ -225,7 +228,7 @@ Using `.mean()` on our groupby object answers the initial question and confirms 
 
 See how convenient this was to do in comparison to our initial method?  Not only does this give us the result quicker, but it also gives us the mean of each column of the dataframe. 
 
-Think of how many filtering and mean calculations would have to be done if we were to do this using our initial approach      
+Think of how many filtering and mean calculations would have to be done if we were to do this using our initial approach.  
 
 Of course, using groups is not limited to finding only the mean. We can do the same thing for other statistics too like `.min()` and `.max()`, or many other operations.
 
@@ -245,7 +248,7 @@ Notes:
 
 In situations where we want to collect multiple statistics together, we can aggregate them in one step using a verb called `.agg()`.
 
-`.agg()` can be used on its own using a single measurement, without groupby.
+`.agg()` can be used on its own using a single measurement, without `.groupby()`.
 
 Using `.agg()` with only a `mean` input is essentially the same thing as calling the statistic `mean()` on the dataframe.
 
@@ -311,7 +314,7 @@ Let's say we are concerned about the `max` and `min` calorie values, the total `
 
 We can achieve this by wrapping everything in curly brackets and using a colon to separate the column name from the statistics values. We need to put the statistics within square brackets. 
 
-The code is complicated, but the result is a bit easier to read. 
+The code is a bit more complicated, but the result is a bit easier to read. 
 
 ---
 

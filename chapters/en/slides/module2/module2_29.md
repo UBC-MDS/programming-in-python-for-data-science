@@ -24,24 +24,24 @@ Notes:
 
 Let’s build on the Altair skills we learned in the previous module.
 
-At this point we are familiar with writing basic plotting code similar
+At this point, we are familiar with writing basic plotting code similar
 to what is shown here.
 
-However it’s important that we start specifying what kind of variable
+However, it’s important that we start specifying what kind of variable
 type we use for our `x` and `y` values with the `encode(..)` verb.
 
 Before, Altair would guess what type of data it was plotting. Usually
 it’s pretty smart and guesses correctly like we saw in our previous
-plots. But unfortunately this is not always the case.
+plots, but unfortunately this is not always the case.
 
 ---
 
 ``` python
 
 chart1 = alt.Chart(cereal_modified, width=500, height=300).mark_circle().encode(
-    x='mfr', 
-    y='calories'
-).properties(title="Scatter plot of manufacturer calorie content")
+                   x='mfr', 
+                   y='calories'
+         ).properties(title="Scatter plot of manufacturer calorie content")
 
 chart1
 ```
@@ -69,9 +69,9 @@ important we specify the data type when plotting.
 
 ``` python
 chart2 = alt.Chart(cereal_modified, width=500, height=300).mark_circle().encode(
-    x='mfr:N', 
-    y='calories:Q'
-).properties(title="Scatter plot of manufacturer calorie content")
+                   x='mfr:N', 
+                   y='calories:Q'
+                  ).properties(title="Scatter plot of manufacturer calorie content")
 
 chart2
 ```
@@ -103,12 +103,12 @@ we specify this when we plot going forward.
 
 Ordinal values imply that there is some natural ordering to the values.
 
-For example, the ratings a movie receives is on an ordinal scale since a
-five star rating is better than a single star rating.
+For example, the ratings of a a movie could be on an ordinal scale since
+a five star rating is better than a single star rating.
 
 In contrast, there is no such natural ordering for nominal values. An
-example of this would be someone’s eye colour, their address or the
-university they attended.
+example of this would be someone’s eye colour, their country location or
+the university they attended.
 
 Anything numeric is considered a `quantitative` variable and `time` or
 `date` values are considered as `temporal`.
@@ -117,9 +117,9 @@ Anything numeric is considered a `quantitative` variable and `time` or
 
 ``` python
 chart3 = alt.Chart(cereal, width=500, height=300).mark_circle().encode(
-    x='sugars:Q',  # set the sugars column as quantitative
-    y='rating:Q'   # set the rating column as quantitative
-).properties(title="Scatter plot of cereal rating vs sugar content")
+                   x='sugars:Q',  # set the sugars column as quantitative
+                   y='rating:Q'   # set the rating column as quantitative
+         ).properties(title="Scatter plot of cereal rating vs sugar content")
 
 chart3
 ```
@@ -145,9 +145,9 @@ Here, `sugars` and `rating` are both quantitative columns so we specify
 
 ``` python
 chart4 = alt.Chart(cereal, width=500, height=300).mark_circle().encode(
-    x=alt.X('sugars:Q'), # use alt.X() to map the x-axis
-    y=alt.Y('rating:Q')  # use alt.Y() to map the y-axis
-).properties(title="Scatter plot of cereal rating vs sugar content")
+                   x=alt.X('sugars:Q'), # use alt.X() to map the x-axis
+                   y=alt.Y('rating:Q')  # use alt.Y() to map the y-axis
+         ).properties(title="Scatter plot of cereal rating vs sugar content")
 
 chart4
 ```
@@ -165,6 +165,7 @@ In order to have more control, we can map our x and y values using
 `x=alt.X(...)` and `y=alt.Y(...)` respectively.
 
 This gives us a lot more control over the customization of our plot.
+
 You’ll see this coming up.
 
 ---
@@ -173,9 +174,9 @@ You’ll see this coming up.
 
 ``` python
 chart5 = alt.Chart(cereal, width=500, height=300).mark_bar().encode(
-    x=alt.X('calories:Q', bin=True), # set x-axis as calories 
-    y=alt.Y('count():Q')             # set the y-axis as the occurrence count for each calorie value
-).properties(title="Histogram plot of cereal calorie content")
+                   x=alt.X('calories:Q', bin=True), # set x-axis as calories 
+                   y=alt.Y('count():Q')             # set the y-axis as the occurrence count for each calorie value
+         ).properties(title="Histogram plot of cereal calorie content")
 chart5
 ```
 <img src="/module2/chart5.png" alt="A caption" width="60%" />
@@ -188,8 +189,8 @@ A histogram would be an ideal plot if we were interested in seeing how
 many cereals in our dataframe have calories within a certain range. A
 histogram is a `bar` chart where the height of each bar shows the
 frequency of something occurring. When applied to quantitative data, it
-groups the values into \***ranges**, and the height of each bar shows
-the frequency of each range.
+groups the values into **ranges**, and the height of each bar shows the
+frequency of each range.
 
 We can generate a histogram plot of the `calories` values in the cereal
 dataframe, which is quantitative. This will enable us to see the various
@@ -210,9 +211,9 @@ charts.
 
 ``` python
 chart6 = alt.Chart(cereal, width=500, height=300).mark_bar().encode(
-    x=alt.X('calories:Q', bin=alt.Bin(maxbins=20)), # set max number of bins to 20
-    y=alt.Y('count():Q')
-).properties(title="Histogram of cereal calorie content with bins = 20")
+                   x=alt.X('calories:Q', bin=alt.Bin(maxbins=20)), # set max number of bins to 20
+                   y=alt.Y('count():Q')
+         ).properties(title="Histogram of cereal calorie content with bins = 20")
 chart6
 ```
 <img src="/module2/chart6.png" alt="A caption" width="60%" />
@@ -222,15 +223,15 @@ Notes:
 We have the ability to change the number of bars (bins) in our histogram
 by using the `bin` argument and the `alt.Bin()` verb.
 
-Within `alt.Bin()` we can specify `maxbins` which is the maximum allowed
-number of bins in our plot.
+Within `alt.Bin()`, we can specify `maxbins` which is the maximum
+allowed number of bins in our plot.
 
 This may be useful when viewing a dataset with lots of different values.
 
 Having control over the number of bins in a histogram can help to make
 visualization easier to extract insights from.
 
-Here, we set the number of bins in the plot to `20` by setting
+Here, we set the number of max bins in the plot to `20` by setting
 `bin=alt.Bin(maxbins=20)` inside `alt.X()`.
 
 ---
@@ -252,9 +253,9 @@ Luckily Altair allows us to customize our axis labels.
 
 ``` python
 chart7 = alt.Chart(cereal, width=500, height=300).mark_bar().encode(
-    x=alt.X('calories:Q', bin=alt.Bin(maxbins=20), title="Calorie Content"), # use alt.X() to label the x-axis
-    y=alt.Y('count():Q', title="Number of Cereals")                          # use alt.Y() to label the y-axis
-).properties(title="Histogram plot of cereal calorie content")
+                   x=alt.X('calories:Q', bin=alt.Bin(maxbins=20), title="Calorie Content"), # use alt.X() to label the x-axis
+                   y=alt.Y('count():Q', title="Number of Cereals")                          # use alt.Y() to label the y-axis
+        ).properties(title="Histogram plot of cereal calorie content")
 chart7
 ```
 <img src="/module2/chart7.png" alt="A caption" width="60%" />
@@ -300,15 +301,15 @@ Before doing this, we need a few more tricks.
 We can start using the mean statistics we calculated from the
 `groupby(by='mfr')` object from the last section.
 
-Here we seem to have lost our index column of numbers we usually have
-and it appears that `mfr` has now moved to the left of the dataframe
-with its label `mfr` lower than the other column labels.
+Here, we seem to have lost our index column of numbers that we usually
+have. It also appears that `mfr` has now moved to the left of the
+dataframe with its label `mfr` lower than the other column labels.
 
 This is because when you apply `groupby()` to a column, the grouping
 column becomes the new dataframe index.
 
 Although this is a useful feature in many cases, Altair cannot access
-the column names of index columns.
+the index column.
 
 ---
 
@@ -356,9 +357,9 @@ integers has returned on the left\!
 
 ``` python
 chart8 = alt.Chart(mfr_mean, width=500, height=300).mark_bar().encode(
-    x=alt.X('mfr:N', title="Manufacturer"),
-    y=alt.Y('sugars:Q', title="Mean sugar content")
-).properties(title="Bar plot of manufacturers mean sugar content")
+                   x=alt.X('mfr:N', title="Manufacturer"),
+                   y=alt.Y('sugars:Q', title="Mean sugar content")
+         ).properties(title="Bar plot of manufacturers mean sugar content")
 chart8
 ```
 <img src="/module2/chart8.png" alt="A caption" width="60%" />
@@ -396,9 +397,9 @@ generated a bar plot using Altair.
 
 ``` python
 chart9 = alt.Chart(mfr_mean, width=500, height=300).mark_bar().encode(
-    x=alt.X('mfr:N', sort="y", title="Manufacturer"),  # use sort="y" to sort in ascending order
-    y=alt.Y('sugars:Q', title="Mean sugar content")
-).properties(title="Bar plot of manufacturers mean sugar content sorted in ascending order")
+                   x=alt.X('mfr:N', sort="y", title="Manufacturer"),  # use sort="y" to sort in ascending order
+                   y=alt.Y('sugars:Q', title="Mean sugar content")
+        ).properties(title="Bar plot of manufacturers mean sugar content in ascending order")
 chart9
 ```
 <img src="/module2/chart9.png" alt="A caption" width="60%" />
@@ -423,8 +424,8 @@ sort by.
 Here we are sorting in ascending order of which manufacturers have the
 largest mean sugar content.
 
-This plot shows us immediately that cereals from manufacturer `P` have
-the highest mean sugar content.
+This plot shows us immediately that manufacturer `P` has the highest
+mean cereal sugar content.
 
 ---
 
@@ -466,7 +467,7 @@ Notes:
 
 # Let’s apply what we learned\!
 
-Notes: \<br\<
+Notes: <br>
 
 <!-- We've added a title before, so there is nothing new there but adding x and y-axis labels is a little different. We can increase the label font sizes using the argument `fontsize`. In this case, we reference our initial plot and use the verb `.set_ylabel()` and `.set_xlabel()` with the desired axis label as an argument and `fontsize` to assign a desired label size.  -->
 

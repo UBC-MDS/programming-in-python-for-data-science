@@ -20,15 +20,18 @@ including:
 Notes:
 
 In the last module, we learned how to read in a `csv` file but loading
-in data is not restricted to this file type.  
-there are several types such as: - A URL: If the data is stored publicly
-on a webpage, pandas can read it directly in from the page address. - A
-`txt` file: We saw what a plain text file looked like in the last module
-and it is generally a simple manner of storing data.  
-\- An `xlsx` file: This is a Microsoft Excel spreadsheet. This is
-different than a regular `csv` file as an Excel file can contain many
-different sheets and can be formatted uniquely and specifically for an
-individual’s needs.
+in data is not restricted to this file type.
+
+There are several types such as:
+
+  - A URL: If the data is stored publicly on a webpage, pandas can read
+    it directly in from the page address.
+  - A `txt` file: We saw what a plain text file looked like in the last
+    module and it is generally a simple manner of storing data.  
+  - An `xlsx` file: This is a Microsoft Excel spreadsheet. This is
+    different than a regular `csv` file as an Excel file can contain
+    many different sheets and can be formatted uniquely and specifically
+    for an individual’s needs.
 
 Of course, there are many other file types but we will focus on these
 for this course.
@@ -113,16 +116,26 @@ candybars.head()
 
 Notes:
 
-Reading in `txt` files can be a little less standard. Sometimes the
-character separating column values are not always commas like we saw
-before There are many different options and when we read in the data, we
-need to specify how the data should be recognized.  
-Let’s load in the `candybars-text.txt` file. This is the same as the
-`candybars.csv` data but saved as a `txt` file. Look what happens when
-we load it in using the same syntax we are used to.
+Reading in `txt` files can be a little less standard.
 
-This is not ideal. What you should notice is instead of each column
-value being separated by a comma, it is now separated by `\t`.  
+Sometimes the character separating column values are not always commas
+like we saw before.
+
+There are many different options and when we read in the data, we need
+to specify how the data should be recognized.
+
+Let’s load in the `candybars-text.txt` file.
+
+This is the same as the `candybars.csv` data but saved as a `txt` file.
+
+Look what happens when we load it in using the same syntax we are used
+to.
+
+This is not ideal.
+
+What you should notice is instead of each column value being separated
+by a comma, it is now separated by `\t`.
+
 This is called the **delimiter**.
 
 In this specific case, a `\t` delimiter is a “tab”.
@@ -165,8 +178,9 @@ Notes:
 
 Excel files need special attention because they give the user the
 capability of additional formatting including saving multiple dataframes
-on different “sheets” within a single file. If this is the case, we need
-to specify which sheet we want.
+on different “sheets” within a single file.
+
+If this is the case, we need to specify which sheet we want.
 
 Since this is a new type of animal, we also need a new verb. Enter
 `read_excel()`.
@@ -191,11 +205,14 @@ This translates to the syntax `data/canucks.csv`.
 Notes:
 
 Something you have seen in Module 1’s exercises is that when reading in
-the data there is always a `data/` before the file name.  
+the data there is always a `data/` before the file name.
+
 This is because we are running the current code in a file that is
-located in a different folder than the data.  
-The `data` is specifying a folder in our current directory (folder). We
-need to specify the path to the `csv` file through the subdirectory.
+located in a different folder than the data.
+
+The `data` is specifying a folder in our current directory (folder).
+
+We need to specify the path to the `csv` file through the subdirectory.
 
 This translates to the syntax `data/canucks.csv`.
 
@@ -213,9 +230,11 @@ This translates to the syntax `data/canucks.csv`.
 
 </center>
 
-Notes: This syntax is not restricted to a single subdirectory and could
-even have multiple folders between the current location and the final
-file name.
+Notes:
+
+This syntax is not restricted to a single subdirectory and could even
+have multiple folders between the current location and the final file
+name.
 
 ---
 

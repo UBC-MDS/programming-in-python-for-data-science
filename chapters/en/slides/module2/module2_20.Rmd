@@ -78,13 +78,14 @@ In the dataframe, the manufacturer value "Q" isn't that informative and it might
 
 This leads us to our task:    
 
-***Replace the `Q` manufacturer values with a new value of `Quaker`***
+***Replace the `Q` manufacturer values with a new value of `Quaker`.***
 
 ---
 
 
 ```{python}
-cereal[cereal['mfr'] == 'Q'].assign(mfr = 'Quaker')
+q_cereal = cereal[cereal['mfr'] == 'Q']
+q_cereal.assign(mfr = 'Quaker')
 ```
 
 
@@ -94,9 +95,9 @@ Notes:
 
 Our first instinct may be to first filter those rows using the technique we learned in our last section.  
 
-From our new filtered selection, perhaps we could assign values of "Quaker" to column `mfr` using similar code this.
+From our new filtered selection, perhaps we could assign values of "Quaker" to column `mfr` using similar code to this.
 
-The output looks like it did what we wanted but what happened to the rest of our dataframe? 
+The output looks like it did what we wanted, but what happened to the rest of our dataframe? 
 
 Remember that we only want to replace the values in our existing dataframe and not create a new one. 
 
@@ -132,7 +133,7 @@ Similarly, to how `.loc[]` can select and return specified columns and rows of t
 
 We are used to seeing code involving `.loc[]` like this.
 
-But we'll now get introduced to a new side of it when we use it to filter as well. 
+But now we'll get introduced to a new side of it when we use it to filter as well. 
 
 We can use the same syntax, `cereal['mfr'] == 'Q'`, we normally would when filtering. However, this time we wrap the whole thing within `.loc[]`.
 

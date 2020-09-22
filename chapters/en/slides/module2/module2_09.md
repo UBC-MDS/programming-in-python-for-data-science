@@ -32,8 +32,9 @@ candy
 
 Notes:
 
-Remember our `candybars.csv` dataframe? Let’s bring it back and save it
-as object named `candy`.
+Remember our `candybars.csv` dataframe?
+
+Let’s bring it back and save it as object named `candy`.
 
 ---
 
@@ -66,19 +67,23 @@ candy
 Notes:
 
 There will be times where you are unsatisfied with the column names and
-you may want to change them. The proper syntax to do that is with
-`.rename()`.
+you may want to change them.
 
-The column name `available_canada_america` is a bit long. Perhaps it
-would be a good idea to change it to something shorter like
+The proper syntax to do that is with `.rename()`.
+
+The column name `available_canada_america` is a bit long.
+
+Perhaps it would be a good idea to change it to something shorter like
 `availability`.
 
 Here is how we can accomplish that.
 
-This code uses something we’ve never seen before - {} curly braces, also
-called curly brackets. These have a special meaning but for now, you
-only need to concentrate your attention on the fact that the argument
-`columns` needs to have the format shown on the slide.
+This code uses something we’ve never seen before - `{}` curly braces,
+also called curly brackets.
+
+These have a special meaning but for now, you only need to concentrate
+your attention on the fact that the argument `columns` needs to have the
+format shown on the slide.
 
 ---
 
@@ -141,8 +146,6 @@ argument of the `drop` verb.
 candy.drop(columns='coconut')
 ```
 
-<br>
-
 ``` python
 candy.head()
 ```
@@ -177,7 +180,9 @@ over the dataframe object, so the dataframe `candy` still will contain
 the `coconut` column.
 
 Let’s overwrite the dataframe and remove multiple columns at the same
-time. Let’s drop `nougat` and `coconut` together.
+time.
+
+Let’s drop `nougat` and `coconut` together.
 
 We put the columns we want to drop in square brackets and this time we
 will remember to overwrite over the `candy` object.

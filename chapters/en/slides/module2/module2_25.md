@@ -36,7 +36,7 @@ Perhaps the question we want to answer from the cereal dataset is:
 *_Which manufacturer has the highest mean sugar content?_*
 
 We found in Module 1 using `.value_counts()` that there are 7 different
-manufacturers; “K”, “G”, “P”, “R”, “Q”, “N” and “A”.
+manufacturers; K, G, P, R, Q, N and A.
 
 ---
 
@@ -86,7 +86,7 @@ mfr_group
 ```
 
 ```out
-<pandas.core.groupby.generic.DataFrameGroupBy object at 0x110e5d520>
+<pandas.core.groupby.generic.DataFrameGroupBy object at 0x12152dd60>
 ```
 
 Notes:
@@ -241,6 +241,22 @@ Q     95.000000  2.625000  1.750000   92.500000  1.337500  10.250000  5.500000  
 R    115.000000  2.500000  1.250000  198.125000  1.875000  17.625000  6.125000   89.500000  25.000000  2.000000  1.000000  0.871250  41.542997
 ```
 
+``` python
+mfr_group.max()
+```
+
+```out
+                        name  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
+mfr                                                                                                                                       
+A                      Maypo   Hot       100        4    1       0    0.0   16.0       3      95        25      2    1.00  1.00  54.850917
+G        Wheaties Honey Gold  Cold       140        6    3     290    4.0   21.0      14     230       100      3    1.50  1.50  51.592193
+K                  Special K  Cold       160        6    3     320   14.0   22.0      15     330       100      3    1.50  1.00  93.704912
+N    Strawberry Fruit Wheats   Hot       100        4    1     130   10.0   21.0       6     280        25      3    1.00  1.00  74.472949
+P      Post Nat. Raisin Bran  Cold       120        3    3     210    6.0   17.0      15     260        25      3    1.33  1.33  53.371007
+Q             Quaker Oatmeal   Hot       120        5    5     220    2.7   14.0      12     135        25      3    1.00  1.00  63.005645
+R                 Wheat Chex  Cold       150        4    3     280    4.0   23.0      11     170        25      3    1.00  1.13  49.787445
+```
+
 Notes:
 
 What now?
@@ -262,7 +278,7 @@ Not only does this give us the result quicker, but it also gives us the
 mean of each column of the dataframe.
 
 Think of how many filtering and mean calculations would have to be done
-if we were to do this using our initial approach
+if we were to do this using our initial approach.
 
 Of course, using groups is not limited to finding only the mean. We can
 do the same thing for other statistics too like `.min()` and `.max()`,
@@ -312,7 +328,7 @@ In situations where we want to collect multiple statistics together, we
 can aggregate them in one step using a verb called `.agg()`.
 
 `.agg()` can be used on its own using a single measurement, without
-groupby.
+`.groupby()`.
 
 Using `.agg()` with only a `mean` input is essentially the same thing as
 calling the statistic `mean()` on the dataframe.
@@ -417,7 +433,8 @@ We can achieve this by wrapping everything in curly brackets and using a
 colon to separate the column name from the statistics values. We need to
 put the statistics within square brackets.
 
-The code is complicated, but the result is a bit easier to read.
+The code is a bit more complicated, but the result is a bit easier to
+read.
 
 ---
 
