@@ -57,7 +57,7 @@ cereal.sort_values(by='rating')
 
 Notes:
 
-When we load in our data, it is generally ordered in the same way it is stored. 
+When we read in our data, it is generally ordered in the same way it is stored. 
 
 We can easily sort the rows of a dataframe based on the values within a column.
 

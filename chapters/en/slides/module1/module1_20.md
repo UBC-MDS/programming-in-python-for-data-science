@@ -39,7 +39,7 @@ and row ***labels*** using `.loc[]`.
 Slicing can also be done by the location position of each row with
 `.iloc[]`.
 
-`.iloc[]` is very similar to `loc[]`, however, the “i” in `iloc` refers
+`.iloc[]` is very similar to `.loc[]`, however, the “i” in `iloc` refers
 to the index ***integer*** position.
 
 We are going to return to our cereal dataset and take a look at the
@@ -215,8 +215,8 @@ upper bound `fat` is located at position 5.
 The same would apply if we only wanted certain rows with certain
 columns.
 
-Both of our upper bound have been compensated with + 1 to make sure they
-are included in the new dataframe.
+Both of our upper bound have been compensated with an added 1 to make
+sure they are included in the new dataframe.
 
 ---
 
@@ -269,7 +269,7 @@ Perhaps you only want the first 3 rows of your data.
 We can use `.head(3)` or we can use `.iloc()`.
 
 Since we are indicating the beginning of the dataframe, we can omit the
-upper bound `0` just like we did we we learned slicing with `.loc[]`.
+upper bound `0` just like we did when we learned slicing with `.loc[]`.
 
 ---
 
@@ -313,7 +313,8 @@ your rows from the bottom with a negative in front of the number of rows
 you want.
 
 This example takes the first 3 rows of the **bottom** of the dataframe.
-since we are collecting data to the end of the dataframe, we do not need
+
+Since we are collecting data to the end of the dataframe, we do not need
 to include the ending row index number.
 
 ---
@@ -383,9 +384,9 @@ cereal.head(10)
 
 Notes:
 
-Selecting using `iloc` is done identically to `loc`, however, the items
-within each set of square brackets **MUST** be integers, and not in
-quotation marks.
+Selecting using `.iloc[]` is done identically to `.loc[]`, however, the
+items within each set of square brackets **MUST** be integers, and not
+in quotation marks.
 
 Let’s say we want the rows `Almond Delight`, `Basic 4` and `Apple Jacks`
 with the columns `name`, `calories`, `fat` and `type` *in that order*.

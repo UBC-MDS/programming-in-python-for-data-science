@@ -39,7 +39,7 @@ pretty quickly and with little code\!
 Take the `cereal` object we analyzed in the last slide deck.
 
 Let say we are interested in the `manufacturer` column. It would be
-great to express the frequency of each expressed as a bar chart.
+great to express the frequencies of the manufacturers as a bar chart.
 
 But how do we do it?
 

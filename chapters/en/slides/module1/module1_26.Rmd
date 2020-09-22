@@ -52,18 +52,17 @@ cereal.head(15)
 
 Notes: 
 
-Now we've learned about how to get our dataframe how we want it, let's try have  some fun with it!
+Now we've learned about how to get our dataframe how we want it, let's try have some fun with it!
 
 We have our data, now what? 
 
-We usually like to learn from it. We want to find out about maybe some summary statistics about the features of the data. 
+We usually like to learn from it. We want to find out about some summary statistics about the data. 
 
-Let's load in our cereal dataset again. 
+First let's load in our cereal dataset again. 
 
 ---
 
 ## Numerical and Categorical Columns 
-
 
 
 ### Categorical data

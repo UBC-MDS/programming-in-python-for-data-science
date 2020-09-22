@@ -57,7 +57,7 @@ cereal.loc[63, 'calories']
 
 Notes: 
 
-At this point of the module, we now know how to get a subset of an existing dataframe but what if we just want to get a single value from it?
+At this point of the module, we know how to get a subset of an existing dataframe but what if we just want to get a single value from it?
 
 For example, what if I wanted to save the calorie content of `Shredded Wheat` by extracting it from the dataframe and not manually typing in the number?
 

@@ -64,7 +64,6 @@ Notes:
 Before we explain what a frequency table is, you must know what frequency means first. 
 
 _*Frequency*_ is simply put, the number of times a value occurs within the data. For example, let's say we have a sample of our candybars data. 
-For example, let's say we have a sample of our candybars data. 
 
 If we count the number of times the value `Both` appears in the `available_canada_america` column, we get 3 times. This is the frequency of the value `both`.  
 
@@ -91,7 +90,7 @@ Notes:
 
 If we want to get a frequency table of a categorical column, there are a few steps that need to be followed. 
 
-Up until now,  we discussed getting a single column from a dataframe using double brackets - `df[['column name']]`. 
+Up until now, we discussed getting a single column from a dataframe using double brackets - `df[['column name']]`. 
 
 For frequency tables, however, we only use single brackets to obtain the column values.
 
@@ -126,7 +125,7 @@ Detailed traceback:
 
 Notes: 
 
-If we used double square brackets with `pd.value_counts()` we would get an error that looks like this so it's important to take care with using the correct number of square brackets.
+If we used double square brackets with `pd.value_counts()` we would get an error so it's important to take care with using the correct number of square brackets.
 
 ---
 
@@ -139,7 +138,7 @@ mfr_freq.to_csv('mfr_frequency.csv', index=False)
 
 Notes: 
 
-Sometimes it's useful to save a new dataframe as a `csv` file for future use or to use in another application.
+Sometimes it's useful to save a new dataframe as a csv file for future use or to use in another application.
 
 We can save dataframes using the method `.to_csv()`. 
 

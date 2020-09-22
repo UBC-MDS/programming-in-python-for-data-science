@@ -31,8 +31,8 @@ cereal_mini
 
 ```out
 Both       3
-Canada     2
 America    2
+Canada     2
 Name: available_canada_america, dtype: int64
 ```
 
@@ -43,7 +43,6 @@ frequency means first.
 
 *_Frequency_* is simply put, the number of times a value occurs within
 the data. For example, let’s say we have a sample of our candybars data.
-For example, let’s say we have a sample of our candybars data.
 
 If we count the number of times the value `Both` appears in the
 `available_canada_america` column, we get 3 times. This is the frequency
@@ -149,8 +148,8 @@ Detailed traceback:
 Notes:
 
 If we used double square brackets with `pd.value_counts()` we would get
-an error that looks like this so it’s important to take care with using
-the correct number of square brackets.
+an error so it’s important to take care with using the correct number of
+square brackets.
 
 ---
 
@@ -162,7 +161,7 @@ mfr_freq.to_csv('mfr_frequency.csv', index=False)
 
 Notes:
 
-Sometimes it’s useful to save a new dataframe as a `csv` file for future
+Sometimes it’s useful to save a new dataframe as a csv file for future
 use or to use in another application.
 
 We can save dataframes using the method `.to_csv()`.

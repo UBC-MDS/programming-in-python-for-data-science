@@ -46,8 +46,9 @@ could use the syntax:
 
 `cereal.loc[:, ['type']]`
 
-This seems a bit long winded and since we do this type of thing often
-pandas has provided a quicker syntax to use to do the same thing.
+This seems a bit long winded and since we do this type of thing often.
+Luckily, Pandas has provided a quicker syntax to use to do the same
+thing.
 
 ---
 
@@ -80,9 +81,9 @@ cereal[['type']]
 
 Notes:
 
-Instead we can selecting a single column can be done without using
-`.loc[]` and we can just specify the dataframe name, followed by double
-square brackets containing the column of interest.
+Instead, selecting a single column can be done without using `.loc[]`
+and we can just specify the dataframe name, followed by double square
+brackets containing the column of interest.
 
 That makes the syntax for selecting the column `type` from the `cereal`
 dataframe:

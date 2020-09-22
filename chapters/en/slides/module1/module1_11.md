@@ -94,8 +94,8 @@ Notes:
 
   - We can read `:` as **“to”**.
 
-  - And finally, if the indices are labelled with numbers, we do not
-    need “quotations” when calling them.
+  - And finally, if the row index is labelled with numbers, we do not
+    need “quotations” when slicing.
 
 ---
 
