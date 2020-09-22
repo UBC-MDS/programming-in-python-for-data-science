@@ -36,7 +36,8 @@ Notes:
 What happens now if we wanted all the rows of the dataframe but only the
 columns `calories` to `fiber`?
 
-We can use `:` to indicate from “end” to “end” for our rows rows:
+We can use `:` in the row postion of the `.loc[]` call to indicate we
+want all the rows. So here we write `cereal.loc[:, 'calories':'fiber']`.
 
 ---
 
@@ -74,17 +75,19 @@ df.loc[:, 'column name start':'column name end']
 
   - We can read `:` as **“to”**.
 
-  - If the indices are labelled with numbers, we do not need
-    “quotations” when calling them.
+  - If the indices are labeled with numbers, we do not need “quotations”
+    when calling them. This is only when the labels are using letters.
 
 Notes:
+
+Let’s talk about what we have covered so far.
 
   - `.loc[]` is used to slice columns and rows by **label** and within
     an interval.
 
   - We always specify **row** indexing first, then **columns**.
 
-  - If we aren’t slicing any columns, but we are slicing rows we only
+  - If we are not slicing any columns, but we are slicing rows we only
     need to specify the row labels.
 
   - However, the reverse is not true. If we want all the rows with only
@@ -94,7 +97,7 @@ Notes:
 
   - We can read `:` as **“to”**.
 
-  - And finally, if the row index is labelled with numbers, we do not
+  - And finally, if the row index is labeled with numbers, we do not
     need “quotations” when slicing.
 
 ---

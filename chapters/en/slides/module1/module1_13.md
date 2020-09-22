@@ -80,7 +80,7 @@ And the columns:
 How would we obtain them?
 
 We need to specify each column and row label that we want between square
-brackets `[]`, that follow `.loc[]` and we separated the items that we
+brackets `[]`, that follow `.loc[]` and we separate the items that we
 list in the square brackets with commas.
 
 What if we wanted the rows to be in the order `Wheaties` (75), `Trix`
@@ -89,8 +89,8 @@ What if we wanted the rows to be in the order `Wheaties` (75), `Trix`
 
 How would we obtain that?
 
-We would just have to rearranging the order you target your rows and
-columns.
+We would just have to rearranging the order in which we list our rows
+and columns.
 
 ---
 

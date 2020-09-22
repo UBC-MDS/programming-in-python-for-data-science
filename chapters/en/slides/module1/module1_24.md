@@ -41,10 +41,10 @@ stored.
 We can easily sort the rows of a dataframe based on the values within a
 column.
 
-The verb for that? `.sort_values()`.
+The verb that we use for that is `.sort_values()`.
 
 For example, if we wanted to order the cereals based on rating, we could
-do so using the argument `by` within the `.sort_values()` verb.
+do so by using the argument `by` within the `.sort_values()` verb.
 
 This allows us to see the cereals with lower ratings on the top.
 

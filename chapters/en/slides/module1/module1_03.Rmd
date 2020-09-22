@@ -125,8 +125,7 @@ We can obtain the names of the columns using `.columns` syntax, and if we wanted
 
 Breaking up the code, we interpret this as:
 
-*"From our dataframe that we saved as `candy`, tell me the `shape`"* or 
-*"From our dataframe that we saved as `candy`, tell me the `columns` "*
+*"From our dataframe that we saved as `candy`, tell me the `columns` and`shape`"*
 
 ---
 
@@ -177,7 +176,7 @@ Notes:
 
 Something you may have noticed is that when we use `pd.read_csv()` we put our instructions within the parentheses, whereas, when we use `.shape` or `.head()` the object that we are operating on comes before our desired command. 
 
-In Python, we use  **functions**, **methods** and  **attributes**. These are special words in Python that takes in instructions (we call these arguments) and do something.
+In Python, we use  **functions**, **methods** and  **attributes**. These are special words in Python that take instructions (we call these arguments) and do something.
 
 Attributes can be distinguished from methods and functions as they do not have parentheses.     
 
@@ -215,11 +214,9 @@ Notes:
 
 While we write code, it's often useful to annotate it or include information for humans that we do not want to executed. 
 
-The easiest way to do this is with a hash (`#`) symbol. This creates a single line comment and prevents anything written after it from being executed. 
+The easiest way to do this is with a hash (`#`) symbol. This creates a single line comment and prevents anything written after it from being executed by Python. 
 
-We can also use it beside code.
-
-We use comments frequently in the exercises. 
+We use comments frequently in the exercises to help you understand what to do and what our intentions are.
 
 It's good practice to use them to explain our code so if we or someone else wants to read it at a later date, it's easier to understand.  
 

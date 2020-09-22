@@ -31,8 +31,8 @@ cereal_mini
 
 ```out
 Both       3
-America    2
 Canada     2
+America    2
 Name: available_canada_america, dtype: int64
 ```
 
@@ -42,15 +42,15 @@ Before we explain what a frequency table is, you must know what
 frequency means first.
 
 *_Frequency_* is simply put, the number of times a value occurs within
-the data. For example, let’s say we have a sample of our candybars data.
+the data. Let’s look at an example using our candybars dataset.
 
 If we count the number of times the value `Both` appears in the
 `available_canada_america` column, we get 3 times. This is the frequency
 of the value `both`.
 
 A frequency table is a manner of displaying all the possible values of a
-column in our data and the number of occurrences (frequencies) of each
-value.
+column in our dataframe and the number of occurrences (frequencies) of
+each value.
 
 For our sample data, a frequency table for the
 `available_canada_america` column would look like this:
@@ -84,8 +84,8 @@ mfr_freq
 K    23
 G    22
 P     9
-R     8
 Q     8
+R     8
 N     6
 A     1
 Name: mfr, dtype: int64
@@ -97,18 +97,17 @@ If we want to get a frequency table of a categorical column, there are a
 few steps that need to be followed.
 
 Up until now, we discussed getting a single column from a dataframe
-using double brackets - `df[['column name']]`.
+using double square brackets - `df[['column name']]`.
 
 For frequency tables, however, we only use single brackets to obtain the
 column values.
 
-We saved the object in a variable called `manufacturer_column` in the
-same way we have saved objects before.
+We saved the object in this example here to an object named `mfr_column`
+in the same way that we have done this before.
 
-Next we can use `.value_counts()` referencing that the column we saved
-as `manufacturer_column`.
-
-This let’s us see the frequency of each categorical value.
+Now we can use `.value_counts()` on this `mfr_column` variable to
+reference it, and we can obtain the frequency value for the different
+categories in that variable.
 
 ---
 
@@ -147,9 +146,9 @@ Detailed traceback:
 
 Notes:
 
-If we used double square brackets with `pd.value_counts()` we would get
-an error so it’s important to take care with using the correct number of
-square brackets.
+If we did instead use double square brackets with `pd.value_counts()`,
+we would get an error. So it is important to take care and remember when
+you are using `value_counts()`, you only use one set of square brackets.
 
 ---
 
@@ -161,10 +160,10 @@ mfr_freq.to_csv('mfr_frequency.csv', index=False)
 
 Notes:
 
-Sometimes it’s useful to save a new dataframe as a csv file for future
-use or to use in another application.
+Sometimes it is useful to save a new dataframe to a file like a csv file
+for future use by you or somebody else.
 
-We can save dataframes using the method `.to_csv()`.
+We can do this using a method called `.to_csv()`.
 
 We put our desired `csv` file name in quotations within the parentheses
 and follow it with the argument `index=False` so we don’t export our

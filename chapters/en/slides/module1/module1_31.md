@@ -33,15 +33,16 @@ cereal
 
 Notes:
 
-If we want to visualize things using different plots we can do that
+If we want to visualize things using different plots, we can do that
 pretty quickly and with little code\!
 
 Take the `cereal` object we analyzed in the last slide deck.
 
 Let say we are interested in the `manufacturer` column. It would be
-great to express the frequencies of the manufacturers as a bar chart.
+great to express the frequency of the item in that column as a bar
+chart.
 
-But how do we do it?
+But how do we do that?
 
 ---
 
@@ -51,12 +52,12 @@ import altair as alt
 
 Notes:
 
-To do this, we are going to use a very nifty library called Altair.
+To do this, we are going to use a very nifty package called Altair.
 
 Altair is a data visualization tool that produces plots relatively
 easily.
 
-Like any other library we have seen so far, Altair needs to be imported
+Like any other package we have seen so far, Altair needs to be imported
 before we can use it.
 
 ---
@@ -75,9 +76,10 @@ Notes:
 We can plot the `mfr` column frequencies using Altair using the
 following code.
 
-See how quick that was?
+See how quick that was? Just five lines\!
 
-Now let’s go through the steps.
+Now let’s take a moment and go through the steps of what each line
+means.
 
 ---
 
@@ -123,17 +125,21 @@ Notes:
 
 To make a `bar` plot using `altair`, we follow the steps below:
 
-1.  We create an `altair` plot object using `alt.chart()`
+1.  First, we create an `altair` plot object using `alt.chart()`
 
-2.  We can pass the dataframe we’d like to plot but putting it in the
-    brackets, in our case it’s `cereal`.
+2.  Next, we pass the dataframe we’d like to plot in to
+    `altair.chart()`. So here, that is the `cereeal` dataframe.
 
 3.  But what kind of plot do we want?\! As we said before, a bar chart
-    in this case would work nicely so let’s add the verb `.mark_bar()`
-    to our code.
+    would be suitable for this type of data. So let’s add `.mark_bar()`
+    to specify that.
 
-4.  Next we need to specify what columns we are interested in
-    visualizing. This is done using the `.encode(x='mfr', y='count()')`.
+4.  Next, we need to say what goes on the `y-axis` and the `x-axis`. We
+    do this inside of the `encode()` call. So inside of encode, we say
+    what should be represented on the `y-axis` and what should be
+    represented on the `x-axis`. Here on the `x-axis`, we put the
+    manufacturer, and on the `y-axis`, we us count: `.encode(x='mfr',
+    y='count()')`.
 
 `count()` is used here to count the occurrences or the number of rows in
 the cereal dataframe that contains a specific manufacturer.
@@ -162,16 +168,10 @@ chart1
 
 Notes:
 
-Our previous graph was a bit small.
-
-We can fix that easily by telling `altair` what height and width the
-plot should have.
-
-This can be done by specifying the `height` and `width` argument in the
-`alt.Chart()` function with arguments named `height` and `width`.
-
-Let’s set the the height and the width of the previous plot to `300` and
-`500` respectively.
+Here is our plot again. It looks a little different this time. The first
+time we plotted it, it was a little too small. So inside the `alt.Chart`
+call, we added a `width` and `height` argument so that we can make the
+plot bigger.
 
 ---
 
@@ -189,16 +189,14 @@ Notes:
 What else can we plot from our original cereal dataframe named `cereal`?
 
 Maybe we want to see the relationship between `sugars` and `calories` in
-cereals?
+the cereals?
 
 This would require a `scatter` plot which can be done by specifying
-`mark_circle` after creating the `alt.chart()` object.
+`mark_circle` instead of `mark_bar` and in the `encode` function, we
+need to say what is going to be on the `x` and the `y` axis.
 
-In the `.encode()` function, we would need to set the x and y axis with
-the column names for each axis.
-
-In this case, the x-axis is the `sugars` column and the y-axis is the
-`calories` column.
+In this case, we are putting `sugars` on the `x-axis` and `calories` on
+the `y-axis`.
 
 ---
 
@@ -219,12 +217,14 @@ doesn’t seem to be 77 data points\!
 That’s because some of them are lying on top of each other with the same
 sugar and calorie values.
 
-It may be of use to set an opacity to the graph to differentiate those
-points.
+One way we can deal with this is by changing the `opacity` of each of
+those points. That way, the darker points represent that there is more
+than one data point at that point in the chart, and the lightest point
+represent that there is only one data point there.
 
-Opacity is set with the argument `opacity` in the `mark_circle()`
-function and accepts values between 0 and 1, with 1 being full
-intensity.
+We set opacity with `opacity` in the `mark_circle()` function and it
+accepts values between 0 and 1, with 1 being full opacity. Here we set
+it at 0.3.
 
 Look at that\! Now we can see there are multiple cereals that have 3.5g
 of sugar with 110 calories.
@@ -244,10 +244,10 @@ Notes:
 
 What if you don’t fancy the default plot colour `blue`?
 
-Well that’s okay, we can change the colour using the `color` argument in
-`.mark_circle()`.
+Well that’s okay, we can change the colour easily using the `color`
+argument in `.mark_circle()`.
 
-Let’s change the colour to `red` (I like red) and keep the same opacity.
+Here we have changed the colour to `red`.
 
 ---
 
@@ -262,10 +262,11 @@ chart5
 
 Notes:
 
-Maybe I have bad eyes, but those data points look pretty small.
-
-Good news though, we can make them bigger. The argument `size` in the
-`mark_circle(size=...)` should do the trick.
+What if the data points seem a little too small? That is no problem, we
+can also increase these. Again in the `mark_circle()` call. Here we add
+an argument where we say the `size`. So we have changed the size from
+the default to a size of 80, and we can see that the points are now
+larger.
 
 ---
 
@@ -280,15 +281,17 @@ chart6
 
 Notes:
 
-Also every good graph should have a title\!
+Every good graph should have a title\!
 
-A title provides useful information as to what the plot is about.
+A title provides useful information about what the plot is about.
 
-Let’s take this opportunity to finish off our scatter plot graph and set
-the argument `title` to something as well.
+Let’s take this opportunity to finish off our scatter plot and set the
+argument `title` to something as well.
 
-To set the `title`, we use the `title` argument to the `.properties()`
-function.
+So here we have called it *“Scatter plot sugars vs calories for
+different cereals”*.
+
+We use the `.properties()` function to do this.
 
 ---
 

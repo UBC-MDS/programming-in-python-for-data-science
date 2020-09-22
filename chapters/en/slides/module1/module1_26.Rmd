@@ -52,11 +52,12 @@ cereal.head(15)
 
 Notes: 
 
-Now we've learned about how to get our dataframe how we want it, let's try have some fun with it!
+Now we've learned about how to get the data in to the shape and size that we desire, now we ca have some fun with it!
 
-We have our data, now what? 
 
-We usually like to learn from it. We want to find out about some summary statistics about the data. 
+We usually like to learn from it. One place we can start is summary statistics, so we can calculate interesting values for each of the variables or columns in our dataframe. 
+
+Let's start by doing this for the cereal dataset again.
 
 First let's load in our cereal dataset again. 
 
@@ -111,7 +112,7 @@ Notes:
 
 Pandas has a lot up its sleeve but one of the most useful methods is called `.describe()` and it does exactly that. it _describes_ our data.  
 
-Let's try it out.
+Let's try it out on our cereal dataset.
 
 By default `df.describe()` only shows numerical columns.
 
@@ -133,7 +134,7 @@ Notes:
 
 Let's talk a little bit about the output of `.describe()`.
 
-On the left-hand side we see a new column. This column contains the names of the different summary statistics that `.describes()` gives us back for our dataset. Let's talk about them: 
+On the left-hand side we see a new column. This column contains the names of the different summary statistics that `.describes()` gives us back for our dataset. Let's talk about them each individually: 
 
 - `count`: The number of non-NA/null observations.
 - `mean`: The mean of the column 
@@ -154,7 +155,7 @@ cereal.describe(include='all')
 
 Notes: 
 
-We can make changes to either limit how much is shown or include more statistics in the dataframe with the additional argument `include="all"` in the `describe` brackets.
+We can make changes to either limit how much is shown or include more using describe.  One useful argument is `include` and a value we can give to that is `all`.
 
 This expands the output so we get summary statistics for both categorical and numerical columns now. 
 
@@ -183,12 +184,12 @@ ratings.median()
 
 Notes: 
 
-We can also get single statistics of each column using:
-either `.mean()`,`.std()`, `.count()`, `.median()`, `.sum()`. 
+We can also get single statistics of each column using functions like:
+`.mean()`,`.std()`, `.count()`, `.median()`, `.sum()`. 
 
-First segregate the column we want to explore further, then add the verb. 
+To do this, we first have to grab the column that we are interested in exploring, and then we add the verb.
 
-Here are some examples where we first calculate the mean of the ratings, the sum of the ratings and the median of the ratings. 
+Here are some examples of things that we can calculate. First we calculate the mean of the ratings, then we calculate sum of the ratings, and finally the median of the ratings. 
 
 ---
 

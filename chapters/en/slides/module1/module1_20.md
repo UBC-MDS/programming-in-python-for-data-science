@@ -33,8 +33,8 @@ cereal.head(10)
 
 Notes:
 
-Up to this point, we have been manipulating our dataframe with column
-and row ***labels*** using `.loc[]`.
+Up until point, we have been manipulating our dataframe with column and
+row ***labels*** using `.loc[]`.
 
 Slicing can also be done by the location position of each row with
 `.iloc[]`.
@@ -45,16 +45,16 @@ to the index ***integer*** position.
 We are going to return to our cereal dataset and take a look at the
 first 10 rows.
 
-Let’s say we want the rows `All-Bran` to `Apple Cinnamon Cheerios` but
-we want to slice based on their position instead of their label.
+Let’s say we want the rows from `All-Bran` to `Apple Cinnamon Cheerios`,
+but we want to slice based on their position instead of their label.
 
-Using Python’s counting method of starting at zero, we conclude
+Using Python’s counting method of starting at zero, we conclude that
 `All-Bran` to be at position to 2.
 
 We get `Apple Cinnamon Cheerios` position to be 5 in the same way.
 
 We are lucky with this dataframe because our index labels match the
-position of the rows.
+position of the rows, and this makes things a little bit simpler.
 
 ---
 
@@ -112,10 +112,11 @@ cereal.iloc[2:6]
 
 Notes:
 
-That’s because when we use slicing by index position, it will take all
-the indices including the lower bound but *EXCLUDING* the upper bound.
+The reason for this is that when we use slicing with indices, it will
+take all the indices including the lower bound but *EXCLUDING* the upper
+bound.
 
-If we wanted to include `Apple Cinnamon Cheerios` we would have to go 1
+If we want to include `Apple Cinnamon Cheerios` we would have to go 1
 index position further.
 
 If we think about this a bit it actually make some sense. Think about
@@ -189,6 +190,8 @@ Let’s say we want the rows `All-Bran` to `Apple Cinnamon Cheerios` and
 **Lower Bound**: `name` is located at position 0.  
 **Upper Bound**:`fat` is located at position 5.
 
+So the code we have to use to do this is the following:
+
 ``` python
 cereal.iloc[2:6, 0:6]
 ```
@@ -217,6 +220,10 @@ columns.
 
 Both of our upper bound have been compensated with an added 1 to make
 sure they are included in the new dataframe.
+
+So the code we have to use to do this is the following:
+
+`cereal.iloc[2:6, 0:6]`
 
 ---
 
@@ -266,7 +273,7 @@ items from the beginning or end of your data.
 
 Perhaps you only want the first 3 rows of your data.
 
-We can use `.head(3)` or we can use `.iloc()`.
+We can use `.head(3)` or we can use `.iloc[]`.
 
 Since we are indicating the beginning of the dataframe, we can omit the
 upper bound `0` just like we did when we learned slicing with `.loc[]`.
@@ -389,7 +396,8 @@ items within each set of square brackets **MUST** be integers, and not
 in quotation marks.
 
 Let’s say we want the rows `Almond Delight`, `Basic 4` and `Apple Jacks`
-with the columns `name`, `calories`, `fat` and `type` *in that order*.
+with the columns `name`, `calories`, `fat` and `type` and *in that
+specific order*.
 
 ---
 
