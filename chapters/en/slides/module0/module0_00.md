@@ -16,7 +16,7 @@ Welcome to Programming in Python for Data Science.
 1. Demonstrate fundamental programming concepts such as loops and conditionals.
 1. Understand the key data structures in Python.
 1. Read data into Python data from vanilla (e.g., .csv) and non-standard plain text files, as well as common spreadsheet file types (e.g., .xls).
-1. Construct simple plots using pandas
+1. Construct simple plots using Altair
 1. Manipulate a single data table by:
     7.1 Filtering rows based on a criterion or combination of criteria
     7.2 Selecting variables
