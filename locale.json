@@ -2,7 +2,7 @@
     "en": {
         "langName": "English",
         "title": "Programming in Python for Data Science",
-        "slogan": "Part of UBC's Key Capabilities in Data Science Program",
+        "slogan": "Course 1 of UBC's Key Capabilities in Data Science Program",
         "description": "Learn the fundamentals of programming in Python, including how to clean, filter, arrange, aggregate and transform data. You will learn the foundations of programming in Python while writing human-readable code that sets a foundation of best practices and coding style. You will gain the skills to clean, filter, manipulate (wrangle) and summarize data using Python libraries for more effective data analysis. An overview of data structures, iteration, flow control and program design relevant to data exploration and analysis will be addressed along with fundamental programming concepts such as loops, conditionals and data structures that create a solid foundation in data science programming.",
         "bio": "The University of British Columbia (UBC) is a comprehensive research-intensive university, consistently ranked among the 40 best universities in the world. The Key Capabilities in Data Science program was launched in September 2020 and is developed and taught by many of the same instructors as the UBC Master of Data Science program. For more information on the complete program and to register, click on the Website link below.",
         "video": ["/grkcTZyb9Tk", "/WCWi1R2CQsY", "/EOkD8Vuowq8", "/7IQc2u0ckLs", "/ebeNeQFUMa0",  "/vW2ZXIfZioE", "/rn5t62Utn4U", "/pILjoN9HSvo", "/2CGO4TWm0O4", "/w7cfM6ReOzU", "/UkRmtvYNylA", "/SbtORPZ2l6w", "/SsBSqNNMAjY",  "/-JrvDPszgis"], 
