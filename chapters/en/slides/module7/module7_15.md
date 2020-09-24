@@ -76,7 +76,7 @@ understanding what the code does.
 Guidelines according to PEP8 and
 <a href="https://www.python.org/dev/peps/pep-0008/#comments" target="_blank">python.org</a>:
 
-  - Comments should start with a `#` followed by a single space
+  - Comments should start with a `#` followed by a single space.
   - They should be complete sentences. The first word should be
     capitalized unless it is an identifier that begins with a lower case
     letter.
