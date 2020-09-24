@@ -20,8 +20,8 @@ cereal['mfr'].value_counts()
 K    23
 G    22
 P     9
-R     8
 Q     8
+R     8
 N     6
 A     1
 Name: mfr, dtype: int64
@@ -86,7 +86,7 @@ mfr_group
 ```
 
 ```out
-<pandas.core.groupby.generic.DataFrameGroupBy object at 0x12152dd60>
+<pandas.core.groupby.generic.DataFrameGroupBy object at 0x11947fd60>
 ```
 
 Notes:
@@ -193,8 +193,8 @@ cereal['mfr'].value_counts()
 K    23
 G    22
 P     9
-R     8
 Q     8
+R     8
 N     6
 A     1
 Name: mfr, dtype: int64

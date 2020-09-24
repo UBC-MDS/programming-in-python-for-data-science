@@ -397,7 +397,7 @@ Tasks:
 
 <exercise id="12" title="Automatic Style Formatters" type="slides, video">
 
-<slides source="module7/module7_12" shot = "4" start="12:03" end="26:00">
+<slides source="module7/module7_12" shot = "4" start="13:03" end="26:00">
 </slides>
 
 </exercise>
