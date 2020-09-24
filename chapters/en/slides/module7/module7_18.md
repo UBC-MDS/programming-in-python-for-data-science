@@ -428,8 +428,8 @@ the output and recognize that it’s been fixed. We can however run it a
 few times and see that steps are now being taken in different directions
 and things seem a little more reasonable.
 
-The Python debugger has other function that can help debug your code and
-you can explore them in the
+The Python debugger has other functions that can help debug your code
+and you can explore them in the
 <a href="https://docs.python.org/3/library/pdb.html" target="_blank">documentation</a>.
 
 ---

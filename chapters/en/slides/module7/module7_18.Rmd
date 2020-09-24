@@ -354,7 +354,7 @@ We can however run it a few times and see that steps are now being taken in diff
 
 
 
-The Python debugger has other function that can help debug your code and you can explore them in the <a href="https://docs.python.org/3/library/pdb.html" target="_blank">documentation</a>.
+The Python debugger has other functions that can help debug your code and you can explore them in the <a href="https://docs.python.org/3/library/pdb.html" target="_blank">documentation</a>.
 
 
 ---
