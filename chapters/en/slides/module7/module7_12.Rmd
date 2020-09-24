@@ -1,6 +1,6 @@
 ---
 params:
-  dynamictitle: "module7_01"
+  dynamictitle: "module7_12"
 title: "`r params$dynamictitle`"
 output: 
   md_document:
@@ -55,7 +55,7 @@ Notes: <br>
 
 <br>
 
-<center><img src='/module7/comp_hum.png'  width = "90%" alt="404 image" /></center>
+<br> <center><img src='/module7/comp_hum.png'  width = "90%" alt="404 image" /></center>
 
 <a href="https://unsplash.com/@clemhlrdt" target="_blank">Photos/Images: Clement H</a> <br>
 <a href="www.wocintechchat.com" target="_blank">Photos/Images by #WOCinTech/#WOCinTech Chat</a>.
@@ -88,7 +88,7 @@ PEP8 is a style guide that recommends formatting such as:
 ### flake8
 
 <br>
-<center><img src='/module7/flake8.png'  width = "45%" alt="404 image" /></center>
+<br> <center><img src='/module7/flake8.png'  width = "45%" alt="404 image" /></center>
 
 
 Notes: 
@@ -186,189 +186,211 @@ Now let's see how we can use both of these in a Jupyter notebook.
 
 ---
 
-<center><img src='/module7/m7_14.png'  width = "90%" alt="404 image" /></center>
+<br> <center><img src='/module7/m7_s12_01.png'  width = "100%" alt="404 image" /></center>
 
 Notes: 
 
-Now that you know a little bit about `flake8` and `black` and what they can do, let's show you how to use them.  
+Now that you know a little bit about what `flake8` and `black` can do, let's see how we use them.  
 
-Here is a blank to Jupyter notebook with the `exponent_a_list`  python script that you saw in the last section. 
+Here is a blank Jupyter notebook with the `exponent_a_list`  Python script that you saw in the last section. 
 
 
 ---
 
-<center><img src='/module7/m7_14.png'  width = "90%" alt="404 image" /></center>
+<br> <center><img src='/module7/m7_s12_02.png'  width = "100%" alt="404 image" /></center>
 
 Notes: 
 
-This time our `exponent_a_list()` function is not as formatted as it was before. We've got space issues, indentation issues and it looks like we are missing white space in areas where we should.
+This time, our `exponent_a_list()` function is not as it was formatted before. 
+
+We've got space and indentation issues and it looks like we are missing white space in areas as well.
 
 ---
 
-<center><img src='/module7/m7_14.png'  width = "90%" alt="404 image" /></center>
+<br> <center><img src='/module7/m7_s12_05.png'  width = "100%" alt="404 image" /></center>
 
 Notes: 
 
-Let’s see if the function works. 
+First let’s see if the `exponent_a_list()` function works. 
 
-I've got this empty notebook  that we need to add a new new cell to. 
+I've got this empty notebook that we need to add a new cell to. 
 
 We can do so by clicking the `+` button in the toolbar. 
 
-It will add by default a code cell but what if I want to have it as a text cell? 
+By default it will add a code type cell to the notebook but what if we want a text cell? 
 
-All I have to do is click on markdown in the toolbar and it will change to a text cell. 
+All we have to do is click on `markdown` in the toolbar and it will change to a text cell. 
 
 
 
 ---
 
-<center><img src='/module7/m7_14.png'  width = "90%" alt="404 image" /></center>
+<br> <center><img src='/module7/m7_s12_06.png'  width = "100%" alt="404 image" /></center>
 
 Notes: 
 
-Let's import our function using a code cell just as Tiffany showed us before. 
+Let's import our function using the same code Tiffany showed us before. 
 
-We specify first `from` and then the name of the script - In this case the file name is `exponent_a_list` and we follow that with the name of the specific function so `exponent_a_list` again. 
+We specify first `from` and then the name of the script - in this case, the file name is `exponent_a_list` and we follow that with the name of the specific function so `exponent_a_list` again. 
 
-Next we run it and it looks like it’s imported into our notebook. 
+Next, we run it and it looks like it’s imported into our notebook. 
+
+
+---
+
+<br> <center><img src='/module7/m7_s12_07.png'  width = "100%" alt="404 image" /></center>
+
+Notes: 
 
 Let's test out the function `exponent_a_list()` with a list containing the values 1, 3 and 7. 
 
+
 We are intentionally not adding spaces between the comma so that we can use it as a formatting example shortly. 
 
-The function works even with the bad formatting but let’s see how we can fix it. 
+---
+
+<br> <center><img src='/module7/m7_s12_08.png'  width = "100%" alt="404 image" /></center>
+
+Notes: 
+
+The function works even with the bad formatting but let’s make our code more readable for our human user now. 
 
 
 
 ---
 
-<center><img src='/module7/m7_14.png'  width = "90%" alt="404 image" /></center>
+<br> <center><img src='/module7/m7_s12_09.png'  width = "100%" alt="404 image" /></center>
 
 Notes: 
 
 Instead of doing everything ourselves and going line-by-line to check our code,  we can use `flake8` to tell us exactly what we need to fix.
 
-By clicking on the addition sign on the top left of the toolbar, we can access the launcher where we can open our terminal. 
+By clicking on the addition sign on the top left of the toolbar, we can access the **Launcher** where we can open our **terminal**. 
 
 
 
 ---
 
-<center><img src='/module7/m7_14.png'  width = "90%" alt="404 image" /></center>
+<br> <center><img src='/module7/m7_s12_15.png'  width = "100%" alt="404 image" /></center>
 
 Notes: 
 
-To use `flake8` all we have to do is type `flake8` followed by the name of the file we want to check; in this case `exponent_a_list.py`.
+To use `flake8` in the terminal, all we have to do is type `flake8` followed by the name of the file we want to check ; in this case `exponent_a_list.py`.
 
 
 
 ---
 
-<center><img src='/module7/m7_14.png'  width = "90%" alt="404 image" /></center>
+<br> <center><img src='/module7/m7_s12_16.png'  width = "100%" alt="404 image" /></center>
 
 Notes: 
 
- This produces an output of are all the formatting issues we need to amend. 
+ This produces an output of all the formatting issues we need to amend. 
 
 
 ---
 
-<center><img src='/module7/m7_14.png'  width = "90%" alt="404 image" /></center>
+<br> <center><img src='/module7/m7_s12_17.png'  width = "100%" alt="404 image" /></center>
 
 Notes: 
 
-We can see that at line 1 column 45 we have `multiple spaces before the operator` which means in our  `exponent_a_list.py` that’s where we will need to make changes. 
+We can see that at line 1 column 45, we have `multiple spaces before the operator` which means in our that’s where we will need to make changes in the file `exponent_a_list.py`. 
 
-We can go through all of these suggestions and correct them so that our  `exponent_a_list.py` is adhering to a cleaner style. 
+We can then go through all of these suggestions and correct them so that our `exponent_a_list.py` is adhering to a cleaner style. 
 
 
 
 ---
 
-<center><img src='/module7/m7_14.png'  width = "90%" alt="404 image" /></center>
+<br> <center><img src='/module7/m7_s12_19.png'  width = "100%" alt="404 image" /></center>
 
 Notes: 
 
-Not only can we check Python scripts but also notebooks too! 
+Not only can we check Python scripts but notebooks files as well! 
 
-In our terminal we write something a little different. 
+In our terminal, we write something a little different. 
 
-We type `flake8-nb` followed by the name of the notebook so we are going to write:
+We type `flake8-nb` followed by the name of the notebook:
 ```
 flake8-nb example.ipynb
 ``` 
-since example is the name of the notebook and our notebooks end with `.ipynb` 
+
+`example` is the name of the notebook and Jupyter notebooks end with `.ipynb`.
 
 
 
 ---
 
-<center><img src='/module7/m7_14.png'  width = "90%" alt="404 image" /></center>
+<br> <center><img src='/module7/m7_s12_20.png'  width = "100%" alt="404 image" /></center>
 
 Notes: 
 
-We can see in this case that `flake8-nb` caught the missing white space after the commas in our list when we ran `exponent_a_list([1,3,7)`  
+We can see in this case that `flake8-nb` caught the missing white space after the commas in our code `exponent_a_list([1,3,7)` inside the notebook. 
 
 
 
 ---
 
-<center><img src='/module7/m7_14.png'  width = "90%" alt="404 image" /></center>
+<br> <center><img src='/module7/m7_s12_22.png'  width = "100%" alt="404 image" /></center>
 
 Notes: 
 
-Not only can you check `flake8` in a terminal but you can actually do it in a Jupyter notebook as well. 
+Not only can you check `flake8` in a terminal but you can check it in a Jupyter notebook as well. 
 
 This time I’m going to run `flake8` but in a code cell in our `example` notebook.
 
-We write almost the same thing we did in our terminal except this time we precede the code with an exclamation mark. 
+We write almost the same thing we did in our terminal except for this time we precede the code with an exclamation mark:
 
 ```
 !flake8 exponent_a_list.py
 ``` 
-And now we see all the formatting flags in our notebook instead of our terminal. 
+Now we see all the formatting flags in our notebook instead of our terminal. 
 
 
 
 
 ---
 
-<center><img src='/module7/m7_14.png'  width = "90%" alt="404 image" /></center>
+<br> <center><img src='/module7/m7_s12_24.png'  width = "100%" alt="404 image" /></center>
 
 Notes: 
 
 
-So we could go through all the code one by one and fix them individually or we can use `black` which does this (well, most of it) for us. 
+We could go through all the issues one by one and fix them individually or we can use `black` which does this (well, most of it) for us. 
 
-Just like `flake8` we can do this in the terminal or in our jupyter notebook.
+Just like `flake8`, we can do this in the terminal or in our Jupyter notebook.
 
-Let’s first try it in a jupyter notebook. 
+Let’s first try it in a Jupyter notebook. 
  
-We can use the exclamation mark followed by `black` and then the file name so in this case `exponent_a_list.py`.
+We can use the exclamation mark followed by `black` and then the file name so in this case:
 
-Before pressing enter and running this, let’s look formatting in the file. 
+```
+!black exponent_a_list.py
+```
 
+Before pressing enter and running this, let’s look at the file first. 
 
-
-
----
-
-<center><img src='/module7/m7_14.png'  width = "90%" alt="404 image" /></center>
-
-Notes: 
-
-So we can confirm that the code in the `exponent_a_list.py` is still looking pretty unformatted. 
 
 
 
 ---
 
-<center><img src='/module7/m7_14.png'  width = "90%" alt="404 image" /></center>
+<br> <center><img src='/module7/m7_s12_25.png'  width = "100%" alt="404 image" /></center>
 
 Notes: 
 
-Now we are can run this cell and we get this output:
+We can see that the code in the `exponent_a_list.py` is still looking pretty messy. 
+
+
+
+---
+
+<br> <center><img src='/module7/m7_s12_23.png'  width = "100%" alt="404 image" /></center>
+
+Notes: 
+
+Now we are can run this cell and we get the output:
+
  ```
 reformatted are exponent_a_list.py. 
 All done!  ✨ 🍰 ✨
@@ -379,11 +401,11 @@ All done!  ✨ 🍰 ✨
 
 ---
 
-<center><img src='/module7/m7_14.png'  width = "90%" alt="404 image" /></center>
+<br> <center><img src='/module7/m7_s12_26.png'  width = "100%" alt="404 image" /></center>
 
 Notes: 
 
-Now when we open up the file, we can see that a lot of the white space has been removed and the indentations have been fixed! 
+When we open up the file `exponent_a_list.py`, we can see that a lot of the white space has been removed and the indentations have been fixed! 
 
 Remember it's not perfect! We can still see blank lines here that probably shouldn't be but it does a pretty good job. 
 
@@ -391,14 +413,14 @@ Remember it's not perfect! We can still see blank lines here that probably shoul
 
 ---
 
-<center><img src='/module7/m7_14.png'  width = "90%" alt="404 image" /></center>
+<br> <center><img src='/module7/m7_s12_27.png'  width = "100%" alt="404 image" /></center>
 
 Notes: 
 
 
-Now that we've done it in a jupyter notebook let’s try it in our terminal. 
+Now that we've done it in a Jupyter notebook, let’s try it in our terminal. 
 
-We do the same thing as in a jupyter notebook but this time without the exclamation point. 
+We do the same thing as in a Jupyter notebook but this time without the exclamation point. 
 
 ```
 Black exponent_a_list.py
@@ -407,7 +429,7 @@ Black exponent_a_list.py
 
 ---
 
-<center><img src='/module7/m7_14.png'  width = "90%" alt="404 image" /></center>
+<br> <center><img src='/module7/m7_s12_28.png'  width = "100%" alt="404 image" /></center>
 
 Notes: 
 
@@ -418,27 +440,27 @@ All done!  ✨ 🍰 ✨
 ```  
 
 ---
-
-<center><img src='/module7/m7_14.png'  width = "90%" alt="404 image" /></center>
+<br>
+<center><img src='/module7/m7_s12_29.png'  width = "100%" alt="404 image" /></center>
 
 Notes: 
 
-This is one last quick tool that we want to show you which is this `black` jupyter notebook extension which lets you format your code cells directly. 
-All you have to do is right click and press “format cell”...
+One last quick tool that we want to show you is this `black` Jupyter notebook extension. This lets you format your code cells in your Jupyter notebook directly. 
+All you have to do is right-click on the cell you want to format and press “format cell”.
 
 ---
 
-<center><img src='/module7/m7_14.png'  width = "90%" alt="404 image" /></center>
+<br> <center><img src='/module7/m7_s12_30.png'  width = "100%" alt="404 image" /></center>
 
 Notes: 
 
-... and it formats your cell right away. 
+It will formats your cell right away. 
 
 So that is how you can use `flake8` and black to clean up your code. 
 
 Remember these tools don’t do everything. 
 
-You’ll learn about some of the things that black and `flake8` don’t pick up in the next section. 
+You’ll learn about some of the things that `black` and `flake8` don’t pick up in the next section. 
 
 ---
 
