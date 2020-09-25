@@ -189,9 +189,9 @@ cereal['calories'].mean()
 
 Notes: The dataframe `cereal2` shows our untidy data from the previous
 slide. We could either groupby nutrition value or filter on `calories`
-first before getting our results to calculate the mean but if we had
-tidy data we could have calculated the mean directly from the `calories`
-column.
+first before getting our results to calculate the mean, but if we had
+tidy data, we could have calculated the mean directly from the
+`calories` column.
 
 ---
 

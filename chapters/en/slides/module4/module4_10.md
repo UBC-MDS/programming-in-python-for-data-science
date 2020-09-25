@@ -15,7 +15,7 @@ A **dictionary** is a map between key-value pairs.
 For example:
 
 A house can have 3 bedrooms.  
-‘bedrooms’ is the ***key*** and the number of bedrooms is the
+‘bedrooms’ is the ***key***, and the number of bedrooms is the
 ***value***.
 
 How does this look in terms of a data structure?
@@ -39,7 +39,7 @@ Python has a data structure by the same name that replicates this
 
 For example:
 
-A house can have 3 bedrooms. bedroom is called the ***key*** and the
+A house can have 3 bedrooms. Bedroom is called the ***key***, and the
 number of bedrooms is called the ***value***.
 
 How does this look in terms of a data structure?
@@ -77,7 +77,7 @@ Notes:
 This works with many different data types for the keys and values.
 
 Here, we see the keys being of type `str` and the values being of type
-`int`, `str` and even `tuples`.
+`int`, `str`, and even `tuples`.
 
 The keys, which are the elements on the left of the colon, are unique
 and cannot be duplicated since they are used to look up the value. The
@@ -158,10 +158,10 @@ Notes:
 We can add to the dictionary in the same way as we edit them, but using
 a new **key** name.
 
-Here we add to the house dictionary a new key that respresents whether
-or not a bed monster exists. We are giving this a value of `True`.
+Here we add to the house dictionary a new key that represents whether or
+not a bed monster exists. We are giving this a value of `True`.
 
-Keys are not limited to strings and can be many different data types
+Keys are not limited to strings and can be many different data types,
 including numerical values and tuples (but they cannot be dictionaries
 or lists).
 
@@ -236,7 +236,7 @@ What about making dataframes from dictionaries?
 We are lucky enough to have two ways of making data from a dictionary
 using the verb `pd.DataFrame.from_dict()`.
 
-First let’s try making this table into a dataframe where we insert our
+First, let’s try making this table into a dataframe where we insert our
 data column-wise.
 
 We can use the dictionary keys to represent the column names and the
@@ -274,7 +274,7 @@ Notes:
 
 The other option is to create the dataframe row-wise.
 
-In this case we assign each row index as a dictionary key and the row
+In this case, we assign each row index as a dictionary key and the row
 values as the dictionary’s values.
 
 We use the argument `orient` to explain the keys are the `index` and the

@@ -7,6 +7,6 @@ def test():
 
     # If an assertion fails, the message will be displayed
     
-    assert __solution__.count('assert') == 4, "Make sure you are writing four unit tests"
+    assert __solution__.count('assert') >= 4, "Make sure you are writing at least four unit tests"
     # Let me know if there are further tests that could be written for this question
     __msg__.good("Nice work, well done!")

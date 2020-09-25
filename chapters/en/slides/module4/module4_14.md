@@ -37,7 +37,7 @@ Notes:
 
 Since the beginning of this module, we have explored basic Python Data
 types and structures. We’ve covered how they can be transformed into a
-dataframe but that didn’t answer the lingering question:
+dataframe, but that didn’t answer the lingering question:
 
 ***“What is and makes up a Pandas dataframe?”***
 
@@ -65,7 +65,7 @@ Looking into this further, the documentation states a dataframe as a:
 
 *“Two-dimensional tabular data structure with columns and axis labels.”*
 
-More directly, we can describe a dataframe as a collection of columns
+More directly, we can describe a dataframe as a collection of columns,
 but that brings us to the new question:
 
 **“What is a dataframe column?”**
@@ -106,10 +106,10 @@ Notes:
 Let’s think back to Module 1 when we were selecting a single column from
 a dataframe.
 
-There are two ways of doing so; with single square brackets, and with
+There are two ways of doing so; with single square brackets and with
 double square brackets.
 
-When indexing with double square brackets we get back another object of
+When indexing with double square brackets, we get back another object of
 type `pd.DataFrame`.
 
 What about single brackets?
@@ -174,8 +174,8 @@ Name: mfr, Length: 77, dtype: object
 
 Notes:
 
-A pandas Series is a one-dimensional array of values with an axis label.
-Sort of like a list with a name attached to it.
+A pandas Series is a one-dimensional array of values with an axis label,
+sort of like a list with a name attached to it.
 
 This is the base data type that makes up a pandas dataframe.
 
@@ -188,9 +188,10 @@ Let’s look back at the series output again.
 We can see additional information at the bottom.
 
 The series contains the name of the column series, which is `mfr` , the
-length of the series which is equal to 77 and a `dtype` equal to object.
+length of the series, which is equal to 77, and a `dtype` equal to
+object.
 
-Ok, we know what `type` is but what is a `dtype`?
+Ok, we know what `type` is, but what is a `dtype`?
 
 ---
 
@@ -206,7 +207,7 @@ Ok, we know what `type` is but what is a `dtype`?
 
 Notes:
 
-So far we know a dataframe is made up of a collection of series and a
+So far, we know a dataframe is made up of a collection of series, and a
 series contains values, a label as well as some additional information
 regarding a **dtype**.
 
@@ -280,7 +281,7 @@ Let’s see what the dtype is of the `calories` column.
 What is the data type of one of the values in this column?
 
 We are going to ignore the `numpy` portion for now (You’ll see this in
-Module 8) but for now we can clearly see it says `int`.
+Module 8), but for now, we can clearly see it says `int`.
 
 ---
 
@@ -320,7 +321,7 @@ Let’s check out the `fiber` column dtype now.
 
 Ah yes, `float64` as expected.
 
-What about the data type of one of the values in the the column now?
+What about the data type of one of the values in the column now?
 
 It’s of type `float`, just what we suspected\! (Again, let’s not worry
 about the `numpy` portion of this)
@@ -344,7 +345,7 @@ the dtypes `object` and `bool`. We will be exploring `datetime64` and
 `timedelta[ns]` in Module 8.
 
   - `object` is a dtype that contains `str` type values in the cells of
-    the dataframe or that had a mixture of different types to begin
+    the dataframe or that had a mixture of different types, to begin
     with. This is the “default” dtype when pandas is not quite sure what
     is the cell type values are or when there is a mixture of numeric
     and non-numeric value types.

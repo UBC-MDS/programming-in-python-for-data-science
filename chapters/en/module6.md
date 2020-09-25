@@ -414,18 +414,18 @@ Running a coding exercise for the first time could take a bit of time for everyt
 
 _**Make sure you remove the hash (`#`) symbol in the coding portions of this question.  We have commented them so that the line won't execute and you can test your code after each step.**_
 
-**Weight** and **mass** are 2 very different measurements althought they do get used interchangeably in everyday conversations. 
+** Weight** and **mass** are 2 very different measurements, although they are used interchangeably in everyday conversations. 
 **Mass** is defined by  <a href="https://www.nasa.gov/pdf/591747main_MVW_Intro.pdf" target="_blank">NASA</a> as the amount of matter in an object, whereas, **weight** is defined as the vertical force exerted by a mass as a result of gravity (with units of Newtons). 
-The function `earth_weight()` converts an object's mass to weight by multiplying it by the gravitational force acting on it. On Earth, the gravitational force is measured as 9.8 m/s^2.  
+The function `earth_weight()` converts an object's mass to Weight by multiplying it by the gravitational force acting on it. On Earth, the gravitational force is measured as 9.8 m/s^2.  
 
 
-We want to make a more versatile function by having the ability to calculate the weight of any object on any particular planet and not just Earth. Redefine the function `earth_weight()` so that it takes an argument with a default gravitational force of 9.8. 
+We want to make a more versatile function by having the ability to calculate the Weight of any object on any particular planet and not just Earth. Redefine the function `earth_weight()` to take an argument with a default gravitational force of 9.8.  
 
 
 Tasks:
-- Create a new function named `mass_to_weight` and give it an additional argument named  `g` which has a default value of 9.8.
+- Create a new function named `mass_to_weight` and give it an additional argument named  `g,` which has a default value of 9.8.
 - Test your new function by converting the mass of 76 kg to weight on Earth and save the results in an object named `earth_weight`.
-- Test your function again but this time calculate the weight of the 76 kg object on the moon using a gravitational force of 1.62 m/s^2 and save your function call to an object named `moon_weight`.
+- Test your function again but this time, calculate the weight of the 76 kg object on the moon using a gravitational force of 1.62 m/s^2 and save your function call to an object named `moon_weight`.
 
 
 
@@ -1214,7 +1214,8 @@ _**Make sure you remove the hash (`#`) symbol in the coding portions of this que
 Given our BMI function from the previous few questions, let's write some unit tests.
 
 Tasks:
-- Write 4 unit tests and check that at least 2 of them are testing edge cases. 
+- Write at least 4 unit tests and check that at least 2 of them are testing edge cases. 
+- For this exercsie, use single quotes `''` instead of double quotes `""` for the `assert` messages.
 
 
 <codeblock id="06_21">

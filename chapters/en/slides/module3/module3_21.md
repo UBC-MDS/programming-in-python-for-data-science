@@ -21,7 +21,7 @@ dataframes together, but what if we needed to combine dataframes of
 different sizes where rows need to be matched up?
 
 <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.merge.html" target="_blank">`.merge()`</a>
-if a verb that give more precision and options when we join dataframes.
+is a verb that give more precision and options when we join dataframes.
 
 We compared `.merge()` in the last section to stitching fabric together,
 where we line up the patterns of each piece of cloth.
@@ -61,7 +61,7 @@ that doesn’t have to be the case.
 Let’s use a subset of the candy bars dataset to explain this concept
 further.
 
-`candy` has a column labelled `name` which has unique candy bar names.
+`candy` has a column labeled `name` which has unique candy bar names.
 
 ---
 
@@ -157,8 +157,8 @@ arguments:
   - `right_on` - The right dataframe identifying key column label.
 
 For example:  
-Dataframe A can have a column labelled `cereal` and Dataframe B could
-have a column labelled `product_name` that both share cereal names.
+Dataframe A can have a column labeled `cereal,` and Dataframe B could
+have a column labeled `product_name` that both share cereal names.
 
 ---
 
@@ -193,8 +193,8 @@ Notes:
 Our `candy` dataframe which we said was our left dataframe, would use
 the argument `left_on='name'`.
 
-our `candy2m` dataframe is our right dataframe and would use the
-argument `right_on='chocolate_bar'`.
+our `candy2m` dataframe is our right dataframe, would use the argument
+`right_on='chocolate_bar'`.
 
 ---
 
@@ -308,11 +308,11 @@ Notes:
 Here we see that `Coffee Crisp` and `Butterfinger` have complete rows.
 
 Rows from the left dataframe that were not present in the right
-dataframe are `Skor`, `Smarties` and `Twix` and therefore have `NaN`
+dataframe are `Skor`, `Smarties`, and `Twix` and therefore have `NaN`
 values for columns from the right table.
 
-The opposite occurs for the values `3 Musketeers`, `Aero` and `Kinder
-Bueno` which are present in the right dataframe and not the left one.
+The opposite occurs for the values `3 Musketeers`, `Aero`, and `Kinder
+Bueno`, which are present in the right dataframe and not the left one.
 
 This results in `NaN` for values in the left dataframe columns.
 
@@ -340,13 +340,13 @@ candy.merge(candy2m, left_on='name', right_on='chocolate_bar', how='left')
 Notes:
 
 The value `left` will only output the rows that are in the left
-dataframe and if they are missing from the right dataframe, `NaN` values
-will occur. No candy bars that are only present in the right dataframe
-will be present.
+dataframe, and if they are missing from the right dataframe, `NaN`
+values will occur. No candy bars that are only present in the right
+dataframe will be present.
 
-Here we can see the values `3 Musketeers`, `Aero` and `Kinder Bueno` are
-not present in the resulting dataframe as they are only present in the
-right one.
+Here we can see the values `3 Musketeers`, `Aero`, and `Kinder Bueno`
+are not present in the resulting dataframe as they are only present in
+the right one.
 
 ---
 
@@ -360,10 +360,10 @@ candy.merge(candy2m, left_on='name', right_on='chocolate_bar', how='right')
 
 ```out
            name  weight  chocolate  peanuts  id_number  calories  fat  sugar chocolate_bar
-0  Butterfinger   184.0        1.0      1.0      45623       798   30   72.0  Butterfinger
-1           NaN     NaN        NaN      NaN      34534       262    8   40.0  3 Musketeers
-2           NaN     NaN        NaN      NaN      32686       220   12   25.0          Aero
-3  Coffee Crisp    50.0        1.0      0.0      12482       260   13   25.0  Coffee Crisp
+0  Coffee Crisp    50.0        1.0      0.0      12482       260   13   25.0  Coffee Crisp
+1  Butterfinger   184.0        1.0      1.0      45623       798   30   72.0  Butterfinger
+2           NaN     NaN        NaN      NaN      34534       262    8   40.0  3 Musketeers
+3           NaN     NaN        NaN      NaN      32686       220   12   25.0          Aero
 4           NaN     NaN        NaN      NaN      85254       244   16   41.2  Kinder Bueno
 ```
 
@@ -371,7 +371,7 @@ candy.merge(candy2m, left_on='name', right_on='chocolate_bar', how='right')
 
 Notes:
 
-  - `right` will only output the rows that are in the right dataframe
+  - `right` will only output the rows that are in the right dataframe,
     and if they are missing from the left dataframe, `NaN` values will
     occur. No candy bars that are only present in the left dataframe
     will be present.
@@ -379,8 +379,8 @@ Notes:
 We can see that the rows `Skor`, `Smarties` and `Twix` that were only
 present in the left dataframe, have been dropped.
 
-One thing that all 4 joins have in common, is they all will have the
-same columns labels that came from both dataframes.
+One thing that all 4 joins have in common is they all will have the same
+columns labels that came from both dataframes.
 
 ---
 
@@ -408,9 +408,9 @@ Notes:
 dataframe the row originated from.
 
 If we want to do an outer join and show all the possible rows from both
-dataframes there is a useful argument called `indicator`.
+dataframes, there is a useful argument called `indicator`.
 
-Here we can see three possible values `left_only`, `right_only` or
+Here we can see three possible values `left_only`, `right_only`, or
 `both` which informs us if the row came from the left dataframe, the
 right dataframe or if the row index label is shared between both
 dataframes.

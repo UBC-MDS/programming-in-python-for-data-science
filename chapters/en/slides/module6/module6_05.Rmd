@@ -88,7 +88,7 @@ Let's bring back the function we made named `squares_a_list()`.
 
 The reason we made this function in the first place was to DRY out our code and avoid repeating the same `for` loop for any additional list we wished to operate on. 
 
-What happens now if we no longer wanted to square a number but calculate a specified exponential of each element, perhaps $n^3$, or $n^4$ ?
+What happens now if we no longer wanted to square a number but calculate a specified exponential of each element, perhaps $n^3$, or $n^4$?
 
 Would we need a new function? 
 
@@ -128,7 +128,7 @@ A better solution that adheres to the DRY principle is to tweak our original fun
 
 Take a look at `exponent_a_list()` which now takes 2 arguments; the original `numerical_list`, and now a new argument named `exponent`. 
 
-This gives us a choice of exponent. We could use the same function now for any exponent we want instead of making a new function for each. 
+This gives us a choice of the exponent. We could use the same function now for any exponent we want instead of making a new function for each. 
 
 This makes sense to do if we foresee needing this versatility, else the additional argument isn't necessary. 
 
@@ -164,7 +164,7 @@ For example, in a new version of `exponent_a_list()`, the function uses a defaul
 
 Since we do not specify the exponent argument when we call our function, it defaults to an exponent of `2`.
 
-These arguments with default values are also called optionals argument (because you don't have to specify them), or "keyword arguments".
+These arguments with default values are also called optional arguments (because you don't have to specify them), or "keyword arguments".
 
 ---
 
@@ -205,7 +205,7 @@ Error: non-default argument follows default argument (<string>, line 1)
 
 Notes: 
 
-Functions can have any number of arguments and any number of optional arguments but we must be careful with the order of the arguments.
+Functions can have any number of arguments and any number of optional arguments, but we must be careful with the order of the arguments.
 
 When we define our arguments in a function, all arguments with default values (aka optional arguments) need to be placed ***after*** required arguments. 
 
@@ -267,7 +267,7 @@ Notes:
 
 We showed earlier that we could also call the function by specifying `exponent=5`.
 
-Another way of calling this would be to also specify any of the argument names that do not have default values, in this case `numerical_list`.
+Another way of calling this would be to also specify any of the argument names that do not have default values, in this case, `numerical_list`.
 
 What happens if we switch up the order of the arguments and put `exponent=5` followed by `numerical_list=numbers`? 
 
@@ -292,7 +292,7 @@ Notes:
 
 What about if we switch up the ordering of the arguments without specifying any of the argument names.
 
-Our function doesn’t recognize the input arguments and an error occurs because the two arguments are being swapped - it thinks 5 is the list and [2, 3, 5] is the exponent. 
+Our function doesn’t recognize the input arguments, and an error occurs because the two arguments are being swapped - it thinks 5 is the list, and [2, 3, 5] is the exponent. 
 
 It's important to take care when ordering and calling a function.
 
