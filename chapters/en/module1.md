@@ -604,9 +604,10 @@ Here is our `fruit_salad` data again:
 If I wanted the rows `elderberry`  to `kiwi` and only columns `seeds`, `shape`, `sweetness` and  `water-content`, what would my code look like if I was using index positions?
 
 <choice id="1" >
-<opt text='<code>fruit_salad.iloc[4:9, 3:]</code>' correct="true">
+<opt text='<code>fruit_salad.iloc[4:9, 3:]</code>'>
 
-This is correct!
+Not quite, but you are halfway there. 
+
 
 </opt>
 
@@ -616,9 +617,9 @@ Not quite, but you are halfway there.
 
 </opt>
 
-<opt text='<code>fruit_salad.iloc[4:9, 4:7]</code>' >
+<opt text='<code>fruit_salad.iloc[4:9, 3:7]</code>'  correct="true">
 
-Not quite, but you are halfway there. 
+This is correct!
 
 </opt>
 

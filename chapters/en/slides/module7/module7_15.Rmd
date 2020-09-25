@@ -108,7 +108,7 @@ Not all code needs a comment, especially if it's redundant for understanding wha
 
 Guidelines according to PEP8 and <a href="https://www.python.org/dev/peps/pep-0008/#comments" target="_blank">python.org</a>: 
 
-- Comments should start with a `#` followed by a single space
+- Comments should start with a `#` followed by a single space.
 - They should be complete sentences. The first word should be capitalized unless it is an identifier that begins with a lower case letter.
 - Comments should be clear and easily understandable to other speakers of the language you are writing in.
 - For block comments, each line of a block comment should start with a `#` followed by a single space and should be indented to the same level as the code it precedes.
@@ -214,7 +214,7 @@ legothemes
  
  Python naming convention is somewhat inconsistent, as stated on <a href="https://www.python.org/dev/peps/pep-0008/#naming-conventions" target="_blank">Python.org's website</a> 
  
- That being said being consistent and setting standards now, helps the python community, your code and future coding. 
+ That being said, it's useful to try to set consistent standards which helps the Python community, and will help you keep track of your code at a later time. 
  
  Some common variable naming recommendations are as follows:
 

@@ -16,9 +16,9 @@ id: 7
 
 </exercise> 
 
-<exercise id="1" title="Importing Python Libraries" type="slides">
+<exercise id="1" title="Importing Python Libraries" type="slides, video">
 
-<slides source="module7/module7_01">
+<slides source="module7/module7_01" shot = "4" start="00:003" end="02:52">
 </slides>
 
 </exercise>
@@ -153,9 +153,9 @@ Tasks:
 
 </exercise>
 
-<exercise id="5" title="Working with Other Files" type="slides">
+<exercise id="5" title="Working with Other Files" type="slides, video">
 
-<slides source="module7/module7_05">
+<slides source="module7/module7_05" shot = "4" start="02:561" end="07:56">
 </slides>
 
 </exercise>
@@ -253,9 +253,9 @@ The alias we want to call `baking` is `bake`, not `scone`.
 
 </exercise>
 
-<exercise id="8" title="Testing Your Own Functions with Pytest" type="slides">
+<exercise id="8" title="Testing Your Own Functions with Pytest" type="slides, video">
 
-<slides source="module7/module7_08">
+<slides source="module7/module7_08" shot = "4" start="08:03" end="12:59">
 </slides>
 
 </exercise>
@@ -395,9 +395,9 @@ Tasks:
 </exercise>
 
 
-<exercise id="12" title="Automatic Style Formatters" type="slides">
+<exercise id="12" title="Automatic Style Formatters" type="slides, video">
 
-<slides source="module7/module7_12" >
+<slides source="module7/module7_12" shot = "4" start="13:03" end="26:00">
 </slides>
 
 </exercise>
@@ -499,9 +499,9 @@ Tasks:
 </exercise>
 
 
-<exercise id="15" title="Formatting That Can't Be Fixed Automatically" type="slides">
+<exercise id="15" title="Formatting That Can't Be Fixed Automatically" type="slides, video">
 
-<slides source="module7/module7_15">
+<slides source="module7/module7_15" shot = "4" start="26:05" end="31:37">
 </slides>
 
 </exercise>
@@ -630,9 +630,9 @@ I think we should try and make this a more readable object name.
 
 </exercise>
 
-<exercise id="18" title="The Python Debugger" type="slides">
+<exercise id="18" title="The Python Debugger" type="slides, video">
 
-<slides source="module7/module7_18" >
+<slides source="module7/module7_18" shot = "4" start="31:512" end="40:541">
 </slides>
 
 </exercise>
