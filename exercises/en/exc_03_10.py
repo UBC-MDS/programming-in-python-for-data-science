@@ -5,7 +5,7 @@ lego = pd.read_csv('data/lego_untidy.csv')
 # Convert the untidy data into tidy data using pivot 
 # Name the new dataframe tidied_lego
 
-____ = (____.____(index=____,
+____ = pd.DataFrame(____.____(index=____,
                    columns=____,
                    values=____)
             .____()
