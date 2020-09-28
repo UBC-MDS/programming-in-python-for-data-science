@@ -45,8 +45,8 @@ Often, we just want to do something 5 times without looping over a
 collection.
 
 The most common way to do that is to use `range()`, which automatically
-generates a collection of the integers in some sort of sequence
-generally 0, to N-1 .
+generates a collection of the integers in some sort of sequence,
+generally 0, to N-1.
 
 We can also specify a *start value*, an *end value* and a *skip-by
 value* with range.
@@ -86,7 +86,7 @@ for i in range(0.5,1.0,0.1):
 ```
 
 ``` out
-TypeError: 'float' object cannot be interpreted as an integer
+TypeError: 'float' object cannot be interpreted as an integer.
 
 Detailed traceback: 
   File "<string>", line 1, in <module>
@@ -95,10 +95,10 @@ Detailed traceback:
 Notes:
 
 The range function specifies the starting integer first, the ending
-integer next and the skip by integer last.
+integer next, and the skip by integer last.
 
 Similarly to slicing with `.iloc[]` in pandas, the starting point of
-`range()` is *included* in the sequence and the ending number is
+`range()` is *included* in the sequence, and the ending number is
 *excluded*.
 
 The skip-by variable is optional.
@@ -154,8 +154,8 @@ variable for each item in the tuple:
   - One for the dictionary **values**
 
 Here we assign an object named `cereal` for the items in the first
-position of the tuple which are the dictionary keys , and an object
-named `stock` for the second index in tuple which are the dictionary
+position of the tuple, which are the dictionary keys, and an object
+named `stock` for the second index in a tuple, which are the dictionary
 values.
 
 ---
@@ -191,8 +191,8 @@ squared
 Notes:
 
 We learned in the last Module that we can create `if` and `else`
-conditions in a single line of code and we can do something similar with
-basic loops.
+conditions in a single line of code, and we can do something similar
+with basic loops.
 
 **Comprehensions** allow us to build lists/sets/dictionaries in one
 convenient, compact line of code.
@@ -200,8 +200,8 @@ convenient, compact line of code.
 In the last set of slides, we made a loop that calculates the square of
 each element from a list and adds them to a new list name `squared`.
 
-This can be done using comprehension so now it executes using the single
-line of code.
+This can be done using comprehension, so now it executes using the
+single line of code.
 
 ---
 
@@ -218,16 +218,16 @@ word_length
 
 Notes:
 
-Dictionary comprehensions can be done in a similar way but this time we
+Dictionary comprehensions can be done in a similar way, but this time we
 wrap the line with curly brackets and specify what our keys and values
 are.
 
-In this case we name the element in the list `number`.
+In this case, we name the element in the list `number`.
 
 We assign `number` as the dictionary key and the square of `number` as
 the dictionary value.
 
-Both methods of building lists and dictionaries work and it’s down to
+Both methods of building lists and dictionaries work, and it’s down to
 you to decide what works better for you.
 
 ---

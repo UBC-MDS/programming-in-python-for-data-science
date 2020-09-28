@@ -102,7 +102,7 @@ We've assigned `'Hayley'` to the object `my_name` in this example.
 
 We use a verb called `print()` that simply prints the object or string set as an argument. 
 
-We can see that since the object `my_name` is equal to `hayley`, the output is `My name is Hayley too`, followed by the regular non conditional code `Nice to meet you!`.
+We can see that since the object `my_name` is equal to `Hayley`, the output is `My name is Hayley too`, followed by the regular non-conditional code `Nice to meet you!`.
 
 
 
@@ -115,9 +115,9 @@ We can see that since the object `my_name` is equal to `hayley`, the output is `
 
 Notes: 
 
-Python looks at the first condition `if my_name.lower() == 'hayley'` and since it evaluates to `True`, it prints the code under the statement which is `'My name is Hayley too!'`
+Python looks at the first condition `if my_name.lower() == 'Hayley'` and since it evaluates to `True`, it prints the code under the statement, which is `'My name is Hayley too!'`
 
-Python passes the other `print()` statements  from the `elif` and `else` conditions and continues to run the regular code `'Nice to meet you!`.
+Python passes the other `print()` statements from the `elif` and `else` conditions and continues to run the regular code `'Nice to meet you!`.
 
 ---
 
@@ -163,7 +163,7 @@ Notes:
 
  Python ignores the code under the first condition `if my_name.lower() == 'hayley'` since it evaluates to `False`.
  
- Instead, Python continues to the next condition `elif my_name.lower() == 'totoro'`which is `True`.  It then executes the code under it which prints `'Interesting, I loved that movie!'`. 
+ Instead, Python continues to the next condition `elif my_name.lower() == 'totoro'`which is `True`.  It then executes the code under it, which prints `'Interesting, I loved that movie!'`. 
  
  Python then skips over the next lines of code and goes straight to printing `'Nice to meet you!'`. 
 
@@ -194,7 +194,7 @@ Notes:
 
 Now we try something that meets neither the first or second conditions.
 
-When `my_name`  is equal to `Desmond`, the first 2 conditions both evaluate to `False` and the last condition executes and prints `That's a great name.`. 
+When `my_name`  is equal to `Desmond`, the first 2 conditions both evaluate to `False`, and the last condition executes and prints `That's a great name.`. 
 
 It executes the regular code `print('Nice to meet you!')` just like before. 
 
@@ -204,7 +204,7 @@ It executes the regular code `print('Nice to meet you!')` just like before.
 
 Notes: 
 
-Here we see that neither the first or second conditions are met so the `else` condition is executed before printing the regular non conditioned code.
+Here we see that neither the first or second conditions are met, so the `else` condition is executed before printing the regular non-conditioned code.
 
 ---
 
@@ -267,7 +267,7 @@ if SOME_BOOLEAN:
     statement body 
 ```
 
-Each conditional expression must end with a colon `:` and code to be execute if the condition is met must all must be indented with 4 spaces (or consistent indentation) in the **statement body**.    
+Each conditional expression must end with a colon `:` and code to be executed if the condition is met must all must be indented with 4 spaces (or consistent indentation) in the **statement body**.    
 
 In the example above:
 
@@ -304,9 +304,9 @@ An `if` keyword is needed for any conditional.
 
 If the Boolean value is `True`, the body of the statement (which is anything indented under it) will be executed. 
 
-If the expression is `False`, the body of the statement is not executed and it continues to the next line of non-indented code outside the body. 
+If the expression is `False`, the body of the statement is not executed, and it continues to the next line of non-indented code outside the body. 
 
-The `else` expression will execute if the conditional expressions above it are `False` 
+The `else` expression will execute if the conditional expressions above it are `False`. 
 
 The keyword `else` can only occur once following an `if` condition and are optional to the code. 
 
@@ -401,7 +401,7 @@ The order we chose for the statement for the `if` and `elif` statements is impor
 
 Let's explore this in the next example using inequalities with numbers.
 
-In this case, our `item` object which equals 13 here, is greater than 10 so our first condition holds true and so  magnitude is assigned a value of `'Between 10 and 20'`
+In this case, our `item` object, which equals 13 here, is greater than 10, so our first condition holds true, and so  magnitude is assigned a value of `'Between 10 and 20'`
 
 ---
 
@@ -423,7 +423,7 @@ Notes:
 
 Let's see what happens with an `item` value equal to 25. 
 
-`magnitude` is still assigned a value of `'Between 10 and 20'` but our item is greater than 20! 
+`magnitude` is still assigned a value of `'Between 10 and 20'`, but our item is greater than 20! 
 
 
 ---
@@ -433,7 +433,7 @@ Let's see what happens with an `item` value equal to 25.
 
 Notes: 
 
-`item` is taken out of the stream at the first `if` condition, so it doesn't get a chance to see the `elif` statement even though it would result in a `True` value. 
+`item` is taken out of the stream at first `if` condition, so it doesn't get a chance to see the `elif` statement even though it would result in a `True` value. 
 
 
 ---
@@ -493,7 +493,7 @@ Notes:
 
 But what about if `item` was equal to 13?
 
-In this case, `magnitude` results in a value of `'Between 10 and 20'` which is what we expect.
+In this case, `magnitude` results in a value of `'Between 10 and 20'`, which is what we expect.
 
 ---
 
@@ -501,7 +501,7 @@ In this case, `magnitude` results in a value of `'Between 10 and 20'` which is w
 
 Notes: 
 
-Since 13 doesn't meet the first condition `item > 20`, Python passes it and moves onto the second condition `item > 10` which assigns `magnitude` the value  `Between 10 and 20`. 
+Since 13 doesn't meet the first condition `item > 20`, Python passes it and moves onto the second condition `item > 10`, which assigns `magnitude` the value  `Between 10 and 20`. 
 
 It skips the `else` statement since one of the statements above was already evaluated to `True`.  
 
@@ -544,7 +544,7 @@ The original conditional statements below checks if the item is greater than 10 
 
 The 4 lines used for the conditional statements can be compressed into a single one.
 
-Both syntax are acceptable depending on your preference. 
+Both syntaxes are acceptable, depending on your preference. 
 
 This type of syntax is only possible for decisions that involve only `if` and `else` conditions. 
 
@@ -574,17 +574,17 @@ Notes:
 
 We've already seen that conditions evaluate to a Boolean. 
 
-So far we've seen a lot of Boolean evaluated from equalities and inequalities but that's not all. 
+So far, we've seen a lot of Boolean evaluated from equalities and inequalities, but that's not all. 
 
-There are many different keywords we can use in to obtain a Boolean value but one that you may use often is the keyword `in`. 
+There are many different keywords we can use to obtain a Boolean value, but one that you may use often is the keyword `in`. 
 
 We can use the keyword `in` to check if a certain value is contained in a list or dictionary. 
 
-We can pair this with with condition statement like we did before to have Python makes decisions/ . 
+We can pair this with a conditional statement like we did before to have Python makes decisions. 
 
-In this example we are checking if `squats` is contained in our list `exercises`. 
+In this example, we are checking if `squats` is contained in our list `exercises`. 
 
-We can see that `squats` exists at position 2 in the list and therefore the object `sore` is assigned a value of `Extreme`.  
+We can see that `squats` exists at position 2 in the list, and therefore the object `sore` is assigned a value of `Extreme`.  
 
 ---
 

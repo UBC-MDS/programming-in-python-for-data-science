@@ -29,18 +29,18 @@ magnitude
 
 Notes:
 
-We know that we can have loops contained in another loop so it should be
-no surprise that we can combine loops with conditional arguments that we
-learned at the beginning of this module.
+We know that we can have loops contained in another loop, so it should
+be no surprise that we can combine loops with conditional arguments that
+we learned at the beginning of this module.
 
 Similarly to how we can have a loop nested in an existing loop, we can
 have conditional statements within a `for` loop.
 
-When we learned about conditions we had the following code.
+When we learned about conditions, we had the following code.
 
 We checked the object `item` with a value of 25 to see if it met the
-`if` condition, the `elif` condition and if it didn’t meet either of
-those then it would undergo the code in the `else` statement body.
+`if` condition, the `elif` condition, and if it didn’t meet either of
+those, then it would undergo the code in the `else` statement body.
 
 ---
 
@@ -64,7 +64,7 @@ magnitude
 Notes:
 
 Then we had to repeat and rewrite the same conditional statements code
-to check `item` with a new value of 13 which violated the DRY principle
+to check `item` with a new value of 13, which violated the DRY principle
 since we repeated and copied the code again.
 
 ---
@@ -93,7 +93,7 @@ Instead, we could put the values 13, and 25 in a list and used a `for`
 loop containing the conditional statements.
 
 This small change helped us adhere to the DRY principle and avoided
-repeating redundant code and now we iterate over each element in the
+repeating redundant code, and now we iterate over each element in the
 list and assigns the object `magnitude` a different value depending on
 which condition was met.
 
@@ -165,14 +165,14 @@ Instead, we can use something called a **break**. A `break` will stop
 the loop from continuing.
 
 Now we can see that as soon as we found a value with `magnitude` equal
-to `10 or less`, all subsequent iterations came to a halt and Python
+to `10 or less`, all subsequent iterations came to a halt, and Python
 exits the loop.
 
 Not even the last `print(magnitude)` in the loop is returned.
 
 ---
 
-## A styalizing side point
+## A stylizing side point
 
 ``` python
 item_list = [25, 13, 21, 8, 17, 11, 4]
@@ -208,7 +208,7 @@ Notes:
 
 You’ve seen that we often add to an existing object when we use loops.
 
-For instance when we count the number of items that are over 20 in the
+For instance, when we count the number of items that are over 20 in the
 list `item_list`.
 
 We keep the object name `number_over_20` and just add to it while

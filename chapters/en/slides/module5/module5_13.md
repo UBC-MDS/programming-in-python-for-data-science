@@ -27,14 +27,14 @@ cards
 Notes:
 
 We’ve seen how loops can help us adhere to the DRY principle, but what
-can we do if we are already using a loop and there is still repetition
+can we do if we are already using a loop, and there is still repetition
 in our code?
 
 For example: Let’s say we are trying to obtain all the red (♥️, ♦️)
 suited face cards from a deck of cards into a list.
 
-We are currently using a loop but we keep repeating the same `faces[#] +
-' of ' + suit` line.
+We are currently using a loop, but we keep repeating the same `faces[#]
++ ' of ' + suit` line.
 
 In these types of situations, we can reduce redundancy by… you guessed
 it, adding another loop\!
@@ -58,7 +58,7 @@ cards
 
 Notes:
 
-Just like how we reduced the repetition by making a first loop we can
+Just like how we reduced the repetition by making the first loop, we can
 make a second loop within the first one.
 
 This is called a **nested loop** since we have a loop *nested* in an
@@ -74,7 +74,7 @@ existing one.
 
 Notes:
 
-We enter into the outer loop where the first element in suits is `♥️`.
+We enter into the outer loop, where the first element in suits is `♥️`.
 
 ---
 
@@ -86,7 +86,7 @@ We enter into the outer loop where the first element in suits is `♥️`.
 
 Notes:
 
-The next line constructs the second loop, which iterate over the list
+The next line constructs the second loop, which iterates over the list
 `faces`.
 
 The first element in this list is `Jack`.
@@ -116,7 +116,7 @@ the list `cards`.
 Notes:
 
 Once we have appended this to `cards`, the inner loop moves onto the
-second element in the `faces` list which has the value `Queen`.
+second element in the `faces` list, which has the value `Queen`.
 
 Notice how we are still on the first element (`♥️`) in the `suit` list.
 
@@ -131,7 +131,7 @@ Notice how we are still on the first element (`♥️`) in the `suit` list.
 Notes:
 
 We create a string containing the suit (`♥️`) and the face (`Queen`) of
-this current iteration which is `Queen of ♥️` and add it to the list
+this current iteration, which is `Queen of ♥️` and add it to the list
 `cards`.
 
 ---
@@ -144,8 +144,8 @@ this current iteration which is `Queen of ♥️` and add it to the list
 
 Notes:
 
-Since we finish all the code in the inner loop’s second iteration we can
-move on the third element in list `faces` which is `King`:
+Since we finish all the code in the inner loop’s second iteration, we
+can move on the third element in list `faces,` which is `King`.
 
 ---
 
@@ -160,7 +160,7 @@ Notes:
 The string `King of ♥️` is added to the `cards` list.
 
 It’s at this point that we have finished all the elements in the inner
-loop, where do we go now?
+loop; where do we go now?
 
 ---
 
@@ -172,8 +172,8 @@ loop, where do we go now?
 
 Notes:
 
-Now, that all the elements in `faces` have been iterated over can we
-move on to the next iteration in the outer loop.
+Now that all the elements in `faces` have been iterated over, can we
+move on to the next iteration in the outer loop?
 
 This involves of iterating to the next element (`♦️`) in the list
 `suits`.
@@ -201,7 +201,7 @@ with `Jack`.
 
 Notes:
 
-We iterate over each element in `faces` again appending the strings
+We iterate over each element in `faces` again, appending the strings
 `'Jack of ♦'`, `'Queen of ♦'`, `'King of ♦'` at each iteration until
 reaching the end of the list `faces`.
 
@@ -218,7 +218,7 @@ Notes:
 Since we have reached the end of both the lists `suits` and `faces`, all
 the iterations in the inner and outer loops have finished.
 
-We exit the loops and executes the next line of code which displays the
+We exit the loops and executes the next line of code, which displays the
 list `cards`.
 
 ---

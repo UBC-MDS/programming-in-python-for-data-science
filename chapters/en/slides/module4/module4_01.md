@@ -10,8 +10,8 @@ Notes: <br>
 
 ## Values and Objects
 
-  - We have been working with **values** which are pieces of data that a
-    computer program works with, such as a number or text.
+  - We have been working with **values**, which are pieces of data that
+    a computer program works with, such as a number or text.
   - We have been assigning a lot of these **values** (with the
     assignment operator `=`) to **objects**.
 
@@ -52,12 +52,12 @@ Python needs to categorize things to make sense of them.
 
 Let’s start with some basics.
 
-In these cases `pet` and `age` are **objects** and `Fido` and `6` are
+In these cases, `pet` and `age` are **objects**, and `Fido` and `6` are
 **values.**
 
-These objects can be named anything that begins with a letter and are
-not “special python words” like **range**, **for**, **if**, **else**,
-etc (we will talk about some of those in the next module).
+These objects can be named anything that begins with a letter and is not
+“special python words” like **range**, **for**, **if**, **else**, etc.
+(we will talk about some of those in the next module).
 
 ---
 
@@ -118,12 +118,12 @@ An `int` value is a whole number that is either positive, negative, or
 zero.
 
 We can use the verb `type()` to find out how Python classifies the value
-that are stored in an object.
+that is stored in an object.
 
 `6` is of type `int`.
 
 A `float` value is a real number in decimal form. That means even if we
-have a whole number, if it contains a decimal point, it is considered a
+have a whole number if it contains a decimal point, it is considered a
 `float`.
 
 In contrast, `6.0` is if type `float`.
@@ -165,10 +165,10 @@ Notes:
 Something you may have noticed in our Pandas dataframes are `NaN`
 values.
 
-This stands for **Not A Number** and it is a special value used to
+This stands for **Not A Number**, and it is a special value used to
 represent missing data in pandas.
 
-Contrary to its acronym it is considered a numeric value, specifically
+Contrary to its acronym, it is considered a numeric value, specifically
 of type `float`\!
 
 Ignore the `numpy` and `64` for now and concentrate on the `float`
@@ -199,12 +199,12 @@ Unlike `NaN` which is a special `float` value, `NoneType` is its own
 type, with only one possible value, `None`.
 
 Let’s say we need to save the name of the monster living under my bed in
-an object. Unfortunately, we have yet to introduce ourselves to him so
+an object. Unfortunately, we have yet to introduce ourselves to him, so
 we are not sure what his name is. We also need to keep track that we are
 missing this information.
 
 We’ve seen this data type in our assignments when we replace the `None`
-provided, with our solution. Since we still need to have the object
+provided with our solution. Since we still need to have the object
 created for the structure of our assignments, we simply use `None` to
 indicate the object exists but is devoid of information.
 
@@ -303,7 +303,7 @@ We think of a string as a sequence of characters enclosed in some form
 of quotations.
 
 We’ve been mostly using single quotations for strings up until this
-point but you can enclose them with different types of quotation marks,
+point, but you can enclose them with different types of quotation marks,
 as shown here.
 
 ---
@@ -337,12 +337,12 @@ type(missing_bed_monster)
 Notes:
 
 If the string contains quotation marks or apostrophes, we can use double
-quotes or triple single quotes, or triple double quotes to define the
+quotes or triple single quotes, or triple-double quotes to define the
 string.
 
-What about empty quotations? When we discussed `None` type and we didn’t
-yet know the monster’s name, we could have also set it to an empty
-string, as shown here. The benefit of this approach is that we’re
+What about empty quotations? When we discussed `None` type, and we
+didn’t yet know the monster’s name, we could have also set it to an
+empty string, as shown here. The benefit of this approach is that we’re
 already setting the type of the object to string, rather than NoneType.
 
 ---
@@ -526,7 +526,7 @@ Notes:
 
 We can even convert `int` and `float` values to `bool` values.
 
-Values of `0` or `0.0` are converted to `False` and all other numeric
+Values of `0` or `0.0` are converted to `False,` and all other numeric
 are converted to `True`.
 
 We can convert Boolean values to `int` and `float` values where `False`
@@ -563,7 +563,7 @@ Notes:
 As suspected, the same applies to strings: Most data types can be
 converted to strings easily.
 
-We don’t even need to use `type()` here as we can see both values now
+We don’t even need to use `type()` here as we can see, both values now
 have quotations surrounding the value, meaning they are strings.
 
 ---
@@ -641,8 +641,8 @@ Detailed traceback:
 
 Notes:
 
-In fact, only the empty string gets casted to False; every other string
-is considered True when turned into a Boolean.
+In fact, only the empty string gets cast to False; every other string is
+considered True when turned into a Boolean.
 
 Often, we may not be able to cast a string at all.
 
@@ -679,4 +679,17 @@ In summary, take care when casting values.
 
 Notes:
 
-<br>
+<br>Something you may have noticed in our Pandas dataframes are `NaN`
+values.
+
+This stands for **Not A Number**, and it is a special value used to
+represent missing data in pandas.
+
+Contrary to its acronym, it is considered a numeric value, specifically
+of type `float`\!
+
+Ignore the `numpy` and `64` for now and concentrate on the `float`
+classification for now. We will be discussing NumPy more in Module 8.
+
+Unlike other values, `NaN` cannot be converted to any other type other
+than a `float.`

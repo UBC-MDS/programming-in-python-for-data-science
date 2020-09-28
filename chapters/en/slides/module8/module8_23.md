@@ -34,18 +34,18 @@ cycling.head(10)
 Notes:
 
 Ok, we have an idea of how we can do some fairly standard strings
-processing, however; it’s time we dived a little deeper into this.
+processing; however, it’s time we dived a little deeper into this.
 
-There are **MANY** different functions but we’ll concentrate on a couple
-here that we will use often and provide a list of several that will be
-useful in future string processing adventures.
+There are **MANY** different functions, but we’ll concentrate on a
+couple here that we will use often and provide a list of several that
+will be useful in future string processing adventures.
 
 Just like in regular text, there will be times in your data analysis
 where you will want to replace some of the text within a string.
 
 That’s where `.replace()` comes in.
 
-We usually like our data to be consistent, however; consistency is not
+We usually like our data to be consistent; however; consistency is not
 always present even in the best of dataframes.
 
 Let’s take a look at our cycling dataset.
@@ -76,7 +76,7 @@ Before we do anything, let’s convert this whole column to lowercase, to
 make our life easier.
 
 This means we only need to be replacing 1 version of a single word
-instead of taking consideration all different case versions.
+instead of taking into consideration all different case versions.
 
 ---
 
@@ -168,7 +168,7 @@ This will return a pandas series with Boolean values.
 We can combine this and use it as a condition to filter our dataframe on
 to obtain all the rows that contain the string “rain”.
 
-If we wanted to we could use this subset of data to see if our cyclist
+If we wanted to, we could use this subset of data to see if our cyclist
 Tom was slower on average, on days that it rained\!
 
 ---
@@ -193,8 +193,8 @@ replacement using `.loc[]`\!
 We learned about conditional value replacement back in Module 2. Let’s
 see what this looks like.
 
-First we call our dataframe and inside the `.loc[]` function we put our
-condition as the first argument and the column we wish to change or
+First, we call our dataframe, and inside the `.loc[]` function, we put
+our condition as the first argument and the column we wish to change or
 create in the second.
 
 Next, on the right side of the assignment operation be specify the new
@@ -236,14 +236,14 @@ cycling_lower[cycling_lower['Comments'] == 'rained']
 Notes:
 
 The rows originally filtered with “rain” in the dataset have now been
-been been replaced with “rained” in the `Comments` column.
+replaced with “rained” in the `Comments` column.
 
-rows 0, and 1 which both had values of `"rain"` and Rows 7 and 8 which
-were both `"raining"` and `"thankfully not raining today!"` repectively
+Rows 0 and 1 which both had values of `"rain"` and Rows 7 and 8 which
+were both `"raining"` and `"thankfully not raining today!"` respectively
 have now all been changed to the just `"rained"`.
 
-rows 0, and 1 which both had values of `"rain"` and Rows 7 and 8 which
-were both `"raining"` and `"raining today"` repectively have now all
+Rows 0 and 1, which both had values of `"rain"`, and Rows 7 and 8, which
+were both `"raining"` and `"raining today"`, respectively, have now all
 been changed to the value `"rained"`.
 
 ---
@@ -253,7 +253,7 @@ String Documentation**</a>
 
 Notes:
 
-There are quite a few other string methods that are available but this
+There are quite a few other string methods that are available, but this
 should get you started.
 
 See the

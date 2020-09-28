@@ -67,8 +67,8 @@ Notes:
 Before we dive into exceptions, let’s revisit our function
 `exponent_a_list()`.
 
-It works somewhat well but what happens if we try to use it with a input
-string instead of a list.
+It works somewhat well, but what happens if we try to use it with an
+input string instead of a list.
 
 We get an error that explains a little bit of what’s causing the issue
 but not directly.
@@ -108,7 +108,7 @@ Detailed traceback:
   File "<string>", line 4, in exponent_a_list
 ```
 
-(Note that in the interest of avoiding new syntax we are using a simple
+(Note that in the interest of avoiding new syntax, we are using a simple
 way of checking if an object is of a certain data type. For a more
 robust approach see
 <a href="https://docs.python.org/3/library/functions.html#isinstance" target="_blank">here</a>.)
@@ -116,7 +116,7 @@ robust approach see
 Notes:
 
 Exceptions disrupt the regular execution of our code. When we raise an
-`Exception` we are forcing our own error with our own message.
+`Exception`, we are forcing our own error with our own message.
 
 If we wanted to raise an exception to solve the problem on the last
 slide, we could do the following.
@@ -153,7 +153,7 @@ failing.
 I hope we can agree that this message is easier to decipher than the
 original.
 
-The new message made the cause of the error much clearer to the user
+The new message made the cause of the error much clearer to the user,
 making our function more usable.
 
 ---
@@ -168,7 +168,7 @@ if type(numerical_list) is not list:
 Notes:
 
 Here we check if `numerical_list` is of the type we expect it to be, in
-this case a `list`.
+this case, a `list`.
 
 Checking the datatype is a helpful exception since the user can quickly
 correct for a simple mistake.
@@ -197,7 +197,7 @@ There are also
 other</a> exception types; for example, you may have encountered
 `ValueError` or a `TypeError` at some point.
 
-`Exception` which is used in our previous examples may not be the best
+`Exception`, which is used in our previous examples, may not be the best
 option for the raises we made.
 
 ---
@@ -241,7 +241,7 @@ Notes:
 Let’s take a look now at the exception we wrote that checks if the input
 value for `numerical_list` was the correct type.
 
-Since this is a type error, a better raised exception over `Exception`
+Since this is a type error, a better-raised exception over `Exception`
 would be `TypeError`.
 
 Let’s make our correction here and change `Exception` in our function to
@@ -283,7 +283,7 @@ def exponent_a_list(numerical_list, exponent=2):
 
 Notes:
 
-Now that we can write exceptions it’s important to document them.
+Now that we can write exceptions, it’s important to document them.
 
 It’s a good idea to include details of any included exceptions in our
 function’s docstring.
@@ -294,7 +294,7 @@ the “***Returns***” section.
 We first specify the exception type and then an explanation of what
 causes the exception to be raised.
 
-For example we’ve added a “Raises” section in our `exponent_a_list`
+For example, we’ve added a “Raises” section in our `exponent_a_list`
 docstring here.
 
 ---

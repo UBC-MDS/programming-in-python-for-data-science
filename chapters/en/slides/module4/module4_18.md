@@ -122,13 +122,13 @@ False + 4
 
 Notes:
 
-We saw that addition, subtraction, multiplication and exponential
+We saw that addition, subtraction, multiplication, and exponential
 operations work as expected with numeric values but let’s check out what
-happens with the other data types
+happens with the other data types.
 
 What happens when we try to add up `bool` values?
 
-We see that `True` values are cast as a value of `1` and `False` values
+We see that `True` values are cast as a value of `1`, and `False` values
 are cast as `0` when they are added together.
 
 ---
@@ -169,7 +169,7 @@ Notes:
 
 Strings react rather interestingly with the addition operator.
 
-For instance, when we add strings we add the sequence from one end to
+For instance, when we add strings, we add the sequence from one end to
 the other. This is also called concatenation.
 
 And we cannot multiply, divide or subtract two strings.
@@ -205,21 +205,21 @@ Detailed traceback:
 
 Notes:
 
-We saw that we can operate on `float` and `int` values together but what
-about `str` and numeric values?
+We saw that we can operate on `float` and `int` values together, but
+what about `str` and numeric values?
 
-Adding a string to an integer does not work, unless we first cast the
+Adding a string to an integer does not work unless we first cast the
 integer to a string.
 
-What about multiplication of a string by an integer?
+What about the multiplication of a string by an integer?
 
 This will repeat the string by the number you are multiplying.
 
 In this case, the string `'The monster under my bed'` is repeated 3
 times.
 
-We can multiply strings and it concatenates the strings together\! Since
-we multiplied by 3, the string is repeated 3 times.
+We can multiply strings, and it concatenates the strings together\!
+Since we multiplied by 3, the string is repeated 3 times.
 
 ---
 
@@ -286,8 +286,8 @@ when working with lists.
 
 Notes:
 
-When we’ve filtered our data we’ve seen different Boolean operators, but
-we have some new ones here for you
+When we’ve filtered our data, we’ve seen different Boolean operators,
+but we have some new ones here for you.
 
 Let’s explore them.
 
@@ -329,21 +329,21 @@ Notes:
 
 Let’s start with 2 base statements;
 
-  - dogs and cats are not equal so we get a False and
+  - dogs and cats are not equal, so we get a False and
   - 6 \< 7 is True
 
 We can combine them to explore the `and`, `or` and `not` operators.
 
 We can check if both statements are `True` using the keyword `and`.
 
-In this case since both statements are not `True`, combining them with
+In this case, since both statements are not `True`, combining them with
 `and` will evaluate to `False`.
 
 On the other hand, the `or` operator checks if at least one of the
-statements is `True` and since `6 < 7` is a `True` statement, the `or`
-statment evaluates to `True`.
+statements are `True` and since `6 < 7` is a `True` statement, the `or`
+statement evaluates to `True`.
 
-Since one statement is true the combine “or” statement is True.
+Since one statement is true, the combined “or” statement is True.
 
 ---
 

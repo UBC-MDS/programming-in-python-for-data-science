@@ -26,8 +26,8 @@ tests**.
 
 Notes:
 
-In the last section, we learned about raising exceptions, which in a lot
-of cases helps the function user identify if they are using it
+In the last section, we learned about raising exceptions, which, in a
+lot of cases, helps the function user identify if they are using it
 correctly.
 
 But there are still some questions remaining:
@@ -44,7 +44,7 @@ We’ll be implementing unit tests in Python using `assert` statements."
 `assert` statements are just one way of implementing unit tests.
 
 Let’s first discuss the syntax of an `assert` statement and then how
-they can be applied to the bigger concept which is unit tests.
+they can be applied to the bigger concept, which is unit tests.
 
 ---
 
@@ -78,13 +78,13 @@ When Python reaches an `assert` statement, it evaluates the condition to
 a Boolean value.
 
 If the statement is `True`, Python will continue to run. However, if the
-Boolean is `False`, the code stops running and an error message is
+Boolean is `False`, the code stops running, and an error message is
 printed.
 
 Let’s take a look at one.
 
 Here we have the keyword `assert` that checks if `1==2`. Since this is
-`False`, an error is throws and the message beside the condition `"1 is
+`False`, an error is thrown, and the message beside the condition `"1 is
 not equal to 2."` is outputted.
 
 ---
@@ -115,7 +115,7 @@ Notes:
 Let’s take a look at an example where the Boolean is `True`.
 
 Here, since the `assert` statement results in a `True` values, Python
-continues to run and the next line of code is executed.
+continues to run, and the next line of code is executed.
 
 When an assert is thrown due to a Boolean evaluating to `False`, the
 next line of code does not get an opportunity to be executed.
@@ -156,8 +156,8 @@ Notes:
 
 Where do assert statements come in handy?
 
-Up to this point, we have been creating functions and only after we have
-written them, we’ve tested if they work.
+Up to this point, we have been creating functions, and only after we
+have written them, we’ve tested if they work.
 
 Some programmers use a different approach: writing tests *before* the
 actual function. This is called Test-Driven Development.
@@ -165,10 +165,10 @@ actual function. This is called Test-Driven Development.
 This may seem a little counter-intuitive, but we’re creating the
 expectations of our function before the actual function code.
 
-Often we have an idea of what our function should be able to do, and
-what output is expected.
+Often we have an idea of what our function should be able to do and what
+output is expected.
 
-If we write our tests before the function it helps understand exactly
+If we write our tests before the function, it helps understand exactly
 what code we need to write and it avoids encountering large
 time-consuming bugs down the line.
 
@@ -211,7 +211,7 @@ could be easily calculated by hand.
 For example, let’s look at our `exponent_a_list()` function.
 
 Easy cases for this function would be lists containing numbers that we
-can easily square, or cube.
+can easily square or cube.
 
 For example, we expect the square output of `[1, 2, 4, 7]` to be
 `[1, 4, 16, 49]`.
@@ -265,13 +265,13 @@ Notes:
 Just because all our tests pass, this does not mean our program is
 necessarily correct.
 
-It’s common that our tests can pass but our code contains errors.
+It’s common that our tests can pass, but our code contains errors.
 
 Let’s take a look at the function `bad_function()`. It’s very similar to
 `exponent_a_list` except that it separately computes the first entry
 before doing the rest in the loop.
 
-This function looks like it would work perfectly fine but what happens
+This function looks like it would work perfectly fine, but what happens
 if we get an input argument for `numerical_list` that cannot be sliced?
 
 Let’s write some unit tests using `assert` statements and see what
@@ -310,7 +310,7 @@ Notes:
 Often, we will be making functions that work on data.
 
 For example, perhaps we want to write a function called `column_stats`
-that returns some summary statistics in form of a dictionary.
+that returns some summary statistics in the form of a dictionary.
 
 The function here is something we might have envisioned. (Note that if
 we’re using test-driven development, this function will just be an idea,
@@ -378,7 +378,7 @@ We use a **systematic approach** to design our function using a general
 set of steps to follow when writing programs.
 
 ***1. Write the function stub: a function that does nothing but accepts
-all input parameters and return the correct datatype.***
+all input parameters and returns the correct datatype.***
 
 ``` python
 def exponent_a_list(numerical_list, exponent=2):
@@ -393,7 +393,7 @@ set of steps to follow when writing programs.
 The approach we recommend includes 5 steps:
 
 ***1. Write the function stub: a function that does nothing but accepts
-all input parameters and return the correct datatype.***
+all input parameters and returns the correct datatype.***
 
 This means we are writing the skeleton of a function.
 
@@ -432,9 +432,10 @@ This is where our `assert` statements come in.
 
 We write tests that we want our function to pass.
 
-In our `exponent_a_list()` example we expect that our function will take
-in a list and an optional argument named `exponent` and then returns a
-list with the exponential value of each element of the input list.
+In our `exponent_a_list()` example, we expect that our function will
+take in a list and an optional argument named `exponent` and then
+returns a list with the exponential value of each element of the input
+list.
 
 Here we can see our code fails since we have no function code yet\!
 
@@ -506,7 +507,7 @@ Notes:
 Here is where we fill in our function.
 
 As you work on the code, more and more tests of the tests that you wrote
-will pass until finally all your `assert` statements no longer produce
+will pass until finally, all your `assert` statements no longer produce
 any error messages.
 
 ---

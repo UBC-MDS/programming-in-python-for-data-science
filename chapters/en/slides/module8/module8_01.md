@@ -6,8 +6,6 @@ type: slides
 
 Notes:
 
-<br>
-
 ---
 
 ``` python
@@ -107,8 +105,8 @@ similar, they have some key differences.
 
 A list can contain multiple data types, while an array cannot.
 
-In this case, `1` was converted to a `'1'` in quotations which signifies
-that it is now a string.
+In this case, `1` was converted to a `'1'` in quotations, which
+signifies that it is now a string.
 
 ---
 
@@ -146,15 +144,15 @@ We can make arrays from lists as well as tuples.
 There are also several built-in NumPy functions that create different
 arrays with patterns and requirements.
 
-`np.zeros()` will create an array containing `0` for each element and
+`np.zeros()` will create an array containing `0` for each element, and
 the input argument specifies the size.
 
-Here we specified 10 so our array has 10 elements.
+Here we specified 10, so our array has 10 elements.
 
 Similarly, `np.ones()` does the same thing except with an array of
 elements with `1` values.
 
-Now we’ve specified 4 as the input and so this array has 4 elements.
+Now we’ve specified 4 as the input, and so this array has 4 elements.
 
 ---
 
@@ -181,8 +179,8 @@ and will produce an array in a similar way that `range()` produces a
 sequence.
 
 If there are 3 input arguments, the first 2 are where the interval
-values start and stop respectively and the third argument gives the step
-size between values.
+values start and stop respectively, and the third argument gives the
+step size between values.
 
 ---
 
@@ -199,7 +197,7 @@ np.random.rand(5)
 ```
 
 ```out
-array([0.98044394, 0.17412137, 0.69554788, 0.01848946, 0.40600867])
+array([0.51939439, 0.84917657, 0.04400428, 0.68715007, 0.23389854])
 ```
 
 Notes:
@@ -208,7 +206,7 @@ Notes:
 specified by the 3rd argument’s value, containing values between the
 first 2 arguments values.
 
-For example: this code will produce 10, equally spaced values from 1 to
+For example, this code will produce 10, equally spaced values from 1 to
 5.
 
 Notice the elements in `np.linspace()` arrays are defaulted to type
@@ -263,8 +261,8 @@ Let’s talk about how operations are calculated with arrays.
 
 We discussed that array and lists are similar but not quite the same.
 
-Arrays are design for convenience mathematically so arrays operate in an
-element-wise manner.
+Arrays are designed for convenience mathematically, so arrays operate in
+an element-wise manner.
 
 When we do operations, the operation is done to each element in the
 array.
@@ -296,9 +294,9 @@ Detailed traceback:
 
 Notes:
 
-This is much more convenient than using list.
+This is much more convenient than using a list.
 
-We can’t simply add 1 to a list. Instead we get an error
+We can’t simply add 1 to a list. Instead, we get an error
 
 ---
 
@@ -328,7 +326,7 @@ list_3
 
 Notes:
 
-If we wanted the same operations done with lists we would have to use a
+If we wanted the same operations done with lists, we would have to use a
 loop or list comprehension to obtain the same results.
 
 ---
@@ -376,8 +374,8 @@ lists are.
 We can obtain an individual location by putting the index position in
 square brackets.
 
-And just like slicing dataframes with `.iloc[]`, when we want and
-interval of values, the first value in the bracket is included and the
+And just like slicing dataframes with `.iloc[]`, when we want an
+interval of values, the first value in the bracket is included, and the
 last value is excluded.
 
 To obtain elements from right to left, we use negative integers.
@@ -424,11 +422,11 @@ manner.
 
 Perhaps we are grading exams that contain bonus marks.
 
-The max possible allowed mark on the exam is 100% so we must cap the
-grades so any mark greater than 100 is set to 100. First we check which
-values are greater than 100.
+The max possible allowed mark on the exam is 100%, so we must cap the
+grades, so any mark greater than 100 is set to 100. First, we check
+which values are greater than 100.
 
-This produces an array containing Boolean values which we store in the
+This produces an array containing Boolean values, which we store in the
 object `threshold`.
 
 The first and second elements are `False` since both 98 and 87 and not
@@ -436,7 +434,7 @@ larger than 100. However, the 3rd element is `True` since 103 is larger
 than 100.
 
 We now can replace all those values that have a `True` Boolean, with a
-new value, in this case let’s assign them a value of 100, the maximum
+new value; in this case, let’s assign them a value of 100, the maximum
 possible allowed grade.
 
 ---
@@ -502,7 +500,7 @@ array([ 70, 120,  70,  50, 110, 110, 110, 130,  90,  90, 120, 110, 120, 110, 110
 
 Notes:
 
-So why NumPy?
+So why, NumPy?
 
 Lists are often used with a similar purpose of arrays, but they are slow
 to process.
@@ -514,12 +512,12 @@ In fact, let’s refresh ourselves on certain values in a dataframe.
 Remember when we obtained the data type of a specific value in a
 dataframe?
 
-We obtained this `<class 'numpy.int64'>` which we originally ignored.
+We obtained this `<class 'numpy.int64'>`, which we originally ignored.
 
 This is because a pandas dataframe is built off of a multidimensional
 (2D specifically) array\!
 
-We will explain more about multi-dimensional arrays in the next set of
+We will explain more about multidimensional arrays in the next set of
 slides.
 
 We can actually convert an entire pandas column into an array pretty

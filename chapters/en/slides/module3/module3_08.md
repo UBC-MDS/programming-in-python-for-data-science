@@ -275,7 +275,7 @@ Notes:
 
 If we want to remove the `nutrition` label that is in the top left of
 the dataframe, we can rename the “axis” using `.rename_axis()`. We
-simple add in quotations what we want to rename the index label as the
+simply add in quotations what we want to rename the index label as the
 first argument (we are going to rename it to something blank hence empty
 quotations) and specify that in the `axis` argument that we are renaming
 the “columns” index.

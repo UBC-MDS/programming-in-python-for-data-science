@@ -48,10 +48,10 @@ Let’s do a little bit of a recap.
 **DRY** stands for Don’t Repeat Yourself.
 
 We can avoid writing repetitive code by creating a function that takes
-in arguments, performs some operations and returns the results.
+in arguments, performs some operations, and returns the results.
 
 The example in Module 5 converted code that creates a list of squared
-elements from an existing list of numbers, into a function.
+elements from an existing list of numbers into a function.
 
 ---
 
@@ -179,7 +179,7 @@ Notes:
 Let’s compare that with the variable `a_new_variable`.
 
 `a_new_variable` is created outside of a function in what we call our
-***global environment*** and therefore Python recognizes it as a
+***global environment***, and therefore Python recognizes it as a
 ***global variable***.
 
 ---
@@ -211,8 +211,8 @@ Notes:
 Global variables differ from local variables as they are not only
 recognized outside of any function but also recognized inside functions.
 
-Let’s take a look what happens when we add `a_new_variable`, which is a
-global variable,e and refer to it in the `squares_a_list` function.
+Let’s take a look at what happens when we add `a_new_variable`, which is
+a global variable,e and refer to it in the `squares_a_list` function.
 
 The function recognizes the global variable\!
 
@@ -244,7 +244,7 @@ I’m going to make an analogy comparing coffee stores to variables.
 **Starbucks Coffee** is a ***globally*** recognized brand across the
 world and is available in 70 different countries.
 
-I can purchase a coffee from Starbucks in Vancouver (my local city) and
+I can purchase a coffee from Starbucks in Vancouver (my local city), and
 if I were to travel across the world to Sydney, Australia, I would still
 be able to purchase a coffee from Starbucks there.
 
@@ -253,7 +253,7 @@ recognized in both its local (Vancouver) and global environments.
 
 **49th Parallel** is a ***local*** Vancouver coffee store.
 
-Many people from Vancouver recognize it, however, purchasing a coffee
+Many people from Vancouver recognize it; however, purchasing a coffee
 from 49th Parallel outside of Vancouver would be impossible as it is not
 accessible past the City of Vancouver.
 
@@ -457,7 +457,7 @@ Since the beginning of this course, we have been using verbs such as;
   - `.sort_values()`
   - `.rename()`
 
-where we modify a dataframe and save the modification as a new dataframe
+Where we modify a dataframe and save the modification as a new dataframe
 object.
 
 ---
@@ -510,8 +510,8 @@ modified dataframe with the dropped columns to the object named
 If we look at the original `cereal` dataframe, we can see it was
 unaffected by this transformation.
 
-Many of the verbs that we use for our transformations such as the ones
-we mentioned on the previous slide have an argument called `inplace`.
+Many of the verbs that we use for our transformations, such as the ones
+we mentioned on the previous slide, have an argument called `inplace`.
 
 The `inplace` argument accepts a Boolean value where the dataframe
 object is modified directly without the need to save the changes to an
@@ -521,8 +521,8 @@ making a new object with the `=` sign.
 Let’s try and drop the same columns as before but now using
 `inplace=True`.
 
-This time, nothing is returned when we execute this code however, if we
-look at the `cereal` dataframe now, we can see that it’s been altered
+This time, nothing is returned when we execute this code; however, if we
+look at the `cereal` dataframe now, we can see that it’s been altered,
 and the columns have been dropped.
 
 This transformation of the dataframe object is a **side effect** of the
@@ -533,7 +533,7 @@ outside the environment it was created, this means a function has an
 observable effect besides the returning value.
 
 It’s important to include that although `inplace` exists, there is a
-reason we haven’t taught it and it’s because we don’t recommend using
+reason we haven’t taught it, and it’s because we don’t recommend using
 it. Overriding the object by saving it with the same object name is the
 preferred coding technique.
 
@@ -567,7 +567,7 @@ regular_list
 Notes:
 
 Although this appears to be new vocabulary, side effects have been
-present since the beginning of this course starting with `pd.to_csv()`.
+present since the beginning of this course, starting with `pd.to_csv()`.
 
 `pd.to_csv()` is a function that we saw in module 1, that didn’t return
 anything after we executed it but still produced a **side effect** of a
@@ -577,9 +577,9 @@ Another example that we’ve seen when working with lists is the verb
 `.append()`.
 
 When we execute the code `.append(3)`, on our object `regular_list`,
-nothing is returned from the function and we have not used to assignment
-operator to save any transformation to the list, however, when we
-inspect `regular_list`, we can see that it has been modified and
+nothing is returned from the function, and we have not used to
+assignment operator to save any transformation to the list, however,
+when we inspect `regular_list`, we can see that it has been modified and
 included the new element `3`.
 
 This would be another example of a function with a side effect.
@@ -587,7 +587,7 @@ This would be another example of a function with a side effect.
 The list was created in the global environment, but modified in
 `.append()`’s local environment.
 
-Side effects seem like fun but they can be extremely problematic when
+Side effects seem like fun, but they can be extremely problematic when
 trying to debug (fix) your code.
 
 When writing functions, it’s usually a good idea to avoid side effects.
@@ -604,7 +604,7 @@ environment they originated in.
 Notes:
 
 Although side effects are not recommended, there are cases where either
-we must have a side-effects in our functions or there is no way to avoid
+we must have side-effects in our functions, or there is no way to avoid
 it. In these cases, it is extremely important that we document it.
 
 This leads to the next question of *How*? Good news - the answer is

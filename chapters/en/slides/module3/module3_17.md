@@ -18,7 +18,7 @@ Notes: Up until this moment, we have been working with a single
 dataframe.
 
 Many organizations split their data into multiple tables and join them
-together depending on what columns they need for their analysis.
+together, depending on what columns they need for their analysis.
 
 There are 2 different verbs we will use for joining dataframes together:
 
@@ -44,14 +44,14 @@ There are 2 different verbs we will use for joining dataframes together:
 
 Notes:
 
-Concatenation works extremely well when you have similar dataframes
+Concatenation works extremely well when you have similar dataframes,
 which both share identical column or row index labels.
 
 `pd.concat()` can glue the 2 dataframes together either horizontally or
 vertically.
 
-In this animation you can see that the pieces are joined in the order
-that was presented and the pattern does not necessarily match up.
+In this animation, you can see that the pieces are joined in the order
+that was presented, and the pattern does not necessarily match up.
 
 ---
 
@@ -136,7 +136,7 @@ This results in the same 4 rows but now we have 8 columns.
 
 Notes:
 
-We can combine these two dataframes using `pd.concat()` but we need to
+We can combine these two dataframes using `pd.concat()`, but we need to
 clarify on which axis to combine.
 
 We use square brackets around the dataframes we wish to glue together.
@@ -373,7 +373,7 @@ Notes:
 observation. What happens if our dataframes have different orders for
 the candy bars?
 
-Let’s use an horizontal concatenation example with the
+Let’s use a horizontal concatenation example with the
 dataframe`snacksize_candybars.csv`. This data contains the candy bars
 from `candy` in a shuffled order.
 
@@ -398,7 +398,7 @@ What happens when we concatenate `candy` and `snacksize_candybars` now
 that it has shuffled mix-matched rows?
 
 Oh no. This does not look good. You can see that the 2 `name` columns
-have different values in each row which means this concatenation would
+have different values in each row, which means this concatenation would
 produce incorrect results\!
 
 ---
@@ -418,7 +418,7 @@ when we are trying to glue two dataframes together horizontally or
 vertically where the rows and columns are in the same order.
 
 If your dataframes don’t have the same row values, your data will be
-displayed incorrectly and therefore your results will also have no
+displayed incorrectly, and therefore, your results will also have no
 meaning.
 
 ---

@@ -16,14 +16,14 @@ Notes: <br>
 
 Notes:
 
-In the previous slide decks we discussed how `pandas` provides 2
+In the previous slide decks, we discussed how `pandas` provides 2
 functions for reshaping data;
 <a href="https://pandas.pydata.org/docs/reference/api/pandas.melt.html" target="_blank">`.melt()`</a>
 and
 <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.pivot.html" target="_blank">`.pivot()`</a>
 .
 
-We are going to spend this next section discussing `.melt()` which is
+We are going to spend this next section discussing `.melt()`, which is
 simply the reverse transformation of `.pivot()`.
 
 Instead of converting a long dataframe to a wider one as we do in
@@ -104,7 +104,7 @@ one named `nutrition` with the values expressed in a column named
 This is the dataframe exactly like we started with when we used
 `.pivot()` in the last section.
 
-After melting we can see that the rows are not quite in the same order
+After melting, we can see that the rows are not quite in the same order
 as before, but we can agree that its what we want.
 
 ---
@@ -127,7 +127,7 @@ Notes:
 
 Let’s try to understand what happened.
 
-  - The identifying column and the columns we wanted to keep, are
+  - The identifying column and the columns we wanted to keep are
     specified in the `id_vars` argument.
 
   - the columns `calories` and `protein` are called in `value_vars` and

@@ -33,7 +33,7 @@ addition
 
 Notes:
 
-Functions may feel like we are introducing something new but we have
+Functions may feel like we are introducing something new, but we have
 been using them for the last 4 and a half modules.
 
 Back in Module 1, we compared functions and methods to verbs as they
@@ -76,10 +76,10 @@ Notes:
 
 In the last section, we discussed how loops helped avoid redundant code.
 
-We wrote code which created a new list containing the square of the
+We wrote code, which created a new list containing the square of the
 elements.
 
-Using a loop for this, helped our coding style somewhat but now we have
+Using a loop for this helped our coding style somewhat, but now we have
 a new problem.
 
 What happens if we want to do the same process to multiple lists all
@@ -138,7 +138,7 @@ Now I will have to ***repeat*** the same code just so it applies to
 these lists too.
 
 This definitely violates the DRY principle. The question now is ***“Is
-there a better way?”*** and luckily there is\!
+there a better way?”*** and luckily, there is\!
 
 ---
 
@@ -173,8 +173,8 @@ Notes:
 We have the ability to make our own function and use them just like how
 we use functions like `pd.read_csv()` and `len()`.
 
-We can convert the code in the last slide, into our very own function
-and use it like we use Python built-in ones.
+We can convert the code in the last slide into our very own function and
+use it like we use Python built-in ones.
 
 We can call our new function using the same syntax as a Python built-in
 function too.
@@ -203,21 +203,21 @@ Let’s take a look at the how we define a function:
 
 Notes:
 
-Let’s take a look at the how we define a function:
+Let’s take a look at how we define a function:
 
   - `def` is a python keyword that tells Python that anything indented
     after this belongs to a function.
 
-  - Next we give it a **Function name**. Like any object, we need to
+  - Next, we give it a **Function name**. Like any object, we need to
     name it.
     
       - In this case, we have named our function `squares_a_list`.  
       - We cannot name it any existing function names.
 
-  - Following our function name we specify any **Parameters/Arguments**
+  - Following our function name, we specify any **Parameters/Arguments**
     that the function requires.
     
-      - Python calls these “**parameters**” however, we have been
+      - Python calls these “**parameters**”; however, we have been
         calling these “**arguments**”.  
       - This is what the function needs as an input in order for us to
         perform some actions on an existing object.  
@@ -255,12 +255,12 @@ Notes:
 In the body of a function, all the code is indented 4 spaces and further
 indented for loops and conditions.
 
-The `return` statement is crucial to a function for returning a desired
-output.
+The `return` statement is crucial to a function for returning the
+desired output.
 
 In our previous function, a new list was returned.
 
-If the function does not return anything then you won’t get a value to
+If the function does not return anything, then you won’t get a value to
 assign to an object.
 
 It does all the work, but never sends the result back to the code that
@@ -285,7 +285,7 @@ Notes:
 We can now call this function and specify each of our lists of interest
 as the input argument:
 
-  - `numbers`
+  - `numbers.`
   - `larger_numbers`
   - `promoted_numbers`
   - `executive_numbers`
@@ -330,7 +330,7 @@ squares_a_list(executive_numbers)
 
 Notes:
 
-This function now is recycled on all of our lists and meets the DRY
+This function is now recycled on all of our lists and meets the DRY
 principle.
 
 ---
@@ -356,14 +356,14 @@ for list_of_numbers in [numbers, larger_numbers, promoted_numbers, executive_num
 
 Notes:
 
-We could get even more fancy, and put all the lists into one large list
+We could get even more fancy and put all the lists into one large list
 (so now you have a list of lists).
 
 Then you could loop over the list and call the function each time.
 
 This example leads us to our next point.
 
-Just because we ***could*** do this, doesn’t necessarily mean we
+Just because we ***could*** do this doesn’t necessarily mean we
 ***should***.
 
 ---

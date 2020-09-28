@@ -33,7 +33,7 @@ cereal
 
 Notes:
 
-We’ve just learned what Python values work with certain operations but
+We’ve just learned what Python values work with certain operations, but
 what about dataframes?
 
 Let’s take a look at our cereal dataframe once more.
@@ -79,9 +79,9 @@ It’s always a good idea to see what column types we have before
 operating on them, since they may not be of the type we expect.
 
 In this case, we discover that the `calories` column is of dtype
-`object` which isn’t the `int64` category we expected. This can happen
-sometimes when reading in data - pandas doesn’t always correctly guess
-what the type of a column should be.
+`object,` which isn’t the `int64` category we expected. This can
+sometimes happen when reading in data - pandas doesn’t always correctly
+guess what the type of a column should be.
 
 Since `calories` is not a numerical type, it will not show up in our
 summary statistics if we call `.describe()`:
@@ -153,7 +153,7 @@ dtype: object
 Notes:
 
 We can now use the verb `.assign()` to add the casted column back to the
-`cereal` dataframe. By using the same name `calories` we overwrite the
+`cereal` dataframe. By using the same name `calories`, we overwrite the
 previous column, but now as dtype `int`.
 
 Great, it looks like we are back on track.
@@ -215,7 +215,7 @@ Notes:
 What happens if we try to take summary statistics of some of the other
 columns?
 
-Yikes\! let’s not take the mean of columns of dtype `object`.
+Yikes\! Let’s not take the mean of columns of dtype `object`.
 
 As we saw before, taking a `.sum()` of a column concatenates the values
 together.
@@ -240,8 +240,8 @@ Since Booleans are cast to 0 and 1 for `True` and `False` values
 respectively, we can take the sum of a column to obtain the total number
 of `True` values.
 
-`.mean()` works by suming up all the values and divides them by the
-total number of rows. In the case where the column is of dtype `bool`,
+`.mean()` works by summing up all the values and divides them by the
+total number of rows. In the case where the column is of dtype `bool`
 since `True` has a value of 1 and `False` has a value of 0, the mean is
 calculated as the total number of `True` values divided by the total
 number of `True` and `False` values. In other words, this gives you the
@@ -283,20 +283,20 @@ Length: 77, dtype: float64
 
 Notes:
 
-We are quite familiar with taking the mean and sum of entire columns now
-but there are times where we want the mean or sum of the values in a
-***row***.
+We are quite familiar with taking the mean and sum of entire columns
+now, but there are times where we want the mean or sum of the values in
+a ***row***.
 
-Perhaps we wanted the total grams of `protein`,`fiber`,`fat` and `carbo`
-for each cereal?
+Perhaps we wanted the total grams of `protein`,`fiber`, `fat`, and
+`carbo` for each cereal?
 
-Remember when we discussed the argument `axis` in Module 3?
+Remember, when we discussed the argument `axis` in Module 3?
 
 We can use it in our operations as well.
 
 `axis=1` refers to the calculation being done for each row, across
 multiple columns, whereas `axis=0` (which is the default for aggregation
-verbs) refers to the calculation for each column, across multiple rows.
+verbs) refers to the calculation for each column across multiple rows.
 
 ---
 
