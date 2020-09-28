@@ -1,7 +1,7 @@
 ---
 title: 'Module Closing Remarks'
 description:
-  'Well done on finishing Programming in Python for Data Science '
+  'Well done on finishing Programming in Python for Data Science.'
 prev: /module8
 next: null
 type: chapter
