@@ -295,13 +295,13 @@ Tasks:
 Which of the following does ***NOT*** continue to execute when there are duplicate rows in the dataframe?
 
 <choice id="1" >
-<opt text="<code>.pivot()</code>">
+<opt text="<code>.pivot_table()</code>">
 
 You may want to look over this before moving forward.
 
 </opt>
 
-<opt text="<code>.pivot_table()</code>" correct="true">
+<opt text="<code>.pivot()</code>" correct="true">
 
 Great studying!
 

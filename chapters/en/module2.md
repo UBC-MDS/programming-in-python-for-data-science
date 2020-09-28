@@ -290,7 +290,7 @@ After running the code above, How many columns (not including the index) are the
 
 
 <choice id="1" >
-<opt text='8'>
+<opt text='9'>
 
 Did you count the index? 
 
@@ -302,7 +302,7 @@ Did you notice that we did not save the new fruit_salad in an object when droppi
 
 </opt>
 
-<opt text='7' correct="true">
+<opt text='8' correct="true">
 
 Good job! Nothing was dropped since we did not save the changes in an object. 
 
