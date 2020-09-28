@@ -37,8 +37,8 @@ multiple times.
 Let’s say we want to add the square of every number in a list to a new
 list.
 
-We could write code that looked something like this but it’s problematic
-for numerous reasons.
+We could write code that looked something like this, but it’s
+problematic for numerous reasons.
 
 ---
 
@@ -99,10 +99,10 @@ squared
 
 Notes:
 
-Just like how we try to reduce, reuse and recycle waste, coding likes to
-borrow a similar principle aimed at reducing repetitive code.
+Just like how we try to reduce, reuse, and recycle waste, coding likes
+to borrow a similar principle aimed at reducing repetitive code.
 
-This motion is called the ***DRY principle*** otherwise known as the
+This motion is called the ***DRY principle***, otherwise known as the
 “Don’t Repeat Yourself” principle.
 
 The premise of this principle to avoid redundancy within code.
@@ -149,15 +149,15 @@ squared
 
 Notes:
 
-Our example before takes 3 lines of code to add all the squared values
-to `squared` and violates the DRY principle in the process.
+Our example from before takes 3 lines of code to add all the squared
+values to `squared` and violates the DRY principle in the process.
 
 Instead, we can add to the list named `squared` by using something
 called a **loop** to repeat the `.append()` action over the multiple
 elements.
 
-This only took 2 lines of code but if the number of elements in the list
-`numbers` increased, the code would remains the same. Think how much
+This only took 2 lines of code, but if the number of elements in the
+list `numbers` increased, the code would remain the same. Think how much
 code writing we would avoid if the list `numbers` had a length of
 1000?\!
 
@@ -184,7 +184,7 @@ tuples, and strings).
 
 In this example, it’s over the values in a list.
 
-Every line of code that is indented, is executed for each value in the
+Every line of code that is indented is executed for each value in the
 list (hence the name “for” loops, sometimes also called “for each”
 loops).
 
@@ -237,7 +237,7 @@ squared
 
 Notes:
 
-Our loop begins with the keyword `for` and we make a new variable named
+Our loop begins with the keyword `for`, and we make a new variable named
 `number`.
 
 This refers to an element in the list `numbers`.
@@ -267,7 +267,7 @@ squared
 Notes:
 
 Loops have a similar structure to conditions in that the first line must
-end with a colon (`:`) and everything within the loop must have a
+end with a colon (`:`), and everything within the loop must have a
 4-space indentation to differentiate it from code outside the loop.
 
 ---
@@ -280,7 +280,8 @@ end with a colon (`:`) and everything within the loop must have a
 
 Notes:
 
-We first start with the first number in the list `numbers` which is `2`.
+We first start with the first number in the list `numbers`, which is
+`2`.
 
 We then calculate the square of `2` as `4` and append it to the empty
 list called `squared`.
@@ -311,13 +312,13 @@ We calculate the square of `3` as `9` and append it to the existing list
 
 Notes:
 
-We then move onto the last element which has a value of `5`.
+We then move onto the last element, which has a value of `5`.
 
-We square the number `5` which results in `25` and append it to the
+We square the number `5`, which results in `25` and append it to the
 existing list `squared`.
 
 This is where the loop ends since there are no more values in the list
-`numbers` and so it executes the next line of code which is displaying
+`numbers` and so it executes the next line of code, which is displaying
 object `squared`.
 
 ---
@@ -330,7 +331,7 @@ object `squared`.
 
 Notes:
 
-Here we can see exactly what steps are happening all together.
+Here we can see exactly what steps are happening altogether.
 
 The first element, 2, gets squared and added to the new list `squared`.
 

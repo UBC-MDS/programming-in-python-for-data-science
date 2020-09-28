@@ -60,7 +60,7 @@ learned such as:
   - `.count()`
   - `.split()`
 
-When we work with just a general string, we can just use the function on
+When we work with just a general string, we can just use the function at
 the end of the object name.
 
 For example, if our string object name was `instrument`.
@@ -100,7 +100,7 @@ Or convert the string to lowercase with `instrument.lower()`.
 We could count the number of occurrences of the letter “i” using
 `instrument.count('i')`
 
-And split a string on a specified character (for example, in this case
+And split a string on a specified character (for example, in this case,
 “i”) using the code `instrument.split('i')`
 
 ---
@@ -175,7 +175,7 @@ rain_cycle.head()
 
 Notes:
 
-Remember when we discussed datetimes columns and we applied time
+Remember when we discussed datetimes columns, and we applied time
 functions to a whole column by adding `.dt` before the function?
 
 We can use that same syntax style when applying string transformations
@@ -187,7 +187,7 @@ dataframe in uppercase.
 We can use `.assign()` and `.upper` paired with `.str` to transform the
 column.
 
-Not too shabby\!
+Not too, shabby\!
 
 How about we add a new column that contains the number of times “RAIN”
 is counted in `upper_cycle`.
@@ -228,11 +228,11 @@ column for each.
 ---
 
 ``` python
-"My favourite colour" + "is Blue"
+"My favorite colour" + "is Blue"
 ```
 
 ```out
-'My favourite colouris Blue'
+'My favorite colouris Blue'
 ```
 
 ``` python
@@ -251,8 +251,8 @@ combined_cycle.head()
 
 Notes:
 
-Another operation that we’ve lightly touched on is concatenation of
-strings. For instance when we add 2 strings together:
+Another operation that we’ve lightly touched on is the concatenation of
+strings. For instance, when we add 2 strings together:
 
 This can be implemented in dataframes too by concatenating a column with
 `str` values with another `str` and create a column:
@@ -390,7 +390,7 @@ dataframes.
 Let’s try to filter our data to find rows where the value for the
 `Comments` column is “Rain”.
 
-We can see that index 0 should be filtered out but pandas does not
+We can see that index 0 should be filtered out, but pandas does not
 recognize it with the trailing blank space.
 
 No rows are outputted. That’s because there is a blank space following
@@ -426,13 +426,13 @@ Notes:
 Let’s now strip our column using `.strip()` and assigning the changes to
 the `Comments` column of a dataframe named `stripped_cycling`.
 
-Since we are using `.strip()` with a dataframe column we have to add
+Since we are using `.strip()` with a dataframe column, we have to add
 `.str`.
 
 This time, when we filter on `Rain` on our new `stripped_cycling`
 dataframe, pandas filters out the row\!
 
-Ahh that’s much better\!
+Ahh, that’s much better\!
 
 ---
 

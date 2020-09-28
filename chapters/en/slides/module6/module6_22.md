@@ -25,7 +25,7 @@ Notes:
 This has been quite a full module\!
 
 We’ve learned how to make functions, how to handle errors gracefully,
-how to test our functions and write the necessary documentation to keep
+how to test our functions, and write the necessary documentation to keep
 our code comprehensible.
 
 These skills will all contribute to writing effective code.
@@ -46,7 +46,7 @@ your functions.
 
 ---
 
-## 1\. Avoid “hard coding”
+## 1\. Avoid “hard coding.”
 
 **Hard coding** is the process of embedding values directly into your
 code without saving them in objects.
@@ -78,20 +78,20 @@ code without saving them in variables
 
 When we hardcode values into our code, it decreases flexibility.
 
-Being inflexible can cause you end up writing more functions and/or
+Being inflexible can cause you to end up writing more functions and/or
 violating the DRY principle.
 
-This in turn can decreases the readability and makes code problematic to
-maintain. In short, hard coding is a breeding ground for bugs.
+This, in turn, can decrease the readability and makes code problematic
+to maintain. In short, hard coding is a breeding ground for bugs.
 
 Remember our function `squares_a_list()`?
 
 In this function, we “hard-coded” in `2` when we calculated `number
 ** 2`.
 
-There are a couple approaches to improving the situation. One is to
+There are a couple of approaches to improving the situation. One is to
 assign 2 to a variable in the function before doing this calculation.
-That way, if you need to reuse that number later on, you can just refer
+That way, if you need to reuse that number, later on, you can just refer
 to the variable; and if you need to change the 2 to a 3, you only need
 to change it in one place. Another benefit is that you’re giving it a
 variable name, which acts as a little bit of documentation.
@@ -105,7 +105,7 @@ If we now encounter a situation where we need to calculate each element
 to a different exponent like 4 or 0, we can do so without writing new
 code and potentially making a new error in doing so.
 
-We reduce our long term work load.
+We reduce our long term workload.
 
 This version is more maintainable code, but it doesn’t give the function
 caller any flexibility. What you decide depends on how you expect your
@@ -141,11 +141,11 @@ ability to reuse code that lies within it.
 Ideally, functions should serve a single purpose.
 
 For example, let’s say we have a function that reads in a csv, finds the
-mean of each group in a column and plots a specified variable.
+mean of each group in a column, and plots a specified variable.
 
 Although this may seem nice, we may want to break this up into multiple
 smaller functions. For example, what if we don’t want the plot? Perhaps
-the plots is just something we wanted a single time and now we are
+the plot is just something we wanted a single time, and now we are
 committed to it for each time we use the function.
 
 Another problem with this function is that the means are only printed
@@ -244,7 +244,7 @@ another_bad_idea
 Notes:
 
 For the most part, we have only lightly touched on the fact that
-functions can return multiple objects and it’s with good reason.
+functions can return multiple objects, and it’s with good reason.
 
 Although functions are *capable* of returning multiple objects, that
 doesn’t mean that it’s the best option.
@@ -262,7 +262,7 @@ another_bad_idea[0]
 
 Notes:
 
-Since our function returns a tuple we can obtain the plot by selecting
+Since our function returns a tuple, we can obtain the plot by selecting
 the first element of the output.
 
 This can be quite confusing. We would recommend separating the code into
@@ -297,7 +297,7 @@ created outside of it.
 
 Take our `grouped_means()` function.
 
-What if instead of including `df` as an input argument we just used
+What if instead of including `df` as an input argument, we just used
 `cereal` that we loaded earlier?
 
 The number one problem with doing this is now our function only works on
@@ -332,12 +332,12 @@ Detailed traceback:
 
 Notes:
 
-Ok let’s say we still use it, then what happens?
+Ok, let’s say we still use it, then what happens?
 
 Although it does work, global variables have the opportunity to be
 altered in the global environment.
 
-When we change the global variable outside the function, and try to use
+When we change the global variable outside the function and try to use
 the function again, it will refer to the new global variable and
 potentially no longer work.
 

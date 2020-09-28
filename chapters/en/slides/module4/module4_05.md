@@ -2,7 +2,7 @@
 type: slides
 ---
 
-# Python data structures: Lists, Tuples and Sets
+# Python data structures: Lists, Tuples, and Sets
 
 Notes:
 
@@ -45,7 +45,7 @@ We can change where to split the string as well.
 This argument uses the character “e” to separate the string and discards
 the separator.
 
-Why is it returned in square brackets though?
+Why is it returned in square brackets, though?
 
 ---
 
@@ -157,7 +157,7 @@ Similarly to how we can slice dataframes by columns and rows, we can
 slice lists by elements.
 
 Slicing lists is similar to slicing with `iloc[]`; the start is
-inclusive and the end is exclusive.
+inclusive, and the end is exclusive.
 
 So `my_list[1:3]` fetches elements 1 and 2, but not 3.
 
@@ -193,7 +193,7 @@ Next, we’ll talk about mutable and immutable data types.
 
 An object is **mutable** if it can be modified.
 
-Lists are mutable and we can assign new values for their various
+Lists are mutable, and we can assign new values for their various
 entries.
 
 For example, we can edit any entry in this list and replace it with a
@@ -256,7 +256,7 @@ Detailed traceback:
 
 Notes:
 
-Strings can be sliced just like lists.
+Strings can be sliced, just like lists.
 
 But we cannot replace characters - if we try, we get an error.
 
@@ -347,7 +347,7 @@ type(shopping_items)
 
 Notes:
 
-Up until this point we have been working with dataframes that have been
+Up until this point, we have been working with dataframes that have been
 read in and converted from different types of files.
 
 However, we can also make dataframes from scratch using lists.
@@ -423,7 +423,7 @@ type(my_list)
 
 Notes:
 
-Just to recap, immutable means that the elements withing the structure
+Just to recap, immutable means that the elements within the structure
 cannot be changed.
 
 We can still cast objects from type `tuple` into type `list` by using
@@ -439,7 +439,7 @@ my_set
 ```
 
 ```out
-{'Buckle my shoe', 1.0, 2}
+{1.0, 2, 'Buckle my shoe'}
 ```
 
 ``` python
@@ -448,7 +448,7 @@ my_set
 ```
 
 ```out
-{'Buckle my shoe', 1.0, 2}
+{1.0, 2, 'Buckle my shoe'}
 ```
 
 Notes:
@@ -479,7 +479,7 @@ my_set
 ```
 
 ```out
-{'Buckle my shoe', 1.0, 2}
+{1.0, 2, 'Buckle my shoe'}
 ```
 
 ``` python
@@ -507,8 +507,8 @@ Notes:
 
 Can we select a specific element?
 
-Remember this data structure does not preserve order, so Python displays
-them according to some internal sorting scheme.
+Remember, this data structure does not preserve order, so Python
+displays them according to some internal sorting scheme.
 
 We cannot select or slice from them. However, we can add to them with
 `.add()` (meaning that sets are mutable\!).

@@ -162,7 +162,7 @@ but now we’ve kept the `mfr` column.
 
 Notes:
 
-When we use `.pivot_table()` we have to proceed with caution.
+When we use `.pivot_table()`, we have to proceed with caution.
 
 We talked about how `.pivot()` and `.pivot_table()` take the arguments
 `index` and `columns`. What happens if we have multiple rows with the
@@ -297,21 +297,21 @@ dtype: bool
 
 Notes:
 
-When we use `.pivot_table()` we recommend checking if there are
+When we use `.pivot_table()`, we recommend checking if there are
 duplicate values in columns we use in the `index` and `columns`
 arguments before we proceed.
 
 We can do this with the `.duplicated()` verb. We put the columns we
-specified in the `index` and `columns` arguments in a `subset` argument
-in this case the columns `name` and `nutrition`. We set the argument
+specified in the `index` and `columns` arguments in a `subset` argument,
+in this case, the columns `name` and `nutrition`. We set the argument
 `keep` to `False` to make sure all the rows are identified and not just
 the repeated ones.
 
 Here we can see now that index 0 and 1 are both duplicates by the `True`
 values.
 
-Without the `keep` argument, only index labelled `1` will be identified
-as a duplicate.
+Without the `keep` argument, only the index labeled `1` will be
+identified as a duplicate.
 
 ---
 
@@ -341,7 +341,7 @@ cereal_problem[duplicate_info]
 
 Notes:
 
-We can obtain the duplicated rows by filtering on them from the original
+We can obtain the duplicated rows by filtering them from the original
 dataframe `cereal_problem`.
 
 How we see our 2 rows with calorie values of 100 and 130.
@@ -380,13 +380,13 @@ Once we have decided which row we want to keep, we can use `.drop()`
 that we learned in the previous Module to remove it from our original
 dataframe.
 
-For this example, we are going to drop the row at index 1 which has a
+For this example, we are going to drop the row at index 1, which has a
 calorie value of 130.
 
-We use the argument `axis=0` which refers to the rows in the dataframe
-and `index` which specifies the row index that we want to drop.
+We use the argument `axis=0,` which refers to the rows in the dataframe
+and `index,` which specifies the row index that we want to drop.
 
-This just means we are *“droping a row with index 1”*.
+This just means we are *“dropping a row with index 1”*.
 
 ---
 

@@ -20,15 +20,15 @@ def squares_a_list(numerical_list):
 
 Notes:
 
-Functions can get very complicated, so it’s not always obvious what they
-do just from looking at the name, arguments, or code.
+Functions can get very complicated, so it is not always obvious what
+they do just from looking at the name, arguments, or code.
 
 Therefore, people like to explain what the function does.
 
 The standard format for doing this is called a **docstring**.
 
 A **docstring** is a literal string that comes directly after the
-function `def` and documents the function’s purpose and usage
+function `def` and documents the function’s purpose and usage.
 
 Writing a docstring documents what your code does so that collaborators
 (and you in 6 months’ time\!) are not struggling to decipher and reuse
@@ -60,7 +60,7 @@ You can view the complete code
 <a href="https://github.com/pandas-dev/pandas/blob/v1.1.0/pandas/core/generic.py#L9258" target="_blank">here</a>.
 
 I think we can all agree that it would take a bit of time to figure out
-what the function is doing, the expected input variable types and what
+what the function is doing, the expected input variable types, and what
 the function is returning.
 
 Luckily `pandas` provides detailed documentation to explain the
@@ -112,7 +112,7 @@ All docstrings, not just the Numpy formatted ones, are contained within
 3 sets of quotations`"""`. We discussed in module 4 that this was one of
 the ways to implement string values.
 
-Adding this additional string to our function has no effect on our code
+Adding this additional string to our function has no effect on our code,
 and the sole purpose of the docstring is for human consumption.
 
 The NumPy format includes 4 main sections:  
@@ -157,8 +157,8 @@ Writing documentation for `squares_a_list()` using the **NumPy style**
 takes the following format.
 
 We can identify the brief description of the function at the top, the
-parameters that it takes in and what object type they should be, as well
-as what to expect as an output.
+parameters that it takes in, and what object type they should be, as
+well as what to expect as an output.
 
 Here we can even see examples of how to run it and what is returned.
 
@@ -177,12 +177,12 @@ def function_name(param1, param2):
         A description of param1.
     param2 : datatype
         A longer description because maybe this requires
-        more explanation and we can use several lines.
+        more explanation, and we can use several lines.
     
     Returns
     -------
     datatype
-        A description of the output, datatypes and behaviours.
+        A description of the output, data types, and behaviors.
         Describe special cases and anything the user needs to know 
         to use the function.
     
@@ -211,7 +211,7 @@ def exponent_a_list(numerical_list, exponent=2):
     ----------
     numerical_list : list
         The list from which to calculate exponential values from
-    exponent : int or float, optional
+    exponent: int or float, optional
         The exponent value (the default is 2, which implies the square).
         
     Returns
@@ -251,7 +251,7 @@ an explanation of the default value in the **parameter** description.
 def function_name(param1, param2):
     """The first line is a short description of the function. 
     
-    If your function include side effects explain it clearly here.
+    If your function includes side effects, explain it clearly here.
     
     
     Parameters
@@ -262,7 +262,7 @@ def function_name(param1, param2):
     .
     .
     .
-    etc.
+    Etc.
     """
 ```
 
@@ -280,7 +280,7 @@ user of the function knows that their objects are going to be modified.
 probably tell them first if you were going to paint it red while you had
 it\!)
 
-So how we we include side effects in our docstrings?
+So how we include side effects in our docstrings?
 
 It’s best to include your function side effects in the first sentence of
 the docstring.
@@ -308,10 +308,10 @@ Type:      builtin_function_or_method
 Notes:
 
 Ok great\! Now that we’ve written and explained our functions with a
-standardized format, we can read it in our file easily but what if our
+standardized format, we can read it in our file easily, but what if our
 function is located in a different file?
 
-How can we learn what it does, when reading our code?
+How can we learn what it does when reading our code?
 
 We learned in the first assignment that we can read more about built-in
 functions using the question mark before the function name.
