@@ -22,9 +22,9 @@ can be useful to move our test to different files as well.
 Let’s take a look at how we can do this, looking at the
 `exponent_a_list` function.
 
-Inside this one notebook `exponent` we have written our test but they’re
-kind of out of place and not really relevant exactly for our analysis in
-this notebook.
+Inside this one notebook `exponent`, we have written our test, but
+they’re kind of out of place and not really relevant exactly for our
+analysis in this notebook.
 
 ---
 
@@ -50,7 +50,7 @@ We can do this by making a new python file by creating a text file.
 
 Notes:
 
-We can rename this file as `test_exponent_a_list.py` ending the file
+We can rename this file as `test_exponent_a_list.py`, ending the file
 with `.py` to indicate that it’s a python script.
 
 ---
@@ -63,7 +63,7 @@ with `.py` to indicate that it’s a python script.
 
 Notes:
 
-We can rename this file as `test_exponent_a_list.py` ending the file
+We can rename this file as `test_exponent_a_list.py`, ending the file
 with `.py` to indicate that it’s a python script.
 
 ---
@@ -76,7 +76,7 @@ with `.py` to indicate that it’s a python script.
 
 Notes:
 
-Going back to the `exponents.ipynb` file we cut these tests and paste
+Going back to the `exponents.ipynb` file, we cut these tests and paste
 them inside of the `test_exponent_a_list` python script.
 
 ---
@@ -91,7 +91,7 @@ Notes:
 
 For this to work, there’s a few extra things we need to do.
 
-It’s important that you wrap these inside of a function so we’re going
+It’s important that you wrap these inside of a function, so we’re going
 to call this function `test_exponent_a_list`.
 
 This does not need any function arguments because we just want the test
@@ -107,7 +107,7 @@ function to execute the assert statement.
 
 Notes:
 
-Finally we need to add the import statement to tell python where the
+Finally, we need to add the import statement to tell python where the
 exponent a list function is coming from because it’s not in this file.
 
 It’s located in the `exponent_a_list` python script that we created
@@ -119,14 +119,14 @@ To import this function we write:
 from exponent_a_list import exponent_a_list`
 ```
 
-We now have our tests saved inside of a function `test_exponent_a_list`
+We now have our tests saved inside of a function `test_exponent_a_list`,
 which is inside of a file named `test_exponent_a_list.py`.
 
 One thing to notice is both the function name and the file name begin
 with test.
 
 This is a nice trick that we use with our testing tool named `pytest`
-which automatically run tests for us.
+which automatically runs tests for us.
 
 ---
 
@@ -167,7 +167,7 @@ the functions inside of those files that start with `test`.
 
 Notes:
 
-We write `pytest` in the terminal and this results in output that
+We write `pytest` in the terminal, and this results in output that
 indicates to us if our tests pass.
 
 This looks like all our tests pass\!
@@ -195,7 +195,7 @@ We got a very loud failure that something didn’t go correctly.
 
 We get the output from the assert statement about which test failed.
 
-At this point we would go back to either our function or test and try
+At this point, we would go back to either our function or test and try
 and fix the issue.
 
 ---

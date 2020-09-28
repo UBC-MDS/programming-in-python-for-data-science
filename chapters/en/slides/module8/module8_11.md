@@ -35,7 +35,7 @@ complete or well planned a database may seem, a data analyst will almost
 always encounter ***null*** values.
 
 A “null” is the human-readable term of a value that is missing from the
-dataframe. Remember in Module 4 we discussed `NaN` being of type
+dataframe. Remember, in Module 4 we discussed `NaN` being of type
 `float`? Python translates null values in numerical columns to `NaN`.
 Well, `NaN` is a constant that comes from the NumPy library.
 
@@ -77,7 +77,7 @@ Notes:
 A good rule of thumb when conducting an analysis is to check early on
 how complete the dataset is.
 
-`.info()` is similar to `.dtypes` but in addition to the dtype of each
+`.info()` is similar to `.dtypes`, but in addition to the dtype of each
 column, it includes the total number of non-null values contained in
 each column.
 
@@ -209,10 +209,10 @@ that contain null values in the `Distance` column of the dataframe.
 Here, we see the 3 rows of our dataframe that contain null values.
 
 If we wanted to filter all the rows that contain null values and not
-just in the `Distance` column, we can use the verb `.any()` on the full
-dataframe.
+just in the `Distance` column, we could use the verb `.any()` on the
+full dataframe.
 
-We only have `NaN` values in the `Distance` column so the same 3 rows
+We only have `NaN` values in the `Distance` column, so the same 3 rows
 are outputted as before.
 
 ---
@@ -257,7 +257,7 @@ Notes:
 The easiest and simplest way of handling nulls values is to remove those
 rows from the dataset.
 
-In a fashion similar to dropping columns, we can drop rows, if they
+In a fashion similar to dropping columns, we can drop rows if they
 contain a `NaN` value.
 
 It’s important that we take some necessary precautions and not drop a
@@ -266,7 +266,7 @@ large portion of the data.
 In our example above, if we were to remove the 3 rows we identified to
 contain `NaN` values, we do it in the following way.
 
-Notice that index 2 was removed and we only have 30 rows in our
+Notice that index 2 was removed, and we only have 30 rows in our
 dataframe now.
 
 ---
@@ -296,8 +296,8 @@ By default, all the rows with `NaN` values in any column will be
 considered when dropping rows; however, if we only want to drop rows
 with `NaN` values in certain columns, we can use the `subset` argument.
 
-Since in this code we subsetting the column `Type` which has no `NaN`
-values, no rows were dropped from the dataframe and we still have 33
+Since in this code, we subsetting the column `Type` which has no `NaN`
+values, no rows were dropped from the dataframe, and we still have 33
 rows.
 
 ---
@@ -325,8 +325,8 @@ Notes:
 
 The rows do get dropped when we subset on the `Distance` column.
 
-Alternatively if you have a column missing a large portion of data, the
-best option maybe to drop that column instead of the rows with missing
+Alternatively, if you have a column missing a large portion of data, the
+best option may be to drop that column instead of the rows with missing
 values.
 
 This will keep more of your data instead of dropping and losing most of
@@ -365,8 +365,8 @@ value.
 We can do so with `.fillna()`.
 
 Perhaps it’s missing from the data because he didn’t cycle that
-particular day. Replacing the `NaN` value with 0 in this case would make
-sense.
+particular day. Replacing the `NaN` value with 0, in this case, would
+make sense.
 
 Now index 2 now has a `Distance` of `0.00`.
 
@@ -405,7 +405,7 @@ Notes:
 Maybe a better decision would be to replace the values in `Distance`
 with the mean to avoid outliers.
 
-First we can calculate the mean rounded to 2 decimal places as 12.67,
+First, we can calculate the mean rounded to 2 decimal places as 12.67,
 and include that in the `value` argument in the `.fillna()` verb.
 
 We can now see the value in `Distance` for index 2 change to `12.67`.
@@ -474,7 +474,7 @@ This way, an observation can adopt a similar value to those near it.
 
 We will explore date columns in the next slide deck.
 
-Remember these are only a few methods that can be used in simple
+Remember, these are only a few methods that can be used in simple
 situations.
 
 In some scenarios, more complex methods of handling missing values may

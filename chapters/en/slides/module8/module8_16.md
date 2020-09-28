@@ -87,11 +87,11 @@ cycling.sort_values('Date').head(15)
 
 Notes:
 
-When we try to sort these values, it doesn’t recognized the day or month
+When we try to sort these values, it doesn’t recognize the day or month
 values and will sort them in some ascending order that is not temporal.
 
-We can see that this sorted starts with October 1st 2019 followed by
-September 10th 2019 and then September 11th 2019.
+We can see that this sorted starts with October 1st, 2019, followed by
+September 10th, 2019, and then September 11th, 2019.
 
 Python is purely sorting the rows by month and not taking the day into
 consideration.
@@ -129,14 +129,14 @@ dates.head()
 
 Notes:
 
-We can try parsing dates ourselves but that can be difficult and
+We can try parsing dates ourselves, but that can be difficult and
 time-consuming.
 
 To demonstrate this, let’s make an attempt at parsing the `Date` column
-in our `cycling` dataframe which currently has an `object` dtype.
+in our `cycling` dataframe, which currently has an `object` dtype.
 
-First we would need to split the column separating the date and the time
-and rename the labels 0, and 1 to `Date` and `Time` respectively.
+First, we would need to split the column separating the date and the
+time and rename the labels 0 and 1 to `Date` and `Time` respectively.
 
 ---
 
@@ -158,8 +158,8 @@ dates.head()
 
 Notes:
 
-Once again, we need to split the date column using `str.split()` which
-we learned in Module 4 and separate it into columns for the year, month
+Once again, we need to split the date column using `str.split(),` which
+we learned in Module 4, and separate it into columns for the year, month
 and day.
 
 ---
@@ -182,7 +182,7 @@ type(dates.iloc[0,1])
 
 Notes:
 
-Currently the values in `dates` are of type `str` so we would not be
+Currently, the values in `dates` are of type `str`, so we would not be
 able to sort them in a temporal manner.
 
 ---
@@ -220,7 +220,7 @@ Notes:
 We must convert the columns to integers values and add them to the
 `cycling_dates` dataframe.
 
-We are then going to select and reorder the columns in the dataframe so
+We are then going to select and reorder the columns in the dataframe, so
 the new date columns are on the left side.
 
 ---
@@ -248,7 +248,7 @@ cycling_dates.sort_values(['Year', 'Month', 'Day'])
 
 Notes:
 
-Now we try to sort them but how do we sort the `month` column?
+Now we try to sort them, but how do we sort the `month` column?
 
 It now incorrectly sorts the rows by listing the October rows before
 September.
@@ -256,20 +256,21 @@ September.
 It must be quite evident that we really don’t want to do it this way,
 right?
 
-There are a lot of limitations, and we haven’t yet separate the time.
+There are a lot of limitations, and we haven’t yet separated the time.
 
 Calculating the time between dates now can also be extremely difficult.
 
 (The differing number of days in months is a contributing factor.)
 
-Thankfully we don’t have do it this way.
+Thankfully we don’t have to do it this way.
 
-Pandas has some built-in functions that will make our lives much easier.
+Pandas have some built-in functions that will make our lives much
+easier.
 
-By the end of this slide deck, we will be able answer the question of
+By the end of this slide deck, we will be able to answer the question of
 *what was Tom’s longest time between rides*.
 
-This is a question that without pandas would have taken hours, instead
+This is a question that without pandas, would have taken hours, instead
 of minutes.
 
 ---
@@ -414,10 +415,10 @@ Notes:
 
 As another example, our date data may be split between multiple columns.
 
-We can combine the `Year`, `Month` and `Day` columns to a single
+We can combine the `Year`, `Month`, and `Day` columns to a single
 datetime column by using a dictionary within the `parse_dates` argument.
 
-The dictionary key, indicates the new column name and the dictionary
+The dictionary key indicates the new column name, and the dictionary
 value is a list with the multiple date columns to combine.
 
 ---
@@ -499,8 +500,8 @@ To convert `Date` to a datetime dtype, we use `pd.to_datetime()` and
 Now in the `new_cycling` dataframe, we see that the column `Date` is now
 of type `datetime64[ns]`
 
-Ok, but what if I don’t want the full datetime value and I want a column
-with only a portion of it, like the month, or year?
+Ok, but what if I don’t want the full datetime value, and I want a
+column with only a portion of it, like the month or year?
 
 ---
 
@@ -540,15 +541,15 @@ new_cycling.assign(weekday = new_cycling['Date'].dt.day_name()).head()
 Notes:
 
 No worries, we can add a new column to our dataframe in a similar as we
-did before but now we can extract a portion of the `datetime` column by
+did before, but now we can extract a portion of the `datetime` column by
 using
 <a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html#time-date-components" target="_blank">one
 of the many pandas datetime tools</a>.
 
 Here are a couple of examples:
 
-  - `.dt.day_name()` for the day of the week which we can pair this with
-    `.assign()` to add this as a column in the dataframe.
+  - `.dt.day_name()` for the day of the week, which we can pair this
+    with `.assign()` to add this as a column in the dataframe.
 
 ---
 
@@ -605,7 +606,7 @@ There is some inconsistency with these verbs. You can see that some use
 parentheses `()` and some do not.
 
 Using the `.dt` portion of these can only be used on a pandas Series. We
-can extract the day, month, year hour, or minute from a single datetime
+can extract the day, month, year, hour, or minute from a single datetime
 value, using the same nouns but omitting the `.dt`.
 
 Let’s see how that’s possible.
@@ -626,7 +627,7 @@ new_cycling.head()
 ```
 
 If I select the first example in row 1 of our `new_cycling` dataset,
-you’ll notice that its outputs something called a `Timestamp`.
+you’ll notice that it outputs something called a `Timestamp`.
 
 ``` python
 timestamp_ex = new_cycling.loc[1,'Date']
@@ -640,7 +641,7 @@ Timestamp('2019-09-11 06:52:00')
 Notes:
 
 If I select the first example in row 1 of our `new_cycling` dataset,
-you’ll notice that its outputs something called a `Timestamp`.
+you’ll notice that it outputs something called a `Timestamp`.
 
 This is a pandas data type.
 
@@ -718,14 +719,14 @@ Name: Date, Length: 33, dtype: timedelta64[ns]
 
 Notes:
 
-In our analysis it might be important to know how frequent events occur
+In our analysis, it might be important to know how frequent events occur
 and the time between them.
 
 `.diff()` is a useful function for that.
 
 This outputs a pandas Series with the time that occurs between rows. As
-you can see there was a 10 hour and 22minute gap between Tom’s third and
-forth bike rides. Wow - that’s a long work day\!"
+you can see, there was a 10 hour and 22minute gap between Tom’s third
+and forth bike rides. Wow - that’s a long workday\!"
 
 Here, you’ll now notice a new dtype at the bottom of our new pandas
 Series named
@@ -774,8 +775,8 @@ Here we obtain the number of seconds.
 
 We can convert them into other units by using simple operations.
 
-In this case we convert it to hours by dividing it by the number of
-seconds in a hour.
+In this case, we convert it to hours by dividing it by the number of
+seconds in an hour.
 
 ---
 
@@ -808,13 +809,13 @@ Notes:
 
 Timedelta objects have a lot of functionality.
 
-We can use summary statistic verbs with them.
+We can use a summary statistic verbs with them.
 
 For example, we can calculate the maximum amount of time between rides.
 
 As well as the minimum.
 
-We can also do simple operation with them like finding the range.
+We can also do a simple operation with them, like finding the range.
 
 ---
 

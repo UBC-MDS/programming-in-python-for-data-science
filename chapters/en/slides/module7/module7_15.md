@@ -43,10 +43,10 @@ cereal_dataframe[(cereal_dataframe['calories'] >130) & (cereal_dataframe['calori
 Notes:
 
 We’ve learned about some tools that can help format and standardize our
-code such as white space and indentations but what about the things that
-a formatter can’t automatically change?
+code, such as white space and indentations, but what about the things
+that a formatter can’t automatically change?
 
-let’s start with how we write comments.
+Let’s start with how we write comments.
 
 Comments are important for understanding your code.
 
@@ -54,7 +54,7 @@ While docstrings cover what a function does, your comments will help
 document how your code achieves its goal.
 
 <a href="https://www.python.org/dev/peps/pep-0008/#comments" target="_blank">python.org</a>
-has some strong opinions about how comments should be written and the
+has some strong opinions about how comments should be written, and the
 first thing they mention is that our comments should reflect what the
 code is doing.
 
@@ -149,11 +149,11 @@ the comment and explain that we are adding 6.99 to the variable `cost`
 to account for shipping charges.
 
 Code that is concise is preferred over long-winded explanations. In this
-next example case there is no need to write a comment this long when
+next example case, there is no need to write a comment this long when
 something short like “Sum up the values 1 to 5” does the job.
 
 When writing comments, it’s important to make sure they are meaningful,
-concise and are a supplement to the understanding of your code.
+concise, and are a supplement to the understanding of your code.
 
 ---
 
@@ -206,15 +206,16 @@ Python naming convention is somewhat inconsistent, as stated on
 <a href="https://www.python.org/dev/peps/pep-0008/#naming-conventions" target="_blank">Python.org’s
 website</a>
 
-That being said being consistent and setting standards now, helps the
-python community, your code and future coding.
+That being said, it’s useful to try to set consistent standards which
+helps the Python community and will help you keep track of your code at
+a later time.
 
 Some common variable naming recommendations are as follows:
 
   - Variable names should use underscores
   - Variable names should be lowercase
 
-You could use the names `lego`, `lego_themes`, `lego_df` but we advise
+You could use the names `lego`, `lego_themes`, `lego_df`, but we advise
 again things like `lego_DF`, `LEGO` or `legothemes`.
 
 ---
@@ -316,7 +317,7 @@ names.
 You want to be efficient yet understandable.
 
 In this example, we can see that the second body of code is much easier
-on our eye and it takes much less effort to understand what our code is
+on our eye, and it takes much less effort to understand what our code is
 trying to convey.
 
 ---

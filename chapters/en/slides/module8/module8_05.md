@@ -38,11 +38,11 @@ Notes:
 We saw in the last set of slides that we can create 1D arrays using a
 number of different functions such as `np.array()`.
 
-We can also use the same functions to make multi-dimensional arrays
+We can also use the same functions to make multi-dimensional arrays,
 which are indicated by the multiple sets of square brackets `[[ ]]`.
 
-In our 1D arrays, our arrays only have a single set of square brackets
-whereas in multi-dimensional arrays we count multiple sets.
+In our 1D arrays, our arrays only have a single set of square brackets,
+whereas, in multi-dimensional arrays, we count multiple sets.
 
 ---
 
@@ -61,10 +61,10 @@ np.random.rand(4, 2)
 ```
 
 ```out
-array([[0.12184308, 0.39989954],
-       [0.84359779, 0.92901664],
-       [0.77012836, 0.14674105],
-       [0.75233526, 0.44412372]])
+array([[2.34487158e-01, 9.12303222e-01],
+       [3.17568989e-01, 4.25334290e-01],
+       [6.73014039e-02, 5.95705704e-01],
+       [2.02607123e-04, 4.21282558e-01]])
 ```
 
 ``` python
@@ -82,7 +82,7 @@ Notes:
 Some of the functions that we use to create arrays have the ability for
 us to specify them with multi-dimensions.
 
-`np.zeros()` is an function that accepts a tuple with the shape of our
+`np.zeros()` is a function that accepts a tuple with the shape of our
 desired array.
 
 In this case, an array with 3 rows and 4 columns.
@@ -92,7 +92,7 @@ numeric values that correspond to the arrays shape.
 
 So in the example, an array with 4 rows and 2 columns.
 
-We can also use the verb `.reshape()` to tranform a 1D array into a
+We can also use the verb `.reshape()` to transform a 1D array into a
 multi-dimension array.
 
 ---
@@ -111,7 +111,7 @@ multi-dimension array.
 
 Notes:
 
-We saw how to make multi-dimensional arrays but dimension is quite
+We saw how to make multi-dimensional arrays, but the dimension is quite
 different than what the shape of an array is.
 
 Here are three main array nouns we need to know to understand the
@@ -164,13 +164,13 @@ Notes:
 
 `array1` is an example of a 1d array.
 
-We can use `.ndim` to check the number of dimensions and just as we
-suspected it is 1.
+We can use `.ndim` to check the number of dimensions, and just as we
+suspected, it is 1.
 
 We use `.shape` to find the number of elements in each dimension.
 
-This returns a tuple with only 1 value which represents the 1 dimension.
-This value gives the number of elements in the dimension.
+This returns a tuple with only 1 value, which represents the 1
+dimension. This value gives the number of elements in the dimension.
 
 Finally, `.size` will return the ***total*** number of values in the
 array.
@@ -218,7 +218,7 @@ Let’s try this again with a 2d array.
 
 We can confirm the number of dimensions with `ndim`.
 
-Here we have a 2 dimensional array as expected.
+Here we have a 2-dimensional array as expected.
 
 The shape of the array now consists of two elements, one for each
 dimension.
@@ -298,7 +298,7 @@ Let’s say we want to select `6`. It’s located in row 1 and column 2
 (remember that the index includes 0).
 
 We could also do the same thing by putting the row and column index in
-separate square brackets but it’s not recommended.
+separate square brackets, but it’s not recommended.
 
 ---
 

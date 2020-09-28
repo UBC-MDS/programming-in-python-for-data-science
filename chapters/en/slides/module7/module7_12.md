@@ -26,7 +26,7 @@ Clement H</a> <br>
 Notes:
 
 We’ve talked a lot about how to make sure our code works and that it
-does what we want it to, but just because it works, doesn’t mean it’s
+does what we want it to, but just because it works doesn’t mean it’s
 maintainable\!
 
 Code has two “users” - the computer (which turns it into machine
@@ -82,10 +82,10 @@ Python library called `flake8`.
 
 Think of it as a grammar check but for your code.
 
-`flake8` will tell us how and where our code is formatted poorly but it
+`flake8` will tell us how and where our code is formatted poorly, but it
 won’t make any changes to it. That is up to us.
 
-We will show you shortly, how to use `flake8` in your Jupyter notebooks.
+We will show you shortly how to use `flake8` in your Jupyter notebooks.
 
 ---
 
@@ -122,7 +122,7 @@ def exponent_a_list(numerical_list, exponent=2):
 
 Notes:
 
-Unlike PEP8 which is a style guide and `flake8` which just tells you
+Unlike PEP8, which is a style guide, and `flake8` which just tells you
 where your code needs changes, `black` is a tool that will format your
 code.
 
@@ -160,7 +160,7 @@ slightly different rules. Even after `black` is run on our code,
 correctly.
 
 We’re not going to worry about that for now. It can be fixed by
-customizing `flake8` but that’s outside the scope of this course.
+customizing `flake8,` but that’s outside the scope of this course.
 
 Now let’s see how we can use both of these in a Jupyter notebook.
 
@@ -176,7 +176,7 @@ Now let’s see how we can use both of these in a Jupyter notebook.
 
 Notes:
 
-Now that you know a little bit about what `flake8` and `black` can do,
+Now that you know a little bit about what `flake8` and `black` can do
 let’s see how we use them.
 
 Here is a blank Jupyter notebook with the `exponent_a_list` Python
@@ -197,7 +197,7 @@ Notes:
 This time, our `exponent_a_list()` function is not as it was formatted
 before.
 
-We’ve got space and indentation issues and it looks like we are missing
+We’ve got space and indentation issues, and it looks like we are missing
 white space in areas as well.
 
 ---
@@ -218,10 +218,10 @@ I’ve got this empty notebook that we need to add a new cell to.
 
 We can do so by clicking the `+` button in the toolbar.
 
-By default it will add a code type cell to the notebook but what if we
+By default, it will add a code type cell to the notebook, but what if we
 want a text cell?
 
-All we have to do is click on `markdown` in the toolbar and it will
+All we have to do is click on `markdown` in the toolbar, and it will
 change to a text cell.
 
 ---
@@ -239,10 +239,10 @@ Notes:
 Let’s import our function using the same code Tiffany showed us before.
 
 We specify first `from` and then the name of the script - in this case,
-the file name is `exponent_a_list` and we follow that with the name of
+the file name is `exponent_a_list`, and we follow that with the name of
 the specific function so `exponent_a_list` again.
 
-Next, we run it and it looks like it’s imported into our notebook.
+Next, we run it, and it looks like it’s imported into our notebook.
 
 ---
 
@@ -257,7 +257,7 @@ Next, we run it and it looks like it’s imported into our notebook.
 Notes:
 
 Let’s test out the function `exponent_a_list()` with a list containing
-the values 1, 3 and 7.
+the values 1, 3, and 7.
 
 We are intentionally not adding spaces between the comma so that we can
 use it as a formatting example shortly.
@@ -293,7 +293,7 @@ Instead of doing everything ourselves and going line-by-line to check
 our code, we can use `flake8` to tell us exactly what we need to fix.
 
 By clicking on the addition sign on the top left of the toolbar, we can
-access the **Launcher** where we can open our **terminal**.
+access the **Launcher**, where we can open our **terminal**.
 
 ---
 
@@ -308,7 +308,7 @@ access the **Launcher** where we can open our **terminal**.
 Notes:
 
 To use `flake8` in the terminal, all we have to do is type `flake8`
-followed by the name of the file we want to check ; in this case
+followed by the name of the file we want to check; in this case,
 `exponent_a_list.py`.
 
 ---
@@ -337,9 +337,9 @@ This produces an output of all the formatting issues we need to amend.
 
 Notes:
 
-We can see that at line 1 column 45, we have `multiple spaces before the
-operator` which means in our that’s where we will need to make changes
-in the file `exponent_a_list.py`.
+We can see that at line 1, column 45, we have `multiple spaces before
+the operator,` which means in our that’s where we will need to make
+changes in the file `exponent_a_list.py`.
 
 We can then go through all of these suggestions and correct them so that
 our `exponent_a_list.py` is adhering to a cleaner style.
@@ -364,7 +364,7 @@ We type `flake8-nb` followed by the name of the notebook:
 
     flake8-nb example.ipynb
 
-`example` is the name of the notebook and Jupyter notebooks end with
+`example` is the name of the notebook, and Jupyter notebooks end with
 `.ipynb`.
 
 ---
@@ -395,14 +395,14 @@ notebook.
 
 Notes:
 
-Not only can you check `flake8` in a terminal but you can check it in a
+Not only can you check `flake8` in a terminal, but you can check it in a
 Jupyter notebook as well.
 
 This time I’m going to run `flake8` but in a code cell in our `example`
 notebook.
 
 We write almost the same thing we did in our terminal except for this
-time we precede the code with an exclamation mark:
+time; we precede the code with an exclamation mark:
 
     !flake8 exponent_a_list.py
 
@@ -421,7 +421,7 @@ terminal.
 
 Notes:
 
-We could go through all the issues one by one and fix them individually
+We could go through all the issues one by one and fix them individually,
 or we can use `black` which does this (well, most of it) for us.
 
 Just like `flake8`, we can do this in the terminal or in our Jupyter
@@ -463,7 +463,7 @@ pretty messy.
 
 Notes:
 
-Now we are can run this cell and we get the output:
+Now we can run this cell, and we get the output:
 
     reformatted are exponent_a_list.py. 
     All done!  ✨ 🍰 ✨
@@ -482,10 +482,10 @@ Now we are can run this cell and we get the output:
 Notes:
 
 When we open up the file `exponent_a_list.py`, we can see that a lot of
-the white space has been removed and the indentations have been fixed\!
+the white space has been removed, and the indentations have been fixed\!
 
-Remember it’s not perfect\! We can still see blank lines here that
-probably shouldn’t be but it does a pretty good job.
+Remember, it’s not perfect\! We can still see blank lines here that
+probably shouldn’t be, but it does a pretty good job.
 
 ---
 
@@ -502,7 +502,7 @@ Notes:
 Now that we’ve done it in a Jupyter notebook, let’s try it in our
 terminal.
 
-We do the same thing as in a Jupyter notebook but this time without the
+We do the same thing as in a Jupyter notebook, but this time without the
 exclamation point.
 
     Black exponent_a_list.py
@@ -519,7 +519,8 @@ exclamation point.
 
 Notes:
 
-This time this file has also already been formatted so the output now is
+This time this file has also already been formatted, so the output now
+is
 
     All done!  ✨ 🍰 ✨
     1 file unchanged
@@ -538,7 +539,7 @@ It will formats your cell right away.
 
 So that is how you can use `flake8` and black to clean up your code.
 
-Remember these tools don’t do everything.
+Remember, these tools don’t do everything.
 
 You’ll learn about some of the things that `black` and `flake8` don’t
 pick up in the next section.
