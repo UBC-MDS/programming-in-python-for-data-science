@@ -510,7 +510,7 @@ Tasks:
 <exercise id="18" title="Concat questions">
 
 **Question 1**     
-If we wanted to concatenate Dataframe A with Dataframe B horizontally, what do we need to make sure **before** proceeding
+If we wanted to concatenate Dataframe A with Dataframe B horizontally, what do we need to make sure **before** proceeding?
 
 <choice id="1" >
 <opt text="There are no <code>NaN</code> values">
