@@ -938,7 +938,7 @@ Right!
 'The monster under my bed' + [1, 2.0, 3, 4.5]
 ```
 
-<choice id="2" >
+<choice id="5" >
 
 <opt text="Output">
 
