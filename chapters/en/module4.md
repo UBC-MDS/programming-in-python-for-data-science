@@ -715,7 +715,7 @@ Use the coding cell below to check the dtype for the `Salary` column.
 
 What is the actual dtype of the `Salary` column?
 
-<choice id="1" >
+<choice id="2" >
 <opt text="<code>float64</code>" correct="true">
 
 Nice!
@@ -750,7 +750,7 @@ Are you looking at the output from above?
 
 What dtype is would be an appropriate guess for the `Weight` column?
 
-<choice id="1" >
+<choice id="3" >
 <opt text="<code>float64</code>" correct="true">
 
 Nice! `float64` and `int64` are both appropriate dtype guesses for the `Weight` column.    
@@ -790,11 +790,11 @@ Use the coding cell below to check the dtype for the `Weight` column.
 </codeblock>
 
 
-**Question 1 (c)**     
+**Question 2 (c)**     
 
 What is the actual dtype of the `Weight` column?
 
-<choice id="1" >
+<choice id="4" >
 <opt text="<code>float64</code>" >
 
 This time is was not of dtype `float64`.
