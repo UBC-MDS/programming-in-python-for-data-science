@@ -414,7 +414,7 @@ Running a coding exercise for the first time could take a bit of time for everyt
 
 _**Make sure you remove the hash (`#`) symbol in the coding portions of this question.  We have commented them so that the line won't execute and you can test your code after each step.**_
 
-** Weight** and **mass** are 2 very different measurements, although they are used interchangeably in everyday conversations. 
+**Weight** and **mass** are 2 very different measurements, although they are used interchangeably in everyday conversations. 
 **Mass** is defined by  <a href="https://www.nasa.gov/pdf/591747main_MVW_Intro.pdf" target="_blank">NASA</a> as the amount of matter in an object, whereas, **weight** is defined as the vertical force exerted by a mass as a result of gravity (with units of Newtons). 
 The function `earth_weight()` converts an object's mass to Weight by multiplying it by the gravitational force acting on it. On Earth, the gravitational force is measured as 9.8 m/s^2.  
 
