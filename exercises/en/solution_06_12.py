@@ -25,4 +25,4 @@ def bmi_calculator(height, weight):
 
 # View the documentation
 
-bmi_calculator?
+?bmi_calculator

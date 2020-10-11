@@ -416,7 +416,7 @@ _**Make sure you remove the hash (`#`) symbol in the coding portions of this que
 
 **Weight** and **mass** are 2 very different measurements, although they are used interchangeably in everyday conversations. 
 **Mass** is defined by  <a href="https://www.nasa.gov/pdf/591747main_MVW_Intro.pdf" target="_blank">NASA</a> as the amount of matter in an object, whereas, **weight** is defined as the vertical force exerted by a mass as a result of gravity (with units of Newtons). 
-The function `earth_weight()` converts an object's mass to Weight by multiplying it by the gravitational force acting on it. On Earth, the gravitational force is measured as 9.8 m/s^2.  
+The function `earth_weight()` converts an object's mass to Weight by multiplying it by the gravitational force acting on it. On Earth, the gravitational force is measured as 9.8 $m/s^2$.  
 
 
 We want to make a more versatile function by having the ability to calculate the Weight of any object on any particular planet and not just Earth. Redefine the function `earth_weight()` to take an argument with a default gravitational force of 9.8.  
@@ -564,7 +564,7 @@ You are so close!
 
 </opt>
 
-<opt text="<code>add_stars?</code>" correct="true">
+<opt text="<code>?add_stars</code>" correct="true">
 
 Great! 
 
@@ -758,7 +758,7 @@ Tasks:
 
 - Are you using `'''` to contain your docstring?
 - Are you including all the sections? 
-- Are you getting the documentation of the docstring using `bmi_calculator?`
+- Are you getting the documentation of the docstring using `?bmi_calculator`
 
 </codeblock>
 
