@@ -127,7 +127,7 @@ x = 0
 # to the variable x to get a sum of the numbers from 1, 2, 3, 4, and 5. 
 
 for i in range(1,5):
-    x = x + 1
+    x = i + 1
 ```
 
 **Better comment**
@@ -137,7 +137,7 @@ x = 0
 
 # Sum up the values 1 to 5 
 for i in range(1,5):
-    x = x + 1
+    x = i + 1
 ```
 
 Notes:
