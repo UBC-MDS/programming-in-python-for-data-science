@@ -517,7 +517,7 @@ array([[ 0,  3,  6,  9, 12, 15],
        [ 2,  5,  8, 11, 14, 17]])
 ```
 
-<choice id="3" >
+<choice id="4" >
 <opt text="<code>hurray.t</code>"  >
 
 Uppercase and lowercase characters are not considered equal in Python.
