@@ -35,16 +35,19 @@
 - _(In the assignment introduce Jupyter notebooks)_
 
 #### Learning Outcomes 
-By the end of the module, students are expected to:
-- Describe the components of a Dataframe.
-- Read a standard `.csv` file using Pandas `pd.read_csv()`.
-- Explain modules and import libraries.
-- Demonstrate indexing and slicing with `df.loc[]` and `df.iloc[]`.
-- Demonstrate Selecting columns of a dataframe using `df[]` notation.
-- Create simple summary statistics using `pd.describe()`.
-- construct simple visualizations using pandas.
-- create a `.csv` file from a dataframe using `df.to_csv()`.
 
+By the end of the module, students are expected to:
+
+- Describe the components of a Dataframe.
+- Read a standard `.csv` file using Pandas [`pd.read_csv()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html).
+- Load the `pandas` library into Python.
+- Demonstrate indexing and slicing with `.loc[]` and `.iloc[]`.
+- Demonstrate Selecting columns of a dataframe using `df[]` notation.
+- Obtain values from a dataframe using `.loc[]`.
+- Sort a dataframe using [`.sort_values()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.sort_values.html).
+- Create simple summary statistics using [`.describe()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.describe.html).
+- Construct simple visualizations using [Altair](https://altair-viz.github.io/).
+- Create a `.csv` file from a dataframe using [`.to_csv()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_csv.html).
 
 
 ### Module 2: Not So Scary Wrangling (Table Manipulation and Chaining)
@@ -64,15 +67,13 @@ By the end of the module, students are expected to:
 
 By the end of the module, students are expected to:
 
-- Demonstrate how to rename columns of a dataframe using [`df.rename()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.rename.html).
-- Create new or columns in a dataframe using [`df.assign`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.assign.html) notation.
-- Drop columns in a dataframe using [`df.drop`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.drop.html)
+- Demonstrate how to rename columns of a dataframe using [`.rename()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.rename.html).
+- Create new or columns in a dataframe using [`.assign()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.assign.html) notation.
+- Drop columns in a dataframe using [`.drop()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.drop.html)
 - Use `df[]` notation to filter rows of a dataframe.
-- Perform aggregating methods on grouped objects using [`groupby`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.groupby.html) and [`df.agg()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.agg.html).
+- Calculate summary statistics on grouped objects using [`.groupby()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.groupby.html) and [`.agg()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.agg.html).
 - Explain when chaining is appropriate.
-- Compare and contrast functions and methods.
-- Demonstrate chaining over multiple lines and methods.
-- _Use pandas to modify values in a dataframe using `df.apply()` and `df.applymap()`._
+- Demonstrate chaining over multiple lines and verbs.
 
 
 ### Module 3: It's Tidy up Time! (Tidy Data)
@@ -86,13 +87,14 @@ By the end of the module, students are expected to:
 
 
 #### Learning Outcomes 
+
 By the end of the module, students are expected to:
 
 - Explain what tidy data is.
-- Use `df.melt() `and `df.pivot() `to reshape dataframes, specifically to make tidy data.
-- Use stacking and unstacking operations to reshape a dataframe.
-- Combine dataframes using `df.merge()` and `pd.concat()` and know when to use these different methods.
-- Understand the different joining methods. 
+- Use [`.melt()`](https://pandas.pydata.org/docs/reference/api/pandas.melt.html) and [`.pivot()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.pivot.html) to reshape dataframes, specifically to make tidy data.
+- Learn how to reset a dataframe's index.
+- Combine dataframes using [`.merge()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.merge.html) and [`.concat()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.concat.html) and know when to use these different methods.
+- Understand the different joining methods.
 
 
 ### Module 4: Python without the "eek": Basic Python 
@@ -108,11 +110,11 @@ By the end of the module, students are expected to:
 
 By the end of the module, students are expected to:
 
-- Compare and contrast python's key data types.
-- Compare and contrast python's key data structures. 
-- Use python to determine the type and structure of an object.
+- Compare and contrast Python's key data types.
+- Compare and contrast Python's key data structures. 
+- Use Python to determine the type and structure of an object.
 - Demonstrate how to create data structures and convert them to another.
-- Describe what python packages/libraries are, as well as explain when and why they are useful.
+- Identify which operations can be applied to different data types and columns dtypes. 
 
 
 ### Module 5: Loops and Conditions 
@@ -130,11 +132,13 @@ By the end of the module, students are expected to:
 #### Learning Outcomes 
 
 By the end of the module, students are expected to:
+
 - Explain the DRY principle and how it can be useful.
-- Write conditional statements with if, elif and else to run different code, depending on the input.
-- Write for loops to repeatedly run code.
-- Describe the expected outcome of code with nested loops .
-- Define and use a named function that accepts parameters and returns values.
+- Write conditional statements with `if`, `elif` and `else` to run different code, depending on the input.
+- Write `for` loops to repeatedly run code.
+- Describe the expected outcome of code with nested loops.
+- Define and use a function that accepts parameters and returns values.
+
 
 ### Module 6:  Functions
 
@@ -147,8 +151,10 @@ By the end of the module, students are expected to:
 
 #### Learning Outcomes 
 
+By the end of the module, students are expected to:
+
 - Evaluate the readability, complexity and performance of a function.
-- Write Docstrings for functions following the NumPy/SciPy format.
+- Write docstrings for functions following the NumPy/SciPy format.
 - Write comments within a function to improve readability.
 - Write and design functions with default arguments.
 - Explain the importance of scoping and environments in Python as they relate to functions.
@@ -170,13 +176,14 @@ By the end of the module, students are expected to:
 
 By the end of the module, students are expected to:
 
-- Describe what python libraries are, as well as explain when and why they are useful.
+- Describe what Python libraries are, as well as explain when and why they are useful.
 - Identify where code can be improved concerning variable names, magic numbers, comments and whitespace.
 - Write code that is human readable and follows the black style guide.
 - Import files from other directories.
-- Use `pytest` to check a function's tests.
-- When running `pytest`, explain how pytest find the associated test functions.
-- Explain how the python debugger can help rectify your code.
+- Use [`pytest`](https://docs.pytest.org/en/stable/) to check a function's tests.
+- When running [`pytest`](https://docs.pytest.org/en/stable/), explain how pytest finds the associated test functions.
+- Explain how the Python debugger can help rectify your code.
+
 
 
 ### Module 8: Numpy, and Advanced Data Wrangling 
@@ -194,34 +201,9 @@ By the end of the module, students are expected to:
 
 By the end of the module, students are expected to:
 
-- Manipulate non-standard date/time formats into standard Pandas datetime using `pd.to_datetime()`.
-- Find, replace and extract text from a dataframe using verbs such as `.replace()`. 
-- Identify missing and erroneous values in a dataframe and manage them by removing them using `.dropna()` or replacing them using `.fillna()`.
-- Use NumPy to create ndarrays with `np.array()` and from functions such as `np.arrange()`, `np.linspace()` and `np.full()`
-- Describe resulting array shapes from operations 
-- Convert between a NumPy ndarray to a Pandas Dataframe.
-- Extract information from the Pandas profiling package. 
+- Use [NumPy](https://numpy.org/) to create ndarrays with `np.array()` and from functions such as `np.arrange()`, `np.linspace()` and `np.ones()`.
+- Describe the shape, dimension and size of an array.
+- Identify null values in a dataframe and manage them by removing them using [`.dropna()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.dropna.html) or replacing them using [`.fillna()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.fillna.html).
+- Manipulate non-standard date/time formats into standard Pandas datetime using [`pd.to_datetime()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.to_datetime.html).
+- Find, and replace text from a dataframe using verbs such as [`.replace()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.replace.html) and [`.contains()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.str.contains.html).  
 
-## APPENDIX: 
-
-### OLD MODULE 6: A Slice of NumPy (NumPy Arrays)
-
-#### Topics 
-
-- NumPy arrays
-- NumPy array dimensions
-- NumPy indexing and slicing
-- Explain broadcasting
-- Compare arrays with Pandas series and dataframes
-- Compare arrays with Pandas series and dataframes
-
-#### Learning Outcomes 
-
-By the end of the module, students are expected to:
-
-- Explain what broadcasting is and how to use it  (Mikes L3+ Tom's L1 _Mike asks do we need it?_)
-- Use NumPy to create ndarrays from existing data with `np.array()` and from functions such as `np.arrange()`, `np.linspace()` and `np.full()`
-- Describe resulting array shapes from operations  
-- Access values from a NumPy ndarray by indexing and slicing.
-- Compare and contrast np.ndarray, pd.Series and pd.DataFrame objects in Python.
-- Convert between a NumPy ndarray, Pandas Series, & Pandas Dataframe.
