@@ -8,7 +8,7 @@ output: pdf_document
 
 ## Time and Place
 Online
-Sept 22 – Oct 26, 2020
+Nov 17, 2020 – Jan 11, 2021
 
 ## Description
 This course is part of the Key Capabilities for Data Science program and will teach you how to conduct data analysis in Python. 
@@ -20,12 +20,12 @@ You will leave this course capable of processing raw data into a format suitable
 - None
 
 ## Content
-We are using an interactive platform that contains a series of slide decks accompanied with multiple choice questions and interactive coding exercises to apply what you learned during the module: [https://prog-learn.mds.ubc.ca/](https://prog-learn.mds.ubc.ca/). We recommend using Chrome, Firefox or Safari to complete the content as other browsers are incompatible with the content platform. 
+We are using an interactive platform that contains a series of slide decks accompanied by multiple-choice questions and interactive coding exercises to apply what you learned during the module: [https://prog-learn.mds.ubc.ca/](https://prog-learn.mds.ubc.ca/). We recommend using Chrome, Firefox or Safari to complete the content as other browsers are incompatible with the content platform. 
 
 ## Course Software Platforms
 Students will learn to write code and perform their analysis using the [Python Programming Language](https://www.python.org/doc/essays/blurb/). Assignments as well as the final project analysis will be done using [Jupyter Notebooks](http://jupyter.org/).
 Students will access the worksheets and tutorials in [Jupyter Notebooks](https://ubc-dsci.github.io/introduction-to-datascience/index.html#jupyter-notebooks) through [Canvas](https://canvas.ubc.ca/courses/19078). 
-Students will require a laptop, chromebook or tablet to complete this course.
+Students will require a laptop, Chromebook or tablet to complete this course.
 
 ## Learning Outcomes
 By the end of the course, students will be able to:
@@ -55,8 +55,8 @@ By the end of the course, students will be able to:
 
 ## Course Structure
 
-There are 8 modules in total for this course. Each module will be accompanied by an autograded assignment to be submitted. 
-The students will be responsible to complete the material of 2 modules per week. In weeks 3 and 5, students will need to take an online 45 minute open book quiz testing, material from Modules 1-4 and 5-8 respectively. 
+There are 8 modules in total for this course. Each module will be accompanied by an auto-graded assignment to be submitted. 
+The students will be responsible to complete the material of 2 modules per week. In weeks 3 and 5, students will need to take an online 45-minute open-book quiz testing, material from Modules 1-4 and 5-8 respectively. 
 This quiz can be taken at any point during the week. At the end of the 8th module, students will have an individual project to complete where they are required to use the skills they learned in the course and produce an analysis regarding an assigned dataset.
 
 
@@ -80,16 +80,16 @@ We have supplied informative videos on how to do this in assignment 1 and refere
 |--------|-------|-------------|
 | Module 1| Python & Pandas - An Unexpected Friendship | An Introduction to dataframes, the Python package Pandas, simple manipulations and Visualizations.|
 | Module 2| Not So Scary Wrangling (Table Manipulation and Chaining) | Importing different types of files, performing more advanced table manipulations (modifying and creating new columns) as well as method chaining conventions (style, including multi-line). | 
-| Module 3| Tidy Data and Joining Dataframes | Tidy data and how to transform your dataset into a tidy format.This module will also focus on how to concatenate and join multiple dataframes.|
+| Module 3| Tidy Data and Joining Dataframes | Tidy data and how to transform your dataset into a tidy format. This module will also focus on how to concatenate and join multiple dataframes.|
 | Module 4| Python Without the "Eek" (Basic Python)| Basic Python data types and structures. You will explore what data types and structures are used to create a Pandas dataframe and how understanding column dtypes is important to data analysis. |
-| Module 5| Making Choices and Repeating Iterations | Conditionals Statements and the fundamentals on creating code that efficiently repeats the same operations by adhering the DRY principle. |
+| Module 5| Making Choices and Repeating Iterations | Conditionals Statements and the fundamentals of creating code that efficiently repeats the same operations by adhering to the DRY principle. |
 | Module 6| Functions Fundamentals and Best Practices | Developing good habits when writing functions like including docstrings, defensive programming, test-driven development and how to compose useful functions. | 
 | Module 7| Importing Files and the Coding Style Guide |  Importing files and libraries from other directories and stylize your code for optimal readability.|
 | Module 8| A Slice of NumPy and Advanced Data Wrangling | NumPy arrays and more advanced wrangling techniques such as handling columns with dates and strings and identifying null values.| 
 
 ## Submission Schedule 
 
-*Assignments are due on Sunday at 6pm. Office hours will be held twice a week to support and answer questions regarding the concepts learned in lecture. Quizzes will be opened for up to 7 days, please check Canvas for quiz submission dates.* 
+*Assignments are due on Sunday at 6 pm. Office hours will be held twice a week to support and answer questions regarding the concepts learned in the lecture. Quizzes will be opened for up to 7 days, please check Canvas for quiz submission dates.* 
 
 | Week | Modules to Complete |Submissions Due|
 |------|--------|---------------|
@@ -109,8 +109,8 @@ We allow 1 week to complete each quiz. if you've submitted a quiz late or did no
 
 
 ### Autograder Policy
-Many of the questions in assignments are graded automatically by software. The grading computer has exactly the same hardware setup as the server that students work on. 
-Students should make sure their assignments are *reproducible*, and run from beginning to end on the autograding computer. 
+Many of the questions in assignments are graded automatically by the software. The grading computer has exactly the same hardware setup as the server that students work on. 
+Students should make sure their assignments are *reproducible*, and run from beginning to end on the auto-grading computer. 
 In particular, **please ensure that any data that needs to be downloaded is done so by the assignment notebook with the correct filename to the correct folder**.
 
 
@@ -134,12 +134,8 @@ Students must correctly cite any code or text that has been authored by someone 
 - the translation of an algorithm or a script from a language to another 
 - the generation of code by automatic code-generation software 
 
-An “adequate acknowledgement” requires a detailed identification of the (parts of the) code or text reused and a full citation of the original source code that has been reused.
+An “adequate acknowledgment” requires a detailed identification of the (parts of the) code or text reused and a full citation of the original source code that has been reused.
 
 The above attribution policy applies only to assignments. **No code or text may be copied (with or without attribution) from any source during a quiz or exam. Answers must always be in your own words. At a minimum, copying will result in a grade of 0 for the related question.**
 
 **Repeated plagiarism of any form could result in larger penalties** 
-
-## Attribution
-
-Parts of this syllabus (particularly the policies) have been copied and derived from the [UBC MDS Policies](https://ubc-mds.github.io/policies/) as well as the Syllabus from [UBC's DSCI 100 course](https://ubc-dsci.github.io/dsci-100/README.html).
