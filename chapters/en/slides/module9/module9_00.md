@@ -23,10 +23,9 @@ Notes:
 
 ## Attribution
 
-- Material from UBC's [DSCI 511: Python Programming for Data Science](https://pages.github.ubc.ca/MDS-2020-21/DSCI_511_py-prog_students/README.html) by <a href="https://www.tomasbeuzen.com/" target="_blank"> Tom Beuzen</a>
+- Material from UBC's <a href="https://pages.github.ubc.ca/MDS-2020-21/DSCI_511_py-prog_students/README.html" target="_blank">DSCI 511: Python Programming for Data Science</a> by <a href="https://www.tomasbeuzen.com/" target="_blank"> Tom Beuzen</a>.
 
-- The cereal dataset:[80 Cereals](https://www.kaggle.com/crawford/80-cereals/)”(c) by [Chris Crawford](https://www.linkedin.com/in/crawforc3/) is licensed
-under [Creative Commons Attribution-ShareAlike 3.0 Unported](http://creativecommons.org/licenses/by-sa/3.0/)
+- The cereal dataset: <a href="https://www.kaggle.com/crawford/80-cereals/" target="_blank">80 Cereals</a>(c) by <a href="https://www.linkedin.com/in/crawforc3/" target="_blank">Chris Crawford</a> is licensed under <a href="http://creativecommons.org/licenses/by-sa/3.0/" target="_blank">Creative Commons Attribution-ShareAlike 3.0 Unported</a>.
 
 
 Notes: 
