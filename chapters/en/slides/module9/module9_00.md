@@ -60,7 +60,7 @@ Notes:
 
 <br>
 
-### Mike Gebart
+### Mike Gelbart
 - Website: <a href="https://www.mikegelbart.com/" target="_blank">www.mikegelbart.com</a> 
 - Twitter: <a href="https://twitter.com/mikegelbart" target="_blank">@MikeGelbart</a> 
 <br>
