@@ -385,7 +385,7 @@ Using my dataframe object named `fruit_salad`, let's answer some slicing questio
 If you wanted all the rows and only columns `seeds`, `shape`, `sweetness` and  `water-content`, what would your code look like using index labels?
 
 <choice id="1" >
-<opt text='<code>fruit_salad.loc[:, "seed":"weight"]</code>'>
+<opt text='<code>fruit_salad.loc[:, "seeds":"weight"]</code>'>
 
 This is almost right but it may be good to check your columns.
 
