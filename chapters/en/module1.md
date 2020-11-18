@@ -562,7 +562,7 @@ Running a coding exercise for the first time, could take a bit of time for every
 Let's try selecting a specific column.
 
 Tasks:
-- Select all the rows from column `Salary` only and save it as `player salary`. (_Hint: you don't need `.loc[]` here_)
+- Select all the rows from column `Salary` only and save it as `player_cost`. (_Hint: you don't need `.loc[]` here_)
 - Display it.
 
 

@@ -70,9 +70,9 @@ We have supplied informative videos on how to do this in assignment 1 and refere
 
 | Deliverable | Percent Grade |
 |-------------|---------------|
-| Assignments | 48 |
-| 2 Quizzes | 30(15% each) |
-| Final project | 22 |
+| Assignments | 56 (7% each) |
+| 2 Quizzes | 32 (16% each) |
+| Final project | 12 |
 
 ## Schedule
 
@@ -93,11 +93,10 @@ We have supplied informative videos on how to do this in assignment 1 and refere
 
 | Week | Modules to Complete |Submissions Due|
 |------|--------|---------------|
-| Week 1 | Module 1: Python & Pandas - An Unexpected Friendship<br> Module 2: Not So Scary Wrangling (Table Manipulation and Chaining)| assignment_01, assignment_02|
-| Week 2 | Module 3: Tidy Data and Joining Dataframes<br>Module 4: Python Without the "Eek" (Basic Python)| assignment_03, assignment_04|
-| Week 3 |Module 5: Making Choices and Repeating Iterations<br>Module 6: Functions Fundamentals and Best Practices| assignment_05, assignment_06, quiz_01| 
-| Week 4 | Module 7: Importing Files and the Coding Style Guide<br>Module 8: A Slice of NumPy and Advanced Data Wrangling| assignment_07, assignment_08|
-| Week 5 | NA | quiz_02, final_project| 
+| Week 1 -2 | Module 1,<br> Module 2, <br> Module 3| assignment_01, assignment_02, assignment_03|
+| Week 3-4 | Module4, <br>Module 5| assignment_04, assignment_05, quiz_01|
+| Week 5-6 |Module 6,<br> Module 7, <br>Module 8| assignment_06, assignment_07, assignment_08| 
+| Week 7 | NA| quiz_02, final_project| 
 
 ## Policies
 
