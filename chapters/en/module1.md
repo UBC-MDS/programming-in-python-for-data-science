@@ -385,25 +385,25 @@ Using my dataframe object named `fruit_salad`, let's answer some slicing questio
 If you wanted all the rows and only columns `seeds`, `shape`, `sweetness` and  `water-content`, what would your code look like using index labels?
 
 <choice id="1" >
-<opt text='<code>fruit_salad.loc[:, "seeds":"weight"]</code>'>
+<opt text='<code>fruit_salad.loc[:, "seed":"weight"]</code>'>
 
 This is almost right but it may be good to check your columns.
 
 </opt>
 
-<opt text='<code>fruit_salad[:, "seeds":"water-content"]</code>' >
+<opt text='<code>fruit_salad[:, "seed":"water-content"]</code>' >
 
 This is almost right but it's missing something important! Try looking at the title of the slides we just finished.
 
 </opt>
 
-<opt text='<code>fruit_salad[0:9, "seeds":"water-content"]</code>' >
+<opt text='<code>fruit_salad[0:9, "seed":"water-content"]</code>' >
 
 This is almost right but it's missing something important and it could be condensed! Try looking at the title of the slides we just finished.
 
 </opt>
 
-<opt text='<code>fruit_salad.loc[:, "seeds":"water-content"]</code>' correct="true">
+<opt text='<code>fruit_salad.loc[:, "seed":"water-content"]</code>' correct="true">
 
 Good job! This has both `.loc[]` and includes the columns we wish to slice here.
 
