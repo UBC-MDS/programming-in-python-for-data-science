@@ -202,7 +202,7 @@ Tasks:
 
 </exercise>
 
-<exercise id="7" title="Slicing with Pandas Using df.loc[]" type="slides,video">
+<exercise id="7" title="Slicing with Pandas Using .loc[]" type="slides,video">
 
 <slides source="module1/module1_07" shot="3" start="06:18" end="10:47">
 </slides>
