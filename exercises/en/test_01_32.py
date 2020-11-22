@@ -13,5 +13,5 @@ def test():
     assert position_bar.encoding.y.shorthand == 'count()', "Make sure you are specifying the y-axis as `count()` in the '.encode()' function."
     assert position_bar.mark.opacity == 0.5, "Make sure you are using the 'opacity' parameter and setting it to 0.5"
     assert position_bar.mark.color == 'Teal', "Make sure you are using the 'color' parameter and setting it to 'Teal'"
-    assert position_bar.title ==  'Canuck player positions', "Make sure you are providing the correct title using the '.properties()' function"    
+    assert position_bar.title ==  'Canuck Player Positions', "Make sure you are providing the correct title using the '.properties()' function"    
     __msg__.good("Nice work, well done!")
