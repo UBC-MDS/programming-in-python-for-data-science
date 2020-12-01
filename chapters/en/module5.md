@@ -53,7 +53,7 @@ We can still write functioning code without an `else` condition.
 
 **Question 2**          
 
-Given the code below, what is the value of the object `expensive`? 
+Given the code below, what is the value of the object `speed`? 
 
 ```python
 time = 150
@@ -70,7 +70,7 @@ speed
 <choice id="2" >
 <opt text="<code>Fast</code>" >
 
-150 is not less than 120 so we would need to proceed to the next condition
+150 is not less than 120 so we would need to proceed to the next condition.
 
 </opt>
 
