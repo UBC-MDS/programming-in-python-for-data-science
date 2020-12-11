@@ -669,7 +669,7 @@ Remember our `canucks` dataframe? Let's take a closer look at the labels of the 
 
 **Question 1 (a)**     
 
-What dtype is would be an appropriate guess for the `Salary` column?
+What dtype would be an appropriate guess for the `Salary` column?
 
 <choice id="1" >
 <opt text="<code>float64</code>" correct="true">
