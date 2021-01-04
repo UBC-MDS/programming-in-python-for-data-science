@@ -184,13 +184,14 @@ playtime()
 ```
 
 <choice id="2" >
-<opt text="A"  >
+
+<opt text="A"  correct="true">
 
 Nice job!
 
 </opt>
 
-<opt text="B" correct="true">
+<opt text="B" >
 
 printing `toy` is considered a function side effect! 
 
