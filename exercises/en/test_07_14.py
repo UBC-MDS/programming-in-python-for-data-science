@@ -8,6 +8,6 @@ def test():
     # If an assertion fails, the message will be displayed
     assert "cleanup" in __solution__, "Your function does not exist. Please make sure you are naming your function 'cleanup'."
     str_fun = inspect.getsource(cleanup)
-    assert 'data=data.loc[:, ~data.columns.duplicated()]' in str_fun, "Make sure you amending the 'cleanup' function to adhere to proper formatting."
+    assert 'data = data.loc[:, ~data.columns.duplicated()]' in str_fun, "Make sure you amending the 'cleanup' function to adhere to proper formatting."
     assert 'data = data[~data.duplicated(subset=columns, keep=False)]', "Make sure you amending the 'cleanup' function to adhere to proper formatting."
     __msg__.good("Nice work, well done!")

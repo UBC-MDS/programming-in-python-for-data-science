@@ -27,7 +27,7 @@ def cleanup(data, columns):
     '''
 
     # Drops duplicate columns
-    data=data.loc[:, ~data.columns.duplicated()]  
+    data = data.loc[:, ~data.columns.duplicated()]  
     
     # Drops duplicate rows
     data = data[~data.duplicated(subset=columns, keep=False)]
