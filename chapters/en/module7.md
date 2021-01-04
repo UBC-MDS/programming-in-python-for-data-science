@@ -501,7 +501,7 @@ Tasks:
 
 <exercise id="15" title="Formatting That Can't Be Fixed Automatically" type="slides, video">
 
-<slides source="module7/module7_15" shot = "4" start="26:05" end="31:37">
+<slides source="module7/module7_15" shot = "4" start="26:05" end="31:47">
 </slides>
 
 </exercise>
