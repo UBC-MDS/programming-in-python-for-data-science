@@ -578,7 +578,7 @@ Tasks:
 
 <codeblock id="05_12">
 
-- Are you using `rpd.concat()`? 
+- Are you using `pd.concat()`? 
 - Are you adding `.csv` to the `string` object?
 - Are you using `pd.read_csv()`?
 - Are you indenting each line of code in the loop?
