@@ -193,20 +193,20 @@ Nice job!
 
 <opt text="B" >
 
-printing `toy` is considered a function side effect! 
+Printing `toy` is considered a function side effect! 
 
 </opt>
 
 <opt text="A and B"  >
 
-having a function `return` something is not considered necessarily a side effect. 
+Having a function `return` something is not considered necessarily a side effect. 
 
 </opt>
 
 
 <opt text="Neither A or B"  >
 
-printing `toy` is considered a function side effect! 
+Printing `toy` is considered a function side effect! 
 
 </opt>
 
