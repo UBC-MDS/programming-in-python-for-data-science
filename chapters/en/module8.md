@@ -1250,13 +1250,13 @@ Are you filtering the dataset correctly?
 Which of the following would you use to replace string patterns with another string within a dataframe column?
 
 <choice id="1" >
-<opt text="<code>.replace()</code>" >
+<opt text="<code>.replace()</code>"  correct="true">
 
 Way to go!
 
 </opt>
 
-<opt text="<code>str.replace()</code>" correct="true">
+<opt text="<code>str.replace()</code>">
 
 This would result in an error. 
 
