@@ -932,7 +932,7 @@ What code would you use to create a column with the name of the month from a dat
 
 
 <choice id="2" >
-<opt text="<code>ts.month</code>" >
+<opt text="<code>td.month</code>" >
 
 This will produce a numerical value, not the month name. 
 
@@ -944,13 +944,13 @@ This will produce a numerical value for a single Timestamp instead of a column.
 
 </opt>
 
-<opt text="<code>ts.month_name()</code>" correct="true">
+<opt text="<code>td.month_name()</code>" correct="true">
 
 You got it!
 
 </opt>
 
-<opt text="<code>ts.month_name</code>">
+<opt text="<code>td.month_name</code>">
 
 So close, but in this case, we need parentheses. 
 
