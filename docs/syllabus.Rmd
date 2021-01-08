@@ -8,7 +8,7 @@ output: pdf_document
 
 ## Time and Place
 Online
-Nov 17, 2020 – Jan 11, 2021
+January 19, 2021 – March 22, 2021
 
 ## Description
 This course is part of the Key Capabilities for Data Science program and will teach you how to conduct data analysis in Python. 
@@ -56,13 +56,13 @@ By the end of the course, students will be able to:
 ## Course Structure
 
 There are 8 modules in total for this course. Each module will be accompanied by an auto-graded assignment to be submitted. 
-The students will be responsible to complete the material of 2 modules per week. In weeks 3 and 5, students will need to take an online 45-minute open-book quiz testing, material from Modules 1-4 and 5-8 respectively. 
+The students will be responsible to complete the material of 1 module per week. In weeks 5 and 9, students will need to take an online 45-minute open-book quiz testing, material from Modules 1-4 and 5-8 respectively. 
 This quiz can be taken at any point during the week. At the end of the 8th module, students will have an individual project to complete where they are required to use the skills they learned in the course and produce an analysis regarding an assigned dataset.
 
 
 ## Assignments
 
-Each week students will submit 2 assignments for a grade. **Assignment due dates are posted on Canvas.** To open the assignment, click the link (e.g. `assignment_01`) from Canvas. 
+Each week students will submit an assignment for a grade. **Assignment due dates are posted on Canvas.** To open the assignment, click the link (e.g. `assignment_01`) from Canvas. 
 To submit your assignment, just make sure your work is saved (File -> Save and Checkpoint to be sure) **on our server** (i.e., using the link from Canvas) before the deadline.  Our server will automatically snapshot at the due date/time.
 We have supplied informative videos on how to do this in assignment 1 and referenced the links in subsequent assignments. 
 
@@ -93,10 +93,15 @@ We have supplied informative videos on how to do this in assignment 1 and refere
 
 | Week | Modules to Complete |Submissions Due|
 |------|--------|---------------|
-| Week 1 -2 | Module 1,<br> Module 2, <br> Module 3| assignment_01, assignment_02, assignment_03|
-| Week 3-4 | Module4, <br>Module 5| assignment_04, assignment_05, quiz_01|
-| Week 5-6 |Module 6,<br> Module 7, <br>Module 8| assignment_06, assignment_07, assignment_08| 
-| Week 7 | NA| quiz_02, final_project| 
+| Week 1 | Module 1| assignment_01|
+| Week 2 | Module 2| assignment_02|
+| Week 3 | Module 3| assignment_03|
+| Week 4 | Module 4| assignment_04|
+| Week 5 | Module 5| assignment_05, quiz_01|
+| Week 6 | Module 6| assignment_06|
+| Week 7 | Module 7| assignment_07|
+| Week 8 | Module 8| assignment_08|
+| Week 9 | NA| quiz_02, final_project| 
 
 ## Policies
 
