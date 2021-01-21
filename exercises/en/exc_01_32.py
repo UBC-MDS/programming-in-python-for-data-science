@@ -3,7 +3,7 @@ import altair as alt
 # Load in the csv named "canucks.csv" the same way you did earlier
 # Save it as hockey_players
 
-hockey_players = pd.____('data/____', ____)
+hockey_players = pd.____('data/____', index_col=0)
 
 # ____
 

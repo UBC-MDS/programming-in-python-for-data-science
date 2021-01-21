@@ -198,7 +198,7 @@ Use the cell above to help yourself out.
 Now let's do the same exercises using arrays.
 
 Tasks:
-- - Create 2 lists of the same length and save each as objects named `a_array` and `b_array`. 
+- Create 2 arrays of the same length and save each as objects named `a_array` and `b_array`. 
 - Using Boolean operators, what is outputted when you test to see if they are equal? 
 
 
@@ -1250,15 +1250,15 @@ Are you filtering the dataset correctly?
 Which of the following would you use to replace string patterns with another string within a dataframe column?
 
 <choice id="1" >
-<opt text="<code>.replace()</code>"  correct="true">
+<opt text="<code>.replace()</code>">
 
-Way to go!
+This would result in an error. 
 
 </opt>
 
-<opt text="<code>str.replace()</code>">
+<opt text="<code>str.replace()</code>"   correct="true">
 
-This would result in an error. 
+Way to go!
 
 </opt>
 

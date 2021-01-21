@@ -4,7 +4,7 @@ import pandas as pd
 
 hockey_players = pd.read_csv('data/canucks.csv')
 
-# Make an object named position_colum` that consists of just the Position column   
+# Make an object named position_column that consists of just the Position column   
 
 ____ = ____
 

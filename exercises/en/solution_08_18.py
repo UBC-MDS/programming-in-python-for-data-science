@@ -13,7 +13,7 @@ canucks = pd.read_csv('data/canucks.csv', parse_dates = ['Birth Date'])
 oldest = canucks['Birth Date'].min()
 
 # Find the youngest player's date of birth 
-# Save the Timstamp as yongest
+# Save the Timestamp as youngest
 
 youngest = canucks['Birth Date'].max()
 

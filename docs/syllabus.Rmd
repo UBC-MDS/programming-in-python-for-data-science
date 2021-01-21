@@ -59,6 +59,11 @@ There are 8 modules in total for this course. Each module will be accompanied by
 The students will be responsible to complete the material of 1 module per week. In weeks 5 and 9, students will need to take an online 45-minute open-book quiz testing, material from Modules 1-4 and 5-8 respectively. 
 This quiz can be taken at any point during the week. At the end of the 8th module, students will have an individual project to complete where they are required to use the skills they learned in the course and produce an analysis regarding an assigned dataset.
 
+## Course Completion and Grading 
+
+You are assessed on each course according to UBC assessment guidelines to ensure successful acquisition of required skills and concepts.
+
+Programming in Python is the prerequisite course in the Key Capabilities in Data Science program, and you must obtain 70% or higher in Programming in Python to obtain a course completion grade and proceed to the next course in the program. To successfully complete the Key Capabilities in Data Science program, you must complete all four required courses and achieve 70% or higher for each of the four courses. 
 
 ## Assignments
 

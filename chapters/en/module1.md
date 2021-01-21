@@ -930,12 +930,12 @@ _**Make sure you remove the hash (`#`) symbol in the coding portions of this que
 You are going to load the `canucks.csv` from the questions that we exported as a `csv` in the last section and create a `bar` plot of the `Positions` column.
 
 Tasks:
-- Load in the csv named `canucks.csv` as you did the earlier exercise and save it as `hockey_players`. 
-- Use alt.Chart() to create a chart object
-- Use the .mark_bar() to create a bar plot
-- Use the .encode() to specify the `Position` column for plotting
-- Assign a color as Teal and set opacity to 0.5   
-- Don't forget to add a title as "Canuck Player Positions"
+- Load in the csv named `canucks.csv` and save it as `hockey_players`. 
+- Use `alt.Chart()` to create a chart object.
+- Use  `.mark_bar()` to create a bar plot.
+- Use  `.encode()` to specify the `Position` column for plotting.
+- Assign a color as Teal and set opacity to 0.5.
+- Don't forget to add a title as "Canuck Player Positions"..
 
 <codeblock id="01_32">
 

@@ -1,7 +1,7 @@
 import numpy as np
 
 # Create 2 arrays containing any the same number of elements
-# Save each as objects named a_list and b_list
+# Save each as objects named a_array and b_array
 
 ____
 

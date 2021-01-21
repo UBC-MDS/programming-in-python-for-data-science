@@ -14,7 +14,7 @@ Notes:
 
 Students are now expected to be able to:
 
-- Use NumPy to create ndarrays with `np.array()` and from functions such as `np.arrange()`, `np.linspace()` and `np.ones()`.
+- Use NumPy to create ndarrays with `np.array()` and from functions such as `np.arange()`, `np.linspace()` and `np.ones()`.
 - Describe the shape, dimension and size of an array.
 - Identify null values in a dataframe and manage them by removing them using `.dropna()` or replacing them using `.fillna()`.
 - Manipulate non-standard date/time formats into standard Pandas datetime using `pd.to_datetime()`.
