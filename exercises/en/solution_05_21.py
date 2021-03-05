@@ -1,4 +1,3 @@
-
 string1 = "Have you Been enjoying yourself While learning about Python?"
 
 uppercase_num = 0

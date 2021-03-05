@@ -1,4 +1,3 @@
-
 exercise = 'burpees'
 
 # Make if, elif, and else statements

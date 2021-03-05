@@ -7,7 +7,6 @@ canucks = pd.read_csv('data/canucks.csv')
 
 canucks_altered = canucks.fillna(value=canucks['Salary'].mean())
 
-
 # Display the canucks_altered dataframe
 
 canucks_altered

@@ -1,5 +1,6 @@
 import pandas as pd
 import altair as alt
+
 # The data
 
 hockey_players = pd.read_csv('data/canucks.csv', index_col=0)

@@ -1,7 +1,6 @@
 def find_force(mass, acceleration):
     return mass * acceleration
 
-
 # Take these unit tests compile them together in 
 # a function to check the function find_force
 

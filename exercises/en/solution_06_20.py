@@ -3,8 +3,6 @@ def bmi_calculator(height, weight):
 
 # Write 4 unit tests and check that at least 2 of them are testing edge cases
 
-
-
 assert bmi_calculator(1, 1) == 702
 assert bmi_calculator(100,10000) == 702
 assert bmi_calculator(1,0) == 0

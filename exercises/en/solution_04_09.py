@@ -1,4 +1,3 @@
-
 import pandas as pd
 
 # Use the lists below to make a dataframe named family

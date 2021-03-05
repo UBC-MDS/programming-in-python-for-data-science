@@ -1,5 +1,6 @@
 import pandas as pd
 import altair as alt
+
 # Load in the csv named "canucks.csv" the same way you did earlier
 # Save it as hockey_players
 
