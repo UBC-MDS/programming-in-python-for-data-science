@@ -8,7 +8,7 @@ Notes:
 
 <br>
 
----
+------------------------------------------------------------------------
 
 ``` python
 chart0 = alt.Chart(cereal, width=500, height=300).mark_circle().encode(
@@ -34,10 +34,9 @@ Before, Altair would guess what type of data it was plotting. Usually
 it’s pretty smart and guesses correctly like we saw in our previous
 plots, but unfortunately this is not always the case.
 
----
+------------------------------------------------------------------------
 
 ``` python
-
 chart1 = alt.Chart(cereal_modified, width=500, height=300).mark_circle().encode(
                    x='mfr', 
                    y='calories'
@@ -65,7 +64,7 @@ problem here, which is due to Altair failing to recognize that
 Even Altair can’t always get it right every time, which is why it’s so
 important we specify the data type when plotting.
 
----
+------------------------------------------------------------------------
 
 ``` python
 chart2 = alt.Chart(cereal_modified, width=500, height=300).mark_circle().encode(
@@ -85,12 +84,12 @@ columns our x and y values are.
 In this case we are going to specify `N` for the *nominal* column `mfr`
 and `Q` for the *quantitative* column `calories`.
 
-That’s better\!
+That’s better!
 
----
+------------------------------------------------------------------------
 
 | Data Type    | Shorthand Code | Description                    | Examples                               |
-| ------------ | -------------- | ------------------------------ | -------------------------------------- |
+|--------------|----------------|--------------------------------|----------------------------------------|
 | Ordinal      | `O`            | a discrete ordered quantity    | “dislike”, “neutral”, “like”           |
 | Nominal      | `N`            | a discrete un-ordered quantity | eye color, postal code, university     |
 | Quantitative | `Q`            | a continuous quantity          | 5, 5.0, 5.011                          |
@@ -113,7 +112,7 @@ the university they attended.
 Anything numeric is considered a `quantitative` variable and `time` or
 `date` values are considered as `temporal`.
 
----
+------------------------------------------------------------------------
 
 ``` python
 chart3 = alt.Chart(cereal, width=500, height=300).mark_circle().encode(
@@ -139,7 +138,7 @@ variable from the `cereal` dataframe we have been using.
 Here, `sugars` and `rating` are both quantitative columns so we specify
 `Q` as variable types in our plot.
 
----
+------------------------------------------------------------------------
 
 # Variable types
 
@@ -168,7 +167,7 @@ This gives us a lot more control over the customization of our plot.
 
 You’ll see this coming up.
 
----
+------------------------------------------------------------------------
 
 ## Histograms
 
@@ -205,7 +204,7 @@ number of cereals that have values within each of the ranges.
 This is the same `count()` argument we use in Module 1 when we made bar
 charts.
 
----
+------------------------------------------------------------------------
 
 ## Bins
 
@@ -234,7 +233,7 @@ visualization easier to extract insights from.
 Here, we set the number of max bins in the plot to `20` by setting
 `bin=alt.Bin(maxbins=20)` inside `alt.X()`.
 
----
+------------------------------------------------------------------------
 
 <img src="/module2/chart6.png" alt="A caption" width="70%" />
 
@@ -249,7 +248,7 @@ little messy.
 
 Luckily Altair allows us to customize our axis labels.
 
----
+------------------------------------------------------------------------
 
 ``` python
 chart7 = alt.Chart(cereal, width=500, height=300).mark_bar().encode(
@@ -267,7 +266,7 @@ respective `alt.X()` and `alt.Y()` verbs that we talked about earlier.
 
 This is a big help for the clarity of our analysis.
 
----
+------------------------------------------------------------------------
 
 ``` python
 mfr_mean = cereal.groupby(by='mfr').mean()
@@ -294,7 +293,7 @@ our cereal data:
 ***Which manufacturer has the highest mean sugar content?***
 
 A nice way of answering this would be to plot the results using a bar
-chart\!
+chart!
 
 Before doing this, we need a few more tricks.
 
@@ -311,7 +310,7 @@ column becomes the new dataframe index.
 Although this is a useful feature in many cases, Altair cannot access
 the index column.
 
----
+------------------------------------------------------------------------
 
 ``` python
 mfr_mean
@@ -351,9 +350,9 @@ To deal with this, we use `reset_index()` which will convert `mfr` to a
 regular column again.
 
 We can see that `mfr` column has now moved right and our index column of
-integers has returned on the left\!
+integers has returned on the left!
 
----
+------------------------------------------------------------------------
 
 ``` python
 chart8 = alt.Chart(mfr_mean, width=500, height=300).mark_bar().encode(
@@ -370,9 +369,9 @@ Now that we have our `mfr_mean` in the correct format, we can proceed.
 
 Using Altair we can plot the `mfr` column on the x axis which we’ve
 identified to contain nominal values and `sugars` which we agreed was a
-quantitative value on the y axis. (Also, let’s not forget our title\!)
+quantitative value on the y axis. (Also, let’s not forget our title!)
 
----
+------------------------------------------------------------------------
 
 <br> <br>
 
@@ -391,7 +390,7 @@ Second, since `.groupby()` made `mfr` the new index, we had to use
 `reset_index()` to make `mfr` a regular column again. And finally, we
 generated a bar plot using Altair.
 
----
+------------------------------------------------------------------------
 
 ## Sorting
 
@@ -427,7 +426,7 @@ largest mean sugar content.
 This plot shows us immediately that manufacturer `P` has the highest
 mean cereal sugar content.
 
----
+------------------------------------------------------------------------
 
 ``` python
 chart10 = alt.Chart(mfr_mean, width=500, height=300).mark_bar().encode(
@@ -446,183 +445,102 @@ order, we recycle the code from the previous slide.
 This time, we add `-y` in the `sort` argument to specify that we would
 like to sort the y variable in descending order.
 
----
+------------------------------------------------------------------------
 
 <br> <br> <br>
-
 <center>
-
 <font size="+3"> If you enjoyed this part of the module and you wish to
-learn more advanced visualizations using Altair, come back soon and
-visit our in development course <br> **Exploratory Data Visualization**
-</font>
-
+learn more advanced visualizations using Altair, take a look at our <br>
+<a href="https://viz-learn.mds.ubc.ca/" target="_blank">**Data
+Visualization**</a> course </font>
 <center>
 
 Notes:
 
 <br>
 
----
+------------------------------------------------------------------------
 
-# Let’s apply what we learned\!
+# Let’s apply what we learned!
 
 Notes: <br>
 
 <!-- We've added a title before, so there is nothing new there but adding x and y-axis labels is a little different. We can increase the label font sizes using the argument `fontsize`. In this case, we reference our initial plot and use the verb `.set_ylabel()` and `.set_xlabel()` with the desired axis label as an argument and `fontsize` to assign a desired label size.  -->
-
 <!-- To avoid unnecessary information that will be returned otherwise, whatever our last verb being used with our plot (named `sugar_plot) has to be reassigned back to the object. If we did this any other way, we would not have the ability to do more transformations on our plot, or we would get additional information with the plot output.  -->
-
 <!-- ```{python  out.width = '45%', fig.asp = .40} -->
-
 <!-- sugar_plot = (df.groupby(by='mfr') -->
-
 <!--                 .mean() -->
-
 <!--                 .loc[:,'sugars'] -->
-
 <!--                 .plot.bar(title='Mean sugar content among manufacturers') -->
-
 <!--               ) -->
-
 <!-- sugar_plot.set_ylabel('Sugar content (in grams)', fontsize=9) -->
-
 <!-- sugar_plot = sugar_plot.set_xlabel('Manufacturer', fontsize=9) -->
-
 <!-- sugar_plot -->
-
 <!-- ``` -->
-
 <!-- Notes: Script here -->
-
 <!-- <html> -->
-
 <!-- <audio controls > -->
-
 <!--   <source src="/placeholder_audio.mp3" /> -->
-
 <!-- </audio></html> -->
-
 <!-- --- -->
-
 <!-- In the last plot, we used `.loc[:,'sugars']` to select a single column to the plot, however, we can show multiple mean column values in a single plot by selecting more columns. The columns `fat`, `fiber` and `protein` seem like good choices.  -->
-
 <!-- ```{python out.width = '60%', fig.asp = .58} -->
-
 <!-- nutrition_plot = (df.groupby(by='mfr') -->
-
 <!--                     .mean() -->
-
 <!--                     .loc[:, ['fat', 'fiber', 'protein']] -->
-
 <!--                     .plot.bar(title='Mean nutritrion value over different manufacturers') -->
-
 <!--                  ) -->
-
 <!-- nutrition_plot.set_ylabel('Content (in grams)', fontsize=9) -->
-
 <!-- nutrition_plot = nutrition_plot.set_xlabel('Manufacturer', fontsize=9) -->
-
 <!-- nutrition_plot -->
-
 <!-- ``` -->
-
 <!-- If you want high fibre and low fat, consider having N's cereals for breakfast (or lunch or dinner)! -->
-
 <!-- Notes: Script here -->
-
 <!-- <html> -->
-
 <!-- <audio controls > -->
-
 <!--   <source src="/placeholder_audio.mp3" /> -->
-
 <!-- </audio></html> -->
-
 <!-- --- -->
-
 <!-- ## Multiple Grouping  -->
-
 <!-- We can group by multiple columns as well.  -->
-
 <!-- For example we can grouping by not only manufacturer but also by cereal type! All we do is put both both column labels in square brackets within `.groupby()`. -->
-
 <!-- ```{python} -->
-
 <!-- mfr_type_group = df.groupby(by=['mfr', 'type']) -->
-
 <!-- mfr_type_group.groups -->
-
 <!-- ``` -->
-
 <!-- The attribute `ngroups` indicates how many groups there are.   -->
-
 <!-- ```{python} -->
-
 <!-- mfr_type_group.ngroups -->
-
 <!-- ``` -->
-
 <!-- Notes: Script here -->
-
 <!-- <html> -->
-
 <!-- <audio controls > -->
-
 <!--   <source src="/placeholder_audio.mp3" /> -->
-
 <!-- </audio></html> -->
-
 <!-- --- -->
-
 <!-- If we want to get the dataframe of a specific group now, we put the value of each column in parentheses.  -->
-
 <!-- ```{python} -->
-
 <!-- mfr_type_group.get_group(('K', 'Cold')) -->
-
 <!-- ``` -->
-
 <!-- Notes: Script here -->
-
 <!-- <html> -->
-
 <!-- <audio controls > -->
-
 <!--   <source src="/placeholder_audio.mp3" /> -->
-
 <!-- </audio></html> -->
-
 <!-- --- -->
-
 <!-- We can plot in the same way as before  -->
-
 <!-- ```{python fig.width = 13, fig.height = 9,  out.width = '50%'} -->
-
 <!-- type_plot = (df.groupby(by=['mfr', 'type']) -->
-
 <!--                     .mean() -->
-
 <!--                     .loc[:, ['sugars']] -->
-
 <!--                     .plot.bar(title='Mean sugar value over different manufacturers and types')) -->
-
 <!-- type_plot.set_ylabel('Sugar (in grams)', fontsize=16) -->
-
 <!-- type_plot.set_xlabel('Manufacturer and cereal type', fontsize=16) -->
-
 <!-- type_plot -->
-
 <!-- ``` -->
-
 <!-- Notes: Script here -->
-
 <!-- <html> -->
-
 <!-- <audio controls > -->
-
 <!--   <source src="/placeholder_audio.mp3" /> -->
-
 <!-- </audio></html> -->
-
 <!-- --- -->
