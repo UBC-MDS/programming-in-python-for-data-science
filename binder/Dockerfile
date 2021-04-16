@@ -6,7 +6,7 @@ RUN pip install --no-cache --upgrade pip && \
                            "pytest>=4.4.1,<4.5.0" \
                            "black==19.10b0" \
                            "altair>=4.1.0" \
-                           "xlrd=1.*" \
+                           "xlrd==1.*" \
                            "pandas==1.0.5" \
                            "plotly==4.8.1" \
                            "numpy>=1.11.0,<1.16.4" \
