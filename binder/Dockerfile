@@ -10,7 +10,8 @@ RUN pip install --no-cache --upgrade pip && \
                            "pandas==1.0.5" \
                            "plotly==4.8.1" \
                            "numpy>=1.11.0,<1.16.4" \
-                           "matplotlib==3.*"
+                           "matplotlib==3.*" \
+                           "openpyxl>=3.0.5"
 
 # create user with a home directory
 ARG NB_USER
