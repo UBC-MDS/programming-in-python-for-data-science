@@ -35,7 +35,7 @@ main <- function(input) {
 
   # replace \n-----\n with \n---\n to denote slide breaks
   text <- str_replace_all(string = text, 
-                          pattern = "\n-----\n", 
+                          pattern = "\n------------------------------------------------------------------------\n", 
                           replacement = "\n---\n")
   
   # fix title slide

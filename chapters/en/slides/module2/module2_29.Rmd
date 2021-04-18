@@ -1,10 +1,11 @@
 ---
 params:
-  dynamictitle: "module2_24"
+  dynamictitle: "module2_29"
 title: "`r params$dynamictitle`"
-output: 
+output:
   md_document:
     variant: gfm
+    pandoc_args: "--markdown-headings=atx"
 ---
 
 

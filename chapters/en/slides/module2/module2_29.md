@@ -8,7 +8,7 @@ Notes:
 
 <br>
 
-------------------------------------------------------------------------
+---
 
 ``` python
 chart0 = alt.Chart(cereal, width=500, height=300).mark_circle().encode(
@@ -34,7 +34,7 @@ Before, Altair would guess what type of data it was plotting. Usually
 it’s pretty smart and guesses correctly like we saw in our previous
 plots, but unfortunately this is not always the case.
 
-------------------------------------------------------------------------
+---
 
 ``` python
 chart1 = alt.Chart(cereal_modified, width=500, height=300).mark_circle().encode(
@@ -64,7 +64,7 @@ problem here, which is due to Altair failing to recognize that
 Even Altair can’t always get it right every time, which is why it’s so
 important we specify the data type when plotting.
 
-------------------------------------------------------------------------
+---
 
 ``` python
 chart2 = alt.Chart(cereal_modified, width=500, height=300).mark_circle().encode(
@@ -86,7 +86,7 @@ and `Q` for the *quantitative* column `calories`.
 
 That’s better!
 
-------------------------------------------------------------------------
+---
 
 | Data Type    | Shorthand Code | Description                    | Examples                               |
 |--------------|----------------|--------------------------------|----------------------------------------|
@@ -112,7 +112,7 @@ the university they attended.
 Anything numeric is considered a `quantitative` variable and `time` or
 `date` values are considered as `temporal`.
 
-------------------------------------------------------------------------
+---
 
 ``` python
 chart3 = alt.Chart(cereal, width=500, height=300).mark_circle().encode(
@@ -138,7 +138,7 @@ variable from the `cereal` dataframe we have been using.
 Here, `sugars` and `rating` are both quantitative columns so we specify
 `Q` as variable types in our plot.
 
-------------------------------------------------------------------------
+---
 
 # Variable types
 
@@ -167,7 +167,7 @@ This gives us a lot more control over the customization of our plot.
 
 You’ll see this coming up.
 
-------------------------------------------------------------------------
+---
 
 ## Histograms
 
@@ -204,7 +204,7 @@ number of cereals that have values within each of the ranges.
 This is the same `count()` argument we use in Module 1 when we made bar
 charts.
 
-------------------------------------------------------------------------
+---
 
 ## Bins
 
@@ -233,7 +233,7 @@ visualization easier to extract insights from.
 Here, we set the number of max bins in the plot to `20` by setting
 `bin=alt.Bin(maxbins=20)` inside `alt.X()`.
 
-------------------------------------------------------------------------
+---
 
 <img src="/module2/chart6.png" alt="A caption" width="70%" />
 
@@ -248,7 +248,7 @@ little messy.
 
 Luckily Altair allows us to customize our axis labels.
 
-------------------------------------------------------------------------
+---
 
 ``` python
 chart7 = alt.Chart(cereal, width=500, height=300).mark_bar().encode(
@@ -266,7 +266,7 @@ respective `alt.X()` and `alt.Y()` verbs that we talked about earlier.
 
 This is a big help for the clarity of our analysis.
 
-------------------------------------------------------------------------
+---
 
 ``` python
 mfr_mean = cereal.groupby(by='mfr').mean()
@@ -310,7 +310,7 @@ column becomes the new dataframe index.
 Although this is a useful feature in many cases, Altair cannot access
 the index column.
 
-------------------------------------------------------------------------
+---
 
 ``` python
 mfr_mean
@@ -352,7 +352,7 @@ regular column again.
 We can see that `mfr` column has now moved right and our index column of
 integers has returned on the left!
 
-------------------------------------------------------------------------
+---
 
 ``` python
 chart8 = alt.Chart(mfr_mean, width=500, height=300).mark_bar().encode(
@@ -371,7 +371,7 @@ Using Altair we can plot the `mfr` column on the x axis which we’ve
 identified to contain nominal values and `sugars` which we agreed was a
 quantitative value on the y axis. (Also, let’s not forget our title!)
 
-------------------------------------------------------------------------
+---
 
 <br> <br>
 
@@ -390,7 +390,7 @@ Second, since `.groupby()` made `mfr` the new index, we had to use
 `reset_index()` to make `mfr` a regular column again. And finally, we
 generated a bar plot using Altair.
 
-------------------------------------------------------------------------
+---
 
 ## Sorting
 
@@ -426,7 +426,7 @@ largest mean sugar content.
 This plot shows us immediately that manufacturer `P` has the highest
 mean cereal sugar content.
 
-------------------------------------------------------------------------
+---
 
 ``` python
 chart10 = alt.Chart(mfr_mean, width=500, height=300).mark_bar().encode(
@@ -445,7 +445,7 @@ order, we recycle the code from the previous slide.
 This time, we add `-y` in the `sort` argument to specify that we would
 like to sort the y variable in descending order.
 
-------------------------------------------------------------------------
+---
 
 <br> <br> <br>
 <center>
@@ -459,7 +459,7 @@ Notes:
 
 <br>
 
-------------------------------------------------------------------------
+---
 
 # Let’s apply what we learned!
 
