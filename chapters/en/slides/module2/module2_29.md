@@ -451,8 +451,8 @@ like to sort the y variable in descending order.
 <center>
 <font size="+3"> If you enjoyed this part of the module and you wish to
 learn more advanced visualizations using Altair, take a look at our <br>
-<a href="https://viz-learn.mds.ubc.ca/" target="_blank">**Data
-Visualization**</a> course </font>
+<a href="https://viz-learn.mds.ubc.ca/" target="_blank"><b>Data
+Visualization</b></a> course </font>
 <center>
 
 Notes:
