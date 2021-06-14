@@ -1,7 +1,7 @@
 # LICENSE
 
 This repository uses 2 licenses divided between [the instructional material](#instructional_material) i.e, the course content and [the software](#software) i.e, the course framework used to develop and host this material.
-We are including both a human readable summary as well as the full legal document for each license. 
+We are including both a human-readable summary as well as the full legal document for each license. 
 
 <a id="instructional_material"></a>
 ## Instructional Material 
@@ -501,7 +501,7 @@ You are free:
 - to **Sublicense**---incorporate the work into something that has a more restrictive license.       
 - to **Modify**----make changes to the work.      
 
-for private or even commercially use.
+for private or even commercial use.
 
 However, you cannot:
 
