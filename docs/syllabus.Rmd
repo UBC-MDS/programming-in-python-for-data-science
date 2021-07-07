@@ -6,10 +6,6 @@ output: pdf_document
 
 # Programming in Python for Data Science
 
-## Time and Place
-Online
-January 19, 2021 – March 22, 2021
-
 ## Description
 This course is part of the Key Capabilities for Data Science program and will teach you how to conduct data analysis in Python. 
 During the course, you will work with powerful Python packages made for data-science, including Pandas for processing tabular data, Altair for data visualization and NumPy for working with numerical data types. 

@@ -517,6 +517,139 @@ This leads to the next question of *How*? Good news - the answer is coming later
 
 ---
 
+## The deal with *print()*
+
+```{python}
+print('A regular string')
+```
+
+
+```{python}
+a_number_variable = 54.346
+
+print(a_number_variable)
+```
+
+
+Notes:
+
+What is `print()`? 
+
+We have not talked about this function in large detail but we do know `print()` will print whatever variable or item you call in it. It can be an especially handy one when debugging. 
+
+We can use it to print some code directly or from a variable like we see here. 
+
+It's important that we address using the print statement vs using return in a function as they are quite different.
+
+Let's see why.
+
+---
+
+```{python}
+def squares_a_list(numerical_list):
+    new_squared_list = list()
+    for number in numerical_list:
+        new_squared_list.append(number ** 2)
+    return new_squared_list
+```
+
+
+<br/>
+<br/>
+
+```{python}
+def squares_a_list_print(numerical_list):
+    new_squared_list = list()
+    for number in numerical_list:
+        new_squared_list.append(number ** 2)
+    print(new_squared_list)
+```
+
+
+
+
+
+Notes:
+
+Here er have our `squares_a_list` function.
+Let's create a new function called  `squares_a_list_print` where instead of returning the new variable `new_squared_list`, we print it instead.  
+
+The only difference here is that in `squares_a_list` we return  `new_squared_list` and in `squares_a_list_print` we are printing `new_squared_list`. 
+
+---
+
+
+```{python}
+numbers = [2, 3, 5]
+```
+
+```{python}
+squares_a_list(numbers)
+```
+
+```{python}
+squares_a_list_print(numbers)
+```
+ 
+ Notes: 
+ 
+ Let's see what happens when we call these functions now.  
+ 
+ If we call them both without assigning them to an object, it looks like these functions do identical things. 
+ 
+Both output the new list. 
+ 
+---
+
+
+```{python}
+return_func_var = squares_a_list(numbers)
+```
+
+No output here since we are assigning to an object. 
+
+<br/>
+
+```{python}
+print_func_var = squares_a_list_print(numbers)
+```
+
+But we do have output here because the `print()` statement is executed within the function here. 
+
+<br/>
+
+<br/>
+
+
+```{python}
+return_func_var
+```
+Here we have an output since the list was returned and saved to the variable. 
+
+```{python}
+print_func_var
+```
+
+No output here since the output was only printed statement and not saved in the object. 
+
+Notes:
+
+This time let's instead save them to objects. 
+
+When we call and save `squares_a_list(numbers)`, you'll see that nothing is printed or outputted, yet when we do the same thing with `squares_a_list_print(numbers)`,  the new list is outputted. 
+
+This is somewhat expected since we are not printing anything in our `squares_a_list()` function but we are in `squares_a_list_print()`. 
+
+Now let's see what our variables return. 
+
+`return_func_var` actually returns the output from the function, but `print_func_var` doesn't! 
+
+That's because the `print()` function, when used in a function that you make, is a **side effect**!
+
+In order for us to save the output of our functions to a variable, we must use return, otherwise we are only producing a side effect instead of returning an actual output. 
+
+---
+
 
 # Let’s apply what we learned!
 

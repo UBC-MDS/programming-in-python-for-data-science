@@ -3,6 +3,8 @@ def bmi_calculator(height, weight):
 
 # Write 4 unit tests and check that at least 2 of them are testing edge cases
 
+# There are many different tests that could have been written for this question. 
+# Here are a few examples. 
 assert bmi_calculator(1, 1) == 702.0, 'Input arguments giving incorrect output'
 assert bmi_calculator(100, 10000) == 702.0, 'Input arguments giving incorrect output'
 assert bmi_calculator(1, 0) == 0, 'Input arguments giving incorrect output'

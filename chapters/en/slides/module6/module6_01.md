@@ -139,9 +139,9 @@ as we loop through the input list.
 But what happens if we try and print this variable outside of the
 function?
 
-Yikes\! Where did `new_squared_list` go?
+Yikes! Where did `new_squared_list` go?
 
-It doesn’t seem to exist\! That’s not entirely true.
+It doesn’t seem to exist! That’s not entirely true.
 
 In Python, `new_squared_list` is something we call a ***local
 variable***.
@@ -214,7 +214,7 @@ recognized outside of any function but also recognized inside functions.
 Let’s take a look at what happens when we add `a_new_variable`, which is
 a global variable,e and refer to it in the `squares_a_list` function.
 
-The function recognizes the global variable\!
+The function recognizes the global variable!
 
 It’s important to note that, although functions recognize global
 variables, it’s not good practice to have functions reference objects
@@ -227,9 +227,7 @@ We will learn more about this later in the module.
 <br> <br> <br>
 
 <center>
-
 <img src='/module6/starbucks.png' width="100%" alt="404 image">
-
 </center>
 
 [Attribution - Starbucks](https://unsplash.com/photos/42ui88Qrxhw)
@@ -415,7 +413,7 @@ Let’s take a list that we define in our global environment called
 `global_list` and add `99` to the list in the local environment.
 
 The list that we defined globally was able to be modified inside the
-function and have the changes reflected back in the global environment\!
+function and have the changes reflected back in the global environment!
 
 What is going on?
 
@@ -440,10 +438,10 @@ cereal.head()
 4             Almond Delight   R  Cold       110        2    2     200    1.0   14.0       8       1        25      3     1.0  0.75  34.384843
 ```
 
-  - `.drop()`
-  - `.assign()`
-  - `.sort_values()`
-  - `.rename()`
+-   `.drop()`
+-   `.assign()`
+-   `.sort_values()`
+-   `.rename()`
 
 Notes:
 
@@ -452,10 +450,10 @@ dataframe.
 
 Since the beginning of this course, we have been using verbs such as;
 
-  - `.drop()`
-  - `.assign()`
-  - `.sort_values()`
-  - `.rename()`
+-   `.drop()`
+-   `.assign()`
+-   `.sort_values()`
+-   `.rename()`
 
 Where we modify a dataframe and save the modification as a new dataframe
 object.
@@ -599,7 +597,7 @@ environment they originated in.
 
 ## Side Effect Documentation
 
-  - If your functions have side-effects, they should be documented.
+-   If your functions have side-effects, they should be documented.
 
 Notes:
 
@@ -608,11 +606,176 @@ we must have side-effects in our functions, or there is no way to avoid
 it. In these cases, it is extremely important that we document it.
 
 This leads to the next question of *How*? Good news - the answer is
-coming later on in this module\!
+coming later on in this module!
 
 ---
 
-# Let’s apply what we learned\!
+## The deal with *print()*
+
+``` python
+print('A regular string')
+```
+
+```out
+A regular string
+```
+
+``` python
+a_number_variable = 54.346
+
+print(a_number_variable)
+```
+
+```out
+54.346
+```
+
+Notes:
+
+What is `print()`?
+
+We have not talked about this function in large detail but we do know
+`print()` will print whatever variable or item you call in it. It can be
+an especially handy one when debugging.
+
+We can use it to print some code directly or from a variable like we see
+here.
+
+It’s important that we address using the print statement vs using return
+in a function as they are quite different.
+
+Let’s see why.
+
+---
+
+``` python
+def squares_a_list(numerical_list):
+    new_squared_list = list()
+    for number in numerical_list:
+        new_squared_list.append(number ** 2)
+    return new_squared_list
+```
+
+<br/> <br/>
+
+``` python
+def squares_a_list_print(numerical_list):
+    new_squared_list = list()
+    for number in numerical_list:
+        new_squared_list.append(number ** 2)
+    print(new_squared_list)
+```
+
+Notes:
+
+Here er have our `squares_a_list` function. Let’s create a new function
+called `squares_a_list_print` where instead of returning the new
+variable `new_squared_list`, we print it instead.
+
+The only difference here is that in `squares_a_list` we return
+`new_squared_list` and in `squares_a_list_print` we are printing
+`new_squared_list`.
+
+---
+
+``` python
+numbers = [2, 3, 5]
+```
+
+``` python
+squares_a_list(numbers)
+```
+
+```out
+[4, 9, 25]
+```
+
+``` python
+squares_a_list_print(numbers)
+```
+
+```out
+[4, 9, 25]
+```
+
+Notes:
+
+Let’s see what happens when we call these functions now.
+
+If we call them both without assigning them to an object, it looks like
+these functions do identical things.
+
+Both output the new list.
+
+---
+
+``` python
+return_func_var = squares_a_list(numbers)
+```
+
+No output here since we are assigning to an object.
+
+<br/>
+
+``` python
+print_func_var = squares_a_list_print(numbers)
+```
+
+```out
+[4, 9, 25]
+```
+
+But we do have output here because the `print()` statement is executed
+within the function here.
+
+<br/>
+
+<br/>
+
+``` python
+return_func_var
+```
+
+```out
+[4, 9, 25]
+```
+
+Here we have an output since the list was returned and saved to the
+variable.
+
+``` python
+print_func_var
+```
+
+No output here since the output was only printed statement and not saved
+in the object.
+
+Notes:
+
+This time let’s instead save them to objects.
+
+When we call and save `squares_a_list(numbers)`, you’ll see that nothing
+is printed or outputted, yet when we do the same thing with
+`squares_a_list_print(numbers)`, the new list is outputted.
+
+This is somewhat expected since we are not printing anything in our
+`squares_a_list()` function but we are in `squares_a_list_print()`.
+
+Now let’s see what our variables return.
+
+`return_func_var` actually returns the output from the function, but
+`print_func_var` doesn’t!
+
+That’s because the `print()` function, when used in a function that you
+make, is a **side effect**!
+
+In order for us to save the output of our functions to a variable, we
+must use return, otherwise we are only producing a side effect instead
+of returning an actual output.
+
+---
+
+# Let’s apply what we learned!
 
 Notes:
 
