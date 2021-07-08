@@ -730,25 +730,21 @@ within the function here.
 
 <br/>
 
-<br/>
-
 ``` python
-return_func_var
+print(return_func_var)
 ```
 
 ```out
 [4, 9, 25]
 ```
 
-Here we have an output since the list was returned and saved to the
-variable.
-
 ``` python
-print_func_var
+print(print_func_var)
 ```
 
-No output here since the output was only printed statement and not saved
-in the object.
+```out
+None
+```
 
 Notes:
 
