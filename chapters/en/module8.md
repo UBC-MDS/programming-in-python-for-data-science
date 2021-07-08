@@ -19,7 +19,7 @@ id: 8
 
 <exercise id="1" title="NumPy and 1D Arrays" type="slides,video">
 
-<slides source="module8/module8_01" shot = "2" start="87:22" end="97:03">
+<slides source="module8/module8_01" shot = "2" start="92:32" end="102:1309">
 </slides>
 
 </exercise>
@@ -234,7 +234,7 @@ This is an example of how useful arrays can be when doing numerical computation!
 
 <exercise id="5" title="Multi-dimensional Arrays" type="slides,video">
 
-<slides source="module8/module8_05" shot = "2" start="97:09" end="103:27">
+<slides source="module8/module8_05" shot = "2" start="102:19" end="108:37">
 </slides>
 
 </exercise>
@@ -578,7 +578,7 @@ Tasks:
 
 
 
-<exercise id="10" title= "Array Practice ">
+<exercise id="10" title= "Array Practice">
 
 **Instructions:**    
 Running a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes. 
@@ -609,7 +609,7 @@ Tasks:
 
 <exercise id="11" title="Working with Null Values" type="slides,video">
 
-<slides source="module8/module8_11" shot = "2" start="103:33" end="111:21">
+<slides source="module8/module8_11" shot = "2" start="108:43" end="116:31">
 </slides>
 
 </exercise>
@@ -890,7 +890,7 @@ Tasks:
 
 <exercise id="16" title="Working with Dates and Time" type="slides,video">
 
-<slides source="module8/module8_16" shot = "2" start="111:27" end="122:13">
+<slides source="module8/module8_16" shot = "2" start="116:38" end="127:24">
 </slides>
 
 </exercise>
@@ -1038,7 +1038,7 @@ Tasks:
 
 <exercise id="19" title="Introduction to Working with Strings" type="slides,video">
 
-<slides source="module8/module8_19" shot = "2" start="122:21" end="128:35">
+<slides source="module8/module8_19" shot = "2" start="127:21" end="133:35">
 </slides>
 
 </exercise>
@@ -1237,7 +1237,7 @@ Are you filtering the dataset correctly?
 
 <exercise id="23" title="More Advanced String Processing" type="slides,video">
 
-<slides source="module8/module8_23" shot = "2" start="128:41" end="132:48">
+<slides source="module8/module8_23" shot = "2" start="133:5111" end="138:00">
 </slides>
 
 </exercise>

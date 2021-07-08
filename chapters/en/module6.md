@@ -18,7 +18,7 @@ id: 6
 
 <exercise id="1" title="DRY Revisited and Function Fundamentals" type="slides, video">
 
-<slides source="module6/module6_01" shot = "2" start="33:27" end="46:51">
+<slides source="module6/module6_01" shot = "2" start="33:27" end="52:02">
 </slides>
 
 </exercise>
@@ -264,7 +264,7 @@ Tasks:
 
 <exercise id="5" title="Default Arguments" type="slides, video">
 
-<slides source="module6/module6_05" shot = "2" start="46:58" end="52:50">
+<slides source="module6/module6_05" shot = "2" start="52:0816" end="58:01">
 </slides>
 
 </exercise>
@@ -444,7 +444,7 @@ Tasks:
 
 <exercise id="9" title="Function Docstrings" type="slides, video">
 
-<slides source="module6/module6_09" shot = "2" start="52:57" end="59:28">
+<slides source="module6/module6_09" shot = "2" start="58:07" end="64:38">
 
 </slides>
 
@@ -768,7 +768,7 @@ Tasks:
 
 <exercise id="13" title="Defensive Programming using Exceptions" type="slides, video">
 
-<slides source="module6/module6_13" shot = "2" start="59:35" end="66:57">
+<slides source="module6/module6_13" shot = "2" start="64:4503" end="72:08">
 
 </slides>
 
@@ -984,7 +984,7 @@ Tasks:
 
 <exercise id="17" title="Unit tests" type="slides, video">
 
-<slides source="module6/module6_17" shot = "2" start="67:04" end="79:45">
+<slides source="module6/module6_17" shot = "2" start="72:15" end="84:5508">
 
 </slides>
 
@@ -1232,7 +1232,7 @@ Tasks:
 
 <exercise id="22" title="Good Function Design Choices" type="slides, video">
 
-<slides source="module6/module6_22" shot = "2" start="79:52" end="87:14">
+<slides source="module6/module6_22" shot = "2" start="85:02" end="92:25">
 
 </slides>
 
