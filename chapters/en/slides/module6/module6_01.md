@@ -713,10 +713,6 @@ Both output the new list.
 return_func_var = squares_a_list(numbers)
 ```
 
-No output here since we are assigning to an object.
-
-<br/>
-
 ``` python
 print_func_var = squares_a_list_print(numbers)
 ```
@@ -724,11 +720,6 @@ print_func_var = squares_a_list_print(numbers)
 ```out
 [4, 9, 25]
 ```
-
-But we do have output here because the `print()` statement is executed
-within the function here.
-
-<br/>
 
 ``` python
 print(return_func_var)
