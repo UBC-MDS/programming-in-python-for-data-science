@@ -606,15 +606,13 @@ Both output the new list.
 return_func_var = squares_a_list(numbers)
 ```
 
-
 ```{python}
-print_func_var = squares_a_list_print(numbers)
+print(return_func_var)
 ```
 
 
-
 ```{python}
-print(return_func_var)
+print_func_var = squares_a_list_print(numbers)
 ```
 
 ```{python}
@@ -625,17 +623,17 @@ Notes:
 
 This time let's instead save them to objects. 
 
-When we call and save `squares_a_list(numbers)`, you'll see that nothing is printed or outputted, yet when we do the same thing with `squares_a_list_print(numbers)`,  the new list is outputted. 
+When we call and save `squares_a_list(numbers)`, you'll see that nothing is printed or outputted.
 
-This is somewhat expected since we are not printing anything in our `squares_a_list()` function but we are in `squares_a_list_print()`. 
+But if we print what our variable `return_func_var` contains, you'll see the list of square numbers. 
 
-Now let's see what our variables return. 
+In contrast,when we do the same thing with `squares_a_list_print(numbers)`,  the new list is outputted while we are assigning it to a variable since the print function is called within our `squares_a_list_print(numbers)` function. 
 
-`return_func_var` actually returns the output from the function, but `print_func_var` doesn't! 
+If we see print what's in our variables `print_func_var`, you'll see that there is nothing stored in it. 
 
-That's because the `print()` function, when used in a function that you make, is a **side effect**!
+That's because the `print()` function, when used in a function, is a **side effect** and our `squares_a_list_print()` function is not returning anything to store, it's only displaying it.
 
-In order for us to save the output of our functions to a variable, we must use return, otherwise we are only producing a side effect instead of returning an actual output. 
+In order for us to save the output of our functions to a variable, we must use `return` in our function, otherwise we are only producing a side effect instead of returning an actual value 
 
 ---
 
