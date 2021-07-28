@@ -599,8 +599,8 @@ Here is our `fruit_salad` data again:
 9         lemon    yellow     mexico   False    oval    False          83          65
 ```
 
-
-**Question 1**
+**Question 1**        
+  
 If I wanted the rows `elderberry`  to `kiwi` and only columns `seeds`, `shape`, `sweetness` and  `water-content`, what would my code look like if I was using index positions?
 
 <choice id="1" >
@@ -631,7 +631,8 @@ Are you forgetting that in the Python language we start counting at 0?
 
 </choice >
 
-**Question 2**
+**Question 2**      
+  
 If I wanted the rows `lemon` and `cantaloupe`  but only the columns `colour`, `weight` and `seeds` in that order, what would my code look like if I was using index position?
 
 <choice id="2" >
@@ -776,7 +777,7 @@ Bringing back our Fruit Salad dataframe
 ```
 
 
-**Question 1**
+**Question 1**        
 
 Which of the following columns contain numerical data?
 
@@ -808,7 +809,7 @@ Maybe it would be a good idea to take a look back at the slides again.
 </choice >
 
 
-**Question 2**
+**Question 2**         
 
 We need summary statistics of both numerical and categorical columns of the dataframe `fruit_salad`. What code would be suitable for this?
 
