@@ -423,7 +423,7 @@ Good job! This has both `.loc[]` and includes the columns we wish to slice here.
 
 <exercise id="14" title="Rearranging Columns and Rows">
 
-Using my `fruit_salad` dataframe from earlier?
+Using my `fruit_salad` dataframe from earlier...
 
 ```out
            name    colour    location    seed   shape  sweetness   water-content  weight
