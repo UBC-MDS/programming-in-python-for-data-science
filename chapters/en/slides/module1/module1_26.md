@@ -39,15 +39,13 @@ cereal.head(15)
 Notes:
 
 Now we’ve learned about how to get the data in to the shape and size
-that we desire, now we ca have some fun with it\!
+that we desire, now we ca have some fun with it!
 
 We usually like to learn from it. One place we can start is summary
 statistics, so we can calculate interesting values for each of the
 variables or columns in our dataframe.
 
 Let’s start by doing this for the cereal dataset again.
-
-First let’s load in our cereal dataset again.
 
 ---
 
@@ -60,8 +58,8 @@ generally containing words.
 
 **Examples**
 
-  - Colours
-  - Names
+-   Colours
+-   Names
 
 <br>
 
@@ -71,8 +69,8 @@ These data are usually expressed with numbers.
 
 **Examples**
 
-  - Measurements
-  - Quantities
+-   Measurements
+-   Quantities
 
 Notes:
 
@@ -135,12 +133,12 @@ min     50.000000   1.000000   0.000000    0.000000   0.000000   1.000000   0.00
 max    160.000000   6.000000   5.000000  320.000000  14.000000  23.000000  15.000000  330.000000  100.000000   3.000000   1.500000   1.500000  93.704912
 ```
 
-  - `count`: The number of non-NA/null observations.
-  - `mean`: The mean of column
-  - `std` : The standard deviation of a column
-  - `min`: The min value for a column
-  - `max`: The max value for a column
-  - By default the 25, 50 and 75 percentile of the observations
+-   `count`: The number of non-NA/null observations.
+-   `mean`: The mean of column
+-   `std` : The standard deviation of a column
+-   `min`: The min value for a column
+-   `max`: The max value for a column
+-   By default the 25, 50 and 75 percentile of the observations
 
 Notes:
 
@@ -150,12 +148,12 @@ On the left-hand side we see a new column. This column contains the
 names of the different summary statistics that `.describes()` gives us
 back for our dataset. Let’s talk about them each individually:
 
-  - `count`: The number of non-NA/null observations.
-  - `mean`: The mean of the column
-  - `std` : The standard deviation of a column
-  - `min`: The min value for a column
-  - `max`: The max value for a column
-  - By default the 25, 50 and 75 percentile of the observations are also
+-   `count`: The number of non-NA/null observations.
+-   `mean`: The mean of the column
+-   `std` : The standard deviation of a column
+-   `min`: The min value for a column
+-   `max`: The max value for a column
+-   By default the 25, 50 and 75 percentile of the observations are also
     included.
 
 ---
@@ -165,25 +163,25 @@ cereal.describe(include='all')
 ```
 
 ```out
-               name  mfr  type    calories    protein        fat      sodium  ...     sugars      potass    vitamins      shelf     weight       cups     rating
-count            77   77    77   77.000000  77.000000  77.000000   77.000000  ...  77.000000   77.000000   77.000000  77.000000  77.000000  77.000000  77.000000
-unique           77    7     2         NaN        NaN        NaN         NaN  ...        NaN         NaN         NaN        NaN        NaN        NaN        NaN
-top     Corn Flakes    K  Cold         NaN        NaN        NaN         NaN  ...        NaN         NaN         NaN        NaN        NaN        NaN        NaN
-freq              1   23    74         NaN        NaN        NaN         NaN  ...        NaN         NaN         NaN        NaN        NaN        NaN        NaN
-mean            NaN  NaN   NaN  106.883117   2.545455   1.012987  159.675325  ...   6.948052   96.129870   28.246753   2.207792   1.029610   0.821039  42.665705
-std             NaN  NaN   NaN   19.484119   1.094790   1.006473   83.832295  ...   4.403635   71.215823   22.342523   0.832524   0.150477   0.232716  14.047289
-min             NaN  NaN   NaN   50.000000   1.000000   0.000000    0.000000  ...   0.000000    1.000000    0.000000   1.000000   0.500000   0.250000  18.042851
-25%             NaN  NaN   NaN  100.000000   2.000000   0.000000  130.000000  ...   3.000000   40.000000   25.000000   1.000000   1.000000   0.670000  33.174094
-50%             NaN  NaN   NaN  110.000000   3.000000   1.000000  180.000000  ...   7.000000   90.000000   25.000000   2.000000   1.000000   0.750000  40.400208
-75%             NaN  NaN   NaN  110.000000   3.000000   2.000000  210.000000  ...  11.000000  120.000000   25.000000   3.000000   1.000000   1.000000  50.828392
-max             NaN  NaN   NaN  160.000000   6.000000   5.000000  320.000000  ...  15.000000  330.000000  100.000000   3.000000   1.500000   1.500000  93.704912
+                  name  mfr  type    calories    protein        fat      sodium  ...     sugars      potass    vitamins      shelf     weight       cups     rating
+count               77   77    77   77.000000  77.000000  77.000000   77.000000  ...  77.000000   77.000000   77.000000  77.000000  77.000000  77.000000  77.000000
+unique              77    7     2         NaN        NaN        NaN         NaN  ...        NaN         NaN         NaN        NaN        NaN        NaN        NaN
+top     Raisin Squares    K  Cold         NaN        NaN        NaN         NaN  ...        NaN         NaN         NaN        NaN        NaN        NaN        NaN
+freq                 1   23    74         NaN        NaN        NaN         NaN  ...        NaN         NaN         NaN        NaN        NaN        NaN        NaN
+mean               NaN  NaN   NaN  106.883117   2.545455   1.012987  159.675325  ...   6.948052   96.129870   28.246753   2.207792   1.029610   0.821039  42.665705
+std                NaN  NaN   NaN   19.484119   1.094790   1.006473   83.832295  ...   4.403635   71.215823   22.342523   0.832524   0.150477   0.232716  14.047289
+min                NaN  NaN   NaN   50.000000   1.000000   0.000000    0.000000  ...   0.000000    1.000000    0.000000   1.000000   0.500000   0.250000  18.042851
+25%                NaN  NaN   NaN  100.000000   2.000000   0.000000  130.000000  ...   3.000000   40.000000   25.000000   1.000000   1.000000   0.670000  33.174094
+50%                NaN  NaN   NaN  110.000000   3.000000   1.000000  180.000000  ...   7.000000   90.000000   25.000000   2.000000   1.000000   0.750000  40.400208
+75%                NaN  NaN   NaN  110.000000   3.000000   2.000000  210.000000  ...  11.000000  120.000000   25.000000   3.000000   1.000000   1.000000  50.828392
+max                NaN  NaN   NaN  160.000000   6.000000   5.000000  320.000000  ...  15.000000  330.000000  100.000000   3.000000   1.500000   1.500000  93.704912
 
 [11 rows x 16 columns]
 ```
 
-  - `unique`: how many observations are unique
-  - `top`: which observation value is most occurring
-  - `freq`: what is the frequency of the most occurring observation
+-   `unique`: how many observations are unique
+-   `top`: which observation value is most occurring
+-   `freq`: what is the frequency of the most occurring observation
 
 Notes:
 
@@ -197,9 +195,9 @@ categorical and numerical columns now.
 Adding `include='all'` within the brackets adds some additional
 statistics about categorical columns including:
 
-  - `unique`: which indicates the number of unique observations
-  - `top`: which tells up the observation value that is most occurring
-  - `freq`: which informs us of the frequency of the most occurring
+-   `unique`: which indicates the number of unique observations
+-   `top`: which tells up the observation value that is most occurring
+-   `freq`: which informs us of the frequency of the most occurring
     observation
 
 ---
@@ -278,7 +276,7 @@ categorical data.
 
 ---
 
-# Let’s apply what we learned\!
+# Let’s apply what we learned!
 
 Notes:
 

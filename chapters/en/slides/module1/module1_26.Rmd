@@ -59,8 +59,6 @@ We usually like to learn from it. One place we can start is summary statistics, 
 
 Let's start by doing this for the cereal dataset again.
 
-First let's load in our cereal dataset again. 
-
 ---
 
 ## Numerical and Categorical Columns 

@@ -35,8 +35,8 @@ cereal.loc[:, ['type']]
 
 Notes:
 
-Something we often do in data analysis is obtaining a single column from
-a dataframe. We can again use `.loc[]` to do this which would look
+Something we often do in data analysis is obtain a single column from a
+dataframe. We can again use `.loc[]` to do this which would look
 something like this in general:
 
 `dataframe.loc[:, ['column name']]`
@@ -92,6 +92,6 @@ dataframe very easy.
 
 ---
 
-# Let’s apply what we learned\!
+# Let’s apply what we learned!
 
 Notes: <br>
