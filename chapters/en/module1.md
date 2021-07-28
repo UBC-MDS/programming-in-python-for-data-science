@@ -635,15 +635,6 @@ Are you forgetting that in the Python language we start counting at 0?
 If I wanted the rows `lemon` and `cantaloupe`  but only the columns `colour`, `weight` and `seeds` in that order, what would my code look like if I was using index position?
 
 <choice id="2" >
-  
-</opt>
-
-<opt text='<code>fruit_salad.iloc[[9, 2], [1, 7, 3]]</code>' correct="true">
-
-Great Work!
-
-</opt>  
-  
 <opt text='<code>fruit_salad.iloc[[lemon, cantaloupe], [colour, weight, seeds]]</code>'>
 
 We need to use the index position for this question and when using `.iloc[]`.
@@ -654,7 +645,13 @@ We need to use the index position for this question and when using `.iloc[]`.
 
 Great! You don't need to specify the second column part because by default the code will slice all the columns.
 
+</opt>
 
+<opt text='<code>fruit_salad.iloc[[9, 2], [1, 7, 3]]</code>' correct="true">
+
+Great Work!
+
+</opt>
 
 <opt text= '<code>fruit_salad[[9, 2], [1, 7, 3]]</code>'  >
 
