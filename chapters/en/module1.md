@@ -784,6 +784,7 @@ Bringing back our Fruit Salad dataframe
 Which of the following columns contain numerical data?
 
 <choice id="1" >
+  
 <opt text='<code>colour</code>, <code>shape</code>, <code>water-content</code>'>
 
 Maybe it would be a good idea to take a look back at the slides again.
