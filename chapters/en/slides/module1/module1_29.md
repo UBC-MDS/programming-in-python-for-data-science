@@ -10,10 +10,10 @@ Notes: <br>
 
 ## What is Frequency?
 
-*_Frequency_*: The number of times a value occurs within the data.
+**Frequency**: The number of times a value occurs within the data.
 
 ``` python
-cereal_mini
+candybars_mini
 ```
 
 ```out
@@ -41,7 +41,7 @@ Notes:
 Before we explain what a frequency table is, you must know what
 frequency means first.
 
-*_Frequency_* is simply put, the number of times a value occurs within
+**Frequency** is simply put, the number of times a value occurs within
 the data. Let’s look at an example using our candybars dataset.
 
 If we count the number of times the value `Both` appears in the
@@ -171,7 +171,7 @@ index column which is just a column of numbers.
 
 ---
 
-# Let’s apply what we learned\!
+# Let’s apply what we learned!
 
 Notes:
 

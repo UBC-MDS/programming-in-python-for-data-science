@@ -33,7 +33,7 @@ pd.set_option('display.max_columns', 15)
 pd.set_option('display.max_rows', 8)
 cereal = pd.read_csv('cereal.csv')
 cereal2 = pd.read_csv('candybars.csv')
-cereal_mini = cereal2.head(7).loc[:, ['name', 'weight', 'available_canada_america' ]]
+candybars_mini = cereal2.head(7).loc[:, ['name', 'weight', 'available_canada_america' ]]
 ```
 
 
@@ -50,14 +50,14 @@ Notes: <br>
 _*Frequency*_: The number of times a value occurs within the data. 
 
 ```{python}
-cereal_mini
+candybars_mini
 ```
 
 ## What is a Frequency Table?
 
 ```{python echo=FALSE}
 
-cereal_mini['available_canada_america'].value_counts()
+candybars_mini['available_canada_america'].value_counts()
 ```
 Notes: 
 
