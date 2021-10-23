@@ -4,7 +4,7 @@ import pandas as pd
 
 mom = ['Teresa', 57, "August"]
 dad = ['John', 61, "February"]
-brother = ['James', 33, "October" ]
+brother = ['Desmond', 5, "July" ]
 
 c_names = ['name', 'age', 'birth_month']
 
