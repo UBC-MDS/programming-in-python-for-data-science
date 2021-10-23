@@ -292,7 +292,7 @@ This one will run since `year_of_birth` is optional and will default to `None`. 
 
 <opt text="<code>name_initials(last_name = 'Grant', year_of_birth = 1977, first_name = 'Cameron')</code>">
 
-Since we are defining our arguments with their names and values, this one will result in an output of `CG1987`.
+Since we are defining our arguments with their names and values, this one will result in an output of `CG1977`.
 
 </opt>
 
@@ -304,7 +304,7 @@ This will result in an error since the argument values are not in the defined or
 
 <opt text="<code>name_initials('Cameron', 'Grant', 1977)</code>">
 
-This function calls the arguments in the same order they were defined in. The output is `CG1987`. 
+This function calls the arguments in the same order they were defined in. The output is `CG1977`. 
 
 </opt>
 
