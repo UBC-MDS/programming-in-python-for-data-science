@@ -290,19 +290,19 @@ This one will run since `year_of_birth` is optional and will default to `None`. 
 
 </opt>
 
-<opt text="<code>name_initials(last_name = 'Grant', year_of_birth = 1987, first_name = 'Cameron')</code>">
+<opt text="<code>name_initials(last_name = 'Grant', year_of_birth = 1977, first_name = 'Cameron')</code>">
 
 Since we are defining our arguments with their names and values, this one will result in an output of `CG1987`.
 
 </opt>
 
-<opt text="<code>name_initials('Cameron', 1987, 'Grant')</code>"  correct="true">
+<opt text="<code>name_initials('Cameron', 1977, 'Grant')</code>"  correct="true">
 
 This will result in an error since the argument values are not in the defined order and they are not defined with the argument names. 
 
 </opt>
 
-<opt text="<code>name_initials('Cameron', 'Grant', 1987)</code>">
+<opt text="<code>name_initials('Cameron', 'Grant', 1977)</code>">
 
 This function calls the arguments in the same order they were defined in. The output is `CG1987`. 
 
