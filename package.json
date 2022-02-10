@@ -33,7 +33,7 @@
         "gatsby-transformer-sharp": "^2.5.3",
         "juniper-js": "^0.1.0",
         "mathjax": "^3.0.5",
-        "node-sass": "^4.14.1",
+        "node-sass": "^7.0.0",
         "plyr": "^3.6.2",
         "prismjs": "^1.20.0",
         "react": "^16.13.1",
