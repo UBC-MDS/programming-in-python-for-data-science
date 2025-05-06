@@ -1,0 +1,83 @@
+project:
+  type: website
+  title: "Programming in Python for Data Science"
+  # Setting the execution dir allows us to use `data/`
+  # instead of relative paths in regular code cells
+  execute-dir: project
+  # `render` executes and renders modules, slides, and exercises into `_site`
+  render:
+    - modules/**/*.qmd
+    - modules/index.qmd
+  # `resources` copies files into `_site` without execution
+  resources:
+    - styles.scss
+    - src/utils.py
+    - data
+
+# Setting the pyodide resources allows live code cells to see files
+# previously copied into `_site`
+# by copying them to the virtual file system used by live coding
+pyodide:
+  resources:
+    - src/utils.py
+    - data
+
+website:
+  page-navigation: true
+  bread-crumbs: false
+  sidebar:
+    collapse-level: 1
+    logo: static/logo.svg
+    search: true
+    style: 'docked'
+    background: 'primary'
+    contents:
+      - section: "**M0. Welcome to Programming in Python for Data Science**"
+        contents:
+          - text: '0. Welcome!'
+            href: modules/index.qmd
+          - href: modules/module0/module0-01-programming_in_python_for_data_science.qmd
+          - text: '&nbsp;&nbsp; 1.1. Prerequisite confirmation'
+            href: modules/module0/module0-02-are_you_ready.qmd
+      - section: "**M1. Python & Pandas - An Unexpected Friendship**"
+
+# Since we are declaring options for two formats here (html and revealjs)
+# each qmd file needs to include a yaml block including which format to use for that file.
+# https://github.com/quarto-dev/quarto-cli/issues/4583
+format:
+  html:
+    callout-icon: false
+    theme: [united, styles.scss]
+    linkcolor: '#003366'
+    highlight-style: atom-one
+    grid:
+      sidebar-width: 350px
+      margin-width: 800px
+  live-html:
+    callout-icon: false
+    theme: [united, styles.scss]
+    linkcolor: '#003366'
+    highlight-style: atom-one
+    grid:
+      sidebar-width: 350px
+      margin-width: 800px
+  revealjs:
+    theme: styles.scss
+    width: 100%
+    monofont: Ubuntu Mono
+    mainfont: Ubuntu
+    font-size: 0.5em
+    monobackgroundcolor: '#F1F3F5'
+    highlight-style: atom-one
+    # tango atom-one  nord
+    transition: slide
+    controls-layout: bottom-right
+    show-notes: true
+    slide-number: true
+    code-line-numbers: false
+    code-copy: true
+    progress: false
+    history: false
+    menu: false
+    execute:
+      echo: true
