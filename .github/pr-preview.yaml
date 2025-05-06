@@ -1,0 +1,44 @@
+name: "Deploy a PR preview to the gh-pages branch"
+
+on:
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
+      - closed
+    branches:
+      - 'main'
+
+concurrency: preview-${{ github.ref }}
+
+jobs:
+  deploy-pr-preview:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      packages: write
+      pull-requests: write
+
+    steps:
+      - name: Checkout the PR version of the website repository
+        uses: actions/checkout@v4
+
+      - name: Setup the environment
+        if: github.event.action != 'closed' # Skip the build if the PR has been closed; just run the clean up steps
+        uses: mamba-org/setup-micromamba@v1
+        with:
+          environment-file: environment.yaml
+          init-shell: bash
+          cache-environment: true
+          post-cleanup: none
+
+      - name: Build the PR version of the website
+        if: github.event.action != 'closed' # Skip the build if the PR has been closed; just run the clean up steps
+        run: quarto render
+        shell: bash -el {0}  # Required to see the mamba init env
+
+      - name: Deploy preview
+        uses: rossjrw/pr-preview-action@v1
+        with:
+          source-dir: ./_site/
