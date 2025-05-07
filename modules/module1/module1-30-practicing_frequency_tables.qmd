@@ -1,0 +1,104 @@
+---
+format: live-html
+---
+
+<script src='../../src/quiz.js'></script>
+
+# 11.1. Exercises
+
+## Practicing Frequency Tables
+
+**Instructions:**    
+Running a coding exercise for the first time, could take a bit of time for everything to load. Be patient, it could take a few minutes. 
+
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.**
+
+```{pyodide}
+import pandas as pd
+
+# The data
+hockey_players = pd.read_csv('data/canucks.csv')
+hockey_players
+```
+
+Let's get the frequencies of some of our values! We spoke in the slides about the steps we needed to follow to get a frequency table.  
+
+**Tasks:**
+
+- Let's make an object named `position_column` that consists of just the `Position` column. Note we will be using this for `value_counts` so we must do this with only using single `[]` brackets.
+- Find the frequencies of the position for the hockey team using `.value_counts()` and save it as `position_freq`.
+- Export `position_freq`  to a csv named `position_frequencies.csv` using `.to_csv()`.
+- Don't forget to display it.
+
+_If you get a warning along with your output, that's fine. We will explain why this happens further in the course._
+
+
+```{pyodide}
+#| setup: true
+#| exercise: practicing_frequency_tables
+import pandas as pd
+from src.utils import print_correct_msg
+
+hockey_players = pd.read_csv('data/canucks.csv')
+```
+
+```{pyodide}
+#| exercise: practicing_frequency_tables
+# Make an object named position_column that consists of just the Position column
+____ = ____
+
+# Find the frequencies of the position for the hockey team     
+# Save it as position_freq
+# ____ = ____.____(____)
+
+# Export it to a csv named position_frequencies.csv
+# ____.____(____)     
+
+# Don't forget to display it
+# ____
+```
+
+```{pyodide}
+#| exercise: practicing_frequency_tables
+#| check: true
+solution = hockey_players['Position'].value_counts()
+assert isinstance(result, pd.Series), "The result type is incorrect"
+assert len(solution) == len(result), "Are you using the correct column?"
+assert list(solution) == list(result), "Are you using the correct column?"
+print_correct_msg()
+```
+
+:::: { .hint exercise="practicing_frequency_tables" }
+::: { .callout-note collapse="false" }
+
+## Hint 1
+
+- Are you sure you are using single `[]` brackets for `position_column`?
+- Are you using `.to_csv()` to save your `csv`?
+- Are you naming your `csv` correctly as "position_frequencies.csv"?
+
+:::
+::::
+
+:::: { .solution exercise="practicing_frequency_tables" }
+::: { .callout-tip collapse="false" }
+
+## Fully worked solution:
+
+```{pyodide}
+# Make an object named position_column that consists of just the Position column
+position_column = hockey_players['Position']
+
+# Find the frequencies of the position for the hockey team     
+# Save it as position_freq
+position_freq = position_column.value_counts()
+
+# Export it to a csv named position_frequencies.csv
+position_freq.to_csv('position_frequencies.csv', index=False)
+
+# Don't forget to display it
+position_freq
+```
+
+:::
+::::
