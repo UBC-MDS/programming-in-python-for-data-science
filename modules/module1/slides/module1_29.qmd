@@ -10,7 +10,7 @@ title-slide-attributes:
 %run src/utils.py
 ```
 
-## What is Frequency?
+### What is Frequency?
 
 _*Frequency*_: The number of times a value occurs within the data. 
 
@@ -25,7 +25,9 @@ candybars_mini = cereal2.head(7).loc[:, ['name', 'weight', 'available_canada_ame
 candybars_mini
 ```
 
-## What is a Frequency Table?
+<br>
+
+### What is a Frequency Table?
 
 ```{python}
 # | echo: false
@@ -36,7 +38,7 @@ candybars_mini['available_canada_america'].value_counts()
 :::{.notes} 
 Before we explain what a frequency table is, you must know what frequency means first. 
 
-_*Frequency*_ is simply put, the number of times a value occurs within the data. Let's look at an example using our candybars dataset.
+**Frequency** is simply put, the number of times a value occurs within the data. Let's look at an example using our candybars dataset.
 
 If we count the number of times the value `Both` appears in the `available_canada_america` column, we get 3 times. This is the frequency of the value `both`.  
 

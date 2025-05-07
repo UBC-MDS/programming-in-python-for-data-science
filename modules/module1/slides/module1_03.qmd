@@ -10,7 +10,7 @@ title-slide-attributes:
 %run src/utils.py
 ```
 
-![](../../../static/module1/pandas.gif){fig-alt="404 image" width="50%" fig-align="center"}
+![](../../../static/module1/pandas.gif){fig-alt="404 image" width="65%" fig-align="center"}
 
 
 :::{.notes} 
@@ -42,6 +42,10 @@ candy = pd.read_csv('data/candybars.csv')
 ```
 
 <br>
+```{python}
+# | include: false
+candy = candy[["name", "weight", "chocolate", "peanuts", "caramel", "available_canada_america"]]
+```
 
 ```{python}
 candy
@@ -116,7 +120,7 @@ We can specify any number of rows within the parentheses or we can leave it empt
 ## Functions/Methods and Attributes
 
 
-![](../../../static/module1/argument.png){fig-alt="404 image"  width="50%" figalign="center"}
+![](../../../static/module1/argument.png){fig-alt="404 image"  width="50%" fig-align="center"}
 
 
 ### Attributes
@@ -124,7 +128,9 @@ We can specify any number of rows within the parentheses or we can leave it empt
 Take `candy.shape` as an example.   
 
 In this case, our dataframe `candy` is our object and `.shape` is the attribute describing it.   
-    
+
+<br>
+
 ### Functions
 
 In the example of `pd.read_csv()`, this function does the action of reading in our data. 

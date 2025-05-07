@@ -63,17 +63,20 @@ Running a coding exercise for the first time, could take a bit of time for every
 
 **When you see `____` in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.**
 
-### Practicing Rows Slicing
-
 This following code chunk will be used to give you an output of the data `hockey_players`. This will help answer and code in the exercises following it.
 
 ```{pyodide}
 import pandas as pd
+pd.set_option('display.max_columns', 10)
+pd.set_option('display.max_rows', 25)
 
 # The data
 hockey_players = pd.read_csv('data/canucks.csv')
 hockey_players
 ```
+
+
+### Practicing Rows Slicing
 
 Using our `hockey_players` data from the last few questions, let's try slicing it.
 
@@ -141,16 +144,6 @@ benched_players
 ::::
 
 ### Practicing Column Slicing
-
-Use the output of the following code chunk to help answer the next question.
-
-```{pyodide}
-import pandas as pd
-
-# The data
-hockey_players = pd.read_csv('data/canucks.csv')
-hockey_players
-```
 
 Using our `hockey_players` data from the last few questions, let's try slicing it.
 

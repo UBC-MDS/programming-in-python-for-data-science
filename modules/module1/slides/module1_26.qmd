@@ -11,6 +11,11 @@ title-slide-attributes:
 ```
 
 ```{python}
+# | include: false
+pd.set_option('display.max_rows', 15)
+```
+
+```{python}
 cereal = pd.read_csv('data/cereal.csv')
 cereal.head(15)
 ```

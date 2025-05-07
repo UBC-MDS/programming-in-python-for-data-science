@@ -12,7 +12,7 @@ format:
 
 <iframe
     class="video"
-    src="https://www.youtube.com/embed/W88f5DAl9hk?start=651&end=758&rel=0" 
+    src="https://www.youtube.com/embed/W88f5DAl9hk?start=652&end=758&rel=0" 
     title="Module 1 Video - Slicing Columns Using .loc[]"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

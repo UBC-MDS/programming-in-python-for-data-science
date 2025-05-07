@@ -40,7 +40,7 @@ cereal.loc['row name start':'row name end', 'column name start':'column name end
   
 - If we aren’t slicing any columns, but we are slicing rows  we can shorten that to
 ```python
-df.loc[ 'row name start':'row name end']
+df.loc['row name start':'row name end']
 ```
 
 - However, the reverse is not true. If we want all the rows with only specific columns, we specify we want all the row first with just a colon `:` followed by interval of the columns:

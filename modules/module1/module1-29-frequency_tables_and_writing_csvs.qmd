@@ -12,7 +12,7 @@ format:
 
 <iframe
     class="video"
-    src="https://www.youtube.com/embed/W88f5DAl9hk?start=1775&end=1940&rel=0" 
+    src="https://www.youtube.com/embed/W88f5DAl9hk?start=1776&end=1940&rel=0" 
     title="Module 1 Video - Frequency Tables and Writing CSVs"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

@@ -12,7 +12,7 @@ format:
 
 <iframe
     class="video"
-    src="https://www.youtube.com/embed/W88f5DAl9hk?start=120&end=371&rel=0" 
+    src="https://www.youtube.com/embed/W88f5DAl9hk?start=121&end=371&rel=0" 
     title="Module 1 Video - Introduction to Pandas"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

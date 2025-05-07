@@ -49,6 +49,11 @@ This doesn't always have to be the case. We can assign another column as the ind
 ---
 
 ```{python}
+# | include: false
+pd.set_option('display.max_rows', 16)
+```
+
+```{python}
 cereal.head(15)
 ```
 
@@ -65,20 +70,20 @@ If you just went and counted those again and started screaming "5! It's the fift
 
 ```{python}
 # | echo: false
-cereal.head(12)
+cereal.head(15)
 ```
 
-<br>
+:::{.notes} 
+Now let's say we want all 5 rows past `Almond Delight`. That means we want the rows from `Apple Cinnamon Cheerios` to `Cap'n'Crunch`.    
+:::
+
+---
 
 ```{python}
 cereal.loc[5:10]
 ```
 
-     
-      
 :::{.notes} 
-Now let's say we want all 5 rows past `Almond Delight`. That means we want the rows from `Apple Cinnamon Cheerios` to `Cap'n'Crunch`.    
-
 We will use `.loc[]` with square brackets to cut the dataframe from "Apple Cinnamon Cheerios" to "Cap'n'Crunch," keeping the columns and everything between.
 
 This code is written as `cereal.loc[5:10]`, and it can be interpreted as _"Obtain the rows in the dataframe located from `5` to `10`."_
@@ -91,13 +96,12 @@ This code is written as `cereal.loc[5:10]`, and it can be interpreted as _"Obtai
 cereal.loc[5:10]
 ```
 
-<br>
 
 ```{python}
 cereal.loc[5:10, 'calories':'fiber']
 ```
 
-
+<br>
 
 The general format to slice both rows and columns together looks like this:
 
@@ -117,9 +121,8 @@ We put in the interval of our desired rows first, and then the columns, and we s
 
 The general format to slice both rows and columns together looks like this:
 
-```python
-cereal.loc['row name start':'row name end', 'column name start':'column name end']
-```
+`cereal.loc['row name start':'row name end', 'column name start':'column name end']`
+
 :::
 
 ---

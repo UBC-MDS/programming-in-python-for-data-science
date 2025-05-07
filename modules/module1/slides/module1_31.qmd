@@ -59,10 +59,10 @@ chart0
 
 ```{python}
 # | include: false
-chart0.save('static/chart0.png')
+chart0.save('static/module1/chart0.png')
 ```
 
-![](../../../static/module1/chart0.png"){fig-alt="404 image" width="20%"}
+![](../../../static/module1/chart0.png){fig-alt="404 image" width="20%"}
 
 
 :::{.notes} 
@@ -145,7 +145,7 @@ chart1
 
 ```{python}
 # | include: false
-chart1.save('static/chart1.png')
+chart1.save('static/module1/chart1.png')
 ```
 
 ![](../../../static/module1/chart1.png){fig-alt="404 image" width="50%"}
@@ -168,7 +168,7 @@ chart2
 
 ```{python}
 # | include: false
-chart2.save('static/chart2.png')
+chart2.save('static/module1/chart2.png')
 ```
 
 ![](../../../static/module1/chart2.png){fig-alt="404 image" width="50%"}
@@ -198,7 +198,7 @@ chart3
 
 ```{python}
 # | include: false
-chart3.save('static/chart3.png')
+chart3.save('static/module1/chart3.png')
 ```
 
 ![](../../../static/module1/chart3.png){fig-alt="404 image" width="50%"}
@@ -230,8 +230,8 @@ chart4
 
 
 ```{python}
-# | inlcude: false
-chart4.save('static/chart4.png')
+# | include: false
+chart4.save('static/module1/chart4.png')
 ```
 
 ![](../../../static/module1/chart4.png){fig-alt="404 image" width="50%"}
@@ -257,8 +257,8 @@ chart5
 ```
 
 ```{python}
-# | inlcude: false
-chart5.save('static/chart5.png')
+# | include: false
+chart5.save('static/module1/chart5.png')
 ```
 
 ![](../../../static/module1/chart5.png){fig-alt="404 image" width="50%"}
@@ -281,8 +281,8 @@ chart6
 
 
 ```{python}
-# | inlcude: false
-chart6.save('static/chart6.png')
+# | include: false
+chart6.save('static/module1/chart6.png')
 ```
 
 ![](../../../static/module1/chart6.png){fig-alt="404 image" width="50%"}

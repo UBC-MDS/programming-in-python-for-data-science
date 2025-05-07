@@ -126,8 +126,6 @@ hockey_players = pd.read_csv('data/canucks.csv')
 hockey_players
 ```
 
-<br>
-
 What are the column names of the hockey_players dataframe?
 
 **Tasks:**

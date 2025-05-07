@@ -15,6 +15,7 @@ title-slide-attributes:
 ```{python}
 # | include: false
 cereal = pd.read_csv('data/cereal.csv')
+cereal = cereal[["name", "mfr", "calories", "shelf", "weight", "cups", "rating"]]
 ```
 
 ```{python}
