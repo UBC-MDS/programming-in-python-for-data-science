@@ -1,0 +1,40 @@
+name: "Render and Publish"
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+# you need these permissions to publish to GitHub pages
+permissions: 
+    contents: write
+    pages: write
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4  # Checkout the repo to find files, such as the env
+      
+      - name: Setup the environment
+        uses: mamba-org/setup-micromamba@v1
+        with:
+          environment-file: environment.yaml
+          init-shell: bash
+          cache-environment: true
+          post-cleanup: none
+
+      - name: Build the website
+        run: quarto render
+        shell: bash -el {0}  # Required to see the mamba init env
+      
+      # Push the website to the gh-pages branch 
+      - name: Push the PR version of the website to gh-pages branch
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
+          keep_files: true
+          destination_dir: .
