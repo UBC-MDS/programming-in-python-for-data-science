@@ -3,7 +3,7 @@ name: "Render and Publish"
 on:
   push:
     branches:
-      - main
+      - master
   workflow_dispatch:
 
 # you need these permissions to publish to GitHub pages
