@@ -1,0 +1,229 @@
+---
+format: live-html
+---
+
+<script src='../../src/quiz.js'></script>
+
+# 5.1. Exercises
+
+## Filtering Question
+
+**Question 1**
+
+If the output of 
+
+```python 
+df['location'] == 'Canada'
+```
+
+is 
+ 
+```out
+[ True, False, False, True]
+```
+
+<br>
+
+What would be the output of 
+ 
+```python
+~(df['location'] == 'Canada')
+```
+
+<div id='mcq1'></div>
+<script>
+    generateQuiz(
+        'mcq1',
+        '',
+        '',
+        {
+        '<code>[True, False, False, True]</code>': 'You may want to review the Tilde section.',
+        '<code>[False, False, False, False]</code>': 'You may want to review the Tilde section.',
+        '<code>[True, True, True, True]</code>': 'You may want to review the Tilde section.',
+        '<code>[False, True, True, False]</code>': 'Great work!',
+        },
+        '<code>[False, True, True, False]</code>',
+    );
+</script>
+
+
+## Coding questiongs
+
+**Instructions:**    
+Running a coding exercise for the first time, could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
+
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
+
+
+### Single Condition Filtering
+
+Try to filter the dataframe to obtain only a certain Pokemon type using single condition filtering.   
+
+**Tasks:**
+
+- Create a new dataframe named `fire_pokemon` containing only the rows of `type` "fire".
+
+```{pyodide}
+#| exercise: single_condition_filtering
+import pandas as pd
+
+pokemon = pd.read_csv('data/pokemon.csv')
+
+# Create a new dataframe named fire_pokemon containing only the rows of type "fire"
+____ = ____
+
+fire_pokemon
+```
+
+```{pyodide}
+#| exercise: single_condition_filtering
+#| check: true
+from src.utils import print_correct_msg
+
+pokemon = pd.read_csv('data/pokemon.csv')
+solution = pokemon[pokemon['type'] == 'fire']
+
+assert isinstance(result, pd.DataFrame), "Your result should be a dataframe."
+assert solution.shape == result.shape, "Your dataframe imensions are incorrect. Are you selecting only the fire pokemons?"
+assert set(list(result.type)) == {'fire'} , "Are you selecting only fire pokemons?"
+print_correct_msg()
+```
+
+:::: { .hint exercise="single_condition_filtering"}
+::: { .callout-note collapse="false"}
+
+## Hint 1
+
+- Are you sure you are saving your dataframe as the correct object names?
+- Are you using `pokemon['type'] == 'fire'` as your condition?
+
+:::
+::::
+
+:::: { .solution exercise="single_condition_filtering" }
+::: { .callout-tip collapse="false"}
+
+## Fully worked solution:
+
+```{pyodide}
+import pandas as pd
+
+pokemon = pd.read_csv('data/pokemon.csv')
+
+# Create a new dataframe named fire_pokemon containing only the rows of type "fire"
+fire_pokemon = pokemon[pokemon['type'] == 'fire']
+
+fire_pokemon
+```
+
+:::
+::::
+
+<br>
+
+<div id='mcq2'></div>
+<script>
+    generateQuiz(
+        'mcq2',
+        'Question',
+        'How many fire Pokemon are there? <i>(Hint: Think about how we obtain dataframe row and column size from the previous module.)</i>',
+        {
+        '11': 'You can answer this question using <code>fire_pokemon.shape</code>',
+        '52': 'That’s great!  Did you use <code>fire_pokemon.shape</code>?',
+        '776': 'You can answer this question using <code>fire_pokemon.shape</code>',
+        },
+        '52',
+    );
+</script>
+
+<br>
+
+### Filtering using "and"
+
+Let's find all the pokemon that meet multiple conditions.  
+
+**Tasks:**
+
+- Filter the dataframe for the pokemon that have `attack` and `defense` values both greater than 100. 
+- Save this dataframe as an object named `mighty_pokemon`.
+
+```{pyodide}
+#| exercise: filtering_using_and
+import pandas as pd
+
+pokemon = pd.read_csv('data/pokemon.csv')
+
+# Filter the dataframe for the pokemon that have attack and
+# defense values both greater than 100
+# Save this dataframe as an object named mighty_pokemon
+____ = ____
+
+mighty_pokemon
+```
+
+```{pyodide}
+#| exercise: filtering_using_and
+#| check: true
+from src.utils import print_correct_msg
+
+pokemon = pd.read_csv('data/pokemon.csv')
+solution = pokemon[(pokemon['defense'] > 100) & (pokemon['attack'] > 100)]
+
+assert isinstance(result, pd.DataFrame), "Your result should be a dataframe."
+assert min(list(solution.defense)) == min(list(result.defense)), "Are you selecting pokemons with attack and defense > 100?"
+assert solution.defense.sum() == result.defense.sum() , "Some values in the 'defense'column are wrong. \n Are you selecting pokemons with defense > 100?"
+assert  max(list(solution.attack)) == max(list(result.attack)), "Are you selecting pokemons with attack and defense > 100?"
+assert solution.attack.sum() == result.attack.sum() , "Some values in the 'attack' column are wrong. \n Are you selecting pokemons with attack > 100?"
+print_correct_msg()
+```
+
+:::: { .hint exercise="filtering_using_and"}
+::: { .callout-note collapse="false"}
+
+## Hint 1
+
+- Are you sure you are saving your dataframe as the correct object names?
+- Are you separating your conditions with brackets?
+- Are you using the symbol` & ` to get the intersect?
+- Are you using `pokemon['defense'] > 100` and  `pokemon['attack'] > 100` as your conditions?
+
+:::
+::::
+
+:::: { .solution exercise="filtering_using_and" }
+::: { .callout-tip collapse="false"}
+
+## Fully worked solution:
+
+```{pyodide}
+import pandas as pd
+
+pokemon = pd.read_csv('data/pokemon.csv')
+
+# Filter the dataframe for the pokemon that have attack and
+# defense values both greater than 100
+# Save this dataframe as an object named mighty_pokemon
+mighty_pokemon = pokemon[(pokemon['defense'] > 100) & (pokemon['attack'] > 100)]
+
+mighty_pokemon
+```
+
+:::
+::::
+
+<br>
+
+<div id='mcq3'></div>
+<script>
+    generateQuiz(
+        'mcq3',
+        'Question',
+        'Which type has the most Pokemon with attack and defense scores greater than 100? <i>(Hint: Think about how we counted the frequency of categorical columns in module 1)</i>',
+        {
+        'Rock and Bug': 'Well done!',
+        'Water and Rock': 'You can use <code>mighty_pokemon[\'type\'].value_counts()</code> to find out.',
+        'Bug and Water': 'You can use <code>mighty_pokemon[\'type\'].value_counts()</code> to find out.',
+        },
+        'Rock and Bug',
+    );
+</script>
