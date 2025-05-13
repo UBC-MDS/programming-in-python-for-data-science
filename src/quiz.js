@@ -52,7 +52,14 @@ function generateQuiz(containerId, title, question, options, correctAnswers) {
             messageElement.style.display = 'none';
             messageElement.style.opacity = 0;
 
-            if (correctAnswers === option) {
+            isCorrect = false
+            if (Array.isArray(correctAnswers)) {
+                isCorrect = correctAnswers.some(ans => ans === option);
+            } else {
+                isCorrect = correctAnswers === option
+            }
+
+            if (isCorrect) {
                 const emojis = ["🍀", "🎉", "🌈", "🚀", "🌟", "✨", "💯"];
                 const emoji = emojis[~~(Math.random() * emojis.length)];
                 messageBody.innerHTML = `<strong style="color: #0E76BC !important; font-size: 16px">Correct! &nbsp;${emoji}</strong><br>${explanation}`;
