@@ -56,11 +56,11 @@ function generateQuiz(containerId, title, question, options, correctAnswers) {
                 const emojis = ["🍀", "🎉", "🌈", "🚀", "🌟", "✨", "💯"];
                 const emoji = emojis[~~(Math.random() * emojis.length)];
                 messageBody.innerHTML = `<strong style="color: #0E76BC !important; font-size: 16px">Correct! &nbsp;${emoji}</strong><br>${explanation}`;
-                messageElement.style.backgroundColor = '#E7F4FD'; // Light background for content
+                messageElement.style.backgroundColor = '#DBF1FF'; // Light background for content
                 messageElement.style.borderLeft = '5px solid #0E76BC'; // Left border styling
             } else {
                 messageBody.innerHTML = `<strong style="color: #003366 !important; font-size: 16px;">Incorrect</strong><br>${explanation}`;
-                messageElement.style.backgroundColor = '#f0f7ff'; // Light background for content
+                messageElement.style.backgroundColor = '#F0F7FF'; // Light background for content
                 messageElement.style.borderLeft = '5px solid #003366'; // Left border styling
             }
 
