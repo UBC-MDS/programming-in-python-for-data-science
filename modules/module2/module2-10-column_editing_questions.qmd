@@ -1,0 +1,226 @@
+---
+format: live-html
+---
+
+<script src='../../src/quiz.js'></script>
+
+# 3.1. Exercises
+
+## Column Editing Questions
+
+Here is our `fruit_salad` dataframe once again. 
+
+```out
+           name    colour    location    seed   shape  sweetness   water-content  weight
+0         apple       red     canada    True   round     True          84         100
+1        banana    yellow     mexico   False    long     True          75         120
+2    cantaloupe    orange      spain    True   round     True          90        1360
+3  dragon-fruit   magenta      china    True   round    False          96         600
+4    elderberry    purple    austria   False   round     True          80           5
+5           fig    purple     turkey   False    oval    False          78          40
+6         guava     green     mexico    True    oval     True          83         450
+7   huckleberry      blue     canada    True   round     True          73           5
+8          kiwi     brown      china    True   round     True          80          76
+9         lemon    yellow     mexico   False    oval    False          83          65
+```
+
+<br>
+
+Let's say we run the following code:
+
+```python
+fruit_salad.drop(columns = ['colour', 'shape', 'sweetness'])
+fruit_salad = fruit_salad.rename(columns={'location':'country',
+                                          'weight':'weight_g'})
+```
+
+Use the dataframe and code above to answer the next 2 questions.
+
+<div id='mcq1'></div>
+<script>
+    generateQuiz(
+        'mcq1',
+        'Question 1',
+        'After running the code above, How many columns (not including the index) are there in <code>fruit_salad</code> ?',
+        {
+        '9': 'Did you count the index?',
+        '5': 'Did you notice that we did not save the new fruit_salad in an object when dropping the columns?',
+        '8': 'Good job! Nothing was dropped since we did not save the changes in an object.',
+        },
+        '8',
+    );
+</script>
+
+<div id='mcq2'></div>
+<script>
+    generateQuiz(
+        'mcq2',
+        'Question 2',
+        'After running the code above, which of the following is a column in the dataframe <code>fruit_salad</code>?',
+        {
+        '<code>country</code>': 'Good job! The code successful renamed the column <code>location</code> to <code>country</code> since we save the changes in an object named <code>fruit_salad</code>.',
+        '<code>location</code>': 'Did the code renamed the column <code>location</code> to <code>country</code>?  Did we save the changes in an object named <code>fruit_salad</code>.',
+        },
+        '<code>country</code>',
+    );
+</script>
+
+
+## Coding questions
+
+**Instructions:**    
+Running a coding exercise for the first time, could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
+
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
+
+<br>
+
+### Renaming a Column Index
+
+Let's rename one of the columns in our `pokemon.csv` data.  
+
+**Tasks:**
+
+- Rename the column `sp_attack` to `special_a` and `sp_defense` to `special_d` using `.rename()` only once.
+- Save the new dataframe as `pokemon_special`.
+- Display the first 5 rows of the dataframe.
+
+```{pyodide}
+#| exercise: renaming_a_column_index
+import pandas as pd
+
+pokemon = pd.read_csv('data/pokemon.csv')
+
+# Rename the column sp_attack to special_a and
+# sp_defense to special_d using df.rename() once  
+# Save the new dataframe as `pokemon_special`
+____ = ____
+
+# Display the first 5 rows of the dataframe
+____
+```
+
+```{pyodide}
+#| exercise: renaming_a_column_index
+#| check: true
+from src.utils import print_correct_msg
+
+pokemon = pd.read_csv('data/pokemon.csv')
+solution = pokemon.rename(columns={'sp_attack':'special_a', 'sp_defense':'special_d'}).head()
+
+assert isinstance(result, pd.DataFrame), "Your result should be a dataframe."
+assert not {"sp_attack"}.issubset(set(result.columns)), "Are you changing 'sp_attack' to 'special_a' using ':'?"
+assert not {"sp_defense"}.issubset(set(result.columns)), "Are you changing 'sp_defense' to 'special_d' using ':'?"
+assert sorted(list(solution.columns)) == sorted(list(result.columns)), "Your columns do not seem correct."
+print_correct_msg()
+```
+
+:::: { .hint exercise="renaming_a_column_index"}
+::: { .callout-note collapse="false"}
+
+## Hint 1
+
+- Are you using `pokemon.rename()`?
+- Are you saving the new dataframe as the correct name?
+- Are you using the argument `columns={'sp_attack':'special_a', 'sp_defense':'special_d'}`?
+
+:::
+::::
+
+:::: { .solution exercise="renaming_a_column_index" }
+::: { .callout-tip collapse="false"}
+
+## Fully worked solution:
+
+```{pyodide}
+import pandas as pd
+
+pokemon = pd.read_csv('data/pokemon.csv')
+
+# Rename the column sp_attack to special_a and
+# sp_defense to special_d using df.rename() once  
+# Save the new dataframe as `pokemon_special`
+pokemon_special = pokemon.rename(columns={'sp_attack':'special_a',
+                                          'sp_defense':'special_d'})
+
+# Display the first 5 rows of the dataframe
+pokemon_special.head()
+```
+
+:::
+::::
+
+<br>
+
+### Dropping Columns in a Dataframe
+
+Some of the columns in `pokemon.csv` we have deemed not useful. Let's get rid of them!   
+
+**Tasks:**
+
+- Drop the columns `deck_no`, `capture_rt`, and `legendary`.
+- Make sure to overwrite the new dataframe to object `pokemon`.
+- Display the first 5 rows of the dataframe.
+
+```{pyodide}
+#| exercise: dropping_columns_in_a_dataframe
+import pandas as pd
+
+pokemon = pd.read_csv('data/pokemon.csv')
+
+# Drop the columns deck_no, capture_rt, and legendary
+# Make sure to overwrite the new dataframe to object pokemon
+____
+
+# Display the first 5 rows of the dataframe
+____
+```
+
+```{pyodide}
+#| exercise: dropping_columns_in_a_dataframe
+#| check: true
+from src.utils import print_correct_msg
+
+pokemon = pd.read_csv('data/pokemon.csv')
+solution = pokemon.drop(columns=['deck_no', 'capture_rt', 'legendary']).head()
+
+assert isinstance(result, pd.DataFrame), "Your result should be a dataframe."
+assert not {'deck_no'}.issubset(set(result.columns)) , "Have you dropped the 'deck_no' column?"
+assert not {"capture_rt"}.issubset(set(result.columns)) , "Have you dropped the 'capture_rt' column?"
+assert not {"legendary"}.issubset(set(result.columns)) , "Have you dropped the 'legendary' column?"
+assert sorted(list(solution.columns)) == sorted(list(result.columns)), "Your columns do not seem correct."
+print_correct_msg()
+```
+
+:::: { .hint exercise="dropping_columns_in_a_dataframe"}
+::: { .callout-note collapse="false"}
+
+## Hint 1
+
+- Are you using `pokemon.drop()`?
+- Are you overwriting the new dataframe to object `pokemon`?
+- Are you using square brackets in the argument `columns`?
+
+:::
+::::
+
+:::: { .solution exercise="dropping_columns_in_a_dataframe" }
+::: { .callout-tip collapse="false"}
+
+## Fully worked solution:
+
+```{pyodide}
+import pandas as pd
+
+pokemon = pd.read_csv('data/pokemon.csv')
+
+# Drop the columns deck_no, capture_rt, and legendary
+# Make sure to overwrite the new dataframe to object pokemon
+pokemon = pokemon.drop(columns=['deck_no', 'capture_rt', 'legendary'])
+
+# Display the first 5 rows of the dataframe
+pokemon.head()
+```
+
+:::
+::::

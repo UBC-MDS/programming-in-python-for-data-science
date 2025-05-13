@@ -1,0 +1,126 @@
+---
+format: live-html
+---
+
+<script src='../../src/quiz.js'></script>
+
+# 9.1. Exercises
+
+## Plotting a Groupby Object
+
+**Instructions:**    
+Running a coding exercise for the first time, could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
+
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
+
+Let's attempt to answer the question ***"Which pokemon type has the highest mean attack score?"*** by making a bar chart from a groupby object.
+
+**Tasks:**
+
+Create a plot by chaining the following actions.
+
+- Make a groupby object on the column `type` and name it pokemon_type.
+- Use `.mean()` on the new groupby object.
+- reset the index so it no longer has `type` as index column.
+- Use `reset_index()` to make `type` a column again.
+- Sort the pokemon mean attack values in descending order using `sort` argument.
+- Name the y-axis "Mean attack scores".
+- Name the object `attack_plot`.
+
+```{pyodide}
+#| exercise: practice_replacing_values
+import pandas as pd
+import altair as alt
+
+pokemon = pd.read_csv('data/pokemon.csv').drop("name", axis=1)
+
+____ = pd.DataFrame(____.____('____').____().____[:, '____'])
+
+____ = ____.____()
+
+# ____ = alt.Chart(____, width=500,
+#                        height=300).____().____(x=alt.X('____',sort='____',
+#        title='____'), y=alt.Y('____',
+#        title='____'
+#       )).____(title='____')
+
+# attack_plot
+```
+
+```{pyodide}
+#| exercise: practice_replacing_values
+#| check: true
+from src.utils import assert_chart_equal, remove_keys_inplace
+
+pokemon = pd.read_csv('data/pokemon.csv').drop("name", axis=1)
+pokemon_type = pd.DataFrame(pokemon.groupby('type').mean().loc[:, 'attack']).reset_index()
+solution = alt.Chart(pokemon_type, width=500,
+                        height=300).mark_bar().encode(x=alt.X('type:N', sort='-y',
+        title='Pokemon type'), y=alt.Y('attack:Q',
+        title='Mean attack score'
+        )).properties(title='Mean attack value among Pokemon types')
+
+assert isinstance(result,type(solution)), "The final check needs a chart."
+remove_keys_inplace(solution, "title")
+remove_keys_inplace(result, "title")
+assert_chart_equal(solution, result)
+```
+
+:::: { .hint exercise="practice_replacing_values"}
+::: { .callout-note collapse="false"}
+
+## Hint 1
+
+- Are you grouping by the column named `type`? 
+- Are you using `.loc[:, 'attack']`?
+- While sorting, are you using the argument `ascending=False`?
+- Are you resetting the index?
+- Are you giving your plot a title??
+
+:::
+::::
+
+:::: { .solution exercise="practice_replacing_values" }
+::: { .callout-tip collapse="false"}
+
+## Fully worked solution:
+
+```{pyodide}
+import pandas as pd
+import altair as alt
+
+pokemon = pd.read_csv('data/pokemon.csv').drop("name", axis=1)
+
+pokemon_type = pd.DataFrame(pokemon.groupby('type').mean().loc[:, 'attack'])
+
+pokemon_type = pokemon_type.reset_index()
+
+attack_plot = alt.Chart(pokemon_type, width=500,
+                        height=300).mark_bar().encode(x=alt.X('type:N', sort='-y',
+        title='Pokemon type'), y=alt.Y('attack:Q',
+        title='Mean attack score'
+        )).properties(title='Mean attack value among Pokemon types')
+
+attack_plot
+```
+
+:::
+::::
+
+<br>
+
+<div id='mcq1'></div>
+<script>
+    generateQuiz(
+        'mcq1',
+        'Question 1',
+        'Which Pokemon type has the highest mean attack value?',
+        {
+        'Steel': 'Take another look at the plot.',
+        'Ground': 'Take another look at the plot.',
+        'Dragon': 'Well done!',
+        'Fighting': 'Take another look at the plot.',
+        },
+        'Dragon',
+    );
+</script>
