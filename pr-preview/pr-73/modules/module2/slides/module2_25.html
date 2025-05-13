@@ -203,7 +203,7 @@
 <section class="slide level2">
 
 <p><em><em>Which manufacturer has the highest mean sugar content?</em></em></p>
-<div id="0f33879b" class="cell" data-execution_count="3">
+<div id="c9f4f7bd" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a>cereal[<span class="st">'mfr'</span>].value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>K    23
@@ -236,7 +236,7 @@ Name: mfr, Length: 7, dtype: int64</code></pre>
 <section class="slide level2">
 
 <p>Let’s start with “K”:</p>
-<div id="8c038e6e" class="cell" data-execution_count="4">
+<div id="c81ee3da" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a>cereal[cereal[<span class="st">'mfr'</span>] <span class="op">==</span> <span class="st">'K'</span>].mean()[[<span class="st">'sugars'</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>sugars    7.565217
@@ -245,7 +245,7 @@ dtype: float64</code></pre>
 </div>
 <p><br></p>
 <p>Next “G”:</p>
-<div id="66c67606" class="cell" data-execution_count="5">
+<div id="d36de31e" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a>cereal[cereal[<span class="st">'mfr'</span>] <span class="op">==</span> <span class="st">'G'</span>].mean()[[<span class="st">'sugars'</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
 <pre><code>sugars    7.954545
@@ -271,11 +271,11 @@ dtype: float64</code></pre>
 </section>
 <section id="using-groupby" class="slide level2">
 <h2>Using groupby</h2>
-<div id="befd5ee1" class="cell" data-execution_count="6">
+<div id="95a713d8" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a>mfr_group <span class="op">=</span> cereal.groupby(by<span class="op">=</span><span class="st">'mfr'</span>)</span>
 <span id="cb7-2"><a aria-hidden="true" tabindex="-1"></a>mfr_group</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
-<pre><code>&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x7f66a4a6e910&gt;</code></pre>
+<pre><code>&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x7f032bfe0550&gt;</code></pre>
 </div>
 </div>
 <aside class="notes">
@@ -316,7 +316,7 @@ dtype: float64</code></pre>
 </section>
 <section class="slide level2">
 
-<div id="ae031462" class="cell" data-execution_count="7">
+<div id="d4c70f1c" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a aria-hidden="true" tabindex="-1"></a>mfr_group.groups</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
 <pre><code>{'A': [43], 'G': [5, 7, 11, 12, 13, 14, 18, 22, 31, 36, 40, 42, 47, 51, 59, 69, 70, 71, 72, 73, 75, 76], 'K': [2, 3, 6, 16, 17, 19, 21, 24, 25, 26, 28, 38, 39, 46, 48, 49, 50, 53, 58, 60, 62, 66, 67], 'N': [0, 20, 63, 64, 65, 68], 'P': [9, 27, 29, 30, 32, 33, 34, 37, 52], 'Q': [1, 10, 35, 41, 54, 55, 56, 57], 'R': [4, 8, 15, 23, 44, 45, 61, 74]}</code></pre>
@@ -340,7 +340,7 @@ dtype: float64</code></pre>
 </section>
 <section class="slide level2">
 
-<div id="462e0856" class="cell" data-execution_count="8">
+<div id="e7dbbfec" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a aria-hidden="true" tabindex="-1"></a>mfr_group.groups[<span class="st">'K'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
 <pre><code>Int64Index([2, 3, 6, 16, 17, 19, 21, 24, 25, 26, 28, 38, 39, 46, 48, 49, 50, 53, 58, 60, 62, 66, 67], dtype='int64')</code></pre>
@@ -363,7 +363,7 @@ dtype: float64</code></pre>
 </section>
 <section class="slide level2">
 
-<div id="0196f5d0" class="cell" data-execution_count="9">
+<div id="5a2b61ca" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a aria-hidden="true" tabindex="-1"></a>mfr_group.get_group(<span class="st">'K'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
 <div>
@@ -504,7 +504,7 @@ dtype: float64</code></pre>
 </section>
 <section class="slide level2">
 
-<div id="e82e15e5" class="cell" data-execution_count="10">
+<div id="0371ac66" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a aria-hidden="true" tabindex="-1"></a>cereal[<span class="st">'mfr'</span>].value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="10">
 <pre><code>K    23
@@ -518,7 +518,7 @@ Name: mfr, Length: 7, dtype: int64</code></pre>
 </div>
 </div>
 <p><br></p>
-<div id="69bc6120" class="cell" data-execution_count="11">
+<div id="881465c1" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a aria-hidden="true" tabindex="-1"></a>mfr_group.size()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="11">
 <pre><code>mfr
@@ -548,10 +548,10 @@ Length: 7, dtype: int64</code></pre>
 </section>
 <section id="summary-statistics-with-groups" class="slide level2">
 <h2>Summary Statistics with Groups</h2>
-<div id="5e9ca7e7" class="cell" data-inlcude="false" data-execution_count="12">
+<div id="0f4ff966" class="cell" data-inlcude="false" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a aria-hidden="true" tabindex="-1"></a>pd.set_option(<span class="st">'display.max_rows'</span>, <span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="03a8aae8" class="cell" data-execution_count="13">
+<div id="a4b69bdc" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a aria-hidden="true" tabindex="-1"></a>mfr_group.mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="13">
 <div>
@@ -664,7 +664,7 @@ Length: 7, dtype: int64</code></pre>
 </div>
 </div>
 </div>
-<div id="4799eabb" class="cell" data-execution_count="14">
+<div id="0881d2d5" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a aria-hidden="true" tabindex="-1"></a>mfr_group.<span class="bu">max</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="14">
 <div>
@@ -800,10 +800,10 @@ Length: 7, dtype: int64</code></pre>
 </section>
 <section id="aggregating-dataframes" class="slide level2">
 <h2>Aggregating dataframes</h2>
-<div id="923abb6e" class="cell" data-inlcude="false" data-execution_count="15">
+<div id="2633a9c5" class="cell" data-inlcude="false" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a aria-hidden="true" tabindex="-1"></a>pd.set_option(<span class="st">'display.max_rows'</span>, <span class="dv">6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="480c8f75" class="cell" data-execution_count="16">
+<div id="0580f2aa" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a aria-hidden="true" tabindex="-1"></a>cereal.agg(<span class="st">'mean'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="16">
 <pre><code>calories    106.883117
@@ -817,7 +817,7 @@ Length: 13, dtype: float64</code></pre>
 </div>
 </div>
 <p><br></p>
-<div id="1068c6a9" class="cell" data-execution_count="17">
+<div id="1932598b" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a aria-hidden="true" tabindex="-1"></a>cereal.mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="17">
 <pre><code>calories    106.883117
@@ -848,7 +848,7 @@ Length: 13, dtype: float64</code></pre>
 </section>
 <section class="slide level2">
 
-<div id="baf3d23c" class="cell" data-execution_count="18">
+<div id="3a47d0a4" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a aria-hidden="true" tabindex="-1"></a>cereal.agg([<span class="st">'max'</span>, <span class="st">'min'</span>, <span class="st">'median'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="18">
 <div>
@@ -943,7 +943,7 @@ Length: 13, dtype: float64</code></pre>
 </section>
 <section id="aggregating-groupby-objects" class="slide level2">
 <h2>Aggregating groupby objects</h2>
-<div id="0220c51f" class="cell" data-execution_count="19">
+<div id="306fd181" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a aria-hidden="true" tabindex="-1"></a>mfr_group.agg([<span class="st">'max'</span>, <span class="st">'min'</span>, <span class="st">'median'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="19">
 <div>
@@ -1113,7 +1113,7 @@ Length: 13, dtype: float64</code></pre>
 </section>
 <section id="extra-fancy-aggregation" class="slide level2">
 <h2>Extra Fancy Aggregation</h2>
-<div id="51ab6d57" class="cell" data-execution_count="20">
+<div id="69e069a3" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a aria-hidden="true" tabindex="-1"></a>mfr_group.agg({<span class="st">"calories"</span>:[<span class="st">'max'</span>, <span class="st">'min'</span>],</span>
 <span id="cb28-2"><a aria-hidden="true" tabindex="-1"></a>               <span class="st">"rating"</span>:[<span class="st">'sum'</span>],  </span>
 <span id="cb28-3"><a aria-hidden="true" tabindex="-1"></a>               <span class="st">"sugars"</span>:[<span class="st">'mean'</span>, <span class="st">'median'</span>]})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
