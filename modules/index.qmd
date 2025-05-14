@@ -1,0 +1,15 @@
+---
+format: html
+pagetitle: Home
+---
+
+# Welcome to Programming in Python for Data Science!
+
+This course is part of the [Key Capabilities for Data Science program](https://extendedlearning.ubc.ca/programs-credentials/key-capabilities-data-science-certificate) and will teach you how to conduct data analysis in Python. 
+During the course, you will work with powerful Python packages made for data-science, including Pandas for processing tabular data, Altair for data visualization and NumPy for working with numerical data types.
+
+You will also learn about iteration, flow control, and the data types relevant to data exploration and analysis. 
+You will leave this course capable of processing raw data into a format suitable for analysis, writing your own analysis functions, and deriving data-driven insights via the creation of interactive visualizations and summary tables.
+
+
+Course prerequisites: None
