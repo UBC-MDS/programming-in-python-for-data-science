@@ -1,0 +1,135 @@
+---
+format: live-html
+---
+
+<script src='../../src/quiz.js'></script>
+
+# 3.1. Exercises
+
+## Pivoting Questions
+
+<div id='mcq1'></div>
+<script>
+    generateQuiz(
+        'mcq1',
+        'Question 1',
+        'We use <code>.pivot()</code> to convert a wider dataframe with multiple columns into a longer dataframe with fewer columns.',
+        {
+        'True': 'The reverse is true.  Please review this section before continuing.',
+        'False': 'Great work!',
+        },
+        'False',
+    );
+</script>
+
+<div id='mcq2'></div>
+<script>
+    generateQuiz(
+        'mcq2',
+        'Question 2',
+        'Which of the following will reset your index?',
+        {
+        '<code>.index_reset()</code>': 'You may want to look over this before moving forward.',
+        '<code>.reset_index()</code>': 'Good job!',
+        },
+        '<code>.reset_index()</code>',
+    );
+</script>
+
+
+## Applying Pivot
+
+**Instructions:**    
+Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
+
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
+
+
+Let's take a look at the new dataset named `lego`.
+
+```{pyodide}
+import pandas as pd
+
+lego = pd.read_csv('data/lego_untidy.csv')
+
+lego
+```
+
+Let's convert the dataframe `lego` into a wider dataframe using `.pivot()`.  
+
+**Tasks:**
+
+- Convert the untidy data into tidy data using `.pivot()`.
+- Don't forget to reset your index.
+- Name the new dataframe `tidied_lego`.
+- Save the mean number of parts (`num_parts`) of the Lego sets in an object named `set_parts_mean`. (We've added a verb named `.round()` to round to the nearest whole number)
+
+```{pyodide}
+#| setup: true
+#| exercise: applying_pivot
+import pandas as pd
+from src.utils import print_correct_msg
+
+lego = pd.read_csv('data/lego_untidy.csv')
+```
+
+```{pyodide}
+#| exercise: applying_pivot
+# Convert the untidy data into tidy data using pivot 
+# Name the new dataframe tidied_lego
+____ = pd.DataFrame(____.____(index=____,
+                   columns=____,
+                   values=____)
+            .____()
+       )
+
+# Save the mean number of parts (num_parts) of the Lego sets in an object named set_parts_mean
+____ = ____[[____]].____().round()
+
+____
+```
+
+```{pyodide}
+#| exercise: applying_pivot
+#| check: true
+tidied_lego = pd.DataFrame(lego.pivot(index='set_num', columns='lego_info', values='value').reset_index())
+solution = tidied_lego[['num_parts']].mean().round()
+
+assert isinstance(result, pd.Series), "Are you using the .mean() function?"
+assert solution[0] == result[0], "The mean value is incorrect."
+print_correct_msg()
+```
+
+:::: { .hint exercise="applying_pivot"}
+::: { .callout-note collapse="false"}
+
+## Hint 1
+
+- Are you pivoting the correct column named `lego_info` with `values='value'`?     
+- Are you resetting your index after you pivot?    
+
+:::
+::::
+
+:::: { .solution exercise="applying_pivot" }
+::: { .callout-tip collapse="false"}
+
+## Fully worked solution:
+
+```{pyodide}
+# Convert the untidy data into tidy data using pivot 
+# Name the new dataframe tidied_lego
+tidied_lego = pd.DataFrame(lego.pivot(index='set_num',
+                          columns='lego_info',
+                          values='value')
+                   .reset_index()
+              )
+
+# Save the mean number of parts (num_parts) of the Lego sets in an object named set_parts_mean
+set_parts_mean = tidied_lego[['num_parts']].mean().round()
+
+set_parts_mean
+```
+
+:::
+::::

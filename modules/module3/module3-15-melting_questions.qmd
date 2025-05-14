@@ -1,0 +1,145 @@
+---
+format: live-html
+---
+
+<script src='../../src/quiz.js'></script>
+
+# 5.1. Exercises
+
+## Melting Questions
+
+<div id='mcq1'></div>
+<script>
+    generateQuiz(
+        'mcq1',
+        'Question 1',
+        'We use <code>.melt()</code> to convert a wide dataframe with multiple columns into a longer dataframe with fewer columns.',
+        {
+        'True': 'Great work!',
+        'False': 'It may be a good idea to look over the last section again.',
+        },
+        'True',
+    );
+</script>
+
+<div id='mcq2'></div>
+<script>
+    generateQuiz(
+        'mcq2',
+        'Question 2',
+        '<code>.melt()</code> has the same arguments as <code>.pivot()</code>.',
+        {
+        'True': 'It may be a good idea to look over the last section again.',
+        'False': 'Good job!',
+        },
+        'False',
+    );
+</script>
+
+<div id='mcq3'></div>
+<script>
+    generateQuiz(
+        'mcq3',
+        'Question 3',
+        '<code>.melt()</code> and <code>.pivot()</code> always transform the data into tidy data.',
+        {
+        'True': 'It may be a good idea to look over the last section again.',
+        'False': 'Good job!  Just because the data is transformed doesn’t mean that it’s transformed for the better!',
+        },
+        'False',
+    );
+</script>
+
+
+## Applying Melt
+
+**Instructions:**    
+Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
+
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
+
+Let's take a look at some new untidy data that we have named `lego`. 
+
+```{pyodide}
+import pandas as pd
+
+lego = pd.read_csv('data/lego_untidy2.csv')
+
+lego
+```
+
+Let's melt this so that the 2 new columns named `matte` and `transparent` become a single one.  These columns refer to the opacity of the blocks and the values refer to the number of pieces of each included in the set. Since our variable of interest in this scenario is `opacity`, we need to combine the two measurements into one column.
+
+**Tasks:**
+
+- `melt` the dataframe columns `matte` and `transparent` into a single column named `opacity` and name the values column `quantity`.
+- Name the new dataframe `tidied_lego`.
+
+```{pyodide}
+#| setup: true
+#| exercise: applying_melt
+import pandas as pd
+from src.utils import print_correct_msg
+
+lego = pd.read_csv('data/lego_untidy2.csv')
+```
+
+```{pyodide}
+#| exercise: applying_melt
+# Melt the dataframe and name the values column quantity  
+# Name your dataframe tidied_lego
+tidied_lego = (____.____(____)
+              )
+              
+# Display the dataframe
+____
+```
+
+```{pyodide}
+#| exercise: applying_melt
+#| check: true
+solution = (lego.melt(id_vars=['set_num', 'name', 'year', 'theme_id', 'num_parts'],
+                         value_vars=['matte', 'transparent'],
+                         var_name='opacity',
+                         value_name= 'quantity')
+              )
+
+assert isinstance(result, pd.DataFrame), "The result should be a DataFrame."
+assert solution.shape == result.shape, "Check your melting."
+assert sorted(list(solution.columns)) == sorted(list(result.columns)), "Are you setting the correct id_vars?"
+assert set(tidied_lego.opacity) == {'matte', 'transparent'}, "Are you setting the value_vars to 'matte' and 'transparent'?"
+print_correct_msg()
+```
+
+:::: { .hint exercise="applying_melt"}
+::: { .callout-note collapse="false"}
+
+## Hint 1
+
+- Are you melting the correct columns named `matte` and `transparent`?
+- Are you making sure to use all the columns (except `matte` and  `transparent`) in the argument `id_vars`?
+- Have you set all arguments (`id_vars`, `value_vars`, `var_name`, and `value_name`)?
+
+:::
+::::
+
+:::: { .solution exercise="applying_melt" }
+::: { .callout-tip collapse="false"}
+
+## Fully worked solution:
+
+```{pyodide}
+# Melt the dataframe and name the values column quantity  
+# Name your dataframe tidied_lego
+tidied_lego = (lego.melt(id_vars=['set_num', 'name', 'year', 'theme_id', 'num_parts'],
+                         value_vars=['matte', 'transparent'],
+                         var_name='opacity',
+                         value_name= 'quantity')
+              )
+
+# Display the dataframe
+tidied_lego
+```
+
+:::
+::::

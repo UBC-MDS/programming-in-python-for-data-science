@@ -1,0 +1,29 @@
+---
+format:
+  html:
+    page-layout: full
+---
+
+# 3. Reshaping with Pivot
+
+::: {.panel-tabset .nav-pills}
+
+## Video
+
+<iframe
+    class="video"
+    src="https://www.youtube.com/embed/WCWi1R2CQsY?start=2991&end=3347&rel=0" 
+    title="Module 3 Video - Reshaping with Pivot"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+></iframe>
+
+## Slides
+
+<iframe
+    class="slide-deck"
+    src="slides/module3_08.html"
+></iframe>
+
+:::
