@@ -1,0 +1,387 @@
+[
+  {
+    "objectID": "modules/module3/slides/module3_25.html#summary",
+    "href": "modules/module3/slides/module3_25.html#summary",
+    "title": "What Did we Learn and What to Expect in Assignment 3",
+    "section": "Summary",
+    "text": "Summary\nStudents are now expected to be able to:\n\nExplain what tidy data is.\nUse .melt() and .pivot() to reshape dataframes, specifically to make tidy data.\nLearn how to reset a dataframe’s index.\nCombine dataframes using .merge() and .concat() and know when to use these different methods.\nUnderstand the different joining methods.\n\n\nThe assignment will concentrate on the learning objectives as well as building knowledge on existing concepts."
+  },
+  {
+    "objectID": "modules/module3/slides/module3_25.html#attribution",
+    "href": "modules/module3/slides/module3_25.html#attribution",
+    "title": "What Did we Learn and What to Expect in Assignment 3",
+    "section": "Attribution",
+    "text": "Attribution\nThe cereal dataset:\n“80 Cereals” (c) by Chris Crawford is licensed under Creative Commons Attribution-ShareAlike 3.0 Unported"
+  },
+  {
+    "objectID": "modules/module3/slides/module3_17.html#concatenation",
+    "href": "modules/module3/slides/module3_17.html#concatenation",
+    "title": "Concatenation",
+    "section": "Concatenation",
+    "text": "Concatenation\n\n\nConcatenation works extremely well when you have similar dataframes, which both share identical column or row index labels.\npd.concat() can glue the 2 dataframes together either horizontally or vertically.\nIn this animation, you can see that the pieces are joined in the order that was presented, and the pattern does not necessarily match up."
+  },
+  {
+    "objectID": "modules/module3/slides/module3_17.html#horizontal-concatenation",
+    "href": "modules/module3/slides/module3_17.html#horizontal-concatenation",
+    "title": "Concatenation",
+    "section": "Horizontal Concatenation",
+    "text": "Horizontal Concatenation\n\ncandy\n\n\n\n\n\n\n\n\nname\nweight\nchocolate\npeanuts\n\n\n\n\n0\nCoffee Crisp\n50\n1\n0\n\n\n1\nButterfinger\n184\n1\n1\n\n\n2\nSkor\n39\n1\n0\n\n\n3\nSmarties\n45\n1\n0\n\n\n4\nTwix\n58\n1\n0\n\n\n\n\n\n\n\n\n\ncandy2 = pd.read_csv('data/candy_bars2.csv')\ncandy2\n\n\n\n\n\n\n\n\nname\ncalories\nfat\nsugar\n\n\n\n\n0\nCoffee Crisp\n260\n13\n25\n\n\n1\nButterfinger\n798\n30\n72\n\n\n2\nSkor\n209\n12\n23\n\n\n3\nSmarties\n210\n6\n33\n\n\n4\nTwix\n250\n12\n25\n\n\n\n\n\n\n\n\ncandy_bars2.csv is a new dataframe that has additional nutritional information about each candy bar like the columns calories fat and sugar. You’ll notice that this dataframe has the same number and order of candy bars.\nWe want to combine candy2 with candy horizontally."
+  },
+  {
+    "objectID": "modules/module3/slides/module3_17.html#vertical-concatenation",
+    "href": "modules/module3/slides/module3_17.html#vertical-concatenation",
+    "title": "Concatenation",
+    "section": "Vertical Concatenation",
+    "text": "Vertical Concatenation\n\ncandy\n\n\n\n\n\n\n\n\nname\nweight\nchocolate\npeanuts\n\n\n\n\n0\nCoffee Crisp\n50\n1\n0\n\n\n1\nButterfinger\n184\n1\n1\n\n\n2\nSkor\n39\n1\n0\n\n\n3\nSmarties\n45\n1\n0\n\n\n4\nTwix\n58\n1\n0\n\n\n\n\n\n\n\n\n\ncandy_more = pd.read_csv('data/candybars_more.csv', usecols=range(4))\ncandy_more\n\n\n\n\n\n\n\n\nname\nweight\nchocolate\npeanuts\n\n\n\n\n0\nKinder Bueno\n43\n1\n0\n\n\n1\n5th Avenue\n56\n1\n1\n\n\n2\nCrunch\n44\n1\n0\n\n\n\n\n\n\n\n\nThe new dataset candybars_more.csv has 3 additional candy bars that we wish to add to the original candy dataframe. The columns in this dataframe have the same order as in the candy dataframe."
+  },
+  {
+    "objectID": "modules/module3/slides/module3_17.html#be-careful-of-order",
+    "href": "modules/module3/slides/module3_17.html#be-careful-of-order",
+    "title": "Concatenation",
+    "section": "Be careful of order!",
+    "text": "Be careful of order!\n\ncandy\n\n\n\n\n\n\n\n\nname\nweight\nchocolate\npeanuts\n\n\n\n\n0\nCoffee Crisp\n50\n1\n0\n\n\n1\nButterfinger\n184\n1\n1\n\n\n2\nSkor\n39\n1\n0\n\n\n3\nSmarties\n45\n1\n0\n\n\n4\nTwix\n58\n1\n0\n\n\n\n\n\n\n\n\n\nsnacksize_candybars = pd.read_csv('data/snacksize_candybars.csv')\nsnacksize_candybars\n\n\n\n\n\n\n\n\nname\ncalories\nfat\nsugar\n\n\n\n\n0\nButterfinger\n798\n30\n72\n\n\n1\nSkor\n209\n12\n23\n\n\n2\nTwix\n250\n12\n25\n\n\n3\nCoffee Crisp\n260\n13\n25\n\n\n4\nSmarties\n210\n6\n33\n\n\n\n\n\n\n\n\npd.concat() is great when our dataframes have the same order for each observation. What happens if our dataframes have different orders for the candy bars?\nLet’s use a horizontal concatenation example with the dataframesnacksize_candybars.csv. This data contains the candy bars from candy in a shuffled order."
+  },
+  {
+    "objectID": "modules/module3/slides/module3_11.html#pivot-table",
+    "href": "modules/module3/slides/module3_11.html#pivot-table",
+    "title": "Reshaping with Pivot Table",
+    "section": "Pivot Table",
+    "text": "Pivot Table\n\n\n\nWe discussed that one of the effects of using .pivot() on our cereal_long dataframe was that the new dataframe was missing the column mfr.\nThat’s because .pivot() discards any columns that are not being directly affected by the pivot. Only the column that is specified in the index argument and the columns that need to be transformed are present in the new dataframe.\nThat’s where pivot_table steps in!"
+  },
+  {
+    "objectID": "modules/module3/slides/module3_11.html#why-use-pivot-at-all-then",
+    "href": "modules/module3/slides/module3_11.html#why-use-pivot-at-all-then",
+    "title": "Reshaping with Pivot Table",
+    "section": "Why use pivot at all then?",
+    "text": "Why use pivot at all then?\n\n\n\nWhen we use .pivot_table(), we have to proceed with caution.\nWe talked about how .pivot() and .pivot_table() take the arguments index and columns. What happens if we have multiple rows with the same index and column values?\nTake the following example where we see that Special K has 2 rows with differing values for calories.\nWhat happens when we try to pivot this?"
+  },
+  {
+    "objectID": "modules/module3/slides/module3_00.html#module-learning-outcomes",
+    "href": "modules/module3/slides/module3_00.html#module-learning-outcomes",
+    "title": "Module Learning Outcomes",
+    "section": "Module Learning Outcomes",
+    "text": "Module Learning Outcomes\nBy the end of the module, students are expected to:\n\nExplain what tidy data is.\nUse .melt() and .pivot() to reshape dataframes, specifically to make tidy data.\nLearn how to reset a dataframe’s index.\nCombine dataframes using .merge() and .concat() and know when to use these different methods.\nUnderstand the different joining methods."
+  },
+  {
+    "objectID": "modules/module3/module3-22-merge_questions.html",
+    "href": "modules/module3/module3-22-merge_questions.html",
+    "title": "7.1. Exercises",
+    "section": "",
+    "text": "Instructions:\nRunning a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\nMake sure you remove the hash (#) symbol in the coding portions of this question. We have commented them so that the line won’t execute and you can test your code after each step.\n\n\nIn this exercise, you are going to join two dataframes lego_inventory_parts.csv and lego-colors.csv and answer a few multiple-choice questions. The multiple-choice questions are being asked with the intention of using the code cell to write your own code in any way that helps to answer the question.\nTasks:\n\nCombine the two dataframes to make 1 large complete dataframe by using an outer join.\nMake sure to set the argument indicator to True.\nName the new dataframe lego_tower.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you naming your new dataframe lego_tower?\nAre you using the arguments left_on='color_id', right_on=id, how='outer' and indicator=True?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThis question may be a bit more challenging. We are wondering about the inventory of a store. We want to see which Lego sets are in stock and if so how many? After all, the store needs to make sure there are enough sets in stock to meet demand.\nTasks:\n\nCombine the two dataframes to make one large complete dataframe by using an inner join.\nName the new dataframe lego_stock.\nGroup the new dataframe by set_num and find how many groups there are using .ngroups\n\nThis question is in two parts and we are going to walk you through how to tackle it.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you naming your new dataframe lego_stock?\nAre you using the arguments left_on='set_num', right_on='set_num' and how='inner'?\nAre you grouping my using groupby('set_num')?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAh, it appears we have multiple rows for some of the same sets.\nAlthough it shows initially the we have 2846 different sets due to the number of rows in lego_stock, when we group them by set_num we actually only get 2306 different sets. This means that we have some rows with the same set_num but with different inventory quantities.\nHow are we going to get the stock quantity of each set now?\nWe are going to have to sum up the quantity of each set using .groupby() and.agg().\nTasks:\n\nUse .groupby() and .agg() to sum up the quantity of each set and save this as store_inventory.\nInner join store_inventory with lego_sets and use chaining to sort the dataframe in descending order based on in-stock quantity\nSave this new dataframe as store_inventory_details.\nDisplay the new dataframe.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you naming your new dataframe store_inventory?\nAre you aggregating using .agg({\\'quantity\\':\\'sum\\'})?\nAre you using the arguments left_index=True, right_index=True, how='inner'?\nAre you sorting in descending order of quantity?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNow we can return to our initial problem of identifying how many Lego sets are in stock.",
+    "crumbs": [
+      "**M3. Tidy Data and Joining Dataframes**",
+      "&nbsp;&nbsp; 7.1. Exercises"
+    ]
+  },
+  {
+    "objectID": "modules/module3/module3-22-merge_questions.html#coding-questions",
+    "href": "modules/module3/module3-22-merge_questions.html#coding-questions",
+    "title": "7.1. Exercises",
+    "section": "",
+    "text": "Instructions:\nRunning a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\nMake sure you remove the hash (#) symbol in the coding portions of this question. We have commented them so that the line won’t execute and you can test your code after each step.\n\n\nIn this exercise, you are going to join two dataframes lego_inventory_parts.csv and lego-colors.csv and answer a few multiple-choice questions. The multiple-choice questions are being asked with the intention of using the code cell to write your own code in any way that helps to answer the question.\nTasks:\n\nCombine the two dataframes to make 1 large complete dataframe by using an outer join.\nMake sure to set the argument indicator to True.\nName the new dataframe lego_tower.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you naming your new dataframe lego_tower?\nAre you using the arguments left_on='color_id', right_on=id, how='outer' and indicator=True?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThis question may be a bit more challenging. We are wondering about the inventory of a store. We want to see which Lego sets are in stock and if so how many? After all, the store needs to make sure there are enough sets in stock to meet demand.\nTasks:\n\nCombine the two dataframes to make one large complete dataframe by using an inner join.\nName the new dataframe lego_stock.\nGroup the new dataframe by set_num and find how many groups there are using .ngroups\n\nThis question is in two parts and we are going to walk you through how to tackle it.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you naming your new dataframe lego_stock?\nAre you using the arguments left_on='set_num', right_on='set_num' and how='inner'?\nAre you grouping my using groupby('set_num')?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAh, it appears we have multiple rows for some of the same sets.\nAlthough it shows initially the we have 2846 different sets due to the number of rows in lego_stock, when we group them by set_num we actually only get 2306 different sets. This means that we have some rows with the same set_num but with different inventory quantities.\nHow are we going to get the stock quantity of each set now?\nWe are going to have to sum up the quantity of each set using .groupby() and.agg().\nTasks:\n\nUse .groupby() and .agg() to sum up the quantity of each set and save this as store_inventory.\nInner join store_inventory with lego_sets and use chaining to sort the dataframe in descending order based on in-stock quantity\nSave this new dataframe as store_inventory_details.\nDisplay the new dataframe.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you naming your new dataframe store_inventory?\nAre you aggregating using .agg({\\'quantity\\':\\'sum\\'})?\nAre you using the arguments left_index=True, right_index=True, how='inner'?\nAre you sorting in descending order of quantity?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNow we can return to our initial problem of identifying how many Lego sets are in stock.",
+    "crumbs": [
+      "**M3. Tidy Data and Joining Dataframes**",
+      "&nbsp;&nbsp; 7.1. Exercises"
+    ]
+  },
+  {
+    "objectID": "modules/module3/module3-18-concat_questions.html",
+    "href": "modules/module3/module3-18-concat_questions.html",
+    "title": "6.1. Exercises",
+    "section": "",
+    "text": "Instructions: Running a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\nMake sure you remove the hash (#) symbol in the coding portions of this question. We have commented them so that the line won’t execute and you can test your code after each step.\n\n\nSometimes we accumulate additional data that we need to combine with our existing data. In the following question, we need to combine our dataframes to have a complete collection of all the Lego sets that exist.\nTasks:\n\nCombine the two dataframes lego_top and lego_bottom vertically to make one large complete dataframe.\nName the new dataframe full_set.\nSave the new dimension of full_set in an object named full_set_shape.\nDisplay the new dataframe.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you using pd.concat()?\nAre you concatenating in the correct order with lego_top first and lego_bottom second?\nAre you putting your dataframes within square brackets?\nAre you using axis=0\nAre you using .shape to find the dimension of the new dataframe?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nOur goal is to obtain a dataframe with the lego_set names and the total amount of pieces in each set but we only have 2 Lego dataframes (with the same indexes). One dataframe has the set names and the other contains information amount the number of matte and transparent pieces included in each set. Complete this question by using pd.concat() and techniques we learned in the previous model.\nTasks:\n\nCombine the two dataframes horizontally to make 1 large complete dataframe and name the new dataframe lego_full.\nDrop any duplicated columns using .loc[] and .duplicate()and save this new dataframe as washed_lego.\nMake a new column named total_pieces by adding up columns matte and transparent.\nSort the dataframe by total_pieces in descending order.\nSave this in an object named lego_details.\nDisplay the new dataframe.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you using pd.concat()?\nAre you concatenating the dataframes lego_base with lego_opacity?\nAre you putting your dataframes within square brackets?\nAre you removing any duplicated columns?\nAre you using axis=1?\nAre you using .assign() to make a new column named total_pieces?\nAre you using using .sort_values() with the argument ascending=False\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:",
+    "crumbs": [
+      "**M3. Tidy Data and Joining Dataframes**",
+      "&nbsp;&nbsp; 6.1. Exercises"
+    ]
+  },
+  {
+    "objectID": "modules/module3/module3-18-concat_questions.html#coding-questions",
+    "href": "modules/module3/module3-18-concat_questions.html#coding-questions",
+    "title": "6.1. Exercises",
+    "section": "",
+    "text": "Instructions: Running a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\nMake sure you remove the hash (#) symbol in the coding portions of this question. We have commented them so that the line won’t execute and you can test your code after each step.\n\n\nSometimes we accumulate additional data that we need to combine with our existing data. In the following question, we need to combine our dataframes to have a complete collection of all the Lego sets that exist.\nTasks:\n\nCombine the two dataframes lego_top and lego_bottom vertically to make one large complete dataframe.\nName the new dataframe full_set.\nSave the new dimension of full_set in an object named full_set_shape.\nDisplay the new dataframe.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you using pd.concat()?\nAre you concatenating in the correct order with lego_top first and lego_bottom second?\nAre you putting your dataframes within square brackets?\nAre you using axis=0\nAre you using .shape to find the dimension of the new dataframe?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nOur goal is to obtain a dataframe with the lego_set names and the total amount of pieces in each set but we only have 2 Lego dataframes (with the same indexes). One dataframe has the set names and the other contains information amount the number of matte and transparent pieces included in each set. Complete this question by using pd.concat() and techniques we learned in the previous model.\nTasks:\n\nCombine the two dataframes horizontally to make 1 large complete dataframe and name the new dataframe lego_full.\nDrop any duplicated columns using .loc[] and .duplicate()and save this new dataframe as washed_lego.\nMake a new column named total_pieces by adding up columns matte and transparent.\nSort the dataframe by total_pieces in descending order.\nSave this in an object named lego_details.\nDisplay the new dataframe.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you using pd.concat()?\nAre you concatenating the dataframes lego_base with lego_opacity?\nAre you putting your dataframes within square brackets?\nAre you removing any duplicated columns?\nAre you using axis=1?\nAre you using .assign() to make a new column named total_pieces?\nAre you using using .sort_values() with the argument ascending=False\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:",
+    "crumbs": [
+      "**M3. Tidy Data and Joining Dataframes**",
+      "&nbsp;&nbsp; 6.1. Exercises"
+    ]
+  },
+  {
+    "objectID": "modules/module3/module3-15-melting_questions.html",
+    "href": "modules/module3/module3-15-melting_questions.html",
+    "title": "5.1. Exercises",
+    "section": "",
+    "text": "Instructions:\nRunning a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\nLet’s take a look at some new untidy data that we have named lego.\n\n\n\n\n\n\nLet’s melt this so that the 2 new columns named matte and transparent become a single one. These columns refer to the opacity of the blocks and the values refer to the number of pieces of each included in the set. Since our variable of interest in this scenario is opacity, we need to combine the two measurements into one column.\nTasks:\n\nmelt the dataframe columns matte and transparent into a single column named opacity and name the values column quantity.\nName the new dataframe tidied_lego.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you melting the correct columns named matte and transparent?\nAre you making sure to use all the columns (except matte and transparent) in the argument id_vars?\nHave you set all arguments (id_vars, value_vars, var_name, and value_name)?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:",
+    "crumbs": [
+      "**M3. Tidy Data and Joining Dataframes**",
+      "&nbsp;&nbsp; 5.1. Exercises"
+    ]
+  },
+  {
+    "objectID": "modules/module3/module3-15-melting_questions.html#applying-melt",
+    "href": "modules/module3/module3-15-melting_questions.html#applying-melt",
+    "title": "5.1. Exercises",
+    "section": "",
+    "text": "Instructions:\nRunning a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\nLet’s take a look at some new untidy data that we have named lego.\n\n\n\n\n\n\nLet’s melt this so that the 2 new columns named matte and transparent become a single one. These columns refer to the opacity of the blocks and the values refer to the number of pieces of each included in the set. Since our variable of interest in this scenario is opacity, we need to combine the two measurements into one column.\nTasks:\n\nmelt the dataframe columns matte and transparent into a single column named opacity and name the values column quantity.\nName the new dataframe tidied_lego.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you melting the correct columns named matte and transparent?\nAre you making sure to use all the columns (except matte and transparent) in the argument id_vars?\nHave you set all arguments (id_vars, value_vars, var_name, and value_name)?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:",
+    "crumbs": [
+      "**M3. Tidy Data and Joining Dataframes**",
+      "&nbsp;&nbsp; 5.1. Exercises"
+    ]
+  },
+  {
+    "objectID": "modules/module3/module3-12-pivot_table_questions.html",
+    "href": "modules/module3/module3-12-pivot_table_questions.html",
+    "title": "4.1. Exercises",
+    "section": "",
+    "text": "Instructions:\nRunning a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\nMake sure you remove the hash (#) symbol in the coding portions of this question. We have commented them so that the line won’t execute and you can test your code after each step.\nLet’s convert the dataframe lego into wider data but this time preserve all the columns in the dataframe by using .pivot_table().\nTasks:\n\nConvert the untidy data into tidy data using .pivot_table() making sure to keep all the columns.\nName the new dataframe tidied_lego.\nUse .agg() to find the mean number of parts for each production year and save it in an object name year_parts_mean. (We’ve added a verb named .round() to round to the nearest whole number)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you using the correct arguments such as index, columns, and values?\nDoes your index contain multiple columns?\nAre you pivoting the correct column named lego_info with values='value'?\nAre you resetting your index again after you pivot?\nAre you using .agg({\"num_parts\": \"mean\"})?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:",
+    "crumbs": [
+      "**M3. Tidy Data and Joining Dataframes**",
+      "&nbsp;&nbsp; 4.1. Exercises"
+    ]
+  },
+  {
+    "objectID": "modules/module3/module3-12-pivot_table_questions.html#applying-pivot-table",
+    "href": "modules/module3/module3-12-pivot_table_questions.html#applying-pivot-table",
+    "title": "4.1. Exercises",
+    "section": "",
+    "text": "Instructions:\nRunning a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\nMake sure you remove the hash (#) symbol in the coding portions of this question. We have commented them so that the line won’t execute and you can test your code after each step.\nLet’s convert the dataframe lego into wider data but this time preserve all the columns in the dataframe by using .pivot_table().\nTasks:\n\nConvert the untidy data into tidy data using .pivot_table() making sure to keep all the columns.\nName the new dataframe tidied_lego.\nUse .agg() to find the mean number of parts for each production year and save it in an object name year_parts_mean. (We’ve added a verb named .round() to round to the nearest whole number)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you using the correct arguments such as index, columns, and values?\nDoes your index contain multiple columns?\nAre you pivoting the correct column named lego_info with values='value'?\nAre you resetting your index again after you pivot?\nAre you using .agg({\"num_parts\": \"mean\"})?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:",
+    "crumbs": [
+      "**M3. Tidy Data and Joining Dataframes**",
+      "&nbsp;&nbsp; 4.1. Exercises"
+    ]
+  },
+  {
+    "objectID": "modules/module3/module3-09-pivoting_questions.html",
+    "href": "modules/module3/module3-09-pivoting_questions.html",
+    "title": "3.1. Exercises",
+    "section": "",
+    "text": "Instructions:\nRunning a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\nLet’s take a look at the new dataset named lego.\n\n\n\n\n\n\nLet’s convert the dataframe lego into a wider dataframe using .pivot().\nTasks:\n\nConvert the untidy data into tidy data using .pivot().\nDon’t forget to reset your index.\nName the new dataframe tidied_lego.\nSave the mean number of parts (num_parts) of the Lego sets in an object named set_parts_mean. (We’ve added a verb named .round() to round to the nearest whole number)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you pivoting the correct column named lego_info with values='value'?\n\nAre you resetting your index after you pivot?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:",
+    "crumbs": [
+      "**M3. Tidy Data and Joining Dataframes**",
+      "&nbsp;&nbsp; 3.1. Exercises"
+    ]
+  },
+  {
+    "objectID": "modules/module3/module3-09-pivoting_questions.html#applying-pivot",
+    "href": "modules/module3/module3-09-pivoting_questions.html#applying-pivot",
+    "title": "3.1. Exercises",
+    "section": "",
+    "text": "Instructions:\nRunning a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\nLet’s take a look at the new dataset named lego.\n\n\n\n\n\n\nLet’s convert the dataframe lego into a wider dataframe using .pivot().\nTasks:\n\nConvert the untidy data into tidy data using .pivot().\nDon’t forget to reset your index.\nName the new dataframe tidied_lego.\nSave the mean number of parts (num_parts) of the Lego sets in an object named set_parts_mean. (We’ve added a verb named .round() to round to the nearest whole number)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you pivoting the correct column named lego_info with values='value'?\n\nAre you resetting your index after you pivot?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:",
+    "crumbs": [
+      "**M3. Tidy Data and Joining Dataframes**",
+      "&nbsp;&nbsp; 3.1. Exercises"
+    ]
+  },
+  {
+    "objectID": "modules/module3/module3-06-which_is_tidy.html",
+    "href": "modules/module3/module3-06-which_is_tidy.html",
+    "title": "2.1. Exercises",
+    "section": "",
+    "text": "Dataframe A\n\n\n\n\n\nDataframe B",
+    "crumbs": [
+      "**M3. Tidy Data and Joining Dataframes**",
+      "&nbsp;&nbsp; 2.1. Exercises"
+    ]
+  },
+  {
+    "objectID": "modules/module3/module3-06-which_is_tidy.html#which-is-tidy",
+    "href": "modules/module3/module3-06-which_is_tidy.html#which-is-tidy",
+    "title": "2.1. Exercises",
+    "section": "",
+    "text": "Dataframe A\n\n\n\n\n\nDataframe B",
+    "crumbs": [
+      "**M3. Tidy Data and Joining Dataframes**",
+      "&nbsp;&nbsp; 2.1. Exercises"
+    ]
+  },
+  {
+    "objectID": "modules/module3/module3-00-module_learning_outcomes.html",
+    "href": "modules/module3/module3-00-module_learning_outcomes.html",
+    "title": "0. Module Learning Outcomes",
+    "section": "",
+    "text": "0. Module Learning Outcomes\n\nVideoSlides",
+    "crumbs": [
+      "**M3. Tidy Data and Joining Dataframes**",
+      "0. Module Learning Outcomes"
+    ]
+  },
+  {
+    "objectID": "modules/module3/module3-01-what_is_tidy_data.html",
+    "href": "modules/module3/module3-01-what_is_tidy_data.html",
+    "title": "1. What is Tidy Data?",
+    "section": "",
+    "text": "1. What is Tidy Data?\n\nVideoSlides",
+    "crumbs": [
+      "**M3. Tidy Data and Joining Dataframes**",
+      "1. What is Tidy Data?"
+    ]
+  },
+  {
+    "objectID": "modules/module3/module3-05-statistical_questions_and_tidy_data.html",
+    "href": "modules/module3/module3-05-statistical_questions_and_tidy_data.html",
+    "title": "2. Statistical Questions and Tidy Data",
+    "section": "",
+    "text": "2. Statistical Questions and Tidy Data\n\nVideoSlides",
+    "crumbs": [
+      "**M3. Tidy Data and Joining Dataframes**",
+      "2. Statistical Questions and Tidy Data"
+    ]
+  },
+  {
+    "objectID": "modules/module3/module3-08-reshaping_with_pivot.html",
+    "href": "modules/module3/module3-08-reshaping_with_pivot.html",
+    "title": "3. Reshaping with Pivot",
+    "section": "",
+    "text": "3. Reshaping with Pivot\n\nVideoSlides",
+    "crumbs": [
+      "**M3. Tidy Data and Joining Dataframes**",
+      "3. Reshaping with Pivot"
+    ]
+  },
+  {
+    "objectID": "modules/module3/module3-11-reshaping_with_pivot_table.html",
+    "href": "modules/module3/module3-11-reshaping_with_pivot_table.html",
+    "title": "4. Reshaping with Pivot Table",
+    "section": "",
+    "text": "4. Reshaping with Pivot Table\n\nVideoSlides",
+    "crumbs": [
+      "**M3. Tidy Data and Joining Dataframes**",
+      "4. Reshaping with Pivot Table"
+    ]
+  },
+  {
+    "objectID": "modules/module3/module3-14-reshaping_with_melt.html",
+    "href": "modules/module3/module3-14-reshaping_with_melt.html",
+    "title": "5. Reshaping with Melt",
+    "section": "",
+    "text": "5. Reshaping with Melt\n\nVideoSlides",
+    "crumbs": [
+      "**M3. Tidy Data and Joining Dataframes**",
+      "5. Reshaping with Melt"
+    ]
+  },
+  {
+    "objectID": "modules/module3/module3-17-concatenation.html",
+    "href": "modules/module3/module3-17-concatenation.html",
+    "title": "6. Concatenation",
+    "section": "",
+    "text": "6. Concatenation\n\nVideoSlides",
+    "crumbs": [
+      "**M3. Tidy Data and Joining Dataframes**",
+      "6. Concatenation"
+    ]
+  },
+  {
+    "objectID": "modules/module3/module3-21-joining_dataframes_using_merge.html",
+    "href": "modules/module3/module3-21-joining_dataframes_using_merge.html",
+    "title": "7. Joining Dataframes using Merge",
+    "section": "",
+    "text": "7. Joining Dataframes using Merge\n\nVideoSlides",
+    "crumbs": [
+      "**M3. Tidy Data and Joining Dataframes**",
+      "7. Joining Dataframes using Merge"
+    ]
+  },
+  {
+    "objectID": "modules/module3/module3-25-what_did_we_just_learn.html",
+    "href": "modules/module3/module3-25-what_did_we_just_learn.html",
+    "title": "8. What Did We Just Learn?",
+    "section": "",
+    "text": "8. What Did We Just Learn?\n\nVideoSlides",
+    "crumbs": [
+      "**M3. Tidy Data and Joining Dataframes**",
+      "8. What Did We Just Learn?"
+    ]
+  },
+  {
+    "objectID": "modules/module3/slides/module3_01.html#what-is-the-concept-of-tidy-data",
+    "href": "modules/module3/slides/module3_01.html#what-is-the-concept-of-tidy-data",
+    "title": "Tidy Data",
+    "section": "What is the concept of tidy data?",
+    "text": "What is the concept of tidy data?\nTidy data satisfies the following three criteria:\n\nEach row is a single observation,\nEach variable is a single column, and\nEach value is a single cell (i.e., its row, column position in the dataframe is not shared with another value)\n\n\nImage Source: R for Data Science by Garrett Grolemund & Hadley Wickham\n\nWhat a variable and an observation is may depend on your immediate goal.\n\nWhen we first hear “tidy data”, you likely think of clean, organized, and orderly data. The same applies here, however, the concept of tidy data stems from a paper written by renowned data scientist Hadley Wickham in 2014.\nWe tidy our data in such a way so that we can create a standard across multiple analysis tools. It changes the focus from figuring out the logistics of how the data is structured, to answering the actual analysis question being asked.\nThis approach allows us to standardize input arguments of certain analysis verbs like .describe() and other predictive methods."
+  },
+  {
+    "objectID": "modules/module3/slides/module3_01.html#criterion-1-each-row-is-a-single-observation",
+    "href": "modules/module3/slides/module3_01.html#criterion-1-each-row-is-a-single-observation",
+    "title": "Tidy Data",
+    "section": "Criterion #1: Each row is a single observation",
+    "text": "Criterion #1: Each row is a single observation\n\n\nFrom the dataframe we can see that each cereal has its own row. Criterion #1 is met!"
+  },
+  {
+    "objectID": "modules/module3/slides/module3_01.html#criterion-2-each-variable-is-a-single-column",
+    "href": "modules/module3/slides/module3_01.html#criterion-2-each-variable-is-a-single-column",
+    "title": "Tidy Data",
+    "section": "Criterion #2: Each variable is a single column",
+    "text": "Criterion #2: Each variable is a single column\n\n\nFrom the dataframe we can see that each of the variables name, mfr, calories and protein have their own column. We can validate that criterion #2 is also met."
+  },
+  {
+    "objectID": "modules/module3/slides/module3_01.html#criterion-3-each-value-is-a-single-cell",
+    "href": "modules/module3/slides/module3_01.html#criterion-3-each-value-is-a-single-cell",
+    "title": "Tidy Data",
+    "section": "Criterion #3: Each value is a single cell",
+    "text": "Criterion #3: Each value is a single cell\n\n\nThe variable value for each cereal has it’s own cell, confirming that criterion #3 is met!"
+  },
+  {
+    "objectID": "modules/module3/slides/module3_01.html#criterion-1-each-row-is-a-single-observation-1",
+    "href": "modules/module3/slides/module3_01.html#criterion-1-each-row-is-a-single-observation-1",
+    "title": "Tidy Data",
+    "section": "Criterion #1 Each row is a single observation",
+    "text": "Criterion #1 Each row is a single observation\n\n\nFrom the dataframe we can see that each observation has its own row. There are 2 rows per cereal but each row is unique.\nWe can confirm that criterion 1 is met."
+  },
+  {
+    "objectID": "modules/module3/slides/module3_01.html#criterion-2-each-variable-is-a-single-column-1",
+    "href": "modules/module3/slides/module3_01.html#criterion-2-each-variable-is-a-single-column-1",
+    "title": "Tidy Data",
+    "section": "Criterion #2: Each variable is a single column",
+    "text": "Criterion #2: Each variable is a single column\n\n\nIt looks like we have a problem here. In this dataframe, two of our variables we are measuring for our statistical question are contained in a single column. This is making the data untidy and potentially a problem to work with.\nFor example, what if I wanted to know the average calorie content of the cereals?"
+  },
+  {
+    "objectID": "modules/module3/slides/module3_08.html#pivot",
+    "href": "modules/module3/slides/module3_08.html#pivot",
+    "title": "Reshaping with Pivot",
+    "section": "Pivot",
+    "text": "Pivot\n\n\n.pivot() can be used in situations to transform long dataframes into wider ones.\nConsider the dataframe below.\nHow can we convert it?"
+  },
+  {
+    "objectID": "modules/module3/slides/module3_08.html#resetting-the-index",
+    "href": "modules/module3/slides/module3_08.html#resetting-the-index",
+    "title": "Reshaping with Pivot",
+    "section": "Resetting the Index",
+    "text": "Resetting the Index\n\ncereal_wide.head(5)\n\n\n\n\n\n\n\nnutrition\ncalories\nprotein\n\n\nname\n\n\n\n\n\n\nApple Jacks\n110\n2\n\n\nCheerios\n110\n6\n\n\nRaisin Bran\n120\n3\n\n\nSpecial K\n110\n6\n\n\nWheaties\n100\n3\n\n\n\n\n\n\n\n\n\ncereal_wide_messy = cereal_wide.reset_index()\ncereal_wide_messy.head(5)\n\n\n\n\n\n\n\nnutrition\nname\ncalories\nprotein\n\n\n\n\n0\nApple Jacks\n110\n2\n\n\n1\nCheerios\n110\n6\n\n\n2\nRaisin Bran\n120\n3\n\n\n3\nSpecial K\n110\n6\n\n\n4\nWheaties\n100\n3\n\n\n\n\n\n\n\n\nLet’s take a brief detour and discuss resetting the index. Here is our dataframe cereal_wide.\nWhile pivoting we transformed the name column as our index.\nWe can transform the name index back into a regular column by using the same reset_index() verb we learned when plotting grouped dataframes in module 2:"
+  },
+  {
+    "objectID": "modules/module3/slides/module3_14.html#melt",
+    "href": "modules/module3/slides/module3_14.html#melt",
+    "title": "Reshaping with Melt",
+    "section": "Melt",
+    "text": "Melt\n\nmelted_cereal  = (cereal.melt(id_vars=['name', 'mfr'] , \n                              value_vars=['calories', 'protein'], \n                              var_name='nutrition', \n                              value_name='value')\n                  )\nmelted_cereal\n\n\n\n\n\n\n\n\nname\nmfr\nnutrition\nvalue\n\n\n\n\n0\nSpecial K\nK\ncalories\n110\n\n\n1\nApple Jacks\nK\ncalories\n110\n\n\n2\nRaisin Bran\nK\ncalories\n120\n\n\n...\n...\n...\n...\n...\n\n\n7\nRaisin Bran\nK\nprotein\n3\n\n\n8\nCheerios\nG\nprotein\n6\n\n\n9\nWheaties\nG\nprotein\n3\n\n\n\n\n10 rows × 4 columns\n\n\n\n\nLet’s attempt to melt the calories and protein columns into a single one named nutrition with the values expressed in a column named value.\nThis is the dataframe exactly like we started with when we used .pivot() in the last section.\nAfter melting, we can see that the rows are not quite in the same order as before, but we can agree that its what we want."
+  },
+  {
+    "objectID": "modules/module3/slides/module3_21.html#introducing-the-data",
+    "href": "modules/module3/slides/module3_21.html#introducing-the-data",
+    "title": "Joining Dataframes using Merge",
+    "section": "Introducing the Data",
+    "text": "Introducing the Data\n\ncandy = pd.read_csv('data/candybars.csv', nrows=5, usecols=['name', 'weight', 'chocolate', 'peanuts'])\ncandy.head()\n\n\n\n\n\n\n\n\nname\nweight\nchocolate\npeanuts\n\n\n\n\n0\nCoffee Crisp\n50\n1\n0\n\n\n1\nButterfinger\n184\n1\n1\n\n\n2\nSkor\n39\n1\n0\n\n\n3\nSmarties\n45\n1\n0\n\n\n4\nTwix\n58\n1\n0\n\n\n\n\n\n\n\n\nWith .merge(), we need to identify a column in each dataframe that acts as a connection between them.\nIt’s a column where the values in Dataframe A are the same values to those in Dataframe B.\nIn the easiest situations both columns are named the same thing, but that doesn’t have to be the case.\nLet’s use a subset of the candy bars dataset to explain this concept further.\ncandy has a column labeled name which has unique candy bar names."
+  },
+  {
+    "objectID": "modules/module3/slides/module3_21.html#key-columns",
+    "href": "modules/module3/slides/module3_21.html#key-columns",
+    "title": "Joining Dataframes using Merge",
+    "section": "Key Columns",
+    "text": "Key Columns\n.merge() needs arguments that identify a common key column. This is a column present in both dataframes which contain common values.\nTo choose our key columns in each dataframe, we use the following arguments:\n\nleft_on - The left dataframe identifying key column label.\nright_on - The right dataframe identifying key column label.\n\n\n.merge() needs arguments that identify a common key column. This is a column present in both dataframes which contain common values.\nKey columns do not need to be named identically.\nTo choose our key columns in each dataframe, we use the following arguments:\n\nleft_on - The left dataframe identifying key column label.\nright_on - The right dataframe identifying key column label.\n\nFor example:\nDataframe A can have a column labeled cereal, and Dataframe B could have a column labeled product_name that both share cereal names."
+  },
+  {
+    "objectID": "modules/module3/slides/module3_21.html#how",
+    "href": "modules/module3/slides/module3_21.html#how",
+    "title": "Joining Dataframes using Merge",
+    "section": "how",
+    "text": "how\n\ncandy.merge(candy2m, left_on='name', right_on='chocolate_bar', how='inner')\n\n\n\n\n\n\n\n\nname\nweight\nchocolate\npeanuts\n...\ncalories\nfat\nsugar\nchocolate_bar\n\n\n\n\n0\nButterfinger\n184\n1\n1\n...\n798\n30.0\n72.0\nButterfinger\n\n\n1\nTwix\n58\n1\n0\n...\n250\n12.0\n25.0\nTwix\n\n\n\n\n2 rows × 9 columns\n\n\n\n\n\nThe how argument specifies “how” our dataframes are joined.\nWe mentioned that the default argument value inner will only keep the rows with identifying column values that are present in both dataframes."
+  },
+  {
+    "objectID": "modules/module3/slides/module3_21.html#indicator",
+    "href": "modules/module3/slides/module3_21.html#indicator",
+    "title": "Joining Dataframes using Merge",
+    "section": "indicator",
+    "text": "indicator\n\ncandy.merge(candy2m, left_on='name', right_on='chocolate_bar', how='outer', indicator=True)\n\n\n\n\n\n\n\n\nname\nweight\nchocolate\npeanuts\n...\nfat\nsugar\nchocolate_bar\n_merge\n\n\n\n\n0\nCoffee Crisp\n50.0\n1.0\n0.0\n...\nNaN\nNaN\nNaN\nleft_only\n\n\n1\nButterfinger\n184.0\n1.0\n1.0\n...\n30.0\n72.0\nButterfinger\nboth\n\n\n2\nSkor\n39.0\n1.0\n0.0\n...\nNaN\nNaN\nNaN\nleft_only\n\n\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n\n\n5\nNaN\nNaN\nNaN\nNaN\n...\n8.0\n40.0\n3 Musketeers\nright_only\n\n\n6\nNaN\nNaN\nNaN\nNaN\n...\n12.0\n22.0\nKitKat\nright_only\n\n\n7\nNaN\nNaN\nNaN\nNaN\n...\n13.0\n32.0\nBabe Ruth\nright_only\n\n\n\n\n8 rows × 10 columns\n\n\n\n\nindicator makes a new column name _merge and informs us from which dataframe the row originated from.\nIf we want to do an outer join and show all the possible rows from both dataframes, there is a useful argument called indicator.\nHere we can see three possible values left_only, right_only, or both which informs us if the row came from the left dataframe, the right dataframe or if the row index label is shared between both dataframes."
+  }
+]
