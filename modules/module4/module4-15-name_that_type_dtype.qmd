@@ -1,0 +1,263 @@
+---
+format: live-html
+---
+
+<script src='../../src/quiz.js'></script>
+
+# 4.1. Exercises
+
+## Name That type/dtype
+
+<div id='mcq1'></div>
+<script>
+    generateQuiz(
+        'mcq1',
+        'Question 1',
+        'What is the data type of a Pandas dataframe?',
+        {
+        '<code>pandas.core.frame.DataFrame</code>': 'Yes, this is the data type!',
+        'Multiple series': 'This is what makes up a dataframe but it’s not the data type.',
+        '<code>object</code>': 'This is a dtype, not a type.',
+        '<code>str</code>': 'This is a type, but not the dataframe type.',
+        },
+        '<code>pandas.core.frame.DataFrame</code>',
+    );
+</script>
+
+<div id='mcq2'></div>
+<script>
+    generateQuiz(
+        'mcq2',
+        'Question 2',
+        'What is the data type of a column in a dataframe?',
+        {
+        '<code>pd.DataFrame</code>': 'This is the whole dataframe type.',
+        '<code>pd.Series</code>': 'That’s right! A column has a type of pd.Series.',
+        '<code>object</code>': 'This is a dtype and not a data type.',
+        '<code>str</code>': 'Although you are guessing a data type, this is the incorrect one.',
+        },
+        '<code>pd.Series</code>',
+    );
+</script>
+
+## Dataframe and Series True and False
+
+<div id='mcq3'></div>
+<script>
+    generateQuiz(
+        'mcq3',
+        'Question 1',
+        'Dataframes are a made up of a tuple of Series.',
+        {
+        'True': 'It is made up of Series but not a tuple data structure.',
+        'False': 'A Dataframe is made up of a dictionary of Series',
+        },
+        'False',
+    );
+</script>
+
+<div id='mcq4'></div>
+<script>
+    generateQuiz(
+        'mcq4',
+        'Question 2',
+        'Pandas will assign a dtype of <code>obj</code> when it’s having difficulty recognizing the column dtype.',
+        {
+        'True': 'When it’s unclear what the dtype is, Pandas will assign it a dtype <code>object</code>.',
+        'False': 'You may want to review this section.',
+        },
+        'True',
+    );
+</script>
+
+
+## Dtype Practice
+
+**Instructions:**    
+Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
+
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
+
+Remember our `canucks` dataframe? Let's take a closer look at the labels of the columns.
+
+| Player   | No.   | Age   | Height   | Weight   | Country   | Position   | Experience   | Birth Date   | Salary   |
+|----------|-------|-------|----------|----------|-----------|------------|--------------|--------------|----------|
+| | | | | | | | | | |
+
+<br>
+**Question 1 (a)**
+
+<div id='mcq5'></div>
+<script>
+    generateQuiz(
+        'mcq5',
+        '',
+        'What dtype would be an appropriate guess for the <code>Salary</code> column?',
+        {
+        '<code>float64</code>': 'Nice! <code>float64</code> and <code>int64</code> are both appropriate dtype guesses for the <code>Salary</code> column.',
+        '<code>int64</code>': 'Nice! <code>float64</code> and <code>int64</code> are both appropriate dtype guesses for the <code>Salary</code> column.',
+        '<code>str</code>': 'This is not a dtype, this is one of Python’s data types.',
+        '<code>bool</code>': '<code>float64</code> and <code>int64</code> would be more appropriate dtype guesses for the <code>Salary</code> column.',
+        },
+        ['<code>float64</code>', '<code>int64</code>'],
+    );
+</script>
+
+**Question 1 (b)**
+
+Use the coding cell below to check the dtype for the `Salary` column.
+
+```{pyodide}
+#| exercise: dtype_1b
+import pandas as pd
+
+# Read in the data from the data folder named `canucks.csv` 
+# Name the dataframe `canucks`
+canucks = pd.read_csv('data/canucks.csv')
+
+____
+```
+
+```{pyodide}
+#| exercise: dtype_1b
+#| check: true
+from src.utils import print_correct_msg
+
+assert result == float, "Are you using the attribute `dtypes`?"
+print_correct_msg()
+```
+
+:::: { .hint exercise="dtype_1b"}
+::: { .callout-note collapse="false"}
+
+## Hint 1
+
+- Are you using the attribute `dtypes`?
+
+:::
+::::
+
+:::: { .solution exercise="dtype_1b" }
+::: { .callout-tip collapse="false"}
+
+## Fully worked solution:
+
+```{pyodide}
+import pandas as pd
+
+# Read in the data from the data folder named `canucks.csv` 
+# Name the dataframe `canucks`
+canucks = pd.read_csv('data/canucks.csv')
+
+canucks['Salary'].dtypes
+```
+
+:::
+::::
+
+**Question 1 (c)**
+
+<div id='mcq6'></div>
+<script>
+    generateQuiz(
+        'mcq6',
+        '',
+        'What is the actual dtype of the <code>Salary</code> column?',
+        {
+        '<code>float64</code>': '',
+        '<code>int64</code>': 'The actual dtype is not <code>int64</code>.',
+        '<code>object</code>': 'Are you looking at the output from above?',
+        '<code>bool</code>': 'Are you looking at the output from above?',
+        },
+        '<code>float64</code>',
+    );
+</script>
+
+**Question 2 (a)**
+
+<div id='mcq7'></div>
+<script>
+    generateQuiz(
+        'mcq7',
+        '',
+        'What dtype is would be an appropriate guess for the <code>Weight</code> column?',
+        {
+        '<code>float64</code>': 'Nice! <code>float64</code> and <code>int64</code> are both appropriate dtype guesses for the <code>Weight</code> column.',
+        '<code>int64</code>': 'Nice! <code>float64</code> and <code>int64</code> are both appropriate dtype guesses for the <code>Weight</code> column.',
+        '<code>str</code>': 'This is not a dtype, this is one of Python’s data types.',
+        '<code>bool</code>': '<code>float64</code> and <code>int64</code> would be more appropriate dtype guesses for the <code>Weight</code> column.',
+        },
+        ['<code>float64</code>', '<code>int64</code>'],
+    );
+</script>
+
+**Question 2 (b)**
+
+Use the coding cell below to check the dtype for the `Weight` column. 
+
+```{pyodide}
+#| exercise: dtype_2b
+import pandas as pd
+
+# Read in the data from the data folder named `canucks.csv` 
+# Name the dataframe `canucks`
+canucks = pd.read_csv('data/canucks.csv')
+
+____
+```
+
+```{pyodide}
+#| exercise: dtype_2b
+#| check: true
+from pandas.api.types import is_integer_dtype
+from src.utils import print_correct_msg
+
+assert is_integer_dtype(result), "Are you using the attribute `dtypes`?"
+print_correct_msg()
+```
+
+:::: { .hint exercise="dtype_2b"}
+::: { .callout-note collapse="false"}
+
+## Hint 1
+
+- Are you using the attribute `dtypes`?
+
+:::
+::::
+
+:::: { .solution exercise="dtype_2b" }
+::: { .callout-tip collapse="false"}
+
+## Fully worked solution:
+
+```{pyodide}
+import pandas as pd
+
+# Read in the data from the data folder named `canucks.csv` 
+# Name the dataframe `canucks`
+canucks = pd.read_csv('data/canucks.csv')
+
+canucks['Weight'].dtypes
+```
+
+:::
+::::
+
+**Question 2 (c)**
+
+<div id='mcq8'></div>
+<script>
+    generateQuiz(
+        'mcq8',
+        '',
+        'What is the actual dtype of the <code>Weight</code> column?',
+        {
+        '<code>float64</code>': 'The actual dtype is not <code>float64</code>.',
+        '<code>int64</code>': '',
+        '<code>object</code>': 'Are you looking at the output from above?',
+        '<code>bool</code>': 'Are you looking at the output from above?',
+        },
+        '<code>int64</code>',
+    );
+</script>

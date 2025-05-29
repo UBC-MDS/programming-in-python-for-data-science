@@ -1,0 +1,282 @@
+---
+format: live-html
+---
+
+<script src='../../src/quiz.js'></script>
+
+# 1.1. Exercises
+
+## Name That Data Type
+
+For the next few questions, name the data type of each value.
+
+<div id='mcq1'></div>
+<script>
+    generateQuiz(
+        'mcq1',
+        'Question 1',
+        '<code>question_1 = ’NaN’</code>',
+        {
+        '<code>int</code>': 'Do you notice the quotations?',
+        '<code>float</code>': 'Do you notice the quotations?',
+        '<code>NoneType</code>': 'Do you notice the quotations?',
+        '<code>bool</code>': 'Do you notice the quotations?',
+        '<code>str</code>': 'Although, this spells out "NaN", The value is within quotations indicating it is a string.',
+        },
+        '<code>str</code>',
+    );
+</script>
+
+<div id='mcq2'></div>
+<script>
+    generateQuiz(
+        'mcq2',
+        'Question 2',
+        '<code>question_1 = 3.6</code>',
+        {
+        '<code>int</code>': 'We are not trying to trick you here.',
+        '<code>float</code>': 'Nothing tricky about this one.',
+        '<code>NoneType</code>': 'We are not trying to trick you here.',
+        '<code>bool</code>': 'We are not trying to trick you here.',
+        '<code>str</code>': 'We are not trying to trick you here.',
+        },
+        '<code>float</code>',
+    );
+</script>
+
+<div id='mcq3'></div>
+<script>
+    generateQuiz(
+        'mcq3',
+        'Question 3',
+        'Which data type can only take on 1 value?',
+        {
+        '<code>int</code>': 'You may want to look over this before moving forward.',
+        '<code>float</code>': 'You may want to look over this before moving forward.',
+        '<code>NoneType</code>': 'Yes, this can only have the value <code>None</code>.',
+        '<code>bool</code>': 'This can actually take 2 values!',
+        '<code>str</code>': 'You may want to look over this before moving forward.',
+        },
+        '<code>NoneType</code>',
+    );
+</script>
+
+
+## Coding questions
+
+**Instructions:**    
+
+Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
+
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
+
+
+### String Verbs
+
+How many times do the lyrics "Let it be" occur in the Beatles Hit song of the same title? 
+
+**Tasks:**
+
+- Use some of the string verbs you learned in the lecture to count all the times "let it be" (all upper and lower case versions) appears in the string `lyrics`. 
+- Save it in an object named `letitbe_count`.
+
+```{pyodide}
+#| setup: true
+#| exercise: string_verbs
+import pandas as pd
+```
+
+```{pyodide}
+#| exercise: string_verbs
+lyrics = '''When I find myself in times of trouble Mother Mary comes to me 
+    Speaking words of wisdom Let it be And in my hour of darkness 
+    She is standing right in front of me Speaking words of wisdom Let it be 
+    Let it be, let it be, let it be, let it be 
+    Whisper words of wisdom Let it be 
+    And when the broken - hearted people Living in the world agree 
+    There will be an answer Let it be 
+    For though they may be parted there is Still a chance that they will see 
+    There will be an answer Let it be 
+    Let it be, let it be, let it be, let it be Yeah, there will be an answer Let it be 
+    Let it be, let it be, let it be, let it be Whisper words of wisdom Let it be 
+    Let it be, let it be, let it be, let it be Whisper words of wisdom Let it be 
+    And when the night is cloudy There is still a light that shines on me 
+    Shine until tomorrow Let it be 
+    I wake up to the sound of music Mother Mary comes to me 
+    Speaking words of wisdom Let it be 
+    Let it be, let it be, let it be, yeah, let it be There will be an answer Let it be 
+    Let it be, let it be, let it be, yeah, let it be There will be an answer Let it be 
+    Let it be, let it be, let it be, yeah, let it be Whisper words of wisdom Let it be'''
+
+# Use some of the string verbs you learn in lecture to count all the times
+# "let it be" (all upper and lower case versions) is said in the Beatles hit song. 
+# Save it in an object named letitbe_count
+____ = ____.____().____(____)
+
+____
+```
+
+```{pyodide}
+#| exercise: string_verbs
+#| check: true
+from src.utils import print_correct_msg
+assert result == 41, "The occurences of 'let it be' is incorrect. Please try again."
+print_correct_msg()
+```
+
+:::: { .hint exercise="string_verbs"}
+::: { .callout-note collapse="false"}
+
+## Hint 1
+
+- Are you converting `lyrics` to lowercase using `.lower()`?
+- Are you using `.count()` with the argument `let it be`?
+
+:::
+::::
+
+:::: { .solution exercise="string_verbs" }
+::: { .callout-tip collapse="false"}
+
+## Fully worked solution:
+
+```{pyodide}
+lyrics = '''When I find myself in times of trouble Mother Mary comes to me 
+    Speaking words of wisdom Let it be And in my hour of darkness 
+    She is standing right in front of me Speaking words of wisdom Let it be 
+    Let it be, let it be, let it be, let it be 
+    Whisper words of wisdom Let it be 
+    And when the broken - hearted people Living in the world agree 
+    There will be an answer Let it be 
+    For though they may be parted there is Still a chance that they will see 
+    There will be an answer Let it be 
+    Let it be, let it be, let it be, let it be Yeah, there will be an answer Let it be 
+    Let it be, let it be, let it be, let it be Whisper words of wisdom Let it be 
+    Let it be, let it be, let it be, let it be Whisper words of wisdom Let it be 
+    And when the night is cloudy There is still a light that shines on me 
+    Shine until tomorrow Let it be 
+    I wake up to the sound of music Mother Mary comes to me 
+    Speaking words of wisdom Let it be 
+    Let it be, let it be, let it be, yeah, let it be There will be an answer Let it be 
+    Let it be, let it be, let it be, yeah, let it be There will be an answer Let it be 
+    Let it be, let it be, let it be, yeah, let it be Whisper words of wisdom Let it be'''
+
+# Use some of the string verbs you learn in lecture to count all the times
+# "let it be" (all upper and lower case versions) is said in the Beatles hit song. 
+# Save it in an object named letitbe_count
+letitbe_count = lyrics.lower().count('let it be')
+
+letitbe_count
+```
+
+:::
+::::
+
+<br>
+
+### Casting Data Types
+
+How can we cast from a string to an integer value?
+
+**Tasks:**
+
+- Convert `string1` to a `float` in an object named `pi`.
+- Convert the object `pi` now into an `int` named `pi_slice`.
+
+```{pyodide}
+#| exercise: casting_data_types_a
+# Convert the following object into the types specified
+
+# Convert string1 to a float in an object named pi
+string1 = '3.14'
+____ = ____
+____
+```
+
+```{pyodide}
+#| exercise: casting_data_types_a
+#| check: true
+from src.utils import print_correct_msg
+
+assert isinstance(result, float), "Make sure you are converting 'pi' to a float using the 'float()' function."
+print_correct_msg()
+```
+
+:::: { .hint exercise="casting_data_types_a"}
+::: { .callout-note collapse="false"}
+
+## Hint 1
+
+- Are you using `float()`?
+
+:::
+::::
+
+:::: { .solution exercise="casting_data_types_a" }
+::: { .callout-tip collapse="false"}
+
+## Fully worked solution:
+
+```{pyodide}
+# Convert the following object into the types specified
+
+# Convert string1 to a float in an object named pi
+string1 = '3.14'
+pi = float(string1)
+pi
+```
+
+:::
+::::
+
+<br>
+
+```{pyodide}
+#| setup: true
+#| exercise: casting_data_types_b
+pi = float('3.14')
+```
+
+```{pyodide}
+#| exercise: casting_data_types_b
+# Convert the following object into the types specified
+
+# Convert pi into an int named pi_slice
+____ = ____
+____
+```
+
+```{pyodide}
+#| exercise: casting_data_types_b
+#| check: true
+from src.utils import print_correct_msg
+
+assert isinstance(result, int), "Make sure you are converting 'pi_slice' to a int using the 'int()' function."
+print_correct_msg()
+```
+
+:::: { .hint exercise="casting_data_types_b"}
+::: { .callout-note collapse="false"}
+
+## Hint 1
+
+-  Are you using `int()`?
+
+:::
+::::
+
+:::: { .solution exercise="casting_data_types_b" }
+::: { .callout-tip collapse="false"}
+
+## Fully worked solution:
+
+```{pyodide}
+# Convert the following object into the types specified
+
+# Convert pi into an int named pi_slice
+pi_slice = int(pi)
+pi_slice
+```
+
+:::
+::::
