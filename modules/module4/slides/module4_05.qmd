@@ -48,8 +48,6 @@ Why is it returned in square brackets, though?
 words
 ```
 
-<br>
-
 ```{python}
 type(words)
 ```
@@ -258,11 +256,15 @@ And the sum of the list with `sum()`.
 
 ## Lists to Dataframes 
 
+:::: {.columns}
+::: {.column}
 | | item     |   location | price |
 |-|----------|------------|-------|
 |0| toothpaste| London Drugs| 3.99 |
 |1| apples | Produce Store  | 4.00 |
 |2| bread |     Bakery  | 3.50 |
+:::
+::::
 
 <br>
 

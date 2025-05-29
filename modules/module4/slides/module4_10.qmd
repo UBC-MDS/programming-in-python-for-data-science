@@ -13,11 +13,15 @@ title-slide-attributes:
 ## Dictionaries
 
 A **dictionary** is a map between key-value pairs. 
- 
+
+<br>
+
 For example: 
 
 A house can have 3 bedrooms.  
 'bedrooms' is the ***key***, and the number of bedrooms is the ***value***. 
+
+<br>
 
 How does this look in terms of a data structure? 
 
@@ -113,7 +117,21 @@ house['bed monster'] = True
 house
 ```
 
-<br>
+:::{.notes} 
+We can add to the dictionary in the same way as we edit them, but using a new **key** name.
+
+Here we add to the house dictionary a new key that represents whether or not a bed monster exists. We are giving this a value of `True`. 
+
+Keys are not limited to strings and can be many different data types, including numerical values and tuples (but they cannot be dictionaries or lists). 
+
+Values can be of any type.
+
+Here you can see that we have a key set as `9999` with a value of type list `['age', 'old']`. 
+
+You have a lot of possibilities when making dictionaries.
+:::
+
+---
 
 ```{python}
 house[9999] = ['age', 'old']
@@ -161,12 +179,16 @@ Now we see tuples contained in a list, where each tuple contains the key and its
 
 ## Dictionaries to Dataframes
 
+:::: {.columns}
+::: {.column}
 |    | name   |   height |   diameter | flowering   |
 |---:|:-------|---------:|-----------:|:------------|
 |  0 | Cherry |        7 |         12 | True        |
 |  1 | Oak    |       20 |         89 | False       |
 |  2 | Willow |       12 |         30 | True        |
 |  3 | Fir    |       16 |         18 | False       |
+:::
+::::
 
 <br>
 
@@ -193,12 +215,16 @@ We can use the dictionary keys to represent the column names and the dictionary 
 
 ---
 
+:::: {.columns}
+::: {.column}
 |    | name   |   height |   diameter | flowering   |
 |---:|:-------|---------:|-----------:|:------------|
 |  0 | Cherry |        7 |         12 | True        |
 |  1 | Oak    |       20 |         89 | False       |
 |  2 | Willow |       12 |         30 | True        |
 |  3 | Fir    |       16 |         18 | False       |
+:::
+::::
 
 <br>
 

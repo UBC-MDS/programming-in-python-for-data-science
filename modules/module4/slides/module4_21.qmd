@@ -126,8 +126,6 @@ Detailed traceback:
     return self._reduce(
 ```
 
-<br>
-
 ```{python}
 cereal['mfr_type'].sum()
 ```

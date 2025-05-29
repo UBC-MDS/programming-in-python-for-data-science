@@ -32,14 +32,31 @@ website:
     style: 'docked'
     background: 'primary'
     contents:
-      - section: "**M0. Welcome to Programming in Python for Data Science**"
+      - section: "**M4. Python Without the \"Eek\" (Basic Python)**"
         contents:
-          - text: '0. Welcome!'
-            href: modules/index.qmd
-          - href: modules/module0/module0-01-programming_in_python_for_data_science.qmd
-          - text: '&nbsp;&nbsp; 1.1. Prerequisite confirmation'
-            href: modules/module0/module0-02-are_you_ready.qmd
-      - section: "**M1. Python & Pandas - An Unexpected Friendship**"
+          - href: modules/module4/module4-00-module_learning_outcomes.qmd
+          - href: modules/module4/module4-01-python_data_types.qmd
+          - text: '&nbsp;&nbsp; 1.1. Exercises'
+            href: modules/module4/module4-02-name_that_data_type.qmd
+          - href: modules/module4/module4-05-python_data_structures:_lists_tuples_and_sets.qmd
+          - text: '&nbsp;&nbsp; 2.1. Exercises'
+            href: modules/module4/module4-06-name_that_data_structure.qmd
+          - href: modules/module4/module4-10-python_data_structures:_dictionaries.qmd
+          - text: '&nbsp;&nbsp; 3.1. Exercises'
+            href: modules/module4/module4-11-dictionary_questions.qmd
+          - href: modules/module4/module4-14-dataframes_series_and_column_dtypes.qmd
+          - text: '&nbsp;&nbsp; 4.1. Exercises'
+            href: modules/module4/module4-15-name_that_type_dtype.qmd
+          - href: modules/module4/module4-18-python_operations.qmd
+          - text: '&nbsp;&nbsp; 5.1. Exercises'
+            href: modules/module4/module4-19-output_or_error_with_operations.qmd
+          - href: modules/module4/module4-21-operations_with_columns.qmd
+          - text: '&nbsp;&nbsp; 6.1. Exercises'
+            href: modules/module4/module4-22-whats_that_output_with_column_operations.qmd
+          - href: modules/module4/module4-23-splitting_a_column.qmd
+          - text: '&nbsp;&nbsp; 7.1. Exercises'
+            href: modules/module4/module4-24-practice_operations_with_dataframe_columns.qmd
+          - href: modules/module4/module4-25-what_did_we_just_learn.qmd
 
 # Since we are declaring options for two formats here (html and revealjs)
 # each qmd file needs to include a yaml block including which format to use for that file.

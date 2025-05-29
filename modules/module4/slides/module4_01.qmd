@@ -11,7 +11,7 @@ title-slide-attributes:
 ```
 
 ```{python}
-# | inlcude: false
+# | include: false
 feb = ['february', 'winter', ]
 mar = ['march', 'spring', 31]
 apr = ['march', 'spring', ]
@@ -91,6 +91,8 @@ Values, as we saw in our `Fido` and `6` examples, can be a variety of different 
 age = 6 
 type(age)
 ```
+
+<br>
 
 ### **Float**
 
@@ -281,23 +283,17 @@ There are <a href="https://docs.python.org/3/library/stdtypes.html#string-method
 name_of_bed_monster = 'Mike Wazowski'
 ```
 
-<br>
-
 - `len()`:
 
 ```{python}
 len(name_of_bed_monster)
 ```
 
-<br>
-
 -  `.upper()`:
 
 ```{python}
 name_of_bed_monster.upper()
 ```
-
-<br>
 
 - `.lower()`:
 
@@ -350,15 +346,11 @@ number_of_floating_balloons = float(5)
 type(number_of_floating_balloons)
 ```
 
-<br>
-
 - An `int` to a `str`:
 ```{python}
 number_of_balloon_strings = str(5)
 type(number_of_balloon_strings)
 ```
-
-<br>
 
 - `float` to an `int` (it will round down to the nearest full integer). 
 
