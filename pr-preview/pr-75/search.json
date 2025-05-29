@@ -1,0 +1,529 @@
+[
+  {
+    "objectID": "modules/module4/slides/module4_25.html#summary",
+    "href": "modules/module4/slides/module4_25.html#summary",
+    "title": "What Did we Learn and What to Expect in Assignment 4",
+    "section": "Summary",
+    "text": "Summary\nStudents are now expected to be able to:\n\nCompare and contrast python’s key data types.\nCompare and contrast python’s key data structures.\nUse Python to determine the type and structure of an object.\nDemonstrate how to create data structures and convert them to another.\nIdentify which operations can be applied to different data types and columns dtypes.\n\n\nThe assignment will concentrate on the learning objectives as well as building knowledge on existing concepts."
+  },
+  {
+    "objectID": "modules/module4/slides/module4_25.html#attribution",
+    "href": "modules/module4/slides/module4_25.html#attribution",
+    "title": "What Did we Learn and What to Expect in Assignment 4",
+    "section": "Attribution",
+    "text": "Attribution\nThe cereal dataset:\n“80 Cereals” (c) by Chris Crawford is licensed under Creative Commons Attribution-ShareAlike 3.0 Unported"
+  },
+  {
+    "objectID": "modules/module4/slides/module4_21.html#object-columns",
+    "href": "modules/module4/slides/module4_21.html#object-columns",
+    "title": "Operations with Columns",
+    "section": "object columns",
+    "text": "object columns\ncereal['mfr_type'].mean()\nTypeError: Could not convert N-ColdQ-ColdK-ColdK-ColdR-ColdG-ColdK-ColdG-ColdR-ColdP-ColdQ-ColdG-ColdG-ColdG-ColdG-ColdR-ColdK-ColdK-ColdG-ColdK-ColdN-HotK-ColdG-ColdR-ColdK-ColdK-ColdK-ColdP-ColdK-ColdP-ColdP-ColdG-ColdP-ColdP-ColdP-ColdQ-ColdG-ColdP-ColdK-ColdK-ColdG-ColdQ-ColdG-ColdA-HotR-ColdR-ColdK-ColdG-ColdK-ColdK-ColdK-ColdG-ColdP-ColdK-ColdQ-ColdQ-ColdQ-ColdQ-HotK-ColdG-ColdK-ColdR-ColdK-ColdN-ColdN-ColdN-ColdK-ColdK-ColdN-ColdG-ColdG-ColdG-ColdG-ColdG-ColdR-ColdG-ColdG-Cold to numeric\n\nDetailed traceback: \n  File \"&lt;string&gt;\", line 1, in &lt;module&gt;\n  File \"/usr/local/lib/python3.8/site-packages/pandas/core/generic.py\", line 11459, in stat_func\n    return self._reduce(\n\ncereal['mfr_type'].sum()\n\n'N-ColdQ-ColdK-ColdK-ColdR-ColdG-ColdK-ColdG-ColdR-ColdP-ColdQ-ColdG-ColdG-ColdG-ColdG-ColdR-ColdK-ColdK-ColdG-ColdK-ColdN-HotK-ColdG-ColdR-ColdK-ColdK-ColdK-ColdP-ColdK-ColdP-ColdP-ColdG-ColdP-ColdP-ColdP-ColdQ-ColdG-ColdP-ColdK-ColdK-ColdG-ColdQ-ColdG-ColdA-HotR-ColdR-ColdK-ColdG-ColdK-ColdK-ColdK-ColdG-ColdP-ColdK-ColdQ-ColdQ-ColdQ-ColdQ-HotK-ColdG-ColdK-ColdR-ColdK-ColdN-ColdN-ColdN-ColdK-ColdK-ColdN-ColdG-ColdG-ColdG-ColdG-ColdG-ColdR-ColdG-ColdG-Cold'\n\n\n\nWhat happens if we try to take summary statistics of some of the other columns?\nYikes! Let’s not take the mean of columns of dtype object.\nAs we saw before, taking a .sum() of a column concatenates the values together."
+  },
+  {
+    "objectID": "modules/module4/slides/module4_21.html#bool",
+    "href": "modules/module4/slides/module4_21.html#bool",
+    "title": "Operations with Columns",
+    "section": "Bool",
+    "text": "Bool\n\ncereal['hot'].mean()\n\n0.03896103896103896\n\n\n\nWhat about the column of type bool?\nSince Booleans are cast to 0 and 1 for True and False values respectively, we can take the sum of a column to obtain the total number of True values.\n.mean() works by summing up all the values and divides them by the total number of rows. In the case where the column is of dtype bool since True has a value of 1 and False has a value of 0, the mean is calculated as the total number of True values divided by the total number of True and False values. In other words, this gives you the fraction of cases that are True."
+  },
+  {
+    "objectID": "modules/module4/slides/module4_21.html#axis-argument",
+    "href": "modules/module4/slides/module4_21.html#axis-argument",
+    "title": "Operations with Columns",
+    "section": "Axis Argument",
+    "text": "Axis Argument\n\ncereal.head(3)\n\n\n\n\n\n\n\n\nname\nmfr_type\ncalories\nprotein\n...\nfat\ncarbo\nrating\nhot\n\n\n\n\n0\n100% Bran\nN-Cold\n70\n4\n...\n1\n5.0\n68.402973\nFalse\n\n\n1\n100% Natural Bran\nQ-Cold\n120\n3\n...\n5\n8.0\n33.983679\nFalse\n\n\n2\nAll-Bran\nK-Cold\n70\n4\n...\n1\n7.0\n59.425505\nFalse\n\n\n\n\n3 rows × 9 columns\n\n\n\n\n\ncereal.loc[:, 'protein': 'carbo'].sum(axis=1)\n\n0     20.0\n1     18.0\n2     21.0\n      ... \n74    24.0\n75    24.0\n76    20.0\nLength: 77, dtype: float64\n\n\n\nWe are quite familiar with taking the mean and sum of entire columns now, but there are times where we want the mean or sum of the values in a row.\nPerhaps we wanted the total grams of protein,fiber, fat, and carbo for each cereal?\nRemember, when we discussed the argument axis in Module 3?\nWe can use it in our operations as well.\naxis=1 refers to the calculation being done for each row, across multiple columns, whereas axis=0 (which is the default for aggregation verbs) refers to the calculation for each column across multiple rows."
+  },
+  {
+    "objectID": "modules/module4/slides/module4_14.html#what-is-a-dataframe-again",
+    "href": "modules/module4/slides/module4_14.html#what-is-a-dataframe-again",
+    "title": "Dataframes, Series and Column dtypes",
+    "section": "What is a Dataframe … again",
+    "text": "What is a Dataframe … again\n\ncereal\n\n\n\n\n\n\n\n\nname\nmfr\ncalories\nprotein\n...\nfat\ncarbo\nrating\nhot\n\n\n\n\n0\n100% Bran\nN\n70\n4\n...\n1\n5.0\n68.402973\nFalse\n\n\n1\n100% Natural Bran\nQ\n120\n3\n...\n5\n8.0\n33.983679\nFalse\n\n\n2\nAll-Bran\nK\n70\n4\n...\n1\n7.0\n59.425505\nFalse\n\n\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n\n\n74\nWheat Chex\nR\n100\n3\n...\n1\n17.0\n49.787445\nFalse\n\n\n75\nWheaties\nG\n100\n3\n...\n1\n17.0\n51.592193\nFalse\n\n\n76\nWheaties Honey Gold\nG\n110\n2\n...\n1\n16.0\n36.187559\nFalse\n\n\n\n\n77 rows × 9 columns\n\n\n\n\nSince the beginning of this module, we have explored basic Python Data types and structures. We’ve covered how they can be transformed into a dataframe, but that didn’t answer the lingering question:\n“What is and makes up a Pandas dataframe?”\nLet’s greet our cereal data back with a warm welcome."
+  },
+  {
+    "objectID": "modules/module4/slides/module4_14.html#pandas-series",
+    "href": "modules/module4/slides/module4_14.html#pandas-series",
+    "title": "Dataframes, Series and Column dtypes",
+    "section": "Pandas Series",
+    "text": "Pandas Series\n\ncereal['mfr']\n\n0     N\n1     Q\n2     K\n     ..\n74    R\n75    G\n76    G\nName: mfr, Length: 77, dtype: object\n\n\n\nA pandas Series is a one-dimensional array of values with an axis label, sort of like a list with a name attached to it.\nThis is the base data type that makes up a pandas dataframe.\nIn fact, the Pandas documentation” explains a dataframe as “a dict of Series objects”.\nLet’s look back at the series output again.\nWe can see additional information at the bottom.\nThe series contains the name of the column series, which is mfr , the length of the series, which is equal to 77, and a dtype equal to object.\nOk, we know what type is, but what is a dtype?"
+  },
+  {
+    "objectID": "modules/module4/slides/module4_14.html#what-is-a-dtype",
+    "href": "modules/module4/slides/module4_14.html#what-is-a-dtype",
+    "title": "Dataframes, Series and Column dtypes",
+    "section": "What is a dtype?",
+    "text": "What is a dtype?\n\n\n\nSo far, we know a dataframe is made up of a collection of series, and a series contains values, a label as well as some additional information regarding a dtype.\nJust like how objects have data types ( str, int, float, etc.), columns in a Pandas dataframe have types called dtypes.\nIn this course we are going to concentrate on the following dtypes."
+  },
+  {
+    "objectID": "modules/module4/slides/module4_14.html#non-numeric-dtypes",
+    "href": "modules/module4/slides/module4_14.html#non-numeric-dtypes",
+    "title": "Dataframes, Series and Column dtypes",
+    "section": "Non-Numeric dtypes",
+    "text": "Non-Numeric dtypes\n\n\n\nNon-numeric types can be a bit more complicated but let’s concentrate on the dtypes object and bool. We will be exploring datetime64 and timedelta[ns] in Module 8.\n\nobject is a dtype that contains str type values in the cells of the dataframe or that had a mixture of different types, to begin with. This is the “default” dtype when pandas is not quite sure what is the cell type values are or when there is a mixture of numeric and non-numeric value types.\nbool dtypes, just like its dtype name, contains Boolean values."
+  },
+  {
+    "objectID": "modules/module4/slides/module4_05.html#sequences",
+    "href": "modules/module4/slides/module4_05.html#sequences",
+    "title": "Python Data Structures: Lists, Tuples and Sets",
+    "section": "Sequences",
+    "text": "Sequences\n\nsentence = \"I always lose at least one sock when I do laundry.\" \nwords = sentence.split()\nwords\n\n['I',\n 'always',\n 'lose',\n 'at',\n 'least',\n 'one',\n 'sock',\n 'when',\n 'I',\n 'do',\n 'laundry.']\n\n\n\n\nsentence.split(\"e\")\n\n['I always los', ' at l', 'ast on', ' sock wh', 'n I do laundry.']\n\n\n\nIn the last section, we discussed the string (str) data type.\nWe described it as a sequence of characters. In many cases, there is good reason to split up a long text string into separate ones. Luckily, we have a convenient verb to do that .split().\nThis verb then splits up the string into separate words.\nWe can change where to split the string as well.\nThis argument uses the character “e” to separate the string and discards the separator.\nWhy is it returned in square brackets, though?"
+  },
+  {
+    "objectID": "modules/module4/slides/module4_05.html#lists",
+    "href": "modules/module4/slides/module4_05.html#lists",
+    "title": "Python Data Structures: Lists, Tuples and Sets",
+    "section": "Lists",
+    "text": "Lists\n\nwords\n\n['I',\n 'always',\n 'lose',\n 'at',\n 'least',\n 'one',\n 'sock',\n 'when',\n 'I',\n 'do',\n 'laundry.']\n\n\n\ntype(words)\n\nlist\n\n\n\n\nmy_list = [1.2, 3, None, True, 'One of the lost socks']\nmy_list\n\n[1.2, 3, None, True, 'One of the lost socks']\n\n\n\nThe output from the .split() verb is called a list.\nSimilarly to how a string is a sequence of characters in order, a list is a sequence of elements with a particular order.\nLists can be identified by their square brackets.\nThe elements in a list can be any objects, and they don’t all need to have the same type."
+  },
+  {
+    "objectID": "modules/module4/slides/module4_05.html#mutable-vs-immutable",
+    "href": "modules/module4/slides/module4_05.html#mutable-vs-immutable",
+    "title": "Python Data Structures: Lists, Tuples and Sets",
+    "section": "Mutable vs Immutable",
+    "text": "Mutable vs Immutable\n\nmy_list\n\n[1.2, 3, None, True, 'One of the lost socks']\n\n\n\n\nmy_list[2] = \"Ta Da!\"\n\n\n\nmy_list\n\n[1.2, 3, 'Ta Da!', True, 'One of the lost socks']\n\n\n\nNext, we’ll talk about mutable and immutable data types.\nAn object is mutable if it can be modified.\nLists are mutable, and we can assign new values for their various entries.\nFor example, we can edit any entry in this list and replace it with a new value."
+  },
+  {
+    "objectID": "modules/module4/slides/module4_05.html#list-verbs",
+    "href": "modules/module4/slides/module4_05.html#list-verbs",
+    "title": "Python Data Structures: Lists, Tuples and Sets",
+    "section": "List Verbs",
+    "text": "List Verbs\n\nprimes = [2,3,5,7,11]\n\n\n\nprimes.append(13)\nprimes\n\n[2, 3, 5, 7, 11, 13]\n\n\n\n\nmax(primes)\n\n13\n\n\n\n\nsum(primes)\n\n41\n\n\n\nLists have a variety of different methods for interacting with their data. Here are just a few.\nWe can add to the end of a list with append(). Notice how we didn’t need to write prime = and overwrite the prime object, because append modified primes directly.\nWe can find the maximum value in the list with max().\nAnd the sum of the list with sum()."
+  },
+  {
+    "objectID": "modules/module4/slides/module4_05.html#lists-to-dataframes",
+    "href": "modules/module4/slides/module4_05.html#lists-to-dataframes",
+    "title": "Python Data Structures: Lists, Tuples and Sets",
+    "section": "Lists to Dataframes",
+    "text": "Lists to Dataframes\n\n\n\n\n\n\nitem\nlocation\nprice\n\n\n\n\n0\ntoothpaste\nLondon Drugs\n3.99\n\n\n1\napples\nProduce Store\n4.00\n\n\n2\nbread\nBakery\n3.50\n\n\n\n\n\n\nitem1 = ['toothpaste', 'London Drugs', 3.99]\nitem2 = ['apples', 'Produce Store', 4.00]\nitem3 = ['bread', 'Bakery', 3.50]\ncolumn_names = ['item', 'location', 'price']\n\nshopping_items = pd.DataFrame(data=[item1, item2, item3], columns=column_names)\nshopping_items\n\n\n\n\n\n\n\n\nitem\nlocation\nprice\n\n\n\n\n0\ntoothpaste\nLondon Drugs\n3.99\n\n\n1\napples\nProduce Store\n4.00\n\n\n2\nbread\nBakery\n3.50\n\n\n\n\n\n\n\n\n\ntype(shopping_items)\n\npandas.core.frame.DataFrame\n\n\n\nUp until this point, we have been working with dataframes that have been read in and converted from different types of files.\nHowever, we can also make dataframes from scratch using lists.\nLet’s say we wanted a dataframe of things we needed to purchase from the store on our next grocery shopping trip, as shown in the table here.\nWe can use a list for each row and a list for the column labels. We then use another list of all the rows to make up the data.\nNow the shopping items are no longer in a structure type list, but in a type DataFrame."
+  },
+  {
+    "objectID": "modules/module4/slides/module4_05.html#tuples",
+    "href": "modules/module4/slides/module4_05.html#tuples",
+    "title": "Python Data Structures: Lists, Tuples and Sets",
+    "section": "Tuples",
+    "text": "Tuples\n\nmy_tuple = ('I', 'lose', None,  'socks', 'when', 1, 'do', 'laundry.', False)\nmy_tuple\n\n('I', 'lose', None, 'socks', 'when', 1, 'do', 'laundry.', False)\n\n\n\n\ntype(my_tuple)\n\ntuple\n\n\n\nTuples are a data structure very similar to lists but with two main differences:\n\nThey are represented with parentheses instead of square brackets, and\nThey are immutable"
+  },
+  {
+    "objectID": "modules/module4/slides/module4_05.html#sets",
+    "href": "modules/module4/slides/module4_05.html#sets",
+    "title": "Python Data Structures: Lists, Tuples and Sets",
+    "section": "Sets",
+    "text": "Sets\n\nmy_set = {2, 1.0, 'Buckle my shoe'}\nmy_set\n\n{1.0, 2, 'Buckle my shoe'}\n\n\n\n\nmy_set = {2, 1.0, 'Buckle my shoe', 1.0, 2}\nmy_set\n\n{1.0, 2, 'Buckle my shoe'}\n\n\n\nSets, not unlike lists and tuples, are a data structure that contains elements. Sets differ from lists and tuples in that:\n\nThey are unordered, meaning there is no element 0 and element 1, and\n\nThe values contained are unique - meaning there are no duplicate entries.\n\nLet’s explore this a bit.\nSets are made with curly brackets.\nYou’ll notice that the printed order is not the same as we inputted then in. That’s because sets do not preserve order.\nIf we have repeats of any entries, they only occur once in the set. This is useful if you want to keep track of a set of things, like who visited a store, and you’re not interested in repeat entries."
+  },
+  {
+    "objectID": "modules/module4/slides/module4_05.html#all-together-now",
+    "href": "modules/module4/slides/module4_05.html#all-together-now",
+    "title": "Python Data Structures: Lists, Tuples and Sets",
+    "section": "All Together Now",
+    "text": "All Together Now\n\n\n\n\n\n\n\n\n\n\n\nData Structure\npreserves order\nMutable\nSymbol\nCan contain duplicates\n\n\n\n\nstr\n✓\n☓\n'' or \"\"\n✓\n\n\nlist\n✓\n✓\n[]\n✓\n\n\ntuple\n✓\n☓\n()\n✓\n\n\nset\n☓\n✓\n{}\n☓\n\n\n\n\nWe have condensed the data structures characteristics into a convenient table for you."
+  },
+  {
+    "objectID": "modules/module4/slides/module4_00.html#module-learning-outcomes",
+    "href": "modules/module4/slides/module4_00.html#module-learning-outcomes",
+    "title": "Module Learning Outcomes",
+    "section": "Module Learning Outcomes",
+    "text": "Module Learning Outcomes\nBy the end of the module, students are expected to:\n\nCompare and contrast Python’s key data types.\nCompare and contrast Python’s key data structures.\nUse Python to determine the type and structure of an object.\nDemonstrate how to create data structures and convert them to another.\nIdentify which operations can be applied to different data types and columns dtypes."
+  },
+  {
+    "objectID": "modules/module4/module4-24-practice_operations_with_dataframe_columns.html",
+    "href": "modules/module4/module4-24-practice_operations_with_dataframe_columns.html",
+    "title": "7.1. Exercises",
+    "section": "",
+    "text": "Instructions:\nRunning a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\nLet’s split up a column of dtype object.\nTasks:\n\nSplit up the column Birth Date into 3 separate columns named Birth_Day, Birth_Month and Birth_Year.\nName this new dataframe birthdate_df.\nSave these as columns in the canucks dataframe as dtype int.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you using str.split('-', expand='True')?\n\nAre you saving the columns from the birthdate_df back to the canucks dataframe?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:",
+    "crumbs": [
+      "**M4. Python Without the \"Eek\" (Basic Python)**",
+      "&nbsp;&nbsp; 7.1. Exercises"
+    ]
+  },
+  {
+    "objectID": "modules/module4/module4-24-practice_operations_with_dataframe_columns.html#practice-operations-with-dataframe-columns",
+    "href": "modules/module4/module4-24-practice_operations_with_dataframe_columns.html#practice-operations-with-dataframe-columns",
+    "title": "7.1. Exercises",
+    "section": "",
+    "text": "Instructions:\nRunning a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\nLet’s split up a column of dtype object.\nTasks:\n\nSplit up the column Birth Date into 3 separate columns named Birth_Day, Birth_Month and Birth_Year.\nName this new dataframe birthdate_df.\nSave these as columns in the canucks dataframe as dtype int.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you using str.split('-', expand='True')?\n\nAre you saving the columns from the birthdate_df back to the canucks dataframe?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:",
+    "crumbs": [
+      "**M4. Python Without the \"Eek\" (Basic Python)**",
+      "&nbsp;&nbsp; 7.1. Exercises"
+    ]
+  },
+  {
+    "objectID": "modules/module4/module4-22-whats_that_output_with_column_operations.html",
+    "href": "modules/module4/module4-22-whats_that_output_with_column_operations.html",
+    "title": "6.1. Exercises",
+    "section": "",
+    "text": "Here is my dataframe named fruit_salad:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nname\ncolour\nlocation\nseed\nshape\nsweetness\nwater-content\nweight\n\n\n\n\n0\napple\nred\ncanada\nTrue\nround\nTrue\n84\n100\n\n\n1\nbanana\nyellow\nmexico\nFalse\nlong\nTrue\n75\n120\n\n\n2\ncantaloupe\norange\nspain\nTrue\nround\nTrue\n90\n1360\n\n\n3\ndragon-fruit\nmegenta\nchina\nTrue\nround\nFalse\n96\n600\n\n\n4\nelderberry\npurple\naustria\nFalse\nround\nTrue\n80\n5\n\n\n5\nfig\npurple\nturkey\nFalse\noval\nFalse\n78\n40\n\n\n6\nguava\ngreen\nmexico\nTrue\noval\nTrue\n83\n450\n\n\n7\nhuckleberry\nblue\ncanada\nTrue\nround\nTrue\n73\n5\n\n\n8\nkiwi\nbrown\nchina\nTrue\nround\nTrue\n80\n76\n\n\n9\nlemon\nyellow\nmexico\nFalse\noval\nFalse\n83\n65",
+    "crumbs": [
+      "**M4. Python Without the \"Eek\" (Basic Python)**",
+      "&nbsp;&nbsp; 6.1. Exercises"
+    ]
+  },
+  {
+    "objectID": "modules/module4/module4-22-whats_that_output_with_column_operations.html#whats-that-output-with-column-operations",
+    "href": "modules/module4/module4-22-whats_that_output_with_column_operations.html#whats-that-output-with-column-operations",
+    "title": "6.1. Exercises",
+    "section": "",
+    "text": "Here is my dataframe named fruit_salad:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nname\ncolour\nlocation\nseed\nshape\nsweetness\nwater-content\nweight\n\n\n\n\n0\napple\nred\ncanada\nTrue\nround\nTrue\n84\n100\n\n\n1\nbanana\nyellow\nmexico\nFalse\nlong\nTrue\n75\n120\n\n\n2\ncantaloupe\norange\nspain\nTrue\nround\nTrue\n90\n1360\n\n\n3\ndragon-fruit\nmegenta\nchina\nTrue\nround\nFalse\n96\n600\n\n\n4\nelderberry\npurple\naustria\nFalse\nround\nTrue\n80\n5\n\n\n5\nfig\npurple\nturkey\nFalse\noval\nFalse\n78\n40\n\n\n6\nguava\ngreen\nmexico\nTrue\noval\nTrue\n83\n450\n\n\n7\nhuckleberry\nblue\ncanada\nTrue\nround\nTrue\n73\n5\n\n\n8\nkiwi\nbrown\nchina\nTrue\nround\nTrue\n80\n76\n\n\n9\nlemon\nyellow\nmexico\nFalse\noval\nFalse\n83\n65",
+    "crumbs": [
+      "**M4. Python Without the \"Eek\" (Basic Python)**",
+      "&nbsp;&nbsp; 6.1. Exercises"
+    ]
+  },
+  {
+    "objectID": "modules/module4/module4-19-output_or_error_with_operations.html",
+    "href": "modules/module4/module4-19-output_or_error_with_operations.html",
+    "title": "5.1. Exercises",
+    "section": "",
+    "text": "Will the following operations result with an output or an error?\n['One', 'Two', 3] + (4, 'five', 6)\n\n\n\n\ntuple(['One', 'Two', 3]) + (4, 'five', 6)\n\n\n\n\ndictionary1 = {1: 'one', 2: 'two'}\ndictionary2 = {3: 'three', 4: 'four'}\n\ndictionary1 + dictionary2\n\n\n\n\nsum(['nine', 'ten', 'eleven', 'twelve'])\n\n\n\n\n'The monster under my bed' + [1, 2.0, 3, 4.5]\n\n\n\n\n\n\n\nWould the following result in a True of False value?\n('hotels' != 'homes') and 50 &lt; 5000\n\n\n\n\nnot ('hotels' != 'homes') \n\n\n\n\nnot not ('hotels' != 'homes')",
+    "crumbs": [
+      "**M4. Python Without the \"Eek\" (Basic Python)**",
+      "&nbsp;&nbsp; 5.1. Exercises"
+    ]
+  },
+  {
+    "objectID": "modules/module4/module4-19-output_or_error_with_operations.html#output-or-error-with-operations",
+    "href": "modules/module4/module4-19-output_or_error_with_operations.html#output-or-error-with-operations",
+    "title": "5.1. Exercises",
+    "section": "",
+    "text": "Will the following operations result with an output or an error?\n['One', 'Two', 3] + (4, 'five', 6)\n\n\n\n\ntuple(['One', 'Two', 3]) + (4, 'five', 6)\n\n\n\n\ndictionary1 = {1: 'one', 2: 'two'}\ndictionary2 = {3: 'three', 4: 'four'}\n\ndictionary1 + dictionary2\n\n\n\n\nsum(['nine', 'ten', 'eleven', 'twelve'])\n\n\n\n\n'The monster under my bed' + [1, 2.0, 3, 4.5]",
+    "crumbs": [
+      "**M4. Python Without the \"Eek\" (Basic Python)**",
+      "&nbsp;&nbsp; 5.1. Exercises"
+    ]
+  },
+  {
+    "objectID": "modules/module4/module4-19-output_or_error_with_operations.html#true-or-false-with-boolean-operators",
+    "href": "modules/module4/module4-19-output_or_error_with_operations.html#true-or-false-with-boolean-operators",
+    "title": "5.1. Exercises",
+    "section": "",
+    "text": "Would the following result in a True of False value?\n('hotels' != 'homes') and 50 &lt; 5000\n\n\n\n\nnot ('hotels' != 'homes') \n\n\n\n\nnot not ('hotels' != 'homes')",
+    "crumbs": [
+      "**M4. Python Without the \"Eek\" (Basic Python)**",
+      "&nbsp;&nbsp; 5.1. Exercises"
+    ]
+  },
+  {
+    "objectID": "modules/module4/module4-15-name_that_type_dtype.html",
+    "href": "modules/module4/module4-15-name_that_type_dtype.html",
+    "title": "4.1. Exercises",
+    "section": "",
+    "text": "Instructions:\nRunning a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\nRemember our canucks dataframe? Let’s take a closer look at the labels of the columns.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPlayer\nNo.\nAge\nHeight\nWeight\nCountry\nPosition\nExperience\nBirth Date\nSalary\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n Question 1 (a)\n\n\n\n\nQuestion 1 (b)\nUse the coding cell below to check the dtype for the Salary column.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you using the attribute dtypes?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nQuestion 1 (c)\n\n\n\n\nQuestion 2 (a)\n\n\n\n\nQuestion 2 (b)\nUse the coding cell below to check the dtype for the Weight column.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you using the attribute dtypes?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nQuestion 2 (c)",
+    "crumbs": [
+      "**M4. Python Without the \"Eek\" (Basic Python)**",
+      "&nbsp;&nbsp; 4.1. Exercises"
+    ]
+  },
+  {
+    "objectID": "modules/module4/module4-15-name_that_type_dtype.html#dtype-practice",
+    "href": "modules/module4/module4-15-name_that_type_dtype.html#dtype-practice",
+    "title": "4.1. Exercises",
+    "section": "",
+    "text": "Instructions:\nRunning a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\nRemember our canucks dataframe? Let’s take a closer look at the labels of the columns.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPlayer\nNo.\nAge\nHeight\nWeight\nCountry\nPosition\nExperience\nBirth Date\nSalary\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n Question 1 (a)\n\n\n\n\nQuestion 1 (b)\nUse the coding cell below to check the dtype for the Salary column.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you using the attribute dtypes?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nQuestion 1 (c)\n\n\n\n\nQuestion 2 (a)\n\n\n\n\nQuestion 2 (b)\nUse the coding cell below to check the dtype for the Weight column.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you using the attribute dtypes?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nQuestion 2 (c)",
+    "crumbs": [
+      "**M4. Python Without the \"Eek\" (Basic Python)**",
+      "&nbsp;&nbsp; 4.1. Exercises"
+    ]
+  },
+  {
+    "objectID": "modules/module4/module4-11-dictionary_questions.html",
+    "href": "modules/module4/module4-11-dictionary_questions.html",
+    "title": "3.1. Exercises",
+    "section": "",
+    "text": "Instructions:\nRunning a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\n\n\nRecently Jeremy bought a new Ikea shoe rack. The packaging included quite a few parts and he is finding it hard to keep track!\nTasks:\n\nMake a dictionary that includes the quantity of each part included in the Ikea set.\n\nThe shoe rack contained the following parts:\n\n8 Long Screw\n8 Wood Dowel\n2 Short Screw\n1 Allen Key\nConstruct the dictionary so that the part names are the keys and the quantities of the parts, are the values for the dictionary.\nName the dictionary ikea_shoe_rack.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you naming your dictionary properly?\nAre all your parts spelled correctly?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe shoe rack was not the only thing Jeremy bought. below is a table of all his purchases.\n\n\n\n\nitem_name\ncollection\nprice\n\n\n\n\n0\nBistro Set\nAPPLARO\n216.98\n\n\n1\nShelf Unit\nHYLLIS\n11.99\n\n\n3\nShoe Rack\nTJUSIG\n29.99\n\n\n\nTasks:\n\nCreate the table above from a dictionary using pd.DataFrame.from_dict().\nName your new dataframe ikea_df\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you using lists as the values in your dictionary?\nAre you making sure to use floats for the price?\nare all your items and collections spelled correctly?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:",
+    "crumbs": [
+      "**M4. Python Without the \"Eek\" (Basic Python)**",
+      "&nbsp;&nbsp; 3.1. Exercises"
+    ]
+  },
+  {
+    "objectID": "modules/module4/module4-11-dictionary_questions.html#coding-questions",
+    "href": "modules/module4/module4-11-dictionary_questions.html#coding-questions",
+    "title": "3.1. Exercises",
+    "section": "",
+    "text": "Instructions:\nRunning a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\n\n\nRecently Jeremy bought a new Ikea shoe rack. The packaging included quite a few parts and he is finding it hard to keep track!\nTasks:\n\nMake a dictionary that includes the quantity of each part included in the Ikea set.\n\nThe shoe rack contained the following parts:\n\n8 Long Screw\n8 Wood Dowel\n2 Short Screw\n1 Allen Key\nConstruct the dictionary so that the part names are the keys and the quantities of the parts, are the values for the dictionary.\nName the dictionary ikea_shoe_rack.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you naming your dictionary properly?\nAre all your parts spelled correctly?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe shoe rack was not the only thing Jeremy bought. below is a table of all his purchases.\n\n\n\n\nitem_name\ncollection\nprice\n\n\n\n\n0\nBistro Set\nAPPLARO\n216.98\n\n\n1\nShelf Unit\nHYLLIS\n11.99\n\n\n3\nShoe Rack\nTJUSIG\n29.99\n\n\n\nTasks:\n\nCreate the table above from a dictionary using pd.DataFrame.from_dict().\nName your new dataframe ikea_df\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you using lists as the values in your dictionary?\nAre you making sure to use floats for the price?\nare all your items and collections spelled correctly?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:",
+    "crumbs": [
+      "**M4. Python Without the \"Eek\" (Basic Python)**",
+      "&nbsp;&nbsp; 3.1. Exercises"
+    ]
+  },
+  {
+    "objectID": "modules/module4/module4-06-name_that_data_structure.html",
+    "href": "modules/module4/module4-06-name_that_data_structure.html",
+    "title": "2.1. Exercises",
+    "section": "",
+    "text": "Instructions:\nRunning a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\nMake sure you remove the hash (#) symbol in the coding portions of this question. We have commented them so that the line won’t execute and you can test your code after each step.\n\n\nLet’s explore how to add to a list, slice it and convert it into a tuple.\nTasks:\n\nUsing the list provided, add a pen, a scrap paper, a 7.3 and a True element.\nFind the length of the list after adding the element and save the value in an object named drawer_length.\nSlice the list from 4 to scrap paper and save this in an object named cleaned_junk_drawer.\nFinally, convert it into a set and name it junk_set.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nThe verbs .append() and len() may be handy.\nYou can convert your list to a tuple with `tuple().\nHave you sliced keeping in mind the end of the slice is excluded?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLet’s use lists and convert them into a pandas dataframe.\nTasks:\n\nUse the lists given in the cell below to make a dataframe.\nName the dataframe family.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you using pd.DataFrame()?\nAre you using the arguments data and columns?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:",
+    "crumbs": [
+      "**M4. Python Without the \"Eek\" (Basic Python)**",
+      "&nbsp;&nbsp; 2.1. Exercises"
+    ]
+  },
+  {
+    "objectID": "modules/module4/module4-06-name_that_data_structure.html#coding-questions",
+    "href": "modules/module4/module4-06-name_that_data_structure.html#coding-questions",
+    "title": "2.1. Exercises",
+    "section": "",
+    "text": "Instructions:\nRunning a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\nMake sure you remove the hash (#) symbol in the coding portions of this question. We have commented them so that the line won’t execute and you can test your code after each step.\n\n\nLet’s explore how to add to a list, slice it and convert it into a tuple.\nTasks:\n\nUsing the list provided, add a pen, a scrap paper, a 7.3 and a True element.\nFind the length of the list after adding the element and save the value in an object named drawer_length.\nSlice the list from 4 to scrap paper and save this in an object named cleaned_junk_drawer.\nFinally, convert it into a set and name it junk_set.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nThe verbs .append() and len() may be handy.\nYou can convert your list to a tuple with `tuple().\nHave you sliced keeping in mind the end of the slice is excluded?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLet’s use lists and convert them into a pandas dataframe.\nTasks:\n\nUse the lists given in the cell below to make a dataframe.\nName the dataframe family.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you using pd.DataFrame()?\nAre you using the arguments data and columns?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:",
+    "crumbs": [
+      "**M4. Python Without the \"Eek\" (Basic Python)**",
+      "&nbsp;&nbsp; 2.1. Exercises"
+    ]
+  },
+  {
+    "objectID": "modules/module4/module4-02-name_that_data_type.html",
+    "href": "modules/module4/module4-02-name_that_data_type.html",
+    "title": "1.1. Exercises",
+    "section": "",
+    "text": "For the next few questions, name the data type of each value.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nInstructions:\nRunning a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\n\n\nHow many times do the lyrics “Let it be” occur in the Beatles Hit song of the same title?\nTasks:\n\nUse some of the string verbs you learned in the lecture to count all the times “let it be” (all upper and lower case versions) appears in the string lyrics.\nSave it in an object named letitbe_count.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you converting lyrics to lowercase using .lower()?\nAre you using .count() with the argument let it be?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHow can we cast from a string to an integer value?\nTasks:\n\nConvert string1 to a float in an object named pi.\nConvert the object pi now into an int named pi_slice.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you using float()?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you using int()?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:",
+    "crumbs": [
+      "**M4. Python Without the \"Eek\" (Basic Python)**",
+      "&nbsp;&nbsp; 1.1. Exercises"
+    ]
+  },
+  {
+    "objectID": "modules/module4/module4-02-name_that_data_type.html#name-that-data-type",
+    "href": "modules/module4/module4-02-name_that_data_type.html#name-that-data-type",
+    "title": "1.1. Exercises",
+    "section": "",
+    "text": "For the next few questions, name the data type of each value.",
+    "crumbs": [
+      "**M4. Python Without the \"Eek\" (Basic Python)**",
+      "&nbsp;&nbsp; 1.1. Exercises"
+    ]
+  },
+  {
+    "objectID": "modules/module4/module4-02-name_that_data_type.html#coding-questions",
+    "href": "modules/module4/module4-02-name_that_data_type.html#coding-questions",
+    "title": "1.1. Exercises",
+    "section": "",
+    "text": "Instructions:\nRunning a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\n\n\nHow many times do the lyrics “Let it be” occur in the Beatles Hit song of the same title?\nTasks:\n\nUse some of the string verbs you learned in the lecture to count all the times “let it be” (all upper and lower case versions) appears in the string lyrics.\nSave it in an object named letitbe_count.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you converting lyrics to lowercase using .lower()?\nAre you using .count() with the argument let it be?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHow can we cast from a string to an integer value?\nTasks:\n\nConvert string1 to a float in an object named pi.\nConvert the object pi now into an int named pi_slice.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you using float()?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you using int()?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:",
+    "crumbs": [
+      "**M4. Python Without the \"Eek\" (Basic Python)**",
+      "&nbsp;&nbsp; 1.1. Exercises"
+    ]
+  },
+  {
+    "objectID": "modules/module4/module4-00-module_learning_outcomes.html",
+    "href": "modules/module4/module4-00-module_learning_outcomes.html",
+    "title": "0. Module Learning Outcomes",
+    "section": "",
+    "text": "0. Module Learning Outcomes\n\nVideoSlides",
+    "crumbs": [
+      "**M4. Python Without the \"Eek\" (Basic Python)**",
+      "0. Module Learning Outcomes"
+    ]
+  },
+  {
+    "objectID": "modules/module4/module4-01-python_data_types.html",
+    "href": "modules/module4/module4-01-python_data_types.html",
+    "title": "1. Python Data Types",
+    "section": "",
+    "text": "1. Python Data Types\n\nVideoSlides",
+    "crumbs": [
+      "**M4. Python Without the \"Eek\" (Basic Python)**",
+      "1. Python Data Types"
+    ]
+  },
+  {
+    "objectID": "modules/module4/module4-05-python_data_structures:_lists_tuples_and_sets.html",
+    "href": "modules/module4/module4-05-python_data_structures:_lists_tuples_and_sets.html",
+    "title": "2. Python Data Structures: Lists, Tuples and Sets",
+    "section": "",
+    "text": "2. Python Data Structures: Lists, Tuples and Sets\n\nVideoSlides",
+    "crumbs": [
+      "**M4. Python Without the \"Eek\" (Basic Python)**",
+      "2. Python Data Structures: Lists, Tuples and Sets"
+    ]
+  },
+  {
+    "objectID": "modules/module4/module4-10-python_data_structures:_dictionaries.html",
+    "href": "modules/module4/module4-10-python_data_structures:_dictionaries.html",
+    "title": "3. Python Data Structures: Dictionaries",
+    "section": "",
+    "text": "3. Python Data Structures: Dictionaries\n\nVideoSlides",
+    "crumbs": [
+      "**M4. Python Without the \"Eek\" (Basic Python)**",
+      "3. Python Data Structures: Dictionaries"
+    ]
+  },
+  {
+    "objectID": "modules/module4/module4-14-dataframes_series_and_column_dtypes.html",
+    "href": "modules/module4/module4-14-dataframes_series_and_column_dtypes.html",
+    "title": "4. Dataframes, Series and Column dtypes",
+    "section": "",
+    "text": "4. Dataframes, Series and Column dtypes\n\nVideoSlides",
+    "crumbs": [
+      "**M4. Python Without the \"Eek\" (Basic Python)**",
+      "4. Dataframes, Series and Column dtypes"
+    ]
+  },
+  {
+    "objectID": "modules/module4/module4-18-python_operations.html",
+    "href": "modules/module4/module4-18-python_operations.html",
+    "title": "5. Python Operations",
+    "section": "",
+    "text": "5. Python Operations\n\nVideoSlides",
+    "crumbs": [
+      "**M4. Python Without the \"Eek\" (Basic Python)**",
+      "5. Python Operations"
+    ]
+  },
+  {
+    "objectID": "modules/module4/module4-21-operations_with_columns.html",
+    "href": "modules/module4/module4-21-operations_with_columns.html",
+    "title": "6. Operations with Columns",
+    "section": "",
+    "text": "6. Operations with Columns\n\nVideoSlides",
+    "crumbs": [
+      "**M4. Python Without the \"Eek\" (Basic Python)**",
+      "6. Operations with Columns"
+    ]
+  },
+  {
+    "objectID": "modules/module4/module4-23-splitting_a_column.html",
+    "href": "modules/module4/module4-23-splitting_a_column.html",
+    "title": "7. Splitting a Column",
+    "section": "",
+    "text": "7. Splitting a Column\n\nVideoSlides",
+    "crumbs": [
+      "**M4. Python Without the \"Eek\" (Basic Python)**",
+      "7. Splitting a Column"
+    ]
+  },
+  {
+    "objectID": "modules/module4/module4-25-what_did_we_just_learn.html",
+    "href": "modules/module4/module4-25-what_did_we_just_learn.html",
+    "title": "8. What Did We Just Learn?",
+    "section": "",
+    "text": "8. What Did We Just Learn?\n\nVideoSlides",
+    "crumbs": [
+      "**M4. Python Without the \"Eek\" (Basic Python)**",
+      "8. What Did We Just Learn?"
+    ]
+  },
+  {
+    "objectID": "modules/module4/slides/module4_01.html#values-and-objects",
+    "href": "modules/module4/slides/module4_01.html#values-and-objects",
+    "title": "Python Data Types",
+    "section": "Values and Objects",
+    "text": "Values and Objects\n\nWe have been working with values, which are pieces of data that a computer program works with, such as a number or text.\nWe have been assigning a lot of these values (with the assignment operator =) to objects.\n\n\npet = 'Fido' \npet\n\n'Fido'\n\n\n\n\nage = 6\nage\n\n6\n\n\n\nIn the last few sections, you may have had questions like:\n“Why are some values in quotation marks while others are not?”,\n“What are these square brackets we keep using in our verb arguments?” or\n“Why can we take the mean of some columns and not others?” .\nWe’ll be answering these questions in this module.\nPython needs to categorize things to make sense of them.\nLet’s start with some basics.\nIn these cases, pet and age are objects, and Fido and 6 are values.\nThese objects can be named anything that begins with a letter and is not “special python words” like range, for, if, else, etc. (we will talk about some of those in the next module)."
+  },
+  {
+    "objectID": "modules/module4/slides/module4_01.html#data-types",
+    "href": "modules/module4/slides/module4_01.html#data-types",
+    "title": "Python Data Types",
+    "section": "Data Types",
+    "text": "Data Types\nHere are some data types built-in to the Python language:\n\nIntegers - int\nFloating-point numbers - float\nStrings - str\nBooleans -bool\nLists - list\nTuples - tuple\nSets - set\nDictionaries - dict\n\n\nValues, as we saw in our Fido and 6 examples, can be a variety of different things that get classified by Python as data types."
+  },
+  {
+    "objectID": "modules/module4/slides/module4_01.html#numerical-data-types",
+    "href": "modules/module4/slides/module4_01.html#numerical-data-types",
+    "title": "Python Data Types",
+    "section": "Numerical Data Types",
+    "text": "Numerical Data Types\nInt\n\nage = 6 \ntype(age)\n\nint\n\n\n\nFloat\n\nage = 6.0\ntype(age)\n\nfloat\n\n\n\nYou’ve likely noticed that we have not needed to put any quotation marks around number values. Python recognizes numbers as one of two possible types.\nEither as an integer called an int type or a floating-point number called a float.\nAn int value is a whole number that is either positive, negative, or zero.\nWe can use the verb type() to find out how Python classifies the value that is stored in an object.\n6 is of type int.\nA float value is a real number in decimal form. That means even if we have a whole number if it contains a decimal point, it is considered a float.\nIn contrast, 6.0 is if type float."
+  },
+  {
+    "objectID": "modules/module4/slides/module4_01.html#nan",
+    "href": "modules/module4/slides/module4_01.html#nan",
+    "title": "Python Data Types",
+    "section": "NaN",
+    "text": "NaN\n\nweather\n\n\n\n\n\n\n\n\nmonth\nseason\n31st\n\n\n\n\n0\nfebruary\nwinter\nNaN\n\n\n1\nmarch\nspring\n31.0\n\n\n2\nmarch\nspring\nNaN\n\n\n\n\n\n\n\n\n\nnan_value = weather.loc[2,'31st']\nnan_value\n\nnan\n\n\n\n\ntype(nan_value)\n\nnumpy.float64\n\n\n\nSomething you may have noticed in our Pandas dataframes are NaN values.\nThis stands for Not A Number, and it is a special value used to represent missing data in pandas.\nContrary to its acronym, it is considered a numeric value, specifically of type float!\nIgnore the numpy and 64 for now and concentrate on the float classification for now. We will be discussing NumPy more in Module 8.\nUnlike other values, NaN cannot be converted to any other type other than a float."
+  },
+  {
+    "objectID": "modules/module4/slides/module4_01.html#nonetype",
+    "href": "modules/module4/slides/module4_01.html#nonetype",
+    "title": "Python Data Types",
+    "section": "NoneType",
+    "text": "NoneType\n\nname_of_bed_monster = None\n\n\n\ntype(name_of_bed_monster)\n\nNoneType\n\n\n\nUnlike NaN which is a special float value, NoneType is its own type, with only one possible value, None.\nLet’s say we need to save the name of the monster living under my bed in an object. Unfortunately, we have yet to introduce ourselves to him, so we are not sure what his name is. We also need to keep track that we are missing this information.\nWe’ve seen this data type in our assignments when we replace the None provided with our solution. Since we still need to have the object created for the structure of our assignments, we simply use None to indicate the object exists but is devoid of information."
+  },
+  {
+    "objectID": "modules/module4/slides/module4_01.html#booleans",
+    "href": "modules/module4/slides/module4_01.html#booleans",
+    "title": "Python Data Types",
+    "section": "Booleans",
+    "text": "Booleans\nThe Boolean (bool) type has two values: True and False.\n\ntype(False)\n\nbool\n\n\n\n\nweather\n\n\n\n\n\n\n\n\nmonth\nseason\n31st\n\n\n\n\n0\nfebruary\nwinter\nNaN\n\n\n1\nmarch\nspring\n31.0\n\n\n2\nmarch\nspring\nNaN\n\n\n\n\n\n\n\n\n\nweather['season'] == 'winter'\n\n0     True\n1    False\n2    False\nName: season, dtype: bool\n\n\n\nThe Boolean type has two values: True and False. As you can see at the top, the value False is of type bool for Boolean.\nWe have seen this data type when we were filtering our dataframes with conditions.\nIn pandas, a condition is evaluated and produces a column indicating whether the condition was met or not for each row.\nThis column is a Boolean type."
+  },
+  {
+    "objectID": "modules/module4/slides/module4_01.html#strings",
+    "href": "modules/module4/slides/module4_01.html#strings",
+    "title": "Python Data Types",
+    "section": "Strings",
+    "text": "Strings\n\nSingle quotes, e.g., 'Hello'\nDouble quotes, e.g., \"Goodbye\"\nTriple single quotes, e.g., '''Yesterday'''\nTriple double quotes, e.g., \"\"\"Tomorrow\"\"\"\n\n\nname_of_bed_monster = 'Mike Wazowski'\nname_of_bed_monster\n\n'Mike Wazowski'\n\n\n\n\nname_of_bed_monster = \"Mike Wazowski\"\nname_of_bed_monster\n\n'Mike Wazowski'\n\n\n\n\nname_of_bed_monster = \"\"\"Mike Wazowski\"\"\"\nname_of_bed_monster\n\n'Mike Wazowski'\n\n\n\nText is stored as a data type called a string (str).\nWe think of a string as a sequence of characters enclosed in some form of quotations.\nWe’ve been mostly using single quotations for strings up until this point, but you can enclose them with different types of quotation marks, as shown here."
+  },
+  {
+    "objectID": "modules/module4/slides/module4_01.html#string-verbs",
+    "href": "modules/module4/slides/module4_01.html#string-verbs",
+    "title": "Python Data Types",
+    "section": "String Verbs",
+    "text": "String Verbs\nThere are A variety of different methods to transform strings or extract information from them.\n\nname_of_bed_monster = 'Mike Wazowski'\n\n\nlen():\n\n\nlen(name_of_bed_monster)\n\n13\n\n\n\n.upper():\n\n\nname_of_bed_monster.upper()\n\n'MIKE WAZOWSKI'\n\n\n\n.lower():\n\n\nname_of_bed_monster.lower()\n\n'mike wazowski'\n\n\n\nThere are A variety of different methods to transform strings or extract information from them. Here are a few of them.\n\nWe can obtain the number of characters in a string with len().\nWe can change the cases to capitals with .upper().\nOr change the cases to lower case with .lower()."
+  },
+  {
+    "objectID": "modules/module4/slides/module4_01.html#casting",
+    "href": "modules/module4/slides/module4_01.html#casting",
+    "title": "Python Data Types",
+    "section": "Casting",
+    "text": "Casting\n\nint to float:\n\n\nnumber_of_floating_balloons = float(5)\ntype(number_of_floating_balloons)\n\nfloat\n\n\n\nAn int to a str:\n\n\nnumber_of_balloon_strings = str(5)\ntype(number_of_balloon_strings)\n\nstr\n\n\n\nfloat to an int (it will round down to the nearest full integer).\n\n\nnumber_of_balloons = int(4.99)\nnumber_of_balloons\n\n4\n\n\n\nSometimes we need to explicitly transform an object from one type to another, which is called casting.\nWe can do this for some types, but not all.\nTo cast an object to a new type, we use verbs corresponding to the desired type, such as int(), float(), bool() or str()."
+  },
+  {
+    "objectID": "modules/module4/slides/module4_10.html#dictionaries",
+    "href": "modules/module4/slides/module4_10.html#dictionaries",
+    "title": "Python Data Structures: Dictionaries",
+    "section": "Dictionaries",
+    "text": "Dictionaries\nA dictionary is a map between key-value pairs.\n\nFor example:\nA house can have 3 bedrooms.\n‘bedrooms’ is the key, and the number of bedrooms is the value.\n\nHow does this look in terms of a data structure?\n\nhouse = {'bedrooms': 3}\nhouse\n\n{'bedrooms': 3}\n\n\n\nDictionaries are used in different languages to look up definitions of words.\nPython has a data structure by the same name that replicates this “lookup” action.\nFor example:\nA house can have 3 bedrooms. Bedroom is called the key, and the number of bedrooms is called the value.\nHow does this look in terms of a data structure?\nWe use curly brackets and a colon that separates the key and its value."
+  },
+  {
+    "objectID": "modules/module4/slides/module4_10.html#dictionaries-to-dataframes",
+    "href": "modules/module4/slides/module4_10.html#dictionaries-to-dataframes",
+    "title": "Python Data Structures: Dictionaries",
+    "section": "Dictionaries to Dataframes",
+    "text": "Dictionaries to Dataframes\n\n\n\n\n\n\nname\nheight\ndiameter\nflowering\n\n\n\n\n0\nCherry\n7\n12\nTrue\n\n\n1\nOak\n20\n89\nFalse\n\n\n2\nWillow\n12\n30\nTrue\n\n\n3\nFir\n16\n18\nFalse\n\n\n\n\n\n\ndata = { 'name': ['Cherry', 'Oak', 'Willow', 'Fir'], \n         'height': [7, 20, 12, 16], \n         'diameter': [12, 89, 30, 18], \n         'flowering': [True, False, True, False]}\n         \nforest = pd.DataFrame.from_dict(data)\nforest\n\n\n\n\n\n\n\n\nname\nheight\ndiameter\nflowering\n\n\n\n\n0\nCherry\n7\n12\nTrue\n\n\n1\nOak\n20\n89\nFalse\n\n\n2\nWillow\n12\n30\nTrue\n\n\n3\nFir\n16\n18\nFalse\n\n\n\n\n\n\n\n\nWhat about making dataframes from dictionaries?\nWe are lucky enough to have two ways of making data from a dictionary using the verb pd.DataFrame.from_dict().\nFirst, let’s try making this table into a dataframe where we insert our data column-wise.\nWe can use the dictionary keys to represent the column names and the dictionary values for the column values stored in a list."
+  },
+  {
+    "objectID": "modules/module4/slides/module4_10.html#lets-add-what-we-learned-to-our-table",
+    "href": "modules/module4/slides/module4_10.html#lets-add-what-we-learned-to-our-table",
+    "title": "Python Data Structures: Dictionaries",
+    "section": "Let’s add what we learned to our table",
+    "text": "Let’s add what we learned to our table\n\n\n\n\n\n\n\n\n\n\n\nData Structure\npreserves order\nMutable\nSymbol\nCan contain duplicates\n\n\n\n\nstr\n✓\n☓\n'' or \"\"\n✓\n\n\nlist\n✓\n✓\n[]\n✓\n\n\ntuple\n✓\n☓\n()\n✓\n\n\nset\n☓\n✓\n{}\n☓\n\n\ndict\n✓\n✓\n{:}\nkeys: ☓ , values: ✓\n\n\n\n\nLet’s add the dictionary data structure to our data structure summary table."
+  },
+  {
+    "objectID": "modules/module4/slides/module4_18.html#numeric-operations",
+    "href": "modules/module4/slides/module4_18.html#numeric-operations",
+    "title": "Python Operations",
+    "section": "Numeric Operations",
+    "text": "Numeric Operations\n\n6 + 5.7\n\n11.7\n\n\n\n\n15 - 7\n\n8\n\n\n\n\n4.5 * 4\n\n18.0\n\n\n\n\n2 ** 3\n\n8\n\n\n\n\n2.2 ** 5\n\n51.53632000000002\n\n\n\nLet’s apply these to the Python types we have learned and observe the results.\nThese operators act as expected on numeric types.\nAn int plus a float results in a float.\nAnd the subtraction of 2 values of type int results with a type int.\nMultiplication with a float and an int will result in a float as well.\nExponents can be calculated with ** and applied with int as well as float data types."
+  },
+  {
+    "objectID": "modules/module4/slides/module4_18.html#bool",
+    "href": "modules/module4/slides/module4_18.html#bool",
+    "title": "Python Operations",
+    "section": "Bool",
+    "text": "Bool\n\nTrue + True \n\n2\n\n\n\n\nTrue * 4\n\n4\n\n\n\n\nFalse * 2 + True\n\n1\n\n\n\n\nFalse + 4\n\n4\n\n\n\nWe saw that addition, subtraction, multiplication, and exponential operations work as expected with numeric values but let’s check out what happens with the other data types.\nWhat happens when we try to add up bool values?\nWe see that True values are cast as a value of 1, and False values are cast as 0 when they are added together."
+  },
+  {
+    "objectID": "modules/module4/slides/module4_18.html#str",
+    "href": "modules/module4/slides/module4_18.html#str",
+    "title": "Python Operations",
+    "section": "Str",
+    "text": "Str\n\n'The monster under my bed' + ' is named Mike' \n\n'The monster under my bed is named Mike'\n\n\n\n'The monster under my bed' - ' is named Mike' \nTypeError: unsupported operand type(s) for -: 'str' and 'str'\n\nDetailed traceback: \n  File \"&lt;string&gt;\", line 1, in &lt;module&gt;\n\n'The monster under my bed' / ' is named Mike' \nTypeError: unsupported operand type(s) for -: 'str' and 'str'\n\nDetailed traceback: \n  File \"&lt;string&gt;\", line 1, in &lt;module&gt;\n\nStrings react rather interestingly with the addition operator.\nFor instance, when we add strings, we add the sequence from one end to the other. This is also called concatenation.\nAnd we cannot multiply, divide or subtract two strings."
+  },
+  {
+    "objectID": "modules/module4/slides/module4_18.html#list",
+    "href": "modules/module4/slides/module4_18.html#list",
+    "title": "Python Operations",
+    "section": "List",
+    "text": "List\n\nlist1 = [1, 2.0, 3, 4.5] + ['nine', 'ten', 'eleven', 'twelve']\nlist1\n\n[1, 2.0, 3, 4.5, 'nine', 'ten', 'eleven', 'twelve']\n\n\n\n[1, 2.0, 3, 4.5] - [3, 5, 2, 1]\nTypeError: unsupported operand type(s) for -: 'list' and 'list'\n\nDetailed traceback: \n  File \"&lt;string&gt;\", line 1, in &lt;module&gt;\n\n\n[1, 2.0, 3, 4.5] * [5, 6, 7, 8]\n\n\n---------------------------------------------------------------------------\nTypeError                                 Traceback (most recent call last)\nCell In[15], line 1\n----&gt; 1 [1, 2.0, 3, 4.5] * [5, 6, 7, 8]\n\nTypeError: can't multiply sequence by non-int of type 'list'\n\n\n\n\nHow about with other data types like lists, tuples and dictionaries?\nIf we add lists, similarly to strings, the lists concatenate together to create a single list containing the elements of both lists.\nOther operators, like subtraction and multiplication, are not supported when working with lists."
+  },
+  {
+    "objectID": "modules/module4/slides/module4_18.html#boolean-operators",
+    "href": "modules/module4/slides/module4_18.html#boolean-operators",
+    "title": "Python Operations",
+    "section": "Boolean Operators",
+    "text": "Boolean Operators\n\n\n\nOperator\nDescription\n\n\n\n\nx == y\nis x equal to y?\n\n\nx != y\nis x not equal to y?\n\n\nx &gt; y\nis x greater than y?\n\n\nx &gt;= y\nis x greater than or equal to y?\n\n\nx &lt; y\nis x less than y?\n\n\nx &lt;= y\nis x less than or equal to y?\n\n\nx is y\nis x the same object as y?\n\n\nx and y\nare x and y both true?\n\n\nx or y\nis at least one of x and y true?\n\n\nnot x\nis x false?\n\n\n\n\nWhen we’ve filtered our data, we’ve seen different Boolean operators, but we have some new ones here for you.\nLet’s explore them."
+  },
+  {
+    "objectID": "modules/module4/slides/module4_23.html#string-split",
+    "href": "modules/module4/slides/module4_23.html#string-split",
+    "title": "Splitting a Column",
+    "section": "String Split",
+    "text": "String Split\n\ncereal_amended\n\n\n\n\n\n\n\n\nname\nmfr_type\ncalories\nprotein\n...\nfat\ncarbo\nrating\nhot\n\n\n\n\n0\n100% Bran\nN-Cold\n70\n4\n...\n1\n5.0\n68.402973\nFalse\n\n\n1\n100% Natural Bran\nQ-Cold\n120\n3\n...\n5\n8.0\n33.983679\nFalse\n\n\n2\nAll-Bran\nK-Cold\n70\n4\n...\n1\n7.0\n59.425505\nFalse\n\n\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n\n\n74\nWheat Chex\nR-Cold\n100\n3\n...\n1\n17.0\n49.787445\nFalse\n\n\n75\nWheaties\nG-Cold\n100\n3\n...\n1\n17.0\n51.592193\nFalse\n\n\n76\nWheaties Honey Gold\nG-Cold\n110\n2\n...\n1\n16.0\n36.187559\nFalse\n\n\n\n\n77 rows × 9 columns\n\n\n\n\nHere is a new cereal dataframe.\nYou’ll notice that our column mfr_type contains two variables.\nIt is displaying both the manufacturer (N, Q, etc.) of the cereal and the cereal type (Cold, Hot).\nTo convert this into tidier data, we will need to split up this column into two separate columns, but how?"
+  }
+]
