@@ -32,14 +32,28 @@ website:
     style: 'docked'
     background: 'primary'
     contents:
-      - section: "**M0. Welcome to Programming in Python for Data Science**"
+      - section: "**Module 5: Making Choices and Repeating Iterations**"
         contents:
-          - text: '0. Welcome!'
-            href: modules/index.qmd
-          - href: modules/module0/module0-01-programming_in_python_for_data_science.qmd
-          - text: '&nbsp;&nbsp; 1.1. Prerequisite confirmation'
-            href: modules/module0/module0-02-are_you_ready.qmd
-      - section: "**M1. Python & Pandas - An Unexpected Friendship**"
+          - href: modules/module5/module5-00-module_learning_outcomes.qmd
+          - href: modules/module5/module5-01-making_choices_with_conditional_statements.qmd
+          - text: '&nbsp;&nbsp; 1.1. Exercises'
+            href: modules/module5/module5-02-quick_questions_with_conditionals.qmd
+          - href: modules/module5/module5-06-repeated_iterations_(loops).qmd
+          - text: '&nbsp;&nbsp; 2.1. Exercises'
+            href: modules/module5/module5-07-repeated_iterations_questions.qmd
+          - href: modules/module5/module5-09-range_dictionaries_and_comprehensions.qmd
+          - text: '&nbsp;&nbsp; 3.1. Exercises'
+            href: modules/module5/module5-10-range_questions.qmd
+          - href: modules/module5/module5-13-nested_loops.qmd
+          - text: '&nbsp;&nbsp; 4.1. Exercises'
+            href: modules/module5/module5-14-nested_loop_questions.qmd
+          - href: modules/module5/module5-16-repeated_iterations_with_conditions.qmd
+          - text: '&nbsp;&nbsp; 5.1. Exercises'
+            href: modules/module5/module5-17-conditional_loop_questions.qmd
+          - href: modules/module5/module5-19-functions.qmd
+          - text: '&nbsp;&nbsp; 6.1. Exercises'
+            href: modules/module5/module5-20-function_questions.qmd
+          - href: modules/module5/module5-23-what_did_we_just_learn.qmd
 
 # Since we are declaring options for two formats here (html and revealjs)
 # each qmd file needs to include a yaml block including which format to use for that file.
