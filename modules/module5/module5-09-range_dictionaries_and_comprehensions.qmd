@@ -1,0 +1,29 @@
+---
+format:
+  html:
+    page-layout: full
+---
+
+# 3. Range, Dictionaries and Comprehensions
+
+::: {.panel-tabset .nav-pills}
+
+## Video
+
+<iframe
+    class="video"
+    src="https://www.youtube.com/embed/yz6Wwa2MkQA?start=943&end=1151&rel=0" 
+    title="Module 5 Video - Range, Dictionaries and Comprehensions"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+></iframe>
+
+## Slides
+
+<iframe
+    class="slide-deck"
+    src="slides/module5_09.html"
+></iframe>
+
+:::

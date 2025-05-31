@@ -1,0 +1,217 @@
+---
+format: live-html
+---
+
+<script src='../../src/quiz.js'></script>
+
+# 3.1. Exercises
+
+## Range  Questions
+
+```python
+numericals = []
+for j in range(30,60,5):
+    numericals.append(j)
+numericals
+```
+
+<div id='mcq1'></div>
+<script>
+    generateQuiz(
+        'mcq1',
+        'Question 1',
+        'What is the output of the above code?',
+        {
+        '<code>[30, 35, 40, 45, 50, 55, 60]</code>': 'Remember how <code>iloc[]</code> worked?  The starting number was inclusive and the ending number was exclusive.',
+        '<code>[30, 35, 40, 45, 50, 55]</code>': '',
+        '<code>[60, 55, 50, 45, 40, 35, 30]</code>': 'To have a list going backward, the skip rate step would be negative.',
+        '<code>[30, 40, 50, 60]</code>': 'The skip rate is 5, not 10.',
+        },
+        '<code>[30, 35, 40, 45, 50, 55]</code>',
+    );
+</script>
+
+
+## Coding questions
+
+**Instructions:**    
+Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
+
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
+
+_**Make sure you remove the hash (`#`) symbol in the coding portions of this question.  We have commented them so that the line won't execute and you can test your code after each step.**_
+
+
+### Practice Iterating using Range
+
+Let's make a loop again but this time let's practice using the `range()` verb. 
+
+**Tasks:**
+
+- Iterate over a range from 50 to 10, stepping down 4 integers at a time. 
+- Append the square of each number for each iteration to `square_list`.
+- Display the value of `square_list`.
+
+```{pyodide}
+#| setup: true
+#| exercise: practice_iterating_using_range
+import pandas as pd
+```
+
+```{pyodide}
+#| exercise: practice_iterating_using_range
+square_list = list()
+
+# Iterate over a range from 50 to 10 steping down 4 integers at a time    
+# Append the square of each number for each iteration to square_list
+____
+    ____
+
+# Display square_list
+____
+```
+
+```{pyodide}
+#| exercise: practice_iterating_using_range
+#| check: true
+from src.utils import print_correct_msg
+
+solution = [x ** 2 for x in range(50,10,-4)]
+assert solution == result, "The values in 'square_list' are incorrect."
+print_correct_msg()
+```
+
+:::: { .hint exercise="practice_iterating_using_range"}
+::: { .callout-note collapse="false"}
+
+## Hint 1
+
+- Are you using `range(50,10,-4)`? 
+- Are you starting your loop with `for` and using a `colon` for the first line?
+- Are you indenting each line of code in the loop?
+
+:::
+::::
+
+:::: { .solution exercise="practice_iterating_using_range" }
+::: { .callout-tip collapse="false"}
+
+## Fully worked solution:
+
+```{pyodide}
+square_list = list()
+
+# Iterate over a range from 50 to 10 steping down 4 integers at a time    
+# Append the square of each number for each iteration to square_list
+for i in range(50,10,-4):
+    square_list.append(i ** 2)
+
+# Display square_list
+square_list
+```
+
+:::
+::::
+
+<br>
+
+<div id='mcq2'></div>
+<script>
+    generateQuiz(
+        'mcq2',
+        'Question',
+        'How many numbers does the code above print out?',
+        {
+        '8': 'Are you sure you used the right values in <code>range()</code>?',
+        '9': 'Are you sure you used the right values in <code>range()</code>?',
+        '10': '',
+        '11': 'Are you sure you used the right values in <code>range()</code>?',
+        },
+        '10',
+    );
+</script>
+
+<br>
+
+### Applying Range with Dataframes
+
+Let's read in multiple dataframes together and concatenate them vertically to one large dataframe using a loop and the `range()` function.
+
+**Tasks:**
+
+- There are 4 dataframes named `pkm1.csv` to `pkm4.csv`. that we wish to load in and vertically concatenate together.
+- Fill in the blanks so the code reads in each dataframe according to their differing file name and concatenates them together. 
+- Display the final dataframe. 
+
+```{pyodide}
+#| exercise: applying_range_with_dataframes
+# Load in the packages
+import pandas as pd
+
+# Starting with an empty dataframe
+full_dataframe = None
+
+# This code creates loop that reads in each dataframe and concatenates them together
+_____ number _____ _____:
+    string = 'data/pkm' + str(_____) + _____
+    data = _____._____(string)
+    full_dataframe = _____._____([full_dataframe, data])
+
+# Display the final dataframe
+_____
+```
+
+```{pyodide}
+#| exercise: applying_range_with_dataframes
+#| check: true
+import pandas as pd
+from src.utils import print_correct_msg
+
+solution = None
+for number in range(1,5):
+    string = 'data/pkm' + str(number) + '.csv'
+    data = pd.read_csv(string)
+    solution = pd.concat([solution, data])
+
+assert isinstance(result, pd.DataFrame), "Please display the final dataframe."
+assert solution.shape == result.shape, "The dimensions of 'full_dataframe' are incorrect. Are you reading the concatenating properly?"
+print_correct_msg()
+```
+
+:::: { .hint exercise="applying_range_with_dataframes"}
+::: { .callout-note collapse="false"}
+
+## Hint 1
+
+- Are you using `pd.concat()`? 
+- Are you adding `.csv` to the `string` object?
+- Are you using `pd.read_csv()`?
+- Are you indenting each line of code in the loop?
+
+:::
+::::
+
+:::: { .solution exercise="applying_range_with_dataframes" }
+::: { .callout-tip collapse="false"}
+
+## Fully worked solution:
+
+```{pyodide}
+# Load in the packages
+import pandas as pd
+
+# Starting with an empty dataframe
+full_dataframe = None
+
+# This code creates loop that reads in each dataframe and concatenates them together
+for number in range(1,5):
+    string = 'data/pkm' + str(number) + '.csv'
+    data = pd.read_csv(string)
+    full_dataframe = pd.concat([full_dataframe, data])
+
+# Display the final dataframe
+full_dataframe
+```
+
+:::
+::::
