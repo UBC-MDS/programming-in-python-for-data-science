@@ -32,14 +32,28 @@ website:
     style: 'docked'
     background: 'primary'
     contents:
-      - section: "**M0. Welcome to Programming in Python for Data Science**"
+      - section: "**Module 6: Functions Fundamentals and Best Practices**"
         contents:
-          - text: '0. Welcome!'
-            href: modules/index.qmd
-          - href: modules/module0/module0-01-programming_in_python_for_data_science.qmd
-          - text: '&nbsp;&nbsp; 1.1. Prerequisite confirmation'
-            href: modules/module0/module0-02-are_you_ready.qmd
-      - section: "**M1. Python & Pandas - An Unexpected Friendship**"
+          - href: modules/module6/module6-00-module_learning_outcomes.qmd
+          - href: modules/module6/module6-01-dry_revisited_and_function_fundamentals.qmd
+          - text: '&nbsp;&nbsp; 1.1. Exercises'
+            href: modules/module6/module6-02-questions_on_scoping.qmd
+          - href: modules/module6/module6-05-default_arguments.qmd
+          - text: '&nbsp;&nbsp; 2.1. Exercises'
+            href: modules/module6/module6-06-will_it_output.qmd
+          - href: modules/module6/module6-09-function_docstrings.qmd
+          - text: '&nbsp;&nbsp; 3.1. Exercises'
+            href: modules/module6/module6-10-docstring_questions.qmd
+          - href: modules/module6/module6-13-defensive_programming_using_exceptions.qmd
+          - text: '&nbsp;&nbsp; 4.1. Exercises'
+            href: modules/module6/module6-14-exceptions.qmd
+          - href: modules/module6/module6-17-unit_tests.qmd
+          - text: '&nbsp;&nbsp; 5.1. Exercises'
+            href: modules/module6/module6-18-assert_questions.qmd
+          - href: modules/module6/module6-22-good_function_design_choices.qmd
+          - text: '&nbsp;&nbsp; 6.1. Exercises'
+            href: modules/module6/module6-23-function_design_questions.qmd
+          - href: modules/module6/module6-26-what_did_we_just_learn.qmd
 
 # Since we are declaring options for two formats here (html and revealjs)
 # each qmd file needs to include a yaml block including which format to use for that file.
