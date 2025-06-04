@@ -1,0 +1,40 @@
+---
+format: html
+---
+
+<script src='../../src/quiz.js'></script>
+
+# 6.1. Exercises
+
+## Using the Python Debugger
+
+<div id='mcq1'></div>
+<script>
+    generateQuiz(
+        'mcq1',
+        'Question 1',
+        'How is the Python debugger helpful?',
+        {
+        'It can help explain where your code is failing': 'This is exactly why the Python debugger is useful!',
+        'It tells us where our code could be more efficient': 'The Python debugger can’t improve code that works.',
+        'It removes any of the code that is not following the DRY principle': 'The Python debugger helps with <b>debugging</b> and not with adhering to the DRY principle.',
+        },
+        'It can help explain where your code is failing',
+    );
+</script>
+
+<div id='mcq2'></div>
+<script>
+    generateQuiz(
+        'mcq2',
+        'Question 2',
+        'Which of the following can we use from the Python Debugger to examine our code and inspect our variables?',
+        {
+        '<code>break()</code>': 'Almost but not quite.',
+        '<code>tracepoint()</code>': 'This is not the function but the ending sure sounds familiar...',
+        '<code>traceback()</code>': 'This does seem plausible, doesn’t it? Unfortunately, this isn’t correct.',
+        '<code>breakpoint()</code>': 'You got it!',
+        },
+        '<code>breakpoint()</code>',
+    );
+</script>

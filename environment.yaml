@@ -9,7 +9,8 @@ dependencies:
     - scipy
     - matplotlib
     - jupyter
-    - quarto
+    - quarto=1.6.43
+    - flake8-nb
+    - pytest
+    - black[jupyter]
     - pip
-
-
