@@ -1,0 +1,241 @@
+[
+  {
+    "objectID": "modules/module7/slides/module7_20.html#summary",
+    "href": "modules/module7/slides/module7_20.html#summary",
+    "title": "What Did we Learn and What to Expect in Assignment 7",
+    "section": "Summary",
+    "text": "Summary\nStudents are now expected to be able to:\n\nDescribe what Python libraries are, as well as explain when and why they are useful.\nIdentify where code can be improved concerning variable names, magic numbers, comments and whitespace.\nWrite code that is human readable and follows the black style guide.\nImport files from other directories.\nUse pytest to check a function’s tests.\nWhen running pytest, explain how pytest finds the associated test functions.\nExplain how the Python debugger can help rectify your code.\n\n\nThe assignment will concentrate on the learning objectives as well as building knowledge on existing concepts."
+  },
+  {
+    "objectID": "modules/module7/slides/module7_20.html#attribution",
+    "href": "modules/module7/slides/module7_20.html#attribution",
+    "title": "What Did we Learn and What to Expect in Assignment 7",
+    "section": "Attribution",
+    "text": "Attribution\nThe cereal dataset:\n“80 Cereals” (c) by Chris Crawford is licensed under Creative Commons Attribution-ShareAlike 3.0 Unported"
+  },
+  {
+    "objectID": "modules/module7/slides/module7_15.html#comments",
+    "href": "modules/module7/slides/module7_15.html#comments",
+    "title": "Non-automatic style formatting",
+    "section": "Comments",
+    "text": "Comments\nBad Comments: Example of a comment that doesn’t make sense\n\n# The estimated stock room size minus the rented space \nscreen_time = 23 * 1.10\n\n\nBad Comments: Example of commenting gone overboard\n\n# Reading in the cereal dataframe\ncereal_dataframe = pd.read_csv('data/cereal.csv')\n\n# Saving the cereal dataframe's columns as cereal_columns\ncereal_columns = cereal_dataframe.columns \n\ncereal_dataframe.head() # Displaying the first 5 rows of the cereal_dataframe\n\n\nGood Comments: Example of a useful comment\n\n# Obtaining the cereals with calories between 130 and 150\ncereal_dataframe[(cereal_dataframe['calories'] &gt;130) & (cereal_dataframe['calories'] &lt;150)]\n\n\nWe’ve learned about some tools that can help format and standardize our code, such as white space and indentations, but what about the things that a formatter can’t automatically change?\nLet’s start with how we write comments.\nComments are important for understanding your code.\nWhile docstrings cover what a function does, your comments will help document how your code achieves its goal.\npython.org has some strong opinions about how comments should be written, and the first thing they mention is that our comments should reflect what the code is doing.\nIt sounds easy enough, but when working on projects that are constantly changing, it’s easy to change the code but forget to change the comments which do not affect the output of the code.\nIn cases like this, it’s better that our code has no comments than comments that contradict it.\nIt’s also important that comments add to the understanding of our coding instead of simply commenting for the sake of commenting.\nNot all code needs a comment, especially if it’s redundant for understanding what the code does."
+  },
+  {
+    "objectID": "modules/module7/slides/module7_15.html#naming-convention",
+    "href": "modules/module7/slides/module7_15.html#naming-convention",
+    "title": "Non-automatic style formatting",
+    "section": "Naming convention",
+    "text": "Naming convention\nSome common variable naming recommendations:\n\nVariable names should use underscores\nVariable names should be lowercase\n\nFine\n\nlego\n\nFine\n\nlego_themes\n\nFine\n\nlego_df\n\nNot Recommended\n\nlego_DF\n\nNot Recommended\n\nLEGO\n\nNot Recommended\n\nlegothemes\n\n\nPython naming convention is somewhat inconsistent, as stated on Python.org’s website\nThat being said, it’s useful to try to set consistent standards which helps the Python community and will help you keep track of your code at a later time.\nSome common variable naming recommendations are as follows:\n\nVariable names should use underscores\nVariable names should be lowercase\n\nYou could use the names lego, lego_themes, lego_df, but we advise again things like lego_DF, LEGO or legothemes."
+  },
+  {
+    "objectID": "modules/module7/slides/module7_15.html#variables-without-keywords",
+    "href": "modules/module7/slides/module7_15.html#variables-without-keywords",
+    "title": "Non-automatic style formatting",
+    "section": "Variables without Keywords",
+    "text": "Variables without Keywords\nDon’t Do This\n\nlist = []\n\n\nOr This\n\ndef tuple(argument):\n    return \n\n\nOr This\n\nstr = 4\ntype = 67 * str\n\n\nSomething you should not name your variables are Python keywords.\nThis will create a multitude of problems for you.\nFor example, If you did name a variable with the specific keyword, the next time that you attempt to use that keyword for its intended functionality, an error will be thrown because it will try to use your variable instead!"
+  },
+  {
+    "objectID": "modules/module7/slides/module7_15.html#meaningful-names",
+    "href": "modules/module7/slides/module7_15.html#meaningful-names",
+    "title": "Non-automatic style formatting",
+    "section": "Meaningful Names",
+    "text": "Meaningful Names\n\na = 100 \nb = 23\nc = 0.56\n\nd = a + b\ne = c * d\n\n\n\napples = 100 \nbananas = 23\nfruit_price = 0.56\n\nfruit_total = apples + bananas\ncost = fruit_price * fruit_total\n\n\nJust like how we use comments to explain our code, it’s good coding style to name your variables thoughtfully and in ways that help make your coding more “readable”.\nNaming your variables helps others (and future you) make sense of the instructions you are writing for the computer.\nFor example, let’s try writing the code here again but with variable names that are a bit more descriptive.\nGiving these new variables names, we can follow a bit more of the reasoning behind the calculations."
+  },
+  {
+    "objectID": "modules/module7/slides/module7_15.html#concise-names",
+    "href": "modules/module7/slides/module7_15.html#concise-names",
+    "title": "Non-automatic style formatting",
+    "section": "Concise Names",
+    "text": "Concise Names\n\nmass_of_the_object_in_motion = 45\nthe_acceleration_of_the_object_in_motion = 1.8\n\nforce_acting_on_an_object = mass_of_the_object_in_motion * the_acceleration_of_the_object_in_motion\n\n\n\nmass = 45\nacceleration = 1.8\n\nforce = mass * acceleration\n\n\nSimilarly to how variables named without meaning makes code readability difficult, the same can be said about variables with excessively long names.\nYou want to be efficient yet understandable.\nIn this example, we can see that the second body of code is much easier on our eye, and it takes much less effort to understand what our code is trying to convey."
+  },
+  {
+    "objectID": "modules/module7/module7-20-what_did_we_just_learn.html",
+    "href": "modules/module7/module7-20-what_did_we_just_learn.html",
+    "title": "7. What Did We Just Learn?",
+    "section": "",
+    "text": "7. What Did We Just Learn?\n\nVideoSlides",
+    "crumbs": [
+      "**Module 7: Importing Files and the Coding Style Guide**",
+      "7. What Did We Just Learn?"
+    ]
+  },
+  {
+    "objectID": "modules/module7/module7-18-the_python_debugger.html",
+    "href": "modules/module7/module7-18-the_python_debugger.html",
+    "title": "6. The Python Debugger",
+    "section": "",
+    "text": "6. The Python Debugger\n\nVideoSlides",
+    "crumbs": [
+      "**Module 7: Importing Files and the Coding Style Guide**",
+      "6. The Python Debugger"
+    ]
+  },
+  {
+    "objectID": "modules/module7/module7-15-formatting_that_can't_be_fixed_automatically.html",
+    "href": "modules/module7/module7-15-formatting_that_can't_be_fixed_automatically.html",
+    "title": "5. Formatting That Can’t Be Fixed Automatically",
+    "section": "",
+    "text": "5. Formatting That Can’t Be Fixed Automatically\n\nVideoSlides",
+    "crumbs": [
+      "**Module 7: Importing Files and the Coding Style Guide**",
+      "5. Formatting That Can't Be Fixed Automatically"
+    ]
+  },
+  {
+    "objectID": "modules/module7/module7-12-automatic_style_formatters.html",
+    "href": "modules/module7/module7-12-automatic_style_formatters.html",
+    "title": "4. Automatic Style Formatting",
+    "section": "",
+    "text": "4. Automatic Style Formatting\n\nVideoSlides",
+    "crumbs": [
+      "**Module 7: Importing Files and the Coding Style Guide**",
+      "4. Automatic Style Formatting"
+    ]
+  },
+  {
+    "objectID": "modules/module7/module7-08-testing_your_own_functions_with_pytest.html",
+    "href": "modules/module7/module7-08-testing_your_own_functions_with_pytest.html",
+    "title": "3. Testing Your Own Functions with Pytest",
+    "section": "",
+    "text": "3. Testing Your Own Functions with Pytest\n\nVideoSlides",
+    "crumbs": [
+      "**Module 7: Importing Files and the Coding Style Guide**",
+      "3. Testing Your Own Functions with Pytest"
+    ]
+  },
+  {
+    "objectID": "modules/module7/module7-05-working_with_other_files.html",
+    "href": "modules/module7/module7-05-working_with_other_files.html",
+    "title": "2. Working with Other Files",
+    "section": "",
+    "text": "2. Working with Other Files\n\nVideoSlides",
+    "crumbs": [
+      "**Module 7: Importing Files and the Coding Style Guide**",
+      "2. Working with Other Files"
+    ]
+  },
+  {
+    "objectID": "modules/module7/module7-01-importing_python_libraries.html",
+    "href": "modules/module7/module7-01-importing_python_libraries.html",
+    "title": "1. Importing Python Libraries",
+    "section": "",
+    "text": "1. Importing Python Libraries\n\nVideoSlides",
+    "crumbs": [
+      "**Module 7: Importing Files and the Coding Style Guide**",
+      "1. Importing Python Libraries"
+    ]
+  },
+  {
+    "objectID": "modules/module7/module7-00-module_learning_outcomes.html",
+    "href": "modules/module7/module7-00-module_learning_outcomes.html",
+    "title": "0. Module Learning Outcomes",
+    "section": "",
+    "text": "0. Module Learning Outcomes\n\nVideoSlides",
+    "crumbs": [
+      "**Module 7: Importing Files and the Coding Style Guide**",
+      "0. Module Learning Outcomes"
+    ]
+  },
+  {
+    "objectID": "modules/module7/module7-02-importing_packages.html",
+    "href": "modules/module7/module7-02-importing_packages.html",
+    "title": "1.1. Exercises",
+    "section": "",
+    "text": "Instructions:\nRunning a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\nMake sure you remove the hash (#) symbol in the coding portions of this question. We have commented them so that the line won’t execute and you can test your code after each step.\nOk, so we’ve seen this numpy package, let’s actually load in one of the functions and use it! If you are wondering what this package does, don’t worry, you’ll learn more of this in the next module. numpy has a function called power().\nTasks:\n\nImport the power() function from the numpy package.\nUse the power() function to find 7 to the power of 5 and save it in an object named power7_5 - you may want to use ?power to see what arguments the function requires.\nDisplay your results.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you using power(7, 5)?\nAre you importing using from?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:",
+    "crumbs": [
+      "**Module 7: Importing Files and the Coding Style Guide**",
+      "&nbsp;&nbsp; 1.1. Exercises"
+    ]
+  },
+  {
+    "objectID": "modules/module7/module7-02-importing_packages.html#importing-packages-again",
+    "href": "modules/module7/module7-02-importing_packages.html#importing-packages-again",
+    "title": "1.1. Exercises",
+    "section": "",
+    "text": "Instructions:\nRunning a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\nMake sure you remove the hash (#) symbol in the coding portions of this question. We have commented them so that the line won’t execute and you can test your code after each step.\nOk, so we’ve seen this numpy package, let’s actually load in one of the functions and use it! If you are wondering what this package does, don’t worry, you’ll learn more of this in the next module. numpy has a function called power().\nTasks:\n\nImport the power() function from the numpy package.\nUse the power() function to find 7 to the power of 5 and save it in an object named power7_5 - you may want to use ?power to see what arguments the function requires.\nDisplay your results.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you using power(7, 5)?\nAre you importing using from?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:",
+    "crumbs": [
+      "**Module 7: Importing Files and the Coding Style Guide**",
+      "&nbsp;&nbsp; 1.1. Exercises"
+    ]
+  },
+  {
+    "objectID": "modules/module7/module7-09-using_pytest_questions.html",
+    "href": "modules/module7/module7-09-using_pytest_questions.html",
+    "title": "3.1. Exercises",
+    "section": "",
+    "text": "Instructions:\nRunning a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\nMake sure you remove the hash (#) symbol in the coding portions of this question. We have commented them so that the line won’t execute and you can test your code after each step.\nLet’s do the first step in testing the function find_force() with pytest by converting the tests provided for into an appropriate function.\nTasks:\n\nTake these unit tests we wrote and compile them together in a function to test the function find_force().\nDon’t forget to give it a name compliant with pytest’s needs.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you naming it something starting with test?\nAre you remembering these functions do not need to return anything?\nThese functions do not take any arguments.\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:",
+    "crumbs": [
+      "**Module 7: Importing Files and the Coding Style Guide**",
+      "&nbsp;&nbsp; 3.1. Exercises"
+    ]
+  },
+  {
+    "objectID": "modules/module7/module7-09-using_pytest_questions.html#making-a-test-function",
+    "href": "modules/module7/module7-09-using_pytest_questions.html#making-a-test-function",
+    "title": "3.1. Exercises",
+    "section": "",
+    "text": "Instructions:\nRunning a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\nMake sure you remove the hash (#) symbol in the coding portions of this question. We have commented them so that the line won’t execute and you can test your code after each step.\nLet’s do the first step in testing the function find_force() with pytest by converting the tests provided for into an appropriate function.\nTasks:\n\nTake these unit tests we wrote and compile them together in a function to test the function find_force().\nDon’t forget to give it a name compliant with pytest’s needs.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you naming it something starting with test?\nAre you remembering these functions do not need to return anything?\nThese functions do not take any arguments.\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:",
+    "crumbs": [
+      "**Module 7: Importing Files and the Coding Style Guide**",
+      "&nbsp;&nbsp; 3.1. Exercises"
+    ]
+  },
+  {
+    "objectID": "modules/module7/module7-13-flake8_and_black.html",
+    "href": "modules/module7/module7-13-flake8_and_black.html",
+    "title": "4.1. Exercises",
+    "section": "",
+    "text": "Instructions:\nRunning a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\nMake sure you remove the hash (#) symbol in the coding portions of this question. We have commented them so that the line won’t execute and you can test your code after each step.\nLet’s take the function named cleanup() which drops duplicate rows and columns. Rewrite the function code (not the docstring) so that it’s written with necessary spaces and indentations.\nTasks:\n\nAmend the function cleanup() so that it adopts an approach that has spaces where necessary and blank space is removed. Make sure that you have indentations and empty lines where necessary.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you adding spaces between operators?\nAre you removing spaces where appropriate?\nDid you fix the indentation error?\nHow about removing the blank lines before the return statement?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:",
+    "crumbs": [
+      "**Module 7: Importing Files and the Coding Style Guide**",
+      "&nbsp;&nbsp; 4.1. Exercises"
+    ]
+  },
+  {
+    "objectID": "modules/module7/module7-13-flake8_and_black.html#formatting-your-code",
+    "href": "modules/module7/module7-13-flake8_and_black.html#formatting-your-code",
+    "title": "4.1. Exercises",
+    "section": "",
+    "text": "Instructions:\nRunning a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\nMake sure you remove the hash (#) symbol in the coding portions of this question. We have commented them so that the line won’t execute and you can test your code after each step.\nLet’s take the function named cleanup() which drops duplicate rows and columns. Rewrite the function code (not the docstring) so that it’s written with necessary spaces and indentations.\nTasks:\n\nAmend the function cleanup() so that it adopts an approach that has spaces where necessary and blank space is removed. Make sure that you have indentations and empty lines where necessary.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you adding spaces between operators?\nAre you removing spaces where appropriate?\nDid you fix the indentation error?\nHow about removing the blank lines before the return statement?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:",
+    "crumbs": [
+      "**Module 7: Importing Files and the Coding Style Guide**",
+      "&nbsp;&nbsp; 4.1. Exercises"
+    ]
+  },
+  {
+    "objectID": "modules/module7/module7-16-writing_useful_comments.html",
+    "href": "modules/module7/module7-16-writing_useful_comments.html",
+    "title": "5.1. Exercises",
+    "section": "",
+    "text": "Given the code here:\ncandy = pd.read_csv('data/candybars.csv')\nchocolate = pd.read_csv('data/chocolate_types.csv')\n\ndessert = candy.merge(chocolate, how='inner').dropna()",
+    "crumbs": [
+      "**Module 7: Importing Files and the Coding Style Guide**",
+      "&nbsp;&nbsp; 5.1. Exercises"
+    ]
+  },
+  {
+    "objectID": "modules/module7/module7-16-writing_useful_comments.html#writing-useful-comments",
+    "href": "modules/module7/module7-16-writing_useful_comments.html#writing-useful-comments",
+    "title": "5.1. Exercises",
+    "section": "",
+    "text": "Given the code here:\ncandy = pd.read_csv('data/candybars.csv')\nchocolate = pd.read_csv('data/chocolate_types.csv')\n\ndessert = candy.merge(chocolate, how='inner').dropna()",
+    "crumbs": [
+      "**Module 7: Importing Files and the Coding Style Guide**",
+      "&nbsp;&nbsp; 5.1. Exercises"
+    ]
+  },
+  {
+    "objectID": "modules/module7/slides/module7_00.html#module-learning-outcomes",
+    "href": "modules/module7/slides/module7_00.html#module-learning-outcomes",
+    "title": "Module Learning Outcomes",
+    "section": "Module Learning Outcomes",
+    "text": "Module Learning Outcomes\nBy the end of the module, students are expected to:\n\nDescribe what Python libraries are, as well as explain when and why they are useful.\nIdentify where code can be improved concerning variable names, magic numbers, comments and whitespace.\nWrite code that is human readable and follows the black style guide.\nImport files from other directories.\nUse pytest to check a function’s tests.\nWhen running pytest, explain how pytest finds the associated test functions.\nExplain how the Python debugger can help rectify your code."
+  },
+  {
+    "objectID": "modules/module7/slides/module7_12.html#black",
+    "href": "modules/module7/slides/module7_12.html#black",
+    "title": "Automatic Style Formatting",
+    "section": "Black",
+    "text": "Black\nBefore black\n\ndef exponent_a_list(numerical_list   ,   exponent   =      2):\n\n    if type(numerical_list         ) is    not list   :\n                raise Exception(     \"You are not using a list for the numerical_list input.\"   \n                )\n\n    new_exponent_list   = list()\n    for   number_in_new_exponent_list in              numerical_list:\n                new_exponent_list.append(                  number_in_new_exponent_list **  exponent  )\n    return new_exponent_list\n\nAfter black\n\ndef exponent_a_list(numerical_list, exponent=2):\n\n    if type(numerical_list) is not list:\n        raise Exception(\"You are not using a list for the numerical_list input.\")\n\n    new_exponent_list = list()\n    for number_in_new_exponent_list in numerical_list:\n        new_exponent_list.append(number_in_new_exponent_list ** exponent)\n    return new_exponent_list\n\n\nUnlike PEP8, which is a style guide, and flake8 which just tells you where your code needs changes, black is a tool that will format your code.\nblack will mostly follow the PEP8 style guide but with a few differences.\nWhen you use black with your code, you are wiping it of bad formatting like trailing whitespace and poor indentation."
+  }
+]
