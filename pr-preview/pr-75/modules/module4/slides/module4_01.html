@@ -207,7 +207,7 @@
 <li>We have been working with <strong>values</strong>, which are pieces of data that a computer program works with, such as a number or text.</li>
 <li>We have been assigning a lot of these <strong>values</strong> (with the assignment operator <code>=</code>) to <strong>objects</strong>.</li>
 </ul>
-<div id="63fdb1aa" class="cell" data-execution_count="3">
+<div id="b2d3f2bc" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a>pet <span class="op">=</span> <span class="st">'Fido'</span> </span>
 <span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a>pet</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
@@ -215,7 +215,7 @@
 </div>
 </div>
 <p><br></p>
-<div id="2650cad5" class="cell" data-execution_count="4">
+<div id="50b172ab" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> <span class="dv">6</span></span>
 <span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a>age</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
@@ -274,7 +274,7 @@
 <section id="numerical-data-types" class="slide level2">
 <h2>Numerical Data Types</h2>
 <h3 id="int"><strong>Int</strong></h3>
-<div id="069e4541" class="cell" data-execution_count="5">
+<div id="8e844f21" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> <span class="dv">6</span> </span>
 <span id="cb5-2"><a aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(age)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
@@ -283,7 +283,7 @@
 </div>
 <p><br></p>
 <h3 id="float"><strong>Float</strong></h3>
-<div id="43498e59" class="cell" data-execution_count="6">
+<div id="25e7140a" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> <span class="fl">6.0</span></span>
 <span id="cb7-2"><a aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(age)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
@@ -312,7 +312,7 @@
 </section>
 <section id="nan" class="slide level2">
 <h2>NaN</h2>
-<div id="f09ebed1" class="cell" data-execution_count="7">
+<div id="e6bd3f4f" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a aria-hidden="true" tabindex="-1"></a>weather</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
 <div>
@@ -365,15 +365,15 @@
 </div>
 </div>
 <p><br></p>
-<div id="367ddb2b" class="cell" data-execution_count="8">
+<div id="2b7db06e" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a aria-hidden="true" tabindex="-1"></a>nan_value <span class="op">=</span> weather.loc[<span class="dv">2</span>,<span class="st">'31st'</span>]</span>
 <span id="cb10-2"><a aria-hidden="true" tabindex="-1"></a>nan_value</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
-<pre><code>nan</code></pre>
+<pre><code>np.float64(nan)</code></pre>
 </div>
 </div>
 <p><br></p>
-<div id="0b3dc586" class="cell" data-execution_count="9">
+<div id="25f6df5e" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(nan_value)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
 <pre><code>numpy.float64</code></pre>
@@ -399,11 +399,11 @@
 </section>
 <section id="nonetype" class="slide level2">
 <h2>NoneType</h2>
-<div id="20a78812" class="cell" data-execution_count="10">
+<div id="79a0d605" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a aria-hidden="true" tabindex="-1"></a>name_of_bed_monster <span class="op">=</span> <span class="va">None</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><br></p>
-<div id="20f3eec4" class="cell" data-execution_count="11">
+<div id="a6a3e28a" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(name_of_bed_monster)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="11">
 <pre><code>NoneType</code></pre>
@@ -428,14 +428,14 @@
 <section id="booleans" class="slide level2">
 <h2>Booleans</h2>
 <p>The Boolean (<code>bool</code>) type has two values: <strong>True</strong> and <strong>False</strong>.</p>
-<div id="b69f8bef" class="cell" data-execution_count="12">
+<div id="69da1e9f" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(<span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
 <pre><code>bool</code></pre>
 </div>
 </div>
 <p><br></p>
-<div id="cf17c075" class="cell" data-execution_count="13">
+<div id="958c0116" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a aria-hidden="true" tabindex="-1"></a>weather</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="13">
 <div>
@@ -488,7 +488,7 @@
 </div>
 </div>
 <p><br></p>
-<div id="5a6865c1" class="cell" data-execution_count="14">
+<div id="420499dc" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a aria-hidden="true" tabindex="-1"></a>weather[<span class="st">'season'</span>] <span class="op">==</span> <span class="st">'winter'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="14">
 <pre><code>0     True
@@ -522,7 +522,7 @@ Name: season, dtype: bool</code></pre>
 <li>Triple single quotes, e.g., <code>'''Yesterday'''</code></li>
 <li>Triple double quotes, e.g., <code>"""Tomorrow"""</code></li>
 </ul>
-<div id="03e7746b" class="cell" data-execution_count="15">
+<div id="c7ae21cb" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a aria-hidden="true" tabindex="-1"></a>name_of_bed_monster <span class="op">=</span> <span class="st">'Mike Wazowski'</span></span>
 <span id="cb22-2"><a aria-hidden="true" tabindex="-1"></a>name_of_bed_monster</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="15">
@@ -530,7 +530,7 @@ Name: season, dtype: bool</code></pre>
 </div>
 </div>
 <p><br></p>
-<div id="ca428cf2" class="cell" data-execution_count="16">
+<div id="0226f983" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a aria-hidden="true" tabindex="-1"></a>name_of_bed_monster <span class="op">=</span> <span class="st">"Mike Wazowski"</span></span>
 <span id="cb24-2"><a aria-hidden="true" tabindex="-1"></a>name_of_bed_monster</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="16">
@@ -538,7 +538,7 @@ Name: season, dtype: bool</code></pre>
 </div>
 </div>
 <p><br></p>
-<div id="47515769" class="cell" data-execution_count="17">
+<div id="ae35a2d6" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a aria-hidden="true" tabindex="-1"></a>name_of_bed_monster <span class="op">=</span> <span class="st">"""Mike Wazowski"""</span></span>
 <span id="cb26-2"><a aria-hidden="true" tabindex="-1"></a>name_of_bed_monster</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="17">
@@ -563,7 +563,7 @@ Name: season, dtype: bool</code></pre>
 </section>
 <section class="slide level2">
 
-<div id="7bb5d978" class="cell" data-execution_count="18">
+<div id="4fd1f277" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a aria-hidden="true" tabindex="-1"></a>saying <span class="op">=</span> <span class="st">'''Mike Wazowski said: "My name's Mike Wazowski!"'''</span></span>
 <span id="cb28-2"><a aria-hidden="true" tabindex="-1"></a>saying</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="18">
@@ -571,7 +571,7 @@ Name: season, dtype: bool</code></pre>
 </div>
 </div>
 <p><br></p>
-<div id="5baed6f4" class="cell" data-execution_count="19">
+<div id="af73d68a" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a aria-hidden="true" tabindex="-1"></a>missing_bed_monster <span class="op">=</span> <span class="st">''</span></span>
 <span id="cb30-2"><a aria-hidden="true" tabindex="-1"></a>missing_bed_monster</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="19">
@@ -579,7 +579,7 @@ Name: season, dtype: bool</code></pre>
 </div>
 </div>
 <p><br></p>
-<div id="004e550b" class="cell" data-execution_count="20">
+<div id="aa8a2684" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(missing_bed_monster)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="20">
 <pre><code>str</code></pre>
@@ -603,13 +603,13 @@ Name: season, dtype: bool</code></pre>
 <section id="string-verbs" class="slide level2">
 <h2>String Verbs</h2>
 <p>There are <a href="https://docs.python.org/3/library/stdtypes.html#string-methods" target="_blank">A variety of different methods</a> to transform strings or extract information from them.</p>
-<div id="d2c7ab9b" class="cell" data-execution_count="21">
+<div id="7251c091" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a aria-hidden="true" tabindex="-1"></a>name_of_bed_monster <span class="op">=</span> <span class="st">'Mike Wazowski'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li><code>len()</code>:</li>
 </ul>
-<div id="c330e121" class="cell" data-execution_count="22">
+<div id="c1383eda" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(name_of_bed_monster)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="22">
 <pre><code>13</code></pre>
@@ -618,7 +618,7 @@ Name: season, dtype: bool</code></pre>
 <ul>
 <li><code>.upper()</code>:</li>
 </ul>
-<div id="7e99c3d9" class="cell" data-execution_count="23">
+<div id="d0d6aa3c" class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a aria-hidden="true" tabindex="-1"></a>name_of_bed_monster.upper()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="23">
 <pre><code>'MIKE WAZOWSKI'</code></pre>
@@ -627,7 +627,7 @@ Name: season, dtype: bool</code></pre>
 <ul>
 <li><code>.lower()</code>:</li>
 </ul>
-<div id="459c3980" class="cell" data-execution_count="24">
+<div id="73a9b932" class="cell" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a aria-hidden="true" tabindex="-1"></a>name_of_bed_monster.lower()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="24">
 <pre><code>'mike wazowski'</code></pre>
@@ -654,18 +654,18 @@ Name: season, dtype: bool</code></pre>
 </section>
 <section class="slide level2">
 
-<div id="e56f9ecc" class="cell" data-execution_count="25">
+<div id="e927f507" class="cell" data-execution_count="25">
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a aria-hidden="true" tabindex="-1"></a>name_of_bed_monster <span class="op">=</span> <span class="st">'Mike Wazowski'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><br></p>
-<div id="9b0572a2" class="cell" data-execution_count="26">
+<div id="12adbf10" class="cell" data-execution_count="26">
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a aria-hidden="true" tabindex="-1"></a>name_of_bed_monster.count(<span class="st">'k'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="26">
 <pre><code>2</code></pre>
 </div>
 </div>
 <p><br></p>
-<div id="e88ac91e" class="cell" data-execution_count="27">
+<div id="0fc8f54e" class="cell" data-execution_count="27">
 <div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a aria-hidden="true" tabindex="-1"></a>name_of_bed_monster.count(<span class="st">'K'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="27">
 <pre><code>0</code></pre>
@@ -691,7 +691,7 @@ Name: season, dtype: bool</code></pre>
 <ul>
 <li><code>int</code> to <code>float</code>:</li>
 </ul>
-<div id="2b2631d5" class="cell" data-execution_count="28">
+<div id="012631e4" class="cell" data-execution_count="28">
 <div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a aria-hidden="true" tabindex="-1"></a>number_of_floating_balloons <span class="op">=</span> <span class="bu">float</span>(<span class="dv">5</span>)</span>
 <span id="cb46-2"><a aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(number_of_floating_balloons)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="28">
@@ -701,7 +701,7 @@ Name: season, dtype: bool</code></pre>
 <ul>
 <li>An <code>int</code> to a <code>str</code>:</li>
 </ul>
-<div id="4c4bb3bb" class="cell" data-execution_count="29">
+<div id="91fa9451" class="cell" data-execution_count="29">
 <div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a aria-hidden="true" tabindex="-1"></a>number_of_balloon_strings <span class="op">=</span> <span class="bu">str</span>(<span class="dv">5</span>)</span>
 <span id="cb48-2"><a aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(number_of_balloon_strings)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="29">
@@ -711,7 +711,7 @@ Name: season, dtype: bool</code></pre>
 <ul>
 <li><code>float</code> to an <code>int</code> (it will round down to the nearest full integer).</li>
 </ul>
-<div id="28e7ba1f" class="cell" data-execution_count="30">
+<div id="632be991" class="cell" data-execution_count="30">
 <div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a aria-hidden="true" tabindex="-1"></a>number_of_balloons <span class="op">=</span> <span class="bu">int</span>(<span class="fl">4.99</span>)</span>
 <span id="cb50-2"><a aria-hidden="true" tabindex="-1"></a>number_of_balloons</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="30">
@@ -736,28 +736,28 @@ Name: season, dtype: bool</code></pre>
 </section>
 <section class="slide level2">
 
-<div id="39cf933b" class="cell" data-execution_count="31">
+<div id="ebf35f58" class="cell" data-execution_count="31">
 <div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a aria-hidden="true" tabindex="-1"></a><span class="bu">bool</span>(<span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="31">
 <pre><code>False</code></pre>
 </div>
 </div>
 <p><br></p>
-<div id="13c67344" class="cell" data-execution_count="32">
+<div id="d7cf401b" class="cell" data-execution_count="32">
 <div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a aria-hidden="true" tabindex="-1"></a><span class="bu">bool</span>(<span class="fl">5.0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="32">
 <pre><code>True</code></pre>
 </div>
 </div>
 <p><br></p>
-<div id="cd497db3" class="cell" data-execution_count="33">
+<div id="5a219b97" class="cell" data-execution_count="33">
 <div class="sourceCode cell-code" id="cb56"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a aria-hidden="true" tabindex="-1"></a><span class="bu">int</span>(<span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="33">
 <pre><code>0</code></pre>
 </div>
 </div>
 <p><br></p>
-<div id="096855a5" class="cell" data-execution_count="34">
+<div id="d2eedc4e" class="cell" data-execution_count="34">
 <div class="sourceCode cell-code" id="cb58"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a aria-hidden="true" tabindex="-1"></a><span class="bu">float</span>(<span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="34">
 <pre><code>1.0</code></pre>
@@ -781,21 +781,21 @@ Name: season, dtype: bool</code></pre>
 </section>
 <section class="slide level2">
 
-<div id="15f42747" class="cell" data-execution_count="35">
+<div id="edb3216d" class="cell" data-execution_count="35">
 <div class="sourceCode cell-code" id="cb60"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a aria-hidden="true" tabindex="-1"></a><span class="bu">str</span>(<span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="35">
 <pre><code>'True'</code></pre>
 </div>
 </div>
 <p><br></p>
-<div id="0605a535" class="cell" data-execution_count="36">
+<div id="275727ef" class="cell" data-execution_count="36">
 <div class="sourceCode cell-code" id="cb62"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb62-1"><a aria-hidden="true" tabindex="-1"></a><span class="bu">str</span>(<span class="va">None</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="36">
 <pre><code>'None'</code></pre>
 </div>
 </div>
 <p><br></p>
-<div id="6c0de87f" class="cell" data-execution_count="37">
+<div id="4fc4c6f8" class="cell" data-execution_count="37">
 <div class="sourceCode cell-code" id="cb64"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb64-1"><a aria-hidden="true" tabindex="-1"></a><span class="bu">str</span>(<span class="fl">3.2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="37">
 <pre><code>'3.2'</code></pre>
@@ -818,28 +818,28 @@ Name: season, dtype: bool</code></pre>
 </section>
 <section class="slide level2">
 
-<div id="96f08ad1" class="cell" data-execution_count="38">
+<div id="fcb3f5a8" class="cell" data-execution_count="38">
 <div class="sourceCode cell-code" id="cb66"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb66-1"><a aria-hidden="true" tabindex="-1"></a><span class="bu">float</span>(<span class="st">'0'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="38">
 <pre><code>0.0</code></pre>
 </div>
 </div>
 <p><br></p>
-<div id="5d88d595" class="cell" data-execution_count="39">
+<div id="c5430c1e" class="cell" data-execution_count="39">
 <div class="sourceCode cell-code" id="cb68"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb68-1"><a aria-hidden="true" tabindex="-1"></a><span class="bu">bool</span>(<span class="st">'True'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="39">
 <pre><code>True</code></pre>
 </div>
 </div>
 <p><br></p>
-<div id="02338814" class="cell" data-execution_count="40">
+<div id="58f42dfc" class="cell" data-execution_count="40">
 <div class="sourceCode cell-code" id="cb70"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb70-1"><a aria-hidden="true" tabindex="-1"></a><span class="bu">bool</span>(<span class="st">'False'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="40">
 <pre><code>True</code></pre>
 </div>
 </div>
 <p><br></p>
-<div id="a9f66ded" class="cell" data-execution_count="41">
+<div id="a6647e6a" class="cell" data-execution_count="41">
 <div class="sourceCode cell-code" id="cb72"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb72-1"><a aria-hidden="true" tabindex="-1"></a><span class="bu">bool</span>(<span class="st">'0'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="41">
 <pre><code>True</code></pre>
@@ -863,14 +863,14 @@ Name: season, dtype: bool</code></pre>
 </section>
 <section class="slide level2">
 
-<div id="ad47520a" class="cell" data-execution_count="42">
+<div id="b6e93631" class="cell" data-execution_count="42">
 <div class="sourceCode cell-code" id="cb74"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb74-1"><a aria-hidden="true" tabindex="-1"></a><span class="bu">bool</span>(<span class="st">'Hello'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="42">
 <pre><code>True</code></pre>
 </div>
 </div>
 <p><br></p>
-<div id="e14256bc" class="cell" data-execution_count="43">
+<div id="56ab6cad" class="cell" data-execution_count="43">
 <div class="sourceCode cell-code" id="cb76"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb76-1"><a aria-hidden="true" tabindex="-1"></a><span class="bu">bool</span>(<span class="st">''</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="43">
 <pre><code>False</code></pre>
@@ -899,7 +899,7 @@ Detailed traceback:
 </section>
 <section class="slide level2">
 
-<div id="8e7e72bd" class="cell" data-execution_count="44">
+<div id="57ba7b23" class="cell" data-execution_count="44">
 <div class="sourceCode cell-code" id="cb80"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb80-1"><a aria-hidden="true" tabindex="-1"></a><span class="bu">bool</span>(<span class="va">None</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="44">
 <pre><code>False</code></pre>
