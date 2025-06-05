@@ -203,7 +203,7 @@
 </section>
 <section id="cereal-data" class="slide level2">
 <h2>Cereal Data</h2>
-<div id="43cbea9e" class="cell" data-execution_count="2">
+<div id="784946ca" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a>  </span>
 <span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a>cereal <span class="op">=</span> pd.read_csv(<span class="st">'data/cereal.csv'</span>)</span>
@@ -335,7 +335,7 @@
 </section>
 <section class="slide level2">
 
-<div id="17417364" class="cell" data-execution_count="4">
+<div id="8cb35804" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a>cereal.head(<span class="dv">15</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <div>
@@ -574,7 +574,7 @@
 </section>
 <section class="slide level2">
 
-<div id="85cbea9e" class="cell" data-execution_count="5">
+<div id="7156b50f" class="cell" data-execution_count="5">
 <div class="cell-output cell-output-display" data-execution_count="5">
 <div>
 <style scoped="">
@@ -810,7 +810,7 @@
 </section>
 <section class="slide level2">
 
-<div id="4fe0f118" class="cell" data-execution_count="6">
+<div id="233d48f8" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a>cereal.loc[<span class="dv">5</span>:<span class="dv">10</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <div>
@@ -940,7 +940,7 @@
 </section>
 <section class="slide level2">
 
-<div id="eb605540" class="cell" data-execution_count="7">
+<div id="dc789ff2" class="cell" data-execution_count="7">
 <div class="cell-output cell-output-display" data-execution_count="7">
 <div>
 <style scoped="">
@@ -1052,7 +1052,7 @@
 </div>
 </div>
 </div>
-<div id="e7c6f8ea" class="cell" data-execution_count="8">
+<div id="e81fc9fa" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a>cereal.loc[<span class="dv">5</span>:<span class="dv">10</span>, <span class="st">'calories'</span>:<span class="st">'fiber'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
 <div>
@@ -1138,7 +1138,7 @@
 </div>
 <p><br></p>
 <p>The general format to slice both rows and columns together looks like this:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a>`cereal.loc[<span class="st">'row name start'</span>:<span class="st">'row name end'</span>, <span class="st">'column name start'</span>:<span class="st">'column name end'</span>]`</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a>cereal.loc[<span class="st">'row name start'</span>:<span class="st">'row name end'</span>, <span class="st">'column name start'</span>:<span class="st">'column name end'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <aside class="notes">
 <p>What if we only wanted certain columns now?</p>
 <p>Perhaps we were only interested in the <code>calories</code> to <code>fiber</code> columns of the “Apple Cinnamon Cheerios” to “Cap’n’Crunch” rows?</p>
@@ -1160,7 +1160,7 @@
 </section>
 <section class="slide level2">
 
-<div id="a9f863ff" class="cell" data-execution_count="9">
+<div id="7b4dc7fe" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a>cereal.loc[:<span class="dv">6</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
 <div>
@@ -1286,7 +1286,7 @@
 </div>
 </div>
 <p><br></p>
-<div id="368f06e8" class="cell" data-execution_count="10">
+<div id="121d13b9" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a>cereal.loc[:<span class="dv">6</span>, <span class="st">'sugars'</span>:]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="10">
 <div>
