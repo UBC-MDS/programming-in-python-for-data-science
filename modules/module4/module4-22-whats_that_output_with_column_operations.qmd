@@ -1,0 +1,74 @@
+---
+format: html
+---
+
+<script src='../../src/quiz.js'></script>
+
+# 6.1. Exercises
+
+## What's That Output? With Column Operations
+
+Here is my dataframe named `fruit_salad`:    
+
+|    | name         | colour   | location   | seed   | shape   | sweetness   |   water-content |   weight |
+|---:|:-------------|:---------|:-----------|:-------|:--------|:------------|----------------:|---------:|
+|  0 | apple        | red      | canada     | True   | round   | True        |              84 |      100 |
+|  1 | banana       | yellow   | mexico     | False  | long    | True        |              75 |      120 |
+|  2 | cantaloupe   | orange   | spain      | True   | round   | True        |              90 |     1360 |
+|  3 | dragon-fruit | megenta  | china      | True   | round   | False       |              96 |      600 |
+|  4 | elderberry   | purple   | austria    | False  | round   | True        |              80 |        5 |
+|  5 | fig          | purple   | turkey     | False  | oval    | False       |              78 |       40 |
+|  6 | guava        | green    | mexico     | True   | oval    | True        |              83 |      450 |
+|  7 | huckleberry  | blue     | canada     | True   | round   | True        |              73 |        5 |
+|  8 | kiwi         | brown    | china      | True   | round   | True        |              80 |       76 |
+|  9 | lemon        | yellow   | mexico     | False  | oval    | False       |              83 |       65 |
+
+<br>
+
+<div id='mcq1'></div>
+<script>
+    generateQuiz(
+        'mcq1',
+        'Question 1',
+        'What would be the output of <code>df[’seed’].sum()</code>',
+        {
+        '<code>0</code>': 'Can we sum up a column of dtype <code>bool</code>? What values does it sum up?',
+        '<code>1</code>': 'Can we sum up a column of dtype <code>bool</code>? What values does it sum up?',
+        '<code>6</code>': '',
+        '<code>Error</code>': 'Can we sum up a column of dtype <code>bool</code>? What values does it sum up?',
+        },
+        '<code>6</code>',
+    );
+</script>
+
+<div id='mcq2'></div>
+<script>
+    generateQuiz(
+        'mcq2',
+        'Question 2',
+        'What would be the output of <code>df.loc[:,[’seed’, ’sweetness’]].sum(axis=1)</code>',
+        {
+        'A single value': '<code>axis=1</code> means we can sum up row-wise.',
+        '2 values, one for each column': '<code>axis=1</code> means we can sum up row-wise.',
+        'A value for each row': 'Well done!',
+        '<code>Error</code>': '<code>axis=1</code> means we can sum up row-wise. We are calculating the number of <code>True</code> values total for <code>Seed</code> and <code>Sweetness</code>.',
+        },
+        'A value for each row',
+    );
+</script>
+
+<div id='mcq3'></div>
+<script>
+    generateQuiz(
+        'mcq3',
+        'Question 3',
+        'What would be the output of <code>df[’shape’].mean()</code>',
+        {
+        '<code>round</code>': '<code>axis=1</code> means we can sum up row-wise.',
+        '<code>13.4</code>': '<code>axis=1</code> means we can sum up row-wise.',
+        'All the values concatenated together': '',
+        '<code>Error</code>': 'We cannot take the mean of a column of dtype <code>object</code>.',
+        },
+        '<code>Error</code>',
+    );
+</script>
