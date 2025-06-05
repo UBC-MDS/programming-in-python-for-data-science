@@ -1,0 +1,71 @@
+---
+format: revealjs
+title: Selecting Using .loc[]
+title-slide-attributes:
+  data-notes: |
+---
+
+```{python}
+#  | echo: false
+%run src/utils.py
+```
+
+
+## Unordered Indexing
+
+```{python}
+# | include: false
+cereal = pd.read_csv('data/cereal.csv')
+```
+
+```{python}
+cereal
+```
+
+
+:::{.notes} 
+Here we have our trusty `cereal` dataframe.
+
+What would we do if we wanted to select columns and rows that don't fall consecutively or if we wanted to rearrange them?
+:::
+
+---
+
+```{python}
+cereal.loc[[13,73,75], ['name', 'type', 'sugars', 'rating']]
+```
+
+<br>
+
+```{python}
+cereal.loc[[75, 73, 13], ['name', 'type', 'rating', 'sugars']]
+```
+
+:::{.notes} 
+Let's say we want only the rows labelled:
+
+- `Clusters` (13)
+- `Trix` (73), and
+- `Wheaties` (75) 
+
+And the columns:
+
+- `name`
+- `type`
+- `sugars`, and 
+- `rating`
+
+How would we obtain them?
+
+We need to specify each column and row label that we want between square brackets `[]`, that follow `.loc[]` and we separate the items that we list in the square brackets with commas.
+
+
+What if we wanted the rows to be in the order `Wheaties` (75), `Trix` (73) and `Clusters` (13) and columns in the order `name`, `type`, `rating` and `sugars`.
+
+How would we obtain that?    
+
+We would just have to rearranging the order in which we list our rows and columns.
+:::
+
+
+# Let’s apply what we learned!
