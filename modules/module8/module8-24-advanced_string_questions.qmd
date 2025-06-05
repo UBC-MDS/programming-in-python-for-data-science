@@ -1,0 +1,196 @@
+---
+format: live-html
+---
+
+<script src='../../src/quiz.js'></script>
+
+# 6.1. Exercises
+
+## Advanced String Questions
+
+<div id='mcq1'></div>
+<script>
+    generateQuiz(
+        'mcq1',
+        'Question 1',
+        'Which of the following would you use to replace string patterns with another string within a dataframe column?',
+        {
+        '<code>.replace()</code>': 'This would result in an error.',
+        '<code>str.replace()</code>': 'Way to go!',
+        '<code>.contains()</code>': 'This checks if a substring is contained in a larger string.',
+        '<code>.str.contains()</code>': 'Unfortunately this is not the right verb in this case.',
+        },
+        '<code>str.replace()</code>',
+    );
+</script>
+
+<div id='mcq2'></div>
+<script>
+    generateQuiz(
+        'mcq2',
+        'Question 2: Is the following statement True or False?',
+        'The <code>.contains()</code> verb will output a new dataframe that matches any values in a specific column and replaces it with your desired value.',
+        {
+        'True': '<code>.contains()</code> actually will output a Boolean Series based on whether a given pattern is contained within a string of a Series.',
+        'False': 'Great! You knew that it outputs a Boolean Series! The value replacement is using <code>.loc[]</code>.',
+        },
+        'False',
+    );
+</script>
+
+## Strings
+
+```out
+           name   colour location   seed  shape  sweetness  water_content  weight
+0         apple      red   canada   True  round       True             84     100
+1        banana   yellow   mexico  False   long       True             75     120
+2    cantaloupe   orange    spain   True  round       True             90    1360
+3  dragon-fruit  magenta    china   True  round      False             96     600
+4    elderberry   purple  austria  False  round       True             80       5
+5           fig   purple   turkey  False   oval      False             78      40
+6         guava    green   mexico   True   oval       True             83     450
+7   huckleberry     blue   canada   True  round       True             73       5
+8          kiwi    brown    china   True  round       True             80      76
+9         lemon   yellow   mexico  False   oval      False             83      65
+
+```
+
+![](../../static/module8/output25.png){fig-align="center" fig-alt="404 image" width="80%"}
+
+<div id='mcq3'></div>
+<script>
+    generateQuiz(
+        'mcq3',
+        'Question 1',
+        'Given the dataframe named <code>fruit_salad</code>,  which code would produce the above dataframe with the new column <code>berry</code>?',
+        {
+        '<code>fruit_salad.assign(name = fruit_salad[’name’].contains(’berry’))</code>': 'This doesn’t contain the necessary <code>str.</code> and it appears to edit the <code>name</code> column.',
+        '<code>fruit_salad.assign(name = fruit_salad[’name’].str.contains(’berry’).replace(True))</code>': 'Not the correct way of making a new column.',
+        '<code>fruit_salad.assign(berry = fruit_salad[’name’].str.replace(’berry’, True))</code>': 'This is not the correct syntax for this output.',
+        '<code>fruit_salad.assign(berry = fruit_salad[’name’].str.contains(’berry’))</code>': 'Nice work.',
+        },
+        '<code>fruit_salad.assign(berry = fruit_salad[’name’].str.contains(’berry’))</code>',
+    );
+</script>
+
+
+## Processing Strings in a Dataframe
+
+**Instructions:**    
+Running a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes. 
+
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
+
+_**Make sure you remove the hash (`#`) symbol in the coding portions of this question.  We have commented them so that the line won't execute and you can test your code after each step.**_
+
+
+Use the `lego` dataframe to help answer the next question.
+
+```{pyodide}
+import pandas as pd
+
+# The data
+lego = pd.read_csv('data/lego-sets.csv')
+lego
+```
+
+Let's practice using the verbs we learned from the lesson to process a string column in our Lego dataset. 
+
+**Tasks:**
+
+- Convert the `name` column in the `lego` dataset to lowercase and overwrite the dataframe by saving it as an object named `lego`.
+- Filter the dataset to find all the Lego sets that contain `"weetabix"` in the `name` column.
+- Save this as an object named `lego_weetabix`.
+- Replace the word` "weetabix`" in the `name` column of the `lego_wetabix` dataframe with the string `"cereal-brand"`.
+- Save this in an object called `lego_cereal`.
+- If the row contains the word `"promotional"` in the `name` column, change the entire value to `"cereal-brand freebie"`.
+- Display `lego_cereal`.
+
+```{pyodide}
+#| exercise: processing_strings_in_a_dataframe
+import pandas as pd
+
+lego = pd.read_csv('data/lego-sets.csv')
+
+# Convert the name column in the lego dataset to lowercase and
+# overwrite the dataframe by saving it as an object named lego 
+____ = ____
+____
+
+# Filter the dataset to find all the lego sets that contain "weetabix"  in the name column
+# Save this as a object named lego_weetabix
+# ____ = ____
+# ____
+
+# Replace the word "weetabix" in the name column of the lego_wetabix dataframe
+# with the string "cereal-brand"
+# Save this in an object called lego_cereal
+# ____ = ____
+
+# If the row contains the word "promotional" in the name column,
+# change the entire value to "cereal-brand freebie"
+# ____ = ____
+
+# Display lego_cereal
+# ____
+```
+
+```{pyodide}
+#| exercise: processing_strings_in_a_dataframe
+#| check: true
+from src.utils import print_correct_msg
+
+assert isinstance(result, pd.DataFrame), "We are expecting a dataframe."
+assert any("cereal-brand" in s for s in list(result['name'])), "Make sure you are replacing 'weetabix' with 'cereal-brand'."
+assert not any("promotional" in s for s in list(result['name'])), "Make sure you are replacing 'promotional' with 'cereal-brand freebie'."
+print_correct_msg()
+```
+
+:::: { .hint exercise="processing_strings_in_a_dataframe"}
+::: { .callout-note collapse="false"}
+
+## Hint 1
+
+- Are you using `.assign()` and `.lower()` to convert the name column to lowercase?
+- Are you using `str.contains('weetabix')` to filter all the rows? 
+- You should be using `assign()` with `str.replace('weetabix', 'cereal-brand')` to replace "weetabix".
+- You should be using  `.loc[]` and `str.contains('promotional')` (and a single `=`) to assign new row values.
+
+:::
+::::
+
+:::: { .solution exercise="processing_strings_in_a_dataframe" }
+::: { .callout-tip collapse="false"}
+
+## Fully worked solution:
+
+```{pyodide}
+import pandas as pd
+
+lego = pd.read_csv('data/lego-sets.csv')
+
+# Convert the name column in the lego dataset to lowercase and
+# overwrite the dataframe by saving it as an object named lego 
+lego = lego.assign(name = lego['name'].str.lower())
+lego
+
+# Filter the dataset to find all the lego sets that contain "weetabix"  in the name column
+# Save this as a object named lego_weetabix
+lego_weetabix = lego[lego['name'].str.contains('weetabix')]
+lego_weetabix
+
+# Replace the word "weetabix" in the name column of the lego_wetabix dataframe
+# with the string "cereal-brand"
+# Save this in an object called lego_cereal
+lego_cereal = lego_weetabix.assign(name = lego_weetabix['name'].str.replace('weetabix', 'cereal-brand'))
+
+# If the row contains the word "promotional" in the name column,
+# change the entire value to "cereal-brand freebie"
+lego_cereal.loc[lego_cereal['name'].str.contains('promotional'), 'name'] = 'cereal-brand freebie'
+
+# Display lego_cereal
+lego_cereal
+```
+
+:::
+::::

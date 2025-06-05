@@ -1,0 +1,259 @@
+---
+format: live-html
+---
+
+<script src='../../src/quiz.js'></script>
+
+# 1.1. Exercises
+
+## NumPy and Array Questions
+
+<div id='mcq1'></div>
+<script>
+    generateQuiz(
+        'mcq1',
+        'Question 1',
+        'Which of the following statements is correct?',
+        {
+        'Pandas is built using NumPy': '',
+        'NumPy is built using pandas': 'NumPy arrays are the building blocks of Pandas dataframes',
+        },
+        'Pandas is built using NumPy',
+    );
+</script>
+
+<div id='mcq2'></div>
+<script>
+    generateQuiz(
+        'mcq2',
+        'Question 2',
+        'Which of the following statements is <b>False</b>?',
+        {
+        'NumPy arrays can be multi-dimensional': 'This is very much true and a very helpful feature.',
+        'NumPy contains constants and mathematical functions': 'This is another benefit of NumPy as it contains multiple other functions and constants.',
+        'NumPy arrays can contain multiple data types': 'NumPy arrays must have elements with a homogenous data type.',
+        '<code>numpy.ndarray</code> is a data type': 'We saw that <code>array</code> is a data type in the slides.',
+        },
+        'NumPy arrays can contain multiple data types',
+    );
+</script>
+
+```python
+array([ 0, 5, 10, 15, 20, 25, 30])
+```
+
+<div id='mcq3'></div>
+<script>
+    generateQuiz(
+        'mcq3',
+        'Question 3',
+        'Which verbs would I use to make the above array?',
+        {
+        '<code>np.linspace(0, 30, 5)</code>': 'This would only produce 5 values (all equally spaced from 0 to 30).',
+        '<code>np.zeros(7)</code>': 'This gives an array with only <code>0</code> elements.',
+        '<code>np.ones(7)</code>': 'This gives an array with only <code>1</code> elements.',
+        '<code>np.arange(0, 35, 5)</code>': '',
+        },
+        '<code>np.arange(0, 35, 5)</code>',
+    );
+</script>
+
+## More NumPy
+
+<div id='mcq4'></div>
+<script>
+    generateQuiz(
+        'mcq4',
+        'Question 1',
+        'Look at the <a href="https://numpy.org/doc/stable/reference/routines.math.html" target="_blank">NumPy documentation</a> and identify  which of the following is <b>not</b> an existing NumPy function? ',
+        {
+        '<code>np.degrees()</code>': 'Are you looking at the <a href="https://numpy.org/doc/stable/reference/routines.math.html" target="_blank">NumPy documentation</a>?',
+        '<code>np.cross()</code>': 'Are you looking at the <a href="https://numpy.org/doc/stable/reference/routines.math.html" target="_blank">NumPy documentation</a>?',
+        '<code>np.interp()</code>': 'Are you looking at the <a href="https://numpy.org/doc/stable/reference/routines.math.html" target="_blank">NumPy documentation</a>?',
+        '<code>np.reticulate()</code>': '',
+        },
+        '<code>np.reticulate()</code>',
+    );
+</script>
+
+
+## NumPy Practice
+
+**Instructions:**    
+Running a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes. 
+
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
+
+_**Make sure you remove the hash (`#`) symbol in the coding portions of this question.  We have commented them so that the line won't execute and you can test your code after each step.**_
+
+Let's explore how Python compares lists and arrays. 
+
+**Tasks:**
+
+- Create 2 lists of the same length and save each as objects named  `a_list` and `b_list`.
+- Using Boolean operators, what is outputted when you test to see if they are equal?
+
+```{pyodide}
+#| setup: true
+#| exercise: numpy_practice_list
+import pandas as pd
+```
+
+```{pyodide}
+#| exercise: numpy_practice_list
+import numpy as np
+
+# Create 2 lists of the same length, but containing different elements
+# Save each as objects named a_list and b_list
+____
+
+____
+
+
+# Using boolean operators, what is outputted when you test to see if they are equal? 
+____
+```
+
+```{pyodide}
+#| exercise: numpy_practice_list
+#| check: true
+from src.utils import print_correct_msg
+
+assert result == False, "Do your lists contain different elements?"
+print_correct_msg()
+```
+
+:::: { .hint exercise="numpy_practice_list"}
+::: { .callout-note collapse="false"}
+
+## Hint 1
+
+- Are you using `[]` or `list()` notation?
+- Are you using `==` to check if the lists are equal?
+
+:::
+::::
+
+:::: { .solution exercise="numpy_practice_list" }
+::: { .callout-tip collapse="false"}
+
+## Fully worked solution:
+
+```{pyodide}
+import numpy as np
+
+# Create 2 lists of the same length, but containing different elements
+# Save each as objects named a_list and b_list
+a_list = [1, 2, 5, 7]
+
+b_list = [2, 4, 7, 7]
+
+
+# Using boolean operators, what is outputted when you test to see if they are equal?
+a_list == b_list
+```
+
+:::
+::::
+
+<br>
+
+<div id='mcq5'></div>
+<script>
+    generateQuiz(
+        'mcq5',
+        'Question 1',
+        'What does the above code output?',
+        {
+        'A single Boolean (Either <code> True</code> or <code>False</code>)': 'This is checking if the lists are equal.',
+        'A list containing a Boolean value for each pair of elements': 'Use the cell above to help yourself out.',
+        },
+        'A single Boolean (Either <code> True</code> or <code>False</code>)',
+    );
+</script>
+
+<br>
+
+Now let's do the same exercises using arrays.
+
+**Tasks:**
+
+- Create 2 arrays of the same length and save each as objects named `a_array` and `b_array`. 
+- Using Boolean operators, what is outputted when you test to see if they are equal? 
+
+```{pyodide}
+#| exercise: numpy_practice_array
+import numpy as np
+
+# Create 2 arrays of the same length, but containing different elements
+# Save each as objects named a_array and b_array
+____
+
+____
+
+
+# Using boolean operators, what is outputted when you test to see if they are equal?
+____
+```
+
+```{pyodide}
+#| exercise: numpy_practice_array
+#| check: true
+import numpy as np
+from src.utils import print_correct_msg
+
+assert isinstance(result, np.ndarray), "Are you creating an array?"
+assert all(isinstance(x, np.bool) for x in result), "Are you using `==` to check if the arrays are equal?"
+print_correct_msg()
+```
+
+:::: { .hint exercise="numpy_practice_array"}
+::: { .callout-note collapse="false"}
+
+## Hint 1
+
+- Are you using `np.array()` with parentheses to make your arrays?
+- Are you using `==` to check if the arrays are equal?
+
+:::
+::::
+
+:::: { .solution exercise="numpy_practice_array" }
+::: { .callout-tip collapse="false"}
+
+## Fully worked solution:
+
+```{pyodide}
+import numpy as np
+
+# Create 2 arrays of the same length, but containing different elements
+# Save each as objects named a_array and b_array
+a_array = np.array((1, 2, 5, 7))
+
+b_array = np.array((2, 4, 7, 7))
+
+
+# Using boolean operators, what is outputted when you test to see if they are equal?
+a_array == b_array
+```
+
+:::
+::::
+
+<br>
+
+<div id='mcq6'></div>
+<script>
+    generateQuiz(
+        'mcq6',
+        'Question 2',
+        'What does the above code output?',
+        {
+        'A single Boolean (Either <code> True</code> or <code>False</code>)': 'Use the cell above to help yourself out.',
+        'An array containing a Boolean value for each pair of elements': 'NumPy performs the operation element-wise and compares the elements that share the same index location.',
+        },
+        'An array containing a Boolean value for each pair of elements',
+    );
+</script>
+
+This is an example of how useful arrays can be when doing numerical computation! To compare each element in a list would take more code and time for the same result.
