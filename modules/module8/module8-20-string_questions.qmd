@@ -1,0 +1,192 @@
+---
+format: live-html
+---
+
+<script src='../../src/quiz.js'></script>
+
+# 5.1. Exercises
+
+## String Questions
+
+<div id='mcq1'></div>
+<script>
+    generateQuiz(
+        'mcq1',
+        'Question 1',
+        'What must we add to our string functions when processing columns of dtype <code>object</code>?',
+        {
+        '<code>.ts</code>': 'We use this for functions that work with time stamps',
+        '<code>.str</code>': 'Great work!',
+        '<code>.st</code>': 'this is not quite right',
+        },
+        '<code>.str</code>',
+    );
+</script>
+
+<div id='mcq2'></div>
+<script>
+    generateQuiz(
+        'mcq2',
+        'Question 2',
+        'Which function will remove leading or trailing characters from a string?',
+        {
+        '<code>.split()</code>': 'This will produce a numerical value, not the month name.',
+        '<code>.strip()</code>': '',
+        '<code>.string()</code>': 'This isn’t a possible method.',
+        '<code>.rstrip()</code>': 'This function removes the trailing character specified in the argument.',
+        },
+        '<code>.strip()</code>',
+    );
+</script>
+
+## Identify the String Code
+
+```out
+           name   colour location   seed  shape  sweetness  water_content  weight
+0         apple      red   canada   True  round       True             84     100
+1        banana   yellow   mexico  False   long       True             75     120
+2    cantaloupe   orange    spain   True  round       True             90    1360
+3  dragon-fruit  magenta    china   True  round      False             96     600
+4    elderberry   purple  austria  False  round       True             80       5
+5           fig   purple   turkey  False   oval      False             78      40
+6         guava    green   mexico   True   oval       True             83     450
+7   huckleberry     blue   canada   True  round       True             73       5
+8          kiwi    brown    china   True  round       True             80      76
+9         lemon   yellow   mexico  False   oval      False             83      65
+
+```
+
+![](../../static/module8/output.png){fig-align="center" fig-alt="404 image" width="80%"}
+
+<div id='mcq3'></div>
+<script>
+    generateQuiz(
+        'mcq3',
+        'Question 1',
+        'Given the dataframe named <code>fruit_salad</code>, which code would produce the above output? <i>Hint: Look at the <code>location</code> column.</i>',
+        {
+        '<code>fruit_salad.assign(location=fruit_salad[\'location\'].str.capitalize())</code>': 'Way to go!',
+        '<code>fruit_salad.assign(location=fruit_salad[\'location\'].capitalize())</code>': 'This would result in an error.',
+        '<code>fruit_salad.assign(location=fruit_salad[\'shape\'].str.upper())</code>': 'The <code>shape</code> column doesn’t look uppercase to me.',
+        '<code>fruit_salad.assign(location=fruit_salad[\'shape\'].upper()</code>': 'You seem to be missing an important part of you code.',
+        },
+        '<code>fruit_salad.assign(location=fruit_salad[\'location\'].str.capitalize())</code>',
+    );
+</script>
+
+
+## Practice Handling Strings
+
+**Instructions:**    
+Running a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes. 
+
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
+
+_**Make sure you remove the hash (`#`) symbol in the coding portions of this question.  We have commented them so that the line won't execute and you can test your code after each step.**_
+
+Use the output of the following code chunk to help answer the next question.
+
+```{pyodide}
+import pandas as pd
+
+# The data
+hockey_players = pd.read_csv('data/canucks.csv')
+hockey_players
+```
+
+Let's transform some of the columns in your canucks dataset. Let's also see how many of the players have multiple `T`'s in their name. 
+
+**Tasks:**
+
+- Convert the `Position` and `Country` columns into uppercase and save this in a dataframe named `canucks_upper`.
+- Create a new column in the `canucks_upper` dataframe named `number_ts` where you count the total number of times the letter T (lowercase or uppercase) appears in their name.
+- Save this dataframe named as `canucks_upper_ts`.
+- How many players have multiple T's in their name? 
+
+```{pyodide}
+#| exercise: practice_handling_strings
+import pandas as pd
+
+canucks = pd.read_csv('data/canucks.csv', parse_dates=['Birth Date'], date_format="%d-%b-%y")
+
+# Convert the Position and Country columns into uppercase 
+# Save this in a dataframe named canucks_upper
+# ____ = ____
+
+# Create a new column in the canucks_upper dataframe named number_ts
+# where you count the total number of times the letter T
+# (lowercase or uppercase) appears in their name
+# Save this  dataframe named as canucks_upper_ts
+# ____ = ____
+
+# How many players have more than 1 letter T in their name? 
+# ____ = ____
+```
+
+```{pyodide}
+#| exercise: practice_handling_strings
+#| check: true
+from src.utils import print_correct_msg
+
+assert isinstance(result, int), "Are you calculating the number of players having more than 1 letter T in their name?"
+assert result == 6, "Check your calculation."
+print_correct_msg()
+```
+
+:::: { .hint exercise="practice_handling_strings"}
+::: { .callout-note collapse="false"}
+
+## Hint 1
+
+- Are you using `.assign` and `.upper()`?
+- You will have to convert the lower to `.lower()` first and then `.count('t')`
+- The number of players with `number_ts` greater than one can be calculated by filtering on that column and getting the `.shape` of the dataframe.
+
+:::
+::::
+
+:::: { .solution exercise="practice_handling_strings" }
+::: { .callout-tip collapse="false"}
+
+## Fully worked solution:
+
+```{pyodide}
+import pandas as pd
+
+canucks = pd.read_csv('data/canucks.csv', parse_dates=['Birth Date'], date_format="%d-%b-%y")
+
+# Convert the Position and Country columns into uppercase 
+# Save this in a dataframe named canucks_upper
+canucks_upper = canucks.assign(Position = canucks['Position'].str.upper(),
+                               Country = canucks['Country'].str.upper())
+
+# Create a new column in the canucks_upper dataframe named number_ts
+# where you count the total number of times the letter T
+# (lowercase or uppercase) appears in their name
+# Save this  dataframe named as canucks_upper_ts
+canucks_upper_ts = canucks_upper.assign(number_ts=canucks_upper['Player'].str.lower().str.count('t'))
+
+# How many players have more than 1 letter T in their name? 
+canucks_upper_ts[canucks_upper_ts['number_ts'] > 1].shape[0]
+```
+
+:::
+::::
+
+<br>
+
+<div id='mcq4'></div>
+<script>
+    generateQuiz(
+        'mcq4',
+        'Question 1',
+        'How many players have the letter "T" in their name more than once?',
+        {
+        '3': 'There are more than that! Are you using <code>.shape[0]</code>?',
+        '5': 'This is not right. Maybe check that you are counting both upper and lower cases of "T".',
+        '6': '',
+        '7': 'Are you filtering the dataset correctly?',
+        },
+        '6',
+    );
+</script>

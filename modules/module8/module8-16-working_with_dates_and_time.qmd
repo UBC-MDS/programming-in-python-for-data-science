@@ -1,0 +1,29 @@
+---
+format:
+  html:
+    page-layout: full
+---
+
+# 4. Working with Dates and Time
+
+::: {.panel-tabset .nav-pills}
+
+## Video
+
+<iframe
+    class="video"
+    src="https://www.youtube.com/embed/yz6Wwa2MkQA?start=6998&end=7644&rel=0" 
+    title="Module 8 Video - Working with Dates and Time"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+></iframe>
+
+## Slides
+
+<iframe
+    class="slide-deck"
+    src="slides/module8_16.html"
+></iframe>
+
+:::

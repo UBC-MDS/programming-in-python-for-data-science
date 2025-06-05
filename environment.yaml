@@ -5,11 +5,11 @@ channels:
 dependencies:
     - python>=3.11,<3.13
     - altair-all=5.5.*
-    - pandas=1.5.*
+    - pandas=2.2.*
     - scipy
     - matplotlib
     - jupyter
-    - quarto
+    - quarto=1.6.43
     - pip
 
 
