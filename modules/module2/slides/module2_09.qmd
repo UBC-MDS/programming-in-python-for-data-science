@@ -1,0 +1,125 @@
+---
+format: revealjs
+title: Column renaming and column dropping
+title-slide-attributes:
+  data-notes: |
+---
+
+```{python}
+#  | echo: false
+%run src/utils.py
+```
+
+```{python}
+# | include: false
+pd.set_option('display.max_columns', 15)
+```
+
+```{python}
+candy = pd.read_csv('data/candybars.csv')
+candy
+```
+
+:::{.notes} 
+Remember our `candybars.csv` dataframe?  
+
+Let's bring it back and save it as object named `candy`.
+:::
+
+---
+
+## Column Renaming
+
+```{python}
+candy = candy.rename(columns={'available_canada_america':'availability'})
+candy
+```
+
+<br>
+
+```python
+ columns={'old column name':'new column name'}
+```
+
+:::{.notes} 
+There will be times where you are unsatisfied with the column names and you may want to change them.  
+
+The proper syntax to do that is with `.rename()`.  
+
+The column name `available_canada_america` is a bit long. 
+
+Perhaps it would be a good idea to change it to something shorter like `availability`. 
+
+Here is how we can accomplish that.
+
+This code uses something we've never seen before - `{}` curly braces, also called curly brackets.
+
+These have a special meaning but for now, you only need to concentrate your attention on the fact that the argument `columns` needs to have the format shown on the slide.
+:::
+
+---
+
+```{python}
+candy = candy.rename(columns={'available_canada_america':'availability',
+                        'weight':'weight_g'})
+candy.head()
+```
+
+
+
+:::{.notes}
+You can also rename multiple columns at once by adding a comma between the new and old column pairs within the curly brackets. 
+
+It's important that we always save the dataframe to an object when making column changes or the changes will not be saved in our dataframe.
+:::
+
+---
+
+## Column Dropping 
+
+```{python}
+candy.drop(columns='coconut')
+```
+
+
+:::{.notes}
+`.drop()` is the verb we use to delete columns in a dataframe. 
+
+Let's delete the column `coconut` by specifying it in the `columns` argument of the `drop` verb.
+:::
+
+---
+
+```{python}
+# | eval: false
+candy.drop(columns='coconut')
+```
+
+<br>
+
+```{python}
+candy.head()
+```
+
+<br>
+
+```{python}
+candy = candy.drop(columns=['nougat', 'coconut'])
+candy.head()
+```
+
+
+:::{.notes} 
+If you look again at the code we just wrote you'll notice we didn't save over the dataframe object, so the dataframe `candy` still will contain the `coconut` column.
+
+Let's overwrite the dataframe and remove multiple columns at the same time. 
+
+Let's drop `nougat` and `coconut` together.
+
+We put the columns we want to drop in square brackets and this time we will remember to overwrite over the `candy` object.
+
+Now when we call `candy.head()` it reflects the dropped columns. They're no longer there.
+:::
+
+
+# Let’s apply what we learned!

@@ -1,0 +1,259 @@
+---
+format: live-html
+---
+
+<script src='../../src/quiz.js'></script>
+
+# 1.1. Exercises
+
+## Delimiter
+
+<div id='mcq1'></div>
+<script>
+    generateQuiz(
+        'mcq1',
+        'Question 1',
+        'What is a delimiter?',
+        {
+        'It defines how column values are separated': 'Good job!',
+        'It prevents a limitation on the data being read it': 'You may want to look over this before moving forward.',
+        'It is a manner of deleting values from a dataframe': 'You may want to look over this before moving forward.',
+        },
+        'It defines how column values are separated',
+    );
+</script>
+
+<div id='mcq2'></div>
+<script>
+    generateQuiz(
+        'mcq2',
+        'Question 2',
+        'What argument is needed if we want to read in data from an Excel spreadsheet where there is data saved on different sheets?',
+        {
+        '<code>header</code>': 'This is not specifying a sheet.  You may want to review this section.',
+        '<code>sheet_name</code>': 'Good job!',
+        '<code>sheet</code>': 'Not quite but you are on the right track.',
+        },
+        '<code>sheet_name</code>',
+    );
+</script>
+
+
+## Coding questions
+
+**Instructions:**    
+Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
+
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
+
+
+### Reading in a URL
+
+Let's try reading in some data from a URL using `pd.read_csv()`.  
+
+**Tasks:**
+
+- Use `pd.read_csv()` to read in the data from [this url](https://raw.githubusercontent.com/UBC-MDS/MCL-DSCI-511-programming-in-python/master/data/pokemon.csv) using the name column as the index.
+- Save the resulting dataframe as `pokemon_df`.
+- Display the first 10 rows of the dataframe.
+
+
+```{pyodide}
+#| exercise: reading_in_a_url
+import pandas as pd
+
+url = 'https://raw.githubusercontent.com/UBC-MDS/MCL-DSCI-511-programming-in-python/master/data/pokemon.csv'
+
+# Read in the data from the URL
+____ = ____(____)
+
+# Display the first 10 rows
+____.____
+```
+
+```{pyodide}
+#| exercise: reading_in_a_url
+#| check: true
+from src.utils import print_correct_msg
+
+url = 'https://raw.githubusercontent.com/UBC-MDS/MCL-DSCI-511-programming-in-python/master/data/pokemon.csv'
+solution = pd.read_csv(url).head(10)
+
+assert isinstance(result, pd.DataFrame), "Your result should be a dataframe."
+assert solution.shape == result.shape, "The dimensions are incorrect."
+assert sorted(list(solution.columns)) == sorted(list(result.columns)), "Your columns do not seem correct."
+print_correct_msg()
+```
+
+:::: { .hint exercise="reading_in_a_url"}
+::: { .callout-note collapse="false"}
+
+## Hint 1
+
+- Are you sure you are saving your dataframe as `pokemon_df`?
+- Are you using `pd.read_csv()`?
+
+:::
+::::
+
+:::: { .solution exercise="reading_in_a_url" }
+::: { .callout-tip collapse="false"}
+
+## Fully worked solution:
+
+```{pyodide}
+import pandas as pd
+
+url = 'https://raw.githubusercontent.com/UBC-MDS/MCL-DSCI-511-programming-in-python/master/data/pokemon.csv'
+
+# Read in the data from the URL
+pokemon_df = pd.read_csv(url)
+
+# Display the first 10 rows
+pokemon_df.head(10)
+```
+
+:::
+::::
+
+<br>
+
+### Reading in a Text File
+
+Let's try reading in a `.txt` file.   
+
+**Tasks:**
+
+- Read in the data from a text file name `pokemon-text.txt` located in the `data` folder.
+- Save the resulting dataframe as `pokemon_df`.
+- It's a good idea to see what the [delimiter](https://github.com/UBC-MDS/MCL-DSCI-511-programming-in-python/blob/binder/data/pokemon-text.txt) is.
+- Display the first 10 rows of `pokemon_df`.
+
+
+```{pyodide}
+#| exercise: reading_in_a_text_file
+import pandas as pd
+
+# Read in the data from the text file using the full pathway
+____ = ____(____, ____)
+
+# Display  the first 10 rows
+____
+```
+
+```{pyodide}
+#| exercise: reading_in_a_text_file
+#| check: true
+from src.utils import print_correct_msg
+solution = pd.read_csv('data/pokemon-text.txt', delimiter=";").head(10)
+
+assert isinstance(result, pd.DataFrame), "Your result should be a dataframe."
+assert solution.shape == result.shape, "The dimensions are incorrect."
+assert sorted(list(solution.columns)) == sorted(list(result.columns)), "Your columns do not seem correct."
+print_correct_msg()
+```
+
+:::: { .hint exercise="reading_in_a_text_file"}
+::: { .callout-note collapse="false"}
+
+## Hint 1
+
+- Are you sure you are saving your dataframe as the correct object names?
+- Are you using `pd.read_csv()`?
+- Did you check to see what the [delimiter](https://github.com/UBC-MDS/MCL-DSCI-511-programming-in-python/blob/binder/data/pokemon-text.txt) is.
+- Are you including the full path through the `data/` folder when calling the file name?
+- Check that your delimiter argument is correct.
+
+:::
+::::
+
+:::: { .solution exercise="reading_in_a_text_file" }
+::: { .callout-tip collapse="false"}
+
+## Fully worked solution:
+
+```{pyodide}
+import pandas as pd
+
+# Read in the data from the text file using the full pathway
+pokemon_df = pd.read_csv('data/pokemon-text.txt', delimiter=";")
+
+# Display the first 10 rows
+pokemon_df.head(10)
+```
+
+:::
+::::
+
+<br>
+
+### Reading in an Excel File
+
+Let's try reading in an Excel file.   
+
+**Tasks:**
+
+- Read in the data from the sheet named `pokemon` from the Excel file `pokemon.xlsx` located in the `data` folder.
+- Save the resulting dataframe as `pokemon_df`.
+- Display the first 10 rows of `pokemon_df`.
+
+```{pyodide}
+#| setup: true
+#| exercise: reading_in_an_excel_file
+import micropip
+await micropip.install('openpyxl')
+```
+
+```{pyodide}
+#| exercise: reading_in_an_excel_file
+import pandas as pd
+
+# Read in the data from the Excel file using the full pathway
+____ = ____(____, ____)
+
+# Display  the first 10 rows
+____
+```
+
+```{pyodide}
+#| exercise: reading_in_an_excel_file
+#| check: true
+from src.utils import print_correct_msg
+solution = pd.read_excel('data/pokemon.xlsx', sheet_name="pokemon").head(10)
+
+assert isinstance(result, pd.DataFrame), "Your result should be a dataframe."
+assert solution.shape == result.shape, "The dimensions are incorrect."
+assert sorted(list(solution.columns)) == sorted(list(result.columns)), "Your columns do not seem correct."
+print_correct_msg()
+```
+
+:::: { .hint exercise="reading_in_an_excel_file"}
+::: { .callout-note collapse="false"}
+
+## Hint 1
+
+- Are you sure you are saving your dataframe as the correct object names?
+- Are you using `pd.read_excel()`?
+- Check that you are using `sheet_name="pokemon"`. 
+- Are you including the full path through the `data/` folder when calling the file name?
+
+:::
+::::
+
+:::: { .solution exercise="reading_in_an_excel_file" }
+::: { .callout-tip collapse="false"}
+
+## Fully worked solution:
+
+```{pyodide}
+import pandas as pd
+
+# Read in the data from the Excel file using the full pathway
+pokemon_df = pd.read_excel('data/pokemon.xlsx', sheet_name="pokemon")
+
+# Display the first 10 rows
+pokemon_df.head(10)
+```
+
+:::
+::::
