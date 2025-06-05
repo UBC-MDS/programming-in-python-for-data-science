@@ -1,0 +1,49 @@
+---
+format: html
+---
+
+<script src='../../src/quiz.js'></script>
+
+# 2.1. Exercises
+
+## Which is Tidy?
+
+
+**Dataframe A**
+
+![](../../static/module3/Q5a.png){fig-align="center" fig-alt="404 image" width="60%"}
+
+
+**Dataframe B**
+
+![](../../static/module3/Q5b.png){fig-align="center" fig-alt="404 image" width="60%"}
+
+<div id='mcq1'></div>
+<script>
+    generateQuiz(
+        'mcq1',
+        'Which of the above would be considered tidy data for the following statistical questions: ',
+        '<i>What factors are associated with fruit with seeds?</i>',
+        {
+        'Dataframe A': 'Not quite! Maybe try re-reading over the content.',
+        'Dataframe B': 'Good job!',
+        },
+        'Dataframe B',
+    );
+</script>
+
+## Tidy Data True or False
+
+<div id='mcq2'></div>
+<script>
+    generateQuiz(
+        'mcq2',
+        'Question 1',
+        'A long dataframe is always a tidy dataframe.',
+        {
+        'True': 'Did you read this section?',
+        'False': 'Good job! Of course it depends on the statistical question!',
+        },
+        'False',
+    );
+</script>
