@@ -312,7 +312,7 @@ This is a big help for the clarity of our analysis.
 ---
 
 ```{python}
-mfr_mean = cereal.groupby(by='mfr').mean()
+mfr_mean = cereal.groupby(by='mfr').mean(numeric_only=True)
 mfr_mean
 ```
 

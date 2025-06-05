@@ -37,7 +37,7 @@ We found in Module 1 using `.value_counts()` that there are 7 different manufact
 Let's start with "K":
 
 ```{python}
-cereal[cereal['mfr'] == 'K'].mean()[['sugars']]
+cereal[cereal['mfr'] == 'K'].mean(numeric_only=True)[['sugars']]
 ```
 
 <br>
@@ -45,7 +45,7 @@ cereal[cereal['mfr'] == 'K'].mean()[['sugars']]
 Next "G":
 
 ```{python}
-cereal[cereal['mfr'] == 'G'].mean()[['sugars']]
+cereal[cereal['mfr'] == 'G'].mean(numeric_only=True)[['sugars']]
 ```
 
 
@@ -154,11 +154,12 @@ Similarly to how we made frequency tables using `.value_counts()`, we can now us
 ## Summary Statistics with Groups
 
 ```{python}
-# | inlcude: false
+# | include: false
 pd.set_option('display.max_rows', 4)
 ```
 
 ```{python}
+mfr_group = cereal.drop(columns=["name", "type"]).groupby(by='mfr')
 mfr_group.mean()
 ```
 
@@ -190,18 +191,18 @@ Of course, using groups is not limited to finding only the mean. We can do the s
 ## Aggregating dataframes
 
 ```{python}
-# | inlcude: false
+# | include: false
 pd.set_option('display.max_rows', 6)
 ```
 
 ```{python}
-cereal.agg('mean')
+cereal.select_dtypes(include=np.number).agg('mean')
 ```
 
 <br>
 
 ```{python}
-cereal.mean()
+cereal.mean(numeric_only=True)
 ```
 
 
@@ -216,7 +217,7 @@ Using `.agg()` with only a `mean` input is essentially the same thing as calling
 ---
 
 ```{python}
-cereal.agg(['max', 'min', 'median'])
+cereal.select_dtypes(include=np.number).agg(['max', 'min', 'median'])
 ```
 
 

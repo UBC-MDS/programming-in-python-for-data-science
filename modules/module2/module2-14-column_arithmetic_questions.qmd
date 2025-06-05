@@ -38,11 +38,11 @@ df[['Column_A']] * df[['Column_B']]
         'Question 2',
         'What is the correct syntax to multiply <code>Column_A</code> and <code>Column_B</code> from dataframe <code>df</code> and save it as a new column named <code>new_column</code>?',
         {
-        '<code>df = df.assign(’new_column’=df[’Column_A’] * df[’Column_B’])</code></code>': 'Do you need to put your new column name in between quotations?',
-        '<code>df = df.assign(new_column=df[’Column_A’] * df[’Column_B’])</code>': 'You must have been paying attention.',
-        '<code>df = df.assign[new_column=df(’Column_A’) * df(’Column_B’)]</code>': 'Are you sure that you are using the correct parentheses for this?',
+        '<code>df = df.assign(\'new_column\'=df[\'Column_A\'] * df[\'Column_B\'])</code></code>': 'Do you need to put your new column name in between quotations?',
+        '<code>df = df.assign(new_column=df[\'Column_A\'] * df[\'Column_B\'])</code>': 'You must have been paying attention.',
+        '<code>df = df.assign[new_column=df(\'Column_A\') * df(\'Column_B\')]</code>': 'Are you sure that you are using the correct parentheses for this?',
         },
-        '<code>df = df.assign(new_column=df[’Column_A’] * df[’Column_B’])</code>',
+        '<code>df = df.assign(new_column=df[\'Column_A\'] * df[\'Column_B\'])</code>',
     );
 </script>
 

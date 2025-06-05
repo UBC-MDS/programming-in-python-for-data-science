@@ -32,9 +32,9 @@ Create a plot by chaining the following actions.
 import pandas as pd
 import altair as alt
 
-pokemon = pd.read_csv('data/pokemon.csv').drop("name", axis=1)
+pokemon = pd.read_csv('data/pokemon.csv')
 
-____ = pd.DataFrame(____.____('____').____().____[:, '____'])
+____ = pd.DataFrame(____.____('____').____(numeric_only=True).____[:, '____'])
 
 ____ = ____.____()
 
@@ -52,8 +52,8 @@ ____ = ____.____()
 #| check: true
 from src.utils import assert_chart_equal, remove_keys_inplace
 
-pokemon = pd.read_csv('data/pokemon.csv').drop("name", axis=1)
-pokemon_type = pd.DataFrame(pokemon.groupby('type').mean().loc[:, 'attack']).reset_index()
+pokemon = pd.read_csv('data/pokemon.csv')
+pokemon_type = pd.DataFrame(pokemon.groupby('type').mean(numeric_only=True).loc[:, 'attack']).reset_index()
 solution = alt.Chart(pokemon_type, width=500,
                         height=300).mark_bar().encode(x=alt.X('type:N', sort='-y',
         title='Pokemon type'), y=alt.Y('attack:Q',
@@ -89,9 +89,9 @@ assert_chart_equal(solution, result)
 import pandas as pd
 import altair as alt
 
-pokemon = pd.read_csv('data/pokemon.csv').drop("name", axis=1)
+pokemon = pd.read_csv('data/pokemon.csv')
 
-pokemon_type = pd.DataFrame(pokemon.groupby('type').mean().loc[:, 'attack'])
+pokemon_type = pd.DataFrame(pokemon.groupby('type').mean(numeric_only=True).loc[:, 'attack'])
 
 pokemon_type = pokemon_type.reset_index()
 

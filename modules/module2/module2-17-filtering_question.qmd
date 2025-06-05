@@ -19,7 +19,7 @@ df['location'] == 'Canada'
 is 
  
 ```out
-[ True, False, False, True]
+[True, False, False, True]
 ```
 
 <br>
@@ -218,7 +218,7 @@ mighty_pokemon
     generateQuiz(
         'mcq3',
         'Question',
-        'Which type has the most Pokemon with attack and defense scores greater than 100? <i>(Hint: Think about how we counted the frequency of categorical columns in module 1)</i>',
+        'Which type has the most Pokemon with attack and defense scores greater than 100? <i>(Hint: Think about how we counted the frequency of categorical columns in module 1).</i>',
         {
         'Rock and Bug': 'Well done!',
         'Water and Rock': 'You can use <code>mighty_pokemon[\'type\'].value_counts()</code> to find out.',
