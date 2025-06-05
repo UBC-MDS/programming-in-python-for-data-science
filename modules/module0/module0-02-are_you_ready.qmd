@@ -1,0 +1,24 @@
+---
+format: html
+---
+
+<script src='../../src/quiz.js'></script>
+
+# 1.1. Exercises
+
+## Are you ready?
+
+<div id='mcq1'></div>
+<script>
+    generateQuiz(
+        'mcq1',
+        'Question 1',
+        'Are you ready to start the course <i>Programming in Python for Data Science</i>?',
+        {
+        'Yes! Let’s get this party started!': 'We love the enthusiasm! Alright let’s move on to Module 1.',
+        'I have a Python background but have not had very much wrangling experience.': 'We recommend taking this course so that you are familiar with <code>Pandas</code> and have the fundamentals master for our more advanced Data Science courses. Please continue to Module 1.',
+        'I don’t think this is the right fit for me.': 'That’s ok. If you don’t think this is the right course for you, we hope you find what you are looking for. We still suggest taking a look at what we have to offer in Module 1 before formulating a set opinion.',
+        },
+        ['Yes! Let’s get this party started!', 'I have a Python background but have not had very much wrangling experience.'],
+    );
+</script>
