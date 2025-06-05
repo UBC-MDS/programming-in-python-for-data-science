@@ -232,7 +232,7 @@
 <section id="avoid-hard-coding." class="slide level2">
 <h2>1. Avoid “hard coding.”</h2>
 <p><strong>Hard coding</strong> is the process of embedding values directly into your code without saving them in objects.</p>
-<div id="881a859a" class="cell" data-execution_count="2">
+<div id="106bcecf" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> squares_a_list(numerical_list):</span>
 <span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a>    new_squared_list <span class="op">=</span> <span class="bu">list</span>()</span>
 <span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a>    </span>
@@ -242,7 +242,7 @@
 <span id="cb1-7"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> new_squared_list</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><br></p>
-<div id="0e34dc96" class="cell" data-execution_count="3">
+<div id="afd7af2c" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> exponent_a_list(numerical_list, exponent):</span>
 <span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a>    new_exponent_list <span class="op">=</span> <span class="bu">list</span>()</span>
 <span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a>    </span>
@@ -278,10 +278,10 @@
 </section>
 <section id="less-is-more" class="slide level2">
 <h2>2. Less is More</h2>
-<div id="cadf4e76" class="cell" data-execution_count="4">
+<div id="9b3b069d" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> load_filter_and_average(<span class="bu">file</span>, grouping_column, ploting_column):</span>
 <span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a>    df <span class="op">=</span> pd.read_csv(<span class="st">"data/"</span> <span class="op">+</span> <span class="bu">file</span>)</span>
-<span id="cb3-3"><a aria-hidden="true" tabindex="-1"></a>    source <span class="op">=</span> df.groupby(grouping_column).mean().reset_index()</span>
+<span id="cb3-3"><a aria-hidden="true" tabindex="-1"></a>    source <span class="op">=</span> df.groupby(grouping_column).mean(numeric_only<span class="op">=</span><span class="va">True</span>).reset_index()</span>
 <span id="cb3-4"><a aria-hidden="true" tabindex="-1"></a>    chart <span class="op">=</span> alt.Chart(source, width <span class="op">=</span> <span class="dv">500</span>, height <span class="op">=</span> <span class="dv">300</span>).mark_bar().encode(</span>
 <span id="cb3-5"><a aria-hidden="true" tabindex="-1"></a>                      x<span class="op">=</span>alt.X(grouping_column),</span>
 <span id="cb3-6"><a aria-hidden="true" tabindex="-1"></a>                      y<span class="op">=</span>alt.Y(ploting_column)</span>
@@ -289,7 +289,7 @@
 <span id="cb3-8"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> chart</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><br></p>
-<div id="174f09a5" class="cell" data-execution_count="5">
+<div id="740082b3" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a>bad_idea <span class="op">=</span> load_filter_and_average(<span class="st">'cereal.csv'</span>, <span class="st">'mfr'</span>, <span class="st">'rating'</span>)</span>
 <span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a>bad_idea</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -315,13 +315,13 @@
 </section>
 <section class="slide level2">
 
-<div id="75d24bd3" class="cell" data-execution_count="7">
+<div id="1407c504" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> grouped_means(df, grouping_column):</span>
-<span id="cb5-2"><a aria-hidden="true" tabindex="-1"></a>    grouped_mean <span class="op">=</span> df.groupby(grouping_column).mean().reset_index()</span>
+<span id="cb5-2"><a aria-hidden="true" tabindex="-1"></a>    grouped_mean <span class="op">=</span> df.groupby(grouping_column).mean(numeric_only<span class="op">=</span><span class="va">True</span>).reset_index()</span>
 <span id="cb5-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> grouped_mean</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><br></p>
-<div id="26aae6a4" class="cell" data-execution_count="9">
+<div id="eceae07a" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a>cereal_mfr <span class="op">=</span> grouped_means(cereal, <span class="st">'mfr'</span>)</span>
 <span id="cb6-2"><a aria-hidden="true" tabindex="-1"></a>cereal_mfr</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
@@ -465,7 +465,7 @@
 </section>
 <section class="slide level2">
 
-<div id="53233417" class="cell" data-execution_count="10">
+<div id="e90682ec" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_mean(df, grouping_column, ploting_column):</span>
 <span id="cb7-2"><a aria-hidden="true" tabindex="-1"></a>    chart <span class="op">=</span> alt.Chart(df, width <span class="op">=</span> <span class="dv">500</span>, height <span class="op">=</span> <span class="dv">300</span>).mark_bar().encode(</span>
 <span id="cb7-3"><a aria-hidden="true" tabindex="-1"></a>                      x<span class="op">=</span>alt.X(grouping_column),</span>
@@ -474,7 +474,7 @@
 <span id="cb7-6"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> chart</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><br></p>
-<div id="3753281f" class="cell" data-execution_count="11">
+<div id="3ba54747" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a aria-hidden="true" tabindex="-1"></a>plot1 <span class="op">=</span> plot_mean(cereal_mfr, <span class="st">'mfr'</span>, <span class="st">'rating'</span>)</span>
 <span id="cb8-2"><a aria-hidden="true" tabindex="-1"></a>plot1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -495,10 +495,10 @@
 </section>
 <section id="return-a-single-object" class="slide level2">
 <h2>3. Return a single object</h2>
-<div id="08ee49a8" class="cell" data-execution_count="14">
+<div id="cc656197" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> load_filter_and_average(<span class="bu">file</span>, grouping_column, ploting_column):</span>
 <span id="cb9-2"><a aria-hidden="true" tabindex="-1"></a>    df <span class="op">=</span> pd.read_csv(<span class="st">"data/"</span> <span class="op">+</span> <span class="bu">file</span>)</span>
-<span id="cb9-3"><a aria-hidden="true" tabindex="-1"></a>    source <span class="op">=</span> df.groupby(grouping_column).mean().reset_index()</span>
+<span id="cb9-3"><a aria-hidden="true" tabindex="-1"></a>    source <span class="op">=</span> df.groupby(grouping_column).mean(numeric_only<span class="op">=</span><span class="va">True</span>).reset_index()</span>
 <span id="cb9-4"><a aria-hidden="true" tabindex="-1"></a>    chart <span class="op">=</span> alt.Chart(source, width <span class="op">=</span> <span class="dv">500</span>, height <span class="op">=</span> <span class="dv">300</span>).mark_bar().encode(</span>
 <span id="cb9-5"><a aria-hidden="true" tabindex="-1"></a>                      x<span class="op">=</span>alt.X(grouping_column),</span>
 <span id="cb9-6"><a aria-hidden="true" tabindex="-1"></a>                      y<span class="op">=</span>alt.Y(ploting_column)</span>
@@ -506,7 +506,7 @@
 <span id="cb9-8"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> chart, source</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><br></p>
-<div id="d82167f5" class="cell" data-execution_count="15">
+<div id="93c884e1" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a aria-hidden="true" tabindex="-1"></a>another_bad_idea <span class="op">=</span> load_filter_and_average(<span class="st">'cereal.csv'</span>, <span class="st">'mfr'</span>, <span class="st">'rating'</span>)</span>
 <span id="cb10-2"><a aria-hidden="true" tabindex="-1"></a>another_bad_idea</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="15">
@@ -541,7 +541,7 @@
 </section>
 <section class="slide level2">
 
-<div id="e8c16ec4" class="cell" data-execution_count="16">
+<div id="0180cfad" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a aria-hidden="true" tabindex="-1"></a>another_bad_idea[<span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
@@ -563,17 +563,17 @@
 </section>
 <section id="keep-global-variables-in-their-global-environment" class="slide level2">
 <h2>4. Keep global variables in their global environment</h2>
-<div id="b3ca733b" class="cell" data-execution_count="18">
+<div id="19c74559" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> grouped_means(df, grouping_column):</span>
-<span id="cb13-2"><a aria-hidden="true" tabindex="-1"></a>    grouped_mean <span class="op">=</span> df.groupby(grouping_column).mean().reset_index()</span>
+<span id="cb13-2"><a aria-hidden="true" tabindex="-1"></a>    grouped_mean <span class="op">=</span> df.groupby(grouping_column).mean(numeric_only<span class="op">=</span><span class="va">True</span>).reset_index()</span>
 <span id="cb13-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> grouped_mean</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><br></p>
-<div id="7532bb9a" class="cell" data-execution_count="19">
+<div id="28f0b7e3" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a aria-hidden="true" tabindex="-1"></a>cereal <span class="op">=</span> pd.read_csv(<span class="st">'data/cereal.csv'</span>)</span>
 <span id="cb14-2"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-3"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> bad_grouped_means(grouping_column):</span>
-<span id="cb14-4"><a aria-hidden="true" tabindex="-1"></a>    grouped_mean <span class="op">=</span> cereal.groupby(grouping_column).mean().reset_index()</span>
+<span id="cb14-4"><a aria-hidden="true" tabindex="-1"></a>    grouped_mean <span class="op">=</span> cereal.groupby(grouping_column).mean(numeric_only<span class="op">=</span><span class="va">True</span>).reset_index()</span>
 <span id="cb14-5"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> grouped_mean</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <aside class="notes">
@@ -595,7 +595,7 @@
 </section>
 <section class="slide level2">
 
-<div id="26ac2978" class="cell" data-execution_count="20">
+<div id="33318d92" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a aria-hidden="true" tabindex="-1"></a>bad_cereal_grouping <span class="op">=</span> bad_grouped_means(<span class="st">'mfr'</span>)</span>
 <span id="cb15-2"><a aria-hidden="true" tabindex="-1"></a>bad_cereal_grouping.head(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="20">
