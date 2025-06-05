@@ -1,0 +1,184 @@
+---
+format: live-html
+---
+
+<script src='../../src/quiz.js'></script>
+
+# 5.1. Exercises
+
+## Assert Questions
+
+<div id='mcq1'></div>
+<script>
+    generateQuiz(
+        'mcq1',
+        'Question 1',
+        'Which of the statements is correct?',
+        {
+        '<code>assert</code> statements cause our program to fail if the condition is <code>True</code>.': '<code>Exceptions</code> are what causes an error if the conditional statement is <code>True</code>.',
+        '<code>assert</code> statements cause our program to fail if the condition is <code>False</code>.': '',
+        },
+        '<code>assert</code> statements cause our program to fail if the condition is <code>False</code>.',
+    );
+</script>
+
+## Unit Tests Questions
+
+```python
+def acronym_it(sentence):
+    words = sentence.split()
+    first_letters = [word[0].upper() for word in words]
+    acronym =  "".join(first_letters)
+    return acronym
+```
+
+<div id='mcq2'></div>
+<script>
+    generateQuiz(
+        'mcq2',
+        'Question 1',
+        'Given the function above, which would <b>not</b> result in an error? ',
+        {
+        '<code>assert acronym_it(’Hard work pays off’) == ’HWPO’</code>': '',
+        '<code>assert acronym_it(’Hard work pays off’) == ’Hwpo’</code>': 'It might be helpful to read the function code line by line.',
+        '<code>assert acronym_it(’Hard work pays off’) == ’H’</code>': 'It might be helpful to read the function code line by line.',
+        '<code>assert acronym_it(’Hard work pays off’) == str<code>': 'It might be helpful to read the function code line by line.',
+        },
+        '<code>assert acronym_it(’Hard work pays off’) == ’HWPO’</code>',
+    );
+</script>
+
+<div id='mcq3'></div>
+<script>
+    generateQuiz(
+        'mcq3',
+        'Question 2',
+        'Given the function above, which test <b>would</b> fail?',
+        {
+        '<code>assert acronym_it(’If at first you do not succeed, try try again’) == ’IAFYDNSTTA’</code>': '',
+        '<code>assert acronym_it(’There are 30 bottles of beer on the wall!’) == ’TA3BOBOTW’</code>': 'It might be helpful to read the function code line by line.',
+        '<code>assert acronym_it(’Build me up, buttercup’) == ’BMUB’</code>': 'It might be helpful to read the function code line by line.',
+        '<code>assert acronym_it(’10 times 5 is 50’) == ’10T5I50’<code>': 'Good work!',
+        },
+        '<code>assert acronym_it(’10 times 5 is 50’) == ’10T5I50’<code>',
+    );
+</script>
+
+## Unit Tests and Test-Driven Development Questions
+
+<div id='mcq4'></div>
+<script>
+    generateQuiz(
+        'mcq4',
+        'Question 1',
+        'When do we ideally like to write our unit tests for our functions?',
+        {
+        'Before writing our function code': 'You got it!',
+        'After writing our function’s code': 'This is not ideal.',
+        'While writing our function’s code': 'Although this happens sometimes, it’s better to write your tests before your function’s code.',
+        },
+        'Before writing our function code',
+    );
+</script>
+
+<div id='mcq5'></div>
+<script>
+    generateQuiz(
+        'mcq5',
+        'Question 2',
+        'When can we be confident in our code?',
+        {
+        'When all our tests pass.': 'Yes, but are we confident that we have covered all possible cases in our tests?',
+        'After writing edge cases and they also pass.': 'This is not ideal.',
+        'When our function does what we want without even writing test.': 'Although this happens sometimes, it’s better to write your tests before your function’s code.',
+        'It’s good to err on the side of caution when it comes to being confident in our code (bad things can happen to good coders).': '',
+        },
+        'It’s good to err on the side of caution when it comes to being confident in our code (bad things can happen to good coders).',
+    );
+</script>
+
+<div id='mcq6'></div>
+<script>
+    generateQuiz(
+        'mcq6',
+        'Question 3',
+        'The first step in a systematic approach to program design is:',
+        {
+        'Write unit tests.': 'But we don’t know our input arguments or the output type that we are expecting yet?',
+        'Write a docstring.': 'This is the last step!',
+        'Write a function stub.': 'Nailed it!',
+        'Write your pseudo-code.': 'This should come after writing tests and defining your function!',
+        },
+        'Write a function stub.',
+    );
+</script>
+
+
+## Writing Tests
+
+**Instructions:**    
+Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
+
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
+
+_**Make sure you remove the hash (`#`) symbol in the coding portions of this question.  We have commented them so that the line won't execute and you can test your code after each step.**_
+
+Given our BMI function from the previous few questions, let's write some unit tests.
+
+**Tasks:**
+
+- Write at least 4 unit tests and check that at least 2 of them are testing edge cases. 
+- For this exercsie, use single quotes `''` instead of double quotes `""` for the `assert` messages.
+
+```{pyodide}
+#| exercise: writing_tests
+def bmi_calculator(height, weight):
+    return (weight/(height**2)) * 702
+
+
+# Write 4 unit tests and check that at least 2 of them are testing edge cases
+____
+____
+____
+____
+```
+
+```{pyodide}
+#| exercise: writing_tests
+#| check: true
+assert False, "No tests available. Please check the solution."
+```
+
+:::: { .hint exercise="writing_tests"}
+::: { .callout-note collapse="false"}
+
+## Hint 1
+
+- Are you using `Assert` statements?
+- Are you checking that they equal a correct value?
+
+:::
+::::
+
+:::: { .solution exercise="writing_tests" }
+::: { .callout-tip collapse="false"}
+
+## Fully worked solution:
+
+```{pyodide}
+def bmi_calculator(height, weight):
+    return (weight/(height**2)) * 702
+
+# Write 4 unit tests and check that at least 2 of them are testing edge cases
+# There are many different tests that could have been written for this question. 
+# Here are a few examples. 
+assert bmi_calculator(1, 1) == 702.0, 'Input arguments giving incorrect output'
+assert bmi_calculator(100, 10000) == 702.0, 'Input arguments giving incorrect output'
+assert bmi_calculator(1, 0) == 0, 'Input arguments giving incorrect output'
+assert type(bmi_calculator(12,8)) == float, 'Output result type is incorrect'
+assert bmi_calculator(20, 400) == 702.0, 'Input arguments giving incorrect output'
+assert bmi_calculator(20, 800) == 1404.0, 'Input arguments giving incorrect output'
+```
+
+:::
+::::
