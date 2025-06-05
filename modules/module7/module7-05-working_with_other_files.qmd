@@ -1,0 +1,29 @@
+---
+format:
+  html:
+    page-layout: full
+---
+
+# 2. Working with Other Files
+
+::: {.panel-tabset .nav-pills}
+
+## Video
+
+<iframe
+    class="video"
+    src="https://www.youtube.com/embed/cZwBfjQpHTU?start=176&end=476&rel=0" 
+    title="Module 7 Video - Working with Other Files"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+></iframe>
+
+## Slides
+
+<iframe
+    class="slide-deck"
+    src="slides/module7_05.html"
+></iframe>
+
+:::

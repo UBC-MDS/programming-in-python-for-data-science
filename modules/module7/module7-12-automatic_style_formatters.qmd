@@ -1,0 +1,29 @@
+---
+format:
+  html:
+    page-layout: full
+---
+
+# 4. Automatic Style Formatting
+
+::: {.panel-tabset .nav-pills}
+
+## Video
+
+<iframe
+    class="video"
+    src="https://www.youtube.com/embed/cZwBfjQpHTU?start=784&end=1560&rel=0" 
+    title="Module 7 Video - Automatic Style Formatters"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+></iframe>
+
+## Slides
+
+<iframe
+    class="slide-deck"
+    src="slides/module7_12.html"
+></iframe>
+
+:::

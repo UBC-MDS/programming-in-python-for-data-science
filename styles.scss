@@ -90,7 +90,8 @@ code {
     font-size: 12px;
 }
 
-.reveal.show-notes .speaker-notes code {
+.reveal.show-notes .speaker-notes code,
+.reveal.show-notes .speaker-notes div.sourceCode {
     /* The ubuntu mono font is quite small */
     font-size: 1.2em;
 }
