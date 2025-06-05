@@ -106,7 +106,7 @@ cereal.loc[5:10, 'calories':'fiber']
 The general format to slice both rows and columns together looks like this:
 
 ```python
-`cereal.loc['row name start':'row name end', 'column name start':'column name end']`
+cereal.loc['row name start':'row name end', 'column name start':'column name end']
 ```
 
 

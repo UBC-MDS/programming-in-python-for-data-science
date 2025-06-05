@@ -156,7 +156,7 @@ ____
 #| exercise: using_df_describe_b
 #| check: true
 solution = hockey_players[['Salary']].sum()
-assert isinstance(result, type(solution)), "The result type is incorrect."
+assert isinstance(result, type(solution)), "Are you using .sum()?"
 assert solution[0] == result[0], "Did you create player_cost properly?"
 print_correct_msg()
 ```

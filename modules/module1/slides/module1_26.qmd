@@ -165,7 +165,7 @@ Here are some examples of things that we can calculate. First we calculate the m
 ---
 
 ```{python}
-cereal.mean()
+cereal.mean(numeric_only=True)
 ```
 
 
