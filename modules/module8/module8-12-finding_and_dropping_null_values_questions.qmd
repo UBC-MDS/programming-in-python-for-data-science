@@ -176,7 +176,7 @@ from src.utils import print_correct_msg
 
 assert isinstance(result, pd.DataFrame), "We are expecting a dataframe."
 assert result['Salary'].isnull().sum() == 0, "There are still some missing values in the 'Salary' column. Are you filling the missing values?"
-assert result.iloc[20]["Salary"] == 3166250.0, "Are you replacing NaN with the mean salary value?"
+assert result.loc[20, "Salary"] == 3166250.0, "Are you replacing NaN with the mean salary value?"
 print_correct_msg()
 ```
 
