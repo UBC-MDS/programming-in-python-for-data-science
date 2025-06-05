@@ -1,0 +1,65 @@
+---
+format: revealjs
+title: Selecting a Single Column
+title-slide-attributes:
+  data-notes: |
+---
+
+```{python}
+#  | echo: false
+%run src/utils.py
+```
+
+
+```{python}
+# | include: false
+cereal = pd.read_csv('data/cereal.csv')
+```
+
+
+```python
+df.loc[:, ['column name']]
+```
+
+<br>
+
+```{python}
+cereal.loc[:, ['type']]
+```
+
+:::{.notes} 
+Something we often do in data analysis is obtain a single column from a dataframe.
+We can again use `.loc[]` to do this which would look something like this in general:
+
+`dataframe.loc[:, ['column name']]` 
+
+So if we here want the column named `type` from our cereal dataframe we could use the syntax: 
+
+`cereal.loc[:, ['type']]` 
+
+This seems a bit long winded and since we do this type of thing often. Luckily, Pandas has provided a quicker syntax to use to do the same thing.
+:::
+
+---
+
+``` Python
+df[['column name']]
+```
+
+<br>
+
+```{python}
+cereal[['type']]
+```
+
+
+:::{.notes}
+Instead, selecting a single column can be done without using `.loc[]` and we can just specify the dataframe name, followed by double square brackets containing the column of interest.
+
+`cereal[['type']]`
+
+This makes the syntax for selecting the column `type` from the `cereal` dataframe very easy.
+:::
+
+
+# Let’s apply what we learned!
