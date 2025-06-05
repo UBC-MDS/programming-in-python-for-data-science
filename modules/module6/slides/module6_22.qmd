@@ -103,7 +103,7 @@ This version is more maintainable code, but it doesn't give the function caller 
 ```{python}
 def load_filter_and_average(file, grouping_column, ploting_column):
     df = pd.read_csv("data/" + file)
-    source = df.groupby(grouping_column).mean().reset_index()
+    source = df.groupby(grouping_column).mean(numeric_only=True).reset_index()
     chart = alt.Chart(source, width = 500, height = 300).mark_bar().encode(
                       x=alt.X(grouping_column),
                       y=alt.Y(ploting_column)
@@ -146,7 +146,7 @@ Another problem with this function is that the means are only printed and not re
 
 ```{python}
 def grouped_means(df, grouping_column):
-    grouped_mean = df.groupby(grouping_column).mean().reset_index()
+    grouped_mean = df.groupby(grouping_column).mean(numeric_only=True).reset_index()
     return grouped_mean
 ```
 
@@ -214,7 +214,7 @@ pd.set_option('display.max_columns', 6)
 ```{python}
 def load_filter_and_average(file, grouping_column, ploting_column):
     df = pd.read_csv("data/" + file)
-    source = df.groupby(grouping_column).mean().reset_index()
+    source = df.groupby(grouping_column).mean(numeric_only=True).reset_index()
     chart = alt.Chart(source, width = 500, height = 300).mark_bar().encode(
                       x=alt.X(grouping_column),
                       y=alt.Y(ploting_column)
@@ -267,7 +267,7 @@ It's best to think of programming functions in the same way as mathematical func
 
 ```{python}
 def grouped_means(df, grouping_column):
-    grouped_mean = df.groupby(grouping_column).mean().reset_index()
+    grouped_mean = df.groupby(grouping_column).mean(numeric_only=True).reset_index()
     return grouped_mean
 ```
 
@@ -277,7 +277,7 @@ def grouped_means(df, grouping_column):
 cereal = pd.read_csv('data/cereal.csv')
 
 def bad_grouped_means(grouping_column):
-    grouped_mean = cereal.groupby(grouping_column).mean().reset_index()
+    grouped_mean = cereal.groupby(grouping_column).mean(numeric_only=True).reset_index()
     return grouped_mean
 ```
 
