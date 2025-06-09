@@ -1,0 +1,339 @@
+---
+format: live-html
+---
+
+<script src='../../src/quiz.js'></script>
+
+# 3.1. Exercises
+
+## Docstring Questions
+
+```python
+def factor_of_10(number):
+    """
+    Takes a number and determines if it is a factor of 10 
+    Parameters
+    ----------
+    number : int
+        the value to check
+      
+    Returns
+    -------
+    bool
+        Returns True if numbers are a multiple of 10 and False otherwise
+      
+    Examples
+    --------
+    >>> factor_of_10(72)
+    False
+    """
+
+    if number % 10 == 0: 
+        factor = True
+    else:
+        factor = False
+        
+    return factor
+```
+
+<div id='mcq1'></div>
+<script>
+    generateQuiz(
+        'mcq1',
+        'Question 1',
+        'What data type is returned from the above function?',
+        {
+        '<code>str</code>': 'Maybe look at the <code>Returns</code> heading in the docstring.',
+        '<code>bool</code>': '',
+        '<code>float</code>': 'Maybe look at the <code>Returns</code> heading in the docstring.',
+        '<code>list</code>': 'Maybe look at the <code>Returns</code> heading in the docstring.',
+        },
+        '<code>bool</code>',
+    );
+</script>
+
+```python
+def add_stars(name):
+  """
+  This will return your input string between a pair of stars. 
+  Parameters
+    ----------
+    name: str
+        a sentence or word
+        
+    Returns
+    -------
+    str
+        The initial string beginning and ending with a pair of stars 
+        
+    Examples
+    --------
+    >>> add_stars('Good Job')
+    'Good Job'
+    """
+
+    name = '**' + name + '**'
+    return
+```
+
+<div id='mcq2'></div>
+<script>
+    generateQuiz(
+        'mcq2',
+        'Question 2',
+        'How do you obtain the documentation for the function above?',
+        {
+        '<code>documentation?</code>': 'The <code>documentation</code> for which function though?',
+        '<code>?docstring(add_stars)</code>': 'Maybe look back at the material again.',
+        '<code>add_stars()?</code>': 'You are so close!',
+        '<code>?add_stars</code>': '',
+        },
+        '<code>?add_stars</code>',
+    );
+</script>
+
+
+## Which Docstring is Most Appropriate?
+
+Given the function below:
+
+```python
+def acronym_it(sentence):
+    words = sentence.split()
+    first_letters = [word[0].upper() for word in words]
+    acronym =  "".join(first_letters)
+    return acronym
+```
+
+A.
+
+```python
+"""
+A function that converts a string into an acronym of capital
+letters
+
+Input
+------
+str : sentence
+   The string to obtain the first letters from
+    
+Output
+-------
+str
+    A string of the first letters of each word in an uppercase format
+    
+Sample
+-------
+>>> acronym_it("Let's make this an acronym")
+"LMTAA"
+"""
+
+```
+
+B.
+
+```python
+"""
+A function that converts a string into an acronym of capital
+letters
+
+Input 
+------
+some_words : str
+   The string to obtain the first letters from
+    
+Output 
+-------
+list 
+    A list of the first letters of each word from the input string
+
+Example
+-------
+>>> acronym_it("Let's make this an acronym")
+"LMTAA"
+"""
+```
+
+
+C. 
+
+```python
+"""
+A function that converts a string into an acronym of capital
+letters
+
+Parameters
+----------
+sentence : str
+   The string to obtain the first letters from
+    
+Returns
+-------
+str
+    a string of just first letters in an uppercase format
+
+Example
+-------
+>>> acronym_it("Let's make this an acronym")
+"LMTAA"
+"""
+```
+
+
+D.
+
+```python
+"""
+A function that converts a string into an acronym of capital
+letters
+
+
+Returns
+-------
+list :
+    A list of the first letters of each word from the input string
+    
+Parameters
+----------
+str : sentence
+   The string to obtain the first letters from
+    
+Example
+-------
+>>> acronym_it("Let's make this an acronym")
+"LMTAA"
+"""
+```
+
+<div id='mcq3'></div>
+<script>
+    generateQuiz(
+        'mcq3',
+        'Question 1',
+        'Which docstring follows the NumPy format?',
+        {
+        'A': 'Are these the correct headings?.',
+        'B': 'Are the headings correct? Also pay attention to the name of the input arguments and what the function is returning.',
+        'C': 'Nice job!',
+        'D': 'Is the order of the description headings correct?',
+        },
+        'C',
+    );
+</script>
+
+
+## Practice Writing a Docstring
+
+**Instructions:**    
+Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
+
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
+
+_**Make sure you remove the hash (`#`) symbol in the coding portions of this question.  We have commented them so that the line won't execute and you can test your code after each step.**_
+
+In module 5, we wrote a function that returns the BMI given a person's weight and height. Let's write a docstring for it now!
+
+```python
+def bmi_calculator(height, weight):
+    return (weight / (height ** 2)) * 702
+```
+
+**Tasks:**
+
+- Write a NumPy style docstring for the function provided. 
+- For this question, we want you to write your docstring between 3 single quotations `'''` instead of the normal double quotations `"""`. This will allow us to test the solution provided.
+- Make sure to include a brief description, parameters, return, and example sections. 
+- View the documentation of the function.
+
+```{pyodide}
+#| setup: true
+#| exercise: practice_writing_a_docstring
+import pandas as pd
+```
+
+```{pyodide}
+#| exercise: practice_writing_a_docstring
+# Make a docstring for the function below: 
+def bmi_calculator(height, weight):
+    '''
+    
+    Write your docstring here
+    
+    '''
+    
+    return (weight / (height ** 2)) * 702
+
+
+# View the documentation
+____
+
+# For checking purposes, do not use print()
+bmi_calculator.__doc__
+```
+
+```{pyodide}
+#| exercise: practice_writing_a_docstring
+#| check: true
+from src.utils import print_correct_msg
+
+assert isinstance(result, str), "Your result should be a string."
+assert "Parameters" in result, "Make sure your docstring includes a 'Parameter' section"
+assert "height" in result.lower(), "Make sure you are describing the 'height' argument in the docstring"
+assert "weight" in result.lower(), "Make sure you are describing the 'weight' argument in the docstring"
+assert "Returns" in result, "Make sure your docstring includes a 'Returns' section"
+assert "Examples" in result, "Make sure your docstring includes an 'Examples' section"
+print_correct_msg()
+```
+
+:::: { .hint exercise="practice_writing_a_docstring"}
+::: { .callout-note collapse="false"}
+
+## Hint 1
+
+- Are you using `'''` to contain your docstring?
+- Are you including all the sections? 
+- Are you getting the documentation of the docstring using `?bmi_calculator`
+
+:::
+::::
+
+:::: { .solution exercise="practice_writing_a_docstring" }
+::: { .callout-tip collapse="false"}
+
+## Fully worked solution:
+
+```{pyodide}
+# Make a docstring for the function below: 
+
+def bmi_calculator(height, weight):
+    '''
+    Calculates and returns the Body Mass Index of an individual 
+    
+    Parameters
+    ----------
+    height : float
+        The height of an individual in inches
+    weight : float
+        The weight of an individual in lbs
+        
+    Returns
+    -------
+    float
+        The Body Mass Index 
+        
+    Examples
+    --------
+    >>> bmi_calculator(62, 105)
+    19.175338189386057
+    '''
+    return (weight/(height**2)) * 702
+
+# View the documentation
+print(bmi_calculator.__doc__)
+
+# for checking purposes, please uncomment the following line
+# bmi_calculator.__doc__
+```
+
+:::
+::::
