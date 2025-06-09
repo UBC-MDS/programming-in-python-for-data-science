@@ -105,6 +105,7 @@ If we did instead use double square brackets with `pd.value_counts()`, we would 
 ## Saving a dataframe
 
 ```{python}
+# | eval: false
 mfr_freq.to_csv('data/mfr_frequency.csv', index=False)
 ```
 
