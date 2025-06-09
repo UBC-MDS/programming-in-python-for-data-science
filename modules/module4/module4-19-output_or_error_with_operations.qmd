@@ -1,0 +1,163 @@
+---
+format: html
+---
+
+<script src='../../src/quiz.js'></script>
+
+# 5.1. Exercises
+
+## Output or Error with Operations
+
+Will the following operations result with an output or an error?
+
+```python
+['One', 'Two', 3] + (4, 'five', 6)
+```
+
+<div id='mcq1'></div>
+<script>
+    generateQuiz(
+        'mcq1',
+        'Question 1',
+        '',
+        {
+        'Output': 'Take special care to the brackets being used.',
+        '<code>Error</code>': 'Both elements must be of the same data structure to add together.',
+        },
+        '<code>Error</code>',
+    );
+</script>
+
+```python
+tuple(['One', 'Two', 3]) + (4, 'five', 6)
+```
+
+<div id='mcq2'></div>
+<script>
+    generateQuiz(
+        'mcq2',
+        'Question 2',
+        '',
+        {
+        'Output': 'That’s right. the output would be <code>(’One’, ’Two’, 3, 4, ’five’, 6)</code>.',
+        '<code>Error</code>': 'Are they both the same data structure?',
+        },
+        'Output',
+    );
+</script>
+
+
+```python
+dictionary1 = {1: 'one', 2: 'two'}
+dictionary2 = {3: 'three', 4: 'four'}
+
+dictionary1 + dictionary2
+```
+
+<div id='mcq3'></div>
+<script>
+    generateQuiz(
+        'mcq3',
+        'Question 3',
+        '',
+        {
+        'Output': 'Dictionaries cannot be concatenated together. We would have to combine them adding the individual keys-value pairs separately.',
+        '<code>Error</code>': 'That’s right!',
+        },
+        '<code>Error</code>',
+    );
+</script>
+
+```python
+sum(['nine', 'ten', 'eleven', 'twelve'])
+```
+
+<div id='mcq4'></div>
+<script>
+    generateQuiz(
+        'mcq4',
+        'Question 4',
+        '',
+        {
+        'Output': 'We cannot sum <code>str</code> elements in a list.',
+        '<code>Error</code>': 'Right!',
+        },
+        '<code>Error</code>',
+    );
+</script>
+
+```python
+'The monster under my bed' + [1, 2.0, 3, 4.5]
+```
+
+<div id='mcq5'></div>
+<script>
+    generateQuiz(
+        'mcq5',
+        'Question 5',
+        '',
+        {
+        'Output': '',
+        '<code>Error</code>': 'That’s right. We cannot concatenate together <code>lists</code> and <code>str</code> data types',
+        },
+        '<code>Error</code>',
+    );
+</script>
+
+## True or False with Boolean Operators
+
+Would the following result in a `True` of `False` value?
+
+```python
+('hotels' != 'homes') and 50 < 5000
+```
+
+<div id='mcq6'></div>
+<script>
+    generateQuiz(
+        'mcq6',
+        'Question 1',
+        '',
+        {
+        'True': 'Both statements are true so the output is True.',
+        'False': '<code>and</code> checks if all statements are True`.',
+        },
+        'True',
+    );
+</script>
+
+```python
+not ('hotels' != 'homes') 
+```
+
+<div id='mcq7'></div>
+<script>
+    generateQuiz(
+        'mcq7',
+        'Question 2',
+        '',
+        {
+        'True': 'The statement is True and <code>not</code> checks if the statement is False.',
+        'False': 'That’s right. The statement is not false so the output is False.',
+        },
+        'False',
+    );
+</script>
+
+```python
+not not ('hotels' != 'homes')
+```
+
+<div id='mcq8'></div>
+<script>
+    generateQuiz(
+        'mcq8',
+        'Question 3',
+        '',
+        {
+        'True': 'The right!',
+        'False': 'The statement <code>not ’hotels’ != ’homes’ </code> is false so checking if that statement is False results in a True output.',
+        },
+        'True',
+    );
+</script>

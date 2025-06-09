@@ -1,0 +1,201 @@
+---
+format: live-html
+---
+
+<script src='../../src/quiz.js'></script>
+
+# 3.1. Exercises
+
+## Dictionary Questions
+
+<div id='mcq1'></div>
+<script>
+    generateQuiz(
+        'mcq1',
+        'Question 1',
+        'Is the following statement True or False: <i>Dictionaries and sets use the same type of brackets to create them.</i>',
+        {
+        'True': 'That’s right. They both use curly brackets.',
+        'False': 'What kind of brackets do they both use?',
+        },
+        'True',
+    );
+</script>
+
+<div id='mcq2'></div>
+<script>
+    generateQuiz(
+        'mcq2',
+        'Question 2',
+        'Which verb transforms dictionaries into dataframes?',
+        {
+        '<code>.from_dict()</code>': 'You seem to be missing something at the beginning.',
+        '<code>pd.dataframe.from_dict()</code>': 'Careful with capitalization. You are extremely close.',
+        '<code>pd.DataFrame.from_dictionary()</code>': 'Maybe it’s not quite this long.',
+        '<code>pd.DataFrame.from_dict()</code>': '',
+        },
+        '<code>pd.DataFrame.from_dict()</code>',
+    );
+</script>
+
+
+## Coding questions
+
+**Instructions:**    
+Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
+
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
+
+
+### Dictionary Basics
+
+Recently Jeremy bought a new Ikea shoe rack.  The packaging included quite a few parts and he is finding it hard to keep track! 
+
+**Tasks:**
+
+- Make a dictionary that includes the quantity of each part included in the Ikea set. 
+
+The shoe rack contained the following parts: 
+
+- 8 `Long Screw`
+- 8 `Wood Dowel`
+- 2 `Short Screw`
+- 1 `Allen Key`
+
+- Construct the dictionary so that the part names are the keys and the quantities of the parts, are the values for the dictionary.
+- Name the dictionary `ikea_shoe_rack`.
+
+```{pyodide}
+#| setup: true
+#| exercise: dictionary_basics
+import pandas as pd
+```
+
+```{pyodide}
+#| exercise: dictionary_basics
+____ = ____
+
+# ____
+```
+
+```{pyodide}
+#| exercise: dictionary_basics
+#| check: true
+from src.utils import print_correct_msg
+
+solution = {'Long Screw': 8,
+                  'Wood Dowel': 8,
+                  'Short Screw': 2,
+                  'Allen Key': 1}
+                  
+assert isinstance(result, dict), "We are expecting a dict."
+assert sorted(list(solution.keys())) == sorted(list(result.keys())), "Your dictionary contains the incorrect keys. Are you adding all the items?"
+assert sorted(list(solution.values())) == sorted(list(result.values())), "Your dictionary contains the incorrect values. Are you adding the correct quantities for the items?"
+print_correct_msg()
+```
+
+:::: { .hint exercise="dictionary_basics"}
+::: { .callout-note collapse="false"}
+
+## Hint 1
+
+- Are you naming your dictionary properly? 
+- Are all your parts spelled correctly?
+
+:::
+::::
+
+:::: { .solution exercise="dictionary_basics" }
+::: { .callout-tip collapse="false"}
+
+## Fully worked solution:
+
+```{pyodide}
+ikea_shoe_rack = {'Long Screw': 8,
+                  'Wood Dowel': 8,
+                  'Short Screw': 2,
+                  'Allen Key': 1}
+
+ikea_shoe_rack
+```
+
+:::
+::::
+
+<br>
+
+### Building a Dataframe from a Dictionary
+
+The shoe rack was not the only thing Jeremy bought. below is a table of all his purchases. 
+
+|    | item_name       | collection   |   price |
+|---:|:----------------|:-------------|--------:|
+|  0 | Bistro Set      | APPLARO      |  216.98 |
+|  1 | Shelf Unit      | HYLLIS       |   11.99 |
+|  3 | Shoe Rack       | TJUSIG       |   29.99 |
+
+**Tasks:**
+
+- Create the table above from a dictionary using `pd.DataFrame.from_dict()`.
+- Name your new dataframe ikea_df
+
+```{pyodide}
+#| exercise: building_a_dataframe_from_a_dictionary
+import pandas as pd
+
+ikea_items = ____
+
+# ____ = ____
+
+# ____
+```
+
+```{pyodide}
+#| exercise: building_a_dataframe_from_a_dictionary
+#| check: true
+import pandas as pd
+from src.utils import print_correct_msg
+
+ikea_items = {'item_name' : ['Bistro Set', 'Shelf Unit', 'Shoe Rack'],
+              'collection': ['APPLARO', 'HYLLIS', 'TJUSIG'],
+              'price': [216.98, 11.99, 29.99]}
+
+solution = pd.DataFrame.from_dict(ikea_items)
+                  
+assert isinstance(result, pd.DataFrame), "We are expecting a dataframe."
+assert solution.shape == result.shape, "The dimension is incorrect."
+assert sorted(solution.columns) == sorted(result.columns), "Your dataframe contains the incorrect columns. Are you adding all the items?"
+assert sorted(solution['price']) == sorted(result['price']), "The 'price' column contains the wrong values. Make sure you are reading the table correctly."
+print_correct_msg()
+```
+
+:::: { .hint exercise="building_a_dataframe_from_a_dictionary"}
+::: { .callout-note collapse="false"}
+
+## Hint 1
+
+- Are you using lists as the values in your dictionary? 
+- Are you making sure to use floats for the price?
+- are all your items and collections spelled correctly?
+
+:::
+::::
+
+:::: { .solution exercise="building_a_dataframe_from_a_dictionary" }
+::: { .callout-tip collapse="false"}
+
+## Fully worked solution:
+
+```{pyodide}
+import pandas as pd
+
+ikea_items = {'item_name' : ['Bistro Set', 'Shelf Unit', 'Shoe Rack'],
+              'collection': ['APPLARO', 'HYLLIS', 'TJUSIG'],
+              'price': [216.98, 11.99, 29.99]}
+
+ikea_df = pd.DataFrame.from_dict(ikea_items)
+ikea_df
+```
+
+:::
+::::
