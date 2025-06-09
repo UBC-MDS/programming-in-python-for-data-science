@@ -249,7 +249,7 @@
 </section>
 <section class="slide level2">
 
-<div id="41ee404c" class="cell" data-execution_count="2">
+<div id="51c69f26" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a>candy <span class="op">=</span> pd.read_csv(<span class="st">'data/candybars.csv'</span>).loc[:<span class="dv">4</span>, <span class="st">'name'</span>: <span class="st">'peanuts'</span>]</span>
 <span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a>candy</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
@@ -337,7 +337,7 @@
 </section>
 <section id="horizontal-concatenation" class="slide level2">
 <h2>Horizontal Concatenation</h2>
-<div id="f3ce7741" class="cell" data-execution_count="3">
+<div id="d67cabec" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a>candy</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <div>
@@ -408,7 +408,7 @@
 </div>
 </div>
 <p><br></p>
-<div id="ca9b7bbe" class="cell" data-execution_count="4">
+<div id="7c588c72" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a>candy2 <span class="op">=</span> pd.read_csv(<span class="st">'data/candy_bars2.csv'</span>)</span>
 <span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a>candy2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
@@ -496,7 +496,7 @@
 </section>
 <section class="slide level2">
 
-<div id="83088c13" class="cell" data-execution_count="5">
+<div id="abbc2b03" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a>candy_nutrition <span class="op">=</span> pd.concat([candy, candy2], axis<span class="op">=</span><span class="dv">1</span>)</span>
 <span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a>candy_nutrition</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
@@ -611,7 +611,7 @@
 </section>
 <section class="slide level2">
 
-<div id="59c76f32" class="cell" data-execution_count="6">
+<div id="598c2715" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a>candy_nutrition</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <div>
@@ -706,7 +706,7 @@
 </div>
 </div>
 <p><br></p>
-<div id="40d42b59" class="cell" data-execution_count="7">
+<div id="aae7024d" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a>candy_nutrition.loc[:,<span class="op">~</span>candy_nutrition.columns.duplicated()]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
 <div>
@@ -813,14 +813,14 @@
 </section>
 <section class="slide level2">
 
-<div id="ae1f440c" class="cell" data-execution_count="8">
+<div id="002a5dea" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a>candy_nutrition.columns.duplicated()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
 <pre><code>array([False, False, False, False,  True, False, False, False])</code></pre>
 </div>
 </div>
 <p><br></p>
-<div id="e83f4b06" class="cell" data-execution_count="9">
+<div id="3771d9ae" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a aria-hidden="true" tabindex="-1"></a><span class="op">~</span>candy_nutrition.columns.duplicated()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
 <pre><code>array([ True,  True,  True,  True, False,  True,  True,  True])</code></pre>
@@ -843,7 +843,7 @@
 </section>
 <section class="slide level2">
 
-<div id="29bbd6a6" class="cell" data-execution_count="10">
+<div id="47a17935" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a aria-hidden="true" tabindex="-1"></a>candy_nutrition_cleaned <span class="op">=</span> candy_nutrition.loc[:,<span class="op">~</span>candy_nutrition.columns.duplicated()]</span>
 <span id="cb11-2"><a aria-hidden="true" tabindex="-1"></a>candy_nutrition_cleaned</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="10">
@@ -948,7 +948,7 @@
 </section>
 <section id="vertical-concatenation" class="slide level2">
 <h2>Vertical Concatenation</h2>
-<div id="4160b6d5" class="cell" data-execution_count="11">
+<div id="d7d3b341" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a aria-hidden="true" tabindex="-1"></a>candy</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="11">
 <div>
@@ -1019,7 +1019,7 @@
 </div>
 </div>
 <p><br></p>
-<div id="c40b3be4" class="cell" data-execution_count="12">
+<div id="bbdc5834" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a aria-hidden="true" tabindex="-1"></a>candy_more <span class="op">=</span> pd.read_csv(<span class="st">'data/candybars_more.csv'</span>, usecols<span class="op">=</span><span class="bu">range</span>(<span class="dv">4</span>))</span>
 <span id="cb13-2"><a aria-hidden="true" tabindex="-1"></a>candy_more</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
@@ -1092,7 +1092,7 @@
 </section>
 <section class="slide level2">
 
-<div id="9e322df4" class="cell" data-execution_count="13">
+<div id="aab9958b" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a aria-hidden="true" tabindex="-1"></a>large_candybars <span class="op">=</span> pd.concat([candy, candy_more], axis<span class="op">=</span><span class="dv">0</span>)</span>
 <span id="cb14-2"><a aria-hidden="true" tabindex="-1"></a>large_candybars</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="13">
@@ -1195,7 +1195,7 @@
 </section>
 <section class="slide level2">
 
-<div id="ae232ccb" class="cell" data-execution_count="14">
+<div id="6d38034f" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a aria-hidden="true" tabindex="-1"></a>large_candybars</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="14">
 <div>
@@ -1281,7 +1281,7 @@
 </div>
 </div>
 <p><br></p>
-<div id="0dac8021" class="cell" data-execution_count="15">
+<div id="40509aa5" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a aria-hidden="true" tabindex="-1"></a>large_candybars_cleaned <span class="op">=</span> large_candybars.reset_index(drop<span class="op">=</span><span class="va">True</span>)</span>
 <span id="cb16-2"><a aria-hidden="true" tabindex="-1"></a>large_candybars_cleaned</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="15">
@@ -1383,7 +1383,7 @@
 </section>
 <section id="be-careful-of-order" class="slide level2">
 <h2>Be careful of order!</h2>
-<div id="1b64546c" class="cell" data-execution_count="16">
+<div id="7ac6b19e" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a aria-hidden="true" tabindex="-1"></a>candy</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="16">
 <div>
@@ -1454,7 +1454,7 @@
 </div>
 </div>
 <p><br></p>
-<div id="a23ede2e" class="cell" data-execution_count="17">
+<div id="7cc03d34" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a aria-hidden="true" tabindex="-1"></a>snacksize_candybars <span class="op">=</span> pd.read_csv(<span class="st">'data/snacksize_candybars.csv'</span>)</span>
 <span id="cb18-2"><a aria-hidden="true" tabindex="-1"></a>snacksize_candybars</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="17">
@@ -1542,7 +1542,7 @@
 </section>
 <section class="slide level2">
 
-<div id="feb86846" class="cell" data-execution_count="18">
+<div id="2e38db5b" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a aria-hidden="true" tabindex="-1"></a>pd.concat([candy, snacksize_candybars], axis<span class="op">=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="18">
 <div>
