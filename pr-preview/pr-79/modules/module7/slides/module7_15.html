@@ -200,13 +200,13 @@
 <section id="comments" class="slide level2">
 <h2>Comments</h2>
 <p><strong>Bad Comments:</strong> Example of a comment that doesn’t make sense</p>
-<div id="d5ff4355" class="cell" data-execution_count="2">
+<div id="04fa1fa9" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># The estimated stock room size minus the rented space </span></span>
 <span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a>screen_time <span class="op">=</span> <span class="dv">23</span> <span class="op">*</span> <span class="fl">1.10</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><br></p>
 <p><strong>Bad Comments:</strong> Example of commenting gone overboard</p>
-<div id="be0024b0" class="cell" data-execution_count="3">
+<div id="0f59b37d" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># Reading in the cereal dataframe</span></span>
 <span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a>cereal_dataframe <span class="op">=</span> pd.read_csv(<span class="st">'data/cereal.csv'</span>)</span>
 <span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a></span>
@@ -217,7 +217,7 @@
 </div>
 <p><br></p>
 <p><strong>Good Comments:</strong> Example of a useful comment</p>
-<div id="23bf2366" class="cell" data-execution_count="4">
+<div id="66158f97" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># Obtaining the cereals with calories between 130 and 150</span></span>
 <span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a>cereal_dataframe[(cereal_dataframe[<span class="st">'calories'</span>] <span class="op">&gt;</span><span class="dv">130</span>) <span class="op">&amp;</span> (cereal_dataframe[<span class="st">'calories'</span>] <span class="op">&lt;</span><span class="dv">150</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -276,18 +276,18 @@
 <section class="slide level2">
 
 <p><strong>BAD comment</strong></p>
-<div id="9c977358" class="cell" data-execution_count="5">
+<div id="bdd9e18f" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># adding 6.99 </span></span>
 <span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a>cost <span class="op">=</span> cost <span class="op">+</span> <span class="fl">6.99</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>Better comment</strong></p>
-<div id="c2fe062f" class="cell" data-execution_count="6">
+<div id="2c960671" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># Accounting for shipping charges</span></span>
 <span id="cb5-2"><a aria-hidden="true" tabindex="-1"></a>cost <span class="op">=</span> cost <span class="op">+</span> <span class="fl">6.99</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><br></p>
 <p><strong>BAD comment</strong></p>
-<div id="f3133d57" class="cell" data-execution_count="7">
+<div id="5e9d288d" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb6-2"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-3"><a aria-hidden="true" tabindex="-1"></a><span class="co"># This code iterates over the numbers 1 to 5 each time adding the number</span></span>
@@ -296,7 +296,7 @@
 <span id="cb6-6"><a aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> x <span class="op">+</span> i</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>Better comment</strong></p>
-<div id="c82c9357" class="cell" data-execution_count="8">
+<div id="ff4b209f" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb7-2"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-3"><a aria-hidden="true" tabindex="-1"></a><span class="co"># Sum up the values 1 to 5 </span></span>
@@ -327,27 +327,27 @@
 <li>Variable names should be lowercase</li>
 </ul>
 <p><strong>Fine</strong></p>
-<div id="dd6038fa" class="cell" data-execution_count="9">
+<div id="b7363ade" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a aria-hidden="true" tabindex="-1"></a>lego</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>Fine</strong></p>
-<div id="a35857fe" class="cell" data-execution_count="10">
+<div id="8eba76c2" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a aria-hidden="true" tabindex="-1"></a>lego_themes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>Fine</strong></p>
-<div id="8275cff6" class="cell" data-execution_count="11">
+<div id="3a29c490" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a aria-hidden="true" tabindex="-1"></a>lego_df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>Not Recommended</strong></p>
-<div id="7fc32ebf" class="cell" data-execution_count="12">
+<div id="e899dc60" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a aria-hidden="true" tabindex="-1"></a>lego_DF</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>Not Recommended</strong></p>
-<div id="a076db3c" class="cell" data-execution_count="13">
+<div id="59e16968" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a aria-hidden="true" tabindex="-1"></a>LEGO</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>Not Recommended</strong></p>
-<div id="79d5f256" class="cell" data-execution_count="14">
+<div id="02d12295" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a aria-hidden="true" tabindex="-1"></a>legothemes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <aside class="notes">
@@ -374,18 +374,18 @@
 <section id="variables-without-keywords" class="slide level2">
 <h2>Variables without Keywords</h2>
 <h3 id="dont-do-this">Don’t Do This</h3>
-<div id="9063f617" class="cell" data-execution_count="15">
+<div id="59b184eb" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a aria-hidden="true" tabindex="-1"></a><span class="bu">list</span> <span class="op">=</span> []</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><br></p>
 <h3 id="or-this">Or This</h3>
-<div id="6dfb6c1c" class="cell" data-execution_count="16">
+<div id="0ab358a6" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> <span class="bu">tuple</span>(argument):</span>
 <span id="cb15-2"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><br></p>
 <h3 id="or-this-1">Or This</h3>
-<div id="8fb76fa1" class="cell" data-execution_count="17">
+<div id="8f348524" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a aria-hidden="true" tabindex="-1"></a><span class="bu">str</span> <span class="op">=</span> <span class="dv">4</span></span>
 <span id="cb16-2"><a aria-hidden="true" tabindex="-1"></a><span class="bu">type</span> <span class="op">=</span> <span class="dv">67</span> <span class="op">*</span> <span class="bu">str</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -407,7 +407,7 @@
 </section>
 <section id="meaningful-names" class="slide level2">
 <h2>Meaningful Names</h2>
-<div id="76e69673" class="cell" data-execution_count="18">
+<div id="0c535c42" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">100</span> </span>
 <span id="cb17-2"><a aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="dv">23</span></span>
 <span id="cb17-3"><a aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> <span class="fl">0.56</span></span>
@@ -416,7 +416,7 @@
 <span id="cb17-6"><a aria-hidden="true" tabindex="-1"></a>e <span class="op">=</span> c <span class="op">*</span> d</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><br></p>
-<div id="2b793915" class="cell" data-execution_count="19">
+<div id="c725be6b" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a aria-hidden="true" tabindex="-1"></a>apples <span class="op">=</span> <span class="dv">100</span> </span>
 <span id="cb18-2"><a aria-hidden="true" tabindex="-1"></a>bananas <span class="op">=</span> <span class="dv">23</span></span>
 <span id="cb18-3"><a aria-hidden="true" tabindex="-1"></a>fruit_price <span class="op">=</span> <span class="fl">0.56</span></span>
@@ -443,14 +443,14 @@
 </section>
 <section id="concise-names" class="slide level2">
 <h2>Concise Names</h2>
-<div id="152698df" class="cell" data-execution_count="20">
+<div id="76ad1620" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a aria-hidden="true" tabindex="-1"></a>mass_of_the_object_in_motion <span class="op">=</span> <span class="dv">45</span></span>
 <span id="cb19-2"><a aria-hidden="true" tabindex="-1"></a>the_acceleration_of_the_object_in_motion <span class="op">=</span> <span class="fl">1.8</span></span>
 <span id="cb19-3"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb19-4"><a aria-hidden="true" tabindex="-1"></a>force_acting_on_an_object <span class="op">=</span> mass_of_the_object_in_motion <span class="op">*</span> the_acceleration_of_the_object_in_motion</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><br></p>
-<div id="891cb27b" class="cell" data-execution_count="21">
+<div id="25f006ae" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a aria-hidden="true" tabindex="-1"></a>mass <span class="op">=</span> <span class="dv">45</span></span>
 <span id="cb20-2"><a aria-hidden="true" tabindex="-1"></a>acceleration <span class="op">=</span> <span class="fl">1.8</span></span>
 <span id="cb20-3"><a aria-hidden="true" tabindex="-1"></a></span>
