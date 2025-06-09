@@ -202,7 +202,7 @@
 </section>
 <section id="replace" class="slide level2">
 <h2>Replace</h2>
-<div id="e38eea0a" class="cell" data-execution_count="2">
+<div id="ba3cd110" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a>cycling <span class="op">=</span> pd.read_csv(<span class="st">'data/cycling_data.csv'</span>)</span>
 <span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a>cycling.head(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
@@ -325,7 +325,7 @@
 </section>
 <section class="slide level2">
 
-<div id="a2d5070a" class="cell" data-execution_count="3">
+<div id="10a14a1c" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a>cycling_lower <span class="op">=</span> cycling.assign(Comments <span class="op">=</span> cycling[<span class="st">'Comments'</span>].<span class="bu">str</span>.lower())</span>
 <span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a>cycling_lower.head(<span class="dv">9</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
@@ -444,7 +444,7 @@
 </section>
 <section class="slide level2">
 
-<div id="a55cf9d5" class="cell" data-execution_count="4">
+<div id="7d76348c" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-display" data-execution_count="4">
 <div>
 <style scoped="">
@@ -526,7 +526,7 @@
 </div>
 </div>
 <p><br></p>
-<div id="5fe6b912" class="cell" data-execution_count="5">
+<div id="39c49d3d" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a>cycling_rain <span class="op">=</span> cycling_lower.assign(Comments <span class="op">=</span> cycling_lower[<span class="st">'Comments'</span>].<span class="bu">str</span>.replace(<span class="st">'whether'</span>, <span class="st">'weather'</span>))</span>
 <span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a>cycling_rain.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
@@ -628,7 +628,7 @@
 </section>
 <section id="contains" class="slide level2">
 <h2>Contains</h2>
-<div id="1d78d362" class="cell" data-execution_count="6">
+<div id="92940353" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a>cycling_lower[<span class="st">'Comments'</span>].<span class="bu">str</span>.contains(<span class="st">'rain'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <pre><code>0      True
@@ -642,7 +642,7 @@ Name: Comments, Length: 33, dtype: bool</code></pre>
 </div>
 </div>
 <p><br></p>
-<div id="7a70c7a5" class="cell" data-execution_count="7">
+<div id="c77a60d9" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a>cycling_lower[cycling_lower[<span class="st">'Comments'</span>].<span class="bu">str</span>.contains(<span class="st">'rain'</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
 <div>
@@ -746,7 +746,7 @@ Name: Comments, Length: 33, dtype: bool</code></pre>
 <section class="slide level2">
 
 <p><br></p>
-<div id="ee92da7a" class="cell" data-execution_count="9">
+<div id="48d9c567" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a>cycling_lower.loc[cycling_lower[<span class="st">'Comments'</span>].<span class="bu">str</span>.contains(<span class="st">'rain'</span>), <span class="st">'Comments'</span>] <span class="op">=</span> <span class="st">'rained'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <aside class="notes">
@@ -774,7 +774,7 @@ Name: Comments, Length: 33, dtype: bool</code></pre>
 <section class="slide level2">
 
 <p>The rows originally filtered with “rain” in the dataset:</p>
-<div id="5eab26ec" class="cell" data-execution_count="10">
+<div id="50614d0f" class="cell" data-execution_count="10">
 <div class="cell-output cell-output-display" data-execution_count="10">
 <div>
 <style scoped="">
@@ -857,7 +857,7 @@ Name: Comments, Length: 33, dtype: bool</code></pre>
 </div>
 <p><br></p>
 <p>Have now been been been replaced with “rained” in the <code>Comments</code> column:</p>
-<div id="a0e2e661" class="cell" data-execution_count="11">
+<div id="2a678c8f" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a aria-hidden="true" tabindex="-1"></a>cycling_lower[cycling_lower[<span class="st">'Comments'</span>] <span class="op">==</span> <span class="st">'rained'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="11">
 <div>
