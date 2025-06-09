@@ -1,0 +1,173 @@
+---
+format: live-html
+---
+
+<script src='../../src/quiz.js'></script>
+
+# 4.1. Exercises
+
+## Datetime Questions
+
+<div id='mcq1'></div>
+<script>
+    generateQuiz(
+        'mcq1',
+        'Question 1',
+        'Which of the following dtypes measures an interval of time?',
+        {
+        'Timestamp': 'This is a snapshot in time.',
+        'timedelta': 'Great work!',
+        'datetime': 'This is a dtype not a measurement',
+        },
+        'timedelta',
+    );
+</script>
+
+<div id='mcq2'></div>
+<script>
+    generateQuiz(
+        'mcq2',
+        'Question 2',
+        'What code would you use to create a column with the name of the month from a datetime column?',
+        {
+        '<code>td.month</code>': 'This will produce a numerical value, not the month name.',
+        '<code>.month</code>': 'This will produce a numerical value for a single Timestamp instead of a column.',
+        '<code>td.month_name()</code>': 'You got it!',
+        '<code>td.month_name</code>': 'So close, but in this case, we need parentheses.',
+        },
+        '<code>td.month_name()</code>',
+    );
+</script>
+
+<div id='mcq3'></div>
+<script>
+    generateQuiz(
+        'mcq3',
+        'Question 3',
+        'Which verb do we use to find the time interval between rows?',
+        {
+        '<code>.diff()</code>': 'Way to go!',
+        '<code>.difference()</code>': 'Not quite.',
+        '<code>differ()</code>': 'This isn’t the function we are looking for.',
+        '<code>.differ</code>': 'Maybe, review the notes a bit more before proceeding.',
+        },
+        '<code>.diff()</code>',
+    );
+</script>
+
+
+## Practice Processing Dates
+
+**Instructions:**    
+Running a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes. 
+
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
+
+_**Make sure you remove the hash (`#`) symbol in the coding portions of this question.  We have commented them so that the line won't execute and you can test your code after each step.**_
+
+
+Use the output of the following code chunk to help answer the next question.
+
+```{pyodide}
+import pandas as pd
+
+# The data
+hockey_players = pd.read_csv('data/canucks.csv')
+hockey_players
+```
+
+Let's read in data and parse a datetime column as well as calculate the hockey team's oldest and youngest player. 
+
+**Tasks:**
+
+- Read in the `canucks.csv` file from the data folder and parse the `Birth Date` column. Save this as an object named `canucks`.
+- Find the oldest player's date of birth and save the Timestamp as `oldest`. 
+- Find the youngest player's date of birth and save the Timestamp as `youngest`.
+- Find the age difference between the two players in years to 2 decimal places. Save this as an object name `age_range`. 
+- Display `age_range`.
+
+
+```{pyodide}
+#| exercise: practice_processing_dates
+import pandas as pd
+
+DAYS_PER_YEAR = 365.25
+
+# Read in the canucks.csv file from the data folder and parse the "Birth Date" column
+# You may want to specify date_format="%d-%b-%y"
+# Save this as an object named canucks
+____ = ____
+
+# Find the oldest player's date of birth
+# Save the Timstamp as oldest
+____ = ____
+
+# Find the youngest player's age date of birth 
+# Save the Timestamp as youngest
+# ____ = ____
+
+# Find the age difference between the two players in number of years to 2 decimal places
+# Save this an an object name age_range
+# ____ = ____
+
+# Display age_range
+# ____
+```
+
+```{pyodide}
+#| exercise: practice_processing_dates
+#| check: true
+from src.utils import print_correct_msg
+
+assert isinstance(result, float), "Are you returning age_range?"
+assert len(str(result).split(".")[1]) == 2, "Please round to 2 decimal places."
+assert result == 14.24, "The value for 'age_range' is incorrect. Are you computing the 'oldest' and 'youngest' correctly?"
+print_correct_msg()
+```
+
+:::: { .hint exercise="practice_processing_dates"}
+::: { .callout-note collapse="false"}
+
+## Hint 1
+
+- Are you using the argument `parse_dates` while reading in the data?
+- The oldest player has the `min()` date of birth.
+- The youngest player has the `max()` date of birth.
+- Are you subtracting the min value from the max value?
+- Are you rounding to 2 decimal places?
+
+:::
+::::
+
+:::: { .solution exercise="practice_processing_dates" }
+::: { .callout-tip collapse="false"}
+
+## Fully worked solution:
+
+```{pyodide}
+import pandas as pd
+
+DAYS_PER_YEAR = 365.25
+
+# Read in the canucks.csv file from the data folder and parse the "Birth Date" column
+# Save this as an object named canucks
+canucks = pd.read_csv('data/canucks.csv', parse_dates=['Birth Date'], date_format="%d-%b-%y")
+
+# Find the oldest player's date of birth 
+# Save the Timstamp as oldest
+oldest = canucks['Birth Date'].min()
+
+# Find the youngest player's date of birth 
+# Save the Timestamp as youngest
+youngest = canucks['Birth Date'].max()
+
+# Find the age difference between the two players in number of years to 2 decimal places
+# Save this an an object name age_range
+age_range = round((youngest - oldest).days/DAYS_PER_YEAR, 2)
+
+# Display age_range
+age_range
+```
+
+:::
+::::

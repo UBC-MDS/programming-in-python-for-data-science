@@ -1,0 +1,306 @@
+---
+format: live-html
+---
+
+<script src='../../src/quiz.js'></script>
+
+# 3.1. Exercises
+
+## Finding and Dropping Null Values Questions
+
+You run `.info()` on the `fruit_salad` dataframe and get the following output.
+
+```out
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 10 entries, 0 to 9
+Data columns (total 8 columns):
+ #   Column         Non-Null Count  Dtype  
+---  ------         --------------  -----  
+ 0   name           10 non-null     object 
+ 1   colour         10 non-null     object 
+ 2   location       10 non-null     object 
+ 3   seed           10 non-null     bool   
+ 4   shape          9 non-null      object 
+ 5   sweetness      10 non-null     bool   
+ 6   water_content  8 non-null      float64
+ 7   weight         10 non-null     int64  
+dtypes: bool(2), float64(1), int64(1), object(4)
+memory usage: 628.0+ bytes
+```
+
+<div id='mcq1'></div>
+<script>
+    generateQuiz(
+        'mcq1',
+        'Question 1',
+        'Which of the columns contain null values? <i>Hint: There could be more than one.</i>',
+        {
+        '<code>name</code>': 'This column has all of its 10 rows with non-null values.',
+        '<code>location</code>': 'This column has all of its 10 rows with non-null values.',
+        '<code>shape</code>': 'Of the 10 rows (entries) only 9 have non-null values meaning this column contains a null value. Are there any others?',
+        '<code>water_content</code>': 'Of the 10 rows (entries) only 8 have non-null values meaning this column contains a null value. Are there any others?',
+        '<code>weight</code>': 'This column has all of its 10 rows with non-null values.',
+        },
+        [ '<code>shape</code>', '<code>water_content</code>'],
+    );
+</script>
+
+```out
+     name  height  diameter   age flowering
+0  Cherry    15.0         2  12.0      True
+1     Fir    20.0         4   4.0     False
+2  Willow    25.0         3   2.0      True
+3     Oak     NaN         2   NaN     False
+4     Oak    10.0         5   6.0       NaN
+```
+
+<div id='mcq2'></div>
+<script>
+    generateQuiz(
+        'mcq2',
+        'Question 2',
+        'Given the dataframe named <code>forest</code>, what code would you use to remove only the rows missing from the <code>age</code> column?',
+        {
+        '<code>forest.drop(columns=[’age’])</code>': 'This is just dropping the entire <code>age</code> column!',
+        '<code>pd.dropna(forest[’age’])</code>': '<code>.dropna()</code> is not called in this manner.',
+        '<code>pd.dropna(columns=[’age’])</code>': 'Are you using the correct argument?',
+        '<code>forest.dropna(subset=[’age’])</code>': '',
+        },
+        '<code>forest.dropna(subset=[’age’])</code>',
+    );
+</script>
+
+## Filling Methods
+
+Use the `forest` dataframe below to answer the next 2 questions: 
+
+```out
+     name  height  diameter   age flowering
+0  Cherry    15.0         2  12.0      True
+1     Fir    20.0         4   4.0     False
+2  Willow    25.0         3   2.0      True
+3     Oak     NaN         2   3.0     False
+4     Oak    10.0         5   6.0     False
+```
+
+```out
+# Quesiton 1
+     name  height  diameter  age  flowering
+0  Cherry    15.0         2   12       True
+1     Fir    20.0         4    4      False
+2  Willow    25.0         3    2       True
+3     Oak    17.5         2    3      False
+4     Oak    10.0         5    6      False
+```
+
+<div id='mcq3'></div>
+<script>
+    generateQuiz(
+        'mcq3',
+        'Question 1',
+        'Which code will replace the <code>NaN</code> value in the <code>height</code> column so the new dataframe looks like the one above?',
+        {
+        '<code>forest.fillna(value = forest[’height’].mean())</code>': '',
+        '<code>forest.fillna(value = forest[’height’].max())</code>': 'The max value in the <code>height</code> column is <code>25</code>, not <code>17.5</code>.',
+        '<code>forest.fillna(method = ’bfill’)</code>': 'This value isn’t an option in the dataframe and would not be possible with <code>bfill</code>.',
+        '<code>forest.fillna(method = ’ffill’)</code>': 'This value isn’t an option in the dataframe and would not be possible with <code>ffill</code>.',
+        },
+        '<code>forest.fillna(value = forest[’height’].mean())</code>',
+    );
+</script>
+
+```out
+# Quesiton 2
+     name  height  diameter  age  flowering
+0  Cherry    15.0         2   12       True
+1     Fir    20.0         4    4      False
+2  Willow    25.0         3    2       True
+3     Oak    10.0         2    3      False
+4     Oak    10.0         5    6      False
+```
+
+<div id='mcq4'></div>
+<script>
+    generateQuiz(
+        'mcq4',
+        'Question 2',
+        'Which code will replace the <code>NaN</code> value in the <code>height</code> column so the new dataframe looks like the one above?',
+        {
+        '<code>forest.fillna(value = 13)': 'The <code>NaN</code> value is being filled with a value of 10, not 13.',
+        '<code>forest.fillna(value = forest[’height’].max())</code>': 'The max value in the <code>height</code> column is <code>25</code>, not <code>10</code>.',
+        '<code>forest.fillna(method = ’bfill’)</code>': 'Perfect!',
+        '<code>forest.fillna(method = ’ffill’)</code>': '<code>ffill</code> has the <code>NaN</code> value adopt the same value and the row that precedes it.',
+        },
+        '<code>forest.fillna(method = ’bfill’)</code>',
+    );
+</script>
+
+## Coding questions
+
+**Instructions:**    
+Running a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes. 
+
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
+
+_**Make sure you remove the hash (`#`) symbol in the coding portions of this question.  We have commented them so that the line won't execute and you can test your code after each step.**_
+
+
+### Practice Filling Null Values
+
+Let's replace the values missing in the `canucks` dataframe with the salary mean.
+
+**Tasks:**
+
+- Replace the `NaN` values in the dataframe with the mean salary value. 
+- Save this as a new dataframe named `canucks_altered`.
+- Display the `canucks_altered` dataframe.
+
+```{pyodide}
+#| exercise: practice_filling_null_values
+import pandas as pd
+
+canucks = pd.read_csv('data/canucks.csv')
+
+# Replace the null values in the dataframe with the mean salary value
+# Save this as a new dataframe named canucks_altered
+____ = ____
+
+# Display the canucks_altered dataframe
+# ____
+```
+
+```{pyodide}
+#| exercise: practice_filling_null_values
+#| check: true
+from src.utils import print_correct_msg
+
+assert isinstance(result, pd.DataFrame), "We are expecting a dataframe."
+assert result['Salary'].isnull().sum() == 0, "There are still some missing values in the 'Salary' column. Are you filling the missing values?"
+assert result.loc[20, "Salary"] == 3166250.0, "Are you replacing NaN with the mean salary value?"
+print_correct_msg()
+```
+
+:::: { .hint exercise="practice_filling_null_values"}
+::: { .callout-note collapse="false"}
+
+## Hint 1
+
+- Are you using `.fillna()`?
+- Are you using the argument `value=canucks['Salary].mean()`?
+
+:::
+::::
+
+:::: { .solution exercise="practice_filling_null_values" }
+::: { .callout-tip collapse="false"}
+
+## Fully worked solution:
+
+```{pyodide}
+import pandas as pd
+
+canucks = pd.read_csv('data/canucks.csv')
+
+# Replace the null values in the dataframe with the mean salary value
+# Save this as a new dataframe named canucks_altered
+canucks_altered = canucks.fillna(value=canucks['Salary'].mean())
+
+# Display the canucks_altered dataframe
+canucks_altered
+```
+
+:::
+::::
+
+<br>
+
+### Practice Identifying Null Values
+
+Let's practice using `.isnull()` in our data processing using the `canucks` dataset from earlier in this course.
+
+**Tasks:**
+
+- Identify any columns with null values in the `canucks` dataframe with `.info()` and save this as `canucks_info`.
+- Create a new column in the dataframe named `Wealth` where all the values equal `"comfortable"`. 
+- Name the new dataframe `canucks_comf`.
+- Do conditional value replacement, where if the value in the `Salary` column is null, we replace `"comfortable"` with `"unknown"`.
+- Display the new `canucks_comf` dataframe.
+
+```{pyodide}
+#| exercise: practice_identifying_null_values
+import pandas as pd
+
+canucks = pd.read_csv('data/canucks.csv')
+
+# Identify any columns with null values with .info()
+# Save this dataframe as canucks_info
+____ = ____
+____
+
+# Create a new column in the dataframe named Wealth
+# where all the values equal "comfortable"
+# Name the new dataframe canucks_comf
+____ = ____
+____
+
+# Do conditional replacement, where if the value in the salary column is null,
+# we replace "comfortable" with "unknown"
+____ = ____
+____
+```
+
+```{pyodide}
+#| exercise: practice_identifying_null_values
+#| check: true
+from src.utils import print_correct_msg
+
+assert isinstance(result, pd.DataFrame), "We are expecting a dataframe."
+assert "Wealth" in list(result.columns), "Make sure you are creating a new column 'Wealth' in the canucks dataframe."
+assert "comfortable" in set(result['Wealth']), "Make sure you are setting the values in the 'Wealth' column to 'comfortable'."
+assert "unknown" in set(result['Wealth']), "Make sure you are setting the null values in the 'Wealth' column to 'unknown'."
+assert sum(result['Wealth'] == "unknown") == 2, "The amount of 'unknown' values is incorrect. Make ure you are replacing all the null values to 'unknown'."
+print_correct_msg()
+```
+
+:::: { .hint exercise="practice_identifying_null_values"}
+::: { .callout-note collapse="false"}
+
+## Hint 1
+
+- Are you using `canucks.info()`?
+- Are you creating `canucks_comf` with `canucks.assign(Wealth = "comfortable")`?
+- Are you using `.loc[]` to replace the values in the `Wealth` column?
+- Are you using `canucks_comf['Salary'].isnull()` as your condition in `.loc[]`?
+
+:::
+::::
+
+:::: { .solution exercise="practice_identifying_null_values" }
+::: { .callout-tip collapse="false"}
+
+## Fully worked solution:
+
+```{pyodide}
+import pandas as pd
+
+canucks = pd.read_csv('data/canucks.csv')
+
+# Identify any columns with null values with .info()
+# Save this dataframe as canucks_info
+canucks_info = canucks.info()
+canucks_info
+
+# Create a new column in the dataframe named Wealth
+# where all the values equal "comfortable"
+# Name the new dataframe canucks_comf
+canucks_comf = canucks.assign(Wealth = "comfortable")
+canucks_comf
+
+# Do conditional replacement, where if the value in the salary column is null,
+# we replace "comfortable" with "unknown" 
+canucks_comf.loc[canucks_comf['Salary'].isnull(), "Wealth"] = "unknown"
+canucks_comf
+```
+
+:::
+::::
