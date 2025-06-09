@@ -1,0 +1,56 @@
+---
+format: html
+---
+
+<script src='../../src/quiz.js'></script>
+
+# 2.1. Exercises
+
+## Importing Your Own Functions Questions
+
+<div id='mcq1'></div>
+<script>
+    generateQuiz(
+        'mcq1',
+        'Question 1',
+        'Where do you save your files so you can import them into new Jupyter notebooks?',
+        {
+        '<code>.python</code>': 'Not quite but you are on the right track.',
+        '<code>.py</code>': '',
+        '<code>.ipynb</code>': 'This is a Jupyter notebook file, not a file to import a function from.',
+        },
+        '<code>.py</code>',
+    );
+</script>
+
+<div id='mcq2'></div>
+<script>
+    generateQuiz(
+        'mcq2',
+        'Question 2: Is the following statement True or False?',
+        'You can import files containing functions in a similar way to how you import Python libraries.',
+        {
+        'True': 'That’s right! This makes things easy for us.',
+        'False': 'Note quite, Python uses a similar importing style for libraries and saved scripts.',
+        },
+        'True',
+    );
+</script>
+
+## More Importing Your Own Functions Questions
+
+<div id='mcq3'></div>
+<script>
+    generateQuiz(
+        'mcq3',
+        'Question 1',
+        'If I have a file named <code>baking.py</code> containing functions like <code>cake()</code> and <code>scones()</code> and I want to import it into a Jupyter notebook using the alias <code>bake</code>, which of the following would be required?',
+        {
+        '<code>import cake from baking</code>': '<code>cake</code> is the function name, not the library.',
+        '<code>from baking import bake</code>': 'This isn’t quite right. <code>bake</code> is an alias, not a package.',
+        '<code>import baking as bake</code>': 'This is right!',
+        '<code>import bake as scone</code>': 'The alias we want to call <code>baking</code> is <code>bake</code>, not <code>scone</code>.',
+        },
+        '<code>import baking as bake</code>',
+    );
+</script>

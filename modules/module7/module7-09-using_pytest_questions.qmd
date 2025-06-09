@@ -1,0 +1,159 @@
+---
+format: live-html
+---
+
+<script src='../../src/quiz.js'></script>
+
+# 3.1. Exercises
+
+## Using Pytest Questions
+
+<div id='mcq1'></div>
+<script>
+    generateQuiz(
+        'mcq1',
+        'Question 1',
+        'When you make a function from a unit test, what naming guideline does your function have to follow for <code>pytest</code> to work?',
+        {
+        'The function must end with <code>test</code>': 'It should not end with <code>test</code>, but the word "test" should be included in the name.',
+        'The function must begin with <code>test</code>': '',
+        'The function must end with <code>pytest</code>': '<code>pytest</code> does not need to be used in the function name.',
+        'The function must begin with <code>pytest</code>': '<code>pytest</code> does not need to be used in the function name.',
+        },
+        'The function must begin with <code>test</code>',
+    );
+</script>
+
+<div id='mcq2'></div>
+<script>
+    generateQuiz(
+        'mcq2',
+        'Question 2',
+        'Where are your unit test functions saved?',
+        {
+        'In the same Jupyter notebook': 'This would defy the DRY principle if wanted to test our function in multiple different notebooks.',
+        'In the same file as the function you are testing': 'Not if we want to use <code>pytest</code>!',
+        'In a seperate <code>.py</code> file': '',
+        'In a seperate Jupyter notebook': '<code>pytest</code> would not be able to check the tests in a separate Jupyter notebook.',
+        },
+        'In a seperate <code>.py</code> file',
+    );
+</script>
+
+## More Questions on Using Pytest
+
+<div id='mcq3'></div>
+<script>
+    generateQuiz(
+        'mcq3',
+        'Question 1',
+        'I have a function named <code>travel_location()</code> stored in a file named <code>travelling.py</code> and unit tests that checks this function stored in a file named <code>test_travelling.py</code>.',
+        {
+        '<code>pytest travel_location</code>': 'You do not need to use your function name.',
+        '<code>pytest travelling</code>': 'The unit tests are not stored in the <code>travelling.py</code> script.',
+        '<code>pytest tests</code>': 'You need to specify a file!',
+        '<code>pytest test_travelling</code>': '',
+        },
+        '<code>pytest test_travelling</code>',
+    );
+</script>
+
+
+## Making a Test Function
+
+**Instructions:**    
+Running a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes. 
+
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
+
+_**Make sure you remove the hash (`#`) symbol in the coding portions of this question.  We have commented them so that the line won't execute and you can test your code after each step.**_
+
+Let's do the first step in testing the function `find_force()` with `pytest` by converting the tests provided for into an appropriate function. 
+
+**Tasks:**
+
+- Take these unit tests we wrote and compile them together in a function to test the function `find_force()`.
+- Don't forget to give it a name compliant with `pytest`'s needs. 
+
+```{pyodide}
+#| setup: true
+#| exercise: making_a_test_function
+import pandas as pd
+```
+
+```{pyodide}
+#| exercise: making_a_test_function
+def find_force(mass, acceleration):
+    return mass * acceleration
+
+# Take these unit tests compile them together in 
+# a function to check the function find_force
+
+assert find_force(50, 3) == 150, 'Input arguments giving incorrect output'
+assert find_force(100, -2) == -200, 'Input arguments giving incorrect output'
+assert find_force(5, 20) == 100, 'Input arguments giving incorrect output'
+
+
+____
+
+    return 
+
+# For testing purposes, replace ____ with your function name
+____.__code__
+```
+
+```{pyodide}
+#| exercise: making_a_test_function
+#| check: true
+from src.utils import print_correct_msg
+
+def dummy():
+    return
+
+assert isinstance(result, type(dummy.__code__)), "Please return your_function_name.__code__"
+assert result.co_argcount == 0, "These functions do not take any arguments."
+assert "find_force" in result.co_names, "Make sure you are testing find_force."
+assert {50, 3, 150, 100, -2, -200, 5, 20}.issubset(set(result.co_consts)), "Make sure you are including all the assert statements."
+print_correct_msg()
+```
+
+:::: { .hint exercise="making_a_test_function"}
+::: { .callout-note collapse="false"}
+
+## Hint 1
+
+- Are you naming it something starting with `test`? 
+- Are you remembering these functions do not need to return anything?
+- These functions do not take any arguments.
+
+:::
+::::
+
+:::: { .solution exercise="making_a_test_function" }
+::: { .callout-tip collapse="false"}
+
+## Fully worked solution:
+
+```{pyodide}
+def find_force(mass, acceleration):
+    return mass * acceleration
+
+# Take these unit tests compile them together in 
+# a function to check the function find_force
+
+assert find_force(50, 3) == 150, 'Input arguments giving incorrect output'
+assert find_force(100, -2) == -200, 'Input arguments giving incorrect output'
+assert find_force(5, 20) == 100, 'Input arguments giving incorrect output'
+
+
+def test_find_force():
+    assert find_force(50, 3) == 150, 'Input arguments giving incorrect output'
+    assert find_force(100, -2) == -200, 'Input arguments giving incorrect output'
+    assert find_force(5, 20) == 100, 'Input arguments giving incorrect output'
+
+# For testing purposes, replace ____ with your function name
+test_find_force.__code__
+```
+
+:::
+::::
