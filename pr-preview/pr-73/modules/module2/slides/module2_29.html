@@ -202,10 +202,10 @@
 </section>
 <section class="slide level2">
 
-<div id="1f87022c" class="cell" data-inlcude="false" data-execution_count="2">
+<div id="5c901ebd" class="cell" data-inlcude="false" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a>cereal <span class="op">=</span> pd.read_csv(<span class="st">'data/cereal.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="f30b432e" class="cell" data-execution_count="3">
+<div id="e8f5e1a9" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> altair <span class="im">as</span> alt</span>
 <span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a>chart0 <span class="op">=</span> alt.Chart(cereal, width<span class="op">=</span><span class="dv">500</span>, height<span class="op">=</span><span class="dv">300</span>).mark_circle().encode(</span>
@@ -235,7 +235,7 @@
 </section>
 <section class="slide level2">
 
-<div id="60d99ba0" class="cell" data-execution_count="6">
+<div id="022020cc" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a>chart1 <span class="op">=</span> alt.Chart(cereal_modified, width<span class="op">=</span><span class="dv">500</span>, height<span class="op">=</span><span class="dv">300</span>).mark_circle().encode(</span>
 <span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a>                   x<span class="op">=</span><span class="st">'mfr'</span>, </span>
 <span id="cb3-3"><a aria-hidden="true" tabindex="-1"></a>                   y<span class="op">=</span><span class="st">'calories'</span></span>
@@ -264,7 +264,7 @@
 </section>
 <section class="slide level2">
 
-<div id="e12e8fa2" class="cell" data-execution_count="8">
+<div id="2ab87806" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a>chart2 <span class="op">=</span> alt.Chart(cereal_modified, width<span class="op">=</span><span class="dv">500</span>, height<span class="op">=</span><span class="dv">300</span>).mark_circle().encode(</span>
 <span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a>                   x<span class="op">=</span><span class="st">'mfr:N'</span>, </span>
 <span id="cb4-3"><a aria-hidden="true" tabindex="-1"></a>                   y<span class="op">=</span><span class="st">'calories:Q'</span></span>
@@ -353,7 +353,7 @@
 </section>
 <section class="slide level2">
 
-<div id="96351918" class="cell" data-execution_count="10">
+<div id="5f2e649d" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a>chart3 <span class="op">=</span> alt.Chart(cereal, width<span class="op">=</span><span class="dv">500</span>, height<span class="op">=</span><span class="dv">300</span>).mark_circle().encode(</span>
 <span id="cb5-2"><a aria-hidden="true" tabindex="-1"></a>                   x<span class="op">=</span><span class="st">'sugars:Q'</span>,  <span class="co"># set the sugars column as quantitative</span></span>
 <span id="cb5-3"><a aria-hidden="true" tabindex="-1"></a>                   y<span class="op">=</span><span class="st">'rating:Q'</span>   <span class="co"># set the rating column as quantitative</span></span>
@@ -381,7 +381,7 @@
 </section>
 <section id="variable-types" class="slide level2">
 <h2>Variable types</h2>
-<div id="a7a64562" class="cell" data-execution_count="12">
+<div id="60abc1ab" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a>chart4 <span class="op">=</span> alt.Chart(cereal, width<span class="op">=</span><span class="dv">500</span>, height<span class="op">=</span><span class="dv">300</span>).mark_circle().encode(</span>
 <span id="cb6-2"><a aria-hidden="true" tabindex="-1"></a>                   x<span class="op">=</span>alt.X(<span class="st">'sugars:Q'</span>), <span class="co"># use alt.X() to map the x-axis</span></span>
 <span id="cb6-3"><a aria-hidden="true" tabindex="-1"></a>                   y<span class="op">=</span>alt.Y(<span class="st">'rating:Q'</span>)  <span class="co"># use alt.Y() to map the y-axis</span></span>
@@ -410,7 +410,7 @@
 </section>
 <section id="histograms" class="slide level2">
 <h2>Histograms</h2>
-<div id="eef05942" class="cell" data-execution_count="14">
+<div id="0f4f9ebc" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a>chart5 <span class="op">=</span> alt.Chart(cereal, width<span class="op">=</span><span class="dv">500</span>, height<span class="op">=</span><span class="dv">300</span>).mark_bar().encode(</span>
 <span id="cb7-2"><a aria-hidden="true" tabindex="-1"></a>                   x<span class="op">=</span>alt.X(<span class="st">'calories:Q'</span>, <span class="bu">bin</span><span class="op">=</span><span class="va">True</span>), <span class="co"># set x-axis as calories </span></span>
 <span id="cb7-3"><a aria-hidden="true" tabindex="-1"></a>                   y<span class="op">=</span>alt.Y(<span class="st">'count():Q'</span>)             <span class="co"># set the y-axis as the occurrence count for each calorie value</span></span>
@@ -439,7 +439,7 @@
 </section>
 <section id="bins" class="slide level2">
 <h2>Bins</h2>
-<div id="004f5b35" class="cell" data-execution_count="16">
+<div id="cd2ba875" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a aria-hidden="true" tabindex="-1"></a>chart6 <span class="op">=</span> alt.Chart(cereal, width<span class="op">=</span><span class="dv">500</span>, height<span class="op">=</span><span class="dv">300</span>).mark_bar().encode(</span>
 <span id="cb8-2"><a aria-hidden="true" tabindex="-1"></a>                   x<span class="op">=</span>alt.X(<span class="st">'calories:Q'</span>, <span class="bu">bin</span><span class="op">=</span>alt.Bin(maxbins<span class="op">=</span><span class="dv">20</span>)), <span class="co"># set max number of bins to 20</span></span>
 <span id="cb8-3"><a aria-hidden="true" tabindex="-1"></a>                   y<span class="op">=</span>alt.Y(<span class="st">'count():Q'</span>)</span>
@@ -486,7 +486,7 @@
 </section>
 <section class="slide level2">
 
-<div id="5bafe039" class="cell" data-execution_count="18">
+<div id="9e0f95db" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a aria-hidden="true" tabindex="-1"></a>chart7 <span class="op">=</span> alt.Chart(cereal, width<span class="op">=</span><span class="dv">500</span>, height<span class="op">=</span><span class="dv">300</span>).mark_bar().encode(</span>
 <span id="cb9-2"><a aria-hidden="true" tabindex="-1"></a>                   x<span class="op">=</span>alt.X(<span class="st">'calories:Q'</span>, <span class="bu">bin</span><span class="op">=</span>alt.Bin(maxbins<span class="op">=</span><span class="dv">20</span>), title<span class="op">=</span><span class="st">"Calorie Content"</span>), <span class="co"># use alt.X() to label the x-axis</span></span>
 <span id="cb9-3"><a aria-hidden="true" tabindex="-1"></a>                   y<span class="op">=</span>alt.Y(<span class="st">'count():Q'</span>, title<span class="op">=</span><span class="st">"Number of Cereals"</span>)                          <span class="co"># use alt.Y() to label the y-axis</span></span>
@@ -511,7 +511,7 @@
 </section>
 <section class="slide level2">
 
-<div id="94e2b3a5" class="cell" data-execution_count="20">
+<div id="2f290eeb" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a aria-hidden="true" tabindex="-1"></a>mfr_mean <span class="op">=</span> cereal.groupby(by<span class="op">=</span><span class="st">'mfr'</span>).mean(numeric_only<span class="op">=</span><span class="va">True</span>)</span>
 <span id="cb10-2"><a aria-hidden="true" tabindex="-1"></a>mfr_mean</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="20">
@@ -672,7 +672,7 @@
 </section>
 <section class="slide level2">
 
-<div id="7a9fc26a" class="cell" data-execution_count="21">
+<div id="64c13052" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a aria-hidden="true" tabindex="-1"></a>mfr_mean</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="21">
 <div>
@@ -809,7 +809,7 @@
 </div>
 </div>
 </div>
-<div id="a5c0abed" class="cell" data-execution_count="22">
+<div id="01a8bec7" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a aria-hidden="true" tabindex="-1"></a>mfr_mean <span class="op">=</span> mfr_mean.reset_index()</span>
 <span id="cb12-2"><a aria-hidden="true" tabindex="-1"></a>mfr_mean</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="22">
@@ -952,7 +952,7 @@
 </section>
 <section class="slide level2">
 
-<div id="d97b1a77" class="cell" data-execution_count="23">
+<div id="15fcbd57" class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a aria-hidden="true" tabindex="-1"></a>chart8 <span class="op">=</span> alt.Chart(mfr_mean, width<span class="op">=</span><span class="dv">500</span>, height<span class="op">=</span><span class="dv">300</span>).mark_bar().encode(</span>
 <span id="cb13-2"><a aria-hidden="true" tabindex="-1"></a>                   x<span class="op">=</span>alt.X(<span class="st">'mfr:N'</span>, title<span class="op">=</span><span class="st">"Manufacturer"</span>),</span>
 <span id="cb13-3"><a aria-hidden="true" tabindex="-1"></a>                   y<span class="op">=</span>alt.Y(<span class="st">'sugars:Q'</span>, title<span class="op">=</span><span class="st">"Mean sugar content"</span>)</span>
@@ -1001,7 +1001,7 @@ Second, since <code>.groupby()</code> made <code>mfr</code> the new index, we ha
 </section>
 <section id="sorting" class="slide level2">
 <h2>Sorting</h2>
-<div id="9c106cd3" class="cell" data-execution_count="25">
+<div id="e42b5123" class="cell" data-execution_count="25">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a aria-hidden="true" tabindex="-1"></a>chart9 <span class="op">=</span> alt.Chart(mfr_mean, width<span class="op">=</span><span class="dv">500</span>, height<span class="op">=</span><span class="dv">300</span>).mark_bar().encode(</span>
 <span id="cb14-2"><a aria-hidden="true" tabindex="-1"></a>                   x<span class="op">=</span>alt.X(<span class="st">'mfr:N'</span>, sort<span class="op">=</span><span class="st">"y"</span>, title<span class="op">=</span><span class="st">"Manufacturer"</span>),  <span class="co"># use sort="y" to sort in ascending order</span></span>
 <span id="cb14-3"><a aria-hidden="true" tabindex="-1"></a>                   y<span class="op">=</span>alt.Y(<span class="st">'sugars:Q'</span>, title<span class="op">=</span><span class="st">"Mean sugar content"</span>)</span>
@@ -1031,7 +1031,7 @@ Second, since <code>.groupby()</code> made <code>mfr</code> the new index, we ha
 </section>
 <section class="slide level2">
 
-<div id="d861b4dd" class="cell" data-execution_count="27">
+<div id="258fc264" class="cell" data-execution_count="27">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a aria-hidden="true" tabindex="-1"></a>chart10 <span class="op">=</span> alt.Chart(mfr_mean, width<span class="op">=</span><span class="dv">500</span>, height<span class="op">=</span><span class="dv">300</span>).mark_bar().encode(</span>
 <span id="cb15-2"><a aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span>alt.X(<span class="st">'mfr:N'</span>, sort<span class="op">=</span><span class="st">"-y"</span>, title<span class="op">=</span><span class="st">"Manufacturer"</span>),  <span class="co"># use sort="-y" to sort in descending order</span></span>
 <span id="cb15-3"><a aria-hidden="true" tabindex="-1"></a>    y<span class="op">=</span>alt.Y(<span class="st">'sugars:Q'</span>, title<span class="op">=</span><span class="st">"Mean sugar content"</span>)</span>

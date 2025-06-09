@@ -202,7 +202,7 @@
 </section>
 <section class="slide level2">
 
-<div id="74d75de5" class="cell" data-execution_count="3">
+<div id="4a7a5565" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a>cereal <span class="op">=</span> pd.read_csv(<span class="st">'data/cereal.csv'</span>)</span>
 <span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a>cereal.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
@@ -363,7 +363,7 @@
 </section>
 <section id="conditions" class="slide level2">
 <h2>Conditions</h2>
-<div id="73abdaf8" class="cell" data-execution_count="4">
+<div id="ef2eb70b" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a>cereal[<span class="st">'protein'</span>] <span class="op">&gt;</span> <span class="dv">4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>0     False
@@ -398,7 +398,7 @@ Name: protein, Length: 77, dtype: bool</code></pre>
 </section>
 <section class="slide level2">
 
-<div id="6e5578e9" class="cell" data-execution_count="5">
+<div id="0105ebac" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a>cereal[cereal[<span class="st">'protein'</span>] <span class="op">&gt;</span> <span class="dv">4</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
 <div>
@@ -522,7 +522,7 @@ Name: protein, Length: 77, dtype: bool</code></pre>
 </section>
 <section class="slide level2">
 
-<div id="32217431" class="cell" data-execution_count="6">
+<div id="7f6f4aa6" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a>cereal[cereal[<span class="st">'protein'</span>] <span class="op">==</span> <span class="dv">4</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <div>
@@ -724,7 +724,7 @@ Name: protein, Length: 77, dtype: bool</code></pre>
 </section>
 <section class="slide level2">
 
-<div id="ed3a0001" class="cell" data-execution_count="7">
+<div id="358ca1c8" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a>cereal[cereal[<span class="st">'mfr'</span>] <span class="op">==</span> <span class="st">'Q'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
 <div>
@@ -922,7 +922,7 @@ Name: protein, Length: 77, dtype: bool</code></pre>
 </section>
 <section id="multiple-condition-filtering---and" class="slide level2">
 <h2>Multiple Condition Filtering - “and”</h2>
-<div id="8514a981" class="cell" data-execution_count="8">
+<div id="7248bd5b" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a>cereal[cereal[<span class="st">'protein'</span>] <span class="op">&gt;=</span> <span class="dv">4</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
 <div>
@@ -1121,7 +1121,7 @@ Name: protein, Length: 77, dtype: bool</code></pre>
 </section>
 <section class="slide level2">
 
-<div id="e50ca7fa" class="cell" data-execution_count="9">
+<div id="d5b423d5" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a aria-hidden="true" tabindex="-1"></a>cereal[cereal[<span class="st">'protein'</span>] <span class="op">&lt;=</span> <span class="dv">5</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
 <div>
@@ -1321,7 +1321,7 @@ Name: protein, Length: 77, dtype: bool</code></pre>
 <div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a aria-hidden="true" tabindex="-1"></a>cereal[cereal[<span class="st">'protein'</span>] <span class="op">&gt;=</span> <span class="dv">4</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a aria-hidden="true" tabindex="-1"></a>cereal[cereal[<span class="st">'protein'</span>] <span class="op">&lt;=</span> <span class="dv">5</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><br></p>
-<div id="7731a3d5" class="cell" data-execution_count="10">
+<div id="c7804160" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a aria-hidden="true" tabindex="-1"></a>cereal[(cereal[<span class="st">'protein'</span>] <span class="op">&gt;=</span> <span class="dv">4</span>) <span class="op">&amp;</span> (cereal[<span class="st">'protein'</span>] <span class="op">&lt;=</span> <span class="dv">5</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="10">
 <div>
@@ -1537,7 +1537,7 @@ Name: protein, Length: 77, dtype: bool</code></pre>
 </section>
 <section class="slide level2">
 
-<div id="24d2d0d3" class="cell" data-execution_count="11">
+<div id="e4841f6e" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a aria-hidden="true" tabindex="-1"></a>cereal[(cereal[<span class="st">'mfr'</span>] <span class="op">==</span> <span class="st">'Q'</span>) <span class="op">&amp;</span> (cereal[<span class="st">'protein'</span>] <span class="op">&gt;</span> <span class="dv">4</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="11">
 <div>
@@ -1621,7 +1621,7 @@ Name: protein, Length: 77, dtype: bool</code></pre>
 </section>
 <section id="multiple-condition-filtering---or" class="slide level2">
 <h2>Multiple Condition Filtering - “or”</h2>
-<div id="14523a23" class="cell" data-execution_count="12">
+<div id="ab360064" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a aria-hidden="true" tabindex="-1"></a>cereal[(cereal[<span class="st">'mfr'</span>] <span class="op">==</span> <span class="st">'Q'</span>) <span class="op">|</span> (cereal[<span class="st">'protein'</span>] <span class="op">&gt;</span> <span class="dv">4</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
 <div>
@@ -1838,7 +1838,7 @@ Name: protein, Length: 77, dtype: bool</code></pre>
 </section>
 <section id="tilde" class="slide level2">
 <h2>Tilde</h2>
-<div id="11f03fed" class="cell" data-execution_count="13">
+<div id="07b7c2cb" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a aria-hidden="true" tabindex="-1"></a>cereal[<span class="st">'protein'</span>] <span class="op">&gt;</span> <span class="dv">4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="13">
 <pre><code>0     False
@@ -1869,7 +1869,7 @@ Name: protein, Length: 77, dtype: bool</code></pre>
 </section>
 <section class="slide level2">
 
-<div id="4164e751" class="cell" data-execution_count="14">
+<div id="ede074d1" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a aria-hidden="true" tabindex="-1"></a>(cereal[<span class="st">'protein'</span>] <span class="op">&gt;</span> <span class="dv">4</span>).head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="14">
 <pre><code>0    False
@@ -1882,7 +1882,7 @@ Name: protein, dtype: bool</code></pre>
 </div>
 <p><br></p>
 <p>Tilde converts all the <code>True</code> values to <code>False</code> and all the <code>False</code> values, to <code>True.</code></p>
-<div id="705f14ea" class="cell" data-execution_count="15">
+<div id="3e439f24" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a aria-hidden="true" tabindex="-1"></a>(<span class="op">~</span>(cereal[<span class="st">'protein'</span>] <span class="op">&gt;</span> <span class="dv">4</span>)).head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="15">
 <pre><code>0    True
@@ -1909,7 +1909,7 @@ Name: protein, dtype: bool</code></pre>
 </section>
 <section class="slide level2">
 
-<div id="36bbf460" class="cell" data-execution_count="16">
+<div id="8b899ac5" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a aria-hidden="true" tabindex="-1"></a>cereal[<span class="op">~</span>(cereal[<span class="st">'protein'</span>] <span class="op">&gt;</span> <span class="dv">4</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="16">
 <div>

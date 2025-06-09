@@ -202,7 +202,7 @@
 </section>
 <section class="slide level2">
 
-<div id="b2c2fc33" class="cell" data-execution_count="3">
+<div id="1b74815c" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a>candy <span class="op">=</span> pd.read_csv(<span class="st">'data/candybars.csv'</span>)</span>
 <span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a>candy</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
@@ -361,7 +361,7 @@
 </section>
 <section id="column-renaming" class="slide level2">
 <h2>Column Renaming</h2>
-<div id="3828bf25" class="cell" data-execution_count="4">
+<div id="3dc93ec6" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a>candy <span class="op">=</span> candy.rename(columns<span class="op">=</span>{<span class="st">'available_canada_america'</span>:<span class="st">'availability'</span>})</span>
 <span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a>candy</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
@@ -527,7 +527,7 @@
 </section>
 <section class="slide level2">
 
-<div id="059f2bdc" class="cell" data-execution_count="5">
+<div id="875ce7b1" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a>candy <span class="op">=</span> candy.rename(columns<span class="op">=</span>{<span class="st">'available_canada_america'</span>:<span class="st">'availability'</span>,</span>
 <span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a>                        <span class="st">'weight'</span>:<span class="st">'weight_g'</span>})</span>
 <span id="cb4-3"><a aria-hidden="true" tabindex="-1"></a>candy.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -658,7 +658,7 @@
 </section>
 <section id="column-dropping" class="slide level2">
 <h2>Column Dropping</h2>
-<div id="c51aa344" class="cell" data-execution_count="6">
+<div id="2f6397c4" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a>candy.drop(columns<span class="op">=</span><span class="st">'coconut'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <div>
@@ -808,11 +808,11 @@
 </section>
 <section class="slide level2">
 
-<div id="3fdc6088" class="cell" data-execution_count="7">
+<div id="3705859c" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a>candy.drop(columns<span class="op">=</span><span class="st">'coconut'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><br></p>
-<div id="d9394d85" class="cell" data-execution_count="8">
+<div id="cbfc0e15" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a>candy.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
 <div>
@@ -925,7 +925,7 @@
 </div>
 </div>
 <p><br></p>
-<div id="a7b787d8" class="cell" data-execution_count="9">
+<div id="74d93c18" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a aria-hidden="true" tabindex="-1"></a>candy <span class="op">=</span> candy.drop(columns<span class="op">=</span>[<span class="st">'nougat'</span>, <span class="st">'coconut'</span>])</span>
 <span id="cb8-2"><a aria-hidden="true" tabindex="-1"></a>candy.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
