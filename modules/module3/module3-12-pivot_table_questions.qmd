@@ -1,0 +1,148 @@
+---
+format: live-html
+---
+
+<script src='../../src/quiz.js'></script>
+
+# 4.1. Exercises
+
+## Pivot Table Questions
+
+<div id='mcq1'></div>
+<script>
+    generateQuiz(
+        'mcq1',
+        'Question 1',
+        'Which of the following does <b>NOT</b> continue to execute when there are duplicate rows in the dataframe?',
+        {
+        '<code>.pivot_table()</code>': 'You may want to look over this before moving forward.',
+        '<code>.pivot()</code>': 'Great studying!',
+        },
+        '<code>.pivot()</code>',
+    );
+</script>
+
+<div id='mcq2'></div>
+<script>
+    generateQuiz(
+        'mcq2',
+        'Question 2',
+        'What must we do before we use pivot table?',
+        {
+        'Check for duplicate values of the columns in the arguments <code>index</code> and <code>columns</code>': 'This is extremely important so we don’t get averaging values! Well done.',
+        'Remove any <code>NaN</code>s from the dataframe': 'This is extremely important so you will want to look over this before moving forward.',
+        },
+        'Check for duplicate values of the columns in the arguments <code>index</code> and <code>columns</code>',
+    );
+</script>
+
+
+## Applying Pivot Table
+
+**Instructions:**    
+Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
+
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
+
+
+_**Make sure you remove the hash (`#`) symbol in the coding portions of this question.  We have commented them so that the line won't execute and you can test your code after each step.**_
+
+Let's convert the dataframe `lego` into wider data but this time preserve all the columns in the dataframe by using `.pivot_table()`.
+
+**Tasks:**
+
+- Convert the untidy data into tidy data using `.pivot_table()` making sure to keep all the columns.
+- Name the new dataframe `tidied_lego`.
+- Use `.agg()` to find the mean number of parts for each production year and save it in an object name `year_parts_mean`. (We've added a verb named `.round()` to round to the nearest whole number)
+
+```{pyodide}
+#| exercise: applying_pivot_table
+import pandas as pd
+
+lego = pd.read_csv('data/lego_untidy.csv')
+
+# Convert the untidy data into tidy data using pivot_table 
+# Assign set_num as your index and name the new dataframe tidied_lego
+tidied_lego = (____.____(____)
+                   .____()
+              )
+
+# Find the mean number of parts for each production year and save it in an object name year_parts_mean
+____ = ____.____(____).____({____:____}).round()
+
+____
+```
+
+```{pyodide}
+#| exercise: applying_pivot_table
+#| check: true
+from src.utils import print_correct_msg
+
+lego = pd.read_csv('data/lego_untidy.csv')
+tidied_lego = (lego.pivot_table(index=['set_num', 'name', 'year'], columns='lego_info', values='value'))
+solution = tidied_lego.groupby('year').agg({"num_parts": "mean"}).round()
+
+assert isinstance(result, pd.DataFrame), "We are expecting a dataframe."
+assert "num_parts" in list(result.columns), "Are you finding the mean number of parts?"
+assert solution.num_parts.sum() == result.num_parts.sum(), "The mean values are incorrect. Are you taking the mean after grouping by year?"
+print_correct_msg()
+```
+
+:::: { .hint exercise="applying_pivot_table"}
+::: { .callout-note collapse="false"}
+
+## Hint 1
+
+- Are you using the correct arguments such as `index`, `columns`, and `values`?
+- Does your `index` contain multiple columns? 
+- Are you pivoting the correct column named `lego_info` with `values='value'`?
+- Are you resetting your index again after you pivot?
+- Are you using `.agg({"num_parts": "mean"})`?
+
+:::
+::::
+
+:::: { .solution exercise="applying_pivot_table" }
+::: { .callout-tip collapse="false"}
+
+## Fully worked solution:
+
+```{pyodide}
+import pandas as pd
+
+lego = pd.read_csv('data/lego_untidy.csv')
+
+# Convert the untidy data into tidy data using pivot_table 
+# Assign set_num as your index and name the new dataframe tidied_lego
+tidied_lego = (lego.pivot_table(index=['set_num', 'name', 'year'],
+                                columns='lego_info',
+                                values='value')
+                   .reset_index()
+              )
+
+# Find the mean number of parts for each production year and save it in an object name year_parts_mean
+year_parts_mean = tidied_lego.groupby('year').agg({"num_parts": "mean"}).round()
+
+year_parts_mean
+```
+
+:::
+::::
+
+<br>
+
+<div id='mcq3'></div>
+<script>
+    generateQuiz(
+        'mcq3',
+        'Question 1',
+        'Which year has the highest average number of parts? <i>(Hint: use <code>.sort_values()</code>.)</i>',
+        {
+        '2016': 'Are your sorting by <code>ascending=False</code>?',
+        '2006': 'Are your sorting by <code>ascending=False</code>?',
+        '2017': '',
+        '2007': 'Are your sorting by <code>ascending=False</code>?',
+        },
+        '2017',
+    );
+</script>
