@@ -1,0 +1,138 @@
+---
+format: live-html
+---
+
+<script src='../../src/quiz.js'></script>
+
+# 7.1. Exercises
+
+## Chaining True/False
+
+<div id='mcq1'></div>
+<script>
+    generateQuiz(
+        'mcq1',
+        'Question 1',
+        'Chaining removes the need for intermediate objects.',
+        {
+        'True': 'Good job!',
+        'False': 'You may want to look over this before moving forward.',
+        },
+        'True',
+    );
+</script>
+
+<div id='mcq2'></div>
+<script>
+    generateQuiz(
+        'mcq2',
+        'Question 2',
+        'What needs to be included when giving a line break for each verb in chaining?',
+        {
+        'Square brackets around the complete chain': 'You may want to look over this before moving forward.',
+        'Parentheses around the complete chain': 'Great work!',
+        'Parentheses around each verb': 'You may want to look over this before moving forward.',
+        },
+        'Parentheses around the complete chain',
+    );
+</script>
+
+
+## Practice Chaining
+
+**Instructions:**    
+Running a coding exercise for the first time, could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
+
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
+
+Make a plot using our Pokemon dataset by chaining actions sequentially.   
+
+**Tasks:**
+
+- Chain the following methods in the order specified.
+- First, rename the column `capture_rt` to `capture_rate`.
+- Then, create a new column named `AD_total` by adding the `attack` and `defense` columns from the pokemon dataset.
+- Save this in a dataframe object called `plot_df`.
+- Finally use `.mark_circle()` to plot `AD_total` on the x-axis and `capture_rate` on the y-axis.
+- Name this plot `pokemon_plot`.
+- Use a new line for each method.
+
+```{pyodide}
+#| exercise: practice_chaining
+import pandas as pd
+import altair as alt
+
+pokemon = pd.read_csv('data/pokemon.csv')
+
+# First, rename the column capture_rt to capture_rate.
+# Then, create a new column named AD_total by adding 
+# the attack and `defense columns from the pokemon dataset.
+# Save this in a dataframe object called plot_df.
+____ = pd.DataFrame(____.____(columns={'____': '____'})
+                        .____(____=pokemon['____'] + pokemon['____'])
+                   )
+
+# Use .mark_circle() to plot AD_total on the x-axis  and capture_rt on the y-axis
+# Name the plot pokemon_plot
+pokemon_plot = alt.Chart(____, width=500, height=300).____().____(
+        x='____',
+        y='____')
+
+pokemon_plot
+```
+
+```{pyodide}
+#| exercise: practice_chaining
+#| check: true
+from src.utils import assert_chart_equal
+
+pokemon = pd.read_csv('data/pokemon.csv')
+plot_df = pd.DataFrame(pokemon.rename(columns={'capture_rt': 'capture_rate'}).assign(AD_total=pokemon['defense'] + pokemon['attack']))
+solution = alt.Chart(plot_df, width=500, height=300).mark_circle().encode(x='AD_total', y='capture_rate')
+
+assert isinstance(result, type(solution)), "The final check needs a chart."
+assert_chart_equal(solution, result)
+```
+
+:::: { .hint exercise="practice_chaining"}
+::: { .callout-note collapse="false"}
+
+## Hint 1
+
+- Are you sure you are saving your dataframe as the correct object names?
+- Are you using the chaning commands in the correct order?
+- Are you using the `.mark_circle()` function?
+
+:::
+::::
+
+:::: { .solution exercise="practice_chaining" }
+::: { .callout-tip collapse="false"}
+
+## Fully worked solution:
+
+```{pyodide}
+import pandas as pd
+import altair as alt
+
+pokemon = pd.read_csv('data/pokemon.csv')
+
+# First, rename the column capture_rt to capture_rate.
+# Then, create a new column named AD_total by adding 
+# the attack and `defense columns from the pokemon dataset.
+# Save this in a dataframe object called plot_df.
+plot_df = pd.DataFrame(pokemon.rename(columns={'capture_rt': 'capture_rate'})
+                              .assign(AD_total=pokemon['defense'] + pokemon['attack'])
+                      )
+
+# Use .mark_circle() to plot AD_total on the x-axis  and capture_rate on the y-axis
+# Name the plot pokemon_plot
+pokemon_plot = alt.Chart(plot_df, width=500, height=300).mark_circle().encode(
+        x='AD_total',
+        y='capture_rate')
+
+pokemon_plot
+```
+
+:::
+::::
