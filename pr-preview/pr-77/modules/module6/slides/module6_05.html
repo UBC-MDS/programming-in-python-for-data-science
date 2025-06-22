@@ -6,8 +6,8 @@
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-f428fda71a3abb5b1b9c21151da8fd61.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.31">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-c1f63da3e08f13bc72dc17e92cfd001d.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.7.32">
 
   <title>Programming in Python for Data Science – Function Arguments</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -200,7 +200,7 @@
 </section>
 <section class="slide level2">
 
-<div id="6d74b691" class="cell" data-execution_count="2">
+<div id="c773cb82" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> squares_a_list(numerical_list):</span>
 <span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a>    new_squared_list <span class="op">=</span> <span class="bu">list</span>()</span>
 <span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a>    </span>
@@ -210,7 +210,7 @@
 <span id="cb1-7"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> new_squared_list</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><br></p>
-<div id="c58a607a" class="cell" data-execution_count="3">
+<div id="1fb7d460" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> cubes_a_list(numerical_list):</span>
 <span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a>    new_cubed_list <span class="op">=</span> <span class="bu">list</span>()</span>
 <span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a>    </span>
@@ -242,7 +242,7 @@
 </section>
 <section class="slide level2">
 
-<div id="dbb222c1" class="cell" data-execution_count="4">
+<div id="297e1eca" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> exponent_a_list(numerical_list, exponent):</span>
 <span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a>    new_exponent_list <span class="op">=</span> <span class="bu">list</span>()</span>
 <span id="cb3-3"><a aria-hidden="true" tabindex="-1"></a>    </span>
@@ -252,7 +252,7 @@
 <span id="cb3-7"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> new_exponent_list</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><br></p>
-<div id="8c94ac39" class="cell" data-execution_count="5">
+<div id="1876b3f0" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a>numbers <span class="op">=</span> [<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>]</span>
 <span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a>exponent_a_list(numbers, <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
@@ -260,7 +260,7 @@
 </div>
 </div>
 <p><br></p>
-<div id="1fe72af5" class="cell" data-execution_count="6">
+<div id="89e22498" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a>exponent_a_list(numbers, <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <pre><code>[32, 243, 3125]</code></pre>
@@ -285,7 +285,7 @@
 </section>
 <section id="default-values-for-arguments" class="slide level2">
 <h2>Default Values for Arguments</h2>
-<div id="0d29e000" class="cell" data-execution_count="7">
+<div id="fa2c3283" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> exponent_a_list(numerical_list, exponent<span class="op">=</span><span class="dv">2</span>):</span>
 <span id="cb8-2"><a aria-hidden="true" tabindex="-1"></a>    new_exponent_list <span class="op">=</span> <span class="bu">list</span>()</span>
 <span id="cb8-3"><a aria-hidden="true" tabindex="-1"></a>    </span>
@@ -295,7 +295,7 @@
 <span id="cb8-7"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> new_exponent_list</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><br></p>
-<div id="17e364ed" class="cell" data-execution_count="8">
+<div id="df9c2009" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a aria-hidden="true" tabindex="-1"></a>numbers <span class="op">=</span> [<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>]</span>
 <span id="cb9-2"><a aria-hidden="true" tabindex="-1"></a>exponent_a_list(numbers)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
@@ -321,14 +321,14 @@
 </section>
 <section class="slide level2">
 
-<div id="106aefae" class="cell" data-execution_count="9">
+<div id="f58fdeea" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a aria-hidden="true" tabindex="-1"></a>exponent_a_list(numbers, exponent<span class="op">=</span><span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
 <pre><code>[32, 243, 3125]</code></pre>
 </div>
 </div>
 <p><br></p>
-<div id="97d0d066" class="cell" data-execution_count="10">
+<div id="787004ab" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a aria-hidden="true" tabindex="-1"></a>exponent_a_list(numbers, <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="10">
 <pre><code>[32, 243, 3125]</code></pre>
@@ -358,7 +358,7 @@
 <span id="cb15-5"><a aria-hidden="true" tabindex="-1"></a>        new_exponent_list.append(number <span class="op">**</span> exponent)</span>
 <span id="cb15-6"><a aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="cb15-7"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> new_exponent_list</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<pre class="out"><code>Error: non-default argument follows default argument (&lt;string&gt;, line 1)</code></pre>
+<pre class="out"><code>Error: parameter without a default follows parameter with a default (&lt;string&gt;, line 1)</code></pre>
 <aside class="notes">
 <p>Functions can have any number of arguments and any number of optional arguments, but we must be careful with the order of the arguments.</p>
 <p>When we define our arguments in a function, all arguments with default values (aka optional arguments) need to be placed <strong><em>after</em></strong> required arguments.</p>
@@ -379,7 +379,7 @@
 </section>
 <section id="argument-ordering" class="slide level2">
 <h2>Argument Ordering</h2>
-<div id="44073c37" class="cell" data-execution_count="11">
+<div id="86ea37b3" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> exponent_a_list(numerical_list, exponent<span class="op">=</span><span class="dv">2</span>):</span>
 <span id="cb17-2"><a aria-hidden="true" tabindex="-1"></a>    new_exponent_list <span class="op">=</span> <span class="bu">list</span>()</span>
 <span id="cb17-3"><a aria-hidden="true" tabindex="-1"></a>    </span>
@@ -389,7 +389,7 @@
 <span id="cb17-7"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> new_exponent_list</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><br></p>
-<div id="bebb2584" class="cell" data-execution_count="12">
+<div id="32206919" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a aria-hidden="true" tabindex="-1"></a>exponent_a_list([<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>], <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
 <pre><code>[32, 243, 3125]</code></pre>
@@ -414,21 +414,21 @@
 </section>
 <section class="slide level2">
 
-<div id="34cf0de8" class="cell" data-execution_count="13">
+<div id="322cef8a" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a aria-hidden="true" tabindex="-1"></a>exponent_a_list([<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>], exponent<span class="op">=</span> <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="13">
 <pre><code>[32, 243, 3125]</code></pre>
 </div>
 </div>
 <p><br></p>
-<div id="24d021e4" class="cell" data-execution_count="14">
+<div id="55ad5c43" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a aria-hidden="true" tabindex="-1"></a>exponent_a_list(numerical_list<span class="op">=</span>[<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>], exponent<span class="op">=</span><span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="14">
 <pre><code>[32, 243, 3125]</code></pre>
 </div>
 </div>
 <p><br></p>
-<div id="eec3cbe4" class="cell" data-execution_count="15">
+<div id="faea4a75" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a aria-hidden="true" tabindex="-1"></a>exponent_a_list(exponent<span class="op">=</span><span class="dv">5</span>, numerical_list<span class="op">=</span>[<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="15">
 <pre><code>[32, 243, 3125]</code></pre>
@@ -453,7 +453,7 @@
 </section>
 <section class="slide level2">
 
-<div id="f27ee7e0" class="cell" data-execution_count="16">
+<div id="89342bdc" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a aria-hidden="true" tabindex="-1"></a>exponent_a_list(<span class="dv">5</span>,  [<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <pre class="out"><code>TypeError: 'int' object is not iterable
