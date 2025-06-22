@@ -6,8 +6,8 @@
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-f428fda71a3abb5b1b9c21151da8fd61.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.31">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-c1f63da3e08f13bc72dc17e92cfd001d.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.7.32">
 
   <title>Programming in Python for Data Science – Python Data Structures: Lists, Tuples and Sets</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -203,7 +203,7 @@
 </section>
 <section id="sequences" class="slide level2">
 <h2>Sequences</h2>
-<div id="591be955" class="cell" data-execution_count="2">
+<div id="6a73349d" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a>sentence <span class="op">=</span> <span class="st">"I always lose at least one sock when I do laundry."</span> </span>
 <span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a>words <span class="op">=</span> sentence.split()</span>
 <span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a>words</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -222,7 +222,7 @@
 </div>
 </div>
 <p><br></p>
-<div id="d501be45" class="cell" data-execution_count="3">
+<div id="e26e3664" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a>sentence.split(<span class="st">"e"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>['I always los', ' at l', 'ast on', ' sock wh', 'n I do laundry.']</code></pre>
@@ -249,7 +249,7 @@
 </section>
 <section id="lists" class="slide level2">
 <h2>Lists</h2>
-<div id="1750b934" class="cell" data-execution_count="4">
+<div id="d44f84bf" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a>words</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>['I',
@@ -265,14 +265,14 @@
  'laundry.']</code></pre>
 </div>
 </div>
-<div id="8deb6bc0" class="cell" data-execution_count="5">
+<div id="8cb4938e" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(words)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
 <pre><code>list</code></pre>
 </div>
 </div>
 <p><br></p>
-<div id="e3f1e8ba" class="cell" data-execution_count="6">
+<div id="9bc35172" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a aria-hidden="true" tabindex="-1"></a>my_list <span class="op">=</span> [<span class="fl">1.2</span>, <span class="dv">3</span>, <span class="va">None</span>, <span class="va">True</span>, <span class="st">'One of the lost socks'</span>]</span>
 <span id="cb9-2"><a aria-hidden="true" tabindex="-1"></a>my_list</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
@@ -298,7 +298,7 @@
 </section>
 <section class="slide level2">
 
-<div id="58d28a20" class="cell" data-execution_count="7">
+<div id="5c94e22f" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a aria-hidden="true" tabindex="-1"></a>lists_of_lists <span class="op">=</span> [[<span class="dv">1</span>,<span class="dv">2</span>], [<span class="st">'buckle'</span>, <span class="st">'My'</span>, <span class="st">'Shoe'</span>], <span class="dv">3</span>, <span class="dv">4</span>]</span>
 <span id="cb11-2"><a aria-hidden="true" tabindex="-1"></a>lists_of_lists</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
@@ -306,7 +306,7 @@
 </div>
 </div>
 <p><br></p>
-<div id="e615e8fb" class="cell" data-execution_count="8">
+<div id="63dd42ea" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a aria-hidden="true" tabindex="-1"></a>my_list <span class="op">=</span> [<span class="fl">1.2</span>, <span class="dv">3</span>, <span class="va">None</span>, <span class="va">True</span>, <span class="st">'One of the lost socks'</span>]</span>
 <span id="cb13-2"><a aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(my_list)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
@@ -314,7 +314,7 @@
 </div>
 </div>
 <p><br></p>
-<div id="6a457cc5" class="cell" data-execution_count="9">
+<div id="35ee1649" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(lists_of_lists)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
 <pre><code>4</code></pre>
@@ -338,21 +338,21 @@
 </section>
 <section class="slide level2">
 
-<div id="427e2aa3" class="cell" data-execution_count="10">
+<div id="d2bfcaac" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a aria-hidden="true" tabindex="-1"></a>my_list</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="10">
 <pre><code>[1.2, 3, None, True, 'One of the lost socks']</code></pre>
 </div>
 </div>
 <p><br></p>
-<div id="d31571f7" class="cell" data-execution_count="11">
+<div id="89b43ca6" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a aria-hidden="true" tabindex="-1"></a>my_list[<span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="11">
 <pre><code>3</code></pre>
 </div>
 </div>
 <p><br></p>
-<div id="0019fb9e" class="cell" data-execution_count="12">
+<div id="4d074c40" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a aria-hidden="true" tabindex="-1"></a>my_list[<span class="dv">1</span>:<span class="dv">3</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
 <pre><code>[3, None]</code></pre>
@@ -377,18 +377,18 @@
 </section>
 <section id="mutable-vs-immutable" class="slide level2">
 <h2>Mutable vs Immutable</h2>
-<div id="3c7ec5a2" class="cell" data-execution_count="13">
+<div id="e8f19039" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a aria-hidden="true" tabindex="-1"></a>my_list</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="13">
 <pre><code>[1.2, 3, None, True, 'One of the lost socks']</code></pre>
 </div>
 </div>
 <p><br></p>
-<div id="11b6a3bc" class="cell" data-execution_count="14">
+<div id="97f09e3f" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a aria-hidden="true" tabindex="-1"></a>my_list[<span class="dv">2</span>] <span class="op">=</span> <span class="st">"Ta Da!"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><br></p>
-<div id="4dcce87c" class="cell" data-execution_count="15">
+<div id="ca242387" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a aria-hidden="true" tabindex="-1"></a>my_list</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="15">
 <pre><code>[1.2, 3, 'Ta Da!', True, 'One of the lost socks']</code></pre>
@@ -413,14 +413,14 @@
 </section>
 <section class="slide level2">
 
-<div id="2d94467e" class="cell" data-execution_count="16">
+<div id="f1e42670" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a aria-hidden="true" tabindex="-1"></a>lists_of_lists</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="16">
 <pre><code>[[1, 2], ['buckle', 'My', 'Shoe'], 3, 4]</code></pre>
 </div>
 </div>
 <p><br></p>
-<div id="d8551f5b" class="cell" data-execution_count="17">
+<div id="81218150" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a aria-hidden="true" tabindex="-1"></a>lists_of_lists[<span class="dv">1</span>][<span class="dv">2</span>] <span class="op">=</span> <span class="st">"Sandal"</span></span>
 <span id="cb30-2"><a aria-hidden="true" tabindex="-1"></a>lists_of_lists</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="17">
@@ -443,14 +443,14 @@
 </section>
 <section class="slide level2">
 
-<div id="c9468220" class="cell" data-execution_count="18">
+<div id="ee817b82" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a aria-hidden="true" tabindex="-1"></a>sentence</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="18">
 <pre><code>'I always lose at least one sock when I do laundry.'</code></pre>
 </div>
 </div>
 <p><br></p>
-<div id="0e11e21e" class="cell" data-execution_count="19">
+<div id="8735e5e7" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a aria-hidden="true" tabindex="-1"></a>sentence[<span class="dv">27</span>:<span class="dv">35</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="19">
 <pre><code>'sock whe'</code></pre>
@@ -480,11 +480,11 @@ Detailed traceback:
 </section>
 <section id="list-verbs" class="slide level2">
 <h2>List Verbs</h2>
-<div id="378d0109" class="cell" data-execution_count="20">
+<div id="cfa0461b" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a aria-hidden="true" tabindex="-1"></a>primes <span class="op">=</span> [<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">7</span>,<span class="dv">11</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><br></p>
-<div id="09e4c800" class="cell" data-execution_count="21">
+<div id="272e0312" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a aria-hidden="true" tabindex="-1"></a>primes.append(<span class="dv">13</span>)</span>
 <span id="cb39-2"><a aria-hidden="true" tabindex="-1"></a>primes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="21">
@@ -492,14 +492,14 @@ Detailed traceback:
 </div>
 </div>
 <p><br></p>
-<div id="f8839301" class="cell" data-execution_count="22">
+<div id="516807cb" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a aria-hidden="true" tabindex="-1"></a><span class="bu">max</span>(primes)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="22">
 <pre><code>13</code></pre>
 </div>
 </div>
 <p><br></p>
-<div id="1c697457" class="cell" data-execution_count="23">
+<div id="755d3b52" class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a aria-hidden="true" tabindex="-1"></a><span class="bu">sum</span>(primes)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="23">
 <pre><code>41</code></pre>
@@ -558,7 +558,7 @@ Detailed traceback:
 </table>
 </div></div>
 <p><br></p>
-<div id="a8a42758" class="cell" data-execution_count="24">
+<div id="d961bbac" class="cell" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a aria-hidden="true" tabindex="-1"></a>item1 <span class="op">=</span> [<span class="st">'toothpaste'</span>, <span class="st">'London Drugs'</span>, <span class="fl">3.99</span>]</span>
 <span id="cb45-2"><a aria-hidden="true" tabindex="-1"></a>item2 <span class="op">=</span> [<span class="st">'apples'</span>, <span class="st">'Produce Store'</span>, <span class="fl">4.00</span>]</span>
 <span id="cb45-3"><a aria-hidden="true" tabindex="-1"></a>item3 <span class="op">=</span> [<span class="st">'bread'</span>, <span class="st">'Bakery'</span>, <span class="fl">3.50</span>]</span>
@@ -617,7 +617,7 @@ Detailed traceback:
 </div>
 </div>
 <p><br></p>
-<div id="1051327b" class="cell" data-execution_count="25">
+<div id="3875e895" class="cell" data-execution_count="25">
 <div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(shopping_items)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="25">
 <pre><code>pandas.core.frame.DataFrame</code></pre>
@@ -643,7 +643,7 @@ Detailed traceback:
 </section>
 <section id="tuples" class="slide level2">
 <h2>Tuples</h2>
-<div id="b883333f" class="cell" data-execution_count="26">
+<div id="6f6b8ded" class="cell" data-execution_count="26">
 <div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a aria-hidden="true" tabindex="-1"></a>my_tuple <span class="op">=</span> (<span class="st">'I'</span>, <span class="st">'lose'</span>, <span class="va">None</span>,  <span class="st">'socks'</span>, <span class="st">'when'</span>, <span class="dv">1</span>, <span class="st">'do'</span>, <span class="st">'laundry.'</span>, <span class="va">False</span>)</span>
 <span id="cb48-2"><a aria-hidden="true" tabindex="-1"></a>my_tuple</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="26">
@@ -651,7 +651,7 @@ Detailed traceback:
 </div>
 </div>
 <p><br></p>
-<div id="fcda318f" class="cell" data-execution_count="27">
+<div id="9d53203b" class="cell" data-execution_count="27">
 <div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(my_tuple)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="27">
 <pre><code>tuple</code></pre>
@@ -677,7 +677,7 @@ Detailed traceback:
 </section>
 <section class="slide level2">
 
-<div id="40831f4f" class="cell" data-execution_count="28">
+<div id="8c09b7ea" class="cell" data-execution_count="28">
 <div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a aria-hidden="true" tabindex="-1"></a>my_tuple</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="28">
 <pre><code>('I', 'lose', None, 'socks', 'when', 1, 'do', 'laundry.', False)</code></pre>
@@ -690,7 +690,7 @@ Detailed traceback:
 Detailed traceback: 
   File "&lt;string&gt;", line 1, in &lt;module&gt;</code></pre>
 <p><br></p>
-<div id="25dbc8fc" class="cell" data-execution_count="29">
+<div id="63a5f62d" class="cell" data-execution_count="29">
 <div class="sourceCode cell-code" id="cb56"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a aria-hidden="true" tabindex="-1"></a>my_list <span class="op">=</span> <span class="bu">list</span>(my_tuple)</span>
 <span id="cb56-2"><a aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(my_list)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="29">
@@ -714,7 +714,7 @@ Detailed traceback:
 </section>
 <section id="sets" class="slide level2">
 <h2>Sets</h2>
-<div id="b8b733cb" class="cell" data-execution_count="30">
+<div id="38e76547" class="cell" data-execution_count="30">
 <div class="sourceCode cell-code" id="cb58"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a aria-hidden="true" tabindex="-1"></a>my_set <span class="op">=</span> {<span class="dv">2</span>, <span class="fl">1.0</span>, <span class="st">'Buckle my shoe'</span>}</span>
 <span id="cb58-2"><a aria-hidden="true" tabindex="-1"></a>my_set</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="30">
@@ -722,7 +722,7 @@ Detailed traceback:
 </div>
 </div>
 <p><br></p>
-<div id="91ed0242" class="cell" data-execution_count="31">
+<div id="950ebcd9" class="cell" data-execution_count="31">
 <div class="sourceCode cell-code" id="cb60"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a aria-hidden="true" tabindex="-1"></a>my_set <span class="op">=</span> {<span class="dv">2</span>, <span class="fl">1.0</span>, <span class="st">'Buckle my shoe'</span>, <span class="fl">1.0</span>, <span class="dv">2</span>}</span>
 <span id="cb60-2"><a aria-hidden="true" tabindex="-1"></a>my_set</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="31">
@@ -754,7 +754,7 @@ Detailed traceback:
 </section>
 <section class="slide level2">
 
-<div id="257e008e" class="cell" data-execution_count="32">
+<div id="5252c0dc" class="cell" data-execution_count="32">
 <div class="sourceCode cell-code" id="cb62"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb62-1"><a aria-hidden="true" tabindex="-1"></a>my_set</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="32">
 <pre><code>{1.0, 2, 'Buckle my shoe'}</code></pre>
@@ -767,7 +767,7 @@ Detailed traceback:
 Detailed traceback: 
   File "&lt;string&gt;", line 1, in &lt;module&gt;</code></pre>
 <p><br></p>
-<div id="308b241b" class="cell" data-execution_count="33">
+<div id="cdb1774d" class="cell" data-execution_count="33">
 <div class="sourceCode cell-code" id="cb66"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb66-1"><a aria-hidden="true" tabindex="-1"></a>my_set.add(<span class="dv">3</span>)</span>
 <span id="cb66-2"><a aria-hidden="true" tabindex="-1"></a>my_set.add(<span class="dv">4</span>)</span>
 <span id="cb66-3"><a aria-hidden="true" tabindex="-1"></a>my_set</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>

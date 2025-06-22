@@ -6,8 +6,8 @@
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-f428fda71a3abb5b1b9c21151da8fd61.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.31">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-c1f63da3e08f13bc72dc17e92cfd001d.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.7.32">
 
   <title>Programming in Python for Data Science – Operations with Columns</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -203,7 +203,7 @@
 </section>
 <section class="slide level2">
 
-<div id="675150e9" class="cell" data-execution_count="3">
+<div id="188ab435" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a>cereal</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <div>
@@ -345,7 +345,7 @@
 </section>
 <section class="slide level2">
 
-<div id="ea762058" class="cell" data-execution_count="4">
+<div id="dd96ba5f" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a>cereal.dtypes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>name         object
@@ -359,7 +359,7 @@ Length: 9, dtype: object</code></pre>
 </div>
 </div>
 <p><br></p>
-<div id="261f0e2f" class="cell" data-execution_count="5">
+<div id="21e50358" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a>cereal.describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
 <div>
@@ -470,14 +470,14 @@ Length: 9, dtype: object</code></pre>
 </section>
 <section class="slide level2">
 
-<div id="848031b2" class="cell" data-execution_count="6">
+<div id="dc353539" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a>cereal[<span class="st">'calories'</span>].<span class="bu">sum</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <pre><code>'70120705011011011013090901201101201101101101001101101101001101001001101101001201201101001101001101201201101101101401101001101001501501601001201409013012010050501001001201009011011080909011011090110140100110110100100110'</code></pre>
 </div>
 </div>
 <p><br></p>
-<div id="2111673f" class="cell" data-execution_count="7">
+<div id="27af26bc" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a>cereal[<span class="st">'calories'</span>].astype(<span class="st">'int'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
 <pre><code>0      70
@@ -509,11 +509,11 @@ Name: calories, Length: 77, dtype: int64</code></pre>
 </section>
 <section class="slide level2">
 
-<div id="8a5d175c" class="cell" data-execution_count="8">
+<div id="9519db92" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a aria-hidden="true" tabindex="-1"></a>cereal <span class="op">=</span> cereal.assign(calories<span class="op">=</span>cereal[<span class="st">'calories'</span>].astype(<span class="st">'int'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><br></p>
-<div id="34d2b764" class="cell" data-execution_count="9">
+<div id="35dd7592" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a aria-hidden="true" tabindex="-1"></a>cereal.dtypes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
 <pre><code>name         object
@@ -543,7 +543,7 @@ Length: 9, dtype: object</code></pre>
 </section>
 <section class="slide level2">
 
-<div id="b3b97eef" class="cell" data-execution_count="10">
+<div id="f36ab441" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a aria-hidden="true" tabindex="-1"></a>cereal.head(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="10">
 <div>
@@ -645,7 +645,7 @@ Length: 9, dtype: object</code></pre>
 </div>
 </div>
 <p><br></p>
-<div id="4bf3405d" class="cell" data-execution_count="11">
+<div id="58e3b597" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a aria-hidden="true" tabindex="-1"></a>cereal[<span class="st">'calories'</span>].<span class="bu">sum</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="11">
 <pre><code>np.int64(8230)</code></pre>
@@ -668,13 +668,13 @@ Length: 9, dtype: object</code></pre>
 <section id="object-columns" class="slide level2">
 <h2>object columns</h2>
 <div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a aria-hidden="true" tabindex="-1"></a>cereal[<span class="st">'mfr_type'</span>].mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<pre class="out"><code>TypeError: Could not convert N-ColdQ-ColdK-ColdK-ColdR-ColdG-ColdK-ColdG-ColdR-ColdP-ColdQ-ColdG-ColdG-ColdG-ColdG-ColdR-ColdK-ColdK-ColdG-ColdK-ColdN-HotK-ColdG-ColdR-ColdK-ColdK-ColdK-ColdP-ColdK-ColdP-ColdP-ColdG-ColdP-ColdP-ColdP-ColdQ-ColdG-ColdP-ColdK-ColdK-ColdG-ColdQ-ColdG-ColdA-HotR-ColdR-ColdK-ColdG-ColdK-ColdK-ColdK-ColdG-ColdP-ColdK-ColdQ-ColdQ-ColdQ-ColdQ-HotK-ColdG-ColdK-ColdR-ColdK-ColdN-ColdN-ColdN-ColdK-ColdK-ColdN-ColdG-ColdG-ColdG-ColdG-ColdG-ColdR-ColdG-ColdG-Cold to numeric
+<pre class="out"><code>TypeError: Could not convert 'N-ColdQ-ColdK-ColdK-ColdR-ColdG-ColdK-ColdG-ColdR-ColdP-ColdQ-ColdG-ColdG-ColdG-ColdG-ColdR-ColdK-ColdK-ColdG-ColdK-ColdN-HotK-ColdG-ColdR-ColdK-ColdK-ColdK-ColdP-ColdK-ColdP-ColdP-ColdG-ColdP-ColdP-ColdP-ColdQ-ColdG-ColdP-ColdK-ColdK-ColdG-ColdQ-ColdG-ColdA-HotR-ColdR-ColdK-ColdG-ColdK-ColdK-ColdK-ColdG-ColdP-ColdK-ColdQ-ColdQ-ColdQ-ColdQ-HotK-ColdG-ColdK-ColdR-ColdK-ColdN-ColdN-ColdN-ColdK-ColdK-ColdN-ColdG-ColdG-ColdG-ColdG-ColdG-ColdR-ColdG-ColdG-Cold' to numeric
 
 Detailed traceback: 
   File "&lt;string&gt;", line 1, in &lt;module&gt;
-  File "/usr/local/lib/python3.8/site-packages/pandas/core/generic.py", line 11459, in stat_func
-    return self._reduce(</code></pre>
-<div id="295b37ec" class="cell" data-execution_count="12">
+  File "/usr/local/lib/python3.12/site-packages/pandas/core/series.py", line 6549, in mean
+  ...</code></pre>
+<div id="2671323c" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a aria-hidden="true" tabindex="-1"></a>cereal[<span class="st">'mfr_type'</span>].<span class="bu">sum</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
 <pre><code>'N-ColdQ-ColdK-ColdK-ColdR-ColdG-ColdK-ColdG-ColdR-ColdP-ColdQ-ColdG-ColdG-ColdG-ColdG-ColdR-ColdK-ColdK-ColdG-ColdK-ColdN-HotK-ColdG-ColdR-ColdK-ColdK-ColdK-ColdP-ColdK-ColdP-ColdP-ColdG-ColdP-ColdP-ColdP-ColdQ-ColdG-ColdP-ColdK-ColdK-ColdG-ColdQ-ColdG-ColdA-HotR-ColdR-ColdK-ColdG-ColdK-ColdK-ColdK-ColdG-ColdP-ColdK-ColdQ-ColdQ-ColdQ-ColdQ-HotK-ColdG-ColdK-ColdR-ColdK-ColdN-ColdN-ColdN-ColdK-ColdK-ColdN-ColdG-ColdG-ColdG-ColdG-ColdG-ColdR-ColdG-ColdG-Cold'</code></pre>
@@ -698,7 +698,7 @@ Detailed traceback:
 </section>
 <section id="bool" class="slide level2">
 <h2>Bool</h2>
-<div id="b24d20e4" class="cell" data-execution_count="13">
+<div id="b900bac7" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a aria-hidden="true" tabindex="-1"></a>cereal[<span class="st">'hot'</span>].mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="13">
 <pre><code>np.float64(0.03896103896103896)</code></pre>
@@ -722,7 +722,7 @@ Detailed traceback:
 </section>
 <section id="axis-argument" class="slide level2">
 <h2>Axis Argument</h2>
-<div id="198ae6d3" class="cell" data-execution_count="14">
+<div id="6e8914d7" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a aria-hidden="true" tabindex="-1"></a>cereal.head(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="14">
 <div>
@@ -800,7 +800,7 @@ Detailed traceback:
 </div>
 </div>
 <p><br></p>
-<div id="1cae29b0" class="cell" data-execution_count="15">
+<div id="0f897e5f" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a aria-hidden="true" tabindex="-1"></a>cereal.loc[:, <span class="st">'protein'</span>: <span class="st">'carbo'</span>].<span class="bu">sum</span>(axis<span class="op">=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="15">
 <pre><code>0     20.0
@@ -833,7 +833,7 @@ Length: 77, dtype: float64</code></pre>
 </section>
 <section class="slide level2">
 
-<div id="269b874a" class="cell" data-execution_count="16">
+<div id="27560b1b" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a aria-hidden="true" tabindex="-1"></a>cereal.loc[:, <span class="st">'protein'</span>: <span class="st">'carbo'</span>].<span class="bu">sum</span>(axis<span class="op">=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="16">
 <pre><code>0     20.0
@@ -847,9 +847,9 @@ Length: 77, dtype: float64</code></pre>
 </div>
 </div>
 <p><br></p>
-<div id="15e81688" class="cell" data-execution_count="17">
+<div id="7ab24acd" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a aria-hidden="true" tabindex="-1"></a>cereal <span class="op">=</span> cereal.assign(total_pffc<span class="op">=</span>cereal.loc[:, <span class="st">'protein'</span>: <span class="st">'carbo'</span>].<span class="bu">sum</span>(axis<span class="op">=</span><span class="dv">1</span>))</span>
-<span id="cb26-2"><a aria-hidden="true" tabindex="-1"></a>cereal.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb26-2"><a aria-hidden="true" tabindex="-1"></a>cereal.head(<span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="17">
 <div>
 <style scoped="">
@@ -930,22 +930,10 @@ Length: 77, dtype: float64</code></pre>
 <td>False</td>
 <td>26.0</td>
 </tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
-<td>Almond Delight</td>
-<td>R-Cold</td>
-<td>110</td>
-<td>2</td>
-<td>...</td>
-<td>14.0</td>
-<td>34.384843</td>
-<td>False</td>
-<td>19.0</td>
-</tr>
 </tbody>
 </table>
 
-<p>5 rows × 10 columns</p>
+<p>4 rows × 10 columns</p>
 </div>
 </div>
 </div>

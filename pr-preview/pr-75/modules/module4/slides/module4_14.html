@@ -6,8 +6,8 @@
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-f428fda71a3abb5b1b9c21151da8fd61.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.31">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-c1f63da3e08f13bc72dc17e92cfd001d.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.7.32">
 
   <title>Programming in Python for Data Science – Dataframes, Series and Column dtypes</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -203,7 +203,7 @@
 </section>
 <section id="what-is-a-dataframe-again" class="slide level2">
 <h2>What is a Dataframe … again</h2>
-<div id="f6318bb3" class="cell" data-execution_count="3">
+<div id="ec2cd416" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a>cereal</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <div>
@@ -346,7 +346,7 @@
 </section>
 <section class="slide level2">
 
-<div id="5da2d3a9" class="cell" data-execution_count="4">
+<div id="e8948b7b" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(cereal)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>pandas.core.frame.DataFrame</code></pre>
@@ -373,7 +373,7 @@
 </section>
 <section class="slide level2">
 
-<div id="fc6cf859" class="cell" data-execution_count="5">
+<div id="91c89b37" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a>cereal[[<span class="st">'mfr'</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
 <div>
@@ -435,7 +435,7 @@
 </div>
 </div>
 <p><br></p>
-<div id="162a008f" class="cell" data-execution_count="6">
+<div id="a5b5da2d" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(cereal[[<span class="st">'mfr'</span>]])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <pre><code>pandas.core.frame.DataFrame</code></pre>
@@ -460,7 +460,7 @@
 </section>
 <section class="slide level2">
 
-<div id="198eff21" class="cell" data-execution_count="7">
+<div id="ef07be61" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a>cereal[<span class="st">'mfr'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
 <pre><code>0     N
@@ -474,7 +474,7 @@ Name: mfr, Length: 77, dtype: object</code></pre>
 </div>
 </div>
 <p><br></p>
-<div id="4d1d4430" class="cell" data-execution_count="8">
+<div id="b7f01097" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(cereal[<span class="st">'mfr'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
 <pre><code>pandas.core.series.Series</code></pre>
@@ -497,7 +497,7 @@ Name: mfr, Length: 77, dtype: object</code></pre>
 </section>
 <section id="pandas-series" class="slide level2">
 <h2>Pandas Series</h2>
-<div id="83d207f1" class="cell" data-execution_count="9">
+<div id="e8b25c13" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a aria-hidden="true" tabindex="-1"></a>cereal[<span class="st">'mfr'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
 <pre><code>0     N
@@ -579,7 +579,7 @@ Name: mfr, Length: 77, dtype: object</code></pre>
 </section>
 <section class="slide level2">
 
-<div id="166e1044" class="cell" data-execution_count="10">
+<div id="f5270575" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a aria-hidden="true" tabindex="-1"></a>cereal.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="10">
 <div>
@@ -681,14 +681,14 @@ Name: mfr, Length: 77, dtype: object</code></pre>
 </div>
 </div>
 <p><br></p>
-<div id="89237c25" class="cell" data-execution_count="11">
+<div id="e9e48c21" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a aria-hidden="true" tabindex="-1"></a>cereal[<span class="st">'calories'</span>].dtypes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="11">
 <pre><code>dtype('int64')</code></pre>
 </div>
 </div>
 <p><br></p>
-<div id="037d1308" class="cell" data-execution_count="12">
+<div id="e78b561f" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a aria-hidden="true" tabindex="-1"></a>all_bran_fiber <span class="op">=</span>  cereal.loc[<span class="dv">2</span>, <span class="st">'calories'</span>]</span>
 <span id="cb16-2"><a aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(all_bran_fiber)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
@@ -714,7 +714,7 @@ Name: mfr, Length: 77, dtype: object</code></pre>
 </section>
 <section class="slide level2">
 
-<div id="c602485c" class="cell" data-execution_count="13">
+<div id="55e6ff79" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a aria-hidden="true" tabindex="-1"></a>cereal.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="13">
 <div>
@@ -816,14 +816,14 @@ Name: mfr, Length: 77, dtype: object</code></pre>
 </div>
 </div>
 <p><br></p>
-<div id="1a9edc6d" class="cell" data-execution_count="14">
+<div id="c35efc85" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a aria-hidden="true" tabindex="-1"></a>cereal[<span class="st">'fiber'</span>].dtypes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="14">
 <pre><code>dtype('float64')</code></pre>
 </div>
 </div>
 <p><br></p>
-<div id="209e1035" class="cell" data-execution_count="15">
+<div id="e097c356" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a aria-hidden="true" tabindex="-1"></a>all_bran_fiber <span class="op">=</span>  cereal.loc[<span class="dv">2</span>, <span class="st">'fiber'</span>]</span>
 <span id="cb21-2"><a aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(all_bran_fiber)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="15">
@@ -871,7 +871,7 @@ Name: mfr, Length: 77, dtype: object</code></pre>
 </section>
 <section class="slide level2">
 
-<div id="f47f1408" class="cell" data-execution_count="16">
+<div id="1be6eb04" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a aria-hidden="true" tabindex="-1"></a>cereal.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="16">
 <div>
@@ -973,14 +973,14 @@ Name: mfr, Length: 77, dtype: object</code></pre>
 </div>
 </div>
 <p><br></p>
-<div id="ffd41eed" class="cell" data-execution_count="17">
+<div id="bea6f0d1" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a aria-hidden="true" tabindex="-1"></a>cereal[<span class="st">'name'</span>].dtypes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="17">
 <pre><code>dtype('O')</code></pre>
 </div>
 </div>
 <p><br></p>
-<div id="04e16c65" class="cell" data-execution_count="18">
+<div id="e8421ff6" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(cereal.loc[<span class="dv">2</span>, <span class="st">'name'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="18">
 <pre><code>str</code></pre>
@@ -1005,7 +1005,7 @@ Name: mfr, Length: 77, dtype: object</code></pre>
 </section>
 <section class="slide level2">
 
-<div id="985a6674" class="cell" data-execution_count="19">
+<div id="1a38fa7c" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a aria-hidden="true" tabindex="-1"></a>cereal.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="19">
 <div>
@@ -1107,14 +1107,14 @@ Name: mfr, Length: 77, dtype: object</code></pre>
 </div>
 </div>
 <p><br></p>
-<div id="9fc5ce6d" class="cell" data-execution_count="20">
+<div id="9a16a166" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a aria-hidden="true" tabindex="-1"></a>cereal[<span class="st">'hot'</span>].dtypes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="20">
 <pre><code>dtype('bool')</code></pre>
 </div>
 </div>
 <p><br></p>
-<div id="755d543c" class="cell" data-execution_count="21">
+<div id="e4acf972" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(cereal.loc[<span class="dv">2</span>, <span class="st">'hot'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="21">
 <pre><code>numpy.bool</code></pre>
@@ -1139,7 +1139,7 @@ Name: mfr, Length: 77, dtype: object</code></pre>
 </section>
 <section class="slide level2">
 
-<div id="c2eb5ec1" class="cell" data-execution_count="22">
+<div id="53fd396a" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a aria-hidden="true" tabindex="-1"></a>cereal.dtypes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="22">
 <pre><code>name         object

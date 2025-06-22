@@ -6,8 +6,8 @@
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-f428fda71a3abb5b1b9c21151da8fd61.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.31">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-c1f63da3e08f13bc72dc17e92cfd001d.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.7.32">
 
   <title>Programming in Python for Data Science – Splitting a Column</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -203,7 +203,7 @@
 </section>
 <section id="string-split" class="slide level2">
 <h2>String Split</h2>
-<div id="73cd2c4c" class="cell" data-execution_count="3">
+<div id="179a1879" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a>cereal_amended</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <div>
@@ -347,7 +347,7 @@
 </section>
 <section class="slide level2">
 
-<div id="c8f58804" class="cell" data-execution_count="4">
+<div id="8abef379" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a>cereal_amended.head(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <div>
@@ -449,7 +449,7 @@
 </div>
 </div>
 <p><br></p>
-<div id="2e617827" class="cell" data-execution_count="5">
+<div id="62859387" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a>new <span class="op">=</span> cereal_amended[<span class="st">'mfr_type'</span>].<span class="bu">str</span>.split(<span class="st">'-'</span>, expand<span class="op">=</span><span class="va">True</span>)</span>
 <span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a>new </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
@@ -541,7 +541,7 @@
 </section>
 <section class="slide level2">
 
-<div id="9511f548" class="cell" data-execution_count="6">
+<div id="220baa28" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a>new.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <div>
@@ -600,7 +600,7 @@
 </div>
 </div>
 <p><br></p>
-<div id="ac89042e" class="cell" data-execution_count="7">
+<div id="82ad622a" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a>new <span class="op">=</span> new.rename(columns <span class="op">=</span> {<span class="dv">0</span>:<span class="st">'mfr'</span>, <span class="dv">1</span>: <span class="st">'type'</span>})</span>
 <span id="cb5-2"><a aria-hidden="true" tabindex="-1"></a>new.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
@@ -675,7 +675,7 @@
 </section>
 <section class="slide level2">
 
-<div id="23f298c1" class="cell" data-execution_count="8">
+<div id="9894a330" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a>cereal <span class="op">=</span> cereal_amended.assign(mfr<span class="op">=</span>new[<span class="st">'mfr'</span>],</span>
 <span id="cb6-2"><a aria-hidden="true" tabindex="-1"></a>                       <span class="bu">type</span><span class="op">=</span>new[<span class="st">'type'</span>])</span>
 <span id="cb6-3"><a aria-hidden="true" tabindex="-1"></a>cereal</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -819,7 +819,7 @@
 </section>
 <section class="slide level2">
 
-<div id="c661afe3" class="cell" data-execution_count="9">
+<div id="43a13039" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a>new <span class="op">=</span> cereal_amended[<span class="st">'mfr_type'</span>].<span class="bu">str</span>.split(<span class="st">'-'</span>, expand<span class="op">=</span><span class="va">False</span>)</span>
 <span id="cb7-2"><a aria-hidden="true" tabindex="-1"></a>new </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
@@ -834,7 +834,7 @@ Name: mfr_type, Length: 77, dtype: object</code></pre>
 </div>
 </div>
 <p><br></p>
-<div id="d3366799" class="cell" data-execution_count="10">
+<div id="cc530c7d" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(new)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="10">
 <pre><code>pandas.core.series.Series</code></pre>
