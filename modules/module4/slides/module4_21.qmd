@@ -118,12 +118,12 @@ cereal['mfr_type'].mean()
 ```
 
 ```out
-TypeError: Could not convert N-ColdQ-ColdK-ColdK-ColdR-ColdG-ColdK-ColdG-ColdR-ColdP-ColdQ-ColdG-ColdG-ColdG-ColdG-ColdR-ColdK-ColdK-ColdG-ColdK-ColdN-HotK-ColdG-ColdR-ColdK-ColdK-ColdK-ColdP-ColdK-ColdP-ColdP-ColdG-ColdP-ColdP-ColdP-ColdQ-ColdG-ColdP-ColdK-ColdK-ColdG-ColdQ-ColdG-ColdA-HotR-ColdR-ColdK-ColdG-ColdK-ColdK-ColdK-ColdG-ColdP-ColdK-ColdQ-ColdQ-ColdQ-ColdQ-HotK-ColdG-ColdK-ColdR-ColdK-ColdN-ColdN-ColdN-ColdK-ColdK-ColdN-ColdG-ColdG-ColdG-ColdG-ColdG-ColdR-ColdG-ColdG-Cold to numeric
+TypeError: Could not convert 'N-ColdQ-ColdK-ColdK-ColdR-ColdG-ColdK-ColdG-ColdR-ColdP-ColdQ-ColdG-ColdG-ColdG-ColdG-ColdR-ColdK-ColdK-ColdG-ColdK-ColdN-HotK-ColdG-ColdR-ColdK-ColdK-ColdK-ColdP-ColdK-ColdP-ColdP-ColdG-ColdP-ColdP-ColdP-ColdQ-ColdG-ColdP-ColdK-ColdK-ColdG-ColdQ-ColdG-ColdA-HotR-ColdR-ColdK-ColdG-ColdK-ColdK-ColdK-ColdG-ColdP-ColdK-ColdQ-ColdQ-ColdQ-ColdQ-HotK-ColdG-ColdK-ColdR-ColdK-ColdN-ColdN-ColdN-ColdK-ColdK-ColdN-ColdG-ColdG-ColdG-ColdG-ColdG-ColdR-ColdG-ColdG-Cold' to numeric
 
 Detailed traceback: 
   File "<string>", line 1, in <module>
-  File "/usr/local/lib/python3.8/site-packages/pandas/core/generic.py", line 11459, in stat_func
-    return self._reduce(
+  File "/usr/local/lib/python3.12/site-packages/pandas/core/series.py", line 6549, in mean
+  ...
 ```
 
 ```{python}
@@ -195,7 +195,7 @@ cereal.loc[:, 'protein': 'carbo'].sum(axis=1)
 
 ```{python}
 cereal = cereal.assign(total_pffc=cereal.loc[:, 'protein': 'carbo'].sum(axis=1))
-cereal.head()
+cereal.head(4)
 ```
 
 

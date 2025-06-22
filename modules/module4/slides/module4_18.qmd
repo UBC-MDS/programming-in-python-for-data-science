@@ -134,7 +134,7 @@ Detailed traceback:
 ```
 
 ```out
-TypeError: unsupported operand type(s) for -: 'str' and 'str'
+TypeError: unsupported operand type(s) for /: 'str' and 'str'
 
 Detailed traceback: 
   File "<string>", line 1, in <module>
