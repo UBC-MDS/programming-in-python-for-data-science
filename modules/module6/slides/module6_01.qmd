@@ -278,9 +278,9 @@ def squares_a_list(numerical_list):
 squares_a_list([1, 2])
 a_new_variable
 ```
+
 ```out
 Ta-Da!
-[1, 4]
 'Peek-a-boo'
 ```
 

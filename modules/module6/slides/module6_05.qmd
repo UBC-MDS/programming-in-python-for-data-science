@@ -152,7 +152,7 @@ def exponent_a_list(exponent=2, numerical_list):
 ```
 
 ```out
-Error: non-default argument follows default argument (<string>, line 1)
+Error: parameter without a default follows parameter with a default (<string>, line 1)
 ```
 
 

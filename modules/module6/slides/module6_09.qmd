@@ -300,18 +300,18 @@ This returns the docstring of the function.
 ```out
 Signature: squares_a_list(numerical_list)
 Docstring:
-Creates a new list containing the square values of the input list. 
+Squared every element in a list.
 
 Parameters
 ----------
 numerical_list : list
     The list from which to calculate squared values 
-    
+
 Returns
 -------
 list
     A new list containing the squared value of each of the elements from the input list 
-    
+
 Examples
 --------
 >>> squares_a_list([1, 2, 3, 4])
