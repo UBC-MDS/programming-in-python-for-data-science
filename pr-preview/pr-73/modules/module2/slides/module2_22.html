@@ -220,10 +220,10 @@
 </section>
 <section class="slide level2">
 
-<div id="ca238a4a" class="cell" data-inlcude="false" data-execution_count="2">
+<div id="3ca76246" class="cell" data-inlcude="false" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a>cereal <span class="op">=</span> pd.read_csv(<span class="st">'data/cereal.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="7f04b1d1" class="cell" data-execution_count="3">
+<div id="f1c4bb43" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a>manufacturer_column <span class="op">=</span> cereal[<span class="st">'mfr'</span>]</span>
 <span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a>manufacturer_column.value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
@@ -239,7 +239,7 @@ Name: count, Length: 7, dtype: int64</code></pre>
 </div>
 </div>
 <p><br></p>
-<div id="b2b44869" class="cell" data-execution_count="4">
+<div id="0b090aae" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a>cereal[<span class="st">'mfr'</span>].value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>mfr
@@ -271,7 +271,7 @@ Name: count, Length: 7, dtype: int64</code></pre>
 </section>
 <section class="slide level2">
 
-<div id="5a831239" class="cell" data-execution_count="5">
+<div id="d17b89cb" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a>mfr_k <span class="op">=</span> cereal[cereal[<span class="st">'mfr'</span>] <span class="op">==</span> <span class="st">'K'</span>]</span>
 <span id="cb6-2"><a aria-hidden="true" tabindex="-1"></a>csr_df <span class="op">=</span> mfr_k.loc[:, [<span class="st">"calories"</span>, <span class="st">"sugars"</span>, <span class="st">"rating"</span>]]</span>
 <span id="cb6-3"><a aria-hidden="true" tabindex="-1"></a>cereal_mean <span class="op">=</span> csr_df.mean()</span>
@@ -284,7 +284,7 @@ dtype: float64</code></pre>
 </div>
 </div>
 <p><br></p>
-<div id="2a811fcb" class="cell" data-execution_count="6">
+<div id="18adbf86" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a aria-hidden="true" tabindex="-1"></a>cereal_mean <span class="op">=</span> cereal[cereal[<span class="st">'mfr'</span>] <span class="op">==</span> <span class="st">'K'</span>].loc[:, [<span class="st">"calories"</span>, <span class="st">"sugars"</span>, <span class="st">"rating"</span>]].mean()</span>
 <span id="cb8-2"><a aria-hidden="true" tabindex="-1"></a>cereal_mean</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
@@ -320,7 +320,7 @@ dtype: float64</code></pre>
 </section>
 <section class="slide level2">
 
-<div id="abc5e7b3" class="cell" data-execution_count="7">
+<div id="58725acb" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a aria-hidden="true" tabindex="-1"></a>cereal_mean <span class="op">=</span> cereal[cereal[<span class="st">'mfr'</span>] <span class="op">==</span> <span class="st">'K'</span>].loc[:, [<span class="st">"calories"</span>, <span class="st">"sugars"</span>, <span class="st">"rating"</span>]].mean()</span>
 <span id="cb10-2"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-3"><a aria-hidden="true" tabindex="-1"></a>cereal_mean</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -332,7 +332,7 @@ dtype: float64</code></pre>
 </div>
 </div>
 <p><br></p>
-<div id="2ca8b130" class="cell" data-execution_count="8">
+<div id="1bb5fa03" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a aria-hidden="true" tabindex="-1"></a>cereal_mean <span class="op">=</span> (cereal[cereal[<span class="st">'mfr'</span>] <span class="op">==</span> <span class="st">'K'</span>].loc[:, [<span class="st">"calories"</span>, <span class="st">"sugars"</span>, <span class="st">"rating"</span>]]</span>
 <span id="cb12-2"><a aria-hidden="true" tabindex="-1"></a>                                           .mean()</span>
 <span id="cb12-3"><a aria-hidden="true" tabindex="-1"></a>              )</span>

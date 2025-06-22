@@ -18,7 +18,7 @@
     "href": "modules/module2/slides/module2_25.html#using-groupby",
     "title": "Grouping and Aggregating",
     "section": "Using groupby",
-    "text": "Using groupby\n\nmfr_group = cereal.groupby(by='mfr')\nmfr_group\n\n&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x7fa951a5d4f0&gt;\n\n\n\nPandas has a solution for this.\nIt’s not uncommon to be interested in examining specific groups in our data. Hence there is a verb that is helpful in grouping like-rows together.\n.groupby() allows us to group our data based on a specified column.\nLet’s group our cereal dataframe on the mfr column and save it as object mfr_group.\nThis returns a DataFrame GroupBy object."
+    "text": "Using groupby\n\nmfr_group = cereal.groupby(by='mfr')\nmfr_group\n\n&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x7f67ca0234d0&gt;\n\n\n\nPandas has a solution for this.\nIt’s not uncommon to be interested in examining specific groups in our data. Hence there is a verb that is helpful in grouping like-rows together.\n.groupby() allows us to group our data based on a specified column.\nLet’s group our cereal dataframe on the mfr column and save it as object mfr_group.\nThis returns a DataFrame GroupBy object."
   },
   {
     "objectID": "modules/module2/slides/module2_25.html#summary-statistics-with-groups",
