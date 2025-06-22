@@ -195,20 +195,16 @@ cereal[cereal['mfr'] == 'Q', 'mfr'] = 'Quaker'
 ```
 
 ```out
-TypeError: 'Series' objects are mutable, thus they cannot be hashed
+TypeError: unhashable type: 'Series'
 
 Detailed traceback: 
   File "<string>", line 1, in <module>
-  File "/usr/local/lib/python3.7/site-packages/pandas/core/frame.py", line 2938, in __setitem__
+  File "/usr/local/lib/python3.12/site-packages/pandas/core/frame.py", line 4311, in __setitem__
     self._set_item(key, value)
-  File "/usr/local/lib/python3.7/site-packages/pandas/core/frame.py", line 3000, in _set_item
-    value = self._sanitize_column(key, value)
-  File "/usr/local/lib/python3.7/site-packages/pandas/core/frame.py", line 3666, in _sanitize_column
-    if broadcast and key in self.columns and value.ndim == 1:
-  File "/usr/local/lib/python3.7/site-packages/pandas/core/indexes/base.py", line 3899, in __contains__
+  File "/usr/local/lib/python3.12/site-packages/pandas/core/frame.py", line 4527, in _set_item
+    key in self.columns
+  File "/usr/local/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 5358, in __contains__
     hash(key)
-  File "/usr/local/lib/python3.7/site-packages/pandas/core/generic.py", line 1799, in __hash__
-    f"{repr(type(self).__name__)} objects are mutable, "
 ```
 
 
