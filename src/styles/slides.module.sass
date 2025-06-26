@@ -1,0 +1,214 @@
+.root
+    position: relative
+    width: 100%
+    height: 650px
+    overflow: hidden
+    margin-top: -2rem
+
+.slides
+    text-align: left !important
+
+.menu
+    margin-top: -1rem
+    margin-bottom: 2rem
+
+.tab
+    font: inherit
+    font-size: var(--font-size-md)
+    font-weight: bold
+    padding: 0.25em 1em
+    border-radius: 2em
+    cursor: pointer
+    background-color: var(--color-subtle-medium)
+    cursor: pointer
+
+    &:not(:last-child)
+        margin-right: 1rem
+
+.tab-active
+    background: var(--color-theme)
+    color: var(--color-theme-contrast)
+
+.radio
+    display: none
+
+.fullscreen
+    background: var(--color-back)
+    width: 100vw
+    max-width: 100vw !important
+    height: 100vh
+    position: fixed
+    top: 0
+    left: 0
+    z-index: 100
+
+    aside
+        display: none !important
+
+\:global
+    .plyr
+        background: var(--color-back) !important
+
+        iframe
+            margin: 0 auto
+            max-width: 100%
+
+        &.plyr--youtube
+            .plyr__poster
+                // Make YouTube title and "copy link" button clickable
+                background: var(--color-back)
+                top: 60px
+                height: calc(100% - 60px)
+
+            &:not(.plyr--loading).plyr--paused:after
+                // Hide YouTube's recommended videos
+                //content: ""
+                //width: 100%
+                //height: 170px
+                //background: var(--color-back)
+                //position: absolute
+                //bottom: 0
+                //left: 0
+
+        .plyr__video-wrapper
+            background: var(--color-back)
+
+        .plyr__progress
+            position: relative
+
+        .plyr__marker
+            position: absolute
+            bottom: 22px
+            left: var(--plyr-marker)
+            margin-left: -14px
+            font-weight: bold
+            text-transform: uppercase
+            cursor: pointer
+            pointer-events: initial
+            opacity: 1
+
+            &:before
+                left: initial
+                right: 0
+
+    .reveal
+        h1
+            border-bottom: 1px solid var(--color-subtle-medium)
+
+        h1, h2, h3, pre, ul, ol
+            margin-bottom: .5rem
+
+        li
+            margin-left: 2rem
+
+        img
+            margin-bottom: 1rem
+
+        img[align]
+            padding: .5rem
+
+        td
+            border-bottom: 1px solid var(--color-subtle-medium)
+
+        th
+            border-bottom: 2px solid var(--color-theme)
+
+        a
+            color: var(--color-theme)
+            text-decoration: underline
+        p
+            margin-bottom: 1rem
+            margin-top: 1rem
+
+        section
+            height: 100%
+            padding: 1rem
+
+        section:first-child h1,
+        section:last-child h1
+            font-size: 4rem
+            border: 0
+            text-align: center
+            width: 100%
+            height: 100%
+            display: flex
+            align-items: center
+            justify-content: center
+
+        pre
+            margin-bottom: 1.0rem
+            margin-top: 1.0rem
+
+        pre code
+            width: 100%
+            display: block
+            padding: 0.5rem 1rem !important
+            border-radius: var(--border-radius)
+            background: var(--syntax-background)
+            color: var(--syntax-text)
+            position: relative
+            overflow-x: scroll
+
+        pre code.language-out
+            background: var(--syntax-output)
+            padding: 2.5rem 1rem 1rem !important
+            color: var(--syntax-background)
+            overflow-x: scroll
+
+            &:before
+                content: "Output"
+                position: absolute
+                top: 0.5rem
+                right: 1rem
+                font-family: var(--font-primary)
+                text-transform: uppercase
+                font-weight: bold
+                font-size: var(--font-size-xs)
+
+    .reveal .slides
+        margin-top: 0.2%
+        margin-left: 2.75%
+
+    .reveal.show-notes
+        max-width: 70%
+
+    .reveal .speaker-notes
+        background: var(--color-back)
+        border: 2px solid var(--color-subtle-medium)
+        color: var(--color-subtle-dark)
+        font-size: var(--font-size-xs)
+        font-family: var(--font-primary)
+        border-radius: var(--border-radius)
+        width: 40%
+        margin-left: 2.75%
+        height: 100%
+        overflow: auto
+
+
+        p
+            margin-bottom: 1.5rem
+
+        code
+            font-size: 80%
+
+        &:before
+            margin-top: 1.5rem
+            content: "Transcript"
+            font-weight: bold
+            color: inherit
+            opacity: 1
+
+    @media(max-width: 1024px)
+        .reveal.show-notes
+            max-width: 100%
+
+        .reveal.show-notes .speaker-notes
+            width: 100%
+            margin-left: 0
+            top: 125%
+            overflow: auto
+
+    @media(max-width: 600px)
+        .reveal.show-notes .speaker-notes
+            height: auto
+            top: 100%
