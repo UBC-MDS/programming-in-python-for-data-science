@@ -160,7 +160,7 @@ website:
           - text: '&nbsp;&nbsp; 7.1. Exercises'
             href: modules/module4/module4-24-practice_operations_with_dataframe_columns.qmd
           - href: modules/module4/module4-25-what_did_we_just_learn.qmd
-      - section: "**Module 5: Making Choices and Repeating Iterations**"
+      - section: "**M5: Making Choices and Repeating Iterations**"
         contents:
           - href: modules/module5/module5-00-module_learning_outcomes.qmd
           - href: modules/module5/module5-01-making_choices_with_conditional_statements.qmd
@@ -182,7 +182,7 @@ website:
           - text: '&nbsp;&nbsp; 6.1. Exercises'
             href: modules/module5/module5-20-function_questions.qmd
           - href: modules/module5/module5-23-what_did_we_just_learn.qmd
-      - section: "**Module 6: Functions Fundamentals and Best Practices**"
+      - section: "**M6: Functions Fundamentals and Best Practices**"
         contents:
           - href: modules/module6/module6-00-module_learning_outcomes.qmd
           - href: modules/module6/module6-01-dry_revisited_and_function_fundamentals.qmd
@@ -204,7 +204,7 @@ website:
           - text: '&nbsp;&nbsp; 6.1. Exercises'
             href: modules/module6/module6-23-function_design_questions.qmd
           - href: modules/module6/module6-26-what_did_we_just_learn.qmd
-      - section: "**Module 7: Importing Files and the Coding Style Guide**"
+      - section: "**M7: Importing Files and the Coding Style Guide**"
         contents:
           - href: modules/module7/module7-00-module_learning_outcomes.qmd
           - href: modules/module7/module7-01-importing_python_libraries.qmd
@@ -226,7 +226,7 @@ website:
           - text: '&nbsp;&nbsp; 6.1. Exercises'
             href: modules/module7/module7-19-using_the_python_debugger.qmd
           - href: modules/module7/module7-20-what_did_we_just_learn.qmd
-      - section: "**Module 8: A Slice of NumPy and Advanced Data Wrangling**"
+      - section: "**M8: A Slice of NumPy and Advanced Data Wrangling**"
         contents:
           - href: modules/module8/module8-00-module_learning_outcomes.qmd
           - href: modules/module8/module8-01-numpy_and_1d_arrays.qmd
