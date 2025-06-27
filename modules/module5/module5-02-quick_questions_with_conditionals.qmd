@@ -1,0 +1,320 @@
+---
+format: live-html
+---
+
+<script src='../../src/quiz.js'></script>
+
+# 1.1. Exercises
+
+## Quick Questions with Conditionals
+
+<div id='mcq1'></div>
+<script>
+    generateQuiz(
+        'mcq1',
+        'Question 1',
+        'Every conditional decision <b>MUST</b> have which of the following:',
+        {
+        '<code>if</code>': 'Well done!',
+        '<code>elif</code>': 'When we tell python to make a decision based on conditionals, an <code>elif</code> statement is optional.',
+        '<code>else</code>': 'We can still write functioning code without an <code>else</code> condition.',
+        },
+        '<code>if</code>',
+    );
+</script>
+
+
+```python
+time = 150
+
+if time  < 120:
+    speed = 'Fast'
+elif time < 180:
+    speed = 'Average'
+else:
+    speed = 'Slow'
+speed
+```
+
+<div id='mcq2'></div>
+<script>
+    generateQuiz(
+        'mcq2',
+        'Question 2',
+        'Given the code above, what is the value of the object <code>speed</code>?',
+        {
+        '<code>Fast</code>': '150 is not less than 120 so we would need to proceed to the next condition.',
+        '<code>Average</code>': 'Well done.',
+        '<code>Slow</code>': '150 is not greater than 180, so it would not enter the body of the <code>else</code> condition.',
+        },
+        '<code>Average</code>',
+    );
+</script>
+
+
+```python
+price = 150
+
+if price > 50:
+    expensive = 'moderately'
+elif price > 100:
+    expensive = 'valuable'
+else:
+    expensive = 'affordable'
+expensive
+```
+
+<div id='mcq3'></div>
+<script>
+    generateQuiz(
+        'mcq3',
+        'Question 3',
+        'Given the code above, what is the value of the object <code>expensive</code>?',
+        {
+        '<code>moderately</code>': 'Well done.',
+        '<code>valuable</code>': 'Proceeding to the body of this condition isn’t possible since the first condition was met.',
+        '<code>affordable</code>': 'Remember what happens when the first condition is met?  It gets removed from the stream.',
+        },
+        '<code>moderately</code>',
+    );
+</script>
+
+## Will it Run with Conditionals
+
+A.
+
+```python
+if price > 100
+    expensive = 'valuable'
+else
+    expensive = 'affordable'
+expensive
+```
+
+
+B.
+
+```python
+if price > 50:
+expensive = 'moderately'
+elif price > 100:
+expensive = 'valuable'
+else:
+expensive = 'affordable'
+expensive
+```
+
+
+C.
+
+```python
+if price > 50:
+    expensive = 'moderately'
+expensive
+```
+
+<div id='mcq4'></div>
+<script>
+    generateQuiz(
+        'mcq4',
+        'Question 1',
+        'Which of the above code wouldn’t result in an error?',
+        {
+        'A': 'This code seems to be missing colons in the statement.',
+        'B': 'Are you sure the structure is correct?',
+        'C': 'Great work.',
+        },
+        'C',
+    );
+</script>
+
+## Coding questions
+
+**Instructions:**    
+Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
+
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
+
+_**Make sure you remove the hash (`#`) symbol in the coding portions of this question.  We have commented them so that the line won't execute and you can test your code after each step.**_
+
+
+### Creating Conditional Statements
+
+Let's practice making decisions with conditional statements. 
+We are going to the gym and our exercise plan takes different amounts of reps. let's make conditional statements that depend on the name of the exercises.
+
+**Tasks:**
+
+- Make `if`, `elif`, and `else` statements for the following conditions:
+    - if the exercise value is `lunges`, set an object value named `reps` to 20.
+    - if the exercise value is `squats`, set `reps` to 25
+    - if the exercise value is `burpees`, set `reps` to 15
+    - If the exercise value is anything else, set `reps` to 10.
+- Display the value of `reps`.
+
+```{pyodide}
+#| setup: true
+#| exercise: creating_conditional_statements
+import pandas as pd
+```
+
+```{pyodide}
+#| exercise: creating_conditional_statements
+exercise = 'burpees'
+
+# Make if, elif, and else statements
+____ ____ == ____:
+    ____
+____
+    ____
+____
+    ____
+____
+    ____
+
+# Display the value of reps
+____
+```
+
+```{pyodide}
+#| exercise: creating_conditional_statements
+#| check: true
+from src.utils import print_correct_msg
+
+assert result == 15, "The value of reps is incorrect. Are you setting up your conditionals properly?"
+print_correct_msg()
+```
+
+:::: { .hint exercise="creating_conditional_statements"}
+::: { .callout-note collapse="false"}
+
+## Hint 1
+
+- Are you using double equal signs  (`==`) to make a conditional statement?
+- Are you using a single `if` statement and 2 `elif` statements? 
+
+:::
+::::
+
+:::: { .solution exercise="creating_conditional_statements" }
+::: { .callout-tip collapse="false"}
+
+## Fully worked solution:
+
+```{pyodide}
+exercise = 'burpees'
+
+# Make if, elif, and else statements
+if exercise == 'lunges':
+    reps = 20
+elif exercise == 'squats':
+    reps = 25
+elif exercise == 'burpees':
+    reps = 15
+else:
+    reps = 10
+
+# Display the value of reps
+reps
+```
+
+:::
+::::
+
+<br>
+
+<div id='mcq5'></div>
+<script>
+    generateQuiz(
+        'mcq5',
+        'Question',
+        'What is the output if <code>exercise = "exercise"</code>?',
+        {
+        '<code>20</code>': 'This is the value if <code>exercise</code> is <code>lunges</code>.',
+        '<code>25</code>': 'This is the value if <code>exercise</code> is <code>squats</code>.',
+        '<code>15</code>': 'This is the value if <code>exercise</code> is <code>burpees</code>.',
+        '<code>10</code>': '',
+        },
+        '<code>10</code>',
+    );
+</script>
+
+
+### Creating an Inline if/else Statement
+
+Let's try to make inline conditional statements using `if` and `else`. 
+the variable `cups_of_tea` is the number of cups of tea Ben drank last week. 
+
+**Tasks:**
+
+- Make an inline if/else statement that satisfies the following conditions:
+    - if the data type of `cups_of_tea` is of type `list`, then set and object named `tea_amount` to the sum of the elements.
+    - if the data type is anything else, set `tea_amount` to the string `'cannot sum'`. 
+- Display the result of `tea_amount`.
+
+```{pyodide}
+#| exercise: creating_an_inline_if_else_statement
+cups_of_tea = [2, 1, 4, 3, 3, 2, 1]
+
+# Make an inline conditional statement
+____ = ____
+
+# Display the result of tea_amount
+____
+```
+
+```{pyodide}
+#| exercise: creating_an_inline_if_else_statement
+#| check: true
+from src.utils import print_correct_msg
+
+assert result == 16, "The value of 'tea_amount' is incorrect. Are you setting up the inline conditional properly?"
+print_correct_msg()
+```
+
+:::: { .hint exercise="creating_an_inline_if_else_statement"}
+::: { .callout-note collapse="false"}
+
+## Hint 1
+
+- To check the data type of `cups_of_tea`, you can use `type(cups_of_tea) == list`.
+- Are you using `sum()` to sum up the elements in a list? 
+
+:::
+::::
+
+:::: { .solution exercise="creating_an_inline_if_else_statement" }
+::: { .callout-tip collapse="false"}
+
+## Fully worked solution:
+
+```{pyodide}
+cups_of_tea = [2, 1, 4, 3, 3, 2, 1]
+
+# Make an inline conditional statement 
+tea_amount = sum(cups_of_tea) if type(cups_of_tea) == list else 'cannot sum'
+
+# Display the result of tea_amount
+tea_amount
+```
+
+:::
+::::
+
+<br>
+
+<div id='mcq6'></div>
+<script>
+    generateQuiz(
+        'mcq6',
+        'Question',
+        'What is the output if <code>cups_of_tea = [2]</code>?',
+        {
+        '<code>0</code>': 'Are you summing up the list?',
+        '<code>2</code>': '',
+        '<code>cannot sum</code>': '<code>cups_of_tea</code> is a list and should be able to sum up the elements.',
+        '<code>Error</code>': 'It should not result in an error message.',
+        },
+        '<code>2</code>',
+    );
+</script>
