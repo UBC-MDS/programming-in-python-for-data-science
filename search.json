@@ -1,5 +1,229 @@
 [
   {
+    "objectID": "modules/module9/slides/module9_00.html#you-did-it",
+    "href": "modules/module9/slides/module9_00.html#you-did-it",
+    "title": "Congratulations on completing Programming in Python for Data Science!",
+    "section": "You did it!",
+    "text": "You did it!\nWe covered a lot of ground but you managed to finished all 8 Modules. It’s important to celebrate this success."
+  },
+  {
+    "objectID": "modules/module9/slides/module9_00.html#attribution",
+    "href": "modules/module9/slides/module9_00.html#attribution",
+    "title": "Congratulations on completing Programming in Python for Data Science!",
+    "section": "Attribution",
+    "text": "Attribution\n\nMaterial from UBC’s DSCI 511: Python Programming for Data Science by  Tom Beuzen.\nThe cereal dataset: 80 Cereals(c) by Chris Crawford is licensed under Creative Commons Attribution-ShareAlike 3.0 Unported."
+  },
+  {
+    "objectID": "modules/module9/slides/module9_00.html#special-thanks",
+    "href": "modules/module9/slides/module9_00.html#special-thanks",
+    "title": "Congratulations on completing Programming in Python for Data Science!",
+    "section": "Special Thanks",
+    "text": "Special Thanks\nNot only did you put in a lot of work by completing this course, but many people did too by helping make this course possible.\nSpecial thanks must be attributed to the following individuals and organizations (in alphabetical order):\n\n Tom Beuzen\nTim Head\n\nInes Montani\nJoel Ostblom\nElijah Willie\nThe Master of Data Science Program at UBC\nOur friends, family and colleagues for supporting us and cheering us on!"
+  },
+  {
+    "objectID": "modules/module9/slides/module9_00.html#about-us",
+    "href": "modules/module9/slides/module9_00.html#about-us",
+    "title": "Congratulations on completing Programming in Python for Data Science!",
+    "section": "About Us",
+    "text": "About Us\n\nMike Gelbart\n\nWebsite: www.mikegelbart.com\nTwitter: @MikeGelbart  \n\nTiffany Timbers\n\nWebsite: www.tiffanytimbers.com\nTwitter: @TiffanyTimbers  \n\nHayley Boyce\n\nWebsite: www.hayleyfboyce.com\nTwitter: @HayleyFBoyce"
+  },
+  {
+    "objectID": "modules/module8/slides/module8_27.html#summary",
+    "href": "modules/module8/slides/module8_27.html#summary",
+    "title": "What Did we Learn and What to Expect in Assignment 8",
+    "section": "Summary",
+    "text": "Summary\nStudents are now expected to be able to:\n\nUse NumPy to create ndarrays with np.array() and from functions such as np.arange(), np.linspace() and np.ones().\nDescribe the shape, dimension and size of an array.\nIdentify null values in a dataframe and manage them by removing them using .dropna() or replacing them using .fillna().\nManipulate non-standard date/time formats into standard Pandas datetime using pd.to_datetime().\nFind, and replace text from a dataframe using verbs such as .replace().\n\n\nThe assignment will concentrate on the learning objectives as well as building knowledge on existing concepts."
+  },
+  {
+    "objectID": "modules/module8/slides/module8_27.html#attribution",
+    "href": "modules/module8/slides/module8_27.html#attribution",
+    "title": "What Did we Learn and What to Expect in Assignment 8",
+    "section": "Attribution",
+    "text": "Attribution\nThe cereal dataset:\n“80 Cereals” (c) by Chris Crawford is licensed under Creative Commons Attribution-ShareAlike 3.0 Unported"
+  },
+  {
+    "objectID": "modules/module8/slides/module8_19.html#recap",
+    "href": "modules/module8/slides/module8_19.html#recap",
+    "title": "Introduction to Working with Strings",
+    "section": "Recap",
+    "text": "Recap\nLet’s first remind ourselves of some of the methods we’ve already learned such as:\n\n.upper()\n.lower()\n.count()\n.split()\n\n\ninstrument = 'Violin'\ninstrument\n\n'Violin'\n\n\n\n\ninstrument.upper()\n\n'VIOLIN'\n\n\n\nAlthough we have already introduced you to strings to a certain degree, processing and working with this data type is an area that will require a substantial amount of learning.\nIn this course, we will only scratch the surface when it comes to strings.\nThat being said, we do hope to provide you with an adequate foundation in string processing.\nLet’s first remind ourselves of some of the methods we’ve already learned such as:\n\n.upper()\n.lower()\n.uppercase()\n.count()\n.split()\n\nWhen we work with just a general string, we can just use the function at the end of the object name.\nFor example, if our string object name was instrument.\nWe could convert to all uppercase characters with instrument.upper()."
+  },
+  {
+    "objectID": "modules/module8/slides/module8_19.html#processing-string-columns",
+    "href": "modules/module8/slides/module8_19.html#processing-string-columns",
+    "title": "Introduction to Working with Strings",
+    "section": "Processing String Columns",
+    "text": "Processing String Columns\n\ncycling\n\n\n\n\n\n\n\n\nDate\nName\nType\nTime\nDistance\nComments\n\n\n\n\n0\nSep-10-2019 17:13\nAfternoon Ride\nRide\n2084\n12.62\nRain\n\n\n1\nSep-11-2019 06:52\nMorning Ride\nRide\n2531\n13.03\nrain\n\n\n2\nSep-11-2019 17:23\nAfternoon Ride\nRide\n1863\n12.52\nWet road but nice whether\n\n\n...\n...\n...\n...\n...\n...\n...\n\n\n30\nOct-10-2019 18:10\nAfternoon Ride\nRide\n1841\n12.59\nFeeling good after a holiday break!\n\n\n31\nOct-11-2019 07:47\nMorning Ride\nRide\n2463\n12.79\nStopped for photo of sunrise\n\n\n32\nOct-11-2019 18:16\nAfternoon Ride\nRide\n1843\n11.79\nBike feeling tight, needs an oil and pump\n\n\n\n\n33 rows × 6 columns\n\n\n\n\nThe only problem is that when we work with data, we will be applying these transformations, not to a single string, but to a whole column of them.\nWe saw back in Module 4 that string data is represented in a pandas dataframe using the dtype object.\nThis is the default dtype given to columns that have a mix of different data types or if pandas cannot identify the column as any other dtype.\nLet’s bring back our cycling dataframe to demonstrate how to work with columns of this dtype."
+  },
+  {
+    "objectID": "modules/module8/slides/module8_19.html#strip",
+    "href": "modules/module8/slides/module8_19.html#strip",
+    "title": "Introduction to Working with Strings",
+    "section": "Strip",
+    "text": "Strip\n.strip() .\n\n\"Sunshine\" == \" Sunshine \"\n\nFalse\n\n\n\n\nstring1 = \" Sunshine \" \nnew_string1 = string1.strip()\nnew_string1\n\n'Sunshine'\n\n\n\n\n\"Sunshine\" == new_string1\n\nTrue\n\n\n\nOne function that might not seem that pertinent but is extremely useful is .strip() .\nstrip() removes characters starting or ending a string, with the default being spaces.\nFor Example:\nTo us, reading “Sunshine” and ” Sunshine ” are the same thing, but to Python, they are quite different because of the blank space surrounding it.\nThe blank space on either side of a string often needs to be removed depending on the analysis.\nWe can remove them in the example above using strip()."
+  },
+  {
+    "objectID": "modules/module8/slides/module8_11.html#info-on-missing-values",
+    "href": "modules/module8/slides/module8_11.html#info-on-missing-values",
+    "title": "Working with Null Values",
+    "section": "Info on missing values",
+    "text": "Info on missing values\n\ncereal.info()\n\n&lt;class 'pandas.core.frame.DataFrame'&gt;\nRangeIndex: 77 entries, 0 to 76\nData columns (total 6 columns):\n #   Column    Non-Null Count  Dtype  \n---  ------    --------------  -----  \n 0   name      77 non-null     object \n 1   mfr       77 non-null     object \n 2   calories  77 non-null     int64  \n 3   fat       77 non-null     int64  \n 4   fiber     77 non-null     float64\n 5   rating    77 non-null     float64\ndtypes: float64(2), int64(2), object(2)\nmemory usage: 3.7+ KB\n\n\n\nA good rule of thumb when conducting an analysis is to check early on how complete the dataset is.\n.info() is similar to .dtypes, but in addition to the dtype of each column, it includes the total number of non-null values contained in each column.\nLet’s try it out on a subset of our cereal dataset.\nHere we see the total number of rows at the top with RangeIndex: 77 entries, 0 to 76.\nThe Non-Null Count column specifies the number of non-null values.\nIn this case, we have a complete dataframe with zero null values for each column."
+  },
+  {
+    "objectID": "modules/module8/slides/module8_11.html#dropping-null-values",
+    "href": "modules/module8/slides/module8_11.html#dropping-null-values",
+    "title": "Working with Null Values",
+    "section": "Dropping Null Values",
+    "text": "Dropping Null Values\n\ntrips_removed = cycling.dropna()\ntrips_removed\n\n\n\n\n\n\n\n\nDate\nName\nType\nTime\nDistance\nComments\n\n\n\n\n0\n2019-09-09 07:13:00\nMorning Ride\nRide\n2084\n12.62\nRain\n\n\n1\n2019-09-09 20:52:00\nAfternoon Ride\nRide\n2531\n13.03\nrain\n\n\n3\n2019-09-10 21:06:00\nAfternoon Ride\nRide\n2192\n12.84\nStopped for photo of sunrise\n\n\n...\n...\n...\n...\n...\n...\n...\n\n\n30\n2019-10-09 07:10:00\nMorning Ride\nRide\n1841\n12.59\nFeeling good after a holiday break!\n\n\n31\n2019-10-09 20:47:00\nAfternoon Ride\nRide\n2463\n12.79\nStopped for photo of sunrise\n\n\n32\n2019-10-10 07:16:00\nMorning Ride\nRide\n1843\n11.79\nBike feeling tight, needs an oil and pump\n\n\n\n\n30 rows × 6 columns\n\n\n\n\nThe easiest and simplest way of handling nulls values is to remove those rows from the dataset.\nIn a fashion similar to dropping columns, we can drop rows if they contain a NaN value.\nIt’s important that we take some necessary precautions and not drop a large portion of the data.\nIn our example above, if we were to remove the 3 rows we identified to contain NaN values, we do it in the following way.\nNotice that index 2 was removed, and we only have 30 rows in our dataframe now."
+  },
+  {
+    "objectID": "modules/module8/slides/module8_11.html#replacing-null-values",
+    "href": "modules/module8/slides/module8_11.html#replacing-null-values",
+    "title": "Working with Null Values",
+    "section": "Replacing Null Values",
+    "text": "Replacing Null Values\n\ncycling_zero_fill = cycling.fillna(value=0)\ncycling_zero_fill\n\n\n\n\n\n\n\n\nDate\nName\nType\nTime\nDistance\nComments\n\n\n\n\n0\n2019-09-09 07:13:00\nMorning Ride\nRide\n2084\n12.62\nRain\n\n\n1\n2019-09-09 20:52:00\nAfternoon Ride\nRide\n2531\n13.03\nrain\n\n\n2\n2019-09-10 07:23:00\nMorning Ride\nRide\n1863\n0.00\nWet road but nice weather\n\n\n...\n...\n...\n...\n...\n...\n...\n\n\n30\n2019-10-09 07:10:00\nMorning Ride\nRide\n1841\n12.59\nFeeling good after a holiday break!\n\n\n31\n2019-10-09 20:47:00\nAfternoon Ride\nRide\n2463\n12.79\nStopped for photo of sunrise\n\n\n32\n2019-10-10 07:16:00\nMorning Ride\nRide\n1843\n11.79\nBike feeling tight, needs an oil and pump\n\n\n\n\n33 rows × 6 columns\n\n\n\n\nAlternately, if we have a small dataset and we don’t want to rid ourselves of any data, we may prefer to replace NaN with a particular value.\nWe can do so with .fillna().\nPerhaps it’s missing from the data because he didn’t cycle that particular day. Replacing the NaN value with 0, in this case, would make sense.\nNow index 2 now has a Distance of 0.00."
+  },
+  {
+    "objectID": "modules/module8/slides/module8_01.html#what-is-numpy",
+    "href": "modules/module8/slides/module8_01.html#what-is-numpy",
+    "title": "NumPy and 1D Arrays",
+    "section": "What is NumPy?",
+    "text": "What is NumPy?\nNumPy -&gt; “Numerical Python extensions”.\nNumPy offers:\n\nArrays\nMathematical Constants\nMathematical Functions\n\n\nThe name NumPy is derived from “Numerical Python extensions”.\nNumPy is a Python library used primarily for computing involving numbers. It is especially useful as it provides a multidimensional array object, called an array.\nIn addition, NumPy also offers numerous other mathematical functions used in the domain of Linear Algebra and Calculus."
+  },
+  {
+    "objectID": "modules/module8/slides/module8_01.html#so-what-is-an-array",
+    "href": "modules/module8/slides/module8_01.html#so-what-is-an-array",
+    "title": "NumPy and 1D Arrays",
+    "section": "So What is an Array?",
+    "text": "So What is an Array?\n\nmy_list = [1, 2, 3, 4, 5]\nmy_list\n\n[1, 2, 3, 4, 5]\n\n\n\n\nmy_array = np.array((1, 2, 3, 4, 5))\nmy_array\n\narray([1, 2, 3, 4, 5])\n\n\n\n\ntype(my_array)\n\nnumpy.ndarray\n\n\n\nA NumPy array is somewhat like a list.\nThey are considered their own data type.\nWe can see this by using type on an array."
+  },
+  {
+    "objectID": "modules/module8/slides/module8_01.html#creating-1d-arrays",
+    "href": "modules/module8/slides/module8_01.html#creating-1d-arrays",
+    "title": "NumPy and 1D Arrays",
+    "section": "Creating 1D Arrays",
+    "text": "Creating 1D Arrays\n\nmy_array = np.array([1, 2, 3, 4])\nmy_array\n\narray([1, 2, 3, 4])\n\n\n\n\nnp.zeros(10)\n\narray([0., 0., 0., 0., 0., 0., 0., 0., 0., 0.])\n\n\n\n\nnp.ones(4)\n\narray([1., 1., 1., 1.])\n\n\n\nWe can make arrays from lists as well as tuples.\nThere are also several built-in NumPy functions that create different arrays with patterns and requirements.\nnp.zeros() will create an array containing 0 for each element, and the input argument specifies the size.\nHere we specified 10, so our array has 10 elements.\nSimilarly, np.ones() does the same thing except with an array of elements with 1 values.\nNow we’ve specified 4 as the input, and so this array has 4 elements."
+  },
+  {
+    "objectID": "modules/module8/slides/module8_01.html#elementwise-operations",
+    "href": "modules/module8/slides/module8_01.html#elementwise-operations",
+    "title": "NumPy and 1D Arrays",
+    "section": "Elementwise operations",
+    "text": "Elementwise operations\n\narray1 = np.ones(4)\narray1\n\narray([1., 1., 1., 1.])\n\n\n\n\narray2 = array1 + 1\narray2\n\narray([2., 2., 2., 2.])\n\n\n\n\narray1 + array2\n\narray([3., 3., 3., 3.])\n\n\n\n\narray1 * array2\n\narray([2., 2., 2., 2.])\n\n\n\nLet’s talk about how operations are calculated with arrays.\nWe discussed that array and lists are similar but not quite the same.\nArrays are designed for convenience mathematically, so arrays operate in an element-wise manner.\nWhen we do operations, the operation is done to each element in the array.\nIf we add to our array, 1 is added to each element in the array.\nIf we add two arrays together, the element at identical index positions are added.\nSimilarly, if we multiply 2 arrays together, the index at each position are multiplied together."
+  },
+  {
+    "objectID": "modules/module8/slides/module8_01.html#slicing-and-indexing-1d-arrays",
+    "href": "modules/module8/slides/module8_01.html#slicing-and-indexing-1d-arrays",
+    "title": "NumPy and 1D Arrays",
+    "section": "Slicing and Indexing 1D Arrays",
+    "text": "Slicing and Indexing 1D Arrays\n\narr = np.arange(10)\narr\n\narray([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])\n\n\n\n\narr[7]\n\nnp.int64(7)\n\n\n\n\narr[2:6]\n\narray([2, 3, 4, 5])\n\n\n\n\narr[-1]\n\nnp.int64(9)\n\n\n\nWhen it comes to slicing, 1D arrays are sliced in the same manner that lists are.\nWe can obtain an individual location by putting the index position in square brackets.\nAnd just like slicing dataframes with .iloc[], when we want an interval of values, the first value in the bracket is included, and the last value is excluded.\nTo obtain elements from right to left, we use negative integers."
+  },
+  {
+    "objectID": "modules/module8/slides/module8_01.html#boolean-indexing",
+    "href": "modules/module8/slides/module8_01.html#boolean-indexing",
+    "title": "NumPy and 1D Arrays",
+    "section": "Boolean Indexing",
+    "text": "Boolean Indexing\n\ngrade_array = np.array([98, 87, 103, 92, 67, 107, 78, 104, 85, 105])\ngrade_array\n\narray([ 98,  87, 103,  92,  67, 107,  78, 104,  85, 105])\n\n\n\n\nthreshold = np.array([98, 87, 103, 92, 67, 107, 78, 104, 85, 105]) &gt; 100\nthreshold\n\narray([False, False,  True, False, False,  True, False,  True, False,  True])\n\n\n\n\ngrade_array[threshold] = 100\ngrade_array\n\narray([ 98,  87, 100,  92,  67, 100,  78, 100,  85, 100])\n\n\n\nLet’s now explore Boolean indexing.\nLet’s take a 1D array that consists of 10 elements.\nRemember that when we do most operations, it occurs in an element-wise manner.\nPerhaps we are grading exams that contain bonus marks.\nThe max possible allowed mark on the exam is 100%, so we must cap the grades, so any mark greater than 100 is set to 100. First, we check which values are greater than 100.\nThis produces an array containing Boolean values, which we store in the object threshold.\nThe first and second elements are False since both 98 and 87 and not larger than 100. However, the 3rd element is True since 103 is larger than 100.\nWe now can replace all those values that have a True Boolean, with a new value; in this case, let’s assign them a value of 100, the maximum possible allowed grade."
+  },
+  {
+    "objectID": "modules/module8/slides/module8_01.html#why-numpy",
+    "href": "modules/module8/slides/module8_01.html#why-numpy",
+    "title": "NumPy and 1D Arrays",
+    "section": "Why NumPy?",
+    "text": "Why NumPy?\n\ncereal.head()\n\n\n\n\n\n\n\n\nname\nmfr\ntype\ncalories\n...\nshelf\nweight\ncups\nrating\n\n\n\n\n0\n100% Bran\nN\nCold\n70\n...\n3\n1.0\n0.33\n68.402973\n\n\n1\n100% Natural Bran\nQ\nCold\n120\n...\n3\n1.0\n1.00\n33.983679\n\n\n2\nAll-Bran\nK\nCold\n70\n...\n3\n1.0\n0.33\n59.425505\n\n\n3\nAll-Bran with Extra Fiber\nK\nCold\n50\n...\n3\n1.0\n0.50\n93.704912\n\n\n4\nAlmond Delight\nR\nCold\n110\n...\n3\n1.0\n0.75\n34.384843\n\n\n\n\n5 rows × 16 columns\n\n\n\n\n\ntype(cereal.loc[3,'calories'])\n\nnumpy.int64\n\n\n\n\ncereal['calories'].to_numpy()\n\narray([ 70, 120,  70,  50, 110, 110, 110, 130,  90,  90, 120, 110, 120, 110, 110, 110, 100, 110, 110, 110, 100, 110, 100, 100, 110, 110, 100, 120, 120, 110, 100, 110, 100, 110, 120, 120, 110, 110, 110, 140, 110, 100, 110, 100, 150, 150, 160, 100, 120, 140,  90, 130, 120, 100,  50,  50, 100, 100, 120, 100,  90, 110, 110,  80,  90,  90, 110, 110,  90, 110, 140, 100, 110, 110, 100, 100, 110])\n\n\n\nSo why, NumPy?\nLists are often used with a similar purpose of arrays, but they are slow to process.\nBecause of this, NumPy is used to create many other structures.\nIn fact, let’s refresh ourselves on certain values in a dataframe.\nRemember when we obtained the data type of a specific value in a dataframe?\nWe obtained this &lt;class 'numpy.int64'&gt;, which we originally ignored.\nThis is because a pandas dataframe is built off of a multidimensional (2D specifically) array!\nWe will explain more about multidimensional arrays in the next set of slides.\nWe can actually convert an entire pandas column into an array pretty easily using np.to_numpy()."
+  },
+  {
+    "objectID": "modules/module8/slides/module8_01.html#numpy-constants-and-functions",
+    "href": "modules/module8/slides/module8_01.html#numpy-constants-and-functions",
+    "title": "NumPy and 1D Arrays",
+    "section": "NumPy Constants and Functions",
+    "text": "NumPy Constants and Functions\n\n\nnp.pi\n\n3.141592653589793\n\n\n\n\n\nnp.inf\n\ninf\n\n\n\n\n\nnp.e\n\n2.718281828459045\n\n\n\nNumPy also offers an assortment of handy mathematical constants and functions."
+  },
+  {
+    "objectID": "modules/module8/slides/module8_01.html#numpy-functions",
+    "href": "modules/module8/slides/module8_01.html#numpy-functions",
+    "title": "NumPy and 1D Arrays",
+    "section": "NumPy Functions",
+    "text": "NumPy Functions\n\nnp.prod([2, 3, 1])\n\nnp.int64(6)\n\n\n\n\nnp.diff([2, 5, 20])\n\narray([ 3, 15])\n\n\n\n\nnp.log10(100)\n\nnp.float64(2.0)\n\n\n\nThe full list of mathematical functions are available at this NumPy website.\n\nNumPy’s functions include but are not limited to:\n\nnp.prod() which calculates the product of values in an array\nnp.diff() which calculates the difference between element (left element subtracted from the right element)\nAnd other functions such as np.log() or trigonometric ones like np.sin()"
+  },
+  {
+    "objectID": "modules/module8/module8-27-what_did_we_just_learn.html",
+    "href": "modules/module8/module8-27-what_did_we_just_learn.html",
+    "title": "7. What Did We Just Learn?",
+    "section": "",
+    "text": "7. What Did We Just Learn?\n\nVideoSlides",
+    "crumbs": [
+      "**Module 8: A Slice of NumPy and Advanced Data Wrangling**",
+      "7. What Did We Just Learn?"
+    ]
+  },
+  {
+    "objectID": "modules/module8/module8-23-more_advanced_string_processing.html",
+    "href": "modules/module8/module8-23-more_advanced_string_processing.html",
+    "title": "6. More Advanced String Processing",
+    "section": "",
+    "text": "6. More Advanced String Processing\n\nVideoSlides",
+    "crumbs": [
+      "**Module 8: A Slice of NumPy and Advanced Data Wrangling**",
+      "6. More Advanced String Processing"
+    ]
+  },
+  {
+    "objectID": "modules/module8/module8-19-introduction_to_working_with_strings.html",
+    "href": "modules/module8/module8-19-introduction_to_working_with_strings.html",
+    "title": "5. Introduction to Working with Strings",
+    "section": "",
+    "text": "5. Introduction to Working with Strings\n\nVideoSlides",
+    "crumbs": [
+      "**Module 8: A Slice of NumPy and Advanced Data Wrangling**",
+      "5. Introduction to Working with Strings"
+    ]
+  },
+  {
+    "objectID": "modules/module8/module8-16-working_with_dates_and_time.html",
+    "href": "modules/module8/module8-16-working_with_dates_and_time.html",
+    "title": "4. Working with Dates and Time",
+    "section": "",
+    "text": "4. Working with Dates and Time\n\nVideoSlides",
+    "crumbs": [
+      "**Module 8: A Slice of NumPy and Advanced Data Wrangling**",
+      "4. Working with Dates and Time"
+    ]
+  },
+  {
+    "objectID": "modules/module8/module8-11-working_with_null_values.html",
+    "href": "modules/module8/module8-11-working_with_null_values.html",
+    "title": "3. Working with Null Values",
+    "section": "",
+    "text": "3. Working with Null Values\n\nVideoSlides",
+    "crumbs": [
+      "**Module 8: A Slice of NumPy and Advanced Data Wrangling**",
+      "3. Working with Null Values"
+    ]
+  },
+  {
+    "objectID": "modules/module8/module8-05-multi-dimensional_arrays.html",
+    "href": "modules/module8/module8-05-multi-dimensional_arrays.html",
+    "title": "2. Multi-dimensional Arrays",
+    "section": "",
+    "text": "2. Multi-dimensional Arrays\n\nVideoSlides",
+    "crumbs": [
+      "**Module 8: A Slice of NumPy and Advanced Data Wrangling**",
+      "2. Multi-dimensional Arrays"
+    ]
+  },
+  {
+    "objectID": "modules/module8/module8-01-numpy_and_1d_arrays.html",
+    "href": "modules/module8/module8-01-numpy_and_1d_arrays.html",
+    "title": "1. NumPy and 1D Arrays",
+    "section": "",
+    "text": "1. NumPy and 1D Arrays\n\nVideoSlides",
+    "crumbs": [
+      "**Module 8: A Slice of NumPy and Advanced Data Wrangling**",
+      "1. NumPy and 1D Arrays"
+    ]
+  },
+  {
     "objectID": "modules/module7/slides/module7_20.html#summary",
     "href": "modules/module7/slides/module7_20.html#summary",
     "title": "What Did we Learn and What to Expect in Assignment 7",
@@ -1014,7 +1238,7 @@
     "href": "modules/module2/slides/module2_25.html#using-groupby",
     "title": "Grouping and Aggregating",
     "section": "Using groupby",
-    "text": "Using groupby\n\nmfr_group = cereal.groupby(by='mfr')\nmfr_group\n\n&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x7f0deb4c5880&gt;\n\n\n\nPandas has a solution for this.\nIt’s not uncommon to be interested in examining specific groups in our data. Hence there is a verb that is helpful in grouping like-rows together.\n.groupby() allows us to group our data based on a specified column.\nLet’s group our cereal dataframe on the mfr column and save it as object mfr_group.\nThis returns a DataFrame GroupBy object."
+    "text": "Using groupby\n\nmfr_group = cereal.groupby(by='mfr')\nmfr_group\n\n&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x7f7469269d30&gt;\n\n\n\nPandas has a solution for this.\nIt’s not uncommon to be interested in examining specific groups in our data. Hence there is a verb that is helpful in grouping like-rows together.\n.groupby() allows us to group our data based on a specified column.\nLet’s group our cereal dataframe on the mfr column and save it as object mfr_group.\nThis returns a DataFrame GroupBy object."
   },
   {
     "objectID": "modules/module2/slides/module2_25.html#summary-statistics-with-groups",
@@ -3361,5 +3585,310 @@
     "title": "Automatic Style Formatting",
     "section": "Black",
     "text": "Black\nBefore black\n\ndef exponent_a_list(numerical_list   ,   exponent   =      2):\n\n    if type(numerical_list         ) is    not list   :\n                raise Exception(     \"You are not using a list for the numerical_list input.\"   \n                )\n\n    new_exponent_list   = list()\n    for   number_in_new_exponent_list in              numerical_list:\n                new_exponent_list.append(                  number_in_new_exponent_list **  exponent  )\n    return new_exponent_list\n\nAfter black\n\ndef exponent_a_list(numerical_list, exponent=2):\n\n    if type(numerical_list) is not list:\n        raise Exception(\"You are not using a list for the numerical_list input.\")\n\n    new_exponent_list = list()\n    for number_in_new_exponent_list in numerical_list:\n        new_exponent_list.append(number_in_new_exponent_list ** exponent)\n    return new_exponent_list\n\n\nUnlike PEP8, which is a style guide, and flake8 which just tells you where your code needs changes, black is a tool that will format your code.\nblack will mostly follow the PEP8 style guide but with a few differences.\nWhen you use black with your code, you are wiping it of bad formatting like trailing whitespace and poor indentation."
+  },
+  {
+    "objectID": "modules/module8/module8-00-module_learning_outcomes.html",
+    "href": "modules/module8/module8-00-module_learning_outcomes.html",
+    "title": "0. Module Learning Outcomes",
+    "section": "",
+    "text": "0. Module Learning Outcomes\n\nVideoSlides",
+    "crumbs": [
+      "**Module 8: A Slice of NumPy and Advanced Data Wrangling**",
+      "0. Module Learning Outcomes"
+    ]
+  },
+  {
+    "objectID": "modules/module8/module8-02-numpy_and_array_questions.html",
+    "href": "modules/module8/module8-02-numpy_and_array_questions.html",
+    "title": "1.1. Exercises",
+    "section": "",
+    "text": "array([ 0, 5, 10, 15, 20, 25, 30])\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nInstructions:\nRunning a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\nMake sure you remove the hash (#) symbol in the coding portions of this question. We have commented them so that the line won’t execute and you can test your code after each step.\nLet’s explore how Python compares lists and arrays.\nTasks:\n\nCreate 2 lists of the same length and save each as objects named a_list and b_list.\nUsing Boolean operators, what is outputted when you test to see if they are equal?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you using [] or list() notation?\nAre you using == to check if the lists are equal?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNow let’s do the same exercises using arrays.\nTasks:\n\nCreate 2 arrays of the same length and save each as objects named a_array and b_array.\nUsing Boolean operators, what is outputted when you test to see if they are equal?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you using np.array() with parentheses to make your arrays?\nAre you using == to check if the arrays are equal?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThis is an example of how useful arrays can be when doing numerical computation! To compare each element in a list would take more code and time for the same result.",
+    "crumbs": [
+      "**Module 8: A Slice of NumPy and Advanced Data Wrangling**",
+      "&nbsp;&nbsp; 1.1. Exercises"
+    ]
+  },
+  {
+    "objectID": "modules/module8/module8-02-numpy_and_array_questions.html#numpy-and-array-questions",
+    "href": "modules/module8/module8-02-numpy_and_array_questions.html#numpy-and-array-questions",
+    "title": "1.1. Exercises",
+    "section": "",
+    "text": "array([ 0, 5, 10, 15, 20, 25, 30])",
+    "crumbs": [
+      "**Module 8: A Slice of NumPy and Advanced Data Wrangling**",
+      "&nbsp;&nbsp; 1.1. Exercises"
+    ]
+  },
+  {
+    "objectID": "modules/module8/module8-02-numpy_and_array_questions.html#numpy-practice",
+    "href": "modules/module8/module8-02-numpy_and_array_questions.html#numpy-practice",
+    "title": "1.1. Exercises",
+    "section": "",
+    "text": "Instructions:\nRunning a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\nMake sure you remove the hash (#) symbol in the coding portions of this question. We have commented them so that the line won’t execute and you can test your code after each step.\nLet’s explore how Python compares lists and arrays.\nTasks:\n\nCreate 2 lists of the same length and save each as objects named a_list and b_list.\nUsing Boolean operators, what is outputted when you test to see if they are equal?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you using [] or list() notation?\nAre you using == to check if the lists are equal?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNow let’s do the same exercises using arrays.\nTasks:\n\nCreate 2 arrays of the same length and save each as objects named a_array and b_array.\nUsing Boolean operators, what is outputted when you test to see if they are equal?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you using np.array() with parentheses to make your arrays?\nAre you using == to check if the arrays are equal?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThis is an example of how useful arrays can be when doing numerical computation! To compare each element in a list would take more code and time for the same result.",
+    "crumbs": [
+      "**Module 8: A Slice of NumPy and Advanced Data Wrangling**",
+      "&nbsp;&nbsp; 1.1. Exercises"
+    ]
+  },
+  {
+    "objectID": "modules/module8/module8-06-make_that_array.html",
+    "href": "modules/module8/module8-06-make_that_array.html",
+    "title": "2.1. Exercises",
+    "section": "",
+    "text": "np.ones((4, 3))\n\n\n\n\n\n\n\narray([[ 0,  1,  2,  3,  4,  5,  6,  7],\n       [ 8,  9, 10, 11, 12, 13, 14, 15]])\n\n\n\n\narray([[[ 0,  1,  2,  3,  4],\n        [ 5,  6,  7,  8,  9]],\n\n       [[10, 11, 12, 13, 14],\n        [15, 16, 17, 18, 19]],\n\n       [[20, 21, 22, 23, 24],\n        [25, 26, 27, 28, 29]]])\n\n\n\n\n\n\n\n\n\n\n\nUse the following array named hurray to answer the next set of questions.\narray([[ 0,  1,  2],\n       [ 3,  4,  5],\n       [ 6,  7,  8],\n       [ 9, 10, 11],\n       [12, 13, 14],\n       [15, 16, 17]])\n# Question 1\narray([[0, 1, 2],\n       [3, 4, 5],\n       [6, 7, 8]])\n\n\n\n\n# Question 2\narray([[10, 11],\n       [13, 14]])\n\n\n\n\n# Question 3\narray([[ 0,  3,  6,  9, 12, 15],\n       [ 1,  4,  7, 10, 13, 16],\n       [ 2,  5,  8, 11, 14, 17]])\n\n\n\n\n\n\n\nInstructions:\nRunning a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\nMake sure you remove the hash (#) symbol in the coding portions of this question. We have commented them so that the line won’t execute and you can test your code after each step.\n\n\nLet’s make an array and find its size and dimension.\nTasks:\n\nCreate an array named arr1 that contains only elements with values 1 and a shape of (3,5).\nSave the dimension and size of arr1 in objects named arr1_dim and arr1_size respectively.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you using .ones((3,5))?\nAre you using .ndim and .size?\nAre you saving your objects as the correct names?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLet’s make a new array and transform it by slicing and transposing.\nTasks:\n\nCreate an array named arr2 using np.linspace() with 6 equally spaced values from 1 to 16 and a shape of (2,3) (You’ll need .reshape() for this!).\nTranspose the array and name it arr2t.\nFinally, slice the new object arr2t so it only includes the values 7 and 16. Save this as an object named sliced_arr2t.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you using .reshape() to change the dimension of np.linspace()?\nAre you using .T?\nAre you slicing with [:,1]?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:",
+    "crumbs": [
+      "**Module 8: A Slice of NumPy and Advanced Data Wrangling**",
+      "&nbsp;&nbsp; 2.1. Exercises"
+    ]
+  },
+  {
+    "objectID": "modules/module8/module8-06-make_that_array.html#make-that-array",
+    "href": "modules/module8/module8-06-make_that_array.html#make-that-array",
+    "title": "2.1. Exercises",
+    "section": "",
+    "text": "np.ones((4, 3))",
+    "crumbs": [
+      "**Module 8: A Slice of NumPy and Advanced Data Wrangling**",
+      "&nbsp;&nbsp; 2.1. Exercises"
+    ]
+  },
+  {
+    "objectID": "modules/module8/module8-06-make_that_array.html#shape-size-and-dimension",
+    "href": "modules/module8/module8-06-make_that_array.html#shape-size-and-dimension",
+    "title": "2.1. Exercises",
+    "section": "",
+    "text": "array([[ 0,  1,  2,  3,  4,  5,  6,  7],\n       [ 8,  9, 10, 11, 12, 13, 14, 15]])\n\n\n\n\narray([[[ 0,  1,  2,  3,  4],\n        [ 5,  6,  7,  8,  9]],\n\n       [[10, 11, 12, 13, 14],\n        [15, 16, 17, 18, 19]],\n\n       [[20, 21, 22, 23, 24],\n        [25, 26, 27, 28, 29]]])",
+    "crumbs": [
+      "**Module 8: A Slice of NumPy and Advanced Data Wrangling**",
+      "&nbsp;&nbsp; 2.1. Exercises"
+    ]
+  },
+  {
+    "objectID": "modules/module8/module8-06-make_that_array.html#more-arrays-questions",
+    "href": "modules/module8/module8-06-make_that_array.html#more-arrays-questions",
+    "title": "2.1. Exercises",
+    "section": "",
+    "text": "Use the following array named hurray to answer the next set of questions.\narray([[ 0,  1,  2],\n       [ 3,  4,  5],\n       [ 6,  7,  8],\n       [ 9, 10, 11],\n       [12, 13, 14],\n       [15, 16, 17]])\n# Question 1\narray([[0, 1, 2],\n       [3, 4, 5],\n       [6, 7, 8]])\n\n\n\n\n# Question 2\narray([[10, 11],\n       [13, 14]])\n\n\n\n\n# Question 3\narray([[ 0,  3,  6,  9, 12, 15],\n       [ 1,  4,  7, 10, 13, 16],\n       [ 2,  5,  8, 11, 14, 17]])",
+    "crumbs": [
+      "**Module 8: A Slice of NumPy and Advanced Data Wrangling**",
+      "&nbsp;&nbsp; 2.1. Exercises"
+    ]
+  },
+  {
+    "objectID": "modules/module8/module8-06-make_that_array.html#coding-questions",
+    "href": "modules/module8/module8-06-make_that_array.html#coding-questions",
+    "title": "2.1. Exercises",
+    "section": "",
+    "text": "Instructions:\nRunning a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\nMake sure you remove the hash (#) symbol in the coding portions of this question. We have commented them so that the line won’t execute and you can test your code after each step.\n\n\nLet’s make an array and find its size and dimension.\nTasks:\n\nCreate an array named arr1 that contains only elements with values 1 and a shape of (3,5).\nSave the dimension and size of arr1 in objects named arr1_dim and arr1_size respectively.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you using .ones((3,5))?\nAre you using .ndim and .size?\nAre you saving your objects as the correct names?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLet’s make a new array and transform it by slicing and transposing.\nTasks:\n\nCreate an array named arr2 using np.linspace() with 6 equally spaced values from 1 to 16 and a shape of (2,3) (You’ll need .reshape() for this!).\nTranspose the array and name it arr2t.\nFinally, slice the new object arr2t so it only includes the values 7 and 16. Save this as an object named sliced_arr2t.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you using .reshape() to change the dimension of np.linspace()?\nAre you using .T?\nAre you slicing with [:,1]?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:",
+    "crumbs": [
+      "**Module 8: A Slice of NumPy and Advanced Data Wrangling**",
+      "&nbsp;&nbsp; 2.1. Exercises"
+    ]
+  },
+  {
+    "objectID": "modules/module8/module8-12-finding_and_dropping_null_values_questions.html",
+    "href": "modules/module8/module8-12-finding_and_dropping_null_values_questions.html",
+    "title": "3.1. Exercises",
+    "section": "",
+    "text": "You run .info() on the fruit_salad dataframe and get the following output.\n&lt;class 'pandas.core.frame.DataFrame'&gt;\nRangeIndex: 10 entries, 0 to 9\nData columns (total 8 columns):\n #   Column         Non-Null Count  Dtype  \n---  ------         --------------  -----  \n 0   name           10 non-null     object \n 1   colour         10 non-null     object \n 2   location       10 non-null     object \n 3   seed           10 non-null     bool   \n 4   shape          9 non-null      object \n 5   sweetness      10 non-null     bool   \n 6   water_content  8 non-null      float64\n 7   weight         10 non-null     int64  \ndtypes: bool(2), float64(1), int64(1), object(4)\nmemory usage: 628.0+ bytes\n\n\n\n\n     name  height  diameter   age flowering\n0  Cherry    15.0         2  12.0      True\n1     Fir    20.0         4   4.0     False\n2  Willow    25.0         3   2.0      True\n3     Oak     NaN         2   NaN     False\n4     Oak    10.0         5   6.0       NaN\n\n\n\n\n\n\n\nUse the forest dataframe below to answer the next 2 questions:\n     name  height  diameter   age flowering\n0  Cherry    15.0         2  12.0      True\n1     Fir    20.0         4   4.0     False\n2  Willow    25.0         3   2.0      True\n3     Oak     NaN         2   3.0     False\n4     Oak    10.0         5   6.0     False\n# Quesiton 1\n     name  height  diameter  age  flowering\n0  Cherry    15.0         2   12       True\n1     Fir    20.0         4    4      False\n2  Willow    25.0         3    2       True\n3     Oak    17.5         2    3      False\n4     Oak    10.0         5    6      False\n\n\n\n\n# Quesiton 2\n     name  height  diameter  age  flowering\n0  Cherry    15.0         2   12       True\n1     Fir    20.0         4    4      False\n2  Willow    25.0         3    2       True\n3     Oak    10.0         2    3      False\n4     Oak    10.0         5    6      False\n\n\n\n\n\n\n\nInstructions:\nRunning a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\nMake sure you remove the hash (#) symbol in the coding portions of this question. We have commented them so that the line won’t execute and you can test your code after each step.\n\n\nLet’s replace the values missing in the canucks dataframe with the salary mean.\nTasks:\n\nReplace the NaN values in the dataframe with the mean salary value.\nSave this as a new dataframe named canucks_altered.\nDisplay the canucks_altered dataframe.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you using .fillna()?\nAre you using the argument value=canucks['Salary].mean()?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLet’s practice using .isnull() in our data processing using the canucks dataset from earlier in this course.\nTasks:\n\nIdentify any columns with null values in the canucks dataframe with .info() and save this as canucks_info.\nCreate a new column in the dataframe named Wealth where all the values equal \"comfortable\".\nName the new dataframe canucks_comf.\nDo conditional value replacement, where if the value in the Salary column is null, we replace \"comfortable\" with \"unknown\".\nDisplay the new canucks_comf dataframe.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you using canucks.info()?\nAre you creating canucks_comf with canucks.assign(Wealth = \"comfortable\")?\nAre you using .loc[] to replace the values in the Wealth column?\nAre you using canucks_comf['Salary'].isnull() as your condition in .loc[]?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:",
+    "crumbs": [
+      "**Module 8: A Slice of NumPy and Advanced Data Wrangling**",
+      "&nbsp;&nbsp; 3.1. Exercises"
+    ]
+  },
+  {
+    "objectID": "modules/module8/module8-12-finding_and_dropping_null_values_questions.html#finding-and-dropping-null-values-questions",
+    "href": "modules/module8/module8-12-finding_and_dropping_null_values_questions.html#finding-and-dropping-null-values-questions",
+    "title": "3.1. Exercises",
+    "section": "",
+    "text": "You run .info() on the fruit_salad dataframe and get the following output.\n&lt;class 'pandas.core.frame.DataFrame'&gt;\nRangeIndex: 10 entries, 0 to 9\nData columns (total 8 columns):\n #   Column         Non-Null Count  Dtype  \n---  ------         --------------  -----  \n 0   name           10 non-null     object \n 1   colour         10 non-null     object \n 2   location       10 non-null     object \n 3   seed           10 non-null     bool   \n 4   shape          9 non-null      object \n 5   sweetness      10 non-null     bool   \n 6   water_content  8 non-null      float64\n 7   weight         10 non-null     int64  \ndtypes: bool(2), float64(1), int64(1), object(4)\nmemory usage: 628.0+ bytes\n\n\n\n\n     name  height  diameter   age flowering\n0  Cherry    15.0         2  12.0      True\n1     Fir    20.0         4   4.0     False\n2  Willow    25.0         3   2.0      True\n3     Oak     NaN         2   NaN     False\n4     Oak    10.0         5   6.0       NaN",
+    "crumbs": [
+      "**Module 8: A Slice of NumPy and Advanced Data Wrangling**",
+      "&nbsp;&nbsp; 3.1. Exercises"
+    ]
+  },
+  {
+    "objectID": "modules/module8/module8-12-finding_and_dropping_null_values_questions.html#filling-methods",
+    "href": "modules/module8/module8-12-finding_and_dropping_null_values_questions.html#filling-methods",
+    "title": "3.1. Exercises",
+    "section": "",
+    "text": "Use the forest dataframe below to answer the next 2 questions:\n     name  height  diameter   age flowering\n0  Cherry    15.0         2  12.0      True\n1     Fir    20.0         4   4.0     False\n2  Willow    25.0         3   2.0      True\n3     Oak     NaN         2   3.0     False\n4     Oak    10.0         5   6.0     False\n# Quesiton 1\n     name  height  diameter  age  flowering\n0  Cherry    15.0         2   12       True\n1     Fir    20.0         4    4      False\n2  Willow    25.0         3    2       True\n3     Oak    17.5         2    3      False\n4     Oak    10.0         5    6      False\n\n\n\n\n# Quesiton 2\n     name  height  diameter  age  flowering\n0  Cherry    15.0         2   12       True\n1     Fir    20.0         4    4      False\n2  Willow    25.0         3    2       True\n3     Oak    10.0         2    3      False\n4     Oak    10.0         5    6      False",
+    "crumbs": [
+      "**Module 8: A Slice of NumPy and Advanced Data Wrangling**",
+      "&nbsp;&nbsp; 3.1. Exercises"
+    ]
+  },
+  {
+    "objectID": "modules/module8/module8-12-finding_and_dropping_null_values_questions.html#coding-questions",
+    "href": "modules/module8/module8-12-finding_and_dropping_null_values_questions.html#coding-questions",
+    "title": "3.1. Exercises",
+    "section": "",
+    "text": "Instructions:\nRunning a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\nMake sure you remove the hash (#) symbol in the coding portions of this question. We have commented them so that the line won’t execute and you can test your code after each step.\n\n\nLet’s replace the values missing in the canucks dataframe with the salary mean.\nTasks:\n\nReplace the NaN values in the dataframe with the mean salary value.\nSave this as a new dataframe named canucks_altered.\nDisplay the canucks_altered dataframe.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you using .fillna()?\nAre you using the argument value=canucks['Salary].mean()?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLet’s practice using .isnull() in our data processing using the canucks dataset from earlier in this course.\nTasks:\n\nIdentify any columns with null values in the canucks dataframe with .info() and save this as canucks_info.\nCreate a new column in the dataframe named Wealth where all the values equal \"comfortable\".\nName the new dataframe canucks_comf.\nDo conditional value replacement, where if the value in the Salary column is null, we replace \"comfortable\" with \"unknown\".\nDisplay the new canucks_comf dataframe.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you using canucks.info()?\nAre you creating canucks_comf with canucks.assign(Wealth = \"comfortable\")?\nAre you using .loc[] to replace the values in the Wealth column?\nAre you using canucks_comf['Salary'].isnull() as your condition in .loc[]?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:",
+    "crumbs": [
+      "**Module 8: A Slice of NumPy and Advanced Data Wrangling**",
+      "&nbsp;&nbsp; 3.1. Exercises"
+    ]
+  },
+  {
+    "objectID": "modules/module8/module8-17-datetime_quesitons.html",
+    "href": "modules/module8/module8-17-datetime_quesitons.html",
+    "title": "4.1. Exercises",
+    "section": "",
+    "text": "Instructions:\nRunning a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\nMake sure you remove the hash (#) symbol in the coding portions of this question. We have commented them so that the line won’t execute and you can test your code after each step.\nUse the output of the following code chunk to help answer the next question.\n\n\n\n\n\n\nLet’s read in data and parse a datetime column as well as calculate the hockey team’s oldest and youngest player.\nTasks:\n\nRead in the canucks.csv file from the data folder and parse the Birth Date column. Save this as an object named canucks.\nFind the oldest player’s date of birth and save the Timestamp as oldest.\nFind the youngest player’s date of birth and save the Timestamp as youngest.\nFind the age difference between the two players in years to 2 decimal places. Save this as an object name age_range.\nDisplay age_range.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you using the argument parse_dates while reading in the data?\nThe oldest player has the min() date of birth.\nThe youngest player has the max() date of birth.\nAre you subtracting the min value from the max value?\nAre you rounding to 2 decimal places?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:",
+    "crumbs": [
+      "**Module 8: A Slice of NumPy and Advanced Data Wrangling**",
+      "&nbsp;&nbsp; 4.1. Exercises"
+    ]
+  },
+  {
+    "objectID": "modules/module8/module8-17-datetime_quesitons.html#practice-processing-dates",
+    "href": "modules/module8/module8-17-datetime_quesitons.html#practice-processing-dates",
+    "title": "4.1. Exercises",
+    "section": "",
+    "text": "Instructions:\nRunning a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\nMake sure you remove the hash (#) symbol in the coding portions of this question. We have commented them so that the line won’t execute and you can test your code after each step.\nUse the output of the following code chunk to help answer the next question.\n\n\n\n\n\n\nLet’s read in data and parse a datetime column as well as calculate the hockey team’s oldest and youngest player.\nTasks:\n\nRead in the canucks.csv file from the data folder and parse the Birth Date column. Save this as an object named canucks.\nFind the oldest player’s date of birth and save the Timestamp as oldest.\nFind the youngest player’s date of birth and save the Timestamp as youngest.\nFind the age difference between the two players in years to 2 decimal places. Save this as an object name age_range.\nDisplay age_range.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you using the argument parse_dates while reading in the data?\nThe oldest player has the min() date of birth.\nThe youngest player has the max() date of birth.\nAre you subtracting the min value from the max value?\nAre you rounding to 2 decimal places?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:",
+    "crumbs": [
+      "**Module 8: A Slice of NumPy and Advanced Data Wrangling**",
+      "&nbsp;&nbsp; 4.1. Exercises"
+    ]
+  },
+  {
+    "objectID": "modules/module8/module8-20-string_questions.html",
+    "href": "modules/module8/module8-20-string_questions.html",
+    "title": "5.1. Exercises",
+    "section": "",
+    "text": "name   colour location   seed  shape  sweetness  water_content  weight\n0         apple      red   canada   True  round       True             84     100\n1        banana   yellow   mexico  False   long       True             75     120\n2    cantaloupe   orange    spain   True  round       True             90    1360\n3  dragon-fruit  magenta    china   True  round      False             96     600\n4    elderberry   purple  austria  False  round       True             80       5\n5           fig   purple   turkey  False   oval      False             78      40\n6         guava    green   mexico   True   oval       True             83     450\n7   huckleberry     blue   canada   True  round       True             73       5\n8          kiwi    brown    china   True  round       True             80      76\n9         lemon   yellow   mexico  False   oval      False             83      65\n\n\n\n\n\n\n\n\n\n\n\n\n\nInstructions:\nRunning a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\nMake sure you remove the hash (#) symbol in the coding portions of this question. We have commented them so that the line won’t execute and you can test your code after each step.\nUse the output of the following code chunk to help answer the next question.\n\n\n\n\n\n\nLet’s transform some of the columns in your canucks dataset. Let’s also see how many of the players have multiple T’s in their name.\nTasks:\n\nConvert the Position and Country columns into uppercase and save this in a dataframe named canucks_upper.\nCreate a new column in the canucks_upper dataframe named number_ts where you count the total number of times the letter T (lowercase or uppercase) appears in their name.\nSave this dataframe named as canucks_upper_ts.\nHow many players have multiple T’s in their name?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you using .assign and .upper()?\nYou will have to convert the lower to .lower() first and then .count('t')\nThe number of players with number_ts greater than one can be calculated by filtering on that column and getting the .shape of the dataframe.\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:",
+    "crumbs": [
+      "**Module 8: A Slice of NumPy and Advanced Data Wrangling**",
+      "&nbsp;&nbsp; 5.1. Exercises"
+    ]
+  },
+  {
+    "objectID": "modules/module8/module8-20-string_questions.html#identify-the-string-code",
+    "href": "modules/module8/module8-20-string_questions.html#identify-the-string-code",
+    "title": "5.1. Exercises",
+    "section": "",
+    "text": "name   colour location   seed  shape  sweetness  water_content  weight\n0         apple      red   canada   True  round       True             84     100\n1        banana   yellow   mexico  False   long       True             75     120\n2    cantaloupe   orange    spain   True  round       True             90    1360\n3  dragon-fruit  magenta    china   True  round      False             96     600\n4    elderberry   purple  austria  False  round       True             80       5\n5           fig   purple   turkey  False   oval      False             78      40\n6         guava    green   mexico   True   oval       True             83     450\n7   huckleberry     blue   canada   True  round       True             73       5\n8          kiwi    brown    china   True  round       True             80      76\n9         lemon   yellow   mexico  False   oval      False             83      65",
+    "crumbs": [
+      "**Module 8: A Slice of NumPy and Advanced Data Wrangling**",
+      "&nbsp;&nbsp; 5.1. Exercises"
+    ]
+  },
+  {
+    "objectID": "modules/module8/module8-20-string_questions.html#practice-handling-strings",
+    "href": "modules/module8/module8-20-string_questions.html#practice-handling-strings",
+    "title": "5.1. Exercises",
+    "section": "",
+    "text": "Instructions:\nRunning a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\nMake sure you remove the hash (#) symbol in the coding portions of this question. We have commented them so that the line won’t execute and you can test your code after each step.\nUse the output of the following code chunk to help answer the next question.\n\n\n\n\n\n\nLet’s transform some of the columns in your canucks dataset. Let’s also see how many of the players have multiple T’s in their name.\nTasks:\n\nConvert the Position and Country columns into uppercase and save this in a dataframe named canucks_upper.\nCreate a new column in the canucks_upper dataframe named number_ts where you count the total number of times the letter T (lowercase or uppercase) appears in their name.\nSave this dataframe named as canucks_upper_ts.\nHow many players have multiple T’s in their name?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you using .assign and .upper()?\nYou will have to convert the lower to .lower() first and then .count('t')\nThe number of players with number_ts greater than one can be calculated by filtering on that column and getting the .shape of the dataframe.\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:",
+    "crumbs": [
+      "**Module 8: A Slice of NumPy and Advanced Data Wrangling**",
+      "&nbsp;&nbsp; 5.1. Exercises"
+    ]
+  },
+  {
+    "objectID": "modules/module8/module8-24-advanced_string_questions.html",
+    "href": "modules/module8/module8-24-advanced_string_questions.html",
+    "title": "6.1. Exercises",
+    "section": "",
+    "text": "name   colour location   seed  shape  sweetness  water_content  weight\n0         apple      red   canada   True  round       True             84     100\n1        banana   yellow   mexico  False   long       True             75     120\n2    cantaloupe   orange    spain   True  round       True             90    1360\n3  dragon-fruit  magenta    china   True  round      False             96     600\n4    elderberry   purple  austria  False  round       True             80       5\n5           fig   purple   turkey  False   oval      False             78      40\n6         guava    green   mexico   True   oval       True             83     450\n7   huckleberry     blue   canada   True  round       True             73       5\n8          kiwi    brown    china   True  round       True             80      76\n9         lemon   yellow   mexico  False   oval      False             83      65\n\n\n\n\n\n\n\n\n\n\n\n\n\nInstructions:\nRunning a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\nMake sure you remove the hash (#) symbol in the coding portions of this question. We have commented them so that the line won’t execute and you can test your code after each step.\nUse the lego dataframe to help answer the next question.\n\n\n\n\n\n\nLet’s practice using the verbs we learned from the lesson to process a string column in our Lego dataset.\nTasks:\n\nConvert the name column in the lego dataset to lowercase and overwrite the dataframe by saving it as an object named lego.\nFilter the dataset to find all the Lego sets that contain \"weetabix\" in the name column.\nSave this as an object named lego_weetabix.\nReplace the word\"weetabix” in the name column of the lego_wetabix dataframe with the string \"cereal-brand\".\nSave this in an object called lego_cereal.\nIf the row contains the word \"promotional\" in the name column, change the entire value to \"cereal-brand freebie\".\nDisplay lego_cereal.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you using .assign() and .lower() to convert the name column to lowercase?\nAre you using str.contains('weetabix') to filter all the rows?\nYou should be using assign() with str.replace('weetabix', 'cereal-brand') to replace “weetabix”.\nYou should be using .loc[] and str.contains('promotional') (and a single =) to assign new row values.\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:",
+    "crumbs": [
+      "**Module 8: A Slice of NumPy and Advanced Data Wrangling**",
+      "&nbsp;&nbsp; 6.1. Exercises"
+    ]
+  },
+  {
+    "objectID": "modules/module8/module8-24-advanced_string_questions.html#strings",
+    "href": "modules/module8/module8-24-advanced_string_questions.html#strings",
+    "title": "6.1. Exercises",
+    "section": "",
+    "text": "name   colour location   seed  shape  sweetness  water_content  weight\n0         apple      red   canada   True  round       True             84     100\n1        banana   yellow   mexico  False   long       True             75     120\n2    cantaloupe   orange    spain   True  round       True             90    1360\n3  dragon-fruit  magenta    china   True  round      False             96     600\n4    elderberry   purple  austria  False  round       True             80       5\n5           fig   purple   turkey  False   oval      False             78      40\n6         guava    green   mexico   True   oval       True             83     450\n7   huckleberry     blue   canada   True  round       True             73       5\n8          kiwi    brown    china   True  round       True             80      76\n9         lemon   yellow   mexico  False   oval      False             83      65",
+    "crumbs": [
+      "**Module 8: A Slice of NumPy and Advanced Data Wrangling**",
+      "&nbsp;&nbsp; 6.1. Exercises"
+    ]
+  },
+  {
+    "objectID": "modules/module8/module8-24-advanced_string_questions.html#processing-strings-in-a-dataframe",
+    "href": "modules/module8/module8-24-advanced_string_questions.html#processing-strings-in-a-dataframe",
+    "title": "6.1. Exercises",
+    "section": "",
+    "text": "Instructions:\nRunning a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\nMake sure you remove the hash (#) symbol in the coding portions of this question. We have commented them so that the line won’t execute and you can test your code after each step.\nUse the lego dataframe to help answer the next question.\n\n\n\n\n\n\nLet’s practice using the verbs we learned from the lesson to process a string column in our Lego dataset.\nTasks:\n\nConvert the name column in the lego dataset to lowercase and overwrite the dataframe by saving it as an object named lego.\nFilter the dataset to find all the Lego sets that contain \"weetabix\" in the name column.\nSave this as an object named lego_weetabix.\nReplace the word\"weetabix” in the name column of the lego_wetabix dataframe with the string \"cereal-brand\".\nSave this in an object called lego_cereal.\nIf the row contains the word \"promotional\" in the name column, change the entire value to \"cereal-brand freebie\".\nDisplay lego_cereal.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you using .assign() and .lower() to convert the name column to lowercase?\nAre you using str.contains('weetabix') to filter all the rows?\nYou should be using assign() with str.replace('weetabix', 'cereal-brand') to replace “weetabix”.\nYou should be using .loc[] and str.contains('promotional') (and a single =) to assign new row values.\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:",
+    "crumbs": [
+      "**Module 8: A Slice of NumPy and Advanced Data Wrangling**",
+      "&nbsp;&nbsp; 6.1. Exercises"
+    ]
+  },
+  {
+    "objectID": "modules/module8/slides/module8_00.html#module-learning-outcomes",
+    "href": "modules/module8/slides/module8_00.html#module-learning-outcomes",
+    "title": "Module Learning Outcomes",
+    "section": "Module Learning Outcomes",
+    "text": "Module Learning Outcomes\nBy the end of the module, students are expected to:\n\nUse NumPy to create ndarrays with np.array() and from functions such as np.arange(), np.linspace() and np.ones().\nDescribe the shape, dimension and size of an array.\nIdentify null values in a dataframe and manage them by removing them using .dropna() or replacing them using .fillna().\nManipulate non-standard date/time formats into standard Pandas datetime using pd.to_datetime().\nFind, and replace text from a dataframe using verbs such as .replace() and .contains()."
+  },
+  {
+    "objectID": "modules/module8/slides/module8_05.html#creating-2d-arrays",
+    "href": "modules/module8/slides/module8_05.html#creating-2d-arrays",
+    "title": "Multi-dimensional Arrays",
+    "section": "Creating 2D Arrays",
+    "text": "Creating 2D Arrays\n\nmy_array = np.array((1, 2, 3, 4))\nmy_array\n\narray([1, 2, 3, 4])\n\n\n\n\nlist_2d = [[1, 2], [3, 4], [5, 6]]\narray_2d = np.array(list_2d)\narray_2d\n\narray([[1, 2],\n       [3, 4],\n       [5, 6]])\n\n\n\nWe saw in the last set of slides that we can create 1D arrays using a number of different functions such as np.array().\nWe can also use the same functions to make multi-dimensional arrays, which are indicated by the multiple sets of square brackets [[ ]].\nIn our 1D arrays, our arrays only have a single set of square brackets, whereas, in multi-dimensional arrays, we count multiple sets."
+  },
+  {
+    "objectID": "modules/module8/slides/module8_05.html#array-shapes",
+    "href": "modules/module8/slides/module8_05.html#array-shapes",
+    "title": "Multi-dimensional Arrays",
+    "section": "Array Shapes",
+    "text": "Array Shapes\n\n\n.ndim\n.shape\n.size\n\n\nWe saw how to make multi-dimensional arrays, but the dimension is quite different than what the shape of an array is.\nHere are three main array nouns we need to know to understand the characteristics of an array:\n\n.ndim: the number of dimensions of an array\n.shape: the number of elements in each dimension (like calling len() on each dimension)\n.size: the total number of elements in an array (i.e., the product of .shape)"
+  },
+  {
+    "objectID": "modules/module8/slides/module8_05.html#indexing-and-slicing-2d-arrays",
+    "href": "modules/module8/slides/module8_05.html#indexing-and-slicing-2d-arrays",
+    "title": "Multi-dimensional Arrays",
+    "section": "Indexing and Slicing 2D arrays",
+    "text": "Indexing and Slicing 2D arrays\n\narr2 = np.arange(0,12).reshape(3,4)\narr2\n\narray([[ 0,  1,  2,  3],\n       [ 4,  5,  6,  7],\n       [ 8,  9, 10, 11]])\n\n\n\n\narr2[1, 2]\n\nnp.int64(6)\n\n\n\n\narr2[1][2]\n\nnp.int64(6)\n\n\n\nSlicing 2D arrays can be compared to slicing pandas dataframes (without the .iloc[]).\nLet’s say we want to select 6. It’s located in row 1 and column 2 (remember that the index includes 0).\nWe could also do the same thing by putting the row and column index in separate square brackets, but it’s not recommended."
+  },
+  {
+    "objectID": "modules/module8/slides/module8_16.html#pandas-parse_dates",
+    "href": "modules/module8/slides/module8_16.html#pandas-parse_dates",
+    "title": "Working with Dates and Time",
+    "section": "Pandas parse_dates",
+    "text": "Pandas parse_dates\n\ncycling = pd.read_csv('data/cycling_data.csv')\ncycling.head(3)\n\n\n\n\n\n\n\n\nDate\nName\nType\nTime\nDistance\nComments\n\n\n\n\n0\nSep-10-2019 17:13\nAfternoon Ride\nRide\n2084\n12.62\nRain\n\n\n1\nSep-11-2019 06:52\nMorning Ride\nRide\n2531\n13.03\nrain\n\n\n2\nSep-11-2019 17:23\nAfternoon Ride\nRide\n1863\n12.52\nWet road but nice whether\n\n\n\n\n\n\n\n\n\ncycling.dtypes\n\nDate         object\nName         object\nType         object\nTime          int64\nDistance    float64\nComments     object\ndtype: object\n\n\n\nRemember How Pandas is built using the NumPy library?\nWell in a similar way, Pandas datetime verbs are built using the built-in Python library; datetime .\nWe can parse our data at the same time as we read in our dataframe using the argument parse_dates.\nOriginally the Date column adopts a dtype of object when the data is read in."
+  },
+  {
+    "objectID": "modules/module8/slides/module8_16.html#diff",
+    "href": "modules/module8/slides/module8_16.html#diff",
+    "title": "Working with Dates and Time",
+    "section": ".diff()",
+    "text": ".diff()\n\ncycling_intervals = new_cycling['Date'].sort_values().diff()\ncycling_intervals\n\n0                NaT\n1    0 days 13:39:00\n2    0 days 10:31:00\n           ...      \n30   0 days 10:15:00\n31   0 days 13:37:00\n32   0 days 10:29:00\nName: Date, Length: 33, dtype: timedelta64[ns]\n\n\n\nIn our analysis, it might be important to know how frequent events occur and the time between them.\n.diff() is a useful function for that.\nThis outputs a pandas Series with the time that occurs between rows. As you can see, there was a 10 hour and 22minute gap between Tom’s third and forth bike rides. Wow - that’s a long workday!”\nHere, you’ll now notice a new dtype at the bottom of our new pandas Series named timedelta64."
+  },
+  {
+    "objectID": "modules/module8/slides/module8_16.html#timedelta",
+    "href": "modules/module8/slides/module8_16.html#timedelta",
+    "title": "Working with Dates and Time",
+    "section": "timedelta",
+    "text": "timedelta\n\ncycling_intervals[1]\n\nTimedelta('0 days 13:39:00')\n\n\n\n\ncycling_intervals[1].seconds\n\n49140\n\n\n\n\nsec_per_hour = 60 * 60\ncycling_intervals[1].seconds / sec_per_hour\n\n13.65\n\n\n\nUnlike a Timestamp that represents a snapshot in time, timedelta represents a duration or an interval of time.\nHere we can obtain the time between 2 trips.\nMeasurement can only be extracted from the timedelta object using either days, seconds, and microseconds verbs.\nHere we obtain the number of seconds.\nWe can convert them into other units by using simple operations.\nIn this case, we convert it to hours by dividing it by the number of seconds in an hour."
+  },
+  {
+    "objectID": "modules/module8/slides/module8_23.html#replace",
+    "href": "modules/module8/slides/module8_23.html#replace",
+    "title": "More Advanced String Processing",
+    "section": "Replace",
+    "text": "Replace\n\ncycling = pd.read_csv('data/cycling_data.csv')\ncycling.head(10)\n\n\n\n\n\n\n\n\nDate\nName\nType\nTime\nDistance\nComments\n\n\n\n\n0\nSep-10-2019 17:13\nAfternoon Ride\nRide\n2084\n12.62\nRain\n\n\n1\nSep-11-2019 06:52\nMorning Ride\nRide\n2531\n13.03\nrain\n\n\n2\nSep-11-2019 17:23\nAfternoon Ride\nRide\n1863\n12.52\nWet road but nice whether\n\n\n...\n...\n...\n...\n...\n...\n...\n\n\n7\nSep-18-2019 06:43\nMorning Ride\nRide\n2285\n12.60\nRaining\n\n\n8\nSep-19-2019 06:49\nMorning Ride\nRide\n2903\n14.57\nThankfully not raining today!\n\n\n9\nSep-18-2019 17:15\nAfternoon Ride\nRide\n2101\n12.48\nPumped up tires\n\n\n\n\n10 rows × 6 columns\n\n\n\n\nOk, we have an idea of how we can do some fairly standard strings processing; however, it’s time we dived a little deeper into this.\nThere are MANY different functions, but we’ll concentrate on a couple here that we will use often and provide a list of several that will be useful in future string processing adventures.\nJust like in regular text, there will be times in your data analysis where you will want to replace some of the text within a string.\nThat’s where .replace() comes in.\nWe usually like our data to be consistent; however; consistency is not always present even in the best of dataframes.\nLet’s take a look at our cycling dataset."
+  },
+  {
+    "objectID": "modules/module8/slides/module8_23.html#contains",
+    "href": "modules/module8/slides/module8_23.html#contains",
+    "title": "More Advanced String Processing",
+    "section": "Contains",
+    "text": "Contains\n\ncycling_lower['Comments'].str.contains('rain')\n\n0      True\n1      True\n2     False\n      ...  \n30    False\n31    False\n32    False\nName: Comments, Length: 33, dtype: bool\n\n\n\n\ncycling_lower[cycling_lower['Comments'].str.contains('rain')]\n\n\n\n\n\n\n\n\nDate\nName\nType\nTime\nDistance\nComments\n\n\n\n\n0\nSep-10-2019 17:13\nAfternoon Ride\nRide\n2084\n12.62\nrain\n\n\n1\nSep-11-2019 06:52\nMorning Ride\nRide\n2531\n13.03\nrain\n\n\n7\nSep-18-2019 06:43\nMorning Ride\nRide\n2285\n12.60\nraining\n\n\n8\nSep-19-2019 06:49\nMorning Ride\nRide\n2903\n14.57\nthankfully not raining today!\n\n\n18\nSep-26-2019 17:13\nAfternoon Ride\nRide\n1860\n12.52\nraining\n\n\n\n\n\n\n\n\ncontains() can be used to filter our dataframe.\nInstead of checking if a column equals an exact value, we can check in a pattern is contained in the column.\nFor example, what if we want all the rows that have some portion of “rain”.\nThis will return a pandas series with Boolean values.\nWe can combine this and use it as a condition to filter our dataframe on to obtain all the rows that contain the string “rain”.\nIf we wanted to, we could use this subset of data to see if our cyclist Tom was slower on average, on days that it rained!"
+  },
+  {
+    "objectID": "modules/module9/module9-00-congratulations.html",
+    "href": "modules/module9/module9-00-congratulations.html",
+    "title": "0. Congratulations!",
+    "section": "",
+    "text": "0. Congratulations!\n\nVideoSlides",
+    "crumbs": [
+      "**Module Closing Remarks**",
+      "0. Congratulations!"
+    ]
   }
 ]

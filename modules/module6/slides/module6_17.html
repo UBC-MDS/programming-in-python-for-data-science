@@ -255,7 +255,7 @@ Detailed traceback:
 </section>
 <section class="slide level2">
 
-<div id="5253ef49" class="cell" data-execution_count="2">
+<div id="38c3820e" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="dv">1</span> <span class="op">==</span> <span class="dv">1</span> , <span class="st">"1 is not equal to 1."</span></span>
 <span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Will this line execute?'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -263,7 +263,7 @@ Detailed traceback:
 </div>
 </div>
 <p><br></p>
-<div id="410e119e" class="cell" data-execution_count="3">
+<div id="65aa44c1" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="dv">1</span> <span class="op">==</span> <span class="dv">2</span> , <span class="st">"1 is not equal to 2."</span></span>
 <span id="cb5-2"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Will this line execute?'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -289,7 +289,7 @@ Detailed traceback:
 </section>
 <section class="slide level2">
 
-<div id="b9209c76" class="cell" data-execution_count="4">
+<div id="f837a8c0" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="dv">1</span> <span class="op">==</span> <span class="dv">2</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <pre class="out"><code>AssertionError: 
@@ -337,7 +337,7 @@ Detailed traceback:
 </section>
 <section id="what-to-test" class="slide level2">
 <h2>What to test?</h2>
-<div id="2152760c" class="cell" data-execution_count="5">
+<div id="7959b2ec" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> exponent_a_list(numerical_list, exponent<span class="op">=</span><span class="dv">2</span>):</span>
 <span id="cb9-2"><a aria-hidden="true" tabindex="-1"></a>    new_exponent_list <span class="op">=</span> <span class="bu">list</span>()</span>
 <span id="cb9-3"><a aria-hidden="true" tabindex="-1"></a>    </span>
@@ -347,15 +347,15 @@ Detailed traceback:
 <span id="cb9-7"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> new_exponent_list</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><br></p>
-<div id="14a3d10a" class="cell" data-execution_count="6">
+<div id="dc679b94" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> exponent_a_list([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">7</span>], <span class="dv">2</span>) <span class="op">==</span> [<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">16</span>, <span class="dv">49</span>], <span class="st">"incorrect output for exponent = 2"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><br></p>
-<div id="a6667cc3" class="cell" data-execution_count="7">
+<div id="a870fe9e" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> exponent_a_list([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], <span class="dv">3</span>) <span class="op">==</span> [<span class="dv">1</span>, <span class="dv">8</span>, <span class="dv">27</span>], <span class="st">"incorrect output for exponent = 3"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><br></p>
-<div id="7cf408d9" class="cell" data-execution_count="8">
+<div id="2c61ddf4" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="bu">type</span>(exponent_a_list([<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">4</span>], <span class="dv">2</span>)) <span class="op">==</span> <span class="bu">list</span>, <span class="st">"output type not a list"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <aside class="notes">
@@ -383,7 +383,7 @@ Detailed traceback:
 </section>
 <section id="false-positives" class="slide level2">
 <h2>False Positives</h2>
-<div id="0cb70bb4" class="cell" data-execution_count="9">
+<div id="25bf5f13" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> bad_function(numerical_list, exponent<span class="op">=</span><span class="dv">2</span>):</span>
 <span id="cb13-2"><a aria-hidden="true" tabindex="-1"></a>    new_exponent_list <span class="op">=</span> [numerical_list[<span class="dv">0</span>] <span class="op">**</span> exponent] <span class="co"># seed list with first element</span></span>
 <span id="cb13-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> number <span class="kw">in</span> numerical_list[<span class="dv">1</span>:]:</span>
@@ -391,12 +391,12 @@ Detailed traceback:
 <span id="cb13-5"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> new_exponent_list</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><br></p>
-<div id="2e67b7e9" class="cell" data-execution_count="10">
+<div id="042b202f" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> bad_function([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">7</span>], <span class="dv">2</span>) <span class="op">==</span> [<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">16</span>, <span class="dv">49</span>], <span class="st">"incorrect output for exponent = 2"</span></span>
 <span id="cb14-2"><a aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> bad_function([<span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">3</span>], <span class="dv">3</span>) <span class="op">==</span> [<span class="dv">8</span>, <span class="dv">1</span>, <span class="dv">27</span>], <span class="st">"incorrect output for exponent = 3"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><br></p>
-<div id="3e2bed2c" class="cell" data-execution_count="11">
+<div id="8eaf674b" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a aria-hidden="true" tabindex="-1"></a>bad_function([], <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <pre class="out"><code>IndexError: list index out of range
@@ -430,7 +430,7 @@ Detailed traceback:
 </section>
 <section id="testing-functions-that-work-with-data" class="slide level2">
 <h2>Testing Functions that Work with Data</h2>
-<div id="374ecccf" class="cell" data-execution_count="12">
+<div id="6232af68" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> column_stats(df, column):</span>
 <span id="cb17-2"><a aria-hidden="true" tabindex="-1"></a>   stats_dict <span class="op">=</span> {<span class="st">'max'</span>: df[column].<span class="bu">max</span>(),</span>
 <span id="cb17-3"><a aria-hidden="true" tabindex="-1"></a>                 <span class="st">'min'</span>: df[column].<span class="bu">min</span>(),</span>
@@ -459,7 +459,7 @@ Detailed traceback:
 </section>
 <section class="slide level2">
 
-<div id="6b16d730" class="cell" data-execution_count="13">
+<div id="2c18cbae" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> {<span class="st">'name'</span>: [<span class="st">'Cherry'</span>, <span class="st">'Oak'</span>, <span class="st">'Willow'</span>, <span class="st">'Fir'</span>, <span class="st">'Oak'</span>], </span>
 <span id="cb18-2"><a aria-hidden="true" tabindex="-1"></a>        <span class="st">'height'</span>: [<span class="dv">15</span>, <span class="dv">20</span>, <span class="dv">10</span>, <span class="dv">5</span>, <span class="dv">10</span>], </span>
 <span id="cb18-3"><a aria-hidden="true" tabindex="-1"></a>        <span class="st">'diameter'</span>: [<span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">10</span>, <span class="dv">5</span>], </span>
@@ -543,7 +543,7 @@ Detailed traceback:
 </div>
 </div>
 <p><br></p>
-<div id="ceb448da" class="cell" data-execution_count="14">
+<div id="44558fc7" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> column_stats(forest, <span class="st">'height'</span>) <span class="op">==</span> {<span class="st">'max'</span>: <span class="dv">20</span>, <span class="st">'min'</span>: <span class="dv">5</span>, <span class="st">'mean'</span>: <span class="fl">12.0</span>, <span class="st">'range'</span>: <span class="dv">15</span>}</span>
 <span id="cb19-2"><a aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> column_stats(forest, <span class="st">'diameter'</span>) <span class="op">==</span> {<span class="st">'max'</span>: <span class="dv">10</span>, <span class="st">'min'</span>: <span class="dv">2</span>, <span class="st">'mean'</span>: <span class="fl">5.0</span>, <span class="st">'range'</span>: <span class="dv">8</span>}</span>
 <span id="cb19-3"><a aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> column_stats(forest, <span class="st">'age'</span>) <span class="op">==</span> {<span class="st">'max'</span>: <span class="dv">0</span>, <span class="st">'min'</span>: <span class="dv">0</span>, <span class="st">'mean'</span>: <span class="dv">0</span>, <span class="st">'range'</span>: <span class="dv">0</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -594,7 +594,7 @@ Detailed traceback:
 <section class="slide level2">
 
 <p><strong><em>2. Write tests to satisfy the design specifications.</em></strong></p>
-<div id="9a01ff7e" class="cell" data-execution_count="15">
+<div id="fbb30be3" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> exponent_a_list(numerical_list, exponent<span class="op">=</span><span class="dv">2</span>):</span>
 <span id="cb21-2"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">list</span>()</span>
 <span id="cb21-3"><a aria-hidden="true" tabindex="-1"></a>   </span>
@@ -627,7 +627,7 @@ Detailed traceback:
 <section class="slide level2">
 
 <p><strong><em>3. Outline the program with pseudo-code.</em></strong></p>
-<div id="e4a8c19c" class="cell" data-execution_count="16">
+<div id="f34c07da" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> exponent_a_list(numerical_list, exponent<span class="op">=</span><span class="dv">2</span>):</span>
 <span id="cb23-2"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb23-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="co"># create a new empty list</span></span>
@@ -669,7 +669,7 @@ Detailed traceback:
 <section class="slide level2">
 
 <p><strong><em>4. Write code and test frequently.</em></strong></p>
-<div id="00a1d4fe" class="cell" data-execution_count="17">
+<div id="4dd837a6" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> exponent_a_list(numerical_list, exponent<span class="op">=</span><span class="dv">2</span>):</span>
 <span id="cb26-2"><a aria-hidden="true" tabindex="-1"></a>    new_exponent_list <span class="op">=</span> <span class="bu">list</span>()</span>
 <span id="cb26-3"><a aria-hidden="true" tabindex="-1"></a>    </span>
