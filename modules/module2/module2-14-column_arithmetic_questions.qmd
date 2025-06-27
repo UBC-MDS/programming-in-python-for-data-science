@@ -1,0 +1,126 @@
+---
+format: live-html
+---
+
+<script src='../../src/quiz.js'></script>
+
+# 4.1. Exercises
+
+## Column Arithmetic Questions
+
+**Question 1**
+
+What is the result if we multiply 2 columns together using the syntax
+
+```
+df[['Column_A']] * df[['Column_B']]
+```
+
+<div id='mcq1'></div>
+<script>
+    generateQuiz(
+        'mcq1',
+        '',
+        '',
+        {
+        'A new column in our dataframe with each column value multiplied together for each row.': 'Take care of the syntax being used. Are we using <code>.assign()</code> and the correct number of square brackets?',
+        'A single column with each column value multiplied together for each row.': 'You may want to look over this before moving forward.  Are we using the correct number of square brackets?',
+        'A dataframe containing 2 new columns with <code>NaN</code> values': 'Good job!',
+        },
+        'A dataframe containing 2 new columns with <code>NaN</code> values',
+    );
+</script>
+
+<div id='mcq2'></div>
+<script>
+    generateQuiz(
+        'mcq2',
+        'Question 2',
+        'What is the correct syntax to multiply <code>Column_A</code> and <code>Column_B</code> from dataframe <code>df</code> and save it as a new column named <code>new_column</code>?',
+        {
+        '<code>df = df.assign(\'new_column\'=df[\'Column_A\'] * df[\'Column_B\'])</code></code>': 'Do you need to put your new column name in between quotations?',
+        '<code>df = df.assign(new_column=df[\'Column_A\'] * df[\'Column_B\'])</code>': 'You must have been paying attention.',
+        '<code>df = df.assign[new_column=df(\'Column_A\') * df(\'Column_B\')]</code>': 'Are you sure that you are using the correct parentheses for this?',
+        },
+        '<code>df = df.assign(new_column=df[\'Column_A\'] * df[\'Column_B\'])</code>',
+    );
+</script>
+
+
+## Creating a New Column
+
+**Instructions:**    
+Running a coding exercise for the first time, could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
+
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
+
+For this exercise, we are going to create and drop some columns from our dataframe. 
+
+**Tasks:**
+
+- Create a new column named `total_special` that is the sum of column `sp_attack` and `sp_defense`.
+- Save it, overwriting the dataframe named `pokemon`.
+- Display the first 5 rows of the dataframe.
+
+```{pyodide}
+#| exercise: creating_a_new_column
+import pandas as pd
+
+pokemon = pd.read_csv('data/pokemon.csv')
+
+# Create a new column named total_special 
+# that is the sum of column sp_attack and sp_defense
+# Save it, overwriting the dataframe named pokemon
+____
+
+# Display the first 5 rows of the dataframe
+____
+```
+
+```{pyodide}
+#| exercise: creating_a_new_column
+#| check: true
+from src.utils import print_correct_msg
+
+pokemon = pd.read_csv('data/pokemon.csv')
+solution = pokemon.assign(total_special = pokemon['sp_attack'] + pokemon['sp_defense']).head()
+
+assert isinstance(result, pd.DataFrame), "Your result should be a dataframe."
+assert 'total_special' in list(result.columns) ,"Are you naming the new column 'total_special'?"
+assert sum(solution.total_special) == sum(result.total_special), "Values in the column 'total_special' is wrong. Are you adding 'sp_attack' and 'sp_defense'?"
+print_correct_msg()
+```
+
+:::: { .hint exercise="creating_a_new_column"}
+::: { .callout-note collapse="false"}
+
+## Hint 1
+
+- Are you using `pokemon.assign()`?
+- Are you saving the new dataframes as the correct names?
+- For the new column does `total_special  = pokemon['sp_attack'] + pokemon['sp_defense']`?
+
+:::
+::::
+
+:::: { .solution exercise="creating_a_new_column" }
+::: { .callout-tip collapse="false"}
+
+## Fully worked solution:
+
+```{pyodide}
+import pandas as pd
+
+pokemon = pd.read_csv('data/pokemon.csv')
+
+# Create a new column named total_special 
+# that is the sum of column sp_attack and sp_defense
+# Save it, overwriting the dataframe named pokemon
+pokemon = pokemon.assign(total_special = pokemon['sp_attack'] + pokemon['sp_defense'])
+
+# Display the first 5 rows of the dataframe
+pokemon.head()
+```
+
+:::
+::::
