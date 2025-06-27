@@ -1,0 +1,167 @@
+---
+format: live-html
+---
+
+<script src='../../src/quiz.js'></script>
+
+# 6.1. Exercises
+
+## Practice Replacing Values
+
+**Instructions:**    
+Running a coding exercise for the first time, could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
+
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
+
+Let's make a new column by assigning each pokemon base score as either "strong" or "weak".
+
+**Tasks:**
+
+- Create a new column in the dataframe named `base_score` by assigning values 500 or greater from the column `total_bs` as 'strong' pokemon and values less than 500 as 'weak' pokemon.
+- Display the first 10 rows of the dataframe.
+
+```{pyodide}
+#| exercise: practice_replacing_values
+import pandas as pd
+
+pokemon = pd.read_csv('data/pokemon.csv')
+
+# Create a new column in the dataframe Name the column base_score, 
+# by assigning values 500 or greater from the column total_bs
+# as 'strong' pokemon and values less than 500 as 'weak' pokemon
+____
+____
+
+# Display the first 10 rows of the dataframe
+____
+```
+
+```{pyodide}
+#| exercise: practice_replacing_values
+#| check: true
+from src.utils import print_correct_msg
+
+pokemon = pd.read_csv('data/pokemon.csv')
+pokemon.loc[pokemon['total_bs'] >= 500, 'base_score']  = 'strong'
+pokemon.loc[pokemon['total_bs'] < 500, 'base_score']  = 'weak'
+solution = pokemon.head(10)
+
+assert isinstance(result, pd.DataFrame), "Your result should be a dataframe."
+assert "base_score" in list(result.columns), "Are you creating a 'base_score' column?"
+assert list(solution.base_score).count("strong") == list(result.base_score).count("strong"), "The number of strong pokemons is incorrect. \nAre you selecting pokemons with total_bs >= 500?"
+assert list(solution.base_score).count("weak") == list(result.base_score).count("weak"), "The number of weak pokemons is incorrect. \nAre you selecting pokemons with total_bs < 500?"
+print_correct_msg()
+```
+
+:::: { .hint exercise="practice_replacing_values"}
+::: { .callout-note collapse="false"}
+
+## Hint 1
+
+- Are you naming the new column named `base_score`? 
+- Are you using `.loc[df['total_bs'] >= 500, 'base_score']` and assigning it to the correct value?
+- Are you using single equality signs for the assignment?
+
+:::
+::::
+
+:::: { .solution exercise="practice_replacing_values" }
+::: { .callout-tip collapse="false"}
+
+## Fully worked solution:
+
+```{pyodide}
+import pandas as pd
+
+pokemon = pd.read_csv('data/pokemon.csv')
+
+# Create a new column in the dataframe Name the column base_score, 
+# by assigning values 500 or greater from the column total_bs
+# as 'strong' pokemon and values less than 500 as 'weak' pokemon
+pokemon.loc[pokemon['total_bs'] >= 500, 'base_score']  = 'strong'
+pokemon.loc[pokemon['total_bs'] < 500, 'base_score']  = 'weak'
+
+# Display the first 10 rows of the dataframe
+pokemon.head(10)
+```
+
+:::
+::::
+
+<br>
+
+Using the new column `base_score` we made above, make a bar graph showing the frequency of the `strong` and `weak` pokemon.
+
+**Tasks:**
+
+- Create an object using single brackets to obtain the column `base_score` and name it `bs_column`.
+- Plot the object `bs_column` using `.mark_bar()` and save this graph as `score_plot`.
+
+```{pyodide}
+#| exercise: practice_replacing_values_b
+import pandas as pd
+import altair as alt
+
+pokemon = pd.read_csv('data/pokemon_sw.csv')
+
+# Create an object using single brackets to obtain the column base_score and name it bs_column
+____ = pd.DataFrame(____['____'])
+
+# Plot the object score_freq using .mark_bar() and save this graph as score_plot
+____ = alt.____(____, width=500, height=300).____().____(
+   x='____',
+   y='____()')
+
+score_plot
+```
+
+```{pyodide}
+#| exercise: practice_replacing_values_b
+#| check: true
+from src.utils import assert_chart_equal
+
+pokemon = pd.read_csv('data/pokemon_sw.csv')
+solution = score_plot = alt.Chart(pd.DataFrame(pokemon['base_score']), width=500, height=300).mark_bar().encode(
+    x='base_score',
+    y='count()')
+
+assert isinstance(result, type(solution)), "The final check needs a chart."
+assert_chart_equal(solution, result)
+```
+
+:::: { .hint exercise="practice_replacing_values_b"}
+::: { .callout-note collapse="false"}
+
+## Hint 1
+
+- Are you using single square brackets or obtain the column `base_score`? 
+- Are you using `count()` to count the occurences of the base scores?
+- Are you saving the objects with the correct names?
+
+:::
+::::
+
+:::: { .solution exercise="practice_replacing_values_b" }
+::: { .callout-tip collapse="false"}
+
+## Fully worked solution:
+
+```{pyodide}
+import pandas as pd
+import altair as alt
+
+pokemon = pd.read_csv('data/pokemon_sw.csv')
+
+# Create an object using single brackets to obtain the column base_score and name it bs_column
+bs_column = pd.DataFrame(pokemon['base_score'])
+
+# Plot the object bs_column using .mark_bar() and save this graph as score_plot
+score_plot = alt.Chart(bs_column, width=500, height=300).mark_bar().encode(
+    x='base_score',
+    y='count()')
+
+score_plot
+```
+
+:::
+::::

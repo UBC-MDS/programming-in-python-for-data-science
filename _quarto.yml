@@ -79,6 +79,37 @@ website:
           - text: '&nbsp;&nbsp; 12.1. Exercises'
             href: modules/module1/module1-32-practicing_bar_charts.qmd
           - href: modules/module1/module1-34-what_did_we_just_learn.qmd
+        - section: "**M2. Not So Scary Wrangling (Table Manipulation and Chaining)**"
+        contents:
+          - href: modules/module2/module2-00-module_learning_outcomes.qmd
+          - href: modules/module2/module2-01-reading_in_different_file_types.qmd
+          - text: '&nbsp;&nbsp; 1.1. Exercises'
+            href: modules/module2/module2-02-delimiter.qmd
+          - href: modules/module2/module2-06-arguments_for_reading_data.qmd
+          - text: '&nbsp;&nbsp; 2.1. Exercises'
+            href: modules/module2/module2-07-name_that_argument.qmd
+          - href: modules/module2/module2-09-column_renaming_and_dropping.qmd
+          - text: '&nbsp;&nbsp; 3.1. Exercises'
+            href: modules/module2/module2-10-column_editing_questions.qmd
+          - href: modules/module2/module2-13-column_arithmetic_and_creation.qmd
+          - text: '&nbsp;&nbsp; 4.1. Exercises'
+            href: modules/module2/module2-14-column_arithmetic_questions.qmd
+          - href: modules/module2/module2-16-data_filtering.qmd
+          - text: '&nbsp;&nbsp; 5.1. Exercises'
+            href: modules/module2/module2-17-filtering_question.qmd
+          - href: modules/module2/module2-20-conditional_value_replacement.qmd
+          - text: '&nbsp;&nbsp; 6.1. Exercises'
+            href: modules/module2/module2-21-practice_replacing_values.qmd
+          - href: modules/module2/module2-22-chaining_notation.qmd
+          - text: '&nbsp;&nbsp; 7.1. Exercises'
+            href: modules/module2/module2-23-chaining_true_false.qmd
+          - href: modules/module2/module2-25-grouping_and_aggregating.qmd
+          - text: '&nbsp;&nbsp; 8.1. Exercises'
+            href: modules/module2/module2-26-fruit_salad_grouping_and_aggregating.qmd
+          - href: modules/module2/module2-29-plotting_with_altair.qmd
+          - text: '&nbsp;&nbsp; 9.1. Exercises'
+            href: modules/module2/module2-30-plotting_a_groupby_object.qmd
+          - href: modules/module2/module2-31-what_did_we_just_learn.qmd
       - section: "**M3. Tidy Data and Joining Dataframes**"
         contents:
           - href: modules/module3/module3-00-module_learning_outcomes.qmd
