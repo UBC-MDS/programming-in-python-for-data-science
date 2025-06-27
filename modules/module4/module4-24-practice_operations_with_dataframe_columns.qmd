@@ -1,0 +1,98 @@
+---
+format: live-html
+---
+
+<script src='../../src/quiz.js'></script>
+
+# 7.1. Exercises
+
+## Practice Operations with Dataframe columns
+
+**Instructions:**    
+Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
+
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
+
+Let's split up a column of dtype `object`. 
+
+**Tasks:**
+
+- Split up the column `Birth Date` into 3 separate columns named `Birth_Day`, `Birth_Month` and `Birth_Year`. 
+- Name this new dataframe `birthdate_df`.
+- Save these as columns in the `canucks` dataframe as dtype `int`.
+
+```{pyodide}
+#| exercise: practice_operations_with_dataframe_columns
+import pandas as pd
+
+canucks = pd.read_csv('data/canucks.csv')
+
+# Split up the column "Birth Date" into 3 separate columns named Birth_Day, Birth_Month and Birth_Year. 
+# Name this new dataframe birthdate_df
+____ = (____.____.____(____)
+                 .____(columns=____)
+             )
+# ____
+
+# Save these as columns in the canucks dataframe as dtype int
+# canucks = ____.____(____)
+
+# canucks
+```
+
+```{pyodide}
+#| exercise: practice_operations_with_dataframe_columns
+#| check: true
+import pandas as pd
+from pandas.api.types import is_integer_dtype
+from src.utils import print_correct_msg
+                  
+assert isinstance(result, pd.DataFrame), "We are expecting a dataframe."
+assert {"Birth_Day", "Birth_Month", "Birth_Year"}.issubset(result.columns), "Have you split up the column `Birth Date` into 3 separate columns?"
+assert is_integer_dtype(result['Birth_Day'].dtype), "Make sure you are reassigning the 'Birth_day' column to type 'int'."
+assert is_integer_dtype(result['Birth_Year'].dtype), "Make sure you are reassigning the 'Birth_Year' column to type 'int'."
+print_correct_msg()
+```
+
+:::: { .hint exercise="practice_operations_with_dataframe_columns"}
+::: { .callout-note collapse="false"}
+
+## Hint 1
+
+- Are you using `str.split('-', expand='True')`?    
+- Are you saving the columns from the `birthdate_df` back to the `canucks` dataframe?
+
+:::
+::::
+
+:::: { .solution exercise="practice_operations_with_dataframe_columns" }
+::: { .callout-tip collapse="false"}
+
+## Fully worked solution:
+
+```{pyodide}
+import pandas as pd
+
+canucks = pd.read_csv('data/canucks.csv')
+
+# Split up the column "Birth Date" into 3 separate columns named Birth_Day, Birth_Month and Birth_Year. 
+# Name this new dataframe birthdate_df
+birthdate_df = (canucks['Birth Date'].str.split('-', expand=True)
+                                     .rename(columns={0:'Birth_Day',
+                                                      1:'Birth_Month',
+                                                      2:'Birth_Year'})
+               )
+
+birthdate_df
+
+# Save these as columns in the canucks dataframe as dtype int
+canucks = canucks.assign(Birth_Day=birthdate_df['Birth_Day'].astype('int'),
+                         Birth_Month=birthdate_df['Birth_Month'],
+                         Birth_Year=birthdate_df['Birth_Year'].astype('int')
+                        )
+
+canucks
+```
+
+:::
+::::

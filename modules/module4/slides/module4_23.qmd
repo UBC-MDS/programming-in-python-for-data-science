@@ -1,0 +1,128 @@
+---
+format: revealjs
+title: Splitting a Column
+title-slide-attributes:
+  data-notes: |
+---
+
+```{python}
+#  | echo: false
+%run src/utils.py
+```
+
+## String Split 
+
+```{python}
+# | include: false
+cereal2 = pd.read_csv('data/cereal2.csv')
+cereal2 = cereal2.loc[:,['name', 'mfr_type', 'type', 'calories', 'protein','fiber', 'fat',  'carbo',  'rating' ]].assign(hot=cereal2['type'] == 'Hot').drop(columns='type')
+cereal_amended = cereal2.assign(calories=cereal2['calories'].astype('str'))
+```
+
+```{python}
+cereal_amended
+```
+
+
+:::{.notes} 
+Here is a new cereal dataframe. 
+
+You'll notice that our column `mfr_type` contains two variables.
+
+It is displaying both the manufacturer (N, Q, etc.) of the cereal and the cereal type (Cold, Hot). 
+
+To convert this into tidier data, we will need to split up this column into two separate columns, but how?
+:::
+
+---
+
+```{python}
+cereal_amended.head(5)
+```
+
+<br>
+
+```{python}
+new = cereal_amended['mfr_type'].str.split('-', expand=True)
+new 
+```
+
+
+:::{.notes} 
+At the beginning of this Module, we were introduced to the verb `.split()` which split up a string into separate substrings. 
+
+Pandas has a verb that similarly splits a column into separate ones. It's called `.str.split()`.
+
+Let's test it out.
+
+First, we need to grab the column and make sure we are splitting on the correct separator. 
+
+In this case, the column is `mfr_type`, and the separator is `-`.   
+
+It's important that we set `expand=True` to indicate that we want to split the substrings into separate columns.
+
+As you can see from the result, we now have two new columns.
+:::
+
+---
+
+```{python}
+new.head()
+```
+
+<br>
+
+```{python}
+new = new.rename(columns = {0:'mfr', 1: 'type'})
+new.head()
+```
+
+
+:::{.notes} 
+We will need to rename them before we add them back to our original dataframe.
+:::
+
+---
+
+```{python}
+cereal = cereal_amended.assign(mfr=new['mfr'],
+                       type=new['type'])
+cereal
+```
+
+
+:::{.notes} 
+We can then use `.assign()` to add the columns from the `new` dataframe into the original `cereal` one.
+
+Now we can see our new columns at the end of our cereal dataframe.
+:::
+
+---
+
+```{python}
+new = cereal_amended['mfr_type'].str.split('-', expand=False)
+new 
+```
+
+<br>
+
+```{python}
+type(new)
+```
+
+
+:::{.notes}
+You may be wondering **What happens if we use `expand=False` instead of `expand=True`**? 
+
+Well, let's take a look!
+
+Our output is now a Pandas Series data type with a list containing both column values as the Series values.
+
+This makes it a little harder to add to the dataframe as separate columns. 
+
+This not ideal for splitting up values in a column.  
+:::
+
+
+
+# Let’s apply what we learned!

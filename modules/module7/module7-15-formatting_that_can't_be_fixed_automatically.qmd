@@ -1,0 +1,29 @@
+---
+format:
+  html:
+    page-layout: full
+---
+
+# 5. Formatting That Can't Be Fixed Automatically
+
+::: {.panel-tabset .nav-pills}
+
+## Video
+
+<iframe
+    class="video"
+    src="https://www.youtube.com/embed/cZwBfjQpHTU?start=1565&end=1907&rel=0" 
+    title="Module 7 Video - Formatting That Can't Be Fixed Automatically"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+></iframe>
+
+## Slides
+
+<iframe
+    class="slide-deck"
+    src="slides/module7_15.html"
+></iframe>
+
+:::

@@ -1,0 +1,265 @@
+---
+format: live-html
+---
+
+<script src='../../src/quiz.js'></script>
+
+# 2.1. Exercises
+
+## Name that Data Structure
+
+<div id='mcq1'></div>
+<script>
+    generateQuiz(
+        'mcq1',
+        'Question 1',
+        '<i>"I don’t care about my elements order."</i> Who am I?',
+        {
+        '<code>str</code>': 'Which data structure does not have a particular order?',
+        '<code>list</code>': 'Which data structure does not have a particular order?',
+        '<code>tuple</code>': 'Which data structure does not have a particular order?',
+        '<code>set</code>': 'Well done.',
+        },
+        '<code>set</code>',
+    );
+</script>
+
+<div id='mcq2'></div>
+<script>
+    generateQuiz(
+        'mcq2',
+        'Question 2',
+        '<i>"I can’t be changed, I don’t accept new elements but I can contain multiple data types"</i> Who am I?',
+        {
+        '<code>str</code>': 'This data structure fits the first two statements but a string contains characters of all type <code>str</code>.',
+        '<code>list</code>': 'This data structure can add elements using <code>.append()</code>',
+        '<code>tuple</code>': '',
+        '<code>set</code>': 'This data structure can add to it using <code>.add()</code>',
+        },
+        '<code>tuple</code>',
+    );
+</script>
+
+## Data Structure True and False
+
+<div id='mcq3'></div>
+<script>
+    generateQuiz(
+        'mcq3',
+        'Question 1',
+        'Tuples are immutable.',
+        {
+        'True': 'Yay! You got it!',
+        'False': 'This is, in fact, the opposite!',
+        },
+        'True',
+    );
+</script>
+
+<div id='mcq4'></div>
+<script>
+    generateQuiz(
+        'mcq4',
+        'Question 2',
+        'Sets can only contain numerical data types.',
+        {
+        'True': 'Sets can contain many different datatypes apart from numerical values.',
+        'False': 'Yay! You got it!',
+        },
+        'False',
+    );
+</script>
+
+
+## Coding questions
+
+**Instructions:**    
+Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
+
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
+
+_**Make sure you remove the hash (`#`) symbol in the coding portions of this question.  We have commented them so that the line won't execute and you can test your code after each step.**_
+
+
+### The Data Structure Basics
+
+Let's explore how to add to a list, slice it and convert it into a tuple. 
+
+**Tasks:**
+
+- Using the list provided, add a `pen`, a `scrap paper`, a `7.3` and a `True` element.
+- Find the length of the list after adding the element and save the value in an object named `drawer_length`.
+- Slice the list from `4` to `scrap paper`  and save this in an object named `cleaned_junk_drawer`.
+- Finally,  convert it into a set and name it `junk_set`.
+
+```{pyodide}
+#| setup: true
+#| exercise: the_data_structure_basics
+import pandas as pd
+```
+
+```{pyodide}
+#| exercise: the_data_structure_basics
+junk_drawer  = [3, 4]
+
+# Using the list provided, add a pen, a scrap paper, a 7.3 and a True element
+____
+# ____
+# ____
+# ____
+
+# What's the length of the list now?
+# Save it in an object named drawer_length
+# ____ = ____
+
+# Slice the junk_drawer object to include the element 4 to scrap paper   
+# Save this in an object named cleaned_junk_drawer
+# ____ = ____
+
+# Next convert it into a set and name it junk_set
+# ____ = ____.(____)
+
+# result = {
+#     "drawer_length": drawer_length,
+#     "cleaned_junk_drawer": cleaned_junk_drawer,
+#     "junk_set": junk_set
+# }
+# result
+```
+
+```{pyodide}
+#| exercise: the_data_structure_basics
+#| check: true
+from src.utils import print_correct_msg
+
+junk_drawer = [3, 4, "pen", "scrap paper", 7.3, True]
+
+assert isinstance(result, dict), "We are expecting a dict."
+assert result["drawer_length"] == len(junk_drawer), "The length of 'junk_drawer' is incorrect. Did you add everthing?"
+assert len(result["cleaned_junk_drawer"]) == 3, "The length of 'cleaned_junk_drawer' is incorrect. Are you slicing properly?"
+assert isinstance(result["junk_set"], set), "junk_set should be a set."
+assert result["junk_set"] == set(junk_drawer[1:4]), "Some items are missing from 'junk_set'. Are you slicing properly?"
+print_correct_msg()
+```
+
+:::: { .hint exercise="the_data_structure_basics"}
+::: { .callout-note collapse="false"}
+
+## Hint 1
+
+- The verbs `.append()` and `len()` may be handy.
+- You can convert your list to a tuple with `tuple(). 
+- Have you sliced keeping in mind the end of the slice is excluded? 
+
+:::
+::::
+
+:::: { .solution exercise="the_data_structure_basics" }
+::: { .callout-tip collapse="false"}
+
+## Fully worked solution:
+
+```{pyodide}
+junk_drawer  = [3, 4]
+
+# Using the list provided, add a pen, a scrap paper, a 7.3 and a True element
+junk_drawer.append('pen')
+junk_drawer.append('scrap paper')
+junk_drawer.append(7.3)
+junk_drawer.append(True)
+
+# What's the length of the list now?
+# Save it in an object named drawer_length
+drawer_length = len(junk_drawer)
+
+# Slice the junk_drawer object to include the element 4 to scrap paper  
+# Save this in an object named `cleaned_junk_drawer`
+cleaned_junk_drawer = junk_drawer[1:4]
+
+# Next convert it into a set and name it junk_set
+junk_set = set(cleaned_junk_drawer)
+
+result = {
+    "drawer_length": drawer_length,
+    "cleaned_junk_drawer": cleaned_junk_drawer,
+    "junk_set": junk_set
+}
+result
+```
+
+:::
+::::
+
+<br>
+
+### Making a Dataframe from Lists
+
+Let's use lists and convert them into a pandas dataframe. 
+
+**Tasks:**
+
+- Use the lists given in the cell below to make a dataframe.
+- Name the dataframe `family`.
+
+```{pyodide}
+#| exercise: making_a_dataframe_from_lists
+import pandas as pd
+
+# Use the lists below to make a dataframe named family
+mom = ['Teresa', 57, "August"]
+dad = ['John', 61, "February"]
+brother = ['Desmond', 5, "July" ]
+
+c_names = ['name', 'age', 'birth_month']
+
+____ = ____
+
+____
+```
+
+```{pyodide}
+#| exercise: making_a_dataframe_from_lists
+#| check: true
+import pandas as pd
+from src.utils import print_correct_msg
+
+assert isinstance(result, pd.DataFrame), "Make sure you are calling the 'pd.DataFrame()' in order to create the dataframe."
+assert result.shape == (3,3), "The length of 'junk_drawer' is incorrect. Did you add everthing?"
+assert sorted(list(result.columns)) == sorted(['name', 'age', 'birth_month']), "Your dataframe contains incorrect columns. Are you specifying the correct column names?"
+print_correct_msg()
+```
+
+:::: { .hint exercise="making_a_dataframe_from_lists"}
+::: { .callout-note collapse="false"}
+
+## Hint 1
+
+- Are you using `pd.DataFrame()`?
+- Are you using the arguments `data` and `columns`?
+
+:::
+::::
+
+:::: { .solution exercise="making_a_dataframe_from_lists" }
+::: { .callout-tip collapse="false"}
+
+## Fully worked solution:
+
+```{pyodide}
+import pandas as pd
+
+# Use the lists below to make a dataframe named family
+mom = ['Teresa', 57, "August"]
+dad = ['John', 61, "February"]
+brother = ['Desmond', 5, "July" ]
+
+c_names = ['name', 'age', 'birth_month']
+
+family = pd.DataFrame(data=[mom, dad, brother], 
+                       columns=c_names)
+
+family
+```
+
+:::
+::::
