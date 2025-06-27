@@ -226,6 +226,31 @@ website:
           - text: '&nbsp;&nbsp; 6.1. Exercises'
             href: modules/module7/module7-19-using_the_python_debugger.qmd
           - href: modules/module7/module7-20-what_did_we_just_learn.qmd
+      - section: "**Module 8: A Slice of NumPy and Advanced Data Wrangling**"
+        contents:
+          - href: modules/module8/module8-00-module_learning_outcomes.qmd
+          - href: modules/module8/module8-01-numpy_and_1d_arrays.qmd
+          - text: '&nbsp;&nbsp; 1.1. Exercises'
+            href: modules/module8/module8-02-numpy_and_array_questions.qmd
+          - href: modules/module8/module8-05-multi-dimensional_arrays.qmd
+          - text: '&nbsp;&nbsp; 2.1. Exercises'
+            href: modules/module8/module8-06-make_that_array.qmd
+          - href: modules/module8/module8-11-working_with_null_values.qmd
+          - text: '&nbsp;&nbsp; 3.1. Exercises'
+            href: modules/module8/module8-12-finding_and_dropping_null_values_questions.qmd
+          - href: modules/module8/module8-16-working_with_dates_and_time.qmd
+          - text: '&nbsp;&nbsp; 4.1. Exercises'
+            href: modules/module8/module8-17-datetime_quesitons.qmd
+          - href: modules/module8/module8-19-introduction_to_working_with_strings.qmd
+          - text: '&nbsp;&nbsp; 5.1. Exercises'
+            href: modules/module8/module8-20-string_questions.qmd
+          - href: modules/module8/module8-23-more_advanced_string_processing.qmd
+          - text: '&nbsp;&nbsp; 6.1. Exercises'
+            href: modules/module8/module8-24-advanced_string_questions.qmd
+          - href: modules/module8/module8-27-what_did_we_just_learn.qmd
+      - section: "**Module Closing Remarks**"
+        contents:
+          - href: modules/module9/module9-00-congratulations.qmd
 
 # Since we are declaring options for two formats here (html and revealjs)
 # each qmd file needs to include a yaml block including which format to use for that file.
