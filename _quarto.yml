@@ -110,6 +110,31 @@ website:
           - text: '&nbsp;&nbsp; 9.1. Exercises'
             href: modules/module2/module2-30-plotting_a_groupby_object.qmd
           - href: modules/module2/module2-31-what_did_we_just_learn.qmd
+      - section: "**M3. Tidy Data and Joining Dataframes**"
+        contents:
+          - href: modules/module3/module3-00-module_learning_outcomes.qmd
+          - href: modules/module3/module3-01-what_is_tidy_data.qmd
+          - text: '&nbsp;&nbsp; 1.1. Exercises'
+            href: modules/module3/module3-02-tidy_data_questions.qmd
+          - href: modules/module3/module3-05-statistical_questions_and_tidy_data.qmd
+          - text: '&nbsp;&nbsp; 2.1. Exercises'
+            href: modules/module3/module3-06-which_is_tidy.qmd
+          - href: modules/module3/module3-08-reshaping_with_pivot.qmd
+          - text: '&nbsp;&nbsp; 3.1. Exercises'
+            href: modules/module3/module3-09-pivoting_questions.qmd
+          - href: modules/module3/module3-11-reshaping_with_pivot_table.qmd
+          - text: '&nbsp;&nbsp; 4.1. Exercises'
+            href: modules/module3/module3-12-pivot_table_questions.qmd
+          - href: modules/module3/module3-14-reshaping_with_melt.qmd
+          - text: '&nbsp;&nbsp; 5.1. Exercises'
+            href: modules/module3/module3-15-melting_questions.qmd
+          - href: modules/module3/module3-17-concatenation.qmd
+          - text: '&nbsp;&nbsp; 6.1. Exercises'
+            href: modules/module3/module3-18-concat_questions.qmd
+          - href: modules/module3/module3-21-joining_dataframes_using_merge.qmd
+          - text: '&nbsp;&nbsp; 7.1. Exercises'
+            href: modules/module3/module3-22-merge_questions.qmd
+          - href: modules/module3/module3-25-what_did_we_just_learn.qmd
 
 # Since we are declaring options for two formats here (html and revealjs)
 # each qmd file needs to include a yaml block including which format to use for that file.
