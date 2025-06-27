@@ -1,0 +1,240 @@
+---
+format: live-html
+---
+
+<script src='../../src/quiz.js'></script>
+
+# 4.1. Exercises
+
+## Exceptions
+
+<div id='mcq1'></div>
+<script>
+    generateQuiz(
+        'mcq1',
+        'Question 1',
+        'Which of the following exceptions is most appropriate for when an operation or function receives an argument that has the right type but an inappropriate value? <i>Hint: Did you look over the resource we provided you in the slides?</i>',
+        {
+        '<code>TypeError</code>': 'This is raised when an operation or function is applied to an object of inappropriate type.',
+        '<code>NameError</code>': 'This is raised when a local or global name is not found.',
+        '<code>AttributeError</code>': 'This is raised when an attribute reference or assignment fails.',
+        '<code>ValueError</code>': '',
+        },
+        '<code>ValueError</code>',
+    );
+</script>
+
+<div id='mcq2'></div>
+<script>
+    generateQuiz(
+        'mcq2',
+        'Question 2',
+        'Why would we want to write code that raises an exception?',
+        {
+        'To make the cause of the error much clearer to the caller of the function': 'This is correct, but did you read the other options?',
+        'To force code to fail sooner rather than later': 'This is correct, but did you read the other options?',
+        'To make your functions more usable': 'This is correct, but did you read the other options?',
+        'All of the above': '',
+        },
+        'All of the above',
+    );
+</script>
+
+## Documenting Exceptions
+
+<div id='mcq3'></div>
+<script>
+    generateQuiz(
+        'mcq3',
+        'Question 1',
+        'Which docstring correctly includes the documentation for exceptions?',
+        {
+        'A': 'That’s right, <code>Raises</code> goes between the <code>Returns</code> and <code>Examples</code>.',
+        'B': 'To document what happens when an exception is raised, we use the title <code>Raises</code>.',
+        },
+        'A',
+    );
+</script>
+
+A.
+
+```python
+def factor_of_10(number):
+    """
+    Takes a number and determines if it is a factor of 10 
+    Parameters
+    ----------
+    number : int
+        the value to check
+      
+    Returns
+    -------
+    bool
+        Returns True if number is a multiple of 10 and False otherwise
+        
+    Raises
+    ------
+    TypeError
+        If the input argument number is not of type int 
+      
+    Examples
+    --------
+    >>> factor_of_10(72)
+    False
+    """
+    if not isinstance(number, int): 
+        raise TypeError("the input value of number is not of type int")
+        
+    if number % 10 == 0: 
+        factor = True
+    else:
+        factor = False
+        
+    return factor
+```
+
+
+B.
+
+```python
+def factor_of_10(number):
+    """
+    Takes a number and determines if it is a factor of 10 
+    Parameters
+    ----------
+    number : int
+        the value to check
+      
+    Returns
+    -------
+    bool
+        Returns True if number is a multiple of 10 and False otherwise
+        
+    Exceptions
+    ------
+    TypeError
+        If the input argument number is not of type int 
+      
+    Examples
+    --------
+    >>> factor_of_10(72)
+    False
+    """
+    if not isinstance(number, int): 
+        raise TypeError("the input value of number is not of type int")
+        
+    if number % 10 == 0: 
+        factor = True
+    else:
+        factor = False
+        
+    return factor
+```
+
+
+## Raising Exceptions
+
+**Instructions:**    
+Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
+
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
+
+_**Make sure you remove the hash (`#`) symbol in the coding portions of this question.  We have commented them so that the line won't execute and you can test your code after each step.**_
+
+Let's build on the BMI function we made in module 5. This time we want to raise 2 exceptions.  
+ 
+
+```python
+def bmi_calculator(height, weight):
+    return (weight / (height ** 2)) * 702
+```
+
+**Tasks:**
+
+- Write an exception that checks if `height` is of type `float`.
+- Write a second exception that raises an error if weight is 0 or less.
+- Test your function with the values given in variable `tall` and `mass`.
+
+```{pyodide}
+#| setup: true
+#| exercise: raising_exceptions
+import pandas as pd
+```
+
+```{pyodide}
+#| exercise: raising_exceptions
+# Add an exception to the function below that checks if height is of type float and
+# an exception that raises an error if weight is 0 or less. 
+def bmi_calculator(height, weight):
+    ____   
+        ____
+
+    ____   
+        ____
+
+    return (weight/(height**2)) * 702
+
+
+# Test your function with the values below 
+tall = 193
+mass = 170.2
+
+____
+
+# For checking purposes:
+bmi_calculator.__code__.co_names
+```
+
+```{pyodide}
+#| exercise: raising_exceptions
+#| check: true
+from src.utils import print_correct_msg
+
+assert isinstance(result, tuple), "Your result should be a tuple."
+assert "isinstance" in result or "type" in result, "Are you checking the type of `height`?"
+assert "float" in result, "Are you checking the type of `height`?"
+assert "TypeError" in result, "Make sure you are raising a 'TypeError' for an incorrect data type."
+assert 'Exception' in result, "Make sure you are raising a 'Exception' for an incorrect data value."
+print_correct_msg()
+```
+
+:::: { .hint exercise="raising_exceptions"}
+::: { .callout-note collapse="false"}
+
+## Hint 1
+
+- Are you using `TypeError` and `Exception` respectively for the exception messages?
+- Are you checking the `height` type with `if type(height) is not float:`?
+- Are you checking if weight is greater than 0 with `if weight <= 0:`?
+
+:::
+::::
+
+:::: { .solution exercise="raising_exceptions" }
+::: { .callout-tip collapse="false"}
+
+## Fully worked solution:
+
+```{pyodide}
+# Add an exception to the function below that checks if height is of type float and
+# an exception that raises an error if weight is 0 or less.
+def bmi_calculator(height, weight):
+    if type(height) is not float:
+        raise TypeError("Sorry, but you are not using a float for input variable")    
+    
+    if weight <= 0:
+        raise Exception("Weight must be a positive value")
+
+    return (weight/(height**2)) * 702
+
+
+# Test your function with the values below
+tall = 193
+mass = 170.2
+
+# For checking purposes:
+bmi_calculator.__code__.co_names
+```
+
+:::
+::::

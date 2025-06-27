@@ -1,0 +1,211 @@
+---
+format: live-html
+---
+
+<script src='../../src/quiz.js'></script>
+
+# 6.1. Exercises
+
+## Function Design Questions
+
+```python
+def give_me_facts(myinfo):
+    max_val = max(myinfo)
+    min_val = min(myinfo)
+    range_val = max_val - min_val
+    return max_val, min_val, range_val
+```
+
+<div id='mcq1'></div>
+<script>
+    generateQuiz(
+        'mcq1',
+        'Question 1',
+        'What’s wrong with the function above?',
+        {
+        'It is doing too many calculations': 'Calculations are fine if we need them and here it looks like we need them to calculate the range.',
+        'It is using a global variable inside the function': 'There are no global variables in the function.',
+        'It’s returning too many objects': 'Perfect! This is too many!',
+        'It’s hard coding values in the function': 'We are lucky that there are no hardcoded values in this function!',
+        },
+        'It’s returning too many objects',
+    );
+</script>
+
+## Improve it!
+
+```python
+
+def count_the_sevens(mylist): 
+    number_of_occurances  = mylist.count(7)
+    return number_of_occurances
+```
+
+<div id='mcq2'></div>
+<script>
+    generateQuiz(
+        'mcq2',
+        'Question 1',
+        'How can we improve the above function?',
+        {
+        'Avoid using a list as an input arguments': 'Lists are completely fine to use as input arguments.',
+        'Simplify the operations': 'This function is only 3 lines! Do we need it simpler?',
+        'Use fewer global variables': 'Luckily no global variables are being used in this function.',
+        'Remove the hard-coded value': 'Perfect! Let’s make the count variable (in this case the <code>7</code>) an input argument.',
+        },
+        'Remove the hard-coded value',
+    );
+</script>
+
+## Function Design
+
+**Instructions:**    
+Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
+
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
+
+_**Make sure you remove the hash (`#`) symbol in the coding portions of this question.  We have commented them so that the line won't execute and you can test your code after each step.**_
+
+Given the function below, improve it so that it follows good function design principles. 
+
+```{pyodide}
+def wage_increase(group):
+    '''
+    Calculates a new wage given a 10% increase for each element in a list and return 
+    a list of containing the new salaries and a list of the raise increases
+    
+    Parameters
+    ----------
+    group : list
+        a list containing a group of people's wages
+    
+    Returns
+    -------
+    new_salary: list
+        a list containing new salaries after each undergoing a 10% wage increase 
+    raise_increase: list 
+        a list containing the absolute wage increase each element underwent. 
+    
+    Examples
+    --------
+    >>> wage_increase([20000, 76000, 110000, 88000])
+    '''
+    new_salary = list()
+    raise_increase = list()
+    
+    for salary in group: 
+        new_salary.append(round(salary * 1.10))
+        raise_increase.append(round(salary * 0.10))
+    
+    return new_salary, raise_increase
+```
+
+**Tasks:**
+
+- Given the function above, improve it using to the new function `new_wage()`. We have provided you with the function stub and the docstring to guide you.   
+- Make sure it follows good function design practices by not looping over a function, avoiding hard-coding and not returning multiple values.
+- Test your new function on a person with a salary of $84000 and an expected raise of 12%.
+- Save this in an object named `person1_new_wage`.
+
+```{pyodide}
+#| setup: true
+#| exercise: function_design
+import pandas as pd
+```
+
+```{pyodide}
+#| exercise: function_design
+# Given the function above, improve it so that it follows best function design practices
+# Name your new function new_wage()
+def new_wage(salary, percent_raise):
+    '''
+    Calculates a new wage given a percentage
+    
+    Parameters
+    ----------
+    salary : int or float
+        a salary expected to change
+    percent_raise : int or float
+        an expect percent which the salary will change
+    
+    Returns
+    -------
+    float
+        the new salary after undergoing the pay change percentage 
+    
+    Examples
+    --------
+    >>> new_wage(30000, 30)
+    39000.0
+    '''
+
+    return ____
+
+# Check your new function on a person with a salary of $84000 and an expected raise of 12%
+# Save this in an object named person1_new_wage
+person1_new_wage = ____
+person1_new_wage
+```
+
+```{pyodide}
+#| exercise: function_design
+#| check: true
+from src.utils import print_correct_msg
+
+assert result == 84000 * (1 + (0.01 * 12)), "Your function output is incorrect. Please revise and try again."
+print_correct_msg()
+```
+
+:::: { .hint exercise="function_design"}
+::: { .callout-note collapse="false"}
+
+## Hint 1
+
+- Are you removing the hardcoded values in the function?
+- Are removing the return of 2 variables? 
+- Are you removing the loop from inside the function? 
+- Are you multiplying the `salary` by `(1 + (0.01 * percent_raise)`?
+
+:::
+::::
+
+:::: { .solution exercise="function_design" }
+::: { .callout-tip collapse="false"}
+
+## Fully worked solution:
+
+```{pyodide}
+# Given the function above, improve it so that it follows best function design practices
+# Name your new function new_wage()
+def new_wage(salary, percent_raise):
+    '''
+    Calculates a new wage given a percentage
+    
+    Parameters
+    ----------
+    salary : int or float
+        a salary expected to change
+    percent_raise : int or float
+        an expect percent which the salary will change
+    
+    Returns
+    -------
+    float
+        the new salary after undergoing the pay change percentage 
+    
+    Examples
+    --------
+    >>> new_wage(30000, 30)
+    39000.0
+    '''
+
+    return salary * (1 + (0.01 * percent_raise))
+
+# Check your new function on a person with a salary of $84000 and an expected raise of 12%
+# Save this in an object named person1_new_wage
+person1_new_wage = new_wage(84000, 12)
+person1_new_wage
+```
+
+:::
+::::

@@ -1,0 +1,254 @@
+---
+format: live-html
+---
+
+<script src='../../src/quiz.js'></script>
+
+# 1.1. Exercises
+
+## Questions on Scoping
+
+```python
+toy = "ball"
+
+def playtime():
+    toy = "truck"
+    return toy 
+
+toy
+```
+
+<div id='mcq1'></div>
+<script>
+    generateQuiz(
+        'mcq1',
+        'Question 1',
+        'Given the code above, what is the output?',
+        {
+        '<code>ball</code>': 'Well done!',
+        '<code>truck</code>': 'Since <code>toy</code> is being called in the global environment, the output of <code>toy</code> is the value of the global variable value of  <code>toy</code>.',
+        '<code>Error</code>': 'This will still run without an error!',
+        },
+        '<code>ball</code>',
+    );
+</script>
+
+```python
+toy = "ball"
+
+def playtime():
+    toy = "truck"
+    return toy 
+
+playtime()
+```
+
+<div id='mcq2'></div>
+<script>
+    generateQuiz(
+        'mcq2',
+        'Question 2',
+        'Given the code above, what is the output?',
+        {
+        '<code>ball</code>': '<code>toy</code> is equal to <code>"truck"</code> in the local environment so it will return the local variable value of <code>toy</code>.',
+        '<code>truck</code>': '',
+        '<code>Error</code>': 'This will still run without an error!',
+        },
+        '<code>truck</code>',
+    );
+</script>
+
+```python
+def playtime():
+    toy = "truck"
+    return toy 
+
+toy
+```
+
+<div id='mcq3'></div>
+<script>
+    generateQuiz(
+        'mcq3',
+        'Question 3',
+        'Given the code above, what is the output?',
+        {
+        '<code>None</code>': '<code>toy</code> is a local variable, will it be recognized in a global environment?',
+        '<code>truck</code>': '<code>toy</code> is a local variable, will it be recognized in a global environment?',
+        '<code>Error</code>': 'Great! <code>toy</code> is a local variable, and will not be recognized in the global environment.',
+        },
+        '<code>Error</code>',
+    );
+</script>
+
+
+## Side Effects
+
+<div id='mcq4'></div>
+<script>
+    generateQuiz(
+        'mcq4',
+        'True or False',
+        'Side effects make your code easier to debug.',
+        {
+        'True': 'Ahh! Please go back and read over the slides. Side effects are generally avoided.',
+        'False': 'Well done. This is an important one to get right!',
+        },
+        'False',
+    );
+</script>
+
+A.
+
+```python
+toy = "ball"
+
+def playtime():
+    toy = "truck"
+    print(toy) 
+
+playtime()
+```
+
+B.
+
+```python
+
+toy = "ball"
+
+def playtime():
+    toy = "truck"
+    return toy 
+
+playtime()
+```
+
+<div id='mcq5'></div>
+<script>
+    generateQuiz(
+        'mcq5',
+        'Question 2',
+        'Which of the above functions produce a side effect?',
+        {
+        'A': 'Nice job! Printing <code>toy</code> is considered a function side effect!',
+        'B': 'Having a function <code>return</code> something is not considered necessarily a side effect.',
+        'A and B': 'Having a function <code>return</code> something is not considered necessarily a side effect.',
+        'Neither A or B': 'Printing <code>toy</code> is considered a function side effect!',
+        },
+        'A',
+    );
+</script>
+
+<div id='mcq6'></div>
+<script>
+    generateQuiz(
+        'mcq6',
+        'True or False',
+        'If a function modifies a variable in the function’s local environment, that is considered a side effect.',
+        {
+        'True': 'This is not considered a side effect if a variable created within a function is modified within the same function.',
+        'False': '',
+        },
+        'False',
+    );
+</script>
+
+
+## Writing Functions Without Side Effects
+
+**Instructions:**    
+Running a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes. 
+
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
+
+_**Make sure you remove the hash (`#`) symbol in the coding portions of this question.  We have commented them so that the line won't execute and you can test your code after each step.**_
+
+The function `kg_to_lb()` is used to convert a list of elements with kg units into a list of elements with lbs units. Unfortunate this function includes a side effect that edits one of the global variables. 
+
+```{pyodide}
+weight_kg = [90, 41, 65, 76, 54, 88]
+weight_lb = list()
+
+def kg_to_lb(weight_list):
+    conversion = 2.20462
+    for kg in weight_kg:
+        weight_lb.append(kg * conversion)
+    return 
+
+kg_to_lb(weight_kg)
+weight_lb
+```
+
+**Tasks:**
+
+- Write a new function named `better_kg_to_lb` that no longer contains a side effect.
+- Test your new function on the `weight_kg` list and save the results in an object named `weight_lb_again`.
+
+```{pyodide}
+#| setup: true
+#| exercise: writing_functions_without_side_effects
+import pandas as pd
+```
+
+```{pyodide}
+#| exercise: writing_functions_without_side_effects
+weight_kg = [90, 41, 65, 76, 54, 88]
+
+# rewrite the code and function above so that it does not have any side effects 
+____ ____(____):
+    ____
+    ____
+    ____
+    ____
+
+# Test your new function on weight_kg and name the new object weight_lb_again
+____ = ____
+____
+```
+
+```{pyodide}
+#| exercise: writing_functions_without_side_effects
+#| check: true
+from src.utils import print_correct_msg
+
+assert isinstance(result, list), "Your function should return a list."
+assert len(result) == 6, "Your function output is incorrect. Are you getting rid of side effects?"
+assert round(sum(result), 2) == 912.71, "Your function output is incorrect. Check your calculation."
+print_correct_msg()
+```
+
+:::: { .hint exercise="writing_functions_without_side_effects"}
+::: { .callout-note collapse="false"}
+
+## Hint 1
+
+- Are you putting `weight_lb` inside the function now? 
+- Are you returning `weight_lb`? 
+
+:::
+::::
+
+:::: { .solution exercise="writing_functions_without_side_effects" }
+::: { .callout-tip collapse="false"}
+
+## Fully worked solution:
+
+```{pyodide}
+weight_kg = [90, 41, 65, 76, 54, 88]
+
+# rewrite the code and function above so that it does not have any side effects 
+def better_kg_to_lb(weight_list):
+    weight_lb = list()
+    conversion = 2.20462
+    
+    for kg in weight_list:
+        weight_lb.append(kg * conversion)
+    return weight_lb
+
+# Test your new function on weight_kg and name the new object weight_lb_again
+weight_lb_again = better_kg_to_lb(weight_kg)
+weight_lb_again
+```
+
+:::
+::::

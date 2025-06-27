@@ -1,0 +1,190 @@
+---
+format: live-html
+---
+
+<script src='../../src/quiz.js'></script>
+
+# 5.1. Exercises
+
+## Conditional Loop Questions
+
+<div id='mcq1'></div>
+<script>
+    generateQuiz(
+        'mcq1',
+        'Question 1',
+        'Which of the following is another syntax for <code>supply = supply - 1</code>',
+        {
+        '<code>supply =- 1 </code>': 'Double-check the order of the operators.',
+        '<code>supply - 1  = supply </code>': 'The left side of the equal sign is reserved for object assignment!',
+        '<code>supply -= 1</code>': '',
+        },
+        '<code>supply -= 1</code>',
+    );
+</script>
+
+
+```python
+parking_lot = [ 20, 60, -12, 110, -20, 80, 12, -40, 37, 92]
+parking_tickets = list()
+
+for stall in parking_lot: 
+    if stall <0:
+        parking_tickets.append(True)
+    else:
+        parking_tickets.append(False)
+
+sum(parking_tickets)
+```
+
+<div id='mcq2'></div>
+<script>
+    generateQuiz(
+        'mcq2',
+        'Question 2',
+        'Given the code above, what is the expected output?',
+        {
+        '<code>3</code>': 'Well done!',
+        '<code>[False, True, False, True, False, False, True, False]</code>': 'Did you miss that the code is taking the  <code>sum()</code> of the list?',
+        '<code>7</code>': 'This is the number of false values.',
+        },
+        '<code>3</code>',
+    );
+</script>
+
+
+```python
+parking_lot = [ 20, 60, -12, 110, -20, 80, 12, -40, 37, 92]
+parking_tickets = []
+
+for stall in parking_lot: 
+    if stall <0:
+        break
+    else:
+        parking_tickets.append(False)
+sum(parking_tickets)
+```
+
+<div id='mcq3'></div>
+<script>
+    generateQuiz(
+        'mcq3',
+        'Question 3',
+        'Given the code above, what is the expected output?',
+        {
+        '<code>3</code>': 'Did you review what <code>break</code> means?',
+        '<code>Error</code>': 'Did you review what <code>break</code> means?',
+        '<code>0</code>': '',
+        },
+        '<code>0</code>',
+    );
+</script>
+
+
+## Practice Iterating Over a Collection
+
+**Instructions:**    
+Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
+
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
+
+_**Make sure you remove the hash (`#`) symbol in the coding portions of this question.  We have commented them so that the line won't execute and you can test your code after each step.**_
+
+For the last few Modules, we have been playing with different dataframes.  In this question, we have stored them in a list named `dataframes`.  
+Let's count how many of these dataframes have more than 1000 rows.
+
+**Tasks:**
+
+- Make an object named `count` and assign it a value of 0.
+- Loop through the dataframes and count how many of them have more than 1000 rows. 
+- *Hint: you can use `.shape[0]` to access the number of rows in a dataframe.*
+- `count` should increase by 1 if the dataframe has more than 1000 rows and 0 otherwise. 
+- Display the value of `count`.
+
+```{pyodide}
+#| exercise: practice_iterating_over_a_collection
+import pandas as pd
+
+# Given dataframes
+canucks = pd.read_csv('data/canucks.csv')
+pokemon = pd.read_csv('data/pokemon.csv')
+lego_themes = pd.read_csv('data/lego-themes.csv')
+lego_inventory = pd.read_csv('data/lego_inventories.csv')
+
+dataframes = [canucks, pokemon, lego_themes, lego_inventory]
+
+# Of the 4 dataframes, how many of them have more than 1000 rows? 
+____
+____
+    ____
+        ____
+
+# Display the value of count
+____
+```
+
+```{pyodide}
+#| exercise: practice_iterating_over_a_collection
+#| check: true
+from src.utils import print_correct_msg
+
+assert result == 1, "The value for 'count' is incorrect. Make sure you are incrementing 'count' if a dataframe has > 1000 rows"
+print_correct_msg()
+```
+
+:::: { .hint exercise="practice_iterating_over_a_collection"}
+::: { .callout-note collapse="false"}
+
+## Hint 1
+
+- Did you use `if data.shape[0] > 1000:` as you if statement? 
+- You don't necessarily need an else statement here. 
+
+:::
+::::
+
+:::: { .solution exercise="practice_iterating_over_a_collection" }
+::: { .callout-tip collapse="false"}
+
+## Fully worked solution:
+
+```{pyodide}
+import pandas as pd
+
+# Given dataframes
+canucks = pd.read_csv('data/canucks.csv')
+pokemon = pd.read_csv('data/pokemon.csv')
+lego_themes = pd.read_csv('data/lego-themes.csv')
+lego_inventory = pd.read_csv('data/lego_inventories.csv')
+
+dataframes = [canucks, pokemon, lego_themes, lego_inventory]
+
+# Of the 4 dataframes, how many of them have more than 1000 rows? 
+count = 0
+for data in dataframes:
+    if data.shape[0] > 1000:
+        count += 1
+
+# Display the value of count
+count
+```
+
+:::
+::::
+
+<br>
+
+<div id='mcq4'></div>
+<script>
+    generateQuiz(
+        'mcq4',
+        'Question',
+        'Does the code above used to read in the dataframes adhere to the DRY principle?',
+        {
+        'Yes': 'It seems that we are repetitively using <code>pd.read_csv()</code>. Remember what we did in exercise 12?',
+        'No': 'We can read in all our data with a loop (In fact, you did this exercise 12!)',
+        'No but this can’t be avoided': 'With repetitive code, there is generally always a manner to reduce redundant code.',
+        },
+        'No',
+    );
+</script>

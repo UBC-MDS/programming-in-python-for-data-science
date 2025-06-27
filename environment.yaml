@@ -14,3 +14,4 @@ dependencies:
     - black[jupyter]
     - pytest
     - pip
+    - openpyxl

@@ -1,0 +1,250 @@
+---
+format: live-html
+---
+
+<script src='../../src/quiz.js'></script>
+
+# 6.1. Exercises
+
+## Concat questions
+
+<div id='mcq1'></div>
+<script>
+    generateQuiz(
+        'mcq1',
+        'Question 1',
+        'If we wanted to concatenate Dataframe A with Dataframe B horizontally, what do we need to make sure <b>before</b> proceeding?',
+        {
+        'There are no <code>NaN</code> values': 'We can still concatenate with missing values.',
+        'The order of the rows in each dataframe are the same': 'Good job!',
+        'The columns are not duplicated': 'We can remove duplicated columns after concatenation.',
+        },
+        'The order of the rows in each dataframe are the same',
+    );
+</script>
+
+<div id='mcq2'></div>
+<script>
+    generateQuiz(
+        'mcq2',
+        'Question 2',
+        'Which of the following statements are correct?',
+        {
+        'Concatenating horizontally requires the argument <code>axis=1</code>': 'Good job!  Maybe more solutions are correct...',
+        'Concatenating vertically requires the argument <code>axis=0</code>': 'Good job!  Did you get multiple correct answers?',
+        'Concatenating vertically requires the argument <code>axis=1</code>': 'I think you got mixed up.  Try reading over the notes again.',
+        'Concatenating horizontally requires the argument <code>axis=0</code>': 'I think you got mixed up.  Try reading over the notes again.',
+        },
+        ['Concatenating horizontally requires the argument <code>axis=1</code>', 'Concatenating vertically requires the argument <code>axis=0</code>'],
+    );
+</script>
+
+
+## Coding questions
+
+**Instructions:** 
+Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes.     
+
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
+
+_**Make sure you remove the hash (`#`) symbol in the coding portions of this question.  We have commented them so that the line won't execute and you can test your code after each step.**_
+
+
+### Concatenating Vertically
+
+Sometimes we accumulate additional data that we need to combine with our existing data.  In the following question, we need to combine our dataframes to have a complete collection of all the Lego sets that exist. 
+
+**Tasks:**
+
+- Combine the two dataframes <a href="https://github.com/UBC-MDS/MCL-DSCI-011-programming-in-python/blob/master/data/lego_top.csv" target="_blank">`lego_top`</a> and  <a href="https://github.com/UBC-MDS/MCL-DSCI-011-programming-in-python/blob/master/data/lego_bottom.csv" target="_blank">`lego_bottom`</a>  vertically to make one large complete dataframe.
+- Name the new dataframe `full_set`.
+- Save the new dimension of `full_set` in an object named `full_set_shape`.
+- Display the new dataframe.
+
+
+```{pyodide}
+#| exercise: concatenating_vertically
+import pandas as pd
+
+# We are going to import lego_top and lego_bottom which have 5001 rows and 6672 rows
+# respectively.
+lego_top = pd.read_csv('data/lego_top.csv')
+lego_bottom = pd.read_csv('data/lego_bottom.csv')
+
+# Combine the two dataframes vertically to make 1 large complete dataframe
+# Name the new dataframe full_set 
+____  = ____
+
+# Save the new dimension of full_set in an object named full_set_shape
+# ____ = ____
+
+# Display the new dataframe
+# ____
+```
+
+```{pyodide}
+#| exercise: concatenating_vertically
+#| check: true
+from src.utils import print_correct_msg
+
+lego_top = pd.read_csv('data/lego_top.csv')
+lego_bottom = pd.read_csv('data/lego_bottom.csv')
+
+solution  = pd.concat([lego_top, lego_bottom], axis=0)
+
+assert isinstance(result, pd.DataFrame), "You should display the DataFrame."
+assert solution.shape == result.shape, "The full_set dataframe dimensions are incorrect. Are you concatenating vertically?"
+assert sorted(list(solution.columns)) == sorted(list(result.columns)), "The dataframe contains incorrect columns."
+print_correct_msg()
+```
+
+:::: { .hint exercise="concatenating_vertically"}
+::: { .callout-note collapse="false"}
+
+## Hint 1
+
+- Are you using `pd.concat()`?
+- Are you concatenating in the correct order with `lego_top` first and `lego_bottom` second?
+- Are you putting your dataframes within square brackets? 
+- Are you using `axis=0`
+- Are you using `.shape` to find the dimension of the new dataframe?
+
+:::
+::::
+
+:::: { .solution exercise="concatenating_vertically" }
+::: { .callout-tip collapse="false"}
+
+## Fully worked solution:
+
+```{pyodide}
+import pandas as pd
+
+# We are going to import lego_top and lego_bottom which have 5001 rows and 6672 rows
+# respectively.
+lego_top = pd.read_csv('data/lego_top.csv')
+lego_bottom = pd.read_csv('data/lego_bottom.csv')
+
+# Combine the two dataframes vertically to make 1 large complete dataframe
+# Name the new dataframe full_set 
+full_set  = pd.concat([lego_top, lego_bottom], axis=0)
+
+# Save the new dimension of full_set in an object named full_set_shape
+full_set_shape = full_set.shape
+
+# Display the new dataframe
+full_set
+```
+
+:::
+::::
+
+<br>
+
+### Concatenating Horizontally
+
+Our goal is to obtain a dataframe with the `lego_set` names and the total amount of pieces in each set but we only have 2 Lego dataframes (with the same indexes).  One dataframe has the set names and the other contains information amount the number of matte and transparent pieces included in each set.  Complete this question by using `pd.concat()` and techniques we learned in the previous model.
+
+**Tasks:**
+
+- Combine the two dataframes horizontally to make 1 large complete dataframe and name the new dataframe `lego_full`.
+- Drop any duplicated columns using `.loc[]` and `.duplicate()`and save this new dataframe as `washed_lego`.
+- Make a new column named `total_pieces` by adding up columns `matte` and `transparent`.
+- Sort the dataframe by `total_pieces` in descending order.
+- Save this in an object named `lego_details`.
+- Display the new dataframe.
+
+```{pyodide}
+#| exercise: concatenating_horizontally
+import pandas as pd
+
+# We are going to import the dataframes lego_base and lego_opacity.
+lego_base = pd.read_csv('data/lego_theme_minimal.csv')
+lego_opacity = pd.read_csv('data/lego_opacity.csv')
+
+# Combine the two dataframes horizontally to make 1 large complete 
+# dataframe and name it lego_full
+____ = ____(____)
+
+# Make sure you are dropping any duplicated columns
+# ____ = ____.____[____]
+
+# Make a new column named total_pieces from the columns matte and transparent
+# Sort the dataframe and save this in an object named lego_details
+# ____ = (____.____(____)
+#             .____(____)
+#        )
+
+# Display the dataframe
+# ____
+```
+
+```{pyodide}
+#| exercise: concatenating_horizontally
+#| check: true
+from src.utils import print_correct_msg
+
+lego_base = pd.read_csv('data/lego_theme_minimal.csv')
+lego_opacity = pd.read_csv('data/lego_opacity.csv')
+
+lego_full = pd.concat([lego_base, lego_opacity], axis=1)
+washed_lego = lego_full.loc[:, ~lego_full.columns.duplicated()]
+solution = (washed_lego.assign(total_pieces = washed_lego['matte'] + washed_lego['transparent'])
+                           .sort_values('total_pieces', ascending=False)
+               )
+
+assert isinstance(result, pd.DataFrame), "You should display the DataFrame."
+assert 'total_pieces' in list(result.columns), "Have you added the total_pieces column?"
+assert solution.shape == result.shape, "The lego_details dataframe dimensions are incorrect. Are you concatenating horizontally? Have you dropped duplicated columns?"
+assert sorted(list(solution.columns)) == sorted(list(result.columns)), "The dataframe contains incorrect columns."
+assert list(solution.total_pieces)[1:5] == list(result.total_pieces)[1:5], "Are you sorting the total_pieces column in descending order? Or double-check your calculation for total_pieces."
+print_correct_msg()
+```
+
+:::: { .hint exercise="concatenating_horizontally"}
+::: { .callout-note collapse="false"}
+
+## Hint 1
+
+- Are you using `pd.concat()`?
+- Are you concatenating the dataframes `lego_base` with `lego_opacity`?
+- Are you putting your dataframes within square brackets? 
+- Are you removing any duplicated columns?
+- Are you using `axis=1`?
+- Are you using `.assign()` to make a new column named `total_pieces`?
+- Are you using using `.sort_values()` with the argument `ascending=False`
+
+:::
+::::
+
+:::: { .solution exercise="concatenating_horizontally" }
+::: { .callout-tip collapse="false"}
+
+## Fully worked solution:
+
+```{pyodide}
+import pandas as pd
+
+# We are going to import the dataframes lego_base and lego_opacity.
+lego_base = pd.read_csv('data/lego_theme_minimal.csv')
+lego_opacity = pd.read_csv('data/lego_opacity.csv')
+
+# Combine the two dataframes horizontally to make 1 large complete 
+# dataframe and name it lego_full
+lego_full = pd.concat([lego_base, lego_opacity], axis=1)
+
+# Make sure you are dropping any duplicated columns
+washed_lego = lego_full.loc[:, ~lego_full.columns.duplicated()]
+
+# Make a new column named total_pieces from the columns matte and transparent
+# Sort the dataframe and save this in an object named lego_details
+lego_details = (washed_lego.assign(total_pieces = washed_lego['matte'] + washed_lego['transparent'])
+                           .sort_values('total_pieces', ascending=False)
+               )
+
+# Display the dataframe
+lego_details
+```
+
+:::
+::::
