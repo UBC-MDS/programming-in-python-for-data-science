@@ -93,7 +93,7 @@
     code span.vs { color: #da4453; } /* VerbatimString */
     code span.wa { color: #da4453; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/theme/quarto-02ec553455131a570a2f3558585aef54.css">
+  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/theme/quarto-f9a839800513c4e4cd53100bfd03d6eb.css">
   <link href="../../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -209,7 +209,7 @@
 ‘bedrooms’ is the <strong><em>key</em></strong>, and the number of bedrooms is the <strong><em>value</em></strong>.</p>
 <p><br></p>
 <p>How does this look in terms of a data structure?</p>
-<div id="62371315" class="cell" data-execution_count="2">
+<div id="d37ddf37" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a>house <span class="op">=</span> {<span class="st">'bedrooms'</span>: <span class="dv">3</span>}</span>
 <span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a>house</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
@@ -237,7 +237,7 @@
 </section>
 <section class="slide level2">
 
-<div id="7632d32d" class="cell" data-execution_count="3">
+<div id="a30fa059" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a>house <span class="op">=</span> {<span class="st">'bedrooms'</span>: <span class="dv">3</span>, <span class="st">'bathrooms'</span>: <span class="dv">2</span>, <span class="st">'city'</span>: <span class="st">'Vancouver'</span>, <span class="st">'price'</span>: <span class="dv">2499999</span>, <span class="st">'date_sold'</span>: (<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">2015</span>)}</span>
 <span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a>house</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
@@ -249,7 +249,7 @@
 </div>
 </div>
 <p><br></p>
-<div id="03255f4b" class="cell" data-execution_count="4">
+<div id="e0650f06" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a>condo <span class="op">=</span> {<span class="st">'bedrooms'</span> : <span class="dv">2</span>, </span>
 <span id="cb5-2"><a aria-hidden="true" tabindex="-1"></a>         <span class="st">'bathrooms'</span>: <span class="dv">1</span>, </span>
 <span id="cb5-3"><a aria-hidden="true" tabindex="-1"></a>         <span class="st">'kitchens'</span> : <span class="dv">1</span>, </span>
@@ -286,7 +286,7 @@
 </section>
 <section class="slide level2">
 
-<div id="f775d091" class="cell" data-execution_count="5">
+<div id="2545e77d" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a>house</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
 <pre><code>{'bedrooms': 3,
@@ -297,14 +297,14 @@
 </div>
 </div>
 <p><br></p>
-<div id="677ccfed" class="cell" data-execution_count="6">
+<div id="8bbf65f8" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a aria-hidden="true" tabindex="-1"></a>house[<span class="st">'price'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <pre><code>2499999</code></pre>
 </div>
 </div>
 <p><br></p>
-<div id="355368ff" class="cell" data-execution_count="7">
+<div id="2c1d08ff" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a aria-hidden="true" tabindex="-1"></a>house[<span class="st">'price'</span>] <span class="op">=</span> <span class="dv">7</span></span>
 <span id="cb11-2"><a aria-hidden="true" tabindex="-1"></a>house</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
@@ -333,7 +333,7 @@
 </section>
 <section class="slide level2">
 
-<div id="9748a591" class="cell" data-execution_count="8">
+<div id="686a0eb5" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a aria-hidden="true" tabindex="-1"></a>house</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
 <pre><code>{'bedrooms': 3,
@@ -344,7 +344,7 @@
 </div>
 </div>
 <p><br></p>
-<div id="fa7500d1" class="cell" data-execution_count="9">
+<div id="c27aaac3" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a aria-hidden="true" tabindex="-1"></a>house[<span class="st">'bed monster'</span>] <span class="op">=</span> <span class="va">True</span></span>
 <span id="cb15-2"><a aria-hidden="true" tabindex="-1"></a>house</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
@@ -377,7 +377,7 @@
 </section>
 <section class="slide level2">
 
-<div id="8c73adbe" class="cell" data-execution_count="10">
+<div id="e028cff9" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a aria-hidden="true" tabindex="-1"></a>house[<span class="dv">9999</span>] <span class="op">=</span> [<span class="st">'age'</span>, <span class="st">'old'</span>]</span>
 <span id="cb17-2"><a aria-hidden="true" tabindex="-1"></a>house[(<span class="st">'trees'</span>, <span class="st">'flower'</span>, <span class="st">'vegetables'</span>)] <span class="op">=</span> {<span class="st">'Garden'</span>: <span class="dv">3</span>}</span>
 <span id="cb17-3"><a aria-hidden="true" tabindex="-1"></a>house</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -413,7 +413,7 @@
 </section>
 <section class="slide level2">
 
-<div id="ee8b47bc" class="cell" data-execution_count="11">
+<div id="d00eba0b" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a aria-hidden="true" tabindex="-1"></a>house</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="11">
 <pre><code>{'bedrooms': 3,
@@ -427,7 +427,7 @@
 </div>
 </div>
 <p><br></p>
-<div id="384482b1" class="cell" data-execution_count="12">
+<div id="f37b2a0b" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a aria-hidden="true" tabindex="-1"></a>house.items()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
 <pre><code>dict_items([('bedrooms', 3), ('bathrooms', 2), ('city', 'Vancouver'), ('price', 7), ('date_sold', (1, 3, 2015)), ('bed monster', True), (9999, ['age', 'old']), (('trees', 'flower', 'vegetables'), {'Garden': 3})])</code></pre>
@@ -496,7 +496,7 @@
 </table>
 </div></div>
 <p><br></p>
-<div id="b96e8f1c" class="cell" data-execution_count="13">
+<div id="0d3041f5" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> { <span class="st">'name'</span>: [<span class="st">'Cherry'</span>, <span class="st">'Oak'</span>, <span class="st">'Willow'</span>, <span class="st">'Fir'</span>], </span>
 <span id="cb23-2"><a aria-hidden="true" tabindex="-1"></a>         <span class="st">'height'</span>: [<span class="dv">7</span>, <span class="dv">20</span>, <span class="dv">12</span>, <span class="dv">16</span>], </span>
 <span id="cb23-3"><a aria-hidden="true" tabindex="-1"></a>         <span class="st">'diameter'</span>: [<span class="dv">12</span>, <span class="dv">89</span>, <span class="dv">30</span>, <span class="dv">18</span>], </span>
@@ -629,7 +629,7 @@
 </table>
 </div></div>
 <p><br></p>
-<div id="8fd1639e" class="cell" data-execution_count="14">
+<div id="752b59ea" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> {<span class="dv">0</span>: [<span class="st">'Cherry'</span>, <span class="dv">7</span>, <span class="dv">12</span>, <span class="va">True</span>],</span>
 <span id="cb24-2"><a aria-hidden="true" tabindex="-1"></a>        <span class="dv">1</span>: [<span class="st">'Oak'</span>, <span class="dv">20</span>, <span class="dv">89</span>, <span class="va">False</span>],</span>
 <span id="cb24-3"><a aria-hidden="true" tabindex="-1"></a>        <span class="dv">2</span>: [<span class="st">'Willow'</span>, <span class="dv">12</span>, <span class="dv">30</span>, <span class="va">True</span>],</span>

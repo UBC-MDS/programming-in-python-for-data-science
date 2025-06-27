@@ -93,7 +93,7 @@
     code span.vs { color: #da4453; } /* VerbatimString */
     code span.wa { color: #da4453; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/theme/quarto-02ec553455131a570a2f3558585aef54.css">
+  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/theme/quarto-f9a839800513c4e4cd53100bfd03d6eb.css">
   <link href="../../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -241,7 +241,7 @@
 </section>
 <section class="slide level2">
 
-<div id="2cf71ac3" class="cell" data-execution_count="3">
+<div id="1ced79a3" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a>cereal_long</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <div>
@@ -327,7 +327,7 @@
 </div>
 </div>
 <p><br></p>
-<div id="323303ae" class="cell" data-execution_count="4">
+<div id="45e5a0bc" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a>cereal_wider <span class="op">=</span> cereal_long.pivot_table(index<span class="op">=</span>[<span class="st">'name'</span>, <span class="st">'mfr'</span>], columns<span class="op">=</span><span class="st">'nutrition'</span>, values<span class="op">=</span><span class="st">'value'</span>)</span>
 <span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a>cereal_wider</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
@@ -417,7 +417,7 @@
 </section>
 <section class="slide level2">
 
-<div id="c5d84460" class="cell" data-execution_count="5">
+<div id="8dc4f413" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a>cereal_wider <span class="op">=</span> cereal_long.pivot_table(index<span class="op">=</span>[<span class="st">'name'</span>,<span class="st">'mfr'</span>], columns<span class="op">=</span><span class="st">'nutrition'</span>, values<span class="op">=</span><span class="st">'value'</span>)</span>
 <span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a>cereal_wider</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
@@ -489,7 +489,7 @@
 </div>
 </div>
 <p><br></p>
-<div id="020ad831" class="cell" data-execution_count="6">
+<div id="e48c23e9" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a>cereal_wider.reset_index().rename_axis(<span class="st">''</span>, axis<span class="op">=</span><span class="st">'columns'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <div>
@@ -614,7 +614,7 @@
 </section>
 <section class="slide level2">
 
-<div id="05e37353" class="cell" data-execution_count="8">
+<div id="15f99b29" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a>cereal_problem</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
 <div>
@@ -684,7 +684,7 @@
 </div>
 </div>
 </div>
-<div id="16c77366" class="cell" data-execution_count="9">
+<div id="420d2911" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a>cereal_problem.pivot(index<span class="op">=</span><span class="st">'name'</span>, columns<span class="op">=</span><span class="st">'nutrition'</span>, values<span class="op">=</span><span class="st">'value'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <pre class="out"><code>ValueError: Index contains duplicate entries, cannot reshape
@@ -736,7 +736,7 @@ Detailed traceback:
 </section>
 <section class="slide level2">
 
-<div id="033a6715" class="cell" data-execution_count="10">
+<div id="cd4d9510" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a aria-hidden="true" tabindex="-1"></a>cereal_problem.pivot_table(index<span class="op">=</span>[<span class="st">'name'</span>, <span class="st">'mfr'</span>], columns<span class="op">=</span><span class="st">'nutrition'</span>, values<span class="op">=</span><span class="st">'value'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
 <div>
@@ -808,7 +808,7 @@ Detailed traceback:
 </section>
 <section class="slide level2">
 
-<div id="efbb46d3" class="cell" data-execution_count="11">
+<div id="e0ebd13a" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a aria-hidden="true" tabindex="-1"></a>cereal_problem.duplicated(subset<span class="op">=</span>[<span class="st">'name'</span>, <span class="st">'nutrition'</span>], keep<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="10">
 <pre><code>0     True
@@ -820,7 +820,7 @@ dtype: bool</code></pre>
 </div>
 </div>
 <p><br></p>
-<div id="b6ca8e90" class="cell" data-execution_count="12">
+<div id="6a1a75b5" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a aria-hidden="true" tabindex="-1"></a>cereal_problem.duplicated(subset<span class="op">=</span>[<span class="st">'name'</span>, <span class="st">'nutrition'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="11">
 <pre><code>0    False
@@ -850,7 +850,7 @@ dtype: bool</code></pre>
 </section>
 <section class="slide level2">
 
-<div id="8741af02" class="cell" data-execution_count="13">
+<div id="aa5a15ac" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a aria-hidden="true" tabindex="-1"></a>cereal_problem.duplicated(subset<span class="op">=</span>[<span class="st">'name'</span>, <span class="st">'nutrition'</span>], keep<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
 <pre><code>0     True
@@ -862,7 +862,7 @@ dtype: bool</code></pre>
 </div>
 </div>
 <p><br></p>
-<div id="899198d3" class="cell" data-execution_count="14">
+<div id="ae778895" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a aria-hidden="true" tabindex="-1"></a>duplicate_info <span class="op">=</span>cereal_problem.duplicated(subset<span class="op">=</span>[<span class="st">'name'</span>, <span class="st">'nutrition'</span>], keep<span class="op">=</span><span class="va">False</span>)</span>
 <span id="cb15-2"><a aria-hidden="true" tabindex="-1"></a>cereal_problem[duplicate_info]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="13">
@@ -929,7 +929,7 @@ dtype: bool</code></pre>
 </section>
 <section class="slide level2">
 
-<div id="ac012ce9" class="cell" data-execution_count="15">
+<div id="dd4a579d" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a aria-hidden="true" tabindex="-1"></a>cereal_problem</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="14">
 <div>
@@ -1000,7 +1000,7 @@ dtype: bool</code></pre>
 </div>
 </div>
 <p><br></p>
-<div id="dcb9ea8c" class="cell" data-execution_count="16">
+<div id="aee82a77" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a aria-hidden="true" tabindex="-1"></a>cereal_no_problem <span class="op">=</span> cereal_problem.drop(axis<span class="op">=</span><span class="dv">0</span>, index<span class="op">=</span><span class="dv">1</span>)</span>
 <span id="cb17-2"><a aria-hidden="true" tabindex="-1"></a>cereal_no_problem</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="15">

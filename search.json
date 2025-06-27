@@ -1,5 +1,173 @@
 [
   {
+    "objectID": "modules/module5/slides/module5_23.html#summary",
+    "href": "modules/module5/slides/module5_23.html#summary",
+    "title": "What Did we Learn and What to Expect in Assignment 5",
+    "section": "Summary",
+    "text": "Summary\nStudents are now expected to be able to:\n\nExplain the DRY principle and how it can be useful.\nWrite conditional statements with if, elif and else to run different code, depending on the input.\nWrite for loops to repeatedly run code.\nDescribe the expected outcome of code with nested loops.\nDefine and use a function that accepts parameters and returns values.\n\n\nThe assignment will concentrate on the learning objectives as well as building knowledge on existing concepts."
+  },
+  {
+    "objectID": "modules/module5/slides/module5_23.html#attribution",
+    "href": "modules/module5/slides/module5_23.html#attribution",
+    "title": "What Did we Learn and What to Expect in Assignment 5",
+    "section": "Attribution",
+    "text": "Attribution\nThe cereal dataset:\n“80 Cereals” (c) by Chris Crawford is licensed under Creative Commons Attribution-ShareAlike 3.0 Unported"
+  },
+  {
+    "objectID": "modules/module5/slides/module5_16.html#break",
+    "href": "modules/module5/slides/module5_16.html#break",
+    "title": "Repeated Iterations with Conditions",
+    "section": "Break",
+    "text": "Break\n\nitem_list = [25, 13, 21, 8, 17, 11, 4]\n\nfor item in item_list:\n    if item &gt; 20:\n        magnitude = 'greater than 20'\n    elif item &gt; 10:\n        magnitude = 'between 10 and 20'\n    else:\n        magnitude = '10 or less'\n    print(magnitude)\n\ngreater than 20\nbetween 10 and 20\ngreater than 20\n10 or less\nbetween 10 and 20\nbetween 10 and 20\n10 or less\n\n\n\nThere are occasions where we may want to stop iterating over an entire sequence once a condition is met.\nPerhaps we only need to find one number that is 10 or less in a list.\nWe can see that even after we located a number that is 10 or less, the loop continues until it reaches the last element. If we have a very large list, it’s inefficient to continue searching for something we have already found."
+  },
+  {
+    "objectID": "modules/module5/slides/module5_16.html#a-stylizing-side-point",
+    "href": "modules/module5/slides/module5_16.html#a-stylizing-side-point",
+    "title": "Repeated Iterations with Conditions",
+    "section": "A stylizing side point",
+    "text": "A stylizing side point\n\nitem_list = [25, 13, 21, 8, 17, 11, 4]\n\n\n\nnumber_over_20 = 0\n\nfor item in item_list:\n    if item &gt; 20:\n        number_over_20 = number_over_20 + item\n        \nnumber_over_20\n\n46\n\n\n\nInstead of writing this line:\nnumber_over_20 = number_over_20 + item\n\nWe can write:\nnumber_over_20 +=  item\n\nYou’ve seen that we often add to an existing object when we use loops.\nFor instance, when we count the number of items that are over 20 in the list item_list.\nWe keep the object name number_over_20 and just add to it while iterating through the loop.\nInstead of writing the line:\nnumber_over_20 = number_over_20 + item\nWe can avoid writing the object name twice and write a more stylized approach:\nnumber_over_20 +=  item\nThis simply means that we are adding item to the number_over_20 object."
+  },
+  {
+    "objectID": "modules/module5/slides/module5_09.html#range",
+    "href": "modules/module5/slides/module5_09.html#range",
+    "title": "Range, Dictionaries and Comprehensions",
+    "section": "Range",
+    "text": "Range\n\nfor i in range(5):\n    print(i)\n\n0\n1\n2\n3\n4\n\n\n\n\nfor i in range(50, 101, 10):\n    print(i)\n\n50\n60\n70\n80\n90\n100\n\n\n\nOften, we just want to do something 5 times without looping over a collection.\nThe most common way to do that is to use range(), which automatically generates a collection of the integers in some sort of sequence, generally 0, to N-1.\nWe can also specify a start value, an end value and a skip-by value with range."
+  },
+  {
+    "objectID": "modules/module5/slides/module5_09.html#looping-in-a-dictionary",
+    "href": "modules/module5/slides/module5_09.html#looping-in-a-dictionary",
+    "title": "Range, Dictionaries and Comprehensions",
+    "section": "Looping in a dictionary",
+    "text": "Looping in a dictionary\n\ncereals = {'Special K': 4, 'Lucky Charms': 7, 'Cheerios': 2, 'Wheaties': 3}\ncereals.items()\n\ndict_items([('Special K', 4), ('Lucky Charms', 7), ('Cheerios', 2), ('Wheaties', 3)])\n\n\n\n\ncereals = {'Special K': 4, 'Lucky Charms': 7, 'Cheerios': 2, 'Wheaties': 3}\n\nfor cereal, stock in cereals.items():\n    print( cereal  + \" has \" + str(stock) + \" available\")\n\nSpecial K has 4 available\nLucky Charms has 7 available\nCheerios has 2 available\nWheaties has 3 available\n\n\n\nWe can also loop over the key-value pairs of a dictionary using .items().\nWe saw this verb back in module 4 when we learned about dictionaries.\nSince each key-value pair has 2 elements in it, we need to specify a variable for each item in the tuple:\n\nOne for the dictionary key\nOne for the dictionary values\n\nHere we assign an object named cereal for the items in the first position of the tuple, which are the dictionary keys, and an object named stock for the second index in a tuple, which are the dictionary values."
+  },
+  {
+    "objectID": "modules/module5/slides/module5_09.html#comprehensions",
+    "href": "modules/module5/slides/module5_09.html#comprehensions",
+    "title": "Range, Dictionaries and Comprehensions",
+    "section": "Comprehensions",
+    "text": "Comprehensions\n\nnumbers = [2, 3, 5]\n\n\n\nsquared = list()\n\nfor number in numbers: \n    squared.append(number ** 2)\n    \nsquared\n\n[4, 9, 25]\n\n\n\n\nsquared = [number ** 2 for number in numbers]\nsquared\n\n[4, 9, 25]\n\n\n\nWe learned in the last Module that we can create if and else conditions in a single line of code, and we can do something similar with basic loops.\nComprehensions allow us to build lists/sets/dictionaries in one convenient, compact line of code.\nIn the last set of slides, we made a loop that calculates the square of each element from a list and adds them to a new list name squared.\nThis can be done using comprehension, so now it executes using the single line of code."
+  },
+  {
+    "objectID": "modules/module5/slides/module5_01.html#syntax",
+    "href": "modules/module5/slides/module5_01.html#syntax",
+    "title": "Making Choices with Conditional Statements",
+    "section": "Syntax",
+    "text": "Syntax\nmy_name = 'Hayley' \n\nif my_name.lower() == 'hayley':\n    print('My name is Hayley too!')\nelif my_name.lower() == 'totoro':\n    print('Interesting, I loved that movie!')\nelse:\n    print(\"That's a great name.\")\n  \nprint('Nice to meet you!')\nMy name is Hayley too!\nNice to meet you!\n\nPython conditional statements contains 2 important things:\n\nA strict structure.\nThe keyword if and optional keywords else and elif."
+  },
+  {
+    "objectID": "modules/module5/slides/module5_01.html#structure",
+    "href": "modules/module5/slides/module5_01.html#structure",
+    "title": "Making Choices with Conditional Statements",
+    "section": "Structure",
+    "text": "Structure\n\nmy_name = 'Hayley' \n\nif my_name.lower() == 'hayley':\n    print('My name is Hayley too!')\n\nMy name is Hayley too!\n\n\n\nThe structure of a choice is as follows:\nif SOME_BOOLEAN:\n    statement body \n\nThe structure of a choice is as follows:\nif SOME_BOOLEAN:\n    statement body \nEach conditional expression must end with a colon : and code to be executed if the condition is met must all must be indented with 4 spaces (or consistent indentation) in the statement body.\nIn the example above:\nif my_name.lower() == 'hayley' is the Boolean statement and\nprint(\"My name is Hayley too!\") is the statement body."
+  },
+  {
+    "objectID": "modules/module5/slides/module5_01.html#keywords---if-else",
+    "href": "modules/module5/slides/module5_01.html#keywords---if-else",
+    "title": "Making Choices with Conditional Statements",
+    "section": "Keywords - if, else",
+    "text": "Keywords - if, else\nmy_name = 'Mia' \n\nif my_name.lower() == 'hayley':\n    print('My name is Hayley too!')\nelif my_name.lower() == 'totoro':\n    print('Interesting, I loved that movie!')\nelse:\n    print(\"That's a great name.\")\n  \nprint('Nice to meet you!')\nThat's a great name.\nNice to meet you!\n\nAn if keyword is needed for any conditional.\nIf the Boolean value is True, the body of the statement (which is anything indented under it) will be executed.\nIf the expression is False, the body of the statement is not executed, and it continues to the next line of non-indented code outside the body.\nThe else expression will execute if the conditional expressions above it are False.\nThe keyword else can only occur once following an if condition and are optional to the code."
+  },
+  {
+    "objectID": "modules/module5/slides/module5_01.html#keywords---elif",
+    "href": "modules/module5/slides/module5_01.html#keywords---elif",
+    "title": "Making Choices with Conditional Statements",
+    "section": "Keywords - elif",
+    "text": "Keywords - elif\nmy_name = 'Totoro' \n\nif my_name.lower() == 'hayley':\n    print('My name is Hayley too!')\nelif my_name.lower() == 'totoro':\n    print('Interesting, I loved that movie!')\nelse:\n    print(\"That's a great name.\")\n  \nprint('Nice to meet you!')\nInteresting, I loved that movie!\nNice to meet you!\n\nelif stands for else if. It allows us to check if different conditions evaluate to True.\nWhen the elif expression evaluates to True, then the body of the statement is executed, just like an if statement.\nIn the case we saw before when my_name = 'Totoro', the elif condition my_name.lower() == 'totoro' evaluates to True."
+  },
+  {
+    "objectID": "modules/module5/slides/module5_01.html#order-matters",
+    "href": "modules/module5/slides/module5_01.html#order-matters",
+    "title": "Making Choices with Conditional Statements",
+    "section": "Order matters",
+    "text": "Order matters\n\nitem = 13 \n\nif item &gt; 10:\n    magnitude = 'Between 10 and 20'\nelif item &gt; 20:\n    magnitude = 'Greater than 20'\nelse:\n    magnitude = '10 or less'\n \nmagnitude\n\n'Between 10 and 20'\n\n\n\nThe order we chose for the statement for the if and elif statements is important and can result in different outputs.\nLet’s explore this in the next example using inequalities with numbers.\nIn this case, our item object, which equals 13 here, is greater than 10, so our first condition holds true, and so magnitude is assigned a value of 'Between 10 and 20'"
+  },
+  {
+    "objectID": "modules/module5/slides/module5_01.html#inline",
+    "href": "modules/module5/slides/module5_01.html#inline",
+    "title": "Making Choices with Conditional Statements",
+    "section": "Inline",
+    "text": "Inline\n\nitem = 13\n\n\n\nif  item &gt; 10:\n    magnitude = 'Greater than 10'\nelse:\n    magnitude = '10 or less'\n    \nmagnitude\n\n'Greater than 10'\n\n\n\n\nmagnitude = \"Greater than 10\" if item &gt; 10 else \"10 or less\"\nmagnitude\n\n'Greater than 10'\n\n\n\nIn situations where we have only if and else statements, we have the ability to put it all in a single line of code.\nLet’s test this on our object item.\nThe original conditional statements below checks if the item is greater than 10 and assigns a value of greater than 10 if it’s True and a value of 10 or less otherwise.\nThe 4 lines used for the conditional statements can be compressed into a single one.\nBoth syntaxes are acceptable, depending on your preference.\nThis type of syntax is only possible for decisions that involve only if and else conditions."
+  },
+  {
+    "objectID": "modules/module5/module5-23-what_did_we_just_learn.html",
+    "href": "modules/module5/module5-23-what_did_we_just_learn.html",
+    "title": "7. What Did We Just Learn?",
+    "section": "",
+    "text": "7. What Did We Just Learn?\n\nVideoSlides",
+    "crumbs": [
+      "**Module 5: Making Choices and Repeating Iterations**",
+      "7. What Did We Just Learn?"
+    ]
+  },
+  {
+    "objectID": "modules/module5/module5-19-functions.html",
+    "href": "modules/module5/module5-19-functions.html",
+    "title": "6. Functions",
+    "section": "",
+    "text": "6. Functions\n\nVideoSlides",
+    "crumbs": [
+      "**Module 5: Making Choices and Repeating Iterations**",
+      "6. Functions"
+    ]
+  },
+  {
+    "objectID": "modules/module5/module5-16-repeated_iterations_with_conditions.html",
+    "href": "modules/module5/module5-16-repeated_iterations_with_conditions.html",
+    "title": "5. Repeated Iterations with Conditions",
+    "section": "",
+    "text": "5. Repeated Iterations with Conditions\n\nVideoSlides",
+    "crumbs": [
+      "**Module 5: Making Choices and Repeating Iterations**",
+      "5. Repeated Iterations with Conditions"
+    ]
+  },
+  {
+    "objectID": "modules/module5/module5-13-nested_loops.html",
+    "href": "modules/module5/module5-13-nested_loops.html",
+    "title": "4. Nested Loops",
+    "section": "",
+    "text": "4. Nested Loops\n\nVideoSlides",
+    "crumbs": [
+      "**Module 5: Making Choices and Repeating Iterations**",
+      "4. Nested Loops"
+    ]
+  },
+  {
+    "objectID": "modules/module5/module5-09-range_dictionaries_and_comprehensions.html",
+    "href": "modules/module5/module5-09-range_dictionaries_and_comprehensions.html",
+    "title": "3. Range, Dictionaries and Comprehensions",
+    "section": "",
+    "text": "3. Range, Dictionaries and Comprehensions\n\nVideoSlides",
+    "crumbs": [
+      "**Module 5: Making Choices and Repeating Iterations**",
+      "3. Range, Dictionaries and Comprehensions"
+    ]
+  },
+  {
+    "objectID": "modules/module5/module5-06-repeated_iterations_(loops).html",
+    "href": "modules/module5/module5-06-repeated_iterations_(loops).html",
+    "title": "2. Repeated Iterations (Loops)",
+    "section": "",
+    "text": "2. Repeated Iterations (Loops)\n\nVideoSlides",
+    "crumbs": [
+      "**Module 5: Making Choices and Repeating Iterations**",
+      "2. Repeated Iterations (Loops)"
+    ]
+  },
+  {
+    "objectID": "modules/module5/module5-01-making_choices_with_conditional_statements.html",
+    "href": "modules/module5/module5-01-making_choices_with_conditional_statements.html",
+    "title": "1. Making Choices with Conditional Statements",
+    "section": "",
+    "text": "1. Making Choices with Conditional Statements\n\nVideoSlides",
+    "crumbs": [
+      "**Module 5: Making Choices and Repeating Iterations**",
+      "1. Making Choices with Conditional Statements"
+    ]
+  },
+  {
     "objectID": "modules/module4/slides/module4_25.html#summary",
     "href": "modules/module4/slides/module4_25.html#summary",
     "title": "What Did we Learn and What to Expect in Assignment 4",
@@ -510,7 +678,7 @@
     "href": "modules/module2/slides/module2_25.html#using-groupby",
     "title": "Grouping and Aggregating",
     "section": "Using groupby",
-    "text": "Using groupby\n\nmfr_group = cereal.groupby(by='mfr')\nmfr_group\n\n&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x7f84118a28d0&gt;\n\n\n\nPandas has a solution for this.\nIt’s not uncommon to be interested in examining specific groups in our data. Hence there is a verb that is helpful in grouping like-rows together.\n.groupby() allows us to group our data based on a specified column.\nLet’s group our cereal dataframe on the mfr column and save it as object mfr_group.\nThis returns a DataFrame GroupBy object."
+    "text": "Using groupby\n\nmfr_group = cereal.groupby(by='mfr')\nmfr_group\n\n&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x7faa44c47b90&gt;\n\n\n\nPandas has a solution for this.\nIt’s not uncommon to be interested in examining specific groups in our data. Hence there is a verb that is helpful in grouping like-rows together.\n.groupby() allows us to group our data based on a specified column.\nLet’s group our cereal dataframe on the mfr column and save it as object mfr_group.\nThis returns a DataFrame GroupBy object."
   },
   {
     "objectID": "modules/module2/slides/module2_25.html#summary-statistics-with-groups",
@@ -2131,5 +2299,281 @@
     "title": "Splitting a Column",
     "section": "String Split",
     "text": "String Split\n\ncereal_amended\n\n\n\n\n\n\n\n\nname\nmfr_type\ncalories\nprotein\n...\nfat\ncarbo\nrating\nhot\n\n\n\n\n0\n100% Bran\nN-Cold\n70\n4\n...\n1\n5.0\n68.402973\nFalse\n\n\n1\n100% Natural Bran\nQ-Cold\n120\n3\n...\n5\n8.0\n33.983679\nFalse\n\n\n2\nAll-Bran\nK-Cold\n70\n4\n...\n1\n7.0\n59.425505\nFalse\n\n\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n\n\n74\nWheat Chex\nR-Cold\n100\n3\n...\n1\n17.0\n49.787445\nFalse\n\n\n75\nWheaties\nG-Cold\n100\n3\n...\n1\n17.0\n51.592193\nFalse\n\n\n76\nWheaties Honey Gold\nG-Cold\n110\n2\n...\n1\n16.0\n36.187559\nFalse\n\n\n\n\n77 rows × 9 columns\n\n\n\n\nHere is a new cereal dataframe.\nYou’ll notice that our column mfr_type contains two variables.\nIt is displaying both the manufacturer (N, Q, etc.) of the cereal and the cereal type (Cold, Hot).\nTo convert this into tidier data, we will need to split up this column into two separate columns, but how?"
+  },
+  {
+    "objectID": "modules/module5/module5-00-module_learning_outcomes.html",
+    "href": "modules/module5/module5-00-module_learning_outcomes.html",
+    "title": "0. Module Learning Outcomes",
+    "section": "",
+    "text": "0. Module Learning Outcomes\n\nVideoSlides",
+    "crumbs": [
+      "**Module 5: Making Choices and Repeating Iterations**",
+      "0. Module Learning Outcomes"
+    ]
+  },
+  {
+    "objectID": "modules/module5/module5-02-quick_questions_with_conditionals.html",
+    "href": "modules/module5/module5-02-quick_questions_with_conditionals.html",
+    "title": "1.1. Exercises",
+    "section": "",
+    "text": "time = 150\n\nif time  &lt; 120:\n    speed = 'Fast'\nelif time &lt; 180:\n    speed = 'Average'\nelse:\n    speed = 'Slow'\nspeed\n\n\n\n\nprice = 150\n\nif price &gt; 50:\n    expensive = 'moderately'\nelif price &gt; 100:\n    expensive = 'valuable'\nelse:\n    expensive = 'affordable'\nexpensive\n\n\n\n\n\n\n\n\n\n\nif price &gt; 100\n    expensive = 'valuable'\nelse\n    expensive = 'affordable'\nexpensive\n\n\n\nif price &gt; 50:\nexpensive = 'moderately'\nelif price &gt; 100:\nexpensive = 'valuable'\nelse:\nexpensive = 'affordable'\nexpensive\n\n\n\nif price &gt; 50:\n    expensive = 'moderately'\nexpensive\n\n\n\n\n\n\n\nInstructions:\nRunning a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\nMake sure you remove the hash (#) symbol in the coding portions of this question. We have commented them so that the line won’t execute and you can test your code after each step.\n\n\nLet’s practice making decisions with conditional statements. We are going to the gym and our exercise plan takes different amounts of reps. let’s make conditional statements that depend on the name of the exercises.\nTasks:\n\nMake if, elif, and else statements for the following conditions:\n\nif the exercise value is lunges, set an object value named reps to 20.\nif the exercise value is squats, set reps to 25\nif the exercise value is burpees, set reps to 15\nIf the exercise value is anything else, set reps to 10.\n\nDisplay the value of reps.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you using double equal signs (==) to make a conditional statement?\nAre you using a single if statement and 2 elif statements?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLet’s try to make inline conditional statements using if and else. the variable cups_of_tea is the number of cups of tea Ben drank last week.\nTasks:\n\nMake an inline if/else statement that satisfies the following conditions:\n\nif the data type of cups_of_tea is of type list, then set and object named tea_amount to the sum of the elements.\nif the data type is anything else, set tea_amount to the string 'cannot sum'.\n\nDisplay the result of tea_amount.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nTo check the data type of cups_of_tea, you can use type(cups_of_tea) == list.\nAre you using sum() to sum up the elements in a list?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:",
+    "crumbs": [
+      "**Module 5: Making Choices and Repeating Iterations**",
+      "&nbsp;&nbsp; 1.1. Exercises"
+    ]
+  },
+  {
+    "objectID": "modules/module5/module5-02-quick_questions_with_conditionals.html#quick-questions-with-conditionals",
+    "href": "modules/module5/module5-02-quick_questions_with_conditionals.html#quick-questions-with-conditionals",
+    "title": "1.1. Exercises",
+    "section": "",
+    "text": "time = 150\n\nif time  &lt; 120:\n    speed = 'Fast'\nelif time &lt; 180:\n    speed = 'Average'\nelse:\n    speed = 'Slow'\nspeed\n\n\n\n\nprice = 150\n\nif price &gt; 50:\n    expensive = 'moderately'\nelif price &gt; 100:\n    expensive = 'valuable'\nelse:\n    expensive = 'affordable'\nexpensive",
+    "crumbs": [
+      "**Module 5: Making Choices and Repeating Iterations**",
+      "&nbsp;&nbsp; 1.1. Exercises"
+    ]
+  },
+  {
+    "objectID": "modules/module5/module5-02-quick_questions_with_conditionals.html#will-it-run-with-conditionals",
+    "href": "modules/module5/module5-02-quick_questions_with_conditionals.html#will-it-run-with-conditionals",
+    "title": "1.1. Exercises",
+    "section": "",
+    "text": "if price &gt; 100\n    expensive = 'valuable'\nelse\n    expensive = 'affordable'\nexpensive\n\n\n\nif price &gt; 50:\nexpensive = 'moderately'\nelif price &gt; 100:\nexpensive = 'valuable'\nelse:\nexpensive = 'affordable'\nexpensive\n\n\n\nif price &gt; 50:\n    expensive = 'moderately'\nexpensive",
+    "crumbs": [
+      "**Module 5: Making Choices and Repeating Iterations**",
+      "&nbsp;&nbsp; 1.1. Exercises"
+    ]
+  },
+  {
+    "objectID": "modules/module5/module5-02-quick_questions_with_conditionals.html#coding-questions",
+    "href": "modules/module5/module5-02-quick_questions_with_conditionals.html#coding-questions",
+    "title": "1.1. Exercises",
+    "section": "",
+    "text": "Instructions:\nRunning a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\nMake sure you remove the hash (#) symbol in the coding portions of this question. We have commented them so that the line won’t execute and you can test your code after each step.\n\n\nLet’s practice making decisions with conditional statements. We are going to the gym and our exercise plan takes different amounts of reps. let’s make conditional statements that depend on the name of the exercises.\nTasks:\n\nMake if, elif, and else statements for the following conditions:\n\nif the exercise value is lunges, set an object value named reps to 20.\nif the exercise value is squats, set reps to 25\nif the exercise value is burpees, set reps to 15\nIf the exercise value is anything else, set reps to 10.\n\nDisplay the value of reps.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you using double equal signs (==) to make a conditional statement?\nAre you using a single if statement and 2 elif statements?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLet’s try to make inline conditional statements using if and else. the variable cups_of_tea is the number of cups of tea Ben drank last week.\nTasks:\n\nMake an inline if/else statement that satisfies the following conditions:\n\nif the data type of cups_of_tea is of type list, then set and object named tea_amount to the sum of the elements.\nif the data type is anything else, set tea_amount to the string 'cannot sum'.\n\nDisplay the result of tea_amount.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nTo check the data type of cups_of_tea, you can use type(cups_of_tea) == list.\nAre you using sum() to sum up the elements in a list?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:",
+    "crumbs": [
+      "**Module 5: Making Choices and Repeating Iterations**",
+      "&nbsp;&nbsp; 1.1. Exercises"
+    ]
+  },
+  {
+    "objectID": "modules/module5/module5-07-repeated_iterations_questions.html",
+    "href": "modules/module5/module5-07-repeated_iterations_questions.html",
+    "title": "2.1. Exercises",
+    "section": "",
+    "text": "sentence = ['Once', 'upon', 'a', 'time']\nword_length = list()\nfor name in sentence: \nword_length.append(len(name))\n\n\n\nsentence = ['Once', 'upon', 'a', 'time']\nword_length = list()\nname in sentence: \n  word_length.append(len(name))\n\n\n\nsentence = ['Once', 'upon', 'a', 'time']\nword_length = list()\nfor name in sentence: \n    word_length.append(len(name))\n\n\n\nsentence = ['Once', 'upon', 'a', 'time']\nword_length = list()\nfor name in sentence\n    word_length.append(len(name))\n\n\n\n\n\n\n\nInstructions:\nRunning a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\nMake sure you remove the hash (#) symbol in the coding portions of this question. We have commented them so that the line won’t execute and you can test your code after each step.\nWe’ve learned about iterating , now it’s time to apply this! We have a list that contains all elements of type float. We want to create a new list that casts each element to type int.\nTasks:\n\nCreate a new empty list named integer_list.\nIterate over all the items in float_list. Cast the element to data type int and append it to integer_list.\nDisplay the value of integer_list.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you starting your loop with for and using a colon for the first line?\nAre you indenting each line of code in the loop?\nAre you appending the int value to the new list with integer_list.append(int('variable-name-chose'))\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:",
+    "crumbs": [
+      "**Module 5: Making Choices and Repeating Iterations**",
+      "&nbsp;&nbsp; 2.1. Exercises"
+    ]
+  },
+  {
+    "objectID": "modules/module5/module5-07-repeated_iterations_questions.html#repeated-iterations-questions",
+    "href": "modules/module5/module5-07-repeated_iterations_questions.html#repeated-iterations-questions",
+    "title": "2.1. Exercises",
+    "section": "",
+    "text": "sentence = ['Once', 'upon', 'a', 'time']\nword_length = list()\nfor name in sentence: \nword_length.append(len(name))\n\n\n\nsentence = ['Once', 'upon', 'a', 'time']\nword_length = list()\nname in sentence: \n  word_length.append(len(name))\n\n\n\nsentence = ['Once', 'upon', 'a', 'time']\nword_length = list()\nfor name in sentence: \n    word_length.append(len(name))\n\n\n\nsentence = ['Once', 'upon', 'a', 'time']\nword_length = list()\nfor name in sentence\n    word_length.append(len(name))",
+    "crumbs": [
+      "**Module 5: Making Choices and Repeating Iterations**",
+      "&nbsp;&nbsp; 2.1. Exercises"
+    ]
+  },
+  {
+    "objectID": "modules/module5/module5-07-repeated_iterations_questions.html#practice-iterating-over-a-collection",
+    "href": "modules/module5/module5-07-repeated_iterations_questions.html#practice-iterating-over-a-collection",
+    "title": "2.1. Exercises",
+    "section": "",
+    "text": "Instructions:\nRunning a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\nMake sure you remove the hash (#) symbol in the coding portions of this question. We have commented them so that the line won’t execute and you can test your code after each step.\nWe’ve learned about iterating , now it’s time to apply this! We have a list that contains all elements of type float. We want to create a new list that casts each element to type int.\nTasks:\n\nCreate a new empty list named integer_list.\nIterate over all the items in float_list. Cast the element to data type int and append it to integer_list.\nDisplay the value of integer_list.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you starting your loop with for and using a colon for the first line?\nAre you indenting each line of code in the loop?\nAre you appending the int value to the new list with integer_list.append(int('variable-name-chose'))\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:",
+    "crumbs": [
+      "**Module 5: Making Choices and Repeating Iterations**",
+      "&nbsp;&nbsp; 2.1. Exercises"
+    ]
+  },
+  {
+    "objectID": "modules/module5/module5-10-range_questions.html",
+    "href": "modules/module5/module5-10-range_questions.html",
+    "title": "3.1. Exercises",
+    "section": "",
+    "text": "numericals = []\nfor j in range(30,60,5):\n    numericals.append(j)\nnumericals\n\n\n\n\n\n\n\nInstructions:\nRunning a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\nMake sure you remove the hash (#) symbol in the coding portions of this question. We have commented them so that the line won’t execute and you can test your code after each step.\n\n\nLet’s make a loop again but this time let’s practice using the range() verb.\nTasks:\n\nIterate over a range from 50 to 10, stepping down 4 integers at a time.\nAppend the square of each number for each iteration to square_list.\nDisplay the value of square_list.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you using range(50,10,-4)?\nAre you starting your loop with for and using a colon for the first line?\nAre you indenting each line of code in the loop?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLet’s read in multiple dataframes together and concatenate them vertically to one large dataframe using a loop and the range() function.\nTasks:\n\nThere are 4 dataframes named pkm1.csv to pkm4.csv. that we wish to load in and vertically concatenate together.\nFill in the blanks so the code reads in each dataframe according to their differing file name and concatenates them together.\nDisplay the final dataframe.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you using pd.concat()?\nAre you adding .csv to the string object?\nAre you using pd.read_csv()?\nAre you indenting each line of code in the loop?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:",
+    "crumbs": [
+      "**Module 5: Making Choices and Repeating Iterations**",
+      "&nbsp;&nbsp; 3.1. Exercises"
+    ]
+  },
+  {
+    "objectID": "modules/module5/module5-10-range_questions.html#range-questions",
+    "href": "modules/module5/module5-10-range_questions.html#range-questions",
+    "title": "3.1. Exercises",
+    "section": "",
+    "text": "numericals = []\nfor j in range(30,60,5):\n    numericals.append(j)\nnumericals",
+    "crumbs": [
+      "**Module 5: Making Choices and Repeating Iterations**",
+      "&nbsp;&nbsp; 3.1. Exercises"
+    ]
+  },
+  {
+    "objectID": "modules/module5/module5-10-range_questions.html#coding-questions",
+    "href": "modules/module5/module5-10-range_questions.html#coding-questions",
+    "title": "3.1. Exercises",
+    "section": "",
+    "text": "Instructions:\nRunning a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\nMake sure you remove the hash (#) symbol in the coding portions of this question. We have commented them so that the line won’t execute and you can test your code after each step.\n\n\nLet’s make a loop again but this time let’s practice using the range() verb.\nTasks:\n\nIterate over a range from 50 to 10, stepping down 4 integers at a time.\nAppend the square of each number for each iteration to square_list.\nDisplay the value of square_list.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you using range(50,10,-4)?\nAre you starting your loop with for and using a colon for the first line?\nAre you indenting each line of code in the loop?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLet’s read in multiple dataframes together and concatenate them vertically to one large dataframe using a loop and the range() function.\nTasks:\n\nThere are 4 dataframes named pkm1.csv to pkm4.csv. that we wish to load in and vertically concatenate together.\nFill in the blanks so the code reads in each dataframe according to their differing file name and concatenates them together.\nDisplay the final dataframe.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you using pd.concat()?\nAre you adding .csv to the string object?\nAre you using pd.read_csv()?\nAre you indenting each line of code in the loop?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:",
+    "crumbs": [
+      "**Module 5: Making Choices and Repeating Iterations**",
+      "&nbsp;&nbsp; 3.1. Exercises"
+    ]
+  },
+  {
+    "objectID": "modules/module5/module5-14-nested_loop_questions.html",
+    "href": "modules/module5/module5-14-nested_loop_questions.html",
+    "title": "4.1. Exercises",
+    "section": "",
+    "text": "for i in range(0, 49, 10):\n    print('Hurray')\n    for j in range(0,8,2):\n        print(\"This is fun!\")\n\n\n\n\n\n\n\n\n\n\n\nInstructions:\nRunning a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\nMake sure you remove the hash (#) symbol in the coding portions of this question. We have commented them so that the line won’t execute and you can test your code after each step.\nLet’s count how many letters are contained in the dishes of a menu! We have a list named menu that contains multiples lists. We want to calculate how many character are contain in the entire menu.\nTasks:\n\nMake an object named charater_count and give it a value of 0.\nMake an outer loop that iterates over each list of the menu list.\nMake an inner loop that iterates over each element in the nested list and add the length of it to charater_count.\nDisplay the value of charater_count outside both loops.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you using 4 indentations for each loop?\nAre you putting character_count = character_count + len(dish) in the inner loop?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:",
+    "crumbs": [
+      "**Module 5: Making Choices and Repeating Iterations**",
+      "&nbsp;&nbsp; 4.1. Exercises"
+    ]
+  },
+  {
+    "objectID": "modules/module5/module5-14-nested_loop_questions.html#nested-loop-questions",
+    "href": "modules/module5/module5-14-nested_loop_questions.html#nested-loop-questions",
+    "title": "4.1. Exercises",
+    "section": "",
+    "text": "for i in range(0, 49, 10):\n    print('Hurray')\n    for j in range(0,8,2):\n        print(\"This is fun!\")",
+    "crumbs": [
+      "**Module 5: Making Choices and Repeating Iterations**",
+      "&nbsp;&nbsp; 4.1. Exercises"
+    ]
+  },
+  {
+    "objectID": "modules/module5/module5-14-nested_loop_questions.html#making-a-nested-loop",
+    "href": "modules/module5/module5-14-nested_loop_questions.html#making-a-nested-loop",
+    "title": "4.1. Exercises",
+    "section": "",
+    "text": "Instructions:\nRunning a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\nMake sure you remove the hash (#) symbol in the coding portions of this question. We have commented them so that the line won’t execute and you can test your code after each step.\nLet’s count how many letters are contained in the dishes of a menu! We have a list named menu that contains multiples lists. We want to calculate how many character are contain in the entire menu.\nTasks:\n\nMake an object named charater_count and give it a value of 0.\nMake an outer loop that iterates over each list of the menu list.\nMake an inner loop that iterates over each element in the nested list and add the length of it to charater_count.\nDisplay the value of charater_count outside both loops.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you using 4 indentations for each loop?\nAre you putting character_count = character_count + len(dish) in the inner loop?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:",
+    "crumbs": [
+      "**Module 5: Making Choices and Repeating Iterations**",
+      "&nbsp;&nbsp; 4.1. Exercises"
+    ]
+  },
+  {
+    "objectID": "modules/module5/module5-17-conditional_loop_questions.html",
+    "href": "modules/module5/module5-17-conditional_loop_questions.html",
+    "title": "5.1. Exercises",
+    "section": "",
+    "text": "parking_lot = [ 20, 60, -12, 110, -20, 80, 12, -40, 37, 92]\nparking_tickets = list()\n\nfor stall in parking_lot: \n    if stall &lt;0:\n        parking_tickets.append(True)\n    else:\n        parking_tickets.append(False)\n\nsum(parking_tickets)\n\n\n\n\nparking_lot = [ 20, 60, -12, 110, -20, 80, 12, -40, 37, 92]\nparking_tickets = []\n\nfor stall in parking_lot: \n    if stall &lt;0:\n        break\n    else:\n        parking_tickets.append(False)\nsum(parking_tickets)\n\n\n\n\n\n\n\nInstructions:\nRunning a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\nMake sure you remove the hash (#) symbol in the coding portions of this question. We have commented them so that the line won’t execute and you can test your code after each step.\nFor the last few Modules, we have been playing with different dataframes. In this question, we have stored them in a list named dataframes.\nLet’s count how many of these dataframes have more than 1000 rows.\nTasks:\n\nMake an object named count and assign it a value of 0.\nLoop through the dataframes and count how many of them have more than 1000 rows.\nHint: you can use .shape[0] to access the number of rows in a dataframe.\ncount should increase by 1 if the dataframe has more than 1000 rows and 0 otherwise.\nDisplay the value of count.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nDid you use if data.shape[0] &gt; 1000: as you if statement?\nYou don’t necessarily need an else statement here.\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:",
+    "crumbs": [
+      "**Module 5: Making Choices and Repeating Iterations**",
+      "&nbsp;&nbsp; 5.1. Exercises"
+    ]
+  },
+  {
+    "objectID": "modules/module5/module5-17-conditional_loop_questions.html#conditional-loop-questions",
+    "href": "modules/module5/module5-17-conditional_loop_questions.html#conditional-loop-questions",
+    "title": "5.1. Exercises",
+    "section": "",
+    "text": "parking_lot = [ 20, 60, -12, 110, -20, 80, 12, -40, 37, 92]\nparking_tickets = list()\n\nfor stall in parking_lot: \n    if stall &lt;0:\n        parking_tickets.append(True)\n    else:\n        parking_tickets.append(False)\n\nsum(parking_tickets)\n\n\n\n\nparking_lot = [ 20, 60, -12, 110, -20, 80, 12, -40, 37, 92]\nparking_tickets = []\n\nfor stall in parking_lot: \n    if stall &lt;0:\n        break\n    else:\n        parking_tickets.append(False)\nsum(parking_tickets)",
+    "crumbs": [
+      "**Module 5: Making Choices and Repeating Iterations**",
+      "&nbsp;&nbsp; 5.1. Exercises"
+    ]
+  },
+  {
+    "objectID": "modules/module5/module5-17-conditional_loop_questions.html#practice-iterating-over-a-collection",
+    "href": "modules/module5/module5-17-conditional_loop_questions.html#practice-iterating-over-a-collection",
+    "title": "5.1. Exercises",
+    "section": "",
+    "text": "Instructions:\nRunning a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\nMake sure you remove the hash (#) symbol in the coding portions of this question. We have commented them so that the line won’t execute and you can test your code after each step.\nFor the last few Modules, we have been playing with different dataframes. In this question, we have stored them in a list named dataframes.\nLet’s count how many of these dataframes have more than 1000 rows.\nTasks:\n\nMake an object named count and assign it a value of 0.\nLoop through the dataframes and count how many of them have more than 1000 rows.\nHint: you can use .shape[0] to access the number of rows in a dataframe.\ncount should increase by 1 if the dataframe has more than 1000 rows and 0 otherwise.\nDisplay the value of count.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nDid you use if data.shape[0] &gt; 1000: as you if statement?\nYou don’t necessarily need an else statement here.\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:",
+    "crumbs": [
+      "**Module 5: Making Choices and Repeating Iterations**",
+      "&nbsp;&nbsp; 5.1. Exercises"
+    ]
+  },
+  {
+    "objectID": "modules/module5/module5-20-function_questions.html",
+    "href": "modules/module5/module5-20-function_questions.html",
+    "title": "6.1. Exercises",
+    "section": "",
+    "text": "def add_stars(name):\n    name = \"**\" + name + \"**\"\n    return\n\n\n\n\n\n\n\nInstructions:\nRunning a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\nMake sure you remove the hash (#) symbol in the coding portions of this question. We have commented them so that the line won’t execute and you can test your code after each step.\n\n\nLet’s practice converting existing code into a function so that it complies with the DRY principle.\nTasks:\n\nUsing the code provided, transform it into a function named uppercase_count\nThe function should take in one argument and return the number of uppercases in the string\nTest it on the string I hope you've Been Learning ALOT!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you defining your function with def uppercase_count(string):?\nAre you returning the object uppercase_num2?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLet’s practice making a function that returns the BMI (Body Mass Index) given a person’s weight and height.\nTasks:\n\nDefine a function and give it the name BMI_calculator.\nIt should take 2 arguments which can be called height, and weight.\nBMI can be calculated as:\n\n\n\n\n\n\n\n\nMake sure the function returns the calculated BMI.\nOnce you have created your function, use it to calculate the BMI of a person with a height of 62 inches and a weight of 105 lbs.\n\nSave this in an object name bmi_calc.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you defining your function with def bmi_calculator(height, weight):\nAre you returning (weight/(height**2)) * 703?\nTo use it, are you running bmi_calculator(62, 105)?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:",
+    "crumbs": [
+      "**Module 5: Making Choices and Repeating Iterations**",
+      "&nbsp;&nbsp; 6.1. Exercises"
+    ]
+  },
+  {
+    "objectID": "modules/module5/module5-20-function_questions.html#function-questions",
+    "href": "modules/module5/module5-20-function_questions.html#function-questions",
+    "title": "6.1. Exercises",
+    "section": "",
+    "text": "def add_stars(name):\n    name = \"**\" + name + \"**\"\n    return",
+    "crumbs": [
+      "**Module 5: Making Choices and Repeating Iterations**",
+      "&nbsp;&nbsp; 6.1. Exercises"
+    ]
+  },
+  {
+    "objectID": "modules/module5/module5-20-function_questions.html#coding-questions",
+    "href": "modules/module5/module5-20-function_questions.html#coding-questions",
+    "title": "6.1. Exercises",
+    "section": "",
+    "text": "Instructions:\nRunning a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\nMake sure you remove the hash (#) symbol in the coding portions of this question. We have commented them so that the line won’t execute and you can test your code after each step.\n\n\nLet’s practice converting existing code into a function so that it complies with the DRY principle.\nTasks:\n\nUsing the code provided, transform it into a function named uppercase_count\nThe function should take in one argument and return the number of uppercases in the string\nTest it on the string I hope you've Been Learning ALOT!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you defining your function with def uppercase_count(string):?\nAre you returning the object uppercase_num2?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLet’s practice making a function that returns the BMI (Body Mass Index) given a person’s weight and height.\nTasks:\n\nDefine a function and give it the name BMI_calculator.\nIt should take 2 arguments which can be called height, and weight.\nBMI can be calculated as:\n\n\n\n\n\n\n\n\nMake sure the function returns the calculated BMI.\nOnce you have created your function, use it to calculate the BMI of a person with a height of 62 inches and a weight of 105 lbs.\n\nSave this in an object name bmi_calc.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you defining your function with def bmi_calculator(height, weight):\nAre you returning (weight/(height**2)) * 703?\nTo use it, are you running bmi_calculator(62, 105)?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:",
+    "crumbs": [
+      "**Module 5: Making Choices and Repeating Iterations**",
+      "&nbsp;&nbsp; 6.1. Exercises"
+    ]
+  },
+  {
+    "objectID": "modules/module5/slides/module5_00.html#module-learning-outcomes",
+    "href": "modules/module5/slides/module5_00.html#module-learning-outcomes",
+    "title": "Module Learning Outcomes",
+    "section": "Module Learning Outcomes",
+    "text": "Module Learning Outcomes\nBy the end of the module, students are expected to:\n\nExplain the DRY principle and how it can be useful.\nWrite conditional statements with if, elif and else to run different code, depending on the input.\nWrite for loops to repeatedly run code.\nDescribe the expected outcome of code with nested loops.\nDefine and use a function that accepts parameters and returns values."
+  },
+  {
+    "objectID": "modules/module5/slides/module5_06.html#repeating-code",
+    "href": "modules/module5/slides/module5_06.html#repeating-code",
+    "title": "Repeated Iterations (Loops)",
+    "section": "Repeating Code",
+    "text": "Repeating Code\n\nnumbers = [2, 3, 5]\n\n\n\nsquared = list()\n\nsquared.append(numbers[0] ** 2)\nsquared.append(numbers[1] ** 2)\nsquared.append(numbers[2] ** 2)\nsquared\n\n[4, 9, 25]\n\n\n\nThere are times while coding where we may want to repeat the same action multiple times.\nLet’s say we want to add the square of every number in a list to a new list.\nWe could write code that looked something like this, but it’s problematic for numerous reasons."
+  },
+  {
+    "objectID": "modules/module5/slides/module5_06.html#dont-repeat-yourself-dry-principle",
+    "href": "modules/module5/slides/module5_06.html#dont-repeat-yourself-dry-principle",
+    "title": "Repeated Iterations (Loops)",
+    "section": "Don’t Repeat Yourself (DRY Principle)",
+    "text": "Don’t Repeat Yourself (DRY Principle)\nThe DRY in the DRY principle stands for “Don’t Repeat Yourself”. It is the principle of avoiding redundancy within code.\n\nsquared = list()\n\nsquared.append(numbers[0] ** 2)\nsquared.append(numbers[1] ** 2)\nsquared.append(numbers[2] ** 2)\nsquared\n\n[4, 9, 25]\n\n\n\nJust like how we try to reduce, reuse, and recycle waste, coding likes to borrow a similar principle aimed at reducing repetitive code.\nThis motion is called the DRY principle, otherwise known as the “Don’t Repeat Yourself” principle.\nThe premise of this principle to avoid redundancy within code.\nThe code we discussed here is a violation of this principle (known as a WET Solution (“write every time”)).\nThere is a much more efficient method to obtain the same output that avoids typing out multiple iterations of similar code."
+  },
+  {
+    "objectID": "modules/module5/slides/module5_06.html#loops",
+    "href": "modules/module5/slides/module5_06.html#loops",
+    "title": "Repeated Iterations (Loops)",
+    "section": "Loops",
+    "text": "Loops\n\nnumbers = [2, 3, 5]\n\n\n\nsquared = list()\n\nsquared.append(numbers[0] ** 2)\nsquared.append(numbers[1] ** 2)\nsquared.append(numbers[2] ** 2)\nsquared\n\n[4, 9, 25]\n\n\n\n\nsquared = list()\nfor number in numbers: \n    squared.append(number ** 2)\nsquared\n\n[4, 9, 25]\n\n\n\nOur example from before takes 3 lines of code to add all the squared values to squared and violates the DRY principle in the process.\nInstead, we can add to the list named squared by using something called a loop to repeat the .append() action over the multiple elements.\nThis only took 2 lines of code, but if the number of elements in the list numbers increased, the code would remain the same. Think how much code writing we would avoid if the list numbers had a length of 1000?!"
+  },
+  {
+    "objectID": "modules/module5/slides/module5_06.html#for-each-loop",
+    "href": "modules/module5/slides/module5_06.html#for-each-loop",
+    "title": "Repeated Iterations (Loops)",
+    "section": "For (Each) Loop",
+    "text": "For (Each) Loop\n\nsquared = list()\nfor number in numbers: \n    squared.append(number ** 2)\nsquared\n\n[4, 9, 25]\n\n\n\nThis specific type of loop is called a For loop and can be iterated over any type of collection/sequence (these are lists, tuples, and strings).\nIn this example, it’s over the values in a list.\nEvery line of code that is indented is executed for each value in the list (hence the name “for” loops, sometimes also called “for each” loops).\nHere we only have one line that is indented and repetitively executed for each element.\nThe loop ends after the variable has iterated over all the values in the collection/sequence."
+  },
+  {
+    "objectID": "modules/module5/slides/module5_19.html#functions-and-the-dry-principle",
+    "href": "modules/module5/slides/module5_19.html#functions-and-the-dry-principle",
+    "title": "Introduction to Functions",
+    "section": "Functions and the DRY principle",
+    "text": "Functions and the DRY principle\n\nnumbers = [ 2, 3, 5]\nsquared = list()\n\nsquared.append(numbers[0] ** 2)\nsquared.append(numbers[1] ** 2)\nsquared.append(numbers[2] ** 2)\nsquared\n\n[4, 9, 25]\n\n\n\n\nsquared = list()\nfor number in numbers: \n    squared.append(number ** 2)\nsquared\n\n[4, 9, 25]\n\n\n\nIn the last section, we discussed how loops helped avoid redundant code.\nWe wrote code, which created a new list containing the square of the elements.\nUsing a loop for this helped our coding style somewhat, but now we have a new problem.\nWhat happens if we want to do the same process to multiple lists all named differently?"
+  },
+  {
+    "objectID": "modules/module5/slides/module5_19.html#syntax",
+    "href": "modules/module5/slides/module5_19.html#syntax",
+    "title": "Introduction to Functions",
+    "section": "Syntax",
+    "text": "Syntax\n\ndef squares_a_list(numerical_list):\n    new_squared_list = list()\n    \n    for number in numerical_list:\n        new_squared_list.append(number ** 2)\n    \n    return new_squared_list\n\n\nLet’s take a look at the how we define a function:\n\n\nLet’s take a look at how we define a function:\n\ndef is a python keyword that tells Python that anything indented after this belongs to a function.\nNext, we give it a Function name. Like any object, we need to name it.\n\nIn this case, we have named our function squares_a_list.\n\nWe cannot name it any existing function names.\n\nFollowing our function name, we specify any Parameters/Arguments that the function requires.\n\nPython calls these “parameters”; however, we have been calling these “arguments”.\n\nThis is what the function needs as an input in order for us to perform some actions on an existing object.\n\nWe can have multiple parameters or no parameters at all.\nIn our function, we have a single parameter named numerical_list.\n\nLastly, we end the line with a Colon\n\nJust like loops and conditionals, a function required its first defining line to end with a colon."
+  },
+  {
+    "objectID": "modules/module5/slides/module5_19.html#designing-good-functions",
+    "href": "modules/module5/slides/module5_19.html#designing-good-functions",
+    "title": "Introduction to Functions",
+    "section": "Designing Good Functions",
+    "text": "Designing Good Functions\nThere is some ambiguity for how and when to design a function.\n\nShould squares_a_list() be a function if I’m only ever using it once?\nShould the loop be inside the function, or outside?\n\n\ndef squares_a_list(numerical_list):\n    new_squared_list = list()\n    \n    for number in numerical_list:\n        new_squared_list.append(number ** 2)\n    \n    return new_squared_list\n\n\nThere is some ambiguity for how and when to design a function.\nFor instance:\n\nShould squares_a_list() be a function if I’m only ever using it once? What about Twice?\nShould the loop be inside the function, or outside?\n\nThis comes down to personal opinion.\nSome may say that the function squares_a_list() does a bit too much to keep things understandable.\nDesigning effective functions will be discussed in Module 6."
   }
 ]
