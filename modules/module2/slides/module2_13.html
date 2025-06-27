@@ -202,7 +202,7 @@
 </section>
 <section class="slide level2">
 
-<div id="0b092078" class="cell" data-execution_count="2">
+<div id="62091c94" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a>cereal <span class="op">=</span> pd.read_csv(<span class="st">'data/cereal.csv'</span>)</span>
 <span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a>cereal.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
@@ -323,7 +323,7 @@
 </section>
 <section class="slide level2">
 
-<div id="2aeff7b0" class="cell" data-execution_count="3">
+<div id="1928c8a6" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a>cereal<span class="op">=</span> cereal.iloc[:<span class="dv">5</span>]</span>
 <span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a>cereal</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
@@ -461,7 +461,7 @@
 </section>
 <section class="slide level2">
 
-<div id="ca6be626" class="cell" data-execution_count="4">
+<div id="56204532" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a>cereal[<span class="st">'fat'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>0    1
@@ -474,7 +474,7 @@ Name: fat, dtype: int64</code></pre>
 </div>
 <p><br></p>
 <p>Is transformed to this:</p>
-<div id="3b227de9" class="cell" data-execution_count="5">
+<div id="3824067f" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a>cereal[<span class="st">'fat'</span>] <span class="op">*</span> <span class="dv">1000</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
 <pre><code>0    1000
@@ -506,7 +506,7 @@ Name: fat, dtype: int64</code></pre>
 </section>
 <section class="slide level2">
 
-<div id="e1484b1f" class="cell" data-execution_count="6">
+<div id="a483000e" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a>cereal[<span class="st">'rating'</span>] </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <pre><code>0    68.402973
@@ -518,7 +518,7 @@ Name: rating, dtype: float64</code></pre>
 </div>
 </div>
 <p><br></p>
-<div id="132b6775" class="cell" data-execution_count="7">
+<div id="469bcb26" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a aria-hidden="true" tabindex="-1"></a>cereal[<span class="st">'rating'</span>] <span class="op">/</span> <span class="dv">10</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
 <pre><code>0    6.840297
@@ -565,7 +565,7 @@ Name: rating, dtype: float64</code></pre>
 
 
 <img data-src="../../../static/module2/sugarcups.png" class="quarto-figure quarto-figure-center r-stretch" style="width:60.0%" alt="404 image"><p><br></p>
-<div id="6498f42e" class="cell" data-execution_count="8">
+<div id="f6dc35ea" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a aria-hidden="true" tabindex="-1"></a>cereal[<span class="st">'sugars'</span>] <span class="op">/</span> cereal[<span class="st">'cups'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
 <pre><code>0    18.181818
@@ -597,7 +597,7 @@ dtype: float64</code></pre>
 </section>
 <section class="slide level2">
 
-<div id="41909582" class="cell" data-execution_count="9">
+<div id="8540d5b0" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a aria-hidden="true" tabindex="-1"></a>cereal[[<span class="st">'sugars'</span>]] <span class="op">/</span> cereal[[<span class="st">'cups'</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
 <div>
@@ -672,7 +672,7 @@ dtype: float64</code></pre>
 </section>
 <section class="slide level2">
 
-<div id="949b08b8" class="cell" data-execution_count="10">
+<div id="0f725090" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a aria-hidden="true" tabindex="-1"></a>cereal <span class="op">=</span> pd.read_csv(<span class="st">'data/cereal.csv'</span>, usecols<span class="op">=</span>[<span class="st">'name'</span>, <span class="st">'mfr'</span>,<span class="st">'type'</span>, <span class="st">'fat'</span>, <span class="st">'sugars'</span>, <span class="st">'weight'</span>, <span class="st">'cups'</span>,<span class="st">'rating'</span>])</span>
 <span id="cb14-2"><a aria-hidden="true" tabindex="-1"></a>cereal</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="10">
@@ -808,7 +808,7 @@ dtype: float64</code></pre>
 </section>
 <section id="column-creation" class="slide level2">
 <h2>Column Creation</h2>
-<div id="db81df27" class="cell" data-execution_count="11">
+<div id="08ee609e" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a aria-hidden="true" tabindex="-1"></a>oz_to_g <span class="op">=</span> <span class="fl">28.3495</span></span>
 <span id="cb15-2"><a aria-hidden="true" tabindex="-1"></a>cereal[<span class="st">'weight'</span>] <span class="op">*</span> oz_to_g</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="11">
@@ -823,7 +823,7 @@ Name: weight, Length: 77, dtype: float64</code></pre>
 </div>
 </div>
 <p><br></p>
-<div id="0eefed15" class="cell" data-execution_count="12">
+<div id="e3e4d361" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a aria-hidden="true" tabindex="-1"></a>cereal <span class="op">=</span> cereal.assign(weight_g<span class="op">=</span>cereal[<span class="st">'weight'</span>] <span class="op">*</span> oz_to_g)</span>
 <span id="cb17-2"><a aria-hidden="true" tabindex="-1"></a>cereal.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
@@ -946,7 +946,7 @@ Name: weight, Length: 77, dtype: float64</code></pre>
 </section>
 <section class="slide level2">
 
-<div id="99461df1" class="cell" data-execution_count="13">
+<div id="91f823cc" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a aria-hidden="true" tabindex="-1"></a>cereal[<span class="st">'sugars'</span>] <span class="op">/</span> cereal[<span class="st">'cups'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="13">
 <pre><code>0     18.181818
@@ -960,7 +960,7 @@ Length: 77, dtype: float64</code></pre>
 </div>
 </div>
 <p><br></p>
-<div id="d8caaf1b" class="cell" data-execution_count="14">
+<div id="3a1a82b5" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a aria-hidden="true" tabindex="-1"></a>cereal <span class="op">=</span> cereal.assign(sugar_per_cup<span class="op">=</span>cereal[<span class="st">'sugars'</span>] <span class="op">/</span> cereal[<span class="st">'cups'</span>])</span>
 <span id="cb20-2"><a aria-hidden="true" tabindex="-1"></a>cereal.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="14">
