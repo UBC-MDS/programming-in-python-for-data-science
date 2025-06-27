@@ -203,7 +203,7 @@
 <section class="slide level2">
 
 <p><strong>Null</strong>: The human-readable term of a value that is missing from the dataframe.</p>
-<div id="7bbb4d16" class="cell" data-execution_count="2">
+<div id="81f0e23f" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a>np.nan</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
 <pre><code>nan</code></pre>
@@ -231,7 +231,7 @@
 </section>
 <section id="info-on-missing-values" class="slide level2">
 <h2>Info on missing values</h2>
-<div id="13af024a" class="cell" data-execution_count="4">
+<div id="79d371b1" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a>cereal.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
@@ -270,7 +270,7 @@ memory usage: 3.7+ KB</code></pre>
 </section>
 <section class="slide level2">
 
-<div id="f6899cbb" class="cell" data-execution_count="6">
+<div id="edc55afd" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a>cycling</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <div>
@@ -387,7 +387,7 @@ memory usage: 3.7+ KB</code></pre>
 </section>
 <section class="slide level2">
 
-<div id="6b849c3b" class="cell" data-execution_count="7">
+<div id="55eb6acf" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a>cycling.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
@@ -424,7 +424,7 @@ memory usage: 1.7+ KB</code></pre>
 </section>
 <section class="slide level2">
 
-<div id="89d0c7b5" class="cell" data-execution_count="8">
+<div id="6e9d8707" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a aria-hidden="true" tabindex="-1"></a>cycling[<span class="st">'Distance'</span>].isnull()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
 <pre><code>0     False
@@ -453,7 +453,7 @@ Name: Distance, Length: 33, dtype: bool</code></pre>
 </section>
 <section class="slide level2">
 
-<div id="91bbfc74" class="cell" data-execution_count="9">
+<div id="c003a2b6" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a aria-hidden="true" tabindex="-1"></a>cycling[cycling[<span class="st">'Distance'</span>].isnull()]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
 <div>
@@ -518,7 +518,7 @@ Name: Distance, Length: 33, dtype: bool</code></pre>
 </div>
 </div>
 <p><br></p>
-<div id="91a76dbc" class="cell" data-execution_count="10">
+<div id="f3fefa97" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a aria-hidden="true" tabindex="-1"></a>cycling[cycling.isnull().<span class="bu">any</span>(axis<span class="op">=</span><span class="dv">1</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="10">
 <div>
@@ -622,7 +622,7 @@ Name: Distance, Length: 33, dtype: bool</code></pre>
 </section>
 <section id="dropping-null-values" class="slide level2">
 <h2>Dropping Null Values</h2>
-<div id="66edd58d" class="cell" data-execution_count="11">
+<div id="d0b5edb6" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a aria-hidden="true" tabindex="-1"></a>trips_removed <span class="op">=</span> cycling.dropna()</span>
 <span id="cb12-2"><a aria-hidden="true" tabindex="-1"></a>trips_removed</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="11">
@@ -744,7 +744,7 @@ Name: Distance, Length: 33, dtype: bool</code></pre>
 </section>
 <section class="slide level2">
 
-<div id="b3ffaaa0" class="cell" data-execution_count="12">
+<div id="df690897" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a aria-hidden="true" tabindex="-1"></a>cycling.dropna(subset<span class="op">=</span>[<span class="st">'Type'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
 <div>
@@ -862,7 +862,7 @@ Name: Distance, Length: 33, dtype: bool</code></pre>
 </section>
 <section class="slide level2">
 
-<div id="7bbf3586" class="cell" data-execution_count="13">
+<div id="605d6d9d" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a aria-hidden="true" tabindex="-1"></a>cycling.dropna(subset<span class="op">=</span>[<span class="st">'Distance'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="13">
 <div>
@@ -981,7 +981,7 @@ Name: Distance, Length: 33, dtype: bool</code></pre>
 </section>
 <section id="replacing-null-values" class="slide level2">
 <h2>Replacing Null Values</h2>
-<div id="ef792cfc" class="cell" data-execution_count="14">
+<div id="ae58a9a5" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a aria-hidden="true" tabindex="-1"></a>cycling_zero_fill <span class="op">=</span> cycling.fillna(value<span class="op">=</span><span class="dv">0</span>)</span>
 <span id="cb15-2"><a aria-hidden="true" tabindex="-1"></a>cycling_zero_fill</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="14">
@@ -1102,14 +1102,14 @@ Name: Distance, Length: 33, dtype: bool</code></pre>
 </section>
 <section class="slide level2">
 
-<div id="b2105e00" class="cell" data-execution_count="15">
+<div id="b474781a" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a aria-hidden="true" tabindex="-1"></a>cycling[<span class="st">'Distance'</span>].mean().<span class="bu">round</span>(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="15">
 <pre><code>np.float64(12.67)</code></pre>
 </div>
 </div>
 <p><br></p>
-<div id="158c4b1e" class="cell" data-execution_count="16">
+<div id="44dc7d20" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a aria-hidden="true" tabindex="-1"></a>cycling_mean_fill <span class="op">=</span> cycling.fillna(value<span class="op">=</span>cycling[<span class="st">'Distance'</span>].mean().<span class="bu">round</span>(<span class="dv">2</span>))</span>
 <span id="cb18-2"><a aria-hidden="true" tabindex="-1"></a>cycling_mean_fill</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="16">
@@ -1229,7 +1229,7 @@ Name: Distance, Length: 33, dtype: bool</code></pre>
 </section>
 <section class="slide level2">
 
-<div id="ee6fd0f5" class="cell" data-execution_count="17">
+<div id="f6a972de" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a aria-hidden="true" tabindex="-1"></a>cycling.fillna(method<span class="op">=</span><span class="st">'bfill'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="17">
 <div>
@@ -1348,7 +1348,7 @@ Name: Distance, Length: 33, dtype: bool</code></pre>
 </section>
 <section class="slide level2">
 
-<div id="e91a097e" class="cell" data-execution_count="18">
+<div id="bd02f174" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a aria-hidden="true" tabindex="-1"></a>cycling.fillna(method<span class="op">=</span><span class="st">'ffill'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="18">
 <div>

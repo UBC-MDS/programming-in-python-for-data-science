@@ -153,7 +153,7 @@
     "section": "",
     "text": "7. What Did We Just Learn?\n\nVideoSlides",
     "crumbs": [
-      "**Module 8: A Slice of NumPy and Advanced Data Wrangling**",
+      "**M8: A Slice of NumPy and Advanced Data Wrangling**",
       "7. What Did We Just Learn?"
     ]
   },
@@ -164,7 +164,7 @@
     "section": "",
     "text": "6. More Advanced String Processing\n\nVideoSlides",
     "crumbs": [
-      "**Module 8: A Slice of NumPy and Advanced Data Wrangling**",
+      "**M8: A Slice of NumPy and Advanced Data Wrangling**",
       "6. More Advanced String Processing"
     ]
   },
@@ -175,7 +175,7 @@
     "section": "",
     "text": "5. Introduction to Working with Strings\n\nVideoSlides",
     "crumbs": [
-      "**Module 8: A Slice of NumPy and Advanced Data Wrangling**",
+      "**M8: A Slice of NumPy and Advanced Data Wrangling**",
       "5. Introduction to Working with Strings"
     ]
   },
@@ -186,7 +186,7 @@
     "section": "",
     "text": "4. Working with Dates and Time\n\nVideoSlides",
     "crumbs": [
-      "**Module 8: A Slice of NumPy and Advanced Data Wrangling**",
+      "**M8: A Slice of NumPy and Advanced Data Wrangling**",
       "4. Working with Dates and Time"
     ]
   },
@@ -197,7 +197,7 @@
     "section": "",
     "text": "3. Working with Null Values\n\nVideoSlides",
     "crumbs": [
-      "**Module 8: A Slice of NumPy and Advanced Data Wrangling**",
+      "**M8: A Slice of NumPy and Advanced Data Wrangling**",
       "3. Working with Null Values"
     ]
   },
@@ -208,7 +208,7 @@
     "section": "",
     "text": "2. Multi-dimensional Arrays\n\nVideoSlides",
     "crumbs": [
-      "**Module 8: A Slice of NumPy and Advanced Data Wrangling**",
+      "**M8: A Slice of NumPy and Advanced Data Wrangling**",
       "2. Multi-dimensional Arrays"
     ]
   },
@@ -219,7 +219,7 @@
     "section": "",
     "text": "1. NumPy and 1D Arrays\n\nVideoSlides",
     "crumbs": [
-      "**Module 8: A Slice of NumPy and Advanced Data Wrangling**",
+      "**M8: A Slice of NumPy and Advanced Data Wrangling**",
       "1. NumPy and 1D Arrays"
     ]
   },
@@ -279,7 +279,7 @@
     "section": "",
     "text": "7. What Did We Just Learn?\n\nVideoSlides",
     "crumbs": [
-      "**Module 7: Importing Files and the Coding Style Guide**",
+      "**M7: Importing Files and the Coding Style Guide**",
       "7. What Did We Just Learn?"
     ]
   },
@@ -290,7 +290,7 @@
     "section": "",
     "text": "6. The Python Debugger\n\nVideoSlides",
     "crumbs": [
-      "**Module 7: Importing Files and the Coding Style Guide**",
+      "**M7: Importing Files and the Coding Style Guide**",
       "6. The Python Debugger"
     ]
   },
@@ -301,7 +301,7 @@
     "section": "",
     "text": "5. Formatting That Can’t Be Fixed Automatically\n\nVideoSlides",
     "crumbs": [
-      "**Module 7: Importing Files and the Coding Style Guide**",
+      "**M7: Importing Files and the Coding Style Guide**",
       "5. Formatting That Can't Be Fixed Automatically"
     ]
   },
@@ -312,7 +312,7 @@
     "section": "",
     "text": "4. Automatic Style Formatting\n\nVideoSlides",
     "crumbs": [
-      "**Module 7: Importing Files and the Coding Style Guide**",
+      "**M7: Importing Files and the Coding Style Guide**",
       "4. Automatic Style Formatting"
     ]
   },
@@ -323,7 +323,7 @@
     "section": "",
     "text": "3. Testing Your Own Functions with Pytest\n\nVideoSlides",
     "crumbs": [
-      "**Module 7: Importing Files and the Coding Style Guide**",
+      "**M7: Importing Files and the Coding Style Guide**",
       "3. Testing Your Own Functions with Pytest"
     ]
   },
@@ -334,7 +334,7 @@
     "section": "",
     "text": "2. Working with Other Files\n\nVideoSlides",
     "crumbs": [
-      "**Module 7: Importing Files and the Coding Style Guide**",
+      "**M7: Importing Files and the Coding Style Guide**",
       "2. Working with Other Files"
     ]
   },
@@ -345,7 +345,7 @@
     "section": "",
     "text": "1. Importing Python Libraries\n\nVideoSlides",
     "crumbs": [
-      "**Module 7: Importing Files and the Coding Style Guide**",
+      "**M7: Importing Files and the Coding Style Guide**",
       "1. Importing Python Libraries"
     ]
   },
@@ -489,7 +489,7 @@
     "section": "",
     "text": "7. What Did We Just Learn?\n\nVideoSlides",
     "crumbs": [
-      "**Module 6: Functions Fundamentals and Best Practices**",
+      "**M6: Functions Fundamentals and Best Practices**",
       "7. What Did We Just Learn?"
     ]
   },
@@ -500,7 +500,7 @@
     "section": "",
     "text": "6. Good Function Design Choices\n\nVideoSlides",
     "crumbs": [
-      "**Module 6: Functions Fundamentals and Best Practices**",
+      "**M6: Functions Fundamentals and Best Practices**",
       "6. Good Function Design Choices"
     ]
   },
@@ -511,7 +511,7 @@
     "section": "",
     "text": "5. Unit tests\n\nVideoSlides",
     "crumbs": [
-      "**Module 6: Functions Fundamentals and Best Practices**",
+      "**M6: Functions Fundamentals and Best Practices**",
       "5. Unit tests"
     ]
   },
@@ -522,7 +522,7 @@
     "section": "",
     "text": "4. Defensive Programming using Exceptions\n\nVideoSlides",
     "crumbs": [
-      "**Module 6: Functions Fundamentals and Best Practices**",
+      "**M6: Functions Fundamentals and Best Practices**",
       "4. Defensive Programming using Exceptions"
     ]
   },
@@ -533,7 +533,7 @@
     "section": "",
     "text": "3. Function Docstrings\n\nVideoSlides",
     "crumbs": [
-      "**Module 6: Functions Fundamentals and Best Practices**",
+      "**M6: Functions Fundamentals and Best Practices**",
       "3. Function Docstrings"
     ]
   },
@@ -544,7 +544,7 @@
     "section": "",
     "text": "2. Default Arguments\n\nVideoSlides",
     "crumbs": [
-      "**Module 6: Functions Fundamentals and Best Practices**",
+      "**M6: Functions Fundamentals and Best Practices**",
       "2. Default Arguments"
     ]
   },
@@ -555,7 +555,7 @@
     "section": "",
     "text": "1. DRY Revisited and Function Fundamentals\n\nVideoSlides",
     "crumbs": [
-      "**Module 6: Functions Fundamentals and Best Practices**",
+      "**M6: Functions Fundamentals and Best Practices**",
       "1. DRY Revisited and Function Fundamentals"
     ]
   },
@@ -657,7 +657,7 @@
     "section": "",
     "text": "7. What Did We Just Learn?\n\nVideoSlides",
     "crumbs": [
-      "**Module 5: Making Choices and Repeating Iterations**",
+      "**M5: Making Choices and Repeating Iterations**",
       "7. What Did We Just Learn?"
     ]
   },
@@ -668,7 +668,7 @@
     "section": "",
     "text": "6. Functions\n\nVideoSlides",
     "crumbs": [
-      "**Module 5: Making Choices and Repeating Iterations**",
+      "**M5: Making Choices and Repeating Iterations**",
       "6. Functions"
     ]
   },
@@ -679,7 +679,7 @@
     "section": "",
     "text": "5. Repeated Iterations with Conditions\n\nVideoSlides",
     "crumbs": [
-      "**Module 5: Making Choices and Repeating Iterations**",
+      "**M5: Making Choices and Repeating Iterations**",
       "5. Repeated Iterations with Conditions"
     ]
   },
@@ -690,7 +690,7 @@
     "section": "",
     "text": "4. Nested Loops\n\nVideoSlides",
     "crumbs": [
-      "**Module 5: Making Choices and Repeating Iterations**",
+      "**M5: Making Choices and Repeating Iterations**",
       "4. Nested Loops"
     ]
   },
@@ -701,7 +701,7 @@
     "section": "",
     "text": "3. Range, Dictionaries and Comprehensions\n\nVideoSlides",
     "crumbs": [
-      "**Module 5: Making Choices and Repeating Iterations**",
+      "**M5: Making Choices and Repeating Iterations**",
       "3. Range, Dictionaries and Comprehensions"
     ]
   },
@@ -712,7 +712,7 @@
     "section": "",
     "text": "2. Repeated Iterations (Loops)\n\nVideoSlides",
     "crumbs": [
-      "**Module 5: Making Choices and Repeating Iterations**",
+      "**M5: Making Choices and Repeating Iterations**",
       "2. Repeated Iterations (Loops)"
     ]
   },
@@ -723,7 +723,7 @@
     "section": "",
     "text": "1. Making Choices with Conditional Statements\n\nVideoSlides",
     "crumbs": [
-      "**Module 5: Making Choices and Repeating Iterations**",
+      "**M5: Making Choices and Repeating Iterations**",
       "1. Making Choices with Conditional Statements"
     ]
   },
@@ -1238,7 +1238,7 @@
     "href": "modules/module2/slides/module2_25.html#using-groupby",
     "title": "Grouping and Aggregating",
     "section": "Using groupby",
-    "text": "Using groupby\n\nmfr_group = cereal.groupby(by='mfr')\nmfr_group\n\n&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x7f7469269d30&gt;\n\n\n\nPandas has a solution for this.\nIt’s not uncommon to be interested in examining specific groups in our data. Hence there is a verb that is helpful in grouping like-rows together.\n.groupby() allows us to group our data based on a specified column.\nLet’s group our cereal dataframe on the mfr column and save it as object mfr_group.\nThis returns a DataFrame GroupBy object."
+    "text": "Using groupby\n\nmfr_group = cereal.groupby(by='mfr')\nmfr_group\n\n&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x7f0ed5871940&gt;\n\n\n\nPandas has a solution for this.\nIt’s not uncommon to be interested in examining specific groups in our data. Hence there is a verb that is helpful in grouping like-rows together.\n.groupby() allows us to group our data based on a specified column.\nLet’s group our cereal dataframe on the mfr column and save it as object mfr_group.\nThis returns a DataFrame GroupBy object."
   },
   {
     "objectID": "modules/module2/slides/module2_25.html#summary-statistics-with-groups",
@@ -2867,7 +2867,7 @@
     "section": "",
     "text": "0. Module Learning Outcomes\n\nVideoSlides",
     "crumbs": [
-      "**Module 5: Making Choices and Repeating Iterations**",
+      "**M5: Making Choices and Repeating Iterations**",
       "0. Module Learning Outcomes"
     ]
   },
@@ -2878,7 +2878,7 @@
     "section": "",
     "text": "time = 150\n\nif time  &lt; 120:\n    speed = 'Fast'\nelif time &lt; 180:\n    speed = 'Average'\nelse:\n    speed = 'Slow'\nspeed\n\n\n\n\nprice = 150\n\nif price &gt; 50:\n    expensive = 'moderately'\nelif price &gt; 100:\n    expensive = 'valuable'\nelse:\n    expensive = 'affordable'\nexpensive\n\n\n\n\n\n\n\n\n\n\nif price &gt; 100\n    expensive = 'valuable'\nelse\n    expensive = 'affordable'\nexpensive\n\n\n\nif price &gt; 50:\nexpensive = 'moderately'\nelif price &gt; 100:\nexpensive = 'valuable'\nelse:\nexpensive = 'affordable'\nexpensive\n\n\n\nif price &gt; 50:\n    expensive = 'moderately'\nexpensive\n\n\n\n\n\n\n\nInstructions:\nRunning a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\nMake sure you remove the hash (#) symbol in the coding portions of this question. We have commented them so that the line won’t execute and you can test your code after each step.\n\n\nLet’s practice making decisions with conditional statements. We are going to the gym and our exercise plan takes different amounts of reps. let’s make conditional statements that depend on the name of the exercises.\nTasks:\n\nMake if, elif, and else statements for the following conditions:\n\nif the exercise value is lunges, set an object value named reps to 20.\nif the exercise value is squats, set reps to 25\nif the exercise value is burpees, set reps to 15\nIf the exercise value is anything else, set reps to 10.\n\nDisplay the value of reps.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you using double equal signs (==) to make a conditional statement?\nAre you using a single if statement and 2 elif statements?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLet’s try to make inline conditional statements using if and else. the variable cups_of_tea is the number of cups of tea Ben drank last week.\nTasks:\n\nMake an inline if/else statement that satisfies the following conditions:\n\nif the data type of cups_of_tea is of type list, then set and object named tea_amount to the sum of the elements.\nif the data type is anything else, set tea_amount to the string 'cannot sum'.\n\nDisplay the result of tea_amount.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nTo check the data type of cups_of_tea, you can use type(cups_of_tea) == list.\nAre you using sum() to sum up the elements in a list?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:",
     "crumbs": [
-      "**Module 5: Making Choices and Repeating Iterations**",
+      "**M5: Making Choices and Repeating Iterations**",
       "&nbsp;&nbsp; 1.1. Exercises"
     ]
   },
@@ -2889,7 +2889,7 @@
     "section": "",
     "text": "time = 150\n\nif time  &lt; 120:\n    speed = 'Fast'\nelif time &lt; 180:\n    speed = 'Average'\nelse:\n    speed = 'Slow'\nspeed\n\n\n\n\nprice = 150\n\nif price &gt; 50:\n    expensive = 'moderately'\nelif price &gt; 100:\n    expensive = 'valuable'\nelse:\n    expensive = 'affordable'\nexpensive",
     "crumbs": [
-      "**Module 5: Making Choices and Repeating Iterations**",
+      "**M5: Making Choices and Repeating Iterations**",
       "&nbsp;&nbsp; 1.1. Exercises"
     ]
   },
@@ -2900,7 +2900,7 @@
     "section": "",
     "text": "if price &gt; 100\n    expensive = 'valuable'\nelse\n    expensive = 'affordable'\nexpensive\n\n\n\nif price &gt; 50:\nexpensive = 'moderately'\nelif price &gt; 100:\nexpensive = 'valuable'\nelse:\nexpensive = 'affordable'\nexpensive\n\n\n\nif price &gt; 50:\n    expensive = 'moderately'\nexpensive",
     "crumbs": [
-      "**Module 5: Making Choices and Repeating Iterations**",
+      "**M5: Making Choices and Repeating Iterations**",
       "&nbsp;&nbsp; 1.1. Exercises"
     ]
   },
@@ -2911,7 +2911,7 @@
     "section": "",
     "text": "Instructions:\nRunning a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\nMake sure you remove the hash (#) symbol in the coding portions of this question. We have commented them so that the line won’t execute and you can test your code after each step.\n\n\nLet’s practice making decisions with conditional statements. We are going to the gym and our exercise plan takes different amounts of reps. let’s make conditional statements that depend on the name of the exercises.\nTasks:\n\nMake if, elif, and else statements for the following conditions:\n\nif the exercise value is lunges, set an object value named reps to 20.\nif the exercise value is squats, set reps to 25\nif the exercise value is burpees, set reps to 15\nIf the exercise value is anything else, set reps to 10.\n\nDisplay the value of reps.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you using double equal signs (==) to make a conditional statement?\nAre you using a single if statement and 2 elif statements?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLet’s try to make inline conditional statements using if and else. the variable cups_of_tea is the number of cups of tea Ben drank last week.\nTasks:\n\nMake an inline if/else statement that satisfies the following conditions:\n\nif the data type of cups_of_tea is of type list, then set and object named tea_amount to the sum of the elements.\nif the data type is anything else, set tea_amount to the string 'cannot sum'.\n\nDisplay the result of tea_amount.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nTo check the data type of cups_of_tea, you can use type(cups_of_tea) == list.\nAre you using sum() to sum up the elements in a list?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:",
     "crumbs": [
-      "**Module 5: Making Choices and Repeating Iterations**",
+      "**M5: Making Choices and Repeating Iterations**",
       "&nbsp;&nbsp; 1.1. Exercises"
     ]
   },
@@ -2922,7 +2922,7 @@
     "section": "",
     "text": "sentence = ['Once', 'upon', 'a', 'time']\nword_length = list()\nfor name in sentence: \nword_length.append(len(name))\n\n\n\nsentence = ['Once', 'upon', 'a', 'time']\nword_length = list()\nname in sentence: \n  word_length.append(len(name))\n\n\n\nsentence = ['Once', 'upon', 'a', 'time']\nword_length = list()\nfor name in sentence: \n    word_length.append(len(name))\n\n\n\nsentence = ['Once', 'upon', 'a', 'time']\nword_length = list()\nfor name in sentence\n    word_length.append(len(name))\n\n\n\n\n\n\n\nInstructions:\nRunning a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\nMake sure you remove the hash (#) symbol in the coding portions of this question. We have commented them so that the line won’t execute and you can test your code after each step.\nWe’ve learned about iterating , now it’s time to apply this! We have a list that contains all elements of type float. We want to create a new list that casts each element to type int.\nTasks:\n\nCreate a new empty list named integer_list.\nIterate over all the items in float_list. Cast the element to data type int and append it to integer_list.\nDisplay the value of integer_list.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you starting your loop with for and using a colon for the first line?\nAre you indenting each line of code in the loop?\nAre you appending the int value to the new list with integer_list.append(int('variable-name-chose'))\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:",
     "crumbs": [
-      "**Module 5: Making Choices and Repeating Iterations**",
+      "**M5: Making Choices and Repeating Iterations**",
       "&nbsp;&nbsp; 2.1. Exercises"
     ]
   },
@@ -2933,7 +2933,7 @@
     "section": "",
     "text": "sentence = ['Once', 'upon', 'a', 'time']\nword_length = list()\nfor name in sentence: \nword_length.append(len(name))\n\n\n\nsentence = ['Once', 'upon', 'a', 'time']\nword_length = list()\nname in sentence: \n  word_length.append(len(name))\n\n\n\nsentence = ['Once', 'upon', 'a', 'time']\nword_length = list()\nfor name in sentence: \n    word_length.append(len(name))\n\n\n\nsentence = ['Once', 'upon', 'a', 'time']\nword_length = list()\nfor name in sentence\n    word_length.append(len(name))",
     "crumbs": [
-      "**Module 5: Making Choices and Repeating Iterations**",
+      "**M5: Making Choices and Repeating Iterations**",
       "&nbsp;&nbsp; 2.1. Exercises"
     ]
   },
@@ -2944,7 +2944,7 @@
     "section": "",
     "text": "Instructions:\nRunning a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\nMake sure you remove the hash (#) symbol in the coding portions of this question. We have commented them so that the line won’t execute and you can test your code after each step.\nWe’ve learned about iterating , now it’s time to apply this! We have a list that contains all elements of type float. We want to create a new list that casts each element to type int.\nTasks:\n\nCreate a new empty list named integer_list.\nIterate over all the items in float_list. Cast the element to data type int and append it to integer_list.\nDisplay the value of integer_list.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you starting your loop with for and using a colon for the first line?\nAre you indenting each line of code in the loop?\nAre you appending the int value to the new list with integer_list.append(int('variable-name-chose'))\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:",
     "crumbs": [
-      "**Module 5: Making Choices and Repeating Iterations**",
+      "**M5: Making Choices and Repeating Iterations**",
       "&nbsp;&nbsp; 2.1. Exercises"
     ]
   },
@@ -2955,7 +2955,7 @@
     "section": "",
     "text": "numericals = []\nfor j in range(30,60,5):\n    numericals.append(j)\nnumericals\n\n\n\n\n\n\n\nInstructions:\nRunning a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\nMake sure you remove the hash (#) symbol in the coding portions of this question. We have commented them so that the line won’t execute and you can test your code after each step.\n\n\nLet’s make a loop again but this time let’s practice using the range() verb.\nTasks:\n\nIterate over a range from 50 to 10, stepping down 4 integers at a time.\nAppend the square of each number for each iteration to square_list.\nDisplay the value of square_list.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you using range(50,10,-4)?\nAre you starting your loop with for and using a colon for the first line?\nAre you indenting each line of code in the loop?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLet’s read in multiple dataframes together and concatenate them vertically to one large dataframe using a loop and the range() function.\nTasks:\n\nThere are 4 dataframes named pkm1.csv to pkm4.csv. that we wish to load in and vertically concatenate together.\nFill in the blanks so the code reads in each dataframe according to their differing file name and concatenates them together.\nDisplay the final dataframe.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you using pd.concat()?\nAre you adding .csv to the string object?\nAre you using pd.read_csv()?\nAre you indenting each line of code in the loop?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:",
     "crumbs": [
-      "**Module 5: Making Choices and Repeating Iterations**",
+      "**M5: Making Choices and Repeating Iterations**",
       "&nbsp;&nbsp; 3.1. Exercises"
     ]
   },
@@ -2966,7 +2966,7 @@
     "section": "",
     "text": "numericals = []\nfor j in range(30,60,5):\n    numericals.append(j)\nnumericals",
     "crumbs": [
-      "**Module 5: Making Choices and Repeating Iterations**",
+      "**M5: Making Choices and Repeating Iterations**",
       "&nbsp;&nbsp; 3.1. Exercises"
     ]
   },
@@ -2977,7 +2977,7 @@
     "section": "",
     "text": "Instructions:\nRunning a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\nMake sure you remove the hash (#) symbol in the coding portions of this question. We have commented them so that the line won’t execute and you can test your code after each step.\n\n\nLet’s make a loop again but this time let’s practice using the range() verb.\nTasks:\n\nIterate over a range from 50 to 10, stepping down 4 integers at a time.\nAppend the square of each number for each iteration to square_list.\nDisplay the value of square_list.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you using range(50,10,-4)?\nAre you starting your loop with for and using a colon for the first line?\nAre you indenting each line of code in the loop?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLet’s read in multiple dataframes together and concatenate them vertically to one large dataframe using a loop and the range() function.\nTasks:\n\nThere are 4 dataframes named pkm1.csv to pkm4.csv. that we wish to load in and vertically concatenate together.\nFill in the blanks so the code reads in each dataframe according to their differing file name and concatenates them together.\nDisplay the final dataframe.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you using pd.concat()?\nAre you adding .csv to the string object?\nAre you using pd.read_csv()?\nAre you indenting each line of code in the loop?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:",
     "crumbs": [
-      "**Module 5: Making Choices and Repeating Iterations**",
+      "**M5: Making Choices and Repeating Iterations**",
       "&nbsp;&nbsp; 3.1. Exercises"
     ]
   },
@@ -2988,7 +2988,7 @@
     "section": "",
     "text": "for i in range(0, 49, 10):\n    print('Hurray')\n    for j in range(0,8,2):\n        print(\"This is fun!\")\n\n\n\n\n\n\n\n\n\n\n\nInstructions:\nRunning a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\nMake sure you remove the hash (#) symbol in the coding portions of this question. We have commented them so that the line won’t execute and you can test your code after each step.\nLet’s count how many letters are contained in the dishes of a menu! We have a list named menu that contains multiples lists. We want to calculate how many character are contain in the entire menu.\nTasks:\n\nMake an object named charater_count and give it a value of 0.\nMake an outer loop that iterates over each list of the menu list.\nMake an inner loop that iterates over each element in the nested list and add the length of it to charater_count.\nDisplay the value of charater_count outside both loops.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you using 4 indentations for each loop?\nAre you putting character_count = character_count + len(dish) in the inner loop?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:",
     "crumbs": [
-      "**Module 5: Making Choices and Repeating Iterations**",
+      "**M5: Making Choices and Repeating Iterations**",
       "&nbsp;&nbsp; 4.1. Exercises"
     ]
   },
@@ -2999,7 +2999,7 @@
     "section": "",
     "text": "for i in range(0, 49, 10):\n    print('Hurray')\n    for j in range(0,8,2):\n        print(\"This is fun!\")",
     "crumbs": [
-      "**Module 5: Making Choices and Repeating Iterations**",
+      "**M5: Making Choices and Repeating Iterations**",
       "&nbsp;&nbsp; 4.1. Exercises"
     ]
   },
@@ -3010,7 +3010,7 @@
     "section": "",
     "text": "Instructions:\nRunning a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\nMake sure you remove the hash (#) symbol in the coding portions of this question. We have commented them so that the line won’t execute and you can test your code after each step.\nLet’s count how many letters are contained in the dishes of a menu! We have a list named menu that contains multiples lists. We want to calculate how many character are contain in the entire menu.\nTasks:\n\nMake an object named charater_count and give it a value of 0.\nMake an outer loop that iterates over each list of the menu list.\nMake an inner loop that iterates over each element in the nested list and add the length of it to charater_count.\nDisplay the value of charater_count outside both loops.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you using 4 indentations for each loop?\nAre you putting character_count = character_count + len(dish) in the inner loop?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:",
     "crumbs": [
-      "**Module 5: Making Choices and Repeating Iterations**",
+      "**M5: Making Choices and Repeating Iterations**",
       "&nbsp;&nbsp; 4.1. Exercises"
     ]
   },
@@ -3021,7 +3021,7 @@
     "section": "",
     "text": "parking_lot = [ 20, 60, -12, 110, -20, 80, 12, -40, 37, 92]\nparking_tickets = list()\n\nfor stall in parking_lot: \n    if stall &lt;0:\n        parking_tickets.append(True)\n    else:\n        parking_tickets.append(False)\n\nsum(parking_tickets)\n\n\n\n\nparking_lot = [ 20, 60, -12, 110, -20, 80, 12, -40, 37, 92]\nparking_tickets = []\n\nfor stall in parking_lot: \n    if stall &lt;0:\n        break\n    else:\n        parking_tickets.append(False)\nsum(parking_tickets)\n\n\n\n\n\n\n\nInstructions:\nRunning a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\nMake sure you remove the hash (#) symbol in the coding portions of this question. We have commented them so that the line won’t execute and you can test your code after each step.\nFor the last few Modules, we have been playing with different dataframes. In this question, we have stored them in a list named dataframes.\nLet’s count how many of these dataframes have more than 1000 rows.\nTasks:\n\nMake an object named count and assign it a value of 0.\nLoop through the dataframes and count how many of them have more than 1000 rows.\nHint: you can use .shape[0] to access the number of rows in a dataframe.\ncount should increase by 1 if the dataframe has more than 1000 rows and 0 otherwise.\nDisplay the value of count.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nDid you use if data.shape[0] &gt; 1000: as you if statement?\nYou don’t necessarily need an else statement here.\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:",
     "crumbs": [
-      "**Module 5: Making Choices and Repeating Iterations**",
+      "**M5: Making Choices and Repeating Iterations**",
       "&nbsp;&nbsp; 5.1. Exercises"
     ]
   },
@@ -3032,7 +3032,7 @@
     "section": "",
     "text": "parking_lot = [ 20, 60, -12, 110, -20, 80, 12, -40, 37, 92]\nparking_tickets = list()\n\nfor stall in parking_lot: \n    if stall &lt;0:\n        parking_tickets.append(True)\n    else:\n        parking_tickets.append(False)\n\nsum(parking_tickets)\n\n\n\n\nparking_lot = [ 20, 60, -12, 110, -20, 80, 12, -40, 37, 92]\nparking_tickets = []\n\nfor stall in parking_lot: \n    if stall &lt;0:\n        break\n    else:\n        parking_tickets.append(False)\nsum(parking_tickets)",
     "crumbs": [
-      "**Module 5: Making Choices and Repeating Iterations**",
+      "**M5: Making Choices and Repeating Iterations**",
       "&nbsp;&nbsp; 5.1. Exercises"
     ]
   },
@@ -3043,7 +3043,7 @@
     "section": "",
     "text": "Instructions:\nRunning a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\nMake sure you remove the hash (#) symbol in the coding portions of this question. We have commented them so that the line won’t execute and you can test your code after each step.\nFor the last few Modules, we have been playing with different dataframes. In this question, we have stored them in a list named dataframes.\nLet’s count how many of these dataframes have more than 1000 rows.\nTasks:\n\nMake an object named count and assign it a value of 0.\nLoop through the dataframes and count how many of them have more than 1000 rows.\nHint: you can use .shape[0] to access the number of rows in a dataframe.\ncount should increase by 1 if the dataframe has more than 1000 rows and 0 otherwise.\nDisplay the value of count.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nDid you use if data.shape[0] &gt; 1000: as you if statement?\nYou don’t necessarily need an else statement here.\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:",
     "crumbs": [
-      "**Module 5: Making Choices and Repeating Iterations**",
+      "**M5: Making Choices and Repeating Iterations**",
       "&nbsp;&nbsp; 5.1. Exercises"
     ]
   },
@@ -3054,7 +3054,7 @@
     "section": "",
     "text": "def add_stars(name):\n    name = \"**\" + name + \"**\"\n    return\n\n\n\n\n\n\n\nInstructions:\nRunning a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\nMake sure you remove the hash (#) symbol in the coding portions of this question. We have commented them so that the line won’t execute and you can test your code after each step.\n\n\nLet’s practice converting existing code into a function so that it complies with the DRY principle.\nTasks:\n\nUsing the code provided, transform it into a function named uppercase_count\nThe function should take in one argument and return the number of uppercases in the string\nTest it on the string I hope you've Been Learning ALOT!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you defining your function with def uppercase_count(string):?\nAre you returning the object uppercase_num2?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLet’s practice making a function that returns the BMI (Body Mass Index) given a person’s weight and height.\nTasks:\n\nDefine a function and give it the name BMI_calculator.\nIt should take 2 arguments which can be called height, and weight.\nBMI can be calculated as:\n\n\n\n\n\n\n\n\nMake sure the function returns the calculated BMI.\nOnce you have created your function, use it to calculate the BMI of a person with a height of 62 inches and a weight of 105 lbs.\n\nSave this in an object name bmi_calc.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you defining your function with def bmi_calculator(height, weight):\nAre you returning (weight/(height**2)) * 703?\nTo use it, are you running bmi_calculator(62, 105)?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:",
     "crumbs": [
-      "**Module 5: Making Choices and Repeating Iterations**",
+      "**M5: Making Choices and Repeating Iterations**",
       "&nbsp;&nbsp; 6.1. Exercises"
     ]
   },
@@ -3065,7 +3065,7 @@
     "section": "",
     "text": "def add_stars(name):\n    name = \"**\" + name + \"**\"\n    return",
     "crumbs": [
-      "**Module 5: Making Choices and Repeating Iterations**",
+      "**M5: Making Choices and Repeating Iterations**",
       "&nbsp;&nbsp; 6.1. Exercises"
     ]
   },
@@ -3076,7 +3076,7 @@
     "section": "",
     "text": "Instructions:\nRunning a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\nMake sure you remove the hash (#) symbol in the coding portions of this question. We have commented them so that the line won’t execute and you can test your code after each step.\n\n\nLet’s practice converting existing code into a function so that it complies with the DRY principle.\nTasks:\n\nUsing the code provided, transform it into a function named uppercase_count\nThe function should take in one argument and return the number of uppercases in the string\nTest it on the string I hope you've Been Learning ALOT!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you defining your function with def uppercase_count(string):?\nAre you returning the object uppercase_num2?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLet’s practice making a function that returns the BMI (Body Mass Index) given a person’s weight and height.\nTasks:\n\nDefine a function and give it the name BMI_calculator.\nIt should take 2 arguments which can be called height, and weight.\nBMI can be calculated as:\n\n\n\n\n\n\n\n\nMake sure the function returns the calculated BMI.\nOnce you have created your function, use it to calculate the BMI of a person with a height of 62 inches and a weight of 105 lbs.\n\nSave this in an object name bmi_calc.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you defining your function with def bmi_calculator(height, weight):\nAre you returning (weight/(height**2)) * 703?\nTo use it, are you running bmi_calculator(62, 105)?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:",
     "crumbs": [
-      "**Module 5: Making Choices and Repeating Iterations**",
+      "**M5: Making Choices and Repeating Iterations**",
       "&nbsp;&nbsp; 6.1. Exercises"
     ]
   },
@@ -3143,7 +3143,7 @@
     "section": "",
     "text": "0. Module Learning Outcomes\n\nVideoSlides",
     "crumbs": [
-      "**Module 6: Functions Fundamentals and Best Practices**",
+      "**M6: Functions Fundamentals and Best Practices**",
       "0. Module Learning Outcomes"
     ]
   },
@@ -3154,7 +3154,7 @@
     "section": "",
     "text": "toy = \"ball\"\n\ndef playtime():\n    toy = \"truck\"\n    return toy \n\ntoy\n\n\n\n\ntoy = \"ball\"\n\ndef playtime():\n    toy = \"truck\"\n    return toy \n\nplaytime()\n\n\n\n\ndef playtime():\n    toy = \"truck\"\n    return toy \n\ntoy\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ntoy = \"ball\"\n\ndef playtime():\n    toy = \"truck\"\n    print(toy) \n\nplaytime()\n\n\n\n\ntoy = \"ball\"\n\ndef playtime():\n    toy = \"truck\"\n    return toy \n\nplaytime()\n\n\n\n\n\n\n\n\n\n\n\nInstructions:\nRunning a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\nMake sure you remove the hash (#) symbol in the coding portions of this question. We have commented them so that the line won’t execute and you can test your code after each step.\nThe function kg_to_lb() is used to convert a list of elements with kg units into a list of elements with lbs units. Unfortunate this function includes a side effect that edits one of the global variables.\n\n\n\n\n\n\nTasks:\n\nWrite a new function named better_kg_to_lb that no longer contains a side effect.\nTest your new function on the weight_kg list and save the results in an object named weight_lb_again.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you putting weight_lb inside the function now?\nAre you returning weight_lb?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:",
     "crumbs": [
-      "**Module 6: Functions Fundamentals and Best Practices**",
+      "**M6: Functions Fundamentals and Best Practices**",
       "&nbsp;&nbsp; 1.1. Exercises"
     ]
   },
@@ -3165,7 +3165,7 @@
     "section": "",
     "text": "toy = \"ball\"\n\ndef playtime():\n    toy = \"truck\"\n    return toy \n\ntoy\n\n\n\n\ntoy = \"ball\"\n\ndef playtime():\n    toy = \"truck\"\n    return toy \n\nplaytime()\n\n\n\n\ndef playtime():\n    toy = \"truck\"\n    return toy \n\ntoy",
     "crumbs": [
-      "**Module 6: Functions Fundamentals and Best Practices**",
+      "**M6: Functions Fundamentals and Best Practices**",
       "&nbsp;&nbsp; 1.1. Exercises"
     ]
   },
@@ -3176,7 +3176,7 @@
     "section": "",
     "text": "toy = \"ball\"\n\ndef playtime():\n    toy = \"truck\"\n    print(toy) \n\nplaytime()\n\n\n\n\ntoy = \"ball\"\n\ndef playtime():\n    toy = \"truck\"\n    return toy \n\nplaytime()",
     "crumbs": [
-      "**Module 6: Functions Fundamentals and Best Practices**",
+      "**M6: Functions Fundamentals and Best Practices**",
       "&nbsp;&nbsp; 1.1. Exercises"
     ]
   },
@@ -3187,7 +3187,7 @@
     "section": "",
     "text": "Instructions:\nRunning a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\nMake sure you remove the hash (#) symbol in the coding portions of this question. We have commented them so that the line won’t execute and you can test your code after each step.\nThe function kg_to_lb() is used to convert a list of elements with kg units into a list of elements with lbs units. Unfortunate this function includes a side effect that edits one of the global variables.\n\n\n\n\n\n\nTasks:\n\nWrite a new function named better_kg_to_lb that no longer contains a side effect.\nTest your new function on the weight_kg list and save the results in an object named weight_lb_again.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you putting weight_lb inside the function now?\nAre you returning weight_lb?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:",
     "crumbs": [
-      "**Module 6: Functions Fundamentals and Best Practices**",
+      "**M6: Functions Fundamentals and Best Practices**",
       "&nbsp;&nbsp; 1.1. Exercises"
     ]
   },
@@ -3198,7 +3198,7 @@
     "section": "",
     "text": "def name_initials(first_name, last_name, year_of_birth = None):\n    if year_of_birth is not None: \n        initials = first_name[0].upper() + middle_name[0].upper() + str(year_of_birth)\n    else:\n        initials = first_name[0].upper() + last_name[0].upper()\n    return initials\n\n\n\n\n\n\n\nGiven the function below:\ndef employee_wage(employee_id, position, experience = 3):\n    if position == \"doctor\": \n        wage = 150000\n    elif position == \"teacher\":\n        wage = 60000\n    elif position == \"lawyer\":\n        wage = 100000\n    elif position == \"server\":\n        wage = 50000\n    else: \n        wage = 70000\n    return wage * (1 + (0.1 * experience)) \n\n\n\n\nmenu_item_id = 42\nmenu_item_name = \"Green Curry\"\nspice_level = \"Medium\"\nmeat = \"Tofu\"\nrice = True\n\nthai_food(menu_item_id, menu_item_name, spice_level, meat, rice)\n\n\n\n\n\n\n\nInstructions:\nRunning a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\nMake sure you remove the hash (#) symbol in the coding portions of this question. We have commented them so that the line won’t execute and you can test your code after each step.\nWeight and mass are 2 very different measurements, although they are used interchangeably in everyday conversations. Mass is defined by NASA as the amount of matter in an object, whereas, weight is defined as the vertical force exerted by a mass as a result of gravity (with units of Newtons). The function earth_weight() converts an object’s mass to Weight by multiplying it by the gravitational force acting on it. On Earth, the gravitational force is measured as 9.8 m/s2.\n\n\n\n\n\n\nWe want to make a more versatile function by having the ability to calculate the Weight of any object on any particular planet and not just Earth. Redefine the function earth_weight() to take an argument with a default gravitational force of 9.8.\nTasks:\n\nCreate a new function named mass_to_weight and give it an additional argument named g, which has a default value of 9.8.\nTest your new function by converting the mass of 76 kg to weight on Earth and save the results in an object named earth_weight.\nTest your function again but this time, calculate the weight of the 76 kg object on the moon using a gravitational force of 1.62 m/s2 and save your function call to an object named moon_weight.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you putting g=9.8 inside the function named mass_to_weight?\nAre you calling mass_to_weight(76) and saving it in an object named earth_weight?\nAre you calling mass_to_weight(76, 1.62) and saving it in an object named moon_weight?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:",
     "crumbs": [
-      "**Module 6: Functions Fundamentals and Best Practices**",
+      "**M6: Functions Fundamentals and Best Practices**",
       "&nbsp;&nbsp; 2.1. Exercises"
     ]
   },
@@ -3209,7 +3209,7 @@
     "section": "",
     "text": "def name_initials(first_name, last_name, year_of_birth = None):\n    if year_of_birth is not None: \n        initials = first_name[0].upper() + middle_name[0].upper() + str(year_of_birth)\n    else:\n        initials = first_name[0].upper() + last_name[0].upper()\n    return initials",
     "crumbs": [
-      "**Module 6: Functions Fundamentals and Best Practices**",
+      "**M6: Functions Fundamentals and Best Practices**",
       "&nbsp;&nbsp; 2.1. Exercises"
     ]
   },
@@ -3220,7 +3220,7 @@
     "section": "",
     "text": "Given the function below:\ndef employee_wage(employee_id, position, experience = 3):\n    if position == \"doctor\": \n        wage = 150000\n    elif position == \"teacher\":\n        wage = 60000\n    elif position == \"lawyer\":\n        wage = 100000\n    elif position == \"server\":\n        wage = 50000\n    else: \n        wage = 70000\n    return wage * (1 + (0.1 * experience)) \n\n\n\n\nmenu_item_id = 42\nmenu_item_name = \"Green Curry\"\nspice_level = \"Medium\"\nmeat = \"Tofu\"\nrice = True\n\nthai_food(menu_item_id, menu_item_name, spice_level, meat, rice)",
     "crumbs": [
-      "**Module 6: Functions Fundamentals and Best Practices**",
+      "**M6: Functions Fundamentals and Best Practices**",
       "&nbsp;&nbsp; 2.1. Exercises"
     ]
   },
@@ -3231,7 +3231,7 @@
     "section": "",
     "text": "Instructions:\nRunning a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\nMake sure you remove the hash (#) symbol in the coding portions of this question. We have commented them so that the line won’t execute and you can test your code after each step.\nWeight and mass are 2 very different measurements, although they are used interchangeably in everyday conversations. Mass is defined by NASA as the amount of matter in an object, whereas, weight is defined as the vertical force exerted by a mass as a result of gravity (with units of Newtons). The function earth_weight() converts an object’s mass to Weight by multiplying it by the gravitational force acting on it. On Earth, the gravitational force is measured as 9.8 m/s2.\n\n\n\n\n\n\nWe want to make a more versatile function by having the ability to calculate the Weight of any object on any particular planet and not just Earth. Redefine the function earth_weight() to take an argument with a default gravitational force of 9.8.\nTasks:\n\nCreate a new function named mass_to_weight and give it an additional argument named g, which has a default value of 9.8.\nTest your new function by converting the mass of 76 kg to weight on Earth and save the results in an object named earth_weight.\nTest your function again but this time, calculate the weight of the 76 kg object on the moon using a gravitational force of 1.62 m/s2 and save your function call to an object named moon_weight.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you putting g=9.8 inside the function named mass_to_weight?\nAre you calling mass_to_weight(76) and saving it in an object named earth_weight?\nAre you calling mass_to_weight(76, 1.62) and saving it in an object named moon_weight?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:",
     "crumbs": [
-      "**Module 6: Functions Fundamentals and Best Practices**",
+      "**M6: Functions Fundamentals and Best Practices**",
       "&nbsp;&nbsp; 2.1. Exercises"
     ]
   },
@@ -3242,7 +3242,7 @@
     "section": "",
     "text": "def factor_of_10(number):\n    \"\"\"\n    Takes a number and determines if it is a factor of 10 \n    Parameters\n    ----------\n    number : int\n        the value to check\n      \n    Returns\n    -------\n    bool\n        Returns True if numbers are a multiple of 10 and False otherwise\n      \n    Examples\n    --------\n    &gt;&gt;&gt; factor_of_10(72)\n    False\n    \"\"\"\n\n    if number % 10 == 0: \n        factor = True\n    else:\n        factor = False\n        \n    return factor\n\n\n\n\ndef add_stars(name):\n  \"\"\"\n  This will return your input string between a pair of stars. \n  Parameters\n    ----------\n    name: str\n        a sentence or word\n        \n    Returns\n    -------\n    str\n        The initial string beginning and ending with a pair of stars \n        \n    Examples\n    --------\n    &gt;&gt;&gt; add_stars('Good Job')\n    'Good Job'\n    \"\"\"\n\n    name = '**' + name + '**'\n    return\n\n\n\n\n\n\n\nGiven the function below:\ndef acronym_it(sentence):\n    words = sentence.split()\n    first_letters = [word[0].upper() for word in words]\n    acronym =  \"\".join(first_letters)\n    return acronym\n\n\n\n\"\"\"\nA function that converts a string into an acronym of capital\nletters\n\nInput\n------\nstr : sentence\n   The string to obtain the first letters from\n    \nOutput\n-------\nstr\n    A string of the first letters of each word in an uppercase format\n    \nSample\n-------\n&gt;&gt;&gt; acronym_it(\"Let's make this an acronym\")\n\"LMTAA\"\n\"\"\"\n\n\n\n\"\"\"\nA function that converts a string into an acronym of capital\nletters\n\nInput \n------\nsome_words : str\n   The string to obtain the first letters from\n    \nOutput \n-------\nlist \n    A list of the first letters of each word from the input string\n\nExample\n-------\n&gt;&gt;&gt; acronym_it(\"Let's make this an acronym\")\n\"LMTAA\"\n\"\"\"\n\n\n\n\"\"\"\nA function that converts a string into an acronym of capital\nletters\n\nParameters\n----------\nsentence : str\n   The string to obtain the first letters from\n    \nReturns\n-------\nstr\n    a string of just first letters in an uppercase format\n\nExample\n-------\n&gt;&gt;&gt; acronym_it(\"Let's make this an acronym\")\n\"LMTAA\"\n\"\"\"\n\n\n\n\"\"\"\nA function that converts a string into an acronym of capital\nletters\n\n\nReturns\n-------\nlist :\n    A list of the first letters of each word from the input string\n    \nParameters\n----------\nstr : sentence\n   The string to obtain the first letters from\n    \nExample\n-------\n&gt;&gt;&gt; acronym_it(\"Let's make this an acronym\")\n\"LMTAA\"\n\"\"\"\n\n\n\n\n\n\n\nInstructions:\nRunning a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\nMake sure you remove the hash (#) symbol in the coding portions of this question. We have commented them so that the line won’t execute and you can test your code after each step.\nIn module 5, we wrote a function that returns the BMI given a person’s weight and height. Let’s write a docstring for it now!\ndef bmi_calculator(height, weight):\n    return (weight / (height ** 2)) * 702\nTasks:\n\nWrite a NumPy style docstring for the function provided.\nFor this question, we want you to write your docstring between 3 single quotations ''' instead of the normal double quotations \"\"\". This will allow us to test the solution provided.\nMake sure to include a brief description, parameters, return, and example sections.\nView the documentation of the function.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you using ''' to contain your docstring?\nAre you including all the sections?\nAre you getting the documentation of the docstring using ?bmi_calculator\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:",
     "crumbs": [
-      "**Module 6: Functions Fundamentals and Best Practices**",
+      "**M6: Functions Fundamentals and Best Practices**",
       "&nbsp;&nbsp; 3.1. Exercises"
     ]
   },
@@ -3253,7 +3253,7 @@
     "section": "",
     "text": "def factor_of_10(number):\n    \"\"\"\n    Takes a number and determines if it is a factor of 10 \n    Parameters\n    ----------\n    number : int\n        the value to check\n      \n    Returns\n    -------\n    bool\n        Returns True if numbers are a multiple of 10 and False otherwise\n      \n    Examples\n    --------\n    &gt;&gt;&gt; factor_of_10(72)\n    False\n    \"\"\"\n\n    if number % 10 == 0: \n        factor = True\n    else:\n        factor = False\n        \n    return factor\n\n\n\n\ndef add_stars(name):\n  \"\"\"\n  This will return your input string between a pair of stars. \n  Parameters\n    ----------\n    name: str\n        a sentence or word\n        \n    Returns\n    -------\n    str\n        The initial string beginning and ending with a pair of stars \n        \n    Examples\n    --------\n    &gt;&gt;&gt; add_stars('Good Job')\n    'Good Job'\n    \"\"\"\n\n    name = '**' + name + '**'\n    return",
     "crumbs": [
-      "**Module 6: Functions Fundamentals and Best Practices**",
+      "**M6: Functions Fundamentals and Best Practices**",
       "&nbsp;&nbsp; 3.1. Exercises"
     ]
   },
@@ -3264,7 +3264,7 @@
     "section": "",
     "text": "Given the function below:\ndef acronym_it(sentence):\n    words = sentence.split()\n    first_letters = [word[0].upper() for word in words]\n    acronym =  \"\".join(first_letters)\n    return acronym\n\n\n\n\"\"\"\nA function that converts a string into an acronym of capital\nletters\n\nInput\n------\nstr : sentence\n   The string to obtain the first letters from\n    \nOutput\n-------\nstr\n    A string of the first letters of each word in an uppercase format\n    \nSample\n-------\n&gt;&gt;&gt; acronym_it(\"Let's make this an acronym\")\n\"LMTAA\"\n\"\"\"\n\n\n\n\"\"\"\nA function that converts a string into an acronym of capital\nletters\n\nInput \n------\nsome_words : str\n   The string to obtain the first letters from\n    \nOutput \n-------\nlist \n    A list of the first letters of each word from the input string\n\nExample\n-------\n&gt;&gt;&gt; acronym_it(\"Let's make this an acronym\")\n\"LMTAA\"\n\"\"\"\n\n\n\n\"\"\"\nA function that converts a string into an acronym of capital\nletters\n\nParameters\n----------\nsentence : str\n   The string to obtain the first letters from\n    \nReturns\n-------\nstr\n    a string of just first letters in an uppercase format\n\nExample\n-------\n&gt;&gt;&gt; acronym_it(\"Let's make this an acronym\")\n\"LMTAA\"\n\"\"\"\n\n\n\n\"\"\"\nA function that converts a string into an acronym of capital\nletters\n\n\nReturns\n-------\nlist :\n    A list of the first letters of each word from the input string\n    \nParameters\n----------\nstr : sentence\n   The string to obtain the first letters from\n    \nExample\n-------\n&gt;&gt;&gt; acronym_it(\"Let's make this an acronym\")\n\"LMTAA\"\n\"\"\"",
     "crumbs": [
-      "**Module 6: Functions Fundamentals and Best Practices**",
+      "**M6: Functions Fundamentals and Best Practices**",
       "&nbsp;&nbsp; 3.1. Exercises"
     ]
   },
@@ -3275,7 +3275,7 @@
     "section": "",
     "text": "Instructions:\nRunning a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\nMake sure you remove the hash (#) symbol in the coding portions of this question. We have commented them so that the line won’t execute and you can test your code after each step.\nIn module 5, we wrote a function that returns the BMI given a person’s weight and height. Let’s write a docstring for it now!\ndef bmi_calculator(height, weight):\n    return (weight / (height ** 2)) * 702\nTasks:\n\nWrite a NumPy style docstring for the function provided.\nFor this question, we want you to write your docstring between 3 single quotations ''' instead of the normal double quotations \"\"\". This will allow us to test the solution provided.\nMake sure to include a brief description, parameters, return, and example sections.\nView the documentation of the function.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you using ''' to contain your docstring?\nAre you including all the sections?\nAre you getting the documentation of the docstring using ?bmi_calculator\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:",
     "crumbs": [
-      "**Module 6: Functions Fundamentals and Best Practices**",
+      "**M6: Functions Fundamentals and Best Practices**",
       "&nbsp;&nbsp; 3.1. Exercises"
     ]
   },
@@ -3286,7 +3286,7 @@
     "section": "",
     "text": "def factor_of_10(number):\n    \"\"\"\n    Takes a number and determines if it is a factor of 10 \n    Parameters\n    ----------\n    number : int\n        the value to check\n      \n    Returns\n    -------\n    bool\n        Returns True if number is a multiple of 10 and False otherwise\n        \n    Raises\n    ------\n    TypeError\n        If the input argument number is not of type int \n      \n    Examples\n    --------\n    &gt;&gt;&gt; factor_of_10(72)\n    False\n    \"\"\"\n    if not isinstance(number, int): \n        raise TypeError(\"the input value of number is not of type int\")\n        \n    if number % 10 == 0: \n        factor = True\n    else:\n        factor = False\n        \n    return factor\n\n\n\ndef factor_of_10(number):\n    \"\"\"\n    Takes a number and determines if it is a factor of 10 \n    Parameters\n    ----------\n    number : int\n        the value to check\n      \n    Returns\n    -------\n    bool\n        Returns True if number is a multiple of 10 and False otherwise\n        \n    Exceptions\n    ------\n    TypeError\n        If the input argument number is not of type int \n      \n    Examples\n    --------\n    &gt;&gt;&gt; factor_of_10(72)\n    False\n    \"\"\"\n    if not isinstance(number, int): \n        raise TypeError(\"the input value of number is not of type int\")\n        \n    if number % 10 == 0: \n        factor = True\n    else:\n        factor = False\n        \n    return factor\n\n\n\nInstructions:\nRunning a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\nMake sure you remove the hash (#) symbol in the coding portions of this question. We have commented them so that the line won’t execute and you can test your code after each step.\nLet’s build on the BMI function we made in module 5. This time we want to raise 2 exceptions.\ndef bmi_calculator(height, weight):\n    return (weight / (height ** 2)) * 702\nTasks:\n\nWrite an exception that checks if height is of type float.\nWrite a second exception that raises an error if weight is 0 or less.\nTest your function with the values given in variable tall and mass.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you using TypeError and Exception respectively for the exception messages?\nAre you checking the height type with if type(height) is not float:?\nAre you checking if weight is greater than 0 with if weight &lt;= 0:?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:",
     "crumbs": [
-      "**Module 6: Functions Fundamentals and Best Practices**",
+      "**M6: Functions Fundamentals and Best Practices**",
       "&nbsp;&nbsp; 4.1. Exercises"
     ]
   },
@@ -3297,7 +3297,7 @@
     "section": "",
     "text": "def factor_of_10(number):\n    \"\"\"\n    Takes a number and determines if it is a factor of 10 \n    Parameters\n    ----------\n    number : int\n        the value to check\n      \n    Returns\n    -------\n    bool\n        Returns True if number is a multiple of 10 and False otherwise\n        \n    Raises\n    ------\n    TypeError\n        If the input argument number is not of type int \n      \n    Examples\n    --------\n    &gt;&gt;&gt; factor_of_10(72)\n    False\n    \"\"\"\n    if not isinstance(number, int): \n        raise TypeError(\"the input value of number is not of type int\")\n        \n    if number % 10 == 0: \n        factor = True\n    else:\n        factor = False\n        \n    return factor\n\n\n\ndef factor_of_10(number):\n    \"\"\"\n    Takes a number and determines if it is a factor of 10 \n    Parameters\n    ----------\n    number : int\n        the value to check\n      \n    Returns\n    -------\n    bool\n        Returns True if number is a multiple of 10 and False otherwise\n        \n    Exceptions\n    ------\n    TypeError\n        If the input argument number is not of type int \n      \n    Examples\n    --------\n    &gt;&gt;&gt; factor_of_10(72)\n    False\n    \"\"\"\n    if not isinstance(number, int): \n        raise TypeError(\"the input value of number is not of type int\")\n        \n    if number % 10 == 0: \n        factor = True\n    else:\n        factor = False\n        \n    return factor",
     "crumbs": [
-      "**Module 6: Functions Fundamentals and Best Practices**",
+      "**M6: Functions Fundamentals and Best Practices**",
       "&nbsp;&nbsp; 4.1. Exercises"
     ]
   },
@@ -3308,7 +3308,7 @@
     "section": "",
     "text": "Instructions:\nRunning a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\nMake sure you remove the hash (#) symbol in the coding portions of this question. We have commented them so that the line won’t execute and you can test your code after each step.\nLet’s build on the BMI function we made in module 5. This time we want to raise 2 exceptions.\ndef bmi_calculator(height, weight):\n    return (weight / (height ** 2)) * 702\nTasks:\n\nWrite an exception that checks if height is of type float.\nWrite a second exception that raises an error if weight is 0 or less.\nTest your function with the values given in variable tall and mass.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you using TypeError and Exception respectively for the exception messages?\nAre you checking the height type with if type(height) is not float:?\nAre you checking if weight is greater than 0 with if weight &lt;= 0:?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:",
     "crumbs": [
-      "**Module 6: Functions Fundamentals and Best Practices**",
+      "**M6: Functions Fundamentals and Best Practices**",
       "&nbsp;&nbsp; 4.1. Exercises"
     ]
   },
@@ -3319,7 +3319,7 @@
     "section": "",
     "text": "def acronym_it(sentence):\n    words = sentence.split()\n    first_letters = [word[0].upper() for word in words]\n    acronym =  \"\".join(first_letters)\n    return acronym\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nInstructions:\nRunning a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\nMake sure you remove the hash (#) symbol in the coding portions of this question. We have commented them so that the line won’t execute and you can test your code after each step.\nGiven our BMI function from the previous few questions, let’s write some unit tests.\nTasks:\n\nWrite at least 4 unit tests and check that at least 2 of them are testing edge cases.\nFor this exercsie, use single quotes '' instead of double quotes \"\" for the assert messages.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you using Assert statements?\nAre you checking that they equal a correct value?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:",
     "crumbs": [
-      "**Module 6: Functions Fundamentals and Best Practices**",
+      "**M6: Functions Fundamentals and Best Practices**",
       "&nbsp;&nbsp; 5.1. Exercises"
     ]
   },
@@ -3330,7 +3330,7 @@
     "section": "",
     "text": "def acronym_it(sentence):\n    words = sentence.split()\n    first_letters = [word[0].upper() for word in words]\n    acronym =  \"\".join(first_letters)\n    return acronym",
     "crumbs": [
-      "**Module 6: Functions Fundamentals and Best Practices**",
+      "**M6: Functions Fundamentals and Best Practices**",
       "&nbsp;&nbsp; 5.1. Exercises"
     ]
   },
@@ -3341,7 +3341,7 @@
     "section": "",
     "text": "Instructions:\nRunning a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\nMake sure you remove the hash (#) symbol in the coding portions of this question. We have commented them so that the line won’t execute and you can test your code after each step.\nGiven our BMI function from the previous few questions, let’s write some unit tests.\nTasks:\n\nWrite at least 4 unit tests and check that at least 2 of them are testing edge cases.\nFor this exercsie, use single quotes '' instead of double quotes \"\" for the assert messages.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you using Assert statements?\nAre you checking that they equal a correct value?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:",
     "crumbs": [
-      "**Module 6: Functions Fundamentals and Best Practices**",
+      "**M6: Functions Fundamentals and Best Practices**",
       "&nbsp;&nbsp; 5.1. Exercises"
     ]
   },
@@ -3352,7 +3352,7 @@
     "section": "",
     "text": "def give_me_facts(myinfo):\n    max_val = max(myinfo)\n    min_val = min(myinfo)\n    range_val = max_val - min_val\n    return max_val, min_val, range_val\n\n\n\n\n\n\n\n\ndef count_the_sevens(mylist): \n    number_of_occurances  = mylist.count(7)\n    return number_of_occurances\n\n\n\n\n\n\n\nInstructions:\nRunning a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\nMake sure you remove the hash (#) symbol in the coding portions of this question. We have commented them so that the line won’t execute and you can test your code after each step.\nGiven the function below, improve it so that it follows good function design principles.\n\n\n\n\n\n\nTasks:\n\nGiven the function above, improve it using to the new function new_wage(). We have provided you with the function stub and the docstring to guide you.\n\nMake sure it follows good function design practices by not looping over a function, avoiding hard-coding and not returning multiple values.\nTest your new function on a person with a salary of $84000 and an expected raise of 12%.\nSave this in an object named person1_new_wage.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you removing the hardcoded values in the function?\nAre removing the return of 2 variables?\nAre you removing the loop from inside the function?\nAre you multiplying the salary by (1 + (0.01 * percent_raise)?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:",
     "crumbs": [
-      "**Module 6: Functions Fundamentals and Best Practices**",
+      "**M6: Functions Fundamentals and Best Practices**",
       "&nbsp;&nbsp; 6.1. Exercises"
     ]
   },
@@ -3363,7 +3363,7 @@
     "section": "",
     "text": "def give_me_facts(myinfo):\n    max_val = max(myinfo)\n    min_val = min(myinfo)\n    range_val = max_val - min_val\n    return max_val, min_val, range_val",
     "crumbs": [
-      "**Module 6: Functions Fundamentals and Best Practices**",
+      "**M6: Functions Fundamentals and Best Practices**",
       "&nbsp;&nbsp; 6.1. Exercises"
     ]
   },
@@ -3374,7 +3374,7 @@
     "section": "",
     "text": "def count_the_sevens(mylist): \n    number_of_occurances  = mylist.count(7)\n    return number_of_occurances",
     "crumbs": [
-      "**Module 6: Functions Fundamentals and Best Practices**",
+      "**M6: Functions Fundamentals and Best Practices**",
       "&nbsp;&nbsp; 6.1. Exercises"
     ]
   },
@@ -3385,7 +3385,7 @@
     "section": "",
     "text": "Instructions:\nRunning a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\nMake sure you remove the hash (#) symbol in the coding portions of this question. We have commented them so that the line won’t execute and you can test your code after each step.\nGiven the function below, improve it so that it follows good function design principles.\n\n\n\n\n\n\nTasks:\n\nGiven the function above, improve it using to the new function new_wage(). We have provided you with the function stub and the docstring to guide you.\n\nMake sure it follows good function design practices by not looping over a function, avoiding hard-coding and not returning multiple values.\nTest your new function on a person with a salary of $84000 and an expected raise of 12%.\nSave this in an object named person1_new_wage.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you removing the hardcoded values in the function?\nAre removing the return of 2 variables?\nAre you removing the loop from inside the function?\nAre you multiplying the salary by (1 + (0.01 * percent_raise)?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:",
     "crumbs": [
-      "**Module 6: Functions Fundamentals and Best Practices**",
+      "**M6: Functions Fundamentals and Best Practices**",
       "&nbsp;&nbsp; 6.1. Exercises"
     ]
   },
@@ -3480,7 +3480,7 @@
     "section": "",
     "text": "0. Module Learning Outcomes\n\nVideoSlides",
     "crumbs": [
-      "**Module 7: Importing Files and the Coding Style Guide**",
+      "**M7: Importing Files and the Coding Style Guide**",
       "0. Module Learning Outcomes"
     ]
   },
@@ -3491,7 +3491,7 @@
     "section": "",
     "text": "Instructions:\nRunning a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\nMake sure you remove the hash (#) symbol in the coding portions of this question. We have commented them so that the line won’t execute and you can test your code after each step.\nOk, so we’ve seen this numpy package, let’s actually load in one of the functions and use it! If you are wondering what this package does, don’t worry, you’ll learn more of this in the next module. numpy has a function called power().\nTasks:\n\nImport the power() function from the numpy package.\nUse the power() function to find 7 to the power of 5 and save it in an object named power7_5 - you may want to use ?power to see what arguments the function requires.\nDisplay your results.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you using power(7, 5)?\nAre you importing using from?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:",
     "crumbs": [
-      "**Module 7: Importing Files and the Coding Style Guide**",
+      "**M7: Importing Files and the Coding Style Guide**",
       "&nbsp;&nbsp; 1.1. Exercises"
     ]
   },
@@ -3502,7 +3502,7 @@
     "section": "",
     "text": "Instructions:\nRunning a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\nMake sure you remove the hash (#) symbol in the coding portions of this question. We have commented them so that the line won’t execute and you can test your code after each step.\nOk, so we’ve seen this numpy package, let’s actually load in one of the functions and use it! If you are wondering what this package does, don’t worry, you’ll learn more of this in the next module. numpy has a function called power().\nTasks:\n\nImport the power() function from the numpy package.\nUse the power() function to find 7 to the power of 5 and save it in an object named power7_5 - you may want to use ?power to see what arguments the function requires.\nDisplay your results.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you using power(7, 5)?\nAre you importing using from?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:",
     "crumbs": [
-      "**Module 7: Importing Files and the Coding Style Guide**",
+      "**M7: Importing Files and the Coding Style Guide**",
       "&nbsp;&nbsp; 1.1. Exercises"
     ]
   },
@@ -3513,7 +3513,7 @@
     "section": "",
     "text": "Instructions:\nRunning a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\nMake sure you remove the hash (#) symbol in the coding portions of this question. We have commented them so that the line won’t execute and you can test your code after each step.\nLet’s do the first step in testing the function find_force() with pytest by converting the tests provided for into an appropriate function.\nTasks:\n\nTake these unit tests we wrote and compile them together in a function to test the function find_force().\nDon’t forget to give it a name compliant with pytest’s needs.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you naming it something starting with test?\nAre you remembering these functions do not need to return anything?\nThese functions do not take any arguments.\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:",
     "crumbs": [
-      "**Module 7: Importing Files and the Coding Style Guide**",
+      "**M7: Importing Files and the Coding Style Guide**",
       "&nbsp;&nbsp; 3.1. Exercises"
     ]
   },
@@ -3524,7 +3524,7 @@
     "section": "",
     "text": "Instructions:\nRunning a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\nMake sure you remove the hash (#) symbol in the coding portions of this question. We have commented them so that the line won’t execute and you can test your code after each step.\nLet’s do the first step in testing the function find_force() with pytest by converting the tests provided for into an appropriate function.\nTasks:\n\nTake these unit tests we wrote and compile them together in a function to test the function find_force().\nDon’t forget to give it a name compliant with pytest’s needs.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you naming it something starting with test?\nAre you remembering these functions do not need to return anything?\nThese functions do not take any arguments.\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:",
     "crumbs": [
-      "**Module 7: Importing Files and the Coding Style Guide**",
+      "**M7: Importing Files and the Coding Style Guide**",
       "&nbsp;&nbsp; 3.1. Exercises"
     ]
   },
@@ -3535,7 +3535,7 @@
     "section": "",
     "text": "Instructions:\nRunning a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\nMake sure you remove the hash (#) symbol in the coding portions of this question. We have commented them so that the line won’t execute and you can test your code after each step.\nLet’s take the function named cleanup() which drops duplicate rows and columns. Rewrite the function code (not the docstring) so that it’s written with necessary spaces and indentations.\nTasks:\n\nAmend the function cleanup() so that it adopts an approach that has spaces where necessary and blank space is removed. Make sure that you have indentations and empty lines where necessary.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you adding spaces between operators?\nAre you removing spaces where appropriate?\nDid you fix the indentation error?\nHow about removing the blank lines before the return statement?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:",
     "crumbs": [
-      "**Module 7: Importing Files and the Coding Style Guide**",
+      "**M7: Importing Files and the Coding Style Guide**",
       "&nbsp;&nbsp; 4.1. Exercises"
     ]
   },
@@ -3546,7 +3546,7 @@
     "section": "",
     "text": "Instructions:\nRunning a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\nMake sure you remove the hash (#) symbol in the coding portions of this question. We have commented them so that the line won’t execute and you can test your code after each step.\nLet’s take the function named cleanup() which drops duplicate rows and columns. Rewrite the function code (not the docstring) so that it’s written with necessary spaces and indentations.\nTasks:\n\nAmend the function cleanup() so that it adopts an approach that has spaces where necessary and blank space is removed. Make sure that you have indentations and empty lines where necessary.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you adding spaces between operators?\nAre you removing spaces where appropriate?\nDid you fix the indentation error?\nHow about removing the blank lines before the return statement?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:",
     "crumbs": [
-      "**Module 7: Importing Files and the Coding Style Guide**",
+      "**M7: Importing Files and the Coding Style Guide**",
       "&nbsp;&nbsp; 4.1. Exercises"
     ]
   },
@@ -3557,7 +3557,7 @@
     "section": "",
     "text": "Given the code here:\ncandy = pd.read_csv('data/candybars.csv')\nchocolate = pd.read_csv('data/chocolate_types.csv')\n\ndessert = candy.merge(chocolate, how='inner').dropna()",
     "crumbs": [
-      "**Module 7: Importing Files and the Coding Style Guide**",
+      "**M7: Importing Files and the Coding Style Guide**",
       "&nbsp;&nbsp; 5.1. Exercises"
     ]
   },
@@ -3568,7 +3568,7 @@
     "section": "",
     "text": "Given the code here:\ncandy = pd.read_csv('data/candybars.csv')\nchocolate = pd.read_csv('data/chocolate_types.csv')\n\ndessert = candy.merge(chocolate, how='inner').dropna()",
     "crumbs": [
-      "**Module 7: Importing Files and the Coding Style Guide**",
+      "**M7: Importing Files and the Coding Style Guide**",
       "&nbsp;&nbsp; 5.1. Exercises"
     ]
   },
@@ -3593,7 +3593,7 @@
     "section": "",
     "text": "0. Module Learning Outcomes\n\nVideoSlides",
     "crumbs": [
-      "**Module 8: A Slice of NumPy and Advanced Data Wrangling**",
+      "**M8: A Slice of NumPy and Advanced Data Wrangling**",
       "0. Module Learning Outcomes"
     ]
   },
@@ -3604,7 +3604,7 @@
     "section": "",
     "text": "array([ 0, 5, 10, 15, 20, 25, 30])\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nInstructions:\nRunning a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\nMake sure you remove the hash (#) symbol in the coding portions of this question. We have commented them so that the line won’t execute and you can test your code after each step.\nLet’s explore how Python compares lists and arrays.\nTasks:\n\nCreate 2 lists of the same length and save each as objects named a_list and b_list.\nUsing Boolean operators, what is outputted when you test to see if they are equal?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you using [] or list() notation?\nAre you using == to check if the lists are equal?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNow let’s do the same exercises using arrays.\nTasks:\n\nCreate 2 arrays of the same length and save each as objects named a_array and b_array.\nUsing Boolean operators, what is outputted when you test to see if they are equal?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you using np.array() with parentheses to make your arrays?\nAre you using == to check if the arrays are equal?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThis is an example of how useful arrays can be when doing numerical computation! To compare each element in a list would take more code and time for the same result.",
     "crumbs": [
-      "**Module 8: A Slice of NumPy and Advanced Data Wrangling**",
+      "**M8: A Slice of NumPy and Advanced Data Wrangling**",
       "&nbsp;&nbsp; 1.1. Exercises"
     ]
   },
@@ -3615,7 +3615,7 @@
     "section": "",
     "text": "array([ 0, 5, 10, 15, 20, 25, 30])",
     "crumbs": [
-      "**Module 8: A Slice of NumPy and Advanced Data Wrangling**",
+      "**M8: A Slice of NumPy and Advanced Data Wrangling**",
       "&nbsp;&nbsp; 1.1. Exercises"
     ]
   },
@@ -3626,7 +3626,7 @@
     "section": "",
     "text": "Instructions:\nRunning a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\nMake sure you remove the hash (#) symbol in the coding portions of this question. We have commented them so that the line won’t execute and you can test your code after each step.\nLet’s explore how Python compares lists and arrays.\nTasks:\n\nCreate 2 lists of the same length and save each as objects named a_list and b_list.\nUsing Boolean operators, what is outputted when you test to see if they are equal?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you using [] or list() notation?\nAre you using == to check if the lists are equal?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNow let’s do the same exercises using arrays.\nTasks:\n\nCreate 2 arrays of the same length and save each as objects named a_array and b_array.\nUsing Boolean operators, what is outputted when you test to see if they are equal?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you using np.array() with parentheses to make your arrays?\nAre you using == to check if the arrays are equal?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThis is an example of how useful arrays can be when doing numerical computation! To compare each element in a list would take more code and time for the same result.",
     "crumbs": [
-      "**Module 8: A Slice of NumPy and Advanced Data Wrangling**",
+      "**M8: A Slice of NumPy and Advanced Data Wrangling**",
       "&nbsp;&nbsp; 1.1. Exercises"
     ]
   },
@@ -3637,7 +3637,7 @@
     "section": "",
     "text": "np.ones((4, 3))\n\n\n\n\n\n\n\narray([[ 0,  1,  2,  3,  4,  5,  6,  7],\n       [ 8,  9, 10, 11, 12, 13, 14, 15]])\n\n\n\n\narray([[[ 0,  1,  2,  3,  4],\n        [ 5,  6,  7,  8,  9]],\n\n       [[10, 11, 12, 13, 14],\n        [15, 16, 17, 18, 19]],\n\n       [[20, 21, 22, 23, 24],\n        [25, 26, 27, 28, 29]]])\n\n\n\n\n\n\n\n\n\n\n\nUse the following array named hurray to answer the next set of questions.\narray([[ 0,  1,  2],\n       [ 3,  4,  5],\n       [ 6,  7,  8],\n       [ 9, 10, 11],\n       [12, 13, 14],\n       [15, 16, 17]])\n# Question 1\narray([[0, 1, 2],\n       [3, 4, 5],\n       [6, 7, 8]])\n\n\n\n\n# Question 2\narray([[10, 11],\n       [13, 14]])\n\n\n\n\n# Question 3\narray([[ 0,  3,  6,  9, 12, 15],\n       [ 1,  4,  7, 10, 13, 16],\n       [ 2,  5,  8, 11, 14, 17]])\n\n\n\n\n\n\n\nInstructions:\nRunning a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\nMake sure you remove the hash (#) symbol in the coding portions of this question. We have commented them so that the line won’t execute and you can test your code after each step.\n\n\nLet’s make an array and find its size and dimension.\nTasks:\n\nCreate an array named arr1 that contains only elements with values 1 and a shape of (3,5).\nSave the dimension and size of arr1 in objects named arr1_dim and arr1_size respectively.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you using .ones((3,5))?\nAre you using .ndim and .size?\nAre you saving your objects as the correct names?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLet’s make a new array and transform it by slicing and transposing.\nTasks:\n\nCreate an array named arr2 using np.linspace() with 6 equally spaced values from 1 to 16 and a shape of (2,3) (You’ll need .reshape() for this!).\nTranspose the array and name it arr2t.\nFinally, slice the new object arr2t so it only includes the values 7 and 16. Save this as an object named sliced_arr2t.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you using .reshape() to change the dimension of np.linspace()?\nAre you using .T?\nAre you slicing with [:,1]?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:",
     "crumbs": [
-      "**Module 8: A Slice of NumPy and Advanced Data Wrangling**",
+      "**M8: A Slice of NumPy and Advanced Data Wrangling**",
       "&nbsp;&nbsp; 2.1. Exercises"
     ]
   },
@@ -3648,7 +3648,7 @@
     "section": "",
     "text": "np.ones((4, 3))",
     "crumbs": [
-      "**Module 8: A Slice of NumPy and Advanced Data Wrangling**",
+      "**M8: A Slice of NumPy and Advanced Data Wrangling**",
       "&nbsp;&nbsp; 2.1. Exercises"
     ]
   },
@@ -3659,7 +3659,7 @@
     "section": "",
     "text": "array([[ 0,  1,  2,  3,  4,  5,  6,  7],\n       [ 8,  9, 10, 11, 12, 13, 14, 15]])\n\n\n\n\narray([[[ 0,  1,  2,  3,  4],\n        [ 5,  6,  7,  8,  9]],\n\n       [[10, 11, 12, 13, 14],\n        [15, 16, 17, 18, 19]],\n\n       [[20, 21, 22, 23, 24],\n        [25, 26, 27, 28, 29]]])",
     "crumbs": [
-      "**Module 8: A Slice of NumPy and Advanced Data Wrangling**",
+      "**M8: A Slice of NumPy and Advanced Data Wrangling**",
       "&nbsp;&nbsp; 2.1. Exercises"
     ]
   },
@@ -3670,7 +3670,7 @@
     "section": "",
     "text": "Use the following array named hurray to answer the next set of questions.\narray([[ 0,  1,  2],\n       [ 3,  4,  5],\n       [ 6,  7,  8],\n       [ 9, 10, 11],\n       [12, 13, 14],\n       [15, 16, 17]])\n# Question 1\narray([[0, 1, 2],\n       [3, 4, 5],\n       [6, 7, 8]])\n\n\n\n\n# Question 2\narray([[10, 11],\n       [13, 14]])\n\n\n\n\n# Question 3\narray([[ 0,  3,  6,  9, 12, 15],\n       [ 1,  4,  7, 10, 13, 16],\n       [ 2,  5,  8, 11, 14, 17]])",
     "crumbs": [
-      "**Module 8: A Slice of NumPy and Advanced Data Wrangling**",
+      "**M8: A Slice of NumPy and Advanced Data Wrangling**",
       "&nbsp;&nbsp; 2.1. Exercises"
     ]
   },
@@ -3681,7 +3681,7 @@
     "section": "",
     "text": "Instructions:\nRunning a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\nMake sure you remove the hash (#) symbol in the coding portions of this question. We have commented them so that the line won’t execute and you can test your code after each step.\n\n\nLet’s make an array and find its size and dimension.\nTasks:\n\nCreate an array named arr1 that contains only elements with values 1 and a shape of (3,5).\nSave the dimension and size of arr1 in objects named arr1_dim and arr1_size respectively.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you using .ones((3,5))?\nAre you using .ndim and .size?\nAre you saving your objects as the correct names?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLet’s make a new array and transform it by slicing and transposing.\nTasks:\n\nCreate an array named arr2 using np.linspace() with 6 equally spaced values from 1 to 16 and a shape of (2,3) (You’ll need .reshape() for this!).\nTranspose the array and name it arr2t.\nFinally, slice the new object arr2t so it only includes the values 7 and 16. Save this as an object named sliced_arr2t.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you using .reshape() to change the dimension of np.linspace()?\nAre you using .T?\nAre you slicing with [:,1]?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:",
     "crumbs": [
-      "**Module 8: A Slice of NumPy and Advanced Data Wrangling**",
+      "**M8: A Slice of NumPy and Advanced Data Wrangling**",
       "&nbsp;&nbsp; 2.1. Exercises"
     ]
   },
@@ -3692,7 +3692,7 @@
     "section": "",
     "text": "You run .info() on the fruit_salad dataframe and get the following output.\n&lt;class 'pandas.core.frame.DataFrame'&gt;\nRangeIndex: 10 entries, 0 to 9\nData columns (total 8 columns):\n #   Column         Non-Null Count  Dtype  \n---  ------         --------------  -----  \n 0   name           10 non-null     object \n 1   colour         10 non-null     object \n 2   location       10 non-null     object \n 3   seed           10 non-null     bool   \n 4   shape          9 non-null      object \n 5   sweetness      10 non-null     bool   \n 6   water_content  8 non-null      float64\n 7   weight         10 non-null     int64  \ndtypes: bool(2), float64(1), int64(1), object(4)\nmemory usage: 628.0+ bytes\n\n\n\n\n     name  height  diameter   age flowering\n0  Cherry    15.0         2  12.0      True\n1     Fir    20.0         4   4.0     False\n2  Willow    25.0         3   2.0      True\n3     Oak     NaN         2   NaN     False\n4     Oak    10.0         5   6.0       NaN\n\n\n\n\n\n\n\nUse the forest dataframe below to answer the next 2 questions:\n     name  height  diameter   age flowering\n0  Cherry    15.0         2  12.0      True\n1     Fir    20.0         4   4.0     False\n2  Willow    25.0         3   2.0      True\n3     Oak     NaN         2   3.0     False\n4     Oak    10.0         5   6.0     False\n# Quesiton 1\n     name  height  diameter  age  flowering\n0  Cherry    15.0         2   12       True\n1     Fir    20.0         4    4      False\n2  Willow    25.0         3    2       True\n3     Oak    17.5         2    3      False\n4     Oak    10.0         5    6      False\n\n\n\n\n# Quesiton 2\n     name  height  diameter  age  flowering\n0  Cherry    15.0         2   12       True\n1     Fir    20.0         4    4      False\n2  Willow    25.0         3    2       True\n3     Oak    10.0         2    3      False\n4     Oak    10.0         5    6      False\n\n\n\n\n\n\n\nInstructions:\nRunning a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\nMake sure you remove the hash (#) symbol in the coding portions of this question. We have commented them so that the line won’t execute and you can test your code after each step.\n\n\nLet’s replace the values missing in the canucks dataframe with the salary mean.\nTasks:\n\nReplace the NaN values in the dataframe with the mean salary value.\nSave this as a new dataframe named canucks_altered.\nDisplay the canucks_altered dataframe.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you using .fillna()?\nAre you using the argument value=canucks['Salary].mean()?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLet’s practice using .isnull() in our data processing using the canucks dataset from earlier in this course.\nTasks:\n\nIdentify any columns with null values in the canucks dataframe with .info() and save this as canucks_info.\nCreate a new column in the dataframe named Wealth where all the values equal \"comfortable\".\nName the new dataframe canucks_comf.\nDo conditional value replacement, where if the value in the Salary column is null, we replace \"comfortable\" with \"unknown\".\nDisplay the new canucks_comf dataframe.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you using canucks.info()?\nAre you creating canucks_comf with canucks.assign(Wealth = \"comfortable\")?\nAre you using .loc[] to replace the values in the Wealth column?\nAre you using canucks_comf['Salary'].isnull() as your condition in .loc[]?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:",
     "crumbs": [
-      "**Module 8: A Slice of NumPy and Advanced Data Wrangling**",
+      "**M8: A Slice of NumPy and Advanced Data Wrangling**",
       "&nbsp;&nbsp; 3.1. Exercises"
     ]
   },
@@ -3703,7 +3703,7 @@
     "section": "",
     "text": "You run .info() on the fruit_salad dataframe and get the following output.\n&lt;class 'pandas.core.frame.DataFrame'&gt;\nRangeIndex: 10 entries, 0 to 9\nData columns (total 8 columns):\n #   Column         Non-Null Count  Dtype  \n---  ------         --------------  -----  \n 0   name           10 non-null     object \n 1   colour         10 non-null     object \n 2   location       10 non-null     object \n 3   seed           10 non-null     bool   \n 4   shape          9 non-null      object \n 5   sweetness      10 non-null     bool   \n 6   water_content  8 non-null      float64\n 7   weight         10 non-null     int64  \ndtypes: bool(2), float64(1), int64(1), object(4)\nmemory usage: 628.0+ bytes\n\n\n\n\n     name  height  diameter   age flowering\n0  Cherry    15.0         2  12.0      True\n1     Fir    20.0         4   4.0     False\n2  Willow    25.0         3   2.0      True\n3     Oak     NaN         2   NaN     False\n4     Oak    10.0         5   6.0       NaN",
     "crumbs": [
-      "**Module 8: A Slice of NumPy and Advanced Data Wrangling**",
+      "**M8: A Slice of NumPy and Advanced Data Wrangling**",
       "&nbsp;&nbsp; 3.1. Exercises"
     ]
   },
@@ -3714,7 +3714,7 @@
     "section": "",
     "text": "Use the forest dataframe below to answer the next 2 questions:\n     name  height  diameter   age flowering\n0  Cherry    15.0         2  12.0      True\n1     Fir    20.0         4   4.0     False\n2  Willow    25.0         3   2.0      True\n3     Oak     NaN         2   3.0     False\n4     Oak    10.0         5   6.0     False\n# Quesiton 1\n     name  height  diameter  age  flowering\n0  Cherry    15.0         2   12       True\n1     Fir    20.0         4    4      False\n2  Willow    25.0         3    2       True\n3     Oak    17.5         2    3      False\n4     Oak    10.0         5    6      False\n\n\n\n\n# Quesiton 2\n     name  height  diameter  age  flowering\n0  Cherry    15.0         2   12       True\n1     Fir    20.0         4    4      False\n2  Willow    25.0         3    2       True\n3     Oak    10.0         2    3      False\n4     Oak    10.0         5    6      False",
     "crumbs": [
-      "**Module 8: A Slice of NumPy and Advanced Data Wrangling**",
+      "**M8: A Slice of NumPy and Advanced Data Wrangling**",
       "&nbsp;&nbsp; 3.1. Exercises"
     ]
   },
@@ -3725,7 +3725,7 @@
     "section": "",
     "text": "Instructions:\nRunning a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\nMake sure you remove the hash (#) symbol in the coding portions of this question. We have commented them so that the line won’t execute and you can test your code after each step.\n\n\nLet’s replace the values missing in the canucks dataframe with the salary mean.\nTasks:\n\nReplace the NaN values in the dataframe with the mean salary value.\nSave this as a new dataframe named canucks_altered.\nDisplay the canucks_altered dataframe.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you using .fillna()?\nAre you using the argument value=canucks['Salary].mean()?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLet’s practice using .isnull() in our data processing using the canucks dataset from earlier in this course.\nTasks:\n\nIdentify any columns with null values in the canucks dataframe with .info() and save this as canucks_info.\nCreate a new column in the dataframe named Wealth where all the values equal \"comfortable\".\nName the new dataframe canucks_comf.\nDo conditional value replacement, where if the value in the Salary column is null, we replace \"comfortable\" with \"unknown\".\nDisplay the new canucks_comf dataframe.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you using canucks.info()?\nAre you creating canucks_comf with canucks.assign(Wealth = \"comfortable\")?\nAre you using .loc[] to replace the values in the Wealth column?\nAre you using canucks_comf['Salary'].isnull() as your condition in .loc[]?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:",
     "crumbs": [
-      "**Module 8: A Slice of NumPy and Advanced Data Wrangling**",
+      "**M8: A Slice of NumPy and Advanced Data Wrangling**",
       "&nbsp;&nbsp; 3.1. Exercises"
     ]
   },
@@ -3736,7 +3736,7 @@
     "section": "",
     "text": "Instructions:\nRunning a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\nMake sure you remove the hash (#) symbol in the coding portions of this question. We have commented them so that the line won’t execute and you can test your code after each step.\nUse the output of the following code chunk to help answer the next question.\n\n\n\n\n\n\nLet’s read in data and parse a datetime column as well as calculate the hockey team’s oldest and youngest player.\nTasks:\n\nRead in the canucks.csv file from the data folder and parse the Birth Date column. Save this as an object named canucks.\nFind the oldest player’s date of birth and save the Timestamp as oldest.\nFind the youngest player’s date of birth and save the Timestamp as youngest.\nFind the age difference between the two players in years to 2 decimal places. Save this as an object name age_range.\nDisplay age_range.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you using the argument parse_dates while reading in the data?\nThe oldest player has the min() date of birth.\nThe youngest player has the max() date of birth.\nAre you subtracting the min value from the max value?\nAre you rounding to 2 decimal places?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:",
     "crumbs": [
-      "**Module 8: A Slice of NumPy and Advanced Data Wrangling**",
+      "**M8: A Slice of NumPy and Advanced Data Wrangling**",
       "&nbsp;&nbsp; 4.1. Exercises"
     ]
   },
@@ -3747,7 +3747,7 @@
     "section": "",
     "text": "Instructions:\nRunning a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\nMake sure you remove the hash (#) symbol in the coding portions of this question. We have commented them so that the line won’t execute and you can test your code after each step.\nUse the output of the following code chunk to help answer the next question.\n\n\n\n\n\n\nLet’s read in data and parse a datetime column as well as calculate the hockey team’s oldest and youngest player.\nTasks:\n\nRead in the canucks.csv file from the data folder and parse the Birth Date column. Save this as an object named canucks.\nFind the oldest player’s date of birth and save the Timestamp as oldest.\nFind the youngest player’s date of birth and save the Timestamp as youngest.\nFind the age difference between the two players in years to 2 decimal places. Save this as an object name age_range.\nDisplay age_range.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you using the argument parse_dates while reading in the data?\nThe oldest player has the min() date of birth.\nThe youngest player has the max() date of birth.\nAre you subtracting the min value from the max value?\nAre you rounding to 2 decimal places?\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:",
     "crumbs": [
-      "**Module 8: A Slice of NumPy and Advanced Data Wrangling**",
+      "**M8: A Slice of NumPy and Advanced Data Wrangling**",
       "&nbsp;&nbsp; 4.1. Exercises"
     ]
   },
@@ -3758,7 +3758,7 @@
     "section": "",
     "text": "name   colour location   seed  shape  sweetness  water_content  weight\n0         apple      red   canada   True  round       True             84     100\n1        banana   yellow   mexico  False   long       True             75     120\n2    cantaloupe   orange    spain   True  round       True             90    1360\n3  dragon-fruit  magenta    china   True  round      False             96     600\n4    elderberry   purple  austria  False  round       True             80       5\n5           fig   purple   turkey  False   oval      False             78      40\n6         guava    green   mexico   True   oval       True             83     450\n7   huckleberry     blue   canada   True  round       True             73       5\n8          kiwi    brown    china   True  round       True             80      76\n9         lemon   yellow   mexico  False   oval      False             83      65\n\n\n\n\n\n\n\n\n\n\n\n\n\nInstructions:\nRunning a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\nMake sure you remove the hash (#) symbol in the coding portions of this question. We have commented them so that the line won’t execute and you can test your code after each step.\nUse the output of the following code chunk to help answer the next question.\n\n\n\n\n\n\nLet’s transform some of the columns in your canucks dataset. Let’s also see how many of the players have multiple T’s in their name.\nTasks:\n\nConvert the Position and Country columns into uppercase and save this in a dataframe named canucks_upper.\nCreate a new column in the canucks_upper dataframe named number_ts where you count the total number of times the letter T (lowercase or uppercase) appears in their name.\nSave this dataframe named as canucks_upper_ts.\nHow many players have multiple T’s in their name?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you using .assign and .upper()?\nYou will have to convert the lower to .lower() first and then .count('t')\nThe number of players with number_ts greater than one can be calculated by filtering on that column and getting the .shape of the dataframe.\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:",
     "crumbs": [
-      "**Module 8: A Slice of NumPy and Advanced Data Wrangling**",
+      "**M8: A Slice of NumPy and Advanced Data Wrangling**",
       "&nbsp;&nbsp; 5.1. Exercises"
     ]
   },
@@ -3769,7 +3769,7 @@
     "section": "",
     "text": "name   colour location   seed  shape  sweetness  water_content  weight\n0         apple      red   canada   True  round       True             84     100\n1        banana   yellow   mexico  False   long       True             75     120\n2    cantaloupe   orange    spain   True  round       True             90    1360\n3  dragon-fruit  magenta    china   True  round      False             96     600\n4    elderberry   purple  austria  False  round       True             80       5\n5           fig   purple   turkey  False   oval      False             78      40\n6         guava    green   mexico   True   oval       True             83     450\n7   huckleberry     blue   canada   True  round       True             73       5\n8          kiwi    brown    china   True  round       True             80      76\n9         lemon   yellow   mexico  False   oval      False             83      65",
     "crumbs": [
-      "**Module 8: A Slice of NumPy and Advanced Data Wrangling**",
+      "**M8: A Slice of NumPy and Advanced Data Wrangling**",
       "&nbsp;&nbsp; 5.1. Exercises"
     ]
   },
@@ -3780,7 +3780,7 @@
     "section": "",
     "text": "Instructions:\nRunning a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\nMake sure you remove the hash (#) symbol in the coding portions of this question. We have commented them so that the line won’t execute and you can test your code after each step.\nUse the output of the following code chunk to help answer the next question.\n\n\n\n\n\n\nLet’s transform some of the columns in your canucks dataset. Let’s also see how many of the players have multiple T’s in their name.\nTasks:\n\nConvert the Position and Country columns into uppercase and save this in a dataframe named canucks_upper.\nCreate a new column in the canucks_upper dataframe named number_ts where you count the total number of times the letter T (lowercase or uppercase) appears in their name.\nSave this dataframe named as canucks_upper_ts.\nHow many players have multiple T’s in their name?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you using .assign and .upper()?\nYou will have to convert the lower to .lower() first and then .count('t')\nThe number of players with number_ts greater than one can be calculated by filtering on that column and getting the .shape of the dataframe.\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:",
     "crumbs": [
-      "**Module 8: A Slice of NumPy and Advanced Data Wrangling**",
+      "**M8: A Slice of NumPy and Advanced Data Wrangling**",
       "&nbsp;&nbsp; 5.1. Exercises"
     ]
   },
@@ -3791,7 +3791,7 @@
     "section": "",
     "text": "name   colour location   seed  shape  sweetness  water_content  weight\n0         apple      red   canada   True  round       True             84     100\n1        banana   yellow   mexico  False   long       True             75     120\n2    cantaloupe   orange    spain   True  round       True             90    1360\n3  dragon-fruit  magenta    china   True  round      False             96     600\n4    elderberry   purple  austria  False  round       True             80       5\n5           fig   purple   turkey  False   oval      False             78      40\n6         guava    green   mexico   True   oval       True             83     450\n7   huckleberry     blue   canada   True  round       True             73       5\n8          kiwi    brown    china   True  round       True             80      76\n9         lemon   yellow   mexico  False   oval      False             83      65\n\n\n\n\n\n\n\n\n\n\n\n\n\nInstructions:\nRunning a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\nMake sure you remove the hash (#) symbol in the coding portions of this question. We have commented them so that the line won’t execute and you can test your code after each step.\nUse the lego dataframe to help answer the next question.\n\n\n\n\n\n\nLet’s practice using the verbs we learned from the lesson to process a string column in our Lego dataset.\nTasks:\n\nConvert the name column in the lego dataset to lowercase and overwrite the dataframe by saving it as an object named lego.\nFilter the dataset to find all the Lego sets that contain \"weetabix\" in the name column.\nSave this as an object named lego_weetabix.\nReplace the word\"weetabix” in the name column of the lego_wetabix dataframe with the string \"cereal-brand\".\nSave this in an object called lego_cereal.\nIf the row contains the word \"promotional\" in the name column, change the entire value to \"cereal-brand freebie\".\nDisplay lego_cereal.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you using .assign() and .lower() to convert the name column to lowercase?\nAre you using str.contains('weetabix') to filter all the rows?\nYou should be using assign() with str.replace('weetabix', 'cereal-brand') to replace “weetabix”.\nYou should be using .loc[] and str.contains('promotional') (and a single =) to assign new row values.\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:",
     "crumbs": [
-      "**Module 8: A Slice of NumPy and Advanced Data Wrangling**",
+      "**M8: A Slice of NumPy and Advanced Data Wrangling**",
       "&nbsp;&nbsp; 6.1. Exercises"
     ]
   },
@@ -3802,7 +3802,7 @@
     "section": "",
     "text": "name   colour location   seed  shape  sweetness  water_content  weight\n0         apple      red   canada   True  round       True             84     100\n1        banana   yellow   mexico  False   long       True             75     120\n2    cantaloupe   orange    spain   True  round       True             90    1360\n3  dragon-fruit  magenta    china   True  round      False             96     600\n4    elderberry   purple  austria  False  round       True             80       5\n5           fig   purple   turkey  False   oval      False             78      40\n6         guava    green   mexico   True   oval       True             83     450\n7   huckleberry     blue   canada   True  round       True             73       5\n8          kiwi    brown    china   True  round       True             80      76\n9         lemon   yellow   mexico  False   oval      False             83      65",
     "crumbs": [
-      "**Module 8: A Slice of NumPy and Advanced Data Wrangling**",
+      "**M8: A Slice of NumPy and Advanced Data Wrangling**",
       "&nbsp;&nbsp; 6.1. Exercises"
     ]
   },
@@ -3813,7 +3813,7 @@
     "section": "",
     "text": "Instructions:\nRunning a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.\nWhen you see ____ in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.\nMake sure you remove the hash (#) symbol in the coding portions of this question. We have commented them so that the line won’t execute and you can test your code after each step.\nUse the lego dataframe to help answer the next question.\n\n\n\n\n\n\nLet’s practice using the verbs we learned from the lesson to process a string column in our Lego dataset.\nTasks:\n\nConvert the name column in the lego dataset to lowercase and overwrite the dataframe by saving it as an object named lego.\nFilter the dataset to find all the Lego sets that contain \"weetabix\" in the name column.\nSave this as an object named lego_weetabix.\nReplace the word\"weetabix” in the name column of the lego_wetabix dataframe with the string \"cereal-brand\".\nSave this in an object called lego_cereal.\nIf the row contains the word \"promotional\" in the name column, change the entire value to \"cereal-brand freebie\".\nDisplay lego_cereal.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\n\nAre you using .assign() and .lower() to convert the name column to lowercase?\nAre you using str.contains('weetabix') to filter all the rows?\nYou should be using assign() with str.replace('weetabix', 'cereal-brand') to replace “weetabix”.\nYou should be using .loc[] and str.contains('promotional') (and a single =) to assign new row values.\n\n\n\n\n\n\n\n\n\n\n\n\nFully worked solution:",
     "crumbs": [
-      "**Module 8: A Slice of NumPy and Advanced Data Wrangling**",
+      "**M8: A Slice of NumPy and Advanced Data Wrangling**",
       "&nbsp;&nbsp; 6.1. Exercises"
     ]
   },

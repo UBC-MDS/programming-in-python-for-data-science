@@ -222,7 +222,7 @@
 </section>
 <section id="introducing-the-data" class="slide level2">
 <h2>Introducing the Data</h2>
-<div id="a1976204" class="cell" data-execution_count="2">
+<div id="52399f4b" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a>candy <span class="op">=</span> pd.read_csv(<span class="st">'data/candybars.csv'</span>, nrows<span class="op">=</span><span class="dv">5</span>, usecols<span class="op">=</span>[<span class="st">'name'</span>, <span class="st">'weight'</span>, <span class="st">'chocolate'</span>, <span class="st">'peanuts'</span>])</span>
 <span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a>candy.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
@@ -313,7 +313,7 @@
 </section>
 <section class="slide level2">
 
-<div id="420d88ac" class="cell" data-execution_count="3">
+<div id="538c1fd7" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a>candy</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <div>
@@ -385,7 +385,7 @@
 </div>
 <p><br></p>
 <p>Let’s load in the next dataset:</p>
-<div id="ad808e8d" class="cell" data-execution_count="4">
+<div id="ee724597" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a>candy2m <span class="op">=</span> pd.read_csv(<span class="st">'data/candybars_merge.csv'</span>).loc[:<span class="dv">4</span>]</span>
 <span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a>candy2m</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
@@ -531,7 +531,7 @@ Dataframe A can have a column labeled <code>cereal,</code> and Dataframe B could
 </section>
 <section class="slide level2">
 
-<div id="8d6382e9" class="cell" data-execution_count="5">
+<div id="fa1fb648" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a>candy</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
 <div>
@@ -602,7 +602,7 @@ Dataframe A can have a column labeled <code>cereal,</code> and Dataframe B could
 </div>
 </div>
 <p><br></p>
-<div id="72e7b79f" class="cell" data-execution_count="6">
+<div id="361647fc" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a>candy2m</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <div>
@@ -695,7 +695,7 @@ Dataframe A can have a column labeled <code>cereal,</code> and Dataframe B could
 </section>
 <section class="slide level2">
 
-<div id="accb1da5" class="cell" data-execution_count="7">
+<div id="a9b86246" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a aria-hidden="true" tabindex="-1"></a>candy.merge(candy2m, left_on<span class="op">=</span><span class="st">'name'</span>, right_on<span class="op">=</span><span class="st">'chocolate_bar'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
 <div>
@@ -780,7 +780,7 @@ Dataframe A can have a column labeled <code>cereal,</code> and Dataframe B could
 </section>
 <section id="how" class="slide level2">
 <h2>how</h2>
-<div id="a7dc069a" class="cell" data-execution_count="8">
+<div id="8086b7b9" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a aria-hidden="true" tabindex="-1"></a>candy.merge(candy2m, left_on<span class="op">=</span><span class="st">'name'</span>, right_on<span class="op">=</span><span class="st">'chocolate_bar'</span>, how<span class="op">=</span><span class="st">'inner'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
 <div>
@@ -889,7 +889,7 @@ Dataframe A can have a column labeled <code>cereal,</code> and Dataframe B could
 <ul>
 <li><code>outer</code></li>
 </ul>
-<div id="9b3e9630" class="cell" data-execution_count="9">
+<div id="0e38ca5b" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a aria-hidden="true" tabindex="-1"></a>candy.merge(candy2m, left_on<span class="op">=</span><span class="st">'name'</span>, right_on<span class="op">=</span><span class="st">'chocolate_bar'</span>, how<span class="op">=</span><span class="st">'outer'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
 <div>
@@ -1057,7 +1057,7 @@ Dataframe A can have a column labeled <code>cereal,</code> and Dataframe B could
 <ul>
 <li><code>left</code></li>
 </ul>
-<div id="e8f770d8" class="cell" data-execution_count="10">
+<div id="62d846fc" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a aria-hidden="true" tabindex="-1"></a>candy.merge(candy2m, left_on<span class="op">=</span><span class="st">'name'</span>, right_on<span class="op">=</span><span class="st">'chocolate_bar'</span>, how<span class="op">=</span><span class="st">'left'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="10">
 <div>
@@ -1179,7 +1179,7 @@ Dataframe A can have a column labeled <code>cereal,</code> and Dataframe B could
 <ul>
 <li><code>right</code></li>
 </ul>
-<div id="4db5682b" class="cell" data-execution_count="11">
+<div id="841f31d4" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a aria-hidden="true" tabindex="-1"></a>candy.merge(candy2m, left_on<span class="op">=</span><span class="st">'name'</span>, right_on<span class="op">=</span><span class="st">'chocolate_bar'</span>, how<span class="op">=</span><span class="st">'right'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="11">
 <div>
@@ -1301,7 +1301,7 @@ Dataframe A can have a column labeled <code>cereal,</code> and Dataframe B could
 </section>
 <section id="indicator" class="slide level2">
 <h2>indicator</h2>
-<div id="29fc41e3" class="cell" data-execution_count="12">
+<div id="2b4694bd" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a aria-hidden="true" tabindex="-1"></a>candy.merge(candy2m, left_on<span class="op">=</span><span class="st">'name'</span>, right_on<span class="op">=</span><span class="st">'chocolate_bar'</span>, how<span class="op">=</span><span class="st">'outer'</span>, indicator<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
 <div>

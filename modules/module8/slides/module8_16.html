@@ -220,7 +220,7 @@
 </section>
 <section class="slide level2">
 
-<div id="bbc195c6" class="cell" data-execution_count="3">
+<div id="90ef1ac6" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a>cycling.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <div>
@@ -303,7 +303,7 @@
 </div>
 </div>
 <p><br></p>
-<div id="ad17793e" class="cell" data-execution_count="4">
+<div id="0455cde7" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a>cycling.dtypes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>Date         object
@@ -332,7 +332,7 @@ dtype: object</code></pre>
 </section>
 <section class="slide level2">
 
-<div id="ae78d3b6" class="cell" data-execution_count="5">
+<div id="45159bd3" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a>cycling.sort_values(<span class="st">'Date'</span>).head(<span class="dv">15</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
 <div>
@@ -451,7 +451,7 @@ dtype: object</code></pre>
 </section>
 <section class="slide level2">
 
-<div id="2055809e" class="cell" data-execution_count="6">
+<div id="dda2ba29" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a>cycling.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <div>
@@ -534,7 +534,7 @@ dtype: object</code></pre>
 </div>
 </div>
 <p><br></p>
-<div id="c3ac58d9" class="cell" data-execution_count="7">
+<div id="29005c14" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a>dates <span class="op">=</span> (cycling[<span class="st">'Date'</span>].<span class="bu">str</span>.split(<span class="st">' '</span>, expand<span class="op">=</span><span class="va">True</span>)</span>
 <span id="cb6-2"><a aria-hidden="true" tabindex="-1"></a>                           .rename(columns <span class="op">=</span> {<span class="dv">0</span>:<span class="st">'Date'</span>,</span>
 <span id="cb6-3"><a aria-hidden="true" tabindex="-1"></a>                                              <span class="dv">1</span>:<span class="st">'Time'</span>}))</span>
@@ -613,7 +613,7 @@ dtype: object</code></pre>
 </section>
 <section class="slide level2">
 
-<div id="0773714b" class="cell" data-execution_count="8">
+<div id="3f6bacbf" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a>dates <span class="op">=</span> (dates[<span class="st">'Date'</span>].<span class="bu">str</span>.split(<span class="st">'-'</span>, expand<span class="op">=</span><span class="va">True</span>).rename(columns <span class="op">=</span> {<span class="dv">0</span>:<span class="st">'Month'</span>,</span>
 <span id="cb7-2"><a aria-hidden="true" tabindex="-1"></a>                                                                     <span class="dv">1</span>:<span class="st">'Day'</span>,</span>
 <span id="cb7-3"><a aria-hidden="true" tabindex="-1"></a>                                                                     <span class="dv">2</span>:<span class="st">'Year'</span>}))</span>
@@ -696,14 +696,14 @@ dtype: object</code></pre>
 </section>
 <section class="slide level2">
 
-<div id="ccdffc4f" class="cell" data-execution_count="9">
+<div id="6966a8d7" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a aria-hidden="true" tabindex="-1"></a>dates.iloc[<span class="dv">0</span>,<span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
 <pre><code>'10'</code></pre>
 </div>
 </div>
 <p><br></p>
-<div id="c7e8c53f" class="cell" data-execution_count="10">
+<div id="7ec366af" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(dates.iloc[<span class="dv">0</span>,<span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="10">
 <pre><code>str</code></pre>
@@ -725,7 +725,7 @@ dtype: object</code></pre>
 </section>
 <section class="slide level2">
 
-<div id="b9036658" class="cell" data-execution_count="11">
+<div id="fe156ee3" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a aria-hidden="true" tabindex="-1"></a>cycling_dates <span class="op">=</span> (cycling.assign(Year <span class="op">=</span> dates[<span class="st">'Year'</span>].astype(<span class="bu">int</span>),</span>
 <span id="cb12-2"><a aria-hidden="true" tabindex="-1"></a>                                Month <span class="op">=</span>  dates[<span class="st">'Month'</span>],</span>
 <span id="cb12-3"><a aria-hidden="true" tabindex="-1"></a>                                Day <span class="op">=</span> dates[<span class="st">'Day'</span>].astype(<span class="bu">int</span>))</span>
@@ -807,7 +807,7 @@ dtype: object</code></pre>
 </div>
 </div>
 <p><br></p>
-<div id="203bc25d" class="cell" data-execution_count="12">
+<div id="1df480ad" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a aria-hidden="true" tabindex="-1"></a>cycling_dates <span class="op">=</span> cycling_dates.loc[:, [<span class="st">'Year'</span>, <span class="st">'Month'</span>, <span class="st">'Day'</span>, <span class="st">'Name'</span>,</span>
 <span id="cb13-2"><a aria-hidden="true" tabindex="-1"></a>                                      <span class="st">'Type'</span>, <span class="st">'Time'</span>, <span class="st">'Distance'</span>, <span class="st">'Comments'</span>]]</span>
 <span id="cb13-3"><a aria-hidden="true" tabindex="-1"></a>cycling_dates.head(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -898,7 +898,7 @@ dtype: object</code></pre>
 </section>
 <section class="slide level2">
 
-<div id="c28a9914" class="cell" data-execution_count="13">
+<div id="68f7bc04" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a aria-hidden="true" tabindex="-1"></a>cycling_dates.sort_values([<span class="st">'Year'</span>, <span class="st">'Month'</span>, <span class="st">'Day'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="13">
 <div>
@@ -1040,7 +1040,7 @@ dtype: object</code></pre>
 </section>
 <section id="pandas-parse_dates" class="slide level2">
 <h2>Pandas parse_dates</h2>
-<div id="00090fa7" class="cell" data-execution_count="14">
+<div id="91b9317f" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a aria-hidden="true" tabindex="-1"></a>cycling <span class="op">=</span> pd.read_csv(<span class="st">'data/cycling_data.csv'</span>)</span>
 <span id="cb15-2"><a aria-hidden="true" tabindex="-1"></a>cycling.head(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="14">
@@ -1106,7 +1106,7 @@ dtype: object</code></pre>
 </div>
 </div>
 <p><br></p>
-<div id="e7ba0b57" class="cell" data-execution_count="15">
+<div id="702de1b7" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a aria-hidden="true" tabindex="-1"></a>cycling.dtypes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="15">
 <pre><code>Date         object
@@ -1137,7 +1137,7 @@ dtype: object</code></pre>
 </section>
 <section class="slide level2">
 
-<div id="4fc9c451" class="cell" data-execution_count="16">
+<div id="27b1cd04" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a aria-hidden="true" tabindex="-1"></a>cycling_dates <span class="op">=</span> pd.read_csv(<span class="st">'data/cycling_data.csv'</span>, parse_dates <span class="op">=</span> [<span class="st">'Date'</span>])</span>
 <span id="cb18-2"><a aria-hidden="true" tabindex="-1"></a>cycling_dates.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="16">
@@ -1221,7 +1221,7 @@ dtype: object</code></pre>
 </div>
 </div>
 <p><br></p>
-<div id="87482b28" class="cell" data-execution_count="17">
+<div id="dc890bbe" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a aria-hidden="true" tabindex="-1"></a>cycling_dates.dtypes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="17">
 <pre><code>Date        datetime64[ns]
@@ -1249,7 +1249,7 @@ dtype: object</code></pre>
 </section>
 <section class="slide level2">
 
-<div id="edd5275e" class="cell" data-execution_count="18">
+<div id="838a602c" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a aria-hidden="true" tabindex="-1"></a>cycling_dates.sort_values(<span class="st">'Date'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="18">
 <div>
@@ -1366,7 +1366,7 @@ dtype: object</code></pre>
 </section>
 <section class="slide level2">
 
-<div id="37603ec6" class="cell" data-execution_count="19">
+<div id="d58f3b31" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a aria-hidden="true" tabindex="-1"></a>pd.read_csv(<span class="st">'data/cycling_data_split_time.csv'</span>).head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="19">
 <div>
@@ -1468,7 +1468,7 @@ dtype: object</code></pre>
 </div>
 </div>
 <p><br></p>
-<div id="5972aca6" class="cell" data-execution_count="20">
+<div id="bb8f0610" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a aria-hidden="true" tabindex="-1"></a>(pd.read_csv(<span class="st">'data/cycling_data_split_time.csv'</span>,</span>
 <span id="cb23-2"><a aria-hidden="true" tabindex="-1"></a>              parse_dates<span class="op">=</span>{<span class="st">'Date'</span>: [<span class="st">'Year'</span>, <span class="st">'Month'</span>, <span class="st">'Day'</span>, <span class="st">'Clock'</span>]})</span>
 <span id="cb23-3"><a aria-hidden="true" tabindex="-1"></a>              .head())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1570,7 +1570,7 @@ dtype: object</code></pre>
 </section>
 <section class="slide level2">
 
-<div id="3c848d18" class="cell" data-execution_count="21">
+<div id="6576aab8" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a aria-hidden="true" tabindex="-1"></a>cycling <span class="op">=</span> pd.read_csv(<span class="st">'data/cycling_data.csv'</span>)</span>
 <span id="cb24-2"><a aria-hidden="true" tabindex="-1"></a>cycling.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="21">
@@ -1654,7 +1654,7 @@ dtype: object</code></pre>
 </div>
 </div>
 <p><br></p>
-<div id="e5fb1160" class="cell" data-execution_count="22">
+<div id="f410dde6" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a aria-hidden="true" tabindex="-1"></a>cycling.dtypes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="22">
 <pre><code>Date         object
@@ -1684,7 +1684,7 @@ dtype: object</code></pre>
 </section>
 <section class="slide level2">
 
-<div id="745ba77d" class="cell" data-execution_count="23">
+<div id="5cd189b1" class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a aria-hidden="true" tabindex="-1"></a>new_cycling <span class="op">=</span> cycling.assign(Date <span class="op">=</span> pd.to_datetime(cycling[<span class="st">'Date'</span>]))</span>
 <span id="cb27-2"><a aria-hidden="true" tabindex="-1"></a>new_cycling.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="23">
@@ -1768,7 +1768,7 @@ dtype: object</code></pre>
 </div>
 </div>
 <p><br></p>
-<div id="7ef97a7f" class="cell" data-execution_count="24">
+<div id="29c21d96" class="cell" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a aria-hidden="true" tabindex="-1"></a>new_cycling.dtypes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="24">
 <pre><code>Date        datetime64[ns]
@@ -1802,7 +1802,7 @@ dtype: object</code></pre>
 <ul>
 <li><code>.dt.day_name()</code> for the day of the week:</li>
 </ul>
-<div id="dd3c1061" class="cell" data-execution_count="25">
+<div id="922713c8" class="cell" data-execution_count="25">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a aria-hidden="true" tabindex="-1"></a>new_cycling[<span class="st">'Date'</span>].dt.day_name().head(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="25">
 <pre><code>0      Tuesday
@@ -1812,7 +1812,7 @@ Name: Date, dtype: object</code></pre>
 </div>
 </div>
 <p><br></p>
-<div id="6d96ebf6" class="cell" data-execution_count="26">
+<div id="59656b16" class="cell" data-execution_count="26">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a aria-hidden="true" tabindex="-1"></a>new_cycling.assign(weekday <span class="op">=</span> new_cycling[<span class="st">'Date'</span>].dt.day_name()).head(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="26">
 <div>
@@ -1900,7 +1900,7 @@ Name: Date, dtype: object</code></pre>
 </section>
 <section class="slide level2">
 
-<div id="72b842bb" class="cell" data-execution_count="27">
+<div id="3d1e75c8" class="cell" data-execution_count="27">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a aria-hidden="true" tabindex="-1"></a>new_cycling[<span class="st">'Date'</span>].dt.day.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="27">
 <pre><code>0    10
@@ -1912,7 +1912,7 @@ Name: Date, dtype: int32</code></pre>
 </div>
 </div>
 <p><br></p>
-<div id="babd2d85" class="cell" data-execution_count="28">
+<div id="785ff355" class="cell" data-execution_count="28">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a aria-hidden="true" tabindex="-1"></a>new_cycling.assign(day <span class="op">=</span> new_cycling[<span class="st">'Date'</span>].dt.day).head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="28">
 <div>
@@ -2047,7 +2047,7 @@ Name: Date, dtype: int32</code></pre>
 </section>
 <section class="slide level2">
 
-<div id="8274e87c" class="cell" data-execution_count="29">
+<div id="ee1e5da9" class="cell" data-execution_count="29">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a aria-hidden="true" tabindex="-1"></a>new_cycling.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="29">
 <div>
@@ -2131,7 +2131,7 @@ Name: Date, dtype: int32</code></pre>
 </div>
 <p><br></p>
 <p>If I select the first example in row 1 of our <code>new_cycling</code> dataset, you’ll notice that it outputs something called a <code>Timestamp</code>.</p>
-<div id="8196792b" class="cell" data-execution_count="30">
+<div id="36edce7c" class="cell" data-execution_count="30">
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a aria-hidden="true" tabindex="-1"></a>timestamp_ex <span class="op">=</span> new_cycling.loc[<span class="dv">1</span>,<span class="st">'Date'</span>]</span>
 <span id="cb37-2"><a aria-hidden="true" tabindex="-1"></a>timestamp_ex</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="30">
@@ -2155,28 +2155,28 @@ Name: Date, dtype: int32</code></pre>
 </section>
 <section class="slide level2">
 
-<div id="3c947504" class="cell" data-execution_count="31">
+<div id="a3ef4ad1" class="cell" data-execution_count="31">
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a aria-hidden="true" tabindex="-1"></a>timestamp_ex</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="31">
 <pre><code>Timestamp('2019-09-11 06:52:00')</code></pre>
 </div>
 </div>
 <p><br></p>
-<div id="5fd63f9c" class="cell" data-execution_count="32">
+<div id="4b74f35a" class="cell" data-execution_count="32">
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a aria-hidden="true" tabindex="-1"></a>timestamp_ex.month_name()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="32">
 <pre><code>'September'</code></pre>
 </div>
 </div>
 <p><br></p>
-<div id="fc0e0797" class="cell" data-execution_count="33">
+<div id="06ce0ee4" class="cell" data-execution_count="33">
 <div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a aria-hidden="true" tabindex="-1"></a>timestamp_ex.day</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="33">
 <pre><code>11</code></pre>
 </div>
 </div>
 <p><br></p>
-<div id="f7c96f00" class="cell" data-execution_count="34">
+<div id="ff899c25" class="cell" data-execution_count="34">
 <div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a aria-hidden="true" tabindex="-1"></a>timestamp_ex.hour</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="34">
 <pre><code>6</code></pre>
@@ -2200,7 +2200,7 @@ Name: Date, dtype: int32</code></pre>
 </section>
 <section id="diff" class="slide level2">
 <h2>.diff()</h2>
-<div id="a86739f4" class="cell" data-execution_count="35">
+<div id="9a555012" class="cell" data-execution_count="35">
 <div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a aria-hidden="true" tabindex="-1"></a>cycling_intervals <span class="op">=</span> new_cycling[<span class="st">'Date'</span>].sort_values().diff()</span>
 <span id="cb47-2"><a aria-hidden="true" tabindex="-1"></a>cycling_intervals</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="35">
@@ -2233,21 +2233,21 @@ Name: Date, Length: 33, dtype: timedelta64[ns]</code></pre>
 </section>
 <section id="timedelta" class="slide level2">
 <h2>timedelta</h2>
-<div id="a49182b3" class="cell" data-execution_count="36">
+<div id="b166c7c7" class="cell" data-execution_count="36">
 <div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a aria-hidden="true" tabindex="-1"></a>cycling_intervals[<span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="36">
 <pre><code>Timedelta('0 days 13:39:00')</code></pre>
 </div>
 </div>
 <p><br></p>
-<div id="45405dad" class="cell" data-execution_count="37">
+<div id="5d38a2f1" class="cell" data-execution_count="37">
 <div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a aria-hidden="true" tabindex="-1"></a>cycling_intervals[<span class="dv">1</span>].seconds</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="37">
 <pre><code>49140</code></pre>
 </div>
 </div>
 <p><br></p>
-<div id="ef20f3b2" class="cell" data-execution_count="38">
+<div id="f9ae5419" class="cell" data-execution_count="38">
 <div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a aria-hidden="true" tabindex="-1"></a>sec_per_hour <span class="op">=</span> <span class="dv">60</span> <span class="op">*</span> <span class="dv">60</span></span>
 <span id="cb53-2"><a aria-hidden="true" tabindex="-1"></a>cycling_intervals[<span class="dv">1</span>].seconds <span class="op">/</span> sec_per_hour</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="38">
@@ -2275,21 +2275,21 @@ Name: Date, Length: 33, dtype: timedelta64[ns]</code></pre>
 </section>
 <section class="slide level2">
 
-<div id="8256aa34" class="cell" data-execution_count="39">
+<div id="ffa6175e" class="cell" data-execution_count="39">
 <div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a aria-hidden="true" tabindex="-1"></a>cycling_intervals.<span class="bu">max</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="39">
 <pre><code>Timedelta('5 days 13:47:00')</code></pre>
 </div>
 </div>
 <p><br></p>
-<div id="d69e3e6e" class="cell" data-execution_count="40">
+<div id="b45c55ee" class="cell" data-execution_count="40">
 <div class="sourceCode cell-code" id="cb57"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a aria-hidden="true" tabindex="-1"></a>cycling_intervals.<span class="bu">min</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="40">
 <pre><code>Timedelta('0 days 10:15:00')</code></pre>
 </div>
 </div>
 <p><br></p>
-<div id="321a4b0f" class="cell" data-execution_count="41">
+<div id="248d85c7" class="cell" data-execution_count="41">
 <div class="sourceCode cell-code" id="cb59"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb59-1"><a aria-hidden="true" tabindex="-1"></a>interval_range <span class="op">=</span> cycling_intervals.<span class="bu">max</span>() <span class="op">-</span> cycling_intervals.<span class="bu">min</span>()</span>
 <span id="cb59-2"><a aria-hidden="true" tabindex="-1"></a>interval_range</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="41">
