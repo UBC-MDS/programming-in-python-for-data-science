@@ -1,0 +1,68 @@
+---
+format: html
+---
+
+<script src='../../src/quiz.js'></script>
+
+# 5.1. Exercises
+
+## Writing Useful Comments
+
+Given the code here: 
+
+```python
+candy = pd.read_csv('data/candybars.csv')
+chocolate = pd.read_csv('data/chocolate_types.csv')
+
+dessert = candy.merge(chocolate, how='inner').dropna()
+```
+
+<div id='mcq1'></div>
+<script>
+    generateQuiz(
+        'mcq1',
+        'Question 1',
+        'Which of following comments are suitable? <i>Hint: there could be more than 1</i>',
+        {
+        '<code># Combine dataframes and drops NaN values</code>': '',
+        '<code># Merge dataframes</code>': 'This could be a bit more useful, what about the <code>.dropna()</code>?',
+        '<code># Combines the candy and chocolate dataframes and only keeps rows that both dataframes have in common, then removes any rows with missing values</code>': 'This is a bit excessive.',
+        'No comment is needed here': 'Since the code is somewhat explanatory, a comment isn’t completely mandatory.',
+        },
+        ['<code># Combine dataframes and drops NaN values</code>', 'No comment is needed here'],
+    );
+</script>
+
+## Choosing Good Variable Names
+
+<div id='mcq2'></div>
+<script>
+    generateQuiz(
+        'mcq2',
+        'Question 1',
+        'Which of the following is an acceptable variable name?',
+        {
+        '<code>bool</code>': 'This is a Python keyword and is not an acceptable object name.',
+        '<code>AppleTrees</code>': 'It’s not good styling to have capitalizations in your variable names.',
+        '<code>Hotel_Df</code>': 'It’s not good styling to have capitalizations in your variable names.',
+        '<code>paper_sales</code>': '',
+        },
+        '<code>paper_sales</code>',
+    );
+</script>
+
+<div id='mcq3'></div>
+<script>
+    generateQuiz(
+        'mcq3',
+        'Question 2',
+        'I have a dataframe that contains different flowers, their seasonality, and where they are found in the world. Which of the following is the most suitable name for this dataframe?',
+        {
+        '<code>flowers_seasonality_location</code>': 'We find this a bit long-winded. Is it necessary to add the columns to the object name?',
+        '<code>FLOWERS</code>': 'Please don’t use all capitals for your object names.',
+        '<code>flowers_df</code>': '',
+        '<code>flw</code>': 'I think we should try and make this a more readable object name.',
+        },
+        '<code>flowers_df</code>',
+    );
+</script>

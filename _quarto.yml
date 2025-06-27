@@ -204,6 +204,28 @@ website:
           - text: '&nbsp;&nbsp; 6.1. Exercises'
             href: modules/module6/module6-23-function_design_questions.qmd
           - href: modules/module6/module6-26-what_did_we_just_learn.qmd
+      - section: "**Module 7: Importing Files and the Coding Style Guide**"
+        contents:
+          - href: modules/module7/module7-00-module_learning_outcomes.qmd
+          - href: modules/module7/module7-01-importing_python_libraries.qmd
+          - text: '&nbsp;&nbsp; 1.1. Exercises'
+            href: modules/module7/module7-02-importing_packages.qmd
+          - href: modules/module7/module7-05-working_with_other_files.qmd
+          - text: '&nbsp;&nbsp; 2.1. Exercises'
+            href: modules/module7/module7-06-importin_your_own_functions_quesitons.qmd
+          - href: modules/module7/module7-08-testing_your_own_functions_with_pytest.qmd
+          - text: '&nbsp;&nbsp; 3.1. Exercises'
+            href: modules/module7/module7-09-using_pytest_questions.qmd
+          - href: modules/module7/module7-12-automatic_style_formatters.qmd
+          - text: '&nbsp;&nbsp; 4.1. Exercises'
+            href: modules/module7/module7-13-flake8_and_black.qmd
+          - href: modules/module7/module7-15-formatting_that_can't_be_fixed_automatically.qmd
+          - text: '&nbsp;&nbsp; 5.1. Exercises'
+            href: modules/module7/module7-16-writing_useful_comments.qmd
+          - href: modules/module7/module7-18-the_python_debugger.qmd
+          - text: '&nbsp;&nbsp; 6.1. Exercises'
+            href: modules/module7/module7-19-using_the_python_debugger.qmd
+          - href: modules/module7/module7-20-what_did_we_just_learn.qmd
 
 # Since we are declaring options for two formats here (html and revealjs)
 # each qmd file needs to include a yaml block including which format to use for that file.

@@ -1,0 +1,136 @@
+---
+format: live-html
+---
+
+<script src='../../src/quiz.js'></script>
+
+# 1.1. Exercises
+
+## Importing packages
+
+<div id='mcq1'></div>
+<script>
+    generateQuiz(
+        'mcq1',
+        'Question 1',
+        'How would you import a package named <code>numpy</code>?',
+        {
+        '<code>import numpy </code>': 'This is the basic way to import a Python package.',
+        '<code>as np import numpy </code>': 'Unfortunately, this would not import <code>numpy</code>.',
+        '<code>from numpy import numpy</code>': 'Are you sure you read the slides properly?',
+        },
+        '<code>import numpy </code>',
+    );
+</script>
+
+<div id='mcq2'></div>
+<script>
+    generateQuiz(
+        'mcq2',
+        'Question 2',
+        'How would you import <code>numpy</code> if you wanted to refer to it as <code>np</code>?',
+        {
+        '<code>as np import numpy </code>': 'This would actually result in an error!',
+        '<code>Import numpy As np</code>': 'Be careful with capitals. In this case, when you use capitalization, neither <code>Import</code> nor <code>As</code> are Python keywords.',
+        '<code>import numpy as np </code>': '',
+        '<code>As np Import numpy </code>': 'This is not the correct way to import, and it uses capitalization on keywords which is incorrect.',
+        },
+        '<code>import numpy as np </code>',
+    );
+</script>
+
+## Importing a Package Function
+
+<div id='mcq3'></div>
+<script>
+    generateQuiz(
+        'mcq3',
+        'Question 1',
+        'How would you import the square root function <code>sqrt</code> from the <code>numpy</code> package?',
+        {
+        '<code>import sqrt from numpy</code>': 'Maybe try ordering this differently?',
+        '<code>from numpy import sqrt</code>': '',
+        '<code>from sqrt import numpy</code>': 'We are importing only the <code>sqrt</code> function from the <code>numpy</code> package.',
+        '<code>import numpy from sqrt</code>': '<code>sqrt</code> is a single function that we want to import from <code>numpy</code>.',
+        },
+        '<code>from numpy import sqrt</code>',
+    );
+</script>
+
+
+## Importing Packages... Again
+
+**Instructions:**    
+Running a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes. 
+
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
+
+_**Make sure you remove the hash (`#`) symbol in the coding portions of this question.  We have commented them so that the line won't execute and you can test your code after each step.**_
+
+Ok, so we've seen this `numpy` package, let's actually load in one of the functions and use it! If you are wondering what this package does, don't worry, you'll learn more of this in the next module. `numpy` has a function called `power()`.
+
+**Tasks:**
+
+- Import the `power()` function from the `numpy` package. 
+- Use the `power()` function to find  7 to the power of 5 and save it in an object named `power7_5` - you may want to use `?power` to see what arguments the function requires.
+- Display your results.
+
+```{pyodide}
+#| setup: true
+#| exercise: importing_packages_again
+import pandas as pd
+```
+
+```{pyodide}
+#| exercise: importing_packages_again
+# Import the power() function from the numpy package
+____
+
+# Use the power function to find 7 to the power of 5
+# Save your solution in an object named `power7_5`
+____ = ____
+
+# Display your results
+____
+```
+
+```{pyodide}
+#| exercise: importing_packages_again
+#| check: true
+from numpy import power
+from src.utils import print_correct_msg
+
+assert result == power(7, 5), "Check your result."
+print_correct_msg()
+```
+
+:::: { .hint exercise="importing_packages_again"}
+::: { .callout-note collapse="false"}
+
+## Hint 1
+
+- Are you using `power(7, 5)`? 
+- Are you importing using `from`?
+
+:::
+::::
+
+:::: { .solution exercise="importing_packages_again" }
+::: { .callout-tip collapse="false"}
+
+## Fully worked solution:
+
+```{pyodide}
+# Import the power() function from the numpy package
+from numpy import power
+
+# Use the power function to find 7 to the power of 5
+# Save your solution in an object named `power7_5`
+power7_5 = power(7, 5)
+
+# Display your results
+power7_5
+```
+
+:::
+::::

@@ -10,5 +10,8 @@ dependencies:
     - matplotlib
     - jupyter
     - quarto=1.6.43
+    - flake8-nb
+    - black[jupyter]
+    - pytest
     - pip
     - openpyxl
