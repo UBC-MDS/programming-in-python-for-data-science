@@ -1,0 +1,208 @@
+---
+format: live-html
+---
+
+<script src='../../src/quiz.js'></script>
+
+# 2.1. Exercises
+
+## Questions on Scoping
+
+```python
+def name_initials(first_name, last_name, year_of_birth = None):
+    if year_of_birth is not None: 
+        initials = first_name[0].upper() + middle_name[0].upper() + str(year_of_birth)
+    else:
+        initials = first_name[0].upper() + last_name[0].upper()
+    return initials
+```
+
+<div id='mcq1'></div>
+<script>
+    generateQuiz(
+        'mcq1',
+        'Question 1',
+        'Given the above function, which of the function calls will result in an error?',
+        {
+        '<code>name_initials(\'Cameron\', \'Grant\')</code>': 'This one will run since <code>year_of_birth</code> is optional and will default to <code>None</code>. The output is <code>CG</code>.',
+        '<code>name_initials(last_name = \'Grant\', year_of_birth = 1977, first_name = \'Cameron\')</code>': 'Since we are defining our arguments with their names and values, this one will result in an output of <code>CG1977</code>.',
+        '<code>name_initials(\'Cameron\', 1977, \'Grant\')</code>': 'This will result in an error since the argument values are not in the defined order and they are not defined with the argument names.',
+        '<code>name_initials(\'Cameron\', \'Grant\', 1977)</code>': 'This function calls the arguments in the same order they were defined in. The output is <code>CG1977</code>.',
+        },
+        '<code>name_initials(\'Cameron\', 1977, \'Grant\')</code>',
+    );
+</script>
+
+## Default Arguments
+
+Given the function below:
+
+```python
+def employee_wage(employee_id, position, experience = 3):
+    if position == "doctor": 
+        wage = 150000
+    elif position == "teacher":
+        wage = 60000
+    elif position == "lawyer":
+        wage = 100000
+    elif position == "server":
+        wage = 50000
+    else: 
+        wage = 70000
+    return wage * (1 + (0.1 * experience)) 
+```
+
+<div id='mcq2'></div>
+<script>
+    generateQuiz(
+        'mcq2',
+        'Question 1',
+        'What is the approximate wage of employee `765` who is a lawyer?',
+        {
+        '<code>100000</code>': 'Are you taking a close look at the argument <code>experience</code> which has a default value?',
+        '<code>110000</code>': 'Take a closer look at the default value of the <code>experience</code> argument.',
+        '<code>130000</code>': 'Nice Job!',
+        '<code>150000</code>': 'Are you looking at the right position?',
+        },
+        '<code>130000</code>',
+    );
+</script>
+
+```python
+menu_item_id = 42
+menu_item_name = "Green Curry"
+spice_level = "Medium"
+meat = "Tofu"
+rice = True
+
+thai_food(menu_item_id, menu_item_name, spice_level, meat, rice)
+```
+
+<div id='mcq3'></div>
+<script>
+    generateQuiz(
+        'mcq3',
+        'Question 2',
+        'If I make a function call using the above code, and I know that that parameter <code>spice_level</code> is an argument that has a default value, which other arguments <b>MUST</b> also have set default values?',
+        {
+        '<code>menu_item_id</code> and <code>menu_item_name</code>': 'These two arguments can be either required or default arguments.',
+        '<code>meat</code>': 'This is partially right but not entirely.',
+        '<code>rice</code>': 'This is partially right but not entirely.',
+        '<code>meat</code> and <code>rice</code>': 'Nice job! Arguments that are required for the function must come *before* defining default arguments.',
+        },
+        '<code>meat</code> and <code>rice</code>',
+    );
+</script>
+
+
+## Default Argument Practice
+
+**Instructions:**    
+Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
+
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
+
+_**Make sure you remove the hash (`#`) symbol in the coding portions of this question.  We have commented them so that the line won't execute and you can test your code after each step.**_
+
+**Weight** and **mass** are 2 very different measurements, although they are used interchangeably in everyday conversations. 
+**Mass** is defined by  <a href="https://www.nasa.gov/pdf/591747main_MVW_Intro.pdf" target="_blank">NASA</a> as the amount of matter in an object, whereas, **weight** is defined as the vertical force exerted by a mass as a result of gravity (with units of Newtons). 
+The function `earth_weight()` converts an object's mass to Weight by multiplying it by the gravitational force acting on it. On Earth, the gravitational force is measured as 9.8 m/s<sup>2</sup>.  
+
+```{pyodide}
+def earth_weight(mass):
+    g = 9.8
+    weight = mass * g
+    return weight
+```
+
+We want to make a more versatile function by having the ability to calculate the Weight of any object on any particular planet and not just Earth. Redefine the function `earth_weight()` to take an argument with a default gravitational force of 9.8.  
+
+**Tasks:**
+
+- Create a new function named `mass_to_weight` and give it an additional argument named  `g,` which has a default value of 9.8.
+- Test your new function by converting the mass of 76 kg to weight on Earth and save the results in an object named `earth_weight`.
+- Test your function again but this time, calculate the weight of the 76 kg object on the moon using a gravitational force of 1.62 m/s<sup>2</sup> and save your function call to an object named `moon_weight`.
+
+```{pyodide}
+#| setup: true
+#| exercise: default_argument_practice
+import pandas as pd
+```
+
+```{pyodide}
+#| exercise: default_argument_practice
+# Create a new function named mass_to_weight() from earth_weight()     
+# Give it an additional argument named g which has a default value of 9.8
+____ ____(____):
+    ____
+    ____
+
+# Test your new function by converting the mass of 76 kg to weight on Earth     
+# Save the results in an object named earth_weight
+____ = ____
+
+# Test your function again but this time calculate the weight    
+# of the 76 kg object on the moon using a gravitational force of 1.62 m/s^2     
+# Save your function call to an object named moon_weight
+# ____ = ____
+
+result = {
+    "earth_weight": earth_weight,
+    "moon_weight": moon_weight
+}
+result
+```
+
+```{pyodide}
+#| exercise: default_argument_practice
+#| check: true
+from src.utils import print_correct_msg
+
+assert isinstance(result, dict), "Your result should be a dict."
+assert result["earth_weight"] == 76*9.8, "Your function's output is incorrect. Are you converting correctly?"
+assert result["moon_weight"] == 76*1.62, "Your function's output is incorrect. Are you converting correctly?"
+print_correct_msg()
+```
+
+:::: { .hint exercise="default_argument_practice"}
+::: { .callout-note collapse="false"}
+
+## Hint 1
+
+- Are you putting `g=9.8` inside the function named `mass_to_weight`? 
+- Are you calling `mass_to_weight(76)` and saving it in an object named `earth_weight`? 
+- Are you calling `mass_to_weight(76, 1.62)` and saving it in an object named `moon_weight`?
+
+:::
+::::
+
+:::: { .solution exercise="default_argument_practice" }
+::: { .callout-tip collapse="false"}
+
+## Fully worked solution:
+
+```{pyodide}
+# Create a new function named mass_to_weight() from earth_weight()     
+# Give it an additional argument named g which has a default value of 9.8
+def mass_to_weight(mass, g=9.8):
+    weight = mass * g
+    return weight
+
+# Test your new function by converting the mass of 76 kg to weight on Earth     
+# Save the results in an object named earth_weight
+earth_weight = mass_to_weight(76)
+
+# Test your function again but this time calculate the weight    
+# of the 76 kg object on the moon using a gravitational force of 1.62 m/s^2     
+# Save your function call to an object named moon_weight
+moon_weight = mass_to_weight(76, 1.62) 
+
+result = {
+    "earth_weight": earth_weight,
+    "moon_weight": moon_weight
+}
+result
+```
+
+:::
+::::

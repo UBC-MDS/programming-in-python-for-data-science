@@ -182,6 +182,28 @@ website:
           - text: '&nbsp;&nbsp; 6.1. Exercises'
             href: modules/module5/module5-20-function_questions.qmd
           - href: modules/module5/module5-23-what_did_we_just_learn.qmd
+      - section: "**Module 6: Functions Fundamentals and Best Practices**"
+        contents:
+          - href: modules/module6/module6-00-module_learning_outcomes.qmd
+          - href: modules/module6/module6-01-dry_revisited_and_function_fundamentals.qmd
+          - text: '&nbsp;&nbsp; 1.1. Exercises'
+            href: modules/module6/module6-02-questions_on_scoping.qmd
+          - href: modules/module6/module6-05-default_arguments.qmd
+          - text: '&nbsp;&nbsp; 2.1. Exercises'
+            href: modules/module6/module6-06-will_it_output.qmd
+          - href: modules/module6/module6-09-function_docstrings.qmd
+          - text: '&nbsp;&nbsp; 3.1. Exercises'
+            href: modules/module6/module6-10-docstring_questions.qmd
+          - href: modules/module6/module6-13-defensive_programming_using_exceptions.qmd
+          - text: '&nbsp;&nbsp; 4.1. Exercises'
+            href: modules/module6/module6-14-exceptions.qmd
+          - href: modules/module6/module6-17-unit_tests.qmd
+          - text: '&nbsp;&nbsp; 5.1. Exercises'
+            href: modules/module6/module6-18-assert_questions.qmd
+          - href: modules/module6/module6-22-good_function_design_choices.qmd
+          - text: '&nbsp;&nbsp; 6.1. Exercises'
+            href: modules/module6/module6-23-function_design_questions.qmd
+          - href: modules/module6/module6-26-what_did_we_just_learn.qmd
 
 # Since we are declaring options for two formats here (html and revealjs)
 # each qmd file needs to include a yaml block including which format to use for that file.
