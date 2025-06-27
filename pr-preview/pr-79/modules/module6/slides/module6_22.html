@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-99fa6729ad23987aafeada22b1565191.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.6.43">
+
+  <title>Programming in Python for Data Science – Good Function Design Choices</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+      }
+    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+    div.sourceCode
+      { color: #383a42;  }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #383a42; } /* Normal */
+    code span.al { color: #95da4c; background-color: #4d1f24; font-weight: bold; } /* Alert */
+    code span.an { color: #50a14f; } /* Annotation */
+    code span.at { color: #a626a4; } /* Attribute */
+    code span.bn { color: #986801; } /* BaseN */
+    code span.bu { color: #a626a4; } /* BuiltIn */
+    code span.cf { color: #a626a4; } /* ControlFlow */
+    code span.ch { color: #50a14f; } /* Char */
+    code span.cn { color: #986801; } /* Constant */
+    code span.co { color: #a0a1a7; font-style: italic; } /* Comment */
+    code span.cv { color: #e45649; font-style: italic; } /* CommentVar */
+    code span.do { color: #e45649; } /* Documentation */
+    code span.dt { color: #a626a4; } /* DataType */
+    code span.dv { color: #986801; } /* DecVal */
+    code span.er { color: #f44747; text-decoration: underline; } /* Error */
+    code span.ex { color: #4078f2; font-weight: bold; } /* Extension */
+    code span.fl { color: #986801; } /* Float */
+    code span.fu { color: #4078f2; } /* Function */
+    code span.im { color: #50a14f; } /* Import */
+    code span.in { color: #c45b00; } /* Information */
+    code span.kw { color: #a626a4; } /* Keyword */
+    code span.op { color: #a626a4; } /* Operator */
+    code span.ot { color: #27ae60; } /* Other */
+    code span.pp { color: #a626a4; } /* Preprocessor */
+    code span.re { color: #2980b9; background-color: #153042; } /* RegionMarker */
+    code span.sc { color: #0184bc; } /* SpecialChar */
+    code span.ss { color: #da4453; } /* SpecialString */
+    code span.st { color: #50a14f; } /* String */
+    code span.va { color: #e45649; } /* Variable */
+    code span.vs { color: #da4453; } /* VerbatimString */
+    code span.wa { color: #da4453; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/theme/quarto-f9a839800513c4e4cd53100bfd03d6eb.css">
+  <link href="../../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../../../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+  
+  <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" data-notes="" class="quarto-title-block center">
+  <h1 class="title">Good Function Design Choices</h1>
+
+<div class="quarto-title-authors">
+</div>
+
+</section>
+<section id="how-to-write-good-functions" class="slide level2">
+<h2>How to write good functions</h2>
+<p><strong>What makes a function useful?</strong></p>
+<p><strong>Is a function more useful when it does more operations?</strong></p>
+<p><strong>Do adding parameters make your functions more or less functional?</strong></p>
+<p>These are all questions we need to think about when writing functions.</p>
+<aside class="notes">
+<p>This has been quite a full module!</p>
+<p>We’ve learned how to make functions, how to handle errors gracefully, how to test our functions, and write the necessary documentation to keep our code comprehensible.</p>
+<p>These skills will all contribute to writing effective code.</p>
+<p>One thing we have not discussed yet is the actual code within a function.</p>
+<p><strong>What makes a function useful?</strong></p>
+<p><strong>Is a function more useful when it performs more operations?</strong></p>
+<p><strong>Does adding parameters make your functions more or less useful?</strong></p>
+<p>These are all questions we need to think about when writing functions.</p>
+<p>We are going to list some habits to adopt when writing and designing your functions.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="avoid-hard-coding." class="slide level2">
+<h2>1. Avoid “hard coding.”</h2>
+<p><strong>Hard coding</strong> is the process of embedding values directly into your code without saving them in objects.</p>
+<div id="cfa48cb4" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> squares_a_list(numerical_list):</span>
+<span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a>    new_squared_list <span class="op">=</span> <span class="bu">list</span>()</span>
+<span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-4"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> number <span class="kw">in</span> numerical_list:</span>
+<span id="cb1-5"><a aria-hidden="true" tabindex="-1"></a>        new_squared_list.append(number <span class="op">**</span> <span class="dv">2</span>)</span>
+<span id="cb1-6"><a aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-7"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> new_squared_list</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><br></p>
+<div id="481126ff" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> exponent_a_list(numerical_list, exponent):</span>
+<span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a>    new_exponent_list <span class="op">=</span> <span class="bu">list</span>()</span>
+<span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-4"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> number <span class="kw">in</span> numerical_list:</span>
+<span id="cb2-5"><a aria-hidden="true" tabindex="-1"></a>        new_exponent_list.append(number <span class="op">**</span> exponent)</span>
+<span id="cb2-6"><a aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-7"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> new_exponent_list</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<aside class="notes">
+<p><strong>Hard coding</strong> is the process of embedding values directly into your code without saving them in variables</p>
+<p>When we hardcode values into our code, it decreases flexibility.</p>
+<p>Being inflexible can cause you to end up writing more functions and/or violating the DRY principle.</p>
+<p>This, in turn, can decrease the readability and makes code problematic to maintain. In short, hard coding is a breeding ground for bugs.</p>
+<p>Remember our function <code>squares_a_list()</code>?</p>
+<p>In this function, we “hard-coded” in <code>2</code> when we calculated <code>number ** 2</code>.</p>
+<p>There are a couple of approaches to improving the situation. One is to assign 2 to a variable in the function before doing this calculation. That way, if you need to reuse that number, later on, you can just refer to the variable; and if you need to change the 2 to a 3, you only need to change it in one place. Another benefit is that you’re giving it a variable name, which acts as a little bit of documentation.</p>
+<p>The other approach is to turn the value into an argument like we did when we made <code>exponent_a_list()</code>.</p>
+<p>This new function now gives us more flexibility with our code.</p>
+<p>If we now encounter a situation where we need to calculate each element to a different exponent like 4 or 0, we can do so without writing new code and potentially making a new error in doing so.</p>
+<p>We reduce our long term workload.</p>
+<p>This version is more maintainable code, but it doesn’t give the function caller any flexibility. What you decide depends on how you expect your function to be used.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="less-is-more" class="slide level2">
+<h2>2. Less is More</h2>
+<div id="365567b0" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> load_filter_and_average(<span class="bu">file</span>, grouping_column, ploting_column):</span>
+<span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a>    df <span class="op">=</span> pd.read_csv(<span class="st">"data/"</span> <span class="op">+</span> <span class="bu">file</span>)</span>
+<span id="cb3-3"><a aria-hidden="true" tabindex="-1"></a>    source <span class="op">=</span> df.groupby(grouping_column).mean(numeric_only<span class="op">=</span><span class="va">True</span>).reset_index()</span>
+<span id="cb3-4"><a aria-hidden="true" tabindex="-1"></a>    chart <span class="op">=</span> alt.Chart(source, width <span class="op">=</span> <span class="dv">500</span>, height <span class="op">=</span> <span class="dv">300</span>).mark_bar().encode(</span>
+<span id="cb3-5"><a aria-hidden="true" tabindex="-1"></a>                      x<span class="op">=</span>alt.X(grouping_column),</span>
+<span id="cb3-6"><a aria-hidden="true" tabindex="-1"></a>                      y<span class="op">=</span>alt.Y(ploting_column)</span>
+<span id="cb3-7"><a aria-hidden="true" tabindex="-1"></a>            )</span>
+<span id="cb3-8"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> chart</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><br></p>
+<div id="87f59b40" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a>bad_idea <span class="op">=</span> load_filter_and_average(<span class="st">'cereal.csv'</span>, <span class="st">'mfr'</span>, <span class="st">'rating'</span>)</span>
+<span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a>bad_idea</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><br></p>
+
+<img data-src="../../../static/module6/chart_bad_idea.png" style="width:40.0%" alt="404 image" class="r-stretch"><aside class="notes">
+<p>Although it may seem useful when a function acts as a one-stop-shop that does everything you want in a single function, this also limits your ability to reuse code that lies within it.</p>
+<p>Ideally, functions should serve a single purpose.</p>
+<p>For example, let’s say we have a function that reads in a csv, finds the mean of each group in a column, and plots a specified variable.</p>
+<p>Although this may seem nice, we may want to break this up into multiple smaller functions. For example, what if we don’t want the plot? Perhaps the plot is just something we wanted a single time, and now we are committed to it for each time we use the function.</p>
+<p>Another problem with this function is that the means are only printed and not returned. Thus, we have no way of accessing the statistics to use further in our code (we would have to repeat ourselves and rewrite it).</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section class="slide level2">
+
+<div id="1370c3a0" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> grouped_means(df, grouping_column):</span>
+<span id="cb5-2"><a aria-hidden="true" tabindex="-1"></a>    grouped_mean <span class="op">=</span> df.groupby(grouping_column).mean(numeric_only<span class="op">=</span><span class="va">True</span>).reset_index()</span>
+<span id="cb5-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> grouped_mean</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><br></p>
+<div id="7ba3646c" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a>cereal_mfr <span class="op">=</span> grouped_means(cereal, <span class="st">'mfr'</span>)</span>
+<span id="cb6-2"><a aria-hidden="true" tabindex="-1"></a>cereal_mfr</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="9">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+
+<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header" style="text-align: right;">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">mfr</th>
+<th data-quarto-table-cell-role="th">calories</th>
+<th data-quarto-table-cell-role="th">protein</th>
+<th data-quarto-table-cell-role="th">fat</th>
+<th data-quarto-table-cell-role="th">...</th>
+<th data-quarto-table-cell-role="th">shelf</th>
+<th data-quarto-table-cell-role="th">weight</th>
+<th data-quarto-table-cell-role="th">cups</th>
+<th data-quarto-table-cell-role="th">rating</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>A</td>
+<td>100.000000</td>
+<td>4.000000</td>
+<td>1.000000</td>
+<td>...</td>
+<td>2.000000</td>
+<td>1.000000</td>
+<td>1.000000</td>
+<td>54.850917</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>G</td>
+<td>111.363636</td>
+<td>2.318182</td>
+<td>1.363636</td>
+<td>...</td>
+<td>2.136364</td>
+<td>1.049091</td>
+<td>0.875000</td>
+<td>34.485852</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>K</td>
+<td>108.695652</td>
+<td>2.652174</td>
+<td>0.608696</td>
+<td>...</td>
+<td>2.347826</td>
+<td>1.077826</td>
+<td>0.796087</td>
+<td>44.038462</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>P</td>
+<td>108.888889</td>
+<td>2.444444</td>
+<td>0.888889</td>
+<td>...</td>
+<td>2.444444</td>
+<td>1.064444</td>
+<td>0.714444</td>
+<td>41.705744</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5</td>
+<td>Q</td>
+<td>95.000000</td>
+<td>2.625000</td>
+<td>1.750000</td>
+<td>...</td>
+<td>2.375000</td>
+<td>0.875000</td>
+<td>0.823750</td>
+<td>42.915990</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">6</td>
+<td>R</td>
+<td>115.000000</td>
+<td>2.500000</td>
+<td>1.250000</td>
+<td>...</td>
+<td>2.000000</td>
+<td>1.000000</td>
+<td>0.871250</td>
+<td>41.542997</td>
+</tr>
+</tbody>
+</table>
+
+<p>7 rows × 14 columns</p>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>In this case, you want to simplify the function.</p>
+<p>Having a function that only calculates the mean values of the groups in the specified column is much more usable.</p>
+<p>A preferred function would look something like this, where the input is a dataframe we have already read in, and the output is the dataframe of mean values for all the columns.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section class="slide level2">
+
+<div id="e6604e3e" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_mean(df, grouping_column, ploting_column):</span>
+<span id="cb7-2"><a aria-hidden="true" tabindex="-1"></a>    chart <span class="op">=</span> alt.Chart(df, width <span class="op">=</span> <span class="dv">500</span>, height <span class="op">=</span> <span class="dv">300</span>).mark_bar().encode(</span>
+<span id="cb7-3"><a aria-hidden="true" tabindex="-1"></a>                      x<span class="op">=</span>alt.X(grouping_column),</span>
+<span id="cb7-4"><a aria-hidden="true" tabindex="-1"></a>                      y<span class="op">=</span>alt.Y(ploting_column)</span>
+<span id="cb7-5"><a aria-hidden="true" tabindex="-1"></a>            )</span>
+<span id="cb7-6"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> chart</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><br></p>
+<div id="0779f3fa" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a aria-hidden="true" tabindex="-1"></a>plot1 <span class="op">=</span> plot_mean(cereal_mfr, <span class="st">'mfr'</span>, <span class="st">'rating'</span>)</span>
+<span id="cb8-2"><a aria-hidden="true" tabindex="-1"></a>plot1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+
+<img data-src="../../../static/module6/plot_better.png" style="width:50.0%" alt="404 image" class="r-stretch"><aside class="notes">
+<p>If we wanted, we could then make a second function that creates the desired plot part of the previous function.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="return-a-single-object" class="slide level2">
+<h2>3. Return a single object</h2>
+<div id="1fd0a872" class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> load_filter_and_average(<span class="bu">file</span>, grouping_column, ploting_column):</span>
+<span id="cb9-2"><a aria-hidden="true" tabindex="-1"></a>    df <span class="op">=</span> pd.read_csv(<span class="st">"data/"</span> <span class="op">+</span> <span class="bu">file</span>)</span>
+<span id="cb9-3"><a aria-hidden="true" tabindex="-1"></a>    source <span class="op">=</span> df.groupby(grouping_column).mean(numeric_only<span class="op">=</span><span class="va">True</span>).reset_index()</span>
+<span id="cb9-4"><a aria-hidden="true" tabindex="-1"></a>    chart <span class="op">=</span> alt.Chart(source, width <span class="op">=</span> <span class="dv">500</span>, height <span class="op">=</span> <span class="dv">300</span>).mark_bar().encode(</span>
+<span id="cb9-5"><a aria-hidden="true" tabindex="-1"></a>                      x<span class="op">=</span>alt.X(grouping_column),</span>
+<span id="cb9-6"><a aria-hidden="true" tabindex="-1"></a>                      y<span class="op">=</span>alt.Y(ploting_column)</span>
+<span id="cb9-7"><a aria-hidden="true" tabindex="-1"></a>            )</span>
+<span id="cb9-8"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> chart, source</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><br></p>
+<div id="c468b3ea" class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a aria-hidden="true" tabindex="-1"></a>another_bad_idea <span class="op">=</span> load_filter_and_average(<span class="st">'cereal.csv'</span>, <span class="st">'mfr'</span>, <span class="st">'rating'</span>)</span>
+<span id="cb10-2"><a aria-hidden="true" tabindex="-1"></a>another_bad_idea</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="15">
+<pre><code>(alt.Chart(...),
+    mfr    calories   protein  ...    weight      cups     rating
+ 0    A  100.000000  4.000000  ...  1.000000  1.000000  54.850917
+ 1    G  111.363636  2.318182  ...  1.049091  0.875000  34.485852
+ 2    K  108.695652  2.652174  ...  1.077826  0.796087  44.038462
+ ..  ..         ...       ...  ...       ...       ...        ...
+ 4    P  108.888889  2.444444  ...  1.064444  0.714444  41.705744
+ 5    Q   95.000000  2.625000  ...  0.875000  0.823750  42.915990
+ 6    R  115.000000  2.500000  ...  1.000000  0.871250  41.542997
+ 
+ [7 rows x 14 columns])</code></pre>
+</div>
+</div>
+<aside class="notes">
+<p>For the most part, we have only lightly touched on the fact that functions can return multiple objects, and it’s with good reason.</p>
+<p>Although functions are <em>capable</em> of returning multiple objects, that doesn’t mean that it’s the best option.</p>
+<p>For instance, what if we converted our function <code>load_filter_and_average()</code> so that it returns a dataframe <strong><em>and</em></strong> a plot.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section class="slide level2">
+
+<div id="f45a9d86" class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a aria-hidden="true" tabindex="-1"></a>another_bad_idea[<span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+
+<img data-src="../../../static/module6/plot_better.png" style="width:55.0%" alt="404 image" class="r-stretch"><aside class="notes">
+<p>Since our function returns a tuple, we can obtain the plot by selecting the first element of the output.</p>
+<p>This can be quite confusing. We would recommend separating the code into two functions and can have each one return a single object.</p>
+<p>It’s best to think of programming functions in the same way as mathematical functions where most times, mathematical functions return a single value.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="keep-global-variables-in-their-global-environment" class="slide level2">
+<h2>4. Keep global variables in their global environment</h2>
+<div id="c8762c7a" class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> grouped_means(df, grouping_column):</span>
+<span id="cb13-2"><a aria-hidden="true" tabindex="-1"></a>    grouped_mean <span class="op">=</span> df.groupby(grouping_column).mean(numeric_only<span class="op">=</span><span class="va">True</span>).reset_index()</span>
+<span id="cb13-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> grouped_mean</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><br></p>
+<div id="0292adde" class="cell" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a aria-hidden="true" tabindex="-1"></a>cereal <span class="op">=</span> pd.read_csv(<span class="st">'data/cereal.csv'</span>)</span>
+<span id="cb14-2"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-3"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> bad_grouped_means(grouping_column):</span>
+<span id="cb14-4"><a aria-hidden="true" tabindex="-1"></a>    grouped_mean <span class="op">=</span> cereal.groupby(grouping_column).mean(numeric_only<span class="op">=</span><span class="va">True</span>).reset_index()</span>
+<span id="cb14-5"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> grouped_mean</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<aside class="notes">
+<p>It’s generally bad form to include objects in a function that were created outside of it.</p>
+<p>Take our <code>grouped_means()</code> function.</p>
+<p>What if instead of including <code>df</code> as an input argument, we just used <code>cereal</code> that we loaded earlier?</p>
+<p>The number one problem with doing this is now our function only works on the cereal data - it’s not usable on other data.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section class="slide level2">
+
+<div id="7cdfc3cd" class="cell" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a aria-hidden="true" tabindex="-1"></a>bad_cereal_grouping <span class="op">=</span> bad_grouped_means(<span class="st">'mfr'</span>)</span>
+<span id="cb15-2"><a aria-hidden="true" tabindex="-1"></a>bad_cereal_grouping.head(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="20">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+
+<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header" style="text-align: right;">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">mfr</th>
+<th data-quarto-table-cell-role="th">calories</th>
+<th data-quarto-table-cell-role="th">protein</th>
+<th data-quarto-table-cell-role="th">...</th>
+<th data-quarto-table-cell-role="th">weight</th>
+<th data-quarto-table-cell-role="th">cups</th>
+<th data-quarto-table-cell-role="th">rating</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>A</td>
+<td>100.000000</td>
+<td>4.000000</td>
+<td>...</td>
+<td>1.000000</td>
+<td>1.000000</td>
+<td>54.850917</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>G</td>
+<td>111.363636</td>
+<td>2.318182</td>
+<td>...</td>
+<td>1.049091</td>
+<td>0.875000</td>
+<td>34.485852</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>K</td>
+<td>108.695652</td>
+<td>2.652174</td>
+<td>...</td>
+<td>1.077826</td>
+<td>0.796087</td>
+<td>44.038462</td>
+</tr>
+</tbody>
+</table>
+
+<p>3 rows × 14 columns</p>
+</div>
+</div>
+</div>
+<p><br></p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a aria-hidden="true" tabindex="-1"></a>cereal <span class="op">=</span> <span class="st">"let's change it to a string"</span> </span>
+<span id="cb16-2"><a aria-hidden="true" tabindex="-1"></a>bad_cereal_grouping <span class="op">=</span> bad_grouped_means(<span class="st">'mfr'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre class="out"><code>AttributeError: 'str' object has no attribute 'groupby'
+
+Detailed traceback: 
+  File "&lt;string&gt;", line 1, in &lt;module&gt;
+  File "&lt;string&gt;", line 2, in bad_grouped_means</code></pre>
+<aside class="notes">
+<p>Ok, let’s say we still use it, then what happens?</p>
+<p>Although it does work, global variables have the opportunity to be altered in the global environment.</p>
+<p>When we change the global variable outside the function and try to use the function again, it will refer to the new global variable and potentially no longer work.</p>
+<p>Of course, like in any case, these habits are suggestions and not strict rules.</p>
+<p>There will be times where adhering to one of these may not be possible or will hinder your code instead of enhancing it.</p>
+<p>The rule of thumb is to ask yourself how helpful is your function if you or someone else wishes to reuse it.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="lets-apply-what-we-learned" class="title-slide slide level1 center">
+<h1>Let’s apply what we learned!</h1>
+
+
+</section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="../../../site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="../../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="../../../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":false},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'bottom-right',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: false,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: false,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: true,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: '100%',
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
+        }
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
+      }
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const isCodeAnnotation = (el) => {
+        for (const clz of el.classList) {
+          if (clz.startsWith('code-annotation-')) {                     
+            return true;
+          }
+        }
+        return false;
+      }
+      const onCopySuccess = function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
+      });
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+        const config = {
+          allowHTML: true,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start',
+        };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
+        });
+      }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+    });
+    </script>
+    
+
+</body></html>
