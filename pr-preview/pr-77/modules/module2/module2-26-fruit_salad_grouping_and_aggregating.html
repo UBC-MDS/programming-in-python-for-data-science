@@ -1,0 +1,1526 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.43">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>module2-26-fruit_salad_grouping_and_aggregating – Programming in Python for Data Science</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../modules/module2/module2-29-plotting_with_altair.html" rel="next">
+<link href="../../modules/module2/module2-25-grouping_and_aggregating.html" rel="prev">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-99fa6729ad23987aafeada22b1565191.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-2082a458460f7e49a13bbc53a63dbda0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
+<link href="../../site_libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script type="module" src="../../site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
+<link href="../../site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
+
+
+</head>
+
+<body class="nav-sidebar docked fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+          <h1 class="quarto-secondary-nav-title"></h1>
+        </a>     
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+      <a href="../../index.html" class="sidebar-logo-link">
+      <img src="../../static/logo.svg" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text"><strong>M0. Welcome to Programming in Python for Data Science</strong></span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">0. Welcome!</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module0/module0-01-programming_in_python_for_data_science.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1. Programming in Python for Data Science</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module0/module0-02-are_you_ready.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">&nbsp;&nbsp; 1.1. Prerequisite confirmation</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text"><strong>M1. Python &amp; Pandas - An Unexpected Friendship</strong></span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module1/module1-00-module_learning_outcomes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">0. Module Learning Outcomes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module1/module1-01-introduction_to_dataframes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1. Introduction to Dataframes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module1/module1-02-describing_a_dataframe.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">&nbsp;&nbsp; 1.1. Exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module1/module1-03-introduction_to_pandas.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2. Introduction to Pandas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module1/module1-04-definitions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">&nbsp;&nbsp; 2.1. Exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module1/module1-07-slicing_with_pandas_using_.loc[].html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">3. Slicing with Pandas Using .loc[]</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module1/module1-08-slicing_and_dicing_practice.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">&nbsp;&nbsp; 3.1. Exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module1/module1-11-slicing_columns_using_.loc[].html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4. Slicing Columns Using .loc[]</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module1/module1-12-slicing_columns_only.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">&nbsp;&nbsp; 4.1. Exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module1/module1-13-selecting_using_.loc[].html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">5. Selecting Using .loc[]</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module1/module1-14-rearraging_columns_and_rows.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">&nbsp;&nbsp; 5.1. Exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module1/module1-16-obtaining_dataframe_values.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6. Obtaining Dataframe Values</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module1/module1-17-practicing_selecting_values.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">&nbsp;&nbsp; 6.1. Exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module1/module1-18-selecting_a_single_column.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">7. Selecting a Single Column</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module1/module1-19-practicing_selecting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">&nbsp;&nbsp; 7.1. Exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module1/module1-20-slicing_and_selecting_using_df.iloc[].html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">8. Slicing and Selecting Using df.iloc[]</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module1/module1-21-practicing_slicing_and_selecting_using_index_position.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">&nbsp;&nbsp; 8.1. Exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module1/module1-24-sorting_dataframes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">9. Sorting Dataframes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module1/module1-25-practice_sorting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">&nbsp;&nbsp; 9.1. Exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module1/module1-26-summary_statistics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10. Summary Statistics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module1/module1-27-fruit_bowl_statistics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">&nbsp;&nbsp; 10.1. Exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module1/module1-29-frequency_tables_and_writing_csvs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">11. Frequency Tables and Writing CSVs</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module1/module1-30-practicing_frequency_tables.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">&nbsp;&nbsp; 11.1. Exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module1/module1-31-quick_viz_with_altair.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">12. Quick Viz with Altair</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module1/module1-32-practicing_bar_charts.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">&nbsp;&nbsp; 12.1. Exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module1/module1-34-what_did_we_just_learn.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">13. What Did We Just Learn?</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text"><strong>M2. Not So Scary Wrangling (Table Manipulation and Chaining)</strong></span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module2/module2-00-module_learning_outcomes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">0. Module Learning Outcomes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module2/module2-01-reading_in_different_file_types.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1. Reading in Different File Types</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module2/module2-02-delimiter.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">&nbsp;&nbsp; 1.1. Exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module2/module2-06-arguments_for_reading_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2. Arguments for Reading Data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module2/module2-07-name_that_argument.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">&nbsp;&nbsp; 2.1. Exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module2/module2-09-column_renaming_and_dropping.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">3. Column Renaming and Dropping</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module2/module2-10-column_editing_questions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">&nbsp;&nbsp; 3.1. Exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module2/module2-13-column_arithmetic_and_creation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4. Column Arithmetic and Creation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module2/module2-14-column_arithmetic_questions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">&nbsp;&nbsp; 4.1. Exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module2/module2-16-data_filtering.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">5. Data Filtering</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module2/module2-17-filtering_question.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">&nbsp;&nbsp; 5.1. Exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module2/module2-20-conditional_value_replacement.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6. Conditional Value Replacement</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module2/module2-21-practice_replacing_values.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">&nbsp;&nbsp; 6.1. Exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module2/module2-22-chaining_notation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">7. Chaining Notation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module2/module2-23-chaining_true_false.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">&nbsp;&nbsp; 7.1. Exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module2/module2-25-grouping_and_aggregating.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">8. Grouping and Aggregating</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module2/module2-26-fruit_salad_grouping_and_aggregating.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">&nbsp;&nbsp; 8.1. Exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module2/module2-29-plotting_with_altair.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">9. Plotting with Altair</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module2/module2-30-plotting_a_groupby_object.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">&nbsp;&nbsp; 9.1. Exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module2/module2-31-what_did_we_just_learn.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10. What Did We Just Learn?</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text"><strong>M3. Tidy Data and Joining Dataframes</strong></span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module3/module3-00-module_learning_outcomes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">0. Module Learning Outcomes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module3/module3-01-what_is_tidy_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1. What is Tidy Data?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module3/module3-02-tidy_data_questions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">&nbsp;&nbsp; 1.1. Exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module3/module3-05-statistical_questions_and_tidy_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2. Statistical Questions and Tidy Data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module3/module3-06-which_is_tidy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">&nbsp;&nbsp; 2.1. Exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module3/module3-08-reshaping_with_pivot.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">3. Reshaping with Pivot</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module3/module3-09-pivoting_questions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">&nbsp;&nbsp; 3.1. Exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module3/module3-11-reshaping_with_pivot_table.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4. Reshaping with Pivot Table</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module3/module3-12-pivot_table_questions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">&nbsp;&nbsp; 4.1. Exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module3/module3-14-reshaping_with_melt.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">5. Reshaping with Melt</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module3/module3-15-melting_questions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">&nbsp;&nbsp; 5.1. Exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module3/module3-17-concatenation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6. Concatenation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module3/module3-18-concat_questions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">&nbsp;&nbsp; 6.1. Exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module3/module3-21-joining_dataframes_using_merge.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">7. Joining Dataframes using Merge</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module3/module3-22-merge_questions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">&nbsp;&nbsp; 7.1. Exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module3/module3-25-what_did_we_just_learn.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">8. What Did We Just Learn?</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+ <span class="menu-text"><strong>M4. Python Without the “Eek” (Basic Python)</strong></span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module4/module4-00-module_learning_outcomes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">0. Module Learning Outcomes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module4/module4-01-python_data_types.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1. Python Data Types</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module4/module4-02-name_that_data_type.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">&nbsp;&nbsp; 1.1. Exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module4/module4-05-python_data_structures:_lists_tuples_and_sets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2. Python Data Structures: Lists, Tuples and Sets</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module4/module4-06-name_that_data_structure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">&nbsp;&nbsp; 2.1. Exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module4/module4-10-python_data_structures:_dictionaries.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">3. Python Data Structures: Dictionaries</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module4/module4-11-dictionary_questions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">&nbsp;&nbsp; 3.1. Exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module4/module4-14-dataframes_series_and_column_dtypes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4. Dataframes, Series and Column dtypes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module4/module4-15-name_that_type_dtype.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">&nbsp;&nbsp; 4.1. Exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module4/module4-18-python_operations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">5. Python Operations</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module4/module4-19-output_or_error_with_operations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">&nbsp;&nbsp; 5.1. Exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module4/module4-21-operations_with_columns.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6. Operations with Columns</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module4/module4-22-whats_that_output_with_column_operations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">&nbsp;&nbsp; 6.1. Exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module4/module4-23-splitting_a_column.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">7. Splitting a Column</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module4/module4-24-practice_operations_with_dataframe_columns.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">&nbsp;&nbsp; 7.1. Exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module4/module4-25-what_did_we_just_learn.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">8. What Did We Just Learn?</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+ <span class="menu-text"><strong>Module 5: Making Choices and Repeating Iterations</strong></span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module5/module5-00-module_learning_outcomes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">0. Module Learning Outcomes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module5/module5-01-making_choices_with_conditional_statements.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1. Making Choices with Conditional Statements</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module5/module5-02-quick_questions_with_conditionals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">&nbsp;&nbsp; 1.1. Exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module5/module5-06-repeated_iterations_(loops).html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2. Repeated Iterations (Loops)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module5/module5-07-repeated_iterations_questions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">&nbsp;&nbsp; 2.1. Exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module5/module5-09-range_dictionaries_and_comprehensions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">3. Range, Dictionaries and Comprehensions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module5/module5-10-range_questions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">&nbsp;&nbsp; 3.1. Exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module5/module5-13-nested_loops.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4. Nested Loops</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module5/module5-14-nested_loop_questions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">&nbsp;&nbsp; 4.1. Exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module5/module5-16-repeated_iterations_with_conditions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">5. Repeated Iterations with Conditions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module5/module5-17-conditional_loop_questions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">&nbsp;&nbsp; 5.1. Exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module5/module5-19-functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6. Functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module5/module5-20-function_questions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">&nbsp;&nbsp; 6.1. Exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module5/module5-23-what_did_we_just_learn.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">7. What Did We Just Learn?</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
+ <span class="menu-text"><strong>Module 6: Functions Fundamentals and Best Practices</strong></span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module6/module6-00-module_learning_outcomes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">0. Module Learning Outcomes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module6/module6-01-dry_revisited_and_function_fundamentals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1. DRY Revisited and Function Fundamentals</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module6/module6-02-questions_on_scoping.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">&nbsp;&nbsp; 1.1. Exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module6/module6-05-default_arguments.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2. Default Arguments</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module6/module6-06-will_it_output.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">&nbsp;&nbsp; 2.1. Exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module6/module6-09-function_docstrings.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">3. Function Docstrings</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module6/module6-10-docstring_questions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">&nbsp;&nbsp; 3.1. Exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module6/module6-13-defensive_programming_using_exceptions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4. Defensive Programming using Exceptions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module6/module6-14-exceptions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">&nbsp;&nbsp; 4.1. Exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module6/module6-17-unit_tests.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">5. Unit tests</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module6/module6-18-assert_questions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">&nbsp;&nbsp; 5.1. Exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module6/module6-22-good_function_design_choices.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6. Good Function Design Choices</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module6/module6-23-function_design_questions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">&nbsp;&nbsp; 6.1. Exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module6/module6-26-what_did_we_just_learn.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">7. What Did We Just Learn?</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+
+
+
+
+<script src="../../src/quiz.js"></script>
+<section id="exercises" class="level1">
+<h1>8.1. Exercises</h1>
+<section id="fruit-salad-grouping-and-aggregating" class="level2">
+<h2 class="anchored" data-anchor-id="fruit-salad-grouping-and-aggregating">Fruit Salad Grouping and Aggregating</h2>
+<p>Remember the fruit salad dataframe named <code>fruit_salad</code>? Refer to it for the next two questions.</p>
+<pre class="out"><code>           name    colour    location    seed   shape  sweetness   water-content  weight
+0         apple       red     canada    True   round     True          84         100
+1        banana    yellow     mexico   False    long     True          75         120
+2    cantaloupe    orange      spain    True   round     True          90        1360
+3  dragon-fruit   magenta      china    True   round    False          96         600
+4    elderberry    purple    austria   False   round     True          80           5
+5           fig    purple     turkey   False    oval    False          78          40
+6         guava     green     mexico    True    oval     True          83         450
+7   huckleberry      blue     canada    True   round     True          73           5
+8          kiwi     brown      china    True   round     True          80          76
+9    </code></pre>
+<div id="mcq1">
+
+</div>
+<script>
+    generateQuiz(
+        'mcq1',
+        'Question 1',
+        'Which code would create a grouby object for the column <code>shape</code>?',
+        {
+        '<code>fruit_salad.get_groups(by=\'shape\')</code>': 'Not quite but you are on the right track.',
+        '<code>fruit_salad.groupby(by=\'shape\')</code>': 'Great work!',
+        '<code>fruit_salad.group(by=\'shape\')</code>': 'Not quite but you are on the right track.',
+        },
+        '<code>fruit_salad.groupby(by=\'shape\')</code>',
+    );
+</script>
+<p>Consider this output made from the <code>fruit_salad</code> dataframe:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../static/module2/Q26_2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="404 image"></p>
+</figure>
+</div>
+<div id="mcq2">
+
+</div>
+<script>
+    generateQuiz(
+        'mcq2',
+        'Question 2',
+        'Which of the following code returns the dataframe above. ',
+        {
+        '<code>fruit_salad.groupby(by=\'shape\').get_group(\'oval\')</code>': 'Good job!',
+        '<code>fruit_salad.groupby(by=\'shape\').get_group[\'oval\']</code>': 'Take care of which type of brackets are needed.',
+        '<code>fruit_salad.get_group(by=\'shape\').group[\'oval\']</code>': 'Are you using the correct verbs?',
+        },
+        '<code>fruit_salad.groupby(by=\'shape\').get_group(\'oval\')</code>',
+    );
+</script>
+</section>
+<section id="coding-questions" class="level2">
+<h2 class="anchored" data-anchor-id="coding-questions">Coding questions</h2>
+<p><strong>Instructions:</strong><br>
+Running a coding exercise for the first time, could take a bit of time for everything to load. Be patient, it could take a few minutes.</p>
+<p><strong>When you see <code>____</code> in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.</strong></p>
+<p><em><strong>Make sure you remove the hash (<code>#</code>) symbol in the coding portions of this question. We have commented them so that the line won’t execute and you can test your code after each step.</strong></em></p>
+<section id="practice-grouping" class="level3">
+<h3 class="anchored" data-anchor-id="practice-grouping">Practice Grouping</h3>
+<p>Find the mean speed of each column for every Pokemon types using <code>.mean()</code> and <code>.groupby()</code>.</p>
+<p><strong>Tasks:</strong></p>
+<ul>
+<li>Make a groupby object on the column <code>type</code>.</li>
+<li>Find the mean value of each column for each pokemon <code>type</code> using <code>.mean()</code> and save the resulting dataframe as <code>type_means</code>.</li>
+<li>Obtain the mean speed of each pokemon type from the dataframe <code>type_means</code> by using <code>.loc[]</code>.</li>
+<li>Save it in an object named mean_speed.</li>
+<li>Display it.</li>
+</ul>
+<div>
+<div id="pyodide-1" class="exercise-cell">
+
+</div>
+<script type="pyodide-1-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjoicHJhY3RpY2VfZ3JvdXBpbmcifSwiY29kZSI6ImltcG9ydCBwYW5kYXMgYXMgcGRcblxucG9rZW1vbiA9IHBkLnJlYWRfY3N2KCdkYXRhL3Bva2Vtb24uY3N2JylcbnBva2Vtb24gPSBwb2tlbW9uLmxvY1sgOiAsICdhdHRhY2snOiAndHlwZSddXG5cbiMgTWFrZSBhIGdyb3VwYnkgb2JqZWN0IG9uIHRoZSBjb2x1bW4gdHlwZSBcbiMgRmluZCB0aGUgbWVhbiB2YWx1ZSBvZiBlYWNoIGNvbHVtbiBmb3IgZWFjaCBwb2tlbW9uIHR5cGUgdXNpbmcgLm1lYW4oKSBcbiMgU2F2ZSB0aGUgcmVzdWx0aW5nIGRhdGFmcmFtZSBhcyB0eXBlX21lYW5zXG5fX19fID0gX19fXy5fX19fKF9fX18pLl9fX18oKVxuX19fX1xuXG4jIE9idGFpbiB0aGUgbWVhbiBzcGVlZCBvZiBlYWNoIHBva2Vtb24gdHlwZSBmcm9tIHRoZSBkYXRhZnJhbWUgXG4jIHR5cGVfbWVhbnMgYnkgdXNpbmcgLmxvY1tdXG4jIFNhdmUgaXQgaW4gYW4gb2JqZWN0IG5hbWVkIG1lYW5fc3BlZWRcbiMgX19fXyA9IF9fX18uX19fX1tfX19fXVxuXG4jIERpc3BsYXkgaXRcbiMgX19fXyJ9
+</script>
+</div>
+<script type="exercise-check-practice_grouping-contents">
+eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJleGVyY2lzZSI6InByYWN0aWNlX2dyb3VwaW5nIn0sImNvZGUiOiJmcm9tIHNyYy51dGlscyBpbXBvcnQgcHJpbnRfY29ycmVjdF9tc2dcblxucG9rZW1vbiA9IHBkLnJlYWRfY3N2KCdkYXRhL3Bva2Vtb24uY3N2JylcbnBva2Vtb24gPSBwb2tlbW9uLmxvY1sgOiAsICdhdHRhY2snOiAndHlwZSddXG5zb2x1dGlvbiA9IHBva2Vtb24uZ3JvdXBieShieT0ndHlwZScpLm1lYW4oKS5sb2NbOiwgJ3NwZWVkJ11cblxuYXNzZXJ0IGlzaW5zdGFuY2UocmVzdWx0LCB0eXBlKHNvbHV0aW9uKSksIFwiQXJlIHlvdSBkaXNwbGF5aW5nIG1lYW5fc3BlZWQ/XCJcbmFzc2VydCByb3VuZChzb2x1dGlvbi52YWx1ZXMubWVhbigpKSA9PSByb3VuZChyZXN1bHQudmFsdWVzLm1lYW4oKSksIFwiVGhlIGF2ZXJhZ2Ugc3BlZWQgdmFsdWVzIGFyZSBpbmNvcnJlY3QuIEFyZSB5b3UgdGFraW5nIHRoZSBtZWFuIGFmdGVyIGdyb3VwaW5nIGJ5IHR5cGU/XCJcbmFzc2VydCByb3VuZChtYXgoc29sdXRpb24udmFsdWVzKSkgPT0gcm91bmQobWF4KHJlc3VsdC52YWx1ZXMpKSwgXCJUaGUgbWF4aW11bSBhdmVyYWdlIHNwZWVkIGlzIGluY29ycmVjdC4gQXJlIHlvdSB0YWtpbmcgdGhlIG1lYW4gYWZ0ZXIgZ3JvdXBpbmcgYnkgdHlwZT9cIlxucHJpbnRfY29ycmVjdF9tc2coKSJ9
+</script>
+<div class="hint webr-ojs-exercise exercise-hint d-none" data-exercise="practice_grouping">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint 1
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<ul>
+<li>Are you grouping by the column named <code>type</code>?</li>
+<li>Are you using <code>.mean()</code> on the <code>pokemon_type</code> dataframe?</li>
+<li>Are you naming the mean speed objects correctly?</li>
+<li>Are you obtaining the mean values using <code>.loc[]</code>?</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="webr-ojs-exercise exercise-solution d-none" data-exercise="practice_grouping">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Fully worked solution:
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<div>
+<div id="pyodide-3" class="exercise-cell">
+
+</div>
+<script type="pyodide-3-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiaW1wb3J0IHBhbmRhcyBhcyBwZFxuXG5wb2tlbW9uID0gcGQucmVhZF9jc3YoJ2RhdGEvcG9rZW1vbi5jc3YnKVxucG9rZW1vbiA9IHBva2Vtb24ubG9jWyA6ICwgJ2F0dGFjayc6ICd0eXBlJ11cblxuIyBNYWtlIGEgZ3JvdXBieSBvYmplY3Qgb24gdGhlIGNvbHVtbiB0eXBlIFxuIyBGaW5kIHRoZSBtZWFuIHZhbHVlIG9mIGVhY2ggY29sdW1uIGZvciBlYWNoIHBva2Vtb24gdHlwZSB1c2luZyAubWVhbigpIFxuIyBTYXZlIHRoZSByZXN1bHRpbmcgZGF0YWZyYW1lIGFzIHR5cGVfbWVhbnNcbnR5cGVfbWVhbnMgPSBwb2tlbW9uLmdyb3VwYnkoYnk9J3R5cGUnKS5tZWFuKCkgXG50eXBlX21lYW5zXG5cbiMgT2J0YWluIHRoZSBtZWFuIHNwZWVkIG9mIGVhY2ggcG9rZW1vbiB0eXBlIGZyb20gdGhlIGRhdGFmcmFtZSBcbiMgdHlwZV9tZWFucyBieSB1c2luZyAubG9jW11cbiMgU2F2ZSBpdCBpbiBhbiBvYmplY3QgbmFtZWQgbWVhbl9zcGVlZFxubWVhbl9zcGVlZCA9IHR5cGVfbWVhbnMubG9jWzosICdzcGVlZCddXG5cbiMgRGlzcGxheSBpdFxubWVhbl9zcGVlZCJ9
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+</section>
+<section id="practice-aggregating" class="level3">
+<h3 class="anchored" data-anchor-id="practice-aggregating">Practice Aggregating</h3>
+<p>Let’s practice using <code>.agg()</code></p>
+<p><strong>Tasks:</strong></p>
+<ul>
+<li>Make a groupby object on the column <code>legendary</code>.</li>
+<li>Find the maximum and minimum value of each column for each legendary groups using <code>.agg()</code> and save the resulting dataframe as <code>legendary_stats</code>.</li>
+<li>Display it.</li>
+</ul>
+<div>
+<div id="pyodide-4" class="exercise-cell">
+
+</div>
+<script type="pyodide-4-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjoicHJhY3RpY2VfYWdncmVnYXRpbmcifSwiY29kZSI6ImltcG9ydCBwYW5kYXMgYXMgcGRcblxucG9rZW1vbiA9IHBkLnJlYWRfY3N2KCdkYXRhL3Bva2Vtb24uY3N2JylcbnBva2Vtb24gPSBwb2tlbW9uLmxvY1sgOiAsIFsnYXR0YWNrJywgICdkZWZlbnNlJywgJ2NhcHR1cmVfcnQnLCAndG90YWxfYnMnLCAnbGVnZW5kYXJ5J11dXG5cbiMgTWFrZSBhIGdyb3VwYnkgb2JqZWN0IG9uIHRoZSBjb2x1bW4gbGVnZW5kYXJ5IFxuIyBGaW5kIHRoZSBtYXhpbXVtIGFuZCBtaW5pbXVtIHZhbHVlIG9mIGVhY2ggY29sdW1uIGZvciBlYWNoIGxlZ2VuZGFyeSBncm91cHMgdXNpbmcgXG4jIC5hZ2coKSBhbmQgc2F2ZSB0aGUgcmVzdWx0aW5nIGRhdGFmcmFtZSBhcyBsZWdlbmRhcnlfc3RhdHNcbl9fX18gPSBfX19fLl9fX19bX19fX10uX19fXyhfX19fKSBcblxuIyBEaXNwbGF5IGl0XG5fX19fIn0=
+</script>
+</div>
+<script type="exercise-check-practice_aggregating-contents">
+eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJleGVyY2lzZSI6InByYWN0aWNlX2FnZ3JlZ2F0aW5nIn0sImNvZGUiOiJmcm9tIHNyYy51dGlscyBpbXBvcnQgcHJpbnRfY29ycmVjdF9tc2dcblxucG9rZW1vbiA9IHBkLnJlYWRfY3N2KCdkYXRhL3Bva2Vtb24uY3N2JylcbnBva2Vtb24gPSBwb2tlbW9uLmxvY1sgOiAsIFsnYXR0YWNrJywgICdkZWZlbnNlJywgJ2NhcHR1cmVfcnQnLCAndG90YWxfYnMnLCAnbGVnZW5kYXJ5J11dXG5zb2x1dGlvbiA9IHBva2Vtb24uZ3JvdXBieShieT0nbGVnZW5kYXJ5JykuYWdnKFsnbWF4JywgJ21pbiddKSBcblxuYXNzZXJ0IGlzaW5zdGFuY2UocmVzdWx0LCB0eXBlKHNvbHV0aW9uKSksIFwiQXJlIHlvdSB1c2luZyBncm91cGJ5P1wiXG5hc3NlcnQgc3VtKG1heChzb2x1dGlvbi52YWx1ZXMudG9saXN0KCkpKSA9PSBzdW0obWF4KHJlc3VsdC52YWx1ZXMudG9saXN0KCkpKSwgXCJZb3VyIG1heGltdW0gdmFsdWVzIGFyZSBpbmNvcnJlY3QuIEFyZSB5b3UgYWdncmVnYXRpbmcgYnkgJ21pbicgYW5kICdtYXgnP1wiXG5hc3NlcnQgc3VtKG1pbihzb2x1dGlvbi52YWx1ZXMudG9saXN0KCkpKSA9PSBzdW0obWluKHJlc3VsdC52YWx1ZXMudG9saXN0KCkpKSwgXCJZb3VyIG1pbmltdW0gdmFsdWVzIGFyZSBpbmNvcnJlY3QuIEFyZSB5b3UgYWdncmVnYXRpbmcgYnkgJ21pbicgYW5kICdtYXgnP1wiXG5wcmludF9jb3JyZWN0X21zZygpIn0=
+</script>
+<div class="hint webr-ojs-exercise exercise-hint d-none" data-exercise="practice_aggregating">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint 1
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<ul>
+<li>Are you grouping by the column named <code>legendary</code>?</li>
+<li>Are you using <code>.agg()</code> on the <code>legendary_stats</code> dataframe?</li>
+<li>Are you naming the objects correctly?</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="webr-ojs-exercise exercise-solution d-none" data-exercise="practice_aggregating">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Fully worked solution:
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<div>
+<div id="pyodide-6" class="exercise-cell">
+
+</div>
+<script type="pyodide-6-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiaW1wb3J0IHBhbmRhcyBhcyBwZFxuXG5wb2tlbW9uID0gcGQucmVhZF9jc3YoJ2RhdGEvcG9rZW1vbi5jc3YnKVxucG9rZW1vbiA9IHBva2Vtb24ubG9jWyA6ICwgWydhdHRhY2snLCAgJ2RlZmVuc2UnLCAnY2FwdHVyZV9ydCcsICd0b3RhbF9icycsICdsZWdlbmRhcnknXV1cblxuIyBNYWtlIGEgZ3JvdXBieSBvYmplY3Qgb24gdGhlIGNvbHVtbiBsZWdlbmRhcnkgXG4jIEZpbmQgdGhlIG1heGltdW0gYW5kIG1pbmltdW0gdmFsdWUgb2YgZWFjaCBjb2x1bW4gZm9yIGVhY2ggbGVnZW5kYXJ5IGdyb3VwcyB1c2luZyBcbiMgLmFnZygpIGFuZCBzYXZlIHRoZSByZXN1bHRpbmcgZGF0YWZyYW1lIGFzIGxlZ2VuZGFyeV9zdGF0c1xubGVnZW5kYXJ5X3N0YXRzID0gcG9rZW1vbi5ncm91cGJ5KGJ5PSdsZWdlbmRhcnknKS5hZ2coWydtYXgnLCAnbWluJ10pIFxuXG4jIERpc3BsYXkgaXRcbmxlZ2VuZGFyeV9zdGF0cyJ9
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<script type="pyodide-data">
+eyJvcHRpb25zIjp7ImVudiI6eyJQTE9UTFlfUkVOREVSRVIiOiJwbG90bHlfbWltZXR5cGUifSwiaW5kZXhVUkwiOiJodHRwczovL2Nkbi5qc2RlbGl2ci5uZXQvcHlvZGlkZS92MC4yNy4wL2Z1bGwvIn0sInBhY2thZ2VzIjp7InBrZ3MiOlsicHlvZGlkZV9odHRwIiwibWljcm9waXAiLCJpcHl0aG9uIl19fQ==
+</script>
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6W3siY2VsbE5hbWUiOiJweW9kaWRlLTYiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0Iiwic291cmNlIjoidmlld29mIF9weW9kaWRlX2VkaXRvcl82ID0ge1xuICBjb25zdCB7IFB5b2RpZGVFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuXG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwicHlvZGlkZS02LWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHB5b2RpZGUtNi1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBQeW9kaWRlRXhlcmNpc2VFZGl0b3IoXG4gICAgcHlvZGlkZU9qcy5weW9kaWRlUHJvbWlzZSxcbiAgICBibG9jay5jb2RlLFxuICAgIG9wdGlvbnNcbiAgKTtcblxuICByZXR1cm4gZWRpdG9yLmNvbnRhaW5lcjtcbn1cbl9weW9kaWRlX3ZhbHVlXzYgPSBweW9kaWRlT2pzLnByb2Nlc3MoX3B5b2RpZGVfZWRpdG9yXzYsIHt9KTtcbiJ9LHsiY2VsbE5hbWUiOiJweW9kaWRlLTQiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0Iiwic291cmNlIjoidmlld29mIF9weW9kaWRlX2VkaXRvcl80ID0ge1xuICBjb25zdCB7IFB5b2RpZGVFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuXG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwicHlvZGlkZS00LWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgLy8gRGVmYXVsdCBleGVyY2lzZSBjb25maWd1cmF0aW9uXG4gIGNvbnN0IG9wdGlvbnMgPSBPYmplY3QuYXNzaWduKFxuICAgIHtcbiAgICAgIGlkOiBcInB5b2RpZGUtNC1jb250ZW50c1wiLFxuICAgICAgZW52aXI6IGBleGVyY2lzZS1lbnYtJHtibG9jay5hdHRyLmV4ZXJjaXNlfWAsXG4gICAgICBlcnJvcjogZmFsc2UsXG4gICAgICBjYXB0aW9uOiAnRXhlcmNpc2UnLFxuICAgIH0sXG4gICAgYmxvY2suYXR0clxuICApO1xuXG4gIGNvbnN0IGVkaXRvciA9IG5ldyBQeW9kaWRlRXhlcmNpc2VFZGl0b3IocHlvZGlkZU9qcy5weW9kaWRlUHJvbWlzZSwgYmxvY2suY29kZSwgb3B0aW9ucyk7XG4gIHJldHVybiBlZGl0b3IuY29udGFpbmVyO1xufVxudmlld29mIF9weW9kaWRlX3ZhbHVlXzQgPSBweW9kaWRlT2pzLnByb2Nlc3MoX3B5b2RpZGVfZWRpdG9yXzQsIHt9KTtcbl9weW9kaWRlX2ZlZWRiYWNrXzQgPSB7XG4gIGNvbnN0IHsgUHlvZGlkZUdyYWRlciB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcbiAgY29uc3QgZW1wdHlGZWVkYmFjayA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoJ2RpdicpO1xuXG4gIGNvbnN0IGdyYWRlciA9IG5ldyBQeW9kaWRlR3JhZGVyKF9weW9kaWRlX3ZhbHVlXzQuZXZhbHVhdG9yKTtcbiAgY29uc3QgZmVlZGJhY2sgPSBhd2FpdCBncmFkZXIuZ3JhZGVFeGVyY2lzZSgpO1xuICBpZiAoIWZlZWRiYWNrKSByZXR1cm4gZW1wdHlGZWVkYmFjaztcbiAgcmV0dXJuIGZlZWRiYWNrO1xufVxuIn0seyJjZWxsTmFtZSI6InB5b2RpZGUtMyIsImlubGluZSI6ZmFsc2UsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJzb3VyY2UiOiJ2aWV3b2YgX3B5b2RpZGVfZWRpdG9yXzMgPSB7XG4gIGNvbnN0IHsgUHlvZGlkZUV4ZXJjaXNlRWRpdG9yLCBiNjREZWNvZGUgfSA9IHdpbmRvdy5fZXhlcmNpc2Vfb2pzX3J1bnRpbWU7XG5cbiAgY29uc3Qgc2NyaXB0Q29udGVudCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoYHNjcmlwdFt0eXBlPVxcXCJweW9kaWRlLTMtY29udGVudHNcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBibG9jayA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKHNjcmlwdENvbnRlbnQpKTtcblxuICBjb25zdCBvcHRpb25zID0gT2JqZWN0LmFzc2lnbih7IGlkOiBgcHlvZGlkZS0zLWNvbnRlbnRzYCB9LCBibG9jay5hdHRyKTtcbiAgY29uc3QgZWRpdG9yID0gbmV3IFB5b2RpZGVFeGVyY2lzZUVkaXRvcihcbiAgICBweW9kaWRlT2pzLnB5b2RpZGVQcm9taXNlLFxuICAgIGJsb2NrLmNvZGUsXG4gICAgb3B0aW9uc1xuICApO1xuXG4gIHJldHVybiBlZGl0b3IuY29udGFpbmVyO1xufVxuX3B5b2RpZGVfdmFsdWVfMyA9IHB5b2RpZGVPanMucHJvY2VzcyhfcHlvZGlkZV9lZGl0b3JfMywge30pO1xuIn0seyJjZWxsTmFtZSI6InB5b2RpZGUtMSIsImlubGluZSI6ZmFsc2UsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJzb3VyY2UiOiJ2aWV3b2YgX3B5b2RpZGVfZWRpdG9yXzEgPSB7XG4gIGNvbnN0IHsgUHlvZGlkZUV4ZXJjaXNlRWRpdG9yLCBiNjREZWNvZGUgfSA9IHdpbmRvdy5fZXhlcmNpc2Vfb2pzX3J1bnRpbWU7XG5cbiAgY29uc3Qgc2NyaXB0Q29udGVudCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoYHNjcmlwdFt0eXBlPVxcXCJweW9kaWRlLTEtY29udGVudHNcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBibG9jayA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKHNjcmlwdENvbnRlbnQpKTtcblxuICAvLyBEZWZhdWx0IGV4ZXJjaXNlIGNvbmZpZ3VyYXRpb25cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oXG4gICAge1xuICAgICAgaWQ6IFwicHlvZGlkZS0xLWNvbnRlbnRzXCIsXG4gICAgICBlbnZpcjogYGV4ZXJjaXNlLWVudi0ke2Jsb2NrLmF0dHIuZXhlcmNpc2V9YCxcbiAgICAgIGVycm9yOiBmYWxzZSxcbiAgICAgIGNhcHRpb246ICdFeGVyY2lzZScsXG4gICAgfSxcbiAgICBibG9jay5hdHRyXG4gICk7XG5cbiAgY29uc3QgZWRpdG9yID0gbmV3IFB5b2RpZGVFeGVyY2lzZUVkaXRvcihweW9kaWRlT2pzLnB5b2RpZGVQcm9taXNlLCBibG9jay5jb2RlLCBvcHRpb25zKTtcbiAgcmV0dXJuIGVkaXRvci5jb250YWluZXI7XG59XG52aWV3b2YgX3B5b2RpZGVfdmFsdWVfMSA9IHB5b2RpZGVPanMucHJvY2VzcyhfcHlvZGlkZV9lZGl0b3JfMSwge30pO1xuX3B5b2RpZGVfZmVlZGJhY2tfMSA9IHtcbiAgY29uc3QgeyBQeW9kaWRlR3JhZGVyIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuICBjb25zdCBlbXB0eUZlZWRiYWNrID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgnZGl2Jyk7XG5cbiAgY29uc3QgZ3JhZGVyID0gbmV3IFB5b2RpZGVHcmFkZXIoX3B5b2RpZGVfdmFsdWVfMS5ldmFsdWF0b3IpO1xuICBjb25zdCBmZWVkYmFjayA9IGF3YWl0IGdyYWRlci5ncmFkZUV4ZXJjaXNlKCk7XG4gIGlmICghZmVlZGJhY2spIHJldHVybiBlbXB0eUZlZWRiYWNrO1xuICByZXR1cm4gZmVlZGJhY2s7XG59XG4ifSx7ImNlbGxOYW1lIjoicHlvZGlkZS1wcmVsdWRlIiwiaW5saW5lIjpmYWxzZSwibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoicHlvZGlkZU9qcyA9IHtcbiAgY29uc3Qge1xuICAgIFB5b2RpZGVFdmFsdWF0b3IsXG4gICAgUHlvZGlkZUVudmlyb25tZW50TWFuYWdlcixcbiAgICBzZXR1cFB5dGhvbixcbiAgICBzdGFydFB5b2RpZGVXb3JrZXIsXG4gICAgYjY0RGVjb2RlLFxuICAgIGNvbGxhcHNlUGF0aCxcbiAgfSA9IHdpbmRvdy5fZXhlcmNpc2Vfb2pzX3J1bnRpbWU7XG5cbiAgY29uc3Qgc3RhdHVzQ29udGFpbmVyID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoXCJleGVyY2lzZS1sb2FkaW5nLXN0YXR1c1wiKTtcbiAgY29uc3QgaW5kaWNhdG9yQ29udGFpbmVyID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoXCJleGVyY2lzZS1sb2FkaW5nLWluZGljYXRvclwiKTtcbiAgaW5kaWNhdG9yQ29udGFpbmVyLmNsYXNzTGlzdC5yZW1vdmUoXCJkLW5vbmVcIik7XG5cbiAgbGV0IHN0YXR1c1RleHQgPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KFwiZGl2XCIpXG4gIHN0YXR1c1RleHQuY2xhc3NMaXN0ID0gXCJleGVyY2lzZS1sb2FkaW5nLWRldGFpbHNcIjtcbiAgc3RhdHVzVGV4dCA9IHN0YXR1c0NvbnRhaW5lci5hcHBlbmRDaGlsZChzdGF0dXNUZXh0KTtcbiAgc3RhdHVzVGV4dC50ZXh0Q29udGVudCA9IGBJbml0aWFsaXNlYDtcblxuICAvLyBIb2lzdCBpbmRpY2F0b3Igb3V0IGZyb20gZmluYWwgc2xpZGUgd2hlbiBydW5uaW5nIHVuZGVyIHJldmVhbFxuICBjb25zdCByZXZlYWxTdGF0dXMgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiLnJldmVhbCAuZXhlcmNpc2UtbG9hZGluZy1pbmRpY2F0b3JcIik7XG4gIGlmIChyZXZlYWxTdGF0dXMpIHtcbiAgICByZXZlYWxTdGF0dXMucmVtb3ZlKCk7XG4gICAgZG9jdW1lbnQucXVlcnlTZWxlY3RvcihcIi5yZXZlYWwgPiAuc2xpZGVzXCIpLmFwcGVuZENoaWxkKHJldmVhbFN0YXR1cyk7XG4gIH1cblxuICAvLyBNYWtlIGFueSByZXZlYWwgc2xpZGVzIHdpdGggbGl2ZSBjZWxscyBzY3JvbGxhYmxlXG4gIGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3JBbGwoXCIucmV2ZWFsIC5leGVyY2lzZS1jZWxsXCIpLmZvckVhY2goKGVsKSA9PiB7XG4gICAgZWwuY2xvc2VzdCgnc2VjdGlvbi5zbGlkZScpLmNsYXNzTGlzdC5hZGQoXCJzY3JvbGxhYmxlXCIpO1xuICB9KVxuXG4gIC8vIFB5b2RpZGUgc3VwcGxlbWVudGFsIGRhdGEgYW5kIG9wdGlvbnNcbiAgY29uc3QgZGF0YUNvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwicHlvZGlkZS1kYXRhXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgZGF0YSA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKGRhdGFDb250ZW50KSk7XG5cbiAgLy8gR3JhYiBsaXN0IG9mIHJlc291cmNlcyB0byBiZSBkb3dubG9hZGVkXG4gIGNvbnN0IGZpbGVzQ29udGVudCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoYHNjcmlwdFt0eXBlPVxcXCJ2ZnMtZmlsZVxcXCJdYCkudGV4dENvbnRlbnQ7XG4gIGNvbnN0IGZpbGVzID0gSlNPTi5wYXJzZShiNjREZWNvZGUoZmlsZXNDb250ZW50KSk7XG5cbiAgbGV0IHB5b2RpZGVQcm9taXNlID0gKGFzeW5jICgpID0+IHtcbiAgICBzdGF0dXNUZXh0LnRleHRDb250ZW50ID0gYERvd25sb2FkaW5nIFB5b2RpZGVgO1xuICAgIGNvbnN0IHB5b2RpZGUgPSBhd2FpdCBzdGFydFB5b2RpZGVXb3JrZXIoZGF0YS5vcHRpb25zKTtcblxuICAgIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBgRG93bmxvYWRpbmcgcGFja2FnZTogbWljcm9waXBgO1xuICAgIGF3YWl0IHB5b2RpZGUubG9hZFBhY2thZ2UoXCJtaWNyb3BpcFwiKTtcbiAgICBjb25zdCBtaWNyb3BpcCA9IGF3YWl0IHB5b2RpZGUucHlpbXBvcnQoXCJtaWNyb3BpcFwiKTtcbiAgICBhd2FpdCBkYXRhLnBhY2thZ2VzLnBrZ3MubWFwKChwa2cpID0+ICgpID0+IHtcbiAgICAgIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBgRG93bmxvYWRpbmcgcGFja2FnZTogJHtwa2d9YDtcbiAgICAgIHJldHVybiBtaWNyb3BpcC5pbnN0YWxsKHBrZyk7XG4gICAgfSkucmVkdWNlKChjdXIsIG5leHQpID0+IGN1ci50aGVuKG5leHQpLCBQcm9taXNlLnJlc29sdmUoKSk7XG4gICAgYXdhaXQgbWljcm9waXAuZGVzdHJveSgpO1xuXG4gICAgLy8gRG93bmxvYWQgYW5kIGluc3RhbGwgcmVzb3VyY2VzXG4gICAgYXdhaXQgZmlsZXMubWFwKChmaWxlKSA9PiBhc3luYyAoKSA9PiB7XG4gICAgICBjb25zdCBuYW1lID0gZmlsZS5zdWJzdHJpbmcoZmlsZS5sYXN0SW5kZXhPZignLycpICsgMSk7XG4gICAgICBzdGF0dXNUZXh0LnRleHRDb250ZW50ID0gYERvd25sb2FkaW5nIHJlc291cmNlOiAke25hbWV9YDtcbiAgICAgIGNvbnN0IHJlc3BvbnNlID0gYXdhaXQgZmV0Y2goZmlsZSk7XG4gICAgICBpZiAoIXJlc3BvbnNlLm9rKSB7XG4gICAgICAgIHRocm93IG5ldyBFcnJvcihgQ2FuJ3QgZG93bmxvYWQgXFxgJHtmaWxlfVxcYC4gRXJyb3IgJHtyZXNwb25zZS5zdGF0dXN9OiBcIiR7cmVzcG9uc2Uuc3RhdHVzVGV4dH1cIi5gKTtcbiAgICAgIH1cbiAgICAgIGNvbnN0IGRhdGEgPSBhd2FpdCByZXNwb25zZS5hcnJheUJ1ZmZlcigpO1xuXG4gICAgICAvLyBTdG9yZSBVUkxzIGluIHRoZSBjd2Qgd2l0aG91dCBhbnkgc3ViZGlyZWN0b3J5IHN0cnVjdHVyZVxuICAgICAgaWYgKGZpbGUuaW5jbHVkZXMoXCI6Ly9cIikpIHtcbiAgICAgICAgZmlsZSA9IG5hbWU7XG4gICAgICB9XG5cbiAgICAgIC8vIENvbGxhcHNlIGhpZ2hlciBkaXJlY3Rvcnkgc3RydWN0dXJlXG4gICAgICBmaWxlID0gY29sbGFwc2VQYXRoKGZpbGUpO1xuXG4gICAgICAvLyBDcmVhdGUgZGlyZWN0b3J5IHRyZWUsIGlnbm9yaW5nIFwiZGlyZWN0b3J5IGV4aXN0c1wiIFZGUyBlcnJvcnNcbiAgICAgIGNvbnN0IHBhcnRzID0gZmlsZS5zcGxpdCgnLycpLnNsaWNlKDAsIC0xKTtcbiAgICAgIGxldCBwYXRoID0gJyc7XG4gICAgICB3aGlsZSAocGFydHMubGVuZ3RoID4gMCkge1xuICAgICAgICBwYXRoICs9IHBhcnRzLnNoaWZ0KCkgKyAnLyc7XG4gICAgICAgIHRyeSB7XG4gICAgICAgICAgYXdhaXQgcHlvZGlkZS5GUy5ta2RpcihwYXRoKTtcbiAgICAgICAgfSBjYXRjaCAoZSkge1xuICAgICAgICAgIGlmIChlLm5hbWUgIT09IFwiRXJybm9FcnJvclwiKSB0aHJvdyBlO1xuICAgICAgICAgIGlmIChlLmVycm5vICE9PSAyMCkge1xuICAgICAgICAgICAgY29uc3QgZXJyb3JUZXh0UHRyID0gYXdhaXQgcHlvZGlkZS5fbW9kdWxlLl9zdHJlcnJvcihlLmVycm5vKTtcbiAgICAgICAgICAgIGNvbnN0IGVycm9yVGV4dCA9IGF3YWl0IHB5b2RpZGUuX21vZHVsZS5VVEY4VG9TdHJpbmcoZXJyb3JUZXh0UHRyKTtcbiAgICAgICAgICAgIHRocm93IG5ldyBFcnJvcihgRmlsZXN5c3RlbSBFcnJvciAke2UuZXJybm99IFwiJHtlcnJvclRleHR9XCIuYCk7XG4gICAgICAgICAgfVxuICAgICAgICB9XG4gICAgICB9XG5cbiAgICAgIC8vIFdyaXRlIHRoaXMgZmlsZSB0byB0aGUgVkZTXG4gICAgICB0cnkge1xuICAgICAgICByZXR1cm4gYXdhaXQgcHlvZGlkZS5GUy53cml0ZUZpbGUoZmlsZSwgbmV3IFVpbnQ4QXJyYXkoZGF0YSkpO1xuICAgICAgfSBjYXRjaCAoZSkge1xuICAgICAgICBpZiAoZS5uYW1lICE9PSBcIkVycm5vRXJyb3JcIikgdGhyb3cgZTtcbiAgICAgICAgY29uc3QgZXJyb3JUZXh0UHRyID0gYXdhaXQgcHlvZGlkZS5fbW9kdWxlLl9zdHJlcnJvcihlLmVycm5vKTtcbiAgICAgICAgY29uc3QgZXJyb3JUZXh0ID0gYXdhaXQgcHlvZGlkZS5fbW9kdWxlLlVURjhUb1N0cmluZyhlcnJvclRleHRQdHIpO1xuICAgICAgICB0aHJvdyBuZXcgRXJyb3IoYEZpbGVzeXN0ZW0gRXJyb3IgJHtlLmVycm5vfSBcIiR7ZXJyb3JUZXh0fVwiLmApO1xuICAgICAgfVxuICAgIH0pLnJlZHVjZSgoY3VyLCBuZXh0KSA9PiBjdXIudGhlbihuZXh0KSwgUHJvbWlzZS5yZXNvbHZlKCkpO1xuXG4gICAgc3RhdHVzVGV4dC50ZXh0Q29udGVudCA9IGBQeW9kaWRlIGVudmlyb25tZW50IHNldHVwYDtcbiAgICBhd2FpdCBzZXR1cFB5dGhvbihweW9kaWRlKTtcblxuICAgIHN0YXR1c1RleHQucmVtb3ZlKCk7XG4gICAgaWYgKHN0YXR1c0NvbnRhaW5lci5jaGlsZHJlbi5sZW5ndGggPT0gMCkge1xuICAgICAgc3RhdHVzQ29udGFpbmVyLnBhcmVudE5vZGUucmVtb3ZlKCk7XG4gICAgfVxuICAgIHJldHVybiBweW9kaWRlO1xuICB9KSgpLmNhdGNoKChlcnIpID0+IHtcbiAgICBzdGF0dXNUZXh0LnN0eWxlLmNvbG9yID0gXCJ2YXIoLS1leGVyY2lzZS1lZGl0b3ItaGwtZXIsICNBRDAwMDApXCI7XG4gICAgc3RhdHVzVGV4dC50ZXh0Q29udGVudCA9IGVyci5tZXNzYWdlO1xuICAgIC8vaW5kaWNhdG9yQ29udGFpbmVyLnF1ZXJ5U2VsZWN0b3IoXCIuc3Bpbm5lci1ncm93XCIpLmNsYXNzTGlzdC5hZGQoXCJkLW5vbmVcIik7XG4gICAgdGhyb3cgZXJyO1xuICB9KTtcblxuICAvLyBLZWVwIHRyYWNrIG9mIGluaXRpYWwgT0pTIGJsb2NrIHJlbmRlclxuICBjb25zdCByZW5kZXJlZE9qcyA9IHt9O1xuXG4gIGNvbnN0IHByb2Nlc3MgPSBhc3luYyAoY29udGV4dCwgaW5wdXRzKSA9PiB7XG4gICAgY29uc3QgcHlvZGlkZSA9IGF3YWl0IHB5b2RpZGVQcm9taXNlO1xuICAgIGNvbnN0IGV2YWx1YXRvciA9IG5ldyBQeW9kaWRlRXZhbHVhdG9yKHB5b2RpZGUsIGNvbnRleHQpO1xuICAgIGF3YWl0IGV2YWx1YXRvci5wcm9jZXNzKGlucHV0cyk7XG4gICAgcmV0dXJuIGV2YWx1YXRvci5jb250YWluZXI7XG4gIH1cblxuICByZXR1cm4ge1xuICAgIHB5b2RpZGVQcm9taXNlLFxuICAgIHJlbmRlcmVkT2pzLFxuICAgIHByb2Nlc3MsXG4gIH07XG59XG4ifV19
+</script>
+<div id="exercise-loading-indicator" class="exercise-loading-indicator d-none d-flex align-items-center gap-2">
+<div id="exercise-loading-status" class="d-flex gap-2">
+
+</div>
+<div class="spinner-grow spinner-grow-sm">
+
+</div>
+</div>
+<script type="vfs-file">
+WyIuLi8uLi9zcmMvdXRpbHMucHkiLCIuLi8uLi9kYXRhL2NhbmR5YmFyc19tZXJnZS5jc3YiLCIuLi8uLi9kYXRhL2xlZ29fdW50aWR5Mi5jc3YiLCIuLi8uLi9kYXRhL2xlZ29faW52ZW50b3J5X3BhcnRzLmNzdiIsIi4uLy4uL2RhdGEvbGVnby10aGVtZXMuY3N2IiwiLi4vLi4vZGF0YS9jYW5keWJhcnNfbW9yZS5jc3YiLCIuLi8uLi9kYXRhL3BrbTEuY3N2IiwiLi4vLi4vZGF0YS9hbmltYWxfYml0ZXMuY3N2IiwiLi4vLi4vZGF0YS9sZWdvX3BpZWNlX3R5cGUuY3N2IiwiLi4vLi4vZGF0YS9jYW5keV9iYXJzMi5jc3YiLCIuLi8uLi9kYXRhL2xlZ29fb3BhY2l0eS5jc3YiLCIuLi8uLi9kYXRhL2xlZ29fdW50aWR5LmNzdiIsIi4uLy4uL2RhdGEvcG9rZW1vbl9zdy5jc3YiLCIuLi8uLi9kYXRhL2NlcmVhbDIuY3N2IiwiLi4vLi4vZGF0YS9sZWdvX2ludmVudG9yaWVzLmNzdiIsIi4uLy4uL2RhdGEvY2FudWNrcy5jc3YiLCIuLi8uLi9kYXRhL2xlZ28tc2V0cy5jc3YiLCIuLi8uLi9kYXRhL2NhbmR5YmFycy5jc3YiLCIuLi8uLi9kYXRhL2NhbmR5YmFyc19tMi5jc3YiLCIuLi8uLi9kYXRhL2NlcmVhbC5jc3YiLCIuLi8uLi9kYXRhL3BrbTMuY3N2IiwiLi4vLi4vZGF0YS9wb2tlbW9uLmNzdiIsIi4uLy4uL2RhdGEvcG9rZW1vbi54bHN4IiwiLi4vLi4vZGF0YS9sZWdvX3N0b2NrLmNzdiIsIi4uLy4uL2RhdGEvZnJ1aXRfc2FsYWQuY3N2IiwiLi4vLi4vZGF0YS9wa20yLmNzdiIsIi4uLy4uL2RhdGEvcG9rZW1vbi10ZXh0LnR4dCIsIi4uLy4uL2RhdGEvbGVnb190aGVtZV9taW5pbWFsLmNzdiIsIi4uLy4uL2RhdGEvbGVnb19ib3R0b20uY3N2IiwiLi4vLi4vZGF0YS9wb3NpdGlvbl9mcmVxX2RmLmNzdiIsIi4uLy4uL2RhdGEvY2FuZHliYXJzMi5jc3YiLCIuLi8uLi9kYXRhL2xlZ28tY29sb3JzLmNzdiIsIi4uLy4uL2RhdGEvZm9vZHMueGxzeCIsIi4uLy4uL2RhdGEvaW52ZW50b3J5X3NldHMuY3N2IiwiLi4vLi4vZGF0YS9wa200LmNzdiIsIi4uLy4uL2RhdGEvbGVnby10aGVtZS1oaS5jc3YiLCIuLi8uLi9kYXRhL2NhbmR5YmFycy1oLmNzdiIsIi4uLy4uL2RhdGEvY2FuZHliYXJzLXRleHQudHh0IiwiLi4vLi4vZGF0YS9sZWdvX3RvcC5jc3YiLCIuLi8uLi9kYXRhL3NuYWNrc2l6ZV9jYW5keWJhcnMuY3N2IiwiLi4vLi4vZGF0YS9wb2tlbW9uMi5jc3YiLCIuLi8uLi9kYXRhL2NlcmVhbF9tZWx0LmNzdiJd
+</script>
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6W119
+</script>
+<script type="module">
+if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
+window._ojs.paths.runtimeToDoc = "../../modules/module2";
+window._ojs.paths.runtimeToRoot = "../..";
+window._ojs.paths.docToRoot = "../..";
+window._ojs.selfContained = false;
+window._ojs.runtime.interpretFromScriptTags();
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../modules/module2/module2-25-grouping_and_aggregating.html" class="pagination-link" aria-label="8. Grouping and Aggregating">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">8. Grouping and Aggregating</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../modules/module2/module2-29-plotting_with_altair.html" class="pagination-link" aria-label="9. Plotting with Altair">
+        <span class="nav-page-text">9. Plotting with Altair</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

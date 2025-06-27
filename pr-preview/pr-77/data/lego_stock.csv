@@ -1,0 +1,2847 @@
+,inventory_id,set_num,quantity,name,year,theme_id,num_parts
+0,35,75911-1,1,McLaren Mercedes Pit Stop,2015,601,340
+1,35,75912-1,1,Porsche 911 GT Finish Line,2015,601,561
+2,39,75048-1,1,The Phantom,2014,182,233
+3,39,75053-1,1,The Ghost,2014,182,927
+4,50,4515-1,1,Straight Rails,1991,244,8
+5,309,4515-1,7,Straight Rails,1991,244,8
+6,561,4515-1,1,Straight Rails,1991,244,8
+7,5358,4515-1,1,Straight Rails,1991,244,8
+8,5491,4515-1,1,Straight Rails,1991,244,8
+9,6050,4515-1,1,Straight Rails,1991,244,8
+10,6330,4515-1,3,Straight Rails,1991,244,8
+11,10158,4515-1,1,Straight Rails,1991,244,8
+12,13917,4515-1,1,Straight Rails,1991,244,8
+13,15164,4515-1,2,Straight Rails,1991,244,8
+14,50,4520-1,2,Curved Rails,1991,244,8
+15,309,4520-1,5,Curved Rails,1991,244,8
+16,561,4520-1,2,Curved Rails,1991,244,8
+17,5491,4520-1,1,Curved Rails,1991,244,8
+18,6050,4520-1,1,Curved Rails,1991,244,8
+19,6330,4520-1,2,Curved Rails,1991,244,8
+20,10158,4520-1,2,Curved Rails,1991,244,8
+21,13917,4520-1,2,Curved Rails,1991,244,8
+22,15164,4520-1,2,Curved Rails,1991,244,8
+23,50,4531-1,1,Manual Points,1991,244,6
+24,309,4531-1,3,Manual Points,1991,244,6
+25,6330,4531-1,2,Manual Points,1991,244,6
+26,15164,4531-1,1,Manual Points,1991,244,6
+27,71,7690-1,1,MB-01 Eagle Command Base,2007,137,763
+28,5114,7690-1,1,MB-01 Eagle Command Base,2007,137,763
+29,71,7691-1,1,ETX Alien Mothership Assault,2007,137,433
+30,5114,7691-1,1,ETX Alien Mothership Assault,2007,137,433
+31,71,7692-1,1,MX-71 Recon Dropship,2007,137,434
+32,5114,7692-1,1,MX-71 Recon Dropship,2007,137,434
+33,71,7693-1,1,ETX Alien Strike,2007,137,245
+34,5114,7693-1,1,ETX Alien Strike,2007,137,245
+35,71,7694-1,1,MT-31 Trike,2007,137,94
+36,5114,7694-1,1,MT-31 Trike,2007,137,94
+37,71,7695-1,1,MX-11 Astro Fighter,2007,137,56
+38,5114,7695-1,1,MX-11 Astro Fighter,2007,137,56
+39,71,7697-1,1,MT-51 Claw-Tank Ambush,2007,137,373
+40,5114,7697-1,1,MT-51 Claw-Tank Ambush,2007,137,373
+41,81,8451-1,1,Dumper,2003,7,183
+42,81,8453-1,1,Front End Loader,2003,7,214
+43,87,10233-1,1,Horizon Express,2013,240,1349
+44,87,88002-1,1,Power Functions Train Motor,2011,438,7
+45,87,8870-1,1,Power Functions Light,2009,438,1
+46,973,8870-1,1,Power Functions Light,2009,438,1
+47,7391,8870-1,1,Power Functions Light,2009,438,1
+48,87,8878-1,1,Rechargeable Battery Box,2009,438,1
+49,973,8878-1,1,Rechargeable Battery Box,2009,438,1
+50,7391,8878-1,1,Rechargeable Battery Box,2009,438,1
+51,87,8879-1,1,IR Speed Remote Control,2009,438,1
+52,973,8879-1,1,IR Speed Remote Control,2009,438,1
+53,7391,8879-1,1,IR Speed Remote Control,2009,438,1
+54,87,8884-1,1,Power Functions IR Receiver,2008,438,1
+55,973,8884-1,1,Power Functions IR Receiver,2008,438,1
+56,7391,8884-1,1,Power Functions IR Receiver,2008,438,1
+57,104,4103-1,1,Fun with Bricks {small red bucket},2002,37,200
+58,104,4782-1,1,Box of Bricks,2005,48,200
+59,122,7238-1,1,Fire Helicopter,2005,58,75
+60,1401,7238-1,1,Fire Helicopter,2005,58,75
+61,3109,7238-1,1,Fire Helicopter,2005,58,75
+62,4261,7238-1,1,Fire Helicopter,2005,58,75
+63,4430,7238-1,1,Fire Helicopter,2005,58,75
+64,4969,7238-1,1,Fire Helicopter,2005,58,75
+65,6282,7238-1,1,Fire Helicopter,2005,58,75
+66,9178,7238-1,1,Fire Helicopter,2005,58,75
+67,11861,7238-1,1,Fire Helicopter,2005,58,75
+68,15694,7238-1,1,Fire Helicopter,2005,58,75
+69,122,7890-1,1,Ambulance,2006,60,117
+70,4187,7890-1,1,Ambulance,2006,60,117
+71,6205,7890-1,1,Ambulance,2006,60,117
+72,9178,7890-1,1,Ambulance,2006,60,117
+73,10028,7890-1,1,Ambulance,2006,60,117
+74,13355,7890-1,1,Ambulance,2006,60,117
+75,13398,7890-1,1,Ambulance,2006,60,117
+76,122,7944-1,1,Fire Hovercraft,2007,58,273
+77,1418,7944-1,1,Fire Hovercraft,2007,58,273
+78,4261,7944-1,1,Fire Hovercraft,2007,58,273
+79,6282,7944-1,1,Fire Hovercraft,2007,58,273
+80,9178,7944-1,1,Fire Hovercraft,2007,58,273
+81,131,7634-1,1,Tractor,2009,57,77
+82,7151,7634-1,1,Tractor,2009,57,77
+83,131,7635-1,1,4WD with Horse Trailer,2009,57,176
+84,131,7684-1,1,Pig Farm & Tractor,2010,57,256
+85,251,3886-2,1,Ryo Walker - Boxed Version,2007,389,19
+86,263,7575-10,1,Advent Calendar 2004 Clikits (Day  9) Bracelet,2004,222,4
+87,263,7575-11,1,Advent Calendar 2004 Clikits (Day 10) Hair Band,2004,222,5
+88,263,7575-12,1,Advent Calendar 2004 Clikits (Day 11) Icons,2004,222,10
+89,263,7575-13,1,Advent Calendar 2004 Clikits (Day 12) Necklace,2004,222,8
+90,263,7575-14,1,Advent Calendar 2004 Clikits (Day 13) Hair Band,2004,222,4
+91,263,7575-15,1,Advent Calendar 2004 Clikits (Day 14) Gift Tag with Icons,2004,222,4
+92,263,7575-16,1,Advent Calendar 2004 Clikits (Day 15) Ring,2004,222,4
+93,263,7575-17,1,Advent Calendar 2004 Clikits (Day 16) Necklace,2004,222,4
+94,263,7575-18,1,Advent Calendar 2004 Clikits (Day 17) Bangle,2004,222,2
+95,263,7575-19,1,Advent Calendar 2004 Clikits (Day 18) Paper Clip / Hair Clip,2004,222,10
+96,263,7575-2,1,Advent Calendar 2004 Clikits (Day  1) Paper Clip / Hair Clip,2004,222,3
+97,263,7575-20,1,Advent Calendar 2004 Clikits (Day 19) Picture Frame,2004,222,8
+98,263,7575-21,1,Advent Calendar 2004 Clikits (Day 20) Hair Band,2004,222,4
+99,263,7575-22,1,Advent Calendar 2004 Clikits (Day 21) Gift Tag with Icons,2004,222,4
+100,263,7575-23,1,Advent Calendar 2004 Clikits (Day 22) Paper Clip / Hair Clip,2004,222,3
+101,263,7575-24,1,Advent Calendar 2004 Clikits (Day 23) Hair Band,2004,222,5
+102,263,7575-25,1,Advent Calendar 2004 Clikits (Day 24) Carry Case,2004,222,5
+103,263,7575-3,1,Advent Calendar 2004 Clikits (Day  2) Bracelet,2004,222,4
+104,263,7575-4,1,Advent Calendar 2004 Clikits (Day  3) Hair Band,2004,222,7
+105,263,7575-5,1,Advent Calendar 2004 Clikits (Day  4) Ring,2004,222,10
+106,263,7575-6,1,Advent Calendar 2004 Clikits (Day  5) Picture Frame,2004,222,6
+107,263,7575-7,1,Advent Calendar 2004 Clikits (Day  6) Bangle,2004,222,2
+108,263,7575-8,1,Advent Calendar 2004 Clikits (Day  7) Gift Tag with Icons,2004,222,4
+109,263,7575-9,1,Advent Calendar 2004 Clikits (Day  8) Hair Band,2004,222,4
+110,305,6299-10,1,Advent Calendar 2009 Pirates (Day  9) - Plants and Crab,2009,224,7
+111,305,6299-11,1,Advent Calendar 2009 Pirates (Day 10) - Barrel with Tools,2009,224,3
+112,305,6299-12,1,Advent Calendar 2009 Pirates (Day 11) - Castaway,2009,224,7
+113,305,6299-13,1,Advent Calendar 2009 Pirates (Day 12) - Fish over Fire,2009,224,9
+114,305,6299-14,1,Advent Calendar 2009 Pirates (Day 13) - Monkey,2009,224,2
+115,305,6299-15,1,Advent Calendar 2009 Pirates (Day 14) - Mermaid,2009,224,4
+116,305,6299-16,1,Advent Calendar 2009 Pirates (Day 15) - Clam and Plant,2009,224,6
+117,305,6299-17,1,Advent Calendar 2009 Pirates (Day 16) - Table with Food and Rat,2009,224,8
+118,305,6299-18,1,Advent Calendar 2009 Pirates (Day 17) - Imperial Soldier II,2009,224,6
+119,305,6299-19,1,Advent Calendar 2009 Pirates (Day 18) - Weapon Stand,2009,224,9
+120,305,6299-2,1,Advent Calendar 2009 Pirates (Day  1) - Captain Brickbeard,2009,224,6
+121,305,6299-20,1,Advent Calendar 2009 Pirates (Day 19) - Pirate,2009,224,4
+122,305,6299-21,1,Advent Calendar 2009 Pirates (Day 20) - Barrel and Paddle,2009,224,2
+123,305,6299-22,1,Advent Calendar 2009 Pirates (Day 21) - Sawfish,2009,224,2
+124,305,6299-23,1,Advent Calendar 2009 Pirates (Day 22) - Skeleton and Snake,2009,224,7
+125,305,6299-24,1,Advent Calendar 2009 Pirates (Day 23) - Brick Arch with Fire and Skull,2009,224,12
+126,305,6299-25,1,Advent Calendar 2009 Pirates (Day 24) - Treasure Chest with Gems,2009,224,8
+127,305,6299-3,1,Advent Calendar 2009 Pirates (Day  2) - Table with Lamp and Map,2009,224,9
+128,305,6299-4,1,Advent Calendar 2009 Pirates (Day  3) - Parrot on Perch,2009,224,7
+129,305,6299-5,1,Advent Calendar 2009 Pirates (Day  4) - Imperial Soldier II Officer,2009,224,6
+130,305,6299-6,1,Advent Calendar 2009 Pirates (Day  5) - Cannon,2009,224,8
+131,305,6299-7,1,Advent Calendar 2009 Pirates (Day  6) - Crocodile,2009,224,3
+132,305,6299-8,1,Advent Calendar 2009 Pirates (Day  7) - Pirate Female,2009,224,5
+133,305,6299-9,1,Advent Calendar 2009 Pirates (Day  8) - Raft with Flagpole,2009,224,8
+134,311,8593-1,1,Makuta,2003,347,199
+135,1289,8593-1,1,Makuta,2003,347,199
+136,11043,8593-1,1,Makuta,2003,347,199
+137,311,8596-1,1,Takanuva,2003,347,200
+138,1289,8596-1,1,Takanuva,2003,347,200
+139,11043,8596-1,1,Takanuva,2003,347,200
+140,398,71010-1,1,Wolf Guy,2015,552,6
+141,398,71010-10,1,Gargoyle,2015,552,6
+142,398,71010-11,1,Skeleton Guy,2015,552,6
+143,398,71010-12,1,Monster Rocker,2015,552,6
+144,398,71010-13,1,Zombie Businessman,2015,552,7
+145,398,71010-14,1,Banshee,2015,552,5
+146,398,71010-15,1,Square Foot,2015,552,5
+147,398,71010-16,1,Spider Lady,2015,552,7
+148,398,71010-2,1,Zombie Pirate,2015,552,7
+149,398,71010-3,1,Monster Scientist,2015,552,6
+150,398,71010-4,1,Wacky Witch,2015,552,8
+151,398,71010-5,1,Plant Monster,2015,552,7
+152,398,71010-6,1,Fly Monster,2015,552,5
+153,398,71010-7,1, Spectre,2015,552,7
+154,398,71010-8,1,Zombie Cheerleader,2015,552,7
+155,398,71010-9,1,Tiger Woman,2015,552,7
+156,473,8756-1,1,Sidorak,2005,347,211
+157,11551,8756-1,1,Sidorak,2005,347,211
+158,14790,8756-1,1,Sidorak,2005,347,211
+159,15733,8756-1,1,Sidorak,2005,347,211
+160,473,8762-1,1,Toa Iruini,2005,349,53
+161,1131,8762-1,1,Toa Iruini,2005,349,53
+162,500,9677-1,1,X-wing Starfighter & Yavin 4,2012,177,77
+163,500,9678-1,1,Twin-pod Cloud Car & Bespin,2012,177,78
+164,500,9679-1,1,AT-ST & Endor,2012,177,65
+165,515,3741-1,1,Large Locomotive (base unit without color trim elements),2001,238,91
+166,2054,3741-1,1,Large Locomotive (base unit without color trim elements),2001,238,91
+167,3694,3741-1,1,Large Locomotive (base unit without color trim elements),2001,238,91
+168,7487,3741-1,1,Large Locomotive (base unit without color trim elements),2001,238,91
+169,7516,3741-1,1,Large Locomotive (base unit without color trim elements),2001,238,91
+170,8558,3741-1,1,Large Locomotive (base unit without color trim elements),2001,238,91
+171,11325,3741-1,1,Large Locomotive (base unit without color trim elements),2001,238,91
+172,11384,3741-1,1,Large Locomotive (base unit without color trim elements),2001,238,91
+173,13153,3741-1,1,Large Locomotive (base unit without color trim elements),2001,238,91
+174,13917,3741-1,1,Large Locomotive (base unit without color trim elements),2001,238,91
+175,16226,3741-1,1,Large Locomotive (base unit without color trim elements),2001,238,91
+176,515,3745-1,1,Locomotive Black Bricks,2001,238,106
+177,1317,3745-1,1,Locomotive Black Bricks,2001,238,106
+178,4806,3745-1,1,Locomotive Black Bricks,2001,238,106
+179,7487,3745-1,1,Locomotive Black Bricks,2001,238,106
+180,525,7121-1,1,Naboo Swamp,1999,166,82
+181,3792,7121-1,1,Naboo Swamp,1999,166,82
+182,12669,7121-1,1,Naboo Swamp,1999,166,82
+183,525,7151-1,1,Sith Infiltrator,1999,166,244
+184,15718,7151-1,1,Sith Infiltrator,1999,166,244
+185,528,6604-1,1,Formula-I Racer,1985,82,31
+186,2836,6604-1,1,Formula-I Racer,1985,82,31
+187,528,6622-1,1,Mailman on Motorcycle,1984,81,30
+188,528,6633-1,1,Family Car,1985,85,46
+189,14493,6633-1,1,Family Car,1985,85,46
+190,580,3402-1,2,Grandstand with Lights,2000,462,60
+191,580,3403-1,1,Fans' Grandstand with Scoreboard,2000,462,80
+192,14277,3403-1,1,Fans' Grandstand with Scoreboard,2000,462,80
+193,580,3406-1,1,Americas Bus,2000,462,130
+194,580,3408-1,1,Super Sports Coverage,2000,462,224
+195,580,3409-1,1,Championship Challenge,2000,462,293
+196,7142,3409-1,1,Championship Challenge,2000,462,293
+197,612,4500-1,1,Rebel Snowspeeder [Redesign] - Blue box,2003,169,216
+198,612,4504-1,1,"Millennium Falcon (Redesign), Blue box",2003,169,996
+199,2488,4504-1,1,"Millennium Falcon (Redesign), Blue box",2003,169,996
+200,614,9441-1,1,Kai’s Blade Cycle,2012,435,187
+201,3691,9441-1,1,Kai’s Blade Cycle,2012,435,187
+202,614,9442-1,1,Jay's Storm Fighter,2012,435,242
+203,614,9591-1,1,Weapon Pack,2012,435,73
+204,695,8607-1,1,Nuhrii,2004,336,27
+205,7670,8607-1,1,Nuhrii,2004,336,27
+206,8471,8607-1,1,Nuhrii,2004,336,27
+207,695,8611-1,1,Orkahm,2004,336,27
+208,8471,8611-1,1,Orkahm,2004,336,27
+209,695,8614-1,1,Vahki Nuurakh,2004,357,32
+210,710,8614-1,1,Vahki Nuurakh,2004,357,32
+211,5137,8614-1,1,Vahki Nuurakh,2004,357,32
+212,10779,8614-1,1,Vahki Nuurakh,2004,357,32
+213,695,8616-1,1,Vahki Vorzakh,2004,357,32
+214,710,8616-1,1,Vahki Vorzakh,2004,357,32
+215,5137,8616-1,1,Vahki Vorzakh,2004,357,32
+216,695,8618-1,1,Vahki Rorzakh,2004,357,32
+217,5137,8618-1,1,Vahki Rorzakh,2004,357,32
+218,708,4180878,1,"Bionicle Poster 2002, Bohrok front Krana back, 420 x 295 mm",2002,501,0
+219,708,8560-1,1,Pahrak,2002,328,41
+220,1795,8560-1,1,Pahrak,2002,328,41
+221,6423,8560-1,1,Pahrak,2002,328,41
+222,7709,8560-1,1,Pahrak,2002,328,41
+223,13238,8560-1,1,Pahrak,2002,328,41
+224,16126,8560-1,1,Pahrak,2002,328,41
+225,708,8564-1,1,Lehvak,2002,328,41
+226,1795,8564-1,1,Lehvak,2002,328,41
+227,3284,8564-1,1,Lehvak,2002,328,41
+228,6423,8564-1,1,Lehvak,2002,328,41
+229,8025,8564-1,1,Lehvak,2002,328,41
+230,16126,8564-1,1,Lehvak,2002,328,41
+231,710,8602-1,1,Toa Nokama,2004,353,46
+232,13907,8602-1,1,Toa Nokama,2004,353,46
+233,710,8606-1,1,Toa Nuju,2004,353,48
+234,13907,8606-1,1,Toa Nuju,2004,353,48
+235,710,8615-1,1,Vahki Bordakh,2004,357,32
+236,1269,8615-1,1,Vahki Bordakh,2004,357,32
+237,5137,8615-1,1,Vahki Bordakh,2004,357,32
+238,9678,8615-1,1,Vahki Bordakh,2004,357,32
+239,10779,8615-1,1,Vahki Bordakh,2004,357,32
+240,758,6712-1,1,Sheriff's Showdown,1996,476,28
+241,758,6716-1,1,Covered Wagon,1996,476,65
+242,758,6755-1,1,Sheriff's Lock-Up,1996,476,177
+243,766,7958-10,1,Advent Calendar 2011 Star Wars (Day  9) - X-wing Fighter,2011,225,23
+244,766,7958-11,1,Advent Calendar 2011 Star Wars (Day 10) - Imperial Shuttle,2011,225,9
+245,766,7958-12,1,Advent Calendar 2011 Star Wars (Day 11) - Battle Droid Pilot,2011,225,6
+246,766,7958-13,1,Advent Calendar 2011 Star Wars (Day 12) - Rebel Snowspeeder,2011,225,17
+247,766,7958-14,1,Advent Calendar 2011 Star Wars (Day 13) - R2-Q5,2011,225,4
+248,766,7958-15,1,Advent Calendar 2011 Star Wars (Day 14) - Mouse Droid,2011,225,9
+249,766,7958-16,1,Advent Calendar 2011 Star Wars (Day 15) - Republic Gunship,2011,225,14
+250,766,7958-17,1,Advent Calendar 2011 Star Wars (Day 16) - Clone Pilot,2011,225,4
+251,766,7958-18,1,Advent Calendar 2011 Star Wars (Day 17) - Weapon Depot,2011,225,10
+252,766,7958-19,1,Advent Calendar 2011 Star Wars (Day 18) - Anakin's Y-wing Starfighter,2011,225,20
+253,766,7958-2,1,Advent Calendar 2011 Star Wars (Day  1) - Republic Cruiser,2011,225,19
+254,766,7958-20,1,Advent Calendar 2011 Star Wars (Day 19) - TIE Defender Pilot,2011,225,4
+255,766,7958-21,1,Advent Calendar 2011 Star Wars (Day 20) - TIE Fighter,2011,225,7
+256,766,7958-22,1,Advent Calendar 2011 Star Wars (Day 21) - Millennium Falcon,2011,225,13
+257,766,7958-23,1,Advent Calendar 2011 Star Wars (Day 22) - A-wing Fighter,2011,225,9
+258,766,7958-24,1,Advent Calendar 2011 Star Wars (Day 23) - Christmas Tree,2011,225,18
+259,766,7958-25,1,Advent Calendar 2011 Star Wars (Day 24) - Santa Yoda,2011,225,7
+260,766,7958-3,1,Advent Calendar 2011 Star Wars (Day  2) - Nute Gunray,2011,225,4
+261,766,7958-4,1,Advent Calendar 2011 Star Wars (Day  3) - Mechno-Chair,2011,225,13
+262,766,7958-5,1,Advent Calendar 2011 Star Wars (Day 4) - Separatist Spider Droid,2011,225,20
+263,766,7958-6,1,Advent Calendar 2011 Star Wars (Day  5) - Boba Fett's Slave I,2011,225,20
+264,766,7958-7,1,Advent Calendar 2011 Star Wars (Day  6) - Chewbacca,2011,225,3
+265,766,7958-8,1,Advent Calendar 2011 Star Wars (Day  7) - Tool Depot,2011,225,9
+266,766,7958-9,1,Advent Calendar 2011 Star Wars (Day 8) - Zev Senesca,2011,225,4
+267,889,9490-1,1,Droid Escape,2012,169,136
+268,889,9492-1,1,TIE Fighter,2012,169,413
+269,889,9496-1,1,Desert Skiff,2012,169,220
+270,7562,9496-1,1,Desert Skiff,2012,169,220
+271,908,7030-1,1,Squad Car,2003,111,51
+272,908,7031-1,1,Helicopter,2003,111,87
+273,908,7032-1,1,Highway Patrol & Undercover Van,2003,111,153
+274,908,7033-1,1,Armored Car Action,2003,111,179
+275,908,7034-1,1,Surveillance Truck,2003,111,260
+276,908,7035-1,1,Police HQ,2003,111,422
+277,909,1557-1,1,Scooter,1986,130,26
+278,909,1558-1,1,Mobile Command Trailer,1986,130,68
+279,916,76029-1,1,Iron Man vs. Ultron,2015,487,92
+280,916,76030-1,1,Avengers Hydra Showdown,2015,487,219
+281,916,76031-1,1,The Hulk Buster Smash,2015,487,247
+282,916,76032-1,1,The Avengers Quinjet Chase,2015,487,720
+283,916,76038-1,1,Attack on Avengers Tower,2015,487,513
+284,916,76041-1,1,The Hydra Fortress Smash,2015,487,404
+285,920,9674-1,1,Naboo Starfighter & Naboo,2012,166,56
+286,920,9675-1,1,Sebulba's Podracer & Tatooine,2012,166,80
+287,920,9676-1,1,TIE Interceptor & Death Star,2012,169,65
+288,962,7990-1,1,Cement Mixer,2007,56,212
+289,4771,7990-1,1,Cement Mixer,2007,56,212
+290,7766,7990-1,1,Cement Mixer,2007,56,212
+291,10043,7990-1,1,Cement Mixer,2007,56,212
+292,15980,7990-1,1,Cement Mixer,2007,56,212
+293,962,7991-1,1,Garbage Truck,2007,63,205
+294,10043,7991-1,1,Garbage Truck,2007,63,205
+295,962,7993-1,1,Service Station,2007,50,393
+296,973,8882-1,1,Power Functions XL-Motor,2008,438,1
+297,7391,8882-1,1,Power Functions XL-Motor,2008,438,1
+298,1130,20203-1,1,"MBA Level Two - Kit 4, Flight Designer",2011,432,145
+299,9730,20203-1,1,"MBA Level Two - Kit 4, Flight Designer",2011,432,145
+300,15238,20203-1,1,"MBA Level Two - Kit 4, Flight Designer",2011,432,145
+301,1130,20204-1,1,"MBA Level Two - Kit 5, Creature Designer",2012,432,232
+302,9730,20204-1,1,"MBA Level Two - Kit 5, Creature Designer",2012,432,232
+303,15238,20204-1,1,"MBA Level Two - Kit 5, Creature Designer",2012,432,232
+304,1130,20205-1,1,MBA Level Two - Kit 6 Auto Designer,2012,432,188
+305,9730,20205-1,1,MBA Level Two - Kit 6 Auto Designer,2012,432,188
+306,15238,20205-1,1,MBA Level Two - Kit 6 Auto Designer,2012,432,188
+307,1131,8763-1,1,Toa Norik,2005,349,55
+308,1159,71000-1,1,Waiter - Complete Set,2013,544,7
+309,1159,71000-10,1,Judge - Complete Set,2013,544,7
+310,1159,71000-11,1,Alien Avenger - Complete Set,2013,544,7
+311,1159,71000-12,1,Mermaid - Complete Set,2013,544,6
+312,1159,71000-13,1,Battle Mech - Complete Set,2013,544,6
+313,1159,71000-14,1,Mr. Good and Evil - Complete Set,2013,544,6
+314,1159,71000-15,1,Forest Maiden - Complete Set,2013,544,7
+315,1159,71000-16,1,Plumber - Complete Set,2013,544,6
+316,1159,71000-2,1,Cyclops - Complete Set,2013,544,6
+317,1159,71000-3,1,Hollywood Starlet - Complete Set,2013,544,6
+318,1159,71000-4,1,Heroic Knight - Complete Set,2013,544,10
+319,1159,71000-5,1,Roman Emperor - Complete Set,2013,544,6
+320,1159,71000-6,1,Policeman - Complete Set,2013,544,7
+321,1159,71000-7,1,Chicken Suit Guy - Complete Set,2013,544,5
+322,1159,71000-8,1,Roller Derby Girl - Complete Set,2013,544,7
+323,1159,71000-9,1,Fortune Teller - Complete Set,2013,544,7
+324,1203,5928-1,1,Bi-Wing Baron,1998,297,70
+325,1203,5938-1,1,Oasis Ambush,1998,297,82
+326,1203,5988-1,1,Pharaoh's Forbidden Ruins,1998,297,720
+327,1205,7239-1,1,Fire Truck,2005,58,215
+328,1418,7239-1,1,Fire Truck,2005,58,215
+329,3109,7239-1,1,Fire Truck,2005,58,215
+330,4261,7239-1,2,Fire Truck,2005,58,215
+331,4969,7239-1,1,Fire Truck,2005,58,215
+332,5857,7239-1,1,Fire Truck,2005,58,215
+333,11861,7239-1,1,Fire Truck,2005,58,215
+334,15192,7239-1,1,Fire Truck,2005,58,215
+335,15694,7239-1,1,Fire Truck,2005,58,215
+336,1205,7733-1,1,Truck & Forklift,2008,54,342
+337,10043,7733-1,1,Truck & Forklift,2008,54,342
+338,16023,7733-1,1,Truck & Forklift,2008,54,342
+339,16034,7733-1,1,Truck & Forklift,2008,54,342
+340,1238,6800-1,1,Cyber Blaster,1997,144,20
+341,1238,6818-1,1,Cyborg Scout,1997,144,36
+342,1238,6836-1,1,V-Wing Fighter,1997,144,40
+343,7971,6836-1,1,V-Wing Fighter,1997,144,40
+344,1255,8621-1,1,Turaga Dume and Nivawk,2004,347,180
+345,16117,8621-1,1,Turaga Dume and Nivawk,2004,347,180
+346,1255,8622-1,1,Nidhiki,2004,347,170
+347,16117,8622-1,1,Nidhiki,2004,347,170
+348,1255,8623-1,1,Krekka,2004,347,214
+349,16117,8623-1,1,Krekka,2004,347,214
+350,1268,6837-1,1,Cosmic Creeper,1998,134,57
+351,1268,6905-1,1,Bi-Wing Blaster,1998,134,112
+352,1269,8617-1,1,Vahki Zadakh,2004,357,32
+353,5137,8617-1,1,Vahki Zadakh,2004,357,32
+354,9678,8617-1,1,Vahki Zadakh,2004,357,32
+355,1269,8619-1,1,Vahki Keerakh,2004,357,32
+356,5137,8619-1,1,Vahki Keerakh,2004,357,32
+357,9678,8619-1,1,Vahki Keerakh,2004,357,32
+358,1315,3740-1,1,Small Locomotive,2001,238,66
+359,1317,3740-1,1,Small Locomotive,2001,238,66
+360,2270,3740-1,1,Small Locomotive,2001,238,66
+361,3260,3740-1,1,Small Locomotive,2001,238,66
+362,4806,3740-1,1,Small Locomotive,2001,238,66
+363,5195,3740-1,1,Small Locomotive,2001,238,66
+364,8837,3740-1,1,Small Locomotive,2001,238,66
+365,9728,3740-1,1,Small Locomotive,2001,238,66
+366,12273,3740-1,1,Small Locomotive,2001,238,66
+367,14942,3740-1,1,Small Locomotive,2001,238,66
+368,1315,3746-1,1,Locomotive Brown Bricks,2001,238,106
+369,7516,3746-1,1,Locomotive Brown Bricks,2001,238,106
+370,8837,3746-1,1,Locomotive Brown Bricks,2001,238,106
+371,11325,3746-1,1,Locomotive Brown Bricks,2001,238,106
+372,1317,3742-1,1,Tender Basis (without color trim elements),2001,238,41
+373,2054,3742-1,1,Tender Basis (without color trim elements),2001,238,41
+374,2270,3742-1,1,Tender Basis (without color trim elements),2001,238,41
+375,3694,3742-1,1,Tender Basis (without color trim elements),2001,238,41
+376,5195,3742-1,1,Tender Basis (without color trim elements),2001,238,41
+377,7487,3742-1,1,Tender Basis (without color trim elements),2001,238,41
+378,8558,3742-1,1,Tender Basis (without color trim elements),2001,238,41
+379,8837,3742-1,1,Tender Basis (without color trim elements),2001,238,41
+380,11325,3742-1,1,Tender Basis (without color trim elements),2001,238,41
+381,13917,3742-1,1,Tender Basis (without color trim elements),2001,238,41
+382,14942,3742-1,1,Tender Basis (without color trim elements),2001,238,41
+383,1323,6239-1,1,Cannon Battle,2009,153,45
+384,1323,6240-1,1,Kraken Attackin',2009,153,78
+385,1323,6241-1,1,Loot Island,2009,153,144
+386,1323,6242-1,1,Soldiers' Fort,2009,153,370
+387,1323,6243-1,1,Brickbeard's Bounty,2009,153,595
+388,1323,8396-1,1,Soldier's Arsenal,2009,153,17
+389,1323,8397-1,1,Pirate Survival,2009,153,16
+390,1334,850842-1,1,Fire Truck Holiday Bauble,2013,228,34
+391,1334,850849-1,1,Friends Puppy Holiday Bauble,2013,227,29
+392,1334,850850-1,1,Santa Holiday Bauble,2013,228,23
+393,1334,850851-1,1,Lego Tree Holiday Bauble,2013,228,26
+394,1334,850949-1,1,Christmas Snow Hut Ornament,2014,228,45
+395,1334,850950-1,1,Christmas Cat Ornament,2014,228,34
+396,1347,8202-1,2,Blast Off Chopper with Bungee Cord Power!,1998,3,70
+397,5217,8202-1,1,Blast Off Chopper with Bungee Cord Power!,1998,3,70
+398,1347,8213-1,1,Spy Runner,1998,12,92
+399,1347,8226-1,1,Mud Masher / Desert Stormer,1998,11,120
+400,1347,8248-1,1,Forklift,1998,7,227
+401,1371,6611-1,1,Fire Chief's Car,1981,74,20
+402,13427,6611-1,1,Fire Chief's Car,1981,74,20
+403,1371,6623-1,1,Police Car,1983,80,40
+404,1371,6624-1,1,Delivery Van,1983,70,40
+405,1373,1294-1,1,Fire Helicopter,2000,50,31
+406,1373,1295-1,1,Water Rider,2000,87,30
+407,1373,1296-1,1,Land Scooper,2000,50,30
+408,1373,1297-1,1,Speed Patroller,2000,50,34
+409,1401,7235-1,1,"Police Motorcycle, Black Logo",2005,61,28
+410,4430,7235-1,1,"Police Motorcycle, Black Logo",2005,61,28
+411,10435,7235-1,1,"Police Motorcycle, Black Logo",2005,61,28
+412,13355,7235-1,1,"Police Motorcycle, Black Logo",2005,61,28
+413,1401,7236-1,1,"Police Car, Black Logo",2005,61,59
+414,4430,7236-1,1,"Police Car, Black Logo",2005,61,59
+415,5110,7236-1,1,"Police Car, Black Logo",2005,61,59
+416,9178,7236-1,1,"Police Car, Black Logo",2005,61,59
+417,13355,7236-1,1,"Police Car, Black Logo",2005,61,59
+418,1401,7241-1,1,Fire Car,2005,58,47
+419,1418,7241-1,1,Fire Car,2005,58,47
+420,1732,7241-1,1,Fire Car,2005,58,47
+421,3109,7241-1,1,Fire Car,2005,58,47
+422,3764,7241-1,1,Fire Car,2005,58,47
+423,4430,7241-1,1,Fire Car,2005,58,47
+424,4969,7241-1,1,Fire Car,2005,58,47
+425,5857,7241-1,1,Fire Car,2005,58,47
+426,7151,7241-1,1,Fire Car,2005,58,47
+427,11861,7241-1,1,Fire Car,2005,58,47
+428,13696,7241-1,1,Fire Car,2005,58,47
+429,15694,7241-1,1,Fire Car,2005,58,47
+430,1418,5613-1,1,Firefighter,2008,58,25
+431,5110,5613-1,1,Firefighter,2008,58,25
+432,1418,7906-1,1,Fireboat,2007,58,175
+433,6282,7906-1,1,Fireboat,2007,58,175
+434,1418,7942-1,1,Off-Road Fire Rescue,2007,58,130
+435,1732,7942-1,1,Off-Road Fire Rescue,2007,58,130
+436,3764,7942-1,1,Off-Road Fire Rescue,2007,58,130
+437,4261,7942-1,1,Off-Road Fire Rescue,2007,58,130
+438,5110,7942-1,1,Off-Road Fire Rescue,2007,58,130
+439,5857,7942-1,1,Off-Road Fire Rescue,2007,58,130
+440,6205,7942-1,1,Off-Road Fire Rescue,2007,58,130
+441,6282,7942-1,1,Off-Road Fire Rescue,2007,58,130
+442,6296,7942-1,1,Off-Road Fire Rescue,2007,58,130
+443,10028,7942-1,1,Off-Road Fire Rescue,2007,58,130
+444,15694,7942-1,1,Off-Road Fire Rescue,2007,58,130
+445,1418,7945-1,1,Fire Station,2007,58,603
+446,4261,7945-1,1,Fire Station,2007,58,603
+447,6282,7945-1,1,Fire Station,2007,58,603
+448,10028,7945-1,1,Fire Station,2007,58,603
+449,15694,7945-1,1,Fire Station,2007,58,603
+450,1421,7869-1,1,Battle for Geonosis,2011,165,335
+451,1421,7913-1,1,Clone Trooper Battle Pack,2011,165,85
+452,6795,7913-1,1,Clone Trooper Battle Pack,2011,165,85
+453,10676,7913-1,1,Clone Trooper Battle Pack,2011,165,85
+454,11786,7913-1,1,Clone Trooper Battle Pack,2011,165,85
+455,1421,7914-1,1,Mandalorian Battle Pack,2011,165,68
+456,6795,7914-1,1,Mandalorian Battle Pack,2011,165,68
+457,10676,7914-1,1,Mandalorian Battle Pack,2011,165,68
+458,14248,7914-1,1,Mandalorian Battle Pack,2011,165,68
+459,1438,8148-1,1,EZ-Roadster,2008,120,44
+460,1438,8149-1,1,Midnight Streak,2008,120,42
+461,1438,8150-1,1,ZX Turbo,2008,120,54
+462,1438,8151-1,1,Adrift Sport,2008,120,51
+463,1621,8573-1,1,Nuhvok-Kal,2003,330,42
+464,3292,8573-1,1,Nuhvok-Kal,2003,330,42
+465,1621,8574-1,1,Tahnok-Kal,2003,330,42
+466,3292,8574-1,1,Tahnok-Kal,2003,330,42
+467,1634,4709-1,1,Hogwarts Castle,2001,251,696
+468,2915,4709-1,1,Hogwarts Castle,2001,251,696
+469,7261,4709-1,1,Hogwarts Castle,2001,251,696
+470,1634,4729-1,1,Dumbledore's Office,2002,247,451
+471,1634,4730-1,1,Chamber of Secrets,2002,247,597
+472,2915,4730-1,1,Chamber of Secrets,2002,247,597
+473,1645,1958-1,1,Windsurfer,1993,83,21
+474,1645,1959-1,1,Ultra-Light,1993,68,30
+475,1645,1969-1,1,Mini Robot,1993,140,38
+476,1645,1970-1,1,Pirate's Gun Cart,1993,148,31
+477,1645,1971-1,1,Black Knight's Battering Ram,1993,188,36
+478,1649,4436-1,1,Patrol Car,2012,61,96
+479,6530,4436-1,1,Patrol Car,2012,61,96
+480,14011,4436-1,1,Patrol Car,2012,61,96
+481,1649,4437-1,1,Police Pursuit,2012,61,129
+482,6530,4437-1,1,Police Pursuit,2012,61,129
+483,1680,8358-1,1,Off-Roader,2003,113,26
+484,1680,8359-1,1,Desert Racer,2003,113,27
+485,1680,8360-1,1,Track Racer,2003,113,23
+486,1716,1517-1,1,Race Car,1989,82,32
+487,1716,1518-1,1,Race Car Repair,1989,82,79
+488,1726,4200-1,1,Mining 4 x 4,2012,56,101
+489,1726,4201-1,1,Loader and Tipper,2012,56,138
+490,1726,4202-1,1,Mining Truck,2012,52,269
+491,1726,4203-1,1,Excavator Transporter,2012,56,304
+492,1726,4204-1,1,The Mine,2012,56,751
+493,1732,7213-1,1,Off-Road Fire Truck & Fireboat,2010,58,387
+494,3764,7213-1,1,Off-Road Fire Truck & Fireboat,2010,58,387
+495,1739,6807-1,1,Space Sledge with Astronaut and Robot,1985,130,24
+496,1739,6822-1,1,Space Digger,1981,130,33
+497,2916,6822-1,1,Space Digger,1981,130,33
+498,1739,6823-1,1,Surface Transport,1983,130,27
+499,2916,6823-1,1,Surface Transport,1983,130,27
+500,1765,4600-1,1,Police Cruiser,2001,281,23
+501,14921,4600-1,1,Police Cruiser,2001,281,23
+502,1765,4604-1,1,Police Copter,2001,281,16
+503,14921,4604-1,1,Police Copter,2001,281,16
+504,1765,4606-1,1,Aqua Res-Q Transport,2001,284,40
+505,1765,4609-1,1,Fire Attack Team,2001,283,95
+506,10318,4609-1,1,Fire Attack Team,2001,283,95
+507,1791,7418-1,1,Scorpion Palace,2003,300,354
+508,5432,7418-1,1,Scorpion Palace,2003,300,354
+509,1795,8561-1,1,Nuhvok,2002,328,41
+510,6423,8561-1,1,Nuhvok,2002,328,41
+511,7709,8561-1,1,Nuhvok,2002,328,41
+512,13238,8561-1,1,Nuhvok,2002,328,41
+513,16126,8561-1,1,Nuhvok,2002,328,41
+514,1795,8562-1,1,Gahlok,2002,328,41
+515,3284,8562-1,1,Gahlok,2002,328,41
+516,13238,8562-1,1,Gahlok,2002,328,41
+517,14524,8562-1,1,Gahlok,2002,328,41
+518,16126,8562-1,1,Gahlok,2002,328,41
+519,1795,8563-1,1,Tahnok,2002,328,41
+520,7709,8563-1,1,Tahnok,2002,328,41
+521,8025,8563-1,1,Tahnok,2002,328,41
+522,16126,8563-1,1,Tahnok,2002,328,41
+523,1795,8565-1,1,Kohrak,2002,328,41
+524,3284,8565-1,1,Kohrak,2002,328,41
+525,8025,8565-1,1,Kohrak,2002,328,41
+526,16126,8565-1,1,Kohrak,2002,328,41
+527,1795,8569-1,2,Krana,2002,324,0
+528,1888,4886-1,1,Building Bonanza,2004,205,667
+529,1888,7280-1,1,Straight & Crossroad Plates,2005,62,2
+530,1888,7281-1,1,T-Junction & Curved Road Plates,2005,62,2
+531,1899,60063-10,1,Advent Calendar 2014 City (Day 9) Handcart with Bread,2014,220,6
+532,1899,60063-11,1,Advent Calendar 2014 City (Day 10) Small Catapult,2014,220,7
+533,1899,60063-12,1,Advent Calendar 2014 City (Day 11) Policeman with Megaphone and Sheet Music,2014,220,6
+534,1899,60063-13,1,Advent Calendar 2014 City (Day 12) Duck with Remote Control,2014,220,10
+535,1899,60063-14,1,Advent Calendar 2014 City (Day 13) Burglar with Bag and Flashlight,2014,220,8
+536,1899,60063-15,1,Advent Calendar 2014 City (Day 14) Sled,2014,220,7
+537,1899,60063-16,1,Advent Calendar 2014 City (Day 15) Dog with Bone and Food Dish,2014,220,3
+538,1899,60063-17,1,Advent Calendar 2014 City (Day 16) Santa's Snowmobile,2014,220,13
+539,1899,60063-18,1,Advent Calendar 2014 City (Day 17) Santa's Sled with Box,2014,220,11
+540,1899,60063-19,1,Advent Calendar 2014 City (Day 18) Policeman with Cup and Handcuffs,2014,220,6
+541,1899,60063-2,1,Advent Calendar 2014 City (Day 1) Boy Posting Christmas Mail,2014,220,5
+542,1899,60063-20,1,Advent Calendar 2014 City (Day 19) Turkey Dinner,2014,220,11
+543,1899,60063-21,1,"Advent Calendar 2014 City (Day 20) Axe, Shovel and Logs",2014,220,5
+544,1899,60063-22,1,Advent Calendar 2014 City (Day 21) Christmas Present and Stocking,2014,220,14
+545,1899,60063-23,1,Advent Calendar 2014 City (Day 22) Christmas Tree,2014,220,21
+546,1899,60063-24,1,Advent Calendar 2014 City (Day 23) Tricycle,2014,220,14
+547,1899,60063-25,1,Advent Calendar 2014 City (Day 24) Santa with Bag and Cookie,2014,220,7
+548,1899,60063-3,1,Advent Calendar 2014 City (Day 2) Mailbox with Green Frog,2014,220,8
+549,1899,60063-4,1,Advent Calendar 2014 City (Day 3) Snowman,2014,220,5
+550,1899,60063-5,1,Advent Calendar 2014 City (Day 4) Pie Stall,2014,220,6
+551,1899,60063-6,1,Advent Calendar 2014 City (Day 5) Girl with Croissant,2014,220,5
+552,1899,60063-7,1,Advent Calendar 2014 City (Day 6) Fruit Stall,2014,220,16
+553,1899,60063-8,1,Advent Calendar 2014 City (Day 7) Little Shop,2014,220,18
+554,1899,60063-9,1,Advent Calendar 2014 City (Day 8) Girl on Ice Skates,2014,220,6
+555,1936,3350-1,1,City #1,2000,50,27
+556,1936,3351-1,1,Three Minifig Pack - City #2,2000,50,24
+557,1989,8827-1,1,Classic Alien - Complete Set,2012,541,6
+558,1989,8827-10,1,Roman Soldier - Complete Set,2012,541,7
+559,1989,8827-11,1,Surgeon - Complete Set,2012,541,7
+560,1989,8827-12,1,Skater Girl - Complete Set,2012,541,8
+561,1989,8827-13,1,Intergalactic Girl - Complete Set,2012,541,9
+562,1989,8827-14,1,Butcher - Complete Set,2012,541,7
+563,1989,8827-15,1,Mechanic - Complete Set,2012,541,7
+564,1989,8827-16,1,Genie - Complete Set,2012,541,7
+565,1989,8827-2,1,Highland Battler - Complete Set,2012,541,7
+566,1989,8827-3,1,Sleepyhead - Complete Set,2012,541,6
+567,1989,8827-4,1,Lady Liberty - Complete Set,2012,541,8
+568,1989,8827-5,1,Bandit - Complete Set,2012,541,8
+569,1989,8827-6,1,Flamenco Dancer - Complete Set,2012,541,6
+570,1989,8827-7,1,Clockwork Robot - Complete Set,2012,541,6
+571,1989,8827-8,1,Minotaur - Complete Set,2012,541,8
+572,1989,8827-9,1,Leprechaun - Complete Set,2012,541,9
+573,2009,8354-1,1,Exo Force Bike,2003,113,99
+574,2009,8355-1,1,H.O.T. Blaster Bike,2003,113,87
+575,2054,3743-1,1,Locomotive Blue Bricks,2001,238,106
+576,5195,3743-1,1,Locomotive Blue Bricks,2001,238,106
+577,9728,3743-1,1,Locomotive Blue Bricks,2001,238,106
+578,13917,3743-1,1,Locomotive Blue Bricks,2001,238,106
+579,16226,3743-1,1,Locomotive Blue Bricks,2001,238,106
+580,2103,7895-1,3,Switching Tracks,2006,245,8
+581,9406,7895-1,1,Switching Tracks,2006,245,8
+582,11759,7895-1,1,Switching Tracks,2006,245,8
+583,13661,7895-1,1,Switching Tracks,2006,245,8
+584,14154,7895-1,1,Switching Tracks,2006,245,8
+585,14328,7895-1,1,Switching Tracks,2006,245,8
+586,14931,7895-1,1,Switching Tracks,2006,245,8
+587,2103,7896-1,3,Straight & Curved Rails,2006,245,16
+588,13661,7896-1,2,Straight & Curved Rails,2006,245,16
+589,14154,7896-1,1,Straight & Curved Rails,2006,245,16
+590,14328,7896-1,1,Straight & Curved Rails,2006,245,16
+591,14931,7896-1,1,Straight & Curved Rails,2006,245,16
+592,2114,9700-1,1,Technic Control Center,1987,529,472
+593,2114,9750-1,1,LEGO Interface,1986,532,4
+594,2114,9767-1,1,Interface Card/Cable for Apple IIe and IIGS,1989,529,1
+595,2216,6016-1,1,Knights' Arsenal,1987,199,37
+596,2216,6041-1,1,Armor Shop,1986,199,113
+597,2239,1374-1,1,Green Goblin,2002,488,59
+598,9750,1374-1,1,Green Goblin,2002,488,59
+599,2239,1376-1,1,Spider-Man Action Studio,2002,488,249
+600,9750,1376-1,1,Spider-Man Action Studio,2002,488,249
+601,2239,4850-1,1,Spider-Man's First Chase,2003,488,190
+602,2239,4851-1,1,The Origins,2003,488,219
+603,2239,4852-1,1,The Final Showdown,2003,488,359
+604,2258,8916-1,1,Takadox,2007,326,62
+605,2258,8917-1,1,Kalmah,2007,326,53
+606,2258,8918-1,1,Carapar,2007,326,50
+607,2258,8919-1,1,Mantax,2007,326,58
+608,2258,8920-1,1,Ehlek,2007,326,54
+609,2258,8921-1,1,Pridak,2007,326,47
+610,2270,3744-1,1,Locomotive Green Bricks,2001,238,106
+611,3260,3744-1,1,Locomotive Green Bricks,2001,238,106
+612,8558,3744-1,1,Locomotive Green Bricks,2001,238,106
+613,11384,3744-1,1,Locomotive Green Bricks,2001,238,106
+614,2364,8130-1,1,Terrain Crusher,2007,120,43
+615,2364,8131-1,1,Raceway Rider,2007,120,50
+616,2364,8132-1,1,Night Driver,2007,120,40
+617,2364,8133-1,1,Rally Rider,2007,120,50
+618,2382,10127-1,2,NHL Action Set with Stickers,2003,461,56
+619,2382,3544-1,1,Hockey Game Set,2003,461,153
+620,2427,8587-1,1,Panrahk,2003,344,45
+621,3989,8587-1,1,Panrahk,2003,344,45
+622,7707,8587-1,1,Panrahk,2003,344,45
+623,8909,8587-1,1,Panrahk,2003,344,45
+624,9620,8587-1,1,Panrahk,2003,344,45
+625,2427,8588-1,1,Kurahk,2003,344,45
+626,7707,8588-1,1,Kurahk,2003,344,45
+627,10850,8588-1,1,Kurahk,2003,344,45
+628,12113,8588-1,1,Kurahk,2003,344,45
+629,14198,8588-1,1,Kurahk,2003,344,45
+630,2427,8589-1,1,Lerahk,2003,344,45
+631,10850,8589-1,1,Lerahk,2003,344,45
+632,12113,8589-1,1,Lerahk,2003,344,45
+633,14198,8589-1,1,Lerahk,2003,344,45
+634,2427,8590-1,1,Guurahk,2003,344,45
+635,8909,8590-1,1,Guurahk,2003,344,45
+636,9620,8590-1,1,Guurahk,2003,344,45
+637,2427,8591-1,1,Vorahk,2003,344,45
+638,3989,8591-1,1,Vorahk,2003,344,45
+639,8909,8591-1,1,Vorahk,2003,344,45
+640,9620,8591-1,1,Vorahk,2003,344,45
+641,2427,8592-1,1,Turahk,2003,344,45
+642,10850,8592-1,1,Turahk,2003,344,45
+643,12113,8592-1,1,Turahk,2003,344,45
+644,14198,8592-1,1,Turahk,2003,344,45
+645,2445,8512-1,1,Onyx,2000,16,38
+646,15594,8512-1,1,Onyx,2000,16,38
+647,2445,8514-1,1,Power,2000,16,32
+648,15594,8514-1,1,Power,2000,16,32
+649,2456,3800-1,1,Ultimate Builders Set,2001,260,322
+650,2456,3801-1,1,Ultimate Accessories,2000,260,45
+651,2456,3804-1,1,"Robotics Invention System, Version 2.0",2001,260,720
+652,3705,3804-1,1,"Robotics Invention System, Version 2.0",2001,260,720
+653,5955,3804-1,1,"Robotics Invention System, Version 2.0",2001,260,720
+654,2481,4853-1,1,Spider-Man's Street Chase,2004,488,81
+655,2481,4857-1,1,Doc Ock's Fusion Lab,2004,488,237
+656,16371,4857-1,1,Doc Ock's Fusion Lab,2004,488,237
+657,2488,10131-1,1,TIE Fighter Collection,2004,169,688
+658,2488,4502-1,1,"X-wing Fighter (Dagobah), Blue box",2003,169,566
+659,2514,4443-1,1,Coca-Cola Defender 1,2002,462,4
+660,2514,4444-1,1,Coca-Cola Defender 2,2002,462,4
+661,2514,4445-1,1,Coca-Cola Middle Fielder 1,2002,462,4
+662,2514,4446-1,1,Coca-Cola Forward 1,2002,462,4
+663,2514,4447-1,1,Coca-Cola Forward 2,2002,462,4
+664,2514,4448-1,1,Coca-Cola Defender 3,2002,462,4
+665,2514,4449-1,1,Coca-Cola Defender 4,2002,462,4
+666,2514,4450-1,1,Coca-Cola Middle Fielder 2,2002,462,4
+667,2514,4451-1,1,Coca-Cola Forward 3,2002,462,4
+668,2514,4452-1,1,Coca-Cola Forward 4,2002,462,4
+669,2514,4453-1,1,Coca-Cola Goal Keeper,2002,462,4
+670,2514,4454-1,1,Coca-Cola Referee,2002,462,6
+671,2514,4455-1,1,Coca-Cola Hotdog Girl,2002,462,6
+672,2514,4456-1,1,Coca-Cola Doctor,2002,462,5
+673,2514,4457-1,1,Coca-Cola TV Cameraman,2002,462,4
+674,2514,4458-1,1,Coca-Cola TV Camera,2002,462,11
+675,2514,4459-1,1,Coca-Cola PK Kicker,2002,462,4
+676,2514,4460-1,1,Coca-Cola Goal,2002,462,7
+677,2514,4461-1,1,Coca-Cola Bench,2002,462,7
+678,2514,4462-1,1,Coca-Cola Hotdog Trolley,2002,462,18
+679,2514,4463-1,1,Coca-Cola Light,2002,462,16
+680,2514,4464-1,1,Coca-Cola Bottle Case,2002,462,7
+681,2514,4465-1,1,Coca-Cola Vending Machine,2002,462,6
+682,2514,4466-1,1,Coca-Cola Sign Board,2002,462,3
+683,2514,4467-1,1,Coca-Cola Stretcher,2002,462,3
+684,2514,4468-1,1,Coca-Cola Stand,2002,462,9
+685,2514,4469-1,1,Coca-Cola Drink Stand,2002,462,8
+686,2514,4470-1,1,Coca-Cola Ball,2002,462,2
+687,2514,4471-1,1,Coca-Cola Secret A,2002,462,4
+688,2514,4472-1,1,Coca-Cola Secret B,2002,462,4
+689,2544,41548-1,1,Dribbal,2015,586,52
+690,2544,41549-1,1,Gurggle,2015,586,66
+691,2544,41550-1,1,Slusho,2015,586,53
+692,2559,7235-2,1,Police Motorcycle - Blue Sticker Version,2008,61,28
+693,6839,7235-2,1,Police Motorcycle - Blue Sticker Version,2008,61,28
+694,8398,7235-2,1,Police Motorcycle - Blue Sticker Version,2008,61,28
+695,10028,7235-2,1,Police Motorcycle - Blue Sticker Version,2008,61,28
+696,11491,7235-2,1,Police Motorcycle - Blue Sticker Version,2008,61,28
+697,12110,7235-2,1,Police Motorcycle - Blue Sticker Version,2008,61,28
+698,14011,7235-2,1,Police Motorcycle - Blue Sticker Version,2008,61,28
+699,2559,7236-2,1,Police Car - Blue Sticker Version,2008,61,59
+700,6296,7236-2,1,Police Car - Blue Sticker Version,2008,61,59
+701,10028,7236-2,1,Police Car - Blue Sticker Version,2008,61,59
+702,12110,7236-2,1,Police Car - Blue Sticker Version,2008,61,59
+703,2559,7245-2,1,Prisoner Transport - Blue Sticker Version,2008,61,99
+704,2723,7245-2,1,Prisoner Transport - Blue Sticker Version,2008,61,99
+705,6839,7245-2,1,Prisoner Transport - Blue Sticker Version,2008,61,99
+706,2559,7741-1,1,Police Helicopter,2008,61,93
+707,2648,7741-1,1,Police Helicopter,2008,61,93
+708,2723,7741-1,1,Police Helicopter,2008,61,93
+709,6205,7741-1,1,Police Helicopter,2008,61,93
+710,6296,7741-1,1,Police Helicopter,2008,61,93
+711,6733,7741-1,1,Police Helicopter,2008,61,93
+712,7944,7741-1,1,Police Helicopter,2008,61,93
+713,10028,7741-1,1,Police Helicopter,2008,61,93
+714,10180,7741-1,1,Police Helicopter,2008,61,93
+715,11491,7741-1,1,Police Helicopter,2008,61,93
+716,12110,7741-1,1,Police Helicopter,2008,61,93
+717,2577,4695-1,1,Knight Bus - Mini,2004,246,58
+718,10229,4695-1,1,Knight Bus - Mini,2004,246,58
+719,2577,4755-1,1,Knight Bus,2004,250,244
+720,2584,75056-10,1,Advent Calendar 2014 Star Wars (Day 9) - Anakin's Jedi Starfighter,2014,225,13
+721,2584,75056-11,1,Advent Calendar 2014 Star Wars (Day 10) - TIE Fighter,2014,225,11
+722,2584,75056-12,1,Advent Calendar 2014 Star Wars (Day 11) - TIE Fighter Pilot,2014,225,4
+723,2584,75056-13,1,Advent Calendar 2014 Star Wars (Day 12) - Luke's Landspeeder,2014,225,15
+724,2584,75056-14,1,Advent Calendar 2014 Star Wars (Day 13) - Luke Skywalker,2014,225,4
+725,2584,75056-15,1,Advent Calendar 2014 Star Wars (Day 14) - Moisture Vaporator ,2014,225,14
+726,2584,75056-16,1,Advent Calendar 2014 Star Wars (Day 15) - Snowspeeder,2014,225,19
+727,2584,75056-17,1,Advent Calendar 2014 Star Wars (Day 16) - Snowspeeder Pilot,2014,225,4
+728,2584,75056-18,1,Advent Calendar 2014 Star Wars (Day 17) - Hoth Command Center,2014,225,16
+729,2584,75056-19,1,Advent Calendar 2014 Star Wars (Day 18) - General Rieekan,2014,225,4
+730,2584,75056-2,1,Advent Calendar 2014 Star Wars (Day 1) - Armored Assault Tank (AAT),2014,225,14
+731,2584,75056-20,1,Advent Calendar 2014 Star Wars (Day 19) - Holiday Speeder Bike,2014,225,19
+732,2584,75056-21,1,Advent Calendar 2014 Star Wars (Day 20) - Imperial Shuttle,2014,225,11
+733,2584,75056-22,1,Advent Calendar 2014 Star Wars (Day 21) - Anakin's Y-wing Starfighter,2014,225,20
+734,2584,75056-23,1,Advent Calendar 2014 Star Wars (Day 22) - Festive Astromech,2014,225,7
+735,2584,75056-24,1,Advent Calendar 2014 Star Wars (Day 23) - Holiday Fireplace,2014,225,26
+736,2584,75056-25,1,Advent Calendar 2014 Star Wars (Day 24) - Santa Darth Vader,2014,225,6
+737,2584,75056-3,1,Advent Calendar 2014 Star Wars (Day 2) - Super Battle Droid,2014,225,4
+738,2584,75056-4,1,Advent Calendar 2014 Star Wars (Day 3) - Republic Cannon,2014,225,18
+739,2584,75056-5,1,Advent Calendar 2014 Star Wars (Day 4) - Clone Trooper with Santa Hat,2014,225,5
+740,2584,75056-6,1,Advent Calendar 2014 Star Wars (Day 5) - Clone Trooper Weapon Station,2014,225,11
+741,2584,75056-7,1,Advent Calendar 2014 Star Wars (Day 6) - Vulture Droid,2014,225,9
+742,2584,75056-8,1,Advent Calendar 2014 Star Wars (Day 7) - Snowball Missle Launcher,2014,225,16
+743,2584,75056-9,1,Advent Calendar 2014 Star Wars (Day 8) - Snowtrooper ,2014,225,4
+744,2636,7009-1,1,The Final Joust,2007,193,62
+745,11050,7009-1,1,The Final Joust,2007,193,62
+746,2636,7029-1,1,Skeleton Ship Attack,2007,193,629
+747,2636,7090-1,1,Crossbow Attack,2007,193,54
+748,11050,7090-1,1,Crossbow Attack,2007,193,54
+749,2636,7091-1,1,Knights' Catapult Defense,2007,193,123
+750,11050,7091-1,1,Knights' Catapult Defense,2007,193,123
+751,2636,7092-1,1,Skeletons' Prison Carriage,2007,193,193
+752,11050,7092-1,1,Skeletons' Prison Carriage,2007,193,193
+753,2636,7093-1,1,Skeleton Tower,2007,193,401
+754,11050,7093-1,1,Skeleton Tower,2007,193,401
+755,2636,7094-1,1,King's Castle Siege,2007,193,921
+756,11050,7094-1,1,King's Castle Siege,2007,193,921
+757,2643,4208-1,1,4 × 4 Fire Truck,2012,58,242
+758,2643,4209-1,1,Fire Plane,2012,58,507
+759,2643,4427-1,1,Fire ATV,2012,58,50
+760,2648,7743-1,1,Police Command Center,2008,61,523
+761,6733,7743-1,1,Police Command Center,2008,61,523
+762,6839,7743-1,1,Police Command Center,2008,61,523
+763,10435,7743-1,1,Police Command Center,2008,61,523
+764,2648,7744-1,1,Police Headquarters,2008,61,957
+765,6733,7744-1,1,Police Headquarters,2008,61,957
+766,12110,7744-1,1,Police Headquarters,2008,61,957
+767,2677,4512-1,1,Cargo Train,2003,239,546
+768,5491,4512-1,1,Cargo Train,2003,239,546
+769,2677,4514-1,1,Cargo Crane,2003,239,176
+770,5491,4514-1,1,Cargo Crane,2003,239,176
+771,2725,60041-1,1,Crook Pursuit,2014,61,38
+772,2725,60042-1,1,High Speed Police Chase,2014,61,109
+773,2725,60046-1,1,Helicopter Surveillance,2014,61,526
+774,2738,4511-1,1,High Speed Train,2003,239,335
+775,5358,4511-1,1,High Speed Train,2003,239,335
+776,2738,4513-1,1,Grand Central Station,2003,239,350
+777,2793,8585-1,1,Hafu,2003,335,25
+778,4874,8585-1,1,Hafu,2003,335,25
+779,2793,8586-1,1,Macku,2003,335,25
+780,4874,8586-1,1,Macku,2003,335,25
+781,2814,2995-1,1,Adventurers Car & Skeleton,1998,297,69
+782,2814,2996-1,1,Adventurers Tomb,1998,297,81
+783,2836,6621-1,1,Fire Truck,1984,74,39
+784,8950,6621-1,1,Fire Truck,1984,74,39
+785,2836,6630-1,1,Bucket Loader,1981,72,34
+786,2849,6325-1,1,Package Pick-Up,1998,95,29
+787,2849,6328-1,1,Helicopter Transport,1998,100,102
+788,2849,6422-1,1,Telephone Repair,1998,103,48
+789,2849,6486-1,1,Fire Engine,1997,98,67
+790,2849,6564-1,1,Recycle Truck,1997,103,35
+791,4643,6564-1,1,Recycle Truck,1997,103,35
+792,2849,6565-1,1,Construction Crew,1997,97,78
+793,2883,3316-10,1,"Advent Calendar 2012, Friends (Day 9) - Breakfast",2012,226,8
+794,2883,3316-11,1,"Advent Calendar 2012, Friends (Day 10) - Sled Trailer #1",2012,226,10
+795,2883,3316-12,1,"Advent Calendar 2012, Friends (Day 11) - Present for Dog",2012,226,8
+796,2883,3316-13,1,"Advent Calendar 2012, Friends (Day 12) - Dog",2012,226,1
+797,2883,3316-14,1,"Advent Calendar 2012, Friends (Day 13) - Stool and Plate with Candies",2012,226,9
+798,2883,3316-15,1,"Advent Calendar 2012, Friends (Day 14) - Dog Basket with Bone",2012,226,9
+799,2883,3316-16,1,"Advent Calendar 2012, Friends (Day 15) - Sled Trailer #2",2012,226,8
+800,2883,3316-17,1,"Advent Calendar 2012, Friends (Day 16) - Basket with Broom and Snow Balls",2012,226,6
+801,2883,3316-18,1,"Advent Calendar 2012, Friends (Day 17) - Mailbox with Letter",2012,226,8
+802,2883,3316-19,1,"Advent Calendar 2012, Friends (Day 18) - Lime/White Present With Letter",2012,226,8
+803,2883,3316-2,1,"Advent Calendar 2012, Friends (Day 1) - Olivia, Long Sleeve Chrismas Top",2012,226,4
+804,2883,3316-20,1,"Advent Calendar 2012, Friends (Day 19) - Handbag",2012,226,1
+805,2883,3316-21,1,"Advent Calendar 2012, Friends (Day 20) - Flower Arrangement",2012,226,8
+806,2883,3316-22,1,"Advent Calendar 2012, Friends (Day 21) - Fireplace",2012,226,21
+807,2883,3316-23,1,"Advent Calendar 2012, Friends (Day 22) - Christmas Tree",2012,226,18
+808,2883,3316-24,1,"Advent Calendar 2012, Friends (Day 23) - Medium Blue/White Present with Letter",2012,226,11
+809,2883,3316-25,1,"Advent Calendar 2012, Friends (Day 24) - Corner Table with Beauty Accessories",2012,226,11
+810,2883,3316-3,1,"Advent Calendar 2012, Friends (Day 2) - Sled",2012,226,9
+811,2883,3316-4,1,"Advent Calendar 2012, Friends (Day 3) - Street Light with Garland",2012,226,12
+812,2883,3316-5,1,"Advent Calendar 2012, Friends (Day 4) - Skis and Ski Poles",2012,226,4
+813,2883,3316-6,1,"Advent Calendar 2012, Friends (Day 5) - Snowman",2012,226,7
+814,2883,3316-7,1,"Advent Calendar 2012, Friends (Day 6) - Christina, Red Christmas Outfit",2012,226,4
+815,2883,3316-8,1,"Advent Calendar 2012, Friends (Day 7) - Friends Accessories",2012,226,20
+816,2883,3316-9,1,"Advent Calendar 2012, Friends (Day 8) - Table with Stool",2012,226,9
+817,2892,8984-1,1,Stronius,2009,332,55
+818,2892,8985-1,1,Ackar,2009,332,55
+819,2892,8986-1,1,Vastus,2009,332,52
+820,2892,8987-1,1,Kiina,2009,332,43
+821,2892,8988-1,1,Gelu,2009,332,52
+822,2892,8989-1,1,Mata Nui,2009,332,52
+823,2898,3070-1,1,Mosquito,1999,134,21
+824,2898,3071-1,1,Light Flyer,1999,134,19
+825,2898,3072-1,1,Mega Tack,1999,134,23
+826,2898,3073-1,1,Booster,1999,134,21
+827,2915,4705-1,1,Snape's Class,2001,251,167
+828,7261,4705-1,1,Snape's Class,2001,251,167
+829,2916,6801-1,1,Moon Buggy,1981,130,22
+830,2917,4524-10,1,Advent Calendar 2002 Creator (Day  9) Space Buggy,2002,223,18
+831,2917,4524-11,1,Advent Calendar 2002 Creator (Day 10) Dinosaur,2002,223,8
+832,2917,4524-12,1,Advent Calendar 2002 Creator (Day 11) Speedboat,2002,223,10
+833,2917,4524-13,1,Advent Calendar 2002 Creator (Day 12) Reindeer,2002,223,10
+834,2917,4524-14,1,Advent Calendar 2002 Creator (Day 13) Snowman,2002,223,15
+835,2917,4524-15,1,Advent Calendar 2002 Creator (Day 14) Jet Ski,2002,223,11
+836,2917,4524-16,1,Advent Calendar 2002 Creator (Day 15) Duck,2002,223,10
+837,2917,4524-17,1,Advent Calendar 2002 Creator (Day 16) Police Boat,2002,223,9
+838,2917,4524-18,1,Advent Calendar 2002 Creator (Day 17) Whale,2002,223,9
+839,2917,4524-19,1,Advent Calendar 2002 Creator (Day 18) Space Shuttle,2002,223,11
+840,2917,4524-2,1,Advent Calendar 2002 Creator (Day  1) Squirrel,2002,223,10
+841,2917,4524-20,1,Advent Calendar 2002 Creator (Day 19) Parrot,2002,223,9
+842,2917,4524-21,1,Advent Calendar 2002 Creator (Day 20) Steamship,2002,223,10
+843,2917,4524-22,1,Advent Calendar 2002 Creator (Day 21) Building,2002,223,10
+844,2917,4524-23,1,Advent Calendar 2002 Creator (Day 22) Helicopter,2002,223,11
+845,2917,4524-24,1,Advent Calendar 2002 Creator (Day 23) Tree,2002,223,11
+846,2917,4524-25,1,Advent Calendar 2002 Creator (Day 24) Present,2002,223,8
+847,2917,4524-3,1,Advent Calendar 2002 Creator (Day  2) Boy,2002,223,1
+848,2917,4524-4,1,Advent Calendar 2002 Creator (Day  3) Fireplace,2002,223,11
+849,2917,4524-5,1,Advent Calendar 2002 Creator (Day  4) Santa,2002,223,10
+850,2917,4524-6,1,Advent Calendar 2002 Creator (Day  5) Car,2002,223,15
+851,2917,4524-7,1,Advent Calendar 2002 Creator (Day  6) Penguin,2002,223,10
+852,2917,4524-8,1,Advent Calendar 2002 Creator (Day  7) Girl,2002,223,1
+853,2917,4524-9,1,Advent Calendar 2002 Creator (Day  8) Dog with hat,2002,223,11
+854,2943,4484-1,1,X-wing Fighter & TIE Advanced - Mini,2003,159,72
+855,7482,4484-1,1,X-wing Fighter & TIE Advanced - Mini,2003,159,72
+856,2943,4485-1,1,Sebulba's Podracer & Anakin's Podracer - Mini,2003,159,72
+857,7482,4485-1,1,Sebulba's Podracer & Anakin's Podracer - Mini,2003,159,72
+858,2943,4486-1,1,AT-ST & Snowspeeder - Mini,2003,159,76
+859,7482,4486-1,1,AT-ST & Snowspeeder - Mini,2003,159,76
+860,2943,4487-1,1,Jedi Starfighter & Slave I - Mini,2003,159,53
+861,7482,4487-1,1,Jedi Starfighter & Slave I - Mini,2003,159,53
+862,2948,1431-1,1,Tahnok Va (Kabaya Promotional),2002,329,27
+863,14198,1431-1,1,Tahnok Va (Kabaya Promotional),2002,329,27
+864,2948,1432-1,1,Nuhvok Va (Kabaya Promotional),2002,329,26
+865,2948,1433-1,1,Gahlok Va (Kabaya Promotional),2002,329,26
+866,2948,1434-1,1,Lehvak Va (Kabaya Promotional),2002,329,25
+867,2989,20201-1,1,"MBA Level One - Kit 2, Microbuild Designer",2011,432,221
+868,15238,20201-1,1,"MBA Level One - Kit 2, Microbuild Designer",2011,432,221
+869,16319,20201-1,1,"MBA Level One - Kit 2, Microbuild Designer",2011,432,221
+870,2989,20202-1,1,"MBA Level One - Kit 3, Robot Designer",2011,432,158
+871,15238,20202-1,1,"MBA Level One - Kit 3, Robot Designer",2011,432,158
+872,16319,20202-1,1,"MBA Level One - Kit 3, Robot Designer",2011,432,158
+873,3044,2065-1,1,Furno 2.0,2011,401,30
+874,6319,2065-1,1,Furno 2.0,2011,401,30
+875,3044,2067-1,1,Evo 2.0,2011,401,31
+876,6319,2067-1,1,Evo 2.0,2011,401,31
+877,3053,7242-1,1,Street Sweeper,2005,63,64
+878,3313,7242-1,1,Street Sweeper,2005,63,64
+879,10043,7242-1,1,Street Sweeper,2005,63,64
+880,3053,7246-1,1,Mini Digger,2005,56,37
+881,13696,7246-1,1,Mini Digger,2005,56,37
+882,15980,7246-1,1,Mini Digger,2005,56,37
+883,3053,7248-1,1,Digger,2005,56,128
+884,3313,7248-1,1,Digger,2005,56,128
+885,15980,7248-1,1,Digger,2005,56,128
+886,3092,6008-1,1,Royal King,1995,201,12
+887,3092,6027-1,1,Bat Lord's Catapult,1997,195,54
+888,3092,6037-1,1,Witch's Windship,1997,195,60
+889,3109,7240-1,1,Fire Station,2005,58,264
+890,4969,7240-1,1,Fire Station,2005,58,264
+891,11861,7240-1,1,Fire Station,2005,58,264
+892,3110,9497-1,1,Republic Striker Starfighter,2012,158,378
+893,3110,9500-1,1,Sith Fury-class Interceptor,2012,170,746
+894,3162,41040-10,1,"Advent Calendar 2014, Friends (Day 9) - Holiday Candle",2014,226,6
+895,3162,41040-11,1,"Advent Calendar 2014, Friends (Day 10) - Friends Kitchen Accessories",2014,226,17
+896,3162,41040-12,1,"Advent Calendar 2014, Friends (Day 11) - Stove",2014,226,13
+897,3162,41040-13,1,"Advent Calendar 2014, Friends (Day 12) - Sweets and Saucepan",2014,226,7
+898,3162,41040-14,1,"Advent Calendar 2014, Friends (Day 13) - Sideboard",2014,226,13
+899,3162,41040-15,1,"Advent Calendar 2014, Friends (Day 14) - Goblets and Food",2014,226,12
+900,3162,41040-16,1,"Advent Calendar 2014, Friends (Day 15) - Sink",2014,226,12
+901,3162,41040-17,1,"Advent Calendar 2014, Friends (Day 16) - Cake and Cups",2014,226,6
+902,3162,41040-18,1,"Advent Calendar 2014, Friends (Day 17) - Holiday Fireplace",2014,226,17
+903,3162,41040-19,1,"Advent Calendar 2014, Friends (Day 18) - End Table and Book",2014,226,11
+904,3162,41040-2,1,"Advent Calendar 2014, Friends (Day 1) - Mia",2014,226,4
+905,3162,41040-20,1,"Advent Calendar 2014, Friends (Day 19) - Sofa",2014,226,10
+906,3162,41040-21,1,"Advent Calendar 2014, Friends (Day 20) - White Cat",2014,226,3
+907,3162,41040-22,1,"Advent Calendar 2014, Friends (Day 21) - Radio and Cell Phone",2014,226,8
+908,3162,41040-23,1,"Advent Calendar 2014, Friends (Day 22) - Large Present",2014,226,8
+909,3162,41040-24,1,"Advent Calendar 2014, Friends (Day 23) - Christmas Tree",2014,226,18
+910,3162,41040-25,1,"Advent Calendar 2014, Friends (Day 24) - Present with Skates, Camera",2014,226,17
+911,3162,41040-3,1,"Advent Calendar 2014, Friends (Day 2) - Sled",2014,226,11
+912,3162,41040-4,1,"Advent Calendar 2014, Friends (Day 3) - Gift and Basket",2014,226,4
+913,3162,41040-5,1,"Advent Calendar 2014, Friends (Day 4) - Deer and Tree",2014,226,4
+914,3162,41040-6,1,"Advent Calendar 2014, Friends (Day 5) - Holiday Window Scene",2014,226,13
+915,3162,41040-7,1,"Advent Calendar 2014, Friends (Day 6) - Ewa, Christmas Outfit",2014,226,4
+916,3162,41040-8,1,"Advent Calendar 2014, Friends (Day 7) - Table",2014,226,11
+917,3162,41040-9,1,"Advent Calendar 2014, Friends (Day 8) - Chairs",2014,226,14
+918,3271,71007-1,1,Wizard,2014,548,11
+919,3271,71007-10,1,Dino Tracker,2014,548,7
+920,3271,71007-11,1,Pizza Delivery Man,2014,548,7
+921,3271,71007-12,1,Rock Star,2014,548,6
+922,3271,71007-13,1,Swashbuckler,2014,548,7
+923,3271,71007-14,1,Piggy Guy,2014,548,6
+924,3271,71007-15,1,Genie Girl,2014,548,6
+925,3271,71007-16,1,Spooky Girl,2014,548,7
+926,3271,71007-2,1,Hun Warrior,2014,548,10
+927,3271,71007-3,1,Fairytale Princess,2014,548,6
+928,3271,71007-4,1,Video Game Guy,2014,548,6
+929,3271,71007-5,1,Battle Goddess,2014,548,9
+930,3271,71007-6,1,Space Miner,2014,548,9
+931,3271,71007-7,1,Lifeguard,2014,548,7
+932,3271,71007-8,1,Prospector,2014,548,7
+933,3271,71007-9,1,Jester,2014,548,7
+934,3292,8575-1,1,Kohrak-Kal,2003,330,42
+935,3292,8576-1,1,Lehvak-Kal,2003,330,42
+936,3292,8577-1,1,Pahrak-Kal,2003,330,42
+937,3292,8578-1,1,Gahlok-Kal,2003,330,42
+938,3309,8831-0,60,Minifigure Series 7 [Random Bag],2012,542,0
+939,3313,7243-1,1,Construction Site,2005,56,301
+940,3313,7249-1,1,XXL Mobile Crane,2005,56,525
+941,3339,7245-1,1,"Prisoner Transport, Black Logo",2005,61,99
+942,6733,7245-1,1,"Prisoner Transport, Black Logo",2005,61,99
+943,10435,7245-1,1,"Prisoner Transport, Black Logo",2005,61,99
+944,13355,7245-1,1,"Prisoner Transport, Black Logo",2005,61,99
+945,15192,7245-1,1,"Prisoner Transport, Black Logo",2005,61,99
+946,3339,7732-1,1,Air Mail,2008,50,87
+947,16034,7732-1,1,Air Mail,2008,50,87
+948,3339,8401-1,1,City Minifigure Collection,2009,62,59
+949,5904,8401-1,1,City Minifigure Collection,2009,62,59
+950,7766,8401-1,1,City Minifigure Collection,2009,62,59
+951,15192,8401-1,1,City Minifigure Collection,2009,62,59
+952,3343,8601-1,1,Toa Vakama,2003,353,48
+953,7670,8601-1,1,Toa Vakama,2003,353,48
+954,8501,8601-1,1,Toa Vakama,2003,353,48
+955,3343,8603-1,1,Toa Whenua,2004,353,49
+956,8091,8603-1,1,Toa Whenua,2004,353,49
+957,13907,8603-1,1,Toa Whenua,2004,353,49
+958,3344,9461-1,1,The Swamp Creature,2012,558,70
+959,3344,9462-1,1,The Mummy,2012,558,91
+960,3344,9463-1,1,The Werewolf,2012,558,243
+961,3344,9464-1,1,The Vampire Hearse,2012,558,313
+962,3344,9466-1,1,The Crazy Scientist & His Monster,2012,558,429
+963,3344,9467-1,1,The Ghost Train,2012,558,741
+964,3344,9468-1,1,The Vampyre Castle,2012,558,942
+965,3351,8909-1,1,Brawny Boxer - Team GB,2012,546,6
+966,3351,8909-2,1,Stealth Swimmer - Team GB Complete Set with Stand and Accessories,2012,546,6
+967,3351,8909-3,1,Relay Runner - Team GB Complete Set with Stand and Accessories,2012,546,7
+968,3351,8909-4,1,Judo Fighter - Team GB Complete Set with Stand and Accessories,2012,546,6
+969,3351,8909-5,1,Tactical Tennis Player - Team GB Complete Set with Stand and Accessories,2012,546,7
+970,3351,8909-6,1,Flexible Gymnast - Team GB Complete Set with Stand and Accessories,2012,546,9
+971,3351,8909-7,1,Wondrous Weightlifter - Team GB Complete Set with Stand and Accessories,2012,546,9
+972,3351,8909-8,1,Horseback Rider - Team GB Complete Set with Stand and Accessories,2012,546,6
+973,3351,8909-9,1,Agile Archer - Team GB Complete Set with Stand and Accessories,2012,546,7
+974,3365,fruit1-1,1,Apple - Hong Kong Lego Show Promotional,2007,33,8
+975,3365,fruit2-1,1,Cherry - Hong Kong Lego Show Promotional,2007,33,11
+976,3365,fruit3-1,1,Grapes - Hong Kong Lego Show Promotional,2007,33,7
+977,3365,fruit4-1,1,Mango - Hong Kong Lego Show Promotional,2007,33,6
+978,3365,fruit5-1,1,Melon - Hong Kong Lego Show Promotional,2007,33,8
+979,3365,fruit6-1,1,Orange - Hong Kong Lego Show Promotional,2007,33,7
+980,3365,fruit7-1,1,Pear - Hong Kong Lego Show Promotional,2007,33,10
+981,3365,fruit8-1,1,Tree - Hong Kong Lego Show Promotional,2007,33,0
+982,3367,1413-1,1,Rover,2001,135,29
+983,3367,1414-1,1,Double Hover (Kabaya Promotional),2001,135,21
+984,3367,1415-1,1,Jet Scooter,2001,135,24
+985,3367,1416-1,1,Worker Robot,2001,135,30
+986,3392,8909-0,60,Team GB Minifigures [Random Bag],2012,546,0
+987,3422,3404-1,1,Black Bus,2000,462,130
+988,3435,8672-1,1,Ferrari Finish Line,2006,114,575
+989,3435,8673-1,1,Ferrari F1 Fuel Stop,2006,114,188
+990,3467,3340-1,1,Star Wars #1 - Sith Minifig Pack,2000,166,30
+991,3467,3341-1,1,Star Wars #2 - Luke/Han/Boba Minifig Pack,2000,169,25
+992,3467,3342-1,1,Star Wars #3 - Troopers/Chewie Minifig Pack,2000,169,25
+993,3467,3343-1,1,Star Wars #4 - Battle Droid Minifig Pack,2000,166,33
+994,3550,8381-1,1,Exo Raider,2003,116,93
+995,3550,8382-1,1,Hot Buster,2004,116,66
+996,3574,00-2,1,Weetabix Promotional House 1,1976,413,147
+997,3574,00-3,1,Weetabix Promotional House 2,1976,413,149
+998,3574,00-4,1,Weetabix Promotional Windmill,1976,413,126
+999,3586,8566-1,1,Onua Nuva,2002,354,41
+1000,9094,8566-1,1,Onua Nuva,2002,354,41
+1001,3586,8567-1,1,Lewa Nuva,2002,354,37
+1002,9094,8567-1,1,Lewa Nuva,2002,354,37
+1003,3586,8568-1,1,Pohatu Nuva,2002,354,43
+1004,3586,8570-1,1,Gali Nuva,2002,354,44
+1005,3586,8571-1,1,Kopaka Nuva,2002,354,42
+1006,3586,8572-1,1,Tahu Nuva,2002,354,36
+1007,3621,70410-1,1,Soldiers Outpost,2015,154,164
+1008,3621,70412-1,1,Soldiers Fort,2015,154,234
+1009,3690,7957-1,1,Sith Nightspeeder,2011,165,213
+1010,10676,7957-1,1,Sith Nightspeeder,2011,165,213
+1011,3690,7961-1,1,Darth Maul's Sith Infiltrator,2011,166,478
+1012,3691,9440-1,1,Venomari Shrine,2012,435,86
+1013,3691,9444-1,1,Cole’s Tread Assault,2012,435,285
+1014,3694,3747-1,1,Locomotive Gray Bricks,2001,238,106
+1015,12273,3747-1,1,Locomotive Gray Bricks,2001,238,106
+1016,13153,3747-1,1,Locomotive Gray Bricks,2001,238,106
+1017,14942,3747-1,1,Locomotive Gray Bricks,2001,238,106
+1018,3699,8772-1,1,Rascus (European version without Cards),2004,198,46
+1019,8980,8772-1,1,Rascus (European version without Cards),2004,198,46
+1020,3699,8774-1,1,Vladek (European version without Cards),2004,198,48
+1021,3705,9738-1,1,Remote Control,1998,260,1
+1022,5955,9738-1,1,Remote Control,1998,260,1
+1023,3705,9916-1,1,LEGO Electrical Capacitor,1999,1,1
+1024,5955,9916-1,1,LEGO Electrical Capacitor,1999,1,1
+1025,3755,1528-1,1,Dragster,1986,82,29
+1026,3755,1572-1,1,Super Tow Truck,1986,85,79
+1027,3764,7207-1,1,Fire Boat,2010,58,305
+1028,3792,7161-1,1,Gungan Sub,1999,166,379
+1029,3941,75000-1,1,Clone Troopers vs. Droidekas,2013,167,124
+1030,3941,75003-1,1,A-wing Starfighter,2013,169,177
+1031,3941,75014-1,1,Battle Of Hoth,2013,169,415
+1032,3963,8736-1,1,Toa Hordika Vakama,2005,350,48
+1033,14498,8736-1,1,Toa Hordika Vakama,2005,350,48
+1034,15776,8736-1,1,Toa Hordika Vakama,2005,350,48
+1035,3963,8737-1,1,Toa Hordika Nokama,2005,350,48
+1036,15776,8737-1,1,Toa Hordika Nokama,2005,350,48
+1037,3963,8738-1,1,Toa Hordika Whenua,2005,350,48
+1038,14498,8738-1,1,Toa Hordika Whenua,2005,350,48
+1039,15776,8738-1,1,Toa Hordika Whenua,2005,350,48
+1040,3963,8739-1,1,Toa Hordika Onewa,2005,350,48
+1041,15776,8739-1,1,Toa Hordika Onewa,2005,350,48
+1042,3963,8740-1,1,Toa Hordika Matau,2005,350,48
+1043,14498,8740-1,1,Toa Hordika Matau,2005,350,48
+1044,15776,8740-1,1,Toa Hordika Matau,2005,350,48
+1045,3963,8741-1,1,Toa Hordika Nuju,2005,350,48
+1046,15776,8741-1,1,Toa Hordika Nuju,2005,350,48
+1047,4041,41551-1,1,Snax,2015,586,51
+1048,4041,41552-1,1,Berp,2015,586,68
+1049,4041,41553-1,1,Vaka-Waka,2015,586,69
+1050,4051,75023-10,1,"Advent Calendar 2013, Star Wars (Day  9) - Republic Assault Ship",2013,225,12
+1051,4051,75023-11,1,"Advent Calendar 2013, Star Wars (Day 10) - Clone Trooper",2013,225,4
+1052,4051,75023-12,1,"Advent Calendar 2013, Star Wars (Day 11) - AT-TE Walker",2013,225,15
+1053,4051,75023-13,1,"Advent Calendar 2013, Star Wars (Day 12) - Republic Dropship",2013,225,11
+1054,4051,75023-14,1,"Advent Calendar 2013, Star Wars (Day 13) - Battle Droid",2013,225,5
+1055,4051,75023-15,1,"Advent Calendar 2013, Star Wars (Day 14) - Geonosian Starfighter",2013,225,11
+1056,4051,75023-16,1,"Advent Calendar 2013, Star Wars (Day 15) - Geonosian Warrior",2013,225,3
+1057,4051,75023-17,1,"Advent Calendar 2013, Star Wars (Day 16) - Geonosian Weapons Depot",2013,225,10
+1058,4051,75023-18,1,"Advent Calendar 2013, Star Wars (Day 17) - Naboo Cruiser",2013,225,16
+1059,4051,75023-19,1,"Advent Calendar 2013, Star Wars (Day 18) - Scout Trooper",2013,225,4
+1060,4051,75023-2,1,"Advent Calendar 2013, Star Wars (Day  1) - R5-F7",2013,225,4
+1061,4051,75023-20,1,"Advent Calendar 2013, Star Wars (Day 19) - Separatist Shuttle",2013,225,18
+1062,4051,75023-21,1,"Advent Calendar 2013, Star Wars (Day 20) - Jedi Starfighter",2013,225,13
+1063,4051,75023-22,1,"Advent Calendar 2013, Star Wars (Day 21) - Jango Fett's Slave I",2013,225,20
+1064,4051,75023-23,1,"Advent Calendar 2013, Star Wars (Day 22) - Young Boba Fett",2013,225,4
+1065,4051,75023-24,1,"Advent Calendar 2013, Star Wars (Day 23) - Jet Pack Sled",2013,225,16
+1066,4051,75023-25,1,"Advent Calendar 2013, Star Wars (Day 24) - Holiday Jango Fett",2013,225,9
+1067,4051,75023-3,1,"Advent Calendar 2013, Star Wars (Day  2) - Dooku's Solar Sailer",2013,225,11
+1068,4051,75023-4,1,"Advent Calendar 2013, Star Wars (Day  3) - FA-4 Pilot Droid",2013,225,9
+1069,4051,75023-5,1,"Advent Calendar 2013, Star Wars (Day  4) - Zam Wesell's Speeder",2013,225,14
+1070,4051,75023-6,1,"Advent Calendar 2013, Star Wars (Day  5) - Twin-Pod Cloud Car",2013,225,16
+1071,4051,75023-7,1,"Advent Calendar 2013, Star Wars (Day  6) - Endor Rebel Trooper",2013,225,4
+1072,4051,75023-8,1,"Advent Calendar 2013, Star Wars (Day  7) - Weapons Depot",2013,225,11
+1073,4051,75023-9,1,"Advent Calendar 2013, Star Wars (Day  8) - Republic Gunship",2013,225,14
+1074,4083,7142-1,1,X-wing Fighter (re-release of 7140),2002,169,273
+1075,13269,7142-1,1,X-wing Fighter (re-release of 7140),2002,169,273
+1076,4083,7152-1,1,TIE Fighter & Y-wing (re-release of 7150),2002,169,411
+1077,13269,7152-1,1,TIE Fighter & Y-wing (re-release of 7150),2002,169,411
+1078,4133,8804-0,60,Minifigure Series 4 [Random Bag],2011,539,0
+1079,4187,7892-1,1,Hospital,2006,60,385
+1080,13398,7892-1,1,Hospital,2006,60,385
+1081,4187,7902-1,1,Doctor's Car,2006,60,65
+1082,13355,7902-1,1,Doctor's Car,2006,60,65
+1083,13398,7902-1,1,Doctor's Car,2006,60,65
+1084,4187,7903-1,1,Rescue Helicopter,2006,60,248
+1085,9502,7903-1,1,Rescue Helicopter,2006,60,248
+1086,13355,7903-1,1,Rescue Helicopter,2006,60,248
+1087,13398,7903-1,1,Rescue Helicopter,2006,60,248
+1088,4278,7952-10,1,Advent Calendar 2010 Kingdoms (Day  9) - Chest with Jewels,2010,219,5
+1089,4278,7952-11,1,Advent Calendar 2010 Kingdoms (Day 10) - Skeleton,2010,219,6
+1090,4278,7952-12,1,Advent Calendar 2010 Kingdoms (Day 11) - Dungeon Cell Window with Handcuffs,2010,219,14
+1091,4278,7952-13,1,Advent Calendar 2010 Kingdoms (Day 12) - Pig with Apple,2010,219,2
+1092,4278,7952-14,1,Advent Calendar 2010 Kingdoms (Day 13) - Prince with Sword,2010,219,5
+1093,4278,7952-15,1,Advent Calendar 2010 Kingdoms (Day 14) - Sword in the Stone,2010,219,6
+1094,4278,7952-16,1,Advent Calendar 2010 Kingdoms (Day 15) - Jousting Dummy with Helmet and Halberd,2010,219,8
+1095,4278,7952-17,1,Advent Calendar 2010 Kingdoms (Day 16) - Barmaid,2010,219,4
+1096,4278,7952-18,1,Advent Calendar 2010 Kingdoms (Day 17) - Keg with Tap,2010,219,9
+1097,4278,7952-19,1,Advent Calendar 2010 Kingdoms (Day 18) - Cauldron,2010,219,3
+1098,4278,7952-2,1,Advent Calendar 2010 Kingdoms (Day  1) - Blacksmith with Hammer,2010,219,5
+1099,4278,7952-20,1,Advent Calendar 2010 Kingdoms (Day 19) - Lion Knight with Spear,2010,219,5
+1100,4278,7952-21,1,Advent Calendar 2010 Kingdoms (Day 20) - Catapult,2010,219,7
+1101,4278,7952-22,1,Advent Calendar 2010 Kingdoms (Day 21) - Lion Knight Scale Mail with Quiver and Crossbow,2010,219,6
+1102,4278,7952-23,1,Advent Calendar 2010 Kingdoms (Day 22) - Owl in Tree,2010,219,6
+1103,4278,7952-24,1,Advent Calendar 2010 Kingdoms (Day 23) - Cooking Table with Frying Pan,2010,219,12
+1104,4278,7952-25,1,Advent Calendar 2010 Kingdoms (Day 24) - Blue Wizard with Wand,2010,219,6
+1105,4278,7952-3,1,Advent Calendar 2010 Kingdoms (Day  2) - Anvil and Forge with Sword,2010,219,13
+1106,4278,7952-4,1,Advent Calendar 2010 Kingdoms (Day  3) - Weapons Rack,2010,219,11
+1107,4278,7952-5,1,Advent Calendar 2010 Kingdoms (Day  4) - Dragon Knight with Flail,2010,219,5
+1108,4278,7952-6,1,Advent Calendar 2010 Kingdoms (Day  5) - Weapons Cart with Spear,2010,219,9
+1109,4278,7952-7,1,Advent Calendar 2010 Kingdoms (Day  6) - Armor Rack with Plate Armor and Helmet,2010,219,7
+1110,4278,7952-8,1,Advent Calendar 2010 Kingdoms (Day  7) - Queen with Frog,2010,219,6
+1111,4278,7952-9,1,Advent Calendar 2010 Kingdoms (Day  8) - Throne,2010,219,7
+1112,4288,60004-1,1,Fire Station,2013,58,750
+1113,4288,850618-1,1,City Fire Accessory Set,2013,58,43
+1114,4365,4335-1,1,Black Robots Pod,2004,478,50
+1115,4365,4346-1,1,Robo Pod,2004,478,50
+1116,8885,4346-1,1,Robo Pod,2004,478,50
+1117,4365,4347-1,1,Auto Pod,2004,478,40
+1118,8885,4347-1,1,Auto Pod,2004,478,40
+1119,4365,4348-1,1,Aero Pod,2004,478,36
+1120,8885,4348-1,1,Aero Pod,2004,478,36
+1121,4365,4349-1,1,Wild Pod,2004,478,44
+1122,8885,4349-1,1,Wild Pod,2004,478,44
+1123,4394,1974-2,1,Flyercracker USA,1989,68,74
+1124,4394,1974-3,1,Smuggler's Hayride,1989,194,50
+1125,4394,1974-4,1,Star Quest,1989,132,37
+1126,4467,6824-1,1,Space Dart I,1984,130,48
+1127,4467,886-1,1,Space Buggy,1979,130,20
+1128,4467,889-1,1,Radar Truck,1979,130,29
+1129,4536,1421-1,1,Director's Copter (Kabaya Promotional),2001,273,22
+1130,4536,1422-1,1,Camera Cart (Kabaya Promotional),2001,273,20
+1131,4536,1423-1,1,Air Boat (Kabaya Promotional),2001,273,24
+1132,4536,1424-1,1,Stunt Go-Kart (Kabaya Promotional),2001,273,25
+1133,4553,8978-1,1,Skrall,2009,331,50
+1134,4553,8979-1,1,Malum,2009,331,59
+1135,4553,8980-1,1,Gresh,2009,331,55
+1136,4553,8981-1,1,Tarix,2009,331,57
+1137,4553,8982-1,1,Strakk,2009,331,46
+1138,4553,8983-1,1,Vorox,2009,331,51
+1139,4570,4210-1,1,Coast Guard Platform,2008,55,450
+1140,4570,7736-1,1,Coast Guard Quad Bike,2008,55,33
+1141,10656,7736-1,1,Coast Guard Quad Bike,2008,55,33
+1142,4570,7737-1,1,Off-Road Vehicle and Jet Scooter,2008,55,130
+1143,10656,7737-1,1,Off-Road Vehicle and Jet Scooter,2008,55,130
+1144,4570,7738-1,1,Coast Guard Helicopter and Life Raft,2008,55,447
+1145,10656,7738-1,1,Coast Guard Helicopter and Life Raft,2008,55,447
+1146,4577,8727-1,1,Inika Toa Jaller,2006,351,46
+1147,13538,8727-1,1,Inika Toa Jaller,2006,351,46
+1148,4577,8728-1,1,Inika Toa Hahli,2006,351,46
+1149,13538,8728-1,1,Inika Toa Hahli,2006,351,46
+1150,4643,6407-1,1,Fire Chief,1997,98,26
+1151,10515,6407-1,1,Fire Chief,1997,98,26
+1152,14919,6407-1,1,Fire Chief,1997,98,26
+1153,4643,6554-1,1,Blaze Brigade,1997,98,261
+1154,4666,71008-0,60,LEGO Minifigures - Series 13 [Random Bag],2015,551,0
+1155,4718,10081-1,1,Birthday Pack Heart,2004,500,70
+1156,4718,10082-1,1,Birthday Pack Daisy,2004,500,70
+1157,4718,10083-1,1,Birthday Pack Star,2004,500,70
+1158,4719,6900-1,1,Cyber Saucer,1997,144,112
+1159,4739,2143-1,1,Rocka 3.0,2011,401,30
+1160,4739,2145-1,1,Stormer 3.0,2011,401,31
+1161,4771,7630-1,1,Front-End Loader,2009,56,107
+1162,5110,7630-1,1,Front-End Loader,2009,56,107
+1163,11935,7630-1,1,Front-End Loader,2009,56,107
+1164,4771,7633-1,1,Construction Site,2009,56,897
+1165,11935,7633-1,1,Construction Site,2009,56,897
+1166,4832,8782-1,1,Danju (USA version with 3 Cards),2004,198,45
+1167,4832,8786-1,1,Vladek (USA version with 3 Cards),2004,198,51
+1168,9381,8786-1,1,Vladek (USA version with 3 Cards),2004,198,51
+1169,4863,5515-1,1,Fun Building with LEGO Bricks,2007,37,240
+1170,4863,5537-1,1,Limited Edition [Blue Tub],2007,37,683
+1171,4874,8581-1,1,Kopeke,2003,335,25
+1172,8312,8581-1,1,Kopeke,2003,335,25
+1173,4874,8582-1,1,Matoro,2003,335,25
+1174,8312,8582-1,1,Matoro,2003,335,25
+1175,4874,8583-1,1,Hahli,2003,335,25
+1176,13423,8583-1,1,Hahli,2003,335,25
+1177,4874,8584-1,1,Hewkii,2003,335,25
+1178,13423,8584-1,1,Hewkii,2003,335,25
+1179,4918,8779-1,1,The Grand Tournament,2004,198,321
+1180,4941,75037-1,1,Battle on Saleucami,2014,158,179
+1181,4941,75038-1,1,Jedi Interceptor,2014,158,222
+1182,4941,75045-1,1,Republic AV-7 Anti-Vehicle Cannon,2014,158,434
+1183,4969,7043-1,1,Firefighter,2004,108,68
+1184,4971,41044-1,1,Macaw's Fountain,2014,496,39
+1185,4971,41045-1,1,Orangutan's Banana Tree,2014,496,37
+1186,4971,41046-1,1,Brown Bear's River,2014,496,37
+1187,4987,8684-1,1,Mariachi / Maraca Man - Complete Set,2010,537,9
+1188,4987,8684-10,1,Weightlifter - Complete Set,2010,537,8
+1189,4987,8684-11,1,Pop Star - Complete Set,2010,537,6
+1190,4987,8684-12,1,Skier - Complete Set,2010,537,9
+1191,4987,8684-13,1,Disco Dude - Complete Set,2010,537,6
+1192,4987,8684-14,1,Karate Master - Complete Set,2010,537,6
+1193,4987,8684-15,1,Surfer - Complete Set,2010,537,6
+1194,4987,8684-16,1,Pharaoh - Complete Set,2010,537,6
+1195,4987,8684-2,1,Spartan Warrior - Complete Set,2010,537,8
+1196,4987,8684-3,1,Circus Ringmaster - Complete Set,2010,537,6
+1197,4987,8684-4,1,Witch - Complete Set,2010,537,6
+1198,4987,8684-5,1,Vampire - Complete Set,2010,537,7
+1199,4987,8684-6,1,Traffic Cop - Complete Set,2010,537,7
+1200,4987,8684-7,1,Explorer - Complete Set,2010,537,7
+1201,4987,8684-8,1,Lifeguard - Complete Set,2010,537,6
+1202,4987,8684-9,1,Mime - Complete Set,2010,537,7
+1203,4993,6814-1,1,Ice Tunnelator,1993,133,25
+1204,4993,6879-1,1,Blizzard Baron,1993,133,83
+1205,4993,6898-1,1,Ice-Sat V,1993,133,136
+1206,5039,7422-1,1,Airplane,2003,300,33
+1207,7286,7422-1,1,Airplane,2003,300,33
+1208,10405,7422-1,1,Airplane,2003,300,33
+1209,5039,7423-1,1,Mountain Sleigh,2003,300,30
+1210,7286,7423-1,1,Mountain Sleigh,2003,300,30
+1211,10405,7423-1,1,Mountain Sleigh,2003,300,30
+1212,5039,7424-1,1,Black Cruiser,2003,300,28
+1213,7286,7424-1,1,Black Cruiser,2003,300,28
+1214,10405,7424-1,1,Black Cruiser,2003,300,28
+1215,5093,6271-1,1,Imperial Flagship,1992,147,320
+1216,5097,1794-1,1,Dragon Master Chariot,1994,186,36
+1217,5097,1795-1,1,Imperial Cannon,1994,147,37
+1218,5110,5610-1,1,Builder,2008,56,23
+1219,5110,5612-1,1,Police Officer,2008,61,21
+1220,6733,5612-1,1,Police Officer,2008,61,21
+1221,5114,7699-1,1,MT-101 Armored Drilling Unit,2007,137,634
+1222,5133,71004-1,1,Calamity Drone,2014,549,7
+1223,5133,71004-10,1,Larry the Barista,2014,549,6
+1224,5133,71004-11,1,Velma Staplebot,2014,549,6
+1225,5133,71004-12,1,Taco Tuesday Man,2014,549,10
+1226,5133,71004-13,1,'Where Are My Pants?' Guy,2014,549,6
+1227,5133,71004-14,1,Wiley Fusebot,2014,549,8
+1228,5133,71004-15,1,Panda Guy,2014,549,6
+1229,5133,71004-16,1,Marsha Queen of the Mermaids,2014,549,7
+1230,5133,71004-2,1,President Business - Complete Set,2014,549,6
+1231,5133,71004-3,1,Hard Hat Emmet,2014,549,6
+1232,5133,71004-4,1,Wild West Wyldstyle,2014,549,6
+1233,5133,71004-5,1,Abraham Lincoln,2014,549,6
+1234,5133,71004-6,1,Mrs Scratchen-Post,2014,549,6
+1235,5133,71004-7,1,Scribble-Face Bad Cop,2014,549,7
+1236,5133,71004-8,1,William Shakespeare,2014,549,7
+1237,5133,71004-9,1,Gail the Construction Worker,2014,549,6
+1238,5183,8910-1,1,Toa Mahri Kongu,2007,352,63
+1239,5183,8911-1,1,Toa Mahri Jaller,2007,352,67
+1240,5183,8912-1,1,Toa Mahri Hewkii,2007,352,61
+1241,5183,8913-1,1,Toa Mahri Nuparu,2007,352,58
+1242,5183,8914-1,1,Toa Mahri Hahli,2007,352,58
+1243,5183,8915-1,1,Toa Mahri Matoro,2007,352,62
+1244,5217,2854-1,1,Bungee Chopper,1998,3,70
+1245,5248,8100-1,1,Cyclone Defender,2007,389,91
+1246,5248,8101-1,1,Claw Crusher,2007,389,98
+1247,5248,8102-1,1,Blade Titan,2007,389,161
+1248,7618,8102-1,1,Blade Titan,2007,389,161
+1249,5248,8103-1,1,Sky Guardian,2007,389,143
+1250,5248,8104-1,1,Shadow Crawler,2007,389,160
+1251,7618,8104-1,1,Shadow Crawler,2007,389,160
+1252,5248,8105-1,1,Iron Condor,2007,389,140
+1253,5358,10158-1,2,High Speed Train Car,2004,239,151
+1254,5366,71001-1,1,Librarian - Complete Set,2013,545,7
+1255,5366,71001-10,1,Sea Captain - Complete Set,2013,545,7
+1256,5366,71001-11,1,Sad Clown - Complete Set,2013,545,6
+1257,5366,71001-12,1,Revolutionary Soldier - Complete Set,2013,545,6
+1258,5366,71001-13,1,Baseball Fielder - Complete Set,2013,545,5
+1259,5366,71001-14,1,Trendsetter - Complete Set,2013,545,7
+1260,5366,71001-15,1,Painter - Complete Set,2013,545,9
+1261,5366,71001-16,1,Motorcycle Mechanic - Complete Set,2013,545,6
+1262,5366,71001-2,1,Medusa - Complete Set,2013,545,5
+1263,5366,71001-3,1,Roman Commander - Complete Set,2013,545,8
+1264,5366,71001-4,1,Warrior Woman - Complete Set,2013,545,7
+1265,5366,71001-5,1,Tomahawk Warrior - Complete Set,2013,545,6
+1266,5366,71001-6,1,Skydiver - Complete Set,2013,545,6
+1267,5366,71001-7,1,Bumblebee Girl - Complete Set,2013,545,7
+1268,5366,71001-8,1,Grandpa - Complete Set,2013,545,7
+1269,5366,71001-9,1,Paintball Player - Complete Set,2013,545,7
+1270,5386,8831-1,1,Swimming Champion - Complete Set,2012,542,6
+1271,5386,8831-10,1,Jungle Boy - Complete Set,2012,542,7
+1272,5386,8831-11,1,Hippie - Complete Set,2012,542,9
+1273,5386,8831-12,1,Computer Programmer - Complete Set,2012,542,7
+1274,5386,8831-13,1,Viking Woman - Complete Set,2012,542,9
+1275,5386,8831-14,1,Evil Knight - Complete Set,2012,542,8
+1276,5386,8831-15,1,Rocker Girl - Complete Set,2012,542,6
+1277,5386,8831-16,1,Grandma Visitor - Complete Set,2012,542,7
+1278,5386,8831-2,1,Aztec Warrior - Complete Set,2012,542,7
+1279,5386,8831-3,1,Bunny Suit Guy - Complete Set,2012,542,7
+1280,5386,8831-4,1,Bride - Complete Set,2012,542,11
+1281,5386,8831-5,1,Ocean King - Complete Set,2012,542,7
+1282,5386,8831-6,1,Bagpiper - Complete Set,2012,542,7
+1283,5386,8831-7,1,Daredevil - Complete Set,2012,542,8
+1284,5386,8831-8,1,Galaxy Patrol - Complete Set,2012,542,7
+1285,5386,8831-9,1,Tennis Ace - Complete Set,2012,542,6
+1286,5404,7958-1,1,Advent Calendar 2011 Star Wars,2011,209,25
+1287,5432,7410-1,1,Jungle River,2003,300,66
+1288,5432,7411-1,1,Tygurah's Roar,2003,300,94
+1289,5432,7414-1,1,Elephant Caravan,2003,300,104
+1290,5500,7308-1,1,Double Hover,2001,135,21
+1291,5500,7309-1,1,Rover,2001,135,29
+1292,5500,7311-1,1,Red Planet Cruiser,2001,135,73
+1293,5553,8803-0,60,Minifigure Series 3 [Random Bag],2011,538,0
+1294,5554,8804-1,1,Lawn Gnome - Complete Set,2011,539,8
+1295,5554,8804-10,1,Sailor - Complete Set,2011,539,6
+1296,5554,8804-11,1,Soccer Player - Complete Set,2011,539,8
+1297,5554,8804-12,1,Werewolf - Complete Set,2011,539,6
+1298,5554,8804-13,1,Hazmat Guy - Complete Set,2011,539,6
+1299,5554,8804-14,1,Artist - Complete Set,2011,539,7
+1300,5554,8804-15,1,Ice Skater - Complete Set,2011,539,8
+1301,5554,8804-16,1,Crazy Scientist - Complete Set,2011,539,6
+1302,5554,8804-2,1,Kimono Girl - Complete Set,2011,539,6
+1303,5554,8804-3,1,Musketeer - Complete Set,2011,539,7
+1304,5554,8804-4,1,Punk Rocker - Complete Set,2011,539,6
+1305,5554,8804-5,1,Surfer Girl - Complete Set,2011,539,6
+1306,5554,8804-6,1,Viking - Complete Set,2011,539,10
+1307,5554,8804-7,1,The Monster - Complete Set,2011,539,5
+1308,5554,8804-8,1,Hockey Player - Complete Set,2011,539,11
+1309,5554,8804-9,1,Street Skater - Complete Set,2011,539,8
+1310,5595,3344-1,1,One Minifig Pack - Ninja #1,2000,434,10
+1311,5595,3345-1,1,Three Minifig Pack - Ninja #2,2000,434,24
+1312,5595,3346-1,1,Three Minifig Pack - Ninja #3,2000,434,26
+1313,5600,75899-1,1,LaFerrari,2015,601,167
+1314,5600,75908-1,1,458 Italia GT2,2015,601,156
+1315,5600,75909-1,1,McLaren P1,2015,601,171
+1316,5600,75910-1,1,Porsche 918 Spyder,2015,601,154
+1317,5645,8742-1,1,Visorak Vohtarak,2005,358,48
+1318,14790,8742-1,1,Visorak Vohtarak,2005,358,48
+1319,5645,8743-1,1,Visorak Boggarak,2005,358,48
+1320,5645,8744-1,1,Visorak Oohnorak,2005,358,48
+1321,5645,8745-1,1,Visorak Roporak,2005,358,48
+1322,5645,8746-1,1,Visorak Keelerak,2005,358,48
+1323,5645,8747-1,1,Visorak Suukorak,2005,358,48
+1324,5675,1196-1,1,Biker with Bicycle,2000,458,7
+1325,5675,1197-1,1,Telekom Race Cyclist and Television Motorbike,2000,458,30
+1326,5675,1198-1,1,Service Team - 2 Bikers with Service Tools,2000,458,76
+1327,5675,1199-1,1,Winning Team,2000,458,110
+1328,5740,8380-1,1,Red Maniac,2004,116,82
+1329,6424,8380-1,1,Red Maniac,2004,116,82
+1330,5740,8384-1,1,Jungle Crasher,2004,116,75
+1331,6424,8384-1,1,Jungle Crasher,2004,116,75
+1332,5855,7509-1,1,Jewels-n-Clips,2003,500,72
+1333,5857,7208-1,1,Fire Station,2010,58,644
+1334,5904,3177-1,1,Small Car,2010,63,43
+1335,7151,3177-1,1,Small Car,2010,63,43
+1336,5904,3179-1,1,Repair Truck,2010,63,122
+1337,5904,8402-1,1,Sports Car,2009,63,68
+1338,9426,8402-1,1,Sports Car,2009,63,68
+1339,5955,10049-1,1,Large Wheels and Axles,2002,254,31
+1340,5955,10072-1,1,TECHNIC Beams,2003,256,56
+1341,5955,10074-1,1,Cross Axles,2003,256,68
+1342,5955,10076-1,1,TECHNIC Gear Wheels,2002,256,38
+1343,5955,5225-1,1,9v Motor with gear reduction,1998,453,1
+1344,5970,8929-1,1,Defilak,2007,334,37
+1345,5970,8930-1,1,Dekar,2007,334,37
+1346,5970,8931-1,1,Thulox,2007,334,39
+1347,5970,8932-1,1,Morak,2007,334,40
+1348,5990,8106-1,1,Aero Booster,2007,389,311
+1349,5990,8107-1,1,Fight for the Golden Tower,2007,389,570
+1350,5990,8108-1,1,Mobile Devastator,2007,389,1012
+1351,6034,7514-1,1,Sweet Dreamy Jewels,2004,500,12
+1352,6050,10132-1,1,Motorized Hogwarts Express,2004,246,693
+1353,6066,4431-1,1,Ambulance,2012,60,198
+1354,6066,4432-1,1,Garbage Truck,2012,63,207
+1355,6066,4433-1,1,Dirt Bike Transporter,2012,64,205
+1356,6066,4435-1,1,Car and Caravan,2012,63,217
+1357,6086,4924-10,1,Advent Calendar 2004 Creator (Day  9) Skiing Elf,2004,223,16
+1358,6086,4924-11,1,Advent Calendar 2004 Creator (Day 10) Sledding Santa,2004,223,14
+1359,6086,4924-12,1,Advent Calendar 2004 Creator (Day 11) Goose,2004,223,14
+1360,6086,4924-13,1,Advent Calendar 2004 Creator (Day 12) Green Present,2004,223,7
+1361,6086,4924-14,1,Advent Calendar 2004 Creator (Day 13) Santa Ornament,2004,223,12
+1362,6086,4924-15,1,Advent Calendar 2004 Creator (Day 14) Helicopter,2004,223,13
+1363,6086,4924-16,1,Advent Calendar 2004 Creator (Day 15) Reindeer,2004,223,9
+1364,6086,4924-17,1,Advent Calendar 2004 Creator (Day 16) Elf Girl,2004,223,14
+1365,6086,4924-18,1,Advent Calendar 2004 Creator (Day 17) Speedboat,2004,223,13
+1366,6086,4924-19,1,Advent Calendar 2004 Creator (Day 18) Racing Car,2004,223,23
+1367,6086,4924-2,1,Advent Calendar 2004 Creator (Day 1) Elf Ornament,2004,223,15
+1368,6086,4924-20,1,Advent Calendar 2004 Creator (Day 19) Snowman,2004,223,13
+1369,6086,4924-21,1,Advent Calendar 2004 Creator (Day 20) Leaf Ornament,2004,223,18
+1370,6086,4924-22,1,Advent Calendar 2004 Creator (Day 21) Santa,2004,223,13
+1371,6086,4924-23,1,Advent Calendar 2004 Creator (Day 22) Sailing Ship,2004,223,16
+1372,6086,4924-24,1,Advent Calendar 2004 Creator (Day 23) Tree,2004,223,12
+1373,6086,4924-25,1,Advent Calendar 2004 Creator (Day 24) Air Boat,2004,223,9
+1374,6086,4924-3,1,Advent Calendar 2004 Creator (Day  2) Plane,2004,223,13
+1375,6086,4924-4,1,Advent Calendar 2004 Creator (Day  3) Parrot,2004,223,13
+1376,6086,4924-5,1,Advent Calendar 2004 Creator (Day  4) Robot,2004,223,19
+1377,6086,4924-6,1,Advent Calendar 2004 Creator (Day  5) Blue Present,2004,223,7
+1378,6086,4924-7,1,Advent Calendar 2004 Creator (Day  6) Ship,2004,223,19
+1379,6086,4924-8,1,Advent Calendar 2004 Creator (Day 7) Angel Ornament,2004,223,17
+1380,6086,4924-9,1,Advent Calendar 2004 Creator (Day  8) Van,2004,223,16
+1381,6093,1547-1,1,Black Knights Boat,1993,188,58
+1382,6093,1596-1,1,Ghostly Hideout,1993,203,37
+1383,6093,1624-1,1,King's Archer,1993,188,22
+1384,6117,8645-1,1,Muscle Slammer Bike,2005,116,126
+1385,6117,8646-1,1,Speed Slammer Bike,2005,116,126
+1386,6174,7979-10,1,Advent Calendar 2008 Castle  (Day 9) - Crossbow on Wheels,2008,219,7
+1387,6174,7979-11,1,Advent Calendar 2008 Castle (Day 10) - Dwarf with Pick Axe,2008,219,6
+1388,6174,7979-12,1,Advent Calendar 2008 Castle (Day 11) - Fire and Crystal,2008,219,6
+1389,6174,7979-13,1,Advent Calendar 2008 Castle (Day 12) - Container on Wheels,2008,219,10
+1390,6174,7979-14,1,Advent Calendar 2008 Castle (Day 13) - Tools Storage with Frog,2008,219,4
+1391,6174,7979-15,1,Advent Calendar 2008 Castle (Day 14) - Evil Witch,2008,219,5
+1392,6174,7979-16,1,Advent Calendar 2008 Castle (Day 15) - Cooking Pot with Snake,2008,219,9
+1393,6174,7979-17,1,Advent Calendar 2008 Castle (Day 16) - Shelving with Bat,2008,219,12
+1394,6174,7979-18,1,Advent Calendar 2008 Castle (Day 17) - Crystal Ball,2008,219,5
+1395,6174,7979-19,1,Advent Calendar 2008 Castle (Day 18) - Maid with Broom and Rat,2008,219,6
+1396,6174,7979-2,1,Advent Calendar 2008 Castle  (Day 1) - Soldier with Spear,2008,219,5
+1397,6174,7979-20,1,Advent Calendar 2008 Castle (Day 19) - Food Basket,2008,219,4
+1398,6174,7979-21,1,Advent Calendar 2008 Castle (Day 20) - Dinner Table,2008,219,17
+1399,6174,7979-22,1,Advent Calendar 2008 Castle (Day 21) - Troll Warrior,2008,219,5
+1400,6174,7979-23,1,Advent Calendar 2008 Castle (Day 22) - Catapult,2008,219,14
+1401,6174,7979-24,1,Advent Calendar 2008 Castle (Day 23) - Treasure Chest with Spider,2008,219,6
+1402,6174,7979-25,1,Advent Calendar 2008 Castle (Day 24) - Jester,2008,219,4
+1403,6174,7979-3,1,Advent Calendar 2008 Castle  (Day 2) - Brick Arch with Flag and Shield,2008,219,10
+1404,6174,7979-4,1,Advent Calendar 2008 Castle  (Day 3) - Armour Stand,2008,219,8
+1405,6174,7979-5,1,Advent Calendar 2008 Castle  (Day 4) - White Skeleton with Flail,2008,219,7
+1406,6174,7979-6,1,Advent Calendar 2008 Castle  (Day 5) - Weapon Stand,2008,219,8
+1407,6174,7979-7,1,Advent Calendar 2008 Castle  (Day 6) - Black Skeleton with Crossbow,2008,219,7
+1408,6174,7979-8,1,Advent Calendar 2008 Castle  (Day 7) - Castle Soldier with Sword,2008,219,5
+1409,6174,7979-9,1,Advent Calendar 2008 Castle  (Day 8) - Archery Target,2008,219,6
+1410,6181,8008-1,1,Stormtrooper™,2001,158,360
+1411,6181,8010-1,1,Darth Vader™,2002,158,390
+1412,6194,8688-1,1,Toa Gali,2008,338,60
+1413,15304,8688-1,1,Toa Gali,2008,338,60
+1414,6194,8689-1,1,Toa Tahu,2008,338,73
+1415,15304,8689-1,1,Toa Tahu,2008,338,73
+1416,6194,8941-1,1,Rockoh T3,2008,327,388
+1417,6194,8942-1,1,Jetrax T6,2008,327,420
+1418,6241,9798-1,1,NXT Rechargeable Battery,2006,259,1
+1419,10976,9798-1,1,NXT Rechargeable Battery,2006,259,1
+1420,6241,9833-2,1,"AC Adapter, 120V - 10V Transformer",1996,259,1
+1421,6253,1278-1,1,Johnny Thunder & Baby T,2000,298,23
+1422,6253,1279-1,1,Aeroplane,2000,298,21
+1423,6253,1280-1,1,Microcopter,2000,298,28
+1424,6253,1281-1,1,Aeroplane,2000,298,25
+1425,6276,8047-1,1,Compact Excavator,2010,7,252
+1426,6276,8065-1,1,Mini Container Truck,2011,7,119
+1427,6276,8067-1,1,Mini Mobile Crane,2011,7,292
+1428,6276,8069-1,1,Backhoe Loader,2011,7,608
+1429,6319,2063-1,1,Stormer 2.0,2011,401,31
+1430,6319,2068-1,1,Nex 2.0,2011,401,31
+1431,6319,2141-1,1,Surge 2.0,2011,401,30
+1432,6319,2142-1,1,Breez 2.0,2011,401,29
+1433,6331,8721-1,1,Velika,2006,337,21
+1434,6331,8722-1,1,Kazi,2006,337,25
+1435,6331,8723-1,1,Piruk,2006,337,27
+1436,6331,8724-1,1,Garan,2006,337,21
+1437,6331,8725-1,1,Balta,2006,337,22
+1438,6331,8726-1,1,Dalu,2006,337,25
+1439,6336,851097,1,"Sword, Toa Hordika Blazer Claw with Flame End",2004,501,0
+1440,14498,851097,1,"Sword, Toa Hordika Blazer Claw with Flame End",2004,501,0
+1441,6336,8758-1,1,Tower of Toa,2005,341,407
+1442,6371,4479-1,1,TIE Bomber,2003,169,229
+1443,6371,7146-1,1,TIE Fighter,2001,169,171
+1444,10645,7146-1,1,TIE Fighter,2001,169,171
+1445,6416,20206-1,1,"MBA Level Three - Kit 7, The Lost Village",2012,432,229
+1446,6416,20207-1,1,"MBA Level Three - Kit 8, The Forbidden Bridge",2012,432,220
+1447,6416,20208-1,1,"MBA Level Three - Kit 9, The Dark Lair",2012,432,183
+1448,6424,8383-1,1,Nitro Terminator,2004,116,69
+1449,14465,8383-1,1,Nitro Terminator,2004,116,69
+1450,6424,8385-1,1,Exo Stealth,2004,116,81
+1451,14465,8385-1,1,Exo Stealth,2004,116,81
+1452,6426,8801-1,1,Knights' Attack Barge,2005,198,165
+1453,6426,8802-1,1,Dark Fortress Landing,2005,198,144
+1454,6447,8925-1,1,Barraki Deepsea Patrol,2007,341,200
+1455,6447,8926-1,1,Toa Undersea Attack,2007,341,357
+1456,6447,8927-1,1,Toa Terrain Crawler,2007,341,603
+1457,6453,3066-1,1,Cosmos Glider,1999,93,19
+1458,6453,3067-1,1,Test Shuttle,1999,93,21
+1459,6453,3068-1,1,Radar Buggy,1999,93,25
+1460,6453,3069-1,1,Cosmic Wing,1999,93,23
+1461,6486,8791-1,1,Sir Danju,2005,198,42
+1462,6486,8795-1,1,Lord Vladek,2005,198,44
+1463,6514,7413-1,1,Passage of Jun-Chi,2003,300,101
+1464,6514,7416-1,1,Emperor's Ship,2003,300,178
+1465,6514,7419-1,1,Dragon Fortress,2003,300,741
+1466,6514,7420-1,1,Thunder Blazer,2003,300,69
+1467,6530,4439-1,1,Heavy-Duty Helicopter,2012,61,392
+1468,6530,4441-1,1,Police Dog Van,2012,61,312
+1469,6544,4721-1,1,Hogwarts Classroom,2001,251,75
+1470,6544,4726-1,1,Quidditch Practice,2002,247,131
+1471,6544,4727-1,1,Aragog in the Dark Forest,2002,247,183
+1472,6544,4731-1,1,Dobby's Release,2002,247,71
+1473,6544,4735-1,1,Slytherin,2002,247,93
+1474,6544,626-1,2,"Baseplate, Green",1996,473,1
+1475,6572,7115-1,1,Gungan Patrol,2000,166,79
+1476,6572,7124-1,1,Flash Speeder,2000,166,107
+1477,9471,7124-1,1,Flash Speeder,2000,166,107
+1478,6572,7141-1,1,Naboo Fighter,1999,166,179
+1479,6702,7904-10,1,Advent Calendar 2006 City (Day  9) Computer Desk & Chair,2006,220,8
+1480,6702,7904-11,1,Advent Calendar 2006 City (Day 10) Train Conductor with Signal Paddle,2006,220,6
+1481,6702,7904-12,1,Advent Calendar 2006 City (Day 11) Level Crossing and Signal,2006,220,22
+1482,6702,7904-13,1,Advent Calendar 2006 City (Day 12) Train Handcar,2006,220,17
+1483,6702,7904-14,1,Advent Calendar 2006 City (Day 13) Street Cleaner,2006,220,5
+1484,6702,7904-15,1,Advent Calendar 2006 City (Day 14) Street Cleaner's Pushcart,2006,220,13
+1485,6702,7904-16,1,Advent Calendar 2006 City (Day 15) Phone Kiosk,2006,220,12
+1486,6702,7904-17,1,Advent Calendar 2006 City (Day 16) Police Officer with Signal Paddle,2006,220,6
+1487,6702,7904-18,1,Advent Calendar 2006 City (Day 17) Police Barricade and Speed Limit Sign,2006,220,9
+1488,6702,7904-19,1,Advent Calendar 2006 City (Day 18) Speed Radar Gun,2006,220,7
+1489,6702,7904-2,1,Advent Calendar 2006 City (Day  1) Construction Worker,2006,220,5
+1490,6702,7904-20,1,Advent Calendar 2006 City (Day 19) Mechanic,2006,220,5
+1491,6702,7904-21,1,Advent Calendar 2006 City (Day 20) Tool Chest,2006,220,11
+1492,6702,7904-22,1,Advent Calendar 2006 City (Day 21) Work Bench with Vise,2006,220,13
+1493,6702,7904-23,1,Advent Calendar 2006 City (Day 22) Firefighter,2006,220,7
+1494,6702,7904-24,1,Advent Calendar 2006 City (Day 23) Water Cannon and Burning Oil Drum,2006,220,11
+1495,6702,7904-25,1,Advent Calendar 2006 City (Day 24) Santa Tree Gifts & Fireplace,2006,220,31
+1496,6702,7904-3,1,Advent Calendar 2006 City (Day  2) Traffic Control Sticks,2006,220,15
+1497,6702,7904-4,1,Advent Calendar 2006 City (Day  3) Traffic Cone Barricade Cement Finisher,2006,220,12
+1498,6702,7904-5,1,Advent Calendar 2006 City (Day  4) Airport Ground Crew,2006,220,8
+1499,6702,7904-6,1,Advent Calendar 2006 City (Day  5) Hand Truck and Luggage,2006,220,4
+1500,6702,7904-7,1,Advent Calendar 2006 City (Day  6) X-Ray Machine,2006,220,15
+1501,6702,7904-8,1,Advent Calendar 2006 City (Day  7) Doctor with bag,2006,220,5
+1502,6702,7904-9,1,Advent Calendar 2006 City (Day  8) Hospital Bed with IV Stand,2006,220,10
+1503,6791,70168-1,1,Drillex Diamond Job,2015,303,311
+1504,6791,70170-1,1,UltraCopter vs. AntiMatter,2015,303,611
+1505,6795,8085-1,1,Freeco Speeder,2010,165,176
+1506,6848,4169306a-1,1,Christmas Tree Ornament,2005,227,46
+1507,6848,4169306b-1,1,Snowman Ornament,2005,227,36
+1508,6848,4169306c-1,1,Santa Claus Ornament,2005,227,36
+1509,6871,41527-1,1,Rokit,2015,584,66
+1510,15631,41527-1,1,Rokit,2015,584,66
+1511,6871,41528-1,1,Niksput,2015,584,62
+1512,15631,41528-1,1,Niksput,2015,584,62
+1513,6871,41529-1,1,Nurp-Naut,2015,584,52
+1514,15631,41529-1,1,Nurp-Naut,2015,584,52
+1515,6871,41530-1,1,Meltus,2015,584,66
+1516,7277,41530-1,1,Meltus,2015,584,66
+1517,6871,41531-1,1,Flamzer,2015,584,60
+1518,7277,41531-1,1,Flamzer,2015,584,60
+1519,6871,41532-1,1,Burnard,2015,584,59
+1520,7277,41532-1,1,Burnard,2015,584,59
+1521,6871,41533-1,1,Globert,2015,584,45
+1522,9386,41533-1,1,Globert,2015,584,45
+1523,6871,41534-1,1,Vampos,2015,584,59
+1524,9386,41534-1,1,Vampos,2015,584,59
+1525,6871,41535-1,1,Boogly,2015,584,52
+1526,9386,41535-1,1,Boogly,2015,584,52
+1527,6877,7313-1,1,Red Planet Protector,2001,135,193
+1528,6877,7314-1,1,Recon-Mech RP,2001,135,189
+1529,6877,7315-1,1,Solar Explorer,2001,135,249
+1530,6877,7317-1,1,Aero Tube Hanger,2001,135,716
+1531,6990,5859-1,1,Little Garden Fairy,2003,319,49
+1532,6990,5861-1,1,Fairy Island,2003,319,105
+1533,6990,5862-1,1,Flower Fairy Party [Blue Box],2003,319,151
+1534,7051,3390-1,1,Basketball Street Player Chupa Chups Promotional,2003,459,5
+1535,7151,7638-1,1,Tow Truck,2009,63,128
+1536,9426,7638-1,1,Tow Truck,2009,63,128
+1537,15192,7638-1,1,Tow Truck,2009,63,128
+1538,7187,3535-1,1,Skateboard Street Park,2003,460,68
+1539,7187,3536-1,1,Snowboard Big Air Comp,2003,460,81
+1540,7187,3538-1,1,Snowboard Boarder Cross Race,2003,460,196
+1541,7201,7508-1,1,Jewels-n-Bands,2003,500,80
+1542,7209,7153-1,1,Jango Fett's Slave I,2002,167,360
+1543,10645,7153-1,1,Jango Fett's Slave I,2002,167,360
+1544,7261,4701-1,1,Sorting Hat,2001,251,50
+1545,7261,4702-1,1,The Final Challenge,2001,251,61
+1546,7261,4704-1,1,The Chamber of the Winged Keys,2001,251,180
+1547,7261,4706-1,1,Forbidden Corridor,2001,251,239
+1548,7261,4711-1,1,Flying Lesson,2002,251,24
+1549,7348,3061-1,1,City Park Café,2012,494,244
+1550,7348,3183-1,1,Stephanie’s Cool Convertible,2012,494,148
+1551,7348,3934-1,1,Mia’s Puppy House,2012,494,83
+1552,7745,3934-1,1,Mia’s Puppy House,2012,494,83
+1553,7348,3936-1,1,Emma’s Fashion Design Studio,2012,494,77
+1554,7363,7324-10,1,Advent Calendar 2005 City (Day  9) Construction Worker,2005,220,5
+1555,7363,7324-11,1,Advent Calendar 2005 City (Day 10) Wheelbarrow,2005,220,11
+1556,7363,7324-12,1,Advent Calendar 2005 City (Day 11) Barricade,2005,220,9
+1557,7363,7324-13,1,Advent Calendar 2005 City (Day 12) Train Worker,2005,220,6
+1558,7363,7324-14,1,Advent Calendar 2005 City (Day 13) Crossing Gate,2005,220,13
+1559,7363,7324-15,1,Advent Calendar 2005 City (Day 14) Signal Post,2005,220,11
+1560,7363,7324-16,1,Advent Calendar 2005 City (Day 15) Mechanic,2005,220,5
+1561,7363,7324-17,1,Advent Calendar 2005 City (Day 16) Drill Press,2005,220,11
+1562,7363,7324-18,1,Advent Calendar 2005 City (Day 17) Oil Barrel & Hand Truck,2005,220,7
+1563,7363,7324-19,1,Advent Calendar 2005 City (Day 18) Man with Radio,2005,220,5
+1564,7363,7324-2,1,Advent Calendar 2005 City (Day  1) Fireman,2005,220,5
+1565,7363,7324-20,1,Advent Calendar 2005 City (Day 19) RC Car,2005,220,8
+1566,7363,7324-21,1,Advent Calendar 2005 City (Day 20) Skateboard & Helmet,2005,220,4
+1567,7363,7324-22,1,Advent Calendar 2005 City (Day 21) Pizza Chef,2005,220,5
+1568,7363,7324-23,1,Advent Calendar 2005 City (Day 22) Food Counter,2005,220,6
+1569,7363,7324-24,1,Advent Calendar 2005 City (Day 23) Pizza Oven,2005,220,11
+1570,7363,7324-25,1,Advent Calendar 2005 City (Day 24) Santa & Sled,2005,220,23
+1571,7363,7324-3,1,Advent Calendar 2005 City (Day  2) Fire Hydrant Hose Airtanks,2005,220,10
+1572,7363,7324-4,1,Advent Calendar 2005 City (Day  3) Rescue Bucket,2005,220,7
+1573,7363,7324-5,1,Advent Calendar 2005 City (Day  4) Policeman,2005,220,5
+1574,7363,7324-6,1,Advent Calendar 2005 City (Day  5) Police Dog & Barricade,2005,220,8
+1575,7363,7324-7,1,Advent Calendar 2005 City (Day  6) Criminal and Buzz Saw,2005,220,5
+1576,7363,7324-8,1,Advent Calendar 2005 City (Day  7) Safe,2005,220,12
+1577,7363,7324-9,1,Advent Calendar 2005 City (Day  8) Welding Tanks & Torch,2005,220,12
+1578,7391,10194-1,1,Emerald Night,2009,240,1089
+1579,7391,8867-1,1,Flexible Train Track,2009,245,64
+1580,7430,2155-1,1,Aircraft,2000,467,18
+1581,7430,2156-1,1,Car,2000,467,17
+1582,7430,2157-1,1,Boat,2000,467,16
+1583,7430,2158-1,1,Helicopter,2000,467,10
+1584,7474,10000-1,1,Guarded Inn,2001,186,256
+1585,7474,10039-1,1,Black Falcon's Fortress,2002,186,431
+1586,7474,3739-1,1,Blacksmith Shop,2002,200,629
+1587,7478,8509-1,1,Swamp,2000,16,45
+1588,15594,8509-1,1,Swamp,2000,16,45
+1589,7478,8510-1,1,Lava,2000,16,35
+1590,15594,8510-1,1,Lava,2000,16,35
+1591,7524,7200-1,1,Final Duel I,2002,169,32
+1592,9471,7200-1,1,Final Duel I,2002,169,32
+1593,15019,7200-1,1,Final Duel I,2002,169,32
+1594,7524,7201-1,1,Final Duel II,2002,169,26
+1595,15019,7201-1,1,Final Duel II,2002,169,26
+1596,7524,7203-1,1,Jedi Defense I,2002,166,59
+1597,15019,7203-1,1,Jedi Defense I,2002,166,59
+1598,7524,7204-1,1,Jedi Defense II,2002,166,53
+1599,15019,7204-1,1,Jedi Defense II,2002,166,53
+1600,7562,9516-1,1,Jabba’s Palace,2012,169,716
+1601,7703,7000-1,1,Baby Ankylosaurus,2001,386,37
+1602,7703,7001-1,1,Baby Iguanodon,2001,386,23
+1603,7703,7002-1,1,Baby Brachiosaurus,2001,386,31
+1604,7703,7003-1,1,Baby Dimetrodon,2001,386,20
+1605,7743,6851-1,1,Tri-Wheeled Tyrax,1991,129,38
+1606,7743,6861-2,1,Super Model Building Instruction,1993,129,1
+1607,7743,6878-1,1,Sub Orbital Guardian,1991,129,75
+1608,7743,6887-1,1,Allied Avenger,1991,129,100
+1609,7745,3187-1,1,Butterfly Beauty Shop,2012,494,240
+1610,7745,3935-1,1,Stephanie’s Pet Patrol,2012,494,73
+1611,7766,5620-1,1,Street Cleaner,2008,63,22
+1612,7766,7632-1,1,Crawler Crane,2009,56,478
+1613,7766,7746-1,1,Single-Drum Roller,2009,56,207
+1614,7774,6578-1,1,Polar Explorer,2000,51,22
+1615,7774,6586-1,1,Polar Scout,2000,51,55
+1616,7805,70126-1,1,Crocodile Legend Beast,2014,574,120
+1617,7805,70128-1,1,Braptor's Wing Striker,2014,571,145
+1618,7805,70129-1,1,Lavertus' Twin Blade,2014,571,181
+1619,7805,70130-1,1,Sparratus' Spider Stalker,2014,571,291
+1620,7805,70131-1,1,Rogon's Rock Flinger,2014,571,256
+1621,7850,9509-10,1,"Advent Calendar 2012, Star Wars (Day 9) - Imperial Officer",2012,225,4
+1622,7850,9509-11,1,"Advent Calendar 2012, Star Wars (Day 10) - AT-AT Walker",2012,225,13
+1623,7850,9509-12,1,"Advent Calendar 2012, Star Wars (Day 11) - Hoth Blaster Station",2012,225,6
+1624,7850,9509-13,1,"Advent Calendar 2012, Star Wars (Day 12) - Hoth Rebel Trooper",2012,225,6
+1625,7850,9509-14,1,"Advent Calendar 2012, Star Wars (Day 13) - Gonk Droid (GNK Power Droid)",2012,225,14
+1626,7850,9509-15,1,"Advent Calendar 2012, Star Wars (Day 14) - General Grievous Weapon Depot",2012,225,10
+1627,7850,9509-16,1,"Advent Calendar 2012, Star Wars (Day 15) - Snowtrooper",2012,225,4
+1628,7850,9509-17,1,"Advent Calendar 2012, Star Wars (Day 16) - Naboo Royal Shuttle",2012,225,18
+1629,7850,9509-18,1,"Advent Calendar 2012, Star Wars (Day 17) - Flash Speeder",2012,225,14
+1630,7850,9509-19,1,"Advent Calendar 2012, Star Wars (Day 18) - Rebel Scout Trooper",2012,225,5
+1631,7850,9509-2,1,"Advent Calendar 2012, Star Wars (Day 1) - Gungan Sub",2012,225,13
+1632,7850,9509-20,1,"Advent Calendar 2012, Star Wars (Day 19) - Trade Federation AAT",2012,225,15
+1633,7850,9509-21,1,"Advent Calendar 2012, Star Wars (Day 20) - General Grievous Starfighter",2012,225,14
+1634,7850,9509-22,1,"Advent Calendar 2012, Star Wars (Day 21) - Super Battle Droid",2012,225,4
+1635,7850,9509-23,1,"Advent Calendar 2012, Star Wars (Day 22) - Sith Infiltrator",2012,225,15
+1636,7850,9509-24,1,"Advent Calendar 2012, Star Wars (Day 23) - Snowman R2-D2",2012,225,8
+1637,7850,9509-25,1,"Advent Calendar 2012, Star Wars (Day 24) - Santa Darth Maul",2012,225,7
+1638,7850,9509-3,1,"Advent Calendar 2012, Star Wars (Day 2) - Gungan Soldier",2012,225,3
+1639,7850,9509-4,1,"Advent Calendar 2012, Star Wars (Day 3) - Gungan Battle Depot",2012,225,8
+1640,7850,9509-5,1,"Advent Calendar 2012, Star Wars (Day 4) - Star Destroyer",2012,225,14
+1641,7850,9509-6,1,"Advent Calendar 2012, Star Wars (Day 5) - Trade Federation MTT",2012,225,9
+1642,7850,9509-7,1,"Advent Calendar 2012, Star Wars (Day 6) - Battle Droid Security",2012,225,5
+1643,7850,9509-8,1,"Advent Calendar 2012, Star Wars (Day 7) - Naboo Starfighter",2012,225,16
+1644,7850,9509-9,1,"Advent Calendar 2012, Star Wars (Day 8) - Vulture Droid",2012,225,9
+1645,7874,3431-1,1,Streetball 2 vs 2,2003,459,186
+1646,7881,7687-10,1,Advent Calendar 2009 City (Day  9) Traffic Light,2009,220,7
+1647,7881,7687-11,1,Advent Calendar 2009 City (Day 10) Letter Carrier,2009,220,5
+1648,7881,7687-12,1,Advent Calendar 2009 City (Day 11) ATV,2009,220,17
+1649,7881,7687-13,1,Advent Calendar 2009 City (Day 12) Crate and Present,2009,220,9
+1650,7881,7687-14,1,Advent Calendar 2009 City (Day 13) Chef and Cup,2009,220,5
+1651,7881,7687-15,1,Advent Calendar 2009 City (Day 14) Coffee Stand,2009,220,17
+1652,7881,7687-16,1,Advent Calendar 2009 City (Day 15) Park Bench,2009,220,9
+1653,7881,7687-17,1,Advent Calendar 2009 City (Day 16) Street Cleaner,2009,220,5
+1654,7881,7687-18,1,Advent Calendar 2009 City (Day 17) Wheelbarrow and Snowballs,2009,220,14
+1655,7881,7687-19,1,Advent Calendar 2009 City (Day 18) Fountain,2009,220,9
+1656,7881,7687-2,1,Advent Calendar 2009 City (Day  1) Minifigure and Snowballs,2009,220,7
+1657,7881,7687-20,1,Advent Calendar 2009 City (Day 19) Child and RC Car,2009,220,12
+1658,7881,7687-21,1,Advent Calendar 2009 City (Day 20) RC Car Cones and Flag,2009,220,15
+1659,7881,7687-22,1,Advent Calendar 2009 City (Day 21) Lumberjack,2009,220,6
+1660,7881,7687-23,1,Advent Calendar 2009 City (Day 22) Chainsaw Sawhorse and Log,2009,220,14
+1661,7881,7687-24,1,Advent Calendar 2009 City (Day 23) Christmas Tree,2009,220,21
+1662,7881,7687-25,1,Advent Calendar 2009 City (Day 24) Santa and Fireplace,2009,220,26
+1663,7881,7687-3,1,Advent Calendar 2009 City (Day  2) Snowman,2009,220,10
+1664,7881,7687-4,1,Advent Calendar 2009 City (Day  3) Sleigh,2009,220,5
+1665,7881,7687-5,1,Advent Calendar 2009 City (Day  4) Minifigure on Skates,2009,220,7
+1666,7881,7687-6,1,Advent Calendar 2009 City (Day  5) Skate Stand,2009,220,12
+1667,7881,7687-7,1,Advent Calendar 2009 City (Day  6) Street Light with Garland,2009,220,12
+1668,7881,7687-8,1,Advent Calendar 2009 City (Day  7) Police Officer with Loudhailer,2009,220,5
+1669,7881,7687-9,1,Advent Calendar 2009 City (Day  8) Road Barrier,2009,220,11
+1670,7902,1428-1,1,Small Soccer Set 1 (Kabaya Box),2002,462,24
+1671,7902,1429-1,1,Small Soccer Set 2 (Kabaya Box),2002,462,19
+1672,7902,1430-1,1,Small Soccer Set 3 (Kabaya Box),2002,462,12
+1673,7929,8684-0,60,Minifigure Series 2 [Random Bag],2010,537,0
+1674,7933,3347-1,1,One Minifig Pack - Rock Raiders #1,2000,442,8
+1675,7933,3348-1,1,Three Minifig Pack - Rock Raiders #2,2000,442,23
+1676,7933,3349-1,1,Three Minifig Pack - Rock Raiders #3,2000,442,29
+1677,7944,7279-1,1,Police Minifigure Collection,2011,61,57
+1678,8398,7279-1,1,Police Minifigure Collection,2011,61,57
+1679,11491,7279-1,1,Police Minifigure Collection,2011,61,57
+1680,14011,7279-1,1,Police Minifigure Collection,2011,61,57
+1681,7944,7285-1,1,Police Dog Unit,2011,61,95
+1682,8398,7285-1,1,Police Dog Unit,2011,61,95
+1683,10180,7285-1,1,Police Dog Unit,2011,61,95
+1684,7944,7286-1,1,Prisoner Transport,2011,61,173
+1685,11491,7286-1,1,Prisoner Transport,2011,61,173
+1686,7944,7288-1,1,Mobile Police Unit,2011,61,407
+1687,7971,1858-1,1,Droid Scout,1996,131,23
+1688,7971,6829-1,1,Radon Rover,1997,144,53
+1689,8019,7075-1,1,Captain Redbeard's Pirate Ship,2004,286,139
+1690,8019,7099-1,1,Accessory Motor for Boats,2004,289,1
+1691,8071,5920-1,1,Island Racer,2000,298,50
+1692,8071,5934-1,1,Dino Explorer,2000,298,90
+1693,8071,5935-1,1,Island Hopper,2000,298,205
+1694,8091,8605-1,1,Toa Matau,2004,353,46
+1695,8501,8605-1,1,Toa Matau,2004,353,46
+1696,8091,8613-1,1,Kanoka Disk Launcher Pack,2004,346,4
+1697,8140,4024-10,1,Advent Calendar 2003 Creator (Day  9) Airplane,2003,223,13
+1698,8140,4024-11,1,Advent Calendar 2003 Creator (Day 10) Sailboat,2003,223,16
+1699,8140,4024-12,1,Advent Calendar 2003 Creator (Day 11) Snowplow,2003,223,21
+1700,8140,4024-13,1,Advent Calendar 2003 Creator (Day 12) Snail,2003,223,9
+1701,8140,4024-14,1,Advent Calendar 2003 Creator (Day 13) Robot,2003,223,14
+1702,8140,4024-15,1,Advent Calendar 2003 Creator (Day 14) Heart,2003,223,11
+1703,8140,4024-16,1,Advent Calendar 2003 Creator (Day 15) Truck,2003,223,21
+1704,8140,4024-17,1,Advent Calendar 2003 Creator (Day 16) Reindeer,2003,223,13
+1705,8140,4024-18,1,Advent Calendar 2003 Creator (Day 17) Bird,2003,223,10
+1706,8140,4024-19,1,Advent Calendar 2003 Creator (Day 18) Present,2003,223,9
+1707,8140,4024-2,1,Advent Calendar 2003 Creator (Day  1) Snowman,2003,223,19
+1708,8140,4024-20,1,Advent Calendar 2003 Creator (Day 19) Fireplace,2003,223,17
+1709,8140,4024-21,1,Advent Calendar 2003 Creator (Day 20) Santa,2003,223,13
+1710,8140,4024-22,1,Advent Calendar 2003 Creator (Day 21) Robot,2003,223,16
+1711,8140,4024-23,1,Advent Calendar 2003 Creator (Day 22) Race Car,2003,223,17
+1712,8140,4024-24,1,Advent Calendar 2003 Creator (Day 23) Helicopter,2003,223,16
+1713,8140,4024-25,1,Advent Calendar 2003 Creator (Day 24) Tree,2003,223,13
+1714,8140,4024-3,1,Advent Calendar 2003 Creator (Day  2) Little Girl,2003,223,9
+1715,8140,4024-4,1,Advent Calendar 2003 Creator (Day  3) Penguin,2003,223,12
+1716,8140,4024-5,1,Advent Calendar 2003 Creator (Day  4) Sheep,2003,223,13
+1717,8140,4024-6,1,Advent Calendar 2003 Creator (Day  5) Little Boy,2003,223,9
+1718,8140,4024-7,1,Advent Calendar 2003 Creator (Day  6) Stocking,2003,223,8
+1719,8140,4024-8,1,Advent Calendar 2003 Creator (Day  7) Spaceship,2003,223,10
+1720,8140,4024-9,1,Advent Calendar 2003 Creator (Day  8) Parrot,2003,223,9
+1721,8159,79015-1,1,Witch-King Battle,2014,565,101
+1722,8159,79016-1,1,Attack on Lake-town,2014,565,313
+1723,8159,79017-1,1,The Battle of the Five Armies,2014,565,471
+1724,8159,79018-1,1,The Lonely Mountain,2014,565,864
+1725,8202,10041-1,1,"Main Street, Reissue",2003,85,639
+1726,8202,1252-1,1,Shell Tanker,1999,99,106
+1727,8202,1254-1,1,Shell Select Shop,1999,99,164
+1728,8202,1255-1,1,Shell Car Wash,1999,99,136
+1729,8216,4492-1,1,Imperial Star Destroyer - Mini,2004,159,87
+1730,9540,4492-1,1,Imperial Star Destroyer - Mini,2004,159,87
+1731,13883,4492-1,1,Imperial Star Destroyer - Mini,2004,159,87
+1732,8216,4494-1,1,Imperial Shuttle - Mini,2004,159,82
+1733,9540,4494-1,1,Imperial Shuttle - Mini,2004,159,82
+1734,13883,4494-1,1,Imperial Shuttle - Mini,2004,159,82
+1735,8216,7255-1,1,General Grievous Chase,2005,168,112
+1736,8222,5576-1,1,Basic Bricks -- Medium,2008,48,378
+1737,12590,5576-1,1,Basic Bricks -- Medium,2008,48,378
+1738,8226,6290-1,1,Red Beard Runner,2001,148,712
+1739,8226,6291-1,1,Armada Flagship,2001,149,291
+1740,8226,6292-1,1,Enchanted Island,2001,152,445
+1741,8285,4488-1,1,Millennium Falcon - Mini,2003,159,87
+1742,8285,4489-1,1,AT-AT - Mini,2003,159,98
+1743,8285,4490-1,1,Republic Gunship - Mini,2003,159,102
+1744,8285,4491-1,1,Trade Federation MTT - Mini,2003,159,99
+1745,8331,8770-1,1,Danju (European version without Cards),2004,198,42
+1746,8331,8771-1,1,Jayko (European version without Cards),2004,198,45
+1747,8348,7907-10,1,Advent Calendar 2007 City (Day  9) Radar,2007,220,10
+1748,8348,7907-11,1,Advent Calendar 2007 City (Day 10) Dock Worker,2007,220,4
+1749,8348,7907-12,1,Advent Calendar 2007 City (Day 11) Small Dock with Life Preserver,2007,220,9
+1750,8348,7907-13,1,Advent Calendar 2007 City (Day 12) Hand Truck and Load,2007,220,6
+1751,8348,7907-14,1,Advent Calendar 2007 City (Day 13) Mechanic and Wrench,2007,220,5
+1752,8348,7907-15,1,Advent Calendar 2007 City (Day 14) Car Wash Kiosk,2007,220,11
+1753,8348,7907-16,1,Advent Calendar 2007 City (Day 15) Cash Register and Display,2007,220,11
+1754,8348,7907-17,1,Advent Calendar 2007 City (Day 16) Train Worker and Briefcase,2007,220,5
+1755,8348,7907-18,1,Advent Calendar 2007 City (Day 17) Bench with Clock,2007,220,11
+1756,8348,7907-19,1,Advent Calendar 2007 City (Day 18) Signal Mast,2007,220,9
+1757,8348,7907-2,1,Advent Calendar 2007 City (Day  1) Firefighter and Saw,2007,220,5
+1758,8348,7907-20,1,Advent Calendar 2007 City (Day 19) Sanitary Engineer and Broom,2007,220,5
+1759,8348,7907-21,1,Advent Calendar 2007 City (Day 20) Dustbin and Shovel,2007,220,11
+1760,8348,7907-22,1,Advent Calendar 2007 City (Day 21) Dumpster,2007,220,13
+1761,8348,7907-23,1,Advent Calendar 2007 City (Day 22) Policeman with Megaphone,2007,220,5
+1762,8348,7907-24,1,Advent Calendar 2007 City (Day 23) Computer Desk and Chair,2007,220,10
+1763,8348,7907-25,1,Advent Calendar 2007 City (Day 24) Christmas Tree,2007,220,27
+1764,8348,7907-3,1,Advent Calendar 2007 City (Day  2) Fire Hydrant and Tools,2007,220,13
+1765,8348,7907-4,1,Advent Calendar 2007 City (Day  3) Crate with Burning Cylinders,2007,220,10
+1766,8348,7907-5,1,Advent Calendar 2007 City (Day  4) Construction Worker and Pickaxe,2007,220,5
+1767,8348,7907-6,1,Advent Calendar 2007 City (Day  5) Barricade,2007,220,12
+1768,8348,7907-7,1,Advent Calendar 2007 City (Day  6) Directional Sign,2007,220,22
+1769,8348,7907-8,1,Advent Calendar 2007 City (Day  7) Airline Worker and Radio,2007,220,5
+1770,8348,7907-9,1,Advent Calendar 2007 City (Day  8) Luggage Cart,2007,220,9
+1771,8398,7498-1,1,Police Station,2011,61,785
+1772,14011,7498-1,1,Police Station,2011,61,785
+1773,8401,7749-1,1,Echo Base,2009,169,155
+1774,14495,7749-1,1,Echo Base,2009,169,155
+1775,8401,8083-1,1,Rebel Trooper Battle Pack,2010,169,79
+1776,14495,8083-1,1,Rebel Trooper Battle Pack,2010,169,79
+1777,16337,8083-1,1,Rebel Trooper Battle Pack,2010,169,79
+1778,8401,8084-1,1,Snowtrooper Battle Pack,2010,169,74
+1779,16337,8084-1,1,Snowtrooper Battle Pack,2010,169,74
+1780,8425,1282-1,1,Blue Racer,2000,91,23
+1781,8425,1283-1,1,Red Four Wheel Driver,2000,91,20
+1782,8425,1284-1,1,Green Buggy,2000,91,23
+1783,8425,1285-1,1,Yellow Tiger,2001,91,23
+1784,8440,1887-1,1,Scout Patrol Ship,1992,129,30
+1785,8440,1888-1,1,Black Knights Guardshack,1992,188,49
+1786,8440,1889-1,1,Pirate's Treasure Hold,1992,148,37
+1787,8440,1890-1,1,Octan Racer,1992,82,47
+1788,8465,8876-1,1,Scorpion Prison Cave,2005,198,279
+1789,8471,8608-1,1,Vhisola,2004,336,27
+1790,8471,8609-1,1,Tehutti,2004,336,27
+1791,8471,8610-1,1,Ahkmou,2004,336,27
+1792,9678,8610-1,1,Ahkmou,2004,336,27
+1793,8471,8612-1,1,Ehrye,2004,336,30
+1794,9678,8612-1,1,Ehrye,2004,336,30
+1795,8491,70000-1,1,Razcal's Glider,2013,571,108
+1796,8491,70001-1,1,Crawley’s Claw Ripper,2013,571,138
+1797,8491,70003-1,1,Eris' Eagle Interceptor,2013,571,345
+1798,8501,8604-1,1,Toa Onewa,2004,353,44
+1799,8585,8293-1,1,Power Functions Motor Set,2008,438,10
+1800,11605,8293-1,1,Power Functions Motor Set,2008,438,10
+1801,13254,8293-1,1,Power Functions Motor Set,2008,438,10
+1802,8585,9392-1,1,Quad Bike,2012,5,198
+1803,8585,9395-1,1,Pick-Up Tow Truck,2012,5,953
+1804,8646,4526-1,1,Batman,2012,492,40
+1805,8646,4527-1,1,The Joker,2012,492,57
+1806,8646,4528-1,1,Green Lantern,2012,492,38
+1807,8734,71009-1,1,Homer,2015,550,5
+1808,8734,71009-10,1,Hans Moleman,2015,550,5
+1809,8734,71009-11,1,Selma,2015,550,6
+1810,8734,71009-12,1,Patty,2015,550,6
+1811,8734,71009-13,1,Groundskeeper Willie,2015,550,5
+1812,8734,71009-14,1,Edna Krabappel,2015,550,7
+1813,8734,71009-15,1,Smithers,2015,550,6
+1814,8734,71009-16,1,Dr Hibbert,2015,550,5
+1815,8734,71009-2,1,Marge,2015,550,10
+1816,8734,71009-3,1,Lisa,2015,550,6
+1817,8734,71009-4,1,Maggie,2015,550,4
+1818,8734,71009-5,1,Bart,2015,550,6
+1819,8734,71009-6,1,Milhouse,2015,550,6
+1820,8734,71009-7,1,Comic Book Guy,2015,550,6
+1821,8734,71009-8,1,Martin,2015,550,5
+1822,8734,71009-9,1,Professor Frink,2015,550,5
+1823,8749,8511-1,1,Frost,2000,16,44
+1824,15594,8511-1,1,Frost,2000,16,44
+1825,8749,8513-1,1,Dust,2000,16,45
+1826,15594,8513-1,1,Dust,2000,16,45
+1827,8759,8014-1,1,Clone Walker Battle Pack,2009,165,79
+1828,8759,8015-1,1,Assassin Droids Battle Pack,2009,165,94
+1829,8759,8091-1,1,Republic Swamp Speeder - Limited Edition,2010,165,175
+1830,8782,71005-0,60,LEGO Minifigures - The Simpsons Series [Random Bag],2014,550,0
+1831,8820,7553-10,1,Advent Calendar 2011 City (Day  9) Ice Fisherman,2011,220,5
+1832,8820,7553-11,1,Advent Calendar 2011 City (Day 10) Camp Fire and Fishing Pole,2011,220,6
+1833,8820,7553-12,1,Advent Calendar 2011 City (Day 11) Wall with Doorway,2011,220,15
+1834,8820,7553-13,1,Advent Calendar 2011 City (Day 12) Wall with Small Window,2011,220,15
+1835,8820,7553-14,1,Advent Calendar 2011 City (Day 13) Police Officer with Radio,2011,220,5
+1836,8820,7553-15,1,Advent Calendar 2011 City (Day 14) Forensic Lab,2011,220,10
+1837,8820,7553-16,1,Advent Calendar 2011 City (Day 15) Police Car Base,2011,220,14
+1838,8820,7553-17,1,Advent Calendar 2011 City (Day 16) Police Car Middle Section,2011,220,11
+1839,8820,7553-18,1,Advent Calendar 2011 City (Day 17) Police Car Top Section,2011,220,7
+1840,8820,7553-19,1,Advent Calendar 2011 City (Day 18) Robber with Crowbar,2011,220,5
+1841,8820,7553-2,1,Advent Calendar 2011 City (Day  1) Robber with Snowball,2011,220,6
+1842,8820,7553-20,1,Advent Calendar 2011 City (Day 19) Safe with Gold Bars,2011,220,10
+1843,8820,7553-21,1,Advent Calendar 2011 City (Day 20) Orange Snowmobile,2011,220,8
+1844,8820,7553-22,1,Advent Calendar 2011 City (Day 21) Sled with Crate,2011,220,6
+1845,8820,7553-23,1,Advent Calendar 2011 City (Day 22) White Snowmobile,2011,220,8
+1846,8820,7553-24,1,Advent Calendar 2011 City (Day 23) Dog with Bone,2011,220,2
+1847,8820,7553-25,1,Advent Calendar 2011 City (Day 24) Santa and Fireplace,2011,220,18
+1848,8820,7553-3,1,Advent Calendar 2011 City (Day  2) Catapult,2011,220,8
+1849,8820,7553-4,1,Advent Calendar 2011 City (Day  3) Police Officer with Handcuffs,2011,220,5
+1850,8820,7553-5,1,Advent Calendar 2011 City (Day  4) Wall with Barred Window,2011,220,14
+1851,8820,7553-6,1,Advent Calendar 2011 City (Day  5) Wall with Large Window,2011,220,18
+1852,8820,7553-7,1,Advent Calendar 2011 City (Day  6) Christmas Tree,2011,220,18
+1853,8820,7553-8,1,Advent Calendar 2011 City (Day  7) Skateboard and Gifts,2011,220,13
+1854,8820,7553-9,1,Advent Calendar 2011 City (Day 8) Bed,2011,220,5
+1855,8849,TRUTIE-1,1,TIE Fighter,2014,170,12
+1856,8849,TRUXWING-1,1,X-Wing,2014,170,23
+1857,8871,8900-1,1,Reidak,2006,340,41
+1858,13960,8900-1,1,Reidak,2006,340,41
+1859,8871,8902-1,1,Vezok,2006,340,41
+1860,13960,8902-1,1,Vezok,2006,340,41
+1861,8871,8905-1,1,Thok,2006,340,42
+1862,13960,8905-1,1,Thok,2006,340,42
+1863,8918,1062-1,1,{Town Vehicles},1980,533,158
+1864,8918,1064-1,1,Dacta Buildings,1981,533,0
+1865,8918,k1062b,1,Set K1062 Activity Booklet,1981,533,1
+1866,8918,pk1062,1,Lego Road Safety Kit Poster,1981,501,0
+1867,8950,6605-1,1,Road Racer,1984,82,20
+1868,8950,6628-1,1,Shell Tow Truck,1981,76,38
+1869,13427,6628-1,1,Shell Tow Truck,1981,76,38
+1870,8980,8783-1,1,Jayko (USA version with 3 Cards),2004,198,48
+1871,9381,8783-1,1,Jayko (USA version with 3 Cards),2004,198,48
+1872,8997,10173-1,1,Holiday Train,2006,236,969
+1873,8997,4548-1,1,Transformer and Speed Regulator,1991,244,3
+1874,9925,4548-1,1,Transformer and Speed Regulator,1991,244,3
+1875,10158,4548-1,1,Transformer and Speed Regulator,1991,244,3
+1876,13917,4548-1,1,Transformer and Speed Regulator,1991,244,3
+1877,9033,71008-1,1,Classic King,2015,551,9
+1878,9033,71008-10,1,Evil Wizard,2015,551,10
+1879,9033,71008-11,1,Fencer,2015,551,6
+1880,9033,71008-12,1,Samurai,2015,551,8
+1881,9033,71008-13,1,Disco Diva,2015,551,8
+1882,9033,71008-14,1,Hot Dog Man,2015,551,5
+1883,9033,71008-15,1,Lady Cyclops,2015,551,6
+1884,9033,71008-16,1,Galaxy Trooper,2015,551,8
+1885,9033,71008-2,1,Sheriff,2015,551,8
+1886,9033,71008-3,1,Unicorn Girl,2015,551,7
+1887,9033,71008-4,1,Snake Charmer,2015,551,7
+1888,9033,71008-5,1,Goblin,2015,551,7
+1889,9033,71008-6,1,Paleontologist,2015,551,7
+1890,9033,71008-7,1,Alien Trooper,2015,551,6
+1891,9033,71008-8,1,Egyptian Warrior,2015,551,7
+1892,9033,71008-9,1,Carpenter,2015,551,7
+1893,9123,5856-1,1,Paprika and the Mischievous Monkey,2003,320,47
+1894,9123,5857-1,1,Safran's Amazing Bazaar,2003,320,96
+1895,9123,5858-1,1,"The Golden Palace, Blue Box",2003,320,174
+1896,9132,1290-1,1,Kabaya Promotional Set: Red (Volcano Climber) RoboRider,2000,16,35
+1897,9132,1291-1,1,Power Bike,2000,16,32
+1898,9132,1292-1,1,Kabaya Promotional Set: White (Ice Explorer) RoboRider,2000,16,33
+1899,9132,1293-1,1,Kabaya Promotional Set: Yellow/Green (Swamp Craft) RoboRider,2000,16,25
+1900,9149,7104-1,1,Desert Skiff,2000,169,55
+1901,9149,7144-1,1,Slave I,2000,169,166
+1902,13286,7144-1,1,Slave I,2000,169,166
+1903,9210,6503-1,1,Sprint Racer,1988,82,32
+1904,9210,6643-1,1,Fire Truck,1988,74,74
+1905,9243,11905-1,1,DK Star Wars Brickmaster: Battle For The Stolen Crystals,2013,497,189
+1906,9253,9249-1,1,LEGO Basic Airport,1988,534,0
+1907,9253,9251-1,1,Lego Basic Just Bricks,2000,507,576
+1908,9283,9488-1,1,Elite Clone Trooper & Commando Droid Battle Pack,2012,165,105
+1909,10561,9488-1,1,Elite Clone Trooper & Commando Droid Battle Pack,2012,165,105
+1910,14248,9488-1,1,Elite Clone Trooper & Commando Droid Battle Pack,2012,165,105
+1911,9283,9489-1,1,Endor Rebel Trooper & Imperial Trooper Battle Pack,2012,169,77
+1912,10561,9489-1,1,Endor Rebel Trooper & Imperial Trooper Battle Pack,2012,169,77
+1913,9283,9495-1,1,Gold Leader's Y-wing Starfighter,2012,169,457
+1914,9329,60000-1,1,Fire Motorcycle,2013,58,39
+1915,9329,60001-1,1,Fire Rescue,2013,58,79
+1916,9329,60002-1,1,Fire Truck,2013,58,208
+1917,9406,7499-1,1,Flexible Rails,2011,245,24
+1918,11759,7499-1,1,Flexible Rails,2011,245,24
+1919,9406,7937-1,1,Train Station,2010,233,367
+1920,14154,7937-1,1,Train Station,2010,233,367
+1921,9406,7939-1,1,Cargo Train,2010,240,838
+1922,14154,7939-1,1,Cargo Train,2010,240,838
+1923,9412,7103-1,1,Jedi Duel,2002,167,82
+1924,9412,7113-1,1,Tusken Raider Encounter,2002,167,93
+1925,9426,7641-1,1,City Corner,2009,63,484
+1926,9426,7642-1,1,Garage,2009,63,957
+1927,9426,7686-1,1,Helicopter Transporter,2009,63,381
+1928,9471,7190-1,1,Millennium Falcon,2000,169,671
+1929,9502,7891-1,1,Airport Firetruck,2006,53,147
+1930,13370,7891-1,1,Airport Firetruck,2006,53,147
+1931,9502,7894-1,1,Airport,2006,53,704
+1932,13370,7894-1,1,Airport,2006,53,704
+1933,9502,7901-1,1,Airplane Mechanic,2006,53,31
+1934,13370,7901-1,1,Airplane Mechanic,2006,53,31
+1935,9540,3219-1,1,TIE Fighter - Mini,2003,159,12
+1936,9540,4493-1,1,Sith Infiltrator - Mini,2004,159,55
+1937,9540,4495-1,1,AT-TE - Mini,2004,159,63
+1938,9599,7724-10,1,Advent Calendar 2008 City (Day  9) Ladder,2008,220,3
+1939,9599,7724-11,1,Advent Calendar 2008 City (Day 10) Chef and Paddle,2008,220,5
+1940,9599,7724-12,1,Advent Calendar 2008 City (Day 11) Table and Pizzas,2008,220,13
+1941,9599,7724-13,1,Advent Calendar 2008 City (Day 12) Oven,2008,220,9
+1942,9599,7724-14,1,Advent Calendar 2008 City (Day 13) Diver and Spear Gun,2008,220,1
+1943,9599,7724-15,1,Advent Calendar 2008 City (Day 14) Life Vest Fins and Bouy,2008,220,6
+1944,9599,7724-16,1,Advent Calendar 2008 City (Day 15) Underwater Scooter,2008,220,9
+1945,9599,7724-17,1,Advent Calendar 2008 City (Day 16) Police Officer and Camera,2008,220,2
+1946,9599,7724-18,1,Advent Calendar 2008 City (Day 17) Mug Shot Studio,2008,220,8
+1947,9599,7724-19,1,Advent Calendar 2008 City (Day 18) Criminal with Handcuffs,2008,220,5
+1948,9599,7724-2,1,Advent Calendar 2008 City (Day  1) Minifigure and Drumstick,2008,220,5
+1949,9599,7724-20,1,Advent Calendar 2008 City (Day 19) Train Worker,2008,220,4
+1950,9599,7724-21,1,Advent Calendar 2008 City (Day 20) Pallet Jack,2008,220,16
+1951,9599,7724-22,1,Advent Calendar 2008 City (Day 21) Pallet of Bottles,2008,220,18
+1952,9599,7724-23,1,Advent Calendar 2008 City (Day 22) Hiker with Ice Pick,2008,220,6
+1953,9599,7724-24,1,Advent Calendar 2008 City (Day 23) Snowmobile,2008,220,16
+1954,9599,7724-25,1,Advent Calendar 2008 City (Day 24) Female and Snowman,2008,220,15
+1955,9599,7724-3,1,Advent Calendar 2008 City (Day  2) Barbecue,2008,220,10
+1956,9599,7724-4,1,Advent Calendar 2008 City (Day 3) Table Cup and Frying Pan,2008,220,4
+1957,9599,7724-5,1,Advent Calendar 2008 City (Day  4) Female with Ice Cream,2008,220,5
+1958,9599,7724-6,1,Advent Calendar 2008 City (Day  5) Freezer Chest and Umbrella,2008,220,6
+1959,9599,7724-7,1,Advent Calendar 2008 City (Day  6) Ice Cream Cart and Sundae,2008,220,11
+1960,9599,7724-8,1,Advent Calendar 2008 City (Day  7) Fireman and Radio,2008,220,5
+1961,9599,7724-9,1,Advent Calendar 2008 City (Day  8) Kitten in a Tree,2008,220,6
+1962,9624,71010-0,20,LEGO Minifigures - Series 14 {Random bag},2015,552,0
+1963,9657,1843-2,1,Spyrius Fold-Wing Spacecraft,1996,142,60
+1964,9657,1843-3,1,Royal Knight's Catapult,1996,201,46
+1965,9665,8206-1,1,Tokyo Pit Stop,2011,269,142
+1966,10806,8206-1,1,Tokyo Pit Stop,2011,269,142
+1967,9665,8426-1,1,Escape at Sea,2011,269,158
+1968,9665,8487-1,1,Flo's V8 Café,2011,269,516
+1969,9691,6282-1,1,Stringer,2012,401,42
+1970,9691,6283-1,1,Voltix,2012,403,61
+1971,9700,8709-1,1,Underground Mining Station,2009,439,635
+1972,9700,8958-1,1,Granite Grinder,2009,439,96
+1973,12445,8958-1,1,Granite Grinder,2009,439,96
+1974,9700,8959-1,1,Claw Digger,2009,439,199
+1975,12445,8959-1,1,Claw Digger,2009,439,199
+1976,9708,6212-1,1,X-wing Fighter,2006,169,437
+1977,9709,2259-1,1,Skull Motorbike,2011,435,156
+1978,14096,2259-1,1,Skull Motorbike,2011,435,156
+1979,9709,2260-1,1,Ice Dragon Attack,2011,435,158
+1980,9709,2506-1,1,Skull Truck,2011,435,517
+1981,9749,5994-1,1,Catapult,2005,198,27
+1982,9749,5999-1,1,Jayko,2005,198,6
+1983,9750,10075-1,1,Spider-Man Action Pack,2002,488,25
+1984,9765,71004-0,60,LEGO Minifigures - The LEGO Movie Series [Random Bag],2014,549,0
+1985,9830,4097-1,1,Mini Robots,2003,204,229
+1986,9830,4099-1,1,Robobots,2003,204,326
+1987,9905,8833-1,1,Evil Robot - Complete Set,2012,543,8
+1988,9905,8833-10,1,Santa - Complete Set,2012,543,7
+1989,9905,8833-11,1,Vampire Bat - Complete Set,2012,543,5
+1990,9905,8833-12,1,DJ - Complete Set,2012,543,7
+1991,9905,8833-13,1,Red Cheerleader - Complete Set,2012,543,7
+1992,9905,8833-14,1,Actor - Complete Set,2012,543,7
+1993,9905,8833-15,1,Pirate Captain - Complete Set,2012,543,7
+1994,9905,8833-16,1,Alien Villainess - Complete Set,2012,543,10
+1995,9905,8833-2,1,Conquistador - Complete Set,2012,543,8
+1996,9905,8833-3,1,Lederhosen Guy - Complete Set,2012,543,7
+1997,9905,8833-4,1,Cowgirl - Complete Set,2012,543,6
+1998,9905,8833-5,1,Football Player - Complete Set,2012,543,8
+1999,9905,8833-6,1,Diver - Complete Set,2012,543,8
+2000,9905,8833-7,1,Downhill Skier - Complete Set,2012,543,9
+2001,9905,8833-8,1,Businessman - Complete Set,2012,543,7
+2002,9905,8833-9,1,Fairy - Complete Set,2012,543,8
+2003,9925,3748-1,1,Light Unit for Train,2001,456,4
+2004,9925,5300-1,1,Electric Train Motor,1991,456,3
+2005,9926,41016-10,1,"Advent Calendar 2013, Friends (Day  9) - Basket",2013,226,19
+2006,9926,41016-11,1,"Advent Calendar 2013, Friends (Day 10) - Friends Accessories",2013,226,20
+2007,9926,41016-12,1,"Advent Calendar 2013, Friends (Day 11) - Basket with Money",2013,226,3
+2008,9926,41016-13,1,"Advent Calendar 2013, Friends (Day 12) - Presents",2013,226,8
+2009,9926,41016-14,1,"Advent Calendar 2013, Friends (Day 13) - Sled",2013,226,8
+2010,9926,41016-15,1,"Advent Calendar 2013, Friends (Day 14) - Fountain",2013,226,6
+2011,9926,41016-16,1,"Advent Calendar 2013, Friends (Day 15) - Bench",2013,226,11
+2012,9926,41016-17,1,"Advent Calendar 2013, Friends (Day 16) - Skates with Flower in Snow",2013,226,15
+2013,9926,41016-18,1,"Advent Calendar 2013, Friends (Day 17) - Cell Phone /Music Player Docking Station",2013,226,8
+2014,9926,41016-19,1,"Advent Calendar 2013, Friends (Day 18) - Snowman",2013,226,8
+2015,9926,41016-2,1,"Advent Calendar 2013, Friends (Day  1) - Stephanie",2013,226,4
+2016,9926,41016-20,1,"Advent Calendar 2013, Friends (Day 19) - Flame",2013,226,4
+2017,9926,41016-21,1,"Advent Calendar 2013, Friends (Day 20) - Christmas Tree",2013,226,18
+2018,9926,41016-22,1,"Advent Calendar 2013, Friends (Day 21) - Musical Score",2013,226,7
+2019,9926,41016-23,1,"Advent Calendar 2013, Friends (Day 22) - Basket with Leaf",2013,226,8
+2020,9926,41016-24,1,"Advent Calendar 2013, Friends (Day 23) - Squirrel",2013,226,2
+2021,9926,41016-25,1,"Advent Calendar 2013, Friends (Day 24) - Present with Letter",2013,226,12
+2022,9926,41016-3,1,"Advent Calendar 2013, Friends (Day  2) - Snowmobile",2013,226,11
+2023,9926,41016-4,1,"Advent Calendar 2013, Friends (Day  3) - Lamp Post",2013,226,10
+2024,9926,41016-5,1,"Advent Calendar 2013, Friends (Day  4) - Lily, Christmas Outfit",2013,226,4
+2025,9926,41016-6,1,"Advent Calendar 2013, Friends (Day  5) - Stand #1",2013,226,17
+2026,9926,41016-7,1,"Advent Calendar 2013, Friends (Day  6) - Perfume Bottles",2013,226,8
+2027,9926,41016-8,1,"Advent Calendar 2013, Friends (Day  7) - Stand #2",2013,226,14
+2028,9926,41016-9,1,"Advent Calendar 2013, Friends (Day 8) - Cups, Milk and Cookies",2013,226,8
+2029,9943,4865-1,1,The Forbidden Forest,2011,246,64
+2030,9943,4866-1,1,The Knight Bus,2011,246,281
+2031,9943,4867-1,1,Hogwarts,2011,246,465
+2032,9955,4182-1,1,The Cannibal Escape,2011,263,279
+2033,9955,4183-1,1,The Mill,2011,263,366
+2034,9960,71005-1,1,Homer Simpson,2014,550,6
+2035,9960,71005-10,1,Ralph Wiggum,2014,550,5
+2036,9960,71005-11,1,Apu Nahasapeemapetilon,2014,550,5
+2037,9960,71005-12,1,Nelson Muntz,2014,550,5
+2038,9960,71005-13,1,Itchy,2014,550,5
+2039,9960,71005-14,1,Scratchy,2014,550,6
+2040,9960,71005-15,1,Chief Wiggum,2014,550,6
+2041,9960,71005-16,1,Mr. Burns,2014,550,6
+2042,9960,71005-2,1,Bart Simpson,2014,550,7
+2043,9960,71005-3,1,Marge Simpson,2014,550,7
+2044,9960,71005-4,1,Lisa Simpson,2014,550,6
+2045,9960,71005-5,1,Maggie Simpson,2014,550,4
+2046,9960,71005-6,1,Grampa Simpson,2014,550,5
+2047,9960,71005-7,1,Ned Flanders,2014,550,6
+2048,9960,71005-8,1,Krusty the Clown,2014,550,5
+2049,9960,71005-9,1,Milhouse Van Houten,2014,550,5
+2050,10024,7600-10,1,Advent Calendar 2007 Belville (Day  9) Sleigh,2007,218,9
+2051,10024,7600-11,1,Advent Calendar 2007 Belville (Day 10) Snowman,2007,218,9
+2052,10024,7600-12,1,Advent Calendar 2007 Belville (Day 11) Turret,2007,218,4
+2053,10024,7600-13,1,Advent Calendar 2007 Belville (Day 12) Rabbit,2007,218,3
+2054,10024,7600-14,1,Advent Calendar 2007 Belville (Day 13) Fruit Cup and Bottles,2007,218,9
+2055,10024,7600-15,1,Advent Calendar 2007 Belville (Day 14) Flowers,2007,218,8
+2056,10024,7600-16,1,Advent Calendar 2007 Belville (Day 15) Vanity Case,2007,218,5
+2057,10024,7600-17,1,Advent Calendar 2007 Belville (Day 16) Fireplace,2007,218,20
+2058,10024,7600-18,1,Advent Calendar 2007 Belville (Day 17) Frog Book and Jewel Case,2007,218,6
+2059,10024,7600-19,1,Advent Calendar 2007 Belville (Day 18) Teddy Bear,2007,218,5
+2060,10024,7600-2,1,Advent Calendar 2007 Belville (Day  1) Fairy with Wand,2007,218,2
+2061,10024,7600-20,1,Advent Calendar 2007 Belville (Day 19) Jelly and Ice Cream,2007,218,10
+2062,10024,7600-21,1,Advent Calendar 2007 Belville (Day 20) Dog and Bowl,2007,218,3
+2063,10024,7600-22,1,Advent Calendar 2007 Belville (Day 21) Toy Ball,2007,218,13
+2064,10024,7600-23,1,Advent Calendar 2007 Belville (Day 22) Festive Wreath,2007,218,12
+2065,10024,7600-24,1,Advent Calendar 2007 Belville (Day 23) Toy Castle,2007,218,17
+2066,10024,7600-25,1,Advent Calendar 2007 Belville (Day 24) Christmas Tree and Presents,2007,218,9
+2067,10024,7600-3,1,Advent Calendar 2007 Belville (Day  2) Bed,2007,218,13
+2068,10024,7600-4,1,Advent Calendar 2007 Belville (Day  3) Vanity Unit,2007,218,8
+2069,10024,7600-5,1,Advent Calendar 2007 Belville (Day  4) Jewel Chest,2007,218,11
+2070,10024,7600-6,1,Advent Calendar 2007 Belville (Day  5) Cat,2007,218,6
+2071,10024,7600-7,1,Advent Calendar 2007 Belville (Day  6) Tea Set,2007,218,9
+2072,10024,7600-8,1,Advent Calendar 2007 Belville (Day  7) Chair and Desk Lamp,2007,218,15
+2073,10024,7600-9,1,Advent Calendar 2007 Belville (Day  8) Kitten,2007,218,12
+2074,10052,71001-0,60,Minifigure Series 10 [Random Bag],2013,545,0
+2075,10089,4056-1,1,Color Light,2001,273,13
+2076,10089,4057-1,1,Spot Light,2001,273,10
+2077,10089,4058-1,1,Cameraman 1,2001,273,4
+2078,10089,4059-1,1,Director,2001,273,4
+2079,10089,4060-1,1,Grip,2001,273,4
+2080,10089,4061-1,1,Assistant,2001,273,4
+2081,10089,4062-1,1,Actress,2001,273,4
+2082,10089,4063-1,1,Cameraman 2,2001,273,4
+2083,10089,4064-1,1,Actor 2,2001,273,4
+2084,10089,4065-1,1,Actor 3,2001,273,4
+2085,10089,4066-1,1,Actor 1,2001,273,4
+2086,10089,4067-1,1,Buggy,2001,273,15
+2087,10089,4068-1,1,Handy Camera,2001,273,6
+2088,10089,4069-1,1,Katinco & Megaphone,2001,273,4
+2089,10089,4070-1,1,Stand Camera,2001,273,7
+2090,10089,4071-1,1,Bottles,2001,273,7
+2091,10089,4072-1,1,Skeleton,2001,273,6
+2092,10089,4073-1,1,Tree 1,2001,273,6
+2093,10089,4074-1,1,Tree 3,2001,273,14
+2094,10089,4075-1,1,Tree 2,2001,273,13
+2095,10089,4076-1,1,Pteranodon,2001,273,17
+2096,10089,4077-1,1,Plesiosaur,2001,273,13
+2097,10089,4078-1,1,T-Rex,2001,273,18
+2098,10089,4079-1,1,Mini Rex,2001,273,4
+2099,10158,10020-1,1,"Santa Fe Super Chief, NOT the Limited Edition",2002,236,427
+2100,13083,10020-1,2,"Santa Fe Super Chief, NOT the Limited Edition",2002,236,427
+2101,10158,10022-1,1,"Santa Fe Cars - Set II (dining, observation, or sleeping car)",2002,237,410
+2102,13083,10022-1,3,"Santa Fe Cars - Set II (dining, observation, or sleeping car)",2002,237,410
+2103,10158,10025-1,1,Santa Fe Cars - Set I (mail or baggage car),2002,237,325
+2104,13083,10025-1,2,Santa Fe Cars - Set I (mail or baggage car),2002,237,325
+2105,10227,1475-1,1,Airport Security Squad,1991,68,128
+2106,10227,6526-1,1,Red Line Racer,1989,82,47
+2107,10227,6679-1,1,Dark Shark,1991,77,82
+2108,10229,4750-1,1,Draco's Encounter with Buckbeak,2004,250,37
+2109,10229,4751-1,1,Harry and the Marauder's Map,2004,250,108
+2110,10235,7507-1,1,Jewels-n-Rings,2003,500,80
+2111,10259,9471-1,1,Uruk-hai Army,2012,568,257
+2112,16180,9471-1,1,Uruk-hai Army,2012,568,257
+2113,10259,9474-1,1,The Battle of Helm’s Deep,2012,568,1365
+2114,16180,9474-1,1,The Battle of Helm’s Deep,2012,568,1365
+2115,10273,3302-1,1,Soccer Field,1998,462,2
+2116,12999,3302-1,1,Soccer Field,1998,462,2
+2117,14849,3302-1,1,Soccer Field,1998,462,2
+2118,10273,3303-1,1,Field Accessories,1998,462,50
+2119,12999,3303-1,1,Field Accessories,1998,462,50
+2120,14849,3303-1,1,Field Accessories,1998,462,50
+2121,10273,3305-1,2,World Team Player,1998,462,4
+2122,12999,3305-1,2,World Team Player,1998,462,4
+2123,14849,3305-1,2,World Team Player,1998,462,4
+2124,10273,3306-1,1,Soccer Goalies,1998,462,8
+2125,12999,3306-1,1,Soccer Goalies,1998,462,8
+2126,14849,3306-1,1,Soccer Goalies,1998,462,8
+2127,10273,3317-1,2,German National Player,1998,462,4
+2128,10318,4601-1,1,Fire Cruiser,2001,283,22
+2129,10318,4605-1,1,Fire Response SUV,2001,283,30
+2130,10391,6336-1,1,Launch Response Unit,1995,88,181
+2131,10391,6516-1,1,Moon Walker,1995,88,34
+2132,10391,6614-1,1,Launch Evac 1,1995,88,122
+2133,10406,1740-1,1,Kayak,1994,83,16
+2134,10406,1741-1,1,Car,1994,83,36
+2135,10406,1742-1,1,Van,1994,83,81
+2136,10421,5969-1,1,Squidman Escape,2009,141,41
+2137,16159,5969-1,1,Squidman Escape,2009,141,41
+2138,10421,5970-1,1,Freeze Ray Frenzy,2009,141,79
+2139,16159,5970-1,1,Freeze Ray Frenzy,2009,141,79
+2140,10421,5971-1,1,Gold Heist,2009,141,204
+2141,10421,5972-1,1,Space Truck Getaway [Container Heist],2009,141,270
+2142,16159,5972-1,1,Space Truck Getaway [Container Heist],2009,141,270
+2143,10421,5973-1,1,Hyperspeed Pursuit,2009,141,455
+2144,16159,5973-1,1,Hyperspeed Pursuit,2009,141,455
+2145,10421,5974-1,1,Galactic Enforcer,2009,141,824
+2146,10421,8399-1,1,K-9 Bot,2009,141,22
+2147,10421,8400-1,1,Space Speeder,2009,141,14
+2148,16159,8400-1,1,Space Speeder,2009,141,14
+2149,10481,5836-1,1,Beautiful Baby Princess,2002,319,23
+2150,10481,5837-1,1,Flora's Bubbling Bath,2002,319,27
+2151,10481,5838-1,1,The Wicked Madam Frost,2002,319,36
+2152,10481,5850-1,1,The Royal Crystal Palace,2002,319,153
+2153,10515,2882-1,1,Speedboat,1997,77,22
+2154,14919,2882-1,1,Speedboat,1997,77,22
+2155,10515,2884-1,1,Microlight,1997,68,20
+2156,14919,2884-1,1,Microlight,1997,68,20
+2157,10515,2886-1,1,Formula 1 Racing Car,1997,82,25
+2158,14919,2886-1,1,Formula 1 Racing Car,1997,82,25
+2159,10645,7133-1,1,Bounty Hunter Pursuit,2002,167,254
+2160,10645,7143-1,1,Jedi Starfighter,2002,167,139
+2161,10770,1298-10,1,Advent Calendar 1998 Classic Basic (Day  9) Whale,1998,221,9
+2162,10770,1298-11,1,Advent Calendar 1998 Classic Basic (Day 10)  Steamboat,1998,221,12
+2163,10770,1298-12,1,Advent Calendar 1998 Classic Basic (Day 11) Boat,1998,221,8
+2164,10770,1298-13,1,Advent Calendar 1998 Classic Basic (Day 12) Airplane,1998,221,12
+2165,10770,1298-14,1,Advent Calendar 1998 Classic Basic (Day 13) Santa,1998,221,5
+2166,10770,1298-15,1,Advent Calendar 1998 Classic Basic (Day 14) Airplane,1998,221,9
+2167,10770,1298-16,1,Advent Calendar 1998 Classic Basic (Day 15) Green Elf,1998,221,9
+2168,10770,1298-17,1,Advent Calendar 1998 Classic Basic (Day 16) Boat,1998,221,8
+2169,10770,1298-18,1,Advent Calendar 1998 Classic Basic (Day 17) Mouse,1998,221,9
+2170,10770,1298-19,1,Advent Calendar 1998 Classic Basic (Day 18) Blue Elf,1998,221,10
+2171,10770,1298-2,1,Advent Calendar 1998 Classic Basic (Day  1)  Airplane,1998,221,10
+2172,10770,1298-20,1,Advent Calendar 1998 Classic Basic (Day 19) Boat,1998,221,9
+2173,10770,1298-21,1,Advent Calendar 1998 Classic Basic (Day 20) Helicopter,1998,221,11
+2174,10770,1298-22,1,Advent Calendar 1998 Classic Basic (Day 21) Red Elf,1998,221,9
+2175,10770,1298-23,1,Advent Calendar 1998 Classic Basic (Day 22) Police Boat,1998,221,9
+2176,10770,1298-24,1,Advent Calendar 1998 Classic Basic (Day 23) Truck,1998,221,10
+2177,10770,1298-25,1,Advent Calendar 1998 Classic Basic (Day 24) Airplane,1998,221,10
+2178,10770,1298-3,1,Advent Calendar 1998 Classic Basic (Day  2) Santa,1998,221,5
+2179,10770,1298-4,1,Advent Calendar 1998 Classic Basic (Day  3) Boat,1998,221,9
+2180,10770,1298-5,1,Advent Calendar 1998 Classic Basic (Day  4) Boat,1998,221,10
+2181,10770,1298-6,1,Advent Calendar 1998 Classic Basic (Day  5) Sailboat,1998,221,10
+2182,10770,1298-7,1,Advent Calendar 1998 Classic Basic (Day  6) Airplane,1998,221,10
+2183,10770,1298-8,1,Advent Calendar 1998 Classic Basic (Day  7) Helicopter,1998,221,8
+2184,10770,1298-9,1,Advent Calendar 1998 Classic Basic (Day  8) Airplane,1998,221,9
+2185,10790,3731-1,2,Pumpkin Pack,2000,230,87
+2186,10795,5370a-1,1,Large Make and Create Bucket with Special LEGO Bonus Bricks (Bucket and its contents only),2005,37,500
+2187,10795,5370b-1,1,Large Make and Create Bucket with Special LEGO Bonus Bricks (Bonus box and its contents only),2005,48,201
+2188,10799,10176-1,1,Royal King's Castle,2006,197,871
+2189,10806,8200-1,1,Radiator Springs Lightning McQueen,2011,269,35
+2190,10806,8201-1,1,Radiator Springs Classic Mater,2011,269,52
+2191,14568,8201-1,1,Radiator Springs Classic Mater,2011,269,52
+2192,10825,7574-10,1,Advent Calendar 2005 Clikits  (Day 9) Hair Band,2005,222,4
+2193,10825,7574-11,1,Advent Calendar 2005 Clikits (Day 10) Paper Clip,2005,222,10
+2194,10825,7574-12,1,Advent Calendar 2005 Clikits (Day 11) Picture Frame,2005,222,6
+2195,10825,7574-13,1,Advent Calendar 2005 Clikits (Day 12) Gift Tag with Icons,2005,222,4
+2196,10825,7574-14,1,Advent Calendar 2005 Clikits (Day 13) Hair Band,2005,222,7
+2197,10825,7574-15,1,Advent Calendar 2005 Clikits (Day 14) Ring,2005,222,3
+2198,10825,7574-16,1,Advent Calendar 2005 Clikits (Day 15) Hair Band,2005,222,7
+2199,10825,7574-17,1,Advent Calendar 2005 Clikits (Day 16) Gift Tag with Icons,2005,222,4
+2200,10825,7574-18,1,Advent Calendar 2005 Clikits (Day 17) Icons,2005,222,8
+2201,10825,7574-19,1,Advent Calendar 2005 Clikits (Day 18) Bracelet,2005,222,9
+2202,10825,7574-2,1,Advent Calendar 2005 Clikits  (Day 1) Ring,2005,222,3
+2203,10825,7574-20,1,Advent Calendar 2005 Clikits (Day 19) Necklace,2005,222,4
+2204,10825,7574-21,1,Advent Calendar 2005 Clikits (Day 20) Paper Clip,2005,222,3
+2205,10825,7574-22,1,Advent Calendar 2005 Clikits (Day 21) Bangle,2005,222,2
+2206,10825,7574-23,1,Advent Calendar 2005 Clikits (Day 22) Hair Band,2005,222,4
+2207,10825,7574-24,1,Advent Calendar 2005 Clikits (Day 23) Gift Tag with Icons,2005,222,4
+2208,10825,7574-25,1,Advent Calendar 2005 Clikits (Day 24) Hair Grip,2005,222,3
+2209,10825,7574-3,1,Advent Calendar 2005 Clikits  (Day 2) Hair Band,2005,222,7
+2210,10825,7574-4,1,Advent Calendar 2005 Clikits  (Day 3) Necklace,2005,222,4
+2211,10825,7574-5,1,Advent Calendar 2005 Clikits  (Day 4) Icons,2005,222,8
+2212,10825,7574-6,1,Advent Calendar 2005 Clikits  (Day 5) Bangle,2005,222,3
+2213,10825,7574-7,1,Advent Calendar 2005 Clikits  (Day 6) Magnet,2005,222,3
+2214,10825,7574-8,1,Advent Calendar 2005 Clikits  (Day 7) Trinket Box,2005,222,3
+2215,10825,7574-9,1,Advent Calendar 2005 Clikits  (Day 8) Magnet,2005,222,3
+2216,10837,1498-1,1,Spy-Bot,1987,130,63
+2217,10837,1499-1,1,Twin Starfire,1987,130,89
+2218,10921,4612-1,1,Super Glider,2002,282,7
+2219,10921,4613-1,1,Turbo Chopper,2002,282,13
+2220,10921,4614-1,1,Ultralight Flyer,2002,282,16
+2221,10976,9833-1,1,AC Adapter 230V - 10V Transformer,1996,259,1
+2222,10993,1875-1,1,Meteor Monitor,1990,128,32
+2223,10993,1876-1,1,Soil Scooper,1990,85,73
+2224,10993,1877-1,1,Crusader's Cart,1990,194,60
+2225,10995,1380-1,1,Werewolf Ambush,2002,273,114
+2226,10995,1381-1,1,Vampire's Crypt,2002,273,171
+2227,10995,1382-1,1,Scary Laboratory,2002,273,500
+2228,10995,1383-1,1,Curse of the Pharaoh,2002,273,52
+2229,10997,5529-1,1,LEGO Basic Bricks,2010,37,326
+2230,10997,6131-1,1,Build and Play,2011,37,646
+2231,11053,70409-1,1,Shipwreck Defense,2015,154,84
+2232,11053,70411-1,1,Treasure Island,2015,154,181
+2233,11075,9628-1,1,Mechanisms Power Add-On Set,2008,532,3
+2234,11075,9632-1,1,Science & Technology Base Set,2006,529,341
+2235,11115,4192-1,1,Fountain of Youth,2011,263,127
+2236,11115,4193-1,1,The London Escape,2011,263,466
+2237,11116,8683-1,1,Tribal Hunter - Complete Set,2010,536,8
+2238,11116,8683-10,1,Super Wrestler - Complete Set,2010,536,5
+2239,11116,8683-11,1,Nurse - Complete Set,2010,536,7
+2240,11116,8683-12,1,Ninja - Complete Set,2010,536,6
+2241,11116,8683-13,1,Spaceman - Complete Set,2010,536,8
+2242,11116,8683-14,1,Forestman - Complete Set,2010,536,8
+2243,11116,8683-15,1,Deep Sea Diver - Complete Set,2010,536,9
+2244,11116,8683-16,1,Cowboy - Complete Set,2010,536,7
+2245,11116,8683-2,1,Cheerleader - Complete Set,2010,536,7
+2246,11116,8683-3,1,Caveman - Complete Set,2010,536,6
+2247,11116,8683-4,1,Circus Clown - Complete Set,2010,536,6
+2248,11116,8683-5,1,Zombie - Complete Set,2010,536,6
+2249,11116,8683-6,1,Skater - Complete Set,2010,536,8
+2250,11116,8683-7,1,Robot - Complete Set,2010,536,5
+2251,11116,8683-8,1,Demolition Dummy - Complete Set,2010,536,6
+2252,11116,8683-9,1,Magician - Complete Set,2010,536,7
+2253,11143,71000-0,60,Minifigure Series 9 [Random Bag],2013,544,0
+2254,11175,1702-1,1,Fire Fighter 4 x 4,1994,74,59
+2255,11175,1704-1,1,Ice Planet Satellite Plough,1994,133,47
+2256,11190,71002-1,1,Barbarian - Complete Set,2013,547,7
+2257,11190,71002-10,1,Welder - Complete Set,2013,547,7
+2258,11190,71002-11,1,Scientist - Complete Set,2013,547,7
+2259,11190,71002-12,1,Saxophone Player - Complete Set,2013,547,6
+2260,11190,71002-13,1,Diner Waitress - Complete Set,2013,547,10
+2261,11190,71002-14,1,Grandma - Complete Set,2013,547,7
+2262,11190,71002-15,1,Constable - Complete Set,2013,547,6
+2263,11190,71002-16,1,Lady Robot - Complete Set,2013,547,6
+2264,11190,71002-2,1,Scarecrow - Complete Set,2013,547,7
+2265,11190,71002-3,1,Pretzel Girl - Complete Set,2013,547,7
+2266,11190,71002-4,1,Evil Mech - Complete Set,2013,547,8
+2267,11190,71002-5,1,Island Warrior - Complete set,2013,547,8
+2268,11190,71002-6,1,Gingerbread Man - Complete Set,2013,547,5
+2269,11190,71002-7,1,Holiday Elf - Complete Set,2013,547,8
+2270,11190,71002-8,1,Yeti - Complete Set,2013,547,5
+2271,11190,71002-9,1,Mountain Climber - Complete Set,2013,547,7
+2272,11194,8799-1,1,Knights' Castle Wall,2004,198,178
+2273,15155,8799-1,1,Knights' Castle Wall,2004,198,178
+2274,11194,8800-1,1,Vladek's Siege Engine,2004,198,192
+2275,15155,8800-1,1,Vladek's Siege Engine,2004,198,192
+2276,11253,4915-1,1,Mini Construction,2007,26,68
+2277,11253,4916-1,1,Mini Animals,2007,31,77
+2278,11253,4917-1,1,Mini Robots,2007,32,77
+2279,11253,4918-1,1,Mini Flyers,2007,24,76
+2280,11304,7467-1,1,International Space Station,2003,387,162
+2281,13450,7467-1,1,International Space Station,2003,387,162
+2282,11304,7470-1,1,Space Shuttle Discovery,2003,387,827
+2283,13450,7470-1,1,Space Shuttle Discovery,2003,387,827
+2284,11304,7471-1,1,Mars Exploration Rover,2003,387,861
+2285,13450,7471-1,1,Mars Exploration Rover,2003,387,861
+2286,11317,4428-10,1,"Advent Calendar 2012, City (Day  9) Mechanic with Wrench",2012,217,5
+2287,11317,4428-11,1,"Advent Calendar 2012, City (Day 10) Wheel Dolly with Wheels",2012,217,10
+2288,11317,4428-12,1,"Advent Calendar 2012, City (Day 11) Firefighter's ATV without Wheels",2012,217,13
+2289,11317,4428-13,1,"Advent Calendar 2012, City (Day 12) Female Firefighter",2012,217,5
+2290,11317,4428-14,1,"Advent Calendar 2012, City (Day 13) Desk with Computer and Chair",2012,217,8
+2291,11317,4428-15,1,"Advent Calendar 2012, City (Day 14) Box with Burning Logs",2012,217,5
+2292,11317,4428-16,1,"Advent Calendar 2012, City (Day 15) Wall with Safety Equipment",2012,217,16
+2293,11317,4428-17,1,"Advent Calendar 2012, City (Day 16) Girl with Snowball",2012,217,5
+2294,11317,4428-18,1,"Advent Calendar 2012, City (Day 17) Catapult",2012,217,15
+2295,11317,4428-19,1,"Advent Calendar 2012, City (Day 18) Dog and Hydrant",2012,217,6
+2296,11317,4428-2,1,"Advent Calendar 2012, City (Day  1) Fireman with Loudhailer",2012,217,5
+2297,11317,4428-20,1,"Advent Calendar 2012, City (Day 19) Firefighter with Cup",2012,217,5
+2298,11317,4428-21,1,"Advent Calendar 2012, City (Day 20) Wheelbarrow with Spade and Snow",2012,217,7
+2299,11317,4428-22,1,"Advent Calendar 2012, City (Day 21) Warning Lights and Sign",2012,217,9
+2300,11317,4428-23,1,"Advent Calendar 2012, City (Day 22) Santa's Sled",2012,217,8
+2301,11317,4428-24,1,"Advent Calendar 2012, City (Day 23) Wrapped Gifts",2012,217,16
+2302,11317,4428-25,1,"Advent Calendar 2012, City (Day 24) Santa on Snowmobile",2012,217,13
+2303,11317,4428-3,1,"Advent Calendar 2012, City (Day 2) Chainsaw with Logs",2012,217,8
+2304,11317,4428-4,1,"Advent Calendar 2012, City (Day 3) Christmas Tree",2012,217,16
+2305,11317,4428-5,1,"Advent Calendar 2012, City (Day 4) Stairs and Star for Tree",2012,217,8
+2306,11317,4428-6,1,"Advent Calendar 2012, City (Day 5) Wall with Fireman Equipment",2012,217,17
+2307,11317,4428-7,1,"Advent Calendar 2012, City (Day  6) Boy with Snowball",2012,217,5
+2308,11317,4428-8,1,"Advent Calendar 2012, City (Day 7) Toy Fire Engine with Remote",2012,217,17
+2309,11317,4428-9,1,"Advent Calendar 2012, City (Day 8) Wall with Ski Equipment",2012,217,24
+2310,11344,4481-1,1,Hailfire Droid,2003,158,680
+2311,11344,4482-1,1,AT-TE,2003,167,650
+2312,11344,7163-1,1,Republic Gunship,2002,167,697
+2313,11380,8805-1,1,Graduate - Complete Set,2011,540,7
+2314,11380,8805-10,1,Fitness Instructor - Complete Set,2011,540,6
+2315,11380,8805-11,1,Detective - Complete Set,2011,540,6
+2316,11380,8805-12,1,Evil Dwarf - Complete Set,2011,540,10
+2317,11380,8805-13,1,Boxer - Complete Set,2011,540,5
+2318,11380,8805-14,1,Egyptian Queen - Complete Set,2011,540,6
+2319,11380,8805-15,1,Gangster - Complete Set,2011,540,7
+2320,11380,8805-16,1,Snowboarder Guy - Complete Set,2011,540,6
+2321,11380,8805-2,1,Gladiator - Complete Set,2011,540,7
+2322,11380,8805-3,1,Royal Guard - Complete Set,2011,540,6
+2323,11380,8805-4,1,Ice Fisherman - Complete Set,2011,540,8
+2324,11380,8805-5,1,Cave Woman - Complete Set,2011,540,7
+2325,11380,8805-6,1,Lizard Man - Complete Set,2011,540,6
+2326,11380,8805-7,1,Zookeeper - Complete Set,2011,540,7
+2327,11380,8805-8,1,Lumberjack - Complete Set,2011,540,6
+2328,11380,8805-9,1,Small Clown - Complete Set,2011,540,6
+2329,11418,1417-2,1,Vakama (bagged),2003,356,28
+2330,11436,8362-1,1,Ferrari F1 Racer 1:24 Scale,2004,114,112
+2331,11436,8389-1,1,M. Schumacher and R. Barrichello,2004,114,13
+2332,11476,8531-1,1,Pohatu,2001,348,49
+2333,11476,8532-1,1,Onua,2001,348,30
+2334,11476,8533-1,1,Gali,2001,348,35
+2335,11476,8534-1,1,Tahu,2001,348,33
+2336,11476,8535-1,1,Lewa,2001,348,36
+2337,11476,8536-1,1,Kopaka,2001,348,33
+2338,11476,8540-1,1,Vakama,2001,356,26
+2339,11476,8541-1,1,Matau,2001,356,25
+2340,11476,8542-1,1,Onewa,2001,356,29
+2341,11550,8944-1,1,Tanma,2008,333,14
+2342,11550,8945-1,1,Solek,2008,333,14
+2343,11550,8946-1,1,Photok,2008,333,14
+2344,11550,8947-1,1,Radiak,2008,333,16
+2345,11550,8948-1,1,Gavla,2008,333,14
+2346,11550,8949-1,1,Kirop,2008,333,14
+2347,11551,8755-1,1,Keetongu,2005,347,203
+2348,15733,8755-1,1,Keetongu,2005,347,203
+2349,11551,8761-1,1,Roodaka,2005,347,233
+2350,15733,8761-1,1,Roodaka,2005,347,233
+2351,11554,6966-1,1,Jedi Starfighter - Mini,2005,159,38
+2352,11554,7252-1,1,Droid Tri-Fighter,2005,168,147
+2353,15519,7252-1,1,Droid Tri-Fighter,2005,168,147
+2354,11554,7259-1,1,ARC-170 Starfighter,2005,168,401
+2355,11605,8049-1,1,Tractor with Log Loader,2010,8,525
+2356,11605,8259-1,1,Mini Bulldozer,2009,7,165
+2357,13254,8259-1,1,Mini Bulldozer,2009,7,165
+2358,11605,8260-1,1,Tractor,2009,7,104
+2359,11608,4051-1,1,Quicky the Bunny (Nesquik Promotional),2001,273,4
+2360,11608,4052-1,1,Director (Nesquik Promotional),2001,273,4
+2361,11608,4053-1,1,Cameraman (Nesquik Promotional),2001,273,5
+2362,11759,60050-1,1,Train Station,2014,66,422
+2363,11759,60052-1,1,Cargo Train,2014,66,887
+2364,11767,6825-1,1,Cosmic Comet,1985,130,40
+2365,11767,6847-1,1,Space Dozer,1985,130,49
+2366,11767,6848-2,1,Interplanetary Shuttle,1985,130,54
+2367,11784,71009-0,60,The Simpsons Series 2 {Random bag},2015,550,0
+2368,11786,7877-1,1,Naboo Starfighter,2011,166,317
+2369,11786,7929-1,1,The Battle of Naboo,2011,166,241
+2370,11855,7770-1,1,Deep Sea Treasure Hunter,2007,310,79
+2371,15955,7770-1,1,Deep Sea Treasure Hunter,2007,310,79
+2372,11855,7771-1,1,Angler Ambush,2007,310,135
+2373,15955,7771-1,1,Angler Ambush,2007,310,135
+2374,11855,7772-1,1,Lobster Strike,2007,310,224
+2375,15955,7772-1,1,Lobster Strike,2007,310,224
+2376,11855,7773-1,1,Tiger Shark Attack,2007,310,341
+2377,15955,7773-1,1,Tiger Shark Attack,2007,310,341
+2378,11855,7774-1,1,Crab Crusher,2007,310,582
+2379,15955,7774-1,1,Crab Crusher,2007,310,582
+2380,11855,7775-1,1,Aquabase Invasion,2007,310,850
+2381,15955,7775-1,1,Aquabase Invasion,2007,310,850
+2382,11855,7776-1,1,The Shipwreck,2007,310,245
+2383,11879,7101-1,1,Lightsaber Duel,1999,166,52
+2384,12759,7101-1,1,Lightsaber Duel,1999,166,52
+2385,11879,7111-1,1,Droid Fighter,1999,166,62
+2386,12669,7111-1,1,Droid Fighter,1999,166,62
+2387,12759,7111-1,1,Droid Fighter,1999,166,62
+2388,11879,7131-1,1,Anakin's Podracer,1999,166,136
+2389,15718,7131-1,1,Anakin's Podracer,1999,166,136
+2390,11935,7631-1,1,Dump Truck,2009,56,184
+2391,11935,7685-1,1,Dozer,2009,56,351
+2392,11966,344-1,1,Bungalow,1969,413,77
+2393,11966,346-2,1,House with Car,1969,413,167
+2394,11966,347-1,1,Fire Station with Mini Cars,1970,417,205
+2395,11966,603-3,1,Vintage Car,1970,397,36
+2396,12000,2878-1,1,Santa Claus,1997,227,16
+2397,14418,2878-1,1,Santa Claus,1997,227,16
+2398,15449,2878-1,1,Santa Claus,1997,227,16
+2399,12121,10068-1,1,Santa Claus,2002,227,39
+2400,15973,10068-1,1,Santa Claus,2002,227,39
+2401,12121,10069-1,1,Christmas Tree,2002,227,33
+2402,15973,10069-1,1,Christmas Tree,2002,227,33
+2403,12121,10070-1,1,Reindeer,2002,227,26
+2404,15973,10070-1,1,Reindeer,2002,227,26
+2405,12121,10079-1,1,Snowman,2003,227,42
+2406,12121,10080-1,1,Angel,2003,227,33
+2407,12137,1286-1,1,King Leo's Cart,2000,197,22
+2408,12137,1287-1,1,Crossbows,2000,197,16
+2409,12137,1288-1,1,Fire Cart,2000,197,24
+2410,12137,1289-1,1,Catapult,2000,197,23
+2411,12146,1088-1,1,Road Burner,1999,87,25
+2412,12146,1098-1,1,Hang Glider,1998,87,19
+2413,12146,6572-1,1,Wind Runners,1998,87,52
+2414,12222,75028-1,1,Clone Turbo Tank,2014,162,96
+2415,12222,75029-1,1,AAT,2014,158,95
+2416,12222,75030-1,1,Millennium Falcon,2014,159,94
+2417,12307,7667-1,1,Imperial Dropship,2008,170,80
+2418,12307,7668-1,1,Rebel Scout Speeder,2008,170,81
+2419,12307,8017-1,1,Darth Vader's TIE Fighter,2009,169,250
+2420,12322,41545-1,1,Kramm,2015,586,68
+2421,12322,41546-1,1,Forx,2015,586,65
+2422,12322,41547-1,1,Wuzzo,2015,586,74
+2423,12344,8833-0,60,Minifigure Series 8 [Random Bag],2012,543,0
+2424,12346,8370-1,1,Nitro Stunt Bike,2003,113,89
+2425,12346,8371-1,1,Extreme Power Bike,2003,113,97
+2426,12437,8803-1,1,Fisherman - Complete Set,2011,538,9
+2427,12437,8803-10,1,Tennis Player - Complete Set,2011,538,6
+2428,12437,8803-11,1,Race Car Driver - Complete Set,2011,538,7
+2429,12437,8803-12,1,Gorilla Suit Guy - Complete Set,2011,538,6
+2430,12437,8803-13,1,Space Alien - Complete Set,2011,538,6
+2431,12437,8803-14,1,Hula Dancer - Complete Set,2011,538,8
+2432,12437,8803-15,1,Rapper - Complete Set,2011,538,7
+2433,12437,8803-16,1,Baseball Player - Complete Set,2011,538,6
+2434,12437,8803-2,1,Pilot - Complete Set,2011,538,7
+2435,12437,8803-3,1,Tribal Chief - Complete Set,2011,538,6
+2436,12437,8803-4,1,Samurai Warrior - Complete Set,2011,538,7
+2437,12437,8803-5,1,Snowboarder - Complete Set,2011,538,7
+2438,12437,8803-6,1,Space Villain - Complete Set,2011,538,8
+2439,12437,8803-7,1,Sumo Wrestler - Complete Set,2011,538,6
+2440,12437,8803-8,1,Mummy - Complete Set,2011,538,5
+2441,12437,8803-9,1,Elf - Complete Set,2011,538,8
+2442,12445,8956-1,1,Stone Chopper,2009,439,33
+2443,12445,8957-1,1,Mine Mech,2009,439,69
+2444,12445,8960-1,1,Thunder Driller,2009,439,237
+2445,12445,8961-1,1,Crystal Sweeper,2009,439,479
+2446,12465,1871-1,1,Pirates Cannon,1994,148,17
+2447,12465,1872-1,1,Imperial Guard Camp,1994,147,28
+2448,12465,1873-1,1,Pirate Treasure,1994,148,49
+2449,12590,5573-1,1,LEGO Build & Play [Blue Tub],2008,37,646
+2450,12748,75031-1,1,TIE Interceptor,2014,159,92
+2451,12748,75032-1,1,X-Wing Fighter,2014,159,97
+2452,12748,75033-1,1,Star Destroyer,2014,159,97
+2453,12759,7171-1,1,Mos Espa Podrace,1999,166,913
+2454,12813,75015-1,1,Corporate Alliance Tank Droid,2013,168,271
+2455,12813,75035-1,1,Kashyyyk Troopers,2014,158,99
+2456,12813,75043-1,1,AT-AP,2014,158,715
+2457,12830,8784-1,1,Rascus (USA version with 3 Cards),2004,198,49
+2458,12830,8785-1,1,Santis (USA version with 3 Cards),2004,198,49
+2459,12836,4108-1,1,T-Junction Road Plates,2002,289,2
+2460,12836,4109-1,2,Curved Road Plates,2002,289,2
+2461,12836,4110-1,1,Straight Road Plates,2002,289,2
+2462,12836,4111-1,1,Cross Road Plates,2002,289,2
+2463,12851,2824-10,1,Advent Calendar 2010 City (Day 9) Toy Airplane,2010,220,11
+2464,12851,2824-11,1,Advent Calendar 2010 City (Day 10) Man with Suitcase,2010,220,5
+2465,12851,2824-12,1,Advent Calendar 2010 City (Day 11) Fireplace,2010,220,13
+2466,12851,2824-13,1,Advent Calendar 2010 City (Day 12) Sled with Wood and Axe,2010,220,14
+2467,12851,2824-14,1,Advent Calendar 2010 City (Day 13) Toy Fire Truck,2010,220,15
+2468,12851,2824-15,1,Advent Calendar 2010 City (Day 14) Woman with Bread,2010,220,5
+2469,12851,2824-16,1,Advent Calendar 2010 City (Day 15) Table with Chairs and Lamp,2010,220,13
+2470,12851,2824-17,1,Advent Calendar 2010 City (Day 16) Couch / Sofa,2010,220,9
+2471,12851,2824-18,1,Advent Calendar 2010 City (Day 17) Shower Stall,2010,220,9
+2472,12851,2824-19,1,Advent Calendar 2010 City (Day 18) Santa Claus (almost Naked) with Brush,2010,220,6
+2473,12851,2824-2,1,Advent Calendar 2010 City (Day 1) Snowman with Broom,2010,220,11
+2474,12851,2824-20,1,Advent Calendar 2010 City (Day 19) Toy Train Car Red,2010,220,15
+2475,12851,2824-21,1,Advent Calendar 2010 City (Day 20) Toy Bulldozer,2010,220,17
+2476,12851,2824-22,1,Advent Calendar 2010 City (Day 21) Toy Train Car Yellow,2010,220,15
+2477,12851,2824-23,1,Advent Calendar 2010 City (Day 22) Toy Helicopter,2010,220,7
+2478,12851,2824-24,1,Advent Calendar 2010 City (Day 23) Christmas Tree,2010,220,23
+2479,12851,2824-25,1,Advent Calendar 2010 City (Day 24) Santa Claus with Toy Train Engine,2010,220,21
+2480,12851,2824-3,1,Advent Calendar 2010 City (Day 2) Boy with Sword,2010,220,5
+2481,12851,2824-4,1,Advent Calendar 2010 City (Day 3) Skateboard with Ramp and Railing,2010,220,10
+2482,12851,2824-5,1,Advent Calendar 2010 City (Day 4) Toy Crane,2010,220,15
+2483,12851,2824-6,1,Advent Calendar 2010 City (Day 5) Drum Set,2010,220,10
+2484,12851,2824-7,1,Advent Calendar 2010 City (Day 6) Girl with Cat,2010,220,5
+2485,12851,2824-8,1,Advent Calendar 2010 City (Day 7) Piano / Organ,2010,220,10
+2486,12851,2824-9,1,Advent Calendar 2010 City (Day 8) Dog with Bowl and Sausage,2010,220,7
+2487,12856,1417-1,1,Vakama,2001,356,28
+2488,12856,1418-1,1,Matau,2001,356,25
+2489,12856,1419-1,1,Nokama (Kabaya Promotional),2001,356,27
+2490,12856,1420-1,1,Nuju,2001,356,29
+2491,12907,6719-1,1,Brachiosaurus,2001,386,25
+2492,12907,6720-1,1,Tyrannosaurus Rex,2001,386,23
+2493,12907,6721-1,1,Mosasaurus,2001,386,26
+2494,12907,6722-1,1,Styracosaurus,2001,386,19
+2495,12955,7130-1,1,Snowspeeder,1999,169,217
+2496,12955,7150-1,1,TIE Fighter & Y-wing,1999,169,410
+2497,12999,3304-1,2,Dutch National Player,1998,462,4
+2498,13073,6762-1,1,Fort Legoredo,2002,476,687
+2499,13073,6763-1,1,Rapid River Village,2002,477,354
+2500,13073,6764-1,1,Sheriff's Lock-Up,2002,476,176
+2501,13141,8733-1,1,Axonn,2006,347,196
+2502,14280,8733-1,1,Axonn,2006,347,196
+2503,13141,8734-1,1,Brutaka,2006,347,191
+2504,14280,8734-1,1,Brutaka,2006,347,191
+2505,13141,8764-1,1,Vezon & Fenrakk,2006,347,281
+2506,14280,8764-1,1,Vezon & Fenrakk,2006,347,281
+2507,13254,8290-1,1,Mini Forklift,2008,7,88
+2508,13254,8294-1,1,Excavator,2008,7,719
+2509,13286,7110-1,1,Landspeeder,1999,169,49
+2510,13370,7893-1,1,Passenger Plane,2006,53,403
+2511,13380,1246-1,1,Helicopter,1999,50,26
+2512,13380,1247-1,1,Patrol Car,1999,50,32
+2513,13380,1248-1,1,Fire Boat,1999,50,24
+2514,13380,1249-1,1,Tri-motorbike,1999,60,17
+2515,13380,1250-1,1,Dragster,1999,91,24
+2516,13380,1251-1,1,Go-Cart,1999,91,25
+2517,13412,4415-1,1,Auto Pod,2006,479,56
+2518,13412,4416-1,1,Robo Pod,2006,479,64
+2519,13412,4417-1,1,Aero Pod,2006,479,60
+2520,13412,4418-1,1,Dino Pod,2006,479,55
+2521,13427,6629-1,1,Ambulance,1981,78,39
+2522,13447,8827-0,60,Minifigure Series 6 [Random Bag],2012,541,0
+2523,13450,7468-1,1,Saturn V Moon Mission,2003,387,176
+2524,13450,7469-1,1,Mission to Mars,2003,387,416
+2525,13480,71002-0,60,Minifigure Series 11 [Random Bag],2013,547,0
+2526,13538,8729-1,1,Inika Toa Nuparu,2006,351,55
+2527,13538,8730-1,1,Inika Toa Hewkii,2006,351,62
+2528,13538,8731-1,1,Inika Toa Kongu,2006,351,46
+2529,13538,8732-1,1,Inika Toa Matoro,2006,351,47
+2530,13603,8683-0,60,Minifigure Series 1 [Random Bag],2010,536,0
+2531,13617,7620-1,1,Motorcycle Chase,2008,266,79
+2532,13617,7621-1,1,Lost Tomb,2008,267,277
+2533,13617,7622-1,1,Race for the Stolen Treasure,2008,267,275
+2534,13617,7623-1,1,Temple Escape,2008,267,553
+2535,13883,7256-1,1,Jedi Starfighter & Vulture Droid,2005,168,202
+2536,15519,7256-1,1,Jedi Starfighter & Vulture Droid,2005,168,202
+2537,13906,8922-1,1,Gadunka,2007,359,176
+2538,13906,8923-1,1,Hydraxon,2007,359,165
+2539,13906,8924-1,1,Maxilos and Spinax,2007,359,256
+2540,13917,10013-1,1,Open Freight Wagon,2001,238,121
+2541,13917,10017-1,1,Hopper Wagon,2001,238,228
+2542,13917,10153-1,1,Electric Train Motor 9V (My Own Train),2002,244,3
+2543,13925,60024-10,1,"Advent Calendar 2013, City (Day  9)",2013,220,4
+2544,13925,60024-11,1,"Advent Calendar 2013, City (Day 10)",2013,220,8
+2545,13925,60024-12,1,"Advent Calendar 2013, City (Day 11)",2013,220,15
+2546,13925,60024-13,1,"Advent Calendar 2013, City (Day 12)",2013,220,21
+2547,13925,60024-14,1,"60024 Advent Calendar 2013, City (Day 13)",2013,220,6
+2548,13925,60024-15,1,"60024 Advent Calendar 2013, City (Day 14)",2013,220,16
+2549,13925,60024-16,1,"60024 Advent Calendar 2013, City (Day 15)",2013,220,12
+2550,13925,60024-17,1,"60024 Advent Calendar 2013, City (Day 16)",2013,220,13
+2551,13925,60024-18,1,"60024 Advent Calendar 2013, City (Day 17)",2013,220,8
+2552,13925,60024-19,1,"60024 Advent Calendar 2013, City (Day 18)",2013,220,7
+2553,13925,60024-2,1,"Advent Calendar 2013, City (Day  1)",2013,220,5
+2554,13925,60024-20,1,"60024 Advent Calendar 2013, City (Day 19)",2013,220,10
+2555,13925,60024-21,1,"60024 Advent Calendar 2013, City (Day 20)",2013,220,10
+2556,13925,60024-22,1,"60024 Advent Calendar 2013, City (Day 21)",2013,220,19
+2557,13925,60024-23,1,"60024 Advent Calendar 2013, City (Day 22)",2013,220,15
+2558,13925,60024-24,1,"60024 Advent Calendar 2013, City (Day 23)",2013,220,18
+2559,13925,60024-25,1,"60024 Advent Calendar 2013, City (Day 24) Santa",2013,220,6
+2560,13925,60024-3,1,"Advent Calendar 2013, City (Day  2)",2013,220,11
+2561,13925,60024-4,1,"Advent Calendar 2013, City (Day  3)",2013,220,3
+2562,13925,60024-5,1,"Advent Calendar 2013, City (Day  4)",2013,220,6
+2563,13925,60024-6,1,"Advent Calendar 2013, City (Day  5)",2013,220,8
+2564,13925,60024-7,1,"Advent Calendar 2013, City (Day  6)",2013,220,6
+2565,13925,60024-8,1,"Advent Calendar 2013, City (Day  7)",2013,220,9
+2566,13925,60024-9,1,"Advent Calendar 2013, City (Day  8)",2013,220,8
+2567,13941,10001-1,1,Metroliner,2001,233,785
+2568,13941,10002-1,1,Railroad Club Car,2001,233,272
+2569,13960,8901-1,1,Hakann,2006,340,42
+2570,13960,8903-1,1,Zaktan,2006,340,42
+2571,13960,8904-1,1,Avak,2006,340,41
+2572,13992,71007-0,60,LEGO Minifigures Series 12 [Random Bag],2014,548,0
+2573,14079,1274-1,1,Light Hover,2000,442,25
+2574,14079,1275-1,1,{Rock Saw Vehicle},2000,442,22
+2575,14079,1276-1,1,Helicopter Transport,2000,442,22
+2576,14079,1277-1,1,Drill Craft,2000,442,27
+2577,14096,2258-1,1,Ninja Ambush,2011,435,71
+2578,14096,2519-1,1,Skeleton Bowling,2011,435,373
+2579,14127,8667-1,1,Action Wheelie,2006,116,78
+2580,14127,8670-1,1,Jump Master,2006,116,104
+2581,14152,6216-1,1,Jawblade,2012,403,45
+2582,14152,6293-1,1,Furno,2012,401,56
+2583,14174,1990-1,1,F1 Race Car,1993,82,35
+2584,14174,1991-1,1,Racing Pickup,1993,82,81
+2585,14174,1992-1,1,Dragsters,1993,82,103
+2586,14222,10121-1,2,NBA Basketball Teams,2003,459,16
+2587,14222,3433-1,1,NBA Ultimate Arena,2003,459,490
+2588,14233,7654-1,1,Droids Battle Pack,2007,168,102
+2589,14233,7670-1,1,Hailfire Droid & Spider Droid,2008,167,249
+2590,14248,9491-1,1,Geonosian Cannon,2012,165,133
+2591,14277,3418-1,1,Point Shooting,2001,462,24
+2592,14277,3419-1,1,Precision Shooting,2001,462,23
+2593,14328,7898-1,1,Cargo Train Deluxe,2006,240,830
+2594,14931,7898-1,1,Cargo Train Deluxe,2006,240,830
+2595,14328,7997-1,1,Train Station,2007,240,386
+2596,14931,7997-1,1,Train Station,2007,240,386
+2597,14390,6452-1,1,Mini Rocket Launcher,1999,93,31
+2598,14390,6458-1,1,Satellite with Astronaut,1999,93,30
+2599,14390,6465-1,1,Space Port Jet,1999,93,65
+2600,14442,71011-1,1,Farmer,2016,554,7
+2601,14442,71011-10,1,Ballerina,2016,554,6
+2602,14442,71011-11,1,Laser Mech,2016,554,9
+2603,14442,71011-12,1,Kendo Fighter,2016,554,7
+2604,14442,71011-13,1,Shark Suit Guy,2016,554,5
+2605,14442,71011-14,1,Wrestling Champion,2016,554,6
+2606,14442,71011-15,1,Jewel Thief,2016,554,8
+2607,14442,71011-16,1,Queen,2016,554,8
+2608,14442,71011-2,1,Astronaut,2016,554,9
+2609,14442,71011-3,1,Frightening Knight,2016,554,10
+2610,14442,71011-4,1,Clumsy Guy,2016,554,7
+2611,14442,71011-5,1,Tribal Woman,2016,554,8
+2612,14442,71011-6,1,Flying Warrior,2016,554,11
+2613,14442,71011-7,1,Faun,2016,554,6
+2614,14442,71011-8,1,Animal Control Officer,2016,554,7
+2615,14442,71011-9,1,Janitor,2016,554,7
+2616,14493,6653-1,1,Highway Emergency Van,1982,85,56
+2617,14493,6656-1,1,Tow Truck,1985,85,53
+2618,14495,8089-1,1,Hoth Wampa Cave,2010,169,296
+2619,14524,8550-1,1,Gahlok Va,2002,329,26
+2620,16126,8550-1,1,Gahlok Va,2002,329,26
+2621,14524,8553-1,1,Pahrak Va,2002,329,27
+2622,16126,8553-1,1,Pahrak Va,2002,329,27
+2623,14524,8554-1,1,Tahnok Va,2002,329,27
+2624,16126,8554-1,1,Tahnok Va,2002,329,27
+2625,14568,9478-1,1,Fransesco Bernoulli,2012,269,49
+2626,14568,9485-1,1,Ultimate Race Set,2012,269,279
+2627,14711,2535-1,1,Formula 1 Racing Car,1998,82,30
+2628,14711,2536-1,1,Divers Jet Ski,1998,86,24
+2629,14711,2537-1,1,Extreme Team Raft,1998,87,20
+2630,14711,2538-1,1,Fright Knights Fire Cart,1998,195,20
+2631,14711,2539-1,1,Fright Knights Flying Machine,1998,195,21
+2632,14711,2540-1,1,Fright Knights Catapult Cart,1998,195,26
+2633,14711,2541-1,1,Adventurers Car,1998,297,24
+2634,14711,2542-1,1,Adventurers Aeroplane,1998,297,21
+2635,14711,2543-1,1,Spacecraft,1998,144,18
+2636,14711,2544-1,1,SHELL Promotional Set: TECHNIC Microbike,1998,13,27
+2637,14717,8024-1,1,Universal Building Set,1989,21,114
+2638,14717,8815-1,1,Speedway Bandit,1991,12,78
+2639,14717,8820-1,1,Mountain Rambler,1991,11,139
+2640,14790,851441,1,"Headgear, Mask, Soft Foam, Bionicle Toa Hordika Vakama",2004,501,0
+2641,14812,10024-1,1,Red Baron,2002,276,669
+2642,16127,10024-1,1,Red Baron,2002,276,669
+2643,14812,10124-1,1,Wright Flyer,2003,276,663
+2644,14812,3451-1,1,Sopwith Camel,2001,276,575
+2645,16127,3451-1,1,Sopwith Camel,2001,276,575
+2646,14822,4475-1,1,Jabba's Message,2003,169,46
+2647,14822,4476-1,1,Jabba's Prize,2003,169,40
+2648,14822,4480-1,1,Jabba's Palace,2003,169,234
+2649,14849,3318-1,2,English Player,1998,462,4
+2650,14921,4608-1,1,Bank Breakout,2001,281,68
+2651,14921,4611-1,1,Police HQ,2001,281,137
+2652,14954,7409-1,1,Secret of the Tomb,2003,300,42
+2653,14954,7412-1,1,Yeti's Hideout,2003,300,114
+2654,14954,7415-1,1,Aero Nomad,2003,300,120
+2655,14954,7417-1,1,Temple of Mount Everest,2003,300,288
+2656,14997,8805-0,60,Minifigure Series 5 [Random Bag],2011,540,0
+2657,14999,8647-1,1,Night Racer,2005,116,75
+2658,14999,8648-1,1,Buzz Saw,2005,116,63
+2659,15010,3000-1,1,Trike Buggy,1999,13,30
+2660,15010,3001-1,1,Kabaya Promotional Set: Propeller Buggy,1999,11,29
+2661,15010,3003-1,1,Motorbike,1999,13,28
+2662,15010,3005-1,1,Kabaya Promotional Set: Car,1999,12,26
+2663,15033,1620-1,1,Astro Dart,1990,132,30
+2664,15033,1621-1,1,Lunar MPV Vehicle,1990,132,96
+2665,15060,8685-1,1,Toa Kopaka,2008,339,53
+2666,15060,8686-1,1,Toa Lewa,2008,339,51
+2667,15060,8687-1,1,Toa Pohatu,2008,339,67
+2668,15060,8691-1,1,Antroz,2008,339,52
+2669,15060,8692-1,1,Vamprah,2008,339,48
+2670,15060,8693-1,1,Chirox,2008,339,48
+2671,15080,4016-1,1,Racer,2001,22,21
+2672,15080,4017-1,1,Sea Helicopter,2001,22,13
+2673,15080,4018-1,1,Ship,2001,22,12
+2674,15080,4019-1,1,Aeroplane,2001,24,17
+2675,15164,4519-1,1,Rail Crossing,1999,244,1
+2676,15224,2192-1,1,Drilldozer,2011,403,61
+2677,15224,2193-1,1,Jetbug,2011,403,63
+2678,15224,2194-1,1,Nitroblast,2011,403,57
+2679,15224,2235-1,1,Fire Lord,2011,403,125
+2680,15304,8690-1,1,Toa Onua,2008,338,62
+2681,15304,8694-1,1,Krika,2008,338,40
+2682,15304,8695-1,1,Gorast,2008,338,51
+2683,15304,8696-1,1,Bitil,2008,338,54
+2684,15519,6205-1,1,V-wing Fighter,2006,168,118
+2685,15560,1188-1,1,Fire Formula,1999,87,38
+2686,15560,1189-1,1,Rocket Boat,1999,87,30
+2687,15560,1190-1,1,Retro Buggy,1999,87,90
+2688,15560,1191-1,1,Try Bird,1999,87,34
+2689,15744,8111-1,1,River Dragon,2008,389,111
+2690,15744,8112-1,1,Battle Arachnoid,2008,389,130
+2691,15744,8113-1,1,Assault Tiger,2008,389,162
+2692,15744,8114-1,1,Chameleon Hunter,2008,389,187
+2693,15744,8115-1,1,Dark Panther,2008,389,243
+2694,15951,4816-1,1,Knight's Catapult,2000,197,50
+2695,15951,4817-1,1,Dungeon,2000,197,39
+2696,15951,4818-1,1,Dragon Rider,2000,197,15
+2697,15951,4819-1,1,Rebel Chariot,2000,197,49
+2698,15980,7905-1,1,Building Crane,2006,56,726
+2699,15990,llca21-1,1,Sitting Santa (Legoland California),2005,427,42
+2700,15990,llca22-1,1,Santa's Sleigh (Legoland California),2005,427,76
+2701,15990,llca23-1,1,Reindeer (Legoland California),2005,427,72
+2702,16023,7734-1,1,Cargo Plane,2008,54,462
+2703,16034,7734-1,1,Cargo Plane,2008,54,462
+2704,16023,7992-1,1,Container Stacker,2007,54,217
+2705,16029,6581-1,1,Dig 'N' Dump,1996,72,128
+2706,16029,6596-1,1,Wave Master,1995,77,133
+2707,16031,4124-10,1,"Advent Calendar 2001, Creator (Day  9) Space Buggy",2001,217,18
+2708,16031,4124-11,1,"Advent Calendar 2001, Creator (Day 10) Dinosaur",2001,217,8
+2709,16031,4124-12,1,"Advent Calendar 2001, Creator (Day 11) Speedboat",2001,217,10
+2710,16031,4124-13,1,"Advent Calendar 2001, Creator (Day 12) Reindeer",2001,217,10
+2711,16031,4124-14,1,"Advent Calendar 2001, Creator (Day 13) Snowman",2001,217,15
+2712,16031,4124-15,1,"Advent Calendar 2001, Creator (Day 14) Jet Ski",2001,217,11
+2713,16031,4124-16,1,"Advent Calendar 2001, Creator (Day 15) Dog",2001,217,10
+2714,16031,4124-17,1,"Advent Calendar 2001, Creator (Day 16) Police Boat",2001,217,9
+2715,16031,4124-18,1,"Advent Calendar 2001, Creator (Day 17) Whale",2001,217,9
+2716,16031,4124-19,1,"Advent Calendar 2001, Creator (Day 18) Space Shuttle",2001,217,10
+2717,16031,4124-2,1,"Advent Calendar 2001, Creator (Day  1) Cat",2001,217,10
+2718,16031,4124-20,1,"Advent Calendar 2001, Creator (Day 19) Parrot",2001,217,9
+2719,16031,4124-21,1,"Advent Calendar 2001, Creator (Day 20) Steamship",2001,217,10
+2720,16031,4124-22,1,"Advent Calendar 2001, Creator (Day 21) Church",2001,217,11
+2721,16031,4124-23,1,"Advent Calendar 2001, Creator (Day 22) Helicopter",2001,217,11
+2722,16031,4124-24,1,"Advent Calendar 2001, Creator (Day 23) Christmas Tree",2001,217,10
+2723,16031,4124-25,1,"Advent Calendar 2001, Creator (Day 24) Present",2001,217,8
+2724,16031,4124-3,1,"Advent Calendar 2001, Creator (Day  2) Max",2001,217,1
+2725,16031,4124-4,1,"Advent Calendar 2001, Creator (Day  3) Fireplace",2001,217,11
+2726,16031,4124-5,1,"Advent Calendar 2001, Creator (Day  4) Santa",2001,217,10
+2727,16031,4124-6,1,"Advent Calendar 2001, Creator (Day  5) Ambulance",2001,217,15
+2728,16031,4124-7,1,"Advent Calendar 2001, Creator (Day  6) Penguin",2001,217,10
+2729,16031,4124-8,1,"Advent Calendar 2001, Creator (Day  7) Tina",2001,217,1
+2730,16031,4124-9,1,"Advent Calendar 2001, Creator (Day  8) Frog with Hat",2001,217,11
+2731,16034,7731-1,1,Mail Van,2008,50,65
+2732,16070,322-1,1,Basic Set,1981,469,82
+2733,16102,8057-1,1,Wreck Raider,2010,315,64
+2734,16102,8058-1,1,Guardian of the Deep,2010,315,144
+2735,16102,8059-1,1,Seabed Scavenger,2010,315,119
+2736,16102,8080-1,1,Undersea Explorer,2010,315,361
+2737,16126,8551-1,1,Kohrak Va,2002,329,28
+2738,16126,8552-1,1,Lehvak Va,2002,329,28
+2739,16126,8555-1,1,Nuhvok Va,2002,329,26
+2740,16131,1496-1,1,Rally Car,1987,82,52
+2741,16131,1497-1,1,Rally and Pitcrew Team,1987,82,124
+2742,16138,3074-1,1,Red Ninja's Dragon Glider,1999,434,20
+2743,16138,3075-1,1,Ninja Master's Boat,1999,434,21
+2744,16138,3076-1,1,White Ninja's Attack Cart,1999,434,23
+2745,16138,3077-1,1,Ninja Shogun's Small Fort,1999,434,21
+2746,16150,3885-2,1,Hikaru Little Flyer - Boxed Version,2007,389,22
+2747,16180,9469-1,1,Gandalf Arrives,2012,567,83
+2748,16180,9470-1,1,Shelob Attacks,2012,569,227
+2749,16180,9472-1,1,Attack on Weathertop,2012,567,429
+2750,16180,9473-1,1,The Mines of Moria,2012,567,780
+2751,16180,9476-1,1,The Orc Forge,2012,568,362
+2752,16210,1790-1,1,Shark Fisherman,1994,83,20
+2753,16210,1791-1,1,Windsurfer & Van,1994,83,70
+2754,16210,1792-1,1,Pleasure Cruiser,1994,83,65
+2755,16254,6235-1,1,Buried Treasure,1989,148,27
+2756,16254,6245-1,1,Harbor Sentry,1989,151,26
+2757,16337,8092-1,1,Luke's Landspeeder,2010,169,163
+2758,16371,4855-1,1,Spider-Man's Train Rescue,2004,488,298
+2759,16371,4856-1,1,Doc Ock's Hideout,2004,488,485
+2760,16423,71013-1,1,Ice Queen,2016,556,12
+2761,16423,71013-10,1,Penguin Boy,2016,556,7
+2762,16423,71013-11,1,Rogue,2016,556,7
+2763,16423,71013-12,1,Dog Show Winner,2016,556,7
+2764,16423,71013-13,1,Mariachi,2016,556,7
+2765,16423,71013-14,1,Spy,2016,556,9
+2766,16423,71013-15,1,Banana Guy,2016,556,5
+2767,16423,71013-16,1,Babysitter,2016,556,8
+2768,16423,71013-2,1,Desert Warrior,2016,556,6
+2769,16423,71013-3,1,Cyborg,2016,556,8
+2770,16423,71013-4,1,Cute Little Devil Set,2016,556,10
+2771,16423,71013-5,1,Spooky Boy,2016,556,7
+2772,16423,71013-6,1,Hiker,2016,556,8
+2773,16423,71013-7,1,Wildlife Photographer,2016,556,8
+2774,16423,71013-8,1,Kickboxer,2016,556,6
+2775,16423,71013-9,1,Scallywag Pirate,2016,556,7
+2776,16460,71012-1,1,Stitch,2016,555,4
+2777,16460,71012-10,1,Donald Duck,2016,555,6
+2778,16460,71012-11,1,Minnie Mouse,2016,555,6
+2779,16460,71012-12,1,Mickey Mouse,2016,555,4
+2780,16460,71012-13,1,Mr. Incredible,2016,555,6
+2781,16460,71012-14,1,Syndrome,2016,555,6
+2782,16460,71012-15,1,Peter Pan,2016,555,7
+2783,16460,71012-16,1,Captain Hook,2016,555,6
+2784,16460,71012-17,1,Ursula,2016,555,6
+2785,16460,71012-18,1,Ariel,2016,555,7
+2786,16460,71012-2,1,Alien,2016,555,4
+2787,16460,71012-3,1,Buzz Lightyear,2016,555,8
+2788,16460,71012-4,1,Aladdin,2016,555,6
+2789,16460,71012-5,1,Genie,2016,555,7
+2790,16460,71012-6,1,Maleficent,2016,555,10
+2791,16460,71012-7,1,Alice,2016,555,8
+2792,16460,71012-8,1,Cheshire Cat,2016,555,5
+2793,16460,71012-9,1,Daisy Duck,2016,555,6
+2794,16593,71014-1,1,Joachim Löw,2016,557,6
+2795,16593,71014-10,1,Toni Kroos (18),2016,557,6
+2796,16593,71014-11,1,Sami Khedira (6),2016,557,6
+2797,16593,71014-12,1,André Schürrle (9),2016,557,6
+2798,16593,71014-13,1,Marco Reus (21),2016,557,6
+2799,16593,71014-14,1,Christoph Kramer (20),2016,557,6
+2800,16593,71014-15,1,Mario Götze (19),2016,557,6
+2801,16593,71014-16,1,Max Kruse (23),2016,557,6
+2802,16593,71014-2,1,Manuel Neuer (1),2016,557,6
+2803,16593,71014-3,1,Jérôme Boateng (17),2016,557,6
+2804,16593,71014-4,1,Mats Hummels (5),2016,557,6
+2805,16593,71014-5,1,Benedikt Höwedes (4),2016,557,6
+2806,16593,71014-6,1,Shkodran Mustafi (2),2016,557,6
+2807,16593,71014-7,1,Bastian Schweinsteiger (7),2016,557,6
+2808,16593,71014-8,1,Mesut Özil (8),2016,557,6
+2809,16593,71014-9,1,Thomas Müller (13),2016,557,6
+2810,16594,71017-1,1,Lobster-Lovin’ Batman™,2017,484,7
+2811,16594,71017-10,1,Pink Power Batgirl™,2017,484,8
+2812,16594,71017-11,1,Red Hood™,2017,484,8
+2813,16594,71017-12,1,The Eraser™,2017,484,6
+2814,16594,71017-13,1,Nurse Harley Quinn™,2017,484,7
+2815,16594,71017-14,1,Orca™,2017,484,5
+2816,16594,71017-15,1,Zodiac Master™,2017,484,6
+2817,16594,71017-16,1,Catman™,2017,484,9
+2818,16594,71017-17,1,March Harriet™,2017,484,6
+2819,16594,71017-18,1,The Calculator™,2017,484,8
+2820,16594,71017-19,1,King Tut™,2017,484,7
+2821,16594,71017-2,1,Glam Metal Batman™,2017,484,8
+2822,16594,71017-20,2,The Mime™,2017,484,7
+2823,16594,71017-3,1,Fairy Batman™,2017,484,8
+2824,16594,71017-4,1,Clan of the Cave Batman™,2017,484,7
+2825,16594,71017-5,1,Vacation Batman™,2017,484,8
+2826,16594,71017-6,1,Barbara Gordon™,2017,484,8
+2827,16594,71017-7,1,Commissioner Gordon™,2017,484,7
+2828,16594,71017-8,1,The Joker™ – Arkham Asylum,2017,484,6
+2829,16594,71017-9,1,Dick Grayson™,2017,484,7
+2830,18701,71018-1,1,Professional Surfer,2017,611,6
+2831,18701,71018-10,1,Battle Dwarf,2017,611,9
+2832,18701,71018-11,1,Retro Spaceman,2017,611,7
+2833,18701,71018-12,1,Yuppie,2017,611,8
+2834,18701,71018-13,1,Rocket Boy,2017,611,7
+2835,18701,71018-14,1,Dance Instructor,2017,611,7
+2836,18701,71018-15,1,Elf-Girl,2017,611,7
+2837,18701,71018-16,1,Highwayman,2017,611,9
+2838,18701,71018-2,1,Circus Strong Man,2017,611,6
+2839,18701,71018-3,1,Gourmet Chef,2017,611,7
+2840,18701,71018-4,1,Corn Cob Guy,2017,611,5
+2841,18701,71018-5,1,Veterinarian,2017,611,6
+2842,18701,71018-6,1,Hot Dog Man,2017,611,9
+2843,18701,71018-7,1,Butterfly Girl,2017,611,10
+2844,18701,71018-8,1,Roman Gladiator,2017,611,6
+2845,18701,71018-9,1,Connoisseur,2017,611,7
