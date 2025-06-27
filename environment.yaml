@@ -9,7 +9,6 @@ dependencies:
     - scipy
     - matplotlib
     - jupyter
-    - quarto
+    - quarto=1.6.43
     - pip
-
-
+    - openpyxl

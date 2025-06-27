@@ -1,0 +1,75 @@
+---
+format: html
+---
+
+<script src='../../src/quiz.js'></script>
+
+# 1.1. Exercises
+
+## Tidy Data Questions
+
+<div id='mcq1'></div>
+<script>
+    generateQuiz(
+        'mcq1',
+        'Question 1',
+        'The same data may be considered tidy for different shaped dataframes depending on the statistical questions .',
+        {
+        'True': '',
+        'False': 'Tidy data depends quite often depends on the statistical question.',
+        },
+        'True',
+    );
+</script>
+
+<div id='mcq2'></div>
+<script>
+    generateQuiz(
+        'mcq2',
+        'Question 2',
+        'Which of the following does <b>not</b> characterize a tidy dataset?',
+        {
+        'Each row is a single observation': 'You may want to look over this before moving forward.',
+        'Each column is a single variable': 'You may want to look over this before moving forward.',
+        'Each value is a single cell': 'You may want to look over this before moving forward.',
+        'There are no <code>NaN</code> values in the dataset': 'You are right.  It is possible to still have tidy data with missing values.',
+        },
+        'There are no <code>NaN</code> values in the dataset',
+    );
+</script>
+
+## Is it Tidy I ?
+
+![](../../static/module3/Q3.png){width="85%" fig-alt="404 image" fig-align="center"}
+
+<div id='mcq3'></div>
+<script>
+    generateQuiz(
+        'mcq3',
+        'Question 1',
+        'Given the 3 tidy data criteria, would this dataframe be defined as tidy?',
+        {
+        'Yes': 'Not quite!  Take a specific look at the column named <code>special_attack_defense</code>. Is this meeting criterion #3?',
+        'No': 'Good job!  Did you notice that <code>special_attack_defense</code> had two values per cell defying criterion #3?',
+        },
+        'No',
+    );
+</script>
+
+## Is it Tidy II?
+
+![](../../static/module3/Q4.png){width="85%" fig-alt="404 image" fig-align="center"}
+
+<div id='mcq4'></div>
+<script>
+    generateQuiz(
+        'mcq4',
+        'Question 1',
+        'Given the 3 tidy data criteria, would this dataframe be defined as tidy?',
+        {
+        'Yes': 'Not quite!  Do you notice anything about the rows?  Are they meeting Criterion #1?',
+        'No': 'Good job!  You must have seen the duplicate rows of <code>Ivysaur</code>, <code>Charmeleon</code> and <code>Squirtle</code>.',
+        },
+        'No',
+    );
+</script>
