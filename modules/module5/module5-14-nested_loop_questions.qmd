@@ -1,0 +1,154 @@
+---
+format: live-html
+---
+
+<script src='../../src/quiz.js'></script>
+
+# 4.1. Exercises
+
+## Nested Loop Questions
+
+```python
+for i in range(0, 49, 10):
+    print('Hurray')
+    for j in range(0,8,2):
+        print("This is fun!")
+```
+
+<div id='mcq1'></div>
+<script>
+    generateQuiz(
+        'mcq1',
+        'Question 1',
+        'Given the code above, how many times does the line <code>print(’Hurray’)</code> get executed?',
+        {
+        '48': 'Keep track of the step increment the values are increasing by in the outer loop.',
+        '49': 'Keep track of the step increment the values are increasing by in the outer loop.',
+        '4': 'Focus your attention on the outer loop and the number of times it executes the code in its body.',
+        '5': 'Well done!  The outer loop calls <code>print(’Hurray’)</code> 5 times.',
+        },
+        '5',
+    );
+</script>
+
+<div id='mcq2'></div>
+<script>
+    generateQuiz(
+        'mcq2',
+        'Question 2',
+        'Given the code above, how many times does the line <code>print("This is fun!")</code> get executed?',
+        {
+        '48': 'We know the outer loop iterates 5 times and the inner loop iterates 4 times (0,2,4,6).',
+        '25': 'We know the outer loop iterates 5 times and the inner loop iterates 4 times (0,2,4,6).',
+        '20': 'We know the outer loop iterates 5 times and the inner loop iterates 4 times (0,2,4,6). We must multiply those numbers together and get 20.',
+        '5': 'We know the outer loop iterates 5 times and the inner loop iterates 4 times (0,2,4,6).',
+        },
+        '20',
+    );
+</script>
+
+
+## Making a Nested Loop
+
+**Instructions:**    
+Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
+
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
+
+_**Make sure you remove the hash (`#`) symbol in the coding portions of this question.  We have commented them so that the line won't execute and you can test your code after each step.**_
+
+Let's count how many letters are contained in the dishes of a menu! 
+We have a list named `menu` that contains multiples lists. We want to calculate how many character are contain in the entire `menu`. 
+
+**Tasks:**
+
+- Make an object named `charater_count` and give it a value of 0.
+- Make an outer loop that iterates over each list of the `menu` list.
+- Make an inner loop that iterates over each element in the nested list and add the length of it to `charater_count`.
+- Display the value of `charater_count` outside both loops.
+
+```{pyodide}
+#| setup: true
+#| exercise: making_a_nested_loop
+import pandas as pd
+```
+
+```{pyodide}
+#| exercise: making_a_nested_loop
+menu = [['Spot Prawn Risotto', 'Atlantic Lobster Bisque',
+         'Crab Cake', 'Crisp Calamari'], 
+       ['Classic Brown Derby Cobb', 'Spring Garden Salad',
+        'Iceberg Wedge'],
+       ['Sirloin Steak', 'Pork Chop', 'New York Striploin',
+        'Bone-in Rib Steak'],
+       ['New York Cheesecake', 'Creme Brulee', 'Key Lime Pie',
+        'Carrot Cake', 'Pavlova']]
+
+# Make an object named charater_count and give it a value of 0
+____ 
+
+# Make an outer loop that iterates over each list of the menu list        
+# Make an inner loop that iterates over each element in the nested list 
+# and add the length of it to charater_count
+____
+____
+____
+
+
+# Display the value of character_count outside both loops
+____
+```
+
+```{pyodide}
+#| exercise: making_a_nested_loop
+#| check: true
+import pandas as pd
+from src.utils import print_correct_msg
+
+assert result == 238, "The value for character count is incorrect. Make sure you are adding 'character_count' to the length of the current dish"
+print_correct_msg()
+```
+
+:::: { .hint exercise="making_a_nested_loop"}
+::: { .callout-note collapse="false"}
+
+## Hint 1
+
+- Are you using 4 indentations for each loop?
+- Are you putting `character_count = character_count + len(dish)` in the inner loop?
+
+:::
+::::
+
+:::: { .solution exercise="making_a_nested_loop" }
+::: { .callout-tip collapse="false"}
+
+## Fully worked solution:
+
+```{pyodide}
+menu = [['Spot Prawn Risotto', 'Atlantic Lobster Bisque',
+         'Crab Cake', 'Crisp Calamari'], 
+       ['Classic Brown Derby Cobb', 'Spring Garden Salad',
+        'Iceberg Wedge'],
+       ['Sirloin Steak', 'Pork Chop', 'New York Striploin',
+        'Bone-in Rib Steak'],
+       ['New York Cheesecake', 'Creme Brulee', 'Key Lime Pie',
+        'Carrot Cake', 'Pavlova']]
+
+# Make an object named charater_count and give it a value of 0     
+character_count = 0
+
+# Make an outer loop that iterates over each list of the menu list        
+# Make an inner loop that iterates over each element in the nested list 
+# and add the length of it to charater_count
+for category in menu:
+    for dish in category:
+        character_count = character_count + len(dish)
+
+
+# Display the value of character_count outside both loops
+character_count
+```
+
+:::
+::::

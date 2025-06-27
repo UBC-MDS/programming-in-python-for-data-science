@@ -1,0 +1,222 @@
+---
+format: live-html
+---
+
+<script src='../../src/quiz.js'></script>
+
+# 6.1. Exercises
+
+## Function Questions
+
+<div id='mcq1'></div>
+<script>
+    generateQuiz(
+        'mcq1',
+        'Question 1',
+        'What Python keyword is needed to begin the construction of a function?',
+        {
+        '<code>fun</code>': 'Unfortunately, <code>fun</code> is not a python keyword, but it would have been <code>fun</code> if it was!',
+        '<code>funct</code>': 'Maybe look back at the material again',
+        '<code>def </code>': '',
+        '<code>define </code>': 'We are defining a function but python doesn’t have <code>define</code> as a keyword.',
+        },
+        '<code>def </code>',
+    );
+</script>
+
+```python
+def add_stars(name):
+    name = "**" + name + "**"
+    return
+```
+
+<div id='mcq2'></div>
+<script>
+    generateQuiz(
+        'mcq2',
+        'Question 2',
+        'What does the function above return?',
+        {
+        '<code>None</code>': 'Well done.',
+        'A string surrounded by stars': 'Does it really return anything?',
+        '<code>Error</code>': 'Are you seeing an error that we aren’t?',
+        },
+        '<code>None</code>',
+    );
+</script>
+
+
+## Coding questions
+
+**Instructions:**    
+Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
+
+**When you see `____` in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.**
+
+_**Make sure you remove the hash (`#`) symbol in the coding portions of this question.  We have commented them so that the line won't execute and you can test your code after each step.**_
+
+
+### Making a Function from Existing Code
+
+Let's practice converting existing code into a function so that it complies with the DRY principle. 
+
+**Tasks:**
+
+- Using the code provided, transform it into a function named `uppercase_count`
+- The function should take in one argument and return the number of uppercases in the string
+- Test it on the string `I hope you've Been Learning ALOT!`
+
+```{pyodide}
+#| setup: true
+#| exercise: making_a_function_from_existing_code
+import pandas as pd
+```
+
+```{pyodide}
+#| exercise: making_a_function_from_existing_code
+string1 = "Have you Been enjoying yourself While learning about Python?"
+
+uppercase_num = 0
+for character in string1:
+    if character.isupper():
+        uppercase_num += 1
+
+uppercase_num
+        
+# Using the code above, transform it into a function named uppercase_count
+# that takes in one argument and returns the number of uppercases in the string
+____
+
+# Test it on the string "I hope you've Been Learning ALOT!"
+uppercase_num2 = uppercase_count("I hope you've Been Learning ALOT!")
+uppercase_num2
+```
+
+```{pyodide}
+#| exercise: making_a_function_from_existing_code
+#| check: true
+from src.utils import print_correct_msg
+
+assert result == 7, "Your function output is incorrect. Are you converting properly?"
+print_correct_msg()
+```
+
+:::: { .hint exercise="making_a_function_from_existing_code"}
+::: { .callout-note collapse="false"}
+
+## Hint 1
+
+- Are you defining your function with `def uppercase_count(string):`?
+- Are you returning the object `uppercase_num2`?
+
+:::
+::::
+
+:::: { .solution exercise="making_a_function_from_existing_code" }
+::: { .callout-tip collapse="false"}
+
+## Fully worked solution:
+
+```{pyodide}
+string1 = "Have you Been enjoying yourself While learning about Python?"
+
+uppercase_num = 0
+for character in string1:
+    if character.isupper():
+        uppercase_num += 1
+
+uppercase_num
+        
+# Using the code above, transform it into a function named uppercase_count
+# that takes in one argument and returns the number of uppercases in the string
+def uppercase_count(string):
+    uppercase_num = 0
+    for character in string:
+        if character.isupper():
+            uppercase_num += 1
+
+    return uppercase_num
+
+# Test it on the string "I hope you've Been Learning ALOT!" 
+uppercase_num2 = uppercase_count("I hope you've Been Learning ALOT!")
+uppercase_num2
+```
+
+:::
+::::
+
+<br>
+
+### Making a Function
+
+Let's practice making a function that returns the BMI (Body Mass Index) given a person's weight and height.
+
+**Tasks:**
+
+- Define a function and give it the name `BMI_calculator`.
+- It should take 2 arguments which can be called `height`, and `weight`.
+- BMI can be calculated as: 
+
+![](../../static/module5/CodeCogsEqn.gif){fig-alt="404 image" fig-align="center"}
+
+<br>
+
+- Make sure the function returns the calculated BMI.
+- Once you have created your function, use it to calculate the BMI of a person with a height of 62 inches and a weight of 105 lbs.   
+- Save this in an object name `bmi_calc`.
+
+
+```{pyodide}
+#| exercise: making_a_function
+# Make a function that takes in the arguments height and weight and returns BMI
+____
+____
+
+# Use the function to calculate the BMI of a person with height 62 inches and a weight of 105 lbs    
+# Save this in an object name bmi_calc
+# ____ = ____
+
+# Display the BMI
+# ____ 
+```
+
+```{pyodide}
+#| exercise: making_a_function
+#| check: true
+from src.utils import assert_accuracy_almost
+
+assert_accuracy_almost((105/(62**2)) * 703, result)
+```
+
+:::: { .hint exercise="making_a_function"}
+::: { .callout-note collapse="false"}
+
+## Hint 1
+
+- Are you defining your function with `def bmi_calculator(height, weight):`
+- Are you returning `(weight/(height**2)) * 703`?
+- To use it, are you running `bmi_calculator(62, 105)`?
+
+:::
+::::
+
+:::: { .solution exercise="making_a_function" }
+::: { .callout-tip collapse="false"}
+
+## Fully worked solution:
+
+```{pyodide}
+# Make a function that takes in the arguments height and weight and returns BMI
+def bmi_calculator(height, weight):
+    return (weight/(height**2)) * 703
+
+# Use the function to calculate the BMI of a person with height 62 inches and a weight of 105 lbs    
+# Save this in an object name bmi_calc
+bmi_calc = bmi_calculator(62, 105)
+
+# Display the BMI
+bmi_calc 
+```
+
+:::
+::::
