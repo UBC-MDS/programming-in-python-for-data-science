@@ -209,7 +209,7 @@
 <li><code>.count()</code></li>
 <li><code>.split()</code></li>
 </ul>
-<div id="4bdfa48e" class="cell" data-execution_count="2">
+<div id="f1a2b2d4" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a>instrument <span class="op">=</span> <span class="st">'Violin'</span></span>
 <span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a>instrument</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
@@ -217,7 +217,7 @@
 </div>
 </div>
 <p><br></p>
-<div id="6bb525d9" class="cell" data-execution_count="3">
+<div id="8f04c7f8" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a>instrument.upper()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>'VIOLIN'</code></pre>
@@ -252,21 +252,21 @@
 </section>
 <section class="slide level2">
 
-<div id="2dab1519" class="cell" data-execution_count="4">
+<div id="5c68ee16" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a>instrument.lower()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>'violin'</code></pre>
 </div>
 </div>
 <p><br></p>
-<div id="3f765e17" class="cell" data-execution_count="5">
+<div id="56527010" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a>instrument.count(<span class="st">'i'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
 <pre><code>2</code></pre>
 </div>
 </div>
 <p><br></p>
-<div id="1fae7a9a" class="cell" data-execution_count="6">
+<div id="2779fd85" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a aria-hidden="true" tabindex="-1"></a>instrument.split(<span class="st">'i'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <pre><code>['V', 'ol', 'n']</code></pre>
@@ -290,7 +290,7 @@
 </section>
 <section id="processing-string-columns" class="slide level2">
 <h2>Processing String Columns</h2>
-<div id="2063457c" class="cell" data-execution_count="8">
+<div id="39243e8b" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a aria-hidden="true" tabindex="-1"></a>cycling</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
 <div>
@@ -410,7 +410,7 @@
 </section>
 <section class="slide level2">
 
-<div id="19b663a6" class="cell" data-execution_count="10">
+<div id="754b3162" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a aria-hidden="true" tabindex="-1"></a>upper_cycle <span class="op">=</span> cycling.assign(Comments <span class="op">=</span> cycling[<span class="st">'Comments'</span>].<span class="bu">str</span>.upper())</span>
 <span id="cb12-2"><a aria-hidden="true" tabindex="-1"></a>upper_cycle.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="10">
@@ -494,7 +494,7 @@
 </div>
 </div>
 <p><br></p>
-<div id="e1cd28ea" class="cell" data-execution_count="11">
+<div id="84dd533b" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a aria-hidden="true" tabindex="-1"></a>rain_cycle <span class="op">=</span> upper_cycle.assign(Rain <span class="op">=</span> upper_cycle[<span class="st">'Comments'</span>].<span class="bu">str</span>.count(<span class="st">'RAIN'</span>))</span>
 <span id="cb13-2"><a aria-hidden="true" tabindex="-1"></a>rain_cycle.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="11">
@@ -605,7 +605,7 @@
 </section>
 <section class="slide level2">
 
-<div id="0490cdf0" class="cell" data-execution_count="12">
+<div id="3d167d7d" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a aria-hidden="true" tabindex="-1"></a>upper_cycle[<span class="st">'Comments'</span>].<span class="bu">str</span>.split(expand<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
 <div>
@@ -739,14 +739,14 @@
 </section>
 <section class="slide level2">
 
-<div id="979662ba" class="cell" data-execution_count="13">
+<div id="1f7959d2" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">"My favorite colour"</span> <span class="op">+</span> <span class="st">"is Blue"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="13">
 <pre><code>'My favorite colouris Blue'</code></pre>
 </div>
 </div>
 <p><br></p>
-<div id="eab4a749" class="cell" data-execution_count="14">
+<div id="d6eca311" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a aria-hidden="true" tabindex="-1"></a>combined_cycle <span class="op">=</span> cycling.assign(Distance_str <span class="op">=</span> cycling[<span class="st">'Distance'</span>].astype(<span class="st">'str'</span>) <span class="op">+</span> <span class="st">' km'</span>)</span>
 <span id="cb17-2"><a aria-hidden="true" tabindex="-1"></a>combined_cycle.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="14">
@@ -852,7 +852,7 @@
 </section>
 <section class="slide level2">
 
-<div id="5e69ecc4" class="cell" data-execution_count="15">
+<div id="d8be88b2" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a aria-hidden="true" tabindex="-1"></a>upper_cycle.head(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="15">
 <div>
@@ -917,7 +917,7 @@
 </div>
 </div>
 <p><br></p>
-<div id="7abdebe5" class="cell" data-execution_count="16">
+<div id="decf062c" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a aria-hidden="true" tabindex="-1"></a>cap_cycle <span class="op">=</span> upper_cycle.assign(Comments <span class="op">=</span> upper_cycle[<span class="st">'Comments'</span>].<span class="bu">str</span>.capitalize())</span>
 <span id="cb19-2"><a aria-hidden="true" tabindex="-1"></a>cap_cycle.head(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="16">
@@ -983,7 +983,7 @@
 </div>
 </div>
 <p><br></p>
-<div id="4c8374ff" class="cell" data-execution_count="17">
+<div id="45e58065" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a aria-hidden="true" tabindex="-1"></a>cap_cycle <span class="op">=</span> upper_cycle.assign(Comments <span class="op">=</span> upper_cycle[<span class="st">'Comments'</span>].<span class="bu">str</span>.title())</span>
 <span id="cb20-2"><a aria-hidden="true" tabindex="-1"></a>cap_cycle.head(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="17">
@@ -1066,14 +1066,14 @@
 <section id="strip" class="slide level2">
 <h2>Strip</h2>
 <p><a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.str.strip.html" target="_blank"><code>.strip()</code> </a>.</p>
-<div id="51b315fc" class="cell" data-execution_count="18">
+<div id="d9b3fd8a" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">"Sunshine"</span> <span class="op">==</span> <span class="st">" Sunshine "</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="18">
 <pre><code>False</code></pre>
 </div>
 </div>
 <p><br></p>
-<div id="95720aaa" class="cell" data-execution_count="19">
+<div id="d3c990f7" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a aria-hidden="true" tabindex="-1"></a>string1 <span class="op">=</span> <span class="st">" Sunshine "</span> </span>
 <span id="cb23-2"><a aria-hidden="true" tabindex="-1"></a>new_string1 <span class="op">=</span> string1.strip()</span>
 <span id="cb23-3"><a aria-hidden="true" tabindex="-1"></a>new_string1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1082,7 +1082,7 @@
 </div>
 </div>
 <p><br></p>
-<div id="c147c39a" class="cell" data-execution_count="20">
+<div id="df472386" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">"Sunshine"</span> <span class="op">==</span> new_string1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="20">
 <pre><code>True</code></pre>
@@ -1109,7 +1109,7 @@
 </section>
 <section class="slide level2">
 
-<div id="a21d4aaa" class="cell" data-execution_count="21">
+<div id="0be8862d" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a aria-hidden="true" tabindex="-1"></a>cycling.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="21">
 <div>
@@ -1192,7 +1192,7 @@
 </div>
 </div>
 <p><br></p>
-<div id="e663e2f5" class="cell" data-execution_count="22">
+<div id="8dd5a857" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a aria-hidden="true" tabindex="-1"></a>cycling[cycling[<span class="st">'Comments'</span>] <span class="op">==</span> <span class="st">'Rain'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="22">
 <div>
@@ -1248,7 +1248,7 @@
 </section>
 <section class="slide level2">
 
-<div id="6ca9b290" class="cell" data-execution_count="23">
+<div id="a83eab05" class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a aria-hidden="true" tabindex="-1"></a>stripped_cycling <span class="op">=</span> cycling.assign(Comments <span class="op">=</span> cycling[<span class="st">'Comments'</span>].<span class="bu">str</span>.strip())</span>
 <span id="cb29-2"><a aria-hidden="true" tabindex="-1"></a>stripped_cycling.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="23">
@@ -1332,7 +1332,7 @@
 </div>
 </div>
 <p><br></p>
-<div id="97f0df6d" class="cell" data-execution_count="24">
+<div id="78009a4d" class="cell" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a aria-hidden="true" tabindex="-1"></a>stripped_cycling[stripped_cycling[<span class="st">'Comments'</span>] <span class="op">==</span> <span class="st">'Rain'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="24">
 <div>
@@ -1397,7 +1397,7 @@
 </section>
 <section class="slide level2">
 
-<div id="920e0a82" class="cell" data-execution_count="25">
+<div id="985a0159" class="cell" data-execution_count="25">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a aria-hidden="true" tabindex="-1"></a>stripped_cycling.tail(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="25">
 <div>
@@ -1480,7 +1480,7 @@
 </div>
 </div>
 <p><br></p>
-<div id="896fba3d" class="cell" data-execution_count="26">
+<div id="d65d26c1" class="cell" data-execution_count="26">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a aria-hidden="true" tabindex="-1"></a>stripped_cycling[<span class="st">'Comments'</span>].<span class="bu">str</span>.strip(<span class="st">"!"</span>).tail()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="26">
 <pre><code>28             Very tired, riding into the wind
