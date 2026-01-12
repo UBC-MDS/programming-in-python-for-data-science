@@ -4,7 +4,7 @@ format:
     page-layout: full
 ---
 
-# 0. Bonus Module
+# 0. Python Vibe Coding Tutorial
 
 ::: {.panel-tabset .nav-pills}
 
