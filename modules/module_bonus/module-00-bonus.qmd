@@ -1,0 +1,23 @@
+---
+format:
+  html:
+    page-layout: full
+---
+
+# 0. Bonus Module
+
+::: {.panel-tabset .nav-pills}
+
+## Video
+
+<iframe
+    class="video"
+    src="https://drive.google.com/file/d/1tIFSOla8gEEe2Hw1JJtI0gtzXOKS9S3G/preview" 
+    title="Bonus Module Video - Python Vibe Coding Tutorial"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+></iframe>
+
+
+:::

@@ -248,6 +248,9 @@ website:
           - text: '&nbsp;&nbsp; 6.1. Exercises'
             href: modules/module8/module8-24-advanced_string_questions.qmd
           - href: modules/module8/module8-27-what_did_we_just_learn.qmd
+      - section: "**Bonus Module**"
+        contents:
+          - href: modules/module_bonus/module-00-bonus.qmd
       - section: "**Module Closing Remarks**"
         contents:
           - href: modules/module9/module9-00-congratulations.qmd
