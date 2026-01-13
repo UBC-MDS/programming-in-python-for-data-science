@@ -12,7 +12,7 @@ format:
 
 <iframe
     class="video"
-    src="https://drive.google.com/file/d/1tIFSOla8gEEe2Hw1JJtI0gtzXOKS9S3G/preview" 
+    src="https://drive.google.com/file/d/1bzXzIQ76p-Ii7g231x3HY0pW_HM9n24Y/view" 
     title="Bonus Module Video - Python Vibe Coding Tutorial"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
