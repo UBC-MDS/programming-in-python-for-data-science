@@ -56,7 +56,7 @@ website:
             href: modules/module1/module1-12-slicing_columns_only.qmd
           - href: modules/module1/module1-13-selecting_using_.loc[].qmd
           - text: '&nbsp;&nbsp; 5.1. Exercises'
-            href: modules/module1/module1-14-rearraging_columns_and_rows.qmd
+            href: modules/module1/module1-14-rearranging_columns_and_rows.qmd
           - href: modules/module1/module1-16-obtaining_dataframe_values.qmd
           - text: '&nbsp;&nbsp; 6.1. Exercises'
             href: modules/module1/module1-17-practicing_selecting_values.qmd
@@ -160,7 +160,7 @@ website:
           - text: '&nbsp;&nbsp; 7.1. Exercises'
             href: modules/module4/module4-24-practice_operations_with_dataframe_columns.qmd
           - href: modules/module4/module4-25-what_did_we_just_learn.qmd
-      - section: "**M5: Making Choices and Repeating Iterations**"
+      - section: "**M5. Making Choices and Repeating Iterations**"
         contents:
           - href: modules/module5/module5-00-module_learning_outcomes.qmd
           - href: modules/module5/module5-01-making_choices_with_conditional_statements.qmd
@@ -182,7 +182,7 @@ website:
           - text: '&nbsp;&nbsp; 6.1. Exercises'
             href: modules/module5/module5-20-function_questions.qmd
           - href: modules/module5/module5-23-what_did_we_just_learn.qmd
-      - section: "**M6: Functions Fundamentals and Best Practices**"
+      - section: "**M6. Function Fundamentals and Best Practices**"
         contents:
           - href: modules/module6/module6-00-module_learning_outcomes.qmd
           - href: modules/module6/module6-01-dry_revisited_and_function_fundamentals.qmd
@@ -204,7 +204,7 @@ website:
           - text: '&nbsp;&nbsp; 6.1. Exercises'
             href: modules/module6/module6-23-function_design_questions.qmd
           - href: modules/module6/module6-26-what_did_we_just_learn.qmd
-      - section: "**M7: Importing Files and the Coding Style Guide**"
+      - section: "**M7. Importing Files and the Coding Style Guide**"
         contents:
           - href: modules/module7/module7-00-module_learning_outcomes.qmd
           - href: modules/module7/module7-01-importing_python_libraries.qmd
@@ -212,7 +212,7 @@ website:
             href: modules/module7/module7-02-importing_packages.qmd
           - href: modules/module7/module7-05-working_with_other_files.qmd
           - text: '&nbsp;&nbsp; 2.1. Exercises'
-            href: modules/module7/module7-06-importin_your_own_functions_quesitons.qmd
+            href: modules/module7/module7-06-importing_your_own_functions_questions.qmd
           - href: modules/module7/module7-08-testing_your_own_functions_with_pytest.qmd
           - text: '&nbsp;&nbsp; 3.1. Exercises'
             href: modules/module7/module7-09-using_pytest_questions.qmd
@@ -226,7 +226,7 @@ website:
           - text: '&nbsp;&nbsp; 6.1. Exercises'
             href: modules/module7/module7-19-using_the_python_debugger.qmd
           - href: modules/module7/module7-20-what_did_we_just_learn.qmd
-      - section: "**M8: A Slice of NumPy and Advanced Data Wrangling**"
+      - section: "**M8. A Slice of NumPy and Advanced Data Wrangling**"
         contents:
           - href: modules/module8/module8-00-module_learning_outcomes.qmd
           - href: modules/module8/module8-01-numpy_and_1d_arrays.qmd
@@ -240,7 +240,7 @@ website:
             href: modules/module8/module8-12-finding_and_dropping_null_values_questions.qmd
           - href: modules/module8/module8-16-working_with_dates_and_time.qmd
           - text: '&nbsp;&nbsp; 4.1. Exercises'
-            href: modules/module8/module8-17-datetime_quesitons.qmd
+            href: modules/module8/module8-17-datetime_questions.qmd
           - href: modules/module8/module8-19-introduction_to_working_with_strings.qmd
           - text: '&nbsp;&nbsp; 5.1. Exercises'
             href: modules/module8/module8-20-string_questions.qmd
@@ -255,7 +255,7 @@ website:
         contents:
           - href: modules/module9/module9-00-congratulations.qmd
 
-# Since we are declaring options for two formats here (html and revealjs)
+# Since we are declaring options for two formats here (html and reveal.js)
 # each qmd file needs to include a yaml block including which format to use for that file.
 # https://github.com/quarto-dev/quarto-cli/issues/4583
 format:
@@ -283,7 +283,7 @@ format:
     font-size: 0.5em
     monobackgroundcolor: '#F1F3F5'
     highlight-style: atom-one
-    # tango atom-one  nord
+    # tango atom-one nord
     transition: slide
     controls-layout: bottom-right
     show-notes: true
