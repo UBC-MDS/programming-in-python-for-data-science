@@ -1,40 +1,37 @@
-# Course Syllabus and Learning Outcome 
-
-## Course Learning Outcomes 
+# Course Learning Outcomes
 
 1. Define tidy data and explain why it is an optimal format for data analysis.
-1. Transform data into the tidy data format using pandas.
-1. Demonstrate fundamental programming concepts such as loops and conditionals.
-1. Understand the key data structures in Python.
-1. Read data into Python data from vanilla (e.g., .csv) and non-standard plain text files, as well as common spreadsheet file types (e.g., .xls).
-1. Construct simple plots using pandas.
-1. Manipulate a single data table by:   
-    7.1 Filtering rows based on a criterion or combination of criteria.   
-    7.2 Selecting variables.   
-    7.3 Creating new variables and modifying pre-existing ones.   
-    7.4 Rearranging the observations or variables by sorting.   
-1. Manage and manipulate data with dates and times, missing values and categorical variables as well as renaming dataframe columns.
-1. Use the split-apply-combine approach to iterate over and summarize data by groups.
-1. Produce human-readable code that incorporates best practices of programming and coding style.
+2. Transform data into the tidy data format using pandas.
+3. Demonstrate fundamental programming concepts such as loops and conditionals.
+4. Understand the key data structures in Python.
+5. Read data into Python data from vanilla (e.g., .csv) and non-standard plain text files, as well as common spreadsheet file types (e.g., .xls).
+6. Construct simple plots using pandas.
+7. Manipulate a single data table by:
+    7.1 Filtering rows based on a criterion or combination of criteria.
+    7.2 Selecting variables.
+    7.3 Creating new variables and modifying pre-existing ones.
+    7.4 Rearranging the observations or variables by sorting.
+8. Manage and manipulate data with dates and times, missing values and categorical variables as well as renaming dataframe columns.
+9. Use the split-apply-combine approach to iterate over and summarize data by groups.
+10. Produce human-readable code that incorporates best practices of programming and coding style.
 
-
-## Modules 
+## Modules
 
 ### Module 1: Python & Pandas - an unexpected friendship!
 
-#### Topics 
+#### Topics
 
-- Understanding Dataframes 
+- Understanding Dataframes
 - Reading in packages, libraries/modules
 - Simple table manipulations (selecting) using Pandas
 - Saving Dataframes as variables
 - Indexing a dataframe using `.iloc[]` and `.loc[]`
 - pandas plotting to make a scatter plot
-- Obtain simple summary statistics of a dataframe 
-- Writing data and saving plots 
+- Obtain simple summary statistics of a dataframe
+- Writing data and saving plots
 - _(In the assignment introduce Jupyter notebooks)_
 
-#### Learning Outcomes 
+#### Learning Outcomes
 
 By the end of the module, students are expected to:
 
@@ -49,21 +46,18 @@ By the end of the module, students are expected to:
 - Construct simple visualizations using [Altair](https://altair-viz.github.io/).
 - Create a `.csv` file from a dataframe using [`.to_csv()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_csv.html).
 
-
 ### Module 2: Not So Scary Wrangling (Table Manipulation and Chaining)
 
-#### Topics 
+#### Topics
 
 - Read different  files using Pandas `pd.read_csv()` and other functions
 - Simple dataframe manipulations and operations
 - filtering using `df[]`
-- Chaining 
-- `df.grouby()` and `df.agg()` 
+- Chaining
+- `df.groupby()` and `df.agg()`
 - Modify values in a dataframe using `df.apply()` and `df.applymap()`
 
-
-
-#### Learning Outcomes 
+#### Learning Outcomes
 
 By the end of the module, students are expected to:
 
@@ -75,18 +69,16 @@ By the end of the module, students are expected to:
 - Explain when chaining is appropriate.
 - Demonstrate chaining over multiple lines and verbs.
 
-
 ### Module 3: It's Tidy up Time! (Tidy Data)
 
-#### Topics 
+#### Topics
 
 - Tidy data - what is it?
 - Manipulating data using `df.melt()` and `df.pivot()`
-- Dataframe stacking and unstacking 
-- Combining dataframes 
+- Dataframe stacking and unstacking
+- Combining dataframes
 
-
-#### Learning Outcomes 
+#### Learning Outcomes
 
 By the end of the module, students are expected to:
 
@@ -96,40 +88,37 @@ By the end of the module, students are expected to:
 - Combine dataframes using [`.merge()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.merge.html) and [`.concat()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.concat.html) and know when to use these different methods.
 - Understand the different joining methods.
 
+### Module 4: Python without the "eek": Basic Python
 
-### Module 4: Python without the "eek": Basic Python 
-
-#### Topics 
+#### Topics
 
 - Basic datatypes - within a dataframe? 
 - Lists and tuples
 - String methods
-- Dictionaries how to convert them to a dataframe? 
+- Dictionaries how to convert them to a dataframe?
 
-#### Learning Outcomes 
+#### Learning Outcomes
 
 By the end of the module, students are expected to:
 
 - Compare and contrast Python's key data types.
-- Compare and contrast Python's key data structures. 
+- Compare and contrast Python's key data structures.
 - Use Python to determine the type and structure of an object.
 - Demonstrate how to create data structures and convert them to another.
-- Identify which operations can be applied to different data types and columns dtypes. 
+- Identify which operations can be applied to different data types and columns dtypes.
 
+### Module 5: Loops and Conditions
 
-### Module 5: Loops and Conditions 
-
-#### Topics 
+#### Topics
 
 - Dry
-- Loops 
-- Loops to read in data 
-- Nested loops 
-- Conditions in loops 
-- Intro to functions 
+- Loops
+- Loops to read in data
+- Nested loops
+- Conditions in loops
+- Intro to functions
 
-
-#### Learning Outcomes 
+#### Learning Outcomes
 
 By the end of the module, students are expected to:
 
@@ -139,17 +128,16 @@ By the end of the module, students are expected to:
 - Describe the expected outcome of code with nested loops.
 - Define and use a function that accepts parameters and returns values.
 
-
 ### Module 6:  Functions
 
 #### Topics
 
 - Functions example in plotting, add data to a dataframe?
 - Keyword arguments (default)
-- Docstrings 
-- Unit testing 
+- Docstrings
+- Unit testing
 
-#### Learning Outcomes 
+#### Learning Outcomes
 
 By the end of the module, students are expected to:
 
@@ -163,16 +151,15 @@ By the end of the module, students are expected to:
 - Use test-driven development principles to define a function that accepts parameters, returns values and passes all tests.
 - Handle errors gracefully via exception handling.
 
-
 ### Module 7: Importing Files and the Coding Style Guide
 
-#### Topics 
+#### Topics
 - Importing your created functions from a different file
 - `pytest`
 - Style guides and coding style - black
-- Python debugger (PDB) (video in notebook instead with MC question) 
+- Python debugger (PDB) (video in notebook instead with MC question)
 
-#### Learning Outcomes 
+#### Learning Outcomes
 
 By the end of the module, students are expected to:
 
@@ -184,20 +171,17 @@ By the end of the module, students are expected to:
 - When running [`pytest`](https://docs.pytest.org/en/stable/), explain how pytest finds the associated test functions.
 - Explain how the Python debugger can help rectify your code.
 
+### Module 8: Numpy, and Advanced Data Wrangling
 
+#### Topics
 
-### Module 8: Numpy, and Advanced Data Wrangling 
-
-#### Topics 
-
-- (Perhaps - - NumPy arrays, pandas relationship explained from old Module 6) 
-- Working with DateTime format 
+- (Perhaps - - NumPy arrays, pandas relationship explained from old Module 6)
+- Working with DateTime format
 - Working with strings in dataframes?
-- Identifying and handling missing/erroneous values 
-- Pandas profiling 
+- Identifying and handling missing/erroneous values
+- Pandas profiling
 
-
-#### Learning Outcomes 
+#### Learning Outcomes
 
 By the end of the module, students are expected to:
 
@@ -206,4 +190,3 @@ By the end of the module, students are expected to:
 - Identify null values in a dataframe and manage them by removing them using [`.dropna()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.dropna.html) or replacing them using [`.fillna()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.fillna.html).
 - Manipulate non-standard date/time formats into standard Pandas datetime using [`pd.to_datetime()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.to_datetime.html).
 - Find, and replace text from a dataframe using verbs such as [`.replace()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.replace.html) and [`.contains()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.str.contains.html).  
-
