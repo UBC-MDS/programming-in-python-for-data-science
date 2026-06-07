@@ -114,7 +114,7 @@ print_correct_msg()
 ## Hint 1
 
 - Are you sure you are saving your objects correctly?
-- Are you using using `.describe(include="all")` ?
+- Are you using `.describe(include="all")` ?
 
 :::
 ::::

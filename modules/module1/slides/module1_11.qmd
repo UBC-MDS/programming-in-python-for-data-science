@@ -23,7 +23,7 @@ cereal.loc[:, 'calories':'fiber']
 :::{.notes} 
 What happens now if we wanted all the rows of the dataframe but only the columns `calories` to `fiber`?
 
-We can use `:` in the row postion of the `.loc[]` call to indicate we want all the rows. So here we write `cereal.loc[:, 'calories':'fiber']`.
+We can use `:` in the row position of the `.loc[]` call to indicate we want all the rows. So here we write `cereal.loc[:, 'calories':'fiber']`.
 :::
 
 ---

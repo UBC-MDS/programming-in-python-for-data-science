@@ -3,7 +3,7 @@ format: revealjs
 title: Module Learning Outcomes
 title-slide-attributes:
   data-notes: |
-    In this module you will be introduced to dataframes, the Python Pandas package and learn how to manipute data.
+    In this module you will be introduced to dataframes, the Python Pandas package and learn how to manipulate data.
 ---
 
 ```{python}

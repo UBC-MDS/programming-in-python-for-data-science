@@ -60,7 +60,7 @@ hockey_players = pd.read_csv('data/canucks.csv')
 hockey_players
 ```
 
-In previous questions, we tried slicing using index labels on our Canack dataset. Let's try something similar but using the index positions.
+In previous questions, we tried slicing using index labels on our Canuck dataset. Let's try something similar but using the index positions.
 
 **Tasks:**
 
