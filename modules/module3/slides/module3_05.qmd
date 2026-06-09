@@ -23,7 +23,7 @@ This shows the language diversity within different countries as well as their po
 
 
 :::{.notes}
-In the last section we learned about tidy data and how it is determined based on what we are trying to figure out, eg: what our statistical question is.
+In the last section we learned about tidy data and how it is determined based on what we are trying to figure out, e.g. what our statistical question is.
 
 There are cases where a longer dataframe is considered tidy data and in other cases, a wider dataframe is tidy depending on what is being ask. 
 

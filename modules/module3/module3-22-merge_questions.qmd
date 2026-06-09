@@ -190,7 +190,7 @@ lego_tower
         'Question 3',
         'How many Lego pieces from the <code>lego_inventory</code> dataframe do not have any matching rows in the <code>lego_colors</code> dataframe? <i>(Hint: Filtering on the <code>_merge</code> column and using <code>.shape</code> can be useful here.)</i>',
         {
-        '0': 'You got it!  All the pieces have matching rows from the <code>lego_colors</code> dataframe.  This code <code>lego_tower[lego_tower[’_merge’] == "left_only"].shape</code> explains that there are 0 rows.',
+        '0': 'You got it!  All the pieces have matching rows from the <code>lego_colors</code> dataframe.  This code <code>lego_tower[lego_tower[\'_merge\'] == "left_only"].shape</code> explains that there are 0 rows.',
         '1': 'Maybe explore the <code>_merge</code> column by filtering or grouping and see if there are any <code>left_only</code> values.',
         '2': 'Maybe explore the <code>_merge</code> column by filtering or grouping and see if there are any <code>left_only</code> values.',
         '3': 'Maybe explore the <code>_merge</code> column by filtering or grouping and see if there are any <code>left_only</code> values.',
@@ -245,7 +245,7 @@ lego_stock = lego_inventory.merge(lego_sets,
 solution = lego_stock.groupby('set_num').ngroups
 
 assert isinstance(result, int), "You should display ngroups."
-assert solution == result, "Are you grouping by 'set_num' and counting the number of groups using the 'ngroups' functon?"
+assert solution == result, "Are you grouping by 'set_num' and counting the number of groups using the 'ngroups' function?"
 print_correct_msg()
 ```
 
@@ -365,7 +365,7 @@ print_correct_msg()
 ## Hint 1
 
 - Are you naming your new dataframe `store_inventory`? 
-- Are you aggregating using `.agg({\'quantity\':\'sum\'})`?
+- Are you aggregating using `.agg({'quantity':'sum'})`?
 - Are you using the arguments `left_index=True, right_index=True, how='inner'`?
 - Are you sorting in descending order of `quantity`?
 

@@ -212,7 +212,7 @@ print_correct_msg()
 - Are you removing any duplicated columns?
 - Are you using `axis=1`?
 - Are you using `.assign()` to make a new column named `total_pieces`?
-- Are you using using `.sort_values()` with the argument `ascending=False`
+- Are you using `.sort_values()` with the argument `ascending=False`
 
 :::
 ::::
