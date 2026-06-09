@@ -29,7 +29,7 @@ Remember the fruit salad dataframe named `fruit_salad`?  Refer to it for the nex
     generateQuiz(
         'mcq1',
         'Question 1',
-        'Which code would create a grouby object for the column <code>shape</code>?',
+        'Which code would create a groupby object for the column <code>shape</code>?',
         {
         '<code>fruit_salad.get_groups(by=\'shape\')</code>': 'Not quite but you are on the right track.',
         '<code>fruit_salad.groupby(by=\'shape\')</code>': 'Great work!',

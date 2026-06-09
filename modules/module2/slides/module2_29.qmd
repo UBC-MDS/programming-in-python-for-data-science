@@ -161,7 +161,7 @@ Let's practice this.
 
 Maybe we are interested in plotting the rating of cereals vs the amount of sugar they contain from `cereal` dataframe. 
 
-We do this using a scatter plot which uses `.mark_circle()`. We can assign `sugars` as the the `x` variable and `ratings` as the `y` variable from the `cereal` dataframe we have been using. 
+We do this using a scatter plot which uses `.mark_circle()`. We can assign `sugars` as the `x` variable and `ratings` as the `y` variable from the `cereal` dataframe we have been using. 
 
 Here, `sugars` and `rating` are both quantitative columns so we specify `Q` as variable types in our plot.
 :::

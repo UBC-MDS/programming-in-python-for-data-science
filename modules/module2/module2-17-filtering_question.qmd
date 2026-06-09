@@ -47,7 +47,7 @@ What would be the output of
 </script>
 
 
-## Coding questiongs
+## Coding questions
 
 **Instructions:**    
 Running a coding exercise for the first time, could take a bit of time for everything to load.  Be patient, it could take a few minutes. 
