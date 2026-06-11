@@ -48,7 +48,7 @@ In the last few sections, you may have had questions like:
 
 ***"What are these square brackets we keep using in our verb arguments?"*** or    
 
-***"Why can we take the mean of some columns and not others?"*** . 
+***"Why can we take the mean of some columns and not others?"*** 
 
 We'll be answering these questions in this module. 
 

@@ -135,7 +135,7 @@ from src.utils import print_correct_msg
 junk_drawer = [3, 4, "pen", "scrap paper", 7.3, True]
 
 assert isinstance(result, dict), "We are expecting a dict."
-assert result["drawer_length"] == len(junk_drawer), "The length of 'junk_drawer' is incorrect. Did you add everthing?"
+assert result["drawer_length"] == len(junk_drawer), "The length of 'junk_drawer' is incorrect. Did you add everything?"
 assert len(result["cleaned_junk_drawer"]) == 3, "The length of 'cleaned_junk_drawer' is incorrect. Are you slicing properly?"
 assert isinstance(result["junk_set"], set), "junk_set should be a set."
 assert result["junk_set"] == set(junk_drawer[1:4]), "Some items are missing from 'junk_set'. Are you slicing properly?"
@@ -224,7 +224,7 @@ import pandas as pd
 from src.utils import print_correct_msg
 
 assert isinstance(result, pd.DataFrame), "Make sure you are calling the 'pd.DataFrame()' in order to create the dataframe."
-assert result.shape == (3,3), "The length of 'junk_drawer' is incorrect. Did you add everthing?"
+assert result.shape == (3,3), "The length of 'junk_drawer' is incorrect. Did you add everything?"
 assert sorted(list(result.columns)) == sorted(['name', 'age', 'birth_month']), "Your dataframe contains incorrect columns. Are you specifying the correct column names?"
 print_correct_msg()
 ```

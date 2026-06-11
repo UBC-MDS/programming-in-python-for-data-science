@@ -39,7 +39,7 @@ tuple(['One', 'Two', 3]) + (4, 'five', 6)
         'Question 2',
         '',
         {
-        'Output': 'That’s right. the output would be <code>(’One’, ’Two’, 3, 4, ’five’, 6)</code>.',
+        'Output': 'That’s right. the output would be <code>(\'One\', \'Two\', 3, 4, \'five\', 6)</code>.',
         '<code>Error</code>': 'Are they both the same data structure?',
         },
         'Output',
@@ -156,7 +156,7 @@ not not ('hotels' != 'homes')
         '',
         {
         'True': 'The right!',
-        'False': 'The statement <code>not ’hotels’ != ’homes’ </code> is false so checking if that statement is False results in a True output.',
+        'False': 'The statement <code>not \'hotels\' != \'homes\' </code> is false so checking if that statement is False results in a True output.',
         },
         'True',
     );

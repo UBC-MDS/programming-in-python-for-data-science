@@ -380,7 +380,7 @@ Let's explore this a bit.
 
 Sets are made with curly brackets.
 
-You'll notice that the printed order is not the same as we inputted then in. That's because sets do not preserve order.
+You'll notice that the printed order is not the same as the order we entered them in. That's because sets do not preserve order.
 
 If we have repeats of any entries, they only occur once in the set. This is useful if you want to keep track of a set of things, like who visited a store, and you're not interested in repeat entries.
 :::
