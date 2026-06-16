@@ -39,12 +39,12 @@ def acronym_it(sentence):
         'Question 1',
         'Given the function above, which would <b>not</b> result in an error? ',
         {
-        '<code>assert acronym_it(’Hard work pays off’) == ’HWPO’</code>': '',
-        '<code>assert acronym_it(’Hard work pays off’) == ’Hwpo’</code>': 'It might be helpful to read the function code line by line.',
-        '<code>assert acronym_it(’Hard work pays off’) == ’H’</code>': 'It might be helpful to read the function code line by line.',
-        '<code>assert acronym_it(’Hard work pays off’) == str<code>': 'It might be helpful to read the function code line by line.',
+        '<code>assert acronym_it(\'Hard work pays off\') == \'HWPO\'</code>': '',
+        '<code>assert acronym_it(\'Hard work pays off\') == \'Hwpo\'</code>': 'It might be helpful to read the function code line by line.',
+        '<code>assert acronym_it(\'Hard work pays off\') == \'H\'</code>': 'It might be helpful to read the function code line by line.',
+        '<code>assert acronym_it(\'Hard work pays off\') == str</code>': 'It might be helpful to read the function code line by line.',
         },
-        '<code>assert acronym_it(’Hard work pays off’) == ’HWPO’</code>',
+        '<code>assert acronym_it(\'Hard work pays off\') == \'HWPO\'</code>',
     );
 </script>
 
@@ -55,12 +55,12 @@ def acronym_it(sentence):
         'Question 2',
         'Given the function above, which test <b>would</b> fail?',
         {
-        '<code>assert acronym_it(’If at first you do not succeed, try try again’) == ’IAFYDNSTTA’</code>': '',
-        '<code>assert acronym_it(’There are 30 bottles of beer on the wall!’) == ’TA3BOBOTW’</code>': 'It might be helpful to read the function code line by line.',
-        '<code>assert acronym_it(’Build me up, buttercup’) == ’BMUB’</code>': 'It might be helpful to read the function code line by line.',
-        '<code>assert acronym_it(’10 times 5 is 50’) == ’10T5I50’<code>': 'Good work!',
+        '<code>assert acronym_it(\'If at first you do not succeed, try try again\') == \'IAFYDNSTTA\'</code>': '',
+        '<code>assert acronym_it(\'There are 30 bottles of beer on the wall!\') == \'TA3BOBOTW\'</code>': 'It might be helpful to read the function code line by line.',
+        '<code>assert acronym_it(\'Build me up, buttercup\') == \'BMUB\'</code>': 'It might be helpful to read the function code line by line.',
+        '<code>assert acronym_it(\'10 times 5 is 50\') == \'10T5I50\'</code>': 'Good work!',
         },
-        '<code>assert acronym_it(’10 times 5 is 50’) == ’10T5I50’<code>',
+        '<code>assert acronym_it(\'10 times 5 is 50\') == \'10T5I50\'</code>',
     );
 </script>
 
@@ -128,7 +128,7 @@ Given our BMI function from the previous few questions, let's write some unit te
 **Tasks:**
 
 - Write at least 4 unit tests and check that at least 2 of them are testing edge cases. 
-- For this exercsie, use single quotes `''` instead of double quotes `""` for the `assert` messages.
+- For this exercise, use single quotes `''` instead of double quotes `""` for the `assert` messages.
 
 ```{pyodide}
 #| exercise: writing_tests
