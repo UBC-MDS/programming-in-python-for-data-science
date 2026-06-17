@@ -145,7 +145,7 @@ rain_before
 
 <br>
 
-Have now been been been replaced with "rained" in the `Comments` column:
+Have now been replaced with "rained" in the `Comments` column:
 
 ```{python}
 cycling_lower[cycling_lower['Comments'] == 'rained']
