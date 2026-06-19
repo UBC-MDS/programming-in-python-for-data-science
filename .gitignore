@@ -7,6 +7,10 @@ _freeze/
 *_files/
 *.quarto_ipynb
 
+# Quarto Outputs
+*.html
+site_libs/
+
 # Python
 __pycache__/
 *.py[cod]
