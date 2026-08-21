@@ -93,7 +93,7 @@
     code span.vs { color: #da4453; } /* VerbatimString */
     code span.wa { color: #da4453; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/theme/quarto-f9a839800513c4e4cd53100bfd03d6eb.css">
+  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/theme/quarto-c238bb2639d871916383443417dbcc05.css">
   <link href="../../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -202,7 +202,7 @@
 </section>
 <section id="slicing-dataframe" class="slide level2">
 <h2>Slicing Dataframe</h2>
-<div id="3e3d0581" class="cell" data-execution_count="3">
+<div id="f11b6aad" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a>cereal <span class="op">=</span> pd.read_csv(<span class="st">'data/cereal.csv'</span>)</span>
 <span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a>cereal.head(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
@@ -387,7 +387,7 @@
 </section>
 <section class="slide level2">
 
-<div id="2a0bdc8d" class="cell" data-execution_count="4">
+<div id="ff0ae05a" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a>cereal.loc[<span class="dv">2</span>:<span class="dv">5</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <div>
@@ -477,7 +477,7 @@
 </div>
 </div>
 <p><br></p>
-<div id="10baeb3f" class="cell" data-execution_count="5">
+<div id="633837bf" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a>cereal.iloc[<span class="dv">2</span>:<span class="dv">5</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
 <div>
@@ -572,7 +572,7 @@
 </section>
 <section class="slide level2">
 
-<div id="77f411bd" class="cell" data-execution_count="6">
+<div id="07fd18b1" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a>cereal.iloc[<span class="dv">2</span>:<span class="dv">6</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <div>
@@ -664,7 +664,7 @@
 <aside class="notes">
 <p>The reason for this is that when we use slicing with indices, it will take all the indices including the lower bound but <em>EXCLUDING</em> the upper bound.</p>
 <p>If we want to include <code>Apple Cinnamon Cheerios</code> we would have to go 1 index position further.</p>
-<p>If we think about this a bit it actually make some sense. Think about the calculation <code>6 - 2 = 4</code> . We get 4 items remaining which is the amount of cereals we want in our in new dataframe.</p>
+<p>If we think about this a bit, it actually makes some sense. Think about the calculation <code>6 - 2 = 4</code>. We get 4 items remaining which is the amount of cereals we want in our in new dataframe.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -679,7 +679,7 @@
 </section>
 <section class="slide level2">
 
-<div id="bf7942d4" class="cell" data-execution_count="7">
+<div id="682c0cf0" class="cell" data-execution_count="7">
 <div class="cell-output cell-output-display" data-execution_count="7">
 <div>
 <style scoped="">
@@ -779,7 +779,7 @@
 </div>
 </div>
 </div>
-<div id="461a3ad0" class="cell" data-execution_count="8">
+<div id="e985000d" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a>cereal.iloc[:, <span class="dv">0</span>:<span class="dv">6</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
 <div>
@@ -946,7 +946,7 @@
 <strong>Upper Bound</strong>:<code>fat</code> is located at position 5.</p>
 <p><br></p>
 <p>So the code we have to use to do this is the following:</p>
-<div id="4dee0546" class="cell" data-execution_count="9">
+<div id="a6180d14" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a>cereal.iloc[<span class="dv">2</span>:<span class="dv">6</span>, <span class="dv">0</span>:<span class="dv">6</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
 <div>
@@ -1041,7 +1041,7 @@
 </section>
 <section class="slide level2">
 
-<div id="aac873bf" class="cell" data-execution_count="10">
+<div id="4cc84144" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a>cereal.head(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="10">
 <div>
@@ -1119,7 +1119,7 @@
 </div>
 </div>
 <p><br></p>
-<div id="20a39962" class="cell" data-execution_count="11">
+<div id="34977d0c" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a aria-hidden="true" tabindex="-1"></a>cereal.iloc[<span class="dv">0</span>:<span class="dv">3</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="11">
 <div>
@@ -1197,7 +1197,7 @@
 </div>
 </div>
 <p><br></p>
-<div id="fe4d2196" class="cell" data-execution_count="12">
+<div id="5963941e" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a aria-hidden="true" tabindex="-1"></a>cereal.iloc[:<span class="dv">3</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
 <div>
@@ -1293,7 +1293,7 @@
 </section>
 <section class="slide level2">
 
-<div id="387f1706" class="cell" data-execution_count="13">
+<div id="1a381326" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a aria-hidden="true" tabindex="-1"></a>cereal.iloc[<span class="dv">74</span>:<span class="dv">77</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="13">
 <div>
@@ -1371,7 +1371,7 @@
 </div>
 </div>
 <p><br></p>
-<div id="7c19c3c9" class="cell" data-execution_count="14">
+<div id="17d59ba0" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a aria-hidden="true" tabindex="-1"></a>cereal.iloc[<span class="op">-</span><span class="dv">3</span>:]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="14">
 <div>
@@ -1468,7 +1468,7 @@
 </section>
 <section id="selecting-with-.iloc" class="slide level2">
 <h2>Selecting with .iloc[]</h2>
-<div id="a41c7a17" class="cell" data-execution_count="15">
+<div id="3c01b1b8" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a aria-hidden="true" tabindex="-1"></a>cereal.head(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="15">
 <div>
@@ -1769,7 +1769,7 @@
 </tr>
 </tbody></table>
 <p><br> <br> <br> <br> <br> <br> <br> <br> <br></p>
-<div id="2769f851" class="cell" data-execution_count="16">
+<div id="89a5866d" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a aria-hidden="true" tabindex="-1"></a>cereal.iloc[[<span class="dv">4</span>, <span class="dv">7</span>, <span class="dv">6</span>], [<span class="dv">0</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">2</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="16">
 <div>

@@ -93,7 +93,7 @@
     code span.vs { color: #da4453; } /* VerbatimString */
     code span.wa { color: #da4453; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/theme/quarto-f9a839800513c4e4cd53100bfd03d6eb.css">
+  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/theme/quarto-c238bb2639d871916383443417dbcc05.css">
   <link href="../../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -199,11 +199,11 @@
 </section>
 <section id="repeating-code" class="slide level2">
 <h2>Repeating Code</h2>
-<div id="992155f5" class="cell" data-execution_count="2">
+<div id="1d56756a" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a>numbers <span class="op">=</span> [<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><br></p>
-<div id="2f8982c1" class="cell" data-execution_count="3">
+<div id="df3e29de" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a>squared <span class="op">=</span> <span class="bu">list</span>()</span>
 <span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a>squared.append(numbers[<span class="dv">0</span>] <span class="op">**</span> <span class="dv">2</span>)</span>
@@ -232,7 +232,7 @@
 </section>
 <section class="slide level2">
 
-<div id="9149921f" class="cell" data-execution_count="4">
+<div id="10bde12b" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a>squared <span class="op">=</span> <span class="bu">list</span>()</span>
 <span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-3"><a aria-hidden="true" tabindex="-1"></a>squared.append(numbers[<span class="dv">0</span>] <span class="op">**</span> <span class="dv">2</span>)</span>
@@ -244,14 +244,14 @@
 </div>
 </div>
 <p><br></p>
-<p>This kind of coding exhibits bad programming practices such as :</p>
+<p>This kind of coding exhibits bad programming practices such as:</p>
 <ul>
 <li><p><strong>Difficult to scale</strong></p></li>
 <li><p><strong>Difficult to modify</strong></p></li>
 <li><p><strong>Clarity</strong></p></li>
 </ul>
 <aside class="notes">
-<p>This kind of coding exhibits bad programming practices such as :</p>
+<p>This kind of coding exhibits bad programming practices such as:</p>
 <ul>
 <li><p><strong>Difficult to scale</strong>: This only works for a list with 3 elements. If we want to do this for a list of a different length, we would need to add or remove code.</p></li>
 <li><p><strong>Difficult to modify</strong>: If we want to change this code’s functionality, we need to change 3 very similar lines of code.</p></li>
@@ -272,7 +272,7 @@
 <section id="dont-repeat-yourself-dry-principle" class="slide level2">
 <h2>Don’t Repeat Yourself (DRY Principle)</h2>
 <p>The <strong>DRY</strong> in the <strong><em>DRY principle</em></strong> stands for “Don’t Repeat Yourself”. It is the principle of avoiding redundancy within code.</p>
-<div id="8e92549a" class="cell" data-execution_count="5">
+<div id="4a69015c" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a>squared <span class="op">=</span> <span class="bu">list</span>()</span>
 <span id="cb6-2"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-3"><a aria-hidden="true" tabindex="-1"></a>squared.append(numbers[<span class="dv">0</span>] <span class="op">**</span> <span class="dv">2</span>)</span>
@@ -303,11 +303,11 @@
 </section>
 <section id="loops" class="slide level2">
 <h2>Loops</h2>
-<div id="b98c7bf7" class="cell" data-execution_count="6">
+<div id="f0decae6" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a aria-hidden="true" tabindex="-1"></a>numbers <span class="op">=</span> [<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><br></p>
-<div id="8c790681" class="cell" data-execution_count="7">
+<div id="3a725974" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a aria-hidden="true" tabindex="-1"></a>squared <span class="op">=</span> <span class="bu">list</span>()</span>
 <span id="cb9-2"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-3"><a aria-hidden="true" tabindex="-1"></a>squared.append(numbers[<span class="dv">0</span>] <span class="op">**</span> <span class="dv">2</span>)</span>
@@ -319,7 +319,7 @@
 </div>
 </div>
 <p><br></p>
-<div id="9762a8bb" class="cell" data-execution_count="8">
+<div id="774fa66c" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a aria-hidden="true" tabindex="-1"></a>squared <span class="op">=</span> <span class="bu">list</span>()</span>
 <span id="cb11-2"><a aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> number <span class="kw">in</span> numbers: </span>
 <span id="cb11-3"><a aria-hidden="true" tabindex="-1"></a>    squared.append(number <span class="op">**</span> <span class="dv">2</span>)</span>
@@ -346,7 +346,7 @@
 </section>
 <section id="for-each-loop" class="slide level2">
 <h2>For (Each) Loop</h2>
-<div id="647e2840" class="cell" data-execution_count="9">
+<div id="fe35bdbb" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a aria-hidden="true" tabindex="-1"></a>squared <span class="op">=</span> <span class="bu">list</span>()</span>
 <span id="cb13-2"><a aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> number <span class="kw">in</span> numbers: </span>
 <span id="cb13-3"><a aria-hidden="true" tabindex="-1"></a>    squared.append(number <span class="op">**</span> <span class="dv">2</span>)</span>
@@ -392,7 +392,7 @@
 </section>
 <section class="slide level2">
 
-<div id="6351562d" class="cell" data-execution_count="10">
+<div id="d27bbc1a" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a aria-hidden="true" tabindex="-1"></a>squared <span class="op">=</span> <span class="bu">list</span>()</span>
 <span id="cb15-2"><a aria-hidden="true" tabindex="-1"></a>numbers <span class="op">=</span> [ <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>]</span>
 <span id="cb15-3"><a aria-hidden="true" tabindex="-1"></a></span>
@@ -405,7 +405,7 @@
 </div>
 </div>
 <p><br></p>
-<div id="5303d691" class="cell" data-execution_count="11">
+<div id="2562a747" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a aria-hidden="true" tabindex="-1"></a>squared <span class="op">=</span> <span class="bu">list</span>()</span>
 <span id="cb17-2"><a aria-hidden="true" tabindex="-1"></a>numbers <span class="op">=</span> [ <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>]</span>
 <span id="cb17-3"><a aria-hidden="true" tabindex="-1"></a></span>
@@ -436,7 +436,7 @@
 </section>
 <section class="slide level2">
 
-<div id="fe8734ab" class="cell" data-execution_count="12">
+<div id="a847d84a" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a aria-hidden="true" tabindex="-1"></a>squared <span class="op">=</span> <span class="bu">list</span>()</span>
 <span id="cb19-2"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb19-3"><a aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> number <span class="kw">in</span> numbers: </span>

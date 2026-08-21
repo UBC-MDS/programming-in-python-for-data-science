@@ -45,8 +45,8 @@ function generateQuiz(containerId, title, question, options, correctAnswers) {
         input.className = 'form-check-input me-2'; // Added margin for spacing
         input.id = `option-${containerId}-${index}`;
         input.style.borderColor = '#4853A4'; // Radio button outline
-        input.style.boxShadow = 'none';  // Remove brief occurances of transparent fill when clicked
-        input.style.outline = 'none';  // Remove brief occurances of transparent fill when clicked
+        input.style.boxShadow = 'none';  // Remove brief occurrences of transparent fill when clicked
+        input.style.outline = 'none';  // Remove brief occurrences of transparent fill when clicked
 
         input.addEventListener('change', function () {
             messageElement.style.display = 'none';

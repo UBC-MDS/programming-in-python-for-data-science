@@ -93,7 +93,7 @@
     code span.vs { color: #da4453; } /* VerbatimString */
     code span.wa { color: #da4453; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/theme/quarto-f9a839800513c4e4cd53100bfd03d6eb.css">
+  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/theme/quarto-c238bb2639d871916383443417dbcc05.css">
   <link href="../../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -202,7 +202,7 @@
 </section>
 <section class="slide level2">
 
-<div id="786a6d54" class="cell" data-execution_count="3">
+<div id="356ead5f" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a>cereal.loc[[<span class="dv">63</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <div>
@@ -256,7 +256,7 @@
 </div>
 </div>
 <p><br></p>
-<div id="f57dad7f" class="cell" data-execution_count="4">
+<div id="075b6ae9" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a>cereal.loc[<span class="dv">63</span>, <span class="st">'calories'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>np.int64(80)</code></pre>
@@ -266,7 +266,7 @@
 <p>At this point of the module, we now know how to get a subset of an existing dataframe, but what if we just want to get a single value from it?</p>
 <p>For example, what if we wanted to save the calorie content of <code>Shredded Wheat</code> by extracting it from the dataframe manually instead of typing the number in Python?</p>
 <p>To do this we use again our <code>.loc</code> notation and we specify the row we are targeting which is 63, followed by the column, here <code>calories</code>. This goes in the square brackets.</p>
-<p>When we do this, it displays the the value contained in the cell, which in this case, is 80.</p>
+<p>When we do this, it displays the value contained in the cell, which in this case, is 80.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -281,7 +281,7 @@
 </section>
 <section class="slide level2">
 
-<div id="59d1ecab" class="cell" data-execution_count="5">
+<div id="44e7747f" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a>cereal.loc[[<span class="dv">66</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
 <div>
@@ -335,7 +335,7 @@
 </div>
 </div>
 <p><br></p>
-<div id="a5528bca" class="cell" data-execution_count="6">
+<div id="5e2b5da1" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a>cereal.loc[<span class="dv">66</span>, <span class="st">'rating'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <pre><code>np.float64(31.230054)</code></pre>
