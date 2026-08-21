@@ -51,7 +51,7 @@ The output looks like it did what we wanted, but what happened to the rest of ou
 
 Remember that we only want to replace the values in our existing dataframe and not create a new one. 
 
-When we use the `.assign()` verb like this, it creates a new dataframe with only the rows that meet the condition ```cereal['mfr'] == 'Q'``` .  
+When we use the `.assign()` verb like this, it creates a new dataframe with only the rows that meet the condition ```cereal['mfr'] == 'Q'```.  
 
 This is problematic since we still want the original dataframe and the rows with `mfr` values not equal `Q`. 
 
@@ -152,7 +152,7 @@ It produces an object containing all the rows with True/False values depending o
 
 
 :::{.notes} 
-Essentially our code is finding the rows with `True` values and replacing the values in the `mfr` colum with the new value of `Quaker`.
+Essentially our code is finding the rows with `True` values and replacing the values in the `mfr` column with the new value of `Quaker`.
 :::
 
 ---

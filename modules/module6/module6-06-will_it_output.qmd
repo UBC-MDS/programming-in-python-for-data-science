@@ -83,7 +83,7 @@ thai_food(menu_item_id, menu_item_name, spice_level, meat, rice)
     generateQuiz(
         'mcq3',
         'Question 2',
-        'If I make a function call using the above code, and I know that that parameter <code>spice_level</code> is an argument that has a default value, which other arguments <b>MUST</b> also have set default values?',
+        'If I make a function call using the above code, and I know that parameter <code>spice_level</code> is an argument that has a default value, which other arguments <b>MUST</b> also have set default values?',
         {
         '<code>menu_item_id</code> and <code>menu_item_name</code>': 'These two arguments can be either required or default arguments.',
         '<code>meat</code>': 'This is partially right but not entirely.',

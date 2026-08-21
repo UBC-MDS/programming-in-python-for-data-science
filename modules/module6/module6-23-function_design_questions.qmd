@@ -37,8 +37,8 @@ def give_me_facts(myinfo):
 ```python
 
 def count_the_sevens(mylist): 
-    number_of_occurances  = mylist.count(7)
-    return number_of_occurances
+    number_of_occurrences  = mylist.count(7)
+    return number_of_occurrences
 ```
 
 <div id='mcq2'></div>
@@ -48,7 +48,7 @@ def count_the_sevens(mylist):
         'Question 1',
         'How can we improve the above function?',
         {
-        'Avoid using a list as an input arguments': 'Lists are completely fine to use as input arguments.',
+        'Avoid using a list as an input argument': 'Lists are completely fine to use as input arguments.',
         'Simplify the operations': 'This function is only 3 lines! Do we need it simpler?',
         'Use fewer global variables': 'Luckily no global variables are being used in this function.',
         'Remove the hard-coded value': 'Perfect! Let’s make the count variable (in this case the <code>7</code>) an input argument.',

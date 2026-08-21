@@ -113,7 +113,7 @@ Let's look back at the series output again.
 
 We can see additional information at the bottom. 
 
-The series contains the name of the column series, which is  `mfr` , the length of the series, which is equal to 77, and a `dtype` equal to object. 
+The series contains the name of the column series, which is `mfr`, the length of the series, which is equal to 77, and a `dtype` equal to object. 
 
 Ok, we know what `type` is, but what is a `dtype`?
 :::

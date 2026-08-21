@@ -161,7 +161,7 @@ Up until now, all of these operations have been done without being added to our 
 
 Let's explore how we can add new columns to a less detailed version of our cereal dataframe. 
 
-We'll be working with a smaller dataframe containing only a few columns columns so that it's easier to follow the examples.
+We'll be working with a smaller dataframe containing only a few columns so that it's easier to follow the examples.
 :::
 
 ---

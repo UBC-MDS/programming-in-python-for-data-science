@@ -290,7 +290,7 @@ This converts the columns to rows and the columns to rows.
 
 We can replace values in an array by specifying the element we wish to replace in square brackets on the left side of the assignment operator and our new desired value on the right of it. 
 
-Here we can see that that value 5, was replaced with 77,777. 
+Here we can see that value 5, was replaced with 77,777. 
 :::
 
 

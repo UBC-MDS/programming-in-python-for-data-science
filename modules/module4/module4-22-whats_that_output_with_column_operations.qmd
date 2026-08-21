@@ -15,7 +15,7 @@ Here is my dataframe named `fruit_salad`:
 |  0 | apple        | red      | canada     | True   | round   | True        |              84 |      100 |
 |  1 | banana       | yellow   | mexico     | False  | long    | True        |              75 |      120 |
 |  2 | cantaloupe   | orange   | spain      | True   | round   | True        |              90 |     1360 |
-|  3 | dragon-fruit | megenta  | china      | True   | round   | False       |              96 |      600 |
+|  3 | dragon-fruit | magenta  | china      | True   | round   | False       |              96 |      600 |
 |  4 | elderberry   | purple   | austria    | False  | round   | True        |              80 |        5 |
 |  5 | fig          | purple   | turkey     | False  | oval    | False       |              78 |       40 |
 |  6 | guava        | green    | mexico     | True   | oval    | True        |              83 |      450 |
@@ -30,7 +30,7 @@ Here is my dataframe named `fruit_salad`:
     generateQuiz(
         'mcq1',
         'Question 1',
-        'What would be the output of <code>df[’seed’].sum()</code>',
+        'What would be the output of <code>df[\'seed\'].sum()</code>',
         {
         '<code>0</code>': 'Can we sum up a column of dtype <code>bool</code>? What values does it sum up?',
         '<code>1</code>': 'Can we sum up a column of dtype <code>bool</code>? What values does it sum up?',
@@ -46,7 +46,7 @@ Here is my dataframe named `fruit_salad`:
     generateQuiz(
         'mcq2',
         'Question 2',
-        'What would be the output of <code>df.loc[:,[’seed’, ’sweetness’]].sum(axis=1)</code>',
+        'What would be the output of <code>df.loc[:,[\'seed\', \'sweetness\']].sum(axis=1)</code>',
         {
         'A single value': '<code>axis=1</code> means we can sum up row-wise.',
         '2 values, one for each column': '<code>axis=1</code> means we can sum up row-wise.',
@@ -62,7 +62,7 @@ Here is my dataframe named `fruit_salad`:
     generateQuiz(
         'mcq3',
         'Question 3',
-        'What would be the output of <code>df[’shape’].mean()</code>',
+        'What would be the output of <code>df[\'shape\'].mean()</code>',
         {
         '<code>round</code>': '<code>axis=1</code> means we can sum up row-wise.',
         '<code>13.4</code>': '<code>axis=1</code> means we can sum up row-wise.',

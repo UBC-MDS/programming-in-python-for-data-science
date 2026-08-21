@@ -34,7 +34,7 @@ For example, what if we wanted to save the calorie content of `Shredded Wheat` b
 
 To do this we use again our `.loc` notation and we specify the row we are targeting which is 63, followed by the column, here `calories`. This goes in the square brackets.
 
-When we do this, it displays the the value contained in the cell, which in this case, is 80.
+When we do this, it displays the value contained in the cell, which in this case, is 80.
 :::
 
 ---

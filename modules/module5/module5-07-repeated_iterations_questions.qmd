@@ -70,7 +70,7 @@ for name in sentence
         'Which of the above code result in an output?',
         {
         'A': 'This code seems to be missing the loop body indentation',
-        'B': 'This is missing the important keywork <code>for</code>!',
+        'B': 'This is missing the important keyword <code>for</code>!',
         'C': 'Great work.',
         'D': 'This is missing the colon in the first line of the loop.',
         },
@@ -88,7 +88,7 @@ Running a coding exercise for the first time could take a bit of time for everyt
 
 _**Make sure you remove the hash (`#`) symbol in the coding portions of this question.  We have commented them so that the line won't execute and you can test your code after each step.**_
 
-We've learned about iterating , now it's time to apply this! 
+We've learned about iterating, now it's time to apply this! 
 We have a list that contains all elements of type `float`.  We want to create a new list that casts each element to type `int`. 
 
 **Tasks:**

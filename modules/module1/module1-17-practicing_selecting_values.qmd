@@ -25,7 +25,7 @@ hockey_players = pd.read_csv('data/canucks.csv')
 hockey_players
 ```
 
-Using our `hockey_players` data, try finding the following values and save them in their repective object names.
+Using our `hockey_players` data, try finding the following values and save them in their respective object names.
 
 **Tasks:**
 

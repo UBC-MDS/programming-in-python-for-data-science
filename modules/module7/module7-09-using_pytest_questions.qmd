@@ -31,12 +31,12 @@ format: live-html
         'Question 2',
         'Where are your unit test functions saved?',
         {
-        'In the same Jupyter notebook': 'This would defy the DRY principle if wanted to test our function in multiple different notebooks.',
+        'In the same Jupyter notebook': 'This would defy the DRY principle if we wanted to test our function in multiple different notebooks.',
         'In the same file as the function you are testing': 'Not if we want to use <code>pytest</code>!',
-        'In a seperate <code>.py</code> file': '',
-        'In a seperate Jupyter notebook': '<code>pytest</code> would not be able to check the tests in a separate Jupyter notebook.',
+        'In a separate <code>.py</code> file': '',
+        'In a separate Jupyter notebook': '<code>pytest</code> would not be able to check the tests in a separate Jupyter notebook.',
         },
-        'In a seperate <code>.py</code> file',
+        'In a separate <code>.py</code> file',
     );
 </script>
 

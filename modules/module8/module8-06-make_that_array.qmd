@@ -84,7 +84,7 @@ array([[[ 0,  1,  2,  3,  4],
     generateQuiz(
         'mcq4',
         'Question 3',
-        'Give an array with <code>shape</code> of <code>(2,3,4,2)</code>, What is it’s <code>.ndim</code>?',
+        'Given an array with <code>shape</code> of <code>(2,3,4,2)</code>, what is its <code>.ndim</code>?',
         {
         '2': 'The values in the tuple do not answer this question.',
         '3': 'The values in the tuple do not answer this question.',

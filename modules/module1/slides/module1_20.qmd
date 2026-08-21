@@ -75,7 +75,7 @@ The reason for this is that when we use slicing with indices, it will take all t
 
 If we want to include `Apple Cinnamon Cheerios` we would have to go 1 index position further. 
 
-If we think about this a bit it actually make some sense. Think about the calculation `6 - 2 = 4` . We get 4 items remaining which is the amount of cereals we want in our in new dataframe.
+If we think about this a bit, it actually makes some sense. Think about the calculation `6 - 2 = 4`. We get 4 items remaining which is the amount of cereals we want in our in new dataframe.
 :::
 
 ---

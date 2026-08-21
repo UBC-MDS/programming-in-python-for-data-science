@@ -20,12 +20,12 @@ for i in range(0, 49, 10):
     generateQuiz(
         'mcq1',
         'Question 1',
-        'Given the code above, how many times does the line <code>print(’Hurray’)</code> get executed?',
+        'Given the code above, how many times does the line <code>print(\'Hurray\')</code> get executed?',
         {
         '48': 'Keep track of the step increment the values are increasing by in the outer loop.',
         '49': 'Keep track of the step increment the values are increasing by in the outer loop.',
         '4': 'Focus your attention on the outer loop and the number of times it executes the code in its body.',
-        '5': 'Well done!  The outer loop calls <code>print(’Hurray’)</code> 5 times.',
+        '5': 'Well done!  The outer loop calls <code>print(\'Hurray\')</code> 5 times.',
         },
         '5',
     );

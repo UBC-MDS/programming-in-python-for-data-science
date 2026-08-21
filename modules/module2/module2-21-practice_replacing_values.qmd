@@ -135,7 +135,7 @@ assert_chart_equal(solution, result)
 ## Hint 1
 
 - Are you using single square brackets or obtain the column `base_score`? 
-- Are you using `count()` to count the occurences of the base scores?
+- Are you using `count()` to count the occurrences of the base scores?
 - Are you saving the objects with the correct names?
 
 :::

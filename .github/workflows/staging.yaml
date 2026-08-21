@@ -1,23 +1,27 @@
-name: "Render and Publish"
+name: "Render and Publish Staging"
+
+# Pushes to `develop` publish a staging copy of the site to gh-pages under
+# /staging/, so work can be reviewed in one place before it is proposed to
+# master. Production (the gh-pages root) is only ever built from master by
+# publish.yaml.
 
 on:
   push:
     branches:
-      - master
+      - develop
   workflow_dispatch:
 
-# you need these permissions to publish to GitHub pages
-permissions: 
-    contents: write
-    pages: write
+# Needed to push the built site to the gh-pages branch
+permissions:
+  contents: write
 
 jobs:
-  build-deploy:
+  build-deploy-staging:
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v4  # Checkout the repo to find files, such as the env
-      
+
       - name: Setup the environment
         uses: mamba-org/setup-micromamba@v1
         with:
@@ -29,17 +33,13 @@ jobs:
       - name: Build the website
         run: quarto render
         shell: bash -el {0}  # Required to see the mamba init env
-      
-      # Push the website to the root of the gh-pages branch.
-      # `clean` removes files the build no longer produces, so deleted pages and
-      # datasets stop being served. `clean-exclude` keeps the paths that other
-      # workflows own -- open PR previews and the develop staging site.
-      - name: Deploy to the gh-pages root
+
+      # `target-folder` scopes this deployment -- and its `clean` -- to /staging/,
+      # leaving the production site at the gh-pages root untouched.
+      - name: Deploy to the staging path
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
           folder: _site
+          target-folder: staging
           clean: true
-          clean-exclude: |
-            pr-preview/
-            staging/

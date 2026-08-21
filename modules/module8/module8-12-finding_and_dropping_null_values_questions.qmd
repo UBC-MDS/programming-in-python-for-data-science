@@ -61,12 +61,12 @@ memory usage: 628.0+ bytes
         'Question 2',
         'Given the dataframe named <code>forest</code>, what code would you use to remove only the rows missing from the <code>age</code> column?',
         {
-        '<code>forest.drop(columns=[’age’])</code>': 'This is just dropping the entire <code>age</code> column!',
-        '<code>pd.dropna(forest[’age’])</code>': '<code>.dropna()</code> is not called in this manner.',
-        '<code>pd.dropna(columns=[’age’])</code>': 'Are you using the correct argument?',
-        '<code>forest.dropna(subset=[’age’])</code>': '',
+        '<code>forest.drop(columns=[\'age\'])</code>': 'This is just dropping the entire <code>age</code> column!',
+        '<code>pd.dropna(forest[\'age\'])</code>': '<code>.dropna()</code> is not called in this manner.',
+        '<code>pd.dropna(columns=[\'age\'])</code>': 'Are you using the correct argument?',
+        '<code>forest.dropna(subset=[\'age\'])</code>': '',
         },
-        '<code>forest.dropna(subset=[’age’])</code>',
+        '<code>forest.dropna(subset=[\'age\'])</code>',
     );
 </script>
 
@@ -100,12 +100,12 @@ Use the `forest` dataframe below to answer the next 2 questions:
         'Question 1',
         'Which code will replace the <code>NaN</code> value in the <code>height</code> column so the new dataframe looks like the one above?',
         {
-        '<code>forest.fillna(value = forest[’height’].mean())</code>': '',
-        '<code>forest.fillna(value = forest[’height’].max())</code>': 'The max value in the <code>height</code> column is <code>25</code>, not <code>17.5</code>.',
-        '<code>forest.fillna(method = ’bfill’)</code>': 'This value isn’t an option in the dataframe and would not be possible with <code>bfill</code>.',
-        '<code>forest.fillna(method = ’ffill’)</code>': 'This value isn’t an option in the dataframe and would not be possible with <code>ffill</code>.',
+        '<code>forest.fillna(value = forest[\'height\'].mean())</code>': '',
+        '<code>forest.fillna(value = forest[\'height\'].max())</code>': 'The max value in the <code>height</code> column is <code>25</code>, not <code>17.5</code>.',
+        '<code>forest.fillna(method = \'bfill\')</code>': 'This value isn’t an option in the dataframe and would not be possible with <code>bfill</code>.',
+        '<code>forest.fillna(method = \'ffill\')</code>': 'This value isn’t an option in the dataframe and would not be possible with <code>ffill</code>.',
         },
-        '<code>forest.fillna(value = forest[’height’].mean())</code>',
+        '<code>forest.fillna(value = forest[\'height\'].mean())</code>',
     );
 </script>
 
@@ -126,12 +126,12 @@ Use the `forest` dataframe below to answer the next 2 questions:
         'Question 2',
         'Which code will replace the <code>NaN</code> value in the <code>height</code> column so the new dataframe looks like the one above?',
         {
-        '<code>forest.fillna(value = 13)': 'The <code>NaN</code> value is being filled with a value of 10, not 13.',
-        '<code>forest.fillna(value = forest[’height’].max())</code>': 'The max value in the <code>height</code> column is <code>25</code>, not <code>10</code>.',
-        '<code>forest.fillna(method = ’bfill’)</code>': 'Perfect!',
-        '<code>forest.fillna(method = ’ffill’)</code>': '<code>ffill</code> has the <code>NaN</code> value adopt the same value and the row that precedes it.',
+        '<code>forest.fillna(value = 13)</code>': 'The <code>NaN</code> value is being filled with a value of 10, not 13.',
+        '<code>forest.fillna(value = forest[\'height\'].max())</code>': 'The max value in the <code>height</code> column is <code>25</code>, not <code>10</code>.',
+        '<code>forest.fillna(method = \'bfill\')</code>': 'Perfect!',
+        '<code>forest.fillna(method = \'ffill\')</code>': '<code>ffill</code> has the <code>NaN</code> value adopt the same value as the row that precedes it.',
         },
-        '<code>forest.fillna(method = ’bfill’)</code>',
+        '<code>forest.fillna(method = \'bfill\')</code>',
     );
 </script>
 

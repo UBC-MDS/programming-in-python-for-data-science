@@ -90,7 +90,7 @@ This returns a `DataFrame GroupBy` object.
 :::{.notes} 
 For example if we only had two manufacturers, the output would look like this.
 
-What exactly is a groubpy object though?
+What exactly is a groupby object though?
 :::
 
 ---
@@ -250,7 +250,7 @@ For example:
 Look at the '150' in the bottom row on the far left under `calories`. 
 The interpretation is that, for cases where the manufacturer is 'R', the max number of calories is 150. 
 
-In a similar manner if the manufacturer is 'P' the minumum amount of sodium is 45.
+In a similar manner if the manufacturer is 'P' the minimum amount of sodium is 45.
 :::
 
 ---

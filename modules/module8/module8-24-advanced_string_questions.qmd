@@ -64,12 +64,12 @@ format: live-html
         'Question 1',
         'Given the dataframe named <code>fruit_salad</code>,  which code would produce the above dataframe with the new column <code>berry</code>?',
         {
-        '<code>fruit_salad.assign(name = fruit_salad[’name’].contains(’berry’))</code>': 'This doesn’t contain the necessary <code>str.</code> and it appears to edit the <code>name</code> column.',
-        '<code>fruit_salad.assign(name = fruit_salad[’name’].str.contains(’berry’).replace(True))</code>': 'Not the correct way of making a new column.',
-        '<code>fruit_salad.assign(berry = fruit_salad[’name’].str.replace(’berry’, True))</code>': 'This is not the correct syntax for this output.',
-        '<code>fruit_salad.assign(berry = fruit_salad[’name’].str.contains(’berry’))</code>': 'Nice work.',
+        '<code>fruit_salad.assign(name = fruit_salad[\'name\'].contains(\'berry\'))</code>': 'This doesn’t contain the necessary <code>str.</code> and it appears to edit the <code>name</code> column.',
+        '<code>fruit_salad.assign(name = fruit_salad[\'name\'].str.contains(\'berry\').replace(True))</code>': 'Not the correct way of making a new column.',
+        '<code>fruit_salad.assign(berry = fruit_salad[\'name\'].str.replace(\'berry\', True))</code>': 'This is not the correct syntax for this output.',
+        '<code>fruit_salad.assign(berry = fruit_salad[\'name\'].str.contains(\'berry\'))</code>': 'Nice work.',
         },
-        '<code>fruit_salad.assign(berry = fruit_salad[’name’].str.contains(’berry’))</code>',
+        '<code>fruit_salad.assign(berry = fruit_salad[\'name\'].str.contains(\'berry\'))</code>',
     );
 </script>
 

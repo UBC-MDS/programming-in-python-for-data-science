@@ -1,0 +1,46 @@
+# Quarto project artifacts
+# The site is rendered by CI and published to the gh-pages branch.
+/_site/
+/.quarto/
+_freeze/
+/.luarc.json
+*_files/
+*.quarto_ipynb
+
+# Quarto Outputs
+*.html
+site_libs/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Jupyter
+.local/
+
+# Environments and secrets
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+
+# Editors and IDEs
+.vscode/
+.idea/
+*.swp
+*~
+
+# R (legacy .Rmd material)
+.Rhistory
+.RData
+.Rproj.user/
+
+# OS
+.DS_Store
+._*
+Thumbs.db
+files.md

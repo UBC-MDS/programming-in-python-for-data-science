@@ -15,7 +15,7 @@ For the next few questions, name the data type of each value.
     generateQuiz(
         'mcq1',
         'Question 1',
-        '<code>question_1 = ’NaN’</code>',
+        '<code>question_1 = \'NaN\'</code>',
         {
         '<code>int</code>': 'Do you notice the quotations?',
         '<code>float</code>': 'Do you notice the quotations?',
@@ -120,7 +120,7 @@ ____
 #| exercise: string_verbs
 #| check: true
 from src.utils import print_correct_msg
-assert result == 41, "The occurences of 'let it be' is incorrect. Please try again."
+assert result == 41, "The occurrences of 'let it be' is incorrect. Please try again."
 print_correct_msg()
 ```
 

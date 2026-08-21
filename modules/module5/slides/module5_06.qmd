@@ -50,7 +50,7 @@ squared
 
 <br>
 
-This kind of coding exhibits bad programming practices such as : 
+This kind of coding exhibits bad programming practices such as: 
 
 - **Difficult to scale** 
 
@@ -60,7 +60,7 @@ This kind of coding exhibits bad programming practices such as :
 
 
 :::{.notes}
-This kind of coding exhibits bad programming practices such as : 
+This kind of coding exhibits bad programming practices such as: 
 
 - **Difficult to scale**: This only works for a list with 3 elements.  If we want to do this for a list of a different length, we would need to add or remove code. 
 
